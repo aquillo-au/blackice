@@ -234,8 +234,8 @@ NProduction = {
 NTechnology = {
 	MAX_SUBTECHS = 3,					    -- Max number of sub technologies a technology can have.
 	BASE_RESEARCH_POINTS_SAVED = 30.0,		-- Base amount of research points a country can save per slot.
-	BASE_YEAR_AHEAD_PENALTY_FACTOR = 4,		-- 3 Base year ahead penalty
-	BASE_TECH_COST = 100,					-- base cost for a tech. multiplied with tech cost and ahead of time penalties
+	BASE_YEAR_AHEAD_PENALTY_FACTOR = 2,		-- Base year ahead penalty
+	BASE_TECH_COST = 100,					-- Base cost for a tech. multiplied with tech cost and ahead of time penalties
 	MAX_TECH_SHARING_BONUS = 0.5 			-- Max technology sharing bonus that can be applied instantly
 },
 
@@ -791,14 +791,14 @@ NAI = {
 	DIPLO_PREFER_OTHER_FACTION = -200,			-- The country has yet to ask some other faction it would prefer to be a part of.
 	MIN_ANTAGONIZE_FOR_WARGOAL_JUSTIFICATION = -100,	-- AI countries will not fabricate claims against countries with an antagonization value lower than this.
 	RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 7, 	-- Refreshes need scores based on country situation.
-	RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = -0.5,    -- DNM, original 0.1  AI overhaul mod) -- Multiplies value based on relative military industry size / country size.
-	RESEARCH_NAVAL_DOCTRINE_NEED_GAIN_FACTOR = 1.5, -- DNM, original 0.075 (AI overhaul mod) -- Multiplies value based on relative naval industry size / country size.
-	RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 1.5,    -- DNM, originl 0.08  (AI overhaul mod) -- Multiplies value based on relative number of air base / country size.
-	RESEARCH_NEW_WEIGHT_FACTOR = 0.5, 			-- DNM, original 0.3 (AI overhaul mod) -- Impact of previously unexplored tech weights. Higher means more random exploration.
-	RESEARCH_BONUS_FACTOR = 150, 				--  DNM, original 1.5 (AI mod) To which extent AI should care about bonuses to research
-	RESEARCH_AHEAD_OF_TIME_FACTOR = 8.0, 		-- 10.0 To which extent AI should care about ahead of time penalties to research
-	RESEARCH_BASE_DAYS = 200,					-- AI adds a base number of days when weighting completion time for techs to ensure it doesn't only research quick techs
-	MAX_AHEAD_RESEARCH_PENALTY = 2,
+	RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = 0.15, -- Multiplies value based on relative military industry size / country size.
+	RESEARCH_NAVAL_DOCTRINE_NEED_GAIN_FACTOR = 0.05, -- Multiplies value based on relative naval industry size / country size.
+	RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 0.07, -- Multiplies value based on relative number of air base / country size.
+	RESEARCH_NEW_WEIGHT_FACTOR = 0.3, 			-- Impact of previously unexplored tech weights. Higher means more random exploration.
+	RESEARCH_BONUS_FACTOR = 0.9, 				-- To which extent AI should care about bonuses to research
+	MAX_AHEAD_RESEARCH_PENALTY = 2,             -- max ahead of tiem penalty ai will pick ever
+	RESEARCH_AHEAD_OF_TIME_FACTOR = 4.0, 		-- To which extent AI should care about ahead of time penalties to research
+	RESEARCH_BASE_DAYS = 60,					-- AI adds a base number of days when weighting completion time for techs to ensure it doesn't only research quick techs
 	DECLARE_WAR_RELATIVE_FORCE_FACTOR = 0.5,	-- Weight of relative force between nations that consider going to war
 	TRADEABLE_FACTORIES_FRACTION = 0.5,		-- DNM, original 0.3 (AI Mod) -- Will at most trade away this fraction of factories.
 	MIN_DELIVERED_TRADE_FRACTION = 0.75,			-- AI will cancel trade deals that are not able to deliver more than this fraction of the agreed amount
@@ -893,11 +893,10 @@ NAI = {
 	GENERATE_WARGOAL_THREAT_BASELINE = 1.0,	   -- The baseline for what the AI considers the world is getting dangerous and we want to generate wargoals	
 	RESERVE_TO_COMMITTED_BALANCE = 0.2,			-- DNM, originla 0.1 (ai overhaul mod) -- How many reserves compared to number of committed divisions in a combat (1.0 = as many as reserves as committed)
 	DIPLOMACY_COMMUNIST_NOT_NEIGHBOUR = -10,	-- Communists want to stay consolidated with their influence
+	MAIN_ENEMY_FRONT_IMPORTANCE = 4.0,			-- How much extra focus the AI should put on who it considers to be its current main enemy.
 	EASY_TARGET_FRONT_IMPORTANCE = 7.5,			-- How much extra focus the AI should put on who it considers to be the easiest target.
-	
-	MAIN_ENEMY_FRONT_IMPORTANCE = 30,			-- 15 DNM (AI) - think this might lead to AI being really bad on managing secondary fronts, so have lowered to vanilla value of 0.1 for the moment - BICE had 80 prior to this, and AI overhaul mod has 50 -- How much extra focus the AI should put on who it considers to be its current main enemy.
-	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.35,	-- DNM, original 0.25 (ai overhaul mod) -- If less than this fraction of units on a front is moving, AI sees it as ready for action	
-	MICRO_POCKET_SIZE = 1,						-- DNM, originally 4 (ai mod) -- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
+	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.25,	-- If less than this fraction of units on a front is moving, AI sees it as ready for action	
+	MICRO_POCKET_SIZE = 4,						-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
 	POCKET_DISTANCE_MAX = 40000,				-- shortest square distance we bother about chasing pockets
 	VP_LEVEL_IMPORTANCE_HIGH = 25,				-- Victory points with values higher than or equal to this are considered to be of high importance.
 	VP_LEVEL_IMPORTANCE_MEDIUM = 5,				-- Victory points with values higher than or equal to this are considered to be of medium importance.
@@ -980,11 +979,11 @@ NAI = {
 	DIVISION_DESIGN_WEIGHTS = {							-- Base values used by AI to evaluate value of a stat
 		-- Army Values
 		0.5,   -- default_morale
-		40.0,  -- defense   -- original 1.0   
-		55.0,  -- breakthrough  -- original 1.2  
+		40.0, -- original 1.0   -- defense
+		55.0,  -- original 1.2  -- breakthrough
 		3.0,   -- hardness
-		55.0,  -- soft_attack  -- DNM, original 50.0 (ai overhaul mod) 
-		40.0,  -- hard_attack  -- DNM, original 30.0 (ai overhaul mod) 
+		55.0,  -- DNM, original 50.0 (ai overhaul mod) -- soft_attack
+		40.0,  -- DNM, original 30.0 (ai overhaul mod) -- hard_attack
 		0.0,   -- recon
 		0.0,   -- entrenchment
 		0.0,   -- initiative
@@ -1040,8 +1039,9 @@ NAI = {
 	},
 	DIVISION_DESIGN_MANPOWER_WEIGHT = 0.006,
 	DIVISION_DESIGN_STOCKPILE_WEIGHT = 0.01,
-	DIVISION_DESIGN_COMBAT_WIDTH_WEIGHT = -2.5,			-- -3.0
-	DIVISION_DESIGN_BASE_WEIGHT_SCORE = 100.0,			-- 100 This score is reduced the farther the width is from the target width (if set)
+	DIVISION_DESIGN_COMBAT_WIDTH_WEIGHT = -3.0,
+	DIVISION_DESIGN_BASE_WEIGHT_SCORE = -1000.0,			-- This score is reduced the farther the width is from the target width (if set)
+	DIVISION_DESIGN_MAX_FAILED_DAYS = 60,					-- max days we keep track of since failure of a design update
 
 	BUILD_ARMOR_BASE_COST_WEIGHT = 200.0,				-- 200
 	BUILD_ARMOR_STRENGTH_MULTIPLIER_WEIGHT = 100.0,
@@ -1136,6 +1136,10 @@ NAI = {
 	PARADROP_MISSION_FACTOR = 1.0,						-- AI paradrop mission factor
 	KAMIKAZE_MISSION_FACTOR = 1.0,						-- AI naval kamikaze mission factor
 	PORT_STRIKE_MISSION_FACTOR = 1.0,					-- AI port strike mission factor
+	
+	ORDER_ASSIGNMENT_DISTANCE_FACTOR = 5.0,				-- When the AI assigns units to orders, it attempts to calculate the distance.
+	RELUCTANCE_TO_CHANGE_FRONT_FACTOR = 0.5,			-- Factor for how reluctant the AI is to change a units order group.
+	REVISITED_PROV_PENALTY_FACTOR = 1.5,				-- When the AI picks units for a front, it tries to spread out a bit which units it grabs.
 },
 
 NFocus = {

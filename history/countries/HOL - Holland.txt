@@ -41,9 +41,23 @@ set_technology = {
 	############# economy#############
 }
 
-	add_ideas = {
-		tdlra_pillarized_society
+add_ideas = {
+	tdlra_pillarized_society
+}
+
+# DIPLOMACY
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
 	}
+	set_autonomy = {
+		target = INS
+		autonomous_state = autonomy_integrated_puppet
+	}
+	else = {
+		puppet = INS
+	}
+}
 1939.1.1 = {
 	add_ideas = {
 		limited_conscription

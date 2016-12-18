@@ -1062,7 +1062,12 @@ create_equipment_variant = {
 	}
 	
 	oob = "GER_1939"
-	puppet = SLO
+	
+	set_autonomy = {
+		target = SLO
+		autonomous_state = autonomy_puppet
+	}
+	
 	give_military_access = SLO
 	create_wargoal = {
 		type = take_state_focus

@@ -231,9 +231,6 @@ give_guarantee = URG
 	}
 }
 
-
-
-
 set_convoys = 400
 set_national_unity = 0.6
 
@@ -241,7 +238,7 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 100
+			popularity = 99
 		}
 
 		fascism = {
@@ -249,7 +246,7 @@ set_politics = {
 		}
 		
 		communism = {
-			popularity = 0
+			popularity = 1
 			#banned = no #default is no
 		}
 	}
@@ -270,7 +267,10 @@ add_ideas = {
 
 
 # DIPLOMACY
-puppet = PHI
+set_autonomy = {
+	target = PHI
+	autonomous_state =  autonomy_puppet
+}
 
 1939.1.1 = {
 	set_national_unity = 0.7
