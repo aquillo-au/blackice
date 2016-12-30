@@ -3,6 +3,7 @@
 oob = "CAN_1936"
 
 set_research_slots = 5
+
 set_country_flag = monroe_doctrine
 
 # Starting tech
@@ -53,9 +54,13 @@ set_technology = {
 }
 
 if = {
-	limit = { has_dlc = "Together for Victory" }
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	
 	add_ideas = CAN_great_depression_1
 	add_ideas = CAN_conscription_crisis
+	
 	set_cosmetic_tag = CAN_UK
 
 	add_to_tech_sharing_group = commonwealth_research
@@ -76,7 +81,10 @@ if = {
 	
 	
 	if = {
-		limit = { has_dlc = "Together for Victory" }
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		
 		complete_national_focus = CAN_army_modernization
 		complete_national_focus = CAN_canadian_infantry_corps
 		complete_national_focus = CAN_cmp_truck
@@ -108,6 +116,7 @@ if = {
 	}
 	
 	oob = "CAN_1939"
+	
 	set_technology = {
 		fighter1 = 1
 		interwar_artillery = 1
@@ -154,6 +163,10 @@ if = {
 		dispersed_industry3 = 1
 	}
 }
+
+set_convoys = 100
+
+set_national_unity = 0.8
 
 set_politics = {
 
@@ -219,9 +232,6 @@ create_country_leader = {
 	}
 }
 
-set_convoys = 100
-set_national_unity = 0.8
-
 1939.1.1 = {
 	set_politics = {
 
@@ -246,8 +256,6 @@ set_national_unity = 0.8
 		elections_allowed = yes
 	}
 }
-
-
 
 create_field_marshal = {
 	name = "Charles Foulkes"

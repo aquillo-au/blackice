@@ -1047,8 +1047,19 @@ guiTypes = {
 		iconType = {
 			name ="progressbar"
 			spriteType = "GFX_prod_progress_bar2"
-			position = { x=27 y=50 } #x=295 y=2
-			hide = yes
+			position = { x=27 y=30 } #x=295 y=2  50
+			#hide = yes
+		}
+		# Productiontime needed
+		instantTextboxType = {
+			name = "speed"
+			position = { x=15 y=30 } # x = 157 y = 32
+			textureFile = ""
+			font = "hoi_16mbs"
+			text = "--"
+			maxWidth = 100	#100
+			maxHeight = 20
+			format = center
 		}
 		instantTextboxType = {
 			name = "total_need"
@@ -1061,17 +1072,6 @@ guiTypes = {
 			text = "Total need: 200"
 			format = left
 			alwaystransparent = yes
-		}
-		# Productiontime needed
-		instantTextboxType = {
-			name = "speed"
-			position = { x=15 y=50 } # x = 157 y = 32
-			textureFile = ""
-			font = "hoi_16mbs"
-			text = "--"
-			maxWidth = 100	#100
-			maxHeight = 20
-			format = center
 		}
 		iconType = {
 			name ="equipment_designer"

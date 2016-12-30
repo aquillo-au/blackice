@@ -1,10 +1,12 @@
 ﻿capital = 275
 
 oob = "SAF_1936"
+
 set_research_slots = 3
+
 # Starting tech
 set_technology = {
-		################ infantry ############
+	################ infantry ############
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	semi_motorised_infantry = 1
@@ -45,7 +47,10 @@ set_technology = {
 }
 
 if = {
-	limit = { has_dlc = "Together for Victory" }
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	
 	add_ideas = SAF_ossewabrandwag
 	add_ideas = SAF_history_of_segregation
 
@@ -59,7 +64,10 @@ if = {
 	oob = "SAF_1939"
 	
 	if = {
-		limit = { has_dlc = "Together for Victory" }
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		
 		complete_national_focus = SAF_special_service_battalion
 		complete_national_focus = SAF_improve_the_three_oh_three
 		complete_national_focus = SAF_q_services_corps
@@ -90,7 +98,6 @@ if = {
 		low_economic_mobilisation
 	}
 
-	
 	set_technology = {
 		fighter1 = 1
 		tactical_bomber1 = 1
@@ -132,6 +139,7 @@ if = {
 }
 
 set_convoys = 25
+
 set_politics = {
 
 	parties = {
@@ -154,7 +162,6 @@ set_politics = {
 	election_frequency = 60
 	elections_allowed = yes
 }
-
 
 create_country_leader = {
 	name = "J. B. M. Hertzog"
