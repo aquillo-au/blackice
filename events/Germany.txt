@@ -215,7 +215,7 @@ country_event = {
 	
 	option = {
 		name = germany.12.a	#neat
-		every_country = {
+		every_other_country = {
 			limit = {
 				NOT = { tag = GER }
 				has_government = fascism 
@@ -969,7 +969,7 @@ country_event = {
 				is_in_faction_with = CZE
 				is_faction_leader = no
 			}
-			random_country = {
+			random_other_country = {
 				limit = {
 					is_in_faction_with = FRA
 					is_faction_leader = yes
@@ -2044,7 +2044,7 @@ country_event = {
 			limit = {
 				FRA = { is_faction_leader = yes }
 			}
-			every_country = {
+			every_other_country = {
 				limit = { is_in_faction_with = FRA NOT = { has_war_with = ENG } }
 				ENG = { add_to_faction = PREV }
 				add_ai_strategy = {
@@ -2829,7 +2829,7 @@ country_event = {
 					is_in_faction_with = POL
 					is_faction_leader = no
 				}
-				random_country = {
+				random_other_country = {
 					limit = { 
 						is_in_faction_with = GER
 						is_faction_leader = yes
@@ -2950,7 +2950,7 @@ country_event = {
 
 	option = {
 		name = germany.84.a
-		every_country = {
+		every_other_country = {
 			limit = {
 				has_idea = anti_soviet_pact
 				NOT = { has_war_with = SOV }
@@ -3074,7 +3074,7 @@ country_event = {
 					is_in_faction_with = POL
 					is_faction_leader = no
 				}
-				random_country = {
+				random_other_country = {
 					limit = { 
 						is_in_faction_with = GER
 						is_faction_leader = yes
@@ -3146,7 +3146,7 @@ country_event = {
 		name = germany.89.a
 		dismantle_faction = yes
 		add_national_unity = -0.1
-		every_country = {
+		every_other_country = {
 			limit = {
 				OR = {
 					AND = {
@@ -3175,14 +3175,14 @@ country_event = {
 			create_faction = "the_berlin_moscow_axis"
 			add_to_faction = SOV
 			add_named_threat = { threat = 5 name = germany.89.t }
-			every_country = {
+			every_other_country = {
 				limit = {
 					NOT = { tag = GER }
 					has_government = fascism 
 				}
 				add_opinion_modifier = { target = GER modifier = communist_collaborators }
 			}
-			every_country = {
+			every_other_country = {
 				limit = {
 					has_government = democratic 
 				}
@@ -3882,7 +3882,7 @@ country_event = {
 			has_global_flag = ITA_claims_on_france_1
 		}
 		clr_global_flag = ITA_claims_on_france_1
-		random_country = {
+		random_other_country = {
 			limit = {
 				original_tag = FRA
 				has_government = fascism
@@ -3900,7 +3900,7 @@ country_event = {
 			NOT = { has_global_flag = ITA_claims_on_france_735 }
 			has_global_flag = ITA_claims_on_france_1
 		}
-		random_country = {
+		random_other_country = {
 			limit = {
 				original_tag = FRA
 				has_government = fascism
@@ -3918,7 +3918,7 @@ country_event = {
 			has_global_flag = ITA_claims_on_france_735
 			NOT = { has_global_flag = ITA_claims_on_france_1 }
 		}
-		random_country = {
+		random_other_country = {
 			limit = {
 				original_tag = FRA
 				has_government = fascism
@@ -3936,7 +3936,7 @@ country_event = {
 			has_global_flag = ITA_claims_on_france_735
 			has_global_flag = ITA_claims_on_france_1
 		}
-		random_country = {
+		random_other_country = {
 			limit = {
 				original_tag = FRA
 				has_government = fascism
@@ -4003,7 +4003,7 @@ country_event = {
 		BUL = {
 			add_opinion_modifier = { target = GER modifier = GER_treaty_of_craiova_GER }
 
-			every_country = {
+			every_other_country = {
 				limit = { 
 					is_faction_leader = yes 
 					NOT = { tag = GER }
@@ -4160,7 +4160,7 @@ country_event = {
 	hidden = yes
 	
 	immediate = {
-		every_country = {
+		every_other_country = {
 			limit = { has_idea = anti_soviet_pact }
 			add_opinion_modifier = { target = FROM modifier = anti_soviet_pact_call_refused }
 		}
@@ -4942,6 +4942,79 @@ country_event = {
 		add_state_core = 74
 		transfer_state = 74
 	}
+}
+#Event if Austria has a civil war
+country_event = {
+	id = germany.126
+	title = germany.126.t
+	desc = germany.126.d
+	picture = GFX_report_event_german_reichstag_gathering
+
+	is_triggered_only = yes
+
+	option = {
+		name = germany.126.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+				}
+			}
+
+		}
+		random_other_country = {
+			limit = {
+				original_tag = AUS
+				NOT = { tag = ROOT }
+			}
+			FROM = {
+				add_to_war = {
+					targeted_alliance = ROOT
+					enemy = PREV
+				}
+				annex_country = { target = ROOT transfer_troops = yes }
+				hidden_effect = { news_event = { id = news.237 } }
+			}
+
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = {
+		name = germany.126.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				OR = {
+					has_government = communism
+					has_government = democratic
+				}
+			}
+
+		}
+
+		every_other_country = {
+			limit = {
+				OR = {
+					tag = AUS
+					original_tag = AUS
+				}
+
+			}
+			FROM = {
+				create_wargoal = {
+					target = PREV
+					type = annex_everything
+				}
+
+			}
+
+		}
+	}
+
 }
 #Order Aufstellunfswelle 1
 country_event = {
