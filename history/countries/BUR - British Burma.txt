@@ -1,8 +1,9 @@
-﻿capital = 439
+﻿capital = 288
 
-oob = "RAJ_1936"
+oob = "BUR_1936"
+set_research_slots = 2
 
-set_research_slots = 3
+set_national_unity = 0.6
 
 # Starting tech
 set_technology = {
@@ -22,6 +23,7 @@ set_technology = {
 	tech_military_police = 1
 	jungle_equipment = 1
 	tech_mountaineers = 1
+	tech_logistics_company = 1
 	############## artillery ##############
 	gw_artillery = 1
 	interwar_artillery = 1
@@ -34,9 +36,9 @@ set_technology = {
 	tech_Tankettes = 1
 	################# aircraft #############
 	early_fighter = 1
-	#cv_early_fighter = 1
-	#cv_naval_bomber1 = 1
-	#naval_bomber1 = 1
+	cv_early_fighter = 1
+	cv_naval_bomber1 = 1
+	naval_bomber1 = 1
 	early_bomber = 1
 	CAS1 = 1
 	generic_fighter = 1
@@ -44,76 +46,49 @@ set_technology = {
 	generic_strategic_bomber = 1
 	################ ships ##############
 	generic_submarine = 1
-	#early_submarine = 1
+	early_submarine = 1
 	generic_naval = 1
 	early_destroyer = 1
 	basic_destroyer = 1
 	early_light_cruiser = 1
-	#early_heavy_cruiser = 1
-	#early_battleship = 1
-	#early_battlecruiser = 1
-	#early_carrier = 1
+	early_heavy_cruiser = 1
+	early_battleship = 1
+	early_battlecruiser = 1
+	early_carrier = 1
 	#transport = 1
 	trench_warfare = 1
-	#fleet_in_being = 1
+	fleet_in_being = 1
 	electronic_mechanical_engineering = 1
 	radio = 1
 	radio_detection = 1
 }
 
-if = {
-	limit = { has_dlc = "Together for Victory" }
+set_convoys = 20
 
-	add_ideas = {
-		RAJ_princely_states
-		RAJ_marginalized_muslim_community
-		RAJ_agrarian_society
-		RAJ_risk_of_famine
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
 	}
 
 	add_to_tech_sharing_group = commonwealth_research
 }
 
-set_convoys = 200
-
-set_cosmetic_tag = RAJ_UK # British Raj
-
 1939.1.1 = {#placeholder same tech as ENG
 	#generic focuses
-	
-	if = {
-		limit = {
-			has_dlc = "Together for Victory"
-		}
-		
-		complete_national_focus = RAJ_lessons_of_the_great_war
-		complete_national_focus = RAJ_vickers_berthier_gun
-		complete_national_focus = RAJ_army_motorization
-		complete_national_focus = RAJ_british_pilot_training
-		complete_national_focus = RAJ_great_indian_peninsula_railway
-		complete_national_focus = RAJ_east_india_railways
-		complete_national_focus = RAJ_found_scindia_shipyard
-		complete_national_focus = RAJ_industrial_expansion
-		complete_national_focus = RAJ_ishapore_arsenal
-		
-		else = {
-			#generic focuses
-			complete_national_focus = army_effort
-			complete_national_focus = equipment_effort
-			complete_national_focus = motorization_effort
-			complete_national_focus = aviation_effort
-			complete_national_focus = naval_effort
-			complete_national_focus = large_navy
-			complete_national_focus = industrial_effort
-			complete_national_focus = construction_effort
-			complete_national_focus = production_effort
-		}
-	}
-	
+
 	add_political_power = 1198
-	oob = "RAJ_1939"
+	oob = "BUR_1939"
 	
-	
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = large_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+
 	add_ideas = {
 		#laws
 		volunteer_only
@@ -215,9 +190,9 @@ set_politics = {
 }
 
 create_country_leader = {
-	name = "Lord Linlithgow"
-	desc = "POLITICS_LORD_LINLITHGOW_DESC"
-	picture = "gfx/leaders/RAJ/Portrait_British_Raj_Lord_Linlithgow.dds"
+	name = "John Edward Golightly"
+	desc = "POLITICS_Golightly_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
@@ -225,43 +200,46 @@ create_country_leader = {
 	}
 }
 
-# REVISIT Unclear if appropriate for this ideology
 create_country_leader = {
-	name = "V. D. Savarkar"
-	desc = "POLITICS_VD_SAVARKAR_DESC"
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_navy_3.dds"
+	name = "Sir Archibald Douglas Cochrane"
+	desc = "POLITICS_JOHN_EDWARDD_GOLIGHTLY_DESC" 
+	picture = "gfx/leaders/ENG/Portrait_Britain_Generic_2.dds"
 	expire = "1965.1.1"
-	ideology = falangism
-	traits = {
+	ideology = despotism
+	traits = { staunch_constitutionalist }
 		
 	}
-}
 
 create_country_leader = {
-	name = "P. Krishna Pillai"
-	desc = "POLITICS_P_KRISHNA_PILLAI_DESC"
-	picture = "gfx/leaders/Africa/Portrait_Africa_Generic_land_3.dds"
+	name = "Ba Maw"
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = { triumphant_revolutionary }
+		
+	}
+
+create_country_leader = {
+	name = "Aung San"
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_communism.dds"
 	expire = "1965.1.1"
 	ideology = marxism
-	traits = {
+	traits = { triumphant_revolutionary }
 		
 	}
-}
 
 create_country_leader = {
-	name = "B. P. Sitaramayya"
-	desc = "POLITICS_B_P_SITARAMAYYA_DESC"
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+	name = "U Thant"
+	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds"
 	expire = "1965.1.1"
-	ideology = socialism
-	traits = {
+	ideology = liberalism
+	traits = { compassionate_gentleman }
 		
 	}
-}
 
-create_field_marshal = {
-	name = "Edward Quinan"
-	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
-	traits = { logistics_wizard_FM  }
-	skill = 2
+create_field_marshal  = {
+	name = "W.L.O. Twiss"
+	portrait_path = "gfx/leaders/Europe/Portrait_Britain_Generic_land_4.dds"
+	traits = { defensive_doctrine_FM logistics_wizard_FM  }
+	skill = 1
 }

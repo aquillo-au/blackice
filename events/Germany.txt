@@ -165,6 +165,7 @@ country_event = {
 		add_state_claim = 96
 		add_state_claim = 97
 		add_state_claim = 80
+		add_state_claim = 840
 		hidden_effect =  {
 			add_timed_idea = {
 				idea = SOV_molotov_ribbentrop_pact days = 730
@@ -260,6 +261,7 @@ country_event = {
 		OR = {
 			OR = {
 				owns_state = 96
+				owns_state = 840
 				owns_state = 95
 				owns_state = 94
 				owns_state = 93
@@ -271,6 +273,7 @@ country_event = {
 				POL = { has_capitulated = yes }
 				OR = {
 					controls_state = 96
+					controls_state = 840
 					controls_state = 95
 					controls_state = 94
 					controls_state = 93
@@ -287,6 +290,7 @@ country_event = {
 					}
 					OR = {
 						owns_state = 96
+						owns_state = 840
 						owns_state = 95
 						owns_state = 94
 						owns_state = 93
@@ -297,6 +301,7 @@ country_event = {
 							POL = { has_capitulated = yes }
 							OR = {
 								controls_state = 96
+								controls_state = 840
 								controls_state = 95
 								controls_state = 94
 								controls_state = 93
@@ -334,6 +339,21 @@ country_event = {
 				}
 			}
 			SOV = { transfer_state = 96 }
+		}
+		if = {
+			limit = {
+				840 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 840
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 840 }
 		}
 		if = {
 			limit = {
@@ -445,6 +465,7 @@ country_event = {
 		}
 		SOV = {
 			add_state_claim = 96
+			add_state_claim = 840
 			add_state_claim = 95
 			add_state_claim = 94
 			add_state_claim = 93
