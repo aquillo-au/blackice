@@ -211,8 +211,8 @@ leader_traits = {
 		
 		gain_xp = {
 			AND = {
-			has_combat_modifier = lack_of_supply
-			has_trait = logistics_wizard_FM
+				has_combat_modifier = lack_of_supply
+				has_trait = logistics_wizard_FM
 			}
 		}
 		cost = 2500
@@ -231,8 +231,8 @@ leader_traits = {
 		
 		gain_xp = {
 			AND = {
-			has_combat_modifier = lack_of_supply
-			has_trait = logistics_wizard_FM_II
+				has_combat_modifier = lack_of_supply
+				has_trait = logistics_wizard_FM_II
 			}
 		}
 		cost = 3000
@@ -2449,8 +2449,7 @@ leader_traits = {
 ##################################################
 # Country TAG medals. Needed for country specific medals
 ##################################################
-
-	german_tag = { 
+	GER_tag = { 
 		type = all
 		
 		allowed = {
@@ -2463,9 +2462,8 @@ leader_traits = {
 				
 		ai_will_do = {
 			factor = 1
-			}
 		}
-	
+	}
 	
 	SOV_tag = { 
 		type = all
@@ -2480,10 +2478,9 @@ leader_traits = {
 				
 		ai_will_do = {
 			factor = 1
-			}
 		}
+	}
 	
-
 	ENG_tag = { 
 		type = all
 		
@@ -2496,10 +2493,9 @@ leader_traits = {
 				}
 		ai_will_do = {
 			factor = 1
-			}
 		}
+	}
 	
-
 	FRA_tag = { 
 		type = all
 		
@@ -2512,9 +2508,8 @@ leader_traits = {
 				}
 		ai_will_do = {
 			factor = 1
-			}
 		}
-
+	}
 
 	ITA_tag = { 
 		type = all
@@ -2528,9 +2523,8 @@ leader_traits = {
 				}
 		ai_will_do = {
 			factor = 1
-			}
 		}
-	
+	}
 	
 	JAP_tag = { 
 		type = all
@@ -2547,8 +2541,8 @@ leader_traits = {
 				}
 		ai_will_do = {
 			factor = 1
-			}
 		}
+	}
 	
 	USA_tag = { 
 		type = all
@@ -2562,9 +2556,8 @@ leader_traits = {
 				
 		ai_will_do = {
 			factor = 1
-			}
 		}
-
+	}
 
 	ROM_tag = { 
 		type = all
@@ -2577,10 +2570,9 @@ leader_traits = {
 				}
 		ai_will_do = {
 			factor = 1
-			}
 		}
+	}
 	
-
 	HUN_tag = { 
 		type = all
 		
@@ -2592,10 +2584,9 @@ leader_traits = {
 				}
 		ai_will_do = {
 			factor = 1
-			}
 		}
+	}
 	
-
 	SPR_tag = { 
 		type = all
 		
@@ -2607,9 +2598,8 @@ leader_traits = {
 				}
 		ai_will_do = {
 			factor = 1
-			}
 		}
-	
+	}
 	
 	SPA_tag = { 
 		type = all
@@ -2622,11 +2612,10 @@ leader_traits = {
 				}
 		ai_will_do = {
 			factor = 1
-			}
 		}
+	}
 	
-
-	general_tag = { 
+	general_tag = {
 		type = all
 		
 		allowed = {
@@ -2634,14 +2623,11 @@ leader_traits = {
 		}
 		modifier = {
 			experience_gain_factor = 0.01
-				}
+		}
 		ai_will_do = {
 			factor = 1
-			}
 		}
-	
-
-	
+	}
 ##################################################
 # MEDALS  - German Medals
 ##################################################
@@ -2653,16 +2639,19 @@ leader_traits = {
 		
 		gain_xp = {
 			is_winning = yes
-			has_trait = german_tag
+			or = {
+				has_trait = GER_tag
+				has_trait = Waffen_SS
 			}
-		cost = 2000
+		}
+		cost = 10 #2000
 		
 		modifier = {
 			offence = 0.05
 			defence = 0.05
 			fort = {
 				attack = 0.01 
-				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -2673,16 +2662,19 @@ leader_traits = {
 		type = all
 
 		gain_xp = {
-			AND = {
 			is_winning = yes
-			has_trait = german_tag
 			OR = {
-				has_trait = Iron_Cross
-				has_trait = Knights_Cross
-				has_trait = Grand_Cross
-					}
+				has_trait = GER_tag
+				has_trait = Waffen_SS
+			}
+			AND = {
+				OR = {
+					has_trait = Iron_Cross
+					has_trait = Knights_Cross
+					has_trait = Grand_Cross
 				}
 			}
+		}
 		cost = 4000
 		
 		modifier = {
@@ -2697,19 +2689,22 @@ leader_traits = {
 		}
 	}
 
-	Knights_Cross = { 
+	Knights_Cross = {
 		type = all
 		gain_xp = {
-			AND = {
 			is_winning = yes
-			has_trait = german_tag
 			OR = {
-				has_trait = Iron_Cross
-				has_trait = German_Cross
-				has_trait = Grand_Cross
-					}
+				has_trait = GER_tag
+				has_trait = Waffen_SS
+			}
+			AND = {
+				OR = {
+					has_trait = Iron_Cross
+					has_trait = German_Cross
+					has_trait = Grand_Cross
 				}
 			}
+		}
 		cost = 8000
 		
 		modifier = {
@@ -2729,7 +2724,7 @@ leader_traits = {
 		gain_xp = {
 			AND = {
 			is_winning = yes
-			has_trait = german_tag
+			has_trait = GER_tag
 			
 			OR = {
 				has_trait = Iron_Cross
@@ -2759,7 +2754,7 @@ leader_traits = {
 	Military_Merit_Order = { 
 		type = all
 		gain_xp = {
-			has_trait = german_tag
+			has_trait = GER_tag
 			
 			}
 		cost = 1500
@@ -2778,7 +2773,7 @@ leader_traits = {
 		type = all
 		gain_xp = {
 			AND = {
-			has_trait = german_tag
+			has_trait = GER_tag
 			OR = {
 				has_trait = Military_Merit_Order
 				has_trait = Long_Service
@@ -2801,13 +2796,13 @@ leader_traits = {
 		type = all
 		gain_xp = {
 			AND = {
-			has_trait = german_tag
-			OR = {
-				has_trait = Military_Merit_Order
-				has_trait = War_Merit_Cross
-					}
+				has_trait = GER_tag
+				OR = {
+					has_trait = Military_Merit_Order
+					has_trait = War_Merit_Cross
 				}
 			}
+		}
 		cost = 16000
 		
 		modifier = {
@@ -2829,20 +2824,17 @@ leader_traits = {
 		type = all
 		gain_xp = {
 			AND = {
-			has_trait = german_tag
-			OR = {
+				has_trait = GER_tag
 				is_attacker = no
-#				has_combat_modifier = BM_ENCIRCLEMENT_PENALTY
-					}
-				}
 			}
+		}
 		cost = 4000
 		
 		modifier = {
 			defence = 0.1
 			fort = {
 				defence = 0.1 
-					}
+			}
 			out_of_supply_factor = -0.1
 		}
 		ai_will_do = {
@@ -2854,20 +2846,20 @@ leader_traits = {
 		type = all
 		gain_xp = {
 			AND = {
-			has_trait = german_tag
+			has_trait = GER_tag
 			OR = {
 				is_attacker = no
 				has_combat_modifier = lack_of_supply
-#				has_combat_modifier = BM_ENCIRCLEMENT_PENALTY
-					}
+				#has_combat_modifier = BM_ENCIRCLEMENT_PENALTY
 				}
 			}
+		}
 		cost = 4000
 		
 		modifier = {
 			max_dig_in_factor = 0.2			
 			out_of_supply_factor = -0.1
-				}
+		}
 		ai_will_do = {
 			factor = 1
 		}
