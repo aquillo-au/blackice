@@ -4659,7 +4659,7 @@ focus_tree = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_focus }
 		x = 27
-		y = 5
+		y = 3
 		cost = 5
 		available = {
 			date > 1937.1.1	
@@ -4672,6 +4672,27 @@ focus_tree = {
 			add_research_slot = 1
 		}
 		#
+	}
+	#####################Foreign SS units recruitment
+	focus = {
+		id = GER_Schutzstaffel_foreign_units
+		#text = Schutzstaffel_foreign_units
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_Schutzstaffel_focus }
+		x = 27
+		y = 4
+		cost = 5
+		available = {
+			date > 1938.3.1	
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			#country_event = ss_event.684
+			set_country_flag = focus_foreign_SS_units
+			#add_idea = GER_foreign_SS_unit_recruitment
+		}
 	}
 	##################### Expansion of SS in aug 1940 with Himmler command
 	focus = {

@@ -607,4 +607,50 @@ country_event = {
 		ai_chance = { factor = 1 }
 	}
 }
+country_event = {
+	id = ss_event.683
+	title = ss_event.683.t
+	desc = ss_event.683.d
+	picture = GFX_...
+	
+	fire_only_once = yes
+	
+	trigger = {
+		original_tag = GER
+		has_tech = tech_panzer_v_equipment_1
+		not = { has_country_flag = hiddentech_ss_panzer_v }
+		or = {
+			has_country_flag = ahistorical_ss
+			date > 1940.7.31
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.683.a
+		trigger = {
+			has_country_flag = ahistorical_ss
+		}
+		hidden_effect = {
+			set_technology = { hiddentech_ss_panzer_v = 1 }
+			set_country_flag = hiddentech_ss_panzer_v
+		}
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = ss_event.683.b
+		trigger = {
+			has_country_flag = SS_Start
+			date > 1943.6.1
+		}
+		hidden_effect = {
+			set_technology = { hiddentech_ss_panzer_v = 1 }
+			set_country_flag = hiddentech_ss_panzer_v
+		}
+		ai_chance = { factor = 1 }
+	}
+}
 ## EOF ##
