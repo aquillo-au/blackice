@@ -441,9 +441,10 @@ country_event = {
 	
 	option = {
 		name = ss_event.676.a
+		set_country_flag = division_LSSAH_39
 		hidden_effect = {
 			load_oob = "GER_LSSAH_division"
-			#set_country_flag = 
+			
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -463,9 +464,10 @@ country_event = {
 	
 	option = {
 		name = ss_event.677.a
+		set_country_flag = division_dasreich_40
 		hidden_effect = {
 			load_oob = "GER_Das_Reich_division"
-			#set_country_flag = 
+			
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -485,9 +487,9 @@ country_event = {
 	
 	option = {
 		name = ss_event.678.a
+		set_country_flag = division_totenkopf_41
 		hidden_effect = {
 			load_oob = "GER_Totenkopf_division"
-			#set_country_flag = 
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -507,9 +509,10 @@ country_event = {
 	
 	option = {
 		name = ss_event.680.a
+		set_country_flag = division_wiking_mot
 		hidden_effect = {
 			load_oob = "GER_Wiking"	# SS-Division (mot) Wiking 
-			#set_country_flag = 
+			
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -539,24 +542,26 @@ country_event = {
 	
 	option = {
 		name = ss_event.681.a
+		set_country_flag = hiddentech_ss_panzer_iii
 		trigger = {
 			has_country_flag = ahistorical_ss
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_iii = 1 }
-			set_country_flag = hiddentech_ss_panzer_iii
+			
 		}
 		ai_chance = { factor = 100 }
 	}
 	option = {
 		name = ss_event.681.b
+		set_country_flag = hiddentech_ss_panzer_iii
 		trigger = {
 			has_country_flag = SS_Start
 			date > 1940.7.31
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_iii = 1 }
-			set_country_flag = hiddentech_ss_panzer_iii
+			
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -585,24 +590,26 @@ country_event = {
 	
 	option = {
 		name = ss_event.682.a
+		set_country_flag = hiddentech_ss_panzer_iv
 		trigger = {
 			has_country_flag = ahistorical_ss
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_iv = 1 }
-			set_country_flag = hiddentech_ss_panzer_iv
+			
 		}
 		ai_chance = { factor = 1 }
 	}
 	option = {
 		name = ss_event.682.b
+		set_country_flag = hiddentech_ss_panzer_iv
 		trigger = {
 			has_country_flag = SS_Start
 			date > 1943.6.1
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_iv = 1 }
-			set_country_flag = hiddentech_ss_panzer_iv
+			
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -631,24 +638,25 @@ country_event = {
 	
 	option = {
 		name = ss_event.683.a
+		set_country_flag = hiddentech_ss_panzer_v
 		trigger = {
 			has_country_flag = ahistorical_ss
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_v = 1 }
-			set_country_flag = hiddentech_ss_panzer_v
+			
 		}
 		ai_chance = { factor = 1 }
 	}
 	option = {
 		name = ss_event.683.b
+		set_country_flag = hiddentech_ss_panzer_v
 		trigger = {
 			has_country_flag = SS_Start
 			date > 1943.6.1
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_v = 1 }
-			set_country_flag = hiddentech_ss_panzer_v
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -657,7 +665,7 @@ country_event = {
 	id = ss_event.684
 	title = ss_event.684.t
 	desc = ss_event.684.d
-	picture = GFX_...
+	picture = GFX_event_foreign_SS_units_recruitment
 	
 	fire_only_once = yes
 	
@@ -669,12 +677,55 @@ country_event = {
 	
 	option = {
 		name = ss_event.684.a
+		set_country_flag = focus_foreign_SS_units_yes
+		hidden_effect = {
+			add_manpower = 500000
+		}
+		
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = ss_event.684.b
+		set_country_flag = focus_foreign_SS_units_n0
+		
+		
+		ai_chance = { factor = 1 }
+	}
+}
+country_event = {
+	id = ss_event.685
+	title = ss_event.685.t
+	desc = ss_event.685.d
+	picture = GFX_event_ss_division_nord
+	
+	fire_only_once = yes
+	
+	trigger = {
+		date > 1941.9.1
+		9116 = { is_controlled_by = GER }
+		has_country_flag = { focus_foreign_SS_units_yes }
+		NOT = { has_country_flag = ss_division_nord }
+		NOT = { has_country_flag = focus_foreign_SS_units_no }
+		NOT = { has_country_flag = ss_division_nord_no }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.685.a
+		set_country_flag = ss_division_nord
 		
 		hidden_effect = {
-			#add_manpower = 500000
-			
-			
+			load_oob = "GER_Nord"	# SS-Division Nord
 		}
+		
+		ai_chance = { factor = 1 }
+	}
+	option = {
+		name = ss_event.685.b
+		set_country_flag = ss_division_nord_no
 		
 		ai_chance = { factor = 1 }
 	}
