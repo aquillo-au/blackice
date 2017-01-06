@@ -972,7 +972,7 @@ guiTypes = {
 			format = center
 			alwaystransparent = yes
 		}
-		# Button to open equipment window
+		# Button to open equipment window and needs to loaded first
 		buttonType = {
 			name = "equipment_button"
 			position = { x=1 y=27 }
@@ -1154,7 +1154,12 @@ guiTypes = {
 			name = "Background"
 			quadTextureSprite ="GFX_production_item"
 		}
-		
+		# Button needs to loaded first
+		iconType = {
+			name = "equipment_button"
+			position = { x=1 y=27 }
+			spriteType = "GFX_prod_land_equipment_item_large"
+		}
 		iconType = {
 			name ="production_line_selected"
 			spriteType = "GFX_production_line_selected"
@@ -1180,11 +1185,6 @@ guiTypes = {
 			name ="efficiency_icon"
 			spriteType = "GFX_efficiency_icon"
 			position = { x=3 y=30 }
-		}
-		iconType = {
-			name = "equipment_button"
-			position = { x=1 y=27 }
-			spriteType = "GFX_prod_land_equipment_item_large"
 		}
 		iconType = {
 			name ="equipment_icon"
