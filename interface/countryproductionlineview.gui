@@ -972,16 +972,18 @@ guiTypes = {
 			format = center
 			alwaystransparent = yes
 		}
-		iconType = {
-			name ="production_line_selected"
-			spriteType = "GFX_production_line_selected"
-			position = { x= 0 y = 0 }
+		# Button to open equipment window
+		buttonType = {
+			name = "equipment_button"
+			position = { x=1 y=27 }
+			quadTextureSprite = "GFX_prod_land_equipment_item_large"
+			clicksound = click_default
 		}
 		# Progressbar efficiency
 		iconType = {
 			name ="efficiency_progressbar_to_max"
 			spriteType = "GFX_efficiency_progressbar_to_max"
-			position = { x=42 y=34 } # x= 328 y = 8
+			position = { x=42 y=34 } # x= 328 y = 8  Y=34
 		}
 		iconType = {
 			name ="efficiency_progressbar"
@@ -994,16 +996,14 @@ guiTypes = {
 			position = { x=38 y=32 } # x= 324 y = 6
 		}
 		iconType = {
+			name ="production_line_selected"
+			spriteType = "GFX_production_line_selected"
+			position = { x= 0 y = 0 }
+		}
+		iconType = {
 			name ="efficiency_icon"
 			spriteType = "GFX_efficiency_icon"
 			position = { x=3 y=30 } # x= 289 y = 4
-		}
-		# Button to open equipment window
-		buttonType = {
-			name = "equipment_button"
-			position = { x=1 y=27 }
-			quadTextureSprite = "GFX_prod_land_equipment_item_large"
-			clicksound = click_default
 		}
 		# Outdated equipment picture
 		iconType = {
@@ -1047,13 +1047,13 @@ guiTypes = {
 		iconType = {
 			name ="progressbar"
 			spriteType = "GFX_prod_progress_bar2"
-			position = { x=27 y=30 } #x=295 y=2  50
+			position = { x=27 y=50 } #x=295 y=2  50
 			#hide = yes
 		}
 		# Productiontime needed
 		instantTextboxType = {
 			name = "speed"
-			position = { x=15 y=30 } # x = 157 y = 32
+			position = { x=15 y=50 } # x = 157 y = 32
 			textureFile = ""
 			font = "hoi_16mbs"
 			text = "--"
