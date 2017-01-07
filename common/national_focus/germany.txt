@@ -4580,7 +4580,10 @@ focus_tree = {
 		id = GER_Schutzstaffel_divisions_IV
 		#text = Schutzstaffel_divisions
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = { focus = GER_Schutzstaffel_divisions_III }
+		prerequisite = {
+			focus = GER_Schutzstaffel_divisions_III
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
 		x = 25
 		y = 6
 		cost = 5
@@ -4675,8 +4678,8 @@ focus_tree = {
 	}
 	#####################Foreign SS units recruitment
 	focus = {
-		id = GER_Schutzstaffel_foreign_units
-		#text = Schutzstaffel_foreign_units
+		id = GER_Schutzstaffel_foreign_ss_units
+		#text = Schutzstaffel_foreign_ss_units
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_focus }
 		x = 27
@@ -4786,7 +4789,7 @@ focus_tree = {
 		#text = Wiking_Division
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Das_Reich_division }
-		prerequisite = { focus = GER_Schutzstaffel_foreign_units }
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 29
 		y = 4
 		cost = 5
