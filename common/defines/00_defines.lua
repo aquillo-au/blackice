@@ -144,7 +144,7 @@ NCountry = {
 	REINFORCEMENT_AIRBASE_PRIORITY_COUNT = 3,
 	REINFORCEMENT_AIRBASE_PRIORITY_DEFAULT = 1,
 	REINFORCEMENT_DELIVERY_SPEED_MIN = 0.6,			-- The distance from the supply region to capital should affect the speed only a little bit. Main factor for penalty is overcrowded areas, and not the route length.
-	REINFORCEMENT_EQUIPMENT_DELIVERY_SPEED = 0.3,	-- was 0.3 -- Modifier for army equipment reinforcement speed
+	REINFORCEMENT_EQUIPMENT_DELIVERY_SPEED = 0.3,	-- Modifier for army equipment reinforcement speed
 	REINFORCEMENT_MANPOWER_DELIVERY_SPEED = 10.0,	-- Modifier for army manpower reinforcement delivery speed (travel time)
 	REINFORCEMENT_MANPOWER_CHUNK = 0.1,				-- Chunk size of manpower reinforcement delivery, in % of total manpower needed by the template.
 	EQUIPMENT_UPGRADE_CHUNK_MAX_SIZE = 10,			-- Maximum chunk size of equipment upgrade distribution per update.
@@ -688,9 +688,7 @@ NNavy = {
 	CONVOY_EFFICIENCY_MIN_VALUE = 0.05,								-- To avoid complete 0% efficiency, set the lower limit.
 	ANTI_AIR_TARGETTING_TO_CHANCE = 0.07,							-- Balancing value to convert averaged equipment stats (anti_air_targetting and naval_strike_agility) to probability chances of airplane being hit by navies AA.
 	ANTI_AIR_ATTACK_TO_AMOUNT = 0.005,								-- Balancing value to convert equipment stat anti_air_attack to the random % value of airplanes being hit.
-	
 	NO_LEADER_MAX_SHIPS = 30,										-- Max amount of ships that can be used in the unit
-
 	UNIT_EXPERIENCE_PER_COMBAT_HOUR = 10,
 	UNIT_EXPERIENCE_SCALE = 1,
 	EXPERIENCE_FACTOR_CONVOY_ATTACK = 2,							-- DNM, original 0.05, increased because sub XP gain very slow.
@@ -1141,6 +1139,55 @@ NAI = {
 	ORDER_ASSIGNMENT_DISTANCE_FACTOR = 5.0,				-- When the AI assigns units to orders, it attempts to calculate the distance.
 	RELUCTANCE_TO_CHANGE_FRONT_FACTOR = 0.5,			-- Factor for how reluctant the AI is to change a units order group.
 	REVISITED_PROV_PENALTY_FACTOR = 1.5,				-- When the AI picks units for a front, it tries to spread out a bit which units it grabs.
+	
+	AIR_SCORE_DISTANCE_IMPACT = 0.1,					-- Effect of distance applied to the score calculations
+	
+	NAVAL_AIR_SUPERIORITY_IMPORTANCE = 0.10,			-- Strategic importance of air superiority ( amount of enemy planes in area )
+	NAVAL_SHIP_AIR_IMPORTANCE = 2.0,					-- Naval ship air importance
+	NAVAL_SHIP_IN_PORT_AIR_IMPORTANCE = 6.0,			-- Naval ship in the port air importance
+	NAVAL_COMBAT_AIR_IMPORTANCE = 12.0,					-- Naval combat air importance
+	NAVAL_TRANSFER_AIR_IMPORTANCE = 25.0,				-- Naval transfer air importance
+	NAVAL_COMBAT_TRANSFER_AIR_IMPORTANCE = 50.0,		-- Naval combat involving enemy land units
+	
+	NAVAL_FIGHTERS_PER_PLANE = 1.1,						-- Amounts of air superiority planes requested per enemy plane
+	NAVAL_STRIKE_PLANES_PER_ARMY = 15,					-- Amount of planes requested per enemy army
+	NAVAL_STRIKE_PLANES_PER_SHIP = 5,					-- Amount of bombers requested per enemy ship
+	PORT_STRIKE_PLANES_PER_SHIP = 10,					-- Amount of bombers request per enemy ship in the port
+	
+	LAND_DEFENSE_AIR_SUPERIORITY_IMPORTANCE = 0.10,		-- Strategic importance of air superiority ( amount of enemy planes in area )
+	LAND_DEFENSE_CIVIL_FACTORY_IMPORTANCE = 50,			-- Strategic importance of civil factories
+	LAND_DEFENSE_MILITARY_FACTORY_IMPORTANCE = 70,		-- Strategic importance of military factories
+	LAND_DEFENSE_NAVAL_FACTORY_IMPORTANCE = 30,			-- Strategic importance of naval factories
+	
+	LAND_DEFENSE_MIN_FACTORIES_FOR_AIR_IMPORTANCE = 6,	-- If amount of factories is less importance of factories won't apply
+	
+	LAND_DEFENSE_FIGHERS_PER_PLANE = 1.1,				-- Amount of air superiority planes requested per enemy plane
+	LAND_DEFENSE_INTERSEPTORS_PER_BOMBERS = 0.2,		-- Amount of air interceptor planes requested per enemy plane
+	
+	LAND_COMBAT_AIR_SUPERIORITY_IMPORTANCE = 0.20,		-- Strategic importance of air superiority ( amount of enemy planes in area )
+	LAND_COMBAT_OUR_ARMIES_AIR_IMPORTANCE = 12,		-- Strategic importance of our armies
+	LAND_COMBAT_OUR_COMBATS_AIR_IMPORTANCE = 55,		-- Strategic importance of our armies in the combats
+	LAND_COMBAT_FRIEND_ARMIES_AIR_IMPORTANCE = 12,	-- Strategic importance of friendly armies
+	LAND_COMBAT_FRIEND_COMBATS_AIR_IMPORTANCE = 6,		-- Strategic importance of friendly armies in the combat
+	LAND_COMBAT_ENEMY_ARMIES_AIR_IMPORTANCE = 8,		-- Strategic importance of our armies
+	LAND_COMBAT_ENEMY_LAND_FORTS_AIR_IMPORTANCE = 5,	-- Strategic importance of enemy land forts in the region
+	LAND_COMBAT_ENEMY_COASTAL_FORTS_AIR_IMPORTANCE = 3,-- Strategic importance of enemy coastal fronts in the region
+	
+	LAND_COMBAT_FIGHTERS_PER_PLANE = 1.1,				-- Amount of air superiority planes requested per enemy plane
+	LAND_COMBAT_CAS_PER_ENEMY_ARMY = 25,				-- Amount of CAS planes requested per enemy army
+	LAND_COMBAT_BOMBERS_PER_LAND_FORT_LEVEL = 15,		-- Amount of bomber planes requested per enemy land fort level
+	LAND_COMBAT_BOMBERS_PER_COASTAL_FORT_LEVEL = 10,	-- Amount of bomber planes requested per enemy coastal fort level
+	
+	STR_BOMB_AIR_SUPERIORITY_IMPORTANCE = 0.10,		-- Strategic importance of air superiority ( amount of enemy planes in area )
+	STR_BOMB_CIVIL_FACTORY_IMPORTANCE = 50,			-- Strategic importance of enemy civil factories
+	STR_BOMB_MILITARY_FACTORY_IMPORTANCE = 70,		-- Strategic importance of enemy military factories
+	STR_BOMB_NAVAL_FACTORY_IMPORTANCE = 30,			-- Strategic importance of enemy naval factories
+	
+	STR_BOMB_MIN_ENEMY_FIGHTERS_IN_AREA = 300,		-- If amount of enemy fighters is higher than this mission won't perform
+	STR_BOMB_FIGHTERS_PER_PLANE = 1.1,				-- Amount of air superiority planes requested per enemy plane
+	STR_BOMB_PLANES_PER_CIV_FACTORY = 20,			-- Amount of planes requested per enemy civ factory
+	STR_BOMB_PLANES_PER_MIL_FACTORY = 25,			-- Amount of planes requested per enemy military factory
+	STR_BOMB_PLANES_PER_NAV_FACTORY = 15,			-- Amount of planes requested per enemy naval factory
 },
 
 NFocus = {
