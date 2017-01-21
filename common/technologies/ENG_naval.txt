@@ -90,6 +90,152 @@ technologies = {
 			factor = 0
 		}
 	}
+	tech_rn_transport = {
+		dependencies = {
+			tech_rn = 1
+		}
+		transport_capacity = -0.10 # was -0.5
+		naval_invasion_capacity = 15
+		
+		path = {
+			leads_to_tech = tech_rn_landing_craft 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1936
+		
+		folder = {
+			name = britishnaval_folder
+			position = { x = @TP y = @1936 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0.5
+				NOT = { has_war = yes }
+			}
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			tp_tech
+		}
+	}
+	
+	tech_rn_landing_craft = {
+		dependencies = {
+			tech_rn = 1
+		}
+		invasion_preparation = -0.5
+		amphibious_invasion_defence = 0.15
+		naval_invasion_capacity = 40
+
+		path = {
+			leads_to_tech = tech_rn_tank_landing_craft 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		start_year = 1941
+		
+		folder = {
+			name = britishnaval_folder
+			position = { x = @TP y = @1941 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0.5
+				NOT = { has_war = yes }
+			}
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			tp_tech
+		}
+	}
+	
+	tech_rn_tank_landing_craft = {
+		dependencies = {
+			tech_rn = 1
+		}
+		amphibious_invasion = 0.25
+		amphibious_invasion_defence = 0.5
+		naval_invasion_capacity = 100
+
+		research_cost = 3
+		start_year = 1942
+		
+		folder = {
+			name = britishnaval_folder
+			position = { x = @TP y = @1942 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 0.5
+				NOT = { has_war = yes }
+			}
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = JAP
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			tp_tech
+		}
+	}
 	
 	#G & H Class
 	tech_rn_dd = {

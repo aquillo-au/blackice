@@ -5381,20 +5381,20 @@ guiTypes = {
 					spriteType = "GFX_naval_techtree_bg"
 					position = { x=0 y=0 }
 				}
-				#instantTextBoxType = {
-				#	name = "naval_subtitle_transport"
-				#	position = { x = 100 y = 700 }
-				#	textureFile = ""
-				#	font = "hoi_33"
-				#	borderSize = {x = 0 y = 4}
-				#	text = "NAVAL_TITLE_TRANSPORTS"
-				#	maxWidth = 600
-				#	maxHeight = 62
-				#	format = left
-				#	orientation = "UPPER_LEFT"
-				#}
 				instantTextBoxType = {
-					name = "naval_subtitle_destroyer"
+					name = "britishnaval_subtitle_transport"
+					position = { x = 225 y = 830 }
+					textureFile = ""
+					font = "hoi_33"
+					borderSize = {x = 0 y = 4}
+					text = "NAVAL_TITLE_TRANSPORTS"
+					maxWidth = 600
+					maxHeight = 62
+					format = left
+					orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "britishnaval_subtitle_destroyer"
 					position = { x = 1550 y = 550 }
 					textureFile = ""
 					font = "hoi_33"
@@ -5407,7 +5407,7 @@ guiTypes = {
 					pdx_tooltip = "destroyer_desc"
 				}
 				instantTextBoxType = {
-					name = "naval_subtitle_light_cruiser"
+					name = "britishnaval_subtitle_light_cruiser"
 					position = { x = 2900 y = 550 }
 					textureFile = ""
 					font = "hoi_33"
@@ -5420,7 +5420,7 @@ guiTypes = {
 					pdx_tooltip = "both_cruisers_desc"
 				}
 				instantTextBoxType = {
-					name = "naval_subtitle_aa_light_cruiser"
+					name = "britishnaval_subtitle_aa_light_cruiser"
 					position = { x = 3590 y = 930 }
 					textureFile = ""
 					font = "hoi_33"
@@ -5433,7 +5433,7 @@ guiTypes = {
 					pdx_tooltip = "both_cruisers_desc"
 				}
 				instantTextBoxType = {
-					name = "naval_subtitle_heavy_cruiser"
+					name = "britishnaval_subtitle_heavy_cruiser"
 					position = { x = 3940 y = 1110 }
 					textureFile = ""
 					font = "hoi_33"
@@ -5446,7 +5446,7 @@ guiTypes = {
 					pdx_tooltip = "both_cruisers_desc"
 				}
 				instantTextBoxType = {
-					name = "naval_subtitle_battlecruiser"
+					name = "britishnaval_subtitle_battlecruiser"
 					position = { x = 4340 y = 830 }
 					textureFile = ""
 					font = "hoi_33"
@@ -5459,7 +5459,7 @@ guiTypes = {
 					pdx_tooltip = "battle_cruiser_desc"
 				}
 				instantTextBoxType = {
-					name = "naval_subtitle_battleship"
+					name = "britishnaval_subtitle_battleship"
 					position = { x = 4700 y = 270 }
 					textureFile = ""
 					font = "hoi_33"
@@ -5472,7 +5472,7 @@ guiTypes = {
 					pdx_tooltip = "battleship_desc"
 				}
 				instantTextBoxType = {
-					name = "naval_subtitle_carrier"
+					name = "britishnaval_subtitle_carrier"
 					position = { x = 5420 y = 690 }
 					textureFile = ""
 					font = "hoi_33"
@@ -5485,7 +5485,7 @@ guiTypes = {
 					pdx_tooltip = "carrier_desc"
 				}
 				instantTextBoxType = {
-					name = "naval_subtitle_light_carrier"
+					name = "britishnaval_subtitle_light_carrier"
 					position = { x = 6090 y = 1250 }
 					textureFile = ""
 					font = "hoi_33"
@@ -5498,7 +5498,7 @@ guiTypes = {
 					pdx_tooltip = "carrier_desc"
 				}
 				instantTextBoxType = {
-					name = "naval_subtitle_escort_carrier"
+					name = "britishnaval_subtitle_escort_carrier"
 					position = { x = 6420 y = 1250 }
 					textureFile = ""
 					font = "hoi_33"
@@ -5699,135 +5699,6 @@ guiTypes = {
 					}
 				}
 				
-				#instantTextBoxType = {
-					#	name = "naval_subtitle_transport"
-					#	position = { x = 100 y = 700 }
-					#	textureFile = ""
-					#	font = "hoi_33"
-					#	borderSize = {x = 0 y = 4}
-					#	text = "NAVAL_TITLE_TRANSPORTS"
-					#	maxWidth = 600
-					#	maxHeight = 62
-					#	format = left
-					#	orientation = "UPPER_LEFT"
-					#}
-					instantTextBoxType = {
-						name = "naval_subtitle_destroyer"
-						position = { x = 600 y = 400 }
-						textureFile = ""
-						font = "hoi_33"
-						borderSize = { x = 0 y = 4 }
-						text = "NAVAL_TITLE_DESTROYERS"
-						maxWidth = 200
-						maxHeight = 62
-						format = centre
-						orientation = "UPPER_LEFT"
-						pdx_tooltip = "destroyer_desc"
-					}
-					instantTextBoxType = {
-						name = "naval_subtitle_light_cruiser"
-						position = { x = 1025 y = 700 }
-						textureFile = ""
-						font = "hoi_33"
-						borderSize = { x = 0 y = 4 }
-						text = "NAVAL_TITLE_LIGHT_CRUISERS"
-						maxWidth = 300
-						maxHeight = 62
-						format = centre
-						orientation = "UPPER_LEFT"
-						pdx_tooltip = "both_cruisers_desc"
-					}
-					instantTextBoxType = {
-						name = "naval_subtitle_aa_light_cruiser"
-						position = { x = 1375 y = 1260 }
-						textureFile = ""
-						font = "hoi_33"
-						borderSize = { x = 0 y = 4 }
-						text = "NAVAL_TITLE_AA_LIGHT_CRUISERS"
-						maxWidth = 300
-						maxHeight = 62
-						format = centre
-						orientation = "UPPER_LEFT"
-						pdx_tooltip = "both_cruisers_desc"
-					}
-					instantTextBoxType = {
-						name = "naval_subtitle_heavy_cruiser"
-						position = { x = 1725 y = 580 }
-						textureFile = ""
-						font = "hoi_33"
-						borderSize = { x = 0 y = 4 }
-						text = "NAVAL_TITLE_HEAVY_CRUISERS"
-						maxWidth = 300
-						maxHeight = 62
-						format = centre
-						orientation = "UPPER_LEFT"
-						pdx_tooltip = "both_cruisers_desc"
-					}
-					instantTextBoxType = {
-						name = "naval_subtitle_battlecruiser"
-						position = { x = 1400 y = 580 }
-						textureFile = ""
-						font = "hoi_33"
-						borderSize = { x = 0 y = 4 }
-						text = "NAVAL_TITLE_BATTLECRUISERS"
-						maxWidth = 600
-						maxHeight = 62
-						format = left
-						orientation = "UPPER_LEFT"
-						pdx_tooltip = "battle_cruiser_desc"
-					}
-					instantTextBoxType = {
-						name = "naval_subtitle_battleship"
-						position = { x = 2500 y = 300 }
-						textureFile = ""
-						font = "hoi_33"
-						borderSize = { x = 0 y = 4 }
-						text = "NAVAL_TITLE_BATTLESHIPS"
-						maxWidth = 600
-						maxHeight = 62
-						format = left
-						orientation = "UPPER_LEFT"
-						pdx_tooltip = "battleship_desc"
-					}
-					instantTextBoxType = {
-						name = "naval_subtitle_carrier"
-						position = { x = 3225 y = 430 }
-						textureFile = ""
-						font = "hoi_33"
-						borderSize = { x = 0 y = 4 }
-						text = "NAVAL_TITLE_CARRIERS"
-						maxWidth = 600
-						maxHeight = 62
-						format = left
-						orientation = "UPPER_LEFT"
-						pdx_tooltip = "carrier_desc"
-					}
-					instantTextBoxType = {
-						name = "naval_subtitle_light_carrier"
-						position = { x = 3530 y = 1425 }
-						textureFile = ""
-						font = "hoi_33"
-						borderSize = { x = 0 y = 4 }
-						text = "NAVAL_TITLE_LIGHT_CARRIERS"
-						maxWidth = 600
-						maxHeight = 62
-						format = left
-						orientation = "UPPER_LEFT"
-						pdx_tooltip = "carrier_desc"
-					}
-					instantTextBoxType = {
-						name = "naval_subtitle_escort_carrier"
-						position = { x = 3860 y = 1145 }
-						textureFile = ""
-						font = "hoi_33"
-						borderSize = { x = 0 y = 4 }
-						text = "NAVAL_TITLE_ESCORT_CARRIERS"
-						maxWidth = 600
-						maxHeight = 62
-						format = left
-						orientation = "UPPER_LEFT"
-						pdx_tooltip = "carrier_desc"
-					}
 				containerWindowType = {
 					name = "britishnaval_year_right"
 					position = { x=7000 y=100 }
@@ -6018,6 +5889,13 @@ guiTypes = {
 			}
 			gridboxtype = {
 				name = "tech_rn_tree"
+				position = { x = 10% y = 172 }
+				size = { width = 80% height = 80% }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+			gridboxtype = {
+				name = "tech_rn_transport_tree"
 				position = { x = 10% y = 172 }
 				size = { width = 80% height = 80% }
 				slotsize = { width = 70 height = 70 }
@@ -9060,7 +8938,7 @@ guiTypes = {
 					}
 					instantTextBoxType = {
 						name = "naval_subtitle_destroyer"
-						position = { x = 550 y = 300 }
+						position = { x = 490 y = 170 }
 						textureFile = ""
 						font = "hoi_33"
 						borderSize = { x = 0 y = 4 }
@@ -9073,7 +8951,7 @@ guiTypes = {
 					}
 					instantTextBoxType = {
 						name = "naval_subtitle_light_cruiser"
-						position = { x = 1050 y = 165 }
+						position = { x = 1100 y = 170 }
 						textureFile = ""
 						font = "hoi_33"
 						borderSize = { x = 0 y = 4 }
@@ -9086,7 +8964,7 @@ guiTypes = {
 					}
 					instantTextBoxType = {
 						name = "naval_subtitle_heavy_cruiser"
-						position = { x = 1400 y = 430 }
+						position = { x = 1450 y = 450 }
 						textureFile = ""
 						font = "hoi_33"
 						borderSize = { x = 0 y = 4 }
@@ -9192,14 +9070,14 @@ guiTypes = {
 				format = "UP"
 			}
 			gridboxtype = {
-				name = "tech_ijn_dd_tree"
+				name = "tech_ijn_dd_obs1_tree"
 				position = { x = 10% y = 172 }
 				size = { width = 80% height = 80% }
 				slotsize = { width = 70 height = 70 }
 				format = "UP"
 			}
 			gridboxtype = {
-				name = "tech_ijn_lcruiser_tree"
+				name = "tech_ijn_lcruiser_obs1_tree"
 				position = { x = 10% y = 172 }
 				size = { width = 80% height = 80% }
 				slotsize = { width = 70 height = 70 }
