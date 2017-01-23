@@ -537,8 +537,8 @@ NAir = {
 	AIR_WING_MAX_STATS_BOMBING = 100,
 	AIR_WING_MAX_SIZE = 1000, 							-- Max amount of airplanes in wing
 	AIR_WING_BOMB_DAMAGE_FACTOR = 2,					-- Used to balance the damage done while bombing.
-	BOMBERS_ENGAGE_PASSES = 1,							-- Combat simulations passes in single fight against the bombers and their escorts (more passes = more bloody)
-	SUPERIORITY_ENGAGE_PASSES = 1,						-- Combat simulations passes in single fight against superiority missions.
+	BOMBERS_ENGAGE_PASSES = 2,							-- Combat simulations passes in single fight against the bombers and their escorts (more passes = more bloody)
+	SUPERIORITY_ENGAGE_PASSES = 2,						-- Combat simulations passes in single fight against superiority missions.
 	COMBAT_ESCORT_PASS_CHANCE_BASE = 0.25, 				-- Base % for chance for passing escorts, and attack directly bombers.
 	COMBAT_ESCORT_PASS_CHANCE_MULT = 0.25,	 			-- How much the difference in airplanes stats (agility+speed) affects the escort passing chance.
 	COMBAT_ESCORT_PASS_CHANCE_LIMIT = 0.95, 			-- So a big difference in airplanes stats never gives 100% chance for passing escorts.
@@ -814,14 +814,14 @@ NAI = {
 	AIR_CONTROLLED_TERRITORY_INTERCEPT_SCORE = 6,	-- Interception score per controlled state in mission region
 	AIR_ALLY_TERRITORY_INTERCEPT_SCORE = 3,		-- Interception score per ally controlled state in mission region
 	INTERCEPT_NAVAL_BOMBING_FACTOR = 4.0,		-- Factors the weight of intercepting naval bombers in sea regions where friendly ships are
-	AIR_CAS_SCORE_FACTOR = 0.05,					-- Factor applied to (friendly units) x (enemy units)) to get CAS score for region
+	AIR_CAS_SCORE_FACTOR = 0.5,					-- Factor applied to (friendly units) x (enemy units)) to get CAS score for region
 	AIR_ENEMY_SUPERIORITY_FACTOR = 2.0,			-- How much enemy air superiority counts relative to own
 	AIR_SUPERIORITY_FACTOR = 4.0,				-- Factor for air superiority score
-	AIR_MIN_ASSIGN_SCORE = 5,					-- Minimum total score for region to be considered for air missions
-	AIR_MIN_REASSIGN_SCORE = 150,				-- Minimum total score for region to be considered for reassigning air missions
+	AIR_MIN_ASSIGN_SCORE = 10,					-- Minimum total score for region to be considered for air missions
+	AIR_MIN_REASSIGN_SCORE = 25,				-- Minimum total score for region to be considered for reassigning air missions
 	AIR_WING_SIZE_FACTOR = 0.5,					-- Impact on air score of assigning wings to mission
 	AIR_MISSION_MIN_COVEREAGE = 0.15,			-- Between 0 and 1, limit for % coverage for air mission to be considered
-	AIR_BASE_PRIORITY_DISTANCE_FACTOR = 1.5,	-- Weight of distance between region and airbase for airbase priority score
+	AIR_BASE_PRIORITY_DISTANCE_FACTOR = 25,	-- Weight of distance between region and airbase for airbase priority score
 	MAX_VOLUNTEER_ARMY_FRACTION = 0.20,			-- Countries will not send more than their forces time this number to aid another country
 	WANTED_UNITS_INDUSTRY_FACTORY = 0.5, 		-- How many units a country wants is partially based on how much military industry that is available
 	DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.95,		-- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
@@ -967,7 +967,7 @@ NAI = {
 	SHIPS_PRODUCTION_BASE_COST = 10000,					-- Used by the AI to normalize IC values when picking what ship to build.
 	NEEDED_NAVAL_FACTORIES_EXPENSIVE_SHIP_BONUS = 8,   -- Amount of naval yards you need to get a bonus to building really expensive ships
 
-	AIR_WING_REINFORCEMENT_LIMIT = 300,				-- number of aircraft needed for reserves before the ai will deploy more, I think.
+	AIR_WING_REINFORCEMENT_LIMIT = 60,				-- number of aircraft needed for reserves before the ai will deploy more, I think.
 	AIR_BASE_DANGER_ZONE_WEIGHT = 100,					-- Score used per province taken by enemy in a state to determine how dangerous it is to use an air base
 
 	MANPOWER_FREE_USAGE_THRESHOLD = 900000,				-- If AI has this much manpower he doesn't care about the percentage
@@ -1126,15 +1126,15 @@ NAI = {
 	FRONT_CUTOFF_MIN_EDGE_PROXIMITY = 2,				-- Minimum number of provinces to the front edge to determine for cutoff oportunity.
 	INVASION_DISTANCE_RANDOMNESS = 300,					-- This higher the value, the more unpredictable the invasions. Compares to actual map distance in pixels.
 	
-	AIR_SUPERIORITY_MISSION_FACTOR = 1.0,				-- AI air superiority mission factor
+	AIR_SUPERIORITY_MISSION_FACTOR = 3.0,				-- AI air superiority mission factor
 	CAS_MISSION_FACTOR = 1.2,							-- AI cas mission factor
-	INTERCEPTION_MISSION_FACTOR = 0.5,					-- AI interception mission factor
-	STREATEGIC_BOMBER_MISSION_FACTOR = 1.2,				-- AI strategic bombing mission factor
-	NAVAL_BOMBER_MISSION_FACTOR = 0.7,					-- AI naval bombing mission factor
-	NUKE_MISSION_FACTOR = 1.0,							-- AI nuke mission factor
+	INTERCEPTION_MISSION_FACTOR = 2.5,					-- AI interception mission factor
+	STREATEGIC_BOMBER_MISSION_FACTOR = 1.5,				-- AI strategic bombing mission factor
+	NAVAL_BOMBER_MISSION_FACTOR = 1.0,					-- AI naval bombing mission factor
+	NUKE_MISSION_FACTOR = 2.0,							-- AI nuke mission factor
 	PARADROP_MISSION_FACTOR = 1.0,						-- AI paradrop mission factor
 	KAMIKAZE_MISSION_FACTOR = 0.5,						-- AI naval kamikaze mission factor
-	PORT_STRIKE_MISSION_FACTOR = 1.4,					-- AI port strike mission factor
+	PORT_STRIKE_MISSION_FACTOR = 0.5,					-- AI port strike mission factor
 	
 	ORDER_ASSIGNMENT_DISTANCE_FACTOR = 5.0,				-- When the AI assigns units to orders, it attempts to calculate the distance.
 	RELUCTANCE_TO_CHANGE_FRONT_FACTOR = 0.5,			-- Factor for how reluctant the AI is to change a units order group.
