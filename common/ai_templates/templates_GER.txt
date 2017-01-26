@@ -1,5 +1,5 @@
 #armor
-light_armor_default = {
+light_armor_default_GER = {
 	target_width = 29.9
 	width_weight = 0.1
 	column_swap_factor = 0.2
@@ -25,7 +25,7 @@ light_armor_default = {
 		#-- Common Values
 		1.00 #-- max_organisation
 		0.80 #-- max_strength
-		-40.00 #-- build_cost_ic
+		0.00 #-- build_cost_ic
 		20.0 #-- maximum_speed
 		0.20 #-- armor_value
 		0.05 #-- ap_attack
@@ -36,11 +36,12 @@ light_armor_default = {
 	
 	target_template = {
 		weight = 0.9
-		match_value = 400.00
+		match_value = 800.00
 		support = {
 			DIV_HQ = 1
 			engineer = 1
 			recon_mot = 1
+			recon_ac = 1
 			#artillery_medium_mot  = 1
 			maintenance_company = 1
 			logistics_company = 1
@@ -49,7 +50,7 @@ light_armor_default = {
 		regiments = {
 			panzer_i = 3
 			panzer_ii = 3
-			motorized = 6
+			motorized = 4
 			artillery_brigade_mot = 2
 		}
 	}
@@ -78,11 +79,11 @@ light_armor_default = {
 	}
 	
 	replace_at_match = 0.3
-	replace_with = panzer_default
+	replace_with = panzer_default_GER
 	target_min_match = 0.1
 }
 
-heavy_armor_default = {
+heavy_armor_default_GER = {
 	target_width = 29.9
 	width_weight = 3.0
 	column_swap_factor = 0.1
@@ -108,7 +109,7 @@ heavy_armor_default = {
 		#-- Common Values
 		1.00 #-- max_organisation
 		0.80 #-- max_strength
-		-40.00 #-- build_cost_ic
+		0.00 #-- build_cost_ic
 		0.0 #-- maximum_speed
 		0.20 #-- armor_value
 		0.05 #-- ap_attack
@@ -164,11 +165,11 @@ heavy_armor_default = {
 	}
 	
 	replace_at_match = 0.4
-	replace_with = modern_armor_default
+	replace_with = modern_armor_default_GER
 	target_min_match = 0.2
 }
 
-panzer_default = {
+panzer_default_GER = {
 	target_width = 29.9
 	width_weight = 3.0
 	column_swap_factor = 0.5
@@ -194,7 +195,7 @@ panzer_default = {
 		#-- Common Values
 		1.00 #-- max_organisation
 		0.80 #-- max_strength
-		10.00 #-- build_cost_ic
+		0.00 #-- build_cost_ic
 		10.0 #-- maximum_speed
 		0.20 #-- armor_value
 		0.05 #-- ap_attack
@@ -210,7 +211,7 @@ panzer_default = {
 			DIV_HQ = 1
 			engineer = 1
 			recon_ac = 1
-			artillery_medium_mot  = 1
+			#artillery_medium_mot  = 1
 			maintenance_company = 1
 			logistics_company = 1
 		}
@@ -218,7 +219,7 @@ panzer_default = {
 		regiments = {
 			panzer_iii = 3
 			panzer_iv = 2
-			motorized = 6
+			motorized = 3
 			artillery_brigade_mot = 2
 		}
 	}
@@ -246,13 +247,13 @@ panzer_default = {
 	}
 	
 	replace_at_match = 0.8
-	replace_with = modern_armor_default
+	replace_with = modern_armor_default_GER
 	target_min_match = 0.3
 }
 
 
 #infantry
-infantry_default = {
+infantry_default_GER = {
 	target_width = 29.9
 	width_weight = 0.1
 	column_swap_factor = 0.5
@@ -278,7 +279,7 @@ infantry_default = {
 		#-- Common Values
 		0.60 #-- max_organisation
 		0.40 #-- max_strength
-		-20.00 #-- build_cost_ic
+		0.00 #-- build_cost_ic
 		0.00 #-- maximum_speed
 		0.00 #-- armor_value
 		0.20 #-- ap_attack
@@ -323,11 +324,11 @@ infantry_default = {
 		maintenance_company
 	}
 	replace_at_match = 0.9
-	replace_with = motorized_default 
+	replace_with = motorized_default_GER
 	target_min_match = 0.9
 }
 
-mountaineers_default = {
+mountaineers_default_GER = {
 	target_width = 29.9
 	width_weight = 0.1
 	column_swap_factor = 0.5
@@ -353,7 +354,7 @@ mountaineers_default = {
 		#-- Common Values
 		1 #-- max_organisation
 		1 #-- max_strength
-		-0.1 #-- build_cost_ic
+		0.0 #-- build_cost_ic
 		0 #-- maximum_speed
 		0 #-- armor_value
 		0 #-- ap_attack
@@ -396,7 +397,7 @@ mountaineers_default = {
 	}
 }
 
-marine_default = {
+marine_default_GER = {
 	target_width = 29.9
 	width_weight = 0.1
 	column_swap_factor = 0.5
@@ -422,7 +423,7 @@ marine_default = {
 		#-- Common Values
 		0.60 #-- max_organisation
 		0.40 #-- max_strength
-		-0.1 #-- build_cost_ic
+		0.0 #-- build_cost_ic
 		0.00 #-- maximum_speed
 		0.05 #-- armor_value
 		0.00 #-- ap_attack
@@ -465,7 +466,7 @@ marine_default = {
 	}
 }
 
-paratrooper_default = {
+paratrooper_default_GER = {
 	target_width = 9.9
 	width_weight = 3.0
 	column_swap_factor = 0.1
@@ -491,7 +492,7 @@ paratrooper_default = {
 		#-- Common Values
 		0.6 #-- max_organisation
 		0.4 #-- max_strength
-		-0.1 #-- build_cost_ic
+		0.0 #-- build_cost_ic
 		0.00 #-- maximum_speed
 		0.00 #-- armor_value
 		0.20 #-- ap_attack
@@ -533,7 +534,7 @@ paratrooper_default = {
 	}
 }
 
-cavalry_default = {
+cavalry_default_GER = {
 	target_width = 12.0
 	width_weight = 4.0
 	column_swap_factor = 1.0
@@ -570,7 +571,7 @@ cavalry_default = {
 
 	target_template = {
 		weight = 0.9
-		match_value = 200.0
+		match_value = 0.0
 		
 		support = {
 			DIV_HQ = 1
@@ -594,11 +595,11 @@ cavalry_default = {
 	}
 	
 	replace_at_match = 0.1
-	replace_with = motorized_default
+	replace_with = semi_motorized_default_GER
 	target_min_match = 0.1
 }
 
-semi_motorized_default = {
+semi_motorized_default_GER = {
 	target_width = 29.9
 	width_weight = 3.0
 	column_swap_factor = 0.0
@@ -624,7 +625,7 @@ semi_motorized_default = {
 		#-- Common Values
 		0.60 #-- max_organisation
 		0.40 #-- max_strength
-		-60.00 #-- build_cost_ic
+		0.00 #-- build_cost_ic
 		0.00 #-- maximum_speed
 		0.00 #-- armor_value
 		0.10 #-- ap_attack
@@ -675,11 +676,11 @@ semi_motorized_default = {
 	}
 	
 	replace_at_match = 0.0
-	replace_with = motorized_default
+	replace_with = motorized_default_GER
 	target_min_match = 0.0
 }
 
-motorized_default = {
+motorized_default_GER = {
 	target_width = 29.9
 	width_weight = 3.0
 	column_swap_factor = 0.2
@@ -705,7 +706,7 @@ motorized_default = {
 		#-- Common Values
 		0.60 #-- max_organisation
 		0.40 #-- max_strength
-		-20.00 #-- build_cost_ic
+		0.00 #-- build_cost_ic
 		0.00 #-- maximum_speed
 		0.00 #-- armor_value
 		0.10 #-- ap_attack
@@ -755,11 +756,11 @@ motorized_default = {
 	}
 	
 	replace_at_match = 0.5
-	replace_with = mechanized_default
+	replace_with = mechanized_default_GER
 	target_min_match = 0.3
 }
 
-mechanized_default = {
+mechanized_default_GER = {
 	target_width = 29.9
 	width_weight = 3.0
 	column_swap_factor = 1.0
@@ -835,7 +836,7 @@ mechanized_default = {
 	}
 }
 
-ss_garrison_default = {
+ss_garrison_default_GER = {
 	target_width = 29.9
 	width_weight = 0.1
 	column_swap_factor = 0.5
@@ -861,7 +862,7 @@ ss_garrison_default = {
 		#-- Common Values
 		0.60 #-- max_organisation
 		0.40 #-- max_strength
-		-20.00 #-- build_cost_ic
+		0.00 #-- build_cost_ic
 		0.00 #-- maximum_speed
 		0.00 #-- armor_value
 		0.20 #-- ap_attack
@@ -910,12 +911,12 @@ ss_garrison_default = {
 	}
 
 	replace_at_match = 1.0
-	replace_with = ss_infantry_default
+	replace_with = ss_infantry_default_GER
 	target_min_match = 1.0
 }
 
 
-garrison_default = {
+garrison_default_GER = {
 	target_width = 29.9
 	width_weight = 0.1
 	column_swap_factor = 0.5
@@ -941,7 +942,7 @@ garrison_default = {
 		#-- Common Values
 		0.60 #-- max_organisation
 		0.40 #-- max_strength
-		-20.00 #-- build_cost_ic
+		0.00 #-- build_cost_ic
 		0.00 #-- maximum_speed
 		0.00 #-- armor_value
 		0.20 #-- ap_attack
@@ -990,11 +991,11 @@ garrison_default = {
 	}
 
 	replace_at_match = 0.0
-	replace_with = infantry_default
+	replace_with = infantry_default_GER
 	target_min_match = 0.0
 }
 ######################## Militia
-militia_default = {
+militia_default_GER = {
 	target_width = 29.9
 	width_weight = 0.1
 	column_swap_factor = 0.5
@@ -1020,7 +1021,7 @@ militia_default = {
 		#-- Common Values
 		0.60 #-- max_organisation
 		0.40 #-- max_strength
-		-20.00 #-- build_cost_ic
+		0.00 #-- build_cost_ic
 		0.00 #-- maximum_speed
 		0.00 #-- armor_value
 		0.20 #-- ap_attack
@@ -1069,7 +1070,7 @@ militia_default = {
 	}
 
 	replace_at_match = 0.0
-	replace_with = infantry_default
+	replace_with = infantry_default_GER
 	target_min_match = 0.0
 }
 

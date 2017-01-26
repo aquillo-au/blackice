@@ -31,7 +31,7 @@ division_template = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
-		light_armor = { x= 1 y = 0 }
+		japanese_light_tank_equipment = { x= 1 y = 0 }
 	}
 	support = {
 		maintenance_company = { x = 0 y = 0 }
@@ -337,17 +337,17 @@ units = {
 air_wings = {
 	533 = { 
 		# 1 Hiko Rentai -- Kawasaki Ki-10
-		fighter_equipment_0 = {
+		kawasaki_ki_10_equipment = {
 			owner = "JAP" 
 			amount = 20
 		}
 		# 16 Hiko Rentai -- Kawasaki Ki-10
-		fighter_equipment_0 = {
+		kawasaki_ki_10_equipment = {
 			owner = "JAP" 
 			amount = 10
 		}
 		# 6 Hiko Rentai -- Mitsubishi Ki-2
-		CAS_equipment_1 =  {
+		mitsubishi_ki_2_equipment =  {
 			owner = "JAP" 
 			amount = 10
 		}
@@ -393,7 +393,7 @@ instant_effect =
 
 	add_equipment_production = {
 		equipment = {
-			type = fighter_equipment_0
+			type = kawasaki_ki_10_equipment
 			creator = "JAP" 
 		}
 		requested_factories = 1
@@ -403,7 +403,7 @@ instant_effect =
 
 	add_equipment_production = {
 		equipment = {
-			type = light_tank_equipment
+			type = japanese_light_tank_equipment
 			creator = "JAP" 
 		}
 		requested_factories = 1
