@@ -5576,3 +5576,522 @@ country_event = {
 	}
 	
 }
+country_event = {
+	id = germany.238
+	title = germany.238.t
+	desc = germany.238.d
+	picture = GFX_report_event_finnish_soldiers_snow
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = no
+		not = { has_country_flag = GERgebirgs}
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.238.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			
+			load_oob = "GER_1_Gebirgs_Brigade"
+			set_country_flag = GERgebirgs
+		}
+	}
+	option = {
+		name = germany.238.b		#refuse
+		ai_chance = { factor = 0 }
+		set_country_flag = GERgebirgs
+	}
+}
+#################### Historical Panzer Division OOBs 
+#Pz_division_Goering date > 1943.6.15
+#Panzer-Lehr  date > 1943.5.1
+#116_Panzer  date > 1944.3.1
+
+#1. Leichte Division  date >  1938.11.10
+### 2. Leichte Division date >  1938.11.10
+### 3. Leichte Division date >  1938.11.10
+#################################
+country_event = {
+	id = germany.239
+	title = germany.239.t
+	desc = germany.239.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_4 }
+		is_ai = yes
+		date > 1937.11.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.239.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_4_Panzer_Division"
+			set_country_flag = panzer_4
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.240
+	title = germany.240.t
+	desc = germany.240.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_5 }
+		is_ai = yes
+		date > 1938.11.24
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.240.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_5_Panzer_Division"
+			set_country_flag = panzer_5
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.241
+	title = germany.241.t
+	desc = germany.241.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_9 }
+		is_ai = yes
+		date > 1940.1.3
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.241.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_9_Panzer_Division"
+			set_country_flag = panzer_9
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.242
+	title = germany.242.t
+	desc = germany.242.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_10 }
+		is_ai = yes
+		date > 1939.4.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.242.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_10_Panzer_Division"
+			set_country_flag = panzer_10
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.243
+	title = germany.243.t
+	desc = germany.243.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_11 }
+		is_ai = yes
+		date > 1940.8.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.243.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_11_Panzer_Division"
+			set_country_flag = panzer_11
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.244
+	title = germany.244.t
+	desc = germany.244.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_12 }
+		is_ai = yes
+		date > 1940.10.5
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.244.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_12_Panzer_Division"
+			set_country_flag = panzer_12
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.245
+	title = germany.245.t
+	desc = germany.245.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_13 }
+		is_ai = yes
+		date > 1940.10.9
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.245.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_13_Panzer_Division"
+			set_country_flag = panzer_13
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.246
+	title = germany.246.t
+	desc = germany.246.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_14 }
+		is_ai = yes
+		date > 1941.1.20
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.246.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_14_Panzer_Division"
+			set_country_flag = panzer_14
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.247
+	title = germany.247.t
+	desc = germany.247.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_16 }
+		is_ai = yes
+		date > 1940.8.6
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.247.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_16_Panzer_Division"
+			set_country_flag = panzer_16
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.248
+	title = germany.248.t
+	desc = germany.248.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_17 }
+		is_ai = yes
+		date > 1941.3.15
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.248.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_17_Panzer_Division"
+			set_country_flag = panzer_17
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.249
+	title = germany.249.t
+	desc = germany.249.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_18 }
+		is_ai = yes
+		date > 1940.10.26
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.249.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_18_Panzer_Division"
+			set_country_flag = panzer_18
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.250
+	title = germany.250.t
+	desc = germany.250.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_19 }
+		is_ai = yes
+		date > 1940.11.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.250.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_19_Panzer_Division"
+			set_country_flag = panzer_19
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.251
+	title = germany.251.t
+	desc = germany.251.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_20 }
+		is_ai = yes
+		date > 1941.5.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.251.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_20_Panzer_Division"
+			set_country_flag = panzer_20
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.252
+	title = germany.252.t
+	desc = germany.252.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = panzer_24 }
+		is_ai = yes
+		date > 1941.11.24
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.252.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_24_Panzer_Division"
+			set_country_flag = panzer_24
+			
+		}
+	}
+	
+}
+country_event = {
+	id = germany.253
+	title = germany.253.t
+	desc = germany.253.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = mot_29 }
+		#is_ai = yes
+		date > 1937.6.23
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.253.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_29_mot_Division"
+			set_country_flag = mot_29
+			
+		}
+	}
+	
+}
+### 2. Infanterie Division mot date >1937.10.12
+### 13. Infanterie Division mot date >1937.10.12
+### 16. Infanterie Division mot date >1940.8.6
+### 20. Infanterie Division mot date >1937.10.12
+### 25. Infanterie Division mot date >1941.3.15
+### 3. Infanterie Division mot date >1940.10.27
+### 10. Infanterie Division mot date >1941.5.1
+### 14. Infanterie Division mot  date >1940.10.15
+### 18. Infanterie Division mot date >1940.11.1
+### 36. Infanterie Division mot date >1940.11.1
