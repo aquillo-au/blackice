@@ -1,0 +1,142 @@
+Stats syntax + description (Army; Air; Navy; Common)
+#### COMMON ####
+MAX_STRENGTH							HP
+MAX_STRENGTH_DESC	 					Strength represents how much damage this unit can suffer before it is destroyed
+#
+BUILD_COST_IC							Production Cost
+BUILD_COST_IC_DESC 						How much Factory Output a piece of equipment needs. §H1§! factory has a Factory Output of $SPEED|H$ per day.
+#
+MAXIMUM_SPEED 							Max Speed
+MAXIMUM_SPEED_DESC 						How quickly this unit can traverse terrain under optimal circumstances.
+MAXIMUM_SPEED_AIR_DESC 					How quickly this unit can fly under optimal circumstances.
+#
+ARMOR 									Armor
+ARMOR_DESC 								Having §HArmor§! that is higher than the opponents §HPiercing§! value makes you take less damage and also makes it possible to perform more attacks in combat as the unit has more freedom of movement.
+#
+PIERCING 								Piercing
+PIERCING_DESC 							Having equal or greater §HPiercing§! to the targets §HArmor§! value allow you to do more damage and more effectively pin down their armored forces
+#
+RELIABILITY 							Reliability
+RELIABILITY_DESC 						The lower the value the more likely the equipment is of suffering random failure, accidents or exploding in a fiery ball of death when lightly bumped."
+#
+RELIABILITY_FACTOR 						Reliability
+RELIABILITY_FACTOR_DESC 				An extra reliability bonus from support companies. This bonus is applied to an equipment type's reliability and reduces the chance of breakdowns and accidents."
+#
+WEIGHT 									Weight
+WEIGHT_DESC								How much the unit will weigh. Heavier units will require more transports to ship and perform invasions effectively
+
+#### ARMY ####
+DEFAULT_MORALE							Recovery Rate
+DEFAULT_MORALE_DESC						How much extra organization can be regained hourly when not in combat.
+#
+COMBAT_WIDTH							Combat width
+#
+DEFENSE									Defense
+DEFENSE_DESC							How many enemy attacks a unit can attempt to avoid while on the defensive, effectively allowing it to hold the line longer
+#
+COLLATERAL								Collateral damage
+COLLATERAL_DESC							How much damage this unit causes to infrastructure and forts."
+#
+BREAKTHROUGH							Breakthrough
+BREAKTHROUGH_DESC						How many enemy attacks a unit can attempt to avoid while on the offensive, effectively allowing it to stay on the offense longer
+#
+HARDNESS								Hardness
+HARDNESS_DESC							Hardness represents how much of your Division is made up of armored or at least protected vehicles.\n\nWhen attacked, a Division adds together all Soft Attacks and Hard Attacks. A Division with high §HHardness§! will suffer fewer §HSoft Attacks§! and more §HHard Attacks§! - and vice versa.§!
+#
+SOFT_ATTACK								Soft attack
+SOFT_ATTACK_DESC						How many attacks the unit can make versus enemies with low hardness
+#
+HARD_ATTACK								Hard attack
+HARD_ATTACK_DESC						How many attacks the unit can make versus enemies with high hardness
+#
+RECON									Reconnaissance
+RECON_DESC								The ability to scout ahead and anticipate the enemy. Increases the chance that this unit can pick better tactics in battle.
+#
+ENTRENCHMENT							Entrenchment
+ENTRENCHMENT_DESC						The ability to make proper defensive entrenchments before a hostile attack.
+#
+FUEL_CONSUMPTION						Fuel use
+FUEL_CONSUMPTION_DESC					How much fuel this unit uses daily
+#
+SUPPLY_CONSUMPTION						Supply use
+SUPPLY_CONSUMPTION_DESC					How much supply a unit consumes per day
+#
+SUPPLY_CONSUMPTION_FACTOR				Supply Usage
+SUPPLY_CONSUMPTION_FACTOR_DESC			How much supply a unit consumes per day
+#
+CASUALTY_TRICKLEBACK					Trickleback
+CASUALTY_TRICKLEBACK_DESC				The proportion of losses in combat that can be saved and returned to the manpower pool
+#
+EXPERIENCE_LOSS_FACTOR					Exp. Loss
+EXPERIENCE_LOSS_FACTOR_DESC				How much experience is lost in a division when they take casualties and have to replace them
+#
+SUPRESSION								Suppression
+SUPRESSION_DESC							Ability to suppress local resistance
+#
+SUPRESSION_FACTOR						Suppression Bonus
+SUPRESSION_FACTOR_DESC					Ability to suppress local resistance
+#
+RESISTANCE_SUPPRESS						Resistance suppression
+#
+INITIATIVE								Initiative
+INITIATIVE_DESC							The higher the Initiative a unit has, the quicker it can reinforce into a battle, and the quicker it gets its planning done
+#
+#### NAVY ####
+TRANSPORT_CAPABILITY					Transport capability
+TRANSPORT_CAPABILITY_DESC				How many divisions can be transported
+#
+SURFACE_DETECTION						Surface detection
+SURFACE_DETECTION_DESC					Ability to detect surface vessels
+used with:								submarine + surface ships
+#
+SUB_DETECTION							Sub detection
+SUB_DETECTION_DESC						Ability to detect submarines
+used with:								surface ships + submarine (end WWII and Cold War)
+#
+SURFACE_VISIBILITY						Surface Visibility
+SURFACE_VISIBILITY_DESC					How hard to find this ship is
+used with:								submarine + surface ships
+#
+SUB_VISIBILITY							Sub Visibility
+SUB_VISIBILITY_DESC						How easy to detect a submarine is
+used with:								submarine only
+#
+SHORE_BOMBARDMENT						Shore bombardment
+SHORE_BOMBARDMENT_DESC					A unit's ability to do shore bombardment to help out in land battles neighboring its sea province when on Hold mission.
+used with:								CL + CA + BB + SHBB
+#
+MISSION_COVERAGE						Spotting Efficiency
+MISSION_COVERAGE_DESC					How efficient the ship is at spotting enemies. Each ship adds its spotting efficiency.
+used with:								...
+#
+FIRE_RANGE								Fire range
+FIRE_RANGE_DESC							The range of a ship's main guns
+used with:								...
+#
+EVASION									Evasion
+EVASION_DESC							Ability for ships to evade enemy fire through maneuvering. When evaluating chances to avoid being hit the target's evasion value is compared to the attacker, so if you have high evasion you will also be better able to hit evasive targets
+used with:								all ships
+#
+TORPEDO_ATTACK							Torpedo attack
+TORPEDO_ATTACK_DESC						How much damage we can do when using the ship's torpedoes.
+used with:								submarine + DD
+#
+SUB_ATTACK								Depth charges
+SUB_ATTACK_DESC							How much damage we can do to the enemy submarines with depth charges
+used with:								DD
+#
+ATTACK									Naval firepower
+ATTACK_DESC								The size of the holes we can punch through enemy ships
+used with:								surface ships
+#
+STAT_NAVY_ANTI_AIR_ATTACK:0 "Anti-air: "
+STAT_NAVY_ANTI_AIR_ATTACK_DESC:0 "How much anti-air firepower the ship carries for shooting down enemy planes."
+STAT_NAVY_ANTI_AIR_ATTACK_VALUE:0 "$VALUE|H1$"
+STAT_NAVY_ANTI_AIR_ATTACK_DIFF:0 " $VALUE|=+1$"
+STAT_NAVY_ANTI_AIR_TARGETTING:0 "Anti-air targeting: "
+STAT_NAVY_ANTI_AIR_TARGETTING_DESC:0 "How well the ship can track enemy planes to shoot them down."
+STAT_NAVY_ANTI_AIR_TARGETTING_VALUE:0 "$VALUE|H1$"
+STAT_NAVY_PORT_CAPACITY_USAGE:0 "Port capacity usage: "
+STAT_NAVY_PORT_CAPACITY_USAGE_DESC:0 "How much room the ship requires in a port."
+STAT_NAVY_PORT_CAPACITY_USAGE_VALUE:0 "$VALUE|H1$"
+STAT_NAVY_PORT_CAPACITY_USAGE_DIFF:0 " $VALUE|=+1$"
