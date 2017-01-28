@@ -24,6 +24,10 @@ RELIABILITY_FACTOR_DESC 				An extra reliability bonus from support companies. T
 #
 WEIGHT 									Weight
 WEIGHT_DESC								How much the unit will weigh. Heavier units will require more transports to ship and perform invasions effectively
+#
+RANGE									Range
+RANGE_DESC								Maximum distance this unit can travel
+#
 
 #### ARMY ####
 DEFAULT_MORALE							Recovery Rate
@@ -95,7 +99,7 @@ used with:								surface ships + submarine (end WWII and Cold War)
 #
 SURFACE_VISIBILITY						Surface Visibility
 SURFACE_VISIBILITY_DESC					How hard to find this ship is
-used with:								submarine + surface ships
+used with:								submarine + surface ships # 
 #
 SUB_VISIBILITY							Sub Visibility
 SUB_VISIBILITY_DESC						How easy to detect a submarine is
@@ -129,14 +133,75 @@ ATTACK									Naval firepower
 ATTACK_DESC								The size of the holes we can punch through enemy ships
 used with:								surface ships
 #
-STAT_NAVY_ANTI_AIR_ATTACK:0 "Anti-air: "
-STAT_NAVY_ANTI_AIR_ATTACK_DESC:0 "How much anti-air firepower the ship carries for shooting down enemy planes."
-STAT_NAVY_ANTI_AIR_ATTACK_VALUE:0 "$VALUE|H1$"
-STAT_NAVY_ANTI_AIR_ATTACK_DIFF:0 " $VALUE|=+1$"
-STAT_NAVY_ANTI_AIR_TARGETTING:0 "Anti-air targeting: "
-STAT_NAVY_ANTI_AIR_TARGETTING_DESC:0 "How well the ship can track enemy planes to shoot them down."
-STAT_NAVY_ANTI_AIR_TARGETTING_VALUE:0 "$VALUE|H1$"
-STAT_NAVY_PORT_CAPACITY_USAGE:0 "Port capacity usage: "
-STAT_NAVY_PORT_CAPACITY_USAGE_DESC:0 "How much room the ship requires in a port."
-STAT_NAVY_PORT_CAPACITY_USAGE_VALUE:0 "$VALUE|H1$"
-STAT_NAVY_PORT_CAPACITY_USAGE_DIFF:0 " $VALUE|=+1$"
+ANTI_AIR_ATTACK							Anti-air
+ANTI_AIR_ATTACK_DESC					How much anti-air firepower the ship carries for shooting down enemy planes
+used with:								All
+#
+#ANTI_AIR_TARGETTING					Anti-air targeting  (not recognized)
+#ANTI_AIR_TARGETTING_DESC				How well the ship can track enemy planes to shoot them down
+#used in:								defines and hoi4.exe
+#
+PORT_CAPACITY_USAGE						Port capacity usage
+PORT_CAPACITY_USAGE_DESC				How much room the ship requires in a port
+used with:								All
+#
+MAXIMUM_SPEED							Max Speed
+MAXIMUM_SPEED_DESC						A faster ship has an easier time disengaging from pursuers and can close to optimal fire range quicker as well as move faster into position when concentrating fleets
+used with:								All
+#
+RANGE									Max Range
+RANGE_DESC								A ship's range represents its onboard stores of fuel and foodstuffs, which limit how far it can travel from the nearest friendly Naval Base
+used with:								All
+#
+CARRIER_SIZE							Deck size
+CARRIER_SIZE_DESC						How many planes a carrier can fit on board
+used with:								All carriers
+#
+AMPHIBIOUS_DEFENSE						Amphibious defense
+AMPHIBIOUS_DEFENSE_DESC					Extra defense given to units while doing amphibious invasions
+#
+INVASION_SPEED							Unload speed"
+INVASION_SPEED_DESC						""
+#
+RAIDING_COORDINATION					Raiding Coordination
+RAIDING_COORDINATION_DESC				How quickly the fleet can gather when a target is found while Convoy Raiding
+#
+PATROL_COORDINATION						Patrol Coordination
+PATROL_COORDINATION_DESC				How quickly the fleet can gather when something happens during a Patrol mission
+#
+SEARCH_AND_DESTROY_COORDINATION			Search & Destroy
+SEARCH_AND_DESTROY_COORDINATION_DESC	How quickly the fleet can gather when a target is found during Search & Destroy missions
+#
+MISSION_CONVOY_ESCORT_EFFICIENCY		Escort efficiency
+MISSION_CONVOY_ESCORT_EFFICIENCY_DESC	How quickly Escorts can defend a Convoy under attack.
+#
+#### AIR ####
+AIR_RANGE								Operational Range
+AIR_RANGE_DESC							How far away missions the plane can perform."
+#
+AIR_DEFENCE								Air Defense
+AIR_DEFENCE_DESC						How many hits a plane can take before being shot down
+#
+AIR_ATTACK								Air Attack
+AIR_ATTACK_DESC							How much damage we can do against airplanes. High Air Attack also helps to counter enemy Air Superiority effects
+#
+AIR_AGILITY								Agility
+AIR_AGILITY_DESC						How agile a plane is. Agility affects how easy it is to hit another plane, and how easily it can avoid being hit
+#
+AIR_SUPERIORITY							Air Superiority
+AIR_SUPERIORITY_DESC					How much the plane helps the overall air superiority of a strategic area
+#
+NAVAL_STRIKE_ATTACK						Naval Attack
+NAVAL_STRIKE_ATTACK_DESC				How much damage the plane inflicts upon hitting a ship
+#
+NAVAL_STRIKE_TARGETTING					Naval Targeting
+NAVAL_STRIKE_TARGETTING_DESC			How likely the plane is to hit a ship
+#
+NAVAL_STRIKE_AGILITY					Naval Agility
+NAVAL_STRIKE_AGILITY_DESC				""
+#
+AIR_GROUND_ATTACK						Ground Attack
+AIR_GROUND_ATTACK_DESC					How much damage the plane can do to enemy divisions on the ground when helping out in combat
+#
+AIR_BOMBING								Strategic Bombing
+AIR_BOMBING_DESC						How good a plane is at strategic bombing
