@@ -1,38 +1,43 @@
 ﻿division_template = {
 	name = "Kakumei-Gun" 			
-									
+
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
+		
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+		
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 	}
 }
+
 division_template = {
 	name = "Tsugekitai" 			
 	regiments = {
 		cavalry = { x = 0 y = 0 }
 		cavalry = { x = 0 y = 1 }
 		cavalry = { x = 0 y = 2 }
+		
 		motorized = { x = 1 y = 0 }
 		motorized = { x = 1 y = 1 }
 	}
 }
 
-
 division_template = {
 	name = "Tanku Shiji Butai" 		
-										
+
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
-		japanese_light_tank_equipment = { x= 1 y = 0 }
+		
+		japanese_light_tank = { x= 1 y = 0 }
 	}
+	
 	support = {
 		maintenance_company = { x = 0 y = 0 }
 	}
@@ -359,8 +364,7 @@ air_wings = {
 #########################
 ## STARTING PRODUCTION ##
 #########################
-instant_effect = 
-{
+instant_effect = {
 	add_equipment_production = {
 		equipment = {
 			type = infantry_equipment_1
