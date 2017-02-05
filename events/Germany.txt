@@ -5586,8 +5586,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		is_ai = no
-		not = { has_country_flag = GERgebirgs}
-		
+		not = { has_country_flag = GERgebirgs }
 	}
 	
 	mean_time_to_happen = {
@@ -6053,6 +6052,7 @@ country_event = {
 	}
 	
 }
+### 29. Infanterie Division mot date>1937.10.12
 country_event = {
 	id = germany.253
 	title = germany.253.t
@@ -6063,9 +6063,9 @@ country_event = {
 	
 	trigger = {
 		tag = GER
+		
 		not = { has_country_flag = mot_29 }
-		#is_ai = yes
-		date > 1937.6.23
+		date > 1937.10.11
 	}
 	
 	mean_time_to_happen = {
@@ -6079,15 +6079,127 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_29_mot_Division"
 			set_country_flag = mot_29
-			
 		}
 	}
-	
 }
-### 2. Infanterie Division mot date >1937.10.12
-### 13. Infanterie Division mot date >1937.10.12
+### 2. Infanterie Division mot forming-date=1937.10.12
+country_event = {
+	id = germany.254
+	title = germany.254.t
+	desc = germany.254.d
+	picture = GFX_report_event_2_mot
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = mot_2 }
+		has_country_flag = mot_29
+		date > 1937.10.12
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.254.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_2_mot_Division"
+			set_country_flag = mot_2
+		}
+	}
+}
+### 13. Infanterie Division mot forming-date>1940.10.27
+country_event = {
+	id = germany.255
+	title = germany.255.t
+	desc = germany.255.d
+	picture = GFX_report_event_13_mot
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = mot_13 }
+		has_country_flag = mot_29
+		date > 1940.10.26
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.255.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_13_mot_Division"
+			set_country_flag = mot_13
+		}
+	}
+}
+### 20. Infanterie Division mot date>1937.10.11
+country_event = {
+	id = germany.256
+	title = germany.256.t
+	desc = germany.256.d
+	picture = GFX_report_event_20_mot
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		332 = { is_controlled_by = GER }
+		not = { has_country_flag = mot_20 }
+		has_country_flag = mot_29
+		date > 1937.10.12
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.256.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_20_mot_Division"
+			set_country_flag = mot_20
+		}
+	}
+}
+
+country_event = {
+	id = germany.257
+	title = germany.257.t
+	desc = germany.257.d
+	picture = GFX_report_event_20_mot
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = no
+		date > 1936.1.1
+		has_army_size = { type = infantry size > 50 }
+		not = { has_country_flag = ger_army_inf_50 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.257.a
+		set_country_flag = ger_army_inf_50
+	}
+}
 ### 16. Infanterie Division mot date >1940.8.6
-### 20. Infanterie Division mot date >1937.10.12
 ### 25. Infanterie Division mot date >1941.3.15
 ### 3. Infanterie Division mot date >1940.10.27
 ### 10. Infanterie Division mot date >1941.5.1
