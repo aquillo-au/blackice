@@ -419,7 +419,6 @@ country_event = {
 			load_oob = "unlock_ss_infantry"
 			load_oob = "unlock_ss_garrison"
 			load_oob = "GER_SS_Start"
-			set_country_flag = SS_Start
 			set_technology = { hiddentech_ss_panzer_i = 1 }
 			set_technology = { hiddentech_ss_panzer_ii = 1 }
 		}
@@ -737,7 +736,7 @@ country_event = {
 	title = ss_event.686.t
 	desc = { 
 		text = ss_event.686.desc.a
-		trigger = { has_country_flag = SS_Start }
+		trigger = { has_country_flag = SS_TV }
 	}
 	desc = { 
 		text = ss_event.686.desc.b
@@ -769,7 +768,7 @@ country_event = {
 	option = {
 		name = ss_event.686.a
 		trigger = {
-			has_country_flag = SS_Start
+			has_country_flag = SS_TV
 		}
 
 		set_country_flag = ss_danzig_heimwehr_hist
