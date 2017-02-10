@@ -1,8 +1,8 @@
 #armor
 light_armor_default_GER = {
-	target_width = 29.9
+	target_width = 23.9
 	width_weight = 0.1
-	column_swap_factor = 0.2
+	column_swap_factor = 10
 	
 	stat_weights = {
 		0.00 #-- default_morale
@@ -35,8 +35,8 @@ light_armor_default_GER = {
 	}
 	
 	target_template = {
-		weight = 0.9
-		match_value = 800.00
+		weight = 1.0
+		match_value = 1000.00
 		support = {
 			DIV_HQ = 1
 			engineer = 1
@@ -78,7 +78,7 @@ light_armor_default_GER = {
 		anti_air
 	}
 	
-	replace_at_match = 0.3
+	replace_at_match = 10.0
 	replace_with = panzer_default_GER
 	target_min_match = 0.1
 }
@@ -170,9 +170,9 @@ heavy_armor_default_GER = {
 }
 
 panzer_default_GER = {
-	target_width = 29.9
+	target_width = 25.9
 	width_weight = 3.0
-	column_swap_factor = 0.5
+	column_swap_factor = 0.1
 	
 	stat_weights = {
 		0.00 #-- default_morale
@@ -195,7 +195,7 @@ panzer_default_GER = {
 		#-- Common Values
 		1.00 #-- max_organisation
 		0.80 #-- max_strength
-		0.00 #-- build_cost_ic
+		50.00 #-- build_cost_ic
 		10.0 #-- maximum_speed
 		0.20 #-- armor_value
 		0.05 #-- ap_attack
@@ -206,7 +206,7 @@ panzer_default_GER = {
 
 	target_template = {
 		weight = 0.9
-		match_value = 500.0
+		match_value = 700.0
 		support = {
 			DIV_HQ = 1
 			engineer = 1
@@ -219,7 +219,8 @@ panzer_default_GER = {
 		regiments = {
 			panzer_iii = 3
 			panzer_iv = 2
-			motorized = 3
+			panzer_ii = 1
+			motorized = 6
 			artillery_brigade_mot = 2
 		}
 	}
@@ -246,7 +247,7 @@ panzer_default_GER = {
 		anti_air
 	}
 	
-	replace_at_match = 0.8
+	replace_at_match = 0.75
 	replace_with = modern_armor_default_GER
 	target_min_match = 0.3
 }
@@ -254,7 +255,7 @@ panzer_default_GER = {
 
 #infantry
 infantry_default_GER = {
-	target_width = 29.9
+	target_width = 20.9
 	width_weight = 0.1
 	column_swap_factor = 0.5
 	
@@ -264,7 +265,7 @@ infantry_default_GER = {
 		10.00 #-- breakthrough
 		0.00 #-- hardness
 		40.00 #-- soft_attack
-		10.00 #-- hard_attack
+		5.00 #-- hard_attack
 		1.00 #-- recon
 		1.00 #-- entrenchment
 		0.00 #-- initiative
@@ -290,7 +291,7 @@ infantry_default_GER = {
 	
 	target_template = {
 		weight = 0.9
-		match_value = 950.0
+		match_value = 300.0
 		
 		support = {
 			DIV_HQ = 1
@@ -323,15 +324,15 @@ infantry_default_GER = {
 		military_police
 		maintenance_company
 	}
-	replace_at_match = 0.9
-	replace_with = motorized_default_GER
-	target_min_match = 0.9
+	#replace_at_match = 1.0
+	#replace_with = semi_motorized_default_GER
+	#target_min_match = 1.0
 }
 
 mountaineers_default_GER = {
-	target_width = 29.9
-	width_weight = 0.1
-	column_swap_factor = 0.5
+	target_width = 19.9
+	width_weight = 3
+	column_swap_factor = 0.2
 	
 	stat_weights = {
 		0 #-- default_morale
@@ -364,7 +365,7 @@ mountaineers_default_GER = {
 	}
 
 	target_template = {
-		weight = 0.9
+		weight = 0.5
 		match_value = 300.0
 		
 		support = {
@@ -398,9 +399,9 @@ mountaineers_default_GER = {
 }
 
 marine_default_GER = {
-	target_width = 29.9
+	target_width = 19.9
 	width_weight = 0.1
-	column_swap_factor = 0.5
+	column_swap_factor = 0.1
 	
 	stat_weights = {
 		0.00 #-- default_morale
@@ -571,7 +572,7 @@ cavalry_default_GER = {
 
 	target_template = {
 		weight = 0.9
-		match_value = 0.0
+		match_value = 10.0
 		
 		support = {
 			DIV_HQ = 1
@@ -595,14 +596,14 @@ cavalry_default_GER = {
 	}
 	
 	replace_at_match = 0.1
-	replace_with = semi_motorized_default_GER
+	replace_with = motorized_default_GER
 	target_min_match = 0.1
 }
 
 semi_motorized_default_GER = {
-	target_width = 29.9
-	width_weight = 3.0
-	column_swap_factor = 0.0
+	target_width = 22.9
+	width_weight = 0.1
+	column_swap_factor = 1.0
 	
 	stat_weights = {
 		0.00 #-- default_morale
@@ -636,7 +637,7 @@ semi_motorized_default_GER = {
 
 	target_template = {
 		weight = 0.9
-		match_value = 0.0
+		match_value = 400.0
 		
 		support = {
 			DIV_HQ = 1
@@ -675,15 +676,15 @@ semi_motorized_default_GER = {
 		anti_air
 	}
 	
-	replace_at_match = 0.0
-	replace_with = motorized_default_GER
-	target_min_match = 0.0
+	replace_at_match = 0.5
+	replace_with = mechanized_default_GER
+	target_min_match = 0.3
 }
 
 motorized_default_GER = {
-	target_width = 29.9
-	width_weight = 3.0
-	column_swap_factor = 0.2
+	target_width = 23.9
+	width_weight = 0.1
+	column_swap_factor = 1.0
 	
 	stat_weights = {
 		0.00 #-- default_morale
@@ -706,7 +707,7 @@ motorized_default_GER = {
 		#-- Common Values
 		0.60 #-- max_organisation
 		0.40 #-- max_strength
-		0.00 #-- build_cost_ic
+		50.00 #-- build_cost_ic
 		0.00 #-- maximum_speed
 		0.00 #-- armor_value
 		0.10 #-- ap_attack
@@ -717,7 +718,7 @@ motorized_default_GER = {
 
 	target_template = {
 		weight = 0.9
-		match_value = 900.0
+		match_value = 400.0
 		
 		support = {
 			DIV_HQ = 1
@@ -746,7 +747,7 @@ motorized_default_GER = {
 		engineer
 		recon
 		signal_company
-       		 maintenance_company
+    		 maintenance_company
 		field_hospital
 		logistics_company
 		anti_tank
@@ -761,8 +762,8 @@ motorized_default_GER = {
 }
 
 mechanized_default_GER = {
-	target_width = 29.9
-	width_weight = 3.0
+	target_width = 24.9
+	width_weight = 0.1
 	column_swap_factor = 1.0
 	
 	stat_weights = {
@@ -917,7 +918,7 @@ ss_garrison_default_GER = {
 
 
 garrison_default_GER = {
-	target_width = 29.9
+	target_width = 9.9
 	width_weight = 0.1
 	column_swap_factor = 0.5
 	
