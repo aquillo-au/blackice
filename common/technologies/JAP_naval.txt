@@ -502,6 +502,7 @@ technologies = {
 		}
 	}
 	## OBS CA
+	
 	tech_ijn_hcruiser_obs1 = {
 		
 		enable_equipments = {
@@ -743,6 +744,7 @@ technologies = {
 		}
 	}
 	## OBS BB
+	# Fuso class
 	tech_ijn_battleship_obs1 = {
 		
 		enable_equipments = {
@@ -773,6 +775,7 @@ technologies = {
 			bb_tech
 		}
 	}
+	# Ise class
 	tech_ijn_battleship_obs2 = {
 		
 		enable_equipments = {
@@ -1661,10 +1664,10 @@ technologies = {
 			tech_ijn = 1
 		}
 		
-		path = {
-			leads_to_tech = tech_ijn_battleship2
-			research_cost_coeff = 1
-		}
+		#path = {
+		#	leads_to_tech = tech_ijn_battleship2
+		#	research_cost_coeff = 1
+		#}
 		path = {
 			leads_to_tech = tech_ijn_shbattleship
 			research_cost_coeff = 0.75
@@ -1687,78 +1690,67 @@ technologies = {
 		}
 	}
 	#Tajima Class
-	tech_ijn_battleship2 = {
-		
-		enable_equipments = {
-			JAP_battleship_3
-		}
-		dependencies = {
-			tech_ijn = 1
-		}
-		
-		path = {
-			leads_to_tech = tech_ijn_battleship3
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 1.5
-		start_year = 1940
-		folder = {
-			name = japannaval_folder
-			position = { x = @BB y = @1940 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 100
-				date > 1940.6.1
-				OR = {
-					tag = JAP
-				}
-			}
-		}
-		
-		categories = {
-			naval_equipment
-			bb_tech
-		}
-	}
+	#tech_ijn_battleship2 = {
+	#	enable_equipments = {
+	#		JAP_battleship_3
+	#	}
+	#	dependencies = {
+	#		tech_ijn = 1
+	#	}
+	#	path = {
+	#		leads_to_tech = tech_ijn_battleship3
+	#		research_cost_coeff = 1
+	#	}
+	#	research_cost = 1.5
+	#	start_year = 1940
+	#	folder = {
+	#		name = japannaval_folder
+	#		position = { x = @BB y = @1940 }
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#		modifier = {
+	#			factor = 100
+	#			date > 1940.6.1
+	#			OR = {
+	#				tag = JAP
+	#			}
+	#		}
+	#	}
+	#	categories = {
+	#		naval_equipment
+	#		bb_tech
+	#	}
+	#}
 	#Iwami Class
-	tech_ijn_battleship3 = {
-		
-		enable_equipments = {
-			JAP_battleship_4
-		}
-		dependencies = {
-			tech_ijn = 1
-		}
-		
-		research_cost = 1.5
-		start_year = 1944
-		folder = {
-			name = japannaval_folder
-			position = { x = @BB y = @1944 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 100
-				date > 1944.6.1
-				OR = {
-					tag = JAP
-				}
-			}
-		}
-		
-		categories = {
-			naval_equipment
-			bb_tech
-		}
-	}
+	#tech_ijn_battleship3 = {
+	#	enable_equipments = {
+	#		JAP_battleship_4
+	#	}
+	#	dependencies = {
+	#		tech_ijn = 1
+	#	}
+	#	research_cost = 1.5
+	#	start_year = 1944
+	#	folder = {
+	#		name = japannaval_folder
+	#		position = { x = @BB y = @1944 }
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#		modifier = {
+	#			factor = 100
+	#			date > 1944.6.1
+	#			OR = {
+	#				tag = JAP
+	#			}
+	#		}
+	#	}
+	#	categories = {
+	#		naval_equipment
+	#		bb_tech
+	#	}
+	#}
 	#Yamato Class
 	tech_ijn_shbattleship = {
 		
