@@ -196,16 +196,50 @@ guiTypes = {
 						format = left
 						#pdx_tooltip = "PRODUCTION_MATERIALS_CHROMIUM"
 					}
+				}				
+				#################################
+				iconType = {
+					name = "docyards_output_icon"
+					position = { x=505 y=22 }	
+					spriteType = "GFX_naval_factory_non_trasnparent_icon"
 				}
-				
+				instantTextboxType = {
+					name = "docyards_output_value"
+					position = { x = 530 y = 21 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "999"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				#################################
+				iconType = {
+					name = "production_output_icon"
+					position = { x=575 y=17 }
+					spriteType = "GFX_production_output_icon"
+				}
+				instantTextboxType = {
+					name = "production_output_value"
+					position = { x = 600 y = 20 }
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "999"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				#################################
 				iconType = {
 					name = "efficiency_cap_icon"
-					position = { x=531 y=20 }	#x=42 y=57
+					position = { x=647 y=21 }	#x=42 y=57 x=531 y=20
 					spriteType = "GFX_efficiency_cap_icon"
 				}
 				instantTextboxType = {
 					name = "efficiency_cap_value"
-					position = { x=561 y=20 } #x=77 y=58
+					position = { x=677 y=20 } #x=77 y=58 x=561 y=20
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
@@ -216,12 +250,29 @@ guiTypes = {
 				}				
 				iconType = {
 					name = "production_efficiency_loss_icon"
-					position = { x=612 y=20 } #x=331 y=57
+					position = { x=717 y=22 } #x=331 y=57
 					spriteType = "GFX_production_efficiency_loss_icon"
 				}
 				instantTextboxType = {
 					name = "production_efficiency_loss_value"
-					position = { x=636 y=20 } #x = 361 y = 58
+					position = { x=746 y=20 } #x = 361 y = 58
+					textureFile = ""
+					font = "hoi_18mbs"
+					borderSize = {x = 0 y = 0}
+					text = "999"
+					maxWidth = 50
+					maxHeight = 20
+					format = left
+				}
+				
+				iconType = {
+					name = "efficiency_growth_icon"
+					position = { x=788 y=20 } #x=421 y=56
+					spriteType = "GFX_efficiency_icon"
+				}
+				instantTextboxType = {
+					name = "efficiency_growth_value"
+					position = { x=817 y=20 }  #x = 458 y = 58
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
@@ -232,44 +283,12 @@ guiTypes = {
 				}
 				iconType = {
 					name = "factory_bombing_defence_icon"
-					position = { x=855 y=18 }  #x=231 y=53
+					position = { x=855 y=17 }  #x=231 y=53`
 					spriteType = "GFX_factory_bombing_defence_icon"
 				}
 				instantTextboxType = {
 					name = "factory_bombing_defence_value"
-					position = { x=879 y=20 }  #x=265 y=58
-					textureFile = ""
-					font = "hoi_18mbs"
-					borderSize = {x = 0 y = 0}
-					text = "999"
-					maxWidth = 50
-					maxHeight = 20
-					format = left
-				}
-				iconType = {
-					name = "production_output_icon"
-					position = { x=775 y=18 } #x=135 y=53
-					spriteType = "GFX_production_output_icon"
-				}
-				instantTextboxType = {
-					name = "production_output_value"
-					position = { x=800 y=20 }  #x = 171 y = 58
-					textureFile = ""
-					font = "hoi_18mbs"
-					borderSize = {x = 0 y = 0}
-					text = "999"
-					maxWidth = 50
-					maxHeight = 20
-					format = left
-				}
-				iconType = {
-					name = "efficiency_growth_icon"
-					position = { x=693 y=20 } #x=421 y=56
-					spriteType = "GFX_efficiency_icon"
-				}
-				instantTextboxType = {
-					name = "efficiency_growth_value"
-					position = { x=717 y=20 }  #x = 458 y = 58
+					position = { x=888 y=22 }
 					textureFile = ""
 					font = "hoi_18mbs"
 					borderSize = {x = 0 y = 0}
@@ -288,7 +307,7 @@ guiTypes = {
 				}
 				iconType = {
 					name = "infantry_button_glow"
-					position = { x = 25 y = 78 } #x = 25 y = 123
+					position = { x=25 y=78 } #x = 25 y = 123
 					spriteType = "GFX_prod_new_equipment_glow"
 					alwaystransparent = yes
 				}
@@ -301,7 +320,7 @@ guiTypes = {
 				}
 				iconType = {
 					name = "tank_button_glow"
-					position = { x = 105 y = 78 } #x = 105 y = 123
+					position = { x=105 y=78 } #x = 105 y = 123
 					spriteType = "GFX_prod_new_equipment_glow"
 					alwaystransparent = yes
 				}
@@ -345,7 +364,7 @@ guiTypes = {
 				}
 				iconType = {
 					name = "military_factory_icon"
-					position = { x=20 y=50 }  #x=20 y=90
+					position = { x=20 y=52 }  #x=20 y=20
 					spriteType = "GFX_military_factory_icon"
 					pdx_tooltip = "arms_factory_desc"					
 				}
@@ -1161,25 +1180,24 @@ guiTypes = {
 			spriteType = "GFX_prod_land_equipment_item_large"
 		}
 		iconType = {
-			name ="production_line_selected"
-			spriteType = "GFX_production_line_selected"
-			position = { x=0 y=0 }
-		}
-		iconType = {
 			name ="efficiency_progressbar_to_max"
 			spriteType = "GFX_efficiency_progressbar_to_max"
-			position = { x=3 y=30 }
+			position = { x=42 y=34 }
 		}
 		iconType = {
 			name ="efficiency_progressbar"
 			spriteType = "GFX_efficiency_progressbar"
 			position = { x=42 y=34 }
-		
 		}
 		iconType = {
 			name ="efficiency_progressbar_frame"
 			spriteType = "GFX_efficiency_progressbar_frame"
-			position = { x=38 y=34 }
+			position = { x=38 y=32 }
+		}
+		iconType = {
+			name ="production_line_selected"
+			spriteType = "GFX_production_line_selected"
+			position = { x=0 y=0 }
 		}
 		iconType = {
 			name ="efficiency_icon"
@@ -1664,17 +1682,6 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		#instantTextboxType = {
-		#	name = "need"
-		#	position = { x = 185 y = 7 }
-		#	font = "hoi_16mbs"
-		#	text = "Perkele-tankki"
-		#	maxWidth = 160
-		#	maxHeight = 30
-		#	format = left
-		#	alwaystransparent = yes
-		#}
-
 		iconType = {
 			name = "prod_entry_resource_bg"
 			position = { x = 257 y = 7 }
@@ -1789,17 +1796,6 @@ guiTypes = {
 			format = left
 			alwaystransparent = yes
 		}
-		
-		#instantTextboxType = {
-		#	name = "need"
-		#	position = { x = 200 y = 6 }
-		#	font = "hoi_16mbs"
-		#	text = "Perkele-tankki"
-		#	maxWidth = 160
-		#	maxHeight = 30
-		#	format = right
-		#	alwaystransparent = yes
-		#}
 		
 		gridBoxType = {
 			name = "resources_grid"
