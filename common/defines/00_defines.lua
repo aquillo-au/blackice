@@ -9,7 +9,7 @@ NGame = {
 	LAG_DAYS_FOR_PAUSE = 25,				-- Days of client lag for pause of gamespeed.
 	MAJOR_PARTICIPANTS_FOR_MAJOR_WAR = 3,	-- Minimum number of major countries involved in a war to consider it major enough to not end the game even though the enddate has been reached.
 	COMBAT_LOG_MAX_MONTHS = 12,
-	MESSAGE_TIMEOUT_DAYS = 60,				-- Useful if running the handsoff game. The popup messages that doesn't require the player respond will automatically hide after some timeout.	
+	MESSAGE_TIMEOUT_DAYS = 30,				-- Useful if running the handsoff game. The popup messages that doesn't require the player respond will automatically hide after some timeout.	
 },
 
 NDiplomacy = {
@@ -128,7 +128,7 @@ NDiplomacy = {
 },
 
 NCountry = {
-	EVENT_PROCESS_OFFSET = 20,							-- Events are checked every X day per character or province (1 is ideal, but CPU heavy)
+	EVENT_PROCESS_OFFSET = 14,							-- Events are checked every X day per character or province (1 is ideal, but CPU heavy)
 	BASE_RESEARCH_SLOTS = 2,							-- Base number of research slots per country.
 	VP_TO_SUPPLY_BASE = 1,								-- Bonus to supply from a VP, no matter the level
 	VP_TO_SUPPLY_BONUS_CONVERSION = 0.1,				-- Bonus to supply local supplies from Victory Points, multiplied by this aspect and rounded to closest integer
@@ -202,7 +202,7 @@ NCountry = {
 	STATE_VALUE_BUILDING_SLOTS_MULT = 4.0,				-- The Value of each building slot in a state ( Value is used to determine costs in peace conference and PP cost to occupy )
 	STATE_VALUE_RESEOURCE_MULT = 0.2,					-- The Value of each resource in a state ( Value is used to determine costs in peace conference and PP cost to occupy)
 	STATE_OCCUPATION_COST_MULTIPLIER = 0.01,			-- Multiplier for state value to PP cost for occupation
-	STATE_VALUE_NON_CORE_STATE_FRACTION = 0.5,			-- If a state is not a core we assume we will get 50% of the factory slots
+	STATE_VALUE_NON_CORE_STATE_FRACTION = 0.45,			-- If a state is not a core we assume we will get 50% of the factory slots
 	INVASION_REPORT_EXPERATION_DAYS = 30,				-- Invasion experation days
 	MIN_FOCUSES_FOR_CONTINUOUS = 10,					-- Focuses needed to unlock continuous focuses
 	AUTONOMOUS_TOTAL_SCORE = 4000,						-- Total score for autonomous scale
@@ -245,8 +245,8 @@ NProduction = {
 NTechnology = {
 	MAX_SUBTECHS = 3,					    -- Max number of sub technologies a technology can have.
 	BASE_RESEARCH_POINTS_SAVED = 30.0,		-- Base amount of research points a country can save per slot.
-	BASE_YEAR_AHEAD_PENALTY_FACTOR = 2,		-- Base year ahead penalty
-	BASE_TECH_COST = 100,					-- Base cost for a tech. multiplied with tech cost and ahead of time penalties
+	BASE_YEAR_AHEAD_PENALTY_FACTOR = 2.2,		-- Base year ahead penalty
+	BASE_TECH_COST = 102,					-- Base cost for a tech. multiplied with tech cost and ahead of time penalties
 	MAX_TECH_SHARING_BONUS = 0.5 			-- Max technology sharing bonus that can be applied instantly
 },
 
@@ -1049,18 +1049,18 @@ NAI = {
 		0.0,   -- strategic_attack
 		70.0,   -- carrier_size
 	},
-	DIVISION_DESIGN_MANPOWER_WEIGHT = 0.009,
-	DIVISION_DESIGN_STOCKPILE_WEIGHT = 0.05,
-	DIVISION_DESIGN_COMBAT_WIDTH_WEIGHT = -3.0,
-	DIVISION_DESIGN_COMBAT_WIDTH_TARGET_WEIGHT = -1000.0,			-- This score is reduced the farther the width is from the target width (if set)
+	DIVISION_DESIGN_MANPOWER_WEIGHT = 0.000,
+	DIVISION_DESIGN_STOCKPILE_WEIGHT = 0.00,
+	DIVISION_DESIGN_COMBAT_WIDTH_WEIGHT = -2.5,
+	DIVISION_DESIGN_COMBAT_WIDTH_TARGET_WEIGHT = -100.0,			-- This score is reduced the farther the width is from the target width (if set)
 	DIVISION_DESIGN_MAX_FAILED_DAYS = 60,					-- max days we keep track of since failure of a design update
 
-	BUILD_ARMOR_BASE_COST_WEIGHT = 200.0,					-- 200
-	BUILD_ARMOR_STRENGTH_MULTIPLIER_WEIGHT = 100.0,
-	BUILD_ARMOR_ORGANIZATION_MULTIPLIER_WEIGHT = 500.0,
+	BUILD_ARMOR_BASE_COST_WEIGHT = 0.0,					-- 200
+	BUILD_ARMOR_STRENGTH_MULTIPLIER_WEIGHT = 0.0,
+	BUILD_ARMOR_ORGANIZATION_MULTIPLIER_WEIGHT = 0.0,
 
 	UPGRADE_DIVISION_RELUCTANCE = 25.5,						-- 5.5 DNM, original 7, changed to be consistent with AI mod
-	UPGRADE_PERCENTAGE_OF_FORCES = 0.02,					-- How big part of the army that should be considered for upgrading
+	UPGRADE_PERCENTAGE_OF_FORCES = 0.01,					-- How big part of the army that should be considered for upgrading
 
 	STRATEGIC_BOMBING_DEFENCE_IMPORTANCE = 3600.0,			-- DNM, original 400, changed to be consistent with AI mod
 	

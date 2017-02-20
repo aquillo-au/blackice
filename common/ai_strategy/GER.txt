@@ -48,7 +48,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = unit_ratio
 		id = motorized
-		value = 0
+		value = -200
 	}
 
 	ai_strategy = {
@@ -60,7 +60,7 @@ GER_unit_production = {
 	ai_strategy = {
 		type = unit_ratio
 		id = armor
-		value = 0
+		value = 2
 	}
 	
 	ai_strategy = {
@@ -112,21 +112,21 @@ GER_unit_production = {
 	}
 }
 
-GER_motorized_production = {
-	enable = {
-		original_tag = GER
-		ai_wants_divisions > 4 #Decreasing the amount of motorized the AI wants
-	}
-	abort = {
-		ai_wants_divisions < 5 #Decreasing the amount of motorized the AI wants
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = motorized
-		value = 1
-	}
-}
+#GER_motorized_production = {
+#	enable = {
+#		original_tag = GER
+##		ai_wants_divisions > 49#Decreasing the amount of motorized the AI wants
+#	}
+#	abort = {
+#		ai_wants_divisions < 50 #Decreasing the amount of motorized the AI wants
+#	}
+#
+#	ai_strategy = {
+#		type = unit_ratio
+#		id = motorized
+#		value = 0
+#	}
+#}
 
 GER_mechanized_production = {
 	enable = {
@@ -147,16 +147,16 @@ GER_mechanized_production = {
 GER_armored_production = {
 	enable = {
 		original_tag = GER
-		ai_wants_divisions > 24 #Decreasing the amount of tanks the AI wants
+		ai_wants_divisions > 4 #Decreasing the amount of tanks the AI wants
 	}
 	abort = {
-		ai_wants_divisions < 25 #Decreasing the amount of tanks the AI wants
+		ai_wants_divisions < 5 #Decreasing the amount of tanks the AI wants
 	}
 
 	ai_strategy = {
 		type = unit_ratio
 		id = armor
-		value = 2
+		value = 5
 	}
 	
 }
@@ -164,16 +164,16 @@ GER_armored_production = {
 GER_highered_armored_production = {
 	enable = {
 		original_tag = GER
-		num_of_military_factories > 149
+		num_of_military_factories > 59
 	}
 	abort = {
-		num_of_military_factories < 150
+		num_of_military_factories < 60
 	}
 
 	ai_strategy = {
 		type = unit_ratio
 		id = armor
-		value = 5
+		value = 10
 	}
 	
 }
@@ -252,13 +252,13 @@ GER_template_design = {
 		date < 1943.1.1				
 	}
 	abort = { 
-		date > 1943.1.1
+		date > 1942.1.1
 	}
 	
 	ai_strategy = { 
 		type = unit_ratio
 		id = motorized 
-		value = 0
+		value = -2
 	}
 
 	#ai_strategy = {
