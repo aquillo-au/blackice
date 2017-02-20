@@ -34,8 +34,8 @@ light_armor_default_JAP = {
 	}
 	
 	target_template = {
-		weight = 0.9
-		match_value = 400.0
+		weight = 1
+		match_value = 25990.0
 		
 		support = {
 			engineer = 1
@@ -99,8 +99,8 @@ heavy_armor_default_JAP = {
 	}
 
 	target_template = {
-		weight = 0.5
-		match_value = 100.0
+		weight = 1
+		match_value = 25990.0
 		
 		support = {
 			engineer = 1
@@ -184,8 +184,8 @@ medium_armor_default_JAP = {
 	
 
 	target_template = {
-		weight = 0.9
-		match_value = 500.0
+		weight = 1
+		match_value = 25990.0
 		
 		support = {
 			engineer = 1
@@ -339,39 +339,22 @@ infantry_default_JAP = {
 	}
 	
 	target_template = {
-		weight = 0.9
-		match_value = 300.0
+		weight = 1
+		match_value = 29990.0
 		
 		support = {
+			DIV_HQ = 1
 			engineer = 1
-			recon = 1
-			artillery = 1
-			anti_tank = 1
+			recon_cav = 1
+			logistics_company = 1
+			field_hospital = 1
 		}
 		
 		regiments = {
-			infantry = 7
-			artillery_brigade = 2
+			infantry = 11
+			artillery_brigade = 3
+			anti_tank_brigade = 2
 		}
-	}
-	
-	allowed_types = {
-		infantry		
-		engineer
-		recon
-		signal_company
-		field_hospital
-		logistics_company
-		anti_tank
-		military_police
-		artillery
-#		anti_air
-		rocket_artillery
-		anti_tank_brigade
-		artillery_brigade
-		rocket_artillery_brigade
-#		light_tank_destroyer_brigade 
-#		medium_tank_destroyer_brigade 
 	}
 }
 
@@ -412,19 +395,22 @@ mountaineers_default_JAP = {
 	}
 
 	target_template = {
-		weight = 0.5
-		match_value = 300.0
+		weight = 1
+		match_value = 25990.0
 		
 		support = {
 			engineer = 1
 			artillery = 1
 			anti_tank = 1
 			logistics_company = 1
+			jungle_support = 1
+			DIV_HQ = 1
 		}
 		
 		regiments = {
-			mountaineers = 8
-			artillery_brigade = 2
+			light_infantry = 5
+			infantry = 2
+			artillery_brigade = 1
 		}
 	}
 	
@@ -477,11 +463,12 @@ marine_default_JAP = {
 	}
 
 	target_template = {
-		weight = 0.9
-		match_value = 200.0
+		weight = 1
+		match_value = 25990.0
 		
 		support = {
 			recon = 1
+			engineer = 1
 			logistics_company = 1
 		}
 		
@@ -600,8 +587,8 @@ cavalry_default_JAP = {
 	}
 
 	target_template = {
-		weight = 0.9
-		match_value = 10.0
+		weight = 1
+		match_value = 21990.0
 		
 		support = {
 			military_police = 1
@@ -663,8 +650,8 @@ motorized_default_JAP = {
 	}
 
 	target_template = {
-		weight = 0.9
-		match_value = 400.0
+		weight = 1
+		match_value = 21990.0
 		
 		support = {
 			engineer = 1
@@ -739,8 +726,8 @@ mechanized_default_JAP = {
 	}
 
 	target_template = {
-		weight = 0.9
-		match_value = 400.0
+		weight = 1
+		match_value = 21990.0
 		
 		support = {
 			engineer = 1
