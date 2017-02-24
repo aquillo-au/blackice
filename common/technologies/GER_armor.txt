@@ -1622,19 +1622,16 @@ technologies = {
 ################### Armored car Recon ###########
 	tech_ger_ac_recon = {
 
-		recon_ac = {
-			recon = 1
+		enable_equipments = { 
+			motorized_AC_equipment_06
 		}
 		enable_subunits = {
 			recon_ac
 		}
-		#enable_equipments = { motorized_AC_equipment }
-		
-		#enable_equipments = {
-		#	reconac_equipment_0
-		#}
-		enable_equipments = { motorized_AC_equipment_06
+		recon_ac = {
+			recon = 1
 		}
+
 		path = {
 			leads_to_tech = tech_ger_ac_recon2
 			research_cost_coeff = 1
@@ -1658,11 +1655,13 @@ technologies = {
 	
 	tech_ger_ac_recon2 = {
 		
+		enable_equipments = { 
+			motorized_AC_equipment_07
+		}
 		recon_ac = {
 			recon = 2
 		}
-		enable_equipments = { motorized_AC_equipment_07
-		}
+		
 		path = {
 			leads_to_tech = tech_ger_ac_recon3
 			research_cost_coeff = 1
@@ -1686,14 +1685,13 @@ technologies = {
 	
 	tech_ger_ac_recon3 = {
 		
-		#enable_equipments = {
-		#	reconac_equipment_1
-		#}
-		enable_equipments = { motorized_AC_equipment_08
+		enable_equipments = { 
+			motorized_AC_equipment_08
 		}
 		recon_ac = {
 			recon = 3
 		}
+		
 		path = {
 			leads_to_tech = tech_ger_ac_recon4
 			research_cost_coeff = 1

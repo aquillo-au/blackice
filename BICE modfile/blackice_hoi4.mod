@@ -1,4 +1,4 @@
-name="Blackice HOI IV"
+﻿name="Blackice HOI IV"
 path="mod/blackice/"
 tags={
 	"Balance"

@@ -10,7 +10,7 @@
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
 		
-      		infantry = { x = 2 y = 0 }
+      	infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
 
@@ -23,7 +23,7 @@
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
 		engineer = { x = 0 y = 1 }
-       		artillery_medium = { x = 0 y = 2 }
+       	artillery_medium = { x = 0 y = 2 }
 		recon = { x = 0 y = 3 }
 		
 		maintenance_company = { x = 1 y = 0 }
@@ -33,7 +33,7 @@
 }
 
 division_template = {
-	name = "Panzer-Division '1936 '"
+	name = "Panzer-Division '1936'"
 
 	regiments = {
 		panzer_i = { x = 0 y = 0 }
@@ -45,21 +45,21 @@ division_template = {
 		panzer_ii = { x = 1 y = 2 }
 		
 		motorized = { x = 2 y = 0 }
-       		motorized = { x = 2 y = 1 }
+       	motorized = { x = 2 y = 1 }
 		motorized = { x = 2 y = 2 }
 		motorized = { x = 2 y = 3 }
 		motorized = { x = 2 y = 4 }
 
-		artillery_brigade_mot = { x = 4 y = 0 }
-		artillery_brigade_mot = { x = 4 y = 1 }
-		artillery_brigade_mot = { x = 4 y = 2 }
-		anti_tank_brigade =  { x = 4 y = 3 }
+		artillery_brigade_mot = { x = 3 y = 0 }
+		artillery_brigade_mot = { x = 3 y = 1 }
+		artillery_brigade_mot = { x = 3 y = 2 }
+		anti_tank_brigade =  { x = 3 y = 3 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
-       		recon_ac = { x = 0 y = 1 }
-		recon_mot = { x = 0 y =2 }
-       		engineer = { x = 0 y = 3 }
+       	recon_ac = { x = 0 y = 1 }
+		#recon_mot = { x = 0 y = 2 }
+       	engineer = { x = 0 y = 2 }
 		
  		maintenance_company = { x = 1 y = 0 }
 		logistics_company = { x = 1 y = 1 }
@@ -72,27 +72,26 @@ division_template = {
 	
 	regiments = {
 		semi_motorized = { x = 0 y = 0 }
-	   	motorized = { x = 0 y = 1 }
-		motorized = { x = 0 y = 2 }
+	   	semi_motorized = { x = 0 y = 1 }
+		semi_motorized = { x = 0 y = 2 }
 		motorized = { x = 0 y = 3 }
 		
 		semi_motorized = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
-		motorized = { x = 1 y = 2 }
+		semi_motorized = { x = 1 y = 1 }
+		semi_motorized = { x = 1 y = 2 }
 		motorized = { x = 1 y = 3 }
 		
-
-		artillery_brigade_mot = { x = 3 y = 0 }		
-		artillery_brigade_mot = { x = 3 y = 1 }
-		artillery_brigade_mot = { x = 3 y = 2 }
-		anti_tank_brigade =  { x = 3 y = 3}
+		artillery_brigade_mot = { x = 2 y = 0 }		
+		artillery_brigade_mot = { x = 2 y = 1 }
+		artillery_brigade_mot = { x = 2 y = 2 }
+		anti_tank_brigade =  { x = 2 y = 3 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
-       		recon_mot = { x = 0 y = 1 }
-		recon_ac = { x = 0 y = 2 }
-	 	engineer = { x = 0 y =3 }
-		artillery_medium = { x = 0 y = 4 }
+       	#recon_mot = { x = 0 y = 1 }
+		recon_ac = { x = 0 y = 1 }
+	 	engineer = { x = 0 y = 2 }
+		artillery_medium = { x = 0 y = 3 }
 		
  		maintenance_company = { x = 1 y = 0 }
 		logistics_company = { x = 1 y = 1 }
@@ -119,9 +118,9 @@ division_template = {
 
 	regiments = {
 		cavalry = { x = 0 y = 0 }
-       		cavalry = { x = 0 y = 1 }
+       	cavalry = { x = 0 y = 1 }
 		
-        		cavalry = { x = 1 y = 0 }
+        cavalry = { x = 1 y = 0 }
 		cavalry = { x = 1 y = 1 }
 
 		artillery_brigade_mot = { x = 2 y = 0 }
@@ -252,7 +251,7 @@ units = {
 	division= {	
 		name = "1. Panzer-Division"
 		location = 6521
-		division_template = "Panzer-Division '1936 '"
+		division_template = "Panzer-Division '1936'"
 		start_experience_factor = 0.7
 		force_equipment_variants = { 
 			panzer_i_equipment_1 = { owner = "GER" }
@@ -262,7 +261,7 @@ units = {
 	division= {	
 		name = "2. Panzer-Division 'Dreizack'"
 		location = 6521
-		division_template = "Panzer-Division '1936 '"
+		division_template = "Panzer-Division '1936'"
 		start_experience_factor = 0.6
 		force_equipment_variants = { 
 			panzer_i_equipment_1 = { owner = "GER" }
@@ -272,7 +271,7 @@ units = {
 	division= {	
 		name = "3. Panzer-Division"
 		location = 6521
-		division_template = "Panzer-Division '1936 '"
+		division_template = "Panzer-Division '1936'"
 		start_experience_factor = 0.6
 		force_equipment_variants = { 
 			panzer_i_equipment_1 = { owner = "GER" }

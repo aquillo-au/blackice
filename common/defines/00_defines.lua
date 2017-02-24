@@ -1152,7 +1152,8 @@ NAI = {
 	INDUSTRY_IC_AIR_IMPORTANCE_FACTOR = 0.02,				-- AI very specific IC cost factor for air missions
 	
 	AIR_SCORE_DISTANCE_IMPACT = 0.3,						-- Effect of distance applied to the score calculations
-	
+	DAYS_BETWEEN_AIR_PRIORITIES_UPDATE = 4,					-- Amount of days between air ai updates priorities for air wings ( from 1 to N )
+
 	NAVAL_AIR_SUPERIORITY_IMPORTANCE = 0.10,				-- Strategic importance of air superiority ( amount of enemy planes in area )
 	NAVAL_SHIP_AIR_IMPORTANCE = 2.0,						-- Naval ship air importance
 	NAVAL_SHIP_IN_PORT_AIR_IMPORTANCE = 6.0,				-- Naval ship in the port air importance
