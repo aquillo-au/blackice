@@ -5240,6 +5240,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		not = { has_country_flag = panzer_35t }
+		not = { has_country_flag = panzer_38t }
 		owns_state = 9
 	}
 	
@@ -5255,7 +5256,28 @@ country_event = {
 		}
 		
 		hidden_effect = {
-			load_oob = "GER_6_8_Panzer_Division"
+			if = { 
+				limit = { 
+					has_tech = tech_panzer_iii_equipment_1
+					not = { has_tech = tech_panzer_iv_equipment_1 }
+				}
+				load_oob = "GER_6_8_Panzer_Division_pz3"
+			}
+			if = { 
+				limit = { 
+					has_tech = tech_panzer_iv_equipment_1
+					not = { has_tech = tech_panzer_iii_equipment_1 }
+				}
+				load_oob = "GER_6_8_Panzer_Division_pz4"
+			}
+			if = { 
+				limit = { 
+					has_tech = tech_panzer_iv_equipment_1
+					has_tech = tech_panzer_iii_equipment_1
+				}
+				load_oob = "GER_6_8_Panzer_Division"
+			}
+			custom_effect_tooltip = GER_6_8_PZDIV
 			set_country_flag = panzer_35t
 		}
 	}
@@ -5275,6 +5297,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
+		has_country_flag = panzer_35t
 		not = { has_country_flag = panzer_38t }
 		owns_state = 9
 	}
@@ -5291,10 +5314,30 @@ country_event = {
 		}
 		
 		hidden_effect = {
-			load_oob = "GER_7_Panzer_Division"
+			if = { 
+				limit = { 
+					has_tech = tech_panzer_iii_equipment_1
+					not = { has_tech = tech_panzer_iv_equipment_1 }
+				}
+				load_oob = "GER_7_Panzer_Division_pz3"
+			}
+			if = { 
+				limit = { 
+					has_tech = tech_panzer_iv_equipment_1
+					not = { has_tech = tech_panzer_iii_equipment_1 }
+				}
+				load_oob = "GER_7_Panzer_Division_pz4"
+			}
+			if = { 
+				limit = { 
+					has_tech = tech_panzer_iv_equipment_1
+					has_tech = tech_panzer_iii_equipment_1
+				}
+				load_oob = "GER_7_Panzer_Division"
+			}
 			set_country_flag = panzer_38t
-			
 		}
+		custom_effect_tooltip = GER_7_PZDIV
 	}
 	option = {
 		name = germany.229.b		#refuse
@@ -5514,8 +5557,8 @@ country_event = {
 	option = {
 		name = germany.235.a
 		ai_chance = { factor = 100 }
-			load_oob = "Czech_Equipment"
-			set_country_flag = czech_equipment
+		load_oob = "Czech_Equipment"
+		set_country_flag = czech_equipment
 		
 	}
 	
