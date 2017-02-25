@@ -4,7 +4,11 @@ light_armor_default_GER = {
 	width_weight = 0.5
 	column_swap_factor = 0.3
 	
-		
+	# this is a stop-gap towards medium tanks, if deployed dont upgrade to medium tanks until we burn out our light tanks
+	#can_upgrade_in_field = {
+	#	has_equipment = { panzer_i_equipment < 500 } 
+	#}
+	
 	target_template = {
 		weight = 1.0
 		match_value = 24990.0
@@ -27,9 +31,9 @@ light_armor_default_GER = {
 	
 	
 	
-	replace_at_match = 0.1
+	replace_at_match = 0.4
 	replace_with = panzer_default_GER
-	target_min_match = 0.1
+	target_min_match = 0.2
 }
 
 heavy_armor_default_GER = {
@@ -104,6 +108,9 @@ infantry_default_GER = {
 	width_weight = 0.6
 	column_swap_factor = 0.6
 	
+	can_upgrade_in_field = {
+		has_equipment = { motorized_equipment > 50000 } 
+	}
 	
 	target_template = {
 		weight = 1
@@ -229,8 +236,7 @@ motorized_default_GER = {
 	width_weight = 0.6
 	column_swap_factor = 0.6
 	
-
-
+	
 	target_template = {
 		weight = 1
 		match_value = 21990.0
@@ -259,8 +265,10 @@ ss_motorized_GER = {
 	width_weight = 0.6
 	column_swap_factor = 0.6
 	
-
-
+	can_upgrade_in_field = {
+		has_equipment = { motorized_equipment > 50000 } 
+	}
+	
 	target_template = {
 		weight = 1
 		match_value = 19990.0
@@ -352,25 +360,47 @@ garrison_default_GER = {
 	width_weight = 0.1
 	column_swap_factor = 0.5
 	
+	can_upgrade_in_field = {
+		has_equipment = {garrison_equipment  < 10 } 
+	}
 	
 	target_template = {
 		weight = 0.9
 		match_value = 0.0
 		
 		support = {
-			engineer = 1
-			recon = 1
-			anti_air = 1
-			logistics_company = 1
-			artillery_medium = 1
-			field_hospital = 1
-		    	anti_tank = 1
+			
 			military_police = 1
+			
+		}
+		
+		regiments = {
+			garrison = 1
+			#artillery_brigade = 1
+		}
+	}
+	
+}
+garrison_art_GER = {
+	target_width = 9.9
+	width_weight = 0.1
+	column_swap_factor = 0.5
+	
+	can_upgrade_in_field = {
+		has_equipment = { superartillery_equipment < 2  } 
+	}
+	
+	target_template = {
+		weight = 0.9
+		match_value = 0.0
+		
+		support = {
+			
 			artillery_coastal = 1
 		}
 		
 		regiments = {
-			garrison = 6
+			garrison = 1
 			#artillery_brigade = 1
 		}
 	}

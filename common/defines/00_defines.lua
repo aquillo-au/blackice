@@ -124,7 +124,7 @@ NDiplomacy = {
 	VICTORY_POINT_WORTH_FACTOR = 10,									-- multiplier when calcualting proince worth (surrender)
 	VICTORY_POINT_WORTH_FACTOR_WARSCORE = 0.2,							-- multiplier when calcualting province worth with autonomy/warscore
 	IDEOLOGY_JOIN_FACTION_MIN_LEVEL = 0.3,								-- ideology limit required to join faction
-	JOIN_FACTION_LIMIT_CHANGE_AT_WAR = -0.3,							-- Change tension requirement for joining faction by amount when at war
+	JOIN_FACTION_LIMIT_CHANGE_AT_WAR = 0.5,							-- Change tension requirement for joining faction by amount when at war
 },
 
 NCountry = {
@@ -221,8 +221,8 @@ NProduction = {
 	BASE_FACTORY_SPEED = 5, 								-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
 	BASE_FACTORY_SPEED_MIL = 7, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
 	BASE_FACTORY_SPEED_NAV = 2.5, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
-	BASE_FACTORY_START_EFFICIENCY_FACTOR = 15,				-- Base start efficiency for factories expressed in %.
-	BASE_FACTORY_MAX_EFFICIENCY_FACTOR = 60,				-- Base max efficiency for factories expressed in %.
+	BASE_FACTORY_START_EFFICIENCY_FACTOR = 12,				-- Base start efficiency for factories expressed in %.
+	BASE_FACTORY_MAX_EFFICIENCY_FACTOR = 55,				-- Base max efficiency for factories expressed in %.
 	BASE_FACTORY_EFFICIENCY_GAIN = 0.25,					-- Base efficiency gain for factories per unit produced in %.
 	BASE_FACTORY_EFFICIENCY_BALANCE_FACTOR = 0.1, 			-- Factory efficiency balancing factor
 	BASE_FACTORY_EFFICIENCY_VARIANT_CHANGE_FACTOR = 90,		-- Base factor for changing production variants in %.
@@ -243,7 +243,7 @@ NProduction = {
 },
 
 NTechnology = {
-	MAX_SUBTECHS = 3,					    -- Max number of sub technologies a technology can have.
+	MAX_SUBTECHS = 5,					    -- Max number of sub technologies a technology can have.
 	BASE_RESEARCH_POINTS_SAVED = 30.0,		-- Base amount of research points a country can save per slot.
 	BASE_YEAR_AHEAD_PENALTY_FACTOR = 2.2,		-- Base year ahead penalty
 	BASE_TECH_COST = 102,					-- Base cost for a tech. multiplied with tech cost and ahead of time penalties
@@ -298,7 +298,7 @@ NMilitary = {
 	COMBAT_VALUE_STR_IMPORTANCE = 1,						-- Multiplier on TotalStrength when determining the combat value of a division
 	
 	HOURLY_ORG_MOVEMENT_IMPACT = -0.2,						-- how much org is lost every hour while moving an army.
-	ZERO_ORG_MOVEMENT_MODIFIER = -0.7,						-- speed impact at 0 org.
+	ZERO_ORG_MOVEMENT_MODIFIER = -0.8,						-- speed impact at 0 org.
 	INFRA_ORG_IMPACT = 0.5,									-- scale factor of infra on org regain.
 
 	INFRASTRUCTURE_MOVEMENT_SPEED_IMPACT = -0.09,			-- speed penalty per infrastucture below maximum.
@@ -365,7 +365,7 @@ NMilitary = {
 	RIVER_SMALL_START_INDEX = 0,                   			-- color indices for rivers
 	RIVER_SMALL_STOP_INDEX = 6,
 	RIVER_LARGE_STOP_INDEX = 11,
-	BASE_FORT_PENALTY = -0.5, 					   			-- fort penalty
+	BASE_FORT_PENALTY = -0.3, 					   			-- fort penalty
 	BASE_STACKING_PENALTY = -0.1,                  			-- multiple direction attack penalty
 	MULTIPLE_COMBATS_PENALTY = -0.5,               			-- defender penalty if attacked from multiple directions
 	DIG_IN_FACTOR = 0.02,						   			-- bonus factor for each dug-in level
@@ -445,8 +445,8 @@ NMilitary = {
 	ORG_LOSS_FACTOR_ON_CONQUER = 0.35,              		-- percentage of (max) org loss on takign enemy province
 	LOW_ORG_FOR_ATTACK = 0.5,                      			-- at what org % we start affecting speed when doign hostile moves. scales down ZERO_ORG_MOVEMENT_MODIFIER
 
-	PLANNING_DECAY = 0.02,									-- 0.01
-	PLANNING_GAIN = 0.04,									-- 0.02
+	PLANNING_DECAY = 0.01,									-- 0.01
+	PLANNING_GAIN = 0.02,									-- 0.02
 	PLANNING_MAX = 0.5,                           			-- can get more from techs
 	CIVILWAR_ORGANIZATION_FACTOR = 0.3,			  			-- Multiplier of org for both sides when civilwar.
 	LAND_COMBAT_ATTACKER_WINNING = 0.65,		  			-- Above this means attacker is winning
@@ -984,7 +984,7 @@ NAI = {
 	AIR_BASE_DANGER_ZONE_WEIGHT = 100,					-- Score used per province taken by enemy in a state to determine how dangerous it is to use an air base
 
 	MANPOWER_FREE_USAGE_THRESHOLD = 900000,				-- If AI has this much manpower he doesn't care about the percentage
-	MANPOWER_RESERVED_THRESHOLD = 0.60,					-- The AI will not deploy more units if he goes below this percentage
+	MANPOWER_RESERVED_THRESHOLD = 0.40,					-- The AI will not deploy more units if he goes below this percentage
 	START_TRAINING_EQUIPMENT_LEVEL = 0.95,              -- was 0.95 ai will not start to train if equipment drops below this level
 	STOP_TRAINING_EQUIPMENT_LEVEL = 0.9,                -- was 0.9 ai will not train if equipment drops below this level
 	BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.012,	-- How much lack of resources are worth when evaluating what to build.
@@ -1122,7 +1122,7 @@ NAI = {
 	MAX_DIST_PORT_RUSH = 20.0,								-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
 	
 	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.65,				-- Cancel unit production if below this to get resources out to units in the field
-	MIN_MANPOWER_TO_BUILD_UNITS = 0.3,						-- Cancel unit production if below this to get resources out to units in the field
+	MIN_MANPOWER_TO_BUILD_UNITS = 0.45,						-- Cancel unit production if below this to get resources out to units in the field
 	
 	AVERAGE_SUPPLY_USE_PESSIMISM = 1.5,						-- Multiplier for when AI calculates average supply use of entire army.
 	
