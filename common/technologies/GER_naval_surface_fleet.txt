@@ -25,7 +25,7 @@ technologies = {
 	@CA = 5
 	@BC = 10
 	@BB = 15
-	@HBB = 20
+	@SHBB = 20
 	@CV = 25
 	@CVL = 30
 	
@@ -38,7 +38,7 @@ technologies = {
 		start_year = 1920
 		folder = {
 			name = kriegsmarine_folder
-			position = {x = 0 y = -1 }
+			position = {x = 0 y = -2 }
 		}
 		
 		ai_will_do = {
@@ -55,11 +55,16 @@ technologies = {
 			tech_kr = 1
 		}
 		
+		path = {
+			leads_to_tech = tech_kr_pb_obs1
+			research_cost_coeff = 1
+		}
+		
 		research_cost = 1.5
 		start_year = 1925
 		folder = {
 			name = kriegsmarine_folder
-			position = { x = @DD y = @1925 }
+			position = { x = @DD y = @1929 }
 		}
 		
 		ai_will_do = {
@@ -81,7 +86,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = tech_ijn_dd_obs2
+			leads_to_tech = tech_kr_dd_obs
 			research_cost_coeff = 1
 		}
 		
@@ -89,7 +94,7 @@ technologies = {
 		start_year = 1927
 		folder = {
 			name = kriegsmarine_folder
-			position = { x = @DD y = @1927 }
+			position = { x = @DD y = @1929 }
 		}
 		
 		ai_will_do = {
@@ -465,7 +470,7 @@ technologies = {
 		start_year = 1928
 		folder = {
 			name = kriegsmarine_folder
-			position = { x = @CL y = @1928 }
+			position = { x = @CL y = @1927 }
 		}
 		
 		ai_will_do = {
