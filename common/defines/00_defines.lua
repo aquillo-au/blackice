@@ -211,7 +211,7 @@ NCountry = {
 },
 
 NProduction = {
-	MAX_EQUIPMENT_RESOURCES_NEED = 3, 						-- Max number of different strategic resources an equipment can be dependent on.
+	MAX_EQUIPMENT_RESOURCES_NEED = 5, 						-- Max number of different strategic resources an equipment can be dependent on.
 	MAX_CIV_FACTORIES_PER_LINE = 16,						-- Max number of factories that can be assigned a single production line.
 	MAX_NAV_FACTORIES_PER_LINE = 16,
 	MAX_MIL_FACTORIES_PER_LINE = 16,
@@ -442,7 +442,7 @@ NMilitary = {
 	SPEED_REINFORCEMENT_BONUS = 0.01,              			-- chance to join combat bonus by each 100% larger than infantry base (up to 200%)
 	OVERSEAS_LOSE_EQUIPMENT_FACTOR = 0.75,		   			-- percentage of equipment lost disbanded overseas
 	ENCIRCLED_DISBAND_MANPOWER_FACTOR = 0.02,       		-- percentage of manpower returned when an encircled unit is disbanded
-	ORG_LOSS_FACTOR_ON_CONQUER = 0.35,              		-- percentage of (max) org loss on takign enemy province
+	ORG_LOSS_FACTOR_ON_CONQUER = 0.55,              		-- percentage of (max) org loss on takign enemy province
 	LOW_ORG_FOR_ATTACK = 0.5,                      			-- at what org % we start affecting speed when doign hostile moves. scales down ZERO_ORG_MOVEMENT_MODIFIER
 
 	PLANNING_DECAY = 0.01,									-- 0.01
@@ -509,8 +509,8 @@ NMilitary = {
 	COMBAT_OVER_WIDTH_PENALTY = -2,							-- over combat width penalty per %.
 	COMBAT_OVER_WIDTH_PENALTY_MAX = -0.33,					-- over combat width max (when you cant join no more).
 	RETREAT_SPEED_FACTOR = 0.25,                    		-- speed bonus when retreating
-	STRATEGIC_SPEED_BASE = 6.0,                 			-- Speed of strategic redeployment
-	STRATEGIC_INFRA_SPEED = 12.0,                  			-- Max of additional speed gained trouh=gh level for strategic redeployment per infra
+	STRATEGIC_SPEED_BASE = 2.0,                 			-- Speed of strategic redeployment
+	STRATEGIC_INFRA_SPEED = 10.0,                  			-- Max of additional speed gained trouh=gh level for strategic redeployment per infra
 	STRATEGIC_REDEPLOY_ORG_RATIO = 0.05,					-- Ratio of max org while strategic redeployment
 	BATALION_NOT_CHANGED_EXPERIENCE_DROP = 0.0,				-- Division experience drop if unit has same batalion
 	BATALION_CHANGED_EXPERIENCE_DROP = 0.5,					-- Division experience drop if unit has different batalion
@@ -800,11 +800,11 @@ NAI = {
 	DIPLOMACY_FACTION_SURRENDER_LEVEL = 20, 			-- How much the recipient nation losing matters for joining a faction
 	DIPLO_PREFER_OTHER_FACTION = -200,					-- The country has yet to ask some other faction it would prefer to be a part of.
 	MIN_ANTAGONIZE_FOR_WARGOAL_JUSTIFICATION = -100,	-- AI countries will not fabricate claims against countries with an antagonization value lower than this.
-	RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 7, 			-- Refreshes need scores based on country situation.
+	RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 2, 			-- Refreshes need scores based on country situation.
 	RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = 0.15, 	-- Multiplies value based on relative military industry size / country size.
 	RESEARCH_NAVAL_DOCTRINE_NEED_GAIN_FACTOR = 0.05, 	-- Multiplies value based on relative naval industry size / country size.
 	RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 0.07, 		-- Multiplies value based on relative number of air base / country size.
-	RESEARCH_NEW_WEIGHT_FACTOR = 0.3, 					-- Impact of previously unexplored tech weights. Higher means more random exploration.
+	RESEARCH_NEW_WEIGHT_FACTOR = 0.5, 					-- Impact of previously unexplored tech weights. Higher means more random exploration.
 	RESEARCH_BONUS_FACTOR = 0.9, 						-- To which extent AI should care about bonuses to research
 	MAX_AHEAD_RESEARCH_PENALTY = 2,             		-- max ahead of tiem penalty ai will pick ever
 	RESEARCH_AHEAD_OF_TIME_FACTOR = 4.0, 				-- To which extent AI should care about ahead of time penalties to research
@@ -820,8 +820,8 @@ NAI = {
 	NAVAL_THEATRE_PRIO_CAPITAL_SCORE = 100,				-- Weight of capital when calculating naval theatre assignment
 	NAVAL_THEATRE_PRIO_NAVAL_BASE_SCORE = 1,			-- Weight of naval bases when calculating naval theatre assignment
 	NAVAL_THEATRE_PRIO_MIN_DISTANCE = 2000,				-- Minimum distance (in km) between priority theatres for naval assignment, to spread navy out
-	PRODUCTION_UNAVAILABLE_RESORCE_FACTORY_FACTOR = 0.9, -- Assign/queue this proportion of desired factories when resources are short 
-	PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.4,			-- Base value for how much of currently used equipment the AI will at least strive to have in stock
+	PRODUCTION_UNAVAILABLE_RESORCE_FACTORY_FACTOR = 0.8, -- Assign/queue this proportion of desired factories when resources are short 
+	PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.3,			-- Base value for how much of currently used equipment the AI will at least strive to have in stock
 	AIR_CONTROLLED_TERRITORY_INTERCEPT_SCORE = 6,		-- Interception score per controlled state in mission region
 	AIR_ALLY_TERRITORY_INTERCEPT_SCORE = 0,				-- Interception score per ally controlled state in mission region
 	INTERCEPT_NAVAL_BOMBING_FACTOR = 15.0,				-- Factors the weight of intercepting naval bombers in sea regions where friendly ships are
@@ -834,11 +834,11 @@ NAI = {
 	AIR_MISSION_MIN_COVEREAGE = 0.33,					-- Between 0 and 1, limit for % coverage for air mission to be considered
 	AIR_BASE_PRIORITY_DISTANCE_FACTOR = 25.0,			-- Weight of distance between region and airbase for airbase priority score
 	MAX_VOLUNTEER_ARMY_FRACTION = 0.20,					-- Countries will not send more than their forces time this number to aid another country
-	WANTED_UNITS_INDUSTRY_FACTORY = 0.5, 				-- How many units a country wants is partially based on how much military industry that is available
+	WANTED_UNITS_INDUSTRY_FACTORY = 1.0, 				-- How many units a country wants is partially based on how much military industry that is available
 	DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.95,			-- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
-	DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.4,				-- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
-	DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 0.6,			-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
-	DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 0.55,				-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in wartime
+	DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.3,				-- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
+	DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 0.8,			-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
+	DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 0.9,				-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in wartime
 	DYNAMIC_STRATEGIES_THREAT_FACTOR = 4.0,				-- How much threat generated by other countries effects generated strategies
 	WARGOAL_GENERATION_STRENGTH_FACTOR = 1.75,			-- Desire to generate wargoal effected negatevely if actor strength is less than this factor of target strength
 	LOCATION_BALANCE_TO_ADVANCE = 0.0,					-- Limit on location strength balance between country and enemy for unit to dare to move forward.
@@ -846,9 +846,9 @@ NAI = {
 	DIVISION_CREATE_MIN_XP = 550,						-- Minimum XP before attempting to create a fresh new division template.
 	VARIANT_UPGRADE_MIN_XP = 400,						-- Minimum XP before attempting to create a new variant.
 	UPGRADE_XP_RUSH_UPDATE = 500,						-- If XP is above this on the daily tick the AI will attempt to spend it
-	FOCUS_TREE_CONTINUE_FACTOR = 0.8,					-- Factor for score of how likely the AI is to keep going down a focus tree rather than starting a new path.
+	FOCUS_TREE_CONTINUE_FACTOR = 0.95,					-- Factor for score of how likely the AI is to keep going down a focus tree rather than starting a new path.
 	VP_GARRISON_VALUE_FACTOR = 0.6,						-- BICE, originally 0.5, not sure why changed, might help with repressing partisans? -- Extent to which VP garrisons are prioritized, based on VP value and compared to other priority values.
-	PLAN_VALUE_TO_EXECUTE = -0.25,						-- AI will typically avoid carrying out a plan it below this value (0.0 is considered balanced).
+	PLAN_VALUE_TO_EXECUTE = -0.35,						-- AI will typically avoid carrying out a plan it below this value (0.0 is considered balanced).
 	DECLARE_WAR_NOT_NEIGHBOR_FACTOR = 0.25,				-- Multiplier applied before force factor if country is not neighbor with the one it is considering going to war
 	CALL_ALLY_BASE_DESIRE = 20,							-- exactly what it says
 	CALL_ALLY_DEMOCRATIC_DESIRE = 50,					-- Desire to call ally added for democratic AI
@@ -983,10 +983,10 @@ NAI = {
 	AIR_WING_REINFORCEMENT_LIMIT = 60,					-- number of aircraft needed for reserves before the ai will deploy more, I think.
 	AIR_BASE_DANGER_ZONE_WEIGHT = 100,					-- Score used per province taken by enemy in a state to determine how dangerous it is to use an air base
 
-	MANPOWER_FREE_USAGE_THRESHOLD = 900000,				-- If AI has this much manpower he doesn't care about the percentage
-	MANPOWER_RESERVED_THRESHOLD = 0.40,					-- The AI will not deploy more units if he goes below this percentage
+	MANPOWER_FREE_USAGE_THRESHOLD = 500000,				-- If AI has this much manpower he doesn't care about the percentage
+	MANPOWER_RESERVED_THRESHOLD = 0.30,					-- The AI will not deploy more units if he goes below this percentage
 	START_TRAINING_EQUIPMENT_LEVEL = 0.95,              -- was 0.95 ai will not start to train if equipment drops below this level
-	STOP_TRAINING_EQUIPMENT_LEVEL = 0.9,                -- was 0.9 ai will not train if equipment drops below this level
+	STOP_TRAINING_EQUIPMENT_LEVEL = 0.8,                -- was 0.9 ai will not train if equipment drops below this level
 	BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.012,	-- How much lack of resources are worth when evaluating what to build.
 	DIVISION_DESIGN_WEIGHTS = {							-- Base values used by AI to evaluate value of a stat
 		-- Army Values
@@ -1038,7 +1038,7 @@ NAI = {
 		-- Common Values
 		1.0,   -- max_organisation
 		10.0,   -- 1.0 max_strength
-		-50.0,  -- build_cost_ic
+		-20.0,  -- build_cost_ic
 		2.0,   -- maximum_speed
 		0.0,   -- armor_value
 		0.5,   -- ap_attack
@@ -1122,7 +1122,7 @@ NAI = {
 	MAX_DIST_PORT_RUSH = 20.0,								-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
 	
 	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.65,				-- Cancel unit production if below this to get resources out to units in the field
-	MIN_MANPOWER_TO_BUILD_UNITS = 0.45,						-- Cancel unit production if below this to get resources out to units in the field
+	MIN_MANPOWER_TO_BUILD_UNITS = 0.7,						-- Cancel unit production if below this to get resources out to units in the field
 	
 	AVERAGE_SUPPLY_USE_PESSIMISM = 1.5,						-- Multiplier for when AI calculates average supply use of entire army.
 	

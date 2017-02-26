@@ -2,7 +2,6 @@ stop_making_horsies = {
 	enable = {
 		num_of_factories > 20
 		date > 1938.1.1
-		NOT = { original_tag = GER }
 	}
 	abort = {
 		always = no
@@ -14,38 +13,7 @@ stop_making_horsies = {
 		value = -100 # -100% cav
 	}		
 }
-make_more_mechanized = {
-	enable = {
-		num_of_factories > 60
-		date > 1938.1.1
-		NOT = { original_tag = GER }
-	}
-	abort = {
-		always = no
-	}
 
-	ai_strategy = {
-		type = unit_ratio
-		id = mechanized
-		value = 50 # added by mod
-	}		
-}
-make_more_armor = {
-	enable = {
-		num_of_factories > 60
-		date > 1938.1.1
-		NOT = { original_tag = GER }
-	}
-	abort = {
-		always = no
-	}
-
-	ai_strategy = {
-		type = unit_ratio
-		id = armor
-		value = 50 # added by mod
-	}		
-}
 ############
 ### LAND ###
 ############
@@ -60,7 +28,7 @@ make_more_armor = {
 #cavalry
 #marines
 #mountaineer
-#############
+
 # No cav if we have motor inf
 no_cavalry = {
 	enable = {
@@ -76,6 +44,7 @@ no_cavalry = {
 		value = -100 
 	}
 }
+
 #Mobile Warfare branch
 mobile_warfare_ratios = {
 	enable = {
@@ -88,21 +57,23 @@ mobile_warfare_ratios = {
 	ai_strategy = {
 		type = unit_ratio
 		id = armor
-		value = 30 # +30% armor
+		value = 10 # +30% armor
 	}
 	
 	ai_strategy = {
 		type = unit_ratio
 		id = motorized
-		value = 30 # +50% motorized
+		value = 10 # +50% motorized
 	}
 
 	ai_strategy = {
 		type = unit_ratio
 		id = mechanized
-		value = 30 # +50% motorized
+		value = 10 # +50% motorized
 	}
+	
 }
+
 superior_firepower_ratios = {
 	enable = {
 		has_tech = superior_firepower
@@ -134,7 +105,9 @@ superior_firepower_ratios = {
 		id = artillery
 		value = 30
 	}
+	
 }
+
 ## Later in superior_firepower tree
 concentrated_fire_plans_ratios = {
 	enable = {
@@ -179,7 +152,10 @@ concentrated_fire_plans_ratios = {
 		id = cas
 		value = 20
 	}
+	
 }
+
+
 grand_battle_plan_ratios = {
 	enable = {
 		has_tech = trench_warfare
@@ -210,8 +186,12 @@ grand_battle_plan_ratios = {
 		type = unit_ratio
 		id = anti_tank
 		value = 20
-	}
+	}	
+
+	
 }
+
+
 mass_assault_ratios = {
 	enable = {
 		has_tech = mass_assault
@@ -231,7 +211,9 @@ mass_assault_ratios = {
 		id = anti_tank
 		value = 20
 	}
+
 }
+
 #Later in  mass_assault tree
 large_front_operations_ratios = {
 	enable = {
@@ -264,7 +246,10 @@ large_front_operations_ratios = {
 		id = armor
 		value = 30
 	}
+	
 }
+
+
 ##############
 ### NAVAL ####
 ##############
@@ -274,7 +259,8 @@ large_front_operations_ratios = {
 #convoy
 #naval_transport
 #carrier
-#############
+
+
 #Fleet in being tree
 fleet_in_being_ratios = {
 	enable = {
@@ -290,6 +276,7 @@ fleet_in_being_ratios = {
 		value = 20
 	}
 }
+
 #Trade Interdiction tree
 trade_interdiction_ratios = {
 	enable = {
@@ -305,6 +292,8 @@ trade_interdiction_ratios = {
 		value = 200
 	}
 }
+
+
 #Base Strike tree
 base_strike_ratios = {
 	enable = {
@@ -326,6 +315,7 @@ base_strike_ratios = {
 		value = 20
 	}
 }
+
 ##############
 ###  AIR  ####
 ##############
@@ -336,7 +326,7 @@ base_strike_ratios = {
 #tactical_bomber
 #strategic_bomber
 #naval_bomber
-##############
+
 #Strategic Destruction tree
 air_superiority_ratios = {
 	enable = {
@@ -352,6 +342,7 @@ air_superiority_ratios = {
 		value = 50
 	}
 }
+
 air_night_day_bombing_ratios = {
 	enable = {
 		OR = {
@@ -368,7 +359,9 @@ air_night_day_bombing_ratios = {
 		id = strategic_bomber
 		value = 50
 	}
+	
 }
+
 #Battlefield Support tree
 formation_flying = {
 	enable = {
@@ -390,6 +383,7 @@ formation_flying = {
 		value = 50
 	}
 }
+
 #Operational Integrity tree
 force_rotation = {
 	enable = {
@@ -404,4 +398,5 @@ force_rotation = {
 		id = fighter
 		value = 30
 	}
+	
 }
