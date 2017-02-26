@@ -95,26 +95,27 @@ set_technology = {
 	#basic_battlecruiser = 1 #BICE
 	#pre_dreadnought_battleship = 1 #BICE
 	#dreadnought_battleship = 1 #BICE
-	#advanced_dreadnought_battleship = 1 #BICE
+	advanced_dreadnought_battleship = 1 #BICE
 	transport = 1
 	
-	# Krieg Destroyer/Patrol Boat
-	tech_kr_dd_obs = 1
-	tech_kr_dd = 1
+	# Kriegsmarine Destroyer/Patrol Boat
 	tech_kr_pb_obs = 1
 	tech_kr_pb_obs1 = 1
+	tech_kr_dd_obs = 1
+	tech_kr_dd = 1
 	
-	# Krieg Cruiser
+	# Kriegsmarine Cruisers
 	tech_kr_cl_obs = 1
 	tech_kr_cl_obs2 = 1
 	tech_kr_cl = 1
 	tech_kr_ca_obs = 1
 	tech_kr_ca = 1
 	
-	# Krieg Battleship
+	# Kriegsmarine Battleship
+	tech_kr_bb_obs = 1
 	tech_kr_bb = 1
 	
-	# Krieg Battlecruiser
+	# Kriegsmarine Battlecruiser
 	tech_kr_bc = 1
 	############## economic ###########
 	basic_machine_tools = 1
@@ -188,7 +189,6 @@ set_politics = {
 
 create_faction = Axis
 add_to_faction = GER
-
 
 add_ideas = {
 	sour_loser
@@ -672,9 +672,7 @@ create_corps_commander = {
 	skill = 4
 	id = 62
 }
-
 # existed not use? ###############################################################################################
-
 create_corps_commander = {
 	name = "Richthofen, Wolfram Freiherr von"
 	picture = "Portrait_Germany_Wolfram_Freiherr_von_Richthofen.dds"
@@ -692,9 +690,7 @@ create_corps_commander = {
 	id = 64
 }
 # OKL ??
-
 ######################################################################################################################
-
 create_corps_commander = {
 	name = "Schörner, Ferdinand"
 	picture = "Portrait_Germany_Ferdinand_Scherner.dds"
@@ -830,7 +826,6 @@ create_corps_commander = {
 	skill = 2
 	id = 85
 }
-
 ######################################################################################################################
 ######################################################################################################################
 ######################################################################################################################
@@ -967,86 +962,6 @@ create_corps_commander = {
 ## 1936 Start ##
 ################### BICE Variants ##################
 create_equipment_variant = {
-	name = "Scharnhorst Class"
-	type = battle_cruiser_2
-	parent_version = 0
-	upgrades = {
-		ship_quality_upgrade = 3
-		ship_engine_upgrade = 1
-		ship_armor_upgrade = 4
-		ship_barrels_upgrade = 0
-	}
-}
-create_equipment_variant = {
-	name = "Deutschland Class "
-	type = battleship_pdn
-	parent_version = 0
-	upgrades = {
-		ship_engine_upgrade = 4
-	}
-	obsolete = yes
-}
-create_equipment_variant = {
-	name = "Deutschland Class"
-	type = heavy_cruiser_2
-	parent_version = 0
-	upgrades = {
-		ship_quality_upgrade = 1
-		ship_engine_upgrade = 0
-		ship_armor_upgrade = 0
-		ship_barrels_upgrade = 4
-	}
-	obsolete=yes
-}
-create_equipment_variant = {
-	name = "Leipzig Class"
-	type = light_cruiser_1
-	parent_version = 0
-	upgrades = {
-		ship_quality_upgrade = 2
-		ship_engine_upgrade = 2
-		ship_barrels_upgrade = 3
-		ship_anti_air_upgrade = 3
-	}
-	obsolete = yes
-}
-#Light Cruisers #
-create_equipment_variant = {
-	name = "Königsberg Class"
-	type = light_cruiser_1
-	parent_version = 0
-	upgrades = {
-		ship_quality_upgrade = 2
-		ship_engine_upgrade = 2
-		ship_barrels_upgrade = 3
-		ship_anti_air_upgrade = 2
-	}
-	obsolete = yes
-}
-create_equipment_variant = {
-	name = "1924 Type"
-	type = destroyer_1
-	parent_version = 0
-	upgrades = {
-		ship_torpedo_upgrade = 1
-		destroyer_engine_upgrade = 1
-		ship_ASW_upgrade = 0
-		ship_anti_air_upgrade = 1
-	}
-	obsolete = yes
-}
-create_equipment_variant = {
-	name = "Zerstörer 1934A"
-	type = destroyer_2
-	parent_version = 0
-	upgrades = {
-		ship_torpedo_upgrade = 1
-		destroyer_engine_upgrade = 1
-		ship_ASW_upgrade = 1
-		ship_anti_air_upgrade = 1
-	}
-}
-create_equipment_variant = {
 	name = "Type IIB"
 	type = coastal_submarine_2
 	parent_version = 0
@@ -1081,7 +996,6 @@ create_equipment_variant = {
 	}
 	obsolete = yes
 }
-
 ##################Aircraft Variants#####################
 	create_equipment_variant = {
 		name = "He 51 B-1"
@@ -1244,29 +1158,5 @@ create_equipment_variant = {
 		}
 	}
 	# Destroyer #
-	create_equipment_variant = {
-		name = "Zerstörer 1936"
-		type = destroyer_2
-		parent_version = 0
-		upgrades = {
-			ship_torpedo_upgrade = 2
-			destroyer_engine_upgrade = 2
-			ship_ASW_upgrade = 2
-			ship_anti_air_upgrade = 2
-		}
-	}
-	# Heavy Cruisers #
-	#create_equipment_variant = {
-	#	name = "Deutschland Class"
-	#	type = heavy_cruiser_1
-	#	parent_version = 0
-	#	upgrades = {
-	#		ship_quality_upgrade = 1
-	#		ship_engine_upgrade = 1
-	#		ship_armor_upgrade = 1
-	#		ship_barrels_upgrade = 2
-	#	}
-	#	obsolete = yes
-	#}
 }
 #EOF#
