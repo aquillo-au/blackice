@@ -125,6 +125,7 @@ NDiplomacy = {
 	VICTORY_POINT_WORTH_FACTOR_WARSCORE = 0.2,							-- multiplier when calcualting province worth with autonomy/warscore
 	IDEOLOGY_JOIN_FACTION_MIN_LEVEL = 0.3,								-- ideology limit required to join faction
 	JOIN_FACTION_LIMIT_CHANGE_AT_WAR = 0.5,							-- Change tension requirement for joining faction by amount when at war
+
 },
 
 NCountry = {
@@ -168,7 +169,7 @@ NCountry = {
 	RESOURCE_LENDLEASE_PRIORITY = 0.85,					-- Default convoy priority for export lend lease
 	SUPPLY_CONVOY_FACTOR = 0.15,						-- How many convoys each supply needs
 	CONVOY_RANGE_FACTOR = 1.2,                        	-- how much range affects convoy need
-	LOCAL_MANPOWER_ACCESSIBLE_FACTOR = 0.35,         	-- was 0.45 accessible recruitable factor base
+	LOCAL_MANPOWER_ACCESSIBLE_FACTOR = 0.45,         	-- was 0.45 accessible recruitable factor base
 	LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 0.02,  	-- accessible recruitable factor base
 	STATE_CONTROLLER_VP_RATIO_FLIP = 0.5,				-- If current state controller has less share than this of state total and no armies in it the state changes controller
 	DEFAULT_NATIONAL_UNITY = 0.7,						-- Default national unity if not scripted otherwise.
@@ -184,7 +185,7 @@ NCountry = {
 	MAX_INTELLIGENCE_AIR_DATA_DEVIATION = 1.0,			-- Max deviation in estimating enemy air planes amount ( 0.0 - 1.0 )
 	MAX_INTELLIGENCE_INDUSTRY_DATA_DEVIATION = 0.4,		-- Max deviation in estimating enemy industry amount ( 0.0 - 1.0 )
 	MAX_INTELLIGENCE_CONVOY_DATA_DEVIATION = 0.3,		-- Max deviation in estimating enemy convoys amount ( 0.0 - 1.0 )
-	MIN_MANPOWER_RATIO = 0.1,							-- was 0.15 Min manpower ratio to show manpower alert
+	MIN_MANPOWER_RATIO = 0.15,							-- was 0.15 Min manpower ratio to show manpower alert
 	ARMY_IMPORTANCE_FACTOR = 5.0,						-- Army factor for AI and calculations
 	VICTORY_POINTS_IMPORTANCE_FACTOR = 5.0,				-- State victory points importance factor for AI and calculations
 	BUILDING_IMPORTANCE_FACTOR = 3.0,					-- State building importance factor for AI and calculations
@@ -223,7 +224,7 @@ NProduction = {
 	BASE_FACTORY_SPEED_NAV = 2.5, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
 	BASE_FACTORY_START_EFFICIENCY_FACTOR = 12,				-- Base start efficiency for factories expressed in %.
 	BASE_FACTORY_MAX_EFFICIENCY_FACTOR = 55,				-- Base max efficiency for factories expressed in %.
-	BASE_FACTORY_EFFICIENCY_GAIN = 0.25,					-- Base efficiency gain for factories per unit produced in %.
+	BASE_FACTORY_EFFICIENCY_GAIN = 0.5,					-- Base efficiency gain for factories per unit produced in %.
 	BASE_FACTORY_EFFICIENCY_BALANCE_FACTOR = 0.1, 			-- Factory efficiency balancing factor
 	BASE_FACTORY_EFFICIENCY_VARIANT_CHANGE_FACTOR = 90,		-- Base factor for changing production variants in %.
 	BASE_FACTORY_EFFICIENCY_PARENT_CHANGE_FACTOR = 50,		-- Base factor for changing production parent<->children in %.
@@ -232,11 +233,11 @@ NProduction = {
 	BASE_CONSUMER_GOODS_NEED_FACTOR = 50,  					-- Base factor for the consumer goods need of civilian factories in %.
 	EQUIPMENT_BASE_LEND_LEASE_WEIGHT = 1.0, 				-- Base equipment lend lease weight
 	EQUIPMENT_LEND_LEASE_WEIGHT_FACTOR = 0.01,				-- Base equipment lend lease factor
-	ANNEX_STOCKPILES_RATIO = 0.9,							-- How much stockpiled equipment will be transferred on annexation
-	ANNEX_FIELD_EQUIPMENT_RATIO = 0.3,						-- How much equipment from deployed divisions will be transferred on annexation
+	ANNEX_STOCKPILES_RATIO = 1.0,							-- How much stockpiled equipment will be transferred on annexation
+	ANNEX_FIELD_EQUIPMENT_RATIO = 0.25,						-- How much equipment from deployed divisions will be transferred on annexation
 	ANNEX_CONVOYS_RATIO = 0.4,								-- How many convoys will be transferred on annexation
 	MIN_POSSIBLE_TRAINING_MANPOWER = 100000,				-- How many deployment lines minimum can be training
-	MIN_FIELD_TO_TRAINING_MANPOWER_RATIO = 0.65,			-- Ratio which % of army in field can be trained
+	MIN_FIELD_TO_TRAINING_MANPOWER_RATIO = 0.75,			-- Ratio which % of army in field can be trained
 	CAPITULATE_STOCKPILES_RATIO = 0.75, 					-- How much equipment from deployed divisions will be transferred on capitulation
 	INFRA_MAX_CONSTRUCTION_COST_EFFECT = 1, 				-- Building in a state with higher infrastructure will reduce the cost of shared buildings.
 	PRODUCTION_RESOURCE_LACK_PENALTY = -0.05,				-- Penalty decrease while lack of resource per factory
@@ -312,14 +313,12 @@ NMilitary = {
 	CORPS_COMMANDER_CAP = 24,								-- how many a corps commander is limited to. 0 = inf
 	FIELD_MARSHALL_CAP = 0,									-- how many a marshall is limited to. 0 = inf
 	UNIT_LEADER_GENERATION_CAPITAL_CONTINENT_FACTOR = 100, 	--Integer factor to multiply manpower.
-
 	RECON_SKILL_IMPACT = 5, 								-- how many skillpoints is a recon advantage worth when picking a tactic.
 	
 	MAX_DIVISION_BRIGADE_WIDTH = 5,							-- Max width of regiments in division designer.
 	MAX_DIVISION_BRIGADE_HEIGHT = 5,						-- Max height of regiments in division designer.
 	MAX_DIVISION_SUPPORT_WIDTH = 2,							-- Max width of support in division designer.
 	MAX_DIVISION_SUPPORT_HEIGHT = 5,						-- Max height of support in division designer.
-	
 	BASE_DIVISION_BRIGADE_GROUP_COST = 20, 					--Base cost to unlock a regiment slot,
 	BASE_DIVISION_BRIGADE_CHANGE_COST = 5,					--Base cost to change a regiment column.
 	BASE_DIVISION_SUPPORT_SLOT_COST = 10, 					--Base cost to unlock a support slot
@@ -459,11 +458,11 @@ NMilitary = {
 	PLAN_NEIGHBORING_ENEMY_PROVINCE_FACTOR = 0.7,			-- When calculating the importance of provinces, it takes number of enemy provinces into account, factored by this
 	PLAN_PROVINCE_BASE_IMPORTANCE = 2.0,					-- 1.0 Used when calculating the calue of front and defense area provinces for the battle plan system
 	
-	PLAN_PROVINCE_LOW_VP_IMPORTANCE_AREA = 1.0,     		-- DNM, original 2 (AI mod) -- Used when calculating the calue of defense area in the battle plan system
+	PLAN_PROVINCE_LOW_VP_IMPORTANCE_AREA = 2.0,     		-- DNM, original 2 (AI mod) -- Used when calculating the calue of defense area in the battle plan system
 	PLAN_PROVINCE_MEDIUM_VP_IMPORTANCE_AREA = 6.0,  		-- DNM, original 5 (AI overhaul mod) -- Used when calculating the calue of defense area in the battle plan system
 	PLAN_PROVINCE_HIGH_VP_IMPORTANCE_AREA = 20.0,   		-- DNM, original 50 (AI overhaul mod) -- Used when calculating the calue of defense area in the battle plan system
 	
-	PLAN_PROVINCE_LOW_VP_IMPORTANCE_FRONT = 1.0,    		-- DNM, original 2.0 (AI overhaul mod) -- Used when calculating the calue of fronts in the battle plan system
+	PLAN_PROVINCE_LOW_VP_IMPORTANCE_FRONT = 2.0,    		-- DNM, original 2.0 (AI overhaul mod) -- Used when calculating the calue of fronts in the battle plan system
 	PLAN_PROVINCE_MEDIUM_VP_IMPORTANCE_FRONT = 6.0, 		-- DNM, original 3.0  (AI overhaul mod) -- Used when calculating the calue of fronts in the battle plan system
 	PLAN_PROVINCE_HIGH_VP_IMPORTANCE_FRONT = 8.0,   		-- DNM, original 4.0  (AI overhaul mod) -- Used when calculating the calue of fronts in the battle plan system
 	
@@ -532,7 +531,7 @@ NMilitary = {
 	SLOWER_ORG_REGAIN_MULT = -0.5,
 	
 	DISBAND_MANPOWER_LOSS = 0.7,
-	MIN_DIVISION_DEPLOYMENT_TRAINING = 0.4,					-- Min level of division training
+	MIN_DIVISION_DEPLOYMENT_TRAINING = 0.2,					-- Min level of division training
 	
 	FRONT_MIN_PATH_TO_REDEPLOY = 8,							-- If a units path is at least this long to reach its front location, it will strategically redeploy.
 	ARMY_INITIATIVE_REINFORCE_FACTOR = 0.25,				-- scales initiative for reinforce chance
@@ -806,7 +805,7 @@ NAI = {
 	RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 0.07, 		-- Multiplies value based on relative number of air base / country size.
 	RESEARCH_NEW_WEIGHT_FACTOR = 0.5, 					-- Impact of previously unexplored tech weights. Higher means more random exploration.
 	RESEARCH_BONUS_FACTOR = 0.9, 						-- To which extent AI should care about bonuses to research
-	MAX_AHEAD_RESEARCH_PENALTY = 2,             		-- max ahead of tiem penalty ai will pick ever
+	MAX_AHEAD_RESEARCH_PENALTY = 2.2,             		-- max ahead of tiem penalty ai will pick ever
 	RESEARCH_AHEAD_OF_TIME_FACTOR = 4.0, 				-- To which extent AI should care about ahead of time penalties to research
 	RESEARCH_BASE_DAYS = 60,							-- AI adds a base number of days when weighting completion time for techs to ensure it doesn't only research quick techs
 	DECLARE_WAR_RELATIVE_FORCE_FACTOR = 0.5,			-- Weight of relative force between nations that consider going to war
@@ -820,10 +819,10 @@ NAI = {
 	NAVAL_THEATRE_PRIO_CAPITAL_SCORE = 100,				-- Weight of capital when calculating naval theatre assignment
 	NAVAL_THEATRE_PRIO_NAVAL_BASE_SCORE = 1,			-- Weight of naval bases when calculating naval theatre assignment
 	NAVAL_THEATRE_PRIO_MIN_DISTANCE = 2000,				-- Minimum distance (in km) between priority theatres for naval assignment, to spread navy out
-	PRODUCTION_UNAVAILABLE_RESORCE_FACTORY_FACTOR = 0.8, -- Assign/queue this proportion of desired factories when resources are short 
-	PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.3,			-- Base value for how much of currently used equipment the AI will at least strive to have in stock
+	PRODUCTION_UNAVAILABLE_RESORCE_FACTORY_FACTOR = 0.75, -- Assign/queue this proportion of desired factories when resources are short 
+	PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.25,			-- Base value for how much of currently used equipment the AI will at least strive to have in stock
 	AIR_CONTROLLED_TERRITORY_INTERCEPT_SCORE = 6,		-- Interception score per controlled state in mission region
-	AIR_ALLY_TERRITORY_INTERCEPT_SCORE = 0,				-- Interception score per ally controlled state in mission region
+	AIR_ALLY_TERRITORY_INTERCEPT_SCORE = -400,				-- Interception score per ally controlled state in mission region
 	INTERCEPT_NAVAL_BOMBING_FACTOR = 15.0,				-- Factors the weight of intercepting naval bombers in sea regions where friendly ships are
 	AIR_CAS_SCORE_FACTOR = 20,							-- Factor applied to (friendly units) x (enemy units)) to get CAS score for region
 	AIR_ENEMY_SUPERIORITY_FACTOR = 2.0,					-- How much enemy air superiority counts relative to own
@@ -833,11 +832,11 @@ NAI = {
 	AIR_WING_SIZE_FACTOR = 1.0,							-- Impact on air score of assigning wings to mission
 	AIR_MISSION_MIN_COVEREAGE = 0.33,					-- Between 0 and 1, limit for % coverage for air mission to be considered
 	AIR_BASE_PRIORITY_DISTANCE_FACTOR = 25.0,			-- Weight of distance between region and airbase for airbase priority score
-	MAX_VOLUNTEER_ARMY_FRACTION = 0.20,					-- Countries will not send more than their forces time this number to aid another country
+	MAX_VOLUNTEER_ARMY_FRACTION = 0.25,					-- Countries will not send more than their forces time this number to aid another country
 	WANTED_UNITS_INDUSTRY_FACTORY = 1.0, 				-- How many units a country wants is partially based on how much military industry that is available
 	DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.95,			-- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
-	DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.3,				-- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
-	DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 0.8,			-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
+	DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.25,				-- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
+	DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 0.95,			-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
 	DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 0.9,				-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in wartime
 	DYNAMIC_STRATEGIES_THREAT_FACTOR = 4.0,				-- How much threat generated by other countries effects generated strategies
 	WARGOAL_GENERATION_STRENGTH_FACTOR = 1.75,			-- Desire to generate wargoal effected negatevely if actor strength is less than this factor of target strength
@@ -984,80 +983,81 @@ NAI = {
 	AIR_BASE_DANGER_ZONE_WEIGHT = 100,					-- Score used per province taken by enemy in a state to determine how dangerous it is to use an air base
 
 	MANPOWER_FREE_USAGE_THRESHOLD = 500000,				-- If AI has this much manpower he doesn't care about the percentage
-	MANPOWER_RESERVED_THRESHOLD = 0.30,					-- The AI will not deploy more units if he goes below this percentage
-	START_TRAINING_EQUIPMENT_LEVEL = 0.95,              -- was 0.95 ai will not start to train if equipment drops below this level
+	MANPOWER_RESERVED_THRESHOLD = 0.25,					-- The AI will not deploy more units if he goes below this percentage
+	START_TRAINING_EQUIPMENT_LEVEL = 0.9,              -- was 0.95 ai will not start to train if equipment drops below this level
 	STOP_TRAINING_EQUIPMENT_LEVEL = 0.8,                -- was 0.9 ai will not train if equipment drops below this level
-	BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.012,	-- How much lack of resources are worth when evaluating what to build.
+	BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.003,	-- How much lack of resources are worth when evaluating what to build.
 	DIVISION_DESIGN_WEIGHTS = {							-- Base values used by AI to evaluate value of a stat
 		-- Army Values
-		0.5,   -- default_morale
-		40.0, -- original 1.0   -- defense
-		55.0,  -- original 1.2  -- breakthrough
-		3.0,   -- hardness
-		55.0,  -- DNM, original 50.0 (ai overhaul mod) -- soft_attack
-		40.0,  -- DNM, original 30.0 (ai overhaul mod) -- hard_attack
-		0.0,   -- recon
-		0.0,   -- entrenchment
-		0.0,   -- initiative
-		0.0,   -- casualty_trickleback
-		-0.0,  -- supply_consumption_factor
-		-0.0,  -- supply_consumption
-		0.0,   -- suppression
-		0.0,   -- suppression_factor
-		0.0,   -- experience_loss_factor
+		0.5, -- default_morale
+		1.0, -- defense
+		1.0, -- breakthrough
+		1.0, -- hardness
+		1.2, -- soft_attack
+		0.0, -- hard_attack
+		0.0, -- recon
+		0.0, -- entrenchment
+		0.0, -- initiative
+		0.0, -- casualty_trickleback
+		-1.0, -- supply_consumption_factor
+		-0.25, -- supply_consumption
+		0.0, -- suppression
+		0.0, -- suppression_factor
+		0.0, -- experience_loss_factor
 		-- Navy Values
-		0.0,   -- surface_detection
-		0.0,   -- sub_detection
-		0.0,   -- surface_visibility
-		0.0,   -- sub_visibility
-		0.0,   -- shore_bombardment
-		0.0,   -- fire_range
-		0.0,   -- evasion
-		40.0,   -- torpedo_attack
-		5.0,   -- sub_attack
-		40.0,   -- attack
-		0.0,   -- port_capacity_usage
-		30.0,   -- anti_air_attack
-		0.0,   -- amphibious_defense
-		0.0,   -- naval_speed
-		25.0,   -- naval_range
-		0.0,   -- convoy_raiding_coordination
-		0.0,   -- patrol_coordination
-		0.0,   -- search_and_destroy_coordination
+		0.0, -- surface_detection
+		0.0, -- sub_detection
+		0.0, -- surface_visibility
+		0.0, -- sub_visibility
+		0.0, -- shore_bombardment
+		0.0, -- fire_range
+		0.0, -- evasion
+		0.0, -- torpedo_attack
+		0.0, -- sub_attack
+		0.0, -- attack
+		0.0, -- port_capacity_usage
+		0.0, -- anti_air_attack
+		0.0, -- amphibious_defense
+		0.0, -- naval_speed
+		0.0, -- naval_range
+		0.0, -- convoy_raiding_coordination
+		0.0, -- patrol_coordination
+		0.0, -- search_and_destroy_coordination
 		-- Air Values
-		0.0,   -- air_range
-		0.0,   -- air_defence
-		0.0,   -- air_attack
-		0.0,   -- air_agility
-		0.0,   -- air_bombing
-		0.0,   -- air_superiority
-		0.0,   -- naval_strike_attack
-		0.0,   -- naval_strike_targetting
-		0.0,   -- air_ground_attack
-		0.0,   -- air_visibility_factor
+		0.0, -- air_range
+		0.0, -- air_defence
+		0.0, -- air_attack
+		0.0, -- air_agility
+		0.0, -- air_bombing
+		0.0, -- air_superiority
+		0.0, -- naval_strike_attack
+		0.0, -- naval_strike_targetting
+		0.0, -- air_ground_attack
+		0.0, -- air_visibility_factor
 		-- Common Values
-		1.0,   -- max_organisation
-		10.0,   -- 1.0 max_strength
-		-20.0,  -- build_cost_ic
-		2.0,   -- maximum_speed
-		0.0,   -- armor_value
-		0.5,   -- ap_attack
-		0.0,   -- reliability
-		0.0,   -- reliability_factor
-		0.00, -- weight
+		1.0, -- max_organisation
+		1.0, -- max_strength
+		-0.5, -- build_cost_ic
+		1.0, -- maximum_speed
+		1.0, -- armor_value
+		0.5, -- ap_attack
+		0.0, -- reliability
+		0.0, -- reliability_factor
+		-0.25, -- weight
 		-- Special Values
-		0.0,   -- strategic_attack
-		70.0,   -- carrier_size
+		0.0, -- strategic_attack
+		0.0, -- carrier_size
 	},
-	DIVISION_DESIGN_MANPOWER_WEIGHT = 0.000,
-	DIVISION_DESIGN_STOCKPILE_WEIGHT = 0.00,
-	DIVISION_DESIGN_COMBAT_WIDTH_WEIGHT = -2.5,
-	DIVISION_DESIGN_COMBAT_WIDTH_TARGET_WEIGHT = -100.0,			-- This score is reduced the farther the width is from the target width (if set)
+	DIVISION_DESIGN_MANPOWER_WEIGHT = 0.005,
+	DIVISION_DESIGN_STOCKPILE_WEIGHT = 0.01,
+	DIVISION_DESIGN_COMBAT_WIDTH_WEIGHT = -1.0,				-- This score is reduced the higher width is when comparing pure changes with no target
+
+	DIVISION_DESIGN_COMBAT_WIDTH_TARGET_WEIGHT = -200.0,	-- This score is reduced the farther the width is from the target width (if set)
 	DIVISION_DESIGN_MAX_FAILED_DAYS = 60,					-- max days we keep track of since failure of a design update
 
-	BUILD_ARMOR_BASE_COST_WEIGHT = 0.0,					-- 200
-	BUILD_ARMOR_STRENGTH_MULTIPLIER_WEIGHT = 0.0,
-	BUILD_ARMOR_ORGANIZATION_MULTIPLIER_WEIGHT = 0.0,
+	BUILD_ARMOR_BASE_COST_WEIGHT = 200.0,
+	BUILD_ARMOR_STRENGTH_MULTIPLIER_WEIGHT = 100.0,
+	BUILD_ARMOR_ORGANIZATION_MULTIPLIER_WEIGHT = 500.0,
 
 	UPGRADE_DIVISION_RELUCTANCE = 25.5,						-- 5.5 DNM, original 7, changed to be consistent with AI mod
 	UPGRADE_PERCENTAGE_OF_FORCES = 0.01,					-- How big part of the army that should be considered for upgrading
@@ -1083,7 +1083,7 @@ NAI = {
 	MAX_DISTANCE_NALAV_INVASION = 100.0,					-- DNM, changed from 500 (AI Mod) -- AI is extremely unwilling to plan naval invasions above this naval distance limit.
 	ENEMY_NAVY_STRENGTH_DONT_BOTHER = 1.8,					-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
 	MIN_SUPPLY_USE_SANITY_CAP = 100,						-- Ignore supply cap if below this value when deciding on how many divisions to produce.
-	MAX_SUPPLY_DIVISOR = 3.0,								-- DNM, original 2 (AI mod) To make sure the AI does not overdeploy divisions. Higher number means more supply per unit.
+	MAX_SUPPLY_DIVISOR = 1.75,								-- DNM, original 2 (AI mod) To make sure the AI does not overdeploy divisions. Higher number means more supply per unit.
 	MISSING_CONVOYS_BOOST_FACTOR = 30.0,					-- The more convoys a country is missing, the more resources it diverts to cover this.
 	TRANSPORTS_PER_PARATROOPER = 20,						-- Air transports only duty is to drop paratroopers.
 	MAX_MICRO_ATTACKS_PER_ORDER = 5,						-- AI goes through its orders and checks if there are situations to take advantage of
@@ -1120,11 +1120,12 @@ NAI = {
 
 	FRONT_UNITS_CAP_FACTOR = 15.0,							-- A factor applied to total front size and supply use. Primarily effects small fronts
 	MAX_DIST_PORT_RUSH = 20.0,								-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
-	
-	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.65,				-- Cancel unit production if below this to get resources out to units in the field
+	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.7,				-- Cancel unit production if below this to get resources out to units in the field
 	MIN_MANPOWER_TO_BUILD_UNITS = 0.7,						-- Cancel unit production if below this to get resources out to units in the field
 	
 	AVERAGE_SUPPLY_USE_PESSIMISM = 1.5,						-- Multiplier for when AI calculates average supply use of entire army.
+	
+	
 	
 	REQUEST_LEND_LEASE_PROTECT_VALUE = 75,					-- Limit for protect enemy desire for reducing lend lease desire
 	REQUEST_LEND_LEASE_CONTAINS_VALUE = 100,				-- Limit of contain enemy desire for boosting friendly help
@@ -1134,12 +1135,20 @@ NAI = {
 	REQUEST_LEND_LEASE_PRODUCTION_DAYS_AIR = 10,			-- Count of daily production amount of equipment to send
 	REQUEST_LEND_LEASE_STOCKPILE_RATIO_NAVAL = 0.1,			-- Ratio to send stockpile from equipment
 	REQUEST_LEND_LEASE_PRODUCTION_DAYS_NAVAL = 28,			-- Count of daily production amount of equipment to send
+
 	
 	FRONT_BULGE_RATIO_UPPER_CUTOFF = 1.5,					-- If total bulginess is lower than this, the front is ignored.
 	FRONT_BULGE_RATIO_LOWER_CUTOFF = 0.95,					-- If local bulginess drops below this, a point of interest is found
 	FRONT_CUTOFF_MIN_EDGE_PROXIMITY = 2,					-- Minimum number of provinces to the front edge to determine for cutoff oportunity.
 	INVASION_DISTANCE_RANDOMNESS = 300,						-- This higher the value, the more unpredictable the invasions. Compares to actual map distance in pixels.
-	
+
+
+
+
+
+
+
+
 	AIR_SUPERIORITY_MISSION_FACTOR = 3.0,					-- AI air superiority mission factor
 	CAS_MISSION_FACTOR = 1.2,								-- AI cas mission factor
 	INTERCEPTION_MISSION_FACTOR = 2.5,						-- AI interception mission factor
@@ -1151,9 +1160,26 @@ NAI = {
 	PORT_STRIKE_MISSION_FACTOR = 0.5,						-- AI port strike mission factor
 	INDUSTRY_IC_AIR_IMPORTANCE_FACTOR = 0.02,				-- AI very specific IC cost factor for air missions
 	
+	
+	
+	
+	
 	AIR_SCORE_DISTANCE_IMPACT = 0.3,						-- Effect of distance applied to the score calculations
 	DAYS_BETWEEN_AIR_PRIORITIES_UPDATE = 4,					-- Amount of days between air ai updates priorities for air wings ( from 1 to N )
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	NAVAL_AIR_SUPERIORITY_IMPORTANCE = 0.10,				-- Strategic importance of air superiority ( amount of enemy planes in area )
 	NAVAL_SHIP_AIR_IMPORTANCE = 2.0,						-- Naval ship air importance
 	NAVAL_SHIP_IN_PORT_AIR_IMPORTANCE = 6.0,				-- Naval ship in the port air importance
