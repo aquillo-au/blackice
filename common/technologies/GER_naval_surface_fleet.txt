@@ -238,6 +238,10 @@ technologies = {
 			leads_to_tech = tech_kr_bb
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_bb_38
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1908
@@ -721,10 +725,10 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		research_cost = 1.5
-		start_year = 1935
+		start_year = 1914
 		folder = {
 			name = kriegsmarine_folder
-			position = { x = @BC y = @1935 }
+			position = { x = @BC y = @1927 }
 		}
 		
 		ai_will_do = {
@@ -761,7 +765,68 @@ technologies = {
 		}
 	}
 	#### BB Battleship ####
+	# Scharnhorst class
 	tech_kr_bb = {
+		XOR = { tech_kr_bb_38 }
+		enable_equipments = {
+			GER_battleship_1a
+		}
+		dependencies = {
+			tech_kr = 1
+		}
+		path = {
+			leads_to_tech = tech_kr_bb1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1935
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 13 y = @1935 }
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		categories = {
+			naval_equipment
+			bb_tech
+		}
+	}
+	tech_kr_bb_38 = {
+		XOR = { tech_kr_bb }
+		
+		enable_equipments = {
+			GER_battleship_1a_38
+		}
+		dependencies = {
+			tech_kr = 1
+		}
+		path = {
+			leads_to_tech = tech_kr_bb1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 0
+		start_year = 1935
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 18 y = @1935 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		categories = {
+			naval_equipment
+			bb_tech
+		}
+	}
+	# Bismarck class
+	tech_kr_bb1 = {
 		
 		enable_equipments = {
 			GER_battleship_1b

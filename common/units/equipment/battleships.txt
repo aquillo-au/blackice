@@ -1163,10 +1163,75 @@ equipments = {
 		
 		manpower = 743
 	}
+	#Scharnhorst Class 28cm guns
+	GER_battleship_1a = {
+		archetype = battleship
+		parent = GER_battleship_1
+		priority = 60
+		
+		ap_attack = 17.2
+		attack = 229.95
+		torpedo_attack = 10
+		fire_range = 36.5
+		shore_bombardment = 11
+		anti_air_attack = 12.56
+		armor_value = 30
+		evasion = 2.58
+		surface_detection = 23
+		surface_visibility = 30
+		sub_attack = 0
+		sub_detection = 5
+		naval_speed = 31
+		
+		naval_range = 4107
+		reliability = 0.75
+		port_capacity_usage = 6
+		max_strength = 4324
+		build_cost_ic = 11189
+		resources = {
+			oil = 2
+			steel = 6
+			chromium = 5
+		}
+		
+		manpower = 1968
+	}
+	#Scharnhorst class 38cm guns
+	GER_battleship_1a_38 = {
+		archetype = battleship
+		parent = GER_battleship_1a
+		priority = 60
+		
+		ap_attack = 19.2
+		attack = 239.95
+		fire_range = 36.5
+		shore_bombardment = 12
+		anti_air_attack = 12.56
+		armor_value = 30
+		evasion = 2.58
+		surface_detection = 23
+		surface_visibility = 30
+		sub_attack = 0
+		sub_detection = 5
+		naval_speed = 31
+		
+		naval_range = 4107
+		reliability = 0.75
+		port_capacity_usage = 6
+		max_strength = 4324
+		build_cost_ic = 13189
+		resources = {
+			oil = 2
+			steel = 7
+			chromium = 6
+		}
+		
+		manpower = 1968
+	}
 	#Bismarck Class 
 	GER_battleship_1b = {
 		archetype = battleship
-		parent = GER_battleship_1
+		parent = GER_battleship_1a
 		priority = 60
 		
 		ap_attack = 19.2
@@ -1198,7 +1263,7 @@ equipments = {
 	#H-39 Class 
 	GER_battleship_2 = {
 		archetype = battleship
-		parent = GER_battleship_1
+		parent = GER_battleship_1b
 		priority = 60
 		
 		ap_attack = 22.33

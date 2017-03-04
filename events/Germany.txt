@@ -6246,7 +6246,57 @@ country_event = {
 		set_country_flag = ger_army_inf_50
 	}
 }
+country_event = {
+	id = germany.258
+	title = germany.258.t
+	desc = { 
+		text = germany.258.desc.a
+		trigger = { has_tech = tech_kr_bb }
+	}
+	desc = { 
+		text = germany.258.desc.b
+		trigger = { has_tech = tech_kr_bb_38 }
+	}
+	picture = GFX_report_event_20_mot
 
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		OR = {
+			has_tech = tech_kr_bb
+			has_tech = tech_kr_bb_38
+			not = { has_country_flag = scharnhorst_28 }
+			not = { has_country_flag = scharnhorst_38 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = germany.258.a
+		ai_chance = { factor = 100 }
+		trigger = { has_tech = tech_kr_bb }
+		
+		hidden_effect = {
+			load_oob = Scharnhorst_Gneisenau
+			set_country_flag = scharnhorst_28
+		}
+		
+	}
+	option = {
+		name = germany.258.b
+		ai_chance = { factor = 100 }
+		trigger = { has_tech = tech_kr_bb_38 }
+		
+		hidden_effect = {
+			load_oob = Scharnhorst_Gneisenau_38
+			set_country_flag = scharnhorst_38
+		}
+	}
+}
 ### 16. Infanterie Division mot date >1940.8.6
 ### 25. Infanterie Division mot date >1941.3.15
 ### 3. Infanterie Division mot date >1940.10.27
