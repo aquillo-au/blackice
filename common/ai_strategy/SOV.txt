@@ -11,27 +11,60 @@
 # influence
 
 
-#soviet_tank_production = {
-#	enable = {
+soviet_tank_production = {
+	enable = {
+		tag = SOV
+		country_exists = SOV
+	}
+	abort = {
+		OR = {
+			NOT = { country_exists = SOV }
+		}	
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = infantry
+		value = -80
+	}
+	ai_strategy = {
+		type = unit_ratio
+		id = armor
+		value = 80
+	}
+}
+#production_type_sov = {
+#	enable = { 
 #		tag = SOV
-#		country_exists = SOV
+#		date > 1940.1.1
 #	}
+#	
 #	abort = {
-#		OR = {
-#			NOT = { country_exists = SOV }
-#		}	
+#		date > 1941.6.1
 #	}
+#	
 #	ai_strategy = {
-#		type = unit_ratio
-#		id = infantry
-#		value = -80
-#	}
-#	ai_strategy = {
-#		type = unit_ratio
+#		type = build_army
 #		id = armor
-#		value = 80
+#		value = 5
 #	}
 #}
+#production_type3_sov = {
+#	enable = { 
+#		tag = SOV
+#		date > 1942.1.1
+#	}
+#	
+#	abort = {
+#		date > 1941.6.1
+#	}
+#	
+#	ai_strategy = {
+#		type = build_army
+#		id = armor
+#		value = 50
+#	}
+#
+
 southern_thrust = {
 	enable = {
 		tag = SOV
