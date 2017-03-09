@@ -17,18 +17,18 @@ default_unit_production = {
 	ai_strategy = { type = unit_ratio id = capital_ship 						value = 1 		} 	
 	ai_strategy = { type = unit_ratio id = submarine 							value = 1 		}	
 	ai_strategy = { type = unit_ratio id = screen_ship 							value = 2 		} 	
-	ai_strategy = { type = unit_ratio id = convoy 								value = 11 		} 	
+	ai_strategy = { type = unit_ratio id = convoy 								value = 1		} 	
 	
 	ai_strategy = { type = equipment_production_factor id = infantry 			value = 80 	    }	
-	ai_strategy = { type = equipment_production_factor id = submarine 			value = 100 	}
+	ai_strategy = { type = equipment_production_factor id = submarine 			value = 25	}
 	ai_strategy = { type = equipment_production_factor id = screen_ship 		value = 100 	}	
-	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = -50 	}
-	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 12	 	}
-	ai_strategy = { type = equipment_production_factor id = convoy 				value = 11 		}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 50 	}
+	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 20	}
+	ai_strategy = { type = equipment_production_factor id = convoy 				value = -100		}
 	
 	ai_strategy = { type = equipment_production_factor id = artillery 			value = 35 	    }
 	ai_strategy = { type = equipment_production_factor id = anti_tank 			value = 5       }
-	ai_strategy = { type = equipment_production_factor id = motorized 			value = 30    	}
+	ai_strategy = { type = equipment_production_factor id = motorized 			value = 50    	}
 }
 
 minors_profile_0 = {
@@ -428,9 +428,16 @@ GER_strategy_2 = {
 	ai_strategy = { type = build_army id = cas 									value =  50 	}	
 	ai_strategy = { type = build_army id = air_transport 						value = -200 	}	
 	
-	ai_strategy = { type = unit_ratio id = capital_ship 						value = -1000 	}	
+	ai_strategy = { type = unit_ratio id = capital_ship 						value = 50	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = 100 	}	
-	ai_strategy = { type = unit_ratio id = screen_ship 							value = 15 	    }	
+	ai_strategy = { type = unit_ratio id = screen_ship 							value = 100 	    }
+	ai_strategy = { type = unit_ratio id = convoy 								value = 0	}
+	
+	#ai_strategy = { type = equipment_production_factor id = carrier		 	value = 5		}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 50	 }
+	ai_strategy = { type = equipment_production_factor id = screen_ship  		value = 100	}
+	ai_strategy = { type = equipment_production_factor id = convoy   			value = 1	}
+	ai_strategy = { type = equipment_production_factor id = submarine    		value = 100	}
 }
 
 GER_strategy_3 = {
@@ -467,9 +474,15 @@ GER_strategy_3 = {
 	ai_strategy = { type = build_army id = cas 									value = 100 	}	
 	ai_strategy = { type = build_army id = air_transport 						value = -200 	}	
 	
-	ai_strategy = { type = unit_ratio id = capital_ship 						value = -1000 	}	
-	ai_strategy = { type = unit_ratio id = submarine 							value = 100 	}	
-	ai_strategy = { type = unit_ratio id = screen_ship 							value = 15 	    }	
+	ai_strategy = { type = unit_ratio id = capital_ship 						value = 100 	}	
+	ai_strategy = { type = unit_ratio id = submarine 							value = 300	}	
+	ai_strategy = { type = unit_ratio id = screen_ship 							value = 150	 	}
+	ai_strategy = { type = unit_ratio id = convoy 								value = 0	}
+	
+	ai_strategy = { type = equipment_production_factor id = submarine		 	value = 500	}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 100 	 }
+	ai_strategy = { type = equipment_production_factor id = screen_ship  		value = 150	}
+	ai_strategy = { type = equipment_production_factor id = convoy 				value = 1	}
 }
 
 GER_strategy_4 = {
@@ -528,7 +541,12 @@ ITA_strategy_1 = {
 	ai_strategy = { type = unit_ratio id = capital_ship 						value = 100 	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
 	ai_strategy = { type = unit_ratio id = screen_ship 							value = 300	 	}
-	ai_strategy = { type = unit_ratio id = convoy 								value = 100 	}
+	ai_strategy = { type = unit_ratio id = convoy 								value = 0	}
+	
+	#ai_strategy = { type = equipment_production_factor id = carrier		 	value = 50	}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 100 	 }
+	ai_strategy = { type = equipment_production_factor id = screen_ship  		value = 500	}
+	ai_strategy = { type = equipment_production_factor id = convoy 				value = 1	}
 }
 
 ITA_strategy_2 = {
@@ -566,8 +584,13 @@ ITA_strategy_2 = {
 	
 	ai_strategy = { type = unit_ratio id = capital_ship 						value = 100 	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
-	ai_strategy = { type = unit_ratio id = screen_ship 							value = 400	 	}	
-	ai_strategy = { type = unit_ratio id = convoy 								value = 100 	}
+	ai_strategy = { type = unit_ratio id = screen_ship 							value = 300	 	}
+	ai_strategy = { type = unit_ratio id = convoy 								value = 0	}
+	
+	#ai_strategy = { type = equipment_production_factor id = carrier		 	value = 50	}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 100 	 }
+	ai_strategy = { type = equipment_production_factor id = screen_ship  		value = 500	}
+	ai_strategy = { type = equipment_production_factor id = convoy 				value = 1	}
 }
 
 JAP_strategy_1 = {
@@ -582,6 +605,8 @@ JAP_strategy_1 = {
 	ai_strategy = { type = unit_ratio id = cavalry 								value = 0 		}	
 	ai_strategy = { type = unit_ratio id = armor 								value = 0 		}	
 	ai_strategy = { type = unit_ratio id = mechanized 							value = 0 		}	
+	
+	ai_strategy = { type = equipment_production_factor id = motorized 				value = 500		}
 	
 	ai_strategy = { type = air_factory_balance value = 33 }
 
@@ -601,13 +626,15 @@ JAP_strategy_1 = {
 	ai_strategy = { type = build_army id = cas 									value = 10 	}	
 	ai_strategy = { type = build_army id = air_transport 						value = -200 	}	
 	
-	ai_strategy = { type = unit_ratio id = capital_ship 						value = 90 	}	
-	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
-	ai_strategy = { type = unit_ratio id = screen_ship 							value = 350 	}
-    ai_strategy = { type = unit_ratio id = convoy 								value = 55 	    }	
+	ai_strategy = { type = unit_ratio id = carrier								value = 300 	}	
+	ai_strategy = { type = unit_ratio id = capital_ship 						value = 200 	}	
+	ai_strategy = { type = unit_ratio id = submarine 							value = -100	}	
+	ai_strategy = { type = unit_ratio id = screen_ship 							value = 100 	}
+    ai_strategy = { type = unit_ratio id = convoy 								value = 0   }	
 
-	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 25 		}
-	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = -25 	}
+	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 300		}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 100	}
+	ai_strategy = { type = equipment_production_factor id = convoy 				value = 1	}
 }
 
 JAP_strategy_2 = {
@@ -618,10 +645,12 @@ JAP_strategy_2 = {
 	ai_strategy = { type = unit_ratio id = mountaineers 							value = 0 		}	
 	ai_strategy = { type = unit_ratio id = marines 								value = 20 		}	
 	ai_strategy = { type = unit_ratio id = paratroopers 							value = 0 		}	
-	ai_strategy = { type = unit_ratio id = motorized 							value = 0 		}	
+	ai_strategy = { type = unit_ratio id = motorized 							value = 10 		}	
 	ai_strategy = { type = unit_ratio id = cavalry 								value = 0 		}	
 	ai_strategy = { type = unit_ratio id = armor 								value = 12 		}	
-	ai_strategy = { type = unit_ratio id = mechanized 							value = 0 		}	
+	ai_strategy = { type = unit_ratio id = mechanized 							value = 0 		}
+
+	ai_strategy = { type = equipment_production_factor id = motorized 				value = 500		}
 	
 	ai_strategy = { type = air_factory_balance value = 45 }
 
@@ -641,13 +670,14 @@ JAP_strategy_2 = {
 	ai_strategy = { type = build_army id = cas 									value = 100 	}	
 	ai_strategy = { type = build_army id = air_transport 						value = -200 	}	
 	
-	ai_strategy = { type = unit_ratio id = capital_ship 						value = 100 	}	
+	ai_strategy = { type = unit_ratio id = carrier 								value = 300 	}
+	ai_strategy = { type = unit_ratio id = capital_ship 						value = 200 	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
-	ai_strategy = { type = unit_ratio id = screen_ship 							value = 400 	}	
-	ai_strategy = { type = unit_ratio id = convoy 								value = 70 	}
+	ai_strategy = { type = unit_ratio id = screen_ship 							value = 200	}	
+	ai_strategy = { type = unit_ratio id = convoy 								value = 1	}
 	
-	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 25 		}
-	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = -25 	}
+	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 300		}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 200	}
 }
 
 SOV_strategy_1 = {
@@ -689,7 +719,7 @@ SOV_strategy_1 = {
 	ai_strategy = { type = unit_ratio id = capital_ship 						value = -1000 	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
 	ai_strategy = { type = unit_ratio id = screen_ship 							value = -50	    }	
-	ai_strategy = { type = unit_ratio id = convoy 								value = -50 	}
+	ai_strategy = { type = unit_ratio id = convoy 								value = 0 	}
 }
 
 SOV_strategy_2 = {
@@ -732,7 +762,7 @@ SOV_strategy_2 = {
 	ai_strategy = { type = unit_ratio id = capital_ship 						value = -1000 	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
 	ai_strategy = { type = unit_ratio id = screen_ship 							value = 50	 	}	
-	ai_strategy = { type = unit_ratio id = convoy 								value = -50 	}
+	ai_strategy = { type = unit_ratio id = convoy 								value = 0 	}
 }
 
 ENG_strategy_1 = {
@@ -768,11 +798,13 @@ ENG_strategy_1 = {
 
 	ai_strategy = { type = unit_ratio id = capital_ship 						value = 250 	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
-	ai_strategy = { type = unit_ratio id = screen_ship 							value = 400	 	}
-    ai_strategy = { type = unit_ratio id = convoy 								value = 300 	}
+	ai_strategy = { type = unit_ratio id = screen_ship 							value = 200	 	}
+   	 ai_strategy = { type = unit_ratio id = convoy 								value = 1	}
 	
-	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 25 		}
-	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 2 	}
+	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 250 		}
+	ai_strategy = { type = equipment_production_factor id = screen_ship		 		value = 300 		}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 200 	}
+	ai_strategy = { type = equipment_production_factor id = convoy 				value = 1	}
 }
 
 ENG_strategy_2 = {
@@ -811,10 +843,11 @@ ENG_strategy_2 = {
 	ai_strategy = { type = unit_ratio id = capital_ship 						value = 250 	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
 	ai_strategy = { type = unit_ratio id = screen_ship 							value = 400	 	}	
-	ai_strategy = { type = unit_ratio id = convoy 								value = 250 	}
+	ai_strategy = { type = unit_ratio id = convoy 								value = 1	}
 	
-	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 25 		}
-	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 2 	}
+	ai_strategy = { type = equipment_production_factor id = screen_ship		 		value = 300 		}
+	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 250 		}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 200	}
 }
 
 FRA_strategy_1 = {
@@ -850,10 +883,11 @@ FRA_strategy_1 = {
 	ai_strategy = { type = build_army id = cas 									value = 100 	}	
 	ai_strategy = { type = build_army id = air_transport 						value = -200 	}	
 	
-	ai_strategy = { type = unit_ratio id = capital_ship 						value = 100 	}	
+	ai_strategy = { type = unit_ratio id = capital_ship 						value = 100	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
 	ai_strategy = { type = unit_ratio id = screen_ship 							value = 400	 	}	
-	ai_strategy = { type = unit_ratio id = convoy 								value = 60 	}
+	ai_strategy = { type = unit_ratio id = convoy 								value = 0	}
+	
 }
 
 FRA_strategy_2 = {
@@ -892,7 +926,7 @@ FRA_strategy_2 = {
 	ai_strategy = { type = unit_ratio id = capital_ship 						value = 100 	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
 	ai_strategy = { type = unit_ratio id = screen_ship 							value = 400		}	
-	ai_strategy = { type = unit_ratio id = convoy 								value = 60 	}
+	ai_strategy = { type = unit_ratio id = convoy 								value = 0	}
 }
 
 USA_strategy_1 = {
@@ -928,13 +962,16 @@ USA_strategy_1 = {
 	ai_strategy = { type = build_army id = cas 									value = -200 	}	
 	ai_strategy = { type = build_army id = air_transport 						value = -200 	}	
 	
-	ai_strategy = { type = unit_ratio id = capital_ship 						value = 300 	}	
+	ai_strategy = { type = unit_ratio id = capital_ship 						value = 250 	}	
+	ai_strategy = { type = unit_ratio id = carrier								value = 250 	}
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
-	ai_strategy = { type = unit_ratio id = screen_ship 							value = 400	 	}	
-	ai_strategy = { type = unit_ratio id = convoy 								value = 300 	}
+	ai_strategy = { type = unit_ratio id = screen_ship 							value = 200	 	}
+   	 ai_strategy = { type = unit_ratio id = convoy 								value = 1	}
 	
-	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 25 		}
-	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 2 	    }
+	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 300 		}
+	ai_strategy = { type = equipment_production_factor id = screen_ship		 		value = 300 		}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 250 	}
+	ai_strategy = { type = equipment_production_factor id = convoy 				value = 1	}
 }
 
 USA_strategy_2 = {
@@ -973,10 +1010,11 @@ USA_strategy_2 = {
 	ai_strategy = { type = unit_ratio id = capital_ship 						value = 200 	}	
 	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
 	ai_strategy = { type = unit_ratio id = screen_ship 							value = 400 	}	
-	ai_strategy = { type = unit_ratio id = convoy 								value = 300 	}
+	ai_strategy = { type = unit_ratio id = convoy 								value = 0	}
 	
-	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 25 		}
-	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 2 	    }
+	ai_strategy = { type = equipment_production_factor id = carrier		 		value = 300		}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 500 	    }
+	ai_strategy = { type = equipment_production_factor id = screen_ship  		value = 100	}
 }
 
 Horde_strategy_2 = {

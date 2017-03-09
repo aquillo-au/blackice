@@ -5442,22 +5442,22 @@ country_event = {
 		hidden_effect = {
 		add_resource = {
 				type = rubber
-				amount = 6
+				amount = 12
 				state = 58
 			}
 		add_resource = {
 				type = tungsten
-				amount = 6
+				amount = 12
 				state = 53
 			}
 		add_resource = {
 				type = chromium
-				amount = 6
+				amount = 12
 				state = 64
 			}
 		add_resource = {
 				type = oil
-				amount = 8
+				amount = 16
 				state = 59
 			}
 			set_country_flag =  GER_aiautarky 
@@ -6296,10 +6296,62 @@ country_event = {
 		}
 	}
 }
-### 16. Infanterie Division mot date >1940.8.6
-### 25. Infanterie Division mot date >1941.3.15
-### 3. Infanterie Division mot date >1940.10.27
-### 10. Infanterie Division mot date >1941.5.1
-### 14. Infanterie Division mot  date >1940.10.15
-### 18. Infanterie Division mot date >1940.11.1
-### 36. Infanterie Division mot date >1940.11.1
+### 16. Infanterie Division mot date >1940.8.6 #event 259
+### 25. Infanterie Division mot date >1941.3.15  #event 260
+### 3. Infanterie Division mot date >1940.10.27  #event 261
+### 10. Infanterie Division mot date >1941.5.1  #event 262
+### 14. Infanterie Division mot  date >1940.10.15  #event 263
+### 18. Infanterie Division mot date >1940.11.1  #event 264
+### 36. Infanterie Division mot date >1940.11.1 #event 265
+
+########################################################################
+########### Tank destroyer conversions ################################
+
+###### Pz 1 >  Pzj1
+
+country_event = {
+	id = germany.266
+	title = germany.266.t
+	desc = germany.266.d
+	picture = GFX_report_event_
+	
+	trigger = {
+		tag = GER
+		has_equipment = { panzer_i_equipment > 500 }
+		has_tech = subtech_panzer_i_td_equipment_1
+		not = { has_country_flag = pzj_1}
+		has_global_flag = end_of_czechoslovakia #uses czech AT guns
+		has_country_flag = czech_equipment
+	}
+	immediate = {
+		set_country_flag = { flag = pzj_1 days = 180 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+
+		option = {
+		name = germany.266.a	#convert Pz 1
+
+		send_equipment = {
+				target = CZE	#needs testing with CZE			
+				type = panzer_i_equipment
+				amount = 500
+			}     
+		hidden_effect = {
+			load_oob = "GER_PanzerJaeger1"
+			
+		}
+					
+		ai_chance = { factor = 0 }	# tanks more useful to the AI
+		
+		}
+				
+		option = {
+		name = germany.266.b #No need
+		ai_chance = { factor = 100 }
+		
+		}
+########################################################
+
