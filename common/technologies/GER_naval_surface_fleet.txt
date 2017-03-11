@@ -44,7 +44,7 @@ technologies = {
 	}
 	tech_kr_transport = {
 		dependencies = {
-			tech_usn = 1
+			tech_kr = 1
 		}
 		transport_capacity = -0.10 # was -0.5
 		naval_invasion_capacity = 15
@@ -75,20 +75,6 @@ technologies = {
 				tag = GER
 			}
 			
-			modifier = {
-				factor = 2
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 2
-				tag = JAP
-			}
-			
-			modifier = {
-				factor = 2
-				tag = ENG
-			}
 		}
 		
 		categories = {
@@ -99,14 +85,14 @@ technologies = {
 	
 	tech_kr_landing_craft = {
 		dependencies = {
-			tech_usn = 1
+			tech_kr = 1
 		}
 		invasion_preparation = -0.5
 		amphibious_invasion_defence = 0.15
 		naval_invasion_capacity = 40
 
 		path = {
-			leads_to_tech = tech_usn_tank_landing_craft 
+			leads_to_tech = tech_kr_tank_landing_craft 
 			research_cost_coeff = 1
 		}
 		
@@ -131,20 +117,6 @@ technologies = {
 				tag = GER
 			}
 			
-			modifier = {
-				factor = 2
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 2
-				tag = JAP
-			}
-			
-			modifier = {
-				factor = 2
-				tag = ENG
-			}
 		}
 		
 		categories = {
@@ -155,7 +127,7 @@ technologies = {
 	
 	tech_kr_tank_landing_craft = {
 		dependencies = {
-			tech_usn = 1
+			tech_kr = 1
 		}
 		amphibious_invasion = 0.25
 		amphibious_invasion_defence = 0.5
@@ -182,27 +154,13 @@ technologies = {
 				tag = GER
 			}
 			
-			modifier = {
-				factor = 2
-				tag = USA
-			}
-			
-			modifier = {
-				factor = 2
-				tag = JAP
-			}
-			
-			modifier = {
-				factor = 2
-				tag = ENG
-			}
 		}
 		
 		categories = {
 			naval_equipment
 			tp_tech
 		}
-		}
+	}
 	#### Obs SHIPS ####
 	#### Obs DD Destroyer ####
 	tech_kr_pb_obs = {
