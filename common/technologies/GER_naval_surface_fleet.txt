@@ -3,18 +3,18 @@ technologies = {
 	@1927 = 0		
 	@1929 = 2		
 	@1934 = 4		
-	@1935 = 6
-	@1936 = 8		
-	@1937 = 10		
-	@1938 = 12		
-	@1939 = 14
-	@1940 = 16		 
-	@1941 = 18		
-	@1942 = 20		
-	@1943 = 22		
-	@1944 = 24
-	@1945 = 26
-	@1946 = 28
+	@1935 = 7
+	@1936 = 10		
+	@1937 = 12		
+	@1938 = 14		
+	@1939 = 17
+	@1940 = 20		 
+	@1941 = 23		
+	@1942 = 26		
+	@1943 = 29		
+	@1944 = 32
+	@1945 = 35
+	@1946 = 38
 	#Horizontal position
 	@LC = -9
 	@DD = -5
@@ -206,6 +206,10 @@ technologies = {
 			leads_to_tech = tech_kr_dd_obs
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_early_sonar_dd
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1927
@@ -223,6 +227,33 @@ technologies = {
 			dd_tech
 		}
 	}
+	tech_kr_early_sonar_dd = {
+		# EFFECT #############
+		destroyer = {
+			sub_detection = 0.15
+		}
+		
+		research_cost = 1
+		start_year = 1929
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = -4 y = 1 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+	}
 	tech_kr_dd_obs = {
 		
 		enable_equipments = {
@@ -234,6 +265,10 @@ technologies = {
 		
 		path = {
 			leads_to_tech = tech_kr_dd
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_kr_depth_charge_throwers_dd
 			research_cost_coeff = 1
 		}
 		
@@ -251,6 +286,37 @@ technologies = {
 		categories = {
 			naval_equipment
 			dd_tech
+		}
+	}
+	tech_kr_depth_charge_throwers_dd = {
+		# EFFECT #############
+		destroyer = {
+			sub_attack = 0.2
+		}
+		dependencies = {
+			tech_kr = 1
+			tech_kr_early_sonar_dd = 1
+		}
+		
+		research_cost = 1
+		start_year = 1934
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = -4 y = 5 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
 		}
 	}
 	#### Obs CL Light cruiser ####
@@ -327,6 +393,10 @@ technologies = {
 			leads_to_tech = tech_kr_ca
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_early_sonar_ca
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1929
@@ -342,6 +412,71 @@ technologies = {
 		categories = {
 			naval_equipment
 			ca_tech
+		}
+	}
+	tech_kr_early_sonar_ca = {
+		# EFFECT #############
+		heavy_cruiser = {
+			sub_detection = 0.025
+		}
+		dependencies = {
+			tech_kr = 1
+		}
+		path = {
+			leads_to_tech = tech_kr_depth_charge_throwers_ca
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1929
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 6 y = 3 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+	}
+	tech_kr_depth_charge_throwers_ca = {
+		# EFFECT #############
+		heavy_cruiser = {
+			sub_attack = 0.03
+		}
+		dependencies = {
+			tech_kr = 1
+			tech_kr_early_sonar_ca = 1
+		}
+		
+		research_cost = 1
+		start_year = 1934
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 6 y = 5 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
 		}
 	}
 	#### Obs BB Battleship ####
@@ -391,6 +526,7 @@ technologies = {
 			leads_to_tech = tech_kr_dd2
 			research_cost_coeff = 1
 		}
+		
 		research_cost = 1.5
 		start_year = 1935
 		folder = {
@@ -419,6 +555,10 @@ technologies = {
 			leads_to_tech = tech_kr_dd3
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_basic_sonar_dd
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1936
@@ -442,6 +582,37 @@ technologies = {
 		categories = {
 			naval_equipment
 			dd_tech
+		}
+	}
+	tech_kr_basic_sonar_dd = {
+		# EFFECT #############
+		destroyer = {
+			sub_detection = 0.15
+		}
+		dependencies = {
+			tech_kr = 1
+			mechanical_computing = 1
+			tech_kr_depth_charge_throwers_dd = 1
+		}
+
+		research_cost = 1
+		start_year = 1936
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = -4 y = 11 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1938.1.1
+			}
+		}
+		categories = {
+			naval_equipment
+			asw_tech
 		}
 	}
 	tech_kr_dd3 = {
@@ -493,6 +664,10 @@ technologies = {
 			leads_to_tech = tech_kr_dd5
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_asw_mortars_dd
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1940
@@ -516,6 +691,38 @@ technologies = {
 		categories = {
 			naval_equipment
 			dd_tech
+		}
+	}
+	tech_kr_asw_mortars_dd = {
+		# EFFECT #############
+		destroyer = {
+			sub_attack = 0.25
+		}
+		dependencies = {
+			tech_kr = 1
+			tech_kr_basic_sonar_dd = 1
+		}
+		
+		research_cost = 1
+
+		start_year = 1940
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = -4 y = 21 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1942.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
 		}
 	}
 	tech_kr_dd5 = {
@@ -641,6 +848,10 @@ technologies = {
 			leads_to_tech = tech_kr_dd9
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_advanced_sonar_dd
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1944
@@ -664,6 +875,38 @@ technologies = {
 		categories = {
 			naval_equipment
 			dd_tech
+		}
+	}
+	tech_kr_advanced_sonar_dd = {
+		# EFFECT #############
+		destroyer = {
+			sub_detection = 0.2
+		}
+		dependencies = {
+			tech_kr = 1
+			improved_computing_machine = 1
+			tech_kr_asw_mortars_dd = 1
+		}
+		
+		research_cost = 1
+		start_year = 1944
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = -4 y = 33 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1945.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
 		}
 	}
 	tech_kr_dd9 = {
@@ -712,6 +955,10 @@ technologies = {
 			leads_to_tech = tech_kr_cl2
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_early_sonar_cl
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1928
@@ -727,6 +974,106 @@ technologies = {
 		categories = {
 			naval_equipment
 			cl_tech
+		}
+	}
+	tech_kr_early_sonar_cl = {
+		# EFFECT #############
+		light_cruiser = {
+			sub_detection = 0.05
+		}
+		dependencies = {
+			tech_kr = 1
+		}
+		path = {
+			leads_to_tech = tech_kr_depth_charge_throwers_cl
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1929
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 1 y = 3 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+	}
+	tech_kr_depth_charge_throwers_cl = {
+		# EFFECT #############
+		light_cruiser = {
+			sub_attack = 0.06
+		}
+		dependencies = {
+			tech_kr = 1
+			tech_kr_early_sonar_cl = 1
+		}
+		path = {
+			leads_to_tech = tech_kr_basic_sonar_cl
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1934
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 1 y = 5 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+	}
+	tech_kr_basic_sonar_cl = {
+		# EFFECT #############
+		light_cruiser = {
+			sub_detection = 0.025
+		}
+		dependencies = {
+			tech_kr = 1
+			mechanical_computing = 1
+			tech_kr_depth_charge_throwers_cl = 1
+		}
+
+		research_cost = 1
+		start_year = 1936
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 1 y = 11 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1938.1.1
+			}
+		}
+		categories = {
+			naval_equipment
+			asw_tech
 		}
 	}
 	tech_kr_cl2 = {
@@ -778,6 +1125,10 @@ technologies = {
 			leads_to_tech = tech_kr_cl4
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_asw_mortars_cl
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1939
@@ -803,6 +1154,37 @@ technologies = {
 			cl_tech
 		}
 	}
+	tech_kr_asw_mortars_cl = {
+		# EFFECT #############
+		light_cruiser = {
+			sub_attack = 0.2
+		}
+		dependencies = {
+			tech_kr = 1
+			tech_kr_basic_sonar_cl = 1
+		}
+		
+		research_cost = 1
+		start_year = 1940
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 1 y = 21 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1942.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+	}
 	tech_kr_cl4 = {
 		
 		enable_equipments = {
@@ -810,6 +1192,10 @@ technologies = {
 		}
 		dependencies = {
 			tech_kr = 1
+		}
+		path = {
+			leads_to_tech = tech_kr_advanced_sonar_cl
+			research_cost_coeff = 1
 		}
 		
 		research_cost = 1.5
@@ -834,6 +1220,38 @@ technologies = {
 		categories = {
 			naval_equipment
 			cl_tech
+		}
+	}
+	tech_kr_advanced_sonar_cl = {
+		# EFFECT #############
+		light_cruiser = {
+			sub_detection = 0.15
+		}
+		dependencies = {
+			tech_kr = 1
+			improved_computing_machine = 1
+			tech_kr_asw_mortars_cl = 1
+		}
+		
+		research_cost = 1
+		start_year = 1944
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 1 y = 33 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1945.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
 		}
 	}
 	#### CA Heavy cruiser ####
@@ -878,6 +1296,11 @@ technologies = {
 			leads_to_tech = tech_kr_ca3
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_basic_sonar_ca
+			research_cost_coeff = 1
+		}
+		
 		research_cost = 1.5
 		start_year = 1936
 		folder = {
@@ -891,15 +1314,43 @@ technologies = {
 			modifier = {
 				factor = 5
 				date > 1936.6.1
-				OR = {
-					tag = GER
-				}
 			}
 		}
 		
 		categories = {
 			naval_equipment
 			ca_tech
+		}
+	}
+	tech_kr_basic_sonar_ca = {
+		# EFFECT #############
+		heavy_cruiser = {
+			sub_detection = 0.025
+		}
+		dependencies = {
+			tech_kr = 1
+			mechanical_computing = 1
+			tech_kr_depth_charge_throwers_ca = 1
+		}
+
+		research_cost = 1
+		start_year = 1936
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 6 y = 11 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1938.1.1
+			}
+		}
+		categories = {
+			naval_equipment
+			asw_tech
 		}
 	}
 	tech_kr_ca3 = {
@@ -910,6 +1361,11 @@ technologies = {
 		dependencies = {
 			tech_kr = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_asw_mortars_ca
+			research_cost_coeff = 1
+		}
+		
 		research_cost = 1.5
 		start_year = 1939
 		folder = {
@@ -923,15 +1379,79 @@ technologies = {
 			modifier = {
 				factor = 5
 				date > 1939.6.1
-				OR = {
-					tag = GER
-				}
 			}
 		}
 		
 		categories = {
 			naval_equipment
 			ca_tech
+		}
+	}
+	tech_kr_asw_mortars_ca = {
+		# EFFECT #############
+		heavy_cruiser = {
+			sub_attack = 0.1
+		}
+		dependencies = {
+			tech_kr = 1
+			tech_kr_basic_sonar_ca = 1
+		}
+		path = {
+			leads_to_tech = tech_kr_advanced_sonar_ca
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		start_year = 1940
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 6 y = 21 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1942.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+	}
+	tech_kr_advanced_sonar_ca = {
+		# EFFECT #############
+		destroyer = {
+			sub_detection = 0.15
+		}
+		dependencies = {
+			tech_kr = 1
+			improved_computing_machine = 1
+			tech_kr_asw_mortars_ca = 1
+		}
+		
+		research_cost = 1
+		start_year = 1944
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 6 y = 33 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1945.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
 		}
 	}
 	#### BC Battlecruiser ####
