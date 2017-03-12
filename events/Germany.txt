@@ -6251,11 +6251,17 @@ country_event = {
 	title = germany.258.t
 	desc = { 
 		text = germany.258.desc.a
-		trigger = { has_tech = tech_kr_bb }
+		trigger = { 
+			has_tech = tech_kr_bb 
+			is_ai = no
+		}
 	}
 	desc = { 
 		text = germany.258.desc.b
-		trigger = { has_tech = tech_kr_bb_38 }
+		trigger = { 
+			has_tech = tech_kr_bb_38
+			is_ai = no
+		}
 	}
 	picture = GFX_report_event_scharnhorst_28
 
@@ -6263,6 +6269,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
+		is_ai = no
 		OR = {
 			has_tech = tech_kr_bb
 			has_tech = tech_kr_bb_38
@@ -6277,8 +6284,11 @@ country_event = {
 	
 	option = {
 		name = germany.258.a
-		ai_chance = { factor = 100 }
-		trigger = { has_tech = tech_kr_bb }
+		ai_chance = { factor = 0 }
+		trigger = { 
+			has_tech = tech_kr_bb
+			is_ai = no
+		}
 		
 		hidden_effect = {
 			load_oob = Scharnhorst_Gneisenau
@@ -6287,8 +6297,11 @@ country_event = {
 	}
 	option = {
 		name = germany.258.b
-		ai_chance = { factor = 100 }
-		trigger = { has_tech = tech_kr_bb_38 }
+		ai_chance = { factor = 0 }
+		trigger = { 
+			has_tech = tech_kr_bb_38
+			is_ai = no
+		}
 		
 		hidden_effect = {
 			load_oob = Scharnhorst_Gneisenau_38
@@ -6331,27 +6344,89 @@ country_event = {
 		days = 2
 	}
 
-		option = {
+	option = {
 		name = germany.266.a	#convert Pz 1
 
 		send_equipment = {
-				target = CZE	#needs testing with CZE			
-				type = panzer_i_equipment
-				amount = 500
-			}     
+			target = CZE	#needs testing with CZE			
+			type = panzer_i_equipment
+			amount = 500
+		}     
 		hidden_effect = {
 			load_oob = "GER_PanzerJaeger1"
 			
 		}
-					
+		
 		ai_chance = { factor = 0 }	# tanks more useful to the AI
 		
-		}
-				
-		option = {
+	}
+	
+	option = {
 		name = germany.266.b #No need
 		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = germany.267
+	title = germany.267.t
+	desc = germany.267.a
+	
+	picture = GFX_report_event_scharnhorst_28
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_tech = tech_kr_bb
+		not = { has_country_flag = scharnhorst_28 }
+		date > 1939.1.6
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = germany.267.a
+		ai_chance = { factor = 100 }
 		
+		hidden_effect = {
+			load_oob = GER_Scharnhorst
+			set_country_flag = scharnhorst_28
 		}
+	}
+}
+country_event = {
+	id = germany.268
+	title = germany.268.t
+	desc = germany.268.a
+	
+	picture = GFX_report_event_scharnhorst_28
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		has_tech = tech_kr_bb
+		not = { has_country_flag = gneisenau_28 }
+		date > 1938.5.20
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = germany.268.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = GER_Gneisenau
+			set_country_flag = gneisenau_28
+		}
+	}
+}
 ########################################################
 
