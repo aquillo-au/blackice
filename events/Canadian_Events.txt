@@ -23,7 +23,7 @@ country_event = {
 	option = {
 		name = canada.1.a
 		set_country_flag = can_cbc_created
-		add_national_unity = 0.025
+		add_national_unity = 0.1
 	}
 }
 
@@ -50,6 +50,13 @@ country_event = {
 		name = canada.2.a #Proceed
 		set_country_flag = can_cmp_design
 		set_country_flag = can_cmp_design_OK
+		add_tech_bonus = {
+				name = Truck_design
+				
+				bonus = 0.25
+				uses = 1
+				category = motorized_equipment
+			}
 ##		add_country_modifier = { 
 ##			name = cmp_trucks_design
 ##			duration = 720 #roughly two years
@@ -85,6 +92,13 @@ country_event = {
 	option = {
 		name = canada.3.a #Excellent
 		set_country_flag = can_cmp_trucks 
+		add_tech_bonus = {
+				name = cmp_truck_design
+				
+				bonus = 0.25
+				uses = 1
+				category = motorized_equipment
+			}
 ##		add_country_modifier = {
 ##			name = cmp_trucks
 ##			duration = -1
@@ -176,6 +190,12 @@ country_event = {
 		name = canada.6.a #Proceed
 		set_country_flag = can_ram_design
 		set_country_flag = can_ram_design_OK
+		add_tech_bonus = {
+				name = RAM_design
+				bonus = 0.25
+				uses = 1
+				category = cat_light_armor
+			}
 ##		add_country_modifier = {
 ##			name = ram_tank_design
 ##			duration = 720 #should be removed by another event, but if it doesn't it will disappear after two years
@@ -212,7 +232,12 @@ country_event = {
 		name = canada.7.a #Excellent
 		set_country_flag = can_ram_tank
 ##		remove_country_modifier = ram_tank_design
-
+		add_tech_bonus = {
+			name = Ram_Tank
+			bonus = 0.25
+			uses = 2
+			category = armor
+		}
 ##		light_armor_brigade_design = 120
 ##		gasoline_engine_design = 120
 ##		armor_brigade_design = 120
@@ -243,7 +268,12 @@ country_event = {
 	option = {
 		name = canada.8.a #Excellent
 		set_country_flag = can_grizzly_tank	
-
+		add_tech_bonus = {
+			name = Grizzly_Tank
+			bonus = 0.25
+			uses = 2
+			category = armor
+		}
 ##		armor_brigade_design = 120
 ##		armor_thickness = 120
 ##		cast_armour = 120			## add in a bonus to armour research? - Misha
@@ -324,11 +354,10 @@ country_event = {
 			set_technology = {basic_medium_tank = 1}
 			set_technology = {tech_inf_tanks = 1}
 			set_technology = {tech_ac_recon = 1}
-			set_technology = {tech_ac_recon2 = 1}	
-			load_oob = "CAN_1_armor_Division"
-			set_country_flag = canada_arm
 			
+			load_oob = "CAN_1_armor_Division"
 		}
+		set_country_flag = canada_arm
 	}
 	
 }
@@ -365,9 +394,9 @@ country_event = {
 			set_technology = {tech_mountaineers = 1}
 			set_technology = {commando_team = 1}
 			load_oob = "CAN_commandoes"
-			set_country_flag = canada_comm
-			
+						
 		}
+		set_country_flag = canada_comm
 	}
 	
 }

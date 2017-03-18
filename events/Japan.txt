@@ -835,3 +835,111 @@ country_event = {
 		set_country_flag = japanesegarrison
 	}
 }	
+country_event = {
+	id = japan.27
+	title = japan.27.t
+	desc = japan.27.d
+	picture = GFX_report_event_japanese_soldiers_on_hill
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		has_country_flag = philipinesinvasion 
+		is_ai = yes 
+		
+		has_war_with = PHI
+				
+	}
+	mean_time_to_happen = { days = 5 }
+	
+	option = {
+		name = japan.27.a
+		hidden_effect = {
+		load_oob = "JAP_invade_philipines"
+		
+		}
+		set_country_flag = philipinesinvasion
+	}
+}
+country_event = {
+	id = japan.28
+	title = japan.28.t
+	desc = japan.28.d
+	picture = GFX_report_event_japanese_soldiers_on_hill
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		has_country_flag = eastindiesinvasion 
+		is_ai = yes 
+		
+		has_war_with = HOL
+				
+	}
+	mean_time_to_happen = { days = 10 }
+	
+	option = {
+		name = japan.28.a
+		hidden_effect = {
+		load_oob = "JAP_invade_eastindies"
+		
+		}
+		set_country_flag = eastindiesinvasion
+	}
+}
+country_event = {
+	id = japan.29
+	title = japan.29.t
+	desc = japan.29.d
+	picture = GFX_report_event_japanese_soldiers_on_hill
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		has_country_flag = borneoinvasion 
+		is_ai = yes 
+		
+		has_war_with = ENG
+				
+	}
+	mean_time_to_happen = { days = 7 }
+	
+	option = {
+		name = japan.29.a
+		hidden_effect = {
+		load_oob = "JAP_invade_borneo"
+		
+		}
+		set_country_flag = borneoinvasion
+	}
+}
+country_event = {
+	id = japan.30
+	title = japan.30.t
+	desc = japan.30.d
+	picture = GFX_report_event_japanese_soldiers_on_hill
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = JAP
+		has_country_flag = newguineainvasion 
+		is_ai = yes 
+		
+		has_war_with = AST
+				
+	}
+	mean_time_to_happen = { days = 14 }
+	
+	option = {
+		name = japan.30.a
+		hidden_effect = {
+		load_oob = "JAP_invade_newguinea"
+		
+		}
+		set_country_flag = newguineainvasion
+	}
+}
