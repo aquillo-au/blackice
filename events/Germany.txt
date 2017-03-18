@@ -6326,7 +6326,7 @@ country_event = {
 	id = germany.266
 	title = germany.266.t
 	desc = germany.266.d
-	picture = GFX_report_event_
+	picture = GFX_report_event_Pz_I
 	
 	trigger = {
 		tag = GER
@@ -6429,4 +6429,141 @@ country_event = {
 	}
 }
 ########################################################
+###### French Chassis >  Marder
 
+country_event = {
+	id = germany.269
+	title = germany.269.t
+	desc = germany.269.d
+	picture = GFX_report_event_polish_tanks_01
+	
+	trigger = {
+		tag = GER
+		
+		has_tech = subtech_panzer_ii_td_equipment_1
+		not = { has_country_flag = marder_1 }
+		has_global_flag = fall_of_france #uses French lorraine chassis
+		has_war_with = SOV #uses soviet guns # should be 6 months into the war 
+	}
+	
+	fire_only_once = yes		# one off event
+		
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = germany.269.a	#convert Marder 1
+
+		#send_equipment = {			# Pz II not converted in this case
+		#	target = FRA	#needs testing with FRA		
+		#	type = panzer_ii_equipment
+		#	amount = 500
+		#}     
+		hidden_effect = {
+			load_oob = "GER_marder1"
+			# AI probably won't use them at this stage
+		}
+		
+		ai_chance = { factor = 100 }	
+		
+	}
+	
+	option = {
+		name = germany.269.b #No need
+		ai_chance = { factor = 0 }
+	}
+}
+###### Pz II >  Marder 2
+
+country_event = {
+	id = germany.270
+	title = germany.270.t
+	desc = germany.270.d
+	picture = GFX_report_event_Pz_II
+	
+	trigger = {
+		tag = GER
+		has_equipment = { panzer_ii_equipment > 500 } 
+		has_tech = subtech_panzer_ii_td_equipment_1
+		not = { has_country_flag = marder_2 }
+		
+		has_war_with = SOV #uses soviet guns # should be 6 months into the war 
+	}
+	immediate = {
+		set_country_flag = { flag = marder_2 days = 180 } 
+		}
+		
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = {
+		name = germany.270.a	#convert Marder 2
+
+		send_equipment = {			# Pz II not converted in this case
+			target = FRA	#needs testing with FRA		
+			type = panzer_ii_equipment
+			amount = 500
+		}     
+		hidden_effect = {
+			load_oob = "GER_marder2"
+			
+		}
+		
+		ai_chance = { factor = 0 }	
+		
+	}
+	
+	option = {
+		name = germany.270.b #No need			# tanks more useful to the AI
+		ai_chance = { factor = 100 }
+	}
+}
+###### Czech tank >  Marder 3
+
+country_event = {
+	id = germany.271
+	title = germany.271.t
+	desc = germany.271.d
+	picture = GFX_report_event_panzer38
+	
+	trigger = {
+		tag = GER
+		has_equipment = { czech_panzer_equipment38 > 200 } 
+		has_tech = subtech_panzer_ii_td_equipment_2
+		not = { has_country_flag = marder_3 }
+		has_global_flag = end_of_czechoslovakia #uses czech chassis
+		has_country_flag = czech_equipment
+		has_war_with = SOV #uses soviet guns # should be 12 months into the war 
+	}
+	immediate = {
+		set_country_flag = { flag = marder_3 days = 180 } 
+		}
+		
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = germany.271.a	#convert Marder 3
+
+		send_equipment = {			
+			target = CZE	#needs testing with CZE
+			type = czech_panzer_equipment38
+			amount = 200
+		}     
+		hidden_effect = {
+			load_oob = "GER_marder3"
+			
+		}
+		
+		ai_chance = { factor = 0 }	
+		
+	}
+	
+	option = {
+		name = germany.271.b #No need			# tanks more useful to the AI
+		ai_chance = { factor = 100 }
+	}
+}
