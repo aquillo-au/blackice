@@ -1713,4 +1713,40 @@ country_event = {
 		}
 	}
 }
+################# chinese partisans
+
+country_event = {
+	id = china.208
+	title = china.208.t
+	desc = china.208.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CHI
+		has_war_with = JAP
+		is_ai = yes
+		not = { has_country_flag =  partisan_uprisings }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_uprisings days = 30 } 
+		}
+		
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = china.208
+		ai_chance = { factor = 100 }
+		set_technology = {partisans = 1}
+		hidden_effect = {
+			load_oob = "CHI_Partisans_I"
+			
+		}
+	}
+
+}
 ### EOF ###
