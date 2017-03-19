@@ -2043,14 +2043,14 @@ country_event = {
 	trigger = {
 		tag = SPR
 		NOT = { has_global_flag = scw_over }
-		has_country_flag = impossible
+		#has_country_flag = impossible
 		is_ai = yes
 		has_civil_war = yes
 		not = { has_country_flag = SPR_partisan_uprisings }
 	}
 	immediate = {
 		set_country_flag = { flag = SPR_partisan_uprisings days = 60 } 
-		}
+	}
 		
 	mean_time_to_happen = {
 		days = 2
@@ -2059,13 +2059,11 @@ country_event = {
 	option = {
 		name = spain.12.a
 		ai_chance = { factor = 100 }
-		set_technology = {partisans = 1}
+		set_technology = { partisans = 1 }
 		hidden_effect = {
 			load_oob = "SPR_Partisans_I"
-			
 		}
 	}
-
 }
 country_event = {
 	id = spain.13
@@ -2078,12 +2076,12 @@ country_event = {
 		original_tag = SPR
 		NOT = { has_global_flag = scw_over }
 		is_ai = yes
-		has_country_flag = impossible 
+		#has_country_flag = impossible 
 		not = { has_country_flag = SPA_partisan_uprisings }
 	}
 	immediate = {
 		set_country_flag = { flag = SPA_partisan_uprisings days = 60 } 
-		}
+	}
 		
 	mean_time_to_happen = {
 		days = 2
