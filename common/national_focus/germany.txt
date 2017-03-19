@@ -52,11 +52,10 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = GER_autobahn_tt
-			
 			hidden_effect = {
 				64 = {
 					if = {
-						limit = { is_controlled_by = ROOT }
+						limit = { is_controlled_by = GER }
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -66,7 +65,7 @@ focus_tree = {
 				}
 				59 = {
 					if = {
-						limit = { is_controlled_by = ROOT }
+						limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -77,7 +76,7 @@ focus_tree = {
 				}
 				60 = {
 					if = {
-						limit = { is_controlled_by = ROOT }
+						limit = { is_controlled_by = GER }
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -87,7 +86,7 @@ focus_tree = {
 				}
 				54 = {
 					if = {
-						limit = { is_controlled_by = ROOT }
+						limit = { is_controlled_by = GER }
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -114,86 +113,53 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = GER_autobahn_I_tt
-			if = {
-				limit = {
-					all_owned_state = {
-						NOT = { infrastructure < 5 }
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = infrastructure
-							size > 2
-						}
-					}
+			hidden_effect = {
+				65 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
 					add_building_construction = {
 						type = infrastructure
-						level = 2
-						instant_build = yes						
-					}
-					
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = infrastructure
-							size > 2
+							level = 1
+							instant_build = yes
 						}
 					}
-					add_building_construction = {
-						type = infrastructure
-						level = 2
-						instant_build = yes
+				}
+				68 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
 					}
-					
-				}				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 8
 				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
+				61 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
 				}
-				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 8
+				62 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
 				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 8
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 8
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-						
+			}		
 		}
-	}
 	}
 	focus = {
 		id = GER_autobahn_III
@@ -211,86 +177,53 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = GER_autobahn_II_tt
-			if = {
-				limit = {
-					all_owned_state = {
-						NOT = { infrastructure < 5 }
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = infrastructure
-							size > 2
-						}
-					}
-					add_building_construction = {
+			hidden_effect = {
+				5 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
+						add_building_construction = {
 						type = infrastructure
-						level = 2
-						instant_build = yes						
-					}
-					
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = infrastructure
-							size > 2
-						}
-					}
-					add_building_construction = {
-						type = infrastructure
-						level = 2
+						level = 1
 						instant_build = yes
+						}
 					}
-					
-				}				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 8
 				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
+				63 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
 				}
-				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 8
+				66 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
 				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
+				52 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
 				}
-				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 8
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 8
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-						
+			}		
 		}
-	}
 	}
 	focus = {
 		id = GER_autobahn_IV
@@ -308,87 +241,54 @@ focus_tree = {
 		
 		completion_reward = {
 			custom_effect_tooltip = GER_autobahn_III_tt
-			if = {
-				limit = {
-					all_owned_state = {
-						NOT = { infrastructure < 5 }
+			hidden_effect = {
+				53 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+
 					}
 				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = infrastructure
-							size > 2
+				50 = {
+					if = {
+					limit = { is_controlled_by = GER }
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
 						}
 					}
-					add_building_construction = {
-						type = infrastructure
-						level = 2
-						instant_build = yes						
-					}
-					
 				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = infrastructure
-							size > 2
+				42 = {
+					if = {
+					limit = { is_controlled_by = GER }
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
 						}
 					}
-					add_building_construction = {
-						type = infrastructure
-						level = 2
-						instant_build = yes
+				}
+				51 = {
+					if = {
+					limit = { is_controlled_by = GER }
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
 					}
-					
-				}				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 9
 				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 9
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 9
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				
-			}
-			random_owned_controlled_state = {
-				limit = {
-					infrastructure < 9
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-						
+			}		
 		}
 	}
-}
+
 	focus = {
 		id = GER_west_wall_lite
 		icon = GFX_goal_generic_construct_military
@@ -407,7 +307,7 @@ focus_tree = {
 			
 			50 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
 						add_building_construction = {
@@ -443,7 +343,7 @@ focus_tree = {
 			}
 			42 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 						custom_effect_tooltip = GER_west_wall_forts
 						hidden_effect = {
 						add_building_construction = {
@@ -495,7 +395,7 @@ focus_tree = {
 			show_ideas_tooltip = todt
 			50 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
 					add_building_construction = {
@@ -531,7 +431,7 @@ focus_tree = {
 			}
 			42 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
 					add_building_construction = {
@@ -584,7 +484,7 @@ focus_tree = {
 			show_ideas_tooltip = todt
 			50 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
 					add_building_construction = {
@@ -620,33 +520,32 @@ focus_tree = {
 			}
 			42 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 3558
-						instant_build = yes
-					}
-					
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 563
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 11531
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 9575
-						instant_build = yes
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 3558
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 563
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 11531
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 9575
+							instant_build = yes
 						}
 					}
 				}
@@ -841,13 +740,11 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-				
 				add_building_construction = {
 					type = smallarms_factory
 					level = 1
 					instant_build = yes
 				}
-				
 				add_building_construction = {
 					type = ammo_factory_factory
 					level = 1
@@ -890,7 +787,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				
 			}
 			add_tech_bonus = {
 				name = construction_tech_bonus
@@ -2270,7 +2166,7 @@ focus_tree = {
 		available = {
 			is_puppet = no
 			or = {
-				has_army_manpower = { size > 999999 }
+				has_army_manpower = { size > 749999 }
 				date > 1938.3.1
 			}
 			NOT = { has_idea = rhineland_challenge_met }
@@ -3456,17 +3352,17 @@ focus_tree = {
 				name = dd_bonus
 				bonus = 0.5
 				uses = 1
-				technology = tech_kr_dd
-				technology = tech_kr_dd3
+				technology = improved_destroyer
+				technology = advanced_destroyer
 			}
 			add_tech_bonus = {
 				name = cr_bonus
 				bonus = 0.5
 				uses = 1
-				technology = tech_kr_cl
-				technology = tech_kr_cl2
-				technology = tech_kr_ca
-				technology = tech_kr_ca2
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
 			}
 		}
 
@@ -3493,17 +3389,17 @@ focus_tree = {
 				name = dd_bonus
 				bonus = 0.5
 				uses = 1
-				technology = tech_kr_dd
-				technology = tech_kr_dd3
+				technology = improved_destroyer
+				technology = advanced_destroyer
 			}
 			add_tech_bonus = {
 				name = cr_bonus
 				bonus = 0.5
 				uses = 1
-				technology = tech_kr_cl
-				technology = tech_kr_cl2
-				technology = tech_kr_ca
-				technology = tech_kr_ca2
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
 			}
 		}
 	}
