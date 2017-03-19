@@ -2500,11 +2500,13 @@ country_event = {
 	option = {
 		name = soviet.61.a
 		ai_chance = { factor = 100 }
+		set_country_flag = T34_tank 
 		
 		hidden_effect = {
 			load_oob = "SOV_T_34_40"
 			
 		}
+		
 	}
 
 }
@@ -2532,11 +2534,13 @@ country_event = {
 	option = {
 		name = soviet.62.a
 		ai_chance = { factor = 100 }
+		set_country_flag = KV1_tank 
 		
 		hidden_effect = {
 			load_oob = "SOV_KV1_40"
 			
 		}
+		
 	}
 
 }
@@ -2548,15 +2552,13 @@ country_event = {
 	desc = soviet.63.d
 	picture = GFX_report_event_soviet_KV
 
-	fire_only_once = yes
-	
 	trigger = {
 		tag = SOV
 		has_war_with = GER
 		is_ai = yes
 		is_puppet = no
 		exists = yes 
-		not = { has_country_flag =  partisan_uprisings }
+		not = { has_country_flag = partisan_uprisings }
 	}
 	immediate = {
 		set_country_flag = { flag = partisan_uprisings days = 30 } 
