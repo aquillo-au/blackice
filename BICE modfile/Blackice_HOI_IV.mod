@@ -7,4 +7,4 @@ tags={
 	"Historical"
 }
 picture="Blackice_HOI_IV.png"
-supported_version="1.1.0"
+supported_version="1.3.*"

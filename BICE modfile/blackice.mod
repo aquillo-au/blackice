@@ -7,4 +7,4 @@ tags={
 	"Historical"
 }
 picture="BICE.png" 
-supported_version="1.2.1"
+supported_version="1.3.*"
