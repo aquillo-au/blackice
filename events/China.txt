@@ -1763,6 +1763,7 @@ country_event = {
 		has_country_flag =  PRC_state 
 		not = { has_country_flag =  partisan_uprisings_PRC }
 		is_ai = yes
+		
 	}
 	immediate = {
 		set_country_flag = { flag = partisan_uprisings_PRC days = 30 } 
@@ -1776,13 +1777,23 @@ country_event = {
 		name = china.209
 		ai_chance = { factor = 100 }
 		set_technology = {partisans = 1}
+		
+				create_wargoal = {
+					type = annex_everything
+					target = JAP
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = CHI
+				}
 		hidden_effect = {
 			load_oob = "PRC_Partisans_I"
 			
-		}
-	}
+					}
 
+		}
 }
+
 ####### PRC Rump 
 country_event = {
 	id = china.210
@@ -1796,9 +1807,12 @@ country_event = {
 	trigger = {
 		tag = PRC
 		SOV = { controls_state =  873 }
+		or = {
 		JAP = { controls_state =  621 }
 		JAP = { controls_state = 796 }
 		JAP = { controls_state =  615 }
+		surrender_progress = 0.7
+		}
 		is_ai = yes
 		CHI = { has_war_with = JAP}
 	}

@@ -45,7 +45,7 @@ country_event = {
 				add_ideas = SPR_desperate_defences
 				load_oob = "SPR_Civil_War"
 				set_equipment_fraction = 0.37
-				set_national_unity = 0.9
+				set_national_unity = 0.8
 				#country_event = { id = spain.3 days = 1 }
 				add_popularity = {
 					ideology = democratic
@@ -57,7 +57,7 @@ country_event = {
 			
 			load_oob = "SPA_Civil_War"
 			set_equipment_fraction = 0.3
-			set_national_unity = 0.9
+			set_national_unity = 0.8
 			add_ideas = SPA_desperate_defences
 			
 			add_popularity = {
@@ -469,7 +469,7 @@ country_event = {
 				}
 				add_ideas = SPA_desperate_defences
 				set_equipment_fraction = 0.3
-				set_national_unity = 0.9
+				set_national_unity = 0.8
 				#country_event = { id = spain.2 days = 1 }
 				load_oob = "SPA_Civil_War"
 			}
@@ -492,7 +492,7 @@ country_event = {
 			
 			load_oob = "SPR_Civil_War"
 			set_equipment_fraction = 0.37
-			set_national_unity = 0.9
+			set_national_unity = 0.8
 			
 			#country_event = { id = spain.3 days = 7 }
 			169 = {
@@ -2043,17 +2043,17 @@ country_event = {
 	trigger = {
 		tag = SPR
 		NOT = { has_global_flag = scw_over }
-		has_country_flag = impossible
+		#has_country_flag = impossible
 		is_ai = yes
 		has_civil_war = yes
 		not = { has_country_flag = SPR_partisan_uprisings }
 	}
 	immediate = {
-		set_country_flag = { flag = SPR_partisan_uprisings days = 60 } 
+		set_country_flag = { flag = SPR_partisan_uprisings days = 90 } 
 	}
 		
 	mean_time_to_happen = {
-		days = 2
+		days = 12
 	}
 	
 	option = {
@@ -2072,19 +2072,19 @@ country_event = {
 	picture = GFX_report_event_spain_civil_war_volunteers_01
 
 	trigger = {
-		has_civil_war = yes
 		original_tag = SPR
 		NOT = { has_global_flag = scw_over }
 		is_ai = yes
-		has_country_flag = impossible 
+		has_civil_war = yes
+		#has_country_flag = impossible 
 		not = { has_country_flag = SPA_partisan_uprisings }
 	}
 	immediate = {
-		set_country_flag = { flag = SPA_partisan_uprisings days = 60 } 
+		set_country_flag = { flag = SPA_partisan_uprisings days = 90 } 
 	}
 		
 	mean_time_to_happen = {
-		days = 2
+		days = 12
 	}
 	
 	option = {
