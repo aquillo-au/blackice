@@ -742,7 +742,7 @@ country_event = {
 	trigger = {
 		tag = ENG
 		date > 1940.8.1
-		has_tech = fighter1 
+		has_tech = fighter1
 		not = { has_country_flag = eagle71 }
 	}
 
@@ -767,7 +767,7 @@ country_event = {
 	trigger = {
 		tag = ENG
 		date > 1941.4.1
-		has_tech = fighter1 
+		has_tech = fighter2
 		not = { has_country_flag = eagle121 }
 	}
 
@@ -792,7 +792,7 @@ country_event = {
 	trigger = {
 		tag = ENG
 		date > 1941.7.1
-		has_tech = fighter1 
+		has_tech = fighter2
 		not = { has_country_flag = eagle131 }
 	}
 
@@ -849,6 +849,7 @@ country_event = {
 
 	trigger = {
 		tag = ENG
+		GER = { has_war_with = SOV }
 		has_global_flag = fall_of_france# France surrendered
 		19 = { NOT = { is_controlled_by = FRA } } # Axis controls french coast
 		23 = { NOT = { is_controlled_by = FRA } } # Axis controls french coast
@@ -869,7 +870,7 @@ country_event = {
 	}
 		
 	mean_time_to_happen = {
-		days = 2
+		days = 28
 	}
 	
 	option = {
