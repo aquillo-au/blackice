@@ -199,6 +199,7 @@ country_event = {
 	trigger = {
 		tag = ENG
 		date > 1938.7.1
+		has_tech = fighter2 
 		not = { has_country_flag =  Spitfire }
 	}
 
@@ -206,9 +207,9 @@ country_event = {
 		name = BICE_britain.8.a	#A Beautiful Machine
 		set_country_flag =  Spitfire
 		hidden_effect = {
-		set_technology = {fighter2 = 1 }
-		}
 		load_oob = "19th_Squadron_RAF"
+		}
+		
 		# tech increase
 	}
 }
@@ -224,6 +225,7 @@ country_event = {
 	trigger = {
 		tag = ENG
 		date > 1937.11.1
+		has_tech = fighter1
 		not = { has_country_flag = Hurricane }
 	}
 
@@ -231,9 +233,9 @@ country_event = {
 		name = BICE_britain.9.a	# A Splendid Machine
 		set_country_flag = Hurricane
 		hidden_effect = {
-		set_technology = {fighter1 = 1 }
-		}
 		load_oob = "111th_Squadron_RAF"
+		}
+		
 		# tech increase
 	}
 }
@@ -740,16 +742,17 @@ country_event = {
 	trigger = {
 		tag = ENG
 		date > 1940.8.1
+		has_tech = fighter1 
 		not = { has_country_flag = eagle71 }
 	}
 
 	option = {
 		name = BICE_britain.28.a	#
 		hidden_effect = {
-			set_technology = {fighter1 = 1 }
+			load_oob = "71_Eagles_Squadron"
 		}
 		set_country_flag = eagle71
-		load_oob = "71_Eagles_Squadron"
+		
 	}
 }
 #121 Eagles Squadron joins the fight!
@@ -764,16 +767,17 @@ country_event = {
 	trigger = {
 		tag = ENG
 		date > 1941.4.1
+		has_tech = fighter1 
 		not = { has_country_flag = eagle121 }
 	}
 
 	option = {
 		name = BICE_britain.28.a	#
 		hidden_effect = {
-			set_technology = {fighter1 = 1 }
+			load_oob = "121_Eagles_Squadron"
 		}
 		set_country_flag = eagle121
-		load_oob = "121_Eagles_Squadron"
+		
 	}
 }
 #133 Eagles Squadron is battle-ready!
@@ -788,17 +792,113 @@ country_event = {
 	trigger = {
 		tag = ENG
 		date > 1941.7.1
+		has_tech = fighter1 
 		not = { has_country_flag = eagle131 }
 	}
 
 	option = {
 		name = BICE_britain.30.a	#
 		hidden_effect = {
-			set_technology = {fighter1 = 1 }
+			load_oob = "133_Eagles_Squadron"
 		}
 		set_country_flag = eagle131
-		load_oob = "133_Eagles_Squadron"
+		
 	}
+}
+country_event = {
+	id = BICE_britain.31
+	title = BICE_britain.31.t
+	desc = BICE_britain.31.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	trigger = {
+		tag = ENG
+		has_war_with = GER
+		is_ai = yes
+				
+	}
+	fire_only_once = yes
+		
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.31.a
+		ai_chance = { factor = 100 }
+		
+		set_country_flag = ENG_commando_units
+		hidden_effect = {
+			set_technology = {marines = 1}
+			set_technology = {amphibious_equipment = 1}
+			set_technology = {commando_team = 1}
+			set_technology = { paratroopers  = 1}
+			set_technology = {tech_mountaineers = 1}
+			set_technology = {commando_team = 1}
+			load_oob = "ENG_commando"		#template
+			
+		}
+	}
+
+}
+country_event = {
+	id = BICE_britain.32
+	title = BICE_britain.32.t
+	desc = BICE_britain.32.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	trigger = {
+		tag = ENG
+		has_global_flag = fall_of_france# France surrendered
+		19 = { NOT = { is_controlled_by = FRA } } # Axis controls french coast
+		23 = { NOT = { is_controlled_by = FRA } } # Axis controls french coast
+		30 = { NOT = { is_controlled_by = FRA } } # Axis controls french coast
+		14 = { NOT = { is_controlled_by = FRA } } # Axis controls french coast
+		15 = { NOT = { is_controlled_by = FRA } } # Axis controls french coast
+		29 = { NOT = { is_controlled_by = FRA } } # Axis controls french coast
+
+		6 = { NOT = { is_controlled_by = BEL } } # Axis controls Belgium coast
+		7 = { NOT = { is_controlled_by = HOL } } # Axis controls Dutch coast
+		36 = { NOT = { is_controlled_by = HOL } } # Axis controls Dutch coast
+		is_ai = yes
+		not = { has_country_flag = ENG_commando_raid }
+		has_country_flag = ENG_commando_units
+	}
+	immediate = {
+		set_country_flag = { flag = ENG_commando_raid days = 90 } 
+	}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = BICE_britain.32.a
+		ai_chance = { factor = 50 }
+	
+		hidden_effect = {
+			random_list = {
+			50 = { load_oob = "ENG_commando_I" } 
+			50 = { load_oob = "ENG_commando_II" } 
+			}
+			
+			
+		}
+	}
+	option = {
+		name = BICE_britain.32.b
+		ai_chance = { factor = 50 }
+	
+		hidden_effect = {
+			random_list = {
+			50 = { load_oob = "ENG_commando_III" } 
+			50 = { load_oob = "ENG_commando_IV" } 
+			}
+			
+			
+		}
+	}
+
 }
 #Irish Expeditonary Force
 #Advanced Air Striking Force (AASF)

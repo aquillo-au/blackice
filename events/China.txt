@@ -1778,14 +1778,10 @@ country_event = {
 		ai_chance = { factor = 100 }
 		set_technology = {partisans = 1}
 		
-				create_wargoal = {
-					type = annex_everything
-					target = JAP
-				}
-				create_wargoal = {
-					type = annex_everything
-					target = CHI
-				}
+				declare_war_on = { target = JAP type = annex_everything }
+				
+				declare_war_on = { target = CHI type = annex_everything }
+				
 		hidden_effect = {
 			load_oob = "PRC_Partisans_I"
 			
