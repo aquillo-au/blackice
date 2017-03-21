@@ -805,18 +805,18 @@ country_event = {
 		
 	}
 }
+# Commando Raids AI
 country_event = {
 	id = BICE_britain.31
 	title = BICE_britain.31.t
 	desc = BICE_britain.31.d
-	picture = GFX_report_event_spain_civil_war_volunteers_01
 
 	trigger = {
 		tag = ENG
 		has_war_with = GER
 		is_ai = yes
-				
 	}
+	
 	fire_only_once = yes
 		
 	mean_time_to_happen = {
@@ -829,23 +829,21 @@ country_event = {
 		
 		set_country_flag = ENG_commando_units
 		hidden_effect = {
-			set_technology = {marines = 1}
-			set_technology = {amphibious_equipment = 1}
-			set_technology = {commando_team = 1}
-			set_technology = { paratroopers  = 1}
-			set_technology = {tech_mountaineers = 1}
-			set_technology = {commando_team = 1}
+			set_technology = { marines = 1 }
+			set_technology = { amphibious_equipment = 1 }
+			set_technology = { commando_team = 1 }
+			set_technology = { paratroopers  = 1 }
+			set_technology = { tech_mountaineers = 1 }
+			set_technology = { commando_team = 1 }
 			load_oob = "ENG_commando"		#template
-			
 		}
 	}
-
 }
+# Commando Raids AI
 country_event = {
 	id = BICE_britain.32
 	title = BICE_britain.32.t
 	desc = BICE_britain.32.d
-	picture = GFX_report_event_spain_civil_war_volunteers_01
 
 	trigger = {
 		tag = ENG
@@ -865,10 +863,11 @@ country_event = {
 		not = { has_country_flag = ENG_commando_raid }
 		has_country_flag = ENG_commando_units
 	}
+	
 	immediate = {
 		set_country_flag = { flag = ENG_commando_raid days = 90 } 
 	}
-		
+	
 	mean_time_to_happen = {
 		days = 28
 	}
@@ -879,11 +878,9 @@ country_event = {
 	
 		hidden_effect = {
 			random_list = {
-			50 = { load_oob = "ENG_commando_I" } 
-			50 = { load_oob = "ENG_commando_II" } 
+				50 = { load_oob = "ENG_commando_I" } 
+				50 = { load_oob = "ENG_commando_II" } 
 			}
-			
-			
 		}
 	}
 	option = {
@@ -892,11 +889,9 @@ country_event = {
 	
 		hidden_effect = {
 			random_list = {
-			50 = { load_oob = "ENG_commando_III" } 
-			50 = { load_oob = "ENG_commando_IV" } 
+				50 = { load_oob = "ENG_commando_III" } 
+				50 = { load_oob = "ENG_commando_IV" } 
 			}
-			
-			
 		}
 	}
 
