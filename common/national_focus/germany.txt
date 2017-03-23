@@ -4662,7 +4662,7 @@ focus_tree = {
 		y = 3
 		cost = 5
 		available = {
-			date > 1937.1.1	
+			date > 1936.6.1	
 		}
 		ai_will_do = {
 			factor = 2
@@ -4671,7 +4671,32 @@ focus_tree = {
 			country_event = ss_event.679
 			add_research_slot = 1
 		}
-		#
+	}
+	focus = {
+		id = GER_Schutzstaffel_junkerschule_klagenfurt
+		#text = Schutzstaffel_junkerschulen	
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_Schutzstaffel_junkerschulen }
+		x = 27
+		y = 4
+		cost = 5
+		available = {
+			date > 1938.7.1
+			152 = { is_controlled_by = GER }
+		}
+		ai_will_do = {
+			factor = 2
+		}	
+		completion_reward = {
+			country_event = ss_event.687
+			
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.10
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 	#####################Foreign SS units recruitment
 	focus = {
@@ -4680,7 +4705,7 @@ focus_tree = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_focus }
 		x = 27
-		y = 4
+		y = 5
 		cost = 5
 		available = {
 			date > 1938.3.1	
