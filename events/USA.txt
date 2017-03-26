@@ -1749,4 +1749,39 @@ country_event = {
 		set_country_flag = green_ice_IV
 	}
 }
+country_event = {
+	id = usa.52
+	title = usa.52.t
+	desc = usa.52.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		is_ai = yes
+		has_country_flag = green_ice_II
+		not = { has_country_flag = green_ice_garrison }
+		ENG = { controls_state = 100 }#
+		ENG = { controls_state = 101}#
+		ENG = { controls_state = 337}
+						
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.52.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+				load_oob = "ENG_ICE_Green_garrison"
+		}
+			set_country_flag = green_ice_garrison
+		
+	}
+
+}
 # destroyers x 50
