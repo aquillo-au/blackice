@@ -865,7 +865,7 @@ country_event = {
 	}
 	
 	immediate = {
-		set_country_flag = { flag = ENG_commando_raid days = 90 } 
+		set_country_flag = { flag = ENG_commando_raid days = 180 } 
 	}
 	
 	mean_time_to_happen = {
@@ -896,12 +896,281 @@ country_event = {
 	}
 
 }
+
+country_event = {
+	id = BICE_britain.33
+	title = BICE_britain.33.t
+	desc = BICE_britain.33.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		date > 1936.1.1			
+		is_ai = yes
+		not = { has_country_flag = ENG_start_ships }
+		# NIC cost idea for 1 year ? industrial_capacity_dockyard = -0.05 5% penalty 
+	}
+
+	option = {
+		name = BICE_britain.33.a	#
+		hidden_effect = {
+			load_oob = "ENG_AI_SHIPS"
+		}
+		add_timed_idea = {
+				idea = ENG_AI_ship_production 
+				days = 365
+			}
+		set_country_flag = ENG_start_ships
+		
+	}
+}
 #Irish Expeditonary Force
 #Advanced Air Striking Force (AASF)
-#Ordering of the battleship HMS King George V
-#Ordering of the battleship HMS Prince Of Wales
-#Ordering of the battleship HMS Duke Of York
-#Ordering of the battleship HMS Anson
-#Ordering of the battleship HMS Howe
+#
+#Ordering of the battleship HMS King George V tech_rn_bb2 date = 1940.12.11
+
+country_event = {
+	id = BICE_britain.34
+	title = BICE_britain.34.t
+	desc = BICE_britain.34.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		date > 1940.12.11			
+		is_ai = yes
+		has_tech = tech_rn_bb2
+		not = { has_country_flag = ENG_KGV_ship }
+		# NIC cost idea for 1 year ? industrial_capacity_dockyard = -0.05 5% penalty 
+	}
+
+	option = {
+		name = BICE_britain.34.a	#
+		hidden_effect = {
+			load_oob = "ENG_KGV"
+		}
+		#add_timed_idea = {
+		#		idea = ENG_KGV 
+		#		days = 365
+		#	}
+		set_country_flag = ENG_KGV_ship
+		
+	}
+}
+#Ordering of the battleship HMS Prince Of Wales tech_rn_bb2 date = 1941.1.19
+country_event = {
+	id = BICE_britain.35
+	title = BICE_britain.35.t
+	desc = BICE_britain.35.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		date > 1941.1.19			
+		is_ai = yes
+		has_tech = tech_rn_bb2
+		not = { has_country_flag = ENG_POW_ship }
+		# NIC cost idea for 1 year ? industrial_capacity_dockyard = -0.05 5% penalty 
+	}
+
+	option = {
+		name = BICE_britain.35.a	#
+		hidden_effect = {
+			load_oob = "ENG_POW"
+		}
+		#add_timed_idea = {
+		#		idea = ENG_POW 
+		#		days = 365
+		#	}
+		set_country_flag = ENG_POW_ship
+		
+	}
+}
+#Ordering of the battleship HMS Duke Of York tech_rn_bb2 date = 1941.11.4
+country_event = {
+	id = BICE_britain.36
+	title = BICE_britain.36.t
+	desc = BICE_britain.36.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		date > 1941.11.4			
+		is_ai = yes
+		has_tech = tech_rn_bb2
+		not = { has_country_flag = ENG_DOY_ship }
+		# NIC cost idea for 1 year ? industrial_capacity_dockyard = -0.05 5% penalty 
+	}
+
+	option = {
+		name = BICE_britain.36.a	#
+		hidden_effect = {
+			load_oob = "ENG_DOY"
+		}
+		#add_timed_idea = {
+		#		idea = ENG_DOY
+		#		days = 365
+		#	}
+		set_country_flag = ENG_DOY_ship
+		
+	}
+}
+#Ordering of the battleship HMS Anson tech_rn_bb2 date = 1942.8.29
+country_event = {
+	id = BICE_britain.37
+	title = BICE_britain.37.t
+	desc = BICE_britain.37.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		date > 1942.8.29		
+		is_ai = yes
+		has_tech = tech_rn_bb2
+		not = { has_country_flag = ENG_Anson_ship }
+		# NIC cost idea for 1 year ? industrial_capacity_dockyard = -0.05 5% penalty 
+	}
+
+	option = {
+		name = BICE_britain.37.a	#
+		hidden_effect = {
+			load_oob = "ENG_Anson"
+		}
+		#add_timed_idea = {
+		#		idea = ENG_Anson
+		#		days = 365
+		#	}
+		set_country_flag = ENG_Anson_ship
+		
+	}
+}
+#Ordering of the battleship HMS Howe tech_rn_bb2 date = 1942.4.14
+country_event = {
+	id = BICE_britain.38
+	title = BICE_britain.38.t
+	desc = BICE_britain.38.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		date > 1942.4.14			
+		is_ai = yes
+		has_tech = tech_rn_bb2
+		not = { has_country_flag = ENG_Howe_ship }
+		# NIC cost idea for 1 year ? industrial_capacity_dockyard = -0.05 5% penalty 
+	}
+
+	option = {
+		name = BICE_britain.38.a	#
+		hidden_effect = {
+			load_oob = "ENG_Howe"
+		}
+		#add_timed_idea = {
+		#		idea = ENG_Howe 
+		#		days = 365
+		#	}
+		set_country_flag = ENG_Howe_ship
+		
+	}
+}
+# carriers x 3
+#Indomitable Class	tech_rn_cv3
+country_event = {
+	id = BICE_britain.39
+	title = BICE_britain.39.t
+	desc = BICE_britain.39.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+				
+		is_ai = yes
+		has_tech = tech_rn_cv3
+		not = { has_country_flag = ENG_Indomitable_ship }
+		# NIC cost idea for 1 year ? industrial_capacity_dockyard = -0.05 5% penalty 
+	}
+
+	option = {
+		name = BICE_britain.39.a	#
+		hidden_effect = {
+			load_oob = "ENG_Indomitable"
+		}
+		#add_timed_idea = {
+		#		idea = ENG_Howe 
+		#		days = 365
+		#	}
+		set_country_flag = ENG_Indomitable_ship
+		
+	}
+}
+#Implacable Class	tech_rn_cv4
+country_event = {
+	id = BICE_britain.40
+	title = BICE_britain.40.t
+	desc = BICE_britain.40.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+				
+		is_ai = yes
+		has_tech = tech_rn_cv4
+		not = { has_country_flag = ENG_Implacable_ship }
+		# NIC cost idea for 1 year ? industrial_capacity_dockyard = -0.05 5% penalty 
+	}
+
+	option = {
+		name = BICE_britain.40.a	#
+		hidden_effect = {
+			load_oob = "ENG_Implacable"
+		}
+		#add_timed_idea = {
+		#		idea = ENG_Howe 
+		#		days = 365
+		#	}
+		set_country_flag = ENG_Implacable_ship
+		
+	}
+} 
+#Audacious Class	tech_rn_cv5
+country_event = {
+	id = BICE_britain.41
+	title = BICE_britain.41.t
+	desc = BICE_britain.41.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+				
+		is_ai = yes
+		has_tech = tech_rn_cv5
+		not = { has_country_flag = ENG_Audacious_ship }
+		# NIC cost idea for 1 year ? industrial_capacity_dockyard = -0.05 5% penalty 
+	}
+
+	option = {
+		name = BICE_britain.41.a	#
+		hidden_effect = {
+			load_oob = "ENG_Audacious"
+		}
+		#add_timed_idea = {
+		#		idea = ENG_Howe 
+		#		days = 365
+		#	}
+		set_country_flag = ENG_Audacious_ship
+		
+	}
+} 
+# destroyers x 30
+
 # JARROW CRUSADE
 ### EOF ###

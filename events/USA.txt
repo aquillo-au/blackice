@@ -1404,4 +1404,214 @@ country_event = {
 	}
 	
 }
+country_event = {
+	id = usa.41
+	title = usa.41.t
+	desc = usa.41.d
+	
+	fire_only_once = yes
 
+	trigger = {
+		tag = USA
+		date > 1936.1.1			
+		is_ai = yes
+		not = { has_country_flag = USA_start_ships }
+		# NIC cost idea for 1 year ?
+	}
+
+	option = {
+		name = usa.41.a	#
+		hidden_effect = {
+			load_oob = "USA_AI_SHIPS"
+		}
+		add_timed_idea = {
+				idea = USA_AI_ship_production 
+				days = 365
+			}
+		set_country_flag = USA_start_ships
+		
+	}
+}
+
+# Hornet #Yorktown Class	USA_carrier_2b  date = 1940.10.20
+country_event = {
+	id = usa.42
+	title = usa.42.t
+	desc = usa.42.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1940.10.20		
+		is_ai = yes
+		not = { has_country_flag = USA_Hornet_ship }
+		# NIC cost idea for 1 year ?
+	}
+
+	option = {
+		name = usa.42.a	#
+		hidden_effect = {
+			load_oob = "USA_Hornet"
+		}
+		#add_timed_idea = {
+		#		idea = USA_AI_ship_production 
+		#		days = 365
+		#	}
+		set_country_flag = USA_Hornet_ship
+		
+	}
+}
+#Essex Class	tech_usn_cv3  Essex date = 1942.12.1
+country_event = {
+	id = usa.43
+	title = usa.43.t
+	desc = usa.43.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1942.12.1		
+		is_ai = yes
+		has_tech = tech_usn_cv3
+		not = { has_country_flag = USA_Essex_ship }
+		# NIC cost idea for 1 year ?
+	}
+
+	option = {
+		name = usa.43.a	#
+		hidden_effect = {
+			load_oob = "USA_Essex"
+		}
+		#add_timed_idea = {
+		#		idea = USA_AI_ship_production 
+		#		days = 365
+		#	}
+		set_country_flag = USA_Essex_ship
+		
+	}
+}
+
+# Iowa tech_usn_bb4 date = 1943.2.22
+country_event = {
+	id = usa.44
+	title = usa.44.t
+	desc = usa.44.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1943.2.22	
+		is_ai = yes
+		has_tech = tech_usn_bb4
+		not = { has_country_flag = USA_Iowa_ship }
+		# NIC cost idea for 1 year ?
+	}
+
+	option = {
+		name = usa.44.a	#
+		hidden_effect = {
+			load_oob = "USA_Iowa"
+		}
+		#add_timed_idea = {
+		#		idea = USA_AI_ship_production 
+		#		days = 365
+		#	}
+		set_country_flag = USA_Iowa_ship
+		
+	}
+}
+#Missouri tech_usn_bb4 date = 1944.6.11
+country_event = {
+	id = usa.45
+	title = usa.45.t
+	desc = usa.45.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1944.6.11		
+		is_ai = yes
+		has_tech = tech_usn_bb4
+		not = { has_country_flag = USA_Missouri_ship }
+		# NIC cost idea for 1 year ?
+	}
+
+	option = {
+		name = usa.45.a	#
+		hidden_effect = {
+			load_oob = "USA_Missouri"
+		}
+		#add_timed_idea = {
+		#		idea = USA_AI_ship_production 
+		#		days = 365
+		#	}
+		set_country_flag = USA_Missouri_ship
+		
+	}
+}
+#USS Wisconsin tech_usn_bb4 date = 1944.4.16
+country_event = {
+	id = usa.46
+	title = usa.46.t
+	desc = usa.46.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1944.4.16		
+		is_ai = yes
+		has_tech = tech_usn_bb4
+		not = { has_country_flag = USA_Wisconsin_ship }
+		# NIC cost idea for 1 year ?
+	}
+
+	option = {
+		name = usa.46.a	#
+		hidden_effect = {
+			load_oob = "USA_Wisconsin"
+		}
+		#add_timed_idea = {
+		#		idea = USA_AI_ship_production 
+		#		days = 365
+		#	}
+		set_country_flag = USA_Wisconsin_ship
+		
+	}
+}
+#USS New Jersey tech_usn_bb4 date = 1943.5.23
+country_event = {
+	id = usa.47
+	title = usa.47.t
+	desc = usa.47.d
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		date > 1943.5.23		
+		is_ai = yes
+		has_tech = tech_usn_bb4
+		not = { has_country_flag = USA_New_Jersey_ship }
+		# NIC cost idea for 1 year ?
+	}
+
+	option = {
+		name = usa.47.a	#
+		hidden_effect = {
+			load_oob = "USA_New_Jersey"
+		}
+		#add_timed_idea = {
+		#		idea = USA_AI_ship_production 
+		#		days = 365
+		#	}
+		set_country_flag = USA_New_Jersey_ship
+		
+	}
+}
+
+# destroyers x 50
