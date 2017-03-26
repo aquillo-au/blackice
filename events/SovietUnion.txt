@@ -2562,7 +2562,7 @@ country_event = {
 	fire_only_once = yes
 		
 	mean_time_to_happen = {
-		days = 1
+		months = 6
 	}
 	
 	option = {
@@ -2590,13 +2590,12 @@ country_event = {
 		is_ai = yes
 		is_puppet = no
 		exists = yes 
-		has_country_flag = partisan_uprisings 
-		not = { has_country_flag = SOV_partisan_uprisings_II }
-		not = { has_country_flag = SOV_partisan_uprisings_III }
+		has_country_flag = SOV_partisan_uprisings 
+	
 		not = { has_country_flag = partisan_attacks }
 	}
 	immediate = {
-		set_country_flag = { flag = partisan_attacks days = 90 } 
+		set_country_flag = { flag = partisan_attacks days = 120 } 
 		}
 		
 	mean_time_to_happen = {
@@ -2605,7 +2604,7 @@ country_event = {
 	
 	option = {
 		name = soviet.64.a
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_I"  
@@ -2614,15 +2613,12 @@ country_event = {
 	}
 	option = {
 		name = soviet.64.b
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 70 }
 	
-		hidden_effect = {
-			load_oob = "SOV_Partisans_II"
-		}
 	}
 
 }
-#### 1942 partisans
+
 country_event = {
 	id = soviet.65
 	title = soviet.65.t
@@ -2635,11 +2631,12 @@ country_event = {
 		is_ai = yes
 		is_puppet = no
 		exists = yes 
-		has_country_flag = partisan_uprisings 
-		not = { has_country_flag = partisan_attacks_II }
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 94 }}
+		not = { has_country_flag = partisan_attacks_94 }
 	}
 	immediate = {
-		set_country_flag = { flag = partisan_attacks_II days = 90 } 
+		set_country_flag = { flag = partisan_attacks_94 days = 120 } 
 		}
 		
 	mean_time_to_happen = {
@@ -2648,35 +2645,19 @@ country_event = {
 	
 	option = {
 		name = soviet.65.a
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
-			set_country_flag = SOV_partisan_uprisings_II
-			random_list = {
-			50 = { load_oob = "SOV_Partisans_I" } 
-			50 = { load_oob = "SOV_Partisans_III" } 
+			
+			load_oob = "SOV_Partisans_94"  
 			}
-			
-			
-		}
 	}
 	option = {
 		name = soviet.65.b
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 70 }
 	
-		hidden_effect = {
-			set_country_flag = SOV_partisan_uprisings_II
-			random_list = {
-			50 = { load_oob = "SOV_Partisans_II" } 
-			50 = { load_oob = "SOV_Partisans_IV" } 
-			}
-			
-			
-		}
 	}
-
 }
-#### 1943 partisans
 country_event = {
 	id = soviet.66
 	title = soviet.66.t
@@ -2689,11 +2670,12 @@ country_event = {
 		is_ai = yes
 		is_puppet = no
 		exists = yes 
-		has_country_flag = partisan_uprisings 
-		not = { has_country_flag = partisan_attacks_III }
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 95 }}
+		not = { has_country_flag = partisan_attacks_95 }
 	}
 	immediate = {
-		set_country_flag = { flag = partisan_attacks_III days = 90 } 
+		set_country_flag = { flag = partisan_attacks_95 days = 120 } 
 		}
 		
 	mean_time_to_happen = {
@@ -2702,35 +2684,19 @@ country_event = {
 	
 	option = {
 		name = soviet.66.a
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
-			set_country_flag = SOV_partisan_uprisings_III
-			random_list = {
-			50 = { load_oob = "SOV_Partisans_I" } 
-			50 = { load_oob = "SOV_Partisans_VI" } 
+			
+			load_oob = "SOV_Partisans_95"  
 			}
-			
-			
-		}
 	}
 	option = {
 		name = soviet.66.b
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 70 }
 	
-		hidden_effect = {
-			set_country_flag = SOV_partisan_uprisings_III
-			random_list = {
-			50 = { load_oob = "SOV_Partisans_III" } 
-			50 = { load_oob = "SOV_Partisans_V" } 
-			}
-			
-			
-		}
 	}
-
 }
-#### 1944 partisans
 country_event = {
 	id = soviet.67
 	title = soviet.67.t
@@ -2743,48 +2709,537 @@ country_event = {
 		is_ai = yes
 		is_puppet = no
 		exists = yes 
-		has_country_flag = partisan_uprisings 
-		not = { has_country_flag = partisan_attacks_IV }
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 96 }}
+		not = { has_country_flag = partisan_attacks_96 }
 	}
 	immediate = {
-		set_country_flag = { flag = partisan_attacks_IV days = 90 } 
+		set_country_flag = { flag = partisan_attacks_96 days = 120 } 
 		}
 		
 	mean_time_to_happen = {
 		days = 2
-
 	}
 	
 	option = {
 		name = soviet.67.a
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
-			set_country_flag = SOV_partisan_uprisings_IV
-			random_list = {
-			50 = { load_oob = "SOV_Partisans_III" } 
-			50 = { load_oob = "SOV_Partisans_VI" } 
+			
+			load_oob = "SOV_Partisans_96"  
 			}
-			
-			
-		}
 	}
 	option = {
 		name = soviet.67.b
-		ai_chance = { factor = 50 }
+		ai_chance = { factor = 70 }
 	
-
-
-
-		hidden_effect = {
-			set_country_flag = SOV_partisan_uprisings_IV
-			random_list = {
-			50 = { load_oob = "SOV_Partisans_V" } 
-			50 = { load_oob = "SOV_Partisans_VII" } 
-			}
-			
-			
-		}
 	}
+}
+country_event = {
+	id = soviet.68
+	title = soviet.68.t
+	desc = soviet.68.d
+	picture = GFX_report_event_soviet_KV
 
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 12 }}
+		not = { has_country_flag = partisan_attacks_12 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_12 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.68.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_12"  
+			}
+	}
+	option = {
+		name = soviet.68.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.69
+	title = soviet.69.t
+	desc = soviet.69.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 13 }}
+		not = { has_country_flag = partisan_attacks_13 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_13 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.69.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_13"  
+			}
+	}
+	option = {
+		name = soviet.69.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.70
+	title = soviet.70.t
+	desc = soviet.70.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 840 }}
+		not = { has_country_flag = partisan_attacks_840 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_840 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.70.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_840"  
+			}
+	}
+	option = {
+		name = soviet.70.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.71
+	title = soviet.71.t
+	desc = soviet.71.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 209 }}
+		not = { has_country_flag = partisan_attacks_209 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_209 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.71.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_209"  
+			}
+	}
+	option = {
+		name = soviet.71.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.72
+	title = soviet.72.t
+	desc = soviet.65.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 195 }}
+		not = { has_country_flag = partisan_attacks_195 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_195 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.72.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_195"  
+			}
+	}
+	option = {
+		name = soviet.72.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.73
+	title = soviet.73.t
+	desc = soviet.65.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 202 }}
+		not = { has_country_flag = partisan_attacks_202 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_202 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.73.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_202"  
+			}
+	}
+	option = {
+		name = soviet.73.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.74
+	title = soviet.74.t
+	desc = soviet.74.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 240 }}
+		not = { has_country_flag = partisan_attacks_240 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_240 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.74.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+		
+			load_oob = "SOV_Partisans_240"  
+			}
+	}
+	option = {
+		name = soviet.74.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.75
+	title = soviet.75.t
+	desc = soviet.75.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 246 }}
+		not = { has_country_flag = partisan_attacks_246 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_246 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.75.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_246"  
+			}
+	}
+	option = {
+		name = soviet.75.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.76
+	title = soviet.76.t
+	desc = soviet.76.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 260 }}
+		not = { has_country_flag = partisan_attacks_260 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_260 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.76.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_260"  
+			}
+	}
+	option = {
+		name = soviet.76.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.77
+	title = soviet.77.t
+	desc = soviet.77.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 223 }}
+		not = { has_country_flag = partisan_attacks_223 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_223 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.77.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_223"  
+			}
+	}
+	option = {
+		name = soviet.77.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.78
+	title = soviet.78.t
+	desc = soviet.78.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 263 }}
+		not = { has_country_flag = partisan_attacks_263 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_263 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.78.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_263"  
+			}
+	}
+	option = {
+		name = soviet.78.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.79
+	title = soviet.79.t
+	desc = soviet.79.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 222 }}
+		not = { has_country_flag = partisan_attacks_222 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_222 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.79.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_222"  
+			}
+	}
+	option = {
+		name = soviet.79.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.80
+	title = soviet.80.t
+	desc = soviet.80.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 226 }}
+		not = { has_country_flag = partisan_attacks_226 }
+	}
+	immediate = {
+		set_country_flag = { flag = partisan_attacks_226 days = 120 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.80.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			
+			load_oob = "SOV_Partisans_226"  
+			}
+	}
+	option = {
+		name = soviet.80.b
+		ai_chance = { factor = 70 }
+	
+	}
 }
