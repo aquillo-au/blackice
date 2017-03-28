@@ -120,8 +120,13 @@ country_event = {
 
 	trigger = {
 		tag = FRA
-		is_ai = yes
-		date > 1936.6.1
+		or = {
+			and = {
+				is_ai = yes
+				date > 1936.6.1 
+					}
+				has_completed_focus = FRA_alpine_forts
+			}
 	}
 
 	fire_only_once = yes
