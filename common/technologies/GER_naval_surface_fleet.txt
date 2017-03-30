@@ -563,6 +563,10 @@ technologies = {
 			leads_to_tech = tech_kr_bb_38
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_Interwar_AA_bb
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1908
@@ -578,6 +582,32 @@ technologies = {
 		categories = {
 			#naval_equipment
 			bb_tech
+		}
+	}
+	tech_kr_Interwar_AA_bb = {
+		# EFFECT #############
+		battleship = {
+			anti_air_attack = 0.25
+		}
+		
+		research_cost = 1.5
+		start_year = 1924
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 14 y = 1 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
 		}
 	}
 	#### DD Destroyers ####
@@ -1833,6 +1863,11 @@ technologies = {
 			leads_to_tech = tech_kr_bc2
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_Interwar_AA_bc
+			research_cost_coeff = 1
+		}
+		
 		research_cost = 1.5
 		start_year = 1914
 		folder = {
@@ -1849,6 +1884,63 @@ technologies = {
 			bc_tech
 		}
 	}
+	tech_kr_Interwar_AA_bc = {
+		# EFFECT #############
+		battle_cruiser = {
+			anti_air_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = tech_kr_Late_1930s_AA_bc
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1924
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 9 y = 1 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+		}
+	}
+	tech_kr_Late_1930s_AA_bc = {
+		# EFFECT #############
+		battle_cruiser = {
+			anti_air_attack = 0.25
+		}
+		
+		research_cost = 1.5
+		start_year = 1936
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 9 y = 11 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+		}
+	}
 	tech_kr_bc2 = {
 		
 		enable_equipments = {
@@ -1857,6 +1949,11 @@ technologies = {
 		dependencies = {
 			tech_kr = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_Early_War_AA_bc
+			research_cost_coeff = 1
+		}
+		
 		research_cost = 1.5
 		start_year = 1940
 		folder = {
@@ -1876,6 +1973,63 @@ technologies = {
 		categories = {
 			#naval_equipment
 			bc_tech
+		}
+	}
+	tech_kr_Early_War_AA_bc = {
+		# EFFECT #############
+		battle_cruiser = {
+			anti_air_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = tech_kr_Late_War_AA_bc
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1940
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 9 y = 21 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1941.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+		}
+	}
+	tech_kr_Late_War_AA_bc = {
+		# EFFECT #############
+		battle_cruiser = {
+			anti_air_attack = 0.25
+		}
+		
+		research_cost = 2
+		start_year = 1944
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 9 y = 33 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1944.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
 		}
 	}
 	#### BB Battleship ####
@@ -1952,6 +2106,10 @@ technologies = {
 			leads_to_tech = tech_kr_bb2
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_Late_1930s_AA_bb
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1936
@@ -1972,6 +2130,32 @@ technologies = {
 		categories = {
 			#naval_equipment
 			bb_tech
+		}
+	}
+	tech_kr_Late_1930s_AA_bb = {
+		# EFFECT #############
+		battleship = {
+			anti_air_attack = 0.25
+		}
+		
+		research_cost = 1.5
+		start_year = 1936
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 14 y = 11 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
 		}
 	}
 	tech_kr_bb2 = {
@@ -2021,6 +2205,10 @@ technologies = {
 			leads_to_tech = tech_kr_shbb2
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_Early_War_AA_shbb
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1940
@@ -2043,6 +2231,33 @@ technologies = {
 			shbb_tech
 		}
 	}
+	tech_kr_Early_War_AA_shbb = {
+		
+		# EFFECT #############
+		battleship = {
+			anti_air_attack = 0.25
+		}
+		
+		research_cost = 1.5
+		start_year = 1940
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 19 y = 21 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1941.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
+		}
+	}
 	tech_kr_shbb2 = {
 		
 		enable_equipments = {
@@ -2051,6 +2266,11 @@ technologies = {
 		dependencies = {
 			tech_kr = 1
 		}
+		path = {
+			leads_to_tech = tech_kr_Late_War_AA_shbb
+			research_cost_coeff = 1
+		}
+		
 		research_cost = 1.5
 		start_year = 1942
 		folder = {
@@ -2070,6 +2290,32 @@ technologies = {
 		categories = {
 			#naval_equipment
 			shbb_tech
+		}
+	}
+	tech_kr_Late_War_AA_shbb = {
+		# EFFECT #############
+		battleship = {
+			anti_air_attack = 0.25
+		}
+		
+		research_cost = 2
+		start_year = 1944
+		folder = {
+			name = kriegsmarine_folder
+			position = { x = 19 y = 33 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1944.1.1
+			}
+		}
+		
+		categories = {
+			naval_equipment
 		}
 	}
 	#### CV Carrier ####
