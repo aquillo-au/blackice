@@ -2,22 +2,39 @@
 # Written by Henrik "Groogy" Hansson
 
 minors_profile_0 = {
-	enable = { num_of_military_factories < 10 is_major = no NOT = { tag = USA tag = ENG tag = FRA tag = GER tag = ITA tag = JAP tag = SOV } }
-	abort = { OR = { num_of_military_factories > 9 is_major = yes} }
+	enable = { 
+		num_of_military_factories < 10
+		is_major = no
+		NOT = {
+			tag = USA
+			tag = ENG
+			tag = FRA
+			tag = GER
+			tag = ITA
+			tag = JAP
+			tag = SOV
+		}
+	}
+	abort = {
+		OR = {
+			num_of_military_factories > 9
+			is_major = yes
+		}
+	}
 	
-	ai_strategy = { type = unit_ratio id = infantry 								value = 180	 	}	
-	ai_strategy = { type = unit_ratio id = mountaineers 							value = 6 		}	
+	ai_strategy = { type = unit_ratio id = infantry 							value = 180	 	}	
+	ai_strategy = { type = unit_ratio id = mountaineers 						value = 6 		}	
 	ai_strategy = { type = unit_ratio id = marines 								value = 0 		}	
-	ai_strategy = { type = unit_ratio id = paratroopers 							value = 0 		}	
+	ai_strategy = { type = unit_ratio id = paratroopers 						value = 0 		}	
 	ai_strategy = { type = unit_ratio id = motorized 							value = 0 		}	
 	ai_strategy = { type = unit_ratio id = cavalry 								value = 8 		}	
 	ai_strategy = { type = unit_ratio id = armor 								value = 0 		}	
 	ai_strategy = { type = unit_ratio id = mechanized 							value = 0 		}	
 
-	ai_strategy = { type = build_army id = infantry 								value = 12	 	}	
-	ai_strategy = { type = build_army id = mountaineers 							value = 0 		}	
+	ai_strategy = { type = build_army id = infantry 							value = 12	 	}	
+	ai_strategy = { type = build_army id = mountaineers 						value = 0 		}	
 	ai_strategy = { type = build_army id = marines 								value = 0 		}	
-	ai_strategy = { type = build_army id = paratroopers 							value = 0 		}	
+	ai_strategy = { type = build_army id = paratroopers 						value = 0 		}	
 	ai_strategy = { type = build_army id = motorized 							value = 0 		}	
 	ai_strategy = { type = build_army id = cavalry 								value = 0 		}	
 	ai_strategy = { type = build_army id = armor 								value = 0 		}	
@@ -41,42 +58,62 @@ minors_profile_0 = {
 	
 	###################################################################
 	
-ai_strategy = { type = unit_ratio id = capital_ship 						value = 100 	}	
-	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 	}	
-	ai_strategy = { type = unit_ratio id = screen_ship 							value = 300	 	}
+	ai_strategy = { type = unit_ratio id = capital_ship 						value = 100 }	
+	ai_strategy = { type = unit_ratio id = submarine 							value = -1000 }	
+	ai_strategy = { type = unit_ratio id = screen_ship 							value = 300	}
 	ai_strategy = { type = unit_ratio id = convoy 								value = 0	}
 	
 	#ai_strategy = { type = equipment_production_factor id = carrier		 	value = 50	}
-	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 100 	 }
+	ai_strategy = { type = equipment_production_factor id = capital_ship 		value = 100 }
 	ai_strategy = { type = equipment_production_factor id = screen_ship  		value = 500	}
 	ai_strategy = { type = equipment_production_factor id = convoy 				value = 1	}
 }
 
 minors_profile_0_b = {
-	enable = { num_of_military_factories < 10 is_major = no NOT = { tag = USA tag = ENG tag = FRA tag = GER tag = ITA tag = JAP tag = SOV } has_equipment = { infantry_equipment > 1700 } }
-	abort = { OR = { num_of_military_factories > 9 is_major = yes NOT = {has_equipment = { infantry_equipment > 1700 }}} }
+	enable = {
+		num_of_military_factories < 10
+		is_major = no
+		NOT = {
+			tag = USA
+			tag = ENG
+			tag = FRA
+			tag = GER
+			tag = ITA
+			tag = JAP
+			tag = SOV
+		}
+		has_equipment = { infantry_equipment > 1700 }
+	}
+	abort = {
+		OR = {
+			num_of_military_factories > 9
+			is_major = yes
+			NOT = {
+				has_equipment = { infantry_equipment > 1700 }
+			}
+		}
+	}
 	
-	ai_strategy = { type = build_army id = infantry 								value = 1	 	}	
+	ai_strategy = { type = build_army id = infantry 							value = 1 }	
 }
-
 
 minors_profile_1 = {
 	enable = { num_of_military_factories > 10 num_of_military_factories < 16 is_major = no NOT = { tag = USA tag = ENG tag = FRA tag = GER tag = ITA tag = JAP tag = SOV } }
 	abort = { OR = { num_of_military_factories < 10 num_of_military_factories > 15 is_major = yes} }
 	
-	ai_strategy = { type = unit_ratio id = infantry 								value = 180	 	}	
-	ai_strategy = { type = unit_ratio id = mountaineers 							value = 6 		}	
+	ai_strategy = { type = unit_ratio id = infantry 							value = 180	 	}	
+	ai_strategy = { type = unit_ratio id = mountaineers 						value = 6 		}	
 	ai_strategy = { type = unit_ratio id = marines 								value = 0 		}	
-	ai_strategy = { type = unit_ratio id = paratroopers 							value = 0 		}	
+	ai_strategy = { type = unit_ratio id = paratroopers 						value = 0 		}	
 	ai_strategy = { type = unit_ratio id = motorized 							value = 0 		}	
 	ai_strategy = { type = unit_ratio id = cavalry 								value = 8 		}	
 	ai_strategy = { type = unit_ratio id = armor 								value = 0 		}	
 	ai_strategy = { type = unit_ratio id = mechanized 							value = 0 		}	
 
-	ai_strategy = { type = build_army id = infantry 								value = 16	 	}	
-	ai_strategy = { type = build_army id = mountaineers 							value = 0 		}	
+	ai_strategy = { type = build_army id = infantry 							value = 16	 	}	
+	ai_strategy = { type = build_army id = mountaineers 						value = 0 		}	
 	ai_strategy = { type = build_army id = marines 								value = 0 		}	
-	ai_strategy = { type = build_army id = paratroopers 							value = 0 		}	
+	ai_strategy = { type = build_army id = paratroopers 						value = 0 		}	
 	ai_strategy = { type = build_army id = motorized 							value = 0 		}	
 	ai_strategy = { type = build_army id = cavalry 								value = 0 		}	
 	ai_strategy = { type = build_army id = armor 								value = 0 		}	
