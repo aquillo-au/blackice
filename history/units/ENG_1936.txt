@@ -1384,11 +1384,11 @@ units = {
 		} } }			
 		ship = { name = "HMS Ramillies" definition = battleship equipment = { ENG_battleship_1b = { amount = 1 owner = ENG #version_name = "Revenge Class"
 		} } }				
-		ship = { name = "HMS Hood" definition = battle_cruiser equipment = { ENG_battle_cruiser_1 = { amount = 1 owner = ENG #version_name = "Admiral Class"
+		ship = { name = "HMS Hood" definition = battle_cruiser equipment = { ENG_battle_cruiser_2 = { amount = 1 owner = ENG #version_name = "Admiral Class"
 		} } }	
-		ship = { name = "HMS Repulse" definition = battle_cruiser equipment = { ENG_battle_cruiser_2 = { amount = 1 owner = ENG
+		ship = { name = "HMS Repulse" definition = battle_cruiser equipment = { ENG_battle_cruiser_1 = { amount = 1 owner = ENG
 		} } }					
-		ship = { name = "HMS Renown" definition = battle_cruiser equipment = { ENG_battle_cruiser_2 = { amount = 1 owner = ENG
+		ship = { name = "HMS Renown" definition = battle_cruiser equipment = { ENG_battle_cruiser_1 = { amount = 1 owner = ENG
 		} } }				
 		ship = { name = "HMS Norfolk" definition = heavy_cruiser equipment = { ENG_heavy_cruiser_4 = { amount = 1 owner = ENG #version_name = "Norfolk Class"
 		} } }
@@ -1752,8 +1752,8 @@ units = {
 				cv_nav_bomber_equipment_1 =  { owner = "ENG" amount = 36 } #historical 36
 			}
 		}
-#		ship = { name = "HMS Warspite" definition = battleship equipment = { ENG_battleship_1 = { amount = 1 owner = ENG #version_name = "Queen Elizabeth Class"
-# } } }	 #DNM Under reconstruction at game start, in production queue instead.		
+		ship = { name = "HMS Warspite" definition = battleship equipment = { ENG_battleship_1 = { amount = 1 owner = ENG #version_name = "Queen Elizabeth Class"
+		 } } }	 	
 		ship = { name = "HMS Barham" definition = battleship equipment = { ENG_battleship_1 = { amount = 1 owner = ENG #version_name = "Queen Elizabeth Class" 
 		} } }						
 		ship = { name = "HMS Malaya" definition = battleship equipment = { ENG_battleship_1 = { amount = 1 owner = ENG #version_name = "Queen Elizabeth Class" 
@@ -2218,18 +2218,7 @@ instant_effect = {
 	}
 
 	### Ongoing Ship Production Jan 1 1936 ###
-	### Ongoing Ship Production Jan 1 1936 ###
-	#BB HMS Warspite
-	add_equipment_production = {
-		equipment = {
-			type = ENG_battleship_1
-			creator = "ENG"
-			#version_name = "Queen Elizabeth Class"
-		}
-		requested_factories = 1
-		progress = 0.60
-		amount = 1
-	}
+	
 
 	# DD: G/H class (x17) ("HMS Gallant" "HMS Garland" "HMS Gipsy" "HMS Glowworm" "HMS Grafton" "HMS Grenade" "HMS Grenville" "HMS Greyhound" "HMS Griffin")
 	#Gallant

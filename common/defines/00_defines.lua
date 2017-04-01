@@ -311,7 +311,7 @@ NMilitary = {
 	WAR_SCORE_AIR_MONTHLY_FALLOFF = 10,						-- how much the warscore we got from the strategic bombing falls off every month.
 	
 	CORPS_COMMANDER_CAP = 18,								-- how many a corps commander is limited to. 0 = inf
-	FIELD_MARSHALL_CAP = 36,									-- how many a marshall is limited to. 0 = inf
+	FIELD_MARSHALL_CAP = 60,									-- how many a marshall is limited to. 0 = inf
 	UNIT_LEADER_GENERATION_CAPITAL_CONTINENT_FACTOR = 100, 	--Integer factor to multiply manpower.
 	RECON_SKILL_IMPACT = 5, 								-- how many skillpoints is a recon advantage worth when picking a tactic.
 	
