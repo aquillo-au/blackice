@@ -296,16 +296,22 @@ if = {
 }
 
 give_military_access = MAN
+give_military_access = MEN
 
 set_politics = {
 
 	parties = {
+	
+		monarchism = {
+			popularity = 45
+		}	
+	
 		democratic = { 
 			popularity = 24
 		}
 
 		fascism = {
-			popularity = 45
+			popularity = 26
 		}
 		
 		communism = {
@@ -313,11 +319,11 @@ set_politics = {
 			#banned = no #default is no
 		}
 		neutrality = {
-			popularity = 26
+			popularity = 0
 		}
 	}
 	
-	ruling_party = fascism
+	ruling_party = monarchism
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
@@ -349,7 +355,16 @@ set_politics = {
 }
 
 create_country_leader = {
-	name = "Hirohito"
+	name = "Emperor Hirohito"
+	desc = "POLITICS_Hirohito_DESC"
+	picture = "Portrait_Japan_Hirohito.dds"
+	expire = "1989.1.1"
+	ideology = parlamentarism
+	traits = { warrior_code	}
+}
+
+create_country_leader = {
+	name = "Hideki Tojo"
 	desc = "POLITICS_Hirohito_DESC"
 	picture = "Portrait_Japan_Hirohito.dds"
 	expire = "1989.1.1"

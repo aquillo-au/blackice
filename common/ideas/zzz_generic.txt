@@ -704,9 +704,31 @@ ideas = {
 				factor = 0
 			}
 		}
-	}
-		
+		generic_monarchist_advisor = {
+			
+			allowed = {
+				NOT = {
+					has_available_idea_with_traits = { idea = monarchist_advisor_drift_trait limit = 1 }
+				}
+			}
+			
+
+			
+			traits = { monarchist_advisor_drift_trait }
+
+
+			
+			do_effect = {
+				NOT = {
+					has_government = monarchism
+				}
+			}
 	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
 
 	# TECHNOLOGY
 	tank_manufacturer = { 

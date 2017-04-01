@@ -115,12 +115,17 @@ set_politics = {
 		communism = {
 			popularity = 6
 		}
-		neutrality = { 
+		monarchism = { 
 		 popularity = 60
-	}
+	    }
+		
+        neutrality = { 
+				popularity = 0
+			}		
+		
 	}
 	
-	ruling_party = neutrality
+	ruling_party = monarchism
 	last_election = "1932.11.27"
 	election_frequency = 48
 	elections_allowed = yes
@@ -130,7 +135,7 @@ set_politics = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
+			monarchism = { 
 				popularity = 87
 			}
 
@@ -141,9 +146,14 @@ set_politics = {
 			communism = {
 				popularity = 5
 			}
+			
+            democratic = { 
+				popularity = 0
+			}			
+			
 		}
 		
-		ruling_party = neutrality
+		ruling_party = monarchism
 		last_election = "1939.4.2"
 		election_frequency = 48
 		elections_allowed = yes
@@ -152,6 +162,17 @@ set_politics = {
 
 set_convoys = 400
 set_national_unity = 0.75
+
+create_country_leader = {
+	name = "King Leopold III"
+	desc = "POLITICS_HUBERT_PIERLOT_DESC"
+	picture = "bel_king_leopold_iii.dds"
+	expire = "1965.1.1"
+	ideology = parlamentarism
+	traits = {
+		#
+	}
+}
 
 create_country_leader = {
 	name = "Hubert Pierlot"
