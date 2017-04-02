@@ -1,59 +1,58 @@
 
 light_armor_default_SOV = {
-	target_width = 21.9
+	target_width = 20
 	width_weight = 0.6
-	column_swap_factor = 0.7
-	
-	target_template = {
-		weight = 1
-		match_value = 0
-		
-		support = {
-			engineer = 1
-			recon_mot = 1
-			#artillery = 1
-			maintenance_company = 1
-		    	logistics_company = 1
-				DIV_HQ = 1
-		}
-		
-		regiments = {
-			#mechanized = 1
-			sov_light_tank = 6
-			motorized = 5
-			artillery_brigade_mot = 2
-			medium_sp_artillery_brigade = 1
-		}
-	}
-}
-
-light_armor_SOV = {
-	target_width = 21.9
-	width_weight = 0.6
-	column_swap_factor = 0.7
+	column_swap_factor = 0
 	
 	target_template = {
 		weight =1
 		match_value = 0
 		
 		support = {
-			engineer = 1
 			recon_mot = 1
-			#artillery = 1
-			maintenance_company = 1
-		    	logistics_company = 1
-				DIV_HQ = 1
+			Tankettes = 1
+			recon_ac = 1
 		}
 		
 		regiments = {
-			#mechanized = 1
-			sov_light_tank = 6
-			motorized = 5
-			artillery_brigade_mot = 2
-			medium_sp_artillery_brigade = 1
+			sov_t_28_tank = 1
+			sov_light_tank =3
+			sov_amph_tank = 2
+			semi_motorized = 3
+			
 		}
 	}
+	replace_at_match = 0.6
+	replace_with = light_armor_default_SOV
+	target_min_match = 0.6
+}
+
+light_armor_SOV = {
+	target_width = 20
+	width_weight = 0.6
+	column_swap_factor = 0
 	
+	target_template = {
+		weight =1
+		match_value = 0
+		
+		support = {
+			recon_mot = 1
+			Tankettes = 1
+			recon_ac = 1
+		}
+		
+		regiments = {
+			sov_t_28_tank = 1
+			sov_light_tank =3
+			sov_amph_tank = 2
+			semi_motorized = 3
+			
+		}
+	}
+	replace_at_match = 0.6
+	replace_with = light_armor_SOV
+	target_min_match = 0.6
 }
 
 heavy_armor_default_SOV = {
@@ -66,20 +65,18 @@ heavy_armor_default_SOV = {
 		match_value = 0
 		
 		support = {
-			engineer = 1
-			recon_mot = 1
-			#artillery_medium_mot  = 1
-			logistics_company = 1
-			maintenance_company = 1
+			
+			recon_ac = 1
+			
+			
 		}
 		
 		regiments = {
-			sov_t_28_tank = 3
-			sov_kv_tank = 3
-			motorized = 5
-			artillery_brigade_mot = 1
-			medium_tank_destroyer_brigade = 1
-			medium_sp_artillery_brigade = 1
+			
+			sov_kv_tank = 2
+			infantry = 3
+			
+			
 		}
 	}
 }
@@ -94,20 +91,18 @@ heavy_armor_SOV = {
 		match_value = 0
 		
 		support = {
-			engineer = 1
-			recon_mot = 1
-			#artillery_medium_mot  = 1
-			logistics_company = 1
-			maintenance_company = 1
+			
+			recon_ac = 1
+			
+			
 		}
 		
 		regiments = {
-			sov_t_28_tank = 3
-			sov_kv_tank = 3
-			motorized = 5
-			artillery_brigade_mot = 1
-			medium_tank_destroyer_brigade = 1
-			medium_sp_artillery_brigade = 1
+			
+			sov_kv_tank = 2
+			infantry = 3
+			
+			
 		}
 	}
 }

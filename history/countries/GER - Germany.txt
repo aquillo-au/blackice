@@ -17,6 +17,7 @@ set_technology = {
 	hmg_2 = 1
 	mortars = 1
 	motorised_infantry = 1
+	mechanised_infantry = 1
 	tech_infantry_uniforms = 1
 	marines = 1
 	infantry_weapons = 1
@@ -965,6 +966,18 @@ create_corps_commander = {
 ### Ship Variants ###
 ## 1936 Start ##
 ################### BICE Variants ##################
+create_equipment_variant = {
+	name = "Type IIA"
+	type = coastal_submarine_1
+	parent_version = 0
+	upgrades = {
+		ship_quality_upgrade = 1
+		sub_engine_upgrade = 0
+		sub_stealth_upgrade = 1
+		sub_torpedo_upgrade = 0
+	}
+	obsolete = yes
+}
 create_equipment_variant = {
 	name = "Type IIB"
 	type = coastal_submarine_2
