@@ -105,7 +105,7 @@ equipments = {
 	infantry_equipment_2 = {
 		archetype = infantry_equipment
 		parent = infantry_equipment_1
-		priority = 22
+		priority = 10
 		visual_level = 2
 		
 		reliability = 0.8
@@ -255,7 +255,7 @@ equipments = {
 	partisan_equipment_0 = {
 		archetype =partisan_equipment
 		active = no
-		priority = 05
+		priority = 01
 		visual_level = 0
 		#defense = 1
 
@@ -317,7 +317,7 @@ equipments = {
 	HQ_equipment_0 = {
 		archetype =HQ_equipment
 		active = yes
-		priority = 05
+		priority = 10
 		visual_level = 0
 		
 		defense = 2
@@ -376,7 +376,7 @@ equipments = {
 	infantry_uniforms_1 = {
 		archetype = infantry_uniforms
 		parent = infantry_uniforms_0
-		priority = 10
+		priority = 05
 		visual_level = 1
 		#Defensive Abilities
 		defense = 2
@@ -388,7 +388,7 @@ equipments = {
 	infantry_uniforms_2 = {
 		archetype = infantry_uniforms
 		parent = infantry_uniforms_1
-		priority = 10
+		priority = 05
 		visual_level = 2
 		#Defensive Abilities
 		defense = 2
@@ -400,7 +400,7 @@ equipments = {
 	infantry_uniforms_3 = {
 		archetype = infantry_uniforms
 		parent = infantry_uniforms_2
-		priority = 10
+		priority = 05
 		visual_level = 3
 		#Defensive Abilities
 		defense = 2
@@ -457,7 +457,7 @@ equipments = {
 		archetype = ss_infantry_uniforms
 		parent = ss_infantry_uniforms_0
 		active = no
-		priority = 10
+		priority = 05
 		visual_level = 1
 		#Defensive Abilities
 		defense =4
@@ -470,7 +470,7 @@ equipments = {
 		archetype = ss_infantry_uniforms
 		parent = ss_infantry_uniforms_1
 		active = no
-		priority = 10
+		priority = 05
 		visual_level = 2
 		#Defensive Abilities
 		defense = 4
@@ -483,13 +483,42 @@ equipments = {
 		archetype = ss_infantry_uniforms
 		parent = ss_infantry_uniforms_2
 		active = no
-		priority = 10
+		priority = 05
 		visual_level = 3
 		#Defensive Abilities
 		defense = 5
 		default_morale = 0.04
 		reliability = 0.9
 		build_cost_ic = 1.0
+	}
+##### Sniper equipment###############
+	sniper_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = infantry
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		active = no
+				
+		soft_attack = 1
+		
+		#Space taken in convoy
+		lend_lease_cost = 1
+		
+		build_cost_ic = 0.5
+		resources = {
+			steel = 1
+		}
+	}
+	##### 
+	sniper_equipment_0 = {
+		archetype = sniper_equipment
+		active = yes
+		priority = 1
+		visual_level = 0
+		
 	}
 ##### SMG-team ###############
 	SMG_equipment = {
@@ -530,7 +559,7 @@ equipments = {
 	SMG_equipment_0 = {
 		archetype = SMG_equipment
 		active = yes
-		priority = 05
+		priority = 1
 		visual_level = 0
 
 		#Misc Abilities
@@ -556,6 +585,118 @@ equipments = {
 		resources = {
 			steel = 1
 		}
+	}
+	##### HMG equipment###############
+	HMG_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			infantry
+			motorized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		active = no
+				
+		soft_attack = 2
+		
+		#Space taken in convoy
+		lend_lease_cost = 1
+		
+		build_cost_ic = 0.5
+		resources = {
+			steel = 1
+		}
+	}
+	
+	HMG_equipment_0 = {
+		archetype = HMG_equipment
+		active = yes
+		priority = 10
+		visual_level = 0
+		
+	}
+	HMG_equipment_1 = {
+		archetype = HMG_equipment
+		parent = HMG_equipment_0
+		
+		priority = 10
+		visual_level = 1
+		
+	}
+	HMG_equipment_2 = {
+		archetype = HMG_equipment
+		parent = HMG_equipment_1
+	
+		priority = 10
+		visual_level = 2
+		
+	}
+	HMG_equipment_3 = {
+		archetype = HMG_equipment
+		parent = HMG_equipment_2
+		
+		priority = 10
+		visual_level = 3
+		
+	}
+	##### Mortar equipment###############
+	mortar_equipment = {
+		is_archetype = yes
+		is_buildable = no
+		type = {
+			infantry
+			motorized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		active = no
+				
+		soft_attack = 2
+		
+		#Space taken in convoy
+		lend_lease_cost = 1
+		
+		build_cost_ic = 0.5
+		resources = {
+			steel = 1
+		}
+	}
+	##### 
+	mortar_equipment_0 = {
+		archetype = mortar_equipment
+		active = yes
+		priority = 10
+		visual_level = 0
+		
+	}
+	mortar_equipment_1 = {
+		archetype = mortar_equipment
+		parent = mortar_equipment_0
+		
+		priority = 10
+		visual_level = 1
+		
+	}
+	mortar_equipment_2 = {
+		archetype = mortar_equipment
+		parent = mortar_equipment_1
+		
+		priority = 10
+		visual_level = 2
+		
+	}
+	mortar_equipment_3 = {
+		archetype = mortar_equipment
+		parent = mortar_equipment_2
+		
+		priority = 10
+		visual_level = 3
+		
 	}
 ##### Urban warfare equipment ###############
 	urbanwar_equipment = {
@@ -870,7 +1011,7 @@ equipments = {
 	horse_equipment_0 = {
 		archetype = horse_equipment
 		active = yes
-		priority = 05
+		priority = 1
 		visual_level = 0
 		
 		reliability = 0.6

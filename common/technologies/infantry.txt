@@ -267,11 +267,15 @@ technologies = {
 		}
 	}	
 	sniper_team = {
-
+		enable_equipments = { 
+			sniper_equipment_0
+		}
 		category_all_infantry = {
 			defense = 0.03
+			need = {
+               				 sniper_equipment = 1
+         		   }
 		}
-		
 		research_cost = 1.5
 		start_year = 1934
 		folder = {
@@ -1492,7 +1496,8 @@ technologies = {
 		}
 		enable_subunits = {
 			para_support
-			
+
+			airborne_artillery_brigade			
 		}
 		research_cost = 1.5
 		start_year = 1939
@@ -1773,21 +1778,52 @@ technologies = {
 	
 	hmg = {
 
+		enable_equipments = { 
+			HMG_equipment_0
+		}
+	
 		infantry = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
+		
 		ss_infantry = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
+		}
+		garrison = {
+			defense = 0.08
+			
+			need = {
+               				 HMG_equipment = 1
+         		   }
+		}
+		ss_garrison = {
+			defense = 0.08
+			
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		cavalry = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}		
 		mountaineers = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		paratrooper = {
 			defense = 0.05
@@ -1800,26 +1836,44 @@ technologies = {
 		motorized = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		mechanized = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		semi_motorized = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
  		ss_semi_motorized = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		ss_motorized = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		ss_mechanized = {
 			defense = 0.05
 			breakthrough = 0.025
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		path = {
 			leads_to_tech = hmg_2
@@ -1857,22 +1911,50 @@ technologies = {
 		}
 	}
 	hmg_2 = {
-
+		enable_equipments = { 
+			HMG_equipment_1
+		}
 		infantry = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		ss_infantry = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 1
+         		   }
+		}
+		garrison = {
+			defense = 0.12
+			need = {
+               				 HMG_equipment = 2
+         		   }
+			
+		}
+		ss_garrison = {
+			defense = 0.12
+			need = {
+               				 HMG_equipment = 2
+         		   }
+			
 		}
 		cavalry = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}		
 		mountaineers = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		paratrooper = {
 			defense = 0.1
@@ -1885,26 +1967,44 @@ technologies = {
 		motorized = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 2
+         		   }
 		}
 		mechanized = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 2
+         		   }
 		}
 		semi_motorized = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 2
+         		   }
 		}
  		ss_semi_motorized = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 2
+         		   }
 		}
 		ss_motorized = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 2
+         		   }
 		}
 		ss_mechanized = {
 			defense = 0.1
 			breakthrough = 0.05
+			need = {
+               				 HMG_equipment = 2
+         		   }
 		}
 		path = {
 			leads_to_tech = hmg_3
@@ -1947,7 +2047,9 @@ technologies = {
 		}
 	}
 	hmg_3 = {
-
+		enable_equipments = { 
+			HMG_equipment_2
+		}
 		infantry = {
 			defense = 0.15
 			breakthrough = 0.075
@@ -1955,6 +2057,20 @@ technologies = {
 		ss_infantry = {
 			defense = 0.15
 			breakthrough = 0.075
+		}
+		garrison = {
+			defense = 0.17
+			need = {
+               				 HMG_equipment = 1
+         		   }
+			
+		}
+		ss_garrison = {
+			defense = 0.17
+			need = {
+               				 HMG_equipment = 1
+         		   }
+			
 		}
 		cavalry = {
 			defense = 0.15
@@ -1975,14 +2091,21 @@ technologies = {
 		motorized = {
 			defense = 0.15
 			breakthrough = 0.075
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		mechanized = {
 			defense = 0.15
 			breakthrough = 0.075
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		semi_motorized = {
 			defense = 0.15
 			breakthrough = 0.075
+			
 		}
  		ss_semi_motorized = {
 			defense = 0.15
@@ -1991,10 +2114,16 @@ technologies = {
 		ss_motorized = {
 			defense = 0.15
 			breakthrough = 0.075
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		ss_mechanized = {
 			defense = 0.15
 			breakthrough = 0.075
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		path = {
 			leads_to_tech = hmg_4
@@ -2037,54 +2166,106 @@ technologies = {
 		}
 	}
 	hmg_4 = {
-
+		enable_equipments = { 
+			HMG_equipment_3
+		}
 		infantry = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		ss_infantry = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
+		}
+		garrison = {
+			defense = 0.22
+			need = {
+               				 HMG_equipment = 1
+         		   }
+			
+		}
+		ss_garrison = {
+			defense = 0.22
+			need = {
+               				 HMG_equipment = 1
+         		   }
+			
 		}
 		cavalry = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}		
 		mountaineers = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		paratrooper = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		marine = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		motorized = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		mechanized = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		semi_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
  		ss_semi_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		ss_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		ss_mechanized = {
 			defense = 0.2
 			breakthrough = 0.1
+			need = {
+               				 HMG_equipment = 1
+         		   }
 		}
 		research_cost = 1.5
 		start_year = 1942
@@ -2124,21 +2305,38 @@ technologies = {
 	
 	mortars = {
 
+		enable_equipments = { 
+			mortar_equipment_0
+		}
+	
+		
 		infantry = {
 			defense = 0.05
 			breakthrough = 0.05
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_infantry = {
 			defense = 0.05
 			breakthrough = 0.05
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		cavalry = {
 			defense = 0.02
 			breakthrough = 0.02
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}		
 		mountaineers = {
 			defense = 0.03
 			breakthrough = 0.03
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		paratrooper = {
 			defense = 0.03
@@ -2151,26 +2349,44 @@ technologies = {
 		motorized = {
 			defense = 0.05
 			breakthrough = 0.05
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		mechanized = {
 			defense = 0.05
 			breakthrough = 0.05
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		semi_motorized = {
 			defense = 0.05
 			breakthrough = 0.05
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
  		ss_semi_motorized = {
 			defense = 0.05
 			breakthrough = 0.05
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_motorized = {
 			defense = 0.05
 			breakthrough = 0.05
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_mechanized = {
 			defense = 0.05
 			breakthrough = 0.05
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		
 		path = {
@@ -2210,21 +2426,36 @@ technologies = {
 	}
 	mortars_2 = {
 
+		enable_equipments = { 
+			mortar_equipment_1
+		}
 		infantry = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_infantry = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		cavalry = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}		
 		mountaineers = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		paratrooper = {
 			defense = 0.08
@@ -2237,26 +2468,44 @@ technologies = {
 		motorized = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		mechanized = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		semi_motorized = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
  		ss_semi_motorized = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_motorized = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_mechanized = {
 			defense = 0.08
 			breakthrough = 0.08
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		
 		path = {
@@ -2300,7 +2549,9 @@ technologies = {
 		}
 	}
 	mortars_3 = {
-
+		enable_equipments = { 
+			mortar_equipment_2
+		}
 		infantry = {
 			defense = 0.12
 			breakthrough = 0.12
@@ -2328,10 +2579,16 @@ technologies = {
 		motorized = {
 			defense = 0.12
 			breakthrough = 0.12
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		mechanized = {
 			defense = 0.12
 			breakthrough = 0.12
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		semi_motorized = {
 			defense = 0.12
@@ -2344,10 +2601,16 @@ technologies = {
 		ss_motorized = {
 			defense = 0.12
 			breakthrough = 0.12
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_mechanized = {
 			defense = 0.12
 			breakthrough = 0.12
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		path = {
 			leads_to_tech = mortars_4
@@ -2390,54 +2653,92 @@ technologies = {
 		}
 	}
 	mortars_4 = {
-
+		enable_equipments = { 
+			mortar_equipment_3
+		}
 		infantry = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_infantry = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		cavalry = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}		
 		mountaineers = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		paratrooper = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		marine = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		motorized = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		mechanized = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		semi_motorized = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
  		ss_semi_motorized = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_motorized = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		ss_mechanized = {
 			defense = 0.15
 			breakthrough = 0.15
+			need = {
+               				 mortar_equipment = 1
+         		   }
 		}
 		
 		research_cost = 1.5
