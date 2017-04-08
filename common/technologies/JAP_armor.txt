@@ -1,17 +1,17 @@
 technologies = {
 	#Vertical position
-	@1932 = -2
-	@1933 = 0
-	@1935 = 2
-	@1936 = 4
-	@1938 = 6
-	@1939 = 8
-	@1940 = 10
-	@1941 = 12
-	@1942 = 14
-	@1943 = 16
-	@1944 = 18
-	@1945 = 20
+	@1932 = 0
+	@1933 = 2
+	@1935 = 4
+	@1936 = 6
+	@1938 = 8
+	@1939 = 10
+	@1940 = 12
+	@1941 = 14
+	@1942 = 16
+	@1943 = 18
+	@1944 = 20
+	@1945 = 22
 
 	japanese_tech_a = {
 		
@@ -1324,7 +1324,7 @@ technologies = {
 		}
 	}
 	################### Command tanks ###########
-	JAP_command_tanks = {
+	tech_japanese_command_tanks = {
 
 		
 		enable_equipments = {
@@ -1332,24 +1332,25 @@ technologies = {
 		}
 		japanese_light_tank = {
 			need = {
-               				command_tank_equipment = 1
-         	}
-			}
-		japanese_medium_tank = {
-			need = {
-               				command_tank_equipment = 1
-         	}
-			}
-		japanese_heavy_tank = {
-			need = {
-               				command_tank_equipment = 1
+               	command_tank_equipment = 1
          	}
 		}
+		japanese_medium_tank = {
+			need = {
+               	command_tank_equipment = 1
+         	}
+		}
+		japanese_heavy_tank = {
+			need = {
+               	command_tank_equipment = 1
+         	}
+		}
+		
 		research_cost = 4
 		start_year = 1938
 		folder = {
-			name = armour_folder
-			position = { x = -2 y = -3 }
+			name = japanarmor_folder
+			position = { x = 3 y = 7 }
 		}
 		
 		categories = {
@@ -1361,32 +1362,33 @@ technologies = {
 		}
 	}
 	################### Recovery tanks ###########
-	JAP_recovery_tanks = {
+	tech_japanese_recovery_tanks = {
 
 		
 		enable_equipments = {
 			recovery_tank_equipment_0
 		}
-	japanese_light_tank = {
+		japanese_light_tank = {
 			need = {
-               				recovery_tank_equipment = 1
+               	recovery_tank_equipment = 1
          	}
-			}
+		}
 		japanese_medium_tank = {
 			need = {
-               				recovery_tank_equipment = 1
+               	recovery_tank_equipment = 1
          	}
-			}
+		}
 		japanese_heavy_tank = {
 			need = {
-               				recovery_tank_equipment = 1
+               	recovery_tank_equipment = 1
          	}
-			}
+		}
+		
 		research_cost = 4
 		start_year = 1938
 		folder = {
-			name = armour_folder
-			position = { x = -2 y = -3 }
+			name = japanarmor_folder
+			position = { x = 3 y = 9 }
 		}
 		
 		categories = {
