@@ -847,4 +847,42 @@ equipments = {
 		priority = 70
 		visual_level = 0
 	}
+##############################################
+	# Artillery spotter planes
+#################################################
+	spotter_planes_equipment = {
+		is_archetype = yes
+		type = { 
+			artillery
+			motorized
+			
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		#Misc Abilities
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 10
+		breakthrough = 5
+		
+
+		#Offensive Abilities
+		soft_attack = 5
+		
+		
+		build_cost_ic = 22
+		resources = {
+			oil = 1
+			rubber = 1
+			steel = 1
+		}
+	}
+	spotter_planes_equipment_0 = {
+		archetype = spotter_planes_equipment
+		priority = 70
+		visual_level = 0
+	}
 }

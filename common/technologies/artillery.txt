@@ -1835,4 +1835,55 @@ technologies = {
 			cat_anti_tank
 		}
 	}
+	########### Artillery FOW - Spotter planes ##############
+	artillery_spotter_planes = {
+		
+		enable_equipments = {
+			spotter_planes_equipment_0
+		}
+		
+		dependencies = {
+			
+		}
+		artillery_heavy = {
+		
+			need = {
+               				 spotter_planes_equipment = 1
+         		   }
+		}
+		artillery_medium = {
+		
+			need = {
+               				 spotter_planes_equipment = 1
+         		   }
+		}
+		artillery_medium_mot = {
+		
+			need = {
+               				 spotter_planes_equipment = 1
+         		   }
+		}
+		research_cost = 3
+		start_year = 1938
+		folder = {
+			name = artillery_folder
+			position = { x = 16 y = @1938 }
+		}
+		
+		categories = {
+			artillery
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 7
+				num_of_military_factories > 70
+			}
+			modifier = {
+				factor = -7
+				tag = JAP
+			}
+		}
+	}
 }
