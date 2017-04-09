@@ -244,7 +244,7 @@ units = {
 		name = "3ème Brigade de Chars de Combat"
 		location = 11502
 		division_template = "Brigade de Chars de Combat" 		# FT-17s
-		force_equipment_variants = { fra_infantry_tank_equipment_1 = { owner = "FRA" } }
+		#force_equipment_variants = { light_tank_equipment_0 = { owner = "FRA" } }
 		start_experience_factor = 0.2
 	}
 
@@ -299,7 +299,7 @@ units = {
 		name = "2ème Brigade de Chars de Combat"
 		location = 11516
 		division_template = "Brigade de Chars de Combat" 		# FT-17s
-		force_equipment_variants = { fra_infantry_tank_equipment_1 = { owner = "FRA" } }
+		#force_equipment_variants = { light_tank_equipment_0 = { owner = "FRA" } }
 		start_experience_factor = 0.2
 	}
 
@@ -409,7 +409,7 @@ units = {
 		name = "5ème Brigade de Chars de Combat"
 		location = 11465
 		division_template = "Brigade de Chars de Combat" 		# R-35s
-		force_equipment_variants = { fra_infantry_tank_equipment_1 = { owner = "FRA" } }
+		force_equipment_variants = { fra_light_cavalry_tank_equipment_1 = { owner = "FRA" } }
 		start_experience_factor = 0.2
 	}
 
@@ -451,7 +451,7 @@ units = {
 		name = "4ème Brigade de Chars de Combat"
 		location = 11506
 		division_template = "Brigade de Chars de Combat" 		# R-35s
-		force_equipment_variants = { fra_infantry_tank_equipment_1 = { owner = "FRA" } }
+		force_equipment_variants = { fra_light_cavalry_tank_equipment_1 = { owner = "FRA" } }
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.5
 
@@ -1305,7 +1305,7 @@ instant_effect = {
 
 	add_equipment_production = {
 		equipment = {
-			type = fra_infantry_tank_equipment_1
+			type = fra_light_cavalry_tank_equipment_2
 			creator = "FRA" 
 		}
 		requested_factories = 1
@@ -1720,8 +1720,9 @@ instant_effect = {
 			amount = 2400
 			producer = FRA
 		}
+		
 	add_equipment_to_stockpile = {
-		type = fra_infantry_tank_equipment_1
+		type = fra_light_cavalry_tank_equipment_2
 			amount = 250
 			producer = FRA
 		}
