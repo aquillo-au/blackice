@@ -38,7 +38,7 @@ technologies = {
 		}
 		path = {
 			leads_to_tech = tech_infantry_uniforms
-			research_cost_coeff = 1
+			research_cost_coeff = 0.75
 		}
 		path = {
 			leads_to_tech = tech_Headquarters
@@ -49,7 +49,7 @@ technologies = {
 		start_year = 1918
 		folder = {
 			name = infantry_folder
-			position = { x = @1918 y = 10 }
+			position = { x = @1918 y = 13 }
 		}
 		
 		on_research_complete = {
@@ -117,7 +117,7 @@ technologies = {
 		start_year = 1934
 		folder = {
 			name = infantry_folder
-			position = { x = @1934 y = 5 }
+			position = { x = @1934 y = 0 }
 		}
 		
 		on_research_complete = {
@@ -154,7 +154,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1940 y = 5 }
+			position = { x = @1940 y = 0 }
 		}
 		
 		categories = {
@@ -179,7 +179,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = infantry_folder
-			position = { x = @1944 y = 5 }
+			position = { x = @1944 y = 0 }
 		}
 		
 		categories = {
@@ -205,7 +205,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x = @1936 y = 13 }
+			position = { x = @1936 y = 16 }
 		}
 		
 		on_research_complete = {
@@ -255,7 +255,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1940 y = 3 }
+			position = { x = @1940 y = 5 }
 		}
 		
 		categories = {
@@ -283,7 +283,7 @@ technologies = {
 		start_year = 1934
 		folder = {
 			name = infantry_folder
-			position = { x =@1934 y = 13  }
+			position = { x =@1934 y = 15  }
 		}
 		
 		categories = {
@@ -294,7 +294,7 @@ technologies = {
 			factor = 20
 		}
 	}
-############################## ww1 era SMG ( 1920 era)
+	### ww1 era SMG ( 1920 era)
 	SMG_team = {
 	
 		enable_subunits = {
@@ -322,7 +322,7 @@ technologies = {
 
 		folder = {
 			name = infantry_folder
-			position = { x =@1937  y = 7 }
+			position = { x =@1937  y = 8 }
 		}
 
 		categories = {
@@ -333,7 +333,7 @@ technologies = {
 			factor = 1
 		}
 	}
-##################### pre war SMG (1930 era)
+	### pre war SMG (1930 era)
 	SMG_team1 = {
 	
 		
@@ -345,6 +345,7 @@ technologies = {
 			leads_to_tech = SMG_team2
 			research_cost_coeff = 1
 		}
+		
 		category_all_infantry = {
 			soft_attack = 0.05
 			
@@ -366,12 +367,15 @@ technologies = {
 			factor = 1
 		}
 	}
-#####################  war SMG (1940 era)
+	### war SMG (1940 era)
 	SMG_team2 = {
 	
-		
 		enable_equipments = {
 			SMG_equipment_2
+		}
+		path = {
+			leads_to_tech = assault_rifle
+			research_cost_coeff = 1
 		}
 		
 		category_all_infantry = {
@@ -432,7 +436,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1940 y = 7 }
+			position = { x = @1940 y = 10 }
 		}
 
 		categories = {
@@ -462,7 +466,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = infantry_folder
-			position = { x = @1942 y = 7 }
+			position = { x = @1942 y = 10 }
 		}
 		
 		categories = {
@@ -473,7 +477,7 @@ technologies = {
 			factor = 1
 		}
 	}
-	####################### Infantry Equipment #################################
+####################### Infantry Equipment #################################
 	infantry_weapons1 = {
 
 		enable_equipments = {
@@ -505,7 +509,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x = @1936 y = 10 }
+			position = { x = @1936 y = 13 }
 		}
 		
 		categories = {
@@ -577,7 +581,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = @1938 y = 10 }
+			position = { x = @1938 y = 13 }
 		}
 		
 		categories = {
@@ -613,7 +617,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = infantry_folder
-			position = { x = @1939 y = 10 }
+			position = { x = @1939 y = 13 }
 		}
 		
 		categories = {
@@ -669,7 +673,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1940 y = 10 }
+			position = { x = @1940 y = 13 }
 		}
 		
 		categories = {
@@ -702,10 +706,8 @@ technologies = {
 			assault_rifle_equipment_0
 		}
 		dependencies = {
-			SMG_team2 = 1 
-		}
-		dependencies = {
-			improved_infantry_weapons_2 = 1 
+			SMG_team2 = 1
+			improved_infantry_weapons_2 = 1
 		}
 		
 		category_all_infantry = {
@@ -720,7 +722,7 @@ technologies = {
 
 		folder = {
 			name = infantry_folder
-			position = { x =@1937  y = 7 }
+			position = { x =@1943  y = 8 }
 		}
 
 		categories = {
@@ -823,7 +825,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x = 6 y = 13 }
+			position = { x = 6 y = 16 }
 		}
 		
 		categories = {
@@ -836,7 +838,6 @@ technologies = {
 	}
 	infantry_at_1 = {
 
-				
 		path = {
 			leads_to_tech = infantry_at_2
 			research_cost_coeff = 1
@@ -846,7 +847,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = infantry_folder
-			position = { x = @1939 y = 13 }
+			position = { x = @1939 y = 16 }
 		}
 		
 		categories = {
@@ -892,7 +893,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = infantry_folder
-			position = { x = @1942 y = 13 }
+			position = { x = @1942 y = 16 }
 		}
 		
 		categories = {
@@ -935,7 +936,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = infantry_folder
-			position = { x = @1944 y = 13 }
+			position = { x = @1944 y = 16 }
 		}
 
 		categories = {
@@ -971,7 +972,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = infantry_folder
-			position = { x = @1942 y = 10 }
+			position = { x = @1942 y = 13 }
 		}
 		
 		categories = {
@@ -1018,11 +1019,12 @@ technologies = {
 		ss_mechanized = {
 			soft_attack = 0.1
 		}
+		
 		research_cost = 1.5
 		start_year = 1944
 		folder = {
 			name = infantry_folder
-			position = { x = @1944 y = 10 }
+			position = { x = @1944 y = 13 }
 		}
 		
 		categories = {
@@ -1068,7 +1070,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x=@1918 y=16  }
+			position = { x=@1918 y= 22  }
 		}
 		
 		on_research_complete = {
@@ -1106,7 +1108,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x=@1940 y=16 }
+			position = { x=@1940 y= 22 }
 		}
 		
 		on_research_complete = {
@@ -1143,7 +1145,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = infantry_folder
-			position = { x=@1944 y=16 }
+			position = { x=@1944 y= 22 }
 		}
 		on_research_complete = {
 			limit = {
@@ -1174,7 +1176,7 @@ technologies = {
 #		start_year = 1944
 #		folder = {
 #			name = infantry_folder
-#			position = { x=@1944 y=19 }
+#			position = { x=@1944 y= 22 }
 #		}
 #		
 #		categories = {
@@ -1220,7 +1222,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x = @1936 y = 25 }
+			position = { x = @1936 y = 31 }
 		}
 		
 		categories = {
@@ -1254,7 +1256,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = @1938 y = 27 }
+			position = { x = @1938 y = 33 }
 		}
 		
 		categories = {
@@ -1298,7 +1300,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = infantry_folder
-			position = { x = @1939 y = 25 }
+			position = { x = @1939 y = 31 }
 		}
 		
 		categories = {
@@ -1329,7 +1331,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = infantry_folder
-			position = { x = @1942 y = 27 }
+			position = { x = @1942 y = 33 }
 		}
 		
 		categories = {
@@ -1364,7 +1366,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = infantry_folder
-			position = { x = @1943 y = 25 }
+			position = { x = @1943 y = 31 }
 		}
 		
 		categories = {
@@ -1420,7 +1422,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x = @1936 y = 30 }
+			position = { x = @1936 y = 36 }
 		}
 		
 		categories = {
@@ -1449,7 +1451,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = @1938 y = 32 }
+			position = { x = @1938 y = 38 }
 		}
 		
 		categories = {
@@ -1479,7 +1481,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = infantry_folder
-			position = { x = @1939 y = 30 }
+			position = { x = @1939 y = 36 }
 		}
 		
 		categories = {
@@ -1500,7 +1502,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = infantry_folder
-			position = { x = @1943 y = 30 }
+			position = { x = @1943 y = 36 }
 		}
 		
 		categories = {
@@ -1525,7 +1527,7 @@ technologies = {
 #		}
 #		folder = {
 #			name = infantry_folder
-#			position = { x = 4 y = @1940 }
+#			position = { x = @1940 y = 36 }
 #		}
 #		
 #		categories = {
@@ -1563,7 +1565,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x = @1936 y = 35 }
+			position = { x = @1936 y = 41 }
 		}
 		
 		on_research_complete = {
@@ -1608,14 +1610,13 @@ technologies = {
 		}
 		enable_subunits = {
 			para_support
-
 			airborne_artillery_brigade			
 		}
 		research_cost = 1.5
 		start_year = 1939
 		folder = {
 			name = infantry_folder
-			position = { x = @1939 y = 37 }
+			position = { x = @1939 y = 41 }
 		}
 		
 		categories = {
@@ -1660,7 +1661,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1940 y = 35 }
+			position = { x = @1940 y = 41 }
 		}
 		
 		categories = {
@@ -1696,7 +1697,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = infantry_folder
-			position = { x = @1943 y = 35 }
+			position = { x = @1943 y = 41 }
 		}
 		
 		categories = {
@@ -1742,7 +1743,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1940 y = 37 }
+			position = { x = @1940 y = 43 }
 		}
 		
 		categories = {
@@ -1766,7 +1767,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = infantry_folder
-			position = { x = @1941 y = 37 }
+			position = { x = @1941 y = 43 }
 		}
 		
 		categories = {
@@ -1794,14 +1795,12 @@ technologies = {
 				movement = 0.1
 			}
 		}
-
 		mountaineers = {
 			jungle = {
 				attack = 0.05
 				movement = 0.1
 			}
 		}
-
 		paratrooper = {
 			jungle = {
 				attack = 0.05
@@ -1993,7 +1992,7 @@ technologies = {
 		start_year = 1918
 		folder = {
 			name = infantry_folder
-			position = { x = @1918 y = 19 }
+			position = { x = @1918 y = 25 }
 		}
 		
 		categories = {
@@ -2124,7 +2123,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = @1938 y = 19 }
+			position = { x = @1938 y = 25 }
 		}
 		
 		categories = {
@@ -2243,7 +2242,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1940 y = 19 }
+			position = { x = @1940 y = 25 }
 		}
 		
 		categories = {
@@ -2379,7 +2378,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = infantry_folder
-			position = { x = @1942 y = 19 }
+			position = { x = @1942 y = 25 }
 		}
 		
 		categories = {
@@ -2505,7 +2504,7 @@ technologies = {
 		start_year = 1918
 		folder = {
 			name = infantry_folder
-			position = { x = @1918 y = 22 }
+			position = { x = @1918 y = 28 }
 		}
 		
 		categories = {
@@ -2624,7 +2623,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = @1938 y = 22 }
+			position = { x = @1938 y = 28 }
 		}
 		
 		categories = {
@@ -2730,7 +2729,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1940 y = 22 }
+			position = { x = @1940 y = 28 }
 		}
 		
 		categories = {
@@ -2854,7 +2853,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = infantry_folder
-			position = { x = @1942 y = 22 }
+			position = { x = @1942 y = 28 }
 		}
 		
 		categories = {
@@ -2885,20 +2884,22 @@ technologies = {
 			}
 		}
 	}
+	### Mot Cav
 	motorised_cavalry = {
 		
 		cavalry = {
 			
 			need = {
-               				motorized_equipment = 80
+               	motorized_equipment = 80
 				horse_equipment = -90
-         		   }
-		}		
+         	}
+		}
+		
 		research_cost = 2
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1938 y = 3 }
+			position = { x = @1938 y = 5 }
 		}
 		
 		categories = {
@@ -2936,6 +2937,10 @@ technologies = {
 		
 		path = {
 			leads_to_tech = desert_equipment
+			research_cost_coeff = 0.75
+		}
+		path = {
+			leads_to_tech = motorised_infantry
 			research_cost_coeff = 1
 		}
 		
@@ -2943,7 +2948,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x=@1936 y=0 }
+			position = { x= @1936 y= 3 }
 		}
 		on_research_complete = {
 			limit = {
@@ -2990,7 +2995,7 @@ technologies = {
 		
 		path = {
 			leads_to_tech = desert_equipment
-			research_cost_coeff = 1
+			research_cost_coeff = 0.75
 		}
 		path = {
 			leads_to_tech = mechanised_infantry
@@ -3028,7 +3033,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x =@1938 y = 0 }
+			position = { x =@1938 y = 3 }
 		}
 		folder = {
 			name = support_folder
@@ -3063,7 +3068,7 @@ technologies = {
 			}
 		}
 	}
-	
+	### subtech mot-inf
 	subtech_motorized_rocket_unit = {
 
 		enable_subunits = {
@@ -3107,7 +3112,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = @1941 y = 0 }
+			position = { x = @1941 y = 3 }
 		}
 		
 		on_research_complete = {
@@ -3143,7 +3148,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = infantry_folder
-			position = { x = @1943 y = 0 }
+			position = { x = @1943 y = 3 }
 		}
 		
 		categories = {
@@ -3175,7 +3180,7 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = infantry_folder
-			position = { x = @1945 y = 0 }
+			position = { x = @1945 y = 3 }
 		}
 		
 		categories = {
@@ -3188,62 +3193,60 @@ technologies = {
 			factor = 1
 		}
 	}
-	############################## Infantry guns
+############################## Infantry guns ##############################
 	infantry_guns = {
 	
 	
 		enable_equipments = {
 			infantrygun_equipment_0
 		}
-		
 		path = {
 			leads_to_tech = infantry_guns1
 			research_cost_coeff = 1
 		}
 	
-		
 		infantry = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_infantry = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		semi_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_semi_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		mechanized = {
 			defense = 0.2
 			breakthrough = 0.1
@@ -3257,13 +3260,13 @@ technologies = {
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
+		
 		research_cost = 1.5
 		start_year = 1918
-
 		folder = {
 			name = infantry_folder
-			position = { x =@1937  y = 7 }
+			position = { x =@1918  y = 19 }
 		}
 
 		categories = {
@@ -3281,74 +3284,73 @@ technologies = {
 		enable_equipments = {
 			infantrygun_equipment_1
 		}
+		path = {
+			leads_to_tech = infantry_guns2
+			research_cost_coeff = 1
+		}
+		
 		infantry = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_infantry = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		semi_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_semi_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		mechanized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_mechanized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
-		path = {
-			leads_to_tech = infantry_guns2
-			research_cost_coeff = 1
 		}
 		
-
 		research_cost = 1.5
 		start_year = 1938
-
 		folder = {
 			name = infantry_folder
-			position = { x =@1938  y = 8 }
+			position = { x =@1938  y = 19 }
 		}
 
 		categories = {
@@ -3366,55 +3368,56 @@ technologies = {
 		enable_equipments = {
 			infantrygun_equipment_2
 		}
+		
 		infantry = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_infantry = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		semi_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_semi_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_motorized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		mechanized = {
 			defense = 0.2
 			breakthrough = 0.1
 			need = {
                	infantrygun_equipment = 1
          	}
-			}
+		}
 		ss_mechanized = {
 			defense = 0.2
 			breakthrough = 0.1
@@ -3422,11 +3425,12 @@ technologies = {
                	infantrygun_equipment = 1
          	}
 		}
+		
 		research_cost = 1.5
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x =@1940  y = 8 }
+			position = { x =@1940  y = 19 }
 		}
 
 		categories = {
