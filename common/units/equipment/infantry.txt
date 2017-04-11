@@ -5,6 +5,7 @@ equipments = {
 	infantry_equipment = {
 		is_archetype = yes
 		is_buildable = no
+		active = yes
 		type = infantry
 		group_by = archetype
 		
@@ -15,7 +16,7 @@ equipments = {
 			AT_upgrade
 			heavy_weapons_upgrade
 		}
-		active = yes
+		
 		
 		#Misc Abilities
 		reliability = 0.4
@@ -540,8 +541,7 @@ equipments = {
 		interface_category = interface_category_land
 		
 		active = no
-				
-				
+		
 		#Space taken in convoy
 		lend_lease_cost = 1
 		
@@ -553,7 +553,7 @@ equipments = {
 	##### 
 	sniper_equipment_0 = {
 		archetype = sniper_equipment
-		active = yes
+		#active = yes
 		priority = 1
 		visual_level = 0
 		
@@ -629,6 +629,7 @@ equipments = {
 	HMG_equipment = {
 		is_archetype = yes
 		is_buildable = no
+		active = no
 		type = {
 			infantry
 			motorized
@@ -637,9 +638,7 @@ equipments = {
 		
 		interface_category = interface_category_land
 		
-		active = no
-				
-				
+		
 		#Space taken in convoy
 		lend_lease_cost = 1
 		
@@ -651,7 +650,7 @@ equipments = {
 	
 	HMG_equipment_0 = {
 		archetype = HMG_equipment
-		active = yes
+		#active = yes
 		priority = 10
 		visual_level = 0
 		
@@ -696,6 +695,7 @@ equipments = {
 	mortar_equipment = {
 		is_archetype = yes
 		is_buildable = no
+		active = no
 		type = {
 			infantry
 			motorized
@@ -703,10 +703,7 @@ equipments = {
 		group_by = archetype
 		
 		interface_category = interface_category_land
-		
-		active = no
-				
-				
+	
 		#Space taken in convoy
 		lend_lease_cost = 1
 		
@@ -718,7 +715,7 @@ equipments = {
 	##### 
 	mortar_equipment_0 = {
 		archetype = mortar_equipment
-		active = yes
+		#active = yes
 		priority = 10
 		visual_level = 0
 		
@@ -765,12 +762,13 @@ equipments = {
 	urbanwar_equipment = {
 		is_archetype = yes
 		is_buildable = no
+		active = yes
 		type = infantry
 		group_by = archetype
 		
 		interface_category = interface_category_land
 		
-		active = yes
+		
 		
 		#Misc Abilities
 		reliability = 0.8
@@ -798,7 +796,7 @@ equipments = {
 	}
 	urbanwar_equipment_0 = {
 		archetype = urbanwar_equipment
-		active = no
+		#active = no
 		priority = 05
 		visual_level = 0
 	}
@@ -806,13 +804,12 @@ equipments = {
 	para_equipment = {
 		is_archetype = yes
 		is_buildable = no
+		active = yes
 		type = infantry
 		group_by = archetype
 		
 		interface_category = interface_category_land
-		
-		active = yes
-		
+
 		#Misc Abilities
 		reliability = 0.6
 		maximum_speed = 1
@@ -840,14 +837,14 @@ equipments = {
 
 	para_equipment_0 = {
 		archetype = para_equipment
-		active = no
+		#active = no
 		priority = 05
 		visual_level = 0
 	}
 	para_equipment_1 = {
 		archetype = para_equipment
 		parent = para_equipment_0
-		active = no
+		#active = no
 		priority = 05
 		visual_level = 0
 	}
