@@ -219,8 +219,8 @@ NProduction = {
 	EFFICIENCY_LOSS_PER_UNUSED_DAY = 1,						-- Daily loss of efficiency for unused factory slots ( efficiency is tracked per factory slot in the production line )
 	MAX_LINE_RESOURCE_PENALTY = 85,							-- Max penalty factor for production lines lacking strategic resources in %.
 	RESOURCE_PENALTY_WARNING_CRITICAL_RATIO = 0.8, 			-- Switch to red progress bar if penalty is over threshold 
-	BASE_FACTORY_SPEED = 3.5, 								-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
-	BASE_FACTORY_SPEED_MIL = 5.8, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
+	BASE_FACTORY_SPEED = 3.8, 								-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
+	BASE_FACTORY_SPEED_MIL = 6.3, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
 	BASE_FACTORY_SPEED_NAV = 3.6, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
 	BASE_FACTORY_START_EFFICIENCY_FACTOR = 12,				-- Base start efficiency for factories expressed in %.
 	BASE_FACTORY_MAX_EFFICIENCY_FACTOR = 55,				-- Base max efficiency for factories expressed in %.
@@ -233,12 +233,12 @@ NProduction = {
 	BASE_CONSUMER_GOODS_NEED_FACTOR = 50,  					-- Base factor for the consumer goods need of civilian factories in %.
 	EQUIPMENT_BASE_LEND_LEASE_WEIGHT = 1.0, 				-- Base equipment lend lease weight
 	EQUIPMENT_LEND_LEASE_WEIGHT_FACTOR = 0.01,				-- Base equipment lend lease factor
-	ANNEX_STOCKPILES_RATIO = 0.7,							-- How much stockpiled equipment will be transferred on annexation
+	ANNEX_STOCKPILES_RATIO = 0.75,							-- How much stockpiled equipment will be transferred on annexation
 	ANNEX_FIELD_EQUIPMENT_RATIO = 0.3,						-- How much equipment from deployed divisions will be transferred on annexation
 	ANNEX_CONVOYS_RATIO = 0.2,								-- How many convoys will be transferred on annexation
 	MIN_POSSIBLE_TRAINING_MANPOWER = 100000,				-- How many deployment lines minimum can be training
 	MIN_FIELD_TO_TRAINING_MANPOWER_RATIO = 0.65,			-- Ratio which % of army in field can be trained
-	CAPITULATE_STOCKPILES_RATIO = 0.40, 					-- How much equipment from deployed divisions will be transferred on capitulation
+	CAPITULATE_STOCKPILES_RATIO = 0.55, 					-- How much equipment from deployed divisions will be transferred on capitulation
 	INFRA_MAX_CONSTRUCTION_COST_EFFECT = 0.5, 				-- Building in a state with higher infrastructure will reduce the cost of shared buildings.
 	PRODUCTION_RESOURCE_LACK_PENALTY = -0.05,				-- Penalty decrease while lack of resource per factory
 },
@@ -302,7 +302,7 @@ NMilitary = {
 	ZERO_ORG_MOVEMENT_MODIFIER = -0.65,						-- speed impact at 0 org.
 	INFRA_ORG_IMPACT = 0.5,									-- scale factor of infra on org regain.
 
-	INFRASTRUCTURE_MOVEMENT_SPEED_IMPACT = -0.09,			-- speed penalty per infrastucture below maximum.
+	INFRASTRUCTURE_MOVEMENT_SPEED_IMPACT = -0.07,			-- speed penalty per infrastucture below maximum.
 
 	WAR_SCORE_LOSSES_RATIO = 0.4,							-- Scale how much losses will affect warscore ( per 1000 losses ).
 	WAR_SCORE_LOSSES_MULT_IF_CAPITULATED = 0.5, 			-- How much your losses count towards warscore if you have capitulated.
@@ -809,7 +809,7 @@ NAI = {
 	RESEARCH_AHEAD_OF_TIME_FACTOR = 4.0, 				-- To which extent AI should care about ahead of time penalties to research
 	RESEARCH_BASE_DAYS = 60,							-- AI adds a base number of days when weighting completion time for techs to ensure it doesn't only research quick techs
 	DECLARE_WAR_RELATIVE_FORCE_FACTOR = 0.5,			-- Weight of relative force between nations that consider going to war
-	TRADEABLE_FACTORIES_FRACTION = 0.75,					-- DNM, original 0.3 (AI Mod) -- Will at most trade away this fraction of factories.
+	TRADEABLE_FACTORIES_FRACTION = 0.6,					-- DNM, original 0.3 (AI Mod) -- Will at most trade away this fraction of factories.
 	MIN_DELIVERED_TRADE_FRACTION = 0.7,				-- AI will cancel trade deals that are not able to deliver more than this fraction of the agreed amount
 	NAVAL_TRANSPORTS_FACTOR = 2,						-- Factor applied to the relative size of army compared to naval capacity.
 	NAVAL_DOCKYARDS_SHIP_FACTOR = 2.0,					-- BICE -- The extent to which number of dockyards play into amount of sips a nation wants
@@ -836,8 +836,8 @@ NAI = {
 	WANTED_UNITS_INDUSTRY_FACTORY = 0.0, 				-- How many units a country wants is partially based on how much military industry that is available
 	DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.95,			-- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
 	DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.25,				-- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
-	DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 0.9,			-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
-	DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 0.9,				-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in wartime
+	DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 0.7,			-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
+	DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 0.6,				-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in wartime
 	DYNAMIC_STRATEGIES_THREAT_FACTOR = 4.0,				-- How much threat generated by other countries effects generated strategies
 	WARGOAL_GENERATION_STRENGTH_FACTOR = 1.75,			-- Desire to generate wargoal effected negatevely if actor strength is less than this factor of target strength
 	LOCATION_BALANCE_TO_ADVANCE = 0.0,					-- Limit on location strength balance between country and enemy for unit to dare to move forward.
@@ -982,10 +982,10 @@ NAI = {
 	AIR_WING_REINFORCEMENT_LIMIT = 60,					-- number of aircraft needed for reserves before the ai will deploy more, I think.
 	AIR_BASE_DANGER_ZONE_WEIGHT = 100,					-- Score used per province taken by enemy in a state to determine how dangerous it is to use an air base
 
-	MANPOWER_FREE_USAGE_THRESHOLD = 90000,				-- If AI has this much manpower he doesn't care about the percentage
-	MANPOWER_RESERVED_THRESHOLD = 0.7,					-- The AI will not deploy more units if he goes below this percentage
-	START_TRAINING_EQUIPMENT_LEVEL = 0.98,              -- was 0.95 ai will not start to train if equipment drops below this level
-	STOP_TRAINING_EQUIPMENT_LEVEL = 0.95,                -- was 0.9 ai will not train if equipment drops below this level
+	MANPOWER_FREE_USAGE_THRESHOLD = 500000,				-- If AI has this much manpower he doesn't care about the percentage
+	MANPOWER_RESERVED_THRESHOLD = 0.3,					-- The AI will not deploy more units if he goes below this percentage
+	START_TRAINING_EQUIPMENT_LEVEL = 0.7,              -- was 0.95 ai will not start to train if equipment drops below this level
+	STOP_TRAINING_EQUIPMENT_LEVEL = 0.5,                -- was 0.9 ai will not train if equipment drops below this level
 	BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.001,	-- How much lack of resources are worth when evaluating what to build.
 	DIVISION_DESIGN_WEIGHTS = {							-- Base values used by AI to evaluate value of a stat
 		-- Army Values
@@ -1120,8 +1120,8 @@ NAI = {
 
 	FRONT_UNITS_CAP_FACTOR = 15.0,							-- A factor applied to total front size and supply use. Primarily effects small fronts
 	MAX_DIST_PORT_RUSH = 20.0,								-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
-	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.94,				-- Cancel unit production if below this to get resources out to units in the field
-	MIN_MANPOWER_TO_BUILD_UNITS = 0.15,						-- Cancel unit production if below this to get resources out to units in the field
+	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.7,				-- Cancel unit production if below this to get resources out to units in the field
+	MIN_MANPOWER_TO_BUILD_UNITS = 0.7,						-- Cancel unit production if below this to get resources out to units in the field
 	
 	AVERAGE_SUPPLY_USE_PESSIMISM = 1.5,						-- Multiplier for when AI calculates average supply use of entire army.
 	
