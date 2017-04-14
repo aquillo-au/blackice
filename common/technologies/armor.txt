@@ -1120,7 +1120,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = armour_folder
-			position = { x = -4 y = 6 }
+			position = { x = -4 y = @1940 }
 		}
 		
 		categories = {
@@ -2397,6 +2397,10 @@ technologies = {
 ################### Command tanks ###########
 	command_tanks = {
 
+		dependencies = {
+			generic_armor = 1
+		}
+
 		enable_equipments = {
 			command_tank_equipment_0
 		}
@@ -2447,6 +2451,10 @@ technologies = {
 	}
 	################### Recovery tanks ###########
 	recovery_tanks = {
+
+		dependencies = {
+			generic_armor = 1
+		}
 
 		enable_equipments = {
 			recovery_tank_equipment_0
