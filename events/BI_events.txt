@@ -1310,7 +1310,7 @@ country_event = {
 		
 		is_ai = yes
 		#has_war = yes
-		surrender_progress > 0.9 # too far gone
+		surrender_progress > 0.4 
 		has_defensive_war = yes # someone attacked them
 		
 		not = { has_country_flag = AIwartemplates }
@@ -1327,6 +1327,39 @@ country_event = {
 		set_country_flag = AIwartemplates
 		hidden_effect = {
 			load_oob = "AI_war_templates"
+			
+		}
+	}
+}
+country_event = {
+	id = blackiceevents.71
+	title = blackiceevents.71.t
+	desc = blackiceevents.71.d
+	
+	picture = GFX_report_event_polish_tanks_01
+
+	trigger = {
+		tag = USA
+		is_ai = yes
+		has_war = yes
+		has_country_flag = impossible
+		#has_army_size = { type = marines size < 4 }
+		not = { has_country_flag = USAmarine }
+		#has_country_flag = USmarine_1
+		controls_state = 847
+	}
+
+	immediate = {
+		set_country_flag = { flag = USAmarine days = 180 } 
+		}
+		
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = blackiceevents.71.a
+		hidden_effect = {
+			load_oob = "USA_marine_div"
 			
 		}
 	}
