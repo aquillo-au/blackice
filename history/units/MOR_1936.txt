@@ -12,21 +12,84 @@
 	}
 	priority = 0
 }
+division_template = {
+	name = "Moroccan Tirailleurs"	
 
+	regiments = {
+		light_infantry = { x = 0 y = 0 }
+		light_infantry = { x = 0 y = 1 }
+		light_infantry = { x = 0 y = 2 }
+
+		light_infantry = { x = 1 y = 0 }
+		light_infantry = { x = 1 y = 1 }
+		light_infantry = { x = 1 y = 2 }
+		
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		recon_cav = { x = 0 y = 1 }
+		desert_support = { x = 0 y = 2 }
+	}
+}
+division_template = {
+	name = "Moroccan Goumiers"	
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }	
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+		
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		desert_support = { x = 0 y = 2 }
+	}
+}
+division_template = {
+	name = "Moroccan Spahis"	
+
+	regiments = {
+		
+		cavalry = { x = 0 y = 0 }	
+		cavalry = { x = 0 y = 1 }	
+		cavalry = { x = 0 y = 2 }	
+		
+		cavalry = { x = 1 y = 0 }	
+		cavalry = { x = 1 y = 1 }	
+		cavalry = { x = 1 y = 2 }
+		
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		recon_cav = { x = 0 y = 1 }
+		desert_support = { x = 0 y = 2 }
+	}
+}
 units = {
 	division = {
-		name = "First Morrocan Regiment"
+		name = "Division d'Moroccan Goumiers"
 		location = 7069
-		division_template = "Brigade Coloniale"
-		start_experience_factor = 0.1
+		division_template = "Moroccan Goumiers"
+		start_experience_factor = 0.9
 		start_equipment_factor = 0.7
 	}	
 	division = {
-		name = "Second Morrocan Regiment"
+		name = "Division d'Moroccan Spahis"
 		location = 7100
-		division_template = "Brigade Coloniale"
-		start_experience_factor = 0.1
+		division_template = "Moroccan Spahis"
+		start_experience_factor = 0.9
 		start_equipment_factor = 0.7
 	}	
-
+	division = {
+		name = "Division d'Moroccan Tirailleurs"
+		location = 7100
+		division_template = "Moroccan Tirailleurs"
+		start_experience_factor = 0.9
+		start_equipment_factor = 0.7
+	}	
 }
