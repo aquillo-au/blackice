@@ -3895,7 +3895,7 @@ country_event = {
 
 	# Italy gets 1 state Savoy
 	option = {
-		ai_chance = { factor = 70 }
+		ai_chance = { factor = 0 }
 		name = germany.104.a
 		trigger = {
 			has_global_flag = ITA_claims_on_france_735
@@ -3914,7 +3914,7 @@ country_event = {
 
 	# Italy gets 1 state Corsica
 	option = {
-		ai_chance = { factor = 70 }
+		ai_chance = { factor = 0 }
 		name = germany.104.b
 		trigger = {
 			NOT = { has_global_flag = ITA_claims_on_france_735 }
@@ -3932,7 +3932,7 @@ country_event = {
 
 	# Italy gets Savoy
 	option = {
-		ai_chance = { factor = 70 }
+		ai_chance = { factor = 0 }
 		name = germany.104.c
 		trigger = {
 			has_global_flag = ITA_claims_on_france_735
@@ -3950,7 +3950,7 @@ country_event = {
 
 	# Italy gets Savoy and Corsica
 	option = {
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 100 }
 		name = germany.104.e
 		trigger = {
 			has_global_flag = ITA_claims_on_france_735
@@ -3968,12 +3968,11 @@ country_event = {
 
 	# Italy gets nothing 
 	option = {
-		ai_chance = { factor = 10 }
+		ai_chance = { factor = 0 }
 		name = germany.104.f
 		ITA = { country_event = { id = italy.14 hours = 2 } }
 	}
 }
-
 
 # Germany: Italy leaves faction
 country_event = {
