@@ -202,8 +202,13 @@ ideas = {
 			picture = generic_victors_of_ww1
 			
 			modifier = {
-			    democratic_drift = 0.1 
-				democratic_acceptance = 85
+			    fascism_drift = -0.05
+				communism_drift = -0.05
+				neutrality_drift = -0.05
+				monarchism_drift = -0.05
+				conservatism_acceptance = 85
+				liberalism_acceptance = 85
+				socialism_acceptance = 85
 			}
 		}
 	  	
@@ -322,41 +327,17 @@ ideas = {
 			}				
 	}
 	
-	political_advisor = {
+##################
+####Politicians
+##################
+#HoS
+head_of_state = {
 
-		BRA_washington_luis_pereira = {
+}
 
-			picture = generic_political_advisor_south_america_1
-			
-			allowed = {
-				original_tag = BRA
-			}
-			
-			traits = { silent_workhorse }
-		}
-
-		BRA_osvaldo_aranha = {
-
-			picture = generic_political_advisor_south_america_2
-				
-			allowed = {
-				original_tag = BRA
-			}
-			
-			traits = { captain_of_industry }
-		}
-
-		BRA_afranio_de_mello_franco = {
-
-			picture = generic_political_advisor_south_america_3
-			
-			allowed = {
-				original_tag = BRA
-			}
-			
-			traits = { war_industrialist }
-		}
-       BRA_gustavo_capanema = {
+#Foreign
+foreign_minister = {
+BRA_gustavo_capanema = {
 		  picture = generic_political_advisor_europe_1
 		   
 		   allowed = { 
@@ -377,7 +358,41 @@ ideas = {
 			traits = { ideological_crusader  }
 			
 			}
+}
+
+#Propaganda/Security
+interior_minister = {
+
+}
+
+#Intelligence
+intel_minister = {
+
+}
+
+#Economic
+economic_minister = {
+BRA_osvaldo_aranha = {
+
+			picture = generic_political_advisor_south_america_2
+				
+			allowed = {
+				original_tag = BRA
+			}
 			
+			traits = { captain_of_industry }
+		}
+
+		BRA_afranio_de_mello_franco = {
+
+			picture = generic_political_advisor_south_america_3
+			
+			allowed = {
+				original_tag = BRA
+			}
+			
+			traits = { war_industrialist }
+		}
 		BRA_alexandre_marcondes_machado_filho = {
 		  picture = generic_political_advisor_europe_3
 		   
@@ -421,6 +436,23 @@ ideas = {
 			
 			traits = { administrative_genius }
 		}
+}	
+
+	political_advisor = {
+
+		BRA_washington_luis_pereira = {
+
+			picture = generic_political_advisor_south_america_1
+			
+			allowed = {
+				original_tag = BRA
+			}
+			
+			traits = { silent_workhorse }
+		}
+
+	
+		
 		
 	}
 

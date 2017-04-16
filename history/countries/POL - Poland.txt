@@ -60,6 +60,21 @@ set_technology = {
 	vehicle_industry = 1
 }
 
+add_ideas = {
+		#laws
+		cons_one
+		low_economic_mobilisation
+		press_regulated
+		tax_average
+		edu_low
+		mob_standing
+		foreign_cooperative
+		tariffs_average
+		fdi_allowed
+		key_industries
+		
+	}
+
 1939.1.1 = {
 
 	add_political_power = 1198
@@ -77,7 +92,7 @@ set_technology = {
 
 	add_ideas = {
 		#laws
-		limited_conscription
+		cons_one
 		partial_economic_mobilisation
 	}
 
@@ -125,12 +140,12 @@ set_technology = {
 }
 
 
-set_convoys = 300
+set_convoys = 10
 
 set_politics = {
 
 	parties = {
-		democratic = { 
+		conservatism = { 
 			popularity = 18
 		}
 
@@ -157,7 +172,7 @@ set_politics = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
+			conservatism = { 
 				popularity = 13
 			}
 
@@ -219,7 +234,29 @@ create_country_leader = {
 	desc = "POLITICS_WINCENTY_WITOS_DESC"
 	picture = "GFX_POL_wincenty_witos"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = social_conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Mieczyslaw Michalowicz"
+	desc = ""
+	picture = "pol_mieczyslaw_michalowicz.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Roman Dmowski"
+	desc = ""
+	picture = "pol_roman_dmowski"
+	expire = "1965.1.1"
+	ideology = nazism
 	traits = {
 		#
 	}
@@ -228,7 +265,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Bolesław Piasecki"
 	desc = "POLITICS_BOLESLAW_PIASECKI_DESC"
-	picture = "GFX_POL_boleslaw_piasecki"
+	picture = "GFX_POL_boleslaw_piasecki.dds"
 	expire = "1965.1.1"
 	ideology = falangism
 	traits = {

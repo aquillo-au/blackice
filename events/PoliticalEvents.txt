@@ -213,32 +213,128 @@ country_event = {
 		name = political.6.a
 		if = {
 			limit = {
-				has_government = democratic
+				has_government = conservatism
 			}
-			start_civil_war = {
-				ruling_party = communism
-				ideology = democratic
-				size = 0.6
+			if = {
+				limit = { communism > 0.4 }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = conservatism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { communism > 0.4 } }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = conservatism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = socialism
+			}
+			if = {
+				limit = { communism > 0.4 }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = socialism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { communism > 0.4 } }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = socialism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+			}
+			if = {
+				limit = { communism > 0.4 }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = liberalism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { communism > 0.4 } }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = liberalism
+					size = 0.7
+				}
 			}
 		}
 		if = {
 			limit = {
 				has_government = fascism
 			}
-			start_civil_war = {
-				ruling_party = communism
-				ideology = fascism
-				size = 0.6
+			if = {
+				limit = { fascism > 0.4 }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = fascism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { fascism > 0.4 } }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = fascism
+					size = 0.7
+				}
 			}
 		}
 		if = {
 			limit = {
 				has_government = neutrality
 			}
-			start_civil_war = {
-				ruling_party = communism
-				ideology = neutrality
-				size = 0.6
+			if = {
+				limit = { communism > 0.4 }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = neutrality
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { communism > 0.4 } }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = neutrality
+					size = 0.7
+				}
+			}
+		} 
+		if = {
+			limit = {
+				has_government = monarchism
+			}
+			if = {
+				limit = { communism > 0.4 }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = monarchism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { communism > 0.4 } }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = monarchism
+					size = 0.7
+				}
 			}
 		}
 		add_timed_idea = { idea = reign_of_terror days = 730 }
@@ -246,7 +342,139 @@ country_event = {
 	}
 	option = {
 		name = political.6.b
+		if = {
+			limit = {
+				has_government = conservatism
+			}
+			if = {
+				limit = { conservatism > 0.3 }
+				start_civil_war = {
+					ruling_party = conservatism
+					ideology = communism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { conservatism > 0.3 } }
+				start_civil_war = {
+					ruling_party = conservatism
+					ideology = communism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = socialism
+			}
+			if = {
+				limit = { socialism > 0.3 }
+				start_civil_war = {
+					ruling_party = socialism
+					ideology = communism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { socialism > 0.3 } }
+				start_civil_war = {
+					ruling_party = socialism
+					ideology = communism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+			}
+			if = {
+				limit = { liberalism > 0.3 }
+				start_civil_war = {
+					ruling_party = liberalism
+					ideology = communism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { liberalism > 0.3 } }
+				start_civil_war = {
+					ruling_party = liberalism
+					ideology = communism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			if = {
+				limit = { fascism > 0.4 }
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = communism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { fascism > 0.4 } }
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = communism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			if = {
+				limit = { neutrality > 0.4 }
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = communism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { neutrality > 0.4 } }
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = communism
+					size = 0.7
+				}
+			}
+			if = {
+				limit = { monarchism > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = communism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchism > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = communism
+					size = 0.7
+				}
+			}
+		if = { 
+			limit = { 
+				OR = {
+					has_government = fascism
+					has_government = monarchism
+				}
+			} 
+			add_timed_idea = { idea = reign_of_terror days = 730 }
+		}  
+		
+		remove_ideas = communist_revolutionaries
 	}
+}
 }
 
 # Fascism on the Rise
@@ -424,13 +652,13 @@ country_event = {
 		name = political.10.a
 		if = {
 			limit = {
-				has_government = democratic
+				has_government = conservatism
 			}
 			if = {
 				limit = { fascism > 0.4 }
 				start_civil_war = {
 					ruling_party = fascism
-					ideology = democratic
+					ideology = conservatism
 					size = 0.6
 				}
 			}
@@ -438,7 +666,49 @@ country_event = {
 				limit = { NOT = { fascism > 0.4 } }
 				start_civil_war = {
 					ruling_party = fascism
-					ideology = democratic
+					ideology = conservatism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = socialism
+			}
+			if = {
+				limit = { fascism > 0.4 }
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = socialism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { fascism > 0.4 } }
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = socialism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+			}
+			if = {
+				limit = { fascism > 0.4 }
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = liberalism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { fascism > 0.4 } }
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = liberalism
 					size = 0.7
 				}
 			}
@@ -484,42 +754,143 @@ country_event = {
 					size = 0.7
 				}
 			}
-		if = {
-				limit = {
-					tag = CHI
-					has_country_flag = new_life
-				}
-				set_party_name = { ideology = fascism long_name = CHI_neutrality_party name = CHI_neutrality_party }
-				create_country_leader = {
-					name = "Chiang Kai-shek"
-					desc = "POLITICS_CHIANG_KAI-SHEK_DESC"
-					picture = "Portrait_China_Chiang_Kai_Shek.dds"
-					expire = "1965.1.1"
-					ideology = fascism_ideology
-					traits = {}
-				}
-				add_popularity = {
-					ideology = neutrality
-					popularity = -1
-				}
-				add_popularity = {
-					ideology = fascism
-					popularity = 1
-				}
-				random_country = {
-					limit = {
-						original_tag = CHI
-						has_government = neutrality
-					}
-					retire_country_leader = yes
-				}
-			}
 		}
 		remove_ideas = fascist_revolutionaries
 		add_timed_idea = { idea = reign_of_terror days = 730 }
 	}
 	option = {
 		name = political.10.b
+		if = {
+			limit = {
+				has_government = conservatism
+			}
+			if = {
+				limit = { conservatism > 0.3 }
+				start_civil_war = {
+					ruling_party = conservatism
+					ideology = fascism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { conservatism > 0.3 } }
+				start_civil_war = {
+					ruling_party = conservatism
+					ideology = fascism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = socialism
+			}
+			if = {
+				limit = { socialism > 0.3 }
+				start_civil_war = {
+					ruling_party = socialism
+					ideology = fascism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { socialism > 0.3 } }
+				start_civil_war = {
+					ruling_party = socialism
+					ideology = fascism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+			}
+			if = {
+				limit = { liberalism > 0.3 }
+				start_civil_war = {
+					ruling_party = liberalism
+					ideology = fascism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { liberalism > 0.3 } }
+				start_civil_war = {
+					ruling_party = liberalism
+					ideology = fascism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = communism
+			}
+			if = {
+				limit = { communism > 0.4 }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = fascism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { communism > 0.4 } }
+				start_civil_war = {
+					ruling_party = communism
+					ideology = fascism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			if = {
+				limit = { neutrality > 0.4 }
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = fascism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { neutrality > 0.4 } }
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = fascism
+					size = 0.7
+				}
+			}
+			if = {
+				limit = { monarchism > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = fascism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchism > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = fascism
+					size = 0.7
+				}
+			}
+		}
+		remove_ideas = fascist_revolutionaries
+		if = { 
+			limit = { 
+				OR = {
+					has_government = communism
+					has_government = monarchism
+				}
+			} 
+			add_timed_idea = { idea = reign_of_terror days = 730 }
+		}
 	}
 }
 
@@ -598,7 +969,14 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_government = democratic }
+		NOT = { 
+		OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					} 
+					}
 	}
 
 	# Seek government support
@@ -628,8 +1006,19 @@ country_event = {
 	picture = GFX_report_event_vienna_award_hungary
 	
 	trigger = {
-		has_idea_with_trait = democratic_reformer
-		NOT = { has_government = democratic }
+	OR = {
+		has_idea_with_trait = socialist_reformer
+		has_idea_with_trait = liberal_reformer
+		has_idea_with_trait = conservative_reformer
+		}
+		NOT = { 
+		OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					} 
+					}
 		NOT = { has_country_flag = democracy_government_support }
 	}
 	
@@ -641,10 +1030,13 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.5
-			democratic > 0.5
+			OR = {
+				socialism > 0.4
+				conservatism > 0.4
+				liberalism > 0.4
+			}
 		}
 	}
-	
 	option = {
 		name = political.14.a
 		custom_effect_tooltip = political.14.a.tt
@@ -661,8 +1053,19 @@ country_event = {
 	picture = GFX_report_event_warsaw_uprising
 	
 	trigger = {
-		has_idea_with_trait = democratic_reformer
-		NOT = { has_government = democratic }
+	OR = {
+		has_idea_with_trait = socialist_reformer
+		has_idea_with_trait = conservative_reformer
+		has_idea_with_trait = liberal_reformer
+		}
+		NOT = { 
+		OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					} 
+					}
 		NOT = { has_country_flag = democracy_opposition_formed }
 	}
 	
@@ -676,9 +1079,26 @@ country_event = {
 	
 	option = {
 		name = political.15.a
+		if = {
+			limit = { has_government = liberalism }
 		add_popularity = {
-			ideology = democratic
+			ideology = liberalism
 			popularity = 0.1
+		}
+		}
+		if = {
+			limit = { has_government = socialism }
+		add_popularity = {
+			ideology = socialism
+			popularity = 0.1
+		}
+		}
+		if = {
+			limit = { has_government = conservatism }
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.1
+		}
 		}
 		add_national_unity = -0.02
 		set_country_flag = democracy_opposition_formed
@@ -693,8 +1113,19 @@ country_event = {
 	picture = GFX_report_event_vote
 	
 	trigger = {
-		has_idea_with_trait = democratic_reformer
-		NOT = { has_government = democratic }
+		OR = {
+			has_idea_with_trait = conservatism
+			has_idea_with_trait = liberalism
+			has_idea_with_trait = socialism
+		}
+		NOT = { 
+		OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					} 
+					}
 		has_country_flag = democracy_opposition_formed
 		NOT = { has_idea = democratic_opposition_voicing_protests }
 	}
@@ -721,9 +1152,30 @@ country_event = {
 	picture = GFX_report_event_vote
 	
 	trigger = {
-		has_idea_with_trait = democratic_reformer
-		NOT = { has_government = democratic }
-		democratic > 0.5
+		OR = {
+			has_idea_with_trait = conservative_reformer
+			has_idea_with_trait = liberal_reformer
+			has_idea_with_trait = socialist_reformer
+		}
+		NOT = { 
+		OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					} 
+					}
+		OR = {
+		conservatism > 0.4
+		liberalism > 0.4
+		socialism > 0.4
+		}
+		NOT = {
+			fascism < 0.4
+			communism < 0.4
+			monarchism < 0.4
+			neutrality < 0.4
+		}
 		has_country_flag = democracy_government_support
 		is_puppet = no
 	}
@@ -742,9 +1194,26 @@ country_event = {
 			limit = { has_government = communism }
 			add_timed_idea = { idea = communism_defeated days = 730 }
 		}
+		if = {
+		limit = { liberalism > 0.4 }
 		set_politics = {
-			ruling_party = democratic
+			ruling_party = liberalism
 			elections_allowed = yes
+		}
+		}
+		if = {
+		limit = { conservatism > 0.4 }
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = yes
+		}
+		}
+		if = {
+		limit = { socialism > 0.4 }
+		set_politics = {
+			ruling_party = socialism
+			elections_allowed = yes
+		}
 		}
 		hold_election = ROOT
 		remove_ideas = democratic_revolutionaries
@@ -915,8 +1384,19 @@ country_event = {
 	picture = GFX_report_event_queen_elizabeth_king_george_VI_visit_blitzed_London
 
 	trigger = {
-		democratic > 0.5
-		NOT = { has_government = democratic }
+		OR = {
+		liberalism > 0.4
+		conservatism > 0.4
+		socialism > 0.4
+		}
+		NOT = { 
+		OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					} 
+					}
 		NOT = { has_idea = democratic_revolutionaries }
 		NOT = { has_idea = reign_of_terror }
 		is_puppet = no
@@ -929,9 +1409,26 @@ country_event = {
 	option = {
 		name = political.20.a
 		add_political_power = -100
+		if = {
+		limit = { conservatism > 0.4 }
 		add_popularity = {
-			ideology = democratic
+			ideology = conservatism
 			popularity = -0.10
+		}
+		}
+		if = {
+		limit = { liberalism > 0.4 }
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.10
+		}
+		}
+		if = {
+		limit = { socialism > 0.4 }
+		add_popularity = {
+			ideology = socialism
+			popularity = -0.10
+		}
 		}
 		add_timed_idea = {
 			idea = democratic_revolutionaries
@@ -970,9 +1467,26 @@ country_event = {
 			}
 			add_timed_idea = { idea = communism_defeated_kmt days = 730 }
 		}
-		set_politics = {
-			ruling_party = democratic
+		if = {
+			limit = { conservatism > 0.4 }
+		set_politics = { 
+			ruling_party = conservatism
 			elections_allowed = yes
+		}
+		}
+		if = {
+			limit = { liberalism > 0.4 }
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		}
+		if = {
+			limit = { socialism > 0.4 }
+		set_politics = {
+			ruling_party = socialism
+			elections_allowed = yes
+		}
 		}
 		add_national_unity = -0.05
 	}
@@ -1050,11 +1564,31 @@ if = {
 		name = political.21.b
 		if = {
 			limit = {
-				has_government = democratic
+				has_government = liberalism
 			}
 			start_civil_war = {
 				ruling_party = fascism
-				ideology = democratic
+				ideology = liberalism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = socialism
+			}
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = socialism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = conservatism
+			}
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = conservatism
 				size = 0.5
 			}
 		}
@@ -1150,11 +1684,31 @@ country_event = {
 		name = political.22.b
 		if = {
 			limit = {
-				has_government = democratic
+				has_government = socialism
 			}
 			start_civil_war = {
 				ruling_party = communism
-				ideology = democratic
+				ideology = socialism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+			}
+			start_civil_war = {
+				ruling_party = communism
+				ideology = liberalism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = conservatism
+			}
+			start_civil_war = {
+				ruling_party = communism
+				ideology = conservatism
 				size = 0.5
 			}
 		}
@@ -1188,7 +1742,11 @@ country_event = {
 	picture = GFX_report_event_polish_army
 
 	trigger = {
-		democratic > 0.7
+	OR = {
+		conservatism > 0.6
+		liberalism > 0.6
+		socialism > 0.6
+		}
 		has_idea = democratic_revolutionaries
 		#Special case CHI PRC
 		OR = {
@@ -1210,20 +1768,59 @@ country_event = {
 
 	option = {
 		name = political.23.a
+		if = {
+			limit = { liberalism > 0.6 }
 		start_civil_war = {
-			ideology = democratic
+			ideology = liberalism
 			size = 0.5
+			}
+		}
+		if = {
+			limit = { socialism > 0.6 }
+		start_civil_war = {
+			ideology = socialism
+			size = 0.5
+			}
+		}
+		if = {
+			limit = { conservatism > 0.6 }
+		start_civil_war = {
+			ideology = conservatism
+			size = 0.5
+			}
 		}
 	}
-
 	option = {
 		name = political.23.b
 		if = {
 			limit = {
 				has_government = neutrality
+				conservatism > 0.5
 			}
 			start_civil_war = {
-				ruling_party = democratic
+				ruling_party = conservatism
+				ideology = neutrality
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+				socialism > 0.5
+			}
+			start_civil_war = {
+				ruling_party = socialism
+				ideology = neutrality
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+				liberalism > 0.5
+			}
+			start_civil_war = {
+				ruling_party = liberalism
 				ideology = neutrality
 				size = 0.5
 			}
@@ -1231,10 +1828,35 @@ country_event = {
 		if = {
 			limit = {
 				has_government = fascism
+				conservatism > 0.5
 			}
 			add_timed_idea = { idea = fascism_defeated days = 730 }			
 			start_civil_war = {
-				ruling_party = democratic
+				ruling_party = conservatism
+				ideology = fascism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = fascism
+				socialism > 0.5
+			}
+			add_timed_idea = { idea = fascism_defeated days = 730 }			
+			start_civil_war = {
+				ruling_party = socialism
+				ideology = fascism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = fascism
+				liberalism > 0.5
+			}
+			add_timed_idea = { idea = fascism_defeated days = 730 }			
+			start_civil_war = {
+				ruling_party = liberalism
 				ideology = fascism
 				size = 0.5
 			}
@@ -1242,10 +1864,35 @@ country_event = {
 		if = {
 			limit = {
 				has_government = communism
+				conservatism > 0.5
 			}
 			add_timed_idea = { idea = communism_defeated days = 730 }
 			start_civil_war = {
-				ruling_party = democratic
+				ruling_party = conservatism
+				ideology = communism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = communism
+				socialism > 0.5
+			}
+			add_timed_idea = { idea = communism_defeated days = 730 }
+			start_civil_war = {
+				ruling_party = socialism
+				ideology = communism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = communism
+				liberalism > 0.5
+			}
+			add_timed_idea = { idea = communism_defeated days = 730 }
+			start_civil_war = {
+				ruling_party = liberalism
 				ideology = communism
 				size = 0.5
 			}
@@ -1304,7 +1951,11 @@ country_event = {
 	picture = GFX_report_event_french_refugees_fleeing
 
 	trigger = {
-		democratic < 0.3
+	OR = {
+		conservatism < 0.3
+		liberalism < 0.3
+		socialism < 0.3
+		}
 		has_idea = democratic_revolutionaries
 	}
 

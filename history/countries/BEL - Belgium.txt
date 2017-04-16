@@ -104,21 +104,29 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 81
+		conservatism = { 
+			popularity = 23
 		}
 
 		fascism = {
-			popularity = 13
+			popularity = 11
 		}
 		
 		communism = {
 			popularity = 6
 		}
+		monarchism = { 
+		 popularity = 60
+	    }
+		
+        neutrality = { 
+				popularity = 0
+			}		
+		
 	}
 	
-	ruling_party = democratic
-	last_election = "1932.5.24"
+	ruling_party = monarchism
+	last_election = "1932.11.27"
 	election_frequency = 48
 	elections_allowed = yes
 }
@@ -139,7 +147,7 @@ set_politics = {
 				popularity = 5
 			}
 			
-            democratic = { 
+            conservatism = { 
 				popularity = 0
 			}			
 			
@@ -166,16 +174,27 @@ add_ideas = {
 
 
 create_country_leader = {
-	name = "Hubert Pierlot"
+	name = "King Leopold III"
 	desc = "POLITICS_HUBERT_PIERLOT_DESC"
-	picture = "Portrait_Belgium_Hubert_Pierlot.dds"
+	picture = "bel_king_leopold_iii.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = parlamentarism
 	traits = {
 		#
 	}
 }
 #tblra belgian Prime Ministers
+
+create_country_leader = {
+	name = "Hubert Pierlot"
+	desc = "POLITICS_HUBERT_PIERLOT_DESC"
+	picture = "Portrait_Belgium_Hubert_Pierlot.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
 
 create_country_leader = {
 	name = "Achille van Acker"
@@ -259,16 +278,7 @@ create_country_leader = {
 		#
 	}
 }
-create_country_leader = {
-	name = "King Leopold III"
-	desc = "POLITICS_HUBERT_PIERLOT_DESC"
-	picture = "bel_king_leopold_iii.dds"
-	expire = "1965.1.1"
-	ideology = parlamentarism
-	traits = {
-		#
-	}
-}
+
 create_corps_commander = {
 	name = "Auguste Baesens"
 	portrait_path = "gfx/leaders/BEL/portrait_Auguste_Baesens.dds"

@@ -1980,7 +1980,12 @@ focus_tree = {
 		ai_will_do = {
 			factor = 0.5
 			modifier = {
-				has_government = democratic
+				OR = {
+			#has_government = democratic
+			has_government = conservatism
+			has_government = socialism
+			has_government = liberalism
+			}
 				factor = 0
 			}
 

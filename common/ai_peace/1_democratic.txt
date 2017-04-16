@@ -9,7 +9,11 @@
 
 democratic_peace = {
 	enable = {
-		has_government = democratic
+	OR = {
+		has_government = conservatism
+		has_government = socialism
+		has_government = liberalism
+		}
 	}
 
 	annex_randomness = 0 #100
@@ -55,7 +59,11 @@ democratic_peace = {
 			factor = 10
 
 			FROM = {
-				has_government = democratic
+				OR = {
+		has_government = conservatism
+		has_government = socialism
+		has_government = liberalism
+		}
 			}
 		}
 		modifier = {
@@ -162,14 +170,22 @@ democratic_peace = {
 			factor = 5
 
 			FROM = {
-				has_government = democratic
+				OR = {
+		has_government = conservatism
+		has_government = socialism
+		has_government = liberalism
+		}
 			}
 		}
 
 		modifier = {
 			factor = 10
 			FROM = {
-				NOT = { has_government = democratic }
+				NOT = { 
+		has_government = conservatism
+		has_government = socialism
+		has_government = liberalism
+		 }
 			}
 		}
 
@@ -623,7 +639,11 @@ democratic_peace = {
 			factor = -1
 
 			FROM = {
-				has_government = democratic
+				OR = {
+		has_government = conservatism
+		has_government = socialism
+		has_government = liberalism
+		}
 			}
 		}
 	}

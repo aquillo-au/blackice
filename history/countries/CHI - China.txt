@@ -44,7 +44,38 @@ add_ideas = {
 	KMT_warlord_cliques_pre_war
 	public_iliteracy
 	incompetent_industry_fake
+
+#laws
+	Mob_standing
+	Cons_one
+	Edu_low
+	Tax_average
+	Train_low
+	Press_censored
+	Foreign_neutral
+	Low_economic_mobilisation
+	fdi_regulated
+	tariffs_high
+	major_industries
+	export_focus
+	age_18
 }
+
+set_country_flag = mob_standing
+set_country_flag = Foreign_neutral
+set_country_flag = Tax_average
+set_country_flag = Edu_low
+set_country_flag = Press_censored
+set_country_flag = Cons_one
+set_country_flag = tariffs_high
+set_country_flag = Train_low
+set_country_flag = major_industries
+set_country_flag = age_18
+set_country_flag = export_focus
+set_country_flag = Low_economic_mobilisation
+set_country_flag = fdi_regulated
+set_country_flag = labor_allowed
+
 set_research_slots = 3
 set_convoys = 200
 set_national_unity = 0.8
@@ -66,7 +97,7 @@ set_national_unity = 0.8
 	add_ideas = {
 		#laws
 		tot_economic_mobilisation
-		service_by_requirement
+		cons_three
 		closed_economy
 
 		#ministers
@@ -128,7 +159,7 @@ set_national_unity = 0.8
 set_politics = {
 
 	parties = {
-		democratic = { 
+		conservatism = { 
 			popularity = 0
 		}
 
@@ -190,7 +221,7 @@ create_country_leader = {
 	desc = "POLITICS_ZHANG_LAN_DESC"
 	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_navy_3.dds"
 	expire = "1965.1.1"
-	ideology = socialism
+	ideology = social_democracy
 	traits = {
 		#
 	}
@@ -202,7 +233,7 @@ add_opinion_modifier = { target = PRC modifier = hostile_status }
 	set_politics = {
 
 		parties = {
-		democratic = { 
+		conservatism = { 
 			popularity = 0
 		}
 

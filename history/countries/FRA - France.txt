@@ -103,14 +103,48 @@ set_technology = {
 	housing_work = 1
 	hospital_work = 1
 	schools_work = 1
-}	
+}
+
+add_ideas = {
+		#politicians
+		albert_lebrun
+		
+		#laws
+		civilian_economy
+		Mob_reserve
+		Cons_two
+		Press_regulated
+		Tax_average
+		Edu_high
+		Foreign_interventionism
+		tariffs_average
+		fdi_regulated
+		key_industries
+		export_focus
+	}	
+	
+set_country_flag = mob_reserve
+set_country_flag = foreign_interventionism
+set_country_flag = Tax_average
+set_country_flag = Edu_high
+set_country_flag = Press_regulated
+set_country_flag = Cons_two
+set_country_flag = tariffs_average
+set_country_flag = fdi_regulated
+set_country_flag = train_medium
+set_country_flag = key_industries
+set_country_flag = age_19
+set_country_flag = export_focus
+set_country_flag = civilian_economy
+set_country_flag = labor_allowed	
+	
 ### 1939
 1939.1.1 = {
 	add_political_power = 899
 
 	#adding ministers
 	add_ideas = {
-		#FRA_charles_tillon
+		FRA_charles_tillon
 		francois_darlan
 		philippe_fequant
 		famh
@@ -200,25 +234,33 @@ set_technology = {
 
 set_convoys = 600
 
-set_national_unity = 0.4
+set_national_unity = 0.62
 
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 84
+		conservatism = { 
+			popularity = 30
+		}
+		
+		liberalism = {
+			popularity = 11
+		}
+		
+		socialism = {
+			popularity = 40
 		}
 
 		fascism = {
-			popularity = 1
+			popularity = 2
 		}
 		
 		communism = {
-			popularity = 15
+			popularity = 17
 		}
 	}
 	
-	ruling_party = democratic
+	ruling_party = liberalism
 	last_election = "1932.5.1"
 	election_frequency = 48
 	elections_allowed = yes
@@ -228,7 +270,19 @@ add_ideas = {
 	FRA_victors_of_wwi
 	FRA_disjointed_government
 	FRA_protected_by_the_maginot_line
-	limited_conscription
+
+	civilian_economy
+	Mob_reserve
+	Cons_two
+	Press_regulated
+	Tax_average
+	Edu_high
+	Foreign_interventionism
+	tariffs_average
+	fdi_regulated
+	key_industries
+	export_focus
+
 }
 if = {
 	limit = { 
@@ -270,7 +324,22 @@ if = {
 		puppet = SYR
 		puppet = LEB
 	}
-}
+set_country_flag = mob_reserve
+set_country_flag = foreign_interventionism
+set_country_flag = Tax_average
+set_country_flag = Edu_high
+set_country_flag = Press_regulated
+set_country_flag = Cons_two
+set_country_flag = tariffs_average
+set_country_flag = fdi_regulated
+set_country_flag = train_medium
+set_country_flag = key_industries
+set_country_flag = age_19
+set_country_flag = export_focus
+set_country_flag = civilian_economy
+set_country_flag = labor_allowed	
+
+
 #give_guarantee = CZE
 
 #Order matters here Daladier will start as leaders because added last
@@ -279,17 +348,21 @@ create_country_leader = {
 	desc = "POLITICS_CHARLES_DE_GAULLE_DESC"
 	picture = "Portrait_France_Charles_De_Gaulle.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = nationalism
 	traits = {
 		
 	}
 }
+
 create_country_leader = {
-	name = "Paul Reynaud"
-	desc = "POLITICS_PAUL_REYNAUD_DESC"
-	picture = "Portrait_France_Paul_Reynaud.dds"
-	expire = "1965.1.1"
-	ideology = socialism
+	name = "Louis Marin"
+	desc = "Leader of the FR"
+	picture = "Portrait_France_louis_marin.dds"
+	expire = "1960.1.1"
+	ideology = moderate
+	traits = {
+		silent_workhorse
+	}
 }
 
 create_country_leader = {
@@ -297,18 +370,23 @@ create_country_leader = {
 	desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 	picture = "Portrait_France_Edouard_Daladier.dds"
 	expire = "1965.1.1"
-	ideology = socialism
+	ideology = social_liberalism
 	traits = {
 		stout_defender
 	}
 }
+
 create_country_leader = {
 	name = "Léon Blum"
-	desc = "POLITICS_LEON_BLUM_DESC"
-	picture = "Portrait_France_Leon_Blum.dds"
+	desc = "Leader of the SFIO"
+	picture = "Portrait_france_leon_blum.dds"
 	expire = "1965.1.1"
-        ideology = socialism
+	ideology = social_democracy
+	traits = {
+		stout_defender
+	}
 }
+
 create_country_leader = {
 	name = "Albert Sarraut"
 	desc = "POLITICS_ALBERT_SARRAUT_DESC"

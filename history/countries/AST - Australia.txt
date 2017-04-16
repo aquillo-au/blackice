@@ -102,7 +102,7 @@ if = {
 	
 	add_ideas = {
 		#laws
-		volunteer_only
+		cons_volunteer
 		low_economic_mobilisation
 	}
 
@@ -148,26 +148,35 @@ if = {
 	}
 }
 
-set_convoys = 400
+set_convoys = 100
 
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 98
+		conservatism = { 
+			popularity = 45
+			
+		}
+		liberalism = { 
+			popularity = 15
+			
+		}
+		socialism = { 
+			popularity = 37
+			
 		}
 
 		fascism = {
 			popularity = 1
-		}
-		
+			}
+			
 		communism = {
-			popularity = 1
+			popularity = 2
 			#banned = no #default is no
+			}
 		}
-	}
 	
-	ruling_party = democratic
+	ruling_party = conservatism
 	last_election = "1934.9.15"
 	election_frequency = 36
 	elections_allowed = yes
@@ -178,7 +187,7 @@ create_country_leader = {
 	desc = "POLITICS_JOHN_CURTIN_DESC"
 	picture = "Portrait_Australia_John_Curtin.dds"
 	expire = "1965.1.1"
-	ideology = socialism
+	ideology = social_democracy
 	traits = {
 		#
 	}
@@ -188,7 +197,7 @@ create_country_leader = {
 	desc = "POLITICS_JOHN_CURTIN_DESC"
 	picture = "Portrait_Australia_Robert_Menzies.tga"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = classical_liberalism
 	traits = {
 		#
 	}
@@ -198,7 +207,7 @@ create_country_leader = {
 	desc = "POLITICS_JOHN_CURTIN_DESC"
 	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
 	expire = "1939.4.7"
-	ideology = liberalism
+	ideology = social_liberalism
 	traits = {
 		#
 	}
@@ -206,29 +215,27 @@ create_country_leader = {
 create_country_leader = {
 	name = "Eric Campbell"
 	desc = "POLITICS_ERIC_CAMPBELL_DESC"
-	picture = "GFX_AST_eric_campbell"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
 		#
 	}
 }
-
 create_country_leader = {
 	name = "Richard Dixon"
 	desc = "POLITICS_RICHARD_DIXON_DESC"
-	picture = "GFX_AST_richard_dixon"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
 	expire = "1965.1.1"
 	ideology = stalinism
 	traits = {
 		#
 	}
 }
-
 create_country_leader = {
 	name = "Earle Page"
 	desc = "POLITICS_EARLE_PAGE_DESC"
-	picture = "GFX_AST_earle_page"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
 	expire = "1965.1.1"
 	ideology = centrism
 	traits = {
@@ -238,7 +245,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Rod Hull"
 	desc = ""
-	picture = "Portrait_Australia_Rod_Hull.dds"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
@@ -250,21 +257,30 @@ create_country_leader = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
-				popularity = 99
-			}
+		conservatism = { 
+			popularity = 45
+			
+		}
+		liberalism = { 
+			popularity = 15
+			
+		}
+		socialism = { 
+			popularity = 37
+			
+		}
 
-			fascism = {
-				popularity = 0
+		fascism = {
+			popularity = 1
 			}
 			
-			communism = {
-				popularity = 1
-				#banned = no #default is no
+		communism = {
+			popularity = 2
+			#banned = no #default is no
 			}
 		}
 		
-		ruling_party = democratic
+		ruling_party = conservatism
 		last_election = "1937.10.23"
 		election_frequency = 36
 		elections_allowed = yes
@@ -272,15 +288,10 @@ create_country_leader = {
 	set_convoys = 100
 }
 
-create_corps_commander = {
-	name = "Leslie Morshead"
-	gfx = "GFX_AST_leslie_morshead"
-	traits = { }
-	skill = 4
-}
+
 create_corps_commander = {
 	name = "Thomas Blamey"
-	gfx = "GFX_AST_thomas_blamey"
+	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = {Awesome_General  offensive_doctrine_CC }
 	skill = 5
 }

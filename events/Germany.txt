@@ -2478,7 +2478,7 @@ country_event = {
 				}
 			}
 			start_civil_war = {
-				ruling_party = democratic
+				ruling_party = conservatism
 				ideology = fascism
 				size = 0.5
 			}
@@ -2491,7 +2491,7 @@ country_event = {
 				}
 			}
 			start_civil_war = {
-				ruling_party = democratic
+				ruling_party = conservatism
 				ideology = fascism
 				size = 0.7
 			}
@@ -2521,7 +2521,7 @@ country_event = {
 				}
 			}
 			start_civil_war = {
-				ideology = democratic
+				ideology = conservatism
 				size = 0.5
 			}
 		}
@@ -2533,7 +2533,7 @@ country_event = {
 				}
 			}
 			start_civil_war = {
-				ideology = democratic
+				ideology = conservatism
 				size = 0.3
 			}
 		}
@@ -2562,7 +2562,7 @@ country_event = {
 				}
 			}
 			start_civil_war = {
-				ideology = democratic
+				ideology = conservatism
 				size = 0.5
 			}
 		}
@@ -2574,7 +2574,7 @@ country_event = {
 				}
 			}
 			start_civil_war = {
-				ideology = democratic
+				ideology = conservatism
 				size = 0.3
 			}
 		}
@@ -3173,7 +3173,12 @@ country_event = {
 						NOT = { tag = GER }
 						has_government = fascism 
 					}
-					has_government = democratic 
+					OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					} 
 				}
 			}
 			add_opinion_modifier = { target = SOV modifier = unholy_alliance }
@@ -3204,7 +3209,12 @@ country_event = {
 			}
 			every_other_country = {
 				limit = {
-					has_government = democratic 
+					OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					} 
 				}
 				add_opinion_modifier = { target = GER modifier = unholy_alliance }
 			}
@@ -4350,7 +4360,12 @@ country_event = {
 				is_in_faction_with = ROOT
 			}
 		}
-		has_government = democratic
+		OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
 		NOT = {
 			tag = SOV
 		}
@@ -5009,8 +5024,11 @@ country_event = {
 				add = 1
 				OR = {
 					has_government = communism
-					has_government = democratic
-				}
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
 			}
 
 		}
@@ -5516,7 +5534,6 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		
 		not = { has_country_flag = GERgrossdeutschland_stug }
 		date > 1939.6.6	#
 		is_ai = yes

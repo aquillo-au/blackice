@@ -49,8 +49,13 @@ set_technology = {
 	
 	}
 
+ #Ideas
+ add_ideas = neutrality_idea
+
 set_convoys = 250
 1939.1.1 = {
+	
+	remove_ideas = neutrality_idea
 
 	add_political_power = 1198
 	
@@ -114,12 +119,12 @@ set_convoys = 250
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 20
+		conservatism = { 
+			popularity = 22
 		}
 
 		fascism = {
-			popularity = 18
+			popularity = 21
 		}
 		
 		communism = {
@@ -127,11 +132,11 @@ set_politics = {
 		}
 		
 		monarchism = { 
-			popularity = 60
+			popularity = 55
 		}	
+		
 		neutrality = { 
 			popularity = 0			
-			
 		}
 	}
 	
@@ -145,7 +150,7 @@ set_politics = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
+			conservatism = { 
 				popularity = 40
 			}
 
@@ -174,11 +179,11 @@ set_politics = {
 }
 
 create_country_leader = {
-	name = "Carol II"
+	name = "Gheorghe Tatarescu"
 	desc = "POLITICS_GHEORGHE_TATARESCU_DESC"
-	picture = "rom_carol_ii.dds"
+	picture = "gfx/leaders/ROM/Portrait_Romania_Gheorghe_Tatarescu.dds"
 	expire = "1965.1.1"
-	ideology = parlamentarism
+	ideology = moderatism
 	traits = {
 		#
 	}
@@ -211,7 +216,7 @@ create_country_leader = {
 	desc = "POLITICS_ARMAND_CALINESCU_DESC"
 	picture = "gfx/leaders/ROM/Portrait_Romania_Armand_Calinescu.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = social_conservatism
 	traits = {
 		#
 	}

@@ -224,7 +224,11 @@ country_event = {
 	trigger = {
 		tag = ENG
 		has_war = yes
-		has_government = democratic
+		OR = {
+			has_government = conservatism
+			has_government = socialism
+			has_government = liberalism
+		}
 		NOT = {
 			has_completed_focus = uk_scandinavian_focus
 		}
@@ -253,7 +257,7 @@ country_event = {
 			desc = "POLITICS_WINSTON_CHURCHILL_DESC"
 			picture = "Portrait_Britain_Winston_Churchill.dds"
 			expire = "1965.1.1"
-			ideology = conservatism
+			ideology = social_conservatism
 			traits = {
 	
 			}
@@ -273,7 +277,11 @@ country_event = {
 
 	trigger = {
 		tag = ENG
-		has_government = democratic
+		OR = {
+			has_government = conservatism
+			has_government = socialism
+			has_government = liberalism
+		}
 		date > 1940.9.11
 		NOT = { has_country_flag = chamberlain_resigned }
 	}
@@ -296,7 +304,7 @@ country_event = {
 			desc = "POLITICS_EDWARD_HALIFAX_DESC"
 			picture = "Portrait_Britain_Edward_Halifax.dds"
 			expire = "1965.1.1"
-			ideology = conservatism
+			ideology = moderate
 			traits = {
 				
 			}
@@ -322,7 +330,11 @@ country_event = {
 			limit = {
 				NOT = { has_war_with = ENG }
 				is_in_faction = no
-				has_government = democratic
+				OR = {
+			has_government = conservatism
+			has_government = socialism
+			has_government = liberalism
+		}
 				is_puppet = no
 				OR = {
 					capital_scope = {
@@ -737,7 +749,11 @@ country_event = {
  
     trigger = {
         original_tag = ENG
-        has_government = democratic
+        OR = {
+			has_government = conservatism
+			has_government = socialism
+			has_government = liberalism
+		}
         date > 1937.5.27
         has_start_date < 1936.01.02
         NOT = { has_country_flag = king_stays }
@@ -755,7 +771,7 @@ country_event = {
         	desc = "POLITICS_NEVILLE_CHAMBERLAIN_DESC"
         	picture = "Portrait_Britain_Neville_Chamberlain.dds"
         	expire = "1965.1.1"
-        	ideology = liberalism
+        	ideology = social_liberalism
         	traits = {
         	}
         }
@@ -1095,16 +1111,17 @@ country_event = {
 		tag = ENG
 		not = { has_country_flag = east_indies }
 		NOT = { HOL = { controls_state = 7 }}
-		INS = { controls_state = 669 }#
-		INS = { controls_state = 668}#
-		INS = { controls_state = 334}#
-		INS = { controls_state = 335}#
-		INS = { controls_state = 672}#
-		INS = { controls_state = 738}#
+		INS = { controls_state = 669 }
+		INS = { controls_state = 668}
+		INS = { controls_state = 667}
+		INS = { controls_state = 334}
+		INS = { controls_state = 335}
+		INS = { controls_state = 672}
+		INS = { controls_state = 738}
 
 		HOL = { controls_state = 673}
 		HOL = { controls_state = 667}
-		HOL = { controls_state = 667}
+		
 	}
 	
 	mean_time_to_happen = {

@@ -1,0 +1,199 @@
+ideas = {
+	### Foreign Investment
+	fdi_regulations = { 
+		law = yes
+		fdi_encouraged = {
+			available = {
+				NOT = {
+					OR = { 
+						has_government = fascism
+						has_government = communism
+					}
+				}
+			}
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				unity_factor = -0.04
+				political_power_factor = -0.10
+				industrial_capacity_factory = 0.025
+				industrial_capacity_dockyard = 0.025
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+				research_time_factor = -0.025
+				local_resources_factor = 0.05
+				trade_opinion_factor = 0.10
+				fascism_drift = -0.01
+				communism_drift = -0.01
+				consumer_goods_factor = -0.05
+			}
+			
+			on_add = {
+				set_country_flag = fdi_encouraged
+				clr_country_flag = fdi_allowed
+				clr_country_flag = fdi_regulated
+				clr_country_flag = fdi_banned
+			}
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+				factor = 5
+				modifier = {
+					factor = 5
+					OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						has_government = fascism
+						has_government = communism
+					}
+				}
+				
+			}
+		}
+		fdi_allowed = {
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				
+				unity_factor = -0.02
+				political_power_factor = -0.05
+				industrial_capacity_factory = 0.025
+				industrial_capacity_dockyard = 0.025
+				production_speed_industrial_complex_factor = 0.025
+				production_speed_arms_factory_factor = 0.025
+				production_speed_dockyard_factor = 0.025
+				local_resources_factor = 0.025
+				trade_opinion_factor = 0.05
+				consumer_goods_factor = -0.025
+			}
+			
+			on_add = {
+				set_country_flag = fdi_allowed
+				clr_country_flag = fdi_encouraged
+				clr_country_flag = fdi_regulated
+				clr_country_flag = fdi_banned
+			}
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+				factor = 10
+				modifier = {
+					factor = 10
+					OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
+				}
+				modifier = {
+					factor = 0
+					has_government = communism
+				}
+			}
+		}
+		fdi_regulated = {
+			
+			available = {
+				
+			}
+		
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				unity_factor = 0.02
+				political_power_factor = 0.10
+				industrial_capacity_factory = -0.025
+				industrial_capacity_dockyard = -0.025
+				production_speed_industrial_complex_factor = -0.025
+				production_speed_arms_factory_factor = -0.025
+				production_speed_dockyard_factor = -0.025
+				research_time_factor = 0.025
+				local_resources_factor = -0.025
+				trade_opinion_factor = -0.05
+			}
+			
+			on_add = {
+				set_country_flag = fdi_regulated
+				clr_country_flag = fdi_encouraged
+				clr_country_flag = fdi_allowed
+				clr_country_flag = fdi_banned
+			}
+			
+			default = yes
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 10
+				modifier = {
+					factor = 10
+					OR = {
+						has_government = fascism
+						has_government = communism
+					}
+				}
+			
+			}
+		}
+		fdi_banned = {
+			
+			available = {
+				OR = { 
+					has_government = fascism
+					has_government = communism
+				}
+			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				unity_factor = 0.06
+				political_power_factor = 0.30
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.05
+				production_speed_dockyard_factor = -0.05
+				research_time_factor = 0.05
+				local_resources_factor = -0.05
+				trade_opinion_factor = -0.10
+				communism_drift = 0.02
+			}
+			
+			on_add = {
+				set_country_flag = fdi_banned
+				clr_country_flag = fdi_allowed
+				clr_country_flag = fdi_regulated
+				clr_country_flag = fdi_encouraged
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 5
+				modifier = {
+					factor = 100
+					has_government = communism
+				}
+   				modifier = {
+					factor = 10
+					has_government = fascism
+				}
+   			}
+		}
+	}
+}
+### EOF ###

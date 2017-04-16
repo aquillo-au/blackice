@@ -1,0 +1,218 @@
+ideas = {
+	## Press Laws
+	press = { 
+		law = yes
+		press_free = {
+			
+			cost = 75
+			removal_cost = -1
+			level = 4
+			
+			modifier = {
+				political_power_factor = -0.20
+				drift_defence_factor = -0.1
+				unity_factor = -0.05
+				trade_opinion_factor = 0.15
+				foreign_subversive_activites = 0.10
+				enemy_partisan_effect = -0.15
+				fascism_drift = -0.01
+				communism_drift = -0.01
+			}
+			
+			on_add = {
+				set_country_flag = press_free
+				clr_country_flag = press_regulated
+				clr_country_flag = press_censored
+				clr_country_flag = press_state
+			}
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 100
+					OR = {
+					##has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
+					has_war = no
+				}
+				modifier = {
+					factor = 0
+					has_war = yes
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = monarchism
+					}
+				}
+			}
+		}
+		press_regulated = {
+			
+			cost = 100
+			removal_cost = -1
+			level = 3
+			modifier = {
+				political_power_factor = -0.10
+				drift_defence_factor = -0.05
+				unity_factor = -0.025
+				trade_opinion_factor = 0.075
+				foreign_subversive_activites = 0.05
+				enemy_partisan_effect = -0.075
+			}
+			
+			on_add = {
+				set_country_flag = press_regulated
+				clr_country_flag = press_free
+				clr_country_flag = press_censored
+				clr_country_flag = press_state
+			}
+			
+			default = yes
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 10
+					AND = {
+						NOT = {
+							OR = {
+							has_government = fascism
+							has_government = communism
+							has_government = monarchism
+							has_war = yes
+							}
+
+						}
+						threat > 0.30
+					}
+				}
+				modifier = {
+					factor = 0
+					OR = {
+						has_government = fascism
+						has_government = communism
+						has_government = monarchism
+					}
+				}
+			}
+		}
+		press_censored = {
+			
+			available = {
+				OR = {
+					AND = {
+						OR = {
+					##has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
+						has_war = yes
+					}
+					has_government = fascism
+					has_government = communism
+					has_government = monarchism	
+					#any_enemy_country = {
+					#	ic_ratio = { 
+					#		tag = ROOT 
+					#		ratio > 0.2
+					#	}
+					#}
+				}
+			}
+		
+			cost = 125
+			removal_cost = -1
+			level = 2
+			modifier = {
+				political_power_factor = 0.10
+				drift_defence_factor = 0.05
+				unity_factor = 0.025
+				trade_opinion_factor = -0.075
+				foreign_subversive_activites = -0.05
+				enemy_partisan_effect = 0.075
+			}
+			
+			on_add = {
+				set_country_flag = press_censored
+				clr_country_flag = press_regulated
+				clr_country_flag = press_free
+				clr_country_flag = press_state
+			}
+			
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					factor = 100
+					has_war = yes
+					
+				}
+			
+				modifier = {
+					factor = 0					
+					OR = {
+						tag = GER
+						tag = JAP
+						tag = ITA
+						tag = SOV
+					}
+				}
+			}
+		}
+		press_state = {
+			
+			available = {
+
+				OR = { 
+					has_government = fascism
+					has_government = communism
+					has_government = monarchism
+				}
+			}
+			
+			cost = 150
+			removal_cost = -1
+			level = 1
+			modifier = {
+				political_power_factor = 0.20
+				drift_defence_factor = 0.15
+				unity_factor = 0.05
+				trade_opinion_factor = -0.15
+				foreign_subversive_activites = -0.15
+				enemy_partisan_effect = 0.15
+				fascism_drift = 0.01
+				communism_drift = 0.01
+			}
+			
+			on_add = {
+				set_country_flag = press_state
+				clr_country_flag = press_regulated
+				clr_country_flag = press_censored
+				clr_country_flag = press_free
+			}
+			
+			cancel_if_invalid = yes
+
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					factor = 1000
+					OR = { 
+						has_government = fascism
+						has_government = communism
+						has_government = monarchism
+					}
+				}
+   			}
+		}
+	}
+}

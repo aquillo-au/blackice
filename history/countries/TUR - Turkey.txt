@@ -5,8 +5,9 @@ oob = "TUR_1936"
 set_research_slots = 4
 
 add_ideas = {
-	limited_conscription
-		}
+	cons_one
+}
+
 set_technology = {
 	################# infantry ###############
 	infantry_weapons = 1
@@ -109,7 +110,7 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		democratic = {
+		conservatism = {
 			popularity = 10
 		}
 
@@ -120,13 +121,13 @@ set_politics = {
 
 
 		communism = {
-			popularity = 0
+			popularity = 5
 			banned = yes #default is no
 		}
 
 
 		neutrality = {
-			popularity = 100
+			popularity = 85
 		}
 	}
 
@@ -146,7 +147,7 @@ set_national_unity = 0.7
 	set_politics = {
 
 		parties = {
-		democratic = { 
+		conservatism = { 
 			popularity = 10
 		}
 
@@ -156,12 +157,12 @@ set_national_unity = 0.7
 		}
 		
 		communism = {
-			popularity = 0
+			popularity = 5
 			banned = yes #default is no
 		}
 		
 		neutrality = { 
-			popularity = 100
+			popularity = 85
 		}
 	}
 	
@@ -225,7 +226,7 @@ create_country_leader = {
 	desc = "POLITICS_CELAL_BAYAR_DESC"
 	picture = "gfx/leaders/TUR/Portrait_Turkey_Celal_Bayar.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = social_conservatism
 	traits = {
 		#
 	}

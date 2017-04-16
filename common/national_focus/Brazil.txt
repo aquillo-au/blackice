@@ -699,7 +699,14 @@ focus_tree = {
 	focus = {
         id = demosiii
         icon = GFX_goal_generic_neutrality_focus
-		available = { has_government = democratic }
+		available = {
+			OR = {
+				#has_government = democratic
+				has_government = conservatism
+				has_government = socialism
+				has_government = liberalism
+			} 
+		}
         prerequisite = { focus = demosii }
         x = 15
         y = 5 

@@ -2,8 +2,8 @@ leader_traits = {
 	
 	dictator = {
 		random = no
-		political_power_factor = 0.3
-		
+		political_power_factor = 0.2
+		unity_factor = -0.03
 		ai_will_do = {
 			factor = 1
 		}
@@ -47,7 +47,7 @@ leader_traits = {
 
 	inexperienced_imperialist = {
 		random = no
-		political_power_factor = -0.3
+		political_power_factor = -0.2
 		unity_factor = 0.05
 		justify_war_goal_time = -0.25
 		
@@ -56,6 +56,16 @@ leader_traits = {
 		}
 	}
 
+	ineffective_politician = {
+		random = yes
+		political_power_factor = -0.10
+		unity_factor = -0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	spirit_of_genghis = {
 		random = no
 		cavalry_attack_factor = 0.05
@@ -162,7 +172,7 @@ leader_traits = {
 	staunch_constitutionalist = {
 		random = no
 		drift_defence_factor = 0.5
-		
+		political_power_factor = 0.05
 		ai_will_do = {
 			factor = 1
 		}
@@ -206,29 +216,63 @@ leader_traits = {
 		random = no
 		# Boosts Communism
 		sprite = 13
-		communism_drift = 0.1
-		
+		communism_drift = 0.04
+		political_power_factor = 0.07
 		ai_will_do = {
 			factor = 0
 		}
 	}
 	
-	democratic_reformer = {
+	liberal_reformer = {
 		random = no
-		# Boosts Democracy
+		# Boosts Liberalism
 		sprite = 13
-		democratic_drift = 0.1
-		
+		liberalism_drift = 0.04
+		political_power_factor = 0.07
 		ai_will_do = {
 			factor = 0
 		}
 	}
+	
+	conservative_reformer = {
+		random = no
+		# Boosts Conservatism
+		sprite = 13
+		conservatism_drift = 0.04
+		political_power_factor = 0.07
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	socialist_reformer = {
+		random = no
+		# Boosts Socialism
+		sprite = 13
+		socialism_drift = 0.04
+		political_power_factor = 0.07
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	royalist_reformer = {
+		random = no
+		# Boosts Monarchism
+		sprite = 13
+		monarchism_drift = 0.04
+		political_power_factor = 0.07
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
 	staunch_traditionalist = {
 		random = no
 		# Boosts Neutrality
 		sprite = 13
-		neutrality_drift = 0.1
-		
+		neutrality_drift = 0.04
+		political_power_factor = 0.07
 		ai_will_do = {
 			factor = 0
 		}
@@ -238,26 +282,16 @@ leader_traits = {
 		random = no
 		# Boosts Fascism
 		sprite = 13
-		fascism_drift = 0.1
-		
+		fascism_drift = 0.04
+		political_power_factor = 0.07
 		ai_will_do = {
 			factor = 0
 		}
 	}
 	
-	monarchist_advisor_drift_trait = {
-		random = no
-		# Boosts Monarchism
-		sprite = 13
-		monarchism_drift = 0.1
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}	
 	popular_figurehead = {
 		sprite = 13
-		unity_factor = 0.15 
+		unity_factor = 0.10 
 		
 		ai_will_do = {
 			factor = 1
@@ -267,7 +301,7 @@ leader_traits = {
 	silent_workhorse = {
 		random = yes
 		sprite = 13
-		political_power_factor = 0.15
+		political_power_factor = 0.20
 		
 		ai_will_do = {
 			factor = 1
@@ -278,6 +312,7 @@ leader_traits = {
 		sprite = 13
 		enemy_partisan_effect = -0.25
 		foreign_subversive_activites = -0.3
+		unity_factor = -0.03
 		
 		ai_will_do = {
 			factor = 1
@@ -393,6 +428,8 @@ leader_traits = {
 		enemy_partisan_effect = -0.10
 		foreign_subversive_activites = -0.10
 		unity_factor = -0.05
+		fascism_drift = 0.01
+		communism_drift = 0.01
 		
 		ai_will_do = {
 			factor = 1
@@ -418,6 +455,8 @@ leader_traits = {
 		industrial_capacity_dockyard = 0.05
         production_factory_max_efficiency_factor = 0.05
 		trade_opinion_factor = 0.05
+		conservatism_drift = 0.01
+		liberalism_drift = 0.01
 		
 		ai_will_do = {
 			factor = 1
@@ -2316,9 +2355,35 @@ leader_traits = {
 	}
 	
 	### Military Minister Traits
-	
+	supreme_com_fritz = {
+		sprite = 9
+		army_defence_factor = 0.1
+		
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	supreme_com_hitler = {
+		sprite = 13
+		attrition = 0.01
+		army_defence_factor = -0.01
+		experience_gain_army_factor = -0.01
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	supreme_com_mussolini = {
+		sprite = 13
+		attrition = 0.01
+		army_defence_factor = -0.01
+		experience_gain_army_factor = -0.01
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	# 1 is worst, 3 is best
-	
 	army_chief_defensive_1 = { # +5 Defensive efficiency
 		sprite = 9
 		army_defence_factor = 0.05
@@ -3372,7 +3437,6 @@ leader_traits = {
 		}
 	}
 	
-	
 	navy_anti_submarine_1 = {
 		sprite = 4
 		navy_submarine_detection_factor = 0.1
@@ -3399,7 +3463,6 @@ leader_traits = {
 			factor = 3
 		}
 	}
-	
 	
 	navy_naval_air_defense_1 = {
 		sprite = 3
@@ -3428,7 +3491,6 @@ leader_traits = {
 		}
 	}
 	
-	
 	navy_fleet_logistics_1 = {
 		sprite = 6
 		navy_max_range_factor = 0.05
@@ -3456,7 +3518,6 @@ leader_traits = {
 		}
 	}
 	
-	
 	navy_amphibious_assault_1 = {
 		sprite = 3
 		amphibious_invasion = 0.05
@@ -3483,7 +3544,6 @@ leader_traits = {
 			factor = 3
 		}
 	}
-
 
 	navy_submarine_1 = {
 		sprite = 4
@@ -3514,7 +3574,6 @@ leader_traits = {
 			factor = 3
 		}
 	}
-
 
 	navy_capital_ship_1 = {
 		sprite = 3
@@ -3604,7 +3663,7 @@ leader_traits = {
 		}
 	}
 	########################################
-	  uniform_factory_1 = {
+	uniform_factory_1 = {
 		sprite = 5
 		attrition = -0.02
 		
@@ -3612,7 +3671,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		uniform_factory_2 = {
+	uniform_factory_2 = {
 		sprite = 5
 		attrition = -0.04
 		
@@ -3620,7 +3679,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		uniform_factory_3 = {
+	uniform_factory_3 = {
 		sprite = 5
 		attrition = -0.08
 		
@@ -3628,7 +3687,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		uniform_factory_4 = {
+	uniform_factory_4 = {
 		sprite = 5
 		attrition = -0.026
 		
@@ -3636,7 +3695,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-	 uniform_factory_5 = {
+	uniform_factory_5 = {
 		sprite = 5
 		attrition = -0.03
 		
@@ -3644,7 +3703,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		uniform_factory_6 = {
+	uniform_factory_6 = {
 		sprite = 5
 		attrition = -0.035
 		
@@ -3652,7 +3711,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-			uniform_factory_7 = {
+	uniform_factory_7 = {
 		sprite = 5
 		attrition = -0.041
 		
@@ -3660,7 +3719,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		uniform_factory_8 = {
+	uniform_factory_8 = {
 		sprite = 5
 		attrition = -0.049
 		
@@ -3668,7 +3727,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-			uniform_factory_9 = {
+	uniform_factory_9 = {
 		sprite = 5
 		attrition = -0.057
 		
@@ -3684,7 +3743,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		uniform_factory_11 = {
+	uniform_factory_11 = {
 		sprite = 5
 		attrition = -0.077
 		
@@ -3701,7 +3760,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		uniform_factory_13 = {
+	uniform_factory_13 = {
 		sprite = 5
 		attrition = -0.1
 		
@@ -3709,7 +3768,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		uniform_factory_14 = {
+	uniform_factory_14 = {
 		sprite = 5
 		attrition = -0.113
 		
@@ -3724,28 +3783,28 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		uniform_factory_16 = {
+	uniform_factory_16 = {
 		sprite = 5
 		attrition = -0.142
 		ai_will_do = {
 			factor = 3
 		}
 	}
-		uniform_factory_17 = {
+	uniform_factory_17 = {
 		sprite = 5
 		attrition = -0.157
 		ai_will_do = {
 			factor = 3
 		}
 	}
-		uniform_factory_18 = {
+	uniform_factory_18 = {
 		sprite = 5
 		attrition = -0.172
 		ai_will_do = {
 			factor = 3
 		}
 	}
-		uniform_factory_19 = {
+	uniform_factory_19 = {
 		sprite = 5
 		attrition = -0.186
 		ai_will_do = {
@@ -3760,9 +3819,8 @@ leader_traits = {
 			factor = 3
 		}
 	}
-	
-		########################################
-	  ammo_factory_1 = {
+	########################################
+	ammo_factory_1 = {
 		sprite = 5
 		army_defence_factor = 0.02
 		army_attack_factor = 0.02
@@ -3775,10 +3833,10 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_2 = {
+	ammo_factory_2 = {
 		sprite = 5
 		army_defence_factor = 0.021
-				army_attack_factor = 0.021
+		army_attack_factor = 0.021
 		naval_hit_chance = 0.021
 		navy_anti_air_attack_factor = 0.021
 		air_attack_factor = 0.021
@@ -3788,10 +3846,10 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_3 = {
+	ammo_factory_3 = {
 		sprite = 5
 		army_defence_factor = 0.023
-				army_attack_factor = 0.023
+		army_attack_factor = 0.023
 		naval_hit_chance = 0.023
 		navy_anti_air_attack_factor = 0.023
 		air_attack_factor = 0.023
@@ -3801,10 +3859,10 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_4 = {
+	ammo_factory_4 = {
 		sprite = 5
 		army_defence_factor = 0.026
-				army_attack_factor = 0.026
+		army_attack_factor = 0.026
 		naval_hit_chance = 0.026
 		navy_anti_air_attack_factor = 0.026
 		air_attack_factor = 0.026
@@ -3814,10 +3872,10 @@ leader_traits = {
 			factor = 3
 		}
 	}
-	 ammo_factory_5 = {
+	ammo_factory_5 = {
 		sprite = 5
 		army_defence_factor = 0.03
-				army_attack_factor = 0.03
+		army_attack_factor = 0.03
 		naval_hit_chance = 0.03
 		navy_anti_air_attack_factor = 0.03
 		air_attack_factor = 0.03
@@ -3827,7 +3885,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_6 = {
+	ammo_factory_6 = {
 		sprite = 5
 		army_defence_factor = 0.035
 		army_attack_factor = 0.035
@@ -3840,7 +3898,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-			ammo_factory_7 = {
+	ammo_factory_7 = {
 		sprite = 5
 		army_defence_factor = 0.041
 		army_attack_factor = 0.041
@@ -3853,7 +3911,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_8 = {
+	ammo_factory_8 = {
 		sprite = 5
 		army_defence_factor = 0.049
 		army_attack_factor = 0.049
@@ -3866,7 +3924,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-			ammo_factory_9 = {
+	ammo_factory_9 = {
 		sprite = 5
 		army_defence_factor = 0.057
 		army_attack_factor = 0.057
@@ -3932,7 +3990,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_14 = {
+	ammo_factory_14 = {
 		sprite = 5
 		army_defence_factor = 0.113
 		army_attack_factor = 0.113
@@ -3957,7 +4015,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_16 = {
+	ammo_factory_16 = {
 		sprite = 5
 		army_defence_factor = 0.142
 		army_attack_factor = 0.142
@@ -3969,7 +4027,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_17 = {
+	ammo_factory_17 = {
 		sprite = 5
 		army_defence_factor = 0.157
 		army_attack_factor = 0.157
@@ -3981,7 +4039,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_18 = {
+	ammo_factory_18 = {
 		sprite = 5
 		army_defence_factor = 0.172
 		army_attack_factor = 0.172
@@ -3993,7 +4051,7 @@ leader_traits = {
 			factor = 3
 		}
 	}
-		ammo_factory_19 = {
+	ammo_factory_19 = {
 		sprite = 5
 		army_defence_factor = 0.186
 		army_attack_factor = 0.186
@@ -4019,13 +4077,69 @@ leader_traits = {
 		}
 	}
 	r_hess = {
-		random = yes
+		random = no
 		sprite = 13
-		political_power_factor = 0.30
+		political_power_factor = 0.25
 		
 		ai_will_do = {
 			factor = 1
 		}
 	}
-	
+	a_hitler = {
+		random = no
+		sprite = 13
+		political_power_factor = 0.10
+		unity_factor = 0.03
+		communism_drift = -0.01
+		#democratic_drift = -0.01
+		conservatism_drift = -0.01
+		socialism_drift = -0.01
+		liberalism_drift = -0.01
+		neutrality_drift = -0.01
+		monarchism_drift = -0.01
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	paranoid = {
+		random = yes
+		sprite = 13
+		political_power_factor = -0.01
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	charismatic = {
+		random = yes
+		sprite = 13
+		political_power_factor = 0.02
+		unity_factor = 0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	conservative = {
+		#conservatism_drift = 0.01
+	}
+	liberal = {
+		#liberalism_drift = 0.01
+	}
+	socialist = {
+		#socialism_drift = 0.01
+	}
+	neutral = {
+		#neutrality_drift = 0.01
+	}
+	monarchist = {
+		#monarchism_drift = 0.01
+	}	
+	communist = {
+		#communism_drift = 0.01
+	}
+	fascist = {
+		#fascism_drift = 0.01
+	}
+
 }

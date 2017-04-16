@@ -98,6 +98,42 @@ set_technology = {
 	
 }
 
+add_ideas = {
+		#politicians
+		mikhail_kalinin
+		SOV_vyacheslav_molotov
+		
+		#laws
+		low_economic_mobilisation
+		foreign_warmonger
+		press_state
+		tax_high
+		edu_low
+		cons_three
+		mob_standing
+		limited_exports
+		tariffs_high
+		fdi_banned
+		train_low
+		planned_economy
+		age_19
+	}
+	
+set_country_flag = mob_standing
+set_country_flag = foreign_warmonger
+set_country_flag = Tax_high
+set_country_flag = Edu_low
+set_country_flag = press_state
+set_country_flag = cons_three
+set_country_flag = tariffs_high
+set_country_flag = fdi_banned
+set_country_flag = train_low
+set_country_flag = planned_economy
+set_country_flag = age_19
+set_country_flag = limited_exports
+set_country_flag = low_economic_mobilisation
+set_country_flag = labor_allowed
+
 1939.1.1 = {
 
 	add_political_power = 1198
@@ -111,7 +147,7 @@ set_technology = {
 
 		#laws
 		war_economy
-		extensive_conscription
+		cons_expanded_draft
 	}
 
 	#purge stuff
@@ -263,21 +299,31 @@ set_technology = {
 
 
 set_convoys = 600
-set_national_unity = 0.7
+set_national_unity = 0.65
 
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 0 #shared between all parties, should add to 100
+		conservatism = { 
+			popularity = 4
 		}
 
-		fascism = {
+		liberalism = { 
 			popularity = 0
+		}
+		monarchism = {
+			popularity = 3
+		}
+		socialism = { 
+			popularity = 10
+		}
+		
+		fascism = {
+			popularity = 3
 		}
 		
 		communism = {
-			popularity = 100
+			popularity = 80
 		}
 	}
 	
@@ -305,7 +351,8 @@ create_country_leader = {
 	expire = "1953.3.1"
 	ideology = stalinism
 	traits = {
-		
+		paranoid
+		dictator
 	}
 }
 
@@ -325,7 +372,7 @@ create_country_leader = {
 	desc = "POLITICS_ALEXANDER_FYODOROVICH_KERENSKY_DESC"
 	picture = "Portrait_Soviet_Generic_1.dds"
 	expire = "1953.3.1"
-	ideology = socialism
+	ideology = social_democracy
 	traits = {
 		
 	}
