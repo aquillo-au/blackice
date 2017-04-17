@@ -541,7 +541,6 @@ country_event = {
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_iii = 1 }
-			
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -637,7 +636,6 @@ country_event = {
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_v = 1 }
-			
 		}
 		ai_chance = { factor = 1 }
 	}
@@ -851,4 +849,50 @@ country_event = {
 		ai_chance = { factor = 100 }
 	}
 }
+country_event = {
+	    id = ss_event.688
+	    title = ss_event.688.t
+	    desc = ss_event.688.d
+	    picture = GFX_event_ger_ss_panzer_v
+	    
+	    fire_only_once = yes
+	    
+	    trigger = {
+	        original_tag = GER
+	        has_tech = tech_heavy_panzer_equipment_2
+	        not = { has_country_flag = hiddentech_ss_panzer_vi }
+	        or = {
+	            has_country_flag = ahistorical_ss
+	            date > 1942.9.1
+	        }
+	    }
+	    
+	    mean_time_to_happen = {
+	        days = 1
+	    }
+	    
+	    option = {
+	        name = ss_event.688.a
+	        set_country_flag = hiddentech_ss_panzer_vi
+	        trigger = {
+	            has_country_flag = ahistorical_ss
+	        }
+	        hidden_effect = {
+	            set_technology = { hiddentech_ss_panzer_vi = 1 }
+	        }
+	        ai_chance = { factor = 1 }
+	    }
+	    option = {
+	        name = ss_event.688.b
+	        set_country_flag = hiddentech_ss_panzer_vi
+	        trigger = {
+	            has_country_flag = SS_Start
+	            date > 1943.1.1
+	        }
+	        hidden_effect = {
+	            set_technology = { hiddentech_ss_panzer_vi = 1 }
+	        }
+	        ai_chance = { factor = 1 }
+	    }
+	}
 ## EOF ##
