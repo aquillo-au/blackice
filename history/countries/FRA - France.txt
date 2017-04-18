@@ -52,7 +52,7 @@ set_technology = {
 	tech_fra_medium_tank_equipment_1 = 1
 	tech_fra_medium_tank_equipment_2 = 1
 	tech_fra_heavy_tank_equipment_1 = 1
-	#tech_fra_superheavy_tank_equipment_1 = 1		# 1917 tech, but I'll keep it deactivated until it is decided if the AI should have it
+	#tech_fra_superheavy_tank_equipment_1 = 1     # 1917 tech, but I'll keep it deactivated until it is decided if the AI should have it
 	tech_ac_recon = 1
 	tech_Tankettes = 1
 	tech_Gun_Carriers = 1
@@ -108,6 +108,10 @@ set_technology = {
 add_ideas = {
 		#politicians
 		albert_lebrun
+		yvon_delbos
+		marx_dormoy
+		maurice_henri_gauche
+		vincent_auriol
 		
 		#laws
 		civilian_economy
@@ -144,7 +148,7 @@ set_country_flag = labor_allowed
 
 	#adding ministers
 	add_ideas = {
-		FRA_charles_tillon
+		charles_tillon
 		francois_darlan
 		philippe_fequant
 		famh
@@ -324,6 +328,7 @@ if = {
 		puppet = SYR
 		puppet = LEB
 	}
+}
 set_country_flag = mob_reserve
 set_country_flag = foreign_interventionism
 set_country_flag = Tax_average
@@ -392,14 +397,14 @@ create_country_leader = {
 	desc = "POLITICS_ALBERT_SARRAUT_DESC"
 	picture = "Portrait_France_Albert_Sarraut.dds"
 	expire = "1965.1.1"
-        ideology = socialism
+        ideology = social_democracy
 }
 create_country_leader = {
 	name = "Camille Chautemps"
 	desc = "POLITICS_CAMILLE_CHAUTEMPS_DESC"
 	picture = "Portrait_France_Camille_Chautemps.dds"
 	expire = "1936.1.24"
-	ideology = conservatism
+	ideology = moderate
 }
 
 create_country_leader = {
@@ -407,7 +412,7 @@ create_country_leader = {
 	desc = "POLITICS_PIERRE_LAVAL_DESC"
 	picture = "Portrait_France_Pierre_Laval.dds"
 	expire = "1936.1.24"
-	ideology = conservatism
+	ideology = moderate
 }
 create_country_leader = {
 	name = "Maurice Thorez"
@@ -3633,6 +3638,7 @@ create_equipment_variant = {
 		sub_torpedo_upgrade = 1
 	}
 }
+
 ### Variants 1939
 1939.1.1 = {	
 	create_equipment_variant = {

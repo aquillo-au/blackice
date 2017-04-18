@@ -694,7 +694,7 @@ foreign_minister = {
 
 		SOV_vyacheslav_molotov = {
 			
-			picture = generic_political_advisor_europe_1
+			picture = idea_vyacheslav_molotov
 			
 			allowed = {
 				original_tag = SOV
@@ -708,10 +708,11 @@ foreign_minister = {
 interior_minister = {
 	SOV_lavrentiy_beria = {
 			
-			picture = generic_army_europe_2
+			picture = idea_lavrentiy_beria
 			
 			allowed = {
 				original_tag = SOV
+				date > 1938.1.1
 			}
 
 			available = 
@@ -729,7 +730,7 @@ interior_minister = {
 		}
 		SOV_nikolai_yezhov = {
 			
-			picture = generic_army_europe_2
+			picture = idea_nikolai_yezhov
 			
 			allowed = {
 				original_tag = SOV
@@ -747,7 +748,16 @@ interior_minister = {
 
 #Intelligence
 intel_minister = {
-
+viktor_abakumov = {
+			
+			picture = idea_viktor_abakumov
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { dismal_enigma }
+		}
 }
 
 #Economic
@@ -755,6 +765,16 @@ economic_minister = {
 	SOV_nikolai_voznesensky = {
 			
 			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { captain_of_industry }
+		}
+		valery_mezhlauk = {
+			
+			picture = idea_valery_mezhlauk
 			
 			allowed = {
 				original_tag = SOV

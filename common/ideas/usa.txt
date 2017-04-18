@@ -692,17 +692,21 @@ foreign_minister = {
 
 #Propaganda/Security
 interior_minister = {
-
+		j_edgar_hoover = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = USA
+			}
+			removal_cost = 150
+			traits = { efficient_sociopath anti_communist powerful}
+		}
 }
 
 #Intelligence
 intel_minister = {
-
-}
-
-#Economic
-economic_minister = {
-USA_henry_stimson = {
+		frank_rowlett = {
 			
 			picture = generic_political_advisor_europe_2
 			
@@ -710,9 +714,45 @@ USA_henry_stimson = {
 				original_tag = USA
 			}
 			
+			traits = { dismal_enigma }
+		}
+		william_j_donovan = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = USA
+				date > 1940.1.1
+			}
+			
+			traits = { dismal_enigma organizer}
+		}
+}
+
+#Economic
+economic_minister = {
+		USA_henry_stimson = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = USA
+				date > 1940.1.1
+			}
+			
 			traits = { war_industrialist conservative }
 		}
-
+		henry_morgenthau = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = USA
+				date > 1940.1.1
+			}
+			
+			traits = { capitalist liberal }
+		}
 		USA_donald_nelson = {
 			
 			picture = generic_political_advisor_europe_3
@@ -815,7 +855,7 @@ political_advisor = {
 				original_tag = USA
 			}
 			
-			traits = { silent_workhorse }
+			traits = { silent_workhorse conservative }
 		}
 	}
 	
