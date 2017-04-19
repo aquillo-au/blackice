@@ -15,6 +15,10 @@ country_event = {
 	immediate = {
 		set_country_flag = bi_politics
 		country_event = politics.30
+		if = { 
+			limit = { GER = { is_ai = yes } }
+			GER = { country_event = germany.280 }
+		}
 	}
 	
 	option = { #United Nation
@@ -1791,8 +1795,11 @@ country_event = {
 		trigger = {
 			has_political_power > 50
 		}
-		
-			add_political_power = -100
+			random_list = {
+				75 = {}
+				25 = { country_event = politics.36 }
+			}
+			add_political_power = -75
 			set_country_flag = { flag = street_clashes_crackdown days = 120 }
 			add_national_unity = -0.01
 			add_popularity = {
@@ -2598,7 +2605,12 @@ country_event = {
 	picture = GFX_report_event_liberated_france
 	is_triggered_only = yes
 	
-	immediate = { add_national_unity = 0.10 }
+	immediate = { 
+	add_national_unity = 0.10 
+	country_event = { id = politics.40 days = 3 }
+	set_country_flag = { flag = normal_coup_success days = 20 }
+	clr_country_flag = charismatic_leader
+	}
 	
 	option = { #Communist Coup
 		name = politics.9.a
@@ -4501,9 +4513,9 @@ country_event = {
 		trigger = {
 			
 		}
-			add_national_unity = -0.03
-			add_political_power = -50
-			remove_ideas_with_trait = corrupt_kleptocrat
+			add_national_unity = -0.02
+			add_political_power = -25
+
 		if = { 
 			limit = { has_government = socialism } 
 			add_popularity = {
@@ -4553,6 +4565,17 @@ country_event = {
 				popularity = -0.05
 			}
 		}
+	}
+	option = { #Try to cover it up
+		name = politics.26.b
+		trigger = {
+			has_political_power > 50
+		}
+			add_political_power = -75
+			random_list = {
+				85 = {}
+				15 = { add_national_unity = -0.03 add_political_power = -30}
+			}
 	}
 }
 ########################
@@ -6655,6 +6678,10 @@ country_event = {
 			has_political_power > 80
 		}
 		add_political_power = -125
+		random_list = {
+			70 = {}
+			30 = { country_event = politics.36 }
+		}
 		random_list = { 
 		65 = { 
 		if = { 
@@ -9302,12 +9329,175 @@ country_event = {
 		}
 	}
 }
+#Low Pop = Lose PP
+country_event = {
+	id = politics.41
+	title = politics.41.t
+	desc = politics.41.desc
+	picture = GFX_news_event_002
+	
+	trigger = { 
+		OR = {
+			AND = {
+				has_government = socialism
+				socialism < 0.21
+			}
+			AND = {
+				has_government = conservatism
+				conservatism < 0.21
+			}
+			AND = {
+				has_government = liberalism
+				liberalism < 0.21
+			}
+			AND = {
+				has_government = neutrality
+				neutrality < 0.21
+			}
+			AND = {
+				has_government = monarchism
+				monarchism < 0.21
+			}
+			AND = {
+				has_government = fascism
+				fascism < 0.21
+			}
+			AND = {
+				has_government = communism
+				communism < 0.21
+			}
+		}
+		NOT = { has_country_flag = low_pop }
+	}
+	
+	mean_time_to_happen = {
+		days = 210
+		modifier = {
+			factor = 0.8
+			OR = {
+			AND = {
+				has_government = socialism
+				socialism < 0.15
+			}
+			AND = {
+				has_government = conservatism
+				conservatism < 0.15
+			}
+			AND = {
+				has_government = liberalism
+				liberalism < 0.15
+			}
+			AND = {
+				has_government = neutrality
+				neutrality < 0.15
+			}
+			AND = {
+				has_government = monarchism
+				monarchism < 0.15
+			}
+			AND = {
+				has_government = fascism
+				fascism < 0.15
+			}
+			AND = {
+				has_government = communism
+				communism < 0.15
+				}
+			}
+		}
+	}
+	
+	immediate = { set_country_flag = { flag = low_pop days = 120 } }
+	
+	option = {
+		name = politics.41.a
+		if = { limit = { has_government = socialism }
+			if = { limit = { socialism > 0.15 }
+			add_political_power = -25
+			}
+			if = { limit = { socialism < 0.15 socialism > 0.10 }
+			add_political_power = -50
+			}
+			if = { limit = { socialism < 0.10 }
+			add_political_power = -75
+			}
+		}
+		if = { limit = { has_government = conservatism }
+			if = { limit = { conservatism > 0.15 }
+			add_political_power = -25
+			}
+			if = { limit = { conservatism < 0.15 conservatism > 0.10 }
+			add_political_power = -50
+			}
+			if = { limit = { conservatism < 0.10 }
+			add_political_power = -75
+			}
+		}
+		if = { limit = { has_government = liberalism }
+			if = { limit = { liberalism > 0.15 }
+			add_political_power = -25
+			}
+			if = { limit = { liberalism < 0.15 liberalism > 0.10 }
+			add_political_power = -50
+			}
+			if = { limit = { liberalism < 0.10 }
+			add_political_power = -75
+			}
+		}
+		if = { limit = { has_government = neutrality }
+			if = { limit = { neutrality > 0.15 }
+			add_political_power = -25
+			}
+			if = { limit = { neutrality < 0.15 neutrality > 0.10 }
+			add_political_power = -50
+			}
+			if = { limit = { neutrality < 0.10 }
+			add_political_power = -75
+			}
+		}
+		if = { limit = { has_government = monarchism }
+			if = { limit = { monarchism > 0.15 }
+			add_political_power = -25
+			}
+			if = { limit = { monarchism < 0.15 monarchism > 0.10 }
+			add_political_power = -50
+			}
+			if = { limit = { monarchism < 0.10 }
+			add_political_power = -75
+			}
+		}
+		if = { limit = { has_government = fascism }
+			if = { limit = { fascism > 0.15 }
+			add_political_power = -25
+			}
+			if = { limit = { fascism < 0.15 fascism > 0.10 }
+			add_political_power = -50
+			}
+			if = { limit = { fascism < 0.10 }
+			add_political_power = -75
+			}
+		}
+		if = { limit = { has_government = communism }
+			if = { limit = { communism > 0.15 }
+			add_political_power = -25
+			}
+			if = { limit = { communism < 0.15 communism > 0.10 }
+			add_political_power = -50
+			}
+			if = { limit = { communism < 0.10 }
+			add_political_power = -75
+			}
+		}
+	}
+}
+
+#Political Repression
 country_event = {
 	id = politics.32
 	title = politics.32.t
 	desc  = politics.32.desc
 	picture = GFX_news_event_002
-	hidden = yes
+
 	trigger = {
 		OR = {
 			has_government = communism
@@ -9551,6 +9741,10 @@ country_event = {
 		}		
 		add_national_unity = -0.02
 		add_political_power = -40
+		random_list = {
+			95 = { }
+			5 = { country_event = politics.36 }
+		}
 		if = { 
 			limit = { socialism > 0.3 NOT = { has_government = socialism } }
 			add_popularity = {
@@ -9608,6 +9802,10 @@ country_event = {
 		}		
 		add_national_unity = -0.02
 		add_political_power = -75
+		random_list = {
+			70 = { }
+			30 = { country_event = politics.36 }
+		}
 		if = { 
 			limit = { socialism > 0.3 NOT = { has_government = socialism } }
 			add_popularity = {
@@ -9694,9 +9892,11 @@ country_event = {
 			85 = { add_national_unity = -0.02 }
 			15 = { country_event = politics.36 }
 		}
+		if = { limit = { has_country_flag = charismatic_leader }
 		random_list = {
 			75 = { country_event = politics.37 }
-			25 = { clr_country_flag = charismatic_leader }
+			25 = { clr_country_flag = charismatic_leader clr_country_flag = conservative_leader clr_country_flag = socialist_leader clr_country_flag = liberal_leader }
+			}
 		}
 		if = { 
 			limit = { socialism > 0.10 }
@@ -9731,9 +9931,11 @@ country_event = {
 			85 = { add_national_unity = -0.02 }
 			15 = { country_event = politics.36 }
 		}
+		if = { limit = { has_country_flag = charismatic_leader }
 		random_list = {
 			75 = { country_event = politics.37 }
-			25 = { clr_country_flag = charismatic_leader }
+			25 = { clr_country_flag = charismatic_leader clr_country_flag = monarchist_leader}
+			}
 		}
 		if = { 
 			limit = { monarchism > 0.10 }
@@ -9754,9 +9956,11 @@ country_event = {
 			85 = { add_national_unity = -0.02 }
 			15 = { country_event = politics.36 }
 		}
+		if = { limit = { has_country_flag = charismatic_leader }
 		random_list = {
 			75 = { country_event = politics.37 }
-			25 = { clr_country_flag = charismatic_leader }
+			25 = { clr_country_flag = charismatic_leader clr_country_flag = fascist_leader}
+			}
 		}
 		if = { 
 			limit = { fascism > 0.10 }
@@ -9777,9 +9981,11 @@ country_event = {
 			85 = { add_national_unity = -0.02 }
 			15 = { country_event = politics.36 }
 		}
+		if = { limit = { has_country_flag = charismatic_leader }
 		random_list = {
 			75 = { country_event = politics.37 }
-			25 = { clr_country_flag = charismatic_leader }
+			25 = { clr_country_flag = charismatic_leader clr_country_flag = communist_leader}
+			}
 		}
 		if = { 
 			limit = { communism > 0.10 }
@@ -9805,7 +10011,7 @@ country_event = {
 		add_political_power = 50
 		random_list = {
 			40 = {  }
-			60 = { clr_country_flag = charismatic_leader }
+			60 = { clr_country_flag = charismatic_leader clr_country_flag = monarchist_leader clr_country_flag = communist_leader clr_country_flag = fascist_leader }
 		}
 		if = { 
 			limit = { has_country_flag = monarchist_assass }
@@ -9887,6 +10093,10 @@ country_event = {
 		
 		add_national_unity = -0.03
 		add_political_power = -25
+		random_list = {
+			80 = { }
+			20 = { country_event = politics.2 }
+		}
 	}
 }
 #Riots Get Worse!
@@ -9906,6 +10116,270 @@ country_event = {
 	}
 }
 
+#Coup Aftermath
+country_event = {
+	id = politics.39
+	title = politics.39.t
+	desc  = politics.39.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		has_country_flag = normal_coup_success
+		OR = {
+			AND = {
+				has_government = socialism
+				OR = {
+					conservatism > 0.25
+					liberalism > 0.25
+					neutrality > 0.25
+					monarchism > 0.25
+					fascism > 0.25
+					communism > 0.25
+				}
+			}
+			AND = {
+				has_government = monarchism
+				OR = {
+					conservatism > 0.25
+					liberalism > 0.25
+					neutrality > 0.25
+					socialism > 0.25
+					fascism > 0.25
+					communism > 0.25
+				}
+			}
+			AND = {
+				has_government = conservatism
+				OR = {
+					socialism > 0.25
+					liberalism > 0.25
+					neutrality > 0.25
+					monarchism > 0.25
+					fascism > 0.25
+					communism > 0.25
+				}
+			}
+			AND = {
+				has_government = liberalism
+				OR = {
+					conservatism > 0.25
+					socialism > 0.25
+					neutrality > 0.25
+					monarchism > 0.25
+					fascism > 0.25
+					communism > 0.25
+				}
+			}
+			AND = {
+				has_government = neutrality
+				OR = {
+					conservatism > 0.25
+					liberalism > 0.25
+					socialism > 0.25
+					monarchism > 0.25
+					fascism > 0.25
+					communism > 0.25
+				}
+			}
+			AND = {
+				has_government = communism
+				OR = {
+					conservatism > 0.25
+					liberalism > 0.25
+					neutrality > 0.25
+					monarchism > 0.25
+					fascism > 0.25
+					socialism > 0.25
+				}
+			}
+			AND = {
+				has_government = fascism
+				OR = {
+					conservatism > 0.25
+					liberalism > 0.25
+					neutrality > 0.25
+					monarchism > 0.25
+					socialism > 0.25
+					communism > 0.25
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 12
+		}
+	option = { #Crackdown
+		name = politics.39.a
+		trigger = {
+			has_political_power > 40
+		}
+		add_political_power = -75
+		add_national_unity = -0.02
+		random_list = {
+			80 = { }
+			20 = { country_event = politics.36 }
+		}
+		if = { 
+			limit = { socialism > 0.25 NOT = { has_government = socialism } }
+			add_popularity = {
+				ideology = socialism
+				popularity = -0.07
+			}
+		}
+		if = { 
+			limit = { conservatism > 0.25 NOT = { has_government = conservatism } }
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.07
+			}
+		}
+		if = { 
+			limit = { liberalism > 0.25 NOT = { has_government = liberalism } }
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.07
+			}
+		}
+		if = { 
+			limit = { neutrality > 0.25 NOT = { has_government = neutrality } }
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.07
+			}
+		}
+		if = { 
+			limit = { communism > 0.25 NOT = { has_government = communism } }
+			add_popularity = {
+				ideology = communism
+				popularity = -0.07
+			}
+		}
+		if = { 
+			limit = { fascism > 0.25 NOT = { has_government = fascism } }
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.07
+			}
+		}
+		if = { 
+			limit = { monarchism > 0.3 NOT = { has_government = monarchism } }
+			add_popularity = {
+				ideology = monarchism
+				popularity = -0.07
+			}
+		}
+	}
+	option = { #Leave them be
+		name = politics.39.b
+		
+		add_political_power = 10
+		add_national_unity = 0.01
+		if = { 
+			limit = { socialism > 0.25 NOT = { has_government = socialism } }
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.02
+			}
+		}
+		if = { 
+			limit = { conservatism > 0.25 NOT = { has_government = conservatism } }
+			add_popularity = {
+				ideology = conservatism
+				popularity = 0.02
+			}
+		}
+		if = { 
+			limit = { liberalism > 0.25 NOT = { has_government = liberalism } }
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.02
+			}
+		}
+		if = { 
+			limit = { neutrality > 0.25 NOT = { has_government = neutrality } }
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.02
+			}
+		}
+		if = { 
+			limit = { communism > 0.25 NOT = { has_government = communism } }
+			add_popularity = {
+				ideology = communism
+				popularity = 0.02
+			}
+		}
+		if = { 
+			limit = { fascism > 0.25 NOT = { has_government = fascism } }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.02
+			}
+		}
+		if = { 
+			limit = { monarchism > 0.3 NOT = { has_government = monarchism } }
+			add_popularity = {
+				ideology = monarchism
+				popularity = 0.02
+			}
+		}
+	}
+}
+
+#Minister Switch following Coup/Election
+country_event = {
+	id = politics.40
+	title = politics.40.t
+	desc  = politics.40.desc
+	picture = GFX_news_event_002
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = politics.40.a
+		
+		add_political_power = 600
+		if = { limit = { has_government = socialism }
+			remove_ideas_with_trait = conservative
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+		}
+		if = { limit = { has_government = monarchism }
+			remove_ideas_with_trait = communist
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = liberal
+			remove_ideas_with_trait = socialist
+		}
+		if = { limit = { has_government = conservatism }
+			remove_ideas_with_trait = socialist
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+		}
+		if = { limit = { has_government = liberalism }
+			remove_ideas_with_trait = communist
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+		}
+		if = { limit = { has_government = fascism }
+			remove_ideas_with_trait = communist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+			remove_ideas_with_trait = socialist
+			remove_ideas_with_trait = liberal
+		}
+		if = { limit = { has_government = communism }
+			remove_ideas_with_trait = conservative
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+			remove_ideas_with_trait = liberal
+		}
+	}
+}
+
 #Heydrich Assassination
 country_event = {
 	id = politics.50
@@ -9921,6 +10395,7 @@ country_event = {
 			exists = yes
 			is_puppet = no
 			NOT = { has_government = fascism }
+			has_war_with = GER
 		}
 	}
 	mean_time_to_happen = {
@@ -10672,6 +11147,7 @@ country_event = {
 		add_national_unity = -0.20
 		add_political_power = -100
 		add_ideas = GER_valkyrie_success
+		country_event = { id = politics.66 days = 180 }
 		#if = { limit = { has_war_with = ENG has_war_with = USA }
 		#country_event = politics.67
 		#}
@@ -10693,7 +11169,7 @@ country_event = {
 		remove_ideas = wilhelm_canaris
 		add_ideas = ernst_kaltenbrunner
 		add_ideas = GER_valkyrie_reprisals
-
+		country_event = { id = politics.65 days = 240}
     }
 }
 #End of Valkyrie Reprisals
@@ -10703,11 +11179,10 @@ country_event = {
     desc = politics.65.desc
     picture = GFX_petain_NFA.dds
 	
-	mean_time_to_happen = {
-		days = 240
-	}
+	is_triggered_only = yes
+	
     option = {
-        name = politics.64.a
+        name = politics.65.a
 		remove_ideas = GER_valkyrie_reprisals
 		add_national_unity = 0.10
 		add_political_power = 50
@@ -10720,9 +11195,8 @@ country_event = {
     desc = politics.66.desc
     picture = GFX_petain_NFA.dds
 	
-	mean_time_to_happen = {
-		days = 180
-	}
+	is_triggered_only = yes
+	
     option = {
         name = politics.66.a
 		remove_ideas = GER_valkyrie_success
