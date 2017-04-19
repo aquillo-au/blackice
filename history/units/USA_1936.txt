@@ -51,16 +51,16 @@ division_template = {
 		infantry = { x = 3 y = 2 }
 		
 		artillery_brigade_mot = { x = 4 y = 0 }
-		artillery_brigade_mot = { x = 4 y = 1 }
-		artillery_brigade_mot = { x = 4 y = 2 }
+		#artillery_brigade_mot = { x = 4 y = 1 }
+		#artillery_brigade_mot = { x = 4 y = 2 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
-		artillery_medium_mot = { x = 0 y = 1 }  # US Hvy Field Arty consisted of 2 Bns, 155mm howitzers
-		engineer = { x = 0 y = 2 }   # US Eng Rgt consisted of 2 Bns
-		maintenance_company = { x = 1 y = 0 }
-		logistics_company = { x = 1 y = 1 }
-		field_hospital = { x = 1 y = 2 }
+		#artillery_medium_mot = { x = 0 y = 1 }  # US Hvy Field Arty consisted of 2 Bns, 155mm howitzers
+		engineer = { x = 0 y = 1}   # US Eng Rgt consisted of 2 Bns
+		#maintenance_company = { x = 1 y = 0 }
+		#logistics_company = { x = 1 y = 1 }
+		#field_hospital = { x = 1 y = 2 }
 	}
 	priority = 0
 }
@@ -71,12 +71,12 @@ division_template = {
 		semi_motorized  = { x = 0 y = 0 }
 		semi_motorized  = { x = 0 y = 1 }
 		semi_motorized  = { x = 0 y = 2 }
-		semi_motorized  = { x = 0 y = 3 }
+		#semi_motorized  = { x = 0 y = 3 }
 		
 		semi_motorized  = { x = 1 y = 0 }
 		semi_motorized  = { x = 1 y = 1 }
 		semi_motorized  = { x = 1 y = 2 }
-		semi_motorized  = { x = 1 y = 3 }
+		#semi_motorized  = { x = 1 y = 3 }
 		
 		american_light_tank = { x = 2 y = 0 }
 	}
@@ -84,9 +84,9 @@ division_template = {
 		DIV_HQ = { x = 0 y = 0 }
 		recon_ac = { x = 0 y = 1 }   # US Cav Recon consisted of 52 ACs, 13 L Arm
 		engineer = { x = 0 y = 2 }   # US Eng Bn
-		maintenance_company = { x = 1 y = 0 }
-		logistics_company = { x = 1 y = 1 }
-		field_hospital = { x = 1 y = 2 }
+		#maintenance_company = { x = 1 y = 0 }
+		#logistics_company = { x = 1 y = 1 }
+		#field_hospital = { x = 1 y = 2 }
 	}
 }
 division_template = {
@@ -107,7 +107,7 @@ division_template = {
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
-		artillery_medium_mot = { x = 0 y = 1 }   
+		#artillery_medium_mot = { x = 0 y = 1 }   
 	}
 	priority = 0
 }
@@ -1757,8 +1757,8 @@ instant_effect = {
 			producer = USA
 		}
 	add_equipment_to_stockpile = {
-		type = support_equipment_0
-			amount = 4000
+		type = support_equipment_1
+			amount = 8000
 			producer = USA
 		}
 	add_equipment_to_stockpile = {
@@ -1774,7 +1774,7 @@ instant_effect = {
 		}
 	add_equipment_to_stockpile = {
 		type = artytruck_equipment_0
-			amount = 500
+			amount = 1000
 			producer = USA
 		}
 	add_equipment_to_stockpile = {
@@ -1810,6 +1810,44 @@ instant_effect = {
 	add_equipment_to_stockpile = {
 		type = mortar_equipment_0
 			amount = 300
+			producer = USA
+	}
+
+
+#medium arty 400
+	add_equipment_to_stockpile = {
+		type = medartillery_equipment_0
+			amount = 400
+			producer = USA
+	}
+#artillery 800
+	add_equipment_to_stockpile = {
+		type = artillery_equipment_0
+			amount = 800
+			producer = USA
+	}
+# liasiason vehicles 800
+	add_equipment_to_stockpile = {
+		type = motorized_lia_equipment_01
+			amount = 800
+			producer = USA
+	}
+#motorcycle recon 150
+	add_equipment_to_stockpile = {
+		type = recon_mot_equipment_0
+			amount = 150
+			producer = USA
+	}
+#recon 80
+	add_equipment_to_stockpile = {
+		type = recon_equipment_0
+			amount = 80
+			producer = USA
+	}
+#HQ 10
+	add_equipment_to_stockpile = {
+		type = HQ_equipment_0
+			amount = 80
 			producer = USA
 	}
 }

@@ -698,7 +698,7 @@ ideas = {
 							has_government = fascism
 							AND = {
 								NOT = { has_government = communism }
-								any_country = {
+								any_other_country = {
 									original_tag = FRA
 									has_government = communism
 								}
@@ -793,7 +793,7 @@ ideas = {
 							has_government = communism
 							AND = {
 								NOT = { has_government = fascism }
-								any_country = {
+								any_other_country = {
 									original_tag = FRA
 									has_government = fascism
 								}
@@ -1342,7 +1342,7 @@ political_advisor = {
 				original_tag = FRA
 			}
 			available = {
-				has_completed_focus = FRA_aggressive_focus
+				has_completed_focus = FRA_de_gaulle_strategy
 			}
 
 			cost = 50
@@ -1361,7 +1361,7 @@ political_advisor = {
 				original_tag = FRA
 			}
 			available = {
-				has_completed_focus = FRA_defensive_focus
+				has_completed_focus = FRA_giraud_plan
 			}
 
 			cost = 50
@@ -1549,8 +1549,10 @@ political_advisor = {
 				original_tag = FRA
 			}
 			
-
-			
+		available = {
+				has_completed_focus = FRA_africa_army
+			}
+			cost = 50
 			traits = { army_logistics_1 }
 			
 			ai_will_do = {
@@ -1565,8 +1567,10 @@ political_advisor = {
 				original_tag = FRA
 			}
 			
-
-			
+		available = {
+				has_completed_focus = FRA_foreign_legion
+			}
+			cost = 50
 			traits = { army_commando_2 }
 			
 			ai_will_do = {
@@ -1674,20 +1678,39 @@ political_advisor = {
 	tank_manufacturer = {
 
 		designer = yes
-	
-		# TECHNOLOGY
-		renault_fra = {
-		
-			picture = renault
-						
+	citroen = { #MOD
 			allowed = {
 				original_tag = FRA
+			}		
+			research_bonus = {
+				armor = 0.07
 			}
-						
+			cost = 75
+			traits = { tank_manufacturer }
+		}
+		
+
+
+		peugeot = { #MOD
+			allowed = {
+				original_tag = FRA
+			}	
 			research_bonus = {
 				armor = 0.10
 			}
-			
+
+			traits = { medium_tank_manufacturer }
+		}
+		
+		renault_fra = {
+			picture = renault	
+			allowed = {
+				original_tag = FRA
+			}	
+			research_bonus = {
+				armor = 0.10
+			}
+
 
 			traits = { heavy_tank_manufacturer }
 		}
@@ -1697,9 +1720,10 @@ political_advisor = {
 			picture = generic_tank_manufacturer_2
 
 			available = {
-				has_completed_focus = FRA_army_reform
-			}
-						
+				has_completed_focus = FRA_military_complex_nationalisation
+
+
+			}	
 			allowed = {
 				original_tag = FRA
 			}
@@ -1712,49 +1736,269 @@ political_advisor = {
 			traits = { fast_tank_manufacturer }
 		}
 	}
-	
+	panhard = { #MOD
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+
+				armor = 0.10
+			}
+
+
+
+			traits = { tank_producer_mass }
+		}
+		
+
+
+		dietrich = { #MOD
+			allowed = {
+				original_tag = FRA
+			}	
+			research_bonus = {
+				armor = 0.10
+			}
+
+			available = {
+				has_completed_focus = FRA_commit_automobile_manufacturer
+			}
+			cost = 50
+			traits = { tank_producer_quality }
+		}
+		
+		berliet = { #MOD
+			allowed = {
+				original_tag = FRA
+			}	
+			research_bonus = {
+
+				armor = 0.10
+			}
+
+
+			available = {
+				has_completed_focus = FRA_commit_automobile_manufacturer
+			}
+			cost = 50
+			traits = { tank_producer_offense }
+		}
+
+
+
+		
+		delaunay = { #MOD
+			allowed = {
+				original_tag = FRA
+
+
+			}	
+			research_bonus = {
+
+				armor = 0.10
+			}
+
+
+			available = {
+				has_completed_focus = FRA_commit_automobile_manufacturer
+			}
+			cost = 50
+			traits = { tank_producer_defense }
+		}
+		
+	}
 	materiel_manufacturer = {
-			
 		designer = yes
 		
-		somua = {
-		
+
+
+		mas = {		
 			allowed = {
 				original_tag = FRA
-			}
 
-			research_bonus = {
-				motorized_equipment = 0.10
-			}
-			
-			traits = { motorized_equipment_manufacturer }
 
-		}
-		
-		mas = {
-						
-			allowed = {
-				original_tag = FRA
-			}
-						
+			}	
 			research_bonus = {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				infantry_weapons = 0.10
 			}
-			
+
+
 			traits = { infantry_equipment_manufacturer }
 		}
-	
-		schneider = {
-						
+		
+
+
+		hotchkiss = { #MOD
 			allowed = {
 				original_tag = FRA
+
+
 			}		
-			
 			research_bonus = {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				support_tech = 0.10
+			}
+
+
+			traits = { support_equipment_manufacturer }
+		}
+		
+
+
+		schneider = {	
+			allowed = {
+				original_tag = FRA
+
+
+			}		
+			research_bonus = {
+
 				artillery = 0.10
 			}
-			
+
 			traits = { artillery_manufacturer }
+		}
+		
+
+
+
+
+
+
+
+
+
+
+
+		darne = {		
+			allowed = {
+				original_tag = FRA
+			}	
+			research_bonus = {
+				infantry_weapons = 0.07
+				support_tech = 0.07
+			}
+
+
+			traits = { infantry_equipment_manufacturer }
+		}
+		
+
+
+		somua = {
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+
+
+
+
+
+
+				motorized_equipment = 0.10
+			}
+			traits = { motorized_equipment_manufacturer }
+		}
+
+		
+		tunis = {	#MOD
+			allowed = {
+				original_tag = FRA
+			}	
+			cost = 75
+			traits = { infantry_equipment_producer_mass }
+		}
+
+
+		
+		bayonne = { #MOD
+			allowed = {
+				original_tag = FRA
+			}
+
+
+
+			available = {
+				has_completed_focus = FRA_war_material_licence
+			}
+
+			cost = 50		
+			traits = { support_equipment_producer_mass }
+		}
+		
+
+
+		puteaux = { #MOD
+			allowed = {
+				original_tag = FRA
+			}
+
+
+			available = {
+				has_completed_focus = FRA_war_material_licence
+			}
+
+
+
+			cost = 50		
+			traits = { artillery_producer_defense }
+		}
+
+
+		
+		bouton = { #MOD
+			allowed = {
+				original_tag = FRA
+			}
+
+
+
+			available = {
+				has_completed_focus = FRA_war_material_licence
+			}
+			cost = 50			
+			traits = { motorised_equipment_producer_quality }
 		}
 	}
 	
@@ -2100,104 +2344,226 @@ political_advisor = {
 			#traits = { latecoere_manufacturer }
 		}
 	}
-	naval_manufacturer = {
-
+naval_manufacturer = {
 		designer = yes
 		
-		fcm = { #modded
-						
+		dakar = { #MOD	
 			allowed = {
 				original_tag = FRA
+
+
+			}	
+			research_bonus = {
+				naval_equipment = 0.07
 			}
-						
+
+			cost = 75
+			traits = { naval_manufacturer }
+		}
+		
+
+
+
+
+
+
+
+
+
+
+
+		oran = { #MOD	
+			allowed = {
+				original_tag = FRA
+			}	
+			research_bonus = {
+				naval_equipment = 0.07
+			}
+
+			cost = 75
+			traits = { ship_producer_mass }
+		}
+		
+		loire = { #MOD	
+			allowed = {
+				original_tag = FRA
+			}	
 			research_bonus = {
 				naval_equipment = 0.10
 			}
-			
-			traits = { convoy_escort_naval_manufacturer }
+			traits = { coastal_defence_naval_manufacturer }
 		}
 
-		caer = { #added
-						
+
+
+
+		
+
+
+		penhoet = { #MOD	
 			allowed = {
 				original_tag = FRA
 			}
-						
+
 			research_bonus = {
 				naval_equipment = 0.10
 			}
-			
+
+
+			traits = { atlantic_fleet_naval_manufacturer }
+		}
+
+		
+		caer = { #MOD
+
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
 			traits = { pacific_fleet_naval_manufacturer }
 		}
 
-		brest = { #added
-						
+		
+		brest = { #MOD
+
 			allowed = {
 				original_tag = FRA
 			}
-						
+
 			research_bonus = {
 				naval_equipment = 0.10
 			}
-			
+
+			available = {
+				has_completed_focus = FRA_capital_ship_focus
+			}
+			cost = 50	
 			traits = { raiding_fleet_naval_manufacturer }
 		}
 
-		penhoet = { #added
-						
+
+
+		
+		fcm = {
 			allowed = {
 				original_tag = FRA
 			}
-						
+
 			research_bonus = {
 				naval_equipment = 0.10
 			}
-			
-			traits = { atlantic_fleet_naval_manufacturer }
+
+
+			available = {
+				has_completed_focus = FRA_carrier_focus
+			}
+			cost = 50	
+			traits = { convoy_escort_naval_manufacturer } #MOD
 		}
+		
 	}
 	
-	industrial_concern = {	
+industrial_concern = {	
 		
 		famh = {
-						
+
 			allowed = {
 				original_tag = FRA
 			}
-						
+
 			research_bonus = {
 				industry = 0.10
 			}
-			
+
 			traits = { industrial_concern }
 		}
 
-		csf = { #added
-						
+
+
+		
+		radiola = { #MOD
 			allowed = {
 				original_tag = FRA
 			}
-						
+
+			research_bonus = {
+				electronics = 0.075
+			}
+			cost = 75
+			traits = { electronics_developer }
+		}
+		
+		csf = { #MOD
+			allowed = {
+				original_tag = FRA
+			}	
 			research_bonus = {
 				electronics = 0.10
 			}
-			
+
 			traits = { electronics_concern }
 		}
 
-		cfp = { #added
-						
+		cfp = { #MOD
+
 			allowed = {
 				original_tag = FRA
 			}
-						
+
 			research_bonus = {
 				industry = 0.05
 				synth_resources = 0.1
 			}
-			
+
 			traits = { refinery_concern }
 		}
+		
+		normandie = { #MOD
+			allowed = { original_tag = FRA  }
+			traits = { construction_concern }
+			modifier = {
+				production_speed_arms_factory_factor = 0.07
+				production_speed_industrial_complex_factor = 0.07
+			}
+		}
+		
+		vetra = { #MOD
+			allowed = { original_tag = FRA  }
+			traits = { construction_concern }
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				production_speed_synthetic_refinery_factor = 0.05
+				production_speed_dockyard_factor = 0.1
+			}
+		}
+		
+		bull = { #MOD
+			allowed = { original_tag = FRA  }
+			traits = { construction_concern }
+			research_bonus = {
+				electronics = 0.05
+			}
+			modifier = {
+				production_speed_radar_station_factor = 0.1
+				production_speed_nuclear_reactor_factor = 0.1
+			}
+		}
+		
+		poulenc = { #MOD
+			allowed = { original_tag = FRA  }
+			traits = { refinery_concern }
+			research_bonus = {
+				synth_resources = 0.1
+			}
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.1
+			}
+		}
+		
 	}
 	
 	
