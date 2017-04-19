@@ -252,6 +252,7 @@ interior_minister = {
 			
 			allowed = {
 				original_tag = GER
+				is_ai = no
 				NOT = { has_country_flag = himmler_dead }
 			}
 			available = {
@@ -259,6 +260,22 @@ interior_minister = {
 			}			
 			traits = { prince_of_terror fascist powerful ambitious pet_projects}
 			removal_cost = 250
+		}
+	himmler_ai = {
+			
+			allowed = {
+				original_tag = GER
+				is_ai = yes
+				NOT = { has_country_flag = himmler_dead }
+			}
+			available = {
+				is_ai = yes
+			}
+			traits = { prince_of_terror fascist }
+			picture = idea_heinrich_himmler
+			ai_will_do = {
+				factor = 2
+			}
 		}
 	reinhard_heydrich = {
 			
@@ -364,6 +381,9 @@ economic_minister = {
 			}
 			#Chance to also die in Todt crash
 			traits = { armaments_organizer organizer apolitical}
+			ai_will_do = {
+				factor = 3
+			}
 		}
 		
 	
@@ -378,7 +398,7 @@ economic_minister = {
 			}			
 			traits = { industrial_planner pet_projects }
 			
-			removal_cost = 100
+			removal_cost = 50
 			
 			ai_will_do = {
 				factor = 1
@@ -417,10 +437,11 @@ political_advisor = {
 			allowed = {
 				original_tag = GER
 				has_government = fascism
+				is_ai = no
 				NOT = { has_country_flag = goebbels_dead }
 			}
 			
-			traits = { fascist_demagogue }
+			traits = { fascist_demagogue powerful loyal}
 	
 			on_add = {
 				country_event = political.7
@@ -432,6 +453,33 @@ political_advisor = {
 				}
 			}
 			removal_cost = 75
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		goebbels_ai = {
+			
+			allowed = {
+				original_tag = GER
+				has_government = fascism
+				is_ai = yes
+				NOT = { has_country_flag = goebbels_dead }
+			}
+			available = {
+				is_ai = yes
+			}
+			traits = { fascist_demagogue }
+	
+			on_add = {
+				country_event = political.7
+			}
+			picture = idea_joseph_goebbels
+			do_effect = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+			
 			ai_will_do = {
 				factor = 0
 			}
@@ -511,15 +559,32 @@ political_advisor = {
 			
 			allowed = {
 				original_tag = GER
+				is_ai = no
 				NOT = { has_country_flag = goering_dead }
 			}
 			available = {
 				
 			}			
-			traits = { fascist loyal corrupt_kleptocrat powerful}
+			traits = { fascist loyal corrupt_kleptocrat powerful }
 			
 			removal_cost = 250
 			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		goering_ai = {
+			
+			allowed = {
+				original_tag = GER
+				is_ai = yes
+				NOT = { has_country_flag = goering_dead }
+			}
+			available = {
+				is_ai = yes
+			}
+			traits = { fascist loyal corrupt_kleptocrat_ai }
+			picture = idea_hermann_goering
 			ai_will_do = {
 				factor = 1
 			}
@@ -688,7 +753,7 @@ political_advisor = {
 			#traits = { daimler_Benz_AG_tank_manufacturer }
 
 			ai_will_do = {
-				factor = 1
+				factor = 3
 			}
 		}
 		MIAG = {
@@ -1266,10 +1331,28 @@ political_advisor = {
 			
 			allowed = {
 				original_tag = GER
+				is_ai = no
+				NOT = { has_country_flag = fritsch_fired }
 			}
 			
-			traits = { supreme_com_fritz }
+			traits = { supreme_com_fritz reluctant_minister fascist }
 			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		fritsch_ai = {
+			
+			allowed = {
+				original_tag = GER
+				is_ai = yes
+				NOT = { has_country_flag = fritsch_fired }
+			}
+			available = {
+				is_ai = yes
+			}
+			traits = { supreme_com_fritz fascist }
+			picture = idea_werner_von_fritsch
 			ai_will_do = {
 				factor = 1
 			}
@@ -1280,7 +1363,7 @@ political_advisor = {
 				original_tag = GER
 			}
 			
-			traits = { supreme_com_hitler }
+			traits = { supreme_com_hitler fascist}
 			
 			ai_will_do = {
 				factor = 1
@@ -1295,6 +1378,7 @@ political_advisor = {
 			
 			allowed = {
 				original_tag = GER
+				NOT = { has_country_flag = beck_dead }
 			}
 			
 			traits = { army_chief_organizational_2 }			
@@ -1307,12 +1391,30 @@ political_advisor = {
 			
 			allowed = {
 				original_tag = GER
-				has_government = fascism
+				is_ai = no
 				NOT = { has_country_flag = keitel_dead }
 			}
 			
-			traits = { army_chief_drill_2 }
+			traits = { army_chief_drill_2 military_yesman }
 			
+			removal_cost = 75
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		keitel_ai  = {
+			
+			allowed = {
+				original_tag = GER
+				is_ai = yes
+				NOT = { has_country_flag = keitel_dead }
+			}
+			available = {
+				is_ai = yes
+			}
+			traits = { army_chief_drill_2 }
+			picture = idea_wilhelm_keitel
 			ai_will_do = {
 				factor = 1
 			}

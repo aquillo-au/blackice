@@ -6795,3 +6795,94 @@ country_event = {
 		
 	}
 }
+#Fritsch Affair
+country_event = {
+	id = germany.279
+	title = germany.279.t
+	desc = germany.279.desc
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		date > 1937.2.1
+		date < 1937.2.10
+		has_government = fascist
+	}
+	
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	option = { #Fire Fritsch
+		name = germany.279.a
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = 25
+		add_national_unity = 0.01
+		remove_ideas = werner_von_fritsch
+		add_ideas = adolf_hitler
+		add_ideas = wilhelm_keitel
+		set_country_flag = fritsch_fired	
+	}
+	option = { #Keep Fritsch
+		name = germany.279.b
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -25
+		add_national_unity = -0.05
+		set_country_flag = fritsch_kept	
+	}
+	option = { #Fire Fritsch AI
+		name = germany.279.c
+		trigger = {
+			is_ai = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 25
+		add_national_unity = 0.01
+		remove_ideas = fritsch_ai
+		add_ideas = adolf_hitler
+		add_ideas = keitel_ai
+		set_country_flag = fritsch_dead	
+	}
+}
+#AI minister switch
+country_event = {
+	id = germany.280
+	title = "Germany Setup"
+	desc = "Setup event for AI"
+	
+	is_triggered_only = yes
+
+	option = { #Get em out
+		name = germany.280.a
+		trigger = {
+			is_ai = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 50
+		remove_ideas = joseph_goebbels
+		remove_ideas = hermann_goering
+		remove_ideas = heinrich_himmler
+		remove_ideas = werner_von_fritsch
+		add_ideas = goebbels_ai
+		add_ideas = goering_ai
+		add_ideas = himmler_ai
+		add_ideas = fritsch_ai
+	}
+	option = { #Get em out
+		name = germany.280.b
+		ai_chance = {
+			factor = 0
+		}
+		
+	}
+
+}

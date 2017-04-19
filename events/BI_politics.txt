@@ -9258,13 +9258,15 @@ country_event = {
 	hidden = yes
 	trigger = {
 		tag = JAP
-		date > 1942.6.1
+		date > 1942.5.1
 		has_idea = isoroku_yamamoto
 		has_war_with = USA
+		NOT = { has_tech = advanced_encryption }
 		USA = {
 			exists = yes
 			is_puppet = no
 			NOT = { has_government = fascism }
+			has_tech = advanced_decryption
 		}
 	}
 	mean_time_to_happen = {
@@ -9531,7 +9533,7 @@ country_event = {
 			random_list = {
 				2 = {
 					remove_ideas = wilhelm_keitel
-					#remove_unit_leader = keitel
+					remove_unit_leader = 207
 					set_country_flag = keitel_dead
 				}
 				98 = {
@@ -9608,7 +9610,7 @@ country_event = {
 			random_list = {
 				5 = {
 					remove_ideas = wilhelm_keitel
-					#remove_unit_leader = keitel
+					remove_unit_leader = 207
 					set_country_flag = keitel_dead
 				}
 				95 = {
@@ -9847,6 +9849,7 @@ country_event = {
     option = {
         name = politics.61.a
 		remove_ideas = ludwig_beck
+		set_country_flag = beck_dead
 		#kill_leader = ludwig_beck
 		remove_ideas = wilhelm_canaris
 		add_ideas = GER_valkyrie_reprisals
@@ -9901,7 +9904,7 @@ country_event = {
 		remove_ideas = hermann_goering
 		remove_ideas = heinrich_muller
 		remove_ideas = ernst_kaltenbrunner
-		#remove_unit_leader = keitel
+		remove_unit_leader = 206
 		kill_country_leader = yes
 		create_country_leader = {
 			name = "Carl Friedrich Goerdeler"
@@ -9932,7 +9935,8 @@ country_event = {
 			popularity = 0.1
 		}
 		add_ideas = beck_hos
-		#remove_unit_leader = beck
+		remove_ideas = ludwig_beck
+		set_country_flag = beck_dead
 		add_national_unity = -0.20
 		add_political_power = -100
 		add_ideas = GER_valkyrie_success
@@ -9952,6 +9956,7 @@ country_event = {
     option = {
         name = politics.64.a
 		remove_ideas = ludwig_beck
+		set_country_flag = beck_dead
 		#remove_unit_leader = ludwig_beck
 		remove_ideas = wilhelm_canaris
 		add_ideas = ernst_kaltenbrunner
