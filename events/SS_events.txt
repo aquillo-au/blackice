@@ -853,7 +853,7 @@ country_event = {
 	    id = ss_event.688
 	    title = ss_event.688.t
 	    desc = ss_event.688.d
-	    picture = GFX_event_ger_ss_panzer_v
+	    picture = GFX_report_event_ger_ss_panzer_v
 	    
 	    fire_only_once = yes
 	    
@@ -893,6 +893,36 @@ country_event = {
 	            set_technology = { hiddentech_ss_panzer_vi = 1 }
 	        }
 	        ai_chance = { factor = 1 }
+	    }
+	}
+	#SS Standarte 'Der Führer' 1938_3.1 in Vienna
+	country_event = {
+	    id = ss_event.689
+	    title = ss_event.689.t
+	    desc = ss_event.689.d
+	    picture = GFX_report_event_historical_SS
+	    
+	    fire_only_once = yes
+	    
+	    trigger = {
+	        original_tag = GER
+	        has_country_flag = SS_start
+	        not = { has_country_flag = hiddentech_ss_panzer_vi }
+	        date > 1938.3.1
+			GER = { controls_state = 4 }
+	    }
+	    
+	    mean_time_to_happen = {
+	        days = 1
+	    }
+	    
+	    option = {
+	        name = ss_event.689.a
+	        hidden_effect = {
+				load_oob = "GER_SS_Start_II"
+				set_country_flag = SS_Start_II
+			}
+	        ai_chance = { factor = 100 }
 	    }
 	}
 ## EOF ##
