@@ -8,6 +8,10 @@ ideas = {
 					OR = { 
 						has_government = fascism
 						has_government = communism
+						has_government = neutrality
+						has_government = monarchism
+						has_country_flag = tariffs_high
+						has_country_flag = closed_economy
 					}
 				}
 			}
@@ -30,7 +34,7 @@ ideas = {
 				socialism_drift = -0.01
 				neutrality_drift = -0.01
 				monarchism_drift = -0.01
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.04
 				conservatism_drift = 0.01
 			}
 			
@@ -64,7 +68,9 @@ ideas = {
 			}
 		}
 		fdi_allowed = {
-			
+			allowed = {
+				NOT = { has_government = communism }
+			}
 			cost = 150
 			removal_cost = -1
 			
@@ -79,7 +85,7 @@ ideas = {
 				production_speed_dockyard_factor = 0.025
 				local_resources_factor = 0.025
 				trade_opinion_factor = 0.05
-				consumer_goods_factor = -0.025
+				consumer_goods_factor = -0.02
 				communism_drift = -0.01
 				liberalism_drift = 0.01
 			}
@@ -160,7 +166,10 @@ ideas = {
 				OR = { 
 					has_government = fascism
 					has_government = communism
+					has_government = monarchism
+					has_government = neutrality
 				}
+				NOT = { has_country_flag = tariffs_none has_country_flag = free_trade }
 			}
 			
 			cost = 150
@@ -174,7 +183,7 @@ ideas = {
 				production_speed_industrial_complex_factor = -0.05
 				production_speed_arms_factory_factor = -0.05
 				production_speed_dockyard_factor = -0.05
-				research_time_factor = 0.05
+				research_time_factor = 0.04
 				local_resources_factor = -0.05
 				trade_opinion_factor = -0.10
 				communism_drift = 0.01

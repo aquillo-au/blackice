@@ -22,5 +22,58 @@ ideas = {
 				autonomy_manpower_share = 0.1
 			}
 		}
+		foreign_volunteers = {
+			
+			removal_cost = -1
+			cost = 150
+			default = yes
+			allowed = {
+				
+			}
+
+			picture = idea_foreign_volunteers.dds
+			
+			modifier = {
+				autonomy_manpower_share = 0.02
+			}
+		}
+		foreign_legion = {
+			
+			removal_cost = -1
+			cost = 300
+			allowed = {
+				OR = {
+				original_tag = FRA
+				original_tag = ENG
+				}
+			}
+			
+			picture = idea_foreign_legion.dds
+			
+			modifier = {
+				autonomy_manpower_share = 0.04
+				
+			}
+		}
+		foreign_conscription = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				OR = {
+					has_government = monarchism
+					has_government = fascism
+					has_government = communism
+				}
+			}
+
+			picture = idea_foreign_conscription.dds
+			
+			modifier = {
+				autonomy_manpower_share = 0.06
+				army_org_factor = -0.01
+				army_morale_factor = -0.01
+			}
+		}
 	}
 }

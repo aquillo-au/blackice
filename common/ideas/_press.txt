@@ -3,18 +3,25 @@ ideas = {
 	press = { 
 		law = yes
 		press_free = {
-			
+			allowed = {
+				NOT = {
+					has_government = fascism
+					has_government = neutrality
+					has_government = communism
+					has_government = monarchism
+				}
+			}
 			cost = 75
 			removal_cost = -1
 			level = 4
 			
 			modifier = {
-				political_power_factor = -0.20
+				political_power_factor = -0.15
 				drift_defence_factor = -0.1
 				unity_factor = -0.05
-				trade_opinion_factor = 0.15
+				trade_opinion_factor = 0.1
 				foreign_subversive_activites = 0.10
-				enemy_partisan_effect = -0.15
+				enemy_partisan_effect = -0.1
 				fascism_drift = -0.01
 				communism_drift = -0.01
 				conservatism_drift = 0.01
@@ -41,15 +48,6 @@ ideas = {
 					}
 					has_war = no
 				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					OR = {
-						has_government = fascism
-						has_government = communism
-						has_government = monarchism
-					}
-				}
 			}
 		}
 		press_regulated = {
@@ -58,12 +56,12 @@ ideas = {
 			removal_cost = -1
 			level = 3
 			modifier = {
-				political_power_factor = -0.10
+				political_power_factor = -0.075
 				drift_defence_factor = -0.05
 				unity_factor = -0.025
-				trade_opinion_factor = 0.075
+				trade_opinion_factor = 0.05
 				foreign_subversive_activites = 0.05
-				enemy_partisan_effect = -0.075
+				enemy_partisan_effect = -0.05
 				liberalism_drift = 0.01
 			}
 			
@@ -88,6 +86,7 @@ ideas = {
 							has_government = fascism
 							has_government = communism
 							has_government = monarchism
+							has_government = neutrality
 							has_war = yes
 							}
 
@@ -100,7 +99,7 @@ ideas = {
 					OR = {
 						has_government = fascism
 						has_government = communism
-						has_government = monarchism
+
 					}
 				}
 			}
@@ -134,12 +133,12 @@ ideas = {
 			removal_cost = -1
 			level = 2
 			modifier = {
-				political_power_factor = 0.10
+				political_power_factor = 0.075
 				drift_defence_factor = 0.05
 				unity_factor = 0.025
-				trade_opinion_factor = -0.075
+				trade_opinion_factor = -0.05
 				foreign_subversive_activites = -0.05
-				enemy_partisan_effect = 0.075
+				enemy_partisan_effect = 0.05
 				monarchism_drift = 0.01
 				neutrality_drift = 0.01
 			}
@@ -180,6 +179,7 @@ ideas = {
 					has_government = fascism
 					has_government = communism
 					has_government = monarchism
+					has_government = neutrality
 				}
 			}
 			
@@ -187,12 +187,12 @@ ideas = {
 			removal_cost = -1
 			level = 1
 			modifier = {
-				political_power_factor = 0.20
-				drift_defence_factor = 0.15
-				unity_factor = 0.05
-				trade_opinion_factor = -0.15
-				foreign_subversive_activites = -0.15
-				enemy_partisan_effect = 0.15
+				political_power_factor = 0.15
+				drift_defence_factor = 0.10
+				unity_factor = 0.04
+				trade_opinion_factor = -0.10
+				foreign_subversive_activites = -0.10
+				enemy_partisan_effect = 0.10
 				fascism_drift = 0.01
 				communism_drift = 0.01
 			}
@@ -214,6 +214,7 @@ ideas = {
 						has_government = fascism
 						has_government = communism
 						has_government = monarchism
+						has_government = neutrality
 					}
 				}
    			}

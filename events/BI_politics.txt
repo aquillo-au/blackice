@@ -9,261 +9,18 @@ country_event = {
 	title = politics.1.t
 	desc  = politics.1.desc
 	picture = GFX_news_event_002
-	fire_only_once = yes
+	#fire_only_once = yes
 	is_triggered_only = yes
 	
 	immediate = {
-		set_country_flag = bi_politics
-		country_event = politics.30
+		#set_country_flag = bi_politics
+		#country_event = politics.30
 	}
 	
 	option = { #United Nation
 		name = politics.1.a
 		trigger = {
-			has_national_unity > 60
-		}
-		add_political_power = 25
-			add_ideas = unity_united_nation
-			set_country_flag = nation_united
-			clr_country_flag = nation_divided
-			clr_country_flag = nation_chaos
-			clr_country_flag = nation_civil_war
 			
-		if = { 
-			limit = { has_government = socialism }
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.05
-			}
-		}
-		if = { 
-			limit = { has_government = conservatism }
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.05
-			}
-		}
-		if = { 
-			limit = { has_government = liberalism }
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.05
-			}
-		}
-		if = { 
-			limit = { has_government = neutrality }
-			add_popularity = {
-				ideology = neutrality
-				popularity = 0.05
-			}
-		}
-		if = { 
-			limit = { has_government = communism }
-			add_popularity = {
-				ideology = communism
-				popularity = 0.05
-			}
-		}
-		if = { 
-			limit = { has_government = fascism }
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.05
-			}
-		}
-		if = { 
-			limit = { has_government = monarchism }
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.05
-			}
-		}
-	}
-	option = {
-		name = politics.1.b #Divided Nation
-		trigger = {
-			has_national_unity < 60
-			has_national_unity > 40
-		}
-			add_ideas = unity_divided_nation
-			set_country_flag = nation_divided
-			clr_country_flag = nation_united
-			clr_country_flag = nation_chaos
-			clr_country_flag = nation_civil_war
-		
-		if = { 
-			limit = { has_government = socialism }
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.03
-			}
-		}
-		if = { 
-			limit = { has_government = conservatism }
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.03
-			}
-		}
-		if = { 
-			limit = { has_government = liberalism }
-			add_popularity = {
-				ideology = liberalism
-				popularity = -0.03
-			}
-		}
-		if = { 
-			limit = { has_government = neutrality }
-			add_popularity = {
-				ideology = neutrality
-				popularity = -0.03
-			}
-		}
-		if = { 
-			limit = { has_government = communism }
-			add_popularity = {
-				ideology = communism
-				popularity = -0.03
-			}
-		}
-		if = { 
-			limit = { has_government = fascism }
-			add_popularity = {
-				ideology = fascism
-				popularity = -0.03
-			}
-		}
-		if = { 
-			limit = { has_government = monarchism }
-			add_popularity = {
-				ideology = monarchism
-				popularity = -0.03
-			}
-		}
-	}
-	option = {
-		name = politics.1.c #Chaos
-		trigger = {
-			has_national_unity < 40
-			has_national_unity > 20
-		}
-			add_political_power = -25
-			add_ideas = unity_broken_nation
-			set_country_flag = nation_chaos
-			clr_country_flag = nation_divided
-			clr_country_flag = nation_united
-			clr_country_flag = nation_civil_war
-			
-		if = { 
-			limit = { has_government = socialism }
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.1
-			}
-		}
-		if = { 
-			limit = { has_government = conservatism }
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.1
-			}
-		}
-		if = { 
-			limit = { has_government = liberalism }
-			add_popularity = {
-				ideology = liberalism
-				popularity = -0.1
-			}
-		}
-		if = { 
-			limit = { has_government = neutrality }
-			add_popularity = {
-				ideology = neutrality
-				popularity = -0.1
-			}
-		}
-		if = { 
-			limit = { has_government = communism }
-			add_popularity = {
-				ideology = communism
-				popularity = -0.10
-			}
-		}
-		if = { 
-			limit = { has_government = fascism }
-			add_popularity = {
-				ideology = fascism
-				popularity = -0.10
-			}
-		}
-		if = { 
-			limit = { has_government = monarchism }
-			add_popularity = {
-				ideology = monarchism
-				popularity = -0.10
-			}
-		}
-	}
-	option = {
-		name = politics.1.d #Civil War
-		trigger = {
-			has_national_unity < 20
-		}
-			add_political_power = -50
-			add_ideas = unity_civil_war
-			set_country_flag = nation_chaos
-			clr_country_flag = nation_divided
-			clr_country_flag = nation_united
-			clr_country_flag = nation_civil_war
-			
-		if = { 
-			limit = { has_government = socialism }
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.15
-			}
-		}
-		if = { 
-			limit = { has_government = conservatism }
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.15
-			}
-		}
-		if = { 
-			limit = { has_government = liberalism }
-			add_popularity = {
-				ideology = liberalism
-				popularity = -0.15
-			}
-		}
-		if = { 
-			limit = { has_government = neutrality }
-			add_popularity = {
-				ideology = neutrality
-				popularity = -0.15
-			}
-		}
-		if = { 
-			limit = { has_government = communism }
-			add_popularity = {
-				ideology = communism
-				popularity = -0.15
-			}
-		}
-		if = { 
-			limit = { has_government = fascism }
-			add_popularity = {
-				ideology = fascism
-				popularity = -0.15
-			}
-		}
-		if = { 
-			limit = { has_government = monarchism }
-			add_popularity = {
-				ideology = monarchism
-				popularity = -0.15
-			}
 		}
 	}
 }
@@ -276,13 +33,13 @@ country_event = {
 	picture = GFX_news_event_002
 	
 	trigger = {
-		has_national_unity < 61
+		has_national_unity < 60
 		#has_idea = unity_united_nation
 		has_country_flag = nation_united
 	}
 	
 	mean_time_to_happen = {
-		days = 10
+		days = 30
 	}
 	option = { #Divided
 		name = politics.22.a
@@ -487,7 +244,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 10
+		days = 30
 	}
 	option = { #United
 		name = politics.23.a
@@ -691,7 +448,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 10
+		days = 30
 	}
 	option = { #United
 		name = politics.24.a
@@ -892,7 +649,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 10
+		days = 30
 	}
 	option = { #United
 		name = politics.25.a
@@ -1093,7 +850,7 @@ country_event = {
 		has_country_flag = march
 		}
 		has_national_unity < 65
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		NOT = { has_political_power < -200 }
 	}
 	
@@ -1398,7 +1155,7 @@ country_event = {
 		has_country_flag = protest
 		}
 		has_national_unity < 70
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		NOT = { has_political_power < -200 }
 	}
 	
@@ -1768,7 +1525,7 @@ country_event = {
 		has_national_unity < 45
 		communism > 0.15
 		fascism > 0.15
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		NOT = { has_political_power < -200 }
 	}
 	
@@ -2115,7 +1872,7 @@ country_event = {
 		has_country_flag = assassination
 		}
 		has_national_unity < 45
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		NOT = { has_political_power < -200 }
 	}
 	
@@ -2462,7 +2219,7 @@ country_event = {
 	trigger = {
 		NOT = { has_political_power < -200 }
 		NOT = { tag = AUS date < 1939.1.1 }
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		NOT = { has_country_flag = nation_united }
 		NOT = { has_country_flag = coup }
 		has_national_unity < 40
@@ -3131,7 +2888,7 @@ country_event = {
 	picture = GFX_report_event_spain_civil_war_soldiers2
 	trigger = {
 		NOT = { OR = { tag = AUS tag = SPR } date < 1939.1.1 }
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		NOT = { has_country_flag = nation_united }
 		has_national_unity < 20
 		OR = {
@@ -4122,7 +3879,7 @@ country_event = {
 	desc  = politics.12.desc
 	picture = GFX_report_event_yugoslavian_king_peter
 	trigger = {
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		NOT = { 
 		has_country_flag = nation_united
 		has_country_flag = charismatic_leader
@@ -4466,7 +4223,7 @@ country_event = {
 	picture = GFX_report_event_german_final_surrender
 	trigger = {
 		NOT = { has_political_power < -200 }
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		has_national_unity < 70
 		NOT = { has_country_flag = govt_scandal }
 	}
@@ -4602,7 +4359,7 @@ country_event = {
 	picture = GFX_report_event_nazi_rally
 	
 	trigger = {
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		has_national_unity < 70
 		NOT = { has_country_flag = good_speech }
 	}
@@ -5033,7 +4790,7 @@ country_event = {
 	desc  = politics.16.desc
 	picture = GFX_report_event_generic_read_write
 	trigger = {
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		has_national_unity < 70
 		NOT = { has_country_flag = govt_success }
 	}
@@ -5136,7 +4893,7 @@ country_event = {
 	desc  = politics.17.desc
 	picture = GFX_report_event_soviet_finnish_pact
 	trigger = {
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		has_national_unity < 70
 		NOT = { has_country_flag = press_release }
 	}
@@ -5454,7 +5211,7 @@ country_event = {
 	desc  = politics.18.desc
 	picture = GFX_report_event_nazi_rally
 	trigger = {
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		has_national_unity < 70
 		NOT = { has_country_flag = bad_speech }
 	}
@@ -6523,7 +6280,7 @@ country_event = {
 	desc  = politics.19.desc
 	picture = GFX_report_event_german_final_surrender
 	trigger = {
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		has_national_unity < 70
 		NOT = { has_country_flag = opp_scandal }
 	}
@@ -6857,7 +6614,7 @@ country_event = {
 	picture = GFX_report_event_soviet_purge
 	trigger = {
 		NOT = { has_political_power < -200 }
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		has_national_unity < 60
 		OR = {
 			has_government = fascism
@@ -7179,7 +6936,7 @@ country_event = {
 	desc  = politics.21.desc
 	picture = GFX_report_event_patton_in_los_angles_1945
 	trigger = {
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		NOT = { has_country_flag = effective_minister }
 		has_national_unity < 70
 	}
@@ -7279,9 +7036,9 @@ country_event = {
 		}
 	}
 }
-###################
+
 #####Party Politics
-###################
+#
 country_event = {
 	id = politics.30
 	title = politics.30.t
@@ -7290,9 +7047,9 @@ country_event = {
 	picture = GFX_report_event_dc
 	
 	trigger = {
-		NOT = { has_political_power < -200 }
-		NOT = { has_country_flag = party_pop_check }
-		has_country_flag = bi_politics
+		has_political_power > -200
+		#NOT = { has_country_flag = party_pop_check }
+		#has_country_flag = bi_politics
 	}
 	
 	mean_time_to_happen = {
@@ -7300,125 +7057,70 @@ country_event = {
 	}
 	
 	immediate = {
-		set_country_flag = { flag = party_pop_check days = 180 }
+		#set_country_flag = { flag = party_pop_check days = 300 }
 	}
 	Option = {
 		name = politics.30.a
 		trigger = { OR = { has_government = conservatism has_government = socialism has_government = liberalism } }
 		If = { Limit = { has_government = socialism }
-			If = { Limit = { socialism > 0.5 } add_political_power = 54 }
-			If = { Limit = { socialism > 0.4 socialism < 0.5 } add_political_power = 36 }
-			If = { Limit = { socialism > 0.35 socialism < 0.4 } add_political_power = 27 }
-			If = { Limit = { socialism > 0.30 socialism < 0.35 } add_political_power = 9 }
-			If = { Limit = { socialism > 0.30 socialism < 0.35 
-				OR = { conservatism > 0.3 liberalism  > 0.3 fascism > 0.3 communism > 0.3 monarchism > 0.3 neutrality > 0.3 } } 
-				add_political_power = 0 }
-			If = { Limit = { socialism > 0.25 socialism < 0.30 
-			OR = { conservatism > 0.25 liberalism  > 0.25 fascism > 0.25 communism > 0.25 monarchism > 0.25 neutrality > 0.25 } } 
-				add_political_power = -9}
-			If = { Limit = { socialism > 0.18 socialism < 0.25 } add_political_power = -27 }
-			If = { Limit = { socialism > 0.10 socialism < 0.18 } add_political_power = -36 }
-			If = { Limit = { socialism < 0.10 } add_political_power = -54 }
+			If = { Limit = { socialism > 0.5 } add_political_power = 30 }
+			If = { Limit = { socialism > 0.4 socialism < 0.5 } add_political_power = 20 }
+			If = { Limit = { socialism > 0.30 socialism < 0.4 } add_political_power = 10 }
+			If = { Limit = { socialism > 0.20 socialism < 0.30 } add_political_power = -10 }
+			If = { Limit = { socialism > 0.10 socialism < 0.20 } add_political_power = -20 }
+			If = { Limit = { socialism < 0.10 } add_political_power = -30 }
 		}
 		If = { Limit = { has_government = conservatism }
-			If = { Limit = { conservatism > 0.5 } add_political_power = 36 }
-			If = { Limit = { conservatism > 0.4 conservatism < 0.5 } add_political_power = 36 }
-			If = { Limit = { conservatism > 0.35 conservatism < 0.4 } add_political_power = 27 }
-			If = { Limit = { conservatism > 0.30 conservatism < 0.35 NOT = { socialism > 0.3 liberalism  > 0.3 fascism > 0.3 communism > 0.3 monarchism > 0.3 neutrality > 0.3 } }
-				add_political_power = 9 }
-			If = { Limit = { conservatism > 0.30 conservatism < 0.35 
-				OR = { socialism > 0.3 liberalism  > 0.3 fascism > 0.3 communism > 0.3 monarchism > 0.3 neutrality > 0.3 } } 
-				add_political_power = 0 }
-			If = { Limit = { conservatism > 0.25 conservatism < 0.30 
-			OR = {  liberalism  > 0.25 socialism > 0.25 fascism > 0.25 communism > 0.25 monarchism > 0.25 neutrality > 0.25 } } 
-				add_political_power = -9}
-			If = { Limit = { conservatism > 0.18 conservatism < 0.25 } add_political_power = -27 }
-			If = { Limit = { conservatism > 0.10 conservatism < 0.18 } add_political_power = -36 }
-			If = { Limit = { conservatism < 0.10 } add_political_power = -54 }
+			If = { Limit = { conservatism > 0.5 } add_political_power = 30 }
+			If = { Limit = { conservatism > 0.4 conservatism < 0.5 } add_political_power = 20 }
+			If = { Limit = { conservatism > 0.30 conservatism < 0.4 } add_political_power = 10 }
+			If = { Limit = { conservatism > 0.20 conservatism < 0.30 } add_political_power = -10 }
+			If = { Limit = { conservatism > 0.10 conservatism < 0.20 } add_political_power = -20 }
+			If = { Limit = { conservatism < 0.10 } add_political_power = -30 }
 		}
 		If = { Limit = { has_government = liberalism }
-			If = { Limit = { liberalism > 0.5 } add_political_power = 36 }
-			If = { Limit = { liberalism > 0.4 liberalism < 0.5 } add_political_power = 36 }
-			If = { Limit = { liberalism > 0.35 liberalism < 0.4 } add_political_power = 27 }
-			If = { Limit = { liberalism > 0.30 liberalism < 0.35 NOT = { socialism > 0.3 conservatism  > 0.3 fascism > 0.3 communism > 0.3 monarchism > 0.3 neutrality > 0.3 } }
-				add_political_power = 9 }
-			If = { Limit = { liberalism > 0.30 liberalism < 0.35 
-				OR = { conservatism > 0.3 socialism  > 0.3 fascism > 0.3 communism > 0.3 monarchism > 0.3 neutrality > 0.3 } } 
-				add_political_power = 0 }
-			If = { Limit = { liberalism > 0.25 liberalism < 0.30 
-			OR = { conservatism > 0.25 socialism > 0.25 fascism > 0.25 communism > 0.25 monarchism > 0.25 neutrality > 0.25 } } 
-				add_political_power = -9}
-			If = { Limit = { liberalism > 0.18 liberalism < 0.25 } add_political_power = -27 }
-			If = { Limit = { liberalism > 0.10 liberalism < 0.18 } add_political_power = -36 }
-			If = { Limit = { liberalism < 0.10 } add_political_power = -54 }
+			If = { Limit = { liberalism > 0.5 } add_political_power = 30 }
+			If = { Limit = { liberalism > 0.4 liberalism < 0.5 } add_political_power = 20 }
+			If = { Limit = { liberalism > 0.30 liberalism < 0.4 } add_political_power = 10 }
+			If = { Limit = { liberalism > 0.20 liberalism < 0.30 } add_political_power = -10 }
+			If = { Limit = { liberalism > 0.10 liberalism < 0.20 } add_political_power = -20 }
+			If = { Limit = { liberalism < 0.10 } add_political_power = -30 }
 		}
 	}
 	Option = {
 		name = politics.30.b
 		trigger = { OR = { has_government = fascism has_government = communism has_government = monarchism has_government = neutrality } }
 		If = { Limit = { has_government = fascism }
-			If = { Limit = { fascism > 0.7 } add_political_power = 63 }
-			If = { Limit = { fascism > 0.6 fascism < 0.7 } add_political_power = 45 }
-			If = { Limit = { fascism > 0.55 fascism < 0.6 } add_political_power = 27 }
-			If = { Limit = { fascism > 0.50 fascism < 0.55 NOT = { socialism > 0.3 liberalism  > 0.3 conservatism > 0.3 communism > 0.3 monarchism > 0.3 neutrality > 0.3 } }
-				add_political_power = 18 }
-			If = { Limit = { fascism > 0.50 fascism < 0.55 
-				OR = { conservatism > 0.3 liberalism  > 0.3 socialism > 0.3 communism > 0.3 monarchism > 0.3 neutrality > 0.3} } 
-				add_political_power = 0 }
-			If = { Limit = { fascism > 0.45 fascism < 0.50 
-			OR = { conservatism > 0.25 liberalism  > 0.25 socialism > 0.25 communism > 0.25 monarchism > 0.25 neutrality > 0.25 } } 
-				add_political_power = -18}
-			If = { Limit = { fascism > 0.40 fascism < 0.45 } add_political_power = -27 }
-			If = { Limit = { fascism > 0.30 fascism < 0.40 } add_political_power = -45 }
-			If = { Limit = { fascism < 0.30 } add_political_power = -63 }
+			If = { Limit = { fascism > 0.7 } add_political_power = 30 }
+			If = { Limit = { fascism > 0.6 fascism < 0.7 } add_political_power = 20 }
+			If = { Limit = { fascism > 0.50 fascism < 0.6 } add_political_power = 10 }
+			If = { Limit = { fascism > 0.40 fascism < 0.50 } add_political_power = -10 }
+			If = { Limit = { fascism > 0.30 fascism < 0.40 } add_political_power = -20 }
+			If = { Limit = { fascism < 0.30 } add_political_power = -30 }
 		}
 		If = { Limit = { has_government = communism }
-			If = { Limit = { communism > 0.7 } add_political_power = 63 }
-			If = { Limit = { communism > 0.6 communism < 0.7 } add_political_power = 45 }
-			If = { Limit = { communism > 0.55 communism < 0.6 } add_political_power = 27 }
-			If = { Limit = { communism > 0.50 communism < 0.55 NOT = { socialism > 0.3 liberalism  > 0.3 fascism > 0.3 conservatism > 0.3 monarchism > 0.3 neutrality > 0.3 } }
-				add_political_power = 18 }
-			If = { Limit = { communism > 0.50 communism < 0.55 
-				OR = { conservatism > 0.3 liberalism  > 0.3 socialism > 0.3 fascism > 0.3 monarchism > 0.3 neutrality > 0.3 } } 
-				add_political_power = 0 }
-			If = { Limit = { communism > 0.45 communism < 0.50 
-			OR = { conservatism > 0.25 liberalism  > 0.25 socialism > 0.25 fascism > 0.25 monarchism > 0.25 neutrality > 0.25 } } 
-				add_political_power = -18}
-			If = { Limit = { communism > 0.40 communism < 0.45 } add_political_power = -27 }
-			If = { Limit = { communism > 0.30 communism < 0.40 } add_political_power = -45 }
-			If = { Limit = { communism < 0.30 } add_political_power = -63 }
+			If = { Limit = { communism > 0.7 } add_political_power = 30 }
+			If = { Limit = { communism > 0.6 communism < 0.7 } add_political_power = 20 }
+			If = { Limit = { communism > 0.50 communism < 0.6 } add_political_power = 10 }
+			If = { Limit = { communism > 0.40 communism < 0.50 } add_political_power = -10 }
+			If = { Limit = { communism > 0.30 communism < 0.40 } add_political_power = -20 }
+			If = { Limit = { communism < 0.30 } add_political_power = -30 }
 		}
 		If = { Limit = { has_government = monarchism }
-			If = { Limit = { monarchism > 0.7 } add_political_power = 63 }
-			If = { Limit = { monarchism > 0.6 monarchism < 0.7 } add_political_power = 45 }
-			If = { Limit = { monarchism > 0.55 monarchism < 0.6 } add_political_power = 27 }
-			If = { Limit = { monarchism > 0.50 monarchism < 0.55 NOT = { socialism > 0.3 liberalism  > 0.3 fascism > 0.3 communism > 0.3 conservatism > 0.3 neutrality > 0.3 } }
-				add_political_power = 18 }
-			If = { Limit = { monarchism > 0.50 monarchism < 0.55 
-				OR = { conservatism > 0.3 liberalism  > 0.3 socialism > 0.3 communism > 0.3 fascism > 0.3 neutrality > 0.3 } } 
-				add_political_power = 0 }
-			If = { Limit = { monarchism > 0.45 monarchism < 0.50 
-			OR = { conservatism > 0.25 liberalism  > 0.25 socialism > 0.25 fascism > 0.25 monarchism > 0.25 neutrality > 0.25 } } 
-				add_political_power = -18}
-			If = { Limit = { monarchism > 0.40 monarchism < 0.45 } add_political_power = -27 }
-			If = { Limit = { monarchism > 0.30 monarchism < 0.40 } add_political_power = -45 }
-			If = { Limit = { monarchism < 0.30 } add_political_power = -63 }
+			If = { Limit = { monarchism > 0.7 } add_political_power = 30 }
+			If = { Limit = { monarchism > 0.6 monarchism < 0.7 } add_political_power = 20 }
+			If = { Limit = { monarchism > 0.50 monarchism < 0.6 } add_political_power = 10 }
+			If = { Limit = { monarchism > 0.40 monarchism < 0.50 } add_political_power = -10 }
+			If = { Limit = { monarchism > 0.30 monarchism < 0.40 } add_political_power = -20 }
+			If = { Limit = { monarchism < 0.30 } add_political_power = -30 }
 		}
 		If = { Limit = { has_government = neutrality }
-			If = { Limit = { neutrality > 0.7 } add_political_power = 63 }
-			If = { Limit = { neutrality > 0.6 neutrality < 0.7 } add_political_power = 45 }
-			If = { Limit = { neutrality > 0.55 neutrality < 0.60 } add_political_power = 27 }
-			If = { Limit = { neutrality > 0.50 neutrality < 0.55 NOT = { socialism > 0.3 liberalism  > 0.3 fascism > 0.3 communism > 0.3 monarchism > 0.3 conservatism > 0.3 } }
-				add_political_power = 18 }
-			If = { Limit = { neutrality > 0.50 neutrality < 0.55 
-				OR = { conservatism > 0.3 liberalism  > 0.3 socialism > 0.3 communism > 0.3 monarchism > 0.3 fascism > 0.3 } } 
-				add_political_power = 0 }
-			If = { Limit = { neutrality > 0.45 neutrality < 0.50 
-			OR = { conservatism > 0.25 liberalism  > 0.25 socialism > 0.25 fascism > 0.25 communism > 0.25 monarchism > 0.25 } } 
-				add_political_power = -18}
-			If = { Limit = { neutrality > 0.40 neutrality < 0.45 } add_political_power = -27 }
-			If = { Limit = { neutrality > 0.30 neutrality < 0.40 } add_political_power = -45 }
-			If = { Limit = { neutrality < 0.30 } add_political_power = -63 }
+			If = { Limit = { neutrality > 0.7 } add_political_power = 30 }
+			If = { Limit = { neutrality > 0.6 neutrality < 0.7 } add_political_power = 20 }
+			If = { Limit = { neutrality > 0.50 neutrality < 0.60 } add_political_power = 10 }
+			If = { Limit = { neutrality > 0.40 neutrality < 0.50 } add_political_power = -10 }
+			If = { Limit = { neutrality > 0.30 neutrality < 0.40 } add_political_power = -20 }
+			If = { Limit = { neutrality < 0.30 } add_political_power = -30 }
 		}
 	}
 }
@@ -7432,9 +7134,9 @@ country_event = {
 	picture = GFX_news_event_002
 
 	trigger = {
-		NOT = { has_political_power < -300 }
+		NOT = { has_political_power < -200 }
 		NOT = { has_country_flag = forced_law_change }
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		has_political_power < 0
 		has_national_unity < 80
 		OR = {
@@ -9574,7 +9276,7 @@ country_event = {
 	
 	trigger = { 
 		NOT = { has_political_power < -200 }
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		OR = {
 			AND = {
 				has_government = socialism
@@ -9745,7 +9447,7 @@ country_event = {
 			has_government = neutrality
 		}
 		has_national_unity < 70
-		has_country_flag = bi_politics
+		#has_country_flag = bi_politics
 		NOT = { has_country_flag = political_repression }
 		OR = {
 			AND = {
@@ -11835,4 +11537,184 @@ country_event = {
 #		}
 #    }
 #}
+#Historical Focus: AI Director
+country_event = { 
+    id = politics.999
+    title = politics.999.t
+    desc = politics.999.desc
+    picture = GFX_petain_NFA.dds
+	
+	trigger = {
+		is_historical_focus_on = yes
+		is_ai = yes
+		date < 1942.1.1
+		AND = {
+			communism > 0.20
+		OR = {
+			tag = GER
+			tag = ITA
+			tag = JAP
+			tag = ENG
+			tag = USA
+			tag = CAN
+			tag = AST
+			}
+		}
+		AND = {
+			fascism > 0.20
+		OR = {
+			tag = SOV
+			tag = FRA
+			tag = ENG
+			tag = USA
+			tag = CAN
+			tag = AST
+			}
+		}
+		AND = {
+			monarchism > 0.20
+		OR = {
+			tag = GER
+			tag = SOV
+			tag = FRA
+			tag = ITA
+			tag = JAP
+			tag = ENG
+			tag = USA
+			tag = CAN
+			tag = AST
+			}
+		}
+		AND = {
+			neutrality > 0.20
+		OR = {
+			tag = GER
+			tag = SOV
+			tag = FRA
+			tag = ITA
+			tag = JAP
+			tag = ENG
+			tag = USA
+			tag = CAN
+			tag = AST
+			}
+		}
+		AND = {
+		OR = {
+			conservatism > 0.25
+			liberalism > 0.25
+			socialism > 0.25
+			}
+		OR = {
+			tag = SOV
+			tag = ITA
+			tag = GER
+			tag = JAP
+			}
+		}		
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+    option = {
+        name = "Fix me!"
+		if = { limit = { has_government = fascism }
+			if = { limit = { conservatism > 0.25 }
+				add_popularity = {
+				ideology = conservatism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { liberalism > 0.25 }
+				add_popularity = {
+				ideology = liberalism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { socialism > 0.25 }
+				add_popularity = {
+				ideology = socialism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { monarchism > 0.20 }
+				add_popularity = {
+				ideology = monarchism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { communism > 0.20 }
+				add_popularity = {
+				ideology = communism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { neutrality > 0.20 }
+				add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+				}
+			}
+		}
+		if = { limit = { has_government = communism }
+			if = { limit = { conservatism > 0.25 }
+				add_popularity = {
+				ideology = conservatism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { liberalism > 0.25 }
+				add_popularity = {
+				ideology = liberalism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { socialism > 0.25 }
+				add_popularity = {
+				ideology = socialism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { monarchism > 0.20 }
+				add_popularity = {
+				ideology = monarchism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { fascism > 0.20 }
+				add_popularity = {
+				ideology = fascism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { neutrality > 0.20 }
+				add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+				}
+			}
+		}
+		if = { limit = { OR = { has_government = conservatism has_government = socialism has_government = liberalism } }
+			if = { limit = { monarchism > 0.20 }
+				add_popularity = {
+				ideology = monarchism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { communism > 0.20 }
+				add_popularity = {
+				ideology = communism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { neutrality > 0.20 }
+				add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+				}
+			}
+		}
+    }
+}
 ### EOF ###
