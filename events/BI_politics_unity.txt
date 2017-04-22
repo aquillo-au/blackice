@@ -1,0 +1,1033 @@
+﻿#Black I.C.E. Politics by Energico
+###################################################
+
+add_namespace = politics
+
+#National Unity Check at Game Start
+country_event = {
+	id = politics.1
+	title = politics.1.t
+	desc  = politics.1.desc
+	picture = GFX_news_event_002
+	#fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		#set_country_flag = bi_politics
+		#country_event = politics.30
+	}
+	
+	option = { #United Nation
+		name = politics.1.a
+		trigger = {
+			
+		}
+	}
+}
+#########Unity Levels###########
+#Change from United
+country_event = { 
+	id = politics.22
+	title = politics.22.t
+	desc = politics.22.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		has_national_unity < 60
+		#has_idea = unity_united_nation
+		has_country_flag = nation_united
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = { #Divided
+		name = politics.22.a
+		trigger = { 
+			has_national_unity > 40
+		}
+		add_political_power = -10
+		remove_ideas = unity_united_nation
+		add_ideas = unity_divided_nation
+		set_country_flag = nation_divided
+		clr_country_flag = nation_united
+		clr_country_flag = nation_chaos
+		clr_country_flag = nation_civil_war
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = -0.03
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.03
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.03
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.03
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = -0.03
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.03
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = -0.03
+			}
+		}
+	}
+	option = { #Broken Nation/Chaos
+		name = politics.22.b
+		trigger = {
+			has_national_unity < 40
+			has_national_unity > 20
+		}
+		add_political_power = -30
+		remove_ideas = unity_united_nation
+		add_ideas = unity_broken_nation
+		set_country_flag = nation_chaos
+		clr_country_flag = nation_divided
+		clr_country_flag = nation_united
+		clr_country_flag = nation_civil_war
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = -0.10
+			}
+		}
+		
+	}
+	option = { #Civil War
+		name = politics.22.c
+		trigger = {
+			has_national_unity < 20
+		}
+		add_political_power = -50
+		remove_ideas = unity_united_nation
+		add_ideas = unity_civil_war
+		set_country_flag = nation_civil_war
+		clr_country_flag = nation_divided
+		clr_country_flag = nation_chaos
+		clr_country_flag = nation_united
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = -0.15
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.15
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.15
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.15
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = -0.15
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.15
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = -0.15
+			}
+		}
+	}
+}
+#Change from Divided
+country_event = { 
+	id = politics.23
+	title = politics.23.t
+	desc = politics.23.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+	NOT = {
+		has_national_unity < 60
+		has_national_unity > 40
+		}
+		#has_idea = unity_divided_nation
+		has_country_flag = nation_divided
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = { #United
+		name = politics.23.a
+		trigger = { 
+			has_national_unity > 60
+		}
+		add_political_power = 20
+		remove_ideas = unity_divided_nation
+		add_ideas = unity_united_nation
+		set_country_flag = nation_united
+		clr_country_flag = nation_divided
+		clr_country_flag = nation_chaos
+		clr_country_flag = nation_civil_war
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = 0.03
+			}
+		}
+	}
+	option = { #Broken Nation/Chaos
+		name = politics.23.b
+		trigger = {
+			has_national_unity < 40
+			has_national_unity > 20
+		}
+		add_political_power = -10
+		remove_ideas = unity_divided_nation
+		add_ideas = unity_broken_nation
+		set_country_flag = nation_chaos
+		clr_country_flag = nation_divided
+		clr_country_flag = nation_united
+		clr_country_flag = nation_civil_war
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = -0.05
+			}
+		}
+	}
+	option = { #Civil War
+		name = politics.23.c
+		trigger = {
+			has_national_unity < 20
+		}
+		add_political_power = -30
+		remove_ideas = unity_divided_nation
+		add_ideas = unity_civil_war
+		set_country_flag = nation_civil_war
+		clr_country_flag = nation_divided
+		clr_country_flag = nation_chaos
+		clr_country_flag = nation_united
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.10
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = -0.10
+			}
+		}
+	}
+}
+#Change from Broken
+country_event = { 
+	id = politics.24
+	title = politics.24.t
+	desc = politics.24.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+	NOT = {
+		has_national_unity < 40
+		has_national_unity > 20
+		}
+		#has_idea = unity_broken_nation
+		has_country_flag = nation_chaos
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = { #United
+		name = politics.24.a
+		trigger = { 
+			has_national_unity > 60
+		}
+		add_political_power = 30
+		remove_ideas = unity_broken_nation
+		add_ideas = unity_united_nation
+		set_country_flag = nation_united
+		clr_country_flag = nation_divided
+		clr_country_flag = nation_chaos
+		clr_country_flag = nation_civil_war
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = 0.06
+			}
+		}
+	}
+	option = { #Divided
+		name = politics.24.b
+		trigger = {
+			has_national_unity < 60
+			has_national_unity > 40
+		}
+		add_political_power = 10
+		remove_ideas = unity_broken_nation
+		add_ideas = unity_divided_nation
+		set_country_flag = nation_divided
+		clr_country_flag = nation_chaos
+		clr_country_flag = nation_united
+		clr_country_flag = nation_civil_war
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = 0.03
+			}
+		}
+	}
+	option = { #Civil War
+		name = politics.24.c
+		trigger = {
+			has_national_unity < 20
+		}
+		add_political_power = -20
+		remove_ideas = unity_broken_nation
+		add_ideas = unity_civil_war
+		set_country_flag = nation_civil_war
+		clr_country_flag = nation_divided
+		clr_country_flag = nation_chaos
+		clr_country_flag = nation_united
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = -0.05
+			}
+		}
+	}
+}
+#Change from Civil War
+country_event = { 
+	id = politics.25
+	title = politics.25.t
+	desc = politics.25.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		has_national_unity < 20
+		#has_idea = unity_civil_war
+		has_country_flag = nation_civil_war
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = { #United
+		name = politics.25.a
+		trigger = { 
+			has_national_unity > 60
+		}
+		add_political_power = 50
+		remove_ideas = unity_civil_war
+		add_ideas = unity_united_nation
+		set_country_flag = nation_united
+		clr_country_flag = nation_divided
+		clr_country_flag = nation_chaos
+		clr_country_flag = nation_civil_war
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.10
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = 0.10
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.10
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = 0.10
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.10
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = 0.10
+			}
+		}
+	}
+	option = { #Divided
+		name = politics.25.b
+		trigger = {
+			has_national_unity < 60
+			has_national_unity > 40
+		}
+		add_political_power = 20
+		remove_ideas = unity_civil_war
+		add_ideas = unity_divided_nation
+		set_country_flag = nation_divided
+		clr_country_flag = nation_civil_war
+		clr_country_flag = nation_chaos
+		clr_country_flag = nation_united
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.06
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = 0.06
+			}
+		}
+	}
+	option = { #Broken Nation/Chaos
+		name = politics.25.c
+		trigger = {
+			has_national_unity < 40
+			has_national_unity > 20
+		}
+		add_political_power = 10
+		remove_ideas = unity_civil_war
+		add_ideas = unity_broken_nation
+		set_country_flag = nation_chaos
+		clr_country_flag = nation_divided
+		clr_country_flag = nation_united
+		clr_country_flag = nation_civil_war
+		if = { 
+			limit = { has_government = socialism }
+			add_popularity = {
+				ideology = socialism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = conservatism }
+			add_popularity = {
+				ideology = conservatism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = liberalism }
+			add_popularity = {
+				ideology = liberalism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = neutrality }
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = communism }
+			add_popularity = {
+				ideology = communism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = fascism }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.03
+			}
+		}
+		if = { 
+			limit = { has_government = monarchism }
+			add_popularity = {
+				ideology = monarchism
+				popularity = 0.03
+			}
+		}
+	}
+}
+
+#Historical Focus: AI Director
+country_event = { 
+    id = politics.999
+    title = politics.999.t
+    desc = politics.999.desc
+    picture = GFX_petain_NFA.dds
+	
+	trigger = {
+		is_historical_focus_on = yes
+		is_ai = yes
+		date < 1942.1.1
+		AND = {
+			communism > 0.20
+		OR = {
+			tag = GER
+			tag = ITA
+			tag = JAP
+			tag = ENG
+			tag = USA
+			tag = CAN
+			tag = AST
+			}
+		}
+		AND = {
+			fascism > 0.20
+		OR = {
+			tag = SOV
+			tag = FRA
+			tag = ENG
+			tag = USA
+			tag = CAN
+			tag = AST
+			}
+		}
+		AND = {
+			monarchism > 0.20
+		OR = {
+			tag = GER
+			tag = SOV
+			tag = FRA
+			tag = ITA
+			tag = JAP
+			tag = ENG
+			tag = USA
+			tag = CAN
+			tag = AST
+			}
+		}
+		AND = {
+			neutrality > 0.20
+		OR = {
+			tag = GER
+			tag = SOV
+			tag = FRA
+			tag = ITA
+			tag = JAP
+			tag = ENG
+			tag = USA
+			tag = CAN
+			tag = AST
+			}
+		}
+		AND = {
+		OR = {
+			conservatism > 0.25
+			liberalism > 0.25
+			socialism > 0.25
+			}
+		OR = {
+			tag = SOV
+			tag = ITA
+			tag = GER
+			tag = JAP
+			}
+		}		
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+    option = {
+        name = "Fix me!"
+		if = { limit = { has_government = fascism }
+			if = { limit = { conservatism > 0.25 }
+				add_popularity = {
+				ideology = conservatism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { liberalism > 0.25 }
+				add_popularity = {
+				ideology = liberalism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { socialism > 0.25 }
+				add_popularity = {
+				ideology = socialism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { monarchism > 0.20 }
+				add_popularity = {
+				ideology = monarchism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { communism > 0.20 }
+				add_popularity = {
+				ideology = communism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { neutrality > 0.20 }
+				add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+				}
+			}
+		}
+		if = { limit = { has_government = communism }
+			if = { limit = { conservatism > 0.25 }
+				add_popularity = {
+				ideology = conservatism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { liberalism > 0.25 }
+				add_popularity = {
+				ideology = liberalism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { socialism > 0.25 }
+				add_popularity = {
+				ideology = socialism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { monarchism > 0.20 }
+				add_popularity = {
+				ideology = monarchism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { fascism > 0.20 }
+				add_popularity = {
+				ideology = fascism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { neutrality > 0.20 }
+				add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+				}
+			}
+		}
+		if = { limit = { OR = { has_government = conservatism has_government = socialism has_government = liberalism } }
+			if = { limit = { monarchism > 0.20 }
+				add_popularity = {
+				ideology = monarchism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { communism > 0.20 }
+				add_popularity = {
+				ideology = communism
+				popularity = -0.10
+				}
+			}
+			if = { limit = { neutrality > 0.20 }
+				add_popularity = {
+				ideology = neutrality
+				popularity = -0.10
+				}
+			}
+		}
+    }
+}
+### EOF ###
