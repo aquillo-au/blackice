@@ -1,6 +1,6 @@
 ﻿##### Division Templates #####
 division_template = {
-	name = "Infantry Division"  	# Standard formation for frontline divisions
+	name = "Infantry Division (RA)"  	# Standard formation for frontline divisions after 1940-41
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -19,19 +19,22 @@ division_template = {
 		artillery_brigade_mot = { x = 3 y = 1 }
 		artillery_brigade_mot = { x = 3 y = 2 }
 		
+		
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
 		artillery_medium_mot = { x = 0 y = 1 }  # US Hvy Field Arty consisted of 2 Bns, 155mm howitzers
 		engineer = { x = 0 y = 2 }   # US Eng Rgt consisted of 2 Bns
 		recon_mot = { x = 0 y = 3 }
+		
 		maintenance_company = { x = 1 y = 0 }
 		logistics_company = { x = 1 y = 1 }
 		field_hospital = { x = 1 y = 2 }
 	}
 }
+
 division_template = {
-	name = "National Guard Division"  	# Standard formation for NG divisions through late 1940
+	name = "Infantry Division (NG)"  	# Standard formation for National Guard divisions through late 1940
 
 	regiments = {						
 		infantry = { x = 0 y = 0 }
@@ -56,67 +59,78 @@ division_template = {
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
-		#artillery_medium_mot = { x = 0 y = 1 }  # US Hvy Field Arty consisted of 2 Bns, 155mm howitzers
 		engineer = { x = 0 y = 1}   # US Eng Rgt consisted of 2 Bns
-		#maintenance_company = { x = 1 y = 0 }
-		#logistics_company = { x = 1 y = 1 }
-		#field_hospital = { x = 1 y = 2 }
+		recon	 = { x = 0 y = 2 }
+		maintenance_company = { x = 1 y = 0 }
+		logistics_company = { x = 1 y = 1 }
+		field_hospital = { x = 1 y = 2 }
 	}
 	priority = 0
 }
+
 division_template = {
 	name = "Cavalry Division"  		# 1st Cavalry Division only
 
 	regiments = {
-		mechanized = { x = 0 y = 0 }
-		semi_motorized = { x = 0 y = 1 }
-		semi_motorized = { x = 0 y = 2 }
-		#semi_motorized  = { x = 0 y = 3 }
+		mechanized 	= { x = 0 y = 0 }
+		semi_motorized 	= { x = 0 y = 1 }
+		semi_motorized 	= { x = 0 y = 2 }
+		semi_motorized 	= { x = 0 y = 3 }
 		
 		motorized  = { x = 1 y = 0 }
 		semi_motorized  = { x = 1 y = 1 }
-		semi_motorized  = { x = 1 y = 2 }
-		#semi_motorized  = { x = 1 y = 3 }
+		semi_motorized 	= { x = 1 y = 2 }
+		semi_motorized 	= { x = 1 y = 3 }
 		
 		american_light_tank = { x = 2 y = 0 }
 
-		artillery_brigade_mot= { x = 3 y = 0 }
+		mountain_artillery_brigade_mot = { x = 3 y = 0 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
 		recon_ac = { x = 0 y = 1 }   # US Cav Recon consisted of 52 ACs, 13 L Arm
-		recon_mot = { x = 0 y = 2 }
-		Tankettes = { x = 0 y = 3 }      
-		engineer = { x = 0 y = 4 }   # US Eng Bn
-		#maintenance_company = { x = 1 y = 0 }
-		#logistics_company = { x = 1 y = 1 }
-		#field_hospital = { x = 1 y = 2 }
+		recon_mot = { x = 0 y = 2 } 
+		engineer = { x = 0 y = 3 }   # US Eng Bn
+		
+		maintenance_company = { x = 1 y = 0 }
+		logistics_company = { x = 1 y = 1 }
+		field_hospital = { x = 1 y = 2 }
 	}
 }
 division_template = {
-	name = "Garrison Brigade"  		# used for island defense (older equipment, lower experience)
+	name =  "Territorial Brigade"  		# used for island defense (older equipment, lower experience)
 
 	regiments = {
 		garrison = { x = 0 y = 0 }
 		garrison = { x = 0 y = 1 }
 		#garrison = { x = 0 y = 2 }
 		
-		#garrison = { x = 1 y = 0 }
-		#garrison = { x = 1 y = 1 }
-		#garrison = { x = 1 y = 2 }
-		
-		#garrison = { x = 2 y = 0 }
-		#garrison = { x = 2 y = 1 }
-		#garrison = { x = 2 y = 2 }
+		mountain_artillery_brigade_mot = { x = 1 y = 0 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
-		#artillery_medium_mot = { x = 0 y = 1 }   
+		engineer = { x = 0 y = 1 }
+		anti_air = { x = 0 y = 2 }
 	}
 	priority = 0
 }
 division_template = {
-	name = "USMC Division"				
+	name =  "Harbor Defenses"  				# used for coastal defenses, 5 were assigned based on the 5 corps ares with sugnificant coastal territory to defend... thus numbers correspond to the corps number instead of being sequential..  there were also three territorial coastal defense batteries set up in Philipines, Hawaii and Panama Canal Zone.
+
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		#garrison = { x = 0 y = 1 }
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+	  	artillery_coastal = { x = 0 y = 1 }
+		anti_air = { x = 0 y = 2 }
+		maintenance_company = { x = 1 y = 0 }
+	}
+}
+division_template = {
+	name = "Marine Division"				
 	regiments = {
 		marine = { x = 0 y = 0 }
 		marine = { x = 0 y = 1 }
@@ -132,7 +146,7 @@ division_template = {
 
 		mountain_artillery_brigade_mot = { x = 3 y = 0 }
 		mountain_artillery_brigade_mot = { x = 3 y = 1 }
-		mountain_artillery_brigade_mot = { x = 3 y = 2  }
+		mountain_artillery_brigade_mot = { x = 3 y = 2 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -166,35 +180,24 @@ units = {
 	#	start_experience_factor = 0.0
 	#	start_equipment_factor = 0.1
 	#}
-	### Carribean Forces ###
-	division = {			
-		name = "Puerto Rico Department"
-		location = 1440
-		division_template = "Infantry Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.15
-force_equipment_variants = { 
-			infantry_equipment_0 = { owner = "USA" }
-		}
-	}			
-	division = {			
-		name = "Panama Canal Force"		
-		location = 7617
-		division_template = "Infantry Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.15
-		force_equipment_variants = { 
-			infantry_equipment_0 = { owner = "USA" }
-		}
-	}
 	### 1st Army -- note: Armies only paper organizations in 1936 ###
 	# I Army Corps #
 	division= {			
+		name = "9th 'Old Reliables' Division"		  #Active only for mobilization purposes 
+		location = 6732
+		division_template = "Infantry Division (RA)"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.2
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}	
+	division= {			
 		name = "26th 'Yankee' Division"		
 		location = 6732
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -202,9 +205,9 @@ force_equipment_variants = {
 	division= {			
 		name = "43rd 'Winged Victory' Division"		
 		location = 6732
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -213,8 +216,9 @@ force_equipment_variants = {
 	division= {			
 		name = "1st 'Big Red One' Division"		
 		location = 3878
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division_template = "Infantry Division (RA)"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -222,9 +226,9 @@ force_equipment_variants = {
 	division= {			
 		name = "27th 'New York' Division"		
 		location = 3878
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -232,20 +236,30 @@ force_equipment_variants = {
 	division= {			
 		name = "44th Infantry Division"		
 		location = 3878
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
 	}			
 	# III Army Corps #
 	division= {			
+		name = "8th 'Pathfinders' Division"		
+		location = 6984
+		division_template = "Infantry Division (RA)"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
+	division= {			
 		name = "28th 'Keystone' Division"		
 		location = 6984
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -253,9 +267,9 @@ force_equipment_variants = {
 	division= {			
 		name = "29th 'Blue and Gray' Division"		
 		location = 6984
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.6
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -263,11 +277,21 @@ force_equipment_variants = {
 	### 2nd Army -- note: Armies only paper organizations in 1936 ###
 	# V Army Corps #
 	division= {			
+		name = "5th 'Red Diamond' Division"		
+		location = 6855
+		division_template = "Infantry Division (RA)"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
+	division= {			
 		name = "37th 'Buckeye' Division"		
 		location = 6855
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -275,20 +299,30 @@ force_equipment_variants = {
 	division= {			
 		name = "38th 'Cyclone' Division"		
 		location = 6855
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
 	}			
 	# VI Army Corps #
 	division= {			
+		name = "6th 'Sight-Seeing' Division"		
+		location = 9450
+		division_template = "Infantry Division (RA)"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
+	division= {			
 		name = "32nd 'Red Arrow' Division"		
 		location = 9450
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -296,21 +330,31 @@ force_equipment_variants = {
 	division= {			
 		name = "33rd 'Golden Cross' Division"		
 		location = 9450
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
 	}
 	### 3rd Army -- note: Armies only paper organizations in 1936 ###
 	# IV Army Corps #
+	division= {			
+		name = "4th 'Ivy' Division"		
+		location = 12384
+		division_template = "Infantry Division (RA)"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
 	division = {			
 		name = "30th 'Old Hickory' Division"		
 		location = 12384
-		division_template = "National Guard Division"
+		division_template = "Infantry Division (NG)"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -318,9 +362,9 @@ force_equipment_variants = {
 	division= {			
 		name = "31st 'Dixie' Division"		
 		location = 12384
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -329,9 +373,9 @@ force_equipment_variants = {
 	division= {			
 		name = "2nd 'Indianhead' Division"		
 		location = 12782
-		division_template = "Infantry Division"
+		division_template = "Infantry Division (RA)"
 		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		start_equipment_factor = 0.8
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -339,9 +383,9 @@ force_equipment_variants = {
 	division= {			
 		name = "36th 'Texas' Division"		
 		location = 12782
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -349,9 +393,9 @@ force_equipment_variants = {
 	division= {			
 		name = "45th 'Thunderbird' Division"		
 		location = 12782
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -360,7 +404,8 @@ force_equipment_variants = {
 		name = "1st Cavalry Division"		
 		location = 12782
 		division_template = "Cavalry Division"
-		start_experience_factor = 0.4
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -368,11 +413,21 @@ force_equipment_variants = {
 	### 4th Army -- note: Armies only paper organizations in 1936 ###
 	# VII Army Corps (CO: Bishop) #
 	division= {			
+		name = "7th 'Bayonet' Division"					#Inactive until 1940
+		location = 12586
+		division_template = "Infantry Division (RA)"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.2
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
+	division= {			
 		name = "34th 'Red Bull' Division"		
 		location = 12586
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -380,9 +435,9 @@ force_equipment_variants = {
 	division= {			
 		name = "35th 'Santa Fe' Division"		
 		location = 12586
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -391,8 +446,9 @@ force_equipment_variants = {
 	division= {			
 		name = "3rd 'Rock of the Marne' Division"		
 		location = 9671
-		division_template = "Infantry Division"
-		start_experience_factor = 0.3
+		division_template = "Infantry Division (RA)"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -400,9 +456,9 @@ force_equipment_variants = {
 	division = {			
 		name = "40th 'Sunshine' Division"		
 		location = 9671
-		division_template = "National Guard Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -410,31 +466,63 @@ force_equipment_variants = {
 	division= {			
 		name = "41st 'Sunset' Division"		
 		location = 9671
-		division_template = "National Guard Division"
+		division_template = "Infantry Division (NG)"
 		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
+	### Carribean Forces ###
+	division = {			
+		name = "Puerto Rico Division"
+		location = 1440
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}			
+	division = {			
+		name = "Panama Canal Division"		
+		location = 7617
+		division_template = "Infantry Division (NG)"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.9
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
+	####### Pacific Theater	#######	
+	### U.S. Army Forces in the Far East ###		
+	division = {										
+		name = "Phillippine Division"			
+		location = 10265
+		division_template = "Infantry Division (NG)"			
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
+	### Alaska Department ###	
+	division= {			
+		name = "Attu Island Garrison"		
+		location = 13067
+		division_template = "Territorial Brigade"
+		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
 	}
-	####### Pacific Theater	#######
-	### Alaska Defense Command ###
-	division = {			
-		name = "Alaska Defense Command"		
-		location = 13091
-		division_template = "Infantry Division"
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.15
-		force_equipment_variants = { 
-			infantry_equipment_0 = { owner = "USA" }
-		}
-	}			
 	division= {			
-		name = "Attu Island Garrison"		
-		location = 13067
-		division_template = "Garrison Brigade"
+		name = "Alaska Garrison"		
+		location = 13091
+		division_template = "Territorial Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.15
+		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -443,9 +531,9 @@ force_equipment_variants = {
 	division = {			
 		name = "Hawaiian Division"		
 		location = 4180
-		division_template = "National Guard Division"		# older equipment, less training than NG division
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Infantry Division (RA)"		#It was considered part of the regular army and tasked with defense of hawaiian main islands while the Hawaii NG was tasked with defending the outlying islands.
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -454,9 +542,9 @@ force_equipment_variants = {
 	division= {				
 		name = "Midway Island Garrison"			
 		location = 13052
-		division_template = "Garrison Brigade"
+		division_template = "Territorial Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.15
+		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -464,9 +552,9 @@ force_equipment_variants = {
 	division= {				
 		name = "Wake Island Garrison"			
 		location = 13047
-		division_template = "Garrison Brigade"
+		division_template = "Territorial Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.15
+		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -474,9 +562,9 @@ force_equipment_variants = {
 	division= {				
 		name = "Guam Garrison"			
 		location = 12140
-		division_template = "Garrison Brigade"
+		division_template = "Territorial Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.15
+		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -485,9 +573,9 @@ force_equipment_variants = {
 	division= {			
 		name = "Christmas Island Garrison"		
 		location = 13048
-		division_template = "Garrison Brigade"
+		division_template = "Territorial Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.15
+		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -495,9 +583,9 @@ force_equipment_variants = {
 	division= {			
 		name = "Jarvis Island Garrison"		
 		location = 13049
-		division_template = "Garrison Brigade"
+		division_template = "Territorial Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.15
+		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -505,9 +593,9 @@ force_equipment_variants = {
 	division= {			
 		name = "Palmyra Garrison"		
 		location = 13050
-		division_template = "Garrison Brigade"
+		division_template = "Territorial Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.15
+		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -515,9 +603,9 @@ force_equipment_variants = {
 	division= {			
 		name = "Phoenix Island Garrison"		
 		location = 13053
-		division_template = "Garrison Brigade"
+		division_template = "Territorial Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.15
+		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -525,20 +613,36 @@ force_equipment_variants = {
 	division= {			
 		name = "Johnston Island Garrison"		
 		location = 13051
-		division_template = "Garrison Brigade"
+		division_template = "Territorial Brigade"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.15
+		start_equipment_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
 	}
-	### U.S. Army Forces in the Far East ###		
-	division = {										
-		name = "Phillippine Division"			
+division= {			
+		name = "Panama Canal Coastal Battery"		
+		location = 7617
+		division_template = "Harbor Defenses"
+		start_experience_factor = 0.3
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
+	division= {			
+		name = "Corregidor Coastal Battery"		
 		location = 10265
-		division_template = "Infantry Division"			# older equipment, less training than NG division
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.3
+		division_template = "Harbor Defenses"
+		start_experience_factor = 0.3
+		force_equipment_variants = { 
+			infantry_equipment_0 = { owner = "USA" }
+		}
+	}
+	division= {			
+		name = "Pearl Harbor Coastal Battery"		
+		location = 4180
+		division_template = "Harbor Defenses"
+		start_experience_factor = 0.3
 		force_equipment_variants = { 
 			infantry_equipment_0 = { owner = "USA" }
 		}
@@ -1105,7 +1209,7 @@ instant_effect = {
 		}
 		requested_factories = 2
 		progress = 0.1
-		efficiency = 50
+		efficiency = 10
 	}
 	add_equipment_production = {
 		equipment = {
@@ -1747,12 +1851,12 @@ instant_effect = {
 	########################### equipment to stockpile
 	add_equipment_to_stockpile = {
 		type = infantry_equipment_0
-			amount = 12000
+			amount = 12500
 			producer = USA
 		}
 	add_equipment_to_stockpile = {
 		type = garrison_equipment_0
-			amount = 2000
+			amount = 2500
 			producer = USA
 		}
 	add_equipment_to_stockpile = {
@@ -1767,7 +1871,7 @@ instant_effect = {
 		}
 	add_equipment_to_stockpile = {
 		type = motorized_equipment_1
-			amount = 1500
+			amount = 1600
 			producer = USA
 		}
 		
@@ -1778,7 +1882,7 @@ instant_effect = {
 		}
 	add_equipment_to_stockpile = {
 		type = artytruck_equipment_0
-			amount = 1000
+			amount = 1200
 			producer = USA
 		}
 	add_equipment_to_stockpile = {
@@ -1808,50 +1912,67 @@ instant_effect = {
 	}
 	add_equipment_to_stockpile = {
 		type = HMG_equipment_0
-			amount = 500
+			amount = 800
+			producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = HMG_equipment_1
+			amount = 300
 			producer = USA
 	}
 	add_equipment_to_stockpile = {
 		type = mortar_equipment_0
-			amount = 300
+			amount = 500
 			producer = USA
 	}
 
 
-#medium arty 400
+#medium arty 500
 	add_equipment_to_stockpile = {
 		type = medartillery_equipment_0
-			amount = 400
+			amount = 500
 			producer = USA
 	}
 #artillery 800
 	add_equipment_to_stockpile = {
 		type = artillery_equipment_0
-			amount = 800
+			amount = 1000
 			producer = USA
 	}
-# liasiason vehicles 800
+# liasiason vehicles 1000
 	add_equipment_to_stockpile = {
 		type = motorized_lia_equipment_01
-			amount = 800
+			amount = 1000
 			producer = USA
 	}
-#motorcycle recon 150
+#motorcycle recon 250
 	add_equipment_to_stockpile = {
 		type = recon_mot_equipment_0
-			amount = 150
+			amount = 250
 			producer = USA
 	}
-#recon 80
+#recon 500
 	add_equipment_to_stockpile = {
 		type = recon_equipment_0
-			amount = 80
+			amount = 500
 			producer = USA
 	}
-#HQ 10
+#HQ 100
 	add_equipment_to_stockpile = {
 		type = HQ_equipment_0
-			amount = 80
+			amount = 100
+			producer = USA
+	}
+	
+	add_equipment_to_stockpile = {
+		type = motorized_AC_equipment_06
+			amount = 500
+			producer = USA
+	}
+	
+	add_equipment_to_stockpile = {
+		type = anti_air_equipment_1
+			amount = 500
 			producer = USA
 	}
 }
