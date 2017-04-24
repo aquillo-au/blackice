@@ -84,30 +84,30 @@ country_event = {
 	}
 	
 	immediate = {
-		set_country_flag = { flag = march value = 1 days = 60 }
-		if = { limit = { NOT = { has_government = communism } communism > 0.12 }
-		set_country_flag = { flag = communist_march value = 1 days = 30 }
-		}
-		if = { limit = { NOT = { has_government = fascism } fascism > 0.12 }
-		set_country_flag = { flag = fascist_march value = 1 days = 30 }
-		}
-		if = { limit = { NOT = { has_government = monarchism } monarchism > 0.12 }
-		set_country_flag = { flag = monarchist_march value = 1 days = 30 }
-		}
-		if = { limit = { 
-				NOT = {
-					has_government = liberalism
-					has_government = socialism
-					has_government = conservatism
-					}
-				OR = {
-					liberalism > 0.15
-					socialism > 0.15
-					conservatism > 0.15
-					} 
-				}
-			set_country_flag = { flag = democratic_march value = 1 days = 30 }
-		}
+		#set_country_flag = { flag = march value = 1 days = 60 }
+		#if = { limit = { NOT = { has_government = communism } communism > 0.12 }
+		#set_country_flag = { flag = communist_march value = 1 days = 30 }
+		#}
+		#if = { limit = { NOT = { has_government = fascism } fascism > 0.12 }
+		#set_country_flag = { flag = fascist_march value = 1 days = 30 }
+		#}
+		#if = { limit = { NOT = { has_government = monarchism } monarchism > 0.12 }
+		#set_country_flag = { flag = monarchist_march value = 1 days = 30 }
+		#}
+		#if = { limit = { 
+		#		NOT = {
+		#			has_government = liberalism
+		#			has_government = socialism
+		#			has_government = conservatism
+		#			}
+		#		OR = {
+		#			liberalism > 0.15
+		#			socialism > 0.15
+		#			conservatism > 0.15
+		#			} 
+		#		}
+		#	set_country_flag = { flag = democratic_march value = 1 days = 30 }
+		#}
 	}
 	
 	
@@ -395,7 +395,7 @@ country_event = {
 	}
 	
 	immediate = {
-		set_country_flag = { flag = protest value = 1 days = 60 }
+		#set_country_flag = { flag = protest value = 1 days = 60 }
 	}
 	
 	option = { #Communist Protests
@@ -418,7 +418,7 @@ country_event = {
 		}
 		
 			add_political_power = -15
-			set_country_flag = { flag = communist_protest value = 1 days = 60 }
+			#set_country_flag = { flag = communist_protest value = 1 days = 60 }
 			add_national_unity = -0.01
 			add_popularity = {
 				ideology = communism
@@ -495,7 +495,7 @@ country_event = {
 		}
 		
 			add_political_power = -15
-			set_country_flag = { flag = fascist_protest value = 1 days = 60 }
+			#set_country_flag = { flag = fascist_protest value = 1 days = 60 }
 			add_national_unity = -0.01
 			add_popularity = {
 				ideology = fascism
@@ -560,7 +560,7 @@ country_event = {
 		}
 		
 			add_political_power = -15
-			set_country_flag = { flag = monarchist_protests value = 1 days = 60 }
+			#set_country_flag = { flag = monarchist_protests value = 1 days = 60 }
 			add_national_unity = -0.01
 			add_popularity = {
 				ideology = monarchism
@@ -641,7 +641,7 @@ country_event = {
 		}
 		
 			add_political_power = -15
-			set_country_flag = { flag = democratic_protests value = 1 days = 60 }
+			#set_country_flag = { flag = democratic_protests value = 1 days = 60 }
 			add_national_unity = -0.01
 			if = { limit = { liberalism > 0.2 }
 			add_popularity = {
@@ -725,7 +725,7 @@ country_event = {
 	}
 	
 	immediate = {
-		set_country_flag = { flag = street_clashes value = 1 days = 60 }
+		#set_country_flag = { flag = street_clashes value = 1 days = 60 }
 	}
 	
 	
@@ -739,7 +739,7 @@ country_event = {
 				20 = { country_event = politics.36 }
 			}
 			add_political_power = -50
-			set_country_flag = { flag = street_clashes_crackdown value = 1 days = 120 }
+			#set_country_flag = { flag = street_clashes_crackdown value = 1 days = 120 }
 			add_national_unity = -0.01
 			add_popularity = {
 				ideology = communism
@@ -797,7 +797,7 @@ country_event = {
 		}
 		
 			add_political_power = -10
-			set_country_flag = { flag = street_clashes_nothing value = 1 days = 120 }
+			#set_country_flag = { flag = street_clashes_nothing value = 1 days = 120 }
 			add_national_unity = -0.03
 			add_popularity = {
 				ideology = fascism
@@ -885,7 +885,7 @@ country_event = {
 		}
 		
 			add_political_power = -40
-			set_country_flag = { flag = street_clashes_fascists value = 1 days = 60 }
+			#set_country_flag = { flag = street_clashes_fascists value = 1 days = 60 }
 			add_national_unity = -0.01
 			add_popularity = {
 				ideology = fascism
@@ -986,7 +986,7 @@ country_event = {
 			}
 		
 			add_political_power = -40
-			set_country_flag = { flag = street_clashes_communists value = 1 days = 60 }
+			#set_country_flag = { flag = street_clashes_communists value = 1 days = 60 }
 			add_national_unity = -0.01
 			add_popularity = {
 				ideology = communism
@@ -1431,7 +1431,7 @@ country_event = {
 	}
 	
 	immediate = {
-		set_country_flag = { flag = govt_scandal value = 1 days = 180 }
+		#set_country_flag = { flag = govt_scandal value = 1 days = 180 }
 	}
 	
 	
@@ -1646,7 +1646,7 @@ country_event = {
 		}
 	}
 
-	immediate = { set_country_flag = { flag = forced_law_change value = 1 days = 75 } }
+	immediate = { #set_country_flag = { flag = forced_law_change value = 1 days = 75 } }
 	option = { 
 		name = politics.31.a
 		trigger = {
@@ -3741,7 +3741,7 @@ country_event = {
 		}
 	}
 	
-	immediate = { set_country_flag = { flag = low_pop value = 1 days = 150 } }
+	immediate = { #set_country_flag = { flag = low_pop value = 1 days = 150 } }
 	
 	option = {
 		name = politics.41.a
