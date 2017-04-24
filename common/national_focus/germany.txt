@@ -302,9 +302,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 0
 		}
-			
+		
 		completion_reward = {
-			
 			50 = {
 				if = {
 					limit = { is_controlled_by = GER }
@@ -344,8 +343,8 @@ focus_tree = {
 			42 = {
 				if = {
 					limit = { is_controlled_by = GER }
-						custom_effect_tooltip = GER_west_wall_forts
-						hidden_effect = {
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
 						add_building_construction = {
 							type = bunker
 							level = 3
@@ -358,6 +357,18 @@ focus_tree = {
 							province = 563
 							instant_build = yes
 						}
+					}
+				}
+			}			
+			if = {
+				limit = { 895 = { is_demilitarized_zone = yes } }
+				custom_effect_tooltip = GER_west_wall_tt
+			}		
+			895 = {		
+				if = {
+					limit = { is_controlled_by = GER }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
 						add_building_construction = {
 							type = bunker
 							level = 3
@@ -371,7 +382,7 @@ focus_tree = {
 							instant_build = yes
 						}
 					}
-				}
+				}				
 			}
 		}
 	}
@@ -390,37 +401,37 @@ focus_tree = {
 		}
 			
 		completion_reward = {
-		#add_ideas = todt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = todt
+			#add_ideas = todt
+			#custom_effect_tooltip = available_political_advisor
+			#show_ideas_tooltip = todt
 			50 = {
 				if = {
 					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 11640
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 6712
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 6542
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 3530
-						instant_build = yes
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 11640
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 6712
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 6542
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 3530
+							instant_build = yes
 						}
 					}
 				}
@@ -434,34 +445,45 @@ focus_tree = {
 					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 3558
-						instant_build = yes
-					}
-					
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 563
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 11531
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 9575
-						instant_build = yes
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 3558
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 563
+							instant_build = yes
 						}
 					}
 				}
 			}
+			if = {
+				limit = { 895 = { is_demilitarized_zone = yes } }
+				custom_effect_tooltip = GER_west_wall_tt
+			}		
+			895 = {		
+				if = {
+					limit = { is_controlled_by = GER }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 11531
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 9575
+							instant_build = yes
+						}
+					}
+				}
+			}				
 		}
 	}
 	focus = {
@@ -487,29 +509,29 @@ focus_tree = {
 					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 11640
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 6712
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 6542
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 3530
-						instant_build = yes
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 11640
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 6712
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 6542
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 3530
+							instant_build = yes
 						}
 					}
 				}
@@ -535,6 +557,18 @@ focus_tree = {
 							province = 563
 							instant_build = yes
 						}
+					}
+				}
+			}			
+			if = {
+				limit = { 895 = { is_demilitarized_zone = yes } }
+				custom_effect_tooltip = GER_west_wall_tt
+			}	
+			895 = {			
+				if = {
+					limit = { is_controlled_by = GER }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
 						add_building_construction = {
 							type = bunker
 							level = 4
@@ -549,7 +583,7 @@ focus_tree = {
 						}
 					}
 				}
-			}
+			}				
 		}
 	}
 	focus = {
@@ -1845,14 +1879,16 @@ focus_tree = {
 		cost = 8
 		available = { is_puppet = no }
 		bypass = {
-			42 = { is_demilitarized_zone = no }
+     		895 = { is_demilitarized_zone = no }
+     		42 = { is_demilitarized_zone = no }
 			51 = { is_demilitarized_zone = no }
 		}
 		ai_will_do = {
 			factor = 15
 		}	
 		completion_reward = {
-			42 = { set_demilitarized_zone = no }
+     		#900 = { is_demilitarized_zone = no }
+     		42 = { set_demilitarized_zone = no }
 			51 = { set_demilitarized_zone = no }
 			custom_effect_tooltip = GER_rhineland_ultimatum
 			add_political_power = 120
