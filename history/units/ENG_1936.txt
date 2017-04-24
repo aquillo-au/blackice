@@ -36,15 +36,15 @@ division_template = {
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
+		light_infantry = { x = 0 y = 2 }
 
       	infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
+		light_infantry = { x = 1 y = 2 }
  
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
-		infantry = { x = 2 y = 2 }
+		light_infantry = { x = 2 y = 2 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -64,11 +64,11 @@ division_template = {
 		motorized = { x = 0 y = 0 }
 		motorized = { x = 0 y = 1 }
 		motorized = { x = 0 y = 2 }
-
+		
         mechanized = { x = 1 y = 0 }
 		motorized = { x = 1 y = 1 }
 		motorized = { x = 1 y = 2 }
-		
+			
 		british_light_tank = { x = 2 y = 0 }
 
 		artillery_brigade_mot = { x = 3 y = 0 } 
@@ -145,14 +145,14 @@ division_template = {
 	name = "Army Tank Brigade"
 
 	regiments = {
-
-		mechanized = { x = 0 y = 0 }
-		motorized = { x = 0 y = 1 }
 		
-		british_infantry_tank = { x = 1 y = 0 }
-		british_light_tank = { x = 1 y = 1 }
-		british_light_tank = { x = 1 y = 2 }
-							
+		british_infantry_tank = { x = 0 y = 0 }
+		british_light_tank = { x = 0 y = 1 }
+		british_light_tank = { x = 0 y = 2 }
+		
+		mechanized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		
 		artillery_brigade_mot = { x = 2 y = 0 } 
 	}
 	support = {
@@ -200,7 +200,8 @@ division_template = {
 		
 		artillery_brigade_mot = { x = 3 y =0 } 
 		artillery_brigade_mot = { x = 3 y = 1 }
-		anti_tank_brigade =  { x = 3 y = 2 }
+		artillery_brigade_mot = { x = 3 y = 2 }
+		anti_tank_brigade =  { x = 3 y = 3 }
 	}
 	support = {
 	 	DIV_HQ = { x = 0 y = 0 }
@@ -213,17 +214,37 @@ division_template = {
 	}
 }
 division_template = {
+	name = "Royal Marines" 	
+
+	regiments = {
+		marine = {x = 0 y = 0}
+		marine = {x = 0 y = 1}
+		marine = {x = 0 y = 2}
+
+		marine = {x = 1 y = 0}
+		marine = {x = 1 y = 1}
+		marine = {x = 1 y = 2}
+		
+		mountain_artillery_brigade_mot = { x = 2 y = 0 }
+		mountain_artillery_brigade_mot = { x = 2 y = 1 }
+		
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }	
+		
+	}
+
+	priority = 1
+}
+division_template = {
 	name = "Fortress Garrison"
 
 	regiments = {
 		garrison = { x = 0 y = 0 }
 		garrison = { x = 0 y = 1 }
-		#garrison = { x = 0 y = 2 }	
-
-		#garrison = { x = 1 y = 0 }
-		#garrison = { x = 1 y = 1 }
-		#garrison = { x = 1 y = 2 }
-		
+				
 		artillery_brigade_mot = { x = 1 y = 0 }
 		artillery_brigade_mot = { x = 1 y = 1 }		
 	}
@@ -241,15 +262,7 @@ division_template = {
 	regiments = {
 		garrison = { x = 0 y = 0 }
 		garrison = { x = 0 y = 1 }
-		#garrison = { x = 0 y = 2 }
 		
-		#garrison = { x = 1 y = 0 }
-		#garrison = { x = 1 y = 1 }
-		#garrison = { x = 1 y = 2 }
-		
-		#garrison = { x = 2 y = 0 }
-		#garrison = { x = 2 y = 1 }
-		#garrison = { x = 2 y = 2 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -264,7 +277,6 @@ division_template = {
 
 	regiments = {
 		garrison = { x = 0 y = 0 }
-		#garrison = { x = 0 y = 1 }
 		garrison = { x = 0 y = 1 }
 	}
 	support = {
