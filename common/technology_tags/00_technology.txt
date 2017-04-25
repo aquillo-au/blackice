@@ -107,9 +107,25 @@ technology_folders = {
 	infantry_folder
 	support_folder
 	armour_folder = {
-		available = { 
+		available = {
+			HUN = { NOT = { is_in_faction_with = GER }}
+			
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
+			
+		}
+	}
+	armour_axis_folder = {
+		available = {
+			HUN = { is_in_faction_with = GER }
+			
+			NOT = { original_tag = GER }
+			NOT = { original_tag = JAP }
+			NOT = { original_tag = SOV }
+			NOT = { original_tag = FRA }
+			NOT = { original_tag = USA }
+			NOT = { original_tag = ENG }
+			NOT = { original_tag = HOL }
 		}
 	}
 	artillery_folder
