@@ -1618,4 +1618,109 @@ technologies = {
 			bb_tech
 		}
 	}
+	##### CV/CVL #####
+	#Project 71B
+	tech_rf_cv = {
+		enable_equipments = {
+			SOV_carrier_1
+		}
+		dependencies = {
+			tech_rf = 1
+		}
+		path = {
+			leads_to_tech = tech_rf_cv2
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1937
+		folder = {
+			name = sovietnaval_folder
+			position = { x = @CV y = @1937 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			cv_tech
+		}
+	}
+	#Project 72
+	tech_rf_cv2 = {
+		enable_equipments = {
+			SOV_carrier_2
+		}
+		dependencies = {
+			tech_rf = 1
+		}
+		path = {
+			leads_to_tech = tech_rf_cv3
+			research_cost_coeff = 1
+		}
+		research_cost = 1.5
+		start_year = 1942
+		folder = {
+			name = sovietnaval_folder
+			position = { x = @CV y = @1942 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			cv_tech
+		}
+	}
+	#Project 69AV
+	tech_rf_cv3 = {
+		enable_equipments = {
+			SOV_carrier_3
+		}
+		dependencies = {
+			tech_rf = 1
+		}
+		research_cost = 1.5
+		start_year = 1945
+		folder = {
+			name = sovietnaval_folder
+			position = { x = @CV y = @1945 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			cv_tech
+		}
+	}
+	#Project 71A
+	tech_rf_cvl = {
+		enable_equipments = {
+			SOV_light_carrier_1
+		}
+		dependencies = {
+			tech_rf = 1
+		}
+		research_cost = 1.5
+		start_year = 1936
+		folder = {
+			name = sovietnaval_folder
+			position = { x = @CVL y = @1936 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			cvl_tech
+		}
+	}
 }
