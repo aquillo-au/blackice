@@ -1,0 +1,101 @@
+﻿add_namespace = law
+
+#Democratic to Dictatorship Press Switch
+news_event = {
+	id = law.1
+	title = "Press Laws Tightened"
+	desc = "Press Laws Tightened"
+	picture = GFX_report_event_IPR_news
+	
+	trigger = {
+	OR = {
+		has_government = communism
+		has_government = fascism
+		}
+	OR = {	
+		has_country_flag = press_free
+		has_country_flag = press_regulated
+		}
+	}
+
+	mean_time_to_happen = { days = 15 }
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = law.1.a
+		add_ideas = press_state
+		set_country_flag = press_state
+	}
+}
+
+#Dictatorship to Democratic Press Switch
+news_event = {
+	id = law.2
+	title = "Press Laws Relaxed"
+	desc = "Press Laws Relaxed"
+	picture = GFX_report_event_IPR_news
+	
+	trigger = {
+		OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
+		has_war = no
+		NOT = { 
+			OR = {
+			has_country_flag = press_free
+			has_country_flag = press_regulated
+				}
+			}
+		OR = {
+			has_idea = communism_defeated
+			has_idea = fascism_defeated 
+		}
+	}
+
+	mean_time_to_happen = { days = 15 }
+
+	immediate = {
+
+	}
+	
+	option = {
+		name = law.2.a
+		add_ideas = press_regulated
+		set_country_flag = press_regulated
+	}
+}
+
+#Democratic to Monarchy Press Switch
+news_event = {
+	id = law.3
+	title = "Press Laws Tightened"
+	desc = "Press Laws Tightened"
+	picture = GFX_report_event_IPR_news
+	
+	trigger = {
+		has_government = monarchism
+		OR = {	
+			has_country_flag = press_free
+			has_country_flag = press_regulated
+			}
+		}
+
+	mean_time_to_happen = { days = 15 }
+
+	immediate = {
+		
+	}
+	
+	option = {
+		name = law.3.a
+		add_ideas = press_censored
+		set_country_flag = press_censored
+	}
+}
+
