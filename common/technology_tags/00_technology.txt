@@ -68,6 +68,7 @@ technology_categories = {
 	cvl_tech
 	bc_tech
 	bb_tech
+	bbv_tech
 	shbb_tech
 	ss_tech
 	tp_tech
@@ -107,9 +108,25 @@ technology_folders = {
 	infantry_folder
 	support_folder
 	armour_folder = {
-		available = { 
+		available = {
+			HUN = { NOT = { is_in_faction_with = GER }}
+			
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
+			
+		}
+	}
+	armour_axis_folder = {
+		available = {
+			HUN = { is_in_faction_with = GER }
+			
+			NOT = { original_tag = GER }
+			NOT = { original_tag = JAP }
+			NOT = { original_tag = SOV }
+			NOT = { original_tag = FRA }
+			NOT = { original_tag = USA }
+			NOT = { original_tag = ENG }
+			NOT = { original_tag = HOL }
 		}
 	}
 	artillery_folder
@@ -142,7 +159,8 @@ technology_folders = {
 	luftwaffe_folder = { available = { original_tag = GER }}
 	kriegsmarine_folder = { available = { original_tag = GER }}
 	kriegsmarine_sub_folder = { available = { original_tag = GER }}
-	soviet_folder = { available = { original_tag = SOV }}
+	soviet_folder = { available = { or = { original_tag = SOV  original_tag = EST original_tag = LIT original_tag = LAT original_tag = SIK original_tag = MON original_tag = TAN } }}
+	sovietnaval_folder = { available = { original_tag = SOV }}
 	sovietair_folder = { available = { original_tag = SOV }}
 	british_folder = { available = { original_tag = ENG }}
 	britishnaval_folder = { available = { original_tag = ENG }}

@@ -1,16 +1,20 @@
 ideologies = {
 	
-	democratic = {
+	conservatism = {
 	
 		types = {
 			
-			conservatism = {
+			classical_liberalism = {
 			}
 		
-			liberalism = {
+			social_conservatism = {
 			}
 		
-			socialism = {
+			nationalism = {
+			}
+			
+			moderate = {
+			
 			}
 		}
 		
@@ -24,6 +28,122 @@ ideologies = {
 		}
 		
 		color = { 0 0 255 }
+		
+		rules = {
+			can_declare_war_on_same_ideology = no
+			can_force_government = yes
+			can_send_volunteers = yes
+			can_puppet = no
+			can_lower_tension = yes
+			can_only_justify_war_on_threat_country = yes
+			can_guarantee_other_ideologies = yes
+			#can_occupy_non_war = no
+		}
+		
+		war_impact_on_world_tension = -1.0
+		faction_impact_on_world_tension = -0.1
+		
+		modifiers = {
+			generate_wargoal_tension = 1.00
+			join_faction_tension = 0.80
+			lend_lease_tension = 0.50
+			send_volunteers_tension = 0.50
+			guarantee_tension = 0.25
+			take_states_cost_factor = 0.25
+			annex_cost_factor = 0.5
+		}
+		
+		faction_modifiers = {
+			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
+		}
+		ai_democratic = yes # uses the democratic AI behaviour
+	}
+	
+	liberalism = {
+	
+		types = {
+			
+			social_liberalism = {
+			}
+		
+			#US style progressivism, not European social democracy
+			progressivism = {
+			}
+		
+			populism = {
+			}
+			
+			centrism = {
+			}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_DEMOCRATIC_1"
+			"FACTION_NAME_DEMOCRATIC_2"
+			"FACTION_NAME_DEMOCRATIC_3"
+			"FACTION_NAME_DEMOCRATIC_4"
+			"FACTION_NAME_DEMOCRATIC_5"
+			"FACTION_NAME_DEMOCRATIC_6"
+		}
+		
+		color = { 94 242 242 }
+		
+		rules = {
+			can_declare_war_on_same_ideology = no
+			can_force_government = yes
+			can_send_volunteers = yes
+			can_puppet = no
+			can_lower_tension = yes
+			can_only_justify_war_on_threat_country = yes
+			can_guarantee_other_ideologies = yes
+			#can_occupy_non_war = no
+		}
+		
+		war_impact_on_world_tension = -1.0
+		faction_impact_on_world_tension = -0.1
+		
+		modifiers = {
+			generate_wargoal_tension = 1.00
+			join_faction_tension = 0.80
+			lend_lease_tension = 0.50
+			send_volunteers_tension = 0.50
+			guarantee_tension = 0.25
+			take_states_cost_factor = 0.25
+			annex_cost_factor = 0.5
+		}
+		
+		faction_modifiers = {
+			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
+		}
+		ai_democratic = yes # uses the democratic AI behaviour
+	}
+	
+	socialism = {
+	
+		types = {
+		
+			#Not Progressivism, but European style social democracy
+			social_democracy = {
+			}
+		
+			syndicalism = {
+			}
+		
+			#Not Nazis, more like KMT or Basque parties
+			#national_socialism = {
+			#}
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_DEMOCRATIC_1"
+			"FACTION_NAME_DEMOCRATIC_2"
+			"FACTION_NAME_DEMOCRATIC_3"
+			"FACTION_NAME_DEMOCRATIC_4"
+			"FACTION_NAME_DEMOCRATIC_5"
+			"FACTION_NAME_DEMOCRATIC_6"
+		}
+		
+		color = { 242 116 94 }
 		
 		rules = {
 			can_declare_war_on_same_ideology = no
@@ -132,7 +252,7 @@ ideologies = {
 			"FACTION_NAME_FASCIST_5"
 		}
 		
-		color = { 150 75 0 }
+		color = { 0 0 12 }
 		
 		war_impact_on_world_tension = 1.0			#evil!
 		faction_impact_on_world_tension = 1.0
@@ -164,8 +284,8 @@ ideologies = {
 			moderatism = {
 			}
 			
-			centrism = {
-			}
+			#centrism = {
+			#}
 			vichy = {
 			}
 			the_peoples_tutelage = {
@@ -213,9 +333,6 @@ ideologies = {
 	monarchism = {
 	
 		types = {
-		
-			parlamentarism = {
-			}
 			
 			absolutism = {
 			}
@@ -223,7 +340,7 @@ ideologies = {
 			emiratism = {
 			}
 			
-			popular = {
+			imperial = {
 			}
 		}
 		

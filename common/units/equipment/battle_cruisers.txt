@@ -153,16 +153,16 @@ equipments = {
 		anti_air_attack = 9.7
 		armor_value = 21
 		evasion = 4.7
-		surface_detection = 27
+		surface_detection = 30
 		surface_visibility = 28
 		sub_attack = 0
 		sub_detection = 5
 		naval_speed = 32.9
 		manpower = 1500
-		reliability = 0.8
+		reliability = 0.9
 		naval_range = 4000
 		max_strength = 2779
-		build_cost_ic = 9287
+		build_cost_ic = 9292
 		resources = {
 			oil = 2
 			steel = 5 
@@ -188,16 +188,16 @@ equipments = {
 		anti_air_attack = 22.2
 		armor_value = 12.7
 		evasion = 4.8
-		surface_detection = 27
+		surface_detection = 30
 		surface_visibility = 28
 		sub_attack = 0
 		sub_detection = 5
 		naval_speed = 33
-		reliability = 0.80
+		reliability = 0.9
 		naval_range = 5500
 		max_strength = 1933
 		manpower = 2251
-		build_cost_ic = 8978
+		build_cost_ic = 8649
 		resources = {
 			oil = 2
 			steel = 4 
@@ -212,9 +212,10 @@ equipments = {
 	#Renown Class
 	ENG_battle_cruiser_1 = {
 		archetype = battle_cruiser
-		priority = 30
+		priority = 0
 		type = { capital_ship }  
-	
+		is_buildable = no
+		
 		ap_attack = 16.6
 		attack = 207.6
 		fire_range = 30.6
@@ -223,16 +224,16 @@ equipments = {
 		anti_air_attack = 9.3
 		armor_value = 22.9
 		evasion = 4.2
-		surface_detection = 24
+		surface_detection = 27
 		surface_visibility = 28
 		sub_attack = 0
 		sub_detection = 5
 		naval_speed = 31.5
-		reliability = 0.75
+		reliability = 0.85
 		naval_range = 1850
 		max_strength = 3014
 		manpower = 1223
-		build_cost_ic = 6319
+		build_cost_ic = 8336
 		resources = {
 			oil = 2
 			steel = 5 
@@ -254,17 +255,17 @@ equipments = {
 		anti_air_attack = 6.1
 		armor_value = 30.5
 		evasion = 2.9
-		surface_detection = 20
+		surface_detection = 23
 		surface_visibility = 28
 		sub_attack = 0
 		sub_detection = 5
 		naval_speed = 39
-		reliability = 0.7
+		reliability = 0.8
 		naval_range = 2467
 		max_strength = 3972
 		port_capacity_usage = 5
 		manpower = 1325
-		build_cost_ic = 7916
+		build_cost_ic = 9255
 		resources = {
 			oil = 1
 			steel = 6 
@@ -286,17 +287,17 @@ equipments = {
 		anti_air_attack = 15.5
 		armor_value = 35.6
 		evasion = 2.8
-		surface_detection = 71
+		surface_detection = 27
 		surface_visibility = 29
 		sub_attack = 0
 		sub_detection = 5
 		naval_speed = 33
-		reliability = 0.8
+		reliability = 0.9
 		naval_range = 3820
 		max_strength = 4573
 		port_capacity_usage = 6
 		manpower = 1975
-		build_cost_ic = 8831
+		build_cost_ic = 9446
 		resources = {
 			oil = 2
 			steel = 7 
@@ -352,21 +353,122 @@ equipments = {
 		anti_air_attack = 7.6
 		armor_value = 21
 		evasion = 4.8
-		surface_detection = 28
+		surface_detection = 32
 		surface_visibility = 30
 		sub_attack = 0
 		sub_detection = 5
 		naval_speed = 35
-		reliability = 0.8
+		reliability = 0.9
 		naval_range = 6500
 		max_strength = 2798
 		port_capacity_usage = 4
 		manpower = 1965
-		build_cost_ic = 8787
+		build_cost_ic = 8833
 		resources = {
 			oil = 2
 			steel = 5
             chromium = 4
 		}
 	}
+	
+	### KRIEGSMARINE ### ### GER ### ### END ###
+	############################################
+	### RED FLEET ### ### SOV ### ### START ####
+	
+	#Project 25
+	SOV_battle_cruiser_1 = {
+		archetype = battle_cruiser
+		priority = 30
+		type = { capital_ship }  
+	
+		ap_attack = 19
+		attack = 238.4
+		fire_range = 47.5
+		torpedo_attack = 0
+		shore_bombardment = 9
+		anti_air_attack = 8.4
+		armor_value = 25
+		evasion = 4.4
+		surface_detection = 29
+		surface_visibility = 28
+		sub_attack = 0
+		sub_detection = 5
+		naval_speed = 33.5
+		reliability = 0.85
+		naval_range = 3400
+		max_strength = 3231
+		port_capacity_usage = 4
+		manpower = 1200
+		build_cost_ic = 8456
+		resources = {
+			oil = 2
+			steel = 5
+            chromium = 4
+		}
+	}
+	#Kronshtadt Class
+	SOV_battle_cruiser_2 = {
+		archetype = battle_cruiser
+		priority = 30
+		parent = SOV_battle_cruiser_1
+		type = { capital_ship }  
+	
+		ap_attack = 19
+		attack = 237.5
+		fire_range = 47.5
+		torpedo_attack = 0
+		shore_bombardment = 9
+		anti_air_attack = 8.9
+		armor_value = 23
+		evasion = 3.8
+		surface_detection = 28
+		surface_visibility = 29
+		sub_attack = 0
+		sub_detection = 5
+		naval_speed = 32
+		reliability = 0.85
+		naval_range = 3797
+		max_strength = 3104
+		port_capacity_usage = 5
+		manpower = 1300
+		build_cost_ic = 8525
+		resources = {
+			oil = 2
+			steel = 6
+            chromium = 5
+		}
+	}
+	#Kronshtadt Ger.38 Class
+	SOV_battle_cruiser_2b = {
+		archetype = battle_cruiser
+		priority = 30
+		parent = SOV_battle_cruiser_2
+		type = { capital_ship }  
+	
+		ap_attack = 17.9
+		attack = 224.4
+		fire_range = 36.5
+		torpedo_attack = 0
+		shore_bombardment = 12
+		anti_air_attack = 8.9
+		armor_value = 23
+		evasion = 3.7
+		surface_detection = 28
+		surface_visibility = 29
+		sub_attack = 0
+		sub_detection = 5
+		naval_speed = 32
+		reliability = 0.85
+		naval_range = 3797
+		max_strength = 3129
+		port_capacity_usage = 5
+		manpower = 1300
+		build_cost_ic = 8683
+		resources = {
+			oil = 2
+			steel = 6
+            chromium = 5
+		}
+	}
+	
 }

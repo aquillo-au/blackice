@@ -4,10 +4,6 @@ oob = "SPR_1936"
 
 set_research_slots = 3
 
-add_ideas = {
-		
-		neutrality_idea
-	}
 
 set_technology = {
 	############### infantry #############
@@ -51,20 +47,26 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 47
+		socialism = { 
+			popularity = 38
 		}
-
+		liberalism = {
+			popularity = 4
+		}
 		fascism = {
-			popularity = 46
+			popularity = 34
+		}
+		
+		conservatism = {
+			popularity = 14
 		}
 		
 		communism = {
-			popularity = 7
+			popularity = 10
 		}
 	}
 	
-	ruling_party = democratic
+	ruling_party = liberalism
 	last_election = "1933.2.16"
 	election_frequency = 36
 	elections_allowed = yes
@@ -137,16 +139,18 @@ set_national_unity = 0.5
 	set_politics = {
 
 		parties = {
-			democratic = { 
-				popularity = 22
-			}
 
 			fascism = {
-				popularity = 76
+				popularity = 70
 			}
-			
+			conservatism = {
+				popularity = 10
+			}
+			socialism = {
+				popularity = 12
+			}
 			communism = {
-				popularity = 2
+				popularity = 8
 			}
 		}
 		
@@ -165,9 +169,9 @@ create_country_leader = {
 	desc = "POLITICS_MANUEL_AZANA_DESC"
 	picture = "Portrait_Spain_Manuel_Azana.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = social_democracy
 	traits = {
-		#
+		ineffective_politician
 	}
 }
 
@@ -189,7 +193,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		#
+		dictator
 	}
 }
 
@@ -198,7 +202,7 @@ create_country_leader = {
 	desc = "POLITICS_ALEJANDRO_LERROUX_DESC"
 	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	expire = "1965.1.1"
-	ideology = centrism
+	ideology = moderatism
 	traits = {
 		#
 	}

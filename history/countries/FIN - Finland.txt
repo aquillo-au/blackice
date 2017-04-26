@@ -5,8 +5,7 @@ oob = "FIN_1936"
 set_research_slots = 4
 
 add_ideas = {
-	limited_conscription
-	#neutrality_idea
+	cons_one
 }
 
 set_technology = {
@@ -42,7 +41,7 @@ set_technology = {
 set_convoys = 200
 
 add_ideas = {
-	limited_conscription
+	cons_one
 }
 
 1939.1.1 = {
@@ -108,12 +107,12 @@ add_ideas = {
 set_politics = {
 
 	parties = {
-		democratic = { 
+		conservatism = { 
 			popularity = 10
 		}
 
 		fascism = {
-			popularity = 1
+			popularity = 10
 		}
 		
 		communism = {
@@ -121,7 +120,7 @@ set_politics = {
 		}
 
 		neutrality = {
-			popularity = 88
+			popularity = 79
 		}
 	}
 	
@@ -135,7 +134,7 @@ set_politics = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
+			conservatism = { 
 				popularity = 10
 			}
 
@@ -152,7 +151,7 @@ set_politics = {
 			}
 		}
 		
-		ruling_party = democratic
+		ruling_party = neutrality
 		last_election = "1939.7.1"
 		election_frequency = 36
 		elections_allowed = yes
@@ -163,7 +162,7 @@ create_country_leader = {
 	desc = "POLITICS_RISTO_HEIKKI_RYT_DESC"
 	picture = "Portrait_Finland_Risto_Heikki_Ryti.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = social_conservatism
 	traits = {
 		#
 	}
@@ -196,7 +195,7 @@ create_country_leader = {
 	desc = "POLITICS_KYÖSTI_KALLIO_DESC"
 	picture = "gfx/leaders/FIN/Portrait_Finland_Kyosti_Kallio.dds"
 	expire = "1965.1.1"
-	ideology = centrism
+	ideology = moderatism
 	traits = {
 		#
 	}

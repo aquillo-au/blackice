@@ -5,18 +5,51 @@ oob = "ITA_1936"
 set_research_slots = 5
 
 add_ideas = {
-	victor_emmanuel
 	vittoria_mutilata
-	limited_exports
-	limited_conscription
-	partial_economic_mobilisation
+	
+	#politicians
+	victor_emmanuel
+	ITA_paolo_thaon_di_revel
+	cesare_ame
+	ITA_giovanni_marinelli
+	ITA_gian_galeazzo_ciano
+	
+	#laws
+		low_economic_mobilisation
+		cons_three
+		press_state
+		mob_limited
+		tax_average
+		edu_low
+		foreign_warmonger
+		limited_exports
+		tariffs_high
+		fdi_regulated
+		train_low
+		key_industries
+		age_19
+		unity_united_nation
 }
+
+set_country_flag = mob_limited
+set_country_flag = foreign_warmonger
+set_country_flag = tax_average
+set_country_flag = edu_low
+set_country_flag = press_state
+set_country_flag = cons_three
+set_country_flag = tariffs_high
+set_country_flag = train_low
+set_country_flag = key_industries
+set_country_flag = age_19
+set_country_flag = limited_exports
+set_country_flag = low_economic_mobilisation
+set_country_flag = fdi_regulated
+set_country_flag = labor_allowed
 
 # Starting tech
 set_technology = {
 	################ infantry ############
 	infantry_weapons = 1
-	
 	infantry_weapons1 = 1
 	hmg = 1
 	mortars = 1
@@ -113,7 +146,7 @@ set_technology = {
 
 		#laws
 		partial_economic_mobilisation
-		extensive_conscription
+		cons_expanded_draft
 	}
 
 	complete_national_focus = ITA_ethiopian_war_logistics
@@ -186,7 +219,7 @@ set_technology = {
 		concentrated_industry3 = 1
 	}
 	
-	set_national_unity = 0.8
+	set_national_unity = 0.75
 	GER = { add_to_faction = ITA }
 }
 
@@ -198,16 +231,22 @@ set_national_unity = 0.6
 set_politics = {
 
 	parties = {
-		democratic = { 
+		conservatism = { 
+			popularity = 10
+		}
+		liberalism = { 
 			popularity = 0
 		}
-
+		socialism = { 
+			popularity = 10
+		}
+		
 		fascism = {
-			popularity = 100
+			popularity = 75
 		}
 		
 		communism = {
-			popularity = 0
+			popularity = 5
 		}
 	}
 	

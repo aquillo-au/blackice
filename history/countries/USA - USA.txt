@@ -8,8 +8,7 @@ set_research_slots = 6
 set_technology = {
 	################### infantry #############
 	infantry_weapons = 1
-	#infantry_weapons1 = 1  ## The M1903A3 came into existance only after 1940.  Using Rock Island Arsenal old but retooled equipment.  
-	improved_infantry_weapons = 1	
+	infantry_weapons1 = 1
 	marines = 1
 	marines2 = 1
 	amphibious_equipment = 1
@@ -20,6 +19,7 @@ set_technology = {
 	tech_Garrison = 1
 	tech_Headquarters = 1
 	hmg = 1
+	hmg_2 = 1
 	mortars = 1
 	################# support #####################
 	tech_recon = 1
@@ -38,12 +38,14 @@ set_technology = {
 	medartillery1 = 1
 	interwar_antiair = 1
 	interwar_antitank = 1
+	superartillery1 = 1
 	################### armor ############
 	gwtank = 1
-	#tech_Tankettes = 1
+	tech_Tankettes = 1
 	tech_Gun_Carriers = 1
 	#
 	tech_ac_recon = 1
+	tech_ac_recon2 = 1
 	american_tech_1 = 1
 	american_tech_2 = 1
 	american_tech_3 = 1
@@ -99,9 +101,6 @@ set_technology = {
 	armor_industry = 1
 	vehicle_industry = 1
 	vehicle_industry2 = 1
-    smallarms_industry = 1
-	Ltaircraft_industry = 1
-	Hvaircraft_industry = 1
 	ship_industry = 1
 	ship_industry2 = 1
 	infra_works = 1
@@ -125,7 +124,46 @@ set_technology = {
 	schools_work = 1
 	schools_work2 = 1
 }
-
+add_ideas = {
+		#politicians
+		john_nance_garner
+		usa_cordell_hull
+		j_edgar_hoover
+		henry_morgenthau
+		frank_rowlett
+		
+		
+		#laws
+		cons_volunteer
+		tax_high
+		edu_high
+		mob_reserve
+		foreign_isolationism
+		export_focus
+		press_free
+		train_low
+		tariffs_high
+		fdi_regulated
+		train_low
+		private_control
+		unity_divided_nation
+		
+	}
+set_country_flag = mob_reserve
+set_country_flag = foreign_isolationism
+set_country_flag = Tax_high
+set_country_flag = Edu_high
+set_country_flag = Press_free
+set_country_flag = Cons_volunteer
+set_country_flag = tariffs_high
+set_country_flag = fdi_regulated
+set_country_flag = train_low
+set_country_flag = private_control
+set_country_flag = age_19
+set_country_flag = export_focus
+set_country_flag = civilian_economy
+set_country_flag = labor_allowed
+	
 #Monroe Doctrine
 give_guarantee = CAN
 give_guarantee = MEX
@@ -165,7 +203,7 @@ give_guarantee = URG
 
 		#laws
 		isolation
-		volunteer_only
+		cons_volunteer
 
 		new_deal
 	}
@@ -185,6 +223,8 @@ give_guarantee = URG
 	complete_national_focus = USA_fund_the_navy
 
 	set_global_flag = earhart_disappeared
+	
+	
 	oob = "USA_1939"
 	set_technology = {
 		fighter1 = 1
@@ -242,26 +282,34 @@ give_guarantee = URG
 }
 
 set_convoys = 800
-set_national_unity = 0.6
+set_national_unity = 0.55
 
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 99
+		conservatism = { 
+			popularity = 32
+		}
+		
+		liberalism = {
+			popularity = 55
+		}
+		
+		socialism = {
+			popularity = 6
 		}
 
 		fascism = {
-			popularity = 0
+			popularity = 2
 		}
 		
 		communism = {
-			popularity = 1
+			popularity = 5
 			#banned = no #default is no
 		}
 	}
 	
-	ruling_party = democratic
+	ruling_party = liberalism
 	last_election = "1932.11.8"
 	election_frequency = 48
 	elections_allowed = yes
@@ -270,7 +318,7 @@ set_politics = {
 add_ideas = {
 	undisturbed_isolation
 	great_depression
-	disarmed_nation
+	mob_reserve
 	free_trade
 	home_of_the_free
 }
@@ -288,21 +336,29 @@ set_autonomy = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
-				popularity = 99
-			}
-
-			fascism = {
-				popularity = 0
-			}
-			
-			communism = {
-				popularity = 1
-				#banned = no #default is no
-			}
+			conservatism = { 
+			popularity = 38
 		}
 		
-		ruling_party = democratic
+		liberalism = {
+			popularity = 48
+		}
+		
+		socialism = {
+			popularity = 6
+		}
+
+		fascism = {
+			popularity = 3
+		}
+		
+		communism = {
+			popularity = 5
+			#banned = no #default is no
+		}
+		}
+		
+		ruling_party = liberalism
 		last_election = "1936.11.3"
 		election_frequency = 48
 		elections_allowed = yes
@@ -314,9 +370,12 @@ create_country_leader = {
 	desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
 	picture = "Portrait_USA_Franklin_Roosevelt.dds"
 	expire = "1947.1.1"
-	ideology = liberalism
+	ideology = progressivism
 	traits = {
 		dislikes_germany
+		popular_figurehead
+		liberal
+		charismatic
 	}
 }
 
@@ -334,7 +393,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Earl Browder"
 	desc = "POLITICS_EARL_BROWDER_DESC"
-	picture = "Portrait_USA_Generic_1.dds"
+	picture = "Portrait_USA_earl_browder.dds"
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {

@@ -1703,10 +1703,18 @@ focus_tree = {
 		icon = GFX_ENG_alliance
 		available = {
 			is_puppet = no
-			has_government = democratic
+			OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+			}
 			ENG = {
 				exists = yes
-				has_government = democratic
+				OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+			}
 			}
 			NOT = { has_war_with = ENG }
 		}
@@ -2390,7 +2398,11 @@ focus_tree = {
 			}
 			every_other_country = {
 				limit = { 
-					has_government = democratic
+					OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+			}
 					num_of_factories > 30
 				}
 				add_opinion_modifier = { 
@@ -3241,10 +3253,10 @@ focus_tree = {
 		cost = 10
 		bypass = {
 			OR = {
-				has_idea = extensive_conscription
-				has_idea = service_by_requirement
-				has_idea = all_adults_serve
-				has_idea = scraping_the_barrel
+				has_idea = cons_three
+				has_idea = cons_expanded_draft
+				has_idea = cons_extensive_draft
+				has_idea = cons_barrel
 			}
 		}
 		available_if_capitulated = yes
@@ -3253,7 +3265,7 @@ focus_tree = {
 			factor = 80
 		}
 		completion_reward = {
-			add_ideas = extensive_conscription
+			add_ideas = cons_extensive_draft
 		}
 	}
 	

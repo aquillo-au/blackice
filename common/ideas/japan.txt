@@ -24,7 +24,10 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					has_government = democratic
+					##has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 			
@@ -63,7 +66,10 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					has_government = democratic
+					##has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 			
@@ -86,7 +92,10 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					has_government = democratic
+					##has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 			
@@ -281,7 +290,10 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					has_government = democratic
+					##has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 			
@@ -334,7 +346,11 @@ ideas = {
 			allowed_civil_war = {
 				AND = {
 					original_tag = JAP
-					has_government = democracy
+					OR = {
+						has_government = conservatism
+						has_government = socialism
+						has_government = liberalism
+					}
 				}
 			}
 			
@@ -392,8 +408,112 @@ ideas = {
 		}
 	}
 	
-	
-	political_advisor = {	
+##################
+####Politicians
+##################
+#HoS
+head_of_state = {
+	nosaka_hos = {
+		allowed = {
+			original_tag = "JAP"
+			has_government = communism
+		}
+	}
+	hirohito_hos = {
+		allowed = {
+			original_tag = "JAP"
+		}
+		picture = idea_hirohito
+	}
+}
+
+#Foreign
+foreign_minister = {
+JAP_chiune_sugihara = {
+			
+			picture = generic_political_advisor_asia_3
+			
+			allowed = {
+				original_tag = JAP
+			}
+			
+			traits = { compassionate_gentleman }
+		}
+hachiro_arita = {
+			
+			picture = idea_hachiro_arita
+			
+			allowed = {
+				original_tag = JAP
+			}
+			
+			traits = { smooth_talking_charmer }
+		}
+}
+
+#Propaganda/Security
+interior_minister = {
+shizuichi_tanaka = {
+			
+			picture = idea_shizuichi_tanaka
+			
+			allowed = {
+				original_tag = JAP
+			}
+			
+			traits = { prince_of_terror }
+		}
+}
+
+#Intelligence
+intel_minister = {
+harukichi_hyakutake = {
+			
+			picture = idea_harukichi_hyakutake
+			
+			allowed = {
+				original_tag = JAP
+			}
+			
+			traits = { dismal_enigma }
+		}
+		seizo_arisue = {
+			
+			picture = idea_seizo_arisue
+			
+			allowed = {
+				original_tag = JAP
+			}
+			
+			traits = { dismal_enigma }
+		}
+}
+
+#Economic
+economic_minister = {
+okinori_kaya = {			
+			picture = idea_okinori_kaya
+			
+			allowed = {
+				original_tag = JAP
+			}
+			
+			traits = { armaments_organizer }
+		}
+}
+
+#Advisors
+political_advisor = {	
+sadao_araki = {
+			
+			picture = idea_sadao_araki
+			
+			allowed = {
+				original_tag = JAP
+			}
+			
+			traits = { fascist_demagogue schemer powerful }
+		}
 		sanzo_nosaka = {
 			
 			
@@ -429,7 +549,7 @@ ideas = {
 			
 
 			
-			traits = { democratic_reformer }
+			traits = { liberal_reformer }
 	
 			on_add = {
 				country_event = political.13
@@ -437,7 +557,10 @@ ideas = {
 	
 			do_effect = {
 				NOT = {
-					has_government = democratic
+					##has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 			
@@ -481,28 +604,6 @@ ideas = {
 			}
 			
 			traits = { silent_workhorse }
-		}
-
-		JAP_hiroshi_oshima = {
-			
-			picture = generic_political_advisor_asia_1
-			
-			allowed = {
-				original_tag = JAP
-			}
-			
-			traits = { prince_of_terror }
-		}
-
-		JAP_chiune_sugihara = {
-			
-			picture = generic_political_advisor_asia_3
-			
-			allowed = {
-				original_tag = JAP
-			}
-			
-			traits = { compassionate_gentleman }
 		}
 	}
 		
@@ -1438,6 +1539,7 @@ ideas = {
 						
 			allowed = {
 				original_tag = JAP
+				NOT = { has_country_flag = yamamoto_dead }
 			}
 			
 			cost = 250

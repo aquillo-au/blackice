@@ -21,7 +21,6 @@ set_technology = {
 	tech_infantry_uniforms = 1
 	marines = 1
 	infantry_weapons = 1
-	
 	infantry_weapons1 = 1
 	SMG_team = 1
 	tech_Garrison = 1
@@ -171,16 +170,24 @@ create_import = {
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 0
+		conservatism = { 
+			popularity = 5
 		}
 
+		liberalism = { 
+			popularity = 2
+		}
+		
+		socialism = { 
+			popularity = 7
+		}
+		
 		fascism = {
-			popularity = 100
+			popularity = 83
 		}
 		
 		communism = {
-			popularity = 0
+			popularity = 3
 			banned = yes #default is no
 		}
 	}
@@ -198,12 +205,51 @@ add_to_faction = GER
 add_ideas = {
 	sour_loser
 	general_staff
+	
+	#Politicians
+	hitler_hos
+	rudolf_hess
+	joseph_goebbels
+	konstantin_von_neurath
+	hjalmar_schacht
+	hermann_goering
+	wilhelm_canaris
+	heinrich_himmler
+	werner_von_fritsch
+	
+	#Laws
 	limited_exports
-	limited_conscription
 	partial_economic_mobilisation
+	foreign_warmonger
+	press_state
+	tax_high
+	edu_high
+	cons_three
+	mob_standing
+	age_18
+	key_industries
+	fdi_regulated
+	tariffs_high
+	unity_united_nation
+	
 	# Factories
 	#GER_tankfactory2
 }
+
+set_country_flag = mob_standing
+set_country_flag = foreign_warmonger
+set_country_flag = Tax_high
+set_country_flag = Edu_high
+set_country_flag = press_state
+set_country_flag = cons_three
+set_country_flag = tariffs_high
+set_country_flag = train_medium
+set_country_flag = key_industries
+set_country_flag = age_18
+set_country_flag = limited_exports
+set_country_flag = partial_economic_mobilisation
+set_country_flag = fdi_regulated
+set_country_flag = labor_allowed
 
 create_country_leader = {
 	name = "Adolf Hitler"
@@ -212,7 +258,8 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = nazism
 	traits = {
-		dictator
+		a_hitler
+		charismatic
 	}
 }
 
@@ -221,7 +268,7 @@ create_country_leader = {
 	desc = "POLITICS_KONRAD_ADENAUER_DESC"
 	picture = "Portrait_Germany_Konrad_Adenauer.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = moderate
 	traits = {
 	}
 }
@@ -238,18 +285,18 @@ create_country_leader = {
 	}
 }
 
-#create_country_leader = {
-#	name = "Otto Wels"
-#	desc = "POLITICS_OTTO_WELS_DESC"
-#	picture = "Portrait_Germany_Adolf_Hitler.dds"
-#	expire = "1939.1.16"
-#	ideology = socialism
-#	traits = {
-#		exiled
-#		union_man
-#	}
-#}
-#
+create_country_leader = {
+	name = "Otto Wels"
+	desc = "POLITICS_OTTO_WELS_DESC"
+	picture = "portrait_germany_otto_wels.dds"
+	expire = "1939.1.16"
+	ideology = social_democracy
+	traits = {
+		exiled
+		union_man
+	}
+}
+
 #create_country_leader = {
 #	name = "Ernst Thälmann"
 #	desc = "POLITICS_ERNST_THALMANN_DESC"
@@ -298,7 +345,6 @@ create_field_marshal = {
 	skill = 2
 	id = 44
 }
-
 create_corps_commander = {
 	name = "Paulus, Friedrich"
 	picture = "Portrait_Germany_Friedrich_Paulus.dds"
@@ -921,14 +967,14 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Daluege.dds"
 	traits = { Waffen_SS }
 	skill = 1
-	#id = 15
+	id = 200
 }
 create_corps_commander = {
 	name = "Waldeck und Pyrmon, Prinz zu"	#1936
 	picture = "Portrait_Germany_Prinz.dds"
 	traits = { Waffen_SS Incompetent_General }
 	skill = 1
-	#id = 15
+	id = 201
 }
 
 create_corps_commander = {
@@ -936,7 +982,7 @@ create_corps_commander = {
 	picture = "Portrait_Germany_generic_ss_3.dds"
 	traits = { offensive_doctrine_CC Waffen_SS }
 	skill = 1
-	#id = 15
+	id = 202
 }
 
 create_corps_commander = {
@@ -944,7 +990,7 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Demelhuber.dds"
 	traits = { offensive_doctrine_CC Waffen_SS }
 	skill = 3
-	#id = 15
+	id = 203
 }
 
 create_corps_commander = {
@@ -952,7 +998,7 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Heissmeyer.dds"
 	traits = {Waffen_SS  Incompetent_General }
 	skill = 1
-	#id = 15
+	id = 204
 }
 
 create_corps_commander = {
@@ -960,9 +1006,15 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Steiner.dds"
 	traits = { panzer_leader offensive_doctrine_CC defensive_doctrine_CC Waffen_SS }
 	skill = 4
-	#id = 15
+	id = 205
 }
-
+create_field_marshal = {
+	name = "Keitel, Wilhelm"
+	picture = "Portrait_Germany_Friedrich_Paulus.dds"
+	traits = { Bad_General defensive_doctrine_FM }
+	skill = 1
+	id = 207
+}
 ### Ship Variants ###
 ## 1936 Start ##
 ################### BICE Variants ##################
@@ -1039,7 +1091,7 @@ create_equipment_variant = {
 
 		#laws
 		war_economy
-		extensive_conscription
+		cons_expanded_draft
 	}
 	
 	oob = "GER_1939"

@@ -5,7 +5,7 @@ oob = "NOR_1936"
 set_research_slots = 3
 
 add_ideas = {
-	limited_conscription
+	cons_one
 }
 
 set_technology = {
@@ -99,17 +99,17 @@ set_technology = {
 }
 
 set_convoys = 1400	# biggest merchant marine in the world
-set_national_unity = 0.5
+set_national_unity = 0.7
 
 set_politics = {
 
 	parties = {
 		monarchism = { 
-			popularity = 94
+			popularity = 10
 		}
 		
-		democratic = {
-			popularity = 2
+		conservatism = {
+			popularity = 24
 		}		
 
 		fascism = {
@@ -123,10 +123,15 @@ set_politics = {
 		neutrality = {
 		    popularity = 0
 		}	
-		
+		socialism = {
+			popularity = 43
+		}
+		liberalism = {
+			popularity = 19
+		}
 	}
 	
-	ruling_party = monarchism
+	ruling_party = socialism
 	last_election = "1933.10.16"
 	election_frequency = 36
 	elections_allowed = yes
@@ -148,7 +153,7 @@ set_politics = {
 				popularity = 2
 			}
 
-			democratic = {
+			conservatism = {
 				popularity = 6
 			}			
 			
@@ -169,7 +174,7 @@ create_country_leader = {
 	desc = "POLITICS_JOHAN_NYGAARDSVOLD_DESC"
 	picture = "nor_king_haakon.dds"
 	expire = "1965.1.1"
-	ideology = parlamentarism
+	ideology = absolutism
 	traits = {
 		#
 	}
@@ -180,7 +185,7 @@ create_country_leader = {
 	desc = "POLITICS_JOHAN_NYGAARDSVOLD_DESC"
 	picture = "Portrait_Norway_Johan_Nygaardsvold.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = social_democracy
 	traits = {
 		#
 	}

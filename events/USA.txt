@@ -4,7 +4,7 @@
 
 add_namespace = usa
 
-# Amelia Eartharts wants to join the USAAC
+# Amelia Earhart wants to join the USAAC
 country_event = {
 	id = usa.1
 	title = usa.1.t
@@ -205,7 +205,11 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		democratic > 0.5
+		OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+		}
 		date > 1936.1.1
 		date < 1937.1.1
 	}
@@ -227,7 +231,10 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}		
-		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = yes
+		}
 		if = {
 			limit = {
 				has_idea = standard_oil_california
@@ -240,12 +247,14 @@ country_event = {
 			}
 			add_ideas = standard_oil_california
 		}
+		add_ideas = frank_knox
+		remove_ideas = john_nance_garner
 		create_country_leader = {
 			name = "Alf Landon"
 			desc = "POLITICS_ALF_LANDON_DESC"
 			picture = "Portrait_USA_Generic_2.dds"
 			expire = "1965.1.1"
-			ideology = conservatism
+			ideology = classical_liberalism
 			traits = {
 				staunch_constitutionalist
 			}
@@ -264,7 +273,11 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		democratic > 0.5
+		OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+		}
 		date > 1940.1.1
 		date < 1941.1.1
 		has_idea = new_deal
@@ -278,6 +291,8 @@ country_event = {
 		add_political_power = 40
 		add_national_unity = -0.15
 		remove_ideas = great_depression
+		add_ideas = henry_wallace
+		remove_ideas = john_nance_garner
 	}
 
 	option = {
@@ -289,19 +304,24 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}	
-		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = yes
+		}
 		remove_ideas = new_deal
 		add_ideas = wilkies_new_deal
 		create_country_leader = {
 			name = "Wendell Wilkie"
 			desc = "POLITICS_WENDELL_WILKIE_DESC"
 			picture = "Portrait_USA_Wendell_Willkie.dds"
-			expire = "1965.1.1"
-			ideology = liberalism
+			expire = "1944.1.1"
+			ideology = moderate
 			traits = {
 				
 			}
 		}
+		add_ideas = charles_mcnary
+		remove_ideas = john_nance_garner
 		remove_ideas = great_depression
 	}
 }
@@ -317,7 +337,11 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		democratic > 0.5
+		OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+		}
 		date > 1940.1.1
 		date < 1941.1.1
 		NOT = { has_idea = new_deal }
@@ -332,10 +356,15 @@ country_event = {
 
 	option = { 
 		name = usa.8.b
-		set_party_name = { ideology = democratic long_name = USA_democratic_party name = USA_democratic_party }
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
 		add_ideas = new_deal
 		retire_country_leader = yes
 		remove_ideas = great_depression
+		add_ideas = henry_wallace
+		remove_ideas = frank_knox
 	}
 }
 
@@ -350,7 +379,11 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		democratic > 0.5
+		OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+		}
 		date > 1944.1.1
 		date < 1945.1.1
 		has_idea = new_deal
@@ -375,13 +408,18 @@ country_event = {
 			}
 		}		
 		remove_ideas = new_deal
-		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = yes
+		}
+		add_ideas = john_bricker
+		remove_ideas = henry_wallace
 		create_country_leader = {
 			name = "Thomas E. Dewey"
 			desc = "POLITICS_THOMAS_DEWEY_DESC"
 			picture = "Portrait_USA_Generic_2.dds"
 			expire = "1965.1.1"
-			ideology = conservatism
+			ideology = moderate
 			traits = {
 				
 			}
@@ -400,7 +438,11 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		democratic > 0.5
+		OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+		}
 		date > 1944.1.1
 		date < 1945.1.1
 		NOT = { has_idea = new_deal }
@@ -414,7 +456,12 @@ country_event = {
 	option = { 
 		name = usa.10.b
 		add_ideas = new_deal
-		set_party_name = { ideology = democratic long_name = USA_democratic_party name = USA_democratic_party }
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		add_ideas = henry_wallace
+		remove_ideas = charles_mcnary
 		if = {
 			limit = { has_idea = wilkies_new_deal }
 			remove_ideas = wilkies_new_deal
@@ -434,7 +481,11 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		democratic > 0.5
+		OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+		}
 		date > 1944.1.1
 		date < 1945.1.1
 		has_idea = new_deal
@@ -462,13 +513,18 @@ country_event = {
 			}
 		}
 		remove_ideas = new_deal
-		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = yes
+		}
+		add_ideas = john_bricker
+		remove_ideas = henry_wallace
 		create_country_leader = {
 			name = "Douglas MacArthur"
 			desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
 			picture = "Portrait_USA_Douglas_MacArthur.dds"
 			expire = "1965.1.1"
-			ideology = conservatism
+			ideology = nationalism
 			traits = {
 				
 			}
@@ -488,7 +544,11 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		democratic > 0.5
+		OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+		}
 		date > 1944.1.1
 		date < 1945.1.1
 		has_idea = new_deal
@@ -517,7 +577,7 @@ country_event = {
 		tag = USA
 		date > 1945.3.29
 		has_idea = new_deal
-		has_government = democratic
+		has_government = liberalism
 	}
 
 	fire_only_once = yes
@@ -530,12 +590,13 @@ country_event = {
 		name = usa.13.a
 		add_political_power = -40
 		kill_country_leader = yes
+		remove_ideas = harry_truman
 		create_country_leader = {
 			name = "Harry S. Truman"
 			desc = "POLITICS_HARRY_TRUMAN_DESC"
 			picture = "Portrait_USA_Harry_Truman.dds"
 			expire = "1965.1.1"
-			ideology = liberalism
+			ideology = progressivism
 			traits = {
 				
 			}
@@ -561,12 +622,12 @@ country_event = {
 	option = { 
 		name = usa.14.a
 		set_politics = {
-			ruling_party = democratic
+			ruling_party = liberalism
 			elections_allowed = yes
 		}
 		set_political_party = {
-			ideology = democratic
-			popularity = 0.5
+			ideology = liberalism
+			popularity = 0.4
 		}
 		remove_ideas = great_depression
 		add_timed_idea = { idea = fascism_defeated days = 730 }
@@ -855,12 +916,12 @@ country_event = {
 	option = { 
 		name = usa.24.a
 		set_politics = {
-			ruling_party = democratic
+			ruling_party = liberalism
 			elections_allowed = yes
 		}
 		set_political_party = {
-			ideology = democratic
-			popularity = 0.5
+			ideology = liberalism
+			popularity = 0.4
 		}
 		remove_ideas = great_depression
 		add_timed_idea = { idea = communism_defeated days = 730 }
@@ -1795,7 +1856,7 @@ country_event = {
 	trigger = {
 		tag = USA
 		is_ai = yes
-			threat > 0.5
+			threat > 0.3
 			has_war = yes
 			}
 	
@@ -1807,7 +1868,7 @@ country_event = {
 		name = usa.53.a
 		
 		hidden_effect = {
-		
+		add_manpower = 1000000
 		random_owned_controlled_state = {
 				limit = {
 					arms_factory > 0
@@ -1873,7 +1934,7 @@ country_event = {
 	trigger = {
 		tag = USA
 		is_ai = yes
-			threat > 0.8
+			threat > 0.6
 			has_war = yes
 			}
 	
@@ -1885,6 +1946,7 @@ country_event = {
 		name = usa.54.a
 		
 		hidden_effect = {
+		add_manpower = 2000000
 		random_owned_controlled_state = {
 				limit = {
 					arms_factory > 0
@@ -2010,9 +2072,10 @@ country_event = {
 	}
 	
 	option = {
-		name = usa.54.a
+		name = usa.55.a
 		
 	hidden_effect = {
+		add_manpower = 2000000
 		random_owned_controlled_state = {
 				limit = {
 					arms_factory > 0
@@ -2218,5 +2281,35 @@ country_event = {
 				}
 			}
 	}
+}
+}
+country_event = {
+	id = usa.56
+	title = usa.56.t
+	desc = usa.56.d
+	picture = GFX_report_event
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		date > 1936.1.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.56.a
+		
+		hidden_effect = {
+				load_oob = "USA_AI_starting_templates"
+		}
+		
+		
+	}
+
 }
 # destroyers x 50

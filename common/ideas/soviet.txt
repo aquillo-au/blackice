@@ -10,7 +10,9 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					has_government = democratic
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
 				}
 			}
 
@@ -50,7 +52,9 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					has_government = democratic
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
 				}
 			}
 
@@ -199,7 +203,7 @@ ideas = {
 			
 			modifier = {
 				drift_defence_factor = 0.5
-				#production_speed_buildings_factor = -0.1
+				production_speed_buildings_factor = -0.1
 			}
 			rule = {
 				can_create_factions = yes
@@ -639,9 +643,12 @@ ideas = {
 
 	}
 
-
-	political_advisor = {
-		mikhail_kalinin = {
+##################
+####Politicians
+##################
+#HoS
+head_of_state = {
+	mikhail_kalinin = {
 			
 			
 			allowed = {
@@ -657,13 +664,55 @@ ideas = {
 			
 			traits = { popular_figurehead }
 		}
+	khrushchev_hos = {
+		allowed = {
+				original_tag = SOV
+				has_government = communism
+		}
+	}
+	kerensky_hos = {
+		allowed = {
+				original_tag = SOV
+			OR= {
+				has_government = liberalism
+				has_government = conservatism
+				has_government = socialism
+			}
+		}
+	}
+	rodzaevsky_hos = {
+		allowed = {
+				original_tag = SOV
+				has_government = fascism
+		}
+	}
+}
 
-		SOV_lavrentiy_beria = {
+#Foreign
+foreign_minister = {
+
+
+		SOV_vyacheslav_molotov = {
 			
-			picture = generic_army_europe_2
+			picture = idea_vyacheslav_molotov
 			
 			allowed = {
 				original_tag = SOV
+			}
+			
+			traits = { smooth_talking_charmer }
+	}
+}
+
+#Propaganda/Security
+interior_minister = {
+	SOV_lavrentiy_beria = {
+			
+			picture = idea_lavrentiy_beria
+			
+			allowed = {
+				original_tag = SOV
+				date > 1938.1.1
 			}
 
 			available = 
@@ -677,34 +726,11 @@ ideas = {
 				}
 			}
 			
-			traits = { ideological_crusader }
+			traits = { prince_of_terror }
 		}
-
-		SOV_vyacheslav_molotov = {
-			
-			picture = generic_political_advisor_europe_1
-			
-			allowed = {
-				original_tag = SOV
-			}
-			
-			traits = { smooth_talking_charmer }
-		}
-
-		SOV_nikolai_voznesensky = {
-			
-			picture = generic_political_advisor_europe_2
-			
-			allowed = {
-				original_tag = SOV
-			}
-			
-			traits = { captain_of_industry }
-		}
-
 		SOV_nikolai_yezhov = {
 			
-			picture = generic_army_europe_2
+			picture = idea_nikolai_yezhov
 			
 			allowed = {
 				original_tag = SOV
@@ -718,8 +744,48 @@ ideas = {
 			
 			traits = { prince_of_terror }
 		}
+}
 
-		
+#Intelligence
+intel_minister = {
+viktor_abakumov = {
+			
+			picture = idea_viktor_abakumov
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { dismal_enigma }
+		}
+}
+
+#Economic
+economic_minister = {
+	SOV_nikolai_voznesensky = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { captain_of_industry }
+		}
+		valery_mezhlauk = {
+			
+			picture = idea_valery_mezhlauk
+			
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { captain_of_industry }
+		}
+}
+
+#Advisors
+political_advisor = {
 		
 		nikita_khrushchev = {
 			
@@ -761,7 +827,7 @@ ideas = {
 			
 
 			
-			traits = { democratic_reformer }
+			traits = { socialist_reformer }
 	
 			on_add = {
 				country_event = political.13
@@ -769,7 +835,9 @@ ideas = {
 	
 			do_effect = {
 				NOT = {
-					has_government = democratic
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
 				}
 			}
 			

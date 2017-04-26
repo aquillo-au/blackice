@@ -129,7 +129,7 @@ ideas = {
 
 			
 			modifier = {
-				fascism_drift = 0.1
+				fascism_drift = 0.05
 			}
 		}
 
@@ -149,7 +149,7 @@ ideas = {
 			
 			modifier = {
 				#justify_war_goal_time = -0.25
-				communism_drift = 0.1
+				communism_drift = 0.05
 			}
 		}
 
@@ -168,7 +168,7 @@ ideas = {
 			picture = generic_fascism_drift_bonus
 			
 			modifier = {
-				fascism_drift = 0.1
+				fascism_drift = 0.05
 				fascism_acceptance = 85
 			}
 		}
@@ -189,10 +189,11 @@ ideas = {
 			picture = generic_communism_drift_bonus
 			
 			modifier = {
-				communism_drift = 0.1
+				communism_drift = 0.05
 				communism_acceptance = 85
 			}
 		}
+		
 		democratic_influence = {
 			
 			
@@ -201,7 +202,11 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_government = democratic
+				OR = {
+				has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
+					}
 			}
 
 			removal_cost = -1
@@ -209,8 +214,77 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				democratic_drift = 0.1
-				democratic_acceptance = 85
+				communism_drift = -0.05
+				communism_acceptance = -85
+				fascism_drift = -0.05
+				fascism_acceptance = -85
+				neutrality_drift = -0.05
+				neutrality_acceptance = -85
+				monarchism_drift = -0.05
+				monarchism_acceptance = -85
+			}
+		}
+		
+		liberalism_influence = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = liberalism
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				liberalism_drift = 0.05
+				liberalism_acceptance = 85
+			}
+		}
+		
+		socialism_influence = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = socialism
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				socialism_drift = 0.05
+				socialism_acceptance = 85
+			}
+		}
+		
+		conservatism_influence = {
+			
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = conservatism
+			}
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+			
+			modifier = {
+				conservatism_drift = 0.05
+				conservatism_acceptance = 85
 			}
 		}
 		
@@ -280,7 +354,10 @@ ideas = {
 			picture = generic_intel_bonus
 
 			modifier = {
-				democratic_drift = -0.05
+				conservatism_drift = -0.05
+				socialism_drift = -0.05
+				liberalism_drift = -0.05
+				#democratic_drift = -0.05
 				fascism_drift = -0.05
 			}
 		}
@@ -305,7 +382,10 @@ ideas = {
 			picture = generic_pp_unity_bonus
 
 			modifier = {
-				democratic_drift = -0.02
+				#democratic_drift = -0.02
+				conservatism_drift = -0.02
+				socialism_drift = -0.02
+				liberalism_drift = -0.02
 			}
 		}
 	
@@ -317,7 +397,11 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_government = democratic
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+				}
 			}
 			
 			removal_cost = -1
@@ -514,11 +598,17 @@ ideas = {
 				
 				join_faction_tension = 1.00
 				army_core_defence_factor = 0.15
-				democratic_drift = -0.1
-				democratic_acceptance = -85
-				communism_drift = -0.1
+				socialism_drift = -0.05
+				socialism_acceptance = -85
+				conservatism_drift = -0.05
+				conservatism_acceptance = -85
+				liberalism_drift = -0.05
+				liberalism_acceptance = -85
+				#democratic_drift = -0.05
+				#democratic_acceptance = -85
+				communism_drift = -0.05
 				communism_acceptance = -85
-				fascism_drift = -0.1
+				fascism_drift = -0.05
 				fascism_acceptance = -85
 				conscription = 0.05
 				ai_badass_factor = 0.01    # Will receive 1% of the threat from others
@@ -619,82 +709,190 @@ ideas = {
 				foreign_subversive_activites = -0.75
 			}			
 		}
-idea_monarchist_1 = {
-			allowed = {
+		idea_monarchist_1 ={
+			allowed = { 
 				always = no
 			}
-
 			allowed_civil_war = {
 				always = yes
 			}
 			
 			removal_cost = -1
-
+			
 			picture = generic_pp_unity_bonus
 			
 			modifier = {
 				unity_factor = 0.1
-			}			
+			}
 		}
-		
-		idea_monarchist_2 = {
-			allowed = {
+		idea_monarchist_2 ={
+			allowed = { 
 				always = no
 			}
-
 			allowed_civil_war = {
 				always = yes
 			}
 			
 			removal_cost = -1
-
-			picture = generic_volunteer_expedition_bonus
+			
+			picture = generic_pp_unity_bonus
 			
 			modifier = {
 				conscription = 0.025
-			}			
+			}
 		}
-		
-		idea_monarchist_3 = {
-			allowed = {
+		idea_monarchist_3 ={
+			allowed = { 
 				always = no
 			}
-
 			allowed_civil_war = {
 				always = yes
 			}
 			
 			removal_cost = -1
-
-			picture = generic_intel_bonus
+			
+			picture = generic_pp_unity_bonus
 			
 			modifier = {
 				political_power_factor = 0.1
-			}			
+			}
 		}
-		
-		idea_monarchist_4 = {
-			allowed = {
+		idea_monarchist_4 ={
+			allowed = { 
 				always = no
 			}
-
 			allowed_civil_war = {
 				always = yes
 			}
 			
 			removal_cost = -1
-
-			picture = generic_infantry_bonus
+			
+			picture = generic_pp_unity_bonus
 			
 			modifier = {
 				training_time_factor = 0.50
 				army_org_factor = 0.2
-			}			
+			}
+		}
+	}
+###############################
+####Ministers
+###############################
+#Head of State
+head_of_state = {
+
+}
+
+#Foreign Minister
+foreign_minister = {
+generic_foreign_minister = {
+			
+			allowed = {
+				NOT = {
+					has_available_idea_with_traits = { idea = compassionate_gentleman limit = 1 }
+					has_available_idea_with_traits = { idea = ideological_crusader limit = 1 }
+				}
+			}
+			
+
+			
+			traits = { compassionate_gentleman }
+
+
+			
+			do_effect = {
+				
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+}
+
+#Interior(Security/Propaganda) Minister
+interior_minister = {
+generic_interior_minister = {
+			
+			allowed = {
+				NOT = {
+					has_available_idea_with_traits = { idea = crime_fighter limit = 1 }
+					has_available_idea_with_traits = { idea = prince_of_terror limit = 1 }
+				}
+			}
+			
+
+			
+			traits = { crime_fighter }
+
+
+			
+			do_effect = {
+				
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+}
+
+#Intel Minister
+intel_minister = {
+generic_intel_minister = {
+			
+			allowed = {
+				NOT = {
+					has_available_idea_with_traits = { idea = dismal_enigma limit = 1 }
+				}
+			}
+				
+			traits = { dismal_enigma }
+
+
+			
+			do_effect = {
+				
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+}
+
+#Economic Minister
+economic_minister = {
+generic_captain_of_industry = {
+
+			allowed = {
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
+			}
+			
+			traits = { captain_of_industry }
 		}
 		
-	}
-	
-	political_advisor = {
+		generic_fortification_engineer = {
+
+			allowed = {
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
+			}
+			
+			traits = { fortification_engineer }
+		}
+
+		generic_war_industrialist = {
+
+			allowed = {
+				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
+			}
+			
+			traits = { war_industrialist }
+		}
+}
+
+
+political_advisor = {
 		# POLITICAL	
 		generic_communist_revolutionary = {
 			
@@ -721,19 +919,19 @@ idea_monarchist_1 = {
 				factor = 0
 			}
 		}
-			
-		generic_democratic_reformer = {
+		
+		generic_conservative_reformer = {
 			
 			allowed = {
 				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = AST } }
 				NOT = {
-					has_available_idea_with_traits = { idea = democratic_reformer limit = 1 }
+					has_available_idea_with_traits = { idea = conservative_reformer limit = 1 }
 				}
 			}
 			
 
 			
-			traits = { democratic_reformer }
+			traits = { conservative_reformer }
 	
 			on_add = {
 				country_event = political.13
@@ -741,7 +939,7 @@ idea_monarchist_1 = {
 	
 			do_effect = {
 				NOT = {
-					has_government = democratic
+					has_government = conservatism
 				}
 			}
 	
@@ -749,6 +947,64 @@ idea_monarchist_1 = {
 				factor = 0
 			}
 		}
+		
+		generic_socialist_reformer = {
+			
+			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = AST } }
+				NOT = {
+					has_available_idea_with_traits = { idea = socialist_reformer limit = 1 }
+				}
+			}
+			
+
+			
+			traits = { socialist_reformer }
+	
+			on_add = {
+				country_event = political.13
+			}
+	
+			do_effect = {
+				NOT = {
+					has_government = socialism
+				}
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		generic_liberal_reformer = {
+			
+			allowed = {
+				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = AST } }
+				NOT = {
+					has_available_idea_with_traits = { idea = liberal_reformer limit = 1 }
+				}
+			}
+			
+
+			
+			traits = { liberal_reformer }
+	
+			on_add = {
+				country_event = political.13
+			}
+	
+			do_effect = {
+				NOT = {
+					has_government = liberalism
+				}
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		
+		
 		
 		generic_fascist_demagogue = {
 			
@@ -781,13 +1037,13 @@ idea_monarchist_1 = {
 			
 			allowed = {
 				NOT = {
-					has_available_idea_with_traits = { idea = monarchist_advisor_drift_trait limit = 1 }
+					has_available_idea_with_traits = { idea = royalist_reformer limit = 1 }
 				}
 			}
 			
 
 			
-			traits = { monarchist_advisor_drift_trait }
+			traits = { royalist_reformer }
 
 
 			
@@ -802,6 +1058,8 @@ idea_monarchist_1 = {
 			}
 		}
 	}
+		
+	
 
 	# TECHNOLOGY
 	tank_manufacturer = { 
@@ -1060,34 +1318,7 @@ idea_monarchist_1 = {
 
 	political_advisor = {
 
-		generic_captain_of_industry = {
-
-			allowed = {
-				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
-			}
-			
-			traits = { captain_of_industry }
-		}
 		
-		generic_fortification_engineer = {
-
-			allowed = {
-				NOT = { OR = { tag = FRI tag = FRA  }}
-				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
-			}
-			
-			traits = { fortification_engineer }
-		}
-
-		generic_war_industrialist = {
-
-			allowed = {
-				NOT = { OR = { tag = FRI tag = FRA  }}
-				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
-			}
-			
-			traits = { war_industrialist }
-		}
 	}
 
 	army_chief = {
