@@ -21,7 +21,7 @@ focus_tree = {
 		y = 0
 		cost = 10
 		available = {
-		
+			date > 1936.5.15
 		}
 		ai_will_do = {
 			factor = 12
@@ -31,8 +31,8 @@ focus_tree = {
 			GER = {
 				country_event = NF_events.37
 			}
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = goering_e
+			
+			show_ideas_tooltip = Goering_four_year_plan_begin
 		}
 
 	}
@@ -42,7 +42,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_infrastructure
 		x = -18
 		y = 1
-		cost = 10
+		cost = 4
 		available = {
 			date > 1936.1.1
 		}
@@ -55,7 +55,7 @@ focus_tree = {
 			hidden_effect = {
 				64 = {
 					if = {
-						limit = { is_controlled_by = ROOT }
+						limit = { is_controlled_by = GER }
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -65,7 +65,7 @@ focus_tree = {
 				}
 				59 = {
 					if = {
-						limit = { is_controlled_by = ROOT }
+						limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -76,7 +76,7 @@ focus_tree = {
 				}
 				60 = {
 					if = {
-						limit = { is_controlled_by = ROOT }
+						limit = { is_controlled_by = GER }
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -86,7 +86,7 @@ focus_tree = {
 				}
 				54 = {
 					if = {
-						limit = { is_controlled_by = ROOT }
+						limit = { is_controlled_by = GER }
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -112,14 +112,14 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			custom_effect_tooltip = GER_autobahn_tt
+			custom_effect_tooltip = GER_autobahn_I_tt
 			hidden_effect = {
 				65 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 					add_building_construction = {
-							type = infrastructure
+						type = infrastructure
 							level = 1
 							instant_build = yes
 						}
@@ -127,7 +127,7 @@ focus_tree = {
 				}
 				68 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -138,7 +138,7 @@ focus_tree = {
 				}
 				61 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -149,7 +149,7 @@ focus_tree = {
 				}
 				62 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -176,11 +176,11 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			custom_effect_tooltip = GER_autobahn_tt
+			custom_effect_tooltip = GER_autobahn_II_tt
 			hidden_effect = {
 				5 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 						type = infrastructure
@@ -191,7 +191,7 @@ focus_tree = {
 				}
 				63 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -202,7 +202,7 @@ focus_tree = {
 				}
 				66 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -213,7 +213,7 @@ focus_tree = {
 				}
 				52 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -240,11 +240,11 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			custom_effect_tooltip = GER_autobahn_tt
+			custom_effect_tooltip = GER_autobahn_III_tt
 			hidden_effect = {
 				53 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -256,7 +256,7 @@ focus_tree = {
 				}
 				50 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 
 						add_building_construction = {
 							type = infrastructure
@@ -267,7 +267,7 @@ focus_tree = {
 				}
 				42 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -277,7 +277,7 @@ focus_tree = {
 				}
 				51 = {
 					if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 						add_building_construction = {
 							type = infrastructure
 							level = 1
@@ -295,19 +295,18 @@ focus_tree = {
 		prerequisite = { focus = GER_Goering_Plan }
 		x = -16
 		y = 1
-		cost = 10
+		cost = 4
 		available = {
 			
 		}
 		ai_will_do = {
 			factor = 0
 		}
-			
+		
 		completion_reward = {
-			
 			50 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
 						add_building_construction = {
@@ -343,9 +342,9 @@ focus_tree = {
 			}
 			42 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
-						custom_effect_tooltip = GER_west_wall_forts
-						hidden_effect = {
+					limit = { is_controlled_by = GER }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
 						add_building_construction = {
 							type = bunker
 							level = 3
@@ -358,6 +357,118 @@ focus_tree = {
 							province = 563
 							instant_build = yes
 						}
+					}
+				}
+			}			
+			if = {
+				limit = { 895 = { is_demilitarized_zone = yes } }
+				custom_effect_tooltip = GER_west_wall_tt
+			}		
+			895 = {		
+				if = {
+					limit = { is_controlled_by = GER }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 11531
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 9575
+							instant_build = yes
+						}
+					}
+				}				
+			}
+		}
+	}
+	focus = {
+		id = GER_west_wall_med
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = GER_west_wall_lite }
+		x = -16
+		y = 2
+		cost = 3
+		available = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+			
+		completion_reward = {
+			#add_ideas = todt
+			#custom_effect_tooltip = available_political_advisor
+			#show_ideas_tooltip = todt
+			50 = {
+				if = {
+					limit = { is_controlled_by = GER }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 11640
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 6712
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 6542
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 3530
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 42 = { is_demilitarized_zone = yes } }
+				custom_effect_tooltip = GER_west_wall_tt
+			}
+			42 = {
+				if = {
+					limit = { is_controlled_by = GER }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 3558
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 563
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 895 = { is_demilitarized_zone = yes } }
+				custom_effect_tooltip = GER_west_wall_tt
+			}		
+			895 = {		
+				if = {
+					limit = { is_controlled_by = GER }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
 						add_building_construction = {
 							type = bunker
 							level = 3
@@ -372,96 +483,7 @@ focus_tree = {
 						}
 					}
 				}
-			}
-		}
-	}
-	focus = {
-		id = GER_west_wall_med
-		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = GER_west_wall_lite }
-		x = -16
-		y = 2
-		cost = 2.1
-		available = {
-			
-		}
-		ai_will_do = {
-			factor = 1
-		}
-			
-		completion_reward = {
-		#add_ideas = todt
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = todt
-			50 = {
-				if = {
-					limit = { is_controlled_by = ROOT }
-					custom_effect_tooltip = GER_west_wall_forts
-					hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 11640
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 6712
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 6542
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 3530
-						instant_build = yes
-						}
-					}
-				}
-			}
-			if = {
-				limit = { 42 = { is_demilitarized_zone = yes } }
-				custom_effect_tooltip = GER_west_wall_tt
-			}
-			42 = {
-				if = {
-					limit = { is_controlled_by = ROOT }
-					custom_effect_tooltip = GER_west_wall_forts
-					hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 3558
-						instant_build = yes
-					}
-					
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 563
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 11531
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 9575
-						instant_build = yes
-						}
-					}
-				}
-			}
+			}				
 		}
 	}
 	focus = {
@@ -470,7 +492,7 @@ focus_tree = {
 		prerequisite = { focus = GER_west_wall_med }
 		x = -16
 		y = 3
-		cost = 10
+		cost = 9
 		available = {
 			
 		}
@@ -484,32 +506,32 @@ focus_tree = {
 			show_ideas_tooltip = todt
 			50 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 11640
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 6712
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 6542
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 3530
-						instant_build = yes
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 11640
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 6712
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 6542
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 3530
+							instant_build = yes
 						}
 					}
 				}
@@ -520,37 +542,48 @@ focus_tree = {
 			}
 			42 = {
 				if = {
-					limit = { is_controlled_by = ROOT }
+					limit = { is_controlled_by = GER }
 					custom_effect_tooltip = GER_west_wall_forts
 					hidden_effect = {
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 3558
-						instant_build = yes
-					}
-					
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 563
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 11531
-						instant_build = yes
-					}
-					add_building_construction = {
-						type = bunker
-						level = 4
-						province = 9575
-						instant_build = yes
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 3558
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 563
+							instant_build = yes
 						}
 					}
 				}
-			}
+			}			
+			if = {
+				limit = { 895 = { is_demilitarized_zone = yes } }
+				custom_effect_tooltip = GER_west_wall_tt
+			}	
+			895 = {			
+				if = {
+					limit = { is_controlled_by = GER }
+					custom_effect_tooltip = GER_west_wall_forts
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 11531
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = bunker
+							level = 4
+							province = 9575
+							instant_build = yes
+						}
+					}
+				}
+			}				
 		}
 	}
 	focus = {
@@ -560,7 +593,7 @@ focus_tree = {
 		prerequisite = { focus = GER_Goering_Plan }
 		x = -14
 		y = 1
-		cost = 10
+		cost = 4
 		available = {
 			date > 1936.1.1
 		}
@@ -741,15 +774,13 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-				
 				add_building_construction = {
 					type = smallarms_factory
 					level = 1
 					instant_build = yes
 				}
-				
 				add_building_construction = {
-					type = ammo_factory_factory
+					type = ammo_factory
 					level = 1
 					instant_build = yes
 				}
@@ -790,7 +821,6 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				
 			}
 			add_tech_bonus = {
 				name = construction_tech_bonus
@@ -1849,14 +1879,16 @@ focus_tree = {
 		cost = 8
 		available = { is_puppet = no }
 		bypass = {
-			42 = { is_demilitarized_zone = no }
+     		895 = { is_demilitarized_zone = no }
+     		42 = { is_demilitarized_zone = no }
 			51 = { is_demilitarized_zone = no }
 		}
 		ai_will_do = {
 			factor = 15
 		}	
 		completion_reward = {
-			42 = { set_demilitarized_zone = no }
+     		#900 = { is_demilitarized_zone = no }
+     		42 = { set_demilitarized_zone = no }
 			51 = { set_demilitarized_zone = no }
 			custom_effect_tooltip = GER_rhineland_ultimatum
 			add_political_power = 120
@@ -2153,7 +2185,11 @@ focus_tree = {
 				if = {
 					limit = {
 						GER = {
-							has_government = democratic
+						OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							}
 						}
 					}
 					add_ideas = democratic_influence
@@ -2730,7 +2766,11 @@ focus_tree = {
 				if = {
 					limit = {
 						GER = {
-							has_government = democratic
+							OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							}
 						}
 					}
 					add_ideas = democratic_influence
@@ -2913,12 +2953,13 @@ focus_tree = {
 				limit = { NOT = { country_exists = CZE } }
 				country_event = { id = germany.55 hours = 6 }
 			}
+			set_technology = { czech_protectorate_tech = 1 } 
 			add_tech_bonus = {
 				ahead_reduction = 2
 				bonus = 1
 				uses = 2
-				technology = tech_czech_panzer_1
-				technology = tech_czech_panzer_2
+				technology = tech_czech_ger_panzer_1
+				technology = tech_czech_ger_panzer_2
 			}
 			add_named_threat = { threat = 3 name = GER_end_of_czechoslovakia }
 		}
@@ -3157,7 +3198,11 @@ focus_tree = {
 				if = {
 					limit = {
 						GER = {
-							has_government = democratic
+							OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							}
 						}
 					}
 					add_ideas = democratic_influence
@@ -3356,17 +3401,20 @@ focus_tree = {
 				name = dd_bonus
 				bonus = 0.5
 				uses = 1
-				technology = improved_destroyer
-				technology = advanced_destroyer
+				technology = tech_kr_dd4
+				technology = tech_kr_dd5
+				technology = tech_kr_dd6
+				technology = tech_kr_dd7
+				technology = tech_kr_dd8
+				technology = tech_kr_dd9
 			}
 			add_tech_bonus = {
 				name = cr_bonus
 				bonus = 0.5
 				uses = 1
-				technology = improved_light_cruiser
-				technology = advanced_light_cruiser
-				technology = improved_heavy_cruiser
-				technology = advanced_heavy_cruiser
+				technology = tech_kr_cl3
+				technology = tech_kr_cl4
+				technology = tech_kr_ca3
 			}
 		}
 
@@ -3432,20 +3480,40 @@ focus_tree = {
 				name = bb_bonus
 				bonus = 0.5
 				uses = 1
-				technology = basic_battleship
-				technology = improved_battleship
-				technology = advanced_battleship
-				technology = heavy_battleship
+				technology = tech_kr_bb
+				technology = tech_kr_bb_38
+				technology = tech_kr_bb1
+				technology = tech_kr_bb2
 				technology = heavy_battleship2
 			}
+			add_tech_bonus = {
+				name = bc_bonus
+				bonus = 0.5
+				uses = 1
+				technology = tech_kr_bc2
+			}
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				uses = 1
+				technology = tech_kr_ca
+				technology = tech_kr_ca3
+				technology = tech_kr_cl2
+				}
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				uses = 1
+				technology = tech_kr_dd5
+				}
 			add_tech_bonus = {
 				name = cv_bonus
 				bonus = 0.5
 				uses = 1
-				technology = early_carrier
-				technology = basic_carrier
-				technology = improved_carrier
-				technology = advanced_carrier
+				technology = tech_kr_cv
+				technology = tech_kr_cv2
+				technology = tech_kr_cvl
+				technology = tech_kr_cvl2
 			}
 		}
 	}
@@ -3609,7 +3677,11 @@ focus_tree = {
 				if = {
 					limit = {
 						GER = {
-							has_government = democratic
+							OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							}
 						}
 					}
 					add_ideas = democratic_influence
@@ -3669,7 +3741,11 @@ focus_tree = {
 				if = {
 					limit = {
 						GER = {
-							has_government = democratic
+							OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							}
 						}
 					}
 					add_ideas = democratic_influence
@@ -3735,7 +3811,11 @@ focus_tree = {
 				if = {
 					limit = {
 						GER = {
-							has_government = democratic
+							OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							}
 						}
 					}
 					add_ideas = democratic_influence
@@ -3795,7 +3875,11 @@ focus_tree = {
 				if = {
 					limit = {
 						GER = {
-							has_government = democratic
+							OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							}
 						}
 					}
 					add_ideas = democratic_influence
@@ -4284,6 +4368,11 @@ focus_tree = {
 		}	
 		completion_reward = {
 			create_wargoal = {
+				type = take_state_focus
+				target = GRE
+				generator = { 47 } 
+			}
+			create_wargoal = {
 				target = GRE
 				type = annex_everything
 			}
@@ -4331,7 +4420,7 @@ focus_tree = {
 			factor = 10	
 			modifier = {
 				factor = 0
-				date < 1939.1.1
+				date < 1941.1.1
 			}
 		}	
 		completion_reward = {
@@ -4372,7 +4461,7 @@ focus_tree = {
 				limit = {
 					is_ai = no
 				}
-			
+				set_country_flag = focus_schutzstaffel
 				GER = {
 					country_event = ss_event.665
 					country_event = NF_events.38
@@ -4386,11 +4475,12 @@ focus_tree = {
 				limit = {
 					is_ai = yes
 				}
+				set_country_flag = focus_schutzstaffel
 				GER = {
 					country_event = NF_events.38
 				}
 				hidden_effect = {
-					load_oob = "GER_LSSAH_division"	# template
+					load_oob = "GER_LSSAH_division_ai"	# template
 				}
 			}
 		}
@@ -4436,9 +4526,9 @@ focus_tree = {
 			}
 		}
 	}
-	# SS-Totenkopfverbände ss garrisons
+	# SS-Totenkopfverbande ss garrisons
 	focus = {
-		id = GER_TV_Schutzstaffel # SS-Totenkopfverbände ss garrisons
+		id = GER_TV_Schutzstaffel # SS-Totenkopfverbande ss garrisons
 		#text = TV_Schutzstaffel_units
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_historical_Schutzstaffel }
@@ -4459,9 +4549,9 @@ focus_tree = {
 			country_event = ss_event.667
 		}
 	}
-	# SS-Verfügungstruppe combat division
+	# SS-Verfugungstruppe combat division
 	focus = {
-		id = GER_VT_Schutzstaffel	# SS-Verfügungstruppe combat division
+		id = GER_VT_Schutzstaffel	# SS-Verfugungstruppe combat division
 		#text = VT_Schutzstaffel_division
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_historical_Schutzstaffel }
@@ -4580,7 +4670,10 @@ focus_tree = {
 		id = GER_Schutzstaffel_divisions_IV
 		#text = Schutzstaffel_divisions
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = { focus = GER_Schutzstaffel_divisions_III }
+		prerequisite = {
+			focus = GER_Schutzstaffel_divisions_III
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
 		x = 25
 		y = 6
 		cost = 5
@@ -4659,10 +4752,10 @@ focus_tree = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_focus }
 		x = 27
-		y = 5
+		y = 3
 		cost = 5
 		available = {
-			date > 1937.1.1	
+			date > 1936.6.1	
 		}
 		ai_will_do = {
 			factor = 2
@@ -4671,7 +4764,53 @@ focus_tree = {
 			country_event = ss_event.679
 			add_research_slot = 1
 		}
-		#
+	}
+	focus = {
+		id = GER_Schutzstaffel_junkerschule_klagenfurt
+		#text = Schutzstaffel_junkerschulen	
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_Schutzstaffel_junkerschulen }
+		x = 27
+		y = 4
+		cost = 5
+		available = {
+			date > 1938.7.1
+			152 = { is_controlled_by = GER }
+		}
+		ai_will_do = {
+			factor = 2
+		}	
+		completion_reward = {
+			country_event = ss_event.687
+			
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.10
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	#####################Foreign SS units recruitment
+	focus = {
+		id = GER_Schutzstaffel_foreign_ss_units
+		#text = Schutzstaffel_foreign_ss_units
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_Schutzstaffel_focus }
+		x = 27
+		y = 5
+		cost = 5
+		available = {
+			date > 1938.3.1	
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			country_event = ss_event.684
+			set_country_flag = focus_foreign_SS_units
+			add_ideas = GER_foreign_SS_unit_recruitment
+		}
 	}
 	##################### Expansion of SS in aug 1940 with Himmler command
 	focus = {
@@ -4761,10 +4900,11 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = GER_Wiking_division # SS 3 Division (1940)
+		id = GER_Wiking_division # SS 3 Division (operational jan 1941)
 		#text = Wiking_Division
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Das_Reich_division }
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 29
 		y = 4
 		cost = 5

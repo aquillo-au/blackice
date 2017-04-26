@@ -6,12 +6,19 @@ division_template = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
+		
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+		
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
+		
+		artillery_brigade_mot = { x = 3 y = 0 }
+		artillery_brigade_mot = { x = 3 y = 1 }
+		artillery_brigade_mot = { x = 3 y = 2 }
+		
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -30,15 +37,22 @@ division_template = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
 		infantry = { x = 0 y = 2 }
+		
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+		
 		infantry = { x = 2 y = 0 }
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
+		
 		infantry = { x = 3 y = 0 }
 		infantry = { x = 3 y = 1 }
 		infantry = { x = 3 y = 2 }
+		
+		artillery_brigade_mot = { x = 4 y = 0 }
+		artillery_brigade_mot = { x = 4 y = 1 }
+		artillery_brigade_mot = { x = 4 y = 2 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -58,10 +72,13 @@ division_template = {
 		semi_motorized  = { x = 0 y = 1 }
 		semi_motorized  = { x = 0 y = 2 }
 		semi_motorized  = { x = 0 y = 3 }
+		
 		semi_motorized  = { x = 1 y = 0 }
 		semi_motorized  = { x = 1 y = 1 }
 		semi_motorized  = { x = 1 y = 2 }
 		semi_motorized  = { x = 1 y = 3 }
+		
+		american_light_tank = { x = 2 y = 0 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -78,13 +95,15 @@ division_template = {
 	regiments = {
 		garrison = { x = 0 y = 0 }
 		garrison = { x = 0 y = 1 }
-		garrison = { x = 0 y = 2 }
-		garrison = { x = 1 y = 0 }
-		garrison = { x = 1 y = 1 }
-		garrison = { x = 1 y = 2 }
-		garrison = { x = 2 y = 0 }
-		garrison = { x = 2 y = 1 }
-		garrison = { x = 2 y = 2 }
+		#garrison = { x = 0 y = 2 }
+		
+		#garrison = { x = 1 y = 0 }
+		#garrison = { x = 1 y = 1 }
+		#garrison = { x = 1 y = 2 }
+		
+		#garrison = { x = 2 y = 0 }
+		#garrison = { x = 2 y = 1 }
+		#garrison = { x = 2 y = 2 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -274,7 +293,7 @@ units = {
 		start_equipment_factor = 0.3
 	}			
 	division= {			
-		name = "1st Cavalry 'The 1st Team' Division"		
+		name = "1st Cavalry Division"		
 		location = 12782
 		division_template = "Cavalry Division"
 		start_experience_factor = 0.3
@@ -438,16 +457,18 @@ units = {
 		location = 1562 # San Diego
 		ship = { name = "USS Lexington" definition = carrier equipment = { USA_carrier_1 = { amount = 1 owner = USA } } 
 			air_wings = {
-				cv_fighter_equipment_0 =  { owner = "USA" amount = 16 } # historical: 16
-				cv_CAS_equipment_1 =  { owner = "USA" amount = 30 } # historical: 30
-				cv_nav_bomber_equipment_1 =  { owner = "USA" amount = 12 } # historical: 12
+				boeing_f4b4_equipment_1 =  { owner = "USA" amount = 18 } # historical: 16
+				grumman_f3f_equipment_1 = { owner = "USA" amount = 18 } #historical: 27?
+				lakes_bg_equipment_1 =  { owner = "USA" amount = 30 } # historical: 30
+				martin_bm_equipment_1 =  { owner = "USA" amount = 12 } # historical: 12
 			}
 		}
 		ship = { name = "USS Saratoga" definition = carrier equipment = { USA_carrier_1 = { amount = 1 owner = USA } } 
 			air_wings = {
-				cv_fighter_equipment_0 =  { owner = "USA" amount = 16 } # historical: 16
-				cv_CAS_equipment_1 =  { owner = "USA" amount = 30 } # historical: 30
-				cv_nav_bomber_equipment_1 =  { owner = "USA" amount = 12 } # historical: 12
+				boeing_f4b4_equipment_1 =  { owner = "USA" amount = 18 } # historical: 16
+				grumman_f3f_equipment_1 = { owner = "USA" amount = 18 } #historical: 18
+				vought_sbu_equipment_1 =  { owner = "USA" amount = 30 } # historical: 30
+				great_lakes_tg2_equipment_1 =  { owner = "USA" amount = 12 } # historical: 12
 			}
 		}
 	}					
@@ -674,9 +695,9 @@ units = {
 		location = 788 # Norfolk
 		ship = { name = "USS Ranger" definition = carrier equipment = { USA_carrier_2 = { amount = 1 owner = USA } } 
 			air_wings = {
-				cv_fighter_equipment_0 =  { owner = "USA" amount = 36 } # historical: 36
-				cv_CAS_equipment_1 =  { owner = "USA" amount = 15 } # historical: 15
-				cv_nav_bomber_equipment_1 =  { owner = "USA" amount = 12 } # historical: 12
+				grumman_f2f_equipment_1 =  { owner = "USA" amount = 36 } # historical: 36
+				lakes_bg_equipment_1 =  { owner = "USA" amount = 15 } # historical: 15
+				martin_bm_equipment_1 =  { owner = "USA" amount = 12 } # historical: 12
 			}
 		}
 	}					
@@ -846,93 +867,111 @@ air_wings = {
 	378 = {
 		# 7th Bombardment Group 
 		# 19th Bombardment Group 
-		tac_bomber_equipment_0 = {
+		martin_b10_bomber_equipment_1 = {
 			owner = "USA" 
-			amount = 60
+			amount = 14
+		}
+		martin_b10_bomber_equipment_1 = {
+			owner = "USA" 
+			version_name = "Martin B-12"
+			amount = 32
+		}
+		martin_b10_bomber_equipment_1 = {
+			owner = "USA" 
+			version_name = "Martin B-10B"
+			amount = 50
 		}
 		# 17th Attack Group 
-		CAS_equipment_1 = {
+		usa_boeing_p26_equipment_1 = {
 			owner = "USA" 
-			amount = 48
+			amount = 55
 		}
 	}
 	### 2 USAAF Wing -- Norfolk
 	362 = { 
 		# 1st Pursuit Group 
 		# 8th Pursuit Group 
-		fighter_equipment_0 =  {
+		pre_war_fighter_equipment_1 =  {
 			owner = "USA" 
-			amount = 144
+			version_name = "Curtiss P-6E Hawk"
+			amount = 19
 		}
 		# 2nd Bombardment Group 
 		# 9th Bombardment Group 
-		tac_bomber_equipment_0 = {
+		prewar_bomber_equipment_1 = {
 			owner = "USA" 
-			amount = 96
+			version_name = "Keystone B-6A"
+			amount = 44
 		}
 	}
 	### 3 USAAF Wing -- Louisiana
 	371 = { 
 		# 20th Pursuit Group 
-		fighter_equipment_0 =  {
+		usa_boeing_p26_equipment_1 =  {
 			owner = "USA" 
-			amount = 96
+			amount = 55
 		}
 		# 3rd Attack Group 
-		CAS_equipment_1 = {
-			owner = "USA" 
-			amount = 48
+		prewar_cas_equipment_1 = {
+			owner = "USA"
+			version_name = "Curtiss A-8"			
+			amount = 13
+		}
+		prewar_cas_equipment_1 = {
+			owner = "USA"
+			version_name = "Consolidated A-11"			
+			amount = 5
+		}
+		prewar_cas_equipment_1 = {
+			owner = "USA"
+			version_name = "Curtiss A-12"			
+			amount = 43
 		}
 	}
 	### 18th Composite Wing -- Hawaii
 	629 = { 
 		# 18th Pursuit Group 
-		fighter_equipment_0 =  {
-			owner = "USA" 
-			amount = 48
-		}
 		# 5th Composite Group 
-		tac_bomber_equipment_0 = {
+		prewar_bomber_equipment_1 = {
 			owner = "USA" 
-			amount = 36
+			version_name = "Keystone B-5A"
+			amount = 27
 		}
 	}
 	### 19th Composite Wing -- Panama Canal
 	685 = { 
 		# 16th Pursuit Group 
-		fighter_equipment_0 =  {
-			owner = "USA" 
-			amount = 96
-		}
 		# 6th Composite Group 
-		tac_bomber_equipment_0 = {
+		prewar_bomber_equipment_1 = {
 			owner = "USA" 
-			amount = 12
+			version_name = "Keystone B-4A"
+			amount = 30
 		}
 	}
 	### Philippines Composite Group -- Manilla
-#	327 = { 
-#		# 4th Composite Group 
-#		fighter_equipment_0 =  {
-#			owner = "USA" 
-#			amount = 36
-#		}
-#	}
+	327 = { 
+		# 4th Composite Group 
+		prewar_bomber_equipment_1 =  {
+			owner = "USA" 
+			version_name = "Keystone B-3A"
+			amount = 36
+		}
+	}
 	### USN Atlantic Naval Patrol Division -- Norfolk
 	362 = { 
 		# Naval Patrol Wing 3 
-		nav_bomber_equipment_1 =  {
+		consolidated_p2y_equipment_1 =  {
 			owner = "USA" 
-			amount = 36
+			amount = 23
 		}
 	}
 	### USN Pacific Naval Patrol Division -- San Diego
 	378 = { 
 		# Naval Patrol Wing 1 
 		# Naval Patrol Wing 2 
-		nav_bomber_equipment_1 =  {
+		consolidated_p2y_equipment_1 =  {
 			owner = "USA" 
-			amount = 72
+			amount = 23
 		}
 	}
 }
@@ -997,11 +1036,30 @@ instant_effect = {
 	}
 	add_equipment_production = {
 		equipment = {
-			type = cv_fighter_equipment_0
+			type = grumman_f3f_equipment_1
 			creator = "USA" 
 		}
 		requested_factories = 1
-		progress = 0.15
+		progress = 0.5
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = northrop_a17_equipment_1
+			creator = "USA" 
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = martin_b10_bomber_equipment_1
+			version_name = "Martin B-10B"
+			creator = "USA" 
+		}
+		requested_factories = 1
+		progress = 0.5
 		efficiency = 50
 	}
 	### Under Construction Notes ###
@@ -1192,7 +1250,7 @@ instant_effect = {
 		equipment = {
 			type = USA_heavy_cruiser_1d
 			creator = "USA"
-			version_name = "New Orleans Class"
+			#version_name = "New Orleans Class"
 		}
 		requested_factories = 1
 		progress = 0.80
@@ -1203,7 +1261,7 @@ instant_effect = {
 		equipment = {
 			type = USA_heavy_cruiser_1d
 			creator = "USA"
-			version_name = "New Orleans Class"
+			#version_name = "New Orleans Class"
 		}
 		requested_factories = 1
 		progress = 0.45
@@ -1296,7 +1354,7 @@ instant_effect = {
 		equipment = {
 			type = USA_carrier_2b
 			creator = "USA"
-			version_name = "Yorktown Class"
+			#version_name = "Yorktown Class"
 		}
 		requested_factories = 1
 		progress = 0.46
@@ -1307,7 +1365,7 @@ instant_effect = {
 		equipment = {
 			type = USA_carrier_2b
 			creator = "USA"
-			version_name = "Yorktown Class"
+			#version_name = "Yorktown Class"
 		}
 		requested_factories = 1
 		progress = 0.38
@@ -1318,7 +1376,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1h
 			creator = "USA"
-			version_name = "Bagley Class"
+			#version_name = "Bagley Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1328,7 +1386,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1h
 			creator = "USA"
-			version_name = "Bagley Class"
+			#version_name = "Bagley Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1338,7 +1396,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1h
 			creator = "USA"
-			version_name = "Bagley Class"
+			#version_name = "Bagley Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1348,7 +1406,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1h
 			creator = "USA"
-			version_name = "Bagley Class"
+			#version_name = "Bagley Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1358,7 +1416,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1h
 			creator = "USA"
-			version_name = "Bagley Class"
+			#version_name = "Bagley Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1368,7 +1426,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1h
 			creator = "USA"
-			version_name = "Bagley Class"
+			#version_name = "Bagley Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1378,7 +1436,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1h
 			creator = "USA"
-			version_name = "Bagley Class"
+			#version_name = "Bagley Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1388,7 +1446,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1h
 			creator = "USA"
-			version_name = "Bagley Class"
+			#version_name = "Bagley Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1399,7 +1457,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1g
 			creator = "USA"
-			version_name = "Gridley Class"
+			#version_name = "Gridley Class"
 		}
 		requested_factories = 1
 		progress = 0.25
@@ -1409,7 +1467,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1g
 			creator = "USA"
-			version_name = "Gridley Class"
+			#version_name = "Gridley Class"
 		}
 		requested_factories = 1
 		progress = 0.16
@@ -1420,7 +1478,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1e
 			creator = "USA"
-			version_name = "Porter Class"
+			#version_name = "Porter Class"
 		}
 		requested_factories = 1
 		progress = 0.67
@@ -1430,7 +1488,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1e
 			creator = "USA"
-			version_name = "Porter Class"
+			#version_name = "Porter Class"
 		}
 		requested_factories = 1
 		progress = 0.67
@@ -1440,7 +1498,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1e
 			creator = "USA"
-			version_name = "Porter Class"
+			#version_name = "Porter Class"
 		}
 		requested_factories = 1
 		progress = 0.67
@@ -1450,7 +1508,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1e
 			creator = "USA"
-			version_name = "Porter Class"
+			#version_name = "Porter Class"
 		}
 		requested_factories = 1
 		progress = 0.67
@@ -1460,7 +1518,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1e
 			creator = "USA"
-			version_name = "Porter Class"
+			#version_name = "Porter Class"
 		}
 		requested_factories = 1
 		progress = 0.67
@@ -1470,7 +1528,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1e
 			creator = "USA"
-			version_name = "Porter Class"
+			#version_name = "Porter Class"
 		}
 		requested_factories = 1
 		progress = 0.67
@@ -1480,7 +1538,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1e
 			creator = "USA"
-			version_name = "Porter Class"
+			#version_name = "Porter Class"
 		}
 		requested_factories = 1
 		progress = 0.67
@@ -1490,7 +1548,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1e
 			creator = "USA"
-			version_name = "Porter Class"
+			#version_name = "Porter Class"
 		}
 		requested_factories = 1
 		progress = 0.67
@@ -1501,7 +1559,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1i
 			creator = "USA"
-			version_name = "Somers Class"
+			#version_name = "Somers Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1511,7 +1569,7 @@ instant_effect = {
 		equipment = {
 			type = USA_destroyer_1i
 			creator = "USA"
-			version_name = "Somers Class"
+			#version_name = "Somers Class"
 		}
 		requested_factories = 1
 		progress = 0.20
@@ -1605,10 +1663,30 @@ instant_effect = {
 			amount = 300
 			producer = USA
 		}
-		add_equipment_to_stockpile = {
+	add_equipment_to_stockpile = {
 		type = horse_equipment_0
 			amount = 475
 			producer = USA
 		}
+	add_equipment_to_stockpile = {
+		type = grumman_f3f_equipment_1
+			amount = 9
+			producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = lakes_bg_equipment_1
+			amount = 15
+			producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = vought_sbu_equipment_1
+			amount = 54
+			producer = USA
+	}
+	add_equipment_to_stockpile = {
+		type = martin_bm_equipment_1
+			amount = 5
+			producer = USA
+	}
 }
 #####################

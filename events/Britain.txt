@@ -248,6 +248,16 @@ country_event = {
 	option = {
 		name = britain.9.a
 		retire_country_leader = yes
+		create_country_leader = {
+			name = "Winston Churchill"
+			desc = "POLITICS_WINSTON_CHURCHILL_DESC"
+			picture = "Portrait_Britain_Winston_Churchill.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+	
+			}
+		}
 		add_national_unity = 0.1
 		set_country_flag = chamberlain_resigned
 	}
@@ -721,7 +731,7 @@ country_event = {
     id = britain.22
     title = britain.22.t
     desc = britain.22.d
-    picture = GFX_report_event_royal_parade
+    picture = GFX_report_event_stanley_baldwin
  
     fire_only_once = yes
  
@@ -745,10 +755,10 @@ country_event = {
         	desc = "POLITICS_NEVILLE_CHAMBERLAIN_DESC"
         	picture = "Portrait_Britain_Neville_Chamberlain.dds"
         	expire = "1965.1.1"
-        	ideology = conservatism
+        	ideology = liberalism
         	traits = {
-        	      }
-            }
+        	}
+        }
         set_country_flag = baldwin_resigned
       }
 }
@@ -757,7 +767,7 @@ country_event = {
 	id = britain.23
 	title = britain.23.t
 	desc = britain.23.d
-	picture = GFX_report_event_45_infantry
+	picture = GFX_report_event_british_troops
 
 	fire_only_once = yes
 	
@@ -793,7 +803,7 @@ country_event = {
 	id = britain.24
 	title = britain.24.t
 	desc = britain.24.d
-	picture = GFX_report_event_59_infantry
+	picture = GFX_report_event_british_troops
 
 	fire_only_once = yes
 	
@@ -828,7 +838,7 @@ country_event = {
 	id = britain.25
 	title = britain.25.t
 	desc = britain.25.d
-	picture = GFX_report_event_38_infantry
+	picture = GFX_report_event_british_troops
 
 	fire_only_once = yes
 	
@@ -863,7 +873,7 @@ country_event = {
 	id = britain.26
 	title = britain.26.t
 	desc = britain.26.d
-	picture = GFX_report_event_18_infantry
+	picture = GFX_report_event_british_troops_snow
 
 	fire_only_once = yes
 	
@@ -899,7 +909,7 @@ country_event = {
 	id = britain.27
 	title = britain.27.t
 	desc = britain.27.d
-	picture = GFX_report_event_
+	picture = GFX_report_event_british_troops_snow
 
 	fire_only_once = yes
 	
@@ -934,7 +944,7 @@ country_event = {
 	id = britain.28
 	title = britain.28.t
 	desc = britain.28.d
-	picture = GFX_report_event_51_infantry
+	picture = GFX_report_event_british_troops
 
 	fire_only_once = yes
 	
@@ -969,7 +979,7 @@ country_event = {
 	id = britain.29
 	title = britain.29.t
 	desc = britain.29.d
-	picture = GFX_report_event_
+	picture = GFX_report_event_british_armour_crew
 
 	fire_only_once = yes
 	
@@ -1004,7 +1014,7 @@ country_event = {
 	id = britain.30
 	title = britain.30.t
 	desc = britain.30.d
-	picture = GFX_report_event_
+	picture = GFX_report_event_british_paratroopers
 
 	fire_only_once = yes
 	
@@ -1040,7 +1050,7 @@ country_event = {
 	id = britain.31
 	title = britain.31.t
 	desc = britain.31.d
-	picture = GFX_report_event_
+	picture = GFX_report_event_british_paratroopers
 
 	fire_only_once = yes
 	
@@ -1085,18 +1095,20 @@ country_event = {
 		tag = ENG
 		not = { has_country_flag = east_indies }
 		NOT = { HOL = { controls_state = 7 }}
-		HOL = { controls_state = 669 }
-		HOL = { controls_state = 668}
-		HOL = { controls_state = 667}
-		HOL = { controls_state = 334}
-		HOL = { controls_state = 335}
-		HOL = { controls_state = 672}
+		INS = { controls_state = 669 }#
+		INS = { controls_state = 668}#
+		INS = { controls_state = 334}#
+		INS = { controls_state = 335}#
+		INS = { controls_state = 672}#
+		INS = { controls_state = 738}#
+
 		HOL = { controls_state = 673}
-		HOL = { controls_state = 738}
+		HOL = { controls_state = 667}
+		HOL = { controls_state = 667}
 	}
 	
 	mean_time_to_happen = {
-		days = 5
+		months = 6
 	}
 	
 	option = {
@@ -1162,7 +1174,7 @@ country_event = {
 	id = britain.34
 	title = britain.34.t
 	desc = britain.34.d
-	picture = GFX_report_event__1st_armored
+	picture = GFX_report_event_british_armour_crew
 
 	fire_only_once = yes
 	
@@ -1171,6 +1183,7 @@ country_event = {
 		not = { has_country_flag = first_armored_div }
 		date > 1937.1.1 	
 		126 = { is_controlled_by = ENG }
+		
 	}
 	
 	mean_time_to_happen = {
@@ -1199,7 +1212,7 @@ country_event = {
 	id = britain.35
 	title = britain.35.t
 	desc = britain.35.d
-	picture = GFX_report_event_7_armored
+	picture = GFX_report_event_british_armour_crew
 
 	fire_only_once = yes
 	

@@ -10,7 +10,7 @@ country_event = {
 	id = sadabat.7
 	title = sadabat.7.t
 	desc = sadabat.7.d
-	picture = GFX_news_event_sign_treaty1
+	picture = GFX_report_event_generic_read_write
 
 	is_triggered_only = yes
 
@@ -50,8 +50,8 @@ country_event = {
 		ai_chance = { factor = 90 }
 		TUR = {
 			country_event = { days = 1 id = turkey.22 }
+			}
 		}
-	}
 	option = { # Refuse
 		name = sadabat.31.b
 		ai_chance = {
@@ -59,24 +59,22 @@ country_event = {
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
+				}
 			}
-		}
-		effect_tooltip = {
-			TUR = {
-				create_wargoal = {
+			effect_tooltip = {
+				TUR = {
+					create_wargoal = {
 					type = take_state_focus
 					target = SYR
 					generator = { 821 }
 					}
 					country_event = { days = 1 id = turkey.23 }
 				}
-				country_event = { days = 1 id = turkey.23 }
 			}
-		}
-		hidden_effect = {
-			TUR = {
-				country_event = { days = 1 id = turkey.23 }
+			hidden_effect = {
+				TUR = {
+					country_event = { days = 1 id = turkey.23 }
+				}
 			}
 		}
 	}
-}

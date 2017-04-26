@@ -7,8 +7,9 @@ set_research_slots = 3
 
 set_technology = {
 	################# infantry ###############
-	infantry_uniforms = 1
+	tech_infantry_uniforms = 1
 	infantry_weapons1 = 1
+	infantry_at = 1
 	infantry_weapons = 1
 	semi_motorised_infantry = 1
 	motorised_infantry = 1
@@ -104,7 +105,7 @@ set_politics = {
 
 	parties = {
 		democratic = { 
-			popularity = 83
+			popularity = 23
 		}
 
 		fascism = {
@@ -114,9 +115,12 @@ set_politics = {
 		communism = {
 			popularity = 6
 		}
+		neutrality = { 
+		 popularity = 60
+	}
 	}
 	
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1932.11.27"
 	election_frequency = 48
 	elections_allowed = yes
@@ -139,14 +143,14 @@ set_politics = {
 			}
 		}
 		
-		ruling_party = democratic
+		ruling_party = neutrality
 		last_election = "1939.4.2"
 		election_frequency = 48
 		elections_allowed = yes
 	}
 }
 
-set_convoys = 80
+set_convoys = 400
 set_national_unity = 0.75
 
 create_country_leader = {
@@ -154,7 +158,7 @@ create_country_leader = {
 	desc = "POLITICS_HUBERT_PIERLOT_DESC"
 	picture = "Portrait_Belgium_Hubert_Pierlot.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = centrism
 	traits = {
 		#
 	}

@@ -52,6 +52,7 @@ ideas = {
 				conscription = 0.01
 				consumer_goods_factor = 0.05
 				industrial_capacity_factory = 0.02
+				industrial_capacity_dockyard = 0.02
 				experience_loss_factor = -0.02
 			}
 		}
@@ -100,7 +101,12 @@ ideas = {
 				original_tag = NZL
 			}
 			allowed_civil_war = {
-				has_government = democratic
+				OR = {
+					##has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
 			}
 
 			removal_cost = -1
@@ -110,6 +116,7 @@ ideas = {
 				consumer_goods_factor = -0.02
 				production_factory_efficiency_gain_factor = 0.02
 				industrial_capacity_factory = 0.02
+				industrial_capacity_dockyard = 0.02
 				unity_factor = 0.05
 			}
 		}
@@ -145,6 +152,7 @@ ideas = {
 			
 			modifier = {
 				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
 				production_factory_efficiency_gain_factor = 0.10
 				conscription = 0.01
 				local_resources_factor = 0.10
@@ -309,9 +317,18 @@ ideas = {
 			}
 		}
 	}
-	political_advisor = {
+	
+##################
+####Politicians
+##################
+#HoS
+head_of_state = {
 
-		NZL_a_e_davy = {
+}
+
+#Foreign
+foreign_minister = {
+NZL_a_e_davy = {
 
 			picture = generic_political_advisor_europe_1
 			
@@ -321,8 +338,11 @@ ideas = {
 			
 			traits = { ideological_crusader }
 		}
+}
 
-		NZL_w_a_veitch_milne = {
+#Propaganda/Security
+interior_minister = {
+NZL_w_a_veitch_milne = {
 
 			picture = generic_political_advisor_europe_2
 				
@@ -332,8 +352,16 @@ ideas = {
 			
 			traits = { prince_of_terror }
 		}
+}
 
-		NZL_walter_nash = {
+#Intelligence
+intel_minister = {
+
+}
+
+#Economic
+economic_minister = {
+NZL_walter_nash = {
 
 			picture = generic_political_advisor_europe_3
 			
@@ -354,6 +382,14 @@ ideas = {
 			
 			traits = { captain_of_industry }
 		}
+}	
+	political_advisor = {
+
+		
+
+		
+
+		
 	}
 
 	theorist = {

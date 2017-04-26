@@ -23,9 +23,8 @@ equipments = {
 		
 		# (Describes combat behaviour - hidden stat)
 		offensive_weapons = no
-	
 	}
-
+	#
 	carrier_ww1 = {
 		archetype = carrier
 		priority = 0
@@ -49,19 +48,20 @@ equipments = {
 		
 		naval_range = 2000
 		
-		max_strength = 800 #DNM - original 250
+		max_strength = 1000 #DNM - original 250
 		
 		port_capacity_usage = 3
 		
-		build_cost_ic = 5250
+		build_cost_ic = 4250
 		resources = {
 			oil = 2
-			steel = 3
+			steel = 3 
+            chromium = 2
 		}
 		
 		manpower = 900
 	}
-
+	#
 	carrier_1 = {
 		archetype = carrier
 		parent = carrier_ww1
@@ -71,7 +71,7 @@ equipments = {
 		attack = 80 #DNM - original 1
 		fire_range = 14.8
 		torpedo_attack = 0
-		carrier_size = 50
+		carrier_size = 40
 		
 		anti_air_attack = 4
 		
@@ -86,17 +86,18 @@ equipments = {
 		
 		naval_range = 2500
 		
-		max_strength = 900#DNM - original 250
+		max_strength = 1500#DNM - original 250
 		
 		port_capacity_usage = 4
 
 		# (Describes combat behaviour - hidden stat)
 		offensive_weapons = no
 		
-		build_cost_ic = 7200
+		build_cost_ic = 5900
 		resources = {
 			oil = 2
-			steel = 3
+			steel = 3 
+            chromium = 2
 		}
 		
 		manpower = 1220
@@ -110,7 +111,7 @@ equipments = {
 		attack = 80 #DNM - original 1
 		fire_range = 14.8
 		torpedo_attack = 0
-		carrier_size = 60
+		carrier_size = 55
 		
 		anti_air_attack = 4.5
 		
@@ -125,15 +126,17 @@ equipments = {
 
 		naval_range = 4000
 		
-		max_strength = 1000#DNM - original 325
+		max_strength = 1800#DNM - original 325
 		
 		port_capacity_usage = 4
 
 		build_cost_ic = 7500
 		resources = {
 			oil = 2
-			steel = 4
+			steel = 4 
+            chromium = 3
 		}
+		
 		manpower = 1580
 	}
 	carrier_3 = {
@@ -160,15 +163,17 @@ equipments = {
 
 		naval_range = 4500
 		
-		max_strength = 1200#DNM - original 350
+		max_strength = 2200#DNM - original 350
 		
 		port_capacity_usage = 4
 
-		build_cost_ic = 8500
+		build_cost_ic = 9250
 		resources = {
 			oil = 2
-			steel = 4
+			steel = 4 
+            chromium = 3
 		}
+		
 		manpower = 1660
 	}
 	carrier_4 = {
@@ -195,53 +200,58 @@ equipments = {
 
 		naval_range = 6000
 		
-		max_strength = 5500 #DNM - original 400
+		max_strength = 2700 #DNM - original 400
 		
 		port_capacity_usage = 2
 
-		build_cost_ic = 10000
+		build_cost_ic = 11000
 		resources = {
 			oil = 2
-			steel = 5
-		}		
+			steel = 5 
+            chromium = 4
+		}
+		
 		manpower = 4100
 	}
-
 	### IMPERIAL JAPANESE NAVY ### ### JAPAN ### ### START ###
 	#Kaga Class
 	JAP_carrier_1 = {
 		archetype = carrier
-		priority = 0
 		is_buildable = no
+		priority = 0
 		
 		torpedo_attack = 0
-		surface_visibility = 30
+		surface_visibility = 29
 		sub_attack = 0
 		sub_detection = 5
-		reliability = 0.7
-		ap_attack = 11.14
-		attack = 139.25
+		reliability = 0.8
+		ap_attack = 11.1
+		attack = 139.2
 		fire_range = 29
 		shore_bombardment = 4
-		anti_air_attack = 12.91
+		anti_air_attack = 10.1
 		armor_value = 15.2
-		evasion = 3.62
-		surface_detection = 20.8
-		naval_speed = 28.08
-		manpower = 1700
+		evasion = 3.6
+		surface_detection = 23
+		naval_speed = 28
+		
 		naval_range = 4750
 		port_capacity_usage = 4
-		max_strength = 1520
+		max_strength = 2364
 		carrier_size = 90
-		build_cost_ic = 11879
+		build_cost_ic = 11500
 		resources = {
 			oil = 2
-			steel = 5
+			steel = 5 
+            chromium = 4
 		}
+		
+		manpower = 1700
 	}
 	#Akagi Class
 	JAP_carrier_1b = {
 		archetype = carrier
+		is_buildable = no
 		parent = JAP_carrier_1
 		priority = 0
 		
@@ -249,88 +259,97 @@ equipments = {
 		surface_visibility = 30
 		sub_attack = 0
 		sub_detection = 5
-		reliability = 0.7
-		ap_attack = 10.34
-		attack = 129.19
+		reliability = 0.8
+		ap_attack = 10.2
+		attack = 128.6
 		fire_range = 29
 		shore_bombardment = 4
-		anti_air_attack = 11.12
+		anti_air_attack = 10.7
 		armor_value = 15.2
-		evasion = 3.73
-		surface_detection = 23.2
-		naval_speed = 31.32
-		manpower = 1630
+		evasion = 3.7
+		surface_detection = 26
+		naval_speed = 31.3
+		
 		naval_range = 4750
 		port_capacity_usage = 5
-		max_strength = 1520
-		carrier_size = 85
-		build_cost_ic = 11137
+		max_strength = 2326
+		carrier_size = 91
+		build_cost_ic = 11851
 		resources = {
 			oil = 2
-			steel = 5
+			steel = 5 
+            chromium = 4
 		}
+		
+		manpower = 1630
 	}
 	#Soryu Class
 	JAP_carrier_2 = {
 		archetype = carrier
 		parent = JAP_carrier_1b
-		priority = 70
+		priority = 80
 		
 		fire_range = 18.4
 		torpedo_attack = 0
-		surface_visibility = 30
+		surface_visibility = 25
 		sub_attack = 0
 		sub_detection = 5
-		reliability = 0.7
-		ap_attack = 6.11
-		attack = 76.37
+		reliability = 0.8
+		ap_attack = 6.1
+		attack = 76.3
 		shore_bombardment = 2
-		anti_air_attack = 11.12
+		anti_air_attack = 11.1
 		armor_value = 9.1
-		evasion = 9.05
-		surface_detection = 25.2
+		evasion = 9
+		surface_detection = 28
 		naval_speed = 34
-		manpower = 1100
+		
 		naval_range = 3587
 		port_capacity_usage = 2
-		max_strength = 910
-		carrier_size = 63
-		build_cost_ic = 7709
+		max_strength = 1273
+		carrier_size = 71
+		build_cost_ic = 8773
 		resources = {
 			oil = 2
-			steel = 3
+			steel = 3 
+            chromium = 2
 		}
+		
+		manpower = 1100
 	}
 	#Hiryu Class
 	JAP_carrier_2b = {
 		archetype = carrier
 		parent = JAP_carrier_2
-		priority = 70
+		priority = 80
 		
 		fire_range = 18.4
 		torpedo_attack = 0
-		surface_visibility = 30
+		surface_visibility = 26
 		sub_attack = 0
 		sub_detection = 5
-		reliability = 0.75
-		ap_attack = 6.11
-		attack = 76.37
+		reliability = 0.85
+		ap_attack = 6.1
+		attack = 76.3
 		shore_bombardment = 2
-		anti_air_attack = 11.495
+		anti_air_attack = 11.4
 		armor_value = 15
-		evasion = 8.43
-		surface_detection = 25.6
+		evasion = 8.4
+		surface_detection = 30
 		naval_speed = 34.6
-		manpower = 1110
+		
 		naval_range = 4782
 		port_capacity_usage = 3
-		max_strength = 1500
-		carrier_size = 63
-		build_cost_ic = 8391
+		max_strength = 1896
+		carrier_size = 73
+		build_cost_ic = 9396
 		resources = {
 			oil = 2
-			steel = 4
+			steel = 4 
+            chromium = 3
 		}
+		
+		manpower = 1110
 	}
 	#Shokaku Class
 	JAP_carrier_3 = {
@@ -343,211 +362,169 @@ equipments = {
 		surface_visibility = 30
 		sub_attack = 0
 		sub_detection = 5
-		reliability = 0.7
-		ap_attack = 6.45
+		reliability = 0.85
+		ap_attack = 6.4
 		attack = 80.6
 		shore_bombardment = 2
-		anti_air_attack = 14.66
+		anti_air_attack = 14.6
 		armor_value = 13.2
-		evasion = 5.47
-		surface_detection = 25.6
+		evasion = 5.4
+		surface_detection = 30
 		naval_speed = 34.6
-		manpower = 1660
+		
 		naval_range = 4500
 		port_capacity_usage = 4
-		max_strength = 1320
+		max_strength = 1932
 		carrier_size = 84
-		build_cost_ic = 10938
+		build_cost_ic = 10984
 		resources = {
 			oil = 2
-			steel = 4
+			steel = 4 
+            chromium = 3
 		}
+		
+		manpower = 1660
 	}
-	#Unryu Class
+	#Taiho Class
 	JAP_carrier_3b = {
 		archetype = carrier
 		parent = JAP_carrier_3
 		priority = 70
 		
-		fire_range = 18.4
 		torpedo_attack = 0
 		surface_visibility = 30
 		sub_attack = 0
 		sub_detection = 5
-		reliability = 0.7
-		ap_attack = 6.11
-		attack = 76.37
-		shore_bombardment = 2
-		anti_air_attack = 15.495
-		armor_value = 15
-		evasion = 9.31
-		surface_detection = 24
-		naval_speed = 32.4
-		manpower = 1500
-		naval_range = 3750
-		reliability = 0.8
-		port_capacity_usage = 2
-		max_strength = 1500
-		carrier_size = 63
-		build_cost_ic = 8157
-		resources = {
-			oil = 2
-			steel = 4
-		}
-	}
-	#Shinano Class
-	JAP_scarrier_1 = {
-		archetype = carrier
-		priority = 70
-		
-		torpedo_attack = 0
-		surface_visibility = 35
-		sub_attack = 0
-		sub_detection = 5
-		ap_attack = 6.45
-		attack = 80.6
-		fire_range = 18.4
-		shore_bombardment = 2
-		anti_air_attack = 28.285
-		armor_value = 25
-		evasion = 1.97
-		surface_detection = 20.8
-		naval_speed = 28.08
-		manpower = 2400
-		naval_range = 3750
-		reliability = 0.75
-		port_capacity_usage = 8
-		max_strength = 2500
-		carrier_size = 47
-		build_cost_ic = 13265
-		resources = {
-			oil = 2
-			steel = 8
-		}
-	}
-	#Taiho Class
-	JAP_carrier_4 = {
-		archetype = carrier
-		parent = JAP_scarrier_1
-		priority = 70
-		
-		torpedo_attack = 0
-		surface_visibility = 35
-		sub_attack = 0
-		sub_detection = 5
-		reliability = 0.8
-		ap_attack = 0.89
-		attack = 11.08
+		reliability = 0.9
+		ap_attack = 6.09
+		attack = 76
 		shore_bombardment = 0
-		anti_air_attack = 12.375
+		anti_air_attack = 24.7
 		armor_value = 15
-		evasion = 4.44
-		surface_detection = 24.8
-		naval_speed = 33.48
-		manpower = 1750
+		evasion = 4.4
+		surface_detection = 31
+		naval_speed = 33.4
+		
 		naval_range = 3700
 		port_capacity_usage = 4
-		max_strength = 1500
-		carrier_size = 75
-		build_cost_ic = 11255
+		max_strength = 2231
+		carrier_size = 84
+		build_cost_ic = 12835
 		resources = {
 			oil = 2
-			steel = 5
+			steel = 5 
+            chromium = 4
 		}
+		
+		manpower = 1750
 	}
-	#Taiho Kai Class
-	JAP_scarrier_2 = {
+	#Unryu Class
+	JAP_carrier_4 = {
 		archetype = carrier
-		parent = JAP_carrier_4
+		parent = JAP_carrier_3b
 		priority = 70
 		
+		fire_range = 18.4
 		torpedo_attack = 0
-		surface_visibility = 35
+		surface_visibility = 26
 		sub_attack = 0
 		sub_detection = 5
-		reliability = 0.8
-		ap_attack = 1.15
-		attack = 14.42
-		shore_bombardment = 0
-		anti_air_attack = 16.25
-		armor_value = 17
-		evasion = 4.24
-		surface_detection = 24.4
-		naval_speed = 32.94
-		manpower = 1800
+		reliability = 0.7
+		ap_attack = 6.1
+		attack = 76.3
+		shore_bombardment = 2
+		anti_air_attack = 30.9
+		armor_value = 15
+		evasion = 9.31
+		surface_detection = 30
+		naval_speed = 32.4
+		
 		naval_range = 3750
-		port_capacity_usage = 4
-		max_strength = 1700
-		carrier_size = 80
-		build_cost_ic =12217
+		reliability = 0.9
+		port_capacity_usage = 2
+		max_strength = 1837
+		carrier_size = 65
+		build_cost_ic = 8732
 		resources = {
 			oil = 2
-			steel = 5
+			steel = 4 
+            chromium = 3
 		}
+		
+		manpower = 1500
 	}
-	### IMPERIAL JAPANESE NAVY ### ### JAPAN ### ### END ###
 	
-	### UNITED STATES NAVY ### ### USA ### ### START ###
+	### IMPERIAL JAPANESE NAVY ### ### JAPAN ### ### END ###
+	########################################################
+	### UNITED STATES NAVY ### ### USA ### ### START #######
 	#Lexington Class
 	USA_carrier_1 = {
 		archetype = carrier
+		is_buildable = no
 		priority = 70
 		
 		torpedo_attack = 0
-		surface_visibility = 30
+		surface_visibility = 31
 		sub_attack = 0
 		sub_detection = 5
-		ap_attack = 9.83
-		attack = 122.93
+		ap_attack = 10.3
+		attack = 129.6
 		fire_range = 27.5
 		shore_bombardment = 4
-		anti_air_attack = 7.62
+		anti_air_attack = 10.6
 		armor_value = 17.8
-		evasion = 3.49
-		surface_detection = 24.63
-		naval_speed = 33.25
-		reliability = 0.7
-		manpower = 2200
+		evasion = 3.4
+		surface_detection = 27
+		naval_speed = 33.2
+		reliability = 0.8
+		
 		naval_range = 4750
 		port_capacity_usage = 5
-		max_strength = 1780
-		carrier_size = 78
-		build_cost_ic = 10615
+		max_strength = 2696
+		carrier_size = 63
+		build_cost_ic = 10029
 		resources = {
 			oil = 2
-			steel = 6
+			steel = 6 
+            chromium = 5
 		}
+		
+		manpower = 2200
 	}
 	#Ranger Class
 	USA_carrier_2 = {
 		archetype = carrier
+		is_buildable = no
 		parent = USA_carrier_1
 		priority = 70
 		
 		torpedo_attack = 0
-		surface_visibility = 30
+		surface_visibility = 28
 		sub_attack = 0
 		sub_detection = 5
-		ap_attack = 5.08
-		attack = 63.55
+		ap_attack = 5
+		attack = 63.5
 		fire_range = 15.9
 		shore_bombardment = 2
-		anti_air_attack = 7.62
+		anti_air_attack = 5
 		armor_value = 5.1
-		evasion = 8.23
-		surface_detection = 21.7
+		evasion = 8.2
+		surface_detection = 24
 		naval_speed = 29.3
-		reliability = 0.7
-		manpower = 1800
+		reliability = 0.8
+		
 		naval_range = 4750
 		port_capacity_usage = 2
-		max_strength = 510
+		max_strength = 853
 		carrier_size = 76
-		build_cost_ic = 8955
+		build_cost_ic = 8874
 		resources = {
 			oil = 2
-			steel = 3
+			steel = 3 
+            chromium = 2
 		}
+		
+		manpower = 1800
 	}
 	#Yorktown Class
 	USA_carrier_2b = {
@@ -559,26 +536,29 @@ equipments = {
 		surface_visibility = 30
 		sub_attack = 0
 		sub_detection = 5
-		ap_attack = 5.08
-		attack = 63.55
+		ap_attack = 5
+		attack = 63.5
 		fire_range = 15.9
 		shore_bombardment = 2
-		anti_air_attack = 8.844
+		anti_air_attack = 8.8
 		armor_value = 10.2
-		evasion = 6.27
-		surface_detection = 24.07
+		evasion = 6.2
+		surface_detection = 26
 		naval_speed = 32.5
-		reliability = 0.7
-		manpower = 1900
+		reliability = 0.8
+		
 		naval_range = 5800
 		port_capacity_usage = 3
-		max_strength = 1020
-		carrier_size = 90
-		build_cost_ic = 10362
+		max_strength = 1520
+		carrier_size = 96
+		build_cost_ic = 10995
 		resources = {
 			oil = 2
-			steel = 4
+			steel = 4 
+            chromium = 3
 		}
+		
+		manpower = 1900
 	}
 	#Wasp Class
 	USA_carrier_2c = {
@@ -587,29 +567,32 @@ equipments = {
 		priority = 70
 
 		torpedo_attack = 0
-		surface_visibility = 30
+		surface_visibility = 27
 		sub_attack = 0
 		sub_detection = 5
-		ap_attack = 5.08
-		attack = 63.55
+		ap_attack = 5
+		attack = 63.5
 		fire_range = 15.9
 		shore_bombardment = 2
-		anti_air_attack = 8.844
+		anti_air_attack = 8.8
 		armor_value = 3.5
 		evasion = 7.6
-		surface_detection = 21.85
+		surface_detection = 26
 		naval_speed = 29.5
-		reliability = 0.75
-		manpower = 1800
+		reliability = 0.85
+		
 		naval_range = 5500
 		port_capacity_usage = 2
-		max_strength = 350
-		carrier_size = 90
-		build_cost_ic = 10139
+		max_strength = 725
+		carrier_size = 76
+		build_cost_ic = 9365
 		resources = {
 			oil = 2
-			steel = 3
+			steel = 3 
+            chromium = 2
 		}
+		
+		manpower = 1800
 	}
 	#Essex Class
 	USA_carrier_3 = {
@@ -618,29 +601,32 @@ equipments = {
 		priority = 70
 		
 		torpedo_attack = 0
-		surface_visibility = 30
+		surface_visibility = 33
 		sub_attack = 0
 		sub_detection = 5
-		ap_attack = 5.42
-		attack = 67.78
+		ap_attack = 5.4
+		attack = 67.7
 		fire_range = 15.9
 		shore_bombardment = 2
-		anti_air_attack = 18.62
+		anti_air_attack = 27.9
 		armor_value = 10
-		evasion = 4.53
-		surface_detection = 24.44
+		evasion = 4.5
+		surface_detection = 30
 		naval_speed = 33
-		reliability = 0.8
-		manpower = 2000
+		reliability = 0.9
+		
 		naval_range = 9250
 		port_capacity_usage = 4
-		max_strength = 1000
-		carrier_size = 90
-		build_cost_ic = 11955
+		max_strength = 1706
+		carrier_size = 91
+		build_cost_ic = 12416
 		resources = {
 			oil = 2
-			steel = 4
+			steel = 4 
+            chromium = 3
 		}
+		
+		manpower = 2000
 	}
 	#Midway Class
 	USA_carrier_4 = {
@@ -649,29 +635,555 @@ equipments = {
 		priority = 70
 		
 		torpedo_attack = 0
-		surface_visibility = 30
+		surface_visibility = 33
 		sub_attack = 0
 		sub_detection = 5
-		ap_attack = 5.93
-		attack = 74.13
+		ap_attack = 5.9
+		attack = 74.1
 		fire_range = 15.9
 		shore_bombardment = 2
-		anti_air_attack = 35.03
+		anti_air_attack = 46.5
 		armor_value = 19.3
-		evasion = 3.67
-		surface_detection = 24.44
+		evasion = 3.6
+		surface_detection = 30
 		naval_speed = 33
-		reliability = 0.8
-		manpower = 4104
+		reliability = 0.9
+		
 		naval_range = 9250
 		port_capacity_usage = 5
-		max_strength = 1930
-		carrier_size = 100
-		build_cost_ic = 15087
+		max_strength = 2804
+		carrier_size = 137
+		build_cost_ic = 17728
 		resources = {
 			oil = 2
-			steel = 6
+			steel = 6 
+            chromium = 5
 		}
+		
+		manpower = 4104
 	}
 	### UNITED STATES NAVY ### ### USA ### ### END ###
+	##################################################
+	### ROYAL NAVY ### ### ENG ### ### START #########
+	#Courageaous/Glorious Class
+	ENG_carrier_1 = {
+		archetype = carrier
+		is_buildable = no
+		priority = 70
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0
+		torpedo_attack = 0
+		shore_bombardment = 0
+		anti_air_attack = 15.3
+		armor_value = 7.6
+		evasion = 5.4
+		surface_detection = 23
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 26
+		naval_speed = 30
+		reliability = 0.75
+	
+		naval_range = 3070
+		port_capacity_usage = 3
+		max_strength = 1287
+		carrier_size = 48
+		build_cost_ic = 8595
+		resources = {
+			oil = 2
+			steel = 4 
+            chromium = 3
+		}
+		
+		manpower = 814
+	}
+	#Furious Class
+	ENG_carrier_1b = {
+		archetype = carrier
+		is_buildable = no
+		parent = ENG_carrier_1
+		priority = 0
+		
+		ap_attack = 5.7
+		attack = 71.7
+		fire_range = 16.2
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 7.7
+		armor_value = 7.6
+		evasion = 5.5
+		surface_detection = 23
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 26
+		naval_speed = 30
+		reliability = 0.75
+		
+		naval_range = 3462
+		port_capacity_usage = 3
+		max_strength = 1277
+		carrier_size = 36
+		build_cost_ic = 7858
+		resources = {
+			oil = 2
+			steel = 4 
+            chromium = 3
+		}
+		
+		manpower = 738
+	}
+	#Argus Class
+	ENG_carrier_1c = {
+		archetype = carrier
+		is_buildable = no
+		parent = ENG_carrier_1b
+		priority = 0
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0
+		torpedo_attack = 0
+		shore_bombardment = 0
+		anti_air_attack = 0
+		armor_value = 5.1
+		evasion = 6.2
+		surface_detection = 15
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 20
+		naval_speed = 20
+		reliability = 0.75
+		
+		naval_range = 1675
+		port_capacity_usage = 2
+		max_strength = 816
+		carrier_size = 20
+		build_cost_ic = 5643
+		resources = {
+			oil = 1
+			steel = 3 
+            chromium = 2
+		}
+		
+		manpower = 495
+	}
+	#Hermes Class
+	ENG_carrier_1d = {
+		archetype = carrier
+		is_buildable = no
+		parent = ENG_carrier_1c
+		priority = 0
+		
+		ap_attack = 5.3
+		attack = 66.4
+		fire_range = 16.2
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 1.5
+		armor_value = 7.6
+		evasion = 8.9
+		surface_detection = 19
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 21
+		naval_speed = 25
+		reliability = 0.75
+		
+		naval_range = 2600
+		port_capacity_usage = 2
+		max_strength = 1026
+		carrier_size = 20
+		build_cost_ic = 4948
+		resources = {
+			oil = 1
+			steel = 3 
+            chromium = 2
+		}
+		
+		manpower = 566
+	}
+	#Eagle Class
+	ENG_carrier_1e = {
+		archetype = carrier
+		is_buildable = no
+		parent = ENG_carrier_1d
+		priority = 0
+		
+		ap_attack = 7.7
+		attack = 96.5
+		fire_range = 23.3
+		torpedo_attack = 0
+		shore_bombardment = 3
+		anti_air_attack = 5
+		armor_value = 11.4
+		evasion = 5.4
+		surface_detection = 18
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 25
+		naval_speed = 24
+		reliability = 0.75
+		
+		naval_range = 2225
+		port_capacity_usage = 3
+		max_strength = 1564
+		carrier_size = 30
+		build_cost_ic = 6377
+		resources = {
+			oil = 1
+			steel = 4 
+            chromium = 3
+		}
+		
+		manpower = 791
+	}
+	#Ark Royal Class
+	ENG_carrier_2 = {
+		archetype = carrier
+		parent = ENG_carrier_1e
+		priority = 70
+		
+		ap_attack = 6.4
+		attack = 80.2
+		fire_range = 18.9
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 17.5
+		armor_value = 11.4
+		evasion = 5.3
+		surface_detection = 24
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 28
+		naval_speed = 30
+		reliability = 0.8
+		
+		naval_range = 3525
+		port_capacity_usage = 3
+		max_strength = 1683
+		carrier_size = 60
+		build_cost_ic = 8842
+		resources = {
+			oil = 2
+			steel = 4 
+            chromium = 3
+		}
+		
+		manpower = 1580
+	}
+	#Illustrious Class
+	ENG_carrier_2b = {
+		archetype = carrier
+		parent = ENG_carrier_2
+		priority = 70
+		
+		ap_attack = 6.4
+		attack = 80.2
+		fire_range = 18.9
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 18.6
+		armor_value = 11.4
+		evasion = 6.6
+		surface_detection = 26
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 26
+		naval_speed = 30.5
+		reliability = 0.85
+		
+		naval_range = 4950
+		port_capacity_usage = 3
+		max_strength = 1585
+		carrier_size = 57
+		build_cost_ic = 8697
+		resources = {
+			oil = 2
+			steel = 4 
+            chromium = 3
+		}
+		
+		manpower = 1229
+	}
+	#Indomitable Class
+	ENG_carrier_2c = {
+		archetype = carrier
+		parent = ENG_carrier_2b
+		priority = 70
+		
+		ap_attack = 6.4
+		attack = 80.2
+		fire_range = 18.9
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 18.7
+		armor_value = 11.4
+		evasion = 5.1
+		surface_detection = 26
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 27
+		naval_speed = 30.5
+		reliability = 0.85
+		
+		naval_range = 5000
+		port_capacity_usage = 3
+		max_strength = 1715
+		carrier_size = 45
+		build_cost_ic = 8413
+		resources = {
+			oil = 2
+			steel = 4 
+            chromium = 3
+		}
+		
+		manpower = 1392
+	}
+	#Implacable Class
+	ENG_carrier_3 = {
+		archetype = carrier
+		parent = ENG_carrier_2c
+		priority = 70
+		
+		ap_attack = 6.4
+		attack = 80.2
+		fire_range = 18.9
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 43.2
+		armor_value = 11.4
+		evasion = 4.9
+		surface_detection = 28
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 27
+		naval_speed = 32.5
+		reliability = 0.85
+		
+		naval_range = 5500
+		port_capacity_usage = 4
+		max_strength = 1772
+		carrier_size = 81
+		build_cost_ic = 11170
+		resources = {
+			oil = 2
+			steel = 4 
+            chromium = 3
+		}
+		
+		manpower = 2300
+	}
+	#Audacious Class
+	ENG_carrier_3b = {
+		archetype = carrier
+		parent = ENG_carrier_3
+		priority = 70
+		
+		ap_attack = 6.4
+		attack = 80.2
+		fire_range = 18.9
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 27.9
+		armor_value = 10.2
+		evasion = 4.3
+		surface_detection = 26
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 30
+		naval_speed = 32
+		reliability = 0.9
+		
+		naval_range = 3250
+		port_capacity_usage = 4
+		max_strength = 1734
+		carrier_size = 78
+		build_cost_ic = 11732
+		resources = {
+			oil = 2
+			steel = 4 
+            chromium = 3
+		}
+		
+		manpower = 2500
+	}
+	### ROYAL NAVY ### ### ENG ### ### END #######
+	##############################################
+	### KRIEGSMARINE ### ### GER ### ### START ###
+	#Graf Zeppelin Class
+	GER_carrier_1 = {
+		archetype = carrier
+		priority = 70
+		
+		ap_attack = 9.6
+		attack = 120
+		fire_range = 25.7
+		torpedo_attack = 0
+		shore_bombardment = 3
+		anti_air_attack = 13.1
+		armor_value = 6
+		evasion = 5.2
+		surface_detection = 30
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 30
+		naval_speed = 35
+		reliability = 0.85
+		
+		naval_range = 3704
+		port_capacity_usage = 4
+		max_strength = 1248
+		carrier_size = 43
+		build_cost_ic = 8170
+		resources = {
+			oil = 2
+			steel = 4
+            chromium = 3
+		}
+		
+		manpower = 1760
+	}
+	#Europa Class
+	GER_carrier_2 = {
+		archetype = carrier
+		parent = GER_carrier_1
+		priority = 70
+		
+		ap_attack = 5.7
+		attack = 72
+		fire_range = 17.6
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 13.6
+		armor_value = 6
+		evasion = 2.35
+		surface_detection = 24
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 34
+		naval_speed = 34
+		reliability = 0.9
+		
+		naval_range = 4750
+		port_capacity_usage = 6
+		max_strength = 1697
+		carrier_size = 42
+		build_cost_ic = 9890
+		resources = {
+			oil = 1
+			steel = 5
+            chromium = 4
+		}
+		
+		manpower = 2200
+	}
+	
+	### KRIEGSMARINE ### ### GER ### ### END ###
+	############################################
+	### RED FLEET ### ### SOV ### ### START ####
+	
+	#Project 71B
+	SOV_carrier_1 = {
+		archetype = carrier
+		priority = 70
+		
+		ap_attack = 7
+		attack = 87.7
+		fire_range = 20.3
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 16.3
+		armor_value = 10
+		evasion = 5.1
+		surface_detection = 27
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 27
+		naval_speed = 31.5
+		reliability = 0.85
+		
+		naval_range = 3250
+		port_capacity_usage = 4
+		max_strength = 1592
+		carrier_size = 54
+		build_cost_ic = 8910
+		resources = {
+			oil = 2
+			steel = 4
+            chromium = 3
+		}
+		
+		manpower = 1450
+	}
+	#Project 72
+	SOV_carrier_2 = {
+		archetype = carrier
+		parent = SOV_carrier_1
+		priority = 70
+		
+		ap_attack = 7.7
+		attack = 97.4
+		fire_range = 20.3
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 27.1
+		armor_value = 9
+		evasion = 4
+		surface_detection = 27
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 32
+		naval_speed = 30
+		reliability = 0.9
+		
+		naval_range = 4000
+		port_capacity_usage = 4
+		max_strength = 1626
+		carrier_size = 62
+		build_cost_ic = 10567
+		resources = {
+			oil = 2
+			steel = 4
+            chromium = 3
+		}
+		
+		manpower = 2200
+	}
+	#Project 69AV
+	SOV_carrier_3 = {
+		archetype = carrier
+		parent = SOV_carrier_2
+		priority = 70
+		
+		ap_attack = 7
+		attack = 87.7
+		fire_range = 20.3
+		torpedo_attack = 0
+		shore_bombardment = 2
+		anti_air_attack = 21.6
+		armor_value = 12
+		evasion = 4.1
+		surface_detection = 29
+		sub_attack = 0
+		sub_detection = 5
+		surface_visibility = 29
+		naval_speed = 32
+		reliability = 0.9
+		
+		naval_range = 4400
+		port_capacity_usage = 4
+		max_strength = 1950
+		carrier_size = 76
+		build_cost_ic = 11423
+		resources = {
+			oil = 2
+			steel = 5
+            chromium = 4
+		}
+		
+		manpower = 2000
+	}
+	
 }

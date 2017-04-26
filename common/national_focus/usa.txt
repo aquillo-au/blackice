@@ -132,7 +132,11 @@ available_if_capitulated = yes
 		icon = GFX_goal_generic_oil_refinery
 		prerequisite = { focus = USA_wartime_industry }
 		available = {
-			has_government = democratic
+			OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+				}
 			controls_state = 369
 		}
 		x = 2
@@ -165,7 +169,13 @@ available_if_capitulated = yes
 		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = USA_office_of_strategic_services }
 		prerequisite = { focus = USA_rubber_reserve_company }
-		available = { has_government = democratic }
+		available = { 
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+				} 
+			}
 		x = 1
 		y = 3
 		cost = 10
@@ -529,7 +539,7 @@ available_if_capitulated = yes
 					instant_build = yes
 				}
 			}
-			add_ideas = extensive_conscription
+			add_ideas = cons_expanded_draft
 		}
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -732,7 +742,7 @@ available_if_capitulated = yes
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
-					level = 3
+					level = 6
 					instant_build = yes
 				}
 				set_state_flag = USA_arsenal_of_democracy_3AF
@@ -749,12 +759,12 @@ available_if_capitulated = yes
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = dockyard
-					level = 3
+					level = 6
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = shipyard
-					level = 3
+					level = 6
 					instant_build = yes
 				}
 				set_state_flag = USA_arsenal_of_democracy_3AF
@@ -812,7 +822,7 @@ available_if_capitulated = yes
 		#}
 		completion_reward = {
 			#remove_ideas = disarmed_nation
-			add_ideas = volunteer_only
+			add_ideas = cons_volunteer
 		}
 	}
 
@@ -883,7 +893,11 @@ available_if_capitulated = yes
 			ENG = {
 				NOT = { is_in_faction_with = GER }
 			}
-			has_government = democratic
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+				} 
 		}
 	bypass = {
 			NOT = { 696 = { is_controlled_by = ENG } }
@@ -977,11 +991,17 @@ available_if_capitulated = yes
 		available = {
 			#any_other_country = {
 			#	has_defensive_war_with = ENG
-			#	has_government = democratic
+			#	#has_government = democratic
 			#}
 			country_exists = ENG
-			NOT = { has_government = democratic }
-		}
+			NOT = { 
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					} 
+				}
+			}
 		x = 12
 		y = 2
 		cost = 10
@@ -1236,11 +1256,11 @@ available_if_capitulated = yes
 			if = {
 				limit = { 
 					OR = { 
-						has_idea = disarmed_nation
-						has_idea = volunteer_only
+						has_country_flag = mob_reserve
+						has_country_flag = cons_volunteer
 					}
 				}
-				add_ideas = limited_conscription
+				add_ideas = cons_one
 			}
 			
 			add_ideas = limited_interventionism
@@ -1679,6 +1699,8 @@ available_if_capitulated = yes
 				bonus = 0.5
 				uses = 2
 				category = cv_tech
+				category = cvl_tech
+				category = cve_tech
 			}
 		}
 	}
@@ -1855,34 +1877,64 @@ available_if_capitulated = yes
 
 		completion_reward = {
 			if = {
-				limit = { has_government = democratic }
+				limit = { 
+					OR = {
+						has_government = conservatism
+						has_government = liberalism
+						has_government = socialism
+					} 
+				}
 				CUB = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				HAI = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				DOM = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
@@ -2001,64 +2053,118 @@ available_if_capitulated = yes
 		#}
 		completion_reward = {
 			if = {
-				limit = { has_government = democratic }
+				limit = { 
+					OR = {
+						has_government = conservatism
+						has_government = liberalism
+						has_government = socialism
+					} 
+				}
 				GUA = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				} 
 				ELS = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				HON = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				NIC = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				COS = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				"PAN" = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
@@ -2238,24 +2344,46 @@ available_if_capitulated = yes
 		}
 		completion_reward = {
 			if = {
-				limit = { has_government = democratic }
+				limit = { 
+					OR = {
+						has_government = conservatism
+						has_government = liberalism
+						has_government = socialism
+					} 
+				}
 				CAN =  {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				MEX =  {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
@@ -2355,106 +2483,192 @@ available_if_capitulated = yes
 		#}
 		completion_reward = {
 			if = {
-				limit = { has_government = democratic }
+				limit = { 
+					OR = {
+						has_government = conservatism
+						has_government = liberalism
+						has_government = socialism
+					} 
+				}
 				COL = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				VEN = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				ECU = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				PRU = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				BRA = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				BOL = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				PAR = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				URG = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
-					}				
+					}
 				}
 				ARG = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				CHL = {
 					if = {
-						limit = { has_government = democratic }
+						limit = { OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							} }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { has_government = democratic } }
+						limit = { NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 } }
 						add_ideas = american_influence_drift_democratic
-					}				
+					}			
 				}
 				every_other_country = {
 					limit = { 
@@ -2716,18 +2930,32 @@ available_if_capitulated = yes
 		#}
 		completion_reward = {
 				if = {
-					limit = { has_government = democratic }
+					limit = { 
+					OR = {
+						has_government = conservatism
+						has_government = liberalism
+						has_government = socialism
+					} 
+				}
 					every_other_country = {
 						limit = { 
 							has_country_flag = monroe_doctrine 
-							has_government = democratic
+							OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							}
 						}
 						add_ideas = american_protection_defence_democratic
 					}
 					every_other_country = {
 						limit = { 
 							has_country_flag = monroe_doctrine 
-							NOT = { has_government = democratic }
+							NOT = { 
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							 }
 						}
 						add_ideas = american_protection_drift_democratic
 						country_event = { id = usa.23 }
@@ -2797,7 +3025,13 @@ available_if_capitulated = yes
 		id = USA_black_chamber
 		icon = GFX_goal_generic_demand_territory
 		prerequisite = { focus = USA_pax_americana }
-		available = { is_puppet = no }
+		available = { 
+			is_puppet = no
+			OR = {
+				has_country_flag = foreign_interventionism
+				has_country_flag = foreign_warmonger
+				}
+			}
 		x = 32
 		y = 3
 		cost = 10
@@ -2805,7 +3039,11 @@ available_if_capitulated = yes
 			factor = 1
 			modifier = {
 				factor = 0
-				has_government = democratic
+				OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+				}
 			}
 		}
 		complete_tooltip = {
@@ -2837,8 +3075,11 @@ available_if_capitulated = yes
 			set_rule = {
 				can_boost_other_ideologies = yes
 			}
+			#US Conservatism
 			if = {
-				limit = { has_government = democratic }
+				limit = { 
+						has_government = conservatism
+				}
 				random_other_country = {
 					limit = {
 						has_government = neutrality
@@ -2849,7 +3090,11 @@ available_if_capitulated = yes
 					}
 
 					if = {
-						limit = { democratic > 0.5 }
+						limit = { 
+							conservatism > 0.35
+							liberalism < 0.35
+							socialism < 0.35
+							}
 						if = {
 							limit = { has_government = fascism }
 							add_timed_idea = { idea = fascism_defeated days = 540 }
@@ -2859,15 +3104,19 @@ available_if_capitulated = yes
 							add_timed_idea = { idea = communism_defeated days = 540 }
 						}
 						set_politics = {
-							ruling_party = democratic
+							ruling_party = conservatism
 							elections_allowed = yes
 						}						
 						set_country_flag = USA_black_chamber_democratic_SetGov
 					}
 					if = {
-						limit = { NOT = { democratic > 0.5 } }
+						limit = { 
+						NOT = {
+							conservatism > 0.35 
+							}
+						}
 						start_civil_war = {
-							ideology = democratic
+							ideology = conservatism
 							size = 0.5
 						}
 						set_country_flag = USA_black_chamber_democratic_CivWar
@@ -2885,7 +3134,11 @@ available_if_capitulated = yes
 					}
 					
 					if = {
-						limit = { democratic > 0.5 }
+						limit = { 
+							conservatism > 0.35
+							liberalism < 0.35
+							socialism < 0.35
+							}
 						if = {
 							limit = { has_government = fascism }
 							add_timed_idea = { idea = fascism_defeated days = 540 }
@@ -2895,14 +3148,19 @@ available_if_capitulated = yes
 							add_timed_idea = { idea = communism_defeated days = 540 }
 						}
 						set_politics = {
-							ruling_party = democratic
+							ruling_party = conservatism
 							elections_allowed = yes
-						}							
+						}						
+						set_country_flag = USA_black_chamber_democratic_SetGov
 					}
 					if = {
-						limit = { NOT = { democratic > 0.5 } }
+						limit = { 
+						NOT = {
+							conservatism > 0.35 
+							}
+						}
 						start_civil_war = {
-							ideology = democratic
+							ideology = conservatism
 							size = 0.5
 						}
 						set_country_flag = USA_black_chamber_democratic_CivWar
@@ -2928,33 +3186,350 @@ available_if_capitulated = yes
 					random_other_country = {
 						limit = {
 							has_country_flag = monroe_doctrine 
-							NOT = { has_government = democratic }
+							NOT = { 
+								OR = {
+										has_government = conservatism
+										has_government = liberalism
+										has_government = socialism
+									} 
+								}
+							}
+						if = {
+						limit = { 
+							conservatism > 0.35
+							liberalism < 0.35
+							socialism < 0.35
+							}
+						if = {
+							limit = { has_government = fascism }
+							add_timed_idea = { idea = fascism_defeated days = 540 }
 						}
 						if = {
-							limit = { democratic > 0.5 }
-							if = {
-								limit = { has_government = fascism }
-								add_timed_idea = { idea = fascism_defeated days = 540 }
+							limit = { has_government = communism }
+							add_timed_idea = { idea = communism_defeated days = 540 }
+						}
+						set_politics = {
+							ruling_party = conservatism
+							elections_allowed = yes
+						}						
+					}
+					if = {
+						limit = { 
+						NOT = {
+							conservatism > 0.35 
 							}
-							if = {
-								limit = { has_government = communism }
-								add_timed_idea = { idea = communism_defeated days = 540 }
+						}
+						start_civil_war = {
+							ideology = conservatism
+							size = 0.5
+						}
+					}					
+					}
+				}
+			}
+			
+			#US Liberalism
+			if = {
+				limit = { 
+						has_government = liberalism
+				}
+				random_other_country = {
+					limit = {
+						has_government = neutrality
+						OR = { 
+							tag = BRA
+							tag = MEX
+						}
+					}
+					if = {
+						limit = { 
+							liberalism > 0.35
+							conservatism < 0.35
+							socialism < 0.35
 							}
-							set_politics = {
-								ruling_party = democratic
-								elections_allowed = yes
-							}							
+						if = {
+							limit = { has_government = fascism }
+							add_timed_idea = { idea = fascism_defeated days = 540 }
 						}
 						if = {
-						limit = { NOT = { democratic > 0.5 } }
-							start_civil_war = {
-								ideology = democratic
-								size = 0.5
+							limit = { has_government = communism }
+							add_timed_idea = { idea = communism_defeated days = 540 }
+						}
+						set_politics = {
+							ruling_party = liberalism
+							elections_allowed = yes
+						}						
+						set_country_flag = USA_black_chamber_democratic_SetGov
+					}
+					if = {
+						limit = { 
+						NOT = {
+							liberalism > 0.35 
+							}
+						}
+						start_civil_war = {
+							ideology = liberalism
+							size = 0.5
+						}
+						set_country_flag = USA_black_chamber_democratic_CivWar
+					}
+				}
+
+				random_other_country = {
+					limit = {
+						has_government = neutrality
+						OR = { 
+							tag = ARG
+							tag = COL
+							tag = BOL
+						}
+					}
+					if = {
+						limit = { 
+							liberalism > 0.35
+							conservatism < 0.35
+							socialism < 0.35
+							}
+						if = {
+							limit = { has_government = fascism }
+							add_timed_idea = { idea = fascism_defeated days = 540 }
+						}
+						if = {
+							limit = { has_government = communism }
+							add_timed_idea = { idea = communism_defeated days = 540 }
+						}
+						set_politics = {
+							ruling_party = liberalism
+							elections_allowed = yes
+						}						
+						set_country_flag = USA_black_chamber_democratic_SetGov
+					}
+					if = {
+						limit = { 
+						NOT = {
+							liberalism > 0.35 
+							}
+						}
+						start_civil_war = {
+							ideology = liberalism
+							size = 0.5
+						}
+						set_country_flag = USA_black_chamber_democratic_CivWar
+					}
+				}				
+
+				#If none matches a trigger above, we have a fallback, so the focus isn't wasted
+				if = {
+					limit = {
+						NOT = {
+							any_other_country = {
+								has_government = neutrality
+								OR = {
+									tag = BRA
+									tag = MEX
+									tag = ARG
+									tag = COL
+									tag = BOL									
+								}
+							}					
+						}
+					}
+					random_other_country = {
+						limit = {
+							has_country_flag = monroe_doctrine 
+							NOT = { 
+								OR = {
+										has_government = conservatism
+										has_government = liberalism
+										has_government = socialism
+									} 
+								}
+							}
+					if = {
+						limit = { 
+							liberalism > 0.35
+							conservatism < 0.35
+							socialism < 0.35
+							}
+						if = {
+							limit = { has_government = fascism }
+							add_timed_idea = { idea = fascism_defeated days = 540 }
+						}
+						if = {
+							limit = { has_government = communism }
+							add_timed_idea = { idea = communism_defeated days = 540 }
+						}
+						set_politics = {
+							ruling_party = liberalism
+							elections_allowed = yes
+						}						
+					}
+					if = {
+						limit = { 
+						NOT = {
+							liberalism > 0.35 
+							}
+						}
+						start_civil_war = {
+							ideology = liberalism
+							size = 0.5
+						}
+					}					
+					}
+				}
+			}
+			
+			#US Socialism
+			if = {
+				limit = { 
+						has_government = socialism
+				}
+				random_other_country = {
+					limit = {
+						has_government = neutrality
+						OR = { 
+							tag = BRA
+							tag = MEX
+						}
+					}
+					if = {
+						limit = { 
+							socialism > 0.35
+							conservatism < 0.35
+							liberalism < 0.35
+							}
+						if = {
+							limit = { has_government = fascism }
+							add_timed_idea = { idea = fascism_defeated days = 540 }
+						}
+						if = {
+							limit = { has_government = communism }
+							add_timed_idea = { idea = communism_defeated days = 540 }
+						}
+						set_politics = {
+							ruling_party = socialism
+							elections_allowed = yes
+						}						
+						set_country_flag = USA_black_chamber_democratic_SetGov
+					}
+					if = {
+						limit = { 
+						NOT = {
+							socialism > 0.35 
+							}
+						}
+						start_civil_war = {
+							ideology = socialism
+							size = 0.5
+						}
+						set_country_flag = USA_black_chamber_democratic_CivWar
+					}
+				}
+
+				random_other_country = {
+					limit = {
+						has_government = neutrality
+						OR = { 
+							tag = ARG
+							tag = COL
+							tag = BOL
+						}
+					}
+					if = {
+						limit = { 
+							socialism > 0.35
+							conservatism < 0.35
+							liberalism < 0.35
+							}
+						if = {
+							limit = { has_government = fascism }
+							add_timed_idea = { idea = fascism_defeated days = 540 }
+						}
+						if = {
+							limit = { has_government = communism }
+							add_timed_idea = { idea = communism_defeated days = 540 }
+						}
+						set_politics = {
+							ruling_party = socialism
+							elections_allowed = yes
+						}						
+						set_country_flag = USA_black_chamber_democratic_SetGov
+					}
+					if = {
+						limit = { 
+						NOT = {
+							socialism > 0.35 
+							}
+						}
+						start_civil_war = {
+							ideology = socialism
+							size = 0.5
+						}
+						set_country_flag = USA_black_chamber_democratic_CivWar
+					}
+				}				
+
+				#If none matches a trigger above, we have a fallback, so the focus isn't wasted
+				if = {
+					limit = {
+						NOT = {
+							any_other_country = {
+								has_government = neutrality
+								OR = {
+									tag = BRA
+									tag = MEX
+									tag = ARG
+									tag = COL
+									tag = BOL									
+								}
+							}					
+						}
+					}
+					random_other_country = {
+						limit = {
+							has_country_flag = monroe_doctrine 
+							NOT = { 
+								OR = {
+										has_government = conservatism
+										has_government = liberalism
+										has_government = socialism
+									} 
+								}
+							}
+					if = {
+						limit = { 
+							socialism > 0.35
+							conservatism < 0.35
+							liberalism < 0.35
+							}
+						if = {
+							limit = { has_government = fascism }
+							add_timed_idea = { idea = fascism_defeated days = 540 }
+						}
+						if = {
+							limit = { has_government = communism }
+							add_timed_idea = { idea = communism_defeated days = 540 }
+						}
+						set_politics = {
+							ruling_party = socialism
+							elections_allowed = yes
+						}						
+					}
+					if = {
+						limit = { 
+						NOT = {
+							socialism > 0.35 
+							}
+						}
+						start_civil_war = {
+							ideology = socialism
+							size = 0.5
 							}
 						}					
 					}
 				}
 			}
+			
 			
 			#US Communist
 			if = {
@@ -3141,7 +3716,6 @@ available_if_capitulated = yes
 						}
 						if = {
 							limit = { fascism > 0.5 }
-	
 							add_timed_idea = { idea = reign_of_terror days = 540 }
 							remove_ideas = fascist_revolutionaries
 							set_politics = {
@@ -3172,13 +3746,23 @@ available_if_capitulated = yes
 			factor = 1
 			modifier = {
 				factor = 0
-				has_government = democratic
+				OR = {
+				has_government = conservatism
+				has_government = socialism
+				has_government = liberalism
+				}
 			}
 		}
 		completion_reward = {
 			# US democratic
 			if = {
-				limit = { has_government = democratic }
+				limit = { 
+					OR = {
+						has_government = conservatism
+						has_government = socialism
+						has_government = liberalism
+						} 
+					}
 				if = {
 					limit = {
 						VEN = {
@@ -3197,7 +3781,12 @@ available_if_capitulated = yes
 				if = {
 					limit = {
 						VEN = {
-							has_government = democratic
+							OR = {
+								has_government = conservatism
+								has_government = socialism
+								has_government = liberalism
+								#has_government = democratic
+							}
 						}
 					}
 				random_other_country = {
@@ -3221,7 +3810,10 @@ available_if_capitulated = yes
 					limit = {
 						CHL = {
 							OR = {
-								has_government = democratic
+								has_government = conservatism
+								has_government = socialism
+								has_government = liberalism
+								#has_government = democratic
 								has_government = fascism
 							}
 						}
@@ -3242,7 +3834,10 @@ available_if_capitulated = yes
 						limit = {
 							has_country_flag = monroe_doctrine
 							OR = {
-								has_government = democratic
+								has_government = conservatism
+								has_government = socialism
+								has_government = liberalism
+								#has_government = democratic
 								has_government = fascism
 							}
 						}
@@ -3259,7 +3854,10 @@ available_if_capitulated = yes
 					limit = {
 						CHL = {
 							OR = {
-								has_government = democratic
+								has_government = conservatism
+								has_government = socialism
+								has_government = liberalism
+								#has_government = democratic
 								has_government = communism
 							}
 						}
@@ -3280,7 +3878,10 @@ available_if_capitulated = yes
 						limit = {
 							has_country_flag = monroe_doctrine
 							OR = {
-								has_government = democratic
+								has_government = conservatism
+								has_government = socialism
+								has_government = liberalism
+								#has_government = democratic
 								has_government = communism
 							}
 						}
