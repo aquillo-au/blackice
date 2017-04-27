@@ -600,8 +600,8 @@ units = {
 		name = "Kriegsmarine"
 		base = 241
 		location = 241  # Wilhemshaven
-		ship = { name = "Deutschland" definition = heavy_cruiser  equipment = { GER_heavy_cruiser_1 = { amount = 1 owner = GER } } }
-		ship = { name = "Admiral Scheer" definition = heavy_cruiser equipment = { GER_heavy_cruiser_1 = { amount = 1 owner = GER } } }
+		ship = { name = "Deutschland" definition = pocket_battleship  equipment = { GER_pocket_battleship_1 = { amount = 1 owner = GER } } }
+		ship = { name = "Admiral Scheer" definition = pocket_battleship equipment = { GER_pocket_battleship_1 = { amount = 1 owner = GER } } }
 		ship = { name = "Nürnberg" definition = light_cruiser equipment = { GER_light_cruiser_2 = { amount = 1 owner = GER } } } 		
 		ship = { name = "Leipzig" definition = light_cruiser equipment = { GER_light_cruiser_2 = { amount = 1 owner = GER } } }		
 		ship = { name = "Königsberg" definition = light_cruiser equipment = { GER_light_cruiser_1b = { amount = 1 owner = GER } } }			
@@ -976,9 +976,8 @@ instant_effect = {
 	# CA: "Graf Spee"
 	add_equipment_production = {
 		equipment = {
-			type = GER_heavy_cruiser_1
+			type = GER_pocket_battleship_1
 			creator = "GER"
-			#version_name = "Deutschland Class"
 		}
 		requested_factories = 1
 		progress = 0.97
@@ -1010,7 +1009,7 @@ instant_effect = {
 	# CA: "Admiral Hipper"
 	add_equipment_production = {
 		equipment = {
-			type = GER_heavy_cruiser_2
+			type = GER_heavy_cruiser_1
 			creator = "GER"
 		}
 		requested_factories = 1
