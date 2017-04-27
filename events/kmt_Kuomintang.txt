@@ -1299,7 +1299,15 @@ country_event = {
 		name = kmt.33.a
 		custom_effect_tooltip = baihua_end_now
 		add_popularity = {
-			ideology = democratic
+			ideology = liberalism
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = socialism
 			popularity = -0.05
 		}
 		add_popularity = {
@@ -1355,7 +1363,15 @@ country_event = {
 		name = kmt.34.a
 		custom_effect_tooltip = baihua_end_now
 		add_popularity = {
-			ideology = democratic
+			ideology = socialism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = conservatism
 			popularity = -0.1
 		}
 		add_popularity = {
@@ -1415,7 +1431,15 @@ country_event = {
 		name = kmt.35.a
 		custom_effect_tooltip = baihua_end_now
 		add_popularity = {
-			ideology = democratic
+			ideology = socialism
+			popularity = -0.2
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.2
+		}
+		add_popularity = {
+			ideology = conservatism
 			popularity = -0.2
 		}
 		add_popularity = {
@@ -1475,7 +1499,15 @@ country_event = {
 		name = kmt.36.a
 		custom_effect_tooltip = baihua_end_now
 		add_popularity = {
-			ideology = democratic
+			ideology = liberalism
+			popularity = -0.4
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = -0.4
+		}
+		add_popularity = {
+			ideology = socialism
 			popularity = -0.4
 		}
 		add_popularity = {
@@ -1521,7 +1553,15 @@ country_event = {
 		name = kmt.37.a
 		custom_effect_tooltip = baihua_end_now
 		add_popularity = {
-			ideology = democratic
+			ideology = socialism
+			popularity = -0.6
+		}
+		add_popularity = {
+			ideology = liberalism
+			popularity = -0.6
+		}
+		add_popularity = {
+			ideology = socialism
 			popularity = -0.6
 		}
 		add_popularity = {
@@ -1813,8 +1853,16 @@ country_event = {
 			popularity = -0.4
 		}
 		add_popularity = {
-			ideology = democratic
-			popularity = 0.25
+			ideology = liberalism
+			popularity = 0.15
+		}
+		add_popularity = {
+			ideology = socialism
+			popularity = 0.15
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.15
 		}
 		add_popularity = {
 			ideology = fascism
@@ -4078,7 +4126,7 @@ country_event = {
 			puppet = SIK
 		}
 		set_politics = {
-			ruling_party = democratic
+			ruling_party = conservatism
 		}
 	}
 	
@@ -4559,13 +4607,23 @@ country_event = {
 			factor = 10
 			modifier = {
 				ROOT = {
-					has_government = democratic
+					OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
 				}
 				factor = 75
 			}
 			modifier = {
 				ROOT = {
-					has_government = democratic
+					OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
 					has_war = yes
 				}
 				factor = 100
@@ -4697,13 +4755,23 @@ country_event = {
 			factor = 10
 			modifier = {
 				ROOT = {
-					has_government = democratic
+					OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
 				}
 				factor = 75
 			}
 			modifier = {
 				ROOT = {
-					has_government = democratic
+					OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
 					has_war = yes
 				}
 				factor = 100
@@ -4843,13 +4911,23 @@ country_event = {
 			factor = 10
 			modifier = {
 				ROOT = {
-					has_government = democratic
+					OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
 				}
 				factor = 75
 			}
 			modifier = {
 				ROOT = {
-					has_government = democratic
+					OR = {
+					#has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+					}
 					has_war = yes
 				}
 				factor = 100
@@ -7899,7 +7977,7 @@ country_event = {
 			has_idea = incompetent_industry_real_3
 			has_idea = incompetent_industry_real_4
 		}
-		has_war = no
+		#has_war = no
 	}
 
 	fire_only_once = yes
@@ -7974,7 +8052,7 @@ country_event = {
 			has_idea = incompetent_industry_real_4
 			has_idea = incompetent_industry_real_5
 		}
-		has_war = no
+		#has_war = no
 	}
 
 	fire_only_once = yes

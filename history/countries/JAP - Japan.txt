@@ -8,11 +8,45 @@ set_research_slots = 6
 
 add_ideas = {
 	state_shintoism
-	limited_exports
-	limited_conscription
-	partial_economic_mobilisation
 	Jap_Coup
+	#politicians
+	hirohito_hos
+	hachiro_arita
+	okinori_kaya
+	sadao_araki
+	harukichi_hyakutake
+	shizuichi_tanaka
+	
+	#laws
+	limited_exports
+	cons_two
+	partial_economic_mobilisation
+	mob_limited
+	press_censored
+	tax_high
+	edu_high
+	foreign_warmonger
+	tariffs_high
+	fdi_regulated
+	key_industries
+	age_18
+	unity_united_nation
 }
+
+set_country_flag = mob_limited
+set_country_flag = foreign_warmonger
+set_country_flag = Tax_high
+set_country_flag = Edu_high
+set_country_flag = press_state
+set_country_flag = cons_two
+set_country_flag = tariffs_high
+set_country_flag = train_medium
+set_country_flag = key_industries
+set_country_flag = age_18
+set_country_flag = limited_exports
+set_country_flag = partial_economic_mobilisation
+set_country_flag = fdi_regulated
+set_country_flag = labor_allowed
 
 set_technology = {
 	################## Setup ############
@@ -23,11 +57,12 @@ set_technology = {
 	tech_ijn = 1
 	################## infantry ############
 	infantry_weapons = 1
-	infantry_at = 1
 	infantry_weapons1 = 1
 	hmg = 1
+	mortars = 1
 	semi_motorised_infantry = 1
 	motorised_infantry = 1
+	mechanised_infantry = 1
 	marines = 1
 	marines2 = 1
 	amphibious_equipment = 1
@@ -51,12 +86,12 @@ set_technology = {
 	interwar_medartillery = 1
 	############## armor #################
 	gwtank = 1
-	#basic_light_tank = 1
 	tech_japanese_light_tank_a = 1
 	#tech_japanese_medium_tank_a = 1
 	#tech_japanese_heavy_tank_a = 1
-	tech_ac_recon = 1
-	tech_Tankettes = 1
+	tech_japanese_ac_recon = 1
+	tech_japanese_ac_recon2 = 1
+	tech_japanese_Tankettes = 1
 	tech_Gun_Carriers = 1
 	############### aircraft ##############
 	#cv_early_fighter = 1
@@ -130,8 +165,8 @@ set_technology = {
 	tech_ijn_hcruiser_obs8 = 1
 	tech_ijn_hcruiser = 1
 	
-	# IJN battlecruiser
-	tech_ijn_battlecruiser = 1
+	# IJN battlecruiser (Kongo Class)
+	tech_ijn_fbattleship = 1
 	
 	# IJN battleship
 	tech_ijn_battleship_obs1 = 1
@@ -185,7 +220,7 @@ create_import = {
 
 		#laws
 		tot_economic_mobilisation
-		service_by_requirement
+		cons_three
 		closed_economy
 	}
 
@@ -296,24 +331,33 @@ if = {
 }
 
 give_military_access = MAN
+give_military_access = MEN
 
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 24
+		conservatism = { 
+			popularity = 20
 		}
 
+		liberalism = { 
+			popularity = 15
+		}
+		
+		socialism = { 
+			popularity = 3
+		}
+		
 		fascism = {
-			popularity = 45
+			popularity = 60
 		}
 		
 		communism = {
-			popularity = 5
+			popularity = 2
 			#banned = no #default is no
 		}
 		neutrality = {
-			popularity = 26
+			popularity = 0
 		}
 	}
 	
@@ -327,18 +371,29 @@ set_politics = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
-				popularity = 0
-			}
+			conservatism = { 
+			popularity = 25
+		}
 
-			fascism = {
-				popularity = 100
-			}
-			
-			communism = {
-				popularity = 0
-				#banned = no #default is no
-			}
+		liberalism = { 
+			popularity = 20
+		}
+		
+		socialism = { 
+			popularity = 3
+		}
+		
+		fascism = {
+			popularity = 50
+		}
+		
+		communism = {
+			popularity = 2
+			#banned = no #default is no
+		}
+		neutrality = {
+			popularity = 0
+		}
 		}
 		
 		ruling_party = fascism

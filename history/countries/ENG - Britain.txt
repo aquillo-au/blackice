@@ -4,17 +4,17 @@ oob = "ENG_1936"
 
 set_research_slots = 6
 
-set_national_unity = 0.6
+set_national_unity = 0.60
 
 # Starting tech
 set_technology = {
 	
 	################# infantry #############
 	infantry_weapons = 1
-	infantry_at = 1
 	infantry_weapons1 = 1
 	semi_motorised_infantry = 1
 	motorised_infantry = 1
+	mechanised_infantry = 1
 	SMG_team = 1
 	hmg = 1
 	mortars = 1
@@ -148,8 +148,44 @@ set_technology = {
 add_ideas = {
 	stiff_upper_lip
 	ENG_the_war_to_end_all_wars
-	george_v
+	
+	#politicians
+	George_v
+	anthony_eden
+	sir_samuel_hoare
+	stewart_menzies
+	neville_chamberlain
+	
+	#laws
+	Mob_reserve
+	Foreign_interventionism
+	Tax_high
+	Edu_high
+	Press_regulated
+	Cons_volunteer
+	tariffs_high
+	fdi_allowed
+	train_high
+	key_industries
+	unity_divided_nation
+	foreign_legion
 }
+
+set_country_flag = mob_reserve
+set_country_flag = foreign_interventionism
+set_country_flag = Tax_high
+set_country_flag = Edu_high
+set_country_flag = Press_regulated
+set_country_flag = Cons_volunteer
+set_country_flag = tariffs_high
+set_country_flag = fdi_allowed
+set_country_flag = train_high
+set_country_flag = key_industries
+set_country_flag = age_19
+set_country_flag = free_trade
+set_country_flag = civilian_economy
+set_country_flag = labor_allowed
+
 
 # DIPLOMACY
 if = {
@@ -222,7 +258,7 @@ set_convoys = 1200
 
 		#laws
 		partial_economic_mobilisation
-		limited_conscription
+		cons_one
 
 		ENG_george_vi
 	}
@@ -231,8 +267,8 @@ set_convoys = 1200
 		name = "Neville Chamberlain"
 		desc = "POLITICS_NEVILLE_CHAMBERLAIN_DESC"
 		picture = "Portrait_Britain_Neville_Chamberlain.dds"
-		expire = "1965.1.1"
-		ideology = liberalism
+		expire = "1941.1.1"
+		ideology = moderate
 		traits = {
 			
 		}
@@ -254,7 +290,9 @@ set_convoys = 1200
 	give_guarantee = POL
 	
 	set_national_unity = 0.8
+	
 	oob = "ENG_1939"
+	
 	set_technology = {
 		fighter1 = 1
 		fighter2 = 1
@@ -325,25 +363,42 @@ set_convoys = 1200
 	}
 
 	set_convoys = 200
+	
 }
 
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 97
+		conservatism = { 
+			popularity = 48
+		}
+		
+		liberalism = {
+			popularity = 10
+		}
+		
+		socialism = {
+			popularity = 30
 		}
 
 		fascism = {
-			popularity = 2
+			popularity = 5
 		}
 		
 		communism = {
-			popularity = 1
+			popularity = 7
+		}
+		
+		neutrality = {
+			popularity = 0
+		}
+		
+		monarchism = {
+			popularity = 0
 		}
 	}
 	
-	ruling_party = democratic
+	ruling_party = conservatism
 	last_election = "1935.11.14"
 	election_frequency = 48
 	elections_allowed = yes ##suspended through duration of war, which is handled via event
@@ -351,7 +406,7 @@ set_politics = {
 
 create_faction = Allies
 add_to_faction = ENG
-#add_to_faction = FRA
+add_to_faction = FRA
 add_to_faction = CAN
 add_to_faction = AST
 add_to_faction = NZL
@@ -368,14 +423,14 @@ add_to_faction = NEW
 
 #give_guarantee = CZE
 
-# Order matters - here Chamberlain becomes starting leader
+#Order matters - here Chamberlain becomes starting leader
 
 create_country_leader = {
 	name = "Stanley Baldwin"
 	desc = "POLITICS_STANLEY_BALDWIN_DESC"
 	picture = "gfx//leaders//ENG//Portrait_Britain_Stanley_Baldwin.dds"
 	expire = "1938.1.1"
-	ideology = liberalism
+	ideology = classical_liberalism
 	traits = {
 		
 	}

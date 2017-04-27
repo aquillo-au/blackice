@@ -1,7 +1,7 @@
 ﻿capital = 328
 
 oob = "MAN_1936"
-
+set_convoys = 25
 set_research_slots = 2
 
 set_national_unity = 0.6
@@ -74,13 +74,26 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		democratic = { 
+	
+		monarchism = {
+			popularity = 63
+		}	
+	
+		conservatism = { 
+			popularity = 0
+			banned = yes
+		}
+		socialism = { 
+			popularity = 0
+			banned = yes
+		}
+		liberalism = { 
 			popularity = 0
 			banned = yes
 		}
 
 		fascism = {
-			popularity = 100
+			popularity = 37
 		}
 		
 		communism = {
@@ -93,7 +106,7 @@ set_politics = {
 		}
 	}
 	
-	ruling_party = fascism
+	ruling_party = monarchism
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
@@ -102,9 +115,9 @@ set_politics = {
 create_country_leader = {
 	name = "Emperor Puyi"
 	desc = "POLITICS_Emperor Puyi_DESC"
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
+	picture = "Generic_Pu_Yi.dds"
 	expire = "1965.1.1"
-	ideology = rexism
+	ideology = absolutism
 	traits = {
 		
 	}

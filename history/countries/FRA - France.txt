@@ -11,10 +11,10 @@ set_technology = {
 	generic_submarine = 1
 	########## infantry ###########
 	infantry_weapons = 1
-	infantry_at = 1
 	infantry_weapons1 = 1
 	hmg = 1
 	mortars = 1
+	SMG_team = 1
 	tech_mountaineers = 1
 	motorised_infantry = 1
 	semi_motorised_infantry = 1
@@ -31,6 +31,7 @@ set_technology = {
 	tech_maintenance_company = 1
 	tech_field_hospital = 1
 	tech_logistics_company = 1
+	desert_equipment = 1
 	########### artillery #########
 	gw_artillery = 1
 	interwar_artillery = 1
@@ -42,18 +43,21 @@ set_technology = {
 	superartillery1 = 1
 	interwar_antiair = 1
 	############ armor ############
-	generic_armor = 1
-	gwtank = 1
-	basic_light_tank = 1
-	basic_heavy_tank = 1
-	improved_light_tank = 1
-	tech_inf_tanks = 1
+	french_tech = 1
+	tech_fra_infantry_tank_equipment_1 = 1
+	tech_fra_light_cavalry_tank_equipment_1 = 1
+	tech_fra_light_cavalry_tank_equipment_2 = 1
+	tech_fra_cavalry_tank_equipment_1 = 1
+	tech_fra_cavalry_tank_equipment_2 = 1
+	tech_fra_medium_tank_equipment_1 = 1
+	tech_fra_medium_tank_equipment_2 = 1
+	tech_fra_heavy_tank_equipment_1 = 1
+	#tech_fra_superheavy_tank_equipment_1 = 1     # 1917 tech, but I'll keep it deactivated until it is decided if the AI should have it
 	tech_ac_recon = 1
 	tech_Tankettes = 1
 	tech_Gun_Carriers = 1
 	
 	############# aircraft ############
-	#tech_testing_4 = 1
 	tech_french_aircraft1 = 1
 	
 	############ ships ################
@@ -99,14 +103,54 @@ set_technology = {
 	housing_work = 1
 	hospital_work = 1
 	schools_work = 1
-}	
+}
+
+add_ideas = {
+		#politicians
+		albert_lebrun
+		yvon_delbos
+		marx_dormoy
+		maurice_henri_gauche
+		vincent_auriol
+		
+		#laws
+		civilian_economy
+		Mob_reserve
+		Cons_two
+		Press_regulated
+		Tax_average
+		Edu_high
+		Foreign_interventionism
+		tariffs_average
+		fdi_regulated
+		key_industries
+		export_focus
+		unity_divided_nation
+		foreign_legion
+	}	
+	
+set_country_flag = mob_reserve
+set_country_flag = foreign_interventionism
+set_country_flag = Tax_average
+set_country_flag = Edu_high
+set_country_flag = Press_regulated
+set_country_flag = Cons_two
+set_country_flag = tariffs_average
+set_country_flag = fdi_regulated
+set_country_flag = train_medium
+set_country_flag = key_industries
+set_country_flag = age_19
+set_country_flag = export_focus
+set_country_flag = civilian_economy
+set_country_flag = labor_allowed	
+	
 ### 1939
 1939.1.1 = {
 	add_political_power = 899
 
 	#adding ministers
 	add_ideas = {
-		FRA_charles_tillon
+		charles_tillon
 		francois_darlan
 		philippe_fequant
 		famh
@@ -196,25 +240,33 @@ set_technology = {
 
 set_convoys = 600
 
-set_national_unity = 0.4
+set_national_unity = 0.62
 
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 69
+		conservatism = { 
+			popularity = 30
+		}
+		
+		liberalism = {
+			popularity = 11
+		}
+		
+		socialism = {
+			popularity = 40
 		}
 
 		fascism = {
-			popularity = 1
+			popularity = 2
 		}
 		
 		communism = {
-			popularity = 30
+			popularity = 17
 		}
 	}
 	
-	ruling_party = democratic
+	ruling_party = liberalism
 	last_election = "1932.5.1"
 	election_frequency = 48
 	elections_allowed = yes
@@ -224,8 +276,76 @@ add_ideas = {
 	FRA_victors_of_wwi
 	FRA_disjointed_government
 	FRA_protected_by_the_maginot_line
-	limited_conscription
+
+	civilian_economy
+	Mob_reserve
+	Cons_two
+	Press_regulated
+	Tax_average
+	Edu_high
+	Foreign_interventionism
+	tariffs_average
+	fdi_regulated
+	key_industries
+	export_focus
+
 }
+if = {
+	limit = { 
+		has_dlc = "Together for Victory" 
+	}
+	add_to_tech_sharing_group = french_research
+}
+# DIPLOMACY
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = MOR
+		autonomous_state = autonomy_colony
+		freedom_level = 0.35
+	}
+	set_autonomy = {
+		target = TUN
+		autonomous_state = autonomy_colony
+		freedom_level = 0.35
+	}
+	set_autonomy = {
+		target = FRI
+		autonomous_state = autonomy_colony
+	}
+	set_autonomy = {
+		target = SYR
+		autonomous_state = autonomy_colony
+	}
+	set_autonomy = {
+		target = LEB
+		autonomous_state = autonomy_colony
+	}
+	else = {
+		puppet = MOR
+		puppet = TUN
+		puppet = FRI
+		puppet = SYR
+		puppet = LEB
+	}
+}
+set_country_flag = mob_reserve
+set_country_flag = foreign_interventionism
+set_country_flag = Tax_average
+set_country_flag = Edu_high
+set_country_flag = Press_regulated
+set_country_flag = Cons_two
+set_country_flag = tariffs_average
+set_country_flag = fdi_regulated
+set_country_flag = train_medium
+set_country_flag = key_industries
+set_country_flag = age_19
+set_country_flag = export_focus
+set_country_flag = civilian_economy
+set_country_flag = labor_allowed	
+
 
 #give_guarantee = CZE
 
@@ -235,20 +355,66 @@ create_country_leader = {
 	desc = "POLITICS_CHARLES_DE_GAULLE_DESC"
 	picture = "Portrait_France_Charles_De_Gaulle.dds"
 	expire = "1965.1.1"
-	ideology = socialism
+	ideology = nationalism
 	traits = {
 		
 	}
 }
+
+create_country_leader = {
+	name = "Louis Marin"
+	desc = "Leader of the FR"
+	picture = "Portrait_France_louis_marin.dds"
+	expire = "1960.1.1"
+	ideology = moderate
+	traits = {
+		silent_workhorse
+	}
+}
+
 create_country_leader = {
 	name = "Édouard Daladier"
 	desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 	picture = "Portrait_France_Edouard_Daladier.dds"
 	expire = "1965.1.1"
-	ideology = socialism
+	ideology = social_liberalism
 	traits = {
 		stout_defender
 	}
+}
+
+create_country_leader = {
+	name = "Léon Blum"
+	desc = "Leader of the SFIO"
+	picture = "Portrait_france_leon_blum.dds"
+	expire = "1965.1.1"
+	ideology = social_democracy
+	traits = {
+		stout_defender
+	}
+}
+
+create_country_leader = {
+	name = "Albert Sarraut"
+	desc = "POLITICS_ALBERT_SARRAUT_DESC"
+	picture = "Portrait_France_Albert_Sarraut.dds"
+	expire = "1965.1.1"
+        ideology = social_democracy
+}
+create_country_leader = {
+	name = "Camille Chautemps"
+	desc = "POLITICS_CAMILLE_CHAUTEMPS_DESC"
+	picture = "Portrait_France_Camille_Chautemps.dds"
+	expire = "1936.1.24"
+	ideology = moderate
+}
+
+create_country_leader = {
+	name = "Pierre Laval"
+	desc = "POLITICS_PIERRE_LAVAL_DESC"
+	picture = "Portrait_France_Pierre_Laval.dds"
+	expire = "1936.1.24"
+	ideology = moderate
 }
 create_country_leader = {
 	name = "Maurice Thorez"
@@ -276,6 +442,16 @@ create_country_leader = {
 	picture = "Portrait_France_Jacques_Doriot.dds"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
+	traits = {
+		
+	}
+}
+create_country_leader = {
+	name = "Charles Maurras"
+	desc = "POLITICS_CHARLES_MAURRAS_DESC"
+	picture = "Portrait_France_Charles_Maurras.tga"
+	expire = "1965.1.1"
+	ideology = despotism
 	traits = {
 		
 	}
@@ -3464,6 +3640,7 @@ create_equipment_variant = {
 		sub_torpedo_upgrade = 1
 	}
 }
+
 ### Variants 1939
 1939.1.1 = {	
 	create_equipment_variant = {

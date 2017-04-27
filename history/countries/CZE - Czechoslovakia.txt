@@ -5,9 +5,10 @@ oob = "CZE_1936"
 set_technology = {
 	################ infantry #############
 	infantry_weapons = 1
-	infantry_at = 1
+	
 	infantry_weapons1 = 1
 	hmg = 1
+	mortars = 1
 	tech_mountaineers = 1
 	semi_motorised_infantry = 1
 	tech_infantry_uniforms = 1
@@ -55,31 +56,35 @@ set_research_slots = 4
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 65
+		conservatism = { 
+			popularity = 40
 		}
-
+		liberalism = {
+			popularity = 8
+		}
+		socialism = {
+			popularity = 20
+		}
 		fascism = {
-			popularity = 25
+			popularity = 22
 		}
-		
 		communism = {
 			popularity = 10
 		}
 	}
 	
-	ruling_party = democratic
+	ruling_party = conservatism
 	last_election = "1935.5.19"
 	election_frequency = 60
 	elections_allowed = yes
 }
 
 create_country_leader = {
-	name = "Edvard Beneš" # Beneš if we get font support :)
+	name = "Edvard Beneš"
 	desc = "POLITICS_EDVARD_BENES_DESC"
 	picture = "Portrait_Czech_Edvard_Benes.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = nationalism
 	traits = {
 		#
 	}

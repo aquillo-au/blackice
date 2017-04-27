@@ -82,7 +82,7 @@ set_technology = {
 set_politics = {
 
 	parties = {
-		democratic = { 
+		monarchism = { 
 			popularity = 92
 		}
 
@@ -93,9 +93,14 @@ set_politics = {
 		communism = {
 			popularity = 5
 		}
+		
+	    neutrality = { 
+		    popularity = 0
+		}	
+		
 	}
 	
-	ruling_party = democratic
+	ruling_party = monarchism
 	last_election = "1934.6.3"
 	election_frequency = 36
 	elections_allowed = yes
@@ -105,7 +110,7 @@ set_politics = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
+			monarchism = { 
 				popularity = 92
 			}
 
@@ -116,9 +121,14 @@ set_politics = {
 			communism = {
 				popularity = 5
 			}
+	        
+			neutrality = { 
+		        popularity = 0
+		    }				
+			
 		}
 		
-		ruling_party = democratic
+		ruling_party = monarchism
 		last_election = "1937.6.6"
 		election_frequency = 36
 		elections_allowed = yes
@@ -129,19 +139,30 @@ set_politics = {
 		desc = "POLITICS_PIERRE_DUPONG_DESC"
 		picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
 		expire = "1965.1.1"
-		ideology = conservatism
+		ideology = social_conservatism
 		traits = {
 			#
 		}
 	}
 }
+create_country_leader = {
+	name = "Grand Duchess Charlotte"
+	desc = "POLITICS_JOSEPH_BECH_DESC"
+	picture = "lux_duchess_charlotte.dds"
+	expire = "1965.1.1"
+	ideology = absolutism
+	traits = {
+		#
+	}
+}
+
 #Pierre Dupong from 37
 create_country_leader = {
 	name = "Joseph Bech"
 	desc = "POLITICS_JOSEPH_BECH_DESC"
 	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = social_conservatism
 	traits = {
 		#
 	}

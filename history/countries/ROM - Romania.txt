@@ -8,7 +8,7 @@ set_research_slots = 4
 set_technology = {
 	################### infantry ################
 	infantry_weapons = 1
-	infantry_at = 1
+	
 	infantry_weapons1 = 1
 	tech_mountaineers = 1
 	semi_motorised_infantry = 1
@@ -119,24 +119,28 @@ set_convoys = 250
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 20
+		conservatism = { 
+			popularity = 22
 		}
 
 		fascism = {
-			popularity = 18
+			popularity = 21
 		}
 		
 		communism = {
 			popularity = 2
 		}
 		
+		monarchism = { 
+			popularity = 55
+		}	
+		
 		neutrality = { 
-			popularity = 60
+			popularity = 0			
 		}
 	}
 	
-	ruling_party = neutrality
+	ruling_party = monarchism
 	last_election = "1933.12.20"
 	election_frequency = 48
 	elections_allowed = yes
@@ -146,20 +150,24 @@ set_politics = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
-				popularity = 48
+			conservatism = { 
+				popularity = 40
 			}
 
 			fascism = {
-				popularity = 30
+				popularity = 44
 			}
 			
 			communism = {
 				popularity = 2
 			}
 			
-			neutrality = { 
-				popularity = 20
+			monarchism = { 
+				popularity = 2
+			}
+
+		    neutrality = { 
+			   popularity = 12		
 			}
 		}
 		
@@ -175,7 +183,18 @@ create_country_leader = {
 	desc = "POLITICS_GHEORGHE_TATARESCU_DESC"
 	picture = "gfx/leaders/ROM/Portrait_Romania_Gheorghe_Tatarescu.dds"
 	expire = "1965.1.1"
-	ideology = centrism
+	ideology = moderatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Gheorge Tatarescu"
+	desc = "POLITICS_GHEORGHE_TATARESCU_DESC"
+	picture = "Portrait_Romania_Gheorghe_Tatarescu.dds"
+	expire = "1965.1.1"
+	ideology = oligarchism
 	traits = {
 		#
 	}
@@ -197,7 +216,7 @@ create_country_leader = {
 	desc = "POLITICS_ARMAND_CALINESCU_DESC"
 	picture = "gfx/leaders/ROM/Portrait_Romania_Armand_Calinescu.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = social_conservatism
 	traits = {
 		#
 	}

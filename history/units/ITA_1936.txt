@@ -3,28 +3,27 @@ division_template = {
 	name = "Divisione di Fanteria-Alpina"
 	#represent semi-mountain divisions (1st, 2nd, 3rd, 4th, 6th Divisions)
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
+		semi_motorized = { x = 0 y = 0 }
+		semi_motorized = { x = 0 y = 1 }
+		light_infantry = { x = 0 y = 2 }
 
 		mountaineers = { x = 1 y = 0 }
 		mountaineers = { x = 1 y = 1 }
 		mountaineers = { x = 1 y = 2 }
 
-		infantry = { x = 2 y = 0 }
-		infantry = { x = 2 y = 1 }
-		infantry = { x = 2 y = 2 }
+		light_infantry = { x = 2 y = 0 }
+		light_infantry = { x = 2 y = 1 }
+		light_infantry = { x = 2 y = 2 }
 
-		artillery_brigade = { x = 3 y = 0 }
+		mountain_artillery_brigade = { x = 3 y = 0 }
 		artillery_brigade = { x = 3 y = 1 }
-		mountain_artillery_brigade = { x = 3 y = 2 }
+		artillery_brigade = { x = 3 y = 2 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
 		engineer = { x = 0 y = 1 }
 		recon = { x = 0 y = 2 }
-		#anti_tank = { x = 0 y = 3 }					# does not have equipment researched at that point
-		
+				
 		maintenance_company = { x = 1 y = 0 }
 		logistics_company = { x = 1 y = 1 }
 		field_hospital = { x = 1 y = 2 }
@@ -67,26 +66,27 @@ division_template = {
 	name = "Divisione di CC.NN."		
 	
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
+		semi_motorized = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
 		
-		militia = { x = 1 y = 0 }
+		
+		semi_motorized = { x = 1 y = 0 }
 		militia = { x = 1 y = 1 }
 		militia = { x = 1 y = 2 }
 		
-		militia = { x = 2 y = 0 }
-		militia = { x = 2 y = 1 }
-		militia = { x = 2 y = 2 }
 		
-		artillery_brigade = { x = 3 y = 0 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		ita_tankette_armor = { x = 3 y = 0 }
 		
-		ita_tankette_armor = { x = 4 y = 0 }
+		artillery_brigade = { x = 4 y = 0 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
 		recon_cav = { x = 0 y = 1 }
 		engineer = { x = 0 y = 2 }
+		military_police = { x = 0 y = 3 }
 	}
 }
 division_template = {
@@ -106,6 +106,7 @@ division_template = {
 		
 		mountain_artillery_brigade = { x = 3 y = 0 }
 		mountain_artillery_brigade = { x = 3 y = 1 }
+		mountain_artillery_brigade = { x = 3 y = 2 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -122,19 +123,21 @@ division_template = {
 	regiments = {
 		cavalry = { x = 0 y = 0 }
 		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
 		
 		cavalry = { x = 1 y = 0 }
 		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
 		
-		motorized = { x = 2 y = 0 }		# (elite) Bersaglieri Regiment
+		mechanized = { x = 2 y = 0 }		# (elite) Bersaglieri Regiment
 		motorized = { x = 2 y = 1 }
 		motorized = { x = 2 y = 2 }		
-		motorized = { x = 2 y = 3 }
+		
 		
 		artillery_brigade_mot = { x = 3 y = 0 }
 		artillery_brigade_mot = { x = 3 y = 1 }
 		
-		ita_tankette_armor  = { x = 4 y = 0 } # L3/35 Tankette Battaltion
+		ita_tankette_armor  = { x = 4 y = 0 } # L3/35 Tankette Battalion
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -150,20 +153,19 @@ division_template = {
 	name = "Divisione Coloniale"		
 	# Represents lesser-equipped colonial units
 	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		cavalry = { x = 0 y = 3 }
-		
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+				
 		militia = { x = 1 y = 0 }
 		militia = { x = 1 y = 1 }
 		militia = { x = 1 y = 2 }
-		militia = { x = 1 y = 3 }
-		
+				
 		militia = { x = 2 y = 0 }
 		militia = { x = 2 y = 1 }
 		militia = { x = 2  y = 2 }
-		militia = { x = 2  y = 3 }
+		
+				
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
@@ -175,24 +177,36 @@ division_template = {
 	name = "Raggruppamento Celere" 			# Raggruppamento Celere
 	# Note: these groups were gradually expanded to army-level supprt of cavalry rgts, bersaglieri rgts, and tankette bns.
 	regiments = {
-		cavalry = { x = 0 y = 0 }
-		cavalry = { x = 0 y = 1 }
-		cavalry = { x = 0 y = 2 }
+		mechanized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
 		
-		motorized = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
-		motorized = { x = 1 y = 2 }
-		
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+				
 		#light_armor = { x = 2 y = 0 }
-		ita_tankette_armor  = { x = 2 y = 0 } # L3/35 Tankette Battaltion
-		ita_tankette_armor  = { x = 2 y = 1 } # L3/35 Tankette Battaltion
+		ita_tankette_armor  = { x = 2 y = 0 } # L3/35 Tankette Battalion
+		ita_tankette_armor  = { x = 2 y = 1 } # L3/35 Tankette Battalion
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
 		recon_mot = { x = 0 y = 1 }
 	}
 }
+division_template = {
+	name = "Divisione Costiera"	# Represents Border Guard Commands, Fortress Groups, etc.
 
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		
+	}
+	support = {
+		military_police = { x = 0 y = 0 }	
+		artillery_coastal = { x = 0 y = 1 }
+	}
+	priority = 0
+}
 #division_template = {
 #	name = "HQ Command"
 #
@@ -547,8 +561,83 @@ units = {
 		start_experience_factor = 0.2
 		start_equipment_factor = 0.2
 	}
-
-
+	division= {	
+		name = "202a Div. Costiera"
+		location = 11954
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "205a Div. Costiera"
+		location = 11773
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "206a Div. Costiera"
+		location = 4014
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "207a Div. Costiera"
+		location = 3943
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "215a Div. Costiera"
+		location = 7059
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "209a Div. Costiera"
+		location = 11837
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "208a Div. Costiera"
+		location = 819
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "211a Div. Costiera"
+		location = 9904
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "212a Div. Costiera"
+		location = 11833
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "213a Div. Costiera"
+		location = 925
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "214a Div. Costiera"
+		location = 6606
+		division_template = "Divisione Costiera"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+	}
 	##### NAVAL UNITS #####
 	### 1st FLEET ###
 	navy = {					
@@ -1272,11 +1361,20 @@ instant_effect = {
 			amount = 500
 			producer = ITA
 		}
-		add_equipment_to_stockpile = {
+	add_equipment_to_stockpile = {
 		type = horse_equipment_0
 			amount = 2400
 			producer = ITA
 		}
+	add_equipment_to_stockpile = {
+		type = HMG_equipment_0
+			amount = 500
+			producer = ITA
+	}
+	add_equipment_to_stockpile = {
+		type = mortar_equipment_0
+			amount = 300
+			producer = ITA
 	}
 
 }

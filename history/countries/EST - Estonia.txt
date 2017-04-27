@@ -5,14 +5,18 @@ oob = "EST_1936"
 set_research_slots = 2
 
 add_ideas = {
-	limited_conscription
+	cons_one
 }
 
 set_technology = {
+	soviet_tech_a = 1
+	soviet_tech_b = 1
+	soviet_tech_c = 1
+	soviet_tech_d = 1
 	################# infantry ###############
 	tech_infantry_uniforms = 1
 	infantry_weapons = 1
-	infantry_at = 1
+	
 	tech_Garrison = 1
 	tech_Headquarters = 1
 	################## support ##################
@@ -21,7 +25,8 @@ set_technology = {
 	################## artillery ###############
 	
 	################## armor ##############
-	generic_armor = 1
+	#generic_armor = 1
+	gwtank = 1
 	################## aircraft ##############
 	early_fighter = 1
 	generic_fighter = 1
@@ -100,7 +105,7 @@ set_convoys = 5
 set_politics = {
 
 	parties = {
-		democratic = { 
+		conservatism = { 
 			popularity = 20
 		}
 
@@ -128,7 +133,7 @@ set_politics = {
 	set_politics = {
 
 		parties = {
-			democratic = { 
+			conservatism = { 
 				popularity = 20
 			}
 
@@ -156,42 +161,9 @@ set_politics = {
 create_country_leader = {
 	name = "Konstantin Päts"
 	desc = "POLITICS_KONSTANTIN_PATS_DESC"
-	picture = "gfx/leaders/EST/Portrait_Estonia_Konstantin_Pats.dds"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
 	expire = "1965.1.1"
 	ideology = despotism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Johannes Vares"
-	desc = ""
-	picture = "gfx/leaders/EST/Portrait_Estonia_Johannes_Vares.dds"
-	expire = "1965.1.1"
-	ideology = stalinism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Jaan Tõnisson"
-	desc = ""
-	picture = "gfx/leaders/EST/Portrait_Estonia_Jaan_Tonisson.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Hjalmar Mäe"
-	desc = ""
-	picture = "gfx/leaders/EST/Portrait_Estonia_Hjalmar_Mae.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
 	traits = {
 		#
 	}

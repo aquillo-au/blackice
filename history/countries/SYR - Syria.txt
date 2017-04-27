@@ -1,5 +1,7 @@
 ﻿capital = 554
 
+oob = "SYR_1936"
+
 # Starting tech
 set_technology = {
 	################# infantry ###############
@@ -10,6 +12,7 @@ set_technology = {
 	################## support ##################
 	tech_recon = 1
 	subtech_recon_cav_1 = 1
+	desert_equipment = 1
 	################## artillery ###############
 	
 	################## armor ##############
@@ -80,7 +83,7 @@ set_convoys = 5
 set_politics = {
 
 	parties = {
-		democratic = { 
+		liberalism = { 
 			popularity = 50
 		}
 
@@ -98,17 +101,22 @@ set_politics = {
 		}
 	}
 	
-	ruling_party = democratic
+	ruling_party = liberalism
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = yes
 }
-
+if = {
+	limit = { 
+		has_dlc = "Together for Victory" 
+	}
+	add_to_tech_sharing_group = french_research
+}
 create_country_leader = {
 	name = "Hashim al-Atassi"
 	desc = ""
-	picture = "gfx/leaders/SYR/Portrait_Arabia_Generic_3.dds"
-	ideology = liberalism
+	picture = "gfx/leaders/SYR/Portrait_Syria_Hashim_al-Atassi.dds"
+	ideology = centrism
 	traits = {
 		#
 	}
@@ -117,7 +125,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Antun Saadeh"
 	desc = ""
-	picture = "gfx/leaders/SYR/Portrait_Arabia_Generic_1.dds"
+	picture = "gfx/leaders/SYR/Portrait_Syria_Antun_Saadeh.dds"
 	ideology = fascism_ideology
 	traits = {
 		#
@@ -137,7 +145,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Khalid Bakdash"
 	desc = ""
-	picture = "gfx/leaders/SYR/Portrait_Arabia_Generic_3.dds"
+	picture = "gfx/leaders/SYR/Portrait_Syria_Khalid_Bakdash.dds"
 	ideology = leninism
 	traits = {
 		#

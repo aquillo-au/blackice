@@ -17,11 +17,10 @@ set_technology = {
 	hmg_2 = 1
 	mortars = 1
 	motorised_infantry = 1
+	mechanised_infantry = 1
 	tech_infantry_uniforms = 1
-	tech_infantry_uniforms1 = 1
 	marines = 1
 	infantry_weapons = 1
-	infantry_at = 1
 	infantry_weapons1 = 1
 	SMG_team = 1
 	tech_Garrison = 1
@@ -83,19 +82,7 @@ set_technology = {
 	tech_patrol_submarine = 1
 	tech_patrol_submarine2 = 1
 	tech_sub_battery = 1
-	#generic_naval = 1
-	#early_destroyer = 1
-	#basic_destroyer = 1
-	#early_light_cruiser = 1
-	#basic_light_cruiser = 1
-	#early_heavy_cruiser = 1
-	#early_battleship = 1
-	#early_battlecruiser = 1
-	#basic_battleship = 1
-	#basic_heavy_cruiser = 1 #BICE
-	#basic_battlecruiser = 1 #BICE
-	#pre_dreadnought_battleship = 1 #BICE
-	#dreadnought_battleship = 1 #BICE
+	
 	advanced_dreadnought_battleship = 1 #BICE
 	# Kriegsamrine Transport
 	tech_kr_transport = 1
@@ -105,6 +92,10 @@ set_technology = {
 	tech_kr_pb_obs2 = 1
 	tech_kr_dd_obs = 1
 	tech_kr_dd = 1
+	# Kriegsmarine ASW/Torpedo/Radar techs DD
+	tech_kr_early_sonar_dd = 1
+	tech_kr_dd_interwar_torpedoes = 1
+	tech_kr_Interwar_AA_dd = 1
 	
 	# Kriegsmarine Cruisers
 	tech_kr_cl_obs = 1
@@ -112,13 +103,24 @@ set_technology = {
 	tech_kr_cl = 1
 	tech_kr_ca_obs = 1
 	tech_kr_ca = 1
+	# Kriegsmarine ASW/Torpedo/Radar techs CL
+	tech_kr_early_sonar_cl = 1
+	tech_kr_cl_interwar_torpedoes = 1
+	tech_kr_Interwar_AA_cl = 1
+	# Kriegsmarine ASW/Torpedo/Radar techs CA
+	tech_kr_early_sonar_ca = 1
+	tech_kr_ca_interwar_torpedoes = 1
+	tech_kr_Interwar_AA_ca = 1
+	
+	# Kriegsmarine Battlecruiser
+	tech_kr_bc = 1
 	
 	# Kriegsmarine Battleship
 	tech_kr_bb_obs = 1
 	tech_kr_bb = 1
+	# Kriegsmarine ASW/Torpedo/Radar techs BB/SHBB
+	tech_kr_Interwar_AA_bb = 1
 	
-	# Kriegsmarine Battlecruiser
-	tech_kr_bc = 1
 	############## economic ###########
 	basic_machine_tools = 1
 	dispersed_smallarms_industry = 1
@@ -143,7 +145,7 @@ set_technology = {
 	#port_infra = 1
 	heavy_industry = 1
 	################ Armor ###########
-	tech_nbfz_equipment_1 = 1
+	tech_heavy_panzer_equipment_1 = 1
 	tech_panzer_i_equipment_1 = 1
 	tech_panzer_ii_equipment_1 = 1
 	tech_ger_ac_recon = 1
@@ -168,16 +170,24 @@ create_import = {
 set_politics = {
 
 	parties = {
-		democratic = { 
-			popularity = 0
+		conservatism = { 
+			popularity = 5
 		}
 
+		liberalism = { 
+			popularity = 2
+		}
+		
+		socialism = { 
+			popularity = 7
+		}
+		
 		fascism = {
-			popularity = 100
+			popularity = 83
 		}
 		
 		communism = {
-			popularity = 0
+			popularity = 3
 			banned = yes #default is no
 		}
 	}
@@ -195,12 +205,51 @@ add_to_faction = GER
 add_ideas = {
 	sour_loser
 	general_staff
+	
+	#Politicians
+	hitler_hos
+	rudolf_hess
+	joseph_goebbels
+	konstantin_von_neurath
+	hjalmar_schacht
+	hermann_goering
+	wilhelm_canaris
+	heinrich_himmler
+	werner_von_fritsch
+	
+	#Laws
 	limited_exports
-	limited_conscription
 	partial_economic_mobilisation
+	foreign_warmonger
+	press_state
+	tax_high
+	edu_high
+	cons_three
+	mob_standing
+	age_18
+	key_industries
+	fdi_regulated
+	tariffs_high
+	unity_united_nation
+	
 	# Factories
 	#GER_tankfactory2
 }
+
+set_country_flag = mob_standing
+set_country_flag = foreign_warmonger
+set_country_flag = Tax_high
+set_country_flag = Edu_high
+set_country_flag = press_state
+set_country_flag = cons_three
+set_country_flag = tariffs_high
+set_country_flag = train_medium
+set_country_flag = key_industries
+set_country_flag = age_18
+set_country_flag = limited_exports
+set_country_flag = partial_economic_mobilisation
+set_country_flag = fdi_regulated
+set_country_flag = labor_allowed
 
 create_country_leader = {
 	name = "Adolf Hitler"
@@ -209,7 +258,8 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = nazism
 	traits = {
-		dictator
+		a_hitler
+		charismatic
 	}
 }
 
@@ -218,7 +268,7 @@ create_country_leader = {
 	desc = "POLITICS_KONRAD_ADENAUER_DESC"
 	picture = "Portrait_Germany_Konrad_Adenauer.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = moderate
 	traits = {
 	}
 }
@@ -235,18 +285,18 @@ create_country_leader = {
 	}
 }
 
-#create_country_leader = {
-#	name = "Otto Wels"
-#	desc = "POLITICS_OTTO_WELS_DESC"
-#	picture = "Portrait_Germany_Adolf_Hitler.dds"
-#	expire = "1939.1.16"
-#	ideology = socialism
-#	traits = {
-#		exiled
-#		union_man
-#	}
-#}
-#
+create_country_leader = {
+	name = "Otto Wels"
+	desc = "POLITICS_OTTO_WELS_DESC"
+	picture = "portrait_germany_otto_wels.dds"
+	expire = "1939.1.16"
+	ideology = social_democracy
+	traits = {
+		exiled
+		union_man
+	}
+}
+
 #create_country_leader = {
 #	name = "Ernst Thälmann"
 #	desc = "POLITICS_ERNST_THALMANN_DESC"
@@ -295,7 +345,6 @@ create_field_marshal = {
 	skill = 2
 	id = 44
 }
-
 create_corps_commander = {
 	name = "Paulus, Friedrich"
 	picture = "Portrait_Germany_Friedrich_Paulus.dds"
@@ -918,14 +967,14 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Daluege.dds"
 	traits = { Waffen_SS }
 	skill = 1
-	#id = 15
+	id = 200
 }
 create_corps_commander = {
 	name = "Waldeck und Pyrmon, Prinz zu"	#1936
 	picture = "Portrait_Germany_Prinz.dds"
 	traits = { Waffen_SS Incompetent_General }
 	skill = 1
-	#id = 15
+	id = 201
 }
 
 create_corps_commander = {
@@ -933,7 +982,7 @@ create_corps_commander = {
 	picture = "Portrait_Germany_generic_ss_3.dds"
 	traits = { offensive_doctrine_CC Waffen_SS }
 	skill = 1
-	#id = 15
+	id = 202
 }
 
 create_corps_commander = {
@@ -941,7 +990,7 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Demelhuber.dds"
 	traits = { offensive_doctrine_CC Waffen_SS }
 	skill = 3
-	#id = 15
+	id = 203
 }
 
 create_corps_commander = {
@@ -949,7 +998,7 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Heissmeyer.dds"
 	traits = {Waffen_SS  Incompetent_General }
 	skill = 1
-	#id = 15
+	id = 204
 }
 
 create_corps_commander = {
@@ -957,9 +1006,15 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Steiner.dds"
 	traits = { panzer_leader offensive_doctrine_CC defensive_doctrine_CC Waffen_SS }
 	skill = 4
-	#id = 15
+	id = 205
 }
-
+create_field_marshal = {
+	name = "Keitel, Wilhelm"
+	picture = "Portrait_Germany_Friedrich_Paulus.dds"
+	traits = { Bad_General defensive_doctrine_FM }
+	skill = 1
+	id = 207
+}
 ### Ship Variants ###
 ## 1936 Start ##
 ################### BICE Variants ##################
@@ -1036,7 +1091,7 @@ create_equipment_variant = {
 
 		#laws
 		war_economy
-		extensive_conscription
+		cons_expanded_draft
 	}
 	
 	oob = "GER_1939"
@@ -1159,6 +1214,18 @@ create_equipment_variant = {
 		dispersed_industry3 = 1
 		dispersed_industry4 = 1
 	}
-	
+	# Submarines #
+	create_equipment_variant = {
+		name = "Type VIIA"
+		type = patrol_submarine_1
+		parent_version = 0
+		upgrades = {
+			ship_quality_upgrade = 1
+			sub_engine_upgrade = 1
+			sub_stealth_upgrade = 1
+			sub_torpedo_upgrade = 1
+		}
+	}
+	# Destroyer #
 }
 #EOF#
