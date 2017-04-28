@@ -29,7 +29,7 @@ set_technology = {
 	gwtank = 1
 	basic_light_tank = 1
 	tech_Tankettes = 1
-	generic_armor = 1
+	generic_armor_axis = 1
 	################# aircraft ###########
 	early_fighter = 1
 	#tech_testing_3 = 1 ####REMOVE BEFORE LAUNCH
@@ -50,7 +50,28 @@ set_technology = {
 	}
 
  #Ideas
- add_ideas = neutrality_idea
+add_ideas = { 	
+		export_focus
+		tax_high
+		tariffs_average
+		
+		civilian_economy
+		press_free
+		key_industries
+		labor_none
+		fdi_regulated
+		
+		cons_volunteer
+		foreign_volunteers
+		mob_reserve
+		train_low
+		age_19
+
+		edu_low
+		
+		unity_divided_nation	
+		foreign_neutral
+}
 
 set_convoys = 250
 1939.1.1 = {
@@ -177,7 +198,16 @@ set_politics = {
 		elections_allowed = no
 	}
 }
-
+create_country_leader = {
+	name = "King Carol II"
+	desc = "POLITICS_GHEORGHE_TATARESCU_DESC"
+	picture = "gfx/leaders/ROM/rom_carol_ii.dds"
+	expire = "1953.1.1"
+	ideology = absolutism
+	traits = {
+		#
+	}
+}
 create_country_leader = {
 	name = "Gheorghe Tatarescu"
 	desc = "POLITICS_GHEORGHE_TATARESCU_DESC"
