@@ -255,21 +255,54 @@ available_if_capitulated = yes
 available_if_capitulated = yes
 		completion_reward = {
 		395 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				
 				add_building_construction = {
 					type = artillery_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			
 			}
+			add_ideas = rock_island_arsenal_idea
 			add_tech_bonus = {
 				name = USA_support_rock_island
-				uses = 3
+				uses = 2
 				bonus = 0.5
 				category = artillery
 				category = support_tech
+			}
+		}
+	}
+
+	focus = {
+		id = USA_support_springfield
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 3
+		y = 4
+		cost = 10
+		prerequisite = { focus = USA_support_rock_island }
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+		889 = {
+				add_extra_state_shared_building_slots = 2
+				
+				add_building_construction = {
+					type = smallarms_factory
+					level = 1
+					instant_build = yes
+				}
+			
+			}
+			add_ideas = springfield_armory_idea
+			add_tech_bonus = {
+				name = USA_support_springfield
+				uses = 2
+				bonus = 0.5
+				category = infantry_weapons
 			}
 		}
 	}
@@ -622,7 +655,7 @@ available_if_capitulated = yes
 		prerequisite = { focus = USA_limited_intervention }
 		x = 4
 		y = 5
-		cost = 10
+		cost = 12
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -656,7 +689,7 @@ available_if_capitulated = yes
 			army_experience = 10
 			every_state = {
 				limit = { has_state_flag = USA_arsenal_of_democracy_3AF }
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 3
@@ -665,21 +698,14 @@ available_if_capitulated = yes
 			}
 		}
 		completion_reward = {
-			navy_experience = 150
-			army_experience = 150
-			air_experience = 150
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 6
+			navy_experience = 100
+			army_experience = 100
+			air_experience = 100
+			393 = {
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -692,6 +718,34 @@ available_if_capitulated = yes
 					level = 1
 					instant_build = yes
 				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}
+			373 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = truck_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = Hvaircraft_factory
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}
+			889 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
 				add_building_construction = {
 					type = smallarms_factory
 					level = 1
@@ -699,23 +753,11 @@ available_if_capitulated = yes
 				}
 				set_state_flag = USA_arsenal_of_democracy_3AF
 			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 6
+			396 = {
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
 					level = 3
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = ammo_factory
-					level = 1
 					instant_build = yes
 				}
 				add_building_construction = {
@@ -723,48 +765,125 @@ available_if_capitulated = yes
 					level = 1
 					instant_build = yes
 				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}
+			369 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = artillery_factory
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = ammo_factory
 					level = 1
 					instant_build = yes
 				}
 				set_state_flag = USA_arsenal_of_democracy_3AF
 			}
-			random_owned_controlled_state = {
-				limit = {
-					dockyard > 0
-					free_building_slots = {
-						building = dockyard
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 3
+			383 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = dockyard
-					level = 6
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = Ltaircraft_factory
+					level = 1
 					instant_build = yes
 				}
 				set_state_flag = USA_arsenal_of_democracy_3AF
 			}
-			random_owned_controlled_state = {
-				limit = {
-					dockyard > 0
-					free_building_slots = {
-						building = dockyard
-						size > 2
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 3
+			378 = {
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = dockyard
-					level = 6
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = shipyard
-					level = 6
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}
+			362 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = shipyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}
+			370 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = subyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}
+			367 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = shipyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}
+			359 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = shipyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}
+			357 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = subyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = USA_arsenal_of_democracy_3AF
+			}
+			375 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = USA_arsenal_of_democracy_3AF
@@ -821,8 +940,7 @@ available_if_capitulated = yes
 		#	factor = 1
 		#}
 		completion_reward = {
-			#remove_ideas = disarmed_nation
-			add_ideas = cons_volunteer
+			add_ideas = cons_one
 		}
 	}
 
@@ -1260,7 +1378,7 @@ available_if_capitulated = yes
 						has_country_flag = cons_volunteer
 					}
 				}
-				add_ideas = cons_one
+				add_ideas = cons_two
 			}
 			
 			add_ideas = limited_interventionism
@@ -1496,7 +1614,7 @@ bypass = {
 		icon = GFX_goal_generic_build_airforce
 		x = 17
 		y = 0
-		cost = 10
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -1627,11 +1745,11 @@ available_if_capitulated = yes
 	}
 
 	focus = {
-		id = USA_bureau_of_ships
+		id = USA_naval_shipbuilding_program
 		icon = GFX_goal_generic_build_navy
 		x = 23
 		y = 0
-		cost = 10
+		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -1645,7 +1763,7 @@ available_if_capitulated = yes
 	focus = {
 		id = USA_battleship_primacy
 		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = USA_bureau_of_ships }
+		prerequisite = { focus = USA_naval_shipbuilding_program }
 		mutually_exclusive = { focus = USA_carrier_primacy }
 		x = 20
 		y = 1
@@ -1685,7 +1803,7 @@ available_if_capitulated = yes
 	focus = {
 		id = USA_carrier_primacy
 		icon = GFX_goal_generic_navy_carrier
-		prerequisite = { focus = USA_bureau_of_ships }
+		prerequisite = { focus = USA_naval_shipbuilding_program }
 		mutually_exclusive = { focus = USA_battleship_primacy }
 		x = 22
 		y = 1
@@ -1729,7 +1847,7 @@ available_if_capitulated = yes
 	focus = {
 		id = USA_escort_effort
 		icon = GFX_goal_generic_navy_anti_submarine
-		prerequisite = { focus = USA_bureau_of_ships }
+		prerequisite = { focus = USA_naval_shipbuilding_program }
 		x = 24
 		y = 1
 		cost = 10
@@ -1769,7 +1887,7 @@ available_if_capitulated = yes
 		x = 26
 		y = 1
 		cost = 10
-		prerequisite = { focus = USA_bureau_of_ships }
+		prerequisite = { focus = USA_naval_shipbuilding_program }
 		ai_will_do = {
 			factor = 1
 		}
@@ -1826,9 +1944,216 @@ available_if_capitulated = yes
 	}
 
 	focus = {
+		id = USA_automotive_industry_focus
+		icon = GFX_goal_generic_production
+		x = 29
+		y = 0
+		cost = 8
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		available_if_capitulated = yes
+		completion_reward = {
+			army_experience = 25
+			add_ideas = automotive_arsenal_focus
+		}
+	}
+
+	focus = {
+		id = USA_detroit_vehicle_focus
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = USA_automotive_industry_focus }
+		mutually_exclusive = { focus = USA_detroit_tank_focus }
+		x = 28
+		y = 1
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		available_if_capitulated = yes
+		completion_reward = {
+			army_experience = 10
+			add_ideas = USA_vehicle_focus
+		}
+	}
+
+	focus = {
+		id = USA_detroit_tank_focus
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = USA_automotive_industry_focus }
+		mutually_exclusive = { focus = USA_detroit_vehicle_focus }
+		x = 30
+		y = 1
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		available_if_capitulated = yes
+		completion_reward = {
+			army_experience = 10
+			add_ideas = USA_tank_focus
+		}
+	}
+
+	focus = {
+		id = USA_motorized_infantry_focus
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = USA_detroit_vehicle_focus }
+		available = {
+			has_war = yes
+		}
+		x = 28
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		available_if_capitulated = yes
+		completion_reward = {
+			army_experience = 20
+			add_tech_bonus = {
+				name = USA_motorized_infantry_focus
+				uses = 2
+				bonus = 0.5
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = USA_combined_arms_focus
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = USA_detroit_tank_focus }
+		available = {
+			has_war = yes
+		}
+		x = 30
+		y = 2
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		available_if_capitulated = yes
+		completion_reward = {
+			army_experience = 10
+			air_experience = 10
+			add_tech_bonus = {
+				name = USA_combined_arms_focus
+				bonus = 0.50
+				uses = 1
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				name = USA_CAS
+				bonus = 0.50
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+
+	focus = {
+		id = USA_volunteers_women
+		icon = GFX_goal_generic_position_armies
+		available = {
+			OR = {
+				threat > 0.25
+				has_war = yes
+			}
+			NOT = { has_government = fascism }
+		}
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		x = 32
+		y = 0
+		cost = 2
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+        			add_manpower = 250000
+		}
+	}
+
+	focus = {
+		id = USA_volunteers_I
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = USA_volunteers_women }
+		available = {
+			OR = {
+				threat > 0.50
+				has_war = yes
+			}
+			NOT = { has_government = fascism }
+		}
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		x = 32
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+        			add_manpower = 1250000
+		}
+	}
+
+	focus = {
+		id = USA_volunteers_II
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = USA_volunteers_I }
+		available = {
+			OR = {
+				threat > 0.75
+				has_war = yes
+			}
+			NOT = { has_government = fascism }
+		}
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		x = 32
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+        			add_manpower = 2000000
+		}
+	}
+
+	focus = {
+		id = USA_volunteers_III
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = USA_volunteers_II }
+		available = {
+				threat > 0.95
+				has_war = yes
+			NOT = { has_government = fascism }
+		}
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		x = 32
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+        			add_manpower = 2500000
+		}
+	}
+
+	focus = {
 		id = USA_reinforce_monroe_doctrine
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 31
+		x = 37
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -1866,7 +2191,7 @@ available_if_capitulated = yes
 		id = USA_carribean_sphere
 		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = USA_reinforce_monroe_doctrine }
-		x = 28
+		x = 34
 		y = 1
 		cost = 10
 		#ai_will_do = {
@@ -2045,7 +2370,7 @@ available_if_capitulated = yes
 		id = USA_central_america
 		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = USA_reinforce_monroe_doctrine }
-		x = 30
+		x = 36
 		y = 1
 		cost = 10
 		#ai_will_do = {
@@ -2336,7 +2661,7 @@ available_if_capitulated = yes
 		id = USA_the_neighbors
 		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = USA_reinforce_monroe_doctrine }
-		x = 32
+		x = 38
 		y = 1
 		cost = 10
 		ai_will_do = {
@@ -2475,7 +2800,7 @@ available_if_capitulated = yes
 		id = USA_south_america
 		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = USA_reinforce_monroe_doctrine }
-		x = 34
+		x = 40
 		y = 1
 		cost = 10
 		#ai_will_do = {
@@ -2922,7 +3247,7 @@ available_if_capitulated = yes
 		prerequisite = { focus = USA_central_america }
 		prerequisite = { focus = USA_carribean_sphere }
 		available = { is_puppet = no }
-		x = 31
+		x = 37
 		y = 2
 		cost = 10
 		#ai_will_do = {
@@ -3032,7 +3357,7 @@ available_if_capitulated = yes
 				has_country_flag = foreign_warmonger
 				}
 			}
-		x = 32
+		x = 38
 		y = 3
 		cost = 10
 		ai_will_do = {
@@ -3739,7 +4064,7 @@ available_if_capitulated = yes
 		id = USA_preemptive_intervention
 		icon = GFX_goal_generic_territory_or_war
 		prerequisite = { focus = USA_pax_americana }
-		x = 30
+		x = 36
 		y = 3
 		cost = 10
 		ai_will_do = {
