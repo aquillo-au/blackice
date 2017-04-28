@@ -1845,21 +1845,21 @@ country_event = {
 	picture = GFX_report_event_polish_tanks_01
 
 	trigger = {
-	date > 1936.1.1
-	NOT = { has_tech = german_tech } 		#Germany
-	NOT = { has_tech = tech_faf }			#France	
-	NOT = { has_tech = soviet_tech_a }		#Soviets + satellites
-	NOT = { has_tech = italian_tech }		#Italy
-	NOT = { has_tech = japanese_tech_a }	#Japan
-	NOT = { has_tech = british_tech_1 }		#UK
-	NOT = { has_tech = american_tech_1 }	#USA
-	NOT = {tag = ROM }
-	NOT = {tag = HUN }
-	NOT = {tag = FIN }
-	NOT = {tag = AUS }
-	NOT = {tag = BUL }
-	NOT = {has_government = fascism}
-	has_country_flag = impossible	
+		date > 1936.1.1
+		NOT = { has_tech = german_tech } 		#Germany
+		NOT = { has_tech = tech_faf }			#France	
+		NOT = { has_tech = soviet_tech_a }		#Soviets + satellites
+		NOT = { has_tech = italian_tech }		#Italy
+		NOT = { has_tech = japanese_tech_a }	#Japan
+		NOT = { has_tech = british_tech_1 }		#UK
+		NOT = { has_tech = american_tech_1 }	#USA
+		NOT = {tag = ROM }
+		NOT = {tag = HUN }
+		NOT = {tag = FIN }
+		NOT = {tag = AUS }
+		NOT = {tag = BUL }
+		NOT = {has_government = fascism}
+		has_country_flag = impossible	
 	}
 	fire_only_once = yes
 
@@ -1870,11 +1870,11 @@ country_event = {
 		name = blackiceevents.88.a	# axis generic
 		ai_chance = { factor = 0 }
 		set_technology = { generic_armor_axis = 1 }
-		}
+	}
 	option = {
 		name = blackiceevents.88.b	# allied generic
 		ai_chance = { factor = 100 }
 		set_technology = { generic_armor = 1 }
-		}	
-	}		
+	}	
+}		
 ### EOF ###
