@@ -5,9 +5,12 @@ ideas = {
 		tax_minimal = {
 		
 			available = {
-				OR = {
+				NOT = {
 					has_government = fascism
 					has_government = communism
+					has_government = monarchism
+					has_government = neutrality
+					has_government = socialism
 				}
 			}
 			
@@ -16,19 +19,19 @@ ideas = {
 			
 			modifier = {
 				political_power_factor = -0.05
-
 				industrial_capacity_factory = -0.05
 				industrial_capacity_dockyard = -0.05
+				production_factory_max_efficiency_factor = 0.05
 				production_speed_industrial_complex_factor = 0.08
 				production_speed_arms_factory_factor = 0.08
 				production_speed_dockyard_factor = 0.08
-
-				consumer_goods_factor = 0.10
+				consumer_goods_factor = 0.05
 				conscription = -0.05
 				communism_drift = -0.03
 				fascism_drift = 0.02
-				unity_factor = -0.05
+				unity_factor = 0.05
 				conservatism_drift = 0.01
+				production_factory_max_efficiency_factor = 0.10
 			}
 			on_add = {
 				set_country_flag = tax_low
@@ -41,7 +44,7 @@ ideas = {
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-				factor = 10
+				factor = 0
 				modifier = {
 					factor = 0
 					OR = {
@@ -68,23 +71,27 @@ ideas = {
 			}
 		}
 		tax_low = {
-			
+			available = {
+				NOT = {
+					has_government = communism
+				}
+			}
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
 				political_power_factor = 0.025
-
 				industrial_capacity_factory = -0.025
 				industrial_capacity_dockyard = -0.025
-				production_speed_industrial_complex_factor = 0.06
-				production_speed_arms_factory_factor = 0.06
-				production_speed_dockyard_factor = 0.06
-
-				consumer_goods_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_industrial_complex_factor = 0.04
+				production_speed_arms_factory_factor = 0.04
+				production_speed_dockyard_factor = 0.04
+				consumer_goods_factor = 0.025
 				conscription = -0.02
-				unity_factor = -0.02
+				unity_factor = 0.03
 				liberalism_drift = 0.01
+				
 			}
 			on_add = {
 				set_country_flag = tax_low
@@ -98,7 +105,7 @@ ideas = {
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-				factor = 10
+				factor = 0
 				modifier = {
 					factor = 0
 					OR = {
@@ -135,14 +142,13 @@ ideas = {
 			
 			modifier = {
 				political_power_factor = 0.05
-				unity_factor = 0.05
+				unity_factor = 0.01
 				liberalism_drift = 0.01
-
 				industrial_capacity_factory = 0.02
 				industrial_capacity_dockyard = 0.02
-				production_speed_industrial_complex_factor = 0.02
-				production_speed_arms_factory_factor = 0.02
-				production_speed_dockyard_factor = 0.02
+				production_speed_industrial_complex_factor = -0.02
+				production_speed_arms_factory_factor = -0.02
+				production_speed_dockyard_factor = -0.02
 			}
 			on_add = {
 				set_country_flag = tax_average
@@ -161,27 +167,27 @@ ideas = {
 		tax_high = {
 			
 			available = {	
-
+				NOT = {
+					has_government = conservatism
+				}
 			}
 			
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = 0.025
-
+				political_power_factor = -0.025
 				industrial_capacity_factory = 0.025
 				industrial_capacity_dockyard = 0.025
-				production_speed_industrial_complex_factor = -0.06
-				production_speed_arms_factory_factor = -0.06
-				production_speed_dockyard_factor = -0.06
-
+				production_factory_max_efficiency_factor = -0.05
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.05
+				production_speed_dockyard_factor = -0.05
 				consumer_goods_factor = -0.025
 				conscription = 0.01
-				
 				unity_factor = -0.03
 				socialism_drift = 0.02
-				fascism_drift = -0.02
+				fascism_drift = 0.02
 			}
 			
 			on_add = {
@@ -195,7 +201,7 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 5
+   				factor = 20
 				modifier = {
 					factor = 100
 					has_war = yes
@@ -219,6 +225,15 @@ ideas = {
 					is_major = no
 					has_war = yes
 				}
+				modifier = {
+					factor = 5
+					threat > 0.30
+					OR = {
+						has_government = conservatism
+						has_government = liberalism
+						has_government = socialism
+					}
+				}
 			}
 		}
 		tax_extreme = {
@@ -227,6 +242,8 @@ ideas = {
 				OR = { 
 					has_government = fascism
 					has_government = communism
+					has_government = monarchism
+					has_government = neutrality
 				}
 			}
 			
@@ -235,15 +252,14 @@ ideas = {
 			
 			modifier = {
 				political_power_factor = -0.05
-
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
+				production_factory_max_efficiency_factor = -0.10
 				production_speed_industrial_complex_factor = -0.08
 				production_speed_arms_factory_factor = -0.08
 				production_speed_dockyard_factor = -0.08
-
 				conscription = 0.02
-				communism_drift = 0.05
+				communism_drift = 0.02
 				unity_factor = -0.05
 				consumer_goods_factor = -0.05
 			}

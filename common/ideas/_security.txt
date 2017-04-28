@@ -1,0 +1,211 @@
+ideas = {
+	## Security
+	security = { 
+		law = yes
+		security_liberty_first = {
+			
+			allowed = {
+				NOT = {
+					has_government = communism
+					has_government = fascism
+					has_government = monarchism
+					has_government = neutrality
+					has_country_flag = press_state
+					has_country_flag = press_censored
+				}
+			}
+			
+			removal_cost = -1
+			cost = 150
+			modifier = {
+				political_power_factor = 0.10
+				unity_factor = 0.03
+				conservatism_drift = 0.01
+				liberalism_drift = 0.01
+				enemy_partisan_effect = 0.10
+				foreign_subversive_activites = 0.10
+			}
+			on_add = {
+				set_country_flag = security_liberty_first
+				clr_country_flag = security_some_restrictions
+				clr_country_flag = security_minor_restrictions
+				clr_country_flag = security_major_restrictions
+				clr_country_flag = security_police_state
+			}
+			cancel_if_invalid = no
+		}
+		security_minor_restrictions = {
+			
+			allowed = {
+				NOT = {
+					has_government = communism
+					has_government = fascism
+					has_government = monarchism
+					has_government = neutrality
+					has_country_flag = press_state
+				}
+			}
+			
+			removal_cost = -1
+			cost = 150
+			modifier = {
+				political_power_factor = 0.05
+				socialism_drift = 0.01
+				unity_factor = 0.01
+			}
+			on_add = {
+				set_country_flag = security_minor_restrictions
+				clr_country_flag = security_liberty_first
+				clr_country_flag = security_some_restrictions
+				clr_country_flag = security_major_restrictions
+				clr_country_flag = security_police_state
+			}
+			
+			cancel_if_invalid = no
+		}
+		security_some_restrictions = {
+			allowed = {
+			OR = {
+				NOT = {
+					has_government = communism
+					has_government = fascism
+					}
+				AND = {
+					OR = {
+						has_government = conservatism
+						has_government = liberalism
+						has_government = socialism
+						}
+					has_war = yes
+					}
+				}
+			}
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				unity_factor = -0.01
+				political_power_factor = -0.03
+				enemy_partisan_effect = -0.05
+				foreign_subversive_activites = -0.05
+				conservatism_drift = -0.01
+				liberalism_drift = -0.01
+			}
+			on_add = {
+				set_country_flag = security_some_restrictions
+				clr_country_flag = security_liberty_first
+				clr_country_flag = security_minor_restrictions
+				clr_country_flag = security_major_restrictions
+				clr_country_flag = security_police_state
+			}
+			default = yes
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					factor = 1000
+					threat < 0.15
+					has_war = no
+				}
+   			}
+		}
+		security_major_restrictions = {
+			
+			allowed = {
+				NOT = { has_country_flag = press_free }
+				OR = {
+				AND = {
+					OR = {
+						has_government = conservatism
+						has_government = liberalism
+						has_government = socialism
+						}
+					has_war = yes
+					}
+				has_government = fascism
+				has_government = communism
+				has_government = neutrality
+				has_government = monarchism
+				}					
+			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				unity_factor = -0.02
+				political_power_factor = -0.06
+				enemy_partisan_effect = -0.10
+				foreign_subversive_activites = -0.10
+				monarchism_drift = 0.01
+				neutrality_drift = 0.01
+				fascism_drift = 0.01
+				communism_drift = 0.01
+			}
+			
+			on_add = {
+				set_country_flag = security_major_restrictions
+				clr_country_flag = security_liberty_first
+				clr_country_flag = security_minor_restrictions
+				clr_country_flag = security_some_restrictions
+				clr_country_flag = security_police_state
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 2
+				
+   			}
+		}
+		security_police_state = {
+			
+			allowed = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+					has_government = monarchism
+					has_government = neutrality
+				}
+				NOT = { has_country_flag = press_free has_country_flag = press_regulated }
+			}
+
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				unity_factor = -0.03
+				political_power_factor = -0.10
+				enemy_partisan_effect = -0.15
+				foreign_subversive_activites = -0.15
+				fascism_drift = 0.02
+				communism_drift = 0.02
+			}
+			
+			on_add = {
+				set_country_flag = security_police_state
+				clr_country_flag = security_liberty_first
+				clr_country_flag = security_minor_restrictions
+				clr_country_flag = security_major_restrictions
+				clr_country_flag = security_some_restrictions
+			}
+			
+			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 1
+				modifier = {
+					factor = 100
+					OR = {
+						has_government = fascism
+						has_government = communism
+					}
+				}
+   			}
+		}
+	}
+}
+
+### EOF ###

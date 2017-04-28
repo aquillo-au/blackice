@@ -4,10 +4,12 @@ ideas = {
 		tariffs_none = {
 			available = {
 			NOT = {
-				OR = {
 					has_government = fascism
 					has_government = communism
-					}
+					has_government = neutrality
+					has_government = monarchism
+					has_country_flag = closed_economy
+					has_country_flag = limited_exports
 				}
 			}
 			
@@ -28,11 +30,7 @@ ideas = {
 				research_time_factor = -0.04
 				production_factory_efficiency_gain_factor = 0.04
 				consumer_goods_factor = -0.04
-				communism_drift = -0.01
-				fascism_drift = -0.01
 				conservatism_drift = 0.01
-				monarchism_drift = -0.01
-				neutrality_drift = -0.01
 			}
 			
 			on_add = {
@@ -49,10 +47,7 @@ ideas = {
 				factor = 5
 				modifier = {
 					factor = 5
-					OR = {
-					##has_government = democratic
 					has_government = conservatism
-					}
 				}
 				modifier = {
 					factor = 0
@@ -61,7 +56,13 @@ ideas = {
 			}
 		}
 		tariffs_low = {
-			
+			available = {
+				NOT = {
+					has_government = communism
+					has_government = fascism
+					has_country_flag = closed_economy
+				}
+			}
 			cost = 150
 			removal_cost = -1
 			
@@ -79,8 +80,6 @@ ideas = {
 				research_time_factor = -0.02
 				production_factory_efficiency_gain_factor = 0.02
 				consumer_goods_factor = -0.02
-				communism_drift = -0.01
-				fascism_drift = -0.01
 				liberalism_drift = 0.01
 			}
 			
@@ -154,7 +153,6 @@ ideas = {
 				OR = {
 					AND = {
 						OR = {
-					##has_government = democratic
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -163,14 +161,13 @@ ideas = {
 						any_enemy_country = {
 							ic_ratio = { 
 								tag = ROOT 
-								ratio > 0.4
+								ratio > 0.7
 							}
 						}
 					}
 					AND = {
 						NOT = { 
 						OR = {
-					##has_government = democratic
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -204,6 +201,7 @@ ideas = {
 				consumer_goods_factor = 0.025
 				fascism_drift = 0.01
 				neutrality_drift = 0.01
+				monarchism_drift = 0.01
 			}
 			
 			on_add = {
@@ -266,7 +264,7 @@ ideas = {
 				research_time_factor = 0.06
 				production_factory_efficiency_gain_factor = -0.05
 				consumer_goods_factor = 0.05
-				communism_drift = 0.02
+				communism_drift = 0.01
 			}
 			
 			on_add = {

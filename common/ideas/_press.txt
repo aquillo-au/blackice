@@ -9,6 +9,8 @@ ideas = {
 					has_government = neutrality
 					has_government = communism
 					has_government = monarchism
+					has_country_flag = security_police_state
+					has_country_flag = security_major_restrictions
 				}
 			}
 			cost = 75
@@ -51,7 +53,9 @@ ideas = {
 			}
 		}
 		press_regulated = {
-			
+			available = {
+				NOT = { has_country_flag = security_police_state has_government = communism has_government = fascism }
+			}
 			cost = 100
 			removal_cost = -1
 			level = 3
@@ -63,6 +67,7 @@ ideas = {
 				foreign_subversive_activites = 0.05
 				enemy_partisan_effect = -0.05
 				liberalism_drift = 0.01
+				socialism_drift = 0.01
 			}
 			
 			on_add = {
@@ -110,7 +115,6 @@ ideas = {
 				OR = {
 					AND = {
 						OR = {
-					##has_government = democratic
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -120,12 +124,7 @@ ideas = {
 					has_government = fascism
 					has_government = communism
 					has_government = monarchism	
-					#any_enemy_country = {
-					#	ic_ratio = { 
-					#		tag = ROOT 
-					#		ratio > 0.2
-					#	}
-					#}
+					has_government = neutrality
 				}
 			}
 		
@@ -181,6 +180,7 @@ ideas = {
 					has_government = monarchism
 					has_government = neutrality
 				}
+				NOT = { has_country_flag = security_liberty_first has_country_flag = security_minor_restrictions }
 			}
 			
 			cost = 150
