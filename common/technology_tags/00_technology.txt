@@ -66,11 +66,9 @@ technology_categories = {
 	cvb_tech
 	cve_tech
 	cvl_tech
-	pbb_tech
-	fbb_tech
-	bbv_tech
 	bc_tech
 	bb_tech
+	bbv_tech
 	shbb_tech
 	ss_tech
 	tp_tech
@@ -111,24 +109,30 @@ technology_folders = {
 	support_folder
 	armour_folder = {
 		available = {
-			HUN = { NOT = { is_in_faction_with = GER }}
-			
+			NOT = { original_tag = AUS }
+			NOT = { original_tag = HUN }
+			NOT = { original_tag = SLO }
+			NOT = { original_tag = CRO }
+			NOT = { original_tag = SER }
+			NOT = { original_tag = BUL }
+			NOT = { original_tag = UKR }
+			NOT = { original_tag = BLR }
+			NOT = { original_tag = ROM }			
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
-			
+			NOT = { original_tag = ITA }
 		}
 	}
 	armour_axis_folder = {
 		available = {
-			HUN = { is_in_faction_with = GER }
-			
+						
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
 			NOT = { original_tag = SOV }
 			NOT = { original_tag = FRA }
 			NOT = { original_tag = USA }
 			NOT = { original_tag = ENG }
-			NOT = { original_tag = HOL }
+			
 		}
 	}
 	artillery_folder
