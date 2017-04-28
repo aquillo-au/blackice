@@ -12,6 +12,8 @@ ideas = {
 		
 			modifier = {
 				consumer_goods_factor = 0.325
+				production_factory_max_efficiency_factor = -0.10
+				production_factory_efficiency_gain_factor = -0.10
 				production_speed_industrial_complex_factor = -0.5
 				production_speed_arms_factory_factor = -0.45
 				production_speed_dockyard_factor = -0.40
@@ -42,7 +44,9 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = 0.030
+				consumer_goods_factor = 0.30
+				production_factory_max_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.05
 				production_speed_industrial_complex_factor = -0.4
 				production_speed_arms_factory_factor = -0.35
 				production_speed_dockyard_factor = -0.35
@@ -86,7 +90,7 @@ ideas = {
 			}
 			on_add = {
 				set_country_flag = civilian_economy
-				set_country_flag = { flag = Transition days = 180 }
+				#set_country_flag = { flag = Transition days = 180 }
 				clr_country_flag = low_economic_mobilisation
 				clr_country_flag = partial_economic_mobilisation
 				clr_country_flag = war_economy
@@ -138,7 +142,7 @@ ideas = {
 			
 			on_add = {
 				set_country_flag = low_economic_mobilisation
-				set_country_flag = { flag = Mobilizing days = 180 }
+				#set_country_flag = { flag = Mobilizing days = 180 }
 				clr_country_flag = civilian_economy
 				clr_country_flag = partial_economic_mobilisation
 				clr_country_flag = war_economy
@@ -203,7 +207,7 @@ ideas = {
 			
 			on_add = {
 				set_country_flag = partial_economic_mobilisation
-				set_country_flag = { flag = Mobilizing days = 180 }
+				#set_country_flag = { flag = Mobilizing days = 180 }
 				clr_country_flag = low_economic_mobilisation
 				clr_country_flag = civilian_economy
 				clr_country_flag = war_economy
@@ -272,7 +276,7 @@ ideas = {
 			
 			on_add = {
 				set_country_flag = war_economy
-				set_country_flag = { flag = Mobilizing days = 180 }
+				#set_country_flag = { flag = Mobilizing days = 180 }
 				clr_country_flag = low_economic_mobilisation
 				clr_country_flag = partial_economic_mobilisation
 				clr_country_flag = civilian_economy
@@ -332,7 +336,7 @@ ideas = {
 			
 			on_add = {
 				set_country_flag = tot_economic_mobilisation
-				set_country_flag = { flag = Mobilizing days = 180 }
+				#set_country_flag = { flag = Mobilizing days = 180 }
 				clr_country_flag = low_economic_mobilisation
 				clr_country_flag = partial_economic_mobilisation
 				clr_country_flag = war_economy
