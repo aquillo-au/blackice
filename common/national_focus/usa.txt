@@ -1610,20 +1610,53 @@ bypass = {
 	}
 
 	focus = {
-		id = USA_air_war_plans_division
+		id = USA_war_department
 		icon = GFX_goal_generic_build_airforce
-		x = 17
+		x = 19
 		y = 0
 		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available = {
+			OR = {
+			has_war = yes
+			threat > 0.20
+			}
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				name = USA_motorized_infantry_focus
+				uses = 1
+				bonus = 0.5
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = USA_air_war_plans_division
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = USA_war_department }
+		x = 17
+		y = 1
+		cost = 8
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		available_if_capitulated = yes
 		completion_reward = {
 			air_experience = 25
 			add_tech_bonus = {
 				bonus = 0.5
-				uses = 2
+				uses = 1
 				category = air_doctrine
 			} # REVISIT May use modifier?
 			add_ideas = air_war_plans_division_focus
@@ -1636,12 +1669,12 @@ available_if_capitulated = yes
 		prerequisite = { focus = USA_air_war_plans_division }
 		mutually_exclusive = { focus = USA_strategic_bombing }
 		x = 16
-		y = 1
+		y = 2
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			air_experience = 25
 			add_ideas = air_support_focus
@@ -1654,12 +1687,12 @@ available_if_capitulated = yes
 		prerequisite = { focus = USA_air_war_plans_division }
 		mutually_exclusive = { focus = USA_air_support }
 		x = 18
-		y = 1
+		y = 2
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			air_experience = 25
 			add_ideas = strategic_bombing_focus
@@ -1671,12 +1704,12 @@ available_if_capitulated = yes
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = USA_air_support }
 		x = 17
-		y = 3
+		y = 4
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			air_experience = 25
 			add_tech_bonus = {
@@ -1694,12 +1727,12 @@ available_if_capitulated = yes
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = USA_air_support }
 		x = 16
-		y = 2
+		y = 3
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			add_tech_bonus = {
 				name = USA_CAS
@@ -1726,12 +1759,12 @@ available_if_capitulated = yes
 			}
 		}
 		x = 18
-		y = 2
+		y = 3
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			air_experience = 25
 			add_tech_bonus = {
@@ -1745,10 +1778,67 @@ available_if_capitulated = yes
 	}
 
 	focus = {
+		id = USA_paratroopers_focus
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = USA_war_department }
+		x = 19
+		y = 4
+		cost = 8
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		available = {
+			OR = {
+			has_war = yes
+			threat > 0.90
+			}
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			army_experience = 10
+			add_ideas = USA_paratrooper_school
+		}
+	}
+
+	focus = {
+		id = USA_navy_department
+		icon = GFX_goal_generic_build_airforce
+		x = 27
+		y = 0
+		cost = 8
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		available = {
+			OR = {
+			has_war = yes
+			threat > 0.20
+			}
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = USA_fund_the_navy
+				uses = 1
+				bonus = 0.5
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
 		id = USA_naval_shipbuilding_program
 		icon = GFX_goal_generic_build_navy
-		x = 23
-		y = 0
+		prerequisite = { focus = USA_navy_department }
+		x = 26
+		y = 1
 		cost = 8
 		#ai_will_do = {
 		#	factor = 1
@@ -1765,13 +1855,13 @@ available_if_capitulated = yes
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = USA_naval_shipbuilding_program }
 		mutually_exclusive = { focus = USA_carrier_primacy }
-		x = 20
-		y = 1
+		x = 24
+		y = 2
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 0.5
@@ -1785,13 +1875,13 @@ available_if_capitulated = yes
 		id = USA_advanced_mahanian_doctrine
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = USA_battleship_primacy }
-		x = 20
-		y = 2
+		x = 24
+		y = 3
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 0.5
@@ -1805,8 +1895,8 @@ available_if_capitulated = yes
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = USA_naval_shipbuilding_program }
 		mutually_exclusive = { focus = USA_battleship_primacy }
-		x = 22
-		y = 1
+		x = 26
+		y = 2
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -1827,8 +1917,8 @@ available_if_capitulated = yes
 		id = USA_bureau_of_aeronautics
 		icon = GFX_goal_generic_air_naval_bomber
 		prerequisite = { focus = USA_carrier_primacy }
-		x = 22
-		y = 2
+		x = 26
+		y = 3
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -1848,8 +1938,8 @@ available_if_capitulated = yes
 		id = USA_escort_effort
 		icon = GFX_goal_generic_navy_anti_submarine
 		prerequisite = { focus = USA_naval_shipbuilding_program }
-		x = 24
-		y = 1
+		x = 28
+		y = 2
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -1864,8 +1954,8 @@ available_if_capitulated = yes
 		id = USA_convoy_tactics
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = USA_escort_effort }
-		x = 24
-		y = 2
+		x = 28
+		y = 3
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -1884,10 +1974,10 @@ available_if_capitulated = yes
 	focus = {
 		id = USA_fund_the_navy
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 26
+		prerequisite = { focus = USA_navy_department }
+		x = 30
 		y = 1
 		cost = 10
-		prerequisite = { focus = USA_naval_shipbuilding_program }
 		ai_will_do = {
 			factor = 1
 		}
@@ -1895,7 +1985,7 @@ available_if_capitulated = yes
 		completion_reward = {
 			add_tech_bonus = {
 				name = USA_fund_the_navy
-				uses = 3
+				uses = 2
 				bonus = 0.5
 				category = naval_doctrine
 			}
@@ -1906,7 +1996,7 @@ available_if_capitulated = yes
 		id = USA_expand_the_USMC
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = USA_fund_the_navy }
-		x = 26
+		x = 30
 		y = 2
 		cost = 10
 		#ai_will_do = {
@@ -1927,7 +2017,7 @@ available_if_capitulated = yes
 		id = USA_amphibious_operations
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = USA_expand_the_USMC }
-		x = 26
+		x = 30
 		y = 3
 		cost = 10
 		#ai_will_do = {
@@ -1946,8 +2036,9 @@ available_if_capitulated = yes
 	focus = {
 		id = USA_automotive_industry_focus
 		icon = GFX_goal_generic_production
-		x = 29
-		y = 0
+		prerequisite = { focus = USA_war_department }
+		x = 21
+		y = 1
 		cost = 8
 		#ai_will_do = {
 		#	factor = 1
@@ -1964,8 +2055,8 @@ available_if_capitulated = yes
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = USA_automotive_industry_focus }
 		mutually_exclusive = { focus = USA_detroit_tank_focus }
-		x = 28
-		y = 1
+		x = 20
+		y = 2
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -1982,8 +2073,8 @@ available_if_capitulated = yes
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = USA_automotive_industry_focus }
 		mutually_exclusive = { focus = USA_detroit_vehicle_focus }
-		x = 30
-		y = 1
+		x = 22
+		y = 2
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -2002,8 +2093,8 @@ available_if_capitulated = yes
 		available = {
 			has_war = yes
 		}
-		x = 28
-		y = 2
+		x = 20
+		y = 3
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -2027,8 +2118,8 @@ available_if_capitulated = yes
 		available = {
 			has_war = yes
 		}
-		x = 30
-		y = 2
+		x = 22
+		y = 3
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
