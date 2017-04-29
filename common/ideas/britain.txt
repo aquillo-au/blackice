@@ -266,19 +266,20 @@ head_of_state = {
 			original_tag = ENG
 			has_government = fascism
 		}
-		traits = { fascist_demagogue }
+		traits = { fascist }
 	}
 	pollitt_hos = {
 		allowed = {
 			original_tag = ENG
 			has_government = communism
 		}
-		traits = { communist_revolutionary }
+		traits = { communist }
 	}
 	george_v = {
 			
 			allowed = {
 				original_tag = ENG
+				NOT = { has_country_flag = ENG_king_died }
 			}
 
 			allowed_civil_war = {
@@ -345,15 +346,21 @@ head_of_state = {
 
 #Foreign
 foreign_minister = {
-ENG_nevile_henderson = {
+	ENG_nevile_henderson = {
 			
 			picture = generic_political_advisor_europe_2
 			
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = { backroom_backstabber }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative naive_appeaser }
 		}
 		anthony_eden = {
 			
@@ -362,8 +369,14 @@ ENG_nevile_henderson = {
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = {  }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative smooth_talking_charmer }
 		}
 		lord_halifax = {
 			
@@ -372,22 +385,54 @@ ENG_nevile_henderson = {
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = {  }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative compassionate_gentleman }
+		}
+		william_joyce = { 
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				has_government = fascism
+			}
+			traits = { fascist iron_fisted_brute }
+			cancel_if_invalid = no
+		}
+		henry_williamson = { 
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				has_government = fascism
+			}
+			traits = { fascist ideological_crusader }
+			cancel_if_invalid = no
 		}
 }
 
 #Propaganda/Security
 interior_minister = {
-sir_samuel_hoare = {
+		sir_samuel_hoare = {
 			
 			picture = idea_sir_samuel_hoare
 			
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = {  }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative crime_fighter }
 		}
 		sir_john_anderson_interior = {
 			
@@ -396,46 +441,94 @@ sir_samuel_hoare = {
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = {  }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative prince_of_terror }
 		}
 		herbert_morrison = {
 			
 			picture = idea_herbert_morrison
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+					}
+				}
+			traits = { conservative crime_fighter }
+		}
+		jeffrey_hamm = {
 			
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = {  }
+			available = {
+				OR = {
+				has_government = fascism
+				has_government = monarchism
+					}
+				}
+			traits = { fascist prince_of_terror }
 		}
 }
 
 #Intelligence
 intel_minister = {
-stewart_menzies = {
+		stewart_menzies = {
 			
 			picture = idea_stewart_menzies
-			
 			allowed = {
 				original_tag = ENG
 			}
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+					}
+				}
+			traits = { conservative codebreaker }
+		}
+		john_amery = { 
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				has_government = fascism
+			}
 			
-			traits = { dismal_enigma }
+			traits = { fascist dismal_enigma}
+
 		}
 }
 
 #Economic
 economic_minister = {
-ENG_maxwell_aitken = {
+		ENG_maxwell_aitken = {
 			
 			picture = generic_political_advisor_europe_1
 			
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = { war_industrialist }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative war_industrialist }
 		}
 
 		ENG_leslie_hore_belisha = {
@@ -445,8 +538,14 @@ ENG_maxwell_aitken = {
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = { armaments_organizer }
+			available = {
+				OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+					}
+				}
+			traits = { liberal quartermaster_general }
 		}
 
 		ENG_ernest_bevin = {
@@ -456,8 +555,13 @@ ENG_maxwell_aitken = {
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = { quartermaster_general }
+			available = {
+				OR = {
+				has_government = socialism
+				has_government = liberalism
+					}
+				}
+			traits = { anti_fascist socialist public_works_focus }
 		}
 		sir_john_anderson = {
 			
@@ -466,8 +570,14 @@ ENG_maxwell_aitken = {
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = {  }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative captain_of_industry }
 		}
 		sir_john_simon = {
 			
@@ -476,8 +586,14 @@ ENG_maxwell_aitken = {
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = {  }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative industrial_planner }
 		}
 		sir_kingsley_wood = {
 			
@@ -486,8 +602,14 @@ ENG_maxwell_aitken = {
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = {  }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative armaments_organizer }
 		}
 		neville_chamberlain = {
 			
@@ -496,8 +618,55 @@ ENG_maxwell_aitken = {
 			allowed = {
 				original_tag = ENG
 			}
-			
-			traits = {  }
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+					}
+				}
+			traits = { conservative public_works_focus }
+		}
+		alxeander_raven_thomson = { 
+			allowed = {
+				original_tag = ENG
+				}
+			available = {
+				has_government = fascism
+			}
+			traits = { fascist industrial_planner }
+			cancel_if_invalid = no
+		}
+
+		alliott_verdon_roe = { 
+			allowed = {
+				original_tag = ENG
+				}
+			available = {
+				has_government = fascism
+			}
+			traits = { fascist war_industrialist }
+			cancel_if_invalid = no
+		}
+		neil_francis_hawkins = { 
+			allowed = {
+				original_tag = ENG
+				}
+			available = {
+				has_government = fascism
+			}
+			traits = { fascist armaments_organizer }
+			cancel_if_invalid = no
+		}
+		jorian_jenks = { 
+			allowed = {
+				original_tag = ENG
+				}
+			available = {
+				has_government = fascism
+			}
+			traits = { fascist resource_industrialist }
+			cancel_if_invalid = no
 		}
 }
 
@@ -508,9 +677,7 @@ political_advisor = {
 			allowed = {
 				original_tag = ENG
 			}
-			
 
-			
 			traits = { communist_revolutionary }
 	
 			on_add = {
@@ -533,9 +700,7 @@ political_advisor = {
 			allowed = {
 				original_tag = ENG
 			}
-			
 
-			
 			traits = { socialist_reformer }
 	
 			on_add = {

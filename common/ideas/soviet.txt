@@ -686,6 +686,34 @@ head_of_state = {
 				has_government = fascism
 		}
 	}
+	pavel_n_milyukov = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+				OR = {
+					has_government = conservatism
+					has_government = monarchism
+					has_government = liberalism
+				}
+			}
+			traits = { conservative }
+			cancel_if_invalid = no
+		}
+
+		iraklij_g_tsereteliy = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+				OR = {
+					has_government = socialism
+					has_government = liberalism
+				}
+			}
+			traits = { socialist }
+			cancel_if_invalid = no
+		}
 }
 
 #Foreign
@@ -699,9 +727,40 @@ foreign_minister = {
 			allowed = {
 				original_tag = SOV
 			}
+			available = {
+				has_government = communism
+			}
 			
-			traits = { smooth_talking_charmer }
+			traits = { communist smooth_talking_charmer }
 	}
+	vasily_a_maklakov = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = monarchism
+				has_government = liberalism
+				}
+			}
+			traits = { conservative smooth_talking_charmer }
+			cancel_if_invalid = no
+		}
+		mikhail_i_tereshchenko = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = socialism
+				has_government = liberalism
+				}
+			}
+			traits = { liberal ideological_crusader }
+			cancel_if_invalid = no
+		}
 }
 
 #Propaganda/Security
@@ -724,9 +783,10 @@ interior_minister = {
 				NOT = { 
 					has_country_flag = counter_purge
 				}
+				has_government = communism
 			}
 			
-			traits = { prince_of_terror }
+			traits = { communist prince_of_terror }
 		}
 		SOV_nikolai_yezhov = {
 			
@@ -735,6 +795,9 @@ interior_minister = {
 			allowed = {
 				original_tag = SOV
 			}
+			available = {
+				has_government = communism
+			}
 
 			available = 
 			{
@@ -742,21 +805,79 @@ interior_minister = {
 				NOT = { has_country_flag = purge_2_group_a }
 			}
 			
-			traits = { prince_of_terror }
+			traits = { communist prince_of_terror }
 		}
+		vladimir_l_burtsev = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+			OR = {
+				has_government = socialism
+				has_government = liberalism
+				}
+			}
+			traits = { socialist crime_fighter}
+			cancel_if_invalid = no
+		}
+		aleksandr_d_protopopov = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = monarchism
+				}
+			}
+			traits = { conservative backroom_backstabber }
+			cancel_if_invalid = no
+		}
+		
 }
 
 #Intelligence
 intel_minister = {
-viktor_abakumov = {
+		viktor_abakumov = {
 			
 			picture = idea_viktor_abakumov
 			
 			allowed = {
 				original_tag = SOV
 			}
+			available = {
+				has_government = communism
+			}
 			
-			traits = { dismal_enigma }
+			traits = { communist dismal_enigma }
+		}
+		pavel_n_malyantovich = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+			OR = {
+				has_government = socialism
+				has_government = liberalism
+				}
+			}
+			traits = { socialist codebreaker }
+			cancel_if_invalid = no
+		}
+		vasily_shulgin = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = monarchism
+				}
+			}
+			traits = { conservative dismal_enigma }
+			cancel_if_invalid = no
 		}
 }
 
@@ -769,8 +890,11 @@ economic_minister = {
 			allowed = {
 				original_tag = SOV
 			}
+			available = {
+				has_government = communism
+			}
 			
-			traits = { captain_of_industry }
+			traits = { communist captain_of_industry }
 		}
 		valery_mezhlauk = {
 			
@@ -779,8 +903,70 @@ economic_minister = {
 			allowed = {
 				original_tag = SOV
 			}
+			available = {
+				has_government = communism
+			}
 			
-			traits = { captain_of_industry }
+			traits = { communist industrial_planner }
+		}
+		aleksandr_i_konovalov = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = monarchism
+				}
+			}
+			traits = { conservative military_entrepreneur }
+			cancel_if_invalid = no
+		}
+		sergei_bulgakov = { 
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = monarchism
+				}
+			}
+			traits = { conservative public_works_focus }
+			cancel_if_invalid = no
+		}
+		dimitry_ustinov = { 
+			allowed = {
+				original_tag = SOV
+				}
+			available = {
+				has_government = communism
+			}
+			traits = { communist armaments_organizer }
+			cancel_if_invalid = no
+		}
+
+		lazar_kaganovich = { 
+			allowed = {
+				original_tag = SOV
+				}
+			available = {
+				has_government = communism
+			}
+			traits = { communist resource_industrialist }
+			cancel_if_invalid = no
+		}
+		boris_vannikov = { 
+			allowed = {
+				original_tag = SOV
+				}
+			available = {
+				has_government = communism
+			}
+			traits = { communist theoretical_scientist }
+			cancel_if_invalid = no
 		}
 }
 
@@ -874,6 +1060,14 @@ political_advisor = {
 			ai_will_do = {
 				factor = 0
 			}
+		}
+		viktor_m_chernov = { 
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { socialist_reformer }
+			cancel_if_invalid = no
 		}
 	}
 		

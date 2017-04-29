@@ -138,9 +138,6 @@ ideas = {
 				light_carrier = {
 					build_cost_ic = -0.05 instant = yes
 				}
-				escort_carrier = {
-					build_cost_ic = -0.05 instant = yes
-				}
 				screen_ship = {
 					build_cost_ic = -0.05 instant = yes
 				}
@@ -149,201 +146,8 @@ ideas = {
 				}
 			}
 		}
-
-		automotive_arsenal_focus = {
 			
-			
-			allowed = {
-				always = no
-			}
 
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_production_bonus
-			
-			equipment_bonus = {
-
-				motorized_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				motorized_lia_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				motorized_AC_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				artytruck_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				mechanized_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_light_tank_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				hellcat_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_medium_tank_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_heavy_tank_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_mbt_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-			}
-		}
-
-		USA_vehicle_focus = {
-			
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_production_bonus
-			
-			equipment_bonus = {
-				motorized_equipment = {
-					build_cost_ic = -0.10 instant = yes
-				}
-				motorized_lia_equipment = {
-					build_cost_ic = -0.10 instant = yes
-				}
-				motorized_AC_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				artytruck_equipment = {
-					build_cost_ic = -0.10 instant = yes
-				}
-				mechanized_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-			}
-		}
-
-		USA_tank_focus = {
-			
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_production_bonus
-			
-			equipment_bonus = {
-				american_light_tank_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				hellcat_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_medium_tank_equipment = {
-					build_cost_ic = -0.10 instant = yes
-				}
-				american_heavy_tank_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_mbt_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_light_tank_aa_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_light_tank_artillery_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_medium_tank_destroyer_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				american_medium_tank_artillery_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				amph_american_tank_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-			}
-		}
-			
-		springfield_armory_idea = {
-			
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_production_bonus
-			
-			equipment_bonus = {
-				infantry_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				HMG_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				assault_rifle = {
-					build_cost_ic = -0.05 instant = yes
-				}
-			}
-		}
-
-		rock_island_arsenal_idea = {
-			
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_production_bonus
-			
-			equipment_bonus = {
-				artillery_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				medartillery_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				mountain_artillery = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				mortar_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-				anti_air_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
-			}
-		}
 		
 		USA_prepare_intervention = {
 			
@@ -787,7 +591,7 @@ head_of_state = {
 				has_government = liberalism
 				date < 1946.1.1
 		}
-		traits = { liberal }
+		traits = { liberal popular_figurehead }
 	}
 	wilkie_hos = {
 		allowed = {
@@ -816,21 +620,21 @@ head_of_state = {
 				has_government = liberalism
 				date > 1944.1.1
 		}
-		traits = { liberal }
+		traits = { liberal intellectual}
 	}
 	browder_hos = {
 		allowed = {
 				original_tag = USA
 				has_government = communism
 		}
-		traits = { communist }
+		traits = { communist tough_guy }
 	}
 	coughlin_hos = {
 		allowed = {
 				original_tag = USA
 				has_government = fascism
 		}
-		traits = { fascist }
+		traits = { fascist tough_guy }
 	}
 }
 
@@ -854,8 +658,40 @@ foreign_minister = {
 			allowed = {
 				original_tag = USA
 			}
-			
-			traits = { smooth_talking_charmer }
+			available = {
+				has_government = liberalism
+			}
+			traits = { liberal smooth_talking_charmer }
+		}
+		john_foster_dulles = { #RE-DO TRAIT
+			allowed = {
+				original_tag = USA
+				}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative compassionate_gentleman }
+			cancel_if_invalid = no
+		}
+		gerald_nye = { 
+			allowed = {
+				original_tag = USA
+				}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative naive_appeaser }
+			cancel_if_invalid = no
+		}
+		arthur_vandenberg = {
+			allowed = {
+				original_tag = USA
+				}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative ideological_crusader }
+			cancel_if_invalid = no
 		}
 }
 
@@ -863,38 +699,69 @@ foreign_minister = {
 interior_minister = {
 		j_edgar_hoover = {
 			
-			picture = generic_political_advisor_europe_2
-			
 			allowed = {
 				original_tag = USA
+			}
+			available = {
+				has_government = liberalism
 			}
 			removal_cost = 150
 			traits = { efficient_sociopath anti_communist powerful}
 		}
+		gerald_b_winrod = { 
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_government = fascism
+			}
+			traits = { fascist efficient_sociopath}
+			cancel_if_invalid = no
+		}
+		ray_l_wilbur = { 
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative crime_fighter }
+			cancel_if_invalid = no
+		}
+		
 }
 
 #Intelligence
 intel_minister = {
 		frank_rowlett = {
 			
-			picture = generic_political_advisor_europe_2
-			
 			allowed = {
 				original_tag = USA
 			}
+			available = {
+				has_government = liberalism
+			}
 			
-			traits = { dismal_enigma }
+			traits = { liberal codebreaker }
 		}
 		william_j_donovan = {
-			
-			picture = generic_political_advisor_europe_2
 			
 			allowed = {
 				original_tag = USA
 				date > 1940.1.1
 			}
 			
-			traits = { dismal_enigma organizer}
+			traits = { apolitical dismal_enigma organizer}
+		}
+		hoyt_s_vandenberg = { 
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative dismal_enigma}
+			cancel_if_invalid = no
 		}
 }
 
@@ -902,25 +769,20 @@ intel_minister = {
 economic_minister = {
 		USA_henry_stimson = {
 			
-			picture = generic_political_advisor_europe_2
-			
 			allowed = {
 				original_tag = USA
-				date > 1940.1.1
+			}
+			available = {
+			OR = {
+				AND = {
+					has_government = liberalism
+					date > 1940.1.1
+					}
+				has_government = conservatism
+				}
 			}
 			
 			traits = { war_industrialist conservative }
-		}
-		henry_morgenthau = {
-			
-			picture = generic_political_advisor_europe_2
-			
-			allowed = {
-				original_tag = USA
-				date > 1940.1.1
-			}
-			
-			traits = { capitalist liberal }
 		}
 		USA_donald_nelson = {
 			
@@ -929,9 +791,108 @@ economic_minister = {
 			allowed = {
 				original_tag = USA
 			}
+			available = {
+				has_government = liberalism
+			}
 			
-			traits = { armaments_organizer }
+			traits = { liberal armaments_organizer }
 		}
+		henry_morgenthau = {
+			
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_government = liberalism
+				date > 1940.1.1
+			}
+			
+			traits = { capitalist liberal }
+		}
+		
+		warren_g_hooper = { 
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative corrupt_kleptocrat }
+			cancel_if_invalid = no
+		}
+		louis_johnson = { 
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_government = liberalism
+			}
+			traits = { liberal quartermaster_general }
+			cancel_if_invalid = no
+		}
+		harry_hopkins = {
+			allowed = {
+				original_tag = USA
+				}
+			available = {
+				has_government = liberalism
+			}
+			traits = { liberal war_industrialist }
+			cancel_if_invalid = no
+		}
+		harold_ickes_econ = {
+			allowed = {
+				original_tag = USA
+				}
+			available = {
+				has_government = liberalism
+			}
+			traits = { liberal public_works_focus }
+			cancel_if_invalid = no
+		}
+		dean_acheson = {
+			allowed = {
+				original_tag = USA
+				}
+			available = {
+				has_government = liberalism
+			}
+			traits = { liberal armaments_organizer }
+			cancel_if_invalid = no
+		}
+		john_d_rockefeller_jr = {
+			allowed = {
+				original_tag = USA
+				}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative capitalist }
+			cancel_if_invalid = no
+		}
+		raymond_e_baldwin = {
+			allowed = {
+				original_tag = USA
+				}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative industrial_planner }
+			cancel_if_invalid = no
+		}
+		alf_m_landon = { 
+			allowed = {
+				original_tag = USA 
+				date > 1940.11.1
+				}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative public_works_focus }
+			cancel_if_invalid = no
+		}		
 }
 
 #Advisors

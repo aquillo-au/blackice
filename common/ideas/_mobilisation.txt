@@ -18,6 +18,13 @@ ideas = {
 				army_org_factor = -0.75
 				army_morale_factor = -0.75
 				navy_org_factor = -0.75
+				air_superiority_efficiency = -0.75
+				air_cas_efficiency = -0.75
+				air_strategic_bomber_bombing_factor = -0.75
+				air_escort_efficiency = -0.75
+				air_intercept_efficiency = -0.75
+				air_nav_efficiency = -0.75
+				air_ace_generation_chance_factor = -0.75
 				training_time_army_factor = 0.1
 				industrial_capacity_dockyard = 0.05
 				industrial_capacity_factory = 0.05
@@ -92,6 +99,13 @@ ideas = {
 				army_org_factor = -0.25
 				army_morale_factor = -0.25
 				navy_org_factor = -0.25
+				air_superiority_efficiency = -0.25
+				air_cas_efficiency = -0.25
+				air_strategic_bomber_bombing_factor = -0.25
+				air_escort_efficiency = -0.25
+				air_intercept_efficiency = -0.25
+				air_nav_efficiency = -0.25
+				air_ace_generation_chance_factor = -0.25
 				training_time_army_factor = 0.05
 				industrial_capacity_dockyard = 0.025
 				industrial_capacity_factory = 0.025
@@ -140,9 +154,20 @@ ideas = {
 			
 			available = {
 				OR = {
+					AND = {
+					has_country_flag = education_minimal
+					OR = {
+						has_country_flag = tax_low
+						has_country_flag = tax_average
+						has_country_flag = tax_high
+						has_country_flag = tax_extreme
+						}
+					}
+				OR = {
 					has_country_flag = tax_average
 					has_country_flag = tax_high
 					has_country_flag = tax_extreme
+					}
 				}
 				NOT = {
 					OR = {
@@ -161,6 +186,13 @@ ideas = {
 				army_org_factor = -0.125
 				army_morale_factor = -0.125
 				navy_org_factor = -0.125
+				air_superiority_efficiency = -0.125
+				air_cas_efficiency = -0.125
+				air_strategic_bomber_bombing_factor = -0.125
+				air_escort_efficiency = -0.125
+				air_intercept_efficiency = -0.125
+				air_nav_efficiency = -0.125
+				air_ace_generation_chance_factor = -0.125
 				training_time_army_factor = 0.025
 			}
 			
@@ -227,11 +259,21 @@ ideas = {
 		mob_general = {
 			
 			available = {
-				has_war = yes
+				OR = {
+					AND = {
+					has_country_flag = education_minimal
+					OR = {
+						has_country_flag = tax_low
+						has_country_flag = tax_average
+						has_country_flag = tax_high
+						has_country_flag = tax_extreme
+						}
+					}
 				OR = {
 					has_country_flag = tax_average
 					has_country_flag = tax_high
 					has_country_flag = tax_extreme
+					}
 				}
 				NOT = {
 					OR = {

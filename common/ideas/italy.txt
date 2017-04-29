@@ -122,6 +122,26 @@ head_of_state = {
 				popular_figurehead				
 			}
 		}
+		ferruccio_parri = { 
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+				has_government = liberalism #centrism
+				}
+			traits = { liberal }
+			cancel_if_invalid = no
+		}
+		alcide_de_gasperi = { 
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+				has_government = conservatism
+			}
+			traits = { conservative }
+			cancel_if_invalid = no
+			}
 }
 
 #Foreign
@@ -135,7 +155,7 @@ ITA_gian_galeazzo_ciano = {
 
 			picture = generic_political_advisor_europe_6
 						
-			traits = { compassionate_gentleman }
+			traits = { fascist compassionate_gentleman }
 	
 			on_add = {				
 			}
@@ -154,7 +174,7 @@ ITA_gian_galeazzo_ciano = {
 
 			picture = generic_army_europe_1
 						
-			traits = { backroom_backstabber }
+			traits = { fascist iron_fisted_brute }
 
 			ai_will_do = {
 				factor = 0
@@ -170,7 +190,7 @@ ITA_gian_galeazzo_ciano = {
 
 			picture = generic_political_advisor_europe_3
 						
-			traits = { smooth_talking_charmer }
+			traits = { fascist smooth_talking_charmer }
 	
 			on_add = {				
 			}
@@ -189,7 +209,7 @@ ITA_gian_galeazzo_ciano = {
 
 			picture = generic_political_advisor_europe_1
 						
-			traits = { ideological_crusader }
+			traits = { fascist ideological_crusader }
 	
 			on_add = {				
 			}
@@ -197,6 +217,32 @@ ITA_gian_galeazzo_ciano = {
 			ai_will_do = {
 				factor = 0.5
 			}
+		}
+		carlo_sforza = { 
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				}
+			}
+			traits = { anti_fascist ideological_crusader }
+			cancel_if_invalid = no
+		}
+		alcide_de_gasperi_foreign = { 
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				}
+			}
+			traits = { conservative smooth_talking_charmer }
+			cancel_if_invalid = no
 		}
 }
 
@@ -219,6 +265,32 @@ ITA_giovanni_marinelli = {
 				factor = 1
 			}
 		}
+		ferruccio_parri_interior = { 
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+			OR = {
+				has_government = socialism
+				has_government = liberalism
+				}
+			}
+			traits = { socialist hearts_and_minds }
+			cancel_if_invalid = no
+		}
+		vito_reale = { 
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				}
+			}
+			traits = { conservative crime_fighter}
+			cancel_if_invalid = no
+		}
 }
 
 #Intelligence
@@ -230,8 +302,37 @@ cesare_ame = {
 			allowed = {
 				original_tag = ITA
 			}
-			
-			traits = { dismal_enigma }
+			available = {
+				has_government = fascism
+			}
+			traits = { fascist dismal_enigma }
+		}
+		giacomo_carboni = { 
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+			OR = {
+				has_government = socialism
+				has_government = liberalism
+				}
+			}
+			traits = { socialist codebreaker }
+			cancel_if_invalid = no
+		}
+		don_luigi_sturzo = { 
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = monarchism
+				}
+			}
+			traits = { conservative dismal_enigma }
+			cancel_if_invalid = no
 		}
 }
 
@@ -239,14 +340,16 @@ cesare_ame = {
 economic_minister = {
 ITA_giacomo_acerbo = {
 			
-			
 			allowed = {
-				original_tag = "ITA"
+				original_tag = ITA
+				}
+			available = {
+				has_government = fascism
 			}
 
 			picture = generic_political_advisor_europe_2
 						
-			traits = { war_industrialist }
+			traits = { fascist war_industrialist }
 	
 			on_add = {				
 			}
@@ -258,14 +361,16 @@ ITA_giacomo_acerbo = {
 					
 		ITA_junio_valerio_borghese = {
 			
-			
 			allowed = {
-				original_tag = "ITA"
+				original_tag = ITA
+				}
+			available = {
+				has_government = fascism
 			}
 
 			picture = generic_army_europe_2
 						
-			traits = { armaments_organizer }
+			traits = { fascist armaments_organizer }
 	
 			on_add = {				
 			}
@@ -276,15 +381,16 @@ ITA_giacomo_acerbo = {
 		}
 					
 		ITA_luigi_einaudi = {
-			
-			
 			allowed = {
-				original_tag = "ITA"
+				original_tag = ITA
+				}
+			available = {
+				has_government = fascism
 			}
 
 			picture = generic_political_advisor_europe_1
 						
-			traits = { captain_of_industry }
+			traits = { fascist captain_of_industry }
 	
 			on_add = {				
 			}
@@ -295,15 +401,16 @@ ITA_giacomo_acerbo = {
 		}
 					
 		ITA_paolo_thaon_di_revel = {
-			
-			
 			allowed = {
-				original_tag = "ITA"
+				original_tag = ITA
+				}
+			available = {
+				has_government = fascism
 			}
 
 			picture = generic_navy_europe_3
 						
-			traits = { quartermaster_general }
+			traits = { fascist quartermaster_general }
 	
 			on_add = {				
 			}
@@ -311,6 +418,121 @@ ITA_giacomo_acerbo = {
 			ai_will_do = {
 				factor = 0.3
 			}
+		}
+		marcello_soleri = { 
+			allowed = {
+				original_tag = ITA
+				}
+			available = {
+				OR = {
+					has_government = liberalism
+					has_government = socialism
+				}
+			}
+			traits = { socialist public_works_focus }
+			cancel_if_invalid = no
+		}
+		luigi_einaudi = { 
+			allowed = {
+				original_tag = ITA
+				}
+			available = {
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+				}
+			}
+			traits = { liberal capitalist }
+			cancel_if_invalid = no
+		}
+		ugo_la_malfa = { 
+			allowed = {
+				original_tag = ITA
+				}
+			available = {
+				OR = {
+					has_government = liberalism
+					has_government = socialism
+				}
+			}
+			traits = { socialist resource_industrialist }
+			cancel_if_invalid = no
+		}
+		giulio_andreotti = { 
+			allowed = {
+				original_tag = ITA
+				}
+			available = {
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = monarchism
+				}
+			}
+			traits = { conservative captain_of_industry }
+			cancel_if_invalid = no
+		}
+		roberto_tremelloni = { 
+			allowed = {
+				original_tag = ITA
+				}
+			available = {
+				OR = {
+					has_government = socialism
+					has_government = liberalism
+				}
+			}
+			traits = { socialist war_industrialist }
+			cancel_if_invalid = no
+		}
+		ezio_vanoni = { 
+			allowed = {
+				original_tag = ITA
+				}
+			available = {
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = monarchism
+				}
+			}
+			traits = { conservative public_works_focus }
+			cancel_if_invalid = no
+		}
+		giuseppe_pella = { 
+			allowed = {
+				original_tag = ITA
+				}
+			available = {
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = monarchism
+				}
+			}
+			traits = { conservative armaments_organizer }
+			cancel_if_invalid = no
+		}
+		alfredo_guzzoni_econ = { 
+			allowed = {
+				original_tag = ITA
+				}
+			available = {
+				has_government = fascism
+			}
+			traits = {fascist quartermaster_general }
+			cancel_if_invalid = no
+		}
+		antonio_sorice = { 
+			allowed = {
+				original_tag = ITA
+				}
+			available = {
+				has_government = fascism
+			}
+			traits = { fascist war_industrialist }
+			cancel_if_invalid = no
 		}
 }
 

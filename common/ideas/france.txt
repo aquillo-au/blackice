@@ -905,12 +905,14 @@ head_of_state = {
 				original_tag = "FRA"
 				has_government = communism
 			}
+			traits = { communist }
 	}
 	bucard_hos = {
 		allowed = {
 			original_tag = "FRA"
 			has_government = fascism
 		}
+		traits = { fascist }
 	}
 	albert_lebrun = {
 		allowed = {
@@ -922,6 +924,7 @@ head_of_state = {
 			}
 		}
 	picture = idea_albert_lebrun
+	traits = { conservative elder_statesman }
 	}
 }
 
@@ -932,15 +935,13 @@ foreign_minister = {
 			allowed = {
 				original_tag = "FRA"
 			}
-			
-			
-			traits = { smooth_talking_charmer }
-	
-			on_add = {
+			available = {
+				OR = {
+				has_government = liberalism
+				has_government = socialism
+				}
 			}
-	
-			do_effect = {
-			}
+			traits = { socialist smooth_talking_charmer }
 			
 			ai_will_do = {
 				factor = 1
@@ -950,6 +951,12 @@ foreign_minister = {
 			
 			allowed = {
 				original_tag = "FRA"
+			}
+			available = {
+				OR = {
+				has_government = liberalism
+				has_government = socialism
+				}
 			}
 			
 			picture = idea_yvon_delbos
@@ -971,17 +978,17 @@ foreign_minister = {
 			allowed = {
 				original_tag = "FRA"
 			}
-			
+			available = {
+				OR = {
+				has_government = liberalism
+				has_government = monarchism
+				has_government = conservatism 
+				}
+			}
 			picture = idea_georges_bonnet
 			
 			traits = { conservative smooth_talking_charmer }
-	
-			on_add = {
-			}
-	
-			do_effect = {
-			}
-			
+
 			ai_will_do = {
 				factor = 1
 			}
@@ -990,7 +997,13 @@ foreign_minister = {
 			allowed = {
 				original_tag = "FRA"
 			}
-			traits = { ideological_crusader }
+			available = {
+				OR = {
+				has_government = liberalism
+				has_government = socialism
+				}
+			}
+			traits = { ideological_crusader liberal}
 			ai_will_do = {
 				factor = 1
 			}
@@ -1001,21 +1014,62 @@ foreign_minister = {
 			}
 			available = {
 				has_completed_focus = FRA_support_daladier
+				OR = {
+				has_government = liberalism
+				has_government = conservatism
+				has_government = socialism
+				}
 			}
-			traits = { backroom_backstabber }
+			traits = { liberal }
 			ai_will_do = {
 				factor = 0
 			}
 		}
-		
+		jacques_duclos = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist ideological_crusader }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		marcel_cachin = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist compassionate_gentleman }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		marcel_gitton = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist smooth_talking_charmer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
 }
 
 #Propaganda/Security
 interior_minister = {
-marx_dormoy = {
+		marx_dormoy = {
 			
 			allowed = {
 				original_tag = "FRA"
+				has_government = socialism
 			}
 			
 			picture = idea_marx_dormoy
@@ -1032,10 +1086,11 @@ marx_dormoy = {
 				factor = 1
 			}
 		}
-albert_sarraut = {
+		albert_sarraut = {
 			
 			allowed = {
 				original_tag = "FRA"
+				has_government = conservatism
 			}
 
 			picture = idea_albert_sarraut
@@ -1052,13 +1107,59 @@ albert_sarraut = {
 				factor = 1
 			}
 		}
+		FRA_jacques_duclos = {
 			
-		
-		jean_moulin = { #MOD
 			allowed = {
 				original_tag = "FRA"
 			}
-			traits = { prince_of_terror }
+			
+			picture = generic_political_advisor_europe_3
+			
+			traits = { communist backroom_backstabber }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}	
+		claudine_chomat = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { prince_of_terror communist}
+			cancel_if_invalid = no
+		}
+		henri_gourdeaux = {
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { crime_fighter communist}
+			cancel_if_invalid = no
+		}
+		marcel_bucard_interior = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = fascism
+			}
+			traits = { prince_of_terror fascist}
+
+		}
+		jean_moulin = { #MOD
+			allowed = {
+				original_tag = "FRA"
+				OR = {
+					has_government = liberalism
+					has_government = socialism
+				}
+			}
+			traits = { liberal backroom_backstabber }
 			ai_will_do = {
 				factor = 1
 			}
@@ -1067,41 +1168,63 @@ albert_sarraut = {
 
 #Intelligence
 intel_minister = {
-	maurice_henri_gauche = {
+		maurice_henri_gauche = {
 			
 			allowed = {
 				original_tag = "FRA"
 			}
-
+			available = {
+				NOT = { has_government = communism has_government = fascism }
+			}
 			picture = idea_maurice_henri_gauche
 			
 			traits = { dismal_enigma apolitical }
-	
-			on_add = {
-			
-			}
-	
-			do_effect = {
-			}
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
+		waldeck_rochet = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist codebreaker }
+
+		}
+		zivony_peshkov_intel = {
+			
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				NOT = { has_government = fascism has_government = communism }
+			}
+			picture = generic_army_europe_3
+			
+			traits = { codebreaker apolitical }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
 }
 
 #Economic
 economic_minister = {
-FRA_zivony_peshkov = {
+		FRA_zivony_peshkov = {
 			
 			allowed = {
-				original_tag = "FRA"
+				original_tag = FRA
 			}
-			
+			available = {
+				NOT = { has_government = fascism has_government = communism }
+			}
 			picture = generic_army_europe_3
 			
-			traits = { war_industrialist }
+			traits = { anti_fascist armaments_organizer }
 	
 			on_add = {
 			}
@@ -1117,12 +1240,17 @@ FRA_zivony_peshkov = {
 		felix_gouin = {
 			
 			allowed = {
-				original_tag = "FRA"
+				original_tag = FRA
 			}
-			
+			available = {
+				OR = {
+				has_government = socialism
+				has_government = liberalism
+				}
+			}
 			picture = generic_political_advisor_europe_3
 			
-			traits = { captain_of_industry }
+			traits = { public_works_focus socialist }
 	
 			on_add = {
 			}
@@ -1138,12 +1266,13 @@ FRA_zivony_peshkov = {
 		charles_tillon = {
 			
 			allowed = {
-				original_tag = "FRA"
+				original_tag = FRA
 			}
-			
+			available = {
+				has_government = communism
+			}
 
-			
-			traits = { armaments_organizer }
+			traits = { communist resource_industrialist }
 	
 			on_add = {
 			}
@@ -1159,19 +1288,13 @@ FRA_zivony_peshkov = {
 		FRA_paul_reynaud = {
 			
 			allowed = {
-				original_tag = "FRA"
+				original_tag = FRA
 			}
 
 			picture = generic_political_advisor_europe_3
 			
 			traits = { quartermaster_general conservative }
 	
-			on_add = {
-			}
-	
-			do_effect = {
-			}
-			
 			ai_will_do = {
 				factor = 1
 			}
@@ -1179,45 +1302,126 @@ FRA_zivony_peshkov = {
 		vincent_auriol = {
 			
 			allowed = {
-				original_tag = "FRA"
+				original_tag = FRA
 			}
 
 			picture = idea_vincent_auriol
 			
-			traits = { socialist }
+			traits = { socialist industrial_planner }
 	
-			on_add = {
-			}
-	
-			do_effect = {
-			}
-			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 		paul_faure = { #MOD
 			allowed = {
-				original_tag = "FRA"
+				original_tag = FRA
 			}
 			available = {
 				has_completed_focus = FRA_loan 
 			}
 			cost = 50
-			traits = { war_industrialist }
+			traits = { socialist war_industrialist }
 			ai_will_do = {
 				factor = 1
 			}
 		}
-}
+		jean_jerome = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist resource_industrialist }
+			cancel_if_invalid = no
+		}
+		georges_levy = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist public_works_focus }
+			cancel_if_invalid = no
+		}
+		benoit_frachon = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist industrial_planner }
+			cancel_if_invalid = no
+		}
 
+		daniel_renoult = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = communism
+			}
+			traits = {communist armaments_organizer }
+			cancel_if_invalid = no
+		}
+		rene_pleven = {
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+				}
+			}
+			traits = { apolitical armaments_organizer }
+			cancel_if_invalid = no
+		}
+		andre_le_troquer = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = socialism
+			}
+			traits = { socialist war_industrialist }
+			cancel_if_invalid = no
+		}
+		raoul_dautry = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				}
+			}
+			traits = { conservative public_works_focus }
+			cancel_if_invalid = no
+		}
+		jules_moch = { 
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_government = socialism
+			}
+			traits = { socialist quartermaster_general }
+			cancel_if_invalid = no
+		}
+}
 #Advisors
 political_advisor = {
 		maurice_thorez = {
-			
-			
+
 			allowed = {
 				original_tag = "FRA"
+				NOT = { has_idea = thorez_hos }
 			}			
 			available = {
 				has_completed_focus = FRA_leftist_rhetoric
@@ -1234,7 +1438,8 @@ political_advisor = {
 					has_government = communism
 				}
 			}
-
+			cancel_if_invalid = yes
+			
 			ai_will_do = {
 				factor = 0
 			}
@@ -1313,21 +1518,6 @@ political_advisor = {
 				factor = 1
 			}
 		}	
-
-		FRA_jacques_duclos = {
-			
-			allowed = {
-				original_tag = "FRA"
-			}
-			
-			picture = generic_political_advisor_europe_3
-			
-			traits = { backroom_backstabber }
-	
-			ai_will_do = {
-				factor = 0
-			}
-		}
 		
 	}
 		

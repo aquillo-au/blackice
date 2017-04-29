@@ -1,8 +1,8 @@
 ﻿###################################################
 add_namespace = blackiceevents
+add_namespace = ai_ideas
 
 #leave the swiss alone germany! dang
-
 country_event = {
 	id = blackiceevents.1
 	title = blackiceevents.1.t
@@ -1795,11 +1795,9 @@ country_event = {
 		name = blackiceevents.87.a
 		hidden_effect = {
 			remove_ideas = neutrality_idea 
-			}
-			
 		}
-		
 	}
+}
 ################ Generic Armor choice tech ( also axis AI )
 country_event = {
 	id = blackiceevents.88
@@ -1809,17 +1807,25 @@ country_event = {
 	picture = GFX_report_event_polish_tanks_01
 
 	trigger = {
-	date > 1936.1.1
-	or = {
-	tag = ROM
-	tag = HUN
-	tag = FIN
-	tag = AUS
-	tag = BUL
-	has_government = fascism
-	has_country_flag = impossible	
-	}
+		date > 1936.1.1
+		NOT = { tag = GER } #Germany
+		NOT = { tag = FRA }	#France	
+		NOT = { has_tech = soviet_tech_a }	#Soviets + satellites
+		NOT = { tag = ITA }	#Italy
+		NOT = { tag = JAP }	#Japan
+		NOT = { tag = ENG }	#UK
+		NOT = { tag = USA }	#USA
+		or = {
+			tag = ROM
+			tag = HUN
+			tag = FIN
+			tag = AUS
+			tag = BUL
+			has_government = fascism
+			has_country_flag = impossible	
 		}
+	}
+	
 	fire_only_once = yes
 
 	mean_time_to_happen = {
@@ -1829,21 +1835,21 @@ country_event = {
 		name = blackiceevents.88.a	# axis generic
 		ai_chance = { factor = 100 }
 		set_technology = { generic_armor_axis = 1 }
-		}
+	}
 	option = {
 		name = blackiceevents.88.b	# allied generic
 		ai_chance = { factor = 0 }
 		set_technology = { generic_armor = 1 }
-		}	
-	}
-	################ Generic Armor choice tech ( also allied AI )
+	}	
+}
+################ Generic Armor choice tech ( also allied AI )
 country_event = {
 	id = blackiceevents.89
 	title = blackiceevents.89.t
 	desc = blackiceevents.88.d
 	
 	picture = GFX_report_event_polish_tanks_01
-
+	
 	trigger = {
 		date > 1936.1.1
 		NOT = { has_tech = german_tech } 		#Germany
@@ -1859,7 +1865,7 @@ country_event = {
 		NOT = {tag = AUS }
 		NOT = {tag = BUL }
 		NOT = {has_government = fascism}
-		has_country_flag = impossible	
+		has_country_flag = impossible
 	}
 	fire_only_once = yes
 
@@ -1876,5 +1882,38 @@ country_event = {
 		ai_chance = { factor = 100 }
 		set_technology = { generic_armor = 1 }
 	}	
-}		
-### EOF ###
+}	
+### END Blackiceevents ###
+country_event = {
+	id = ai_ideas.1
+	title = ai_ideas.1.t
+	desc = ai_ideas.1.d
+	
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		date > 1936.1.1
+		is_ai = no
+	}
+	
+	immediate = {
+		if = {
+			limit = { 
+				AND = {
+					tag = GER 	
+					is_ai = no
+				}
+			}
+			remove_ideas = {
+				himmler_ai
+			}
+		}
+	}
+
+	
+	option = {
+		name = ai_ideas.1.a
+	}
+}
