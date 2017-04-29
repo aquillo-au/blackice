@@ -3,16 +3,15 @@ ideas = {
 	country = {
 		great_depression = {
 			
-			
 			allowed = {
 				always = no
 			}
 
 			allowed_civil_war = {
-					OR = {
-						has_government = conservatism
-						has_government = liberalism
-						has_government = socialism
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				} 
 			}
 
@@ -27,17 +26,16 @@ ideas = {
 		}
 		
 		new_deal = {
-			
-			
+
 			allowed = {
 				always = no
 			}
 
 			allowed_civil_war = {
 				OR = {
-						has_government = conservatism
-						has_government = liberalism
-						has_government = socialism
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 
@@ -51,16 +49,15 @@ ideas = {
 
 		wilkies_new_deal = {
 			
-			
 			allowed = {
 				always = no
 			}
 
 			allowed_civil_war = {
 				OR = {
-						has_government = conservatism
-						has_government = liberalism
-						has_government = socialism
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 
@@ -74,7 +71,6 @@ ideas = {
 		}
 		
 		full_employment = {
-			
 			
 			allowed = {
 				always = no
@@ -93,8 +89,8 @@ ideas = {
 			}
 		}
 		
-		
 		wartime_industry_focus = {
+			
 			allowed = {
 				always = no
 			}
@@ -114,7 +110,6 @@ ideas = {
 	
 		bureau_of_ships_focus = {
 			
-			
 			allowed = {
 				always = no
 			}
@@ -128,7 +123,6 @@ ideas = {
 			picture = generic_navy_bonus
 			
 			equipment_bonus = {
-
 				capital_ship = {
 					build_cost_ic = -0.05 instant = yes
 				}
@@ -146,11 +140,9 @@ ideas = {
 				}
 			}
 		}
-			
-
 		
 		USA_paratrooper_school= {
-						
+			
 			allowed = {
 				always = no
 			}
@@ -172,7 +164,6 @@ ideas = {
 
 		USA_prepare_intervention = {
 			
-			
 			allowed = {
 				always = no
 			}
@@ -192,7 +183,6 @@ ideas = {
 		
 		limited_interventionism = {
 			
-			
 			allowed = {
 				always = no
 			}
@@ -210,7 +200,6 @@ ideas = {
 				send_volunteer_divisions_required = -0.25
 			}
 		}
-
 
 		combined_bomber_offensive = {
 			
@@ -234,15 +223,16 @@ ideas = {
 		}
 
 		office_of_strategic_services = {
+			
 			allowed = {
 				always = no
 			}
 
 			allowed_civil_war = {
 				OR = {
-						has_government = conservatism
-						has_government = liberalism
-						has_government = socialism
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 
@@ -259,15 +249,16 @@ ideas = {
 		}
 
 		war_bonds_focus = {
+			
 			allowed = {
 				always = no
 			}
 
 			allowed_civil_war = {
 				OR = {
-						has_government = conservatism
-						has_government = liberalism
-						has_government = socialism
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 			removal_cost = -1
@@ -386,9 +377,9 @@ ideas = {
 
 			allowed_civil_war = {
 				OR = {
-						has_government = conservatism
-						has_government = liberalism
-						has_government = socialism
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 			
@@ -405,34 +396,42 @@ ideas = {
 				ai_badass_factor = 0.03 # cares for 3% of normal threat
 			}
 		}
-
 		# idea for the protect Amercians focus - USA democratic
 		american_influence_defence_democratic = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
-			OR = {
-				has_government = conservatism
+				OR = {
+					has_government = conservatism
 					has_government = socialism
 					has_government = liberalism
-					}
+				}
 			}
 
 			removal_cost = -1
+			
 			picture = generic_democratic_drift_bonus
+			
 			modifier = {
 				drift_defence_factor = 0.5
 			}
 		}
+		
 		american_influence_drift_democratic = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				OR = {
-				has_government = conservatism
+					has_government = conservatism
 					has_government = socialism
 					has_government = liberalism
-					}
+				}
 			}
 
 			removal_cost = -1
@@ -444,224 +443,277 @@ ideas = {
 			}
 		} 
 		american_protection_defence_democratic = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				OR = {
-				has_government = conservatism
+					has_government = conservatism
 					has_government = socialism
 					has_government = liberalism
-					}
+				}
 			}
 
 			removal_cost = -1
+			
 			picture = generic_intel_bonus
+			
 			modifier = {
 				drift_defence_factor = 0.5
 			}
 		}
 		american_protection_drift_democratic = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				OR = {
-				has_government = conservatism
+					has_government = conservatism
 					has_government = socialism
 					has_government = liberalism
-					}
+				}
 			}
 
 			removal_cost = -1
+			
 			picture = generic_intel_bonus
+			
 			modifier = {
 				conservatism_drift = 0.05
 				liberalism_drift = 0.05
 				socialism_drift = 0.05
 			}			
 		}
-			# idea for the protect Amercians focus - USA communist
+		# idea for the protect Amercians focus - USA communist
 		american_influence_defence_communism = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				has_government = communism
 			}
 
 			removal_cost = -1
+			
 			picture = generic_communism_drift_bonus
+			
 			modifier = {
 				drift_defence_factor = 0.5
 			}
 		}
 		american_influence_drift_communism = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				has_government = communism
 			}
 
 			removal_cost = -1
+			
 			picture = generic_communism_drift_bonus
+			
 			modifier = {
 				communism_drift = 0.05
 			}
 		} 
 		american_protection_defence_communism = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				has_government = communism
 			}
 
 			removal_cost = -1
+			
 			picture = generic_intel_bonus
+			
 			modifier = {
 				drift_defence_factor = 0.5
 			}
 		}
 		american_protection_drift_communism = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				has_government = communism
 			}
 
 			removal_cost = -1
+			
 			picture = generic_intel_bonus
+			
 			modifier = {
 				communism_drift = 0.05
 			}			
 		}
-			# idea for the protect Amercians focus - USA fascist
+		# idea for the protect Amercians focus - USA fascist
 		american_influence_defence_fascism = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				has_government = fascism
 			}
 
 			removal_cost = -1
+			
 			picture = generic_fascism_drift_bonus
+			
 			modifier = {
 				drift_defence_factor = 0.5
 			}
 		}
 		american_influence_drift_fascism = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				has_government = fascism
 			}
 
 			removal_cost = -1
+			
 			picture = generic_fascism_drift_bonus
+			
 			modifier = {
 				fascism_drift = 0.05
 			}
 		} 
 		american_protection_defence_fascism = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				has_government = fascism
 			}
 
 			removal_cost = -1
+			
 			picture = generic_intel_bonus
+			
 			modifier = {
 				drift_defence_factor = 0.5
 			}
 		}
 		american_protection_drift_fascism = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				has_government = fascism
 			}
 
 			removal_cost = -1
+			
 			picture = generic_intel_bonus
+			
 			modifier = {
 				fascism_drift = 0.05
 			}			
 		}
 		USA_world_police = {
-			allowed = { always = no	}
+			
+			allowed = {
+				always = no
+			}
 
 			allowed_civil_war = {
 				always = yes
 			}
 
 			removal_cost = -1
+			
 			picture = generic_volunteer_expedition_bonus
+			
 			modifier = {			
 				justify_war_goal_time = -0.25
 			}			
 		}
 	
 	}
-	
-##################
-####Politicians
-##################
-#HoS
-head_of_state = {
-	roosevelt_hos = {
-		allowed = {
-				original_tag = USA
-				has_government = liberalism
-				date < 1946.1.1
+	##################
+	####Politicians
+	##################
+	#HoS
+	head_of_state = {
+		roosevelt_hos = {
+			allowed = {
+					original_tag = USA
+					has_government = liberalism
+					date < 1946.1.1
+			}
+			traits = { liberal popular_figurehead }
 		}
-		traits = { liberal popular_figurehead }
-	}
-	wilkie_hos = {
-		allowed = {
-				original_tag = USA
-				has_government = conservatism
+		wilkie_hos = {
+			allowed = {
+					original_tag = USA
+					has_government = conservatism
+			}
+			traits = { conservative }
 		}
-		traits = { conservative }
-	}
-	landon_hos = {
-		allowed = {
-				original_tag = USA
-				has_government = conservatism
+		landon_hos = {
+			allowed = {
+					original_tag = USA
+					has_government = conservatism
+			}
+			traits = { conservative }
 		}
-		traits = { conservative }
-	}
-	dewey_hos = {
-		allowed = {
-				original_tag = USA
-				has_government = conservatism
+		dewey_hos = {
+			allowed = {
+					original_tag = USA
+					has_government = conservatism
+			}
+			traits = { conservative }
 		}
-		traits = { conservative }
-	}
-	truman_hos = {
-		allowed = {
-				original_tag = USA
-				has_government = liberalism
-				date > 1944.1.1
+		truman_hos = {
+			allowed = {
+					original_tag = USA
+					has_government = liberalism
+					date > 1944.1.1
+			}
+			traits = { liberal intellectual}
 		}
-		traits = { liberal intellectual}
-	}
-	browder_hos = {
-		allowed = {
-				original_tag = USA
-				has_government = communism
+		browder_hos = {
+			allowed = {
+					original_tag = USA
+					has_government = communism
+			}
+			traits = { communist tough_guy }
 		}
-		traits = { communist tough_guy }
-	}
-	coughlin_hos = {
-		allowed = {
-				original_tag = USA
-				has_government = fascism
+		coughlin_hos = {
+			allowed = {
+					original_tag = USA
+					has_government = fascism
+			}
+			traits = { fascist tough_guy }
 		}
-		traits = { fascist tough_guy }
 	}
-}
-
-#Foreign
-foreign_minister = {
-	USA_john_winant = {
+	#Foreign
+	foreign_minister = {
+		USA_john_winant = {
 			
 			picture = generic_political_advisor_europe_2
 			
@@ -672,7 +724,7 @@ foreign_minister = {
 			traits = { compassionate_gentleman }
 		}
 
-	USA_cordell_hull = {
+		USA_cordell_hull = {
 			
 			picture = generic_political_advisor_europe_3
 			
@@ -714,10 +766,9 @@ foreign_minister = {
 			traits = { conservative ideological_crusader }
 			cancel_if_invalid = no
 		}
-}
-
-#Propaganda/Security
-interior_minister = {
+	}
+	#Propaganda/Security
+	interior_minister = {
 		j_edgar_hoover = {
 			
 			allowed = {
@@ -750,10 +801,9 @@ interior_minister = {
 			cancel_if_invalid = no
 		}
 		
-}
-
-#Intelligence
-intel_minister = {
+	}
+	#Intelligence
+	intel_minister = {
 		frank_rowlett = {
 			
 			allowed = {
@@ -784,10 +834,9 @@ intel_minister = {
 			traits = { conservative dismal_enigma}
 			cancel_if_invalid = no
 		}
-}
-
-#Economic
-economic_minister = {
+	}
+	#Economic
+	economic_minister = {
 		USA_henry_stimson = {
 			
 			allowed = {
@@ -914,89 +963,85 @@ economic_minister = {
 			traits = { conservative public_works_focus }
 			cancel_if_invalid = no
 		}		
-}
-
-#Advisors
-political_advisor = {
+	}
+	#Advisors
+	political_advisor = {
 		john_nance_garner = {
-		allowed = {
+			allowed = {
 				original_tag = USA
 				has_government = liberalism
 				has_government = conservatism
-		}
-		
-		picture = idea_john_nance_garner
-		
-		traits = { conservative }
-	}
-	henry_wallace = {
-		allowed = {
-				original_tag = USA
-			OR = {
-				has_government = liberalism
-				has_government = socialism
 			}
+			
+			picture = idea_john_nance_garner
+			
+			traits = { conservative }
 		}
-		
-		picture = idea_henry_wallace
-		
-		traits = { socialist }
-	}
-	harry_truman = {
-		allowed = {
+		henry_wallace = {
+			allowed = {
 				original_tag = USA
-				has_government = liberalism
+				OR = {
+					has_government = liberalism
+					has_government = socialism
+				}
+			}
+			
+			picture = idea_henry_wallace
+			
+			traits = { socialist }
 		}
-		
-		picture = idea_henry_wallace
-		
-		traits = { liberal }
-	}
-	frank_knox = {
-		allowed = {
+		harry_truman = {
+			allowed = {
+					original_tag = USA
+					has_government = liberalism
+			}
+			
+			picture = idea_henry_wallace
+			
+			traits = { liberal }
+		}
+		frank_knox = {
+			allowed = {
+					original_tag = USA
+					has_government = conservatism
+			}
+			
+			picture = idea_henry_wallace
+			
+			traits = { conservative }
+		}
+		charles_mcnary = {
+			allowed = {
+					original_tag = USA
+					has_government = conservatism
+			}
+			
+			picture = idea_henry_wallace
+			
+			traits = { conservative }
+		}
+		john_bricker = {
+			allowed = {
 				original_tag = USA
 				has_government = conservatism
+			}
+			
+			picture = idea_henry_wallace
+			
+			traits = { conservative }
 		}
-		
-		picture = idea_henry_wallace
-		
-		traits = { conservative }
-	}
-	charles_mcnary = {
-		allowed = {
-				original_tag = USA
-				has_government = conservatism
-		}
-		
-		picture = idea_henry_wallace
-		
-		traits = { conservative }
-	}
-	john_bricker = {
-		allowed = {
-				original_tag = USA
-				has_government = conservatism
-		}
-		
-		picture = idea_henry_wallace
-		
-		traits = { conservative }
-	}
 		earl_browder = {
-			
-			
+
 			allowed = {
 				original_tag = "USA"
 			}
-			
 
-			
 			traits = { communist_revolutionary }
-	
+
 			on_add = {
 				country_event = political.1
 			}
-	
+
 			do_effect = {
 				NOT = {
 					has_government = communism
@@ -1006,23 +1051,19 @@ political_advisor = {
 			ai_will_do = {
 				factor = 0
 			}
-		}	
-			
+		}
 		harold_ickes = {
-			
-			
+
 			allowed = {
 				original_tag = "USA"
 			}
-			
 
-			
 			traits = { liberal_reformer }
-	
+
 			on_add = {
 				country_event = political.13
 			}
-	
+
 			do_effect = {
 				NOT = {
 				has_government = conservatism
@@ -1035,16 +1076,12 @@ political_advisor = {
 				factor = 0
 			}
 		}
-		
 		charles_coughlin = {
-			
-			
+
 			allowed = {
 				original_tag = "USA"
 			}
-			
 
-			
 			traits = { fascist_demagogue }
 	
 			on_add = {
@@ -1061,7 +1098,6 @@ political_advisor = {
 				factor = 0
 			}
 		}
-
 		USA_robert_taft = {
 			
 			picture = generic_political_advisor_europe_1
@@ -1073,52 +1109,39 @@ political_advisor = {
 			traits = { silent_workhorse conservative }
 		}
 	}
-	
 
 	army_chief = {
-		
-	
+
 		douglas_macarthur = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { army_chief_morale_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		george_marshall = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { army_chief_drill_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		dwight_eisenhower = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { army_chief_offensive_2 }
 			
 			ai_will_do = {
@@ -1128,33 +1151,24 @@ political_advisor = {
 	}
 	
 	air_chief = {
-		
-		
 		henry_arnold = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { air_chief_reform_3 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		carl_spaatz = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
-
-			
+	
 			traits = { air_chief_night_operations_2 }
 			# TODO Strategic bombing secondary trait?
 			
@@ -1162,16 +1176,12 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		
 		george_kenney = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { air_chief_safety_2 }
 			
 			ai_will_do = {
@@ -1181,48 +1191,36 @@ political_advisor = {
 	}
 	
 	navy_chief = {
-	
 		ernest_king = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { navy_chief_reform_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		chester_nimitz = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { navy_chief_commerce_raiding_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		william_halsey = {
-			
-			
+	
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { navy_chief_naval_aviation_2 }
 			
 			ai_will_do = {
@@ -1231,145 +1229,109 @@ political_advisor = {
 		}	
 	}
 	
-	
 	high_command = {
 		courtney_hodges = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { army_commando_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		joseph_stilwell = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { army_logistics_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		mark_clark = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { army_infantry_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}	
-		
 		jimmy_doolittle = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { air_strategic_bombing_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		john_cannon = {
-			
-			
+	
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { air_close_air_support_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		claire_lee_chennault = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { air_tactical_bombing_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		raymond_spruance = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { navy_naval_air_defense_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		frank_jack_fletcher = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { navy_carrier_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		thomas_kinkaid = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			traits = { navy_amphibious_assault_2 }
 			
 			ai_will_do = {
@@ -1383,13 +1345,11 @@ political_advisor = {
 		designer = yes
 	
 		marmon_herrington = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}			
 
-			
 			research_bonus = {
 				armor = 0.10
 			}
@@ -1399,16 +1359,12 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		chrysler = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				armor = 0.10
 			}
@@ -1418,16 +1374,12 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		army_ordnance_department = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				armor = 0.10
 			}
@@ -1444,14 +1396,11 @@ political_advisor = {
 		designer = yes
 		
 		norfolk_naval_yard = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				naval_equipment = 0.10
 			}
@@ -1461,16 +1410,12 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		electric_boat_company = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				naval_equipment = 0.10
 			}
@@ -1480,16 +1425,12 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		brooklyn_naval_yard = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				naval_equipment = 0.10
 			}
@@ -1499,16 +1440,12 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		newport_news_shipbuilding = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				naval_equipment = 0.10
 			}
@@ -1525,8 +1462,7 @@ political_advisor = {
 		designer = yes
 		
 		beechcraft_aviation = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1544,7 +1480,6 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		north_american_aviation = {
 			
 			
@@ -1570,10 +1505,8 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		bell_aircraft = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1594,11 +1527,9 @@ political_advisor = {
 			
 			modifier = {
 			}
-		}	
-		
+		}
 		lockheed = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1619,10 +1550,8 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		douglas_aircraft_company = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1647,11 +1576,8 @@ political_advisor = {
 			modifier = {
 			}
 		}
-
-		
 		boeing = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1672,10 +1598,8 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		consolidated_aircraft = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1700,8 +1624,7 @@ political_advisor = {
 			}
 		}
 		curtiss_aircraft = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1723,8 +1646,7 @@ political_advisor = {
 			}
 		}
 		grumman = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1745,8 +1667,7 @@ political_advisor = {
 			}
 		}
 		republic_aircraft = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1770,8 +1691,7 @@ political_advisor = {
 			}
 		}		
 		vought_aircraft = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1791,8 +1711,7 @@ political_advisor = {
 			}
 		}
 		northrop_aircraft = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1812,8 +1731,7 @@ political_advisor = {
 			}
 		}
 		vultee_aircraft = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1833,8 +1751,7 @@ political_advisor = {
 			}
 		}
 		martin_aircraft = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1856,21 +1773,17 @@ political_advisor = {
 			}
 		}
 	}
-	
-	
+
 	materiel_manufacturer = {
 			
 		designer = yes
 		
 		springfield_armory = {
-			
-			
+	
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				infantry_weapons = 0.10
 			}
@@ -1880,16 +1793,12 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		ford_motor_company = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				motorized_equipment = 0.10
 			}
@@ -1899,18 +1808,13 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
-	
-		
+
 		rock_island_arsenal = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				artillery = 0.10
 			}
@@ -1921,20 +1825,15 @@ political_advisor = {
 			}
 		}
 	}
-	
 
-	
 	industrial_concern = {
-					
+		
 		standard_oil_california = {
-			
-			
+	
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				industry = 0.10
 			}
@@ -1944,16 +1843,12 @@ political_advisor = {
 			modifier = {
 			}
 		}
-		
 		general_electric = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				electronics = 0.10
 			}
@@ -1965,11 +1860,9 @@ political_advisor = {
 		}
 	}
 	
-	
 	theorist = {
 		omar_bradley = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1982,10 +1875,8 @@ political_advisor = {
 			
 			traits = { superior_firepower_expert }
 		}
-		
 		george_patton = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -1998,26 +1889,20 @@ political_advisor = {
 			
 			traits = { mobile_warfare_expert }
 		}
-		
 		dewitt_clinton_ramsey = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				naval_doctrine = 0.07
 			}
 			
 			traits = { naval_theorist }
 		}
-		
 		marc_mitscher = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -2030,10 +1915,8 @@ political_advisor = {
 			
 			traits = { naval_aviation_pioneer }
 		}
-		
 		curtis_lemay = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
@@ -2046,48 +1929,36 @@ political_advisor = {
 			
 			traits = { victory_through_airpower }
 		}
-		
 		harold_mcclelland = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				air_doctrine = 0.07
 			}
 			
 			traits = { air_warfare_theorist }
 		}
-		
 		robert_oppenheimer = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
 
-			
 			research_bonus = {
 				nuclear = 0.10
 			}
 			
 			traits = { nuclear_scientist }
 		}
-		
 		robert_goddard = {
-			
-			
+
 			allowed = {
 				original_tag = USA
 			}
-			
-
-			
+	
 			research_bonus = {
 				rocketry = 0.10
 			}
@@ -2095,5 +1966,5 @@ political_advisor = {
 			traits = { rocket_scientist }
 		}
 	}
-	
 }
+### EOF ###
