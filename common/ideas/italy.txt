@@ -91,14 +91,20 @@ head_of_state = {
 				original_tag = "ITA"
 				has_government = communism
 			}
+		traits = { communist }
 	}
 	bonomi_hos = {
 		allowed = {
 				original_tag = "ITA"
+		}
+		available = {
+			OR = {
 				has_government = liberalism
 				has_government = socialism
-				has_government = conservatism
+
+			}
 		}
+		traits = { socialist coalition_builder }
 	}
 	victor_emmanuel = {
 			
@@ -118,8 +124,8 @@ head_of_state = {
 				}
 			}
 			
-			traits = {
-				popular_figurehead				
+				traits = {
+				monarchist popular_figurehead				
 			}
 		}
 		ferruccio_parri = { 
@@ -127,21 +133,29 @@ head_of_state = {
 				original_tag = ITA
 			}
 			available = {
-				has_government = liberalism #centrism
+
+				OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+					}
 				}
-			traits = { liberal }
+			traits = { liberal silent_workhorse }
 			cancel_if_invalid = no
 		}
 		alcide_de_gasperi = { 
 			allowed = {
 				original_tag = ITA
 			}
-			available = {
+				available = {
+			OR = {
 				has_government = conservatism
+				}
 			}
-			traits = { conservative }
+			traits = { conservative elder_statesman }
 			cancel_if_invalid = no
-			}
+
+			}	
 }
 
 #Foreign

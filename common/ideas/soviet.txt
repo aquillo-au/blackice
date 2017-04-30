@@ -662,13 +662,52 @@ head_of_state = {
 			
 
 			
-			traits = { popular_figurehead }
+			traits = { communist popular_figurehead }
+		}
+	kirill_v_romanov = {
+			
+			
+			allowed = {
+				original_tag = "SOV"
+				date < 1938.1.1
+			}
+			available = {
+			OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+				}
+			}
+			
+
+			
+			traits = { monarchist popular_figurehead }
+		}
+	vladimir_k_romanov = {
+			
+			
+			allowed = {
+				original_tag = "SOV"
+				date > 1938.1.1
+			}
+			available = {
+			OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+				}
+			}
+			
+
+			
+			traits = { monarchist popular_figurehead }
 		}
 	khrushchev_hos = {
 		allowed = {
 				original_tag = SOV
 				has_government = communism
 		}
+		traits = { communist }
 	}
 	kerensky_hos = {
 		allowed = {
@@ -679,12 +718,14 @@ head_of_state = {
 				has_government = socialism
 			}
 		}
+		traits = { socialist effective_leader }
 	}
 	rodzaevsky_hos = {
 		allowed = {
 				original_tag = SOV
 				has_government = fascism
 		}
+		traits = { fascist }
 	}
 	pavel_n_milyukov = { 
 			allowed = {
@@ -697,7 +738,7 @@ head_of_state = {
 					has_government = liberalism
 				}
 			}
-			traits = { conservative }
+			traits = { conservative intellectual }
 			cancel_if_invalid = no
 		}
 
@@ -711,11 +752,10 @@ head_of_state = {
 					has_government = liberalism
 				}
 			}
-			traits = { socialist }
+			traits = { socialist ineffective_politician }
 			cancel_if_invalid = no
 		}
 }
-
 #Foreign
 foreign_minister = {
 

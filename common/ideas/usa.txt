@@ -851,58 +851,80 @@ ideas = {
 	##################
 	#HoS
 	head_of_state = {
-		roosevelt_hos = {
-			allowed = {
+	roosevelt_hos = {
+		allowed = {
 				original_tag = USA
 				has_government = liberalism
 				date < 1946.1.1
-			}
-			traits = { liberal popular_figurehead }
+
+
 		}
-		wilkie_hos = {
-			allowed = {
+		traits = { liberal popular_figurehead }
+	}
+	wilkie_hos = {
+		allowed = {
 				original_tag = USA
 				has_government = conservatism
-			}
-			traits = { conservative }
+
+
 		}
-		landon_hos = {
-			allowed = {
+		traits = { conservative coalition_builder }
+	}
+	landon_hos = {
+		allowed = {
 				original_tag = USA
 				has_government = conservatism
-			}
-			traits = { conservative }
+
+
 		}
-		dewey_hos = {
-			allowed = {
+		traits = { conservative business_tycoon }
+	}
+	dewey_hos = {
+		allowed = {
 				original_tag = USA
 				has_government = conservatism
-			}
-			traits = { conservative }
+
+
 		}
-		truman_hos = {
-			allowed = {
+		traits = { conservative tough_guy }
+	}
+	truman_hos = {
+		allowed = {
 				original_tag = USA
 				has_government = liberalism
 				date > 1944.1.1
-			}
-			traits = { liberal intellectual}
+
+
 		}
-		browder_hos = {
-			allowed = {
+		traits = { liberal tough_guy }
+	}
+	browder_hos = {
+		allowed = {
 				original_tag = USA
 				has_government = communism
-			}
-			traits = { communist tough_guy }
+
+
 		}
-		coughlin_hos = {
-			allowed = {
+
+		traits = { communist demagogue }
+	}
+	foster_hos = {
+		allowed = {
+				original_tag = USA
+				has_government = communism
+		}
+		traits = { communist tough_guy }
+	}
+	coughlin_hos = {
+		allowed = {
 				original_tag = USA
 				has_government = fascism
-			}
-			traits = { fascist tough_guy }
+
+
 		}
+		traits = { fascist demagogue }
 	}
+}
 	#Foreign
 	foreign_minister = {
 		USA_john_winant = {
@@ -1055,10 +1077,18 @@ ideas = {
 		USA_henry_stimson = {
 			
 			picture = generic_political_advisor_europe_2
-			
+
 			allowed = {
 				original_tag = USA
-				date > 1940.1.1
+			}
+			available = {
+			OR = {
+				AND = {
+					has_government = liberalism
+					date > 1940.1.1
+					}
+				has_government = conservatism
+				}
 			}
 			
 			traits = { war_industrialist conservative }
@@ -1079,9 +1109,12 @@ ideas = {
 		}
 		henry_morgenthau = {
 
+			
+			picture = generic_political_advisor_europe_2
+			
 			allowed = {
 				original_tag = USA
-				date > 1940.1.1
+
 			}
 
 			available = {
@@ -1208,16 +1241,21 @@ ideas = {
 	#Advisors
 	political_advisor = {
 		john_nance_garner = {
-			allowed = {
+		allowed = {
 				original_tag = USA
 				has_government = liberalism
 				has_government = conservatism
-			}
-			
-			picture = idea_john_nance_garner
-			
-			traits = { conservative }
+
+
+
+
+
 		}
+		
+		picture = idea_john_nance_garner
+		
+		traits = { conservative }
+	}
 		henry_wallace = {
 			allowed = {
 				original_tag = USA

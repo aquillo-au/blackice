@@ -815,10 +815,13 @@ interior_minister = {
 generic_interior_minister = {
 			
 			allowed = {
-				NOT = {
-					has_available_idea_with_traits = { idea = crime_fighter limit = 1 }
-					has_available_idea_with_traits = { idea = prince_of_terror limit = 1 }
-				}
+
+					has_available_idea_with_traits = { idea = prince_of_terror limit = 0 }
+					has_available_idea_with_traits = { idea = backroom_backstabber limit = 0 }
+					has_available_idea_with_traits = { idea = efficient_sociopath limit = 0 }
+					has_available_idea_with_traits = { idea = crime_fighter limit = 0 }
+					has_available_idea_with_traits = { idea = hearts_and_minds limit = 0 }
+
 			}
 			
 
@@ -842,9 +845,10 @@ intel_minister = {
 generic_intel_minister = {
 			
 			allowed = {
-				NOT = {
-					has_available_idea_with_traits = { idea = dismal_enigma limit = 1 }
-				}
+
+					has_available_idea_with_traits = { idea = codebreaker limit = 0 }
+					has_available_idea_with_traits = { idea = dismal_enigma limit = 0 }
+
 			}
 				
 			traits = { dismal_enigma }
@@ -888,6 +892,36 @@ generic_captain_of_industry = {
 			}
 			
 			traits = { war_industrialist }
+		}
+		generic_economic_minister = {
+			
+			allowed = {
+					has_available_idea_with_traits = { idea = capitalist limit = 0 }
+					has_available_idea_with_traits = { idea = theoretical_scientist limit = 0 }
+					has_available_idea_with_traits = { idea = administrative_genius limit = 0 }
+					has_available_idea_with_traits = { idea = resource_industrialist limit = 0 }
+					has_available_idea_with_traits = { idea = military_entrepreneur limit = 0 }
+					has_available_idea_with_traits = { idea = technical_especialist limit = 0 }
+					has_available_idea_with_traits = { idea = corrupt_kleptocrat limit = 0 }
+					has_available_idea_with_traits = { idea = fortification_engineer limit = 0 }
+					has_available_idea_with_traits = { idea = war_industrialist limit = 0 }
+					has_available_idea_with_traits = { idea = captain_of_industry limit = 0 }
+					has_available_idea_with_traits = { idea = industrial_planner limit = 0 }
+					has_available_idea_with_traits = { idea = armaments_organizer limit = 0 }
+					has_available_idea_with_traits = { idea = quartermaster_general limit = 0 }
+			}
+				
+			traits = { industrial_planner }
+
+
+			
+			do_effect = {
+				
+			}
+	
+			ai_will_do = {
+				factor = 0
+			}
 		}
 }
 

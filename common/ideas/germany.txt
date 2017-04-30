@@ -321,6 +321,25 @@ ideas = {
 			
 			traits = { fascist }
 		}
+	wilhelm_iii = {
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				OR = {
+					has_government = monarchism
+					AND = {
+						OR = {
+							has_government = conservatism
+							has_government = liberalism
+							has_government = socialism
+						}
+						has_country_flag = const_kaiser
+					}
+				}
+			}
+			traits = { monarchist popular_figurehead }
+		}
 		beck_hos = {
 			allowed = {
 				original_tag = GER
@@ -331,7 +350,7 @@ ideas = {
 					has_government = socialism
 				}
 			}
-			traits = { conservative }
+			traits = { conservative war_hero }
 			
 		}
 		thalmann_hos = {
@@ -341,7 +360,7 @@ ideas = {
 			}
 			traits = { communist }
 		}
-		heinrich_bruening = { #needs portrait
+		heinrich_bruening = { 
 			allowed = {
 				original_tag = GER
 			}
@@ -352,12 +371,12 @@ ideas = {
 					has_government = monarchism
 				}
 			}
-			traits = { conservative }
+			traits = { conservative ineffective_politician }
 			cancel_if_invalid = no
 		}
 
-		konrad_adenauer = { #needs portrait
-			allowed = {original_tag = GER}
+		konrad_adenauer = { 
+
 			allowed = {
 				original_tag = GER
 			}
@@ -368,7 +387,7 @@ ideas = {
 					has_government = socialism
 				}
 			}
-			traits = { conservative }
+			traits = { conservative elder_statesman }
 			cancel_if_invalid = no
 		}
 		theodor_heuss = { #bundespraesident
@@ -382,7 +401,7 @@ ideas = {
 					has_government = socialism
 				}
 			}
-			traits = { conservative }
+			traits = { conservative coalition_builder }
 			cancel_if_invalid = no
 		}
 	}

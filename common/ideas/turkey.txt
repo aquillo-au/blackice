@@ -121,7 +121,36 @@ country = {
 ##################
 #HoS
 head_of_state = {
+abdulmejid_ii = {	
+			allowed = {
+				original_tag = "TUR"
+				date < 1944.1.1
+			}
+			available = {
+			OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+				}
+			}
 
+			traits = { monarchist popular_figurehead }
+		}
+ahmed_iv = {	
+			allowed = {
+				original_tag = "TUR"
+				date > 1944.1.1
+			}
+			available = {
+			OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+				}
+			}
+
+			traits = { monarchist popular_figurehead }
+		}
 }
 
 #Foreign
