@@ -321,7 +321,7 @@ ideas = {
 			
 			traits = { fascist }
 		}
-	wilhelm_iii = {
+		wilhelm_iii = {
 			allowed = {
 				original_tag = GER
 			}
@@ -374,7 +374,6 @@ ideas = {
 			traits = { conservative ineffective_politician }
 			cancel_if_invalid = no
 		}
-
 		konrad_adenauer = { 
 
 			allowed = {
@@ -426,29 +425,36 @@ ideas = {
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
 				has_government = fascism
 			}
+			
 			traits = { smooth_talking_charmer apolitical }
 		}
 		konrad_adenauer_foreign = { 
+			
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
 				OR = {
 					has_government = conservatism
 					has_government = liberalism
 				}
 			}
+			
 			traits = { conservative ideological_crusader }
+			
 			cancel_if_invalid = no
 		}
-
 		ludwig_kaas = { 
+			
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
 				OR = {
 					has_government = conservatism
@@ -456,14 +462,17 @@ ideas = {
 					has_government = socialism
 				}
 			}
+			
 			traits = { conservative smooth_talking_charmer }
+			
 			cancel_if_invalid = no
 		}
-
 		theodor_heuss_foreign = { 
+			
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
 				OR = {
 					has_government = conservatism
@@ -471,59 +480,68 @@ ideas = {
 					has_government = socialism
 				}
 			}
+			
 			traits = { liberal compassionate_gentleman }
+			
 			cancel_if_invalid = no
 		}
 	}
 	
 	#Security Ministers
 	interior_minister = {
-		
-	heinrich_himmler = {
+		heinrich_himmler = {
 			
 			allowed = {
 				original_tag = GER
 				is_ai = no
 				NOT = { has_country_flag = himmler_dead }
 			}
+			
 			available = {
 				has_government = fascism
 			}			
+			
 			traits = { prince_of_terror fascist powerful ambitious pet_projects}
+			
 			removal_cost = 250
 		}
-	himmler_ai = {
+		himmler_ai = {
 			
 			allowed = {
 				original_tag = GER
 				is_ai = yes
 				NOT = { has_country_flag = himmler_dead }
 			}
+			
 			available = {
 				is_ai = yes
 				has_government = fascism
 			}
+			
 			traits = { prince_of_terror fascist }
+			
 			picture = idea_heinrich_himmler
+			
 			ai_will_do = {
 				factor = 2
 			}
 		}
-	reinhard_heydrich = {
+		reinhard_heydrich = {
 			
 			allowed = {
 				original_tag = GER
 				NOT = { has_country_flag = heydrich_dead }
 			}
+			
 			picture = idea_reinhard_heydrich
 			
 			available = {
 				has_government = fascism
 			}			
+			
 			traits = { efficient_sociopath fascist ambitious organizer powerful }
-
 		}
-	ernst_kaltenbrunner = {
+		ernst_kaltenbrunner = {
 			
 			allowed = {
 				original_tag = GER

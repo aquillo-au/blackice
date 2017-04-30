@@ -1897,8 +1897,10 @@ country_event = {
 		date > 1936.1.1
 		is_ai = no
 	}
-	
-	immediate = {
+
+	option = {
+		name = ai_ideas.1.a
+		ai_chance = { factor = 0 }
 		if = {
 			limit = { 
 				AND = {
@@ -1906,14 +1908,11 @@ country_event = {
 					is_ai = no
 				}
 			}
+			custom_effect_tooltip = remove_interior_minister
+			show_ideas_tooltip = himmler_ai
 			remove_ideas = {
 				himmler_ai
 			}
 		}
-	}
-
-	
-	option = {
-		name = ai_ideas.1.a
 	}
 }
