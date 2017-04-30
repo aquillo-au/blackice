@@ -1,0 +1,45 @@
+
+USA_save_the_aussies = {
+	enable = {
+		tag = USA
+		OR = {
+			has_government = conservatism
+			has_government = socialism
+			has_government = liberalism
+		}
+		is_in_faction = no
+		has_war = no
+
+		JAP = {	has_war_with = AST }
+		AST = {
+			OR = {
+				has_government = conservatism
+				has_government = socialism
+				has_government = liberalism
+			}		
+			surrender_progress > 0.15
+		}
+	}
+	abort = {
+		OR = {
+			has_war_with = AST
+			is_in_faction_with = JAP
+			JAP = {	
+				NOT = { has_war_with = AST } 
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = contain
+		id = "JAP"			
+		value = 200
+	}
+	
+	ai_strategy = {
+		type = protect
+		id = "AST"			
+		value = 200
+	}
+}
+
