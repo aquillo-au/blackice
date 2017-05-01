@@ -135,7 +135,9 @@ add_ideas = {
 		henry_morgenthau
 		frank_rowlett
 		
+		roosevelt_hos
 		
+		#Laws
 		free_trade
 		tax_high
 		tariffs_high
@@ -146,7 +148,7 @@ add_ideas = {
 		press_free
 		security_liberty_first
 		private_control
-		labor_allowed
+		labor_none
 		fdi_regulated
 		
 		cons_volunteer
@@ -174,7 +176,9 @@ set_country_flag = private_control
 set_country_flag = age_19
 set_country_flag = export_focus
 set_country_flag = civilian_economy
-set_country_flag = labor_allowed
+set_country_flag = labor_none
+set_country_flag = officer_train_low
+set_country_flag = security_liberty_first
 	
 #Monroe Doctrine
 give_guarantee = CAN
@@ -376,7 +380,7 @@ create_country_leader = {
 	ideology = progressivism
 	traits = {
 		dislikes_germany
-		popular_figurehead
+	
 		liberal
 		charismatic
 	}
@@ -389,7 +393,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		
+		fascist
 	}
 }
 
@@ -400,10 +404,19 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {
-		
+		communist
 	}
 }
-
+create_country_leader = {
+	name = "Wendell Willkie"
+	desc = "Leader of the Republican Party"
+	picture = "Portrait_USA_wendell_willkie.dds"
+	expire = "1940.1.1"
+	ideology = classical_liberalism
+	traits = {
+		conservative
+	}
+}
 create_corps_commander = {
 	name = "George S. Patton"
 	picture = "Portrait_USA_George_S_Patton.dds"
