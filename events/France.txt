@@ -52,7 +52,7 @@ country_event = {
 	}
 	option = {
 		name = france.33.a
-		retire_country_leader = yes
+		#retire_country_leader = yes
 		create_country_leader = {
 			name = "Albert Sarraut"
 			desc = "POLITICS_ALBERT_SARRAUT_DESC"
@@ -81,7 +81,7 @@ country_event = {
 			desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
 			picture = "Portrait_France_Edouard_Daladier.dds"
 			expire = "1965.1.1"
-			ideology = moderate
+			ideology = social_liberalism
 			traits = {
 				stout_defender
 			}
@@ -222,7 +222,7 @@ country_event = {
 			add_idea = FRA_reforms_failed
 			remove_idea = FRA_disjointed_government
 		}
-		retire_country_leader = yes
+		#retire_country_leader = yes
 		create_country_leader = {
 			name = "Camille Chautemps"
 			desc = "POLITICS_CAMILLE_CHAUTEMPS_DESC"
@@ -334,7 +334,7 @@ country_event = {
 				desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
 				picture = "Portrait_France_Philippe_Petain.dds"
 				expire = "1965.1.1"
-				ideology = fascism_ideology
+				ideology = vichy
 				traits = {
 				}
 			}			
@@ -558,7 +558,7 @@ country_event = {
 			desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
 			picture = "Portrait_France_Philippe_Petain.dds"
 			expire = "1965.1.1"
-			ideology = nationalism
+			ideology = vichy
 		}
 		set_country_flag = petain_lead
 	}
@@ -1060,7 +1060,7 @@ country_event = {
 	option = { # Become Free French
 		name = france.10.b
 		ai_chance = {
-			factor = 85
+			factor = 100
 		}
 		set_global_flag = fall_of_france
 		GER = { country_event = france.14 }
@@ -1069,7 +1069,7 @@ country_event = {
 	option = { # Ask for British Union
 		name = france.10.c
 		ai_chance = {
-			factor = 15
+			factor = 0
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
@@ -1939,4 +1939,30 @@ country_event = {
 	option = {
 		name = france.30.a
 	}
+}
+###########Cze dead. Join UK
+country_event = {
+	id = france.31
+	title = france.31.t
+	desc = france.31.d
+	picture = GFX_report_event_chamberlain
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		is_ai = yes
+		NOT = { has_war_with = ENG } 
+		is_in_faction = no
+		has_global_flag = end_of_czechoslovakia
+		NOT = { has_completed_focus = FRA_go_with_britain }
+		NOT = { has_completed_focus = FRA_little_entente }
+	}
+
+	option = {
+		name = france.31.a
+		
+		unlock_national_focus = FRA_go_with_britain
+	}
+	
 }

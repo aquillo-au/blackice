@@ -36,7 +36,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = FRA_industrial_effort
-				bonus = 0.25
+				bonus = 0.2
 				uses = 2
 				category = industry
 			}
@@ -153,19 +153,19 @@ focus_tree = {
 		complete_tooltip = {
 			every_state = {
 				limit = { has_state_flag = FRA_colonial_industry_4IC }
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
-					level = 4
+					level = 3
 					instant_build = yes
 				}
 			}
 			every_state = {
 				limit = { has_state_flag = FRA_colonial_industry_2IC }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -196,7 +196,7 @@ focus_tree = {
 					add_extra_state_shared_building_slots = 2
 					add_building_construction = {
 						type = industrial_complex
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 					set_state_flag = FRA_colonial_industry_2IC
@@ -210,10 +210,10 @@ focus_tree = {
 						}
 						NOT = { is_on_continent = europe }
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = industrial_complex
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 					set_state_flag = FRA_colonial_industry_2IC
@@ -230,10 +230,10 @@ focus_tree = {
 					}
 				}
 				459 = {
-					add_extra_state_shared_building_slots = 4
+					add_extra_state_shared_building_slots = 3
 					add_building_construction = {
 						type = industrial_complex
-						level = 4
+						level = 3
 						instant_build = yes
 					}
 					set_state_flag = FRA_colonial_industry_4IC
@@ -278,7 +278,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = FRA_nuclear_effort
-				bonus = 0.25
+				bonus = 0.15
 				uses = 2
 				category = nuclear
 			}
@@ -377,10 +377,10 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -559,19 +559,19 @@ focus_tree = {
 		complete_tooltip = {
 			every_state = {
 				limit = { has_state_flag = FRA_colonial_military_factories_4MF }
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 			}
 			every_state = {
 				limit = { has_state_flag = FRA_colonial_military_factories_2MF }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -599,10 +599,10 @@ focus_tree = {
 						}
 						NOT = { is_on_continent = europe }
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 					set_state_flag = FRA_colonial_military_factories_2MF
@@ -616,10 +616,10 @@ focus_tree = {
 						}
 						NOT = { is_on_continent = europe }
 					}
-					add_extra_state_shared_building_slots = 2
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
-						level = 2
+						level = 1
 						instant_build = yes
 					}
 					set_state_flag = FRA_colonial_military_factories_2MF
@@ -630,16 +630,16 @@ focus_tree = {
 					459 = {
 						free_building_slots = {
 							building = arms_factory
-							size > 3
+							size > 2
 							include_locked = yes
 						}
 					}
 				}
 				459 = {
-					add_extra_state_shared_building_slots = 4
+					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = arms_factory
-						level = 4
+						level = 2
 						instant_build = yes
 					}
 					set_state_flag = FRA_colonial_military_factories_4MF
@@ -691,7 +691,7 @@ focus_tree = {
 					add_building_construction = {
 						#province = 1185
 						type = naval_base
-						level = 4
+						level = 2
 						instant_build = yes
 					}
 					add_building_construction = {
@@ -834,19 +834,19 @@ focus_tree = {
 				}
 				add_tech_bonus = {
 					name = electronics_bonus
-					bonus = 0.5
+					bonus = 0.25
 					uses = 1
 					category = electronics
 				}
 				add_tech_bonus = {
 					name = industrial_bonus
-					bonus = 0.5
+					bonus = 0.25
 					uses = 1
 					category = industry
 				}	
 				add_tech_bonus = {
 					name = infantry_weapons_bonus
-					bonus = 0.5
+					bonus = 0.25
 					uses = 1
 					category = infantry_weapons
 					category = artillery
@@ -877,14 +877,14 @@ focus_tree = {
 		completion_reward = {
 			add_resource = {
 				type = oil
-				amount = 4
+				amount = 14
 				state = 459
 			}
 			459 = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = synthetic_refinery
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}	
@@ -918,7 +918,7 @@ focus_tree = {
 		completion_reward = {
 			add_resource = {
 				type = tungsten
-				amount = 14
+				amount = 20
 				state = 671
 			}
 		}
@@ -1105,7 +1105,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			add_national_unity = -0.05
+			add_national_unity = -0.1
 			add_ideas =  FRA_bank_nationalisation
 		}
 	}	
@@ -1120,7 +1120,7 @@ focus_tree = {
 		icon = GFX_goal_generic_build_tank
 		available = {
 			OR = {
-				threat > 0.05
+				threat > 0.25
 				GER = { has_completed_focus  =  GER_rhineland }
 				has_war = yes 
 			}
@@ -1165,7 +1165,7 @@ focus_tree = {
 				limit = { has_state_flag = FRA_military_factories_2MF }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = arms_factory
+					type = tank_factory
 					level = 2
 					instant_build = yes
 				}
@@ -1174,7 +1174,7 @@ focus_tree = {
 				limit = { has_state_flag = FRA_military_factories_1MF }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = arms_factory
+					type = smallarms_factory
 					level = 1
 					instant_build = yes
 				}
@@ -1185,17 +1185,17 @@ focus_tree = {
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = FRA_AMX
 			random_owned_controlled_state = {
-				limit = {
+					limit = {
 					free_building_slots = {
-						building = arms_factory
-						size > 1
+						building = smallarms_factory
+						size > 0
 						include_locked = yes
 					}
-					is_on_continent = europe				
+					is_on_continent = europe					
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = arms_factory
+					type = tank_factory
 					level = 2
 					instant_build = yes
 				}
@@ -1205,7 +1205,7 @@ focus_tree = {
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
-						building = arms_factory
+						building = smallarms_factory
 						size > 0
 						include_locked = yes
 					}
@@ -1213,7 +1213,7 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = arms_factory
+					type = smallarms_factory
 					level = 1
 					instant_build = yes
 				}
@@ -1235,7 +1235,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			add_national_unity = 0.05
+			add_national_unity = 0.03
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = felix_gouin
 		}
@@ -1261,7 +1261,7 @@ focus_tree = {
 				limit = { has_state_flag = FRA_military_factories_2MF }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = arms_factory
+					type = Ltaircraft_factory
 					level = 2
 					instant_build = yes
 				}
@@ -1270,7 +1270,7 @@ focus_tree = {
 				limit = { has_state_flag = FRA_military_factories_1MF }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = arms_factory
+					type = Hvaircraft_factory
 					level = 1
 					instant_build = yes
 				}
@@ -1298,15 +1298,15 @@ focus_tree = {
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
-						building = arms_factory
-						size > 1
+						building = Ltaircraft_factory
+						size > 0
 						include_locked = yes
 					}
 					is_on_continent = europe				
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = arms_factory
+					type = Ltaircraft_factory
 					level = 2
 					instant_build = yes
 				}
@@ -1314,17 +1314,17 @@ focus_tree = {
 			}
 
 			random_owned_controlled_state = {
-				limit = {
+					limit = {
 					free_building_slots = {
-						building = arms_factory
+						building = Ltaircraft_factory
 						size > 0
 						include_locked = yes
 					}
-					is_on_continent = europe					
+					is_on_continent = europe				
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = arms_factory
+					type = Hvaircraft_factory
 					level = 1
 					instant_build = yes
 				}
@@ -1339,7 +1339,7 @@ focus_tree = {
 		icon = GFX_mobilisation
 		available = {
 			OR = {
-				threat > 0.15
+				threat > 0.45
 				GER = { has_completed_focus  =  GER_anschluss }
 				has_war = yes 
 			}
@@ -1409,7 +1409,7 @@ focus_tree = {
 		icon = GFX_goal_generic_more_territorial_claims
 		available = {
 			OR = {
-				threat > 0.25
+				threat > 0.65
 				GER = { has_completed_focus  =  GER_demand_sudetenland }
 				has_war = yes 
 			}
@@ -1500,7 +1500,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			add_national_unity = -0.05
+			add_national_unity = -0.1
 			add_timed_idea = { idea = FRA_matignon_agreements2 days = 290 }
 		}
 	}
@@ -1655,7 +1655,7 @@ focus_tree = {
 		icon = GFX_CZE_alliance
 		available = {
 			is_puppet = no
-			is_in_faction = no
+			#is_in_faction = no
 		}
 	 	prerequisite = { focus = FRA_status_quo }
 	 	mutually_exclusive = { focus = FRA_go_with_britain }
@@ -1668,7 +1668,7 @@ focus_tree = {
 		cost = 10
 
 		ai_will_do = {
-			factor = 100
+			factor = 0
 
 			modifier = {
 				factor = 10
@@ -1683,6 +1683,7 @@ focus_tree = {
 			add_national_unity = 0.05
 			set_rule = { can_create_factions = yes }
 			create_faction = "french_entente_alliance"
+			ENG = {remove_from_faction = FRA}
 			if = {
 				limit = {
 					CZE = { 
@@ -3339,7 +3340,7 @@ focus_tree = {
 			add_ideas = charles_huntziger
 			add_tech_bonus = {
 				name = FRA_army_reform
-				bonus = 0.5
+				bonus = 0.3
 				uses = 1
 				category = support_tech
 			}
@@ -3361,7 +3362,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = FRA_desert_equipment
-			army_experience = 10
+			army_experience = 30
 		}
 	}
 	
@@ -3383,7 +3384,7 @@ focus_tree = {
 			add_ideas = philippe_leclerc
 			add_tech_bonus = {
 				name = RAJ_chindits
-				bonus = 0.5
+				bonus = 0.25
 				uses = 2
 				category = para_tech
 				category = mountaineers_tech
@@ -3406,7 +3407,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = FRA_commando_marine
-			army_experience = 10
+			army_experience = 30
 		}
 	}
 	

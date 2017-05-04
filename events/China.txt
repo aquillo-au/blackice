@@ -1732,7 +1732,7 @@ country_event = {
 		
 	}
 	immediate = {
-		set_country_flag = { flag = partisan_uprisings days = 90 } 
+		set_country_flag = { flag = partisan_uprisings days = 180 } 
 		}
 		
 	mean_time_to_happen = {
@@ -1740,15 +1740,19 @@ country_event = {
 	}
 	
 	option = {
-		name = china.208
-		ai_chance = { factor = 100 }
+		name = china.208.a
+		ai_chance = { factor = 20 }
 		set_technology = {partisans = 1}
 		hidden_effect = {
 			load_oob = "CHI_Partisans_I"
 			
 		}
 	}
-
+	option = {
+		name = china.208.b
+		ai_chance = { factor = 80 }
+	
+	}
 }
 country_event = {
 	id = china.209
@@ -1767,7 +1771,7 @@ country_event = {
 		
 	}
 	immediate = {
-		set_country_flag = { flag = partisan_uprisings_PRC days = 180 } 
+		set_country_flag = { flag = partisan_uprisings_PRC days = 240 } 
 		}
 		
 	mean_time_to_happen = {
@@ -1775,8 +1779,8 @@ country_event = {
 	}
 	
 	option = {
-		name = china.209
-		ai_chance = { factor = 100 }
+		name = china.209.a
+		ai_chance = { factor = 20 }
 		add_ideas = neutrality_idea 
 		set_technology = {partisans = 1}
 		
@@ -1789,6 +1793,11 @@ country_event = {
 			
 					}
 
+		}
+		option = {
+		name = china.209.b
+		ai_chance = { factor = 80 }
+		
 		}
 }
 

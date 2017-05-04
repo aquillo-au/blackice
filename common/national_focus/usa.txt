@@ -689,7 +689,7 @@ focus_tree = {
 			army_experience = 10
 			every_state = {
 				limit = { has_state_flag = USA_arsenal_of_democracy_3AF }
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
 					level = 3
@@ -903,10 +903,9 @@ focus_tree = {
 		#}
 available_if_capitulated = yes
 		completion_reward = {
-			add_timed_idea = {
-				idea = liberty_ships_focus
-				days = 365
-			}
+			
+				add_ideas = liberty_ships_focus
+			
 			
 		}
 	}
@@ -1024,6 +1023,7 @@ available_if_capitulated = yes
 			NOT = { 693 = { is_controlled_by = ENG } } 
 			NOT = { 689 = { is_controlled_by = ENG } } 
 			NOT = { 691 = { is_controlled_by = ENG } } 
+			ENG = { exists = no }
 		}
 		
 		x = 8
@@ -1039,6 +1039,7 @@ available_if_capitulated = yes
 			}
 			
 			effect_tooltip = {
+				custom_effect_tooltip = USA_destroyers_for_bases_tt
 				transfer_state = 696
 				transfer_state = 331
 				transfer_state = 308
@@ -1525,6 +1526,9 @@ bypass = {
 				target = SOV
 				generator = { 644 637 562 } # Eastern Siberia, Kamchatka
 			}
+		hidden_effect = {
+				news_event = { hours = 6 id = news.207 }
+			}
 		}
 	}
 
@@ -1569,9 +1573,7 @@ bypass = {
 				target = ENG
 				generator = { 689 690 693 308 691 692 696 } # Carribean Islands
 			}
-			hidden_effect = {
-				news_event = { hours = 6 id = news.207 }
-			}
+			
 		}
 	}
 
@@ -1584,7 +1586,7 @@ bypass = {
 
 			JAP = {
 				exists = yes
-				has_government = ROOT
+				NOT = { has_government = ROOT }
 			}
 			date > 1942.1.1
 		}
@@ -3488,6 +3490,7 @@ available_if_capitulated = yes
 			hidden_effect = {
 				news_event = { hours = 12 id = news.230 }
 			}
+			add_named_threat = { threat = 1 name = USA_black_chamber }
 			set_rule = {
 				can_boost_other_ideologies = yes
 			}
@@ -3581,9 +3584,7 @@ available_if_capitulated = yes
 						}
 						set_country_flag = USA_black_chamber_democratic_CivWar
 					}
-				}				
-
-				#If none matches a trigger above, we have a fallback, so the focus isn't wasted
+								#If none matches a trigger above, we have a fallback, so the focus isn't wasted
 				if = {
 					limit = {
 						NOT = {
@@ -4151,6 +4152,7 @@ available_if_capitulated = yes
 			}
 		}
 	}
+	}
 	focus = {
 		id = USA_preemptive_intervention
 		icon = GFX_goal_generic_territory_or_war
@@ -4208,6 +4210,7 @@ available_if_capitulated = yes
 				random_other_country = {
 						limit = {
 							has_country_flag = monroe_doctrine
+							not = {tag = JAP}
 							OR = {
 								has_government = fascism
 								has_government = communism

@@ -55,6 +55,7 @@ country_event = {
 		every_other_country = {
 			limit = {
 				OR = {
+					not = {tag = JAP}
 					has_government = fascism
 					has_government = communism
 				}
@@ -79,6 +80,8 @@ country_event = {
 
 	trigger = {
 		tag = JAP
+		has_country_flag = impossible
+		NOT = { has_completed_focus = strike_usa_focus }
 		USA = {
 			focus_progress = {
 				focus = USA_pearl_harbor_gambit
@@ -1856,8 +1859,10 @@ country_event = {
 	trigger = {
 		tag = USA
 		is_ai = yes
+		
+		or = {
 			threat > 0.3
-			has_war = yes
+			has_war = yes }
 			}
 	
 	mean_time_to_happen = {
@@ -1934,8 +1939,10 @@ country_event = {
 	trigger = {
 		tag = USA
 		is_ai = yes
+		
+			or = {
 			threat > 0.6
-			has_war = yes
+			has_war = yes }
 			}
 	
 	mean_time_to_happen = {

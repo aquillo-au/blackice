@@ -470,6 +470,7 @@ country_event = {
 	trigger = {
 		tag = ITA
 		is_ai = yes
+		has_country_flag = impossible
 		GER = { is_ai = yes }
 		is_in_faction_with = GER
 		GER = { has_war_with = USA }
@@ -529,7 +530,7 @@ country_event = {
 		GER = { has_war_with = SOV }
 		SOV = {is_ai = no}
 		OR = {
-		    SOV = { surrender_progress > 0.5 }
+		    SOV = { surrender_progress > 0.2 }
 		    date > 1945.12.1
 		
 		}
@@ -603,6 +604,7 @@ country_event = {
 
 	trigger = {
 	    tag = JAP
+	has_country_flag = impossible
 	    NOT = { is_in_faction_with = USA }
 	    is_ai = yes
 		date > 1941.12.7                            # make sure that they join
@@ -688,6 +690,7 @@ country_event = {
 	trigger = {
 		tag = USA
 		is_ai = yes
+		has_country_flag = impossible
 		  NOT = { is_in_faction_with = GER }
 		    NOT = { is_in_faction_with = JAP }
 		date > 1941.12.10
@@ -1089,7 +1092,7 @@ country_event = {
 
 	trigger = {
 		tag = JAP
-		#has_country_flag = impossible
+		has_country_flag = impossible
 		is_ai = yes
 		has_war_with = USA
 		date > 1942.6.1
@@ -1808,6 +1811,7 @@ country_event = {
 
 	trigger = {
 		date > 1936.1.1
+		has_country_flag = impossible
 		NOT = { tag = GER } #Germany
 		NOT = { tag = FRA }	#France	
 		NOT = { has_tech = soviet_tech_a }	#Soviets + satellites
@@ -1883,7 +1887,7 @@ country_event = {
 		set_technology = { generic_armor = 1 }
 	}	
 }	
-### END Blackiceevents ###
+
 country_event = {
 	id = ai_ideas.1
 	title = ai_ideas.1.t
