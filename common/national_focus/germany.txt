@@ -2286,6 +2286,7 @@ focus_tree = {
 							owns_state = 4
 							owns_state = 152
 							owns_state = 153
+							owns_state = 897
 						}
 					}
 				}
@@ -2302,6 +2303,7 @@ focus_tree = {
 							owns_state = 4
 							owns_state = 152
 							owns_state = 153
+							owns_state = 897
 						}
 					}
 				}
@@ -2379,6 +2381,21 @@ focus_tree = {
 					}
 				}
 				add_state_core = 153
+			}
+			if = {
+				limit = {
+					897 = {
+						owner = {
+							NOT = {
+								tag = AUS
+							}
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				add_state_core = 897
 			}
 		}
 	}
