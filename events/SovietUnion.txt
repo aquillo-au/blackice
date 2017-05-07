@@ -3701,3 +3701,28 @@ country_event = {
 
 #308th_division_decision stalingrad 1942.3.1
 #120_Guard_decision stalingrad 1942.12.1
+
+country_event = {
+	id = soviet.90
+	title = soviet.90.t
+	desc = soviet.90.d
+	picture = GFX_report_event_chamberlain
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		date > 1936.1.1	
+	
+	}
+
+	option = {
+		name = soviet.90.a
+			hidden_effect = {
+			load_oob = "SOV_AI_starting_equipment"
+		}
+		
+	}
+	
+}
