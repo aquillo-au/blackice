@@ -56,33 +56,8 @@ leader_traits = {
 		}
 	}
 
-	ineffective_politician = {
-		random = yes
-		political_power_factor = -0.06
-		unity_factor = -0.02
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	ineffective_politician2 = {
-		random = no
-		political_power_factor = -0.12
-		unity_factor = -0.04
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	ineffective_politician2 = {
-		random = no
-		political_power_factor = -0.15
-		unity_factor = -0.06
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
+	
+	
 	spirit_of_genghis = {
 		random = no
 		cavalry_attack_factor = 0.05
@@ -172,24 +147,6 @@ leader_traits = {
 	union_man = {
 		random = no
 		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	political_dancer = {
-		random = no
-		political_power_factor = 0.08
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	staunch_constitutionalist = {
-		random = no
-		drift_defence_factor = 0.5
-		political_power_factor = 0.05
 		ai_will_do = {
 			factor = 1
 		}
@@ -307,7 +264,51 @@ leader_traits = {
 	}
 	
 	#Head of State/Government/General Traits
+	political_dancer = {
+		random = no
+		political_power_factor = 0.08
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	staunch_constitutionalist = {
+		random = no
+		drift_defence_factor = 0.5
+		political_power_factor = 0.05
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ineffective_politician = {
+		random = yes
+		political_power_factor = -0.06
+		unity_factor = -0.02
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ineffective_politician2 = {
+		random = no
+		political_power_factor = -0.12
+		unity_factor = -0.04
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ineffective_politician3 = {
+		random = no
+		political_power_factor = -0.15
+		unity_factor = -0.06
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	popular_figurehead = {
+		random = no
 		sprite = 13
 		unity_factor = 0.10 
 		
@@ -315,7 +316,16 @@ leader_traits = {
 			factor = 1
 		}
 	}
-	
+	great_leader = {
+		random = no
+		sprite = 13
+		unity_factor = 0.05 
+		political_power_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	silent_workhorse = {
 		random = yes
 		sprite = 13
@@ -463,7 +473,7 @@ leader_traits = {
 	ideological_crusader = {
 		random = yes
 		sprite = 13
-		opinion_gain_monthly_same_ideology_factor = 1.0
+		opinion_gain_monthly_same_ideology_factor = 0.8
 		
 		ai_will_do = {
 			factor = 1
@@ -472,7 +482,8 @@ leader_traits = {
 	tough_negotiator = {
 		random = no
 		sprite = 13
-		opinion_gain_monthly_same_ideology_factor = 1.0
+		opinion_gain_monthly_same_ideology_factor = 0.5
+		trade_opinion_factor = 0.05
 		
 		ai_will_do = {
 			factor = 1
@@ -481,7 +492,9 @@ leader_traits = {
 	policy_expert = { #BETTER NAME NEEDED
 		random = no
 		sprite = 13
-		opinion_gain_monthly_same_ideology_factor = 1.0
+		opinion_gain_monthly_same_ideology_factor = 0.025
+		trade_opinion_factor = 0.1
+		
 		
 		ai_will_do = {
 			factor = 1
@@ -489,7 +502,7 @@ leader_traits = {
 	}
 	 iron_fisted_brute = {
 		opinion_gain_monthly_factor = -0.2
-		opinion_gain_monthly_same_ideology_factor = 0.3
+		opinion_gain_monthly_same_ideology_factor = 0.2
 		justify_war_goal_time = -0.2
 		sprite = 13
         random = no
