@@ -6396,18 +6396,81 @@ country_event = {
 	}
 }
 ### 16. Infanterie Division mot date >1940.8.6 #event 259
+country_event = {
+	id = germany.259
+	title = germany.259.t
+	desc = germany.259.d
+	picture = GFX_report_event_german_halftrack_with_arty_in_city
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_equipment = { anti_tank_equipment > 24 }
+		#9347 = { is_controlled_by = GER } # doesnt work
+		not = { has_country_flag = mot_16 }
+		has_country_flag = mot_16
+		is_ai = no
+		date > 1940.8.6
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.259.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_16_mot_Division"
+			set_country_flag = mot_16
+		}
+	}
+}
 ### 25. Infanterie Division mot date >1941.3.15  #event 260
 ### 3. Infanterie Division mot date >1940.10.27  #event 261
+country_event = {
+	id = germany.261
+	title = germany.261.t
+	desc = germany.261.d
+	picture = GFX_report_event_german_halftrack_with_arty_in_city
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_equipment = { anti_tank_equipment > 24 }
+		#9347 = { is_controlled_by = GER } # doesnt work
+		not = { has_country_flag = mot_3 }
+		has_country_flag = mot_3
+		is_ai = no
+		date > 1940.10.27
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.261.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_3_mot_Division"
+			set_country_flag = mot_3
+		}
+	}
+}
 ### 10. Infanterie Division mot date >1941.5.1  #event 262
 ### 14. Infanterie Division mot  date >1940.10.15  #event 263
+
 ### 18. Infanterie Division mot date >1940.11.1  #event 264
 ### 36. Infanterie Division mot date >1940.11.1 #event 265
 
 ########################################################################
 ########### Tank destroyer conversions ################################
-
 ###### Pz 1 >  Pzj1
-
 country_event = {
 	id = germany.266
 	title = germany.266.t
@@ -6422,9 +6485,10 @@ country_event = {
 		has_global_flag = end_of_czechoslovakia #uses czech AT guns
 		has_country_flag = czech_equipment
 	}
+	
 	immediate = {
 		set_country_flag = { flag = pzj_1 days = 180 } 
-		}
+	}
 		
 	mean_time_to_happen = {
 		days = 2
@@ -6432,7 +6496,7 @@ country_event = {
 
 	option = {
 		name = germany.266.a	#convert Pz 1
-
+		ai_chance = { factor = 0 }	# tanks more useful to the AI
 		send_equipment = {
 			target = CZE	#needs testing with CZE			
 			type = panzer_i_equipment
@@ -6440,11 +6504,7 @@ country_event = {
 		}     
 		hidden_effect = {
 			load_oob = "GER_PanzerJaeger1"
-			
 		}
-		
-		ai_chance = { factor = 0 }	# tanks more useful to the AI
-		
 	}
 	
 	option = {
@@ -6516,7 +6576,6 @@ country_event = {
 }
 ########################################################
 ###### French Chassis >  Marder
-
 country_event = {
 	id = germany.269
 	title = germany.269.t
@@ -6525,7 +6584,6 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		
 		has_tech = tech_marder_conversion_td_equipment_1
 		not = { has_country_flag = marder_1 }
 		has_global_flag = fall_of_france #uses French lorraine chassis
@@ -6533,14 +6591,14 @@ country_event = {
 	}
 	
 	fire_only_once = yes		# one off event
-		
+	
 	mean_time_to_happen = {
 		months = 6
 	}
 
 	option = {
 		name = germany.269.a	#convert Marder 1
-
+		ai_chance = { factor = 100 }
 		#send_equipment = {			# Pz II not converted in this case
 		#	target = FRA	#needs testing with FRA		
 		#	type = panzer_ii_equipment
@@ -6550,9 +6608,6 @@ country_event = {
 			load_oob = "GER_marder1"
 			# AI probably won't use them at this stage
 		}
-		
-		ai_chance = { factor = 100 }	
-		
 	}
 	
 	option = {
@@ -6561,7 +6616,6 @@ country_event = {
 	}
 }
 ###### Pz II >  Marder 2
-
 country_event = {
 	id = germany.270
 	title = germany.270.t
@@ -6573,12 +6627,12 @@ country_event = {
 		has_equipment = { panzer_ii_equipment > 500 } 
 		has_tech = subtech_light_panzer_td_equipment_2
 		not = { has_country_flag = marder_2 }
-		
 		has_war_with = SOV #uses soviet guns # should be 6 months into the war 
 	}
+	
 	immediate = {
 		set_country_flag = { flag = marder_2 days = 180 } 
-		}
+	}
 		
 	mean_time_to_happen = {
 		months = 6
@@ -6586,7 +6640,7 @@ country_event = {
 
 	option = {
 		name = germany.270.a	#convert Marder 2
-
+		ai_chance = { factor = 0 }
 		send_equipment = {			# Pz II not converted in this case
 			target = FRA	#needs testing with FRA		
 			type = panzer_ii_equipment
@@ -6594,11 +6648,7 @@ country_event = {
 		}     
 		hidden_effect = {
 			load_oob = "GER_marder2"
-			
 		}
-		
-		ai_chance = { factor = 0 }	
-		
 	}
 	
 	option = {
@@ -6623,9 +6673,10 @@ country_event = {
 		has_country_flag = czech_equipment
 		has_war_with = SOV #uses soviet guns # should be 12 months into the war 
 	}
+	
 	immediate = {
 		set_country_flag = { flag = marder_3 days = 180 } 
-		}
+	}
 		
 	mean_time_to_happen = {
 		months = 12
@@ -6633,7 +6684,7 @@ country_event = {
 
 	option = {
 		name = germany.271.a	#convert Marder 3
-
+		ai_chance = { factor = 0 }
 		send_equipment = {			
 			target = CZE	#needs testing with CZE
 			type = czech_panzer_equipment38
@@ -6641,11 +6692,7 @@ country_event = {
 		}     
 		hidden_effect = {
 			load_oob = "GER_marder3"
-			
 		}
-		
-		ai_chance = { factor = 0 }	
-		
 	}
 	
 	option = {
