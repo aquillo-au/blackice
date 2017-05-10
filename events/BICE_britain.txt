@@ -1199,6 +1199,33 @@ country_event = {
 		set_country_flag = ENG_Audacious_ship
 		
 	}
+}
+############## Recommission of HMS Argus
+country_event = {
+	id = BICE_britain.42
+	title = BICE_britain.42.t
+	desc = BICE_britain.42.d
+	picture = GFX_report_event_british_armour_crew
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		date > 1938.7.30	
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.42.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "ENG_HMS_Argus"
+		}
+	}
 } 
 # destroyers x 30
 

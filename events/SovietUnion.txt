@@ -3698,6 +3698,79 @@ country_event = {
 			}
 	}
 }
+country_event = {
+	id = soviet.90
+	title = soviet.90.t
+	desc = { 
+		text = soviet.90.desc.a
+		trigger = { 
+			has_tech = tech_rf_bbv
+			is_ai = no
+		}
+	}
+	desc = { 
+		text = soviet.90.desc.b
+		trigger = { 
+			has_tech = tech_rf_bbv2
+			is_ai = no
+		}
+	}
+	desc = { 
+		text = soviet.90.desc.c
+		trigger = { 
+			has_tech = tech_rf_bbv3
+			is_ai = no
+		}
+	}
+	picture = GFX_report_event_project_1058
 
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = no
+		date > 1938.1.1
+		OR = {
+			has_tech = tech_rf_bbv
+			has_tech = tech_rf_bbv2
+			has_tech = tech_rf_bbv3
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = soviet.90.a
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			set_technology = { tech_rf_bbv =1 }
+			}
+		trigger = { 
+			is_ai = no
+		}
+	}
+	option = {
+		name = soviet.90.b
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			set_technology = { tech_rf_bbv2 =1 }
+			}
+		trigger = { 
+			is_ai = no
+		}
+	}
+	option = {
+		name = soviet.90.c
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			set_technology = { tech_rf_bbv3 =1 }
+			}
+		trigger = { 
+			is_ai = no
+		}
+	}
+}
 #308th_division_decision stalingrad 1942.3.1
 #120_Guard_decision stalingrad 1942.12.1
