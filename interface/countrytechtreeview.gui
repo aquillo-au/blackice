@@ -7662,6 +7662,203 @@ guiTypes = {
 				format = "UP"
 			}
 		}
+		# British Air-folder RAF
+		containerWindowType = {
+			name = "britishair_folder"
+			position = { x=0 y=83 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 4200 height = 2500
+					min = { width=100%% height=100%% }
+				}
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_techtree_stripes"
+				}
+				
+				iconType = {
+					name ="britishair_techtree_bg"
+					spriteType = "GFX_air_techtree_bg"
+					position = { x=0 y=0 }
+					allwaystransparent = yes
+				}
+				
+				containerWindowType = {
+					name = "britishair_year_left"
+					position = { x=10 y=100 }
+					size = { width = 80 height = 100%% }
+					orientation = upper_left
+						
+					instantTextBoxType = {
+						name = "britishair_year1"
+						position = { x = 20 y = 2 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1930"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year2"
+						position = { x = 20 y = 140 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1933"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year3"
+						position = { x = 20 y = 278 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1936"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year4"
+						position = { x = 20 y = 416 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1937"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year5"
+						position = { x = 20 y = 554 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1938"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year6"
+						position = { x = 20 y = 692 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1939"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year7"
+						position = { x = 20 y = 830 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1940"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year8"
+						position = { x = 20 y = 968 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1941"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year9"
+						position = { x = 20 y = 1106 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1942"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year10"
+						position = { x = 20 y = 1244 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1943"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year11"
+						position = { x = 20 y = 1382 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1944"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "britishair_year12"
+						position = { x = 20 y = 1520 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1945"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						Orientation = "UPPER_LEFT"
+					}
+				}
+			}
+			
+			gridboxtype = {
+				name = "tech_raf_tree"
+				position = { x = 15% y = 172 }
+				size = { width = 80% height = 80% }
+				slotsize = { width = 70 height = 70 }
+				format = "UP"
+			}
+		}
 		# British Navy
 		containerWindowType = {
 			name = "britishnaval_folder"
@@ -13665,7 +13862,14 @@ guiTypes = {
 				frame = 1
 				clicksound = click_default
 			}
-			## UK Air tab x = 810 y = 40
+			## UK Air
+			buttonType = {
+				position = { x = 810 y = 0 } #x = 1189 y = 0
+				name = "britishair_folder_tab"
+				quadTextureSprite = "GFX_britishair_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
 			# UK Naval tab
 			buttonType = {
 				position = { x = 170 y = 40 }
@@ -15373,88 +15577,6 @@ guiTypes = {
 		}
 	}
 	### USA ###
-	# British Navy
-	containerWindowType = {
-		name = "techtree_britishnaval_folder_small_item" 
-		position = { x=0 y=5 }
-		size = { width = 72 height = 72 }
-		clipping = no
-
-		background = {
-			name = "Background"
-			quadTextureSprite ="GFX_technology_unavailable_item_bg"
-		}
-
-		iconType = {
-			name = "Icon"
-			position = { x=3 y=3 }
-			spriteType = "GFX_technology_medium"
-			allwaystransparent = yes
-		}
-		iconType = {
-			name = "bonus_icon"
-			position = { x=3 y=-22 }
-			spriteType = "GFX_tech_bonus"
-		}
-		instantTextBoxType = {
-			name = "bonus"
-			position = { x = 17 y = -22 }
-			textureFile = ""
-			font = "hoi_16mbs"
-			borderSize = {x = 4 y = 4}
-			text = "lol boat"
-			maxWidth = 50
-			maxHeight = 20
-			format = right
-		}
-	}
-	containerWindowType = {
-		name = "techtree_britishnaval_folder_item"
-		position = { x=-131 y=1 }
-		size = { width = 204 height = 72 }
-		clipping = no
-
-		background = {
-			name = "Background"
-			quadTextureSprite ="GFX_technology_unavailable_item_bg"
-		}
-
-		iconType = {
-			name = "Icon"
-			position = { x=167 y=34 }
-			spriteType = "GFX_technology_medium"
-			centerposition = yes		
-			allwaystransparent = yes
-		}
-		instantTextBoxType = {
-			name = "Name"
-			position = { x = 3 y = -1 }
-			textureFile = ""
-			font = "hoi_20bs"
-			borderSize = {x = 4 y = 4}
-			text = "lol boat"
-			maxWidth = 270
-			maxHeight = 20
-			fixedsize = yes
-			format = left
-		}
-		iconType = {
-			name = "bonus_icon"
-			position = { x=261 y=-18 }
-			spriteType = "GFX_tech_bonus"
-		}
-		instantTextBoxType = {
-			name = "bonus"
-			position = { x = 275 y = -18 }
-			textureFile = ""
-			font = "hoi_16mbs"
-			borderSize = {x = 4 y = 4}
-			text = "lol boat"
-			maxWidth = 50
-			maxHeight = 20
-			format = right
-		}
-	}
 	### SOVIET ###
 	# SOV techtree armour folder item
 	containerWindowType = {
@@ -15821,6 +15943,157 @@ guiTypes = {
 			}
 		}
 	}
+	## British AIR RAF ##
+	containerWindowType = {
+		name = "techtree_britishair_folder_item"
+		position = { x=-60 y=0 }
+		size = { width = 183 height = 84 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -1 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 4 y = 4}
+			text = ""
+			maxWidth = 166
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=89 y=50 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes	
+			allwaystransparent = yes
+		}
+
+		iconType = {
+			name = "bonus_icon"
+			position = { x=115 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 129 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+
+		containerWindowType = {
+			name = "sub_technology_slot_0"
+			position = { x=142 y=5 }
+			size = { width = 35 height = 26 }
+			clipping = no
+			
+			background = {
+				name = "Background"
+				spriteType ="GFX_subtech_carrier_plane_bg"
+			}
+			
+			iconType = {
+				name = "picture"
+				position = { x=6 y=2 }
+				spriteType = "GFX_airwing_carrier_icon"
+				allwaystransparent = yes
+			}
+		}
+	}
+	# British Navy
+	containerWindowType = {
+		name = "techtree_britishnaval_folder_small_item" 
+		position = { x=0 y=5 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=3 y=3 }
+			spriteType = "GFX_technology_medium"
+			allwaystransparent = yes
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+	}
+	containerWindowType = {
+		name = "techtree_britishnaval_folder_item"
+		position = { x=-131 y=1 }
+		size = { width = 204 height = 72 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=167 y=34 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes		
+			allwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -1 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 270
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=261 y=-18 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 275 y = -18 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+	}
 	### USA ###
 	# USA armor techtree folder item
 	containerWindowType = {
@@ -15925,7 +16198,6 @@ guiTypes = {
 				allwaystransparent = yes
 			}
 		}
-
 		containerWindowType = {
 			name = "sub_technology_slot_1"
 			position = { x=141 y=28 }
@@ -15944,7 +16216,6 @@ guiTypes = {
 				allwaystransparent = yes
 			}
 		}
-
 		containerWindowType = {
 			name = "sub_technology_slot_2"
 			position = { x=141 y=55 }
@@ -15988,7 +16259,6 @@ guiTypes = {
 			fixedsize = yes
 			format = left
 		}
-
 		iconType = {
 			name = "Icon"
 			position = { x=89 y=50 }
@@ -15996,7 +16266,6 @@ guiTypes = {
 			centerposition = yes	
 			allwaystransparent = yes
 		}
-
 		iconType = {
 			name = "bonus_icon"
 			position = { x=115 y=-22 }
@@ -16013,7 +16282,6 @@ guiTypes = {
 			maxHeight = 20
 			format = right
 		}
-
 		containerWindowType = {
 			name = "sub_technology_slot_0"
 			position = { x=142 y=5 }
