@@ -105,13 +105,7 @@ set_technology = {
 	schools_work = 1
 }
 
-
 add_ideas = {
-
-		FRA_victors_of_wwi
-		FRA_disjointed_government
-		FRA_protected_by_the_maginot_line
-	
 		#politicians
 		albert_lebrun
 		yvon_delbos
@@ -189,7 +183,7 @@ set_country_flag = labor_allowed
 	complete_national_focus = FRA_colonial_military_factories
 
 	give_guarantee = POL
-	#ENG = { add_to_faction = FRA }
+	ENG = { add_to_faction = FRA }
 
 	oob = "FRA_1939"
 	set_technology = {
@@ -255,13 +249,13 @@ set_country_flag = labor_allowed
 set_convoys = 600
 
 set_national_unity = 0.62
-	
+	ENG = { add_to_faction = FRA }
 	
 set_politics = {
 
 	parties = {
 		conservatism = { 
-			popularity = 35
+			popularity = 30
 		}
 		
 		liberalism = {
@@ -269,7 +263,7 @@ set_politics = {
 		}
 		
 		socialism = {
-			popularity = 9
+			popularity = 11
 		}
 
 		fascism = {
@@ -277,7 +271,7 @@ set_politics = {
 		}
 		
 		communism = {
-			popularity = 14
+			popularity = 17
 		}
 	}
 	
@@ -287,7 +281,24 @@ set_politics = {
 	elections_allowed = yes
 }
 
+add_ideas = {
+	FRA_victors_of_wwi
+	FRA_disjointed_government
+	FRA_protected_by_the_maginot_line
 
+	civilian_economy
+	Mob_reserve
+	Cons_two
+	Press_regulated
+	Tax_average
+	Edu_high
+	Foreign_interventionism
+	tariffs_average
+	fdi_regulated
+	key_industries
+	export_focus
+
+}
 if = {
 	limit = { 
 		has_dlc = "Together for Victory" 

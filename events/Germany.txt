@@ -6922,8 +6922,8 @@ country_event = {
 #AI minister switch
 country_event = {
 	id = germany.280
-	title = germany.280.t
-	desc = germany.280.d
+	title = "Germany Setup"
+	desc = "Setup event for AI"
 	hidden = yes
 	is_triggered_only = yes
 	fire_only_once = yes
@@ -6954,29 +6954,5 @@ country_event = {
 		}
 		
 	}
-}
 
-country_event = {
-	id = germany.281
-	title = germany.281.t
-	desc = germany.280.d
-	picture = GFX_report_event_chamberlain
-
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		date > 1936.1.1	
-	
-	}
-
-	option = {
-		name = germany.281.a
-			hidden_effect = {
-			load_oob = "GER_AI_starting_equipment"
-		}
-		
-	}
-	
 }
