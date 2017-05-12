@@ -174,17 +174,17 @@ country_event = {
 		ai_chance = { factor = 1 } 
 		set_global_flag = jap_got_indo_china
 		JAP = {
-			transfer_state = 286
-			transfer_state = 670
-			transfer_state = 671
-			transfer_state = 741
-			transfer_state = 744
+				transfer_state = 286
+				transfer_state = 670
+				transfer_state = 671
+				transfer_state = 741
+				transfer_state = 744
 			transfer_state = 913
 			transfer_state = 914
 			transfer_state = 915
 			transfer_state = 916
-		}
-		add_named_threat = { threat = 1 name = france.1.t }
+			}
+			add_named_threat = { threat = 1 name = france.1.t }
 	}
 }
 country_event = {
@@ -1814,8 +1814,9 @@ country_event = {
 	picture = GFX_report_event_polish_tanks_01
 
 	trigger = {
+		
 		date > 1936.1.1
-		has_country_flag = impossible
+		has_tech = tech_Headquarters
 		NOT = { tag = GER } #Germany
 		NOT = { tag = FRA }	#France	
 		NOT = { has_tech = soviet_tech_a }	#Soviets + satellites
@@ -1830,15 +1831,17 @@ country_event = {
 			tag = AUS
 			tag = BUL
 			has_government = fascism
-			has_country_flag = impossible	
+			
 		}
+		#has_country_flag = impossible	
+		NOT = { has_country_flag = genericaxisarmor }
 	}
-	
-	fire_only_once = yes
-
+		
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
+	immediate = { set_country_flag = genericaxisarmor }
+	
 	option = {
 		name = blackiceevents.88.a	# axis generic
 		ai_chance = { factor = 100 }
@@ -1854,12 +1857,14 @@ country_event = {
 country_event = {
 	id = blackiceevents.89
 	title = blackiceevents.89.t
-	desc = blackiceevents.88.d
+	desc = blackiceevents.89.d
 	
 	picture = GFX_report_event_polish_tanks_01
 	
 	trigger = {
+		
 		date > 1936.1.1
+		has_tech = tech_Headquarters
 		NOT = { has_tech = german_tech } 		#Germany
 		NOT = { has_tech = tech_faf }			#France	
 		NOT = { has_tech = soviet_tech_a }		#Soviets + satellites
@@ -1873,20 +1878,22 @@ country_event = {
 		NOT = {tag = AUS }
 		NOT = {tag = BUL }
 		NOT = {has_government = fascism}
-		has_country_flag = impossible
+		#has_country_flag = impossible
+		NOT = { has_country_flag = genericalliedarmor }
 	}
-	fire_only_once = yes
-
+	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
+		immediate = { set_country_flag = genericalliedarmor }
+		
 	option = {
-		name = blackiceevents.88.a	# axis generic
+		name = blackiceevents.89.a	# axis generic
 		ai_chance = { factor = 0 }
 		set_technology = { generic_armor_axis = 1 }
 	}
 	option = {
-		name = blackiceevents.88.b	# allied generic
+		name = blackiceevents.89.b	# allied generic
 		ai_chance = { factor = 100 }
 		set_technology = { generic_armor = 1 }
 	}	
