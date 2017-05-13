@@ -3118,17 +3118,9 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = @1941 y = 3 }
+			position = { x = @1939 y = 3 }
 		}
 		
-		on_research_complete = {
-			limit = {
-				tag = GER
-			}
-			hidden_effect = {
-				set_technology = { ss_mechanized_tech = 1 }
-			}
-		}
 		categories = {
 			motorized_equipment
 			infantry_tech
@@ -3143,6 +3135,18 @@ technologies = {
 
 		enable_equipments = {
 			mechanized_equipment_2
+		}
+		
+		on_research_complete = {
+			if = {
+				limit = {
+					tag = GER
+					has_tech = mechanised_infantry2
+				}
+				hidden_effect = {
+					set_technology = { ss_mechinfantry_tech = 1 }
+				}
+			}
 		}
 		
 		path = {

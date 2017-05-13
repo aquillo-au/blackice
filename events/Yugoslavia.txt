@@ -366,7 +366,6 @@ country_event = {
 					owns_state = 103
 					owns_state = 104
 					owns_state = 109
-					owns_state = 900
 					owns_state = 901
 					owns_state = 902
 					owns_state = 903
@@ -375,6 +374,9 @@ country_event = {
 					owns_state = 906
 					owns_state = 907
 					owns_state = 908
+					owns_state = 915
+					owns_state = 917					
+					
 				} 
 			} 
 		}
@@ -397,10 +399,6 @@ country_event = {
 					transfer_state = 109
 				}
 				if = {
-					limit = { YUG = { owns_state = 900 } }
-					transfer_state = 900
-				}
-				if = {
 					limit = { YUG = { owns_state = 901 } }
 					transfer_state = 901
 				}
@@ -412,6 +410,14 @@ country_event = {
 					limit = { YUG = { owns_state = 908 } }
 					transfer_state = 908
 				}
+				if = {
+					limit = { YUG = { owns_state = 915 } }
+					transfer_state = 915
+				}	
+				if = {
+					limit = { YUG = { owns_state = 917 } }
+					transfer_state = 917
+				}				
 			}
 			puppet = CRO
 			annex_country = { target = YUG transfer_troops = no }
@@ -489,10 +495,6 @@ country_event = {
 					transfer_state = 109
 				}
 				if = {
-					limit = { YUG = { owns_state = 900 } }
-					transfer_state = 900
-				}
-				if = {
 					limit = { YUG = { owns_state = 901 } }
 					transfer_state = 901
 				}
@@ -504,6 +506,14 @@ country_event = {
 					limit = { YUG = { owns_state = 908 } }
 					transfer_state = 908
 				}
+				if = {
+					limit = { YUG = { owns_state = 915 } }
+					transfer_state = 915
+				}	
+				if = {
+					limit = { YUG = { owns_state = 917 } }
+					transfer_state = 917
+				}				
 			}
 			puppet = CRO
 			puppet = YUG

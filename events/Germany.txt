@@ -3521,6 +3521,16 @@ country_event = {
 					owns_state = 103
 					owns_state = 104
 					owns_state = 109
+					owns_state = 901
+					owns_state = 902
+					owns_state = 903
+					owns_state = 904
+					owns_state = 905
+					owns_state = 906
+					owns_state = 907
+					owns_state = 908
+					owns_state = 915
+					owns_state = 917
 				} 
 			} 
 		}
@@ -3541,20 +3551,40 @@ country_event = {
 			effect_tooltip = {
 				add_political_power = -25
 				add_named_threat = { threat = 5 name = GER_fate_of_yugoslavia }
-				CRO = {
-					if = {
-						limit = { YUG = { owns_state = 103 } }
-						transfer_state = 103
-					}
-					if = {
-						limit = { YUG = { owns_state = 104 } }
-						transfer_state = 104
-					}
-					if = {
-						limit = { YUG = { owns_state = 109 } }
-						transfer_state = 109
-					}						
+			CRO = {
+				if = {
+					limit = { YUG = { owns_state = 103 } }
+					transfer_state = 103
 				}
+				if = {
+					limit = { YUG = { owns_state = 104 } }
+					transfer_state = 104
+				}
+				if = {
+					limit = { YUG = { owns_state = 109 } }
+					transfer_state = 109
+				}
+				if = {
+					limit = { YUG = { owns_state = 901 } }
+					transfer_state = 901
+				}
+				if = {
+					limit = { YUG = { owns_state = 902 } }
+					transfer_state = 902
+				}
+				if = {
+					limit = { YUG = { owns_state = 908 } }
+					transfer_state = 908
+				}
+				if = {
+					limit = { YUG = { owns_state = 915 } }
+					transfer_state = 915
+				}	
+				if = {
+					limit = { YUG = { owns_state = 917 } }
+					transfer_state = 917
+				}				
+			}
 				puppet = CRO
 				annex_country = { target = YUG transfer_troops = no }
 			}
@@ -3586,7 +3616,27 @@ country_event = {
 				if = {
 					limit = { YUG = { owns_state = 109 } }
 					transfer_state = 109
-				}						
+				}
+				if = {
+					limit = { YUG = { owns_state = 901 } }
+					transfer_state = 901
+				}
+				if = {
+					limit = { YUG = { owns_state = 902 } }
+					transfer_state = 902
+				}
+				if = {
+					limit = { YUG = { owns_state = 908 } }
+					transfer_state = 908
+				}
+				if = {
+					limit = { YUG = { owns_state = 915 } }
+					transfer_state = 915
+				}	
+				if = {
+					limit = { YUG = { owns_state = 917 } }
+					transfer_state = 917
+				}				
 			}
 			puppet = CRO
 			annex_country = { target = YUG transfer_troops = no }
@@ -3625,20 +3675,40 @@ country_event = {
 			effect_tooltip = {
 				add_named_threat = { threat = 3 name = GER_fate_of_yugoslavia }
 				
-				CRO = {
-					if = {
-						limit = { YUG = { owns_state = 103 } }
-						transfer_state = 103
-					}
-					if = {
-						limit = { YUG = { owns_state = 104 } }
-						transfer_state = 104
-					}
-					if = {
-						limit = { YUG = { owns_state = 109 } }
-						transfer_state = 109
-					}						
+			CRO = {
+				if = {
+					limit = { YUG = { owns_state = 103 } }
+					transfer_state = 103
 				}
+				if = {
+					limit = { YUG = { owns_state = 104 } }
+					transfer_state = 104
+				}
+				if = {
+					limit = { YUG = { owns_state = 109 } }
+					transfer_state = 109
+				}
+				if = {
+					limit = { YUG = { owns_state = 901 } }
+					transfer_state = 901
+				}
+				if = {
+					limit = { YUG = { owns_state = 902 } }
+					transfer_state = 902
+				}
+				if = {
+					limit = { YUG = { owns_state = 908 } }
+					transfer_state = 908
+				}
+				if = {
+					limit = { YUG = { owns_state = 915 } }
+					transfer_state = 915
+				}	
+				if = {
+					limit = { YUG = { owns_state = 917 } }
+					transfer_state = 917
+				}				
+			}
 				puppet = CRO
 				puppet = YUG
 
@@ -3676,7 +3746,27 @@ country_event = {
 				if = {
 					limit = { YUG = { owns_state = 109 } }
 					transfer_state = 109
-				}						
+				}
+				if = {
+					limit = { YUG = { owns_state = 901 } }
+					transfer_state = 901
+				}
+				if = {
+					limit = { YUG = { owns_state = 902 } }
+					transfer_state = 902
+				}
+				if = {
+					limit = { YUG = { owns_state = 908 } }
+					transfer_state = 908
+				}
+				if = {
+					limit = { YUG = { owns_state = 915 } }
+					transfer_state = 915
+				}	
+				if = {
+					limit = { YUG = { owns_state = 917 } }
+					transfer_state = 917
+				}				
 			}
 			puppet = CRO
 			puppet = YUG
