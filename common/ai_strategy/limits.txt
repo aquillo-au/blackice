@@ -169,8 +169,8 @@ default_ENG_production_lim = {
 
 
 manpower_limit_1 = {
-	enable = { num_of_military_factories < 10 has_manpower < 80000 }
-	abort = { has_manpower > 80000  }
+	enable = { num_of_military_factories < 10 has_manpower < 100000 }
+	abort = { has_manpower >100000  }
 	
 	ai_strategy = { type = unit_ratio id = infantry 							value = -310	}	
 	ai_strategy = { type = unit_ratio id = mountaineers 						value = -600 	}	
@@ -183,8 +183,8 @@ manpower_limit_1 = {
 }
 
 manpower_limit_2 = {
-	enable = { num_of_military_factories > 15 has_manpower < 150000 }
-	abort = { has_manpower > 150000  }
+	enable = { num_of_military_factories > 15 has_manpower < 180000 }
+	abort = { has_manpower > 180000  }
 	
 	ai_strategy = { type = unit_ratio id = infantry 							value = -310	}	
 	ai_strategy = { type = unit_ratio id = mountaineers 						value = -600 	}	
