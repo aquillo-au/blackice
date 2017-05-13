@@ -123,14 +123,22 @@ country = {
 head_of_state = {
 abdulmejid_ii = {	
 			allowed = {
-				original_tag = "TUR"
-				date < 1944.1.1
+				original_tag = TUR
+
 			}
 			available = {
-			OR = {
+			NOT = { has_country_flag = abdulmejid_dead }
+				original_tag = TUR
+				OR = { 
 				has_government = monarchism
-				has_government = conservatism
-				has_government = liberalism
+				AND = {
+					OR = {
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
+						}
+					has_country_flag = const_sultan
+					}
 				}
 			}
 
@@ -138,14 +146,22 @@ abdulmejid_ii = {
 		}
 ahmed_iv = {	
 			allowed = {
-				original_tag = "TUR"
-				date > 1944.1.1
+				original_tag = TUR
+
 			}
 			available = {
-			OR = {
+			has_country_flag = abdulmejid_dead
+				original_tag = TUR
+				OR = { 
 				has_government = monarchism
-				has_government = conservatism
-				has_government = liberalism
+				AND = {
+					OR = {
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
+						}
+					has_country_flag = const_sultan
+					}
 				}
 			}
 

@@ -665,41 +665,58 @@ head_of_state = {
 			traits = { communist popular_figurehead }
 		}
 	kirill_v_romanov = {
-			
-			
+
+
 			allowed = {
 				original_tag = "SOV"
-				date < 1938.1.1
+
 			}
+			cancel_if_invalid = yes
 			available = {
-			OR = {
+			NOT = { has_country_flag = kirill_dead }
+				original_tag = SOV
+				OR = { 
 				has_government = monarchism
-				has_government = conservatism
-				has_government = liberalism
+				AND = {
+					OR = {
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
+						}
+					has_country_flag = const_tsar
+					}
 				}
 			}
-			
 
-			
+
+
 			traits = { monarchist popular_figurehead }
 		}
 	vladimir_k_romanov = {
 			
-			
+
 			allowed = {
 				original_tag = "SOV"
-				date > 1938.1.1
+
 			}
 			available = {
-			OR = {
+			has_country_flag = kirill_dead
+				original_tag = SOV
+				OR = { 
 				has_government = monarchism
-				has_government = conservatism
-				has_government = liberalism
+				AND = {
+					OR = {
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
+						}
+					has_country_flag = const_tsar
+					}
 				}
 			}
-			
 
-			
+
+
 			traits = { monarchist popular_figurehead }
 		}
 	khrushchev_hos = {
@@ -773,7 +790,7 @@ foreign_minister = {
 			
 			traits = { communist smooth_talking_charmer }
 	}
-	vasily_a_maklakov = { 
+	vasily_maklakov = { 
 			allowed = {
 				original_tag = SOV
 			}
@@ -787,7 +804,7 @@ foreign_minister = {
 			traits = { conservative smooth_talking_charmer }
 			cancel_if_invalid = no
 		}
-		mikhail_i_tereshchenko = { 
+	mikhail_tereshchenko = { 
 			allowed = {
 				original_tag = SOV
 			}
@@ -847,7 +864,7 @@ interior_minister = {
 			
 			traits = { communist prince_of_terror }
 		}
-		vladimir_l_burtsev = { 
+		vladimir_burtsev = { 
 			allowed = {
 				original_tag = SOV
 			}
@@ -860,7 +877,7 @@ interior_minister = {
 			traits = { socialist crime_fighter}
 			cancel_if_invalid = no
 		}
-		aleksandr_d_protopopov = { 
+		aleksandr_protopopov = {  
 			allowed = {
 				original_tag = SOV
 			}
@@ -892,7 +909,7 @@ intel_minister = {
 			
 			traits = { communist dismal_enigma }
 		}
-		pavel_n_malyantovich = { 
+		pavel_malyantovich = {  
 			allowed = {
 				original_tag = SOV
 			}
@@ -949,7 +966,7 @@ economic_minister = {
 			
 			traits = { communist industrial_planner }
 		}
-		aleksandr_i_konovalov = { 
+		aleksandr_konovalov = { 
 			allowed = {
 				original_tag = SOV
 			}

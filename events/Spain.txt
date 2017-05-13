@@ -2198,3 +2198,58 @@ country_event = {
 	}
 
 }
+# Alphonse XIII dies
+country_event = {
+	id = spain.100
+	title = spain.100.t
+	desc = spain.100.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+
+	trigger = {
+	OR = {
+		tag = SPR
+		tag = D01
+		}
+		OR = {
+		has_government = monarchism
+		AND = {
+			OR = {
+			has_government = conservatism
+			has_government = socialism
+			has_government = liberalism
+			}
+			has_country_flag = const_king
+		}
+		
+		}
+		date > 1941.1.1
+	}
+	immediate = { set_country_flag = alfonso_dead }
+	mean_time_to_happen = {
+		days = 90
+		modifier = {
+			factor = 0.7
+			date > 1941.2.20
+		}
+	}
+
+	option = {
+		name = spain.100.a
+		kill_country_leader = yes
+		remove_ideas = alfonso_xiii
+		add_ideas = juan_iii
+		create_country_leader = {
+		name = "Juan III"
+		desc = "King of Spain"
+		picture = "gfx/leaders/SPR/SPR_Portrait_juan_iii.dds"
+		expire = "1993.6.4"
+		ideology = absolutism
+		traits = {
+			monarchist
+			effective_leader
+			}
+		}
+	}
+}

@@ -125,7 +125,66 @@ ideas = {
 ##################
 #HoS
 head_of_state = {
+alfonso_xiii = {
+			allowed = {
+				OR = {
+				original_tag = SPR
+				original_tag = D01
+				}
+			}
+			picture = alfonso_xiii.dds
+			cancel_if_invalid = yes
+			available = {
+			NOT = { has_country_flag = alfonso_dead }
+			OR = {
+				original_tag = SPR
+				original_tag = D01
+				}
+				OR = { 
+				has_government = monarchism
+				AND = {
+					OR = {
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
+						}
+					has_country_flag = const_king
+					}
+				}
+			}
+			
+			traits = { monarchist ineffective_politician }
+		}
+juan_iii = {
 
+			picture = juan_iii.dds
+			allowed = {
+				OR = {
+				original_tag = SPR
+				original_tag = D01
+				}
+			}
+			available = {
+			has_country_flag = alfonso_dead
+			OR = {
+				original_tag = SPR
+				original_tag = D01
+				}
+				OR = { 
+				has_government = monarchism
+				AND = {
+					OR = {
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
+						}
+					has_country_flag = const_king
+					}
+				}
+			}
+			
+			traits = { monarchist popular_figurehead }
+		}		
 }
 
 #Foreign

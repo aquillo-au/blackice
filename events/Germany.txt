@@ -7027,31 +7027,43 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
-		
+	}
+}
+# Wilhelm II dies
+country_event = {
+	id = germany.300
+	title = germany.300.t
+	desc = germany.300.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+				OR = { 
+				has_government = monarchism
+				AND = {
+					OR = {
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
+						}
+					has_country_flag = const_kaiser
+				}
+			}
+		date > 1941.3.10
+	}
+	immediate = { set_country_flag = wilhelm_ii_dead }
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			factor = 0.6
+			date > 1941.6.1
+		}
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	option = {
+		name = germany.300.a
+		add_political_power = 10
+	}
 }

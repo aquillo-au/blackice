@@ -1,7 +1,22 @@
 ideas = {
 
 	hidden_ideas = {
-
+		royal_check ={
+			allowed = { 
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			modifier = {
+				
+			}
+		}
 		idea_continuous_naval_production = {
 			allowed = {
 				always = no
@@ -774,6 +789,23 @@ ideas = {
 				army_org_factor = 0.2
 			}
 		}
+		royal_restoration ={
+			allowed = { 
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+			
+			picture = generic_pp_unity_bonus
+			
+			modifier = {
+				unity_factor = 0.05
+				monarchism_drift = 0.02
+			}
+		}
 	}
 ###############################
 ####Ministers
@@ -815,16 +847,12 @@ interior_minister = {
 generic_interior_minister = {
 			
 			allowed = {
-
 					has_available_idea_with_traits = { idea = prince_of_terror limit = 0 }
 					has_available_idea_with_traits = { idea = backroom_backstabber limit = 0 }
 					has_available_idea_with_traits = { idea = efficient_sociopath limit = 0 }
 					has_available_idea_with_traits = { idea = crime_fighter limit = 0 }
 					has_available_idea_with_traits = { idea = hearts_and_minds limit = 0 }
-
 			}
-			
-
 			
 			traits = { crime_fighter }
 
@@ -845,10 +873,8 @@ intel_minister = {
 generic_intel_minister = {
 			
 			allowed = {
-
 					has_available_idea_with_traits = { idea = codebreaker limit = 0 }
 					has_available_idea_with_traits = { idea = dismal_enigma limit = 0 }
-
 			}
 				
 			traits = { dismal_enigma }

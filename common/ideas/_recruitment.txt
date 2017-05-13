@@ -22,16 +22,16 @@ ideas = {
 				autonomy_manpower_share = 0.1
 			}
 		}
-	foreign_none = {
+		foreign_none = {
 			
 			removal_cost = -1
 			cost = 150
 			default = yes
-			allowed = {
+			available = {
 				
 			}
 
-			picture = idea_foreign_none.dds
+			picture = "gfx/interface/ideas/manpower/recruitment/idea_foreign_none.dds"
 			
 			modifier = {
 
@@ -41,11 +41,11 @@ ideas = {
 			
 			removal_cost = -1
 			cost = 150
-			allowed = {
-				
+			available = {
+				has_war = yes
 			}
 
-			picture = idea_foreign_volunteers.dds
+			picture = "gfx/interface/ideas/manpower/recruitment/idea_foreign_volunteers.dds"
 			
 			modifier = {
 				autonomy_manpower_share = 0.02
@@ -55,33 +55,36 @@ ideas = {
 			
 			removal_cost = -1
 			cost = 300
-			allowed = {
+			available = {
 				OR = {
 				original_tag = FRA
 				original_tag = ENG
 				}
+				has_war = yes
 			}
 			
-			picture = idea_foreign_legion.dds
+			picture = "gfx/interface/ideas/manpower/recruitment/idea_foreign_legion.dds"
 			
 			modifier = {
 				autonomy_manpower_share = 0.04
 				
 			}
 		}
-		foreign_conscription = {
+		foreign_conscript = {
 			
 			removal_cost = -1
 			
-			allowed = {
+			available = {
 				OR = {
 					has_government = monarchism
 					has_government = fascism
 					has_government = communism
+					has_government = neutrality
 				}
+				has_war = yes
 			}
 
-			picture = idea_foreign_conscription.dds
+			picture = "gfx/interface/ideas/manpower/recruitment/idea_foreign_conscript.dds"
 			
 			modifier = {
 				autonomy_manpower_share = 0.06
