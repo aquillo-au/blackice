@@ -1030,5 +1030,58 @@ country_event = {
 		}
     }
 }
+#Minister Switch following Coup/Election
+country_event = {
+	id = politics.40
+	title = politics.40.t
+	desc  = politics.40.desc
+	picture = GFX_news_event_002
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = politics.40.a
+		
+		add_political_power = 600
+		if = { limit = { has_government = socialism }
+			remove_ideas_with_trait = conservative
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+		}
+		if = { limit = { has_government = monarchism }
+			remove_ideas_with_trait = communist
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = liberal
+			remove_ideas_with_trait = socialist
+		}
+		if = { limit = { has_government = conservatism }
+			remove_ideas_with_trait = socialist
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+		}
+		if = { limit = { has_government = liberalism }
+			remove_ideas_with_trait = communist
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+		}
+		if = { limit = { has_government = fascism }
+			remove_ideas_with_trait = communist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+			remove_ideas_with_trait = socialist
+			remove_ideas_with_trait = liberal
+		}
+		if = { limit = { has_government = communism }
+			remove_ideas_with_trait = conservative
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+			remove_ideas_with_trait = liberal
+		}
+	}
+}
 
 ### EOF ###
