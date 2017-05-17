@@ -1066,10 +1066,8 @@ focus_tree = {
 				name = cv_bonus
 				bonus = 0.5
 				uses = 2
-				technology = early_carrier
-				technology = basic_carrier
-				technology = improved_carrier
-				technology = advanced_carrier
+				technology = tech_rm_cv
+				technology = tech_rm_cvl
 			}
 		}
 	}
@@ -1091,20 +1089,18 @@ focus_tree = {
 				name = bb_bonus
 				bonus = 0.5
 				uses = 2
-				technology = basic_battleship
-				technology = improved_battleship
-				technology = advanced_battleship
-				technology = heavy_battleship
-				technology = heavy_battleship2
+				technology = tech_rm_bb2
+				technology = tech_rm_bb3
 			}
 			add_tech_bonus = {
 				name = cr_bonus
 				bonus = 0.5
 				uses = 2
-				technology = improved_light_cruiser
-				technology = advanced_light_cruiser
-				technology = improved_heavy_cruiser
-				technology = advanced_heavy_cruiser
+				technology = tech_rm_cl2
+				technology = tech_rm_dl
+				technology = tech_rm_dl2
+				technology = tech_rm_dl3
+				technology = tech_rm_ca2
 			}
 		}
 	}
@@ -1191,7 +1187,19 @@ focus_tree = {
 				name = ITA_atlantic_fleet
 				bonus = 0.5
 				uses = 1
+				category = cvl_tech
+			}
+			add_tech_bonus = {
+				name = ITA_atlantic_fleet
+				bonus = 0.5
+				uses = 1
 				category = bb_tech
+			}
+			add_tech_bonus = {
+				name = ITA_atlantic_fleet
+				bonus = 0.5
+				uses = 1
+				category = bc_tech
 			}
 		}
 	}
@@ -1297,9 +1305,10 @@ focus_tree = {
 				name = dd_bonus
 				bonus = 0.5
 				uses = 1
-				technology = basic_destroyer
-				technology = improved_destroyer
-				technology = advanced_destroyer
+				technology = tech_rm_dd2
+				technology = tech_rm_dd3
+				technology = tech_rm_dd4
+				technology = tech_rm_dd5
 			}
 			add_tech_bonus = {
 				name = con_def_bonus
@@ -1328,9 +1337,10 @@ focus_tree = {
 				name = ITA_escort_effort
 				bonus = 0.5
 				uses = 1
-				technology = basic_destroyer
-				technology = improved_destroyer
-				technology = advanced_destroyer
+				technology = tech_rm_dd2
+				technology = tech_rm_dd3
+				technology = tech_rm_dd4
+				technology = tech_rm_dd5
 			}
 			add_tech_bonus = {
 				name = ITA_escort_effort
@@ -1338,7 +1348,6 @@ focus_tree = {
 				uses = 2
 				technology = convoy_escorts
 				technology = convoy_escorts_bs
-				technology = escort_carriers
 			}
 		}
 	}

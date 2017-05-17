@@ -2244,63 +2244,9 @@ equipments = {
 	### ROYAL NAVY ### ### ENG ### ### END #######
 	##############################################
 	### KRIEGSMARINE ### ### GER ### ### START ###
-	#Type 1923 Class
-	GER_pb_1 = {
-		archetype = destroyer
-		is_buildable = no
-		priority = 10
-		type = { 
-			screen_ship
-		}
-		
-		ap_attack = 5.1
-		attack = 64.2
-		fire_range = 17.6
-		torpedo_attack = 39.9
-		anti_air_attack = 1.7
-		evasion = 127.9
-		surface_detection = 22
-		surface_visibility = 10
-		sub_attack = 1
-		sub_detection = 90
-		naval_speed = 33
-		reliability = 0.65
-		naval_range = 775
-		manpower = 120	
-		max_strength = 113		
-		build_cost_ic = 3603
-	}
-	#Type 1924 Class
-	GER_pb_2 = {
-		archetype = destroyer
-		parent = GER_pb_1
-		is_buildable = no
-		priority = 10
-		type = { 
-			screen_ship
-		}
-		
-		ap_attack = 5.1
-		attack = 64.2
-		fire_range = 17.6
-		torpedo_attack = 39.9
-		anti_air_attack = 1.7
-		evasion = 128.7
-		surface_detection = 23
-		surface_visibility = 10
-		sub_attack = 1
-		sub_detection = 90
-		naval_speed = 34
-		reliability = 0.65
-		naval_range = 925
-		manpower = 120	
-		max_strength = 116		
-		build_cost_ic = 3330
-	}
 	#Type 1934 Class
 	GER_destroyer_2 = {
 		archetype = destroyer
-		parent = GER_pb_2
 		#is_buildable = no
 		priority = 10
 		type = { 
@@ -3187,6 +3133,426 @@ equipments = {
 		manpower = 301	
 		max_strength = 156		
 		build_cost_ic = 1518
+	}
+	
+	### RED FLEET ### ### SOV ### ### END #######
+	#############################################
+	### REGIA MARINA ### ### ITA ### ### START ##
+	
+	#Poerio Class
+	ITA_destroyer_0 = {
+		archetype = destroyer
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 4.5
+		attack = 56.4
+		fire_range = 15
+		torpedo_attack = 22.5
+		anti_air_attack = 3.4
+		evasion = 131.2
+		surface_detection = 24
+		surface_visibility = 9
+		sub_attack = 5
+		sub_detection = 50
+		naval_speed = 31.5
+		reliability = 0.75
+		naval_range = 1946
+		manpower = 129	
+		max_strength = 122		
+		build_cost_ic = 1057
+	}
+	#Mirabello Class
+	ITA_destroyer_1 = {
+		archetype = destroyer
+		parent = ITA_destroyer_0
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 4.6
+		attack = 58.1
+		fire_range = 15
+		torpedo_attack = 22.5
+		anti_air_attack = 4.5
+		evasion = 88.8
+		surface_detection = 27
+		surface_visibility = 11
+		sub_attack = 11
+		sub_detection = 50
+		naval_speed = 35
+		reliability = 0.75
+		naval_range = 2130
+		manpower = 169	
+		max_strength = 137		
+		build_cost_ic = 1242
+	}
+	#Palestro Class
+	ITA_destroyer_1b = {
+		archetype = destroyer
+		parent = ITA_destroyer_1
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 4.4
+		attack = 56.1
+		fire_range = 15
+		torpedo_attack = 22.5
+		anti_air_attack = 2.8
+		evasion = 166
+		surface_detection = 24
+		surface_visibility = 9
+		sub_attack = 4
+		sub_detection = 50
+		naval_speed = 32
+		reliability = 0.75
+		naval_range = 1824
+		manpower = 118	
+		max_strength = 119		
+		build_cost_ic = 988
+	}
+	#Curtatone Class
+	ITA_destroyer_1c = {
+		archetype = destroyer
+		parent = ITA_destroyer_1b
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 4.4
+		attack = 56.1
+		fire_range = 15
+		torpedo_attack = 33.75
+		anti_air_attack = 2.8
+		evasion = 133.3
+		surface_detection = 24
+		surface_visibility = 9
+		sub_attack = 2
+		sub_detection = 50
+		naval_speed = 32
+		reliability = 0.75
+		naval_range = 1668
+		manpower = 117	
+		max_strength = 123
+		build_cost_ic = 1205
+	}
+	#Leone Class
+	ITA_destroyer_1d = {
+		archetype = destroyer
+		parent = ITA_destroyer_1c
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 4.6
+		attack = 58.1
+		fire_range = 15
+		torpedo_attack = 26.65
+		anti_air_attack = 5.3
+		evasion = 74.2
+		surface_detection = 26
+		surface_visibility = 12
+		sub_attack = 7
+		sub_detection = 50
+		naval_speed = 34
+		reliability = 0.75
+		naval_range = 1919
+		manpower = 204	
+		max_strength = 143		
+		build_cost_ic = 1302
+	}
+	#Sella Class
+	ITA_destroyer_1e = {
+		archetype = destroyer
+		parent = ITA_destroyer_1d
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.6
+		attack = 71.2
+		fire_range = 19.6
+		torpedo_attack = 26.65
+		anti_air_attack = 2.9
+		evasion = 119.8
+		surface_detection = 27
+		surface_visibility = 9
+		sub_attack = 13
+		sub_detection = 70
+		naval_speed = 35
+		reliability = 0.75
+		naval_range = 1668
+		manpower = 152	
+		max_strength = 128		
+		build_cost_ic = 1096
+	}
+	#Sauro Class
+	ITA_destroyer_1f = {
+		archetype = destroyer
+		parent = ITA_destroyer_1e
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.6
+		attack = 71.2
+		fire_range = 19.6
+		torpedo_attack = 39.98
+		anti_air_attack = 2.9
+		evasion = 110.7
+		surface_detection = 27
+		surface_visibility = 10
+		sub_attack = 15
+		sub_detection = 90
+		naval_speed = 35
+		reliability = 0.75
+		naval_range = 2408
+		manpower = 155	
+		max_strength = 130		
+		build_cost_ic = 1308
+	}
+	#Turbine Class
+	ITA_destroyer_1g = {
+		archetype = destroyer
+		parent = ITA_destroyer_1f
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.6
+		attack = 71.2
+		fire_range = 19.6
+		torpedo_attack = 39.98
+		anti_air_attack = 2.9
+		evasion = 107.7
+		surface_detection = 27
+		surface_visibility = 10
+		sub_attack = 6
+		sub_detection = 90
+		naval_speed = 36
+		reliability = 0.75
+		naval_range = 2964
+		manpower = 179	
+		max_strength = 132		
+		build_cost_ic = 1298
+	}
+	#Navigatori Class
+	ITA_destroyer_1h = {
+		archetype = destroyer
+		parent = ITA_destroyer_1g
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.8
+		attack = 73.2
+		fire_range = 19.6
+		torpedo_attack = 26.65
+		anti_air_attack = 4.5
+		evasion = 73.6
+		surface_detection = 29
+		surface_visibility = 12
+		sub_attack = 16
+		sub_detection = 90
+		naval_speed = 38
+		reliability = 0.75
+		naval_range = 3520
+		manpower = 224	
+		max_strength = 149		
+		build_cost_ic = 1350
+	}
+	#Freccia Class
+	ITA_destroyer_1i = {
+		archetype = destroyer
+		parent = ITA_destroyer_1h
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.6
+		attack = 71.2
+		fire_range = 19.6
+		torpedo_attack = 39.98
+		anti_air_attack = 3
+		evasion = 70.7
+		surface_detection = 23
+		surface_visibility = 11
+		sub_attack = 16
+		sub_detection = 90
+		naval_speed = 30
+		reliability = 0.75
+		naval_range = 3334
+		manpower = 185	
+		max_strength = 140		
+		build_cost_ic = 1419
+	}
+	#Folgore Class
+	ITA_destroyer_1j = {
+		archetype = destroyer
+		parent = ITA_destroyer_1i
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.6
+		attack = 71.2
+		fire_range = 19.6
+		torpedo_attack = 39.98
+		anti_air_attack = 3
+		evasion = 71.4
+		surface_detection = 23
+		surface_visibility = 10
+		sub_attack = 16
+		sub_detection = 90
+		naval_speed = 30
+		reliability = 0.75
+		naval_range = 3334
+		manpower = 185	
+		max_strength = 140		
+		build_cost_ic = 1414
+	}
+	#Maestrale Class
+	ITA_destroyer_1k = {
+		archetype = destroyer
+		parent = ITA_destroyer_1j
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.6
+		attack = 71.2
+		fire_range = 19.6
+		torpedo_attack = 39.98
+		anti_air_attack = 3
+		evasion = 72.7
+		surface_detection = 26
+		surface_visibility = 12
+		sub_attack = 15
+		sub_detection = 90
+		naval_speed = 32
+		reliability = 0.8
+		naval_range = 3704
+		manpower = 190	
+		max_strength = 142		
+		build_cost_ic = 1503
+	}
+	#Oriani Class
+	ITA_destroyer_1l = {
+		archetype = destroyer
+		parent = ITA_destroyer_1k
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.6
+		attack = 71.2
+		fire_range = 19.6
+		torpedo_attack = 39.98
+		anti_air_attack = 2.9
+		evasion = 73.3
+		surface_detection = 29
+		surface_visibility = 12
+		sub_attack = 15
+		sub_detection = 110
+		naval_speed = 33
+		reliability = 0.85
+		naval_range = 2028
+		manpower = 206	
+		max_strength = 143		
+		build_cost_ic = 1484
+	}
+	#Soldati 1st Group Class
+	ITA_destroyer_2 = {
+		archetype = destroyer
+		parent = ITA_destroyer_1l
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.7
+		attack = 72.2
+		fire_range = 19.6
+		torpedo_attack = 39.98
+		anti_air_attack = 3.7
+		evasion = 71.1
+		surface_detection = 30
+		surface_visibility = 12
+		sub_attack = 15
+		sub_detection = 130
+		naval_speed = 35
+		reliability = 0.85
+		naval_range = 2050
+		manpower = 206	
+		max_strength = 147		
+		build_cost_ic = 1574
+	}
+	#Soldati 2nd Group Class
+	ITA_destroyer_3 = {
+		archetype = destroyer
+		parent = ITA_destroyer_2
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.7
+		attack = 72.2
+		fire_range = 19.6
+		torpedo_attack = 39.98
+		anti_air_attack = 3.8
+		evasion = 71.1
+		surface_detection = 32
+		surface_visibility = 12
+		sub_attack = 20
+		sub_detection = 140
+		naval_speed = 35
+		reliability = 0.9
+		naval_range = 2050
+		manpower = 206	
+		max_strength = 147		
+		build_cost_ic = 1641
+	}
+	#Comandanti Medaglie d'Oro Class
+	ITA_destroyer_4 = {
+		archetype = destroyer
+		parent = ITA_destroyer_3
+		priority = 50
+		type = { 
+			screen_ship
+		}
+		
+		ap_attack = 5.8
+		attack = 72.5
+		fire_range = 19.6
+		torpedo_attack = 39.98
+		anti_air_attack = 4.9
+		evasion = 60.3
+		surface_detection = 32
+		surface_visibility = 13
+		sub_attack = 20
+		sub_detection = 140
+		naval_speed = 35
+		reliability = 0.9
+		naval_range = 5600
+		manpower = 272	
+		max_strength = 156		
+		build_cost_ic = 1780
 	}
 	
 	
