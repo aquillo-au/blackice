@@ -22,17 +22,18 @@ ideas = {
 			modifier = {
 				min_export = 0.75
 				political_power_factor = 0.025
-				production_factory_max_efficiency_factor = 0.10
+				production_factory_max_efficiency_factor = 0.08
 				trade_opinion_factor = 0.10
 				#relations = 0.10
 				industrial_capacity_factory = -0.05
 				industrial_capacity_dockyard = -0.05
-				research_time_factor = -0.05
+				research_time_factor = -0.04
 				production_factory_efficiency_gain_factor = 0.05
 				unity_factor = 0.02
 				conservatism_drift = 0.01
 				communism_drift = -0.01
 				fascism_drift = -0.01
+				line_change_production_efficiency_factor = 0.04
 			}
 			
 			on_add = {
@@ -52,12 +53,15 @@ ideas = {
 					##has_government = democratic
 					has_government = conservatism
 					has_government = liberalism
-					has_government = socialism
 					}
+				}
+			modifier = {
+					factor = 0
+					has_war = yes
 				}
 				modifier = {
 					factor = 0
-					has_war = yes
+					has_government = socialism
 				}
 			}
 		}
@@ -77,15 +81,15 @@ ideas = {
 			
 			modifier = {
 				min_export = 0.5
-				political_power_factor = 0.025
-				production_factory_max_efficiency_factor = 0.05
+				production_factory_max_efficiency_factor = 0.04
 				trade_opinion_factor = 0.05
 				#relations = 0.05
 				industrial_capacity_factory = -0.025
 				industrial_capacity_dockyard = -0.025
-				research_time_factor = -0.025
+				research_time_factor = -0.02
 				production_factory_efficiency_gain_factor = 0.025
 				consumer_goods_factor = 0.025
+				line_change_production_efficiency_factor = 0.02
 			}
 			
 			on_add = {
@@ -140,9 +144,10 @@ ideas = {
 				#relations = -0.05
 				industrial_capacity_factory = 0.025
 				industrial_capacity_dockyard = 0.025
-				research_time_factor = 0.025
+				research_time_factor = 0.02
 				production_factory_efficiency_gain_factor = -0.05
 				neutrality_drift = 0.01
+				line_change_production_efficiency_factor = -0.02
 			}
 			
 			on_add = {
@@ -238,11 +243,12 @@ ideas = {
 				production_factory_efficiency_gain_factor = -0.10
 				trade_opinion_factor = -0.10
 				#relations = -0.10
-				industrial_capacity_factory = 0.075
-				industrial_capacity_dockyard = 0.075
-				research_time_factor = 0.05
+				industrial_capacity_factory = 0.08
+				industrial_capacity_dockyard = 0.08
+				research_time_factor = 0.04
 				fascism_drift = 0.01
 				communism_drift = 0.01
+				line_change_production_efficiency_factor = -0.04
 			}
 			
 			on_add = {

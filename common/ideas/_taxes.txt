@@ -22,16 +22,16 @@ ideas = {
 				industrial_capacity_factory = -0.05
 				industrial_capacity_dockyard = -0.05
 				production_factory_max_efficiency_factor = 0.05
-				production_speed_industrial_complex_factor = 0.08
-				production_speed_arms_factory_factor = 0.08
-				production_speed_dockyard_factor = 0.08
+				production_speed_industrial_complex_factor = 0.10
+				production_speed_arms_factory_factor = 0.10
+				production_speed_dockyard_factor = 0.10
 				consumer_goods_factor = 0.05
 				conscription = -0.05
 				#communism_drift = -0.01
 				#fascism_drift = -0.01
 				unity_factor = 0.05
 				#conservatism_drift = 0.01
-				production_factory_max_efficiency_factor = 0.10
+				line_change_production_efficiency_factor = 0.05
 			}
 			on_add = {
 				set_country_flag = tax_minimal
@@ -58,13 +58,13 @@ ideas = {
 				}
 				modifier = {
 					factor = 0
-					has_manpower < 500000
+					has_manpower < 1000000
 					is_major = yes
 					has_war = yes
 				}
 				modifier = {
 					factor = 0
-					has_manpower < 250000
+					has_manpower < 500000
 					is_major = no
 					has_war = yes
 				}
@@ -73,24 +73,28 @@ ideas = {
 		tax_low = {
 			available = {
 				NOT = {
+				OR = {
 					has_government = communism
+					has_government = fascism
+					}
 				}
 			}
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = 0.025
+				political_power_factor = -0.025
 				industrial_capacity_factory = -0.025
 				industrial_capacity_dockyard = -0.025
 				production_factory_max_efficiency_factor = 0.05
-				production_speed_industrial_complex_factor = 0.04
-				production_speed_arms_factory_factor = 0.04
-				production_speed_dockyard_factor = 0.04
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
 				consumer_goods_factor = 0.025
 				conscription = -0.02
 				unity_factor = 0.03
 				#liberalism_drift = 0.01
+				line_change_production_efficiency_factor = 0.025
 				
 			}
 			on_add = {
@@ -100,7 +104,7 @@ ideas = {
 				clr_country_flag = tax_average
 				clr_country_flag = tax_extreme
 			}
-			default = yes
+
 			
 			cancel_if_invalid = no
 			
@@ -136,7 +140,7 @@ ideas = {
 			available = {
 				
 			}
-		
+			default = yes
 			cost = 150
 			removal_cost = -1
 			
@@ -149,6 +153,7 @@ ideas = {
 				production_speed_industrial_complex_factor = -0.02
 				production_speed_arms_factory_factor = -0.02
 				production_speed_dockyard_factor = -0.02
+				line_change_production_efficiency_factor = -0.02
 			}
 			on_add = {
 				set_country_flag = tax_average
@@ -177,8 +182,8 @@ ideas = {
 			
 			modifier = {
 				political_power_factor = -0.025
-				industrial_capacity_factory = 0.025
-				industrial_capacity_dockyard = 0.025
+				industrial_capacity_factory = 0.04
+				industrial_capacity_dockyard = 0.04
 				production_factory_max_efficiency_factor = -0.05
 				production_speed_industrial_complex_factor = -0.05
 				production_speed_arms_factory_factor = -0.05
@@ -187,6 +192,7 @@ ideas = {
 				conscription = 0.01
 				unity_factor = -0.03
 				#fascism_drift = 0.01
+				line_change_production_efficiency_factor = -0.025
 			}
 			
 			on_add = {
@@ -251,8 +257,8 @@ ideas = {
 			
 			modifier = {
 				political_power_factor = -0.05
-				industrial_capacity_factory = 0.05
-				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.08
+				industrial_capacity_dockyard = 0.08
 				production_factory_max_efficiency_factor = -0.10
 				production_speed_industrial_complex_factor = -0.08
 				production_speed_arms_factory_factor = -0.08
@@ -261,6 +267,7 @@ ideas = {
 				#communism_drift = 0.01
 				unity_factor = -0.05
 				consumer_goods_factor = -0.05
+				line_change_production_efficiency_factor = -0.05
 			}
 			
 			on_add = {
@@ -277,13 +284,13 @@ ideas = {
    				factor = 4
 				modifier = {
 					factor = 10
-					has_manpower < 500000
+					has_manpower < 750000
 					is_major = yes
 					has_war = yes
 				}
 				modifier = {
 					factor = 10
-					has_manpower < 250000
+					has_manpower < 400000
 					is_major = no
 					has_war = yes
 				}

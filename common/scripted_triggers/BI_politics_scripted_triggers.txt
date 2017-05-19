@@ -1,0 +1,113 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+#Groupings
+democratic_govt = {
+	OR = {
+		has_government = conservatism
+		has_government = socialism
+		has_government = liberalism
+	}
+}
+
+#Rest not in use right now
+rightist_govt = {
+	OR = {
+		has_government = conservatism
+		has_government = fascism
+		has_government = monarchism
+	}
+}
+
+leftist_govt = {
+	OR = {
+		has_government = socialism
+		has_government = communism
+	}
+}
+
+non_ideological_govt = {
+	OR = {
+		has_government = monarchism
+		has_government = neutrality
+	}
+}
+
+authoritarian_govt = {
+	OR = {
+		has_government = monarchism
+		has_government = neutrality
+		has_government = fascism
+		has_government = communism
+	}
+}
+
+#Triggers
+same_type = {
+	OR = {
+		AND = {
+			democratic_govt = yes
+			ROOT = { democratic_govt = yes }
+		}
+		AND = {
+			rightist_govt = yes
+			ROOT = { rightist_govt = yes }
+		}
+		AND = {
+			leftist_govt = yes
+			ROOT = { leftist_govt = yes }
+		}
+		AND = {
+			non_ideological_govt = yes
+			ROOT = { non_ideological_govt = yes }
+		}
+		AND = {
+			authoritarian_govt = yes
+			ROOT = { authoritarian_govt = yes }
+		}
+	}
+}
+
+same_ideology = {
+	OR = {
+		AND = {
+			has_government = communism
+			ROOT = { has_government = communism }
+		}
+		AND = {
+			has_government = fascism
+			ROOT = { has_government = fascism }
+		}
+		AND = {
+			has_government = monarchism
+			ROOT = { has_government = monarchism }
+		}
+		AND = {
+			has_government = neutrality
+			ROOT = { has_government = neutrality }
+		}
+		AND = {
+			has_government = liberalism
+			ROOT = { has_government = liberalism }
+		}
+		AND = {
+			has_government = conservatism
+			ROOT = { has_government = conservatism }
+		}
+		AND = {
+			has_government = socialism
+			ROOT = { has_government = socialism }
+		}
+	}
+}

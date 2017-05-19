@@ -765,12 +765,34 @@ political_advisor = {
 		
 	# MILITARY
 	army_chief = {
-		john_vereker = {
+		cyril_deverell = { #36-37
 			allowed = {
 				original_tag = ENG
 			}
-			
+			available = {
+				NOT = { has_country_flag = deverell_retires }
+			}
 
+			
+			traits = { army_chief_reform_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		john_vereker = { #37-39
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+			OR = {
+				AND = {
+					is_ai = yes
+					NOT = { has_country_flag = vereker_fired }
+					}
+				NOT = { has_country_flag = vereker_fired is_historical_focus_on = yes }
+				}
+			}
 			
 			traits = { army_chief_offensive_2 }
 			
@@ -779,12 +801,20 @@ political_advisor = {
 			}
 		}
 		
-		edmund_ironside = {
+		edmund_ironside = { #39-40
 			
 			allowed = {
 				original_tag = ENG
 			}
-			
+			available = {
+			OR = {
+				AND = {
+					is_ai = yes
+					NOT = { has_country_flag = ironside_fired }
+					}
+				NOT = { has_country_flag = ironside_fired is_historical_focus_on = yes }
+				}
+			}
 
 			
 			traits = { army_chief_defensive_2 }
@@ -793,13 +823,36 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		
-		alan_brooke = {
+		john_dill = { #40-41
 			
 			allowed = {
 				original_tag = ENG
 			}
+			available = {
+			OR = {
+				AND = {
+					is_ai = yes
+					NOT = { has_country_flag = dill_fired }
+					}
+				NOT = { has_country_flag = dill_fired is_historical_focus_on = yes }
+				}
+			}
+
 			
+			traits = { army_chief_old_guard }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		alan_brooke = { #41-46
+			
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				date > 1940.1.1
+			}
 
 			
 			traits = { army_chief_maneuver_3 }
@@ -811,12 +864,14 @@ political_advisor = {
 	}
 	navy_chief = {
 
-		ernle_chatfield = {
+		ernle_chatfield = { #36-39
 			
 			allowed = {
 				original_tag = ENG
 			}
-			
+			available = {
+				NOT = { has_country_flag = chatfield_retires }
+			}
 
 			
 			traits = { navy_chief_maneuver_2 }
@@ -826,12 +881,15 @@ political_advisor = {
 			}
 		}
 		
-		dudley_pound = {
+		dudley_pound = { #39-43
 			
 			allowed = {
 				original_tag = ENG
 			}
-			
+			available = {
+				NOT = { has_country_flag = pound_retires }
+			}
+
 
 			
 			traits = { navy_chief_decisive_battle_1 }
@@ -842,7 +900,7 @@ political_advisor = {
 			}
 		}
 		
-		andrew_cunningham = {
+		andrew_cunningham = { #43-46
 			
 			allowed = {
 				original_tag = ENG
@@ -859,12 +917,14 @@ political_advisor = {
 	}
 	air_chief = {
 
-		cyril_newall = {
+		cyril_newall = { #37-40
 			
 			allowed = {
 				original_tag = ENG
 			}
-			
+			available = {
+				NOT = { has_country_flag = newall_retires }
+			}
 
 			
 			traits = { air_chief_reform_2 }
@@ -874,7 +934,7 @@ political_advisor = {
 			}
 		}
 		
-		charles_portal = {
+		charles_portal = { #40-46
 			
 			allowed = {
 				original_tag = ENG
@@ -890,12 +950,14 @@ political_advisor = {
 			}
 		}
 		
-		edward_ellington = {
+		edward_ellington = { #36-37
 			
 			allowed = {
 				original_tag = ENG
 			}
-			
+			available = {
+				NOT = { has_country_flag = ellington_replaced }
+			}
 
 			
 			traits = { air_chief_safety_2 }

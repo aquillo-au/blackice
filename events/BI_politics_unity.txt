@@ -27,6 +27,7 @@ country_event = {
 
 		}
 		country_event = politics.998
+		country_event = politics.997
 	}
 	option = { #United Nation
 		name = "politics.1.b"
@@ -35,6 +36,148 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 100
+		}
+	}
+}
+#Workaround for Allies w/ different ideologies
+country_event = {
+	id = politics.996
+	title = politics.996.t
+	desc  = politics.996.desc
+	
+	picture = GFX_news_event_002
+	
+	trigger = {
+		ENG = {
+			NOT = { 
+			has_government = fascism
+			has_government = communism
+			}
+			has_war_with = GER
+		}
+		date < 1946.1.1
+		NOT = { has_country_flag = ww2_started }
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	hidden = yes
+	
+	immediate = {
+		set_country_flag = ww2_started
+	}
+	
+	option = { #Ok
+		name = "politics.996.a"
+		trigger = {
+			is_historical_focus_on = yes
+		}
+		ENG = {
+			if = { limit = { FRA = { is_ai = yes } }
+			add_to_faction = FRA
+			}
+			if = { limit = { CAN = { is_ai = yes } }
+			add_to_faction = CAN
+			}
+			if = { limit = { NZL = { is_ai = yes } }
+			add_to_faction = NZL
+			}
+			if = { limit = { SAF = { is_ai = yes } }
+			add_to_faction = SAF
+			}
+			if = { limit = { BUR = { is_ai = yes } }
+			add_to_faction = BUR
+			}
+			if = { limit = { AST = { is_ai = yes } }
+			add_to_faction = AST
+			}
+			if = { limit = { RAJ = { is_ai = yes } }
+			add_to_faction = RAJ
+			}
+		}
+		USA = {
+			set_rule = { can_send_volunteers = no }
+		}
+	}
+	option = { #Ok
+		name = "politics.996.b"
+		trigger = {
+			NOT = { is_historical_focus_on = yes }
+		}
+		ENG = {
+			if = { limit = { CAN = { is_ai = yes } }
+			add_to_faction = CAN
+			}
+			if = { limit = { NZL = { is_ai = yes } }
+			add_to_faction = NZL
+			}
+			if = { limit = { SAF = { is_ai = yes } }
+			add_to_faction = SAF
+			}
+			if = { limit = { BUR = { is_ai = yes } }
+			add_to_faction = BUR
+			}
+			if = { limit = { AST = { is_ai = yes } }
+			add_to_faction = AST
+			}
+			if = { limit = { RAJ = { is_ai = yes } }
+			add_to_faction = RAJ
+			}
+		if = { limit = { FRA = { democratic_govt = yes NOT = { is_in_faction = yes is_faction_leader = yes } } }
+			if = { limit = { FRA = { is_ai = yes } }
+			add_to_faction = FRA
+				}
+			}
+		}
+		USA = {
+			set_rule = { can_send_volunteers = no }
+		}
+	}
+}
+country_event = {
+	id = politics.997
+	title = politics.997.t
+	desc  = politics.997.desc
+	
+	picture = GFX_news_event_002
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	immediate = {
+		
+	}
+	
+	option = { #Ok
+		name = "politics.997.a"
+		trigger = {
+			is_historical_focus_on = yes
+		}
+		ENG = {
+			give_guarantee = CAN
+			give_guarantee = NZL
+			give_guarantee = FRA
+			give_guarantee = AST
+			give_guarantee = RAJ
+			give_guarantee = BUR
+			give_guarantee = SAF
+		}
+	}
+	option = { #Ok
+		name = "politics.997.b"
+		trigger = {
+			NOT = { is_historical_focus_on = yes }
+		}
+		ENG = {
+			give_guarantee = CAN
+			give_guarantee = NZL
+			give_guarantee = AST
+			give_guarantee = RAJ
+			give_guarantee = BUR
+			give_guarantee = SAF
 		}
 	}
 }
@@ -911,6 +1054,10 @@ country_event = {
 			tag = AST
 			}
 		}
+			AND = {
+			communism > 0.25
+			tag = FRA
+		}
 		AND = {
 			fascism > 0.15
 		OR = {
@@ -920,6 +1067,7 @@ country_event = {
 			tag = USA
 			tag = CAN
 			tag = AST
+			tag = BUR
 			}
 		}
 		AND = {
@@ -958,9 +1106,18 @@ country_event = {
 			}
 		OR = {
 			tag = SOV
+			AND = {
 			tag = ITA
+			date < 1941.6.1
+			}
+			AND = {
 			tag = GER
+			has_government = fascism
+			}
+			AND = {
 			tag = JAP
+			has_government = fascism
+					}
 				}
 			}
 		}		
@@ -1203,5 +1360,227 @@ country_event = {
 			remove_ideas_with_trait = liberal
 		}
 	}
+}
+#Starting Opinions - Overrides Diff Democratic Ideologies
+country_event = {
+	id = politics.900
+	title = politics.900.t #"Democracies are all the same."
+	desc = politics.901.d #"We all are in this together."
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				democratic_govt = yes
+			}
+			every_country = {
+				limit = {
+					AND = {
+						democratic_govt = yes
+						NOT = { same_ideology = yes }
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = same_type_group
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = communism
+			}
+			set_country_flag = was_communist
+		}
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			set_country_flag = was_fascist
+		}
+		if = {
+			limit = {
+				has_government = monarchism
+			}
+			set_country_flag = was_monarchist
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			set_country_flag = was_neutral
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+			}
+			set_country_flag = was_liberal
+		}
+		if = {
+			limit = {
+				has_government = conservatism
+			}
+			set_country_flag = was_conservative
+		}
+		if = {
+			limit = {
+				has_government = socialism
+			}
+			set_country_flag = was_socialist
+		}
+	}
+	
+	option = {
+		name =  politics.900.a
+		
+	}
+}
+
+#Govt Change Opinions
+country_event = {
+	id = politics.901
+	title = politics.901.t
+	desc = politics.901.desc
+	hidden = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				NOT = { has_government = communism }
+				has_country_flag = was_communist
+			}
+			AND = {
+				NOT = { has_government = fascism }
+				has_country_flag = was_fascist
+			}
+			AND = {
+				NOT = { has_government = monarchism }
+				has_country_flag = was_monarchist
+			}
+			AND = {
+				NOT = { has_government = neutrality }
+				has_country_flag = was_neutral
+			}
+			AND = {
+				NOT = { has_government = liberalism }
+				has_country_flag = was_liberal
+			}
+			AND = {
+				NOT = { has_government = conservatism }
+				has_country_flag = was_conservative
+			}
+			AND = {
+				NOT = { has_government = socialism }
+				has_country_flag = was_socialist
+			}
+			AND = {
+				NOT = { 
+					has_country_flag = was_communist
+					has_country_flag = was_conservative
+					has_country_flag = was_fascist
+					has_country_flag = was_liberal
+					has_country_flag = was_monarchist
+					has_country_flag = was_neutral
+					has_country_flag = was_socialist
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	immediate = {
+		clr_country_flag = was_communist
+		clr_country_flag = was_conservative
+		clr_country_flag = was_fascist
+		clr_country_flag = was_liberal
+		clr_country_flag = was_monarchist
+		clr_country_flag = was_neutral
+		clr_country_flag = was_socialist
+		every_country = {
+			remove_opinion_modifier = {
+				target = ROOT
+				modifier = same_type_group
+			}
+			ROOT = {
+			remove_opinion_modifier = {
+				target = PREV
+				modifier = same_type_group
+				}
+			}
+		}
+		if = {
+			limit = {
+				democratic_govt = yes
+			}
+			every_country = {
+				limit = {
+					AND = {
+						democratic_govt = yes
+						NOT = { same_ideology = yes }
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = same_type_group
+				}
+				reverse_add_opinion_modifier = {
+					target = ROOT
+					modifier = same_type_group
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = communism
+			}
+			set_country_flag = was_communist
+		}
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			set_country_flag = was_fascist
+		}
+		if = {
+			limit = {
+				has_government = monarchism
+			}
+			set_country_flag = was_monarchist
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			set_country_flag = was_neutral
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+			}
+			set_country_flag = was_liberal
+		}
+		if = {
+			limit = {
+				has_government = conservatism
+			}
+			set_country_flag = was_conservative
+		}
+		if = {
+			limit = {
+				has_government = socialism
+			}
+			set_country_flag = was_socialist
+		}
+	}
+	
+	
+	option = {
+		name = politics.901.a
+	}
+
 }
 ### EOF ###

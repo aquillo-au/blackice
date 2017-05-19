@@ -33,7 +33,20 @@ ideas = {
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-   				factor = 0
+   				factor = 1
+				modifier = {
+					factor = 100
+					OR = {
+					AND = {
+						is_major = yes
+						has_manpower < 800000
+					}
+					AND = {
+						is_major = no
+						has_manpower < 300000
+						}
+					}
+				}
 			}
 		}
 		officer_train_low = {
@@ -72,20 +85,22 @@ ideas = {
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-   				factor = 1
+   				factor = 2
 				modifier = {
 					factor = 100
 					has_war = yes
 					enemies_strength_ratio > 1.5
 				}
 				modifier = {
-					factor = 0
+					factor = 100
 					OR = {
-						has_war = no
-						enemies_strength_ratio < 1.1
-						AND = {
-							is_major = yes
-							has_manpower < 800000
+					AND = {
+						is_major = yes
+						has_manpower < 1200000
+					}
+					AND = {
+						is_major = no
+						has_manpower < 600000
 						}
 					}
 				}
@@ -139,6 +154,10 @@ ideas = {
 						tag = CHI
 						tag = ITA
 					}
+				}
+				modifier = {
+					factor = 10
+					tag = GER
 				}
    			}
 		}
