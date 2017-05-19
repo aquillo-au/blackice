@@ -73,7 +73,7 @@ set_technology = {
 	early_battleship = 1
 	early_battlecruiser = 1
 	early_carrier = 1
-	transport = 1
+	#transport = 1
 	trench_warfare = 1
 	fleet_in_being = 1
 	basic_battlecruiser = 1 #BICE
@@ -118,6 +118,9 @@ add_ideas = {
 		marx_dormoy
 		maurice_henri_gauche
 		vincent_auriol
+		francois_darlan
+		maurice_gamelin
+		philippe_fequant
 		
 		#laws
 		export_focus
@@ -130,7 +133,7 @@ add_ideas = {
 		labor_allowed
 		fdi_allowed
 		
-		cons_volunteer
+		cons_two
 		foreign_volunteers
 		mob_reserve
 		train_medium
@@ -140,7 +143,7 @@ add_ideas = {
 		edu_high
 		
 		unity_divided_nation
-		foreign_neutral
+		foreign_interventionism
 	}	
 	
 set_country_flag = mob_reserve
@@ -261,15 +264,15 @@ set_politics = {
 
 	parties = {
 		conservatism = { 
-			popularity = 35
+			popularity = 33
 		}
 		
 		liberalism = {
-			popularity = 40
+			popularity = 9
 		}
 		
 		socialism = {
-			popularity = 9
+			popularity = 40
 		}
 
 		fascism = {
@@ -277,7 +280,7 @@ set_politics = {
 		}
 		
 		communism = {
-			popularity = 14
+			popularity = 16
 		}
 	}
 	
@@ -369,6 +372,13 @@ create_country_leader = {
 		silent_workhorse
 	}
 }
+create_country_leader = {
+	name = "Albert Sarraut"
+	desc = "POLITICS_ALBERT_SARRAUT_DESC"
+	picture = "Portrait_France_Albert_Sarraut.dds"
+	expire = "1965.1.1"
+        ideology = social_liberalism
+}
 
 create_country_leader = {
 	name = "Édouard Daladier"
@@ -392,13 +402,7 @@ create_country_leader = {
 	}
 }
 
-create_country_leader = {
-	name = "Albert Sarraut"
-	desc = "POLITICS_ALBERT_SARRAUT_DESC"
-	picture = "Portrait_France_Albert_Sarraut.dds"
-	expire = "1965.1.1"
-        ideology = social_democracy
-}
+
 create_country_leader = {
 	name = "Camille Chautemps"
 	desc = "POLITICS_CAMILLE_CHAUTEMPS_DESC"

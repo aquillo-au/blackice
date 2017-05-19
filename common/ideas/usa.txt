@@ -1116,10 +1116,14 @@ political_advisor = {
 		john_nance_garner = {
 		allowed = {
 				original_tag = USA
+		}
+		available = {
+			OR = {
 				has_government = liberalism
 				has_government = conservatism
+			}
+			date < 1940.10.29
 		}
-		
 		picture = idea_john_nance_garner
 		
 		traits = { conservative staunch_constitutionalist }
@@ -1134,6 +1138,7 @@ political_advisor = {
 				has_government = liberalism
 				has_government = socialism
 			}
+			date > 1940.10.29
 		}
 		picture = idea_henry_wallace
 		
@@ -1280,7 +1285,23 @@ political_advisor = {
 
 	army_chief = {
 		
-	
+		malin_craig = { #36-39
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				NOT = { has_country_flag = craig_retires }
+			}
+
+			
+			traits = { army_chief_reform_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
 		douglas_macarthur = {
 			
 			
@@ -1297,7 +1318,7 @@ political_advisor = {
 			}
 		}
 		
-		george_marshall = {
+		george_marshall = { #39-45
 			
 			
 			allowed = {
@@ -1332,14 +1353,32 @@ political_advisor = {
 	
 	air_chief = {
 		
-		
-		henry_arnold = {
+		oscar_westover = { #36-38
 			
 			
 			allowed = {
 				original_tag = USA
 			}
+			available = {
+				NOT = { has_country_flag = westover_dead }
+			}
+
 			
+			traits = { air_chief_ground_support_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		henry_arnold = { #38-46
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				NOT = { has_country_flag = arnold_retires }
+			}
 
 			
 			traits = { air_chief_reform_3 }
@@ -1349,7 +1388,7 @@ political_advisor = {
 			}
 		}
 		
-		carl_spaatz = {
+		carl_spaatz = { #46-48
 			
 			
 			allowed = {
@@ -1385,7 +1424,7 @@ political_advisor = {
 	
 	navy_chief = {
 	
-		ernest_king = {
+		ernest_king = { #42-45
 			
 			
 			allowed = {
@@ -1431,7 +1470,46 @@ political_advisor = {
 			ai_will_do = {
 				factor = 1
 			}
-		}	
+		}
+		william_leahy = { #36-39
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				NOT = { has_country_flag = leahy_retires }
+			}
+
+			
+			traits = { navy_chief_reform_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		harold_stark = { #39-42
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+			OR = {
+				AND = {
+					is_ai = yes
+					NOT = { has_country_flag = stark_fired }
+					}
+				NOT = { has_country_flag = stark_fired is_historical_focus_on = yes }
+				}
+			}
+			
+			traits = { navy_chief_maneuver_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 	
 	

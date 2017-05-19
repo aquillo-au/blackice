@@ -24,15 +24,22 @@ ideas = {
 				liberalism_drift = 0.01
 				enemy_partisan_effect = 0.10
 				foreign_subversive_activites = 0.10
+				drift_defence_factor = -0.20
 			}
 			on_add = {
 				set_country_flag = security_liberty_first
-				clr_country_flag = security_some_restrictions
 				clr_country_flag = security_minor_restrictions
 				clr_country_flag = security_major_restrictions
 				clr_country_flag = security_police_state
 			}
 			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 10
+   				modifier = {
+					factor = 0
+					has_war = yes
+				}
+   			}
 		}
 		security_minor_restrictions = {
 			
@@ -55,16 +62,23 @@ ideas = {
 				unity_factor = 0.01
 				enemy_partisan_effect = 0.05
 				foreign_subversive_activites = 0.05
+				drift_defence_factor = -0.10
 			}
 			on_add = {
 				set_country_flag = security_minor_restrictions
 				clr_country_flag = security_liberty_first
-				clr_country_flag = security_some_restrictions
 				clr_country_flag = security_major_restrictions
 				clr_country_flag = security_police_state
 			}
 			
 			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 10
+   				modifier = {
+					factor = 0
+					has_war = yes
+				}
+   			}
 		}
 		security_major_restrictions = {
 			
@@ -93,11 +107,12 @@ ideas = {
 				unity_factor = -0.02
 				political_power_factor = -0.05
 				enemy_partisan_effect = -0.05
-				foreign_subversive_activites = -0.05
+				foreign_subversive_activites = -0.10
 				monarchism_drift = 0.01
 				neutrality_drift = 0.01
 				fascism_drift = 0.01
 				communism_drift = 0.01
+				drift_defence_factor = 0.10
 			}
 			
 			on_add = {
@@ -132,8 +147,9 @@ ideas = {
 			modifier = {
 				unity_factor = -0.03
 				political_power_factor = -0.10
-				enemy_partisan_effect = -0.15
-				foreign_subversive_activites = -0.15
+				enemy_partisan_effect = -0.10
+				foreign_subversive_activites = -0.20
+				drift_defence_factor = 0.10
 				fascism_drift = 0.01
 				communism_drift = 0.01
 			}

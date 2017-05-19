@@ -643,9 +643,7 @@ political_advisor = {
 		
 	}
 	army_chief = {
-		
-		
-		pietro_badoglio = {
+		alberto_pariani = { #36-39
 			
 			
 			allowed = {
@@ -654,14 +652,28 @@ political_advisor = {
 			
 
 			
-			traits = { army_chief_morale_1 }
+			traits = { army_chief_defensive_1 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
-		ugo_cavallero = {
+		graziani_coa = { #39-41
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+
+			
+			traits = { army_chief_offensive_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		roatta_coa = { #41-43
 			
 			
 			allowed = {
@@ -671,6 +683,21 @@ political_advisor = {
 
 			
 			traits = { army_chief_maneuver_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		paolo_berardi = { #43-45
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+
+			
+			traits = { army_chief_organizational_1 }
 			
 			ai_will_do = {
 				factor = 1
@@ -695,7 +722,7 @@ political_advisor = {
 	}
 	navy_chief = {
 		
-		domenico_cavagnari = {
+		domenico_cavagnari = { #36-40
 			
 			
 			allowed = {
@@ -712,7 +739,7 @@ political_advisor = {
 			}
 		}
 		
-		arturo_riccardi = {
+		arturo_riccardi = { #40-43
 			
 			
 			allowed = {
@@ -747,13 +774,15 @@ political_advisor = {
 	air_chief = {
 		
 		
-		italo_balbo = {
+		italo_balbo = { #36-40
 			
 			
 			allowed = {
 				original_tag = ITA
 			}
-			
+			available = {
+				NOT = { has_country_flag = balbo_dead }
+			}
 
 			
 			traits = { air_chief_all_weather_2 }
@@ -763,14 +792,12 @@ political_advisor = {
 			}
 		}
 		
-		rino_corso_fougier = {
+		rino_corso_fougier = { #40-43
 			
 			
 			allowed = {
 				original_tag = ITA
 			}
-			
-
 			
 			traits = { air_air_combat_training_1 }
 			
@@ -795,7 +822,39 @@ political_advisor = {
 			}
 		}	
 	}	
-	
+	supreme_commander = {
+		pietro_badoglio = { #36-40
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+
+			
+			traits = { army_chief_morale_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ugo_cavallero = { #40-43
+			
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+
+			
+			traits = { army_chief_maneuver_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
 	high_command = {
 	
 		mario_roatta = {

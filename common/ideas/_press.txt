@@ -42,12 +42,11 @@ ideas = {
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					factor = 100
+					factor = 10
 					OR = {
 					##has_government = democratic
 					has_government = conservatism
 					has_government = liberalism
-					has_government = socialism
 					}
 					has_war = no
 				}
@@ -55,7 +54,11 @@ ideas = {
 		}
 		press_regulated = {
 			available = {
-				NOT = { has_country_flag = security_police_state has_government = communism has_government = fascism }
+				NOT = { 
+				has_country_flag = security_police_state 
+				has_government = communism 
+				has_government = fascism
+				}
 			}
 			cost = 100
 			removal_cost = -1
@@ -95,7 +98,6 @@ ideas = {
 							has_government = neutrality
 							has_war = yes
 							}
-
 						}
 						threat > 0.30
 					}
@@ -105,8 +107,11 @@ ideas = {
 					OR = {
 						has_government = fascism
 						has_government = communism
-
 					}
+				}
+				modifier = {
+					factor = 10
+					has_government = socialism
 				}
 			}
 		}
@@ -157,16 +162,31 @@ ideas = {
 				modifier = {
 					factor = 100
 					has_war = yes
-					
+					OR = {
+						has_government = socialism
+						has_government = conservatism
+						has_government = liberalism
+					}
 				}
-			
+				modifier = {
+					factor = 10
+					has_government = monarchism
+				}
 				modifier = {
 					factor = 0					
 					OR = {
+					AND = {
+						has_government = fascism
+						OR = {
 						tag = GER
 						tag = JAP
 						tag = ITA
+							}
+						}
+					AND = {
+						has_government = communism
 						tag = SOV
+						}
 					}
 				}
 			}
@@ -214,7 +234,6 @@ ideas = {
 					OR = { 
 						has_government = fascism
 						has_government = communism
-						has_government = monarchism
 						has_government = neutrality
 					}
 				}

@@ -136,7 +136,7 @@ ideas = {
 						has_government = conservatism
 						has_government = socialism
 						has_government = liberalism
-					}
+						}
 						date < 1940.6.1
 					}
 				}
@@ -147,6 +147,16 @@ ideas = {
 						has_government = fascism
 						has_government = communism
 					}
+				}
+				modifier = {
+					factor = 10
+					OR = {
+						tag = ENG
+						tag = POL
+						tag = FRA
+					}
+					threat > 0.30
+					threat < 0.50
 				}
    			}
 		}
@@ -231,7 +241,7 @@ ideas = {
 					date < 1941.6.1
 				}
 				modifier = {
-					factor = 10
+					factor = 100
 					OR = {
 						AND = {
 							date > 1939.3.1
@@ -241,7 +251,7 @@ ideas = {
 						has_government = fascism
 						has_government = communism
 						has_government = monarchism
-						threat > 0.55
+						threat > 0.50
 						tag = SPR
 						AND = {
 							tag = POL

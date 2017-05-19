@@ -14,11 +14,11 @@ ideas = {
 				foreign_subversive_activites = -0.10
 				enemy_partisan_effect = -0.10
 				justify_war_goal_time = 0.50
-				generate_wargoal_tension = 0.20
-				join_faction_tension = 0.20
-				lend_lease_tension = 0.05
-				send_volunteers_tension = 0.20
-				guarantee_tension = 0.05
+				generate_wargoal_tension = 0.50
+				join_faction_tension = 0.70
+				lend_lease_tension = 0.10
+				send_volunteers_tension = 0.70
+				guarantee_tension = 0.20
 				
 			}
 			
@@ -50,6 +50,15 @@ ideas = {
 						has_war = yes
 					}
 				}
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+					date < 1946.1.1
+					OR = {
+						tag = ENG
+						tag = FRA
+					}
+				}
 			}
 		}
 		foreign_neutral = {
@@ -63,8 +72,10 @@ ideas = {
 				trade_opinion_factor = 0.15
 				foreign_subversive_activites = -0.05
 				justify_war_goal_time = 0.25
-				join_faction_tension = 0.10
+				join_faction_tension = 0.25
 				#neutrality_drift = 0.01
+				send_volunteers_tension = 0.25
+				guarantee_tension = 0.25
 			}
 			
 			on_add = {
@@ -88,6 +99,15 @@ ideas = {
 				modifier = {
 					factor = 0
 					has_war = yes
+				}
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+					date < 1946.1.1
+					OR = {
+						tag = ENG
+						tag = FRA
+					}
 				}
 			}
 		}
@@ -140,25 +160,21 @@ ideas = {
 						has_government = fascism
 					}
 				}
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+					date < 1946.1.1
+					OR = {
+						tag = ENG
+						tag = FRA
+					}
+				}
 			}
 		}
 		foreign_interventionism = {
 			
 			available = {
-				OR = {
-					AND = {
-						OR = {
-						##has_government = democratic
-						has_government = liberalism
-						has_government = conservatism
-						has_government = socialism
-							}
-						has_war = yes
-					}
-					has_government = fascism
-					has_government = communism
-					has_government = monarchism	
-				}
+
 			}
 		
 			cost = 75
@@ -172,9 +188,9 @@ ideas = {
 				enemy_partisan_effect = 0.075
 				generate_wargoal_tension = -0.10
 				join_faction_tension = -0.10
-				lend_lease_tension = -0.15
+				lend_lease_tension = -0.10
 				send_volunteers_tension = -0.10
-				guarantee_tension = -0.20
+				guarantee_tension = -0.10
 			}
 			
 			on_add = {
@@ -197,7 +213,6 @@ ideas = {
 						tag = JAP
 						tag = ITA
 						tag = SOV
-						has_manpower < 400000
 						has_government = fascism
 					}
 				}
@@ -207,11 +222,15 @@ ideas = {
 				}
 				modifier = {
 					factor = 100
-					date < 1940.1.1
 					OR = {
 						tag = ENG
 						tag = FRA
 					}
+				}
+				modifier = {
+					factor = 100
+					tag = USA
+					date > 1941.1.1
 				}
 			}
 		}
@@ -223,6 +242,7 @@ ideas = {
 					has_government = fascism
 					has_government = communism
 					has_government = monarchism
+					has_government = neutrality
 				}
 			}
 			
@@ -230,10 +250,10 @@ ideas = {
 			removal_cost = -1
 			level = 1
 			modifier = {
-				justify_war_goal_time = -0.25
+				justify_war_goal_time = -0.20
 				unity_factor = -0.05
 				trade_opinion_factor = -0.1
-				foreign_subversive_activites = 0.1
+				foreign_subversive_activites = 0.15
 				enemy_partisan_effect = 0.15
 				#fascism_drift = 0.01
 				generate_wargoal_tension = -0.20

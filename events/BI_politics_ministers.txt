@@ -1,0 +1,798 @@
+﻿#Black I.C.E. Politics by Energico
+###################################################
+
+add_namespace = politics
+
+######GERMANY#######
+#Wever Crash
+country_event = {
+	id = politics.200
+	title = politics.200.t
+	desc  = politics.200.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = GER
+		date > 1936.5.10
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = { 
+		name = politics.200.a
+		random_list = {
+		85 = { 
+		set_country_flag = wever_dead
+		remove_ideas = walther_wever
+		}
+		15 = { }
+		}
+	}
+}
+
+#Todt Crash
+country_event = {
+	id = politics.201
+	title = politics.201.t
+	desc  = politics.201.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = GER
+		date > 1942.1.10
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = { 
+		name = politics.201.a
+		random_list = {
+		85 = { 
+		set_country_flag = todt_dead
+		remove_ideas = todt
+		}
+		15 = { }
+		}
+	}
+}
+#Beck Fired
+country_event = {
+	id = politics.202
+	title = politics.202.t
+	desc  = politics.202.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = GER
+		date > 1938.7.10
+		has_idea = ludwig_beck
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	option = { 
+		name = politics.202.a
+		remove_ideas = ludwig_beck
+		set_country_flag = beck_fired
+	}
+	option = { 
+		name = politics.202.b
+		trigger = {
+			is_ai = yes
+		}
+		remove_ideas = ludwig_beck
+		add_ideas = franz_halder
+		set_country_flag = beck_fired
+		ai_chance = {
+			factor = 1000
+		}
+	}
+	option = { 
+		name = politics.202.c
+		add_political_power = -40
+	}
+}
+#Halder Fired
+country_event = {
+	id = politics.203
+	title = politics.203.t
+	desc  = politics.203.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = GER
+		date > 1942.6.15
+		has_idea = franz_halder
+		has_war_with = SOV
+		GER = {
+			NOT = { 
+			controls_state = 845
+			controls_state = 217
+			controls_state = 195
+				}
+			}
+		}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+	option = { 
+		name = politics.203.a
+		remove_ideas = franz_halder
+		set_country_flag = halder_fired
+	}
+	option = { 
+		name = politics.203.b
+		trigger = {
+			is_ai = yes
+		}
+		remove_ideas = franz_halder
+		add_ideas = kurt_zeitzler
+		set_country_flag = halder_fired
+		ai_chance = {
+			factor = 1000
+		}
+	}
+	option = { 
+		name = politics.203.c
+		add_political_power = -30
+	}
+}
+#Zeitzler Fired
+country_event = {
+	id = politics.204
+	title = politics.204.t
+	desc  = politics.204.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = GER
+		date > 1944.3.15
+		has_idea = kurt_zeitzler
+		has_war_with = SOV
+		GER = {
+			NOT = { 
+			controls_state = 209
+			controls_state = 242
+			controls_state = 202
+				}
+			}
+		}
+
+	mean_time_to_happen = {
+		days = 120
+	}
+	option = { 
+		name = politics.204.a
+		remove_ideas = kurt_zeitzler
+		set_country_flag = halder_fired
+	}
+	option = { 
+		name = politics.204.b
+		trigger = {
+			is_ai = yes
+		}
+		remove_ideas = kurt_zeitzler
+		add_ideas = guderian_coa
+		set_country_flag = halder_fired
+		ai_chance = {
+			factor = 1000
+		}
+	}
+	option = { 
+		name = politics.204.c
+		add_political_power = -30
+	}
+}
+#Raeder Fired
+country_event = {
+	id = politics.205
+	title = politics.205.t
+	desc  = politics.205.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = GER
+		date > 1942.12.1
+		has_idea = raeder
+		has_war_with = ENG
+		GER = {
+			NOT = { 
+			controls_state = 126
+				}
+			}
+		}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+	option = { 
+		name = politics.205.a
+		remove_ideas = raeder
+		set_country_flag = raeder_fired
+	}
+	option = { 
+		name = politics.205.b
+		trigger = {
+			is_ai = yes
+		}
+		remove_ideas = raeder
+		add_ideas = donitz
+		set_country_flag = raeder_fired
+		ai_chance = {
+			factor = 1000
+		}
+	}
+	option = { 
+		name = politics.205.c
+		add_political_power = -30
+	}
+}
+######USSR#######
+#AI Install Shaposhnikov
+country_event = {
+	id = politics.206
+	title = politics.206.t
+	desc  = politics.206.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = SOV
+		date > 1937.2.1
+		has_idea = alexander_yegorov
+		is_ai = yes
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+		name = politics.206.a
+		remove_ideas = alexander_yegorov
+		add_ideas = shaposhnikov_coa
+	}
+}
+#AI Install Meretskov
+country_event = {
+	id = politics.208
+	title = politics.208.t
+	desc  = politics.208.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = SOV
+		date > 1940.2.1
+		has_idea = shaposhnikov_coa
+		is_ai = yes
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+		name = politics.208.a
+		remove_ideas = shaposhnikov_coa
+		add_ideas = kirill_meretskov
+	}
+}
+#AI Install Vasilevsky
+country_event = {
+	id = politics.209
+	title = politics.209.t
+	desc  = politics.209.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = SOV
+		date > 1941.5.1
+		has_idea = kirill_meretskov
+		is_ai = yes
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+		name = politics.209.a
+		remove_ideas = kirill_meretskov
+		add_ideas = vasilevsky_coa
+	}
+}
+#AI Install Smushkevich
+country_event = {
+	id = politics.210
+	title = politics.210.t
+	desc  = politics.210.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = SOV
+		date > 1939.2.1
+		has_idea = aleksandr_loktionov
+		is_ai = yes
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+		name = politics.210.a
+		remove_ideas = aleksandr_loktionov
+		add_ideas = yakov_smushkevich
+	}
+}
+#AI Install Novikov
+country_event = {
+	id = politics.211
+	title = politics.211.t
+	desc  = politics.211.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = SOV
+		date > 1941.2.1
+		has_idea = yakov_smushkevich
+		is_ai = yes
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+		name = politics.211.a
+		remove_ideas = yakov_smushkevich
+		add_ideas = alexander_novikov
+	}
+}
+#AI Install Vershinin
+country_event = {
+	id = politics.212
+	title = politics.212.t
+	desc  = politics.212.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = SOV
+		date > 1946.4.1
+		has_idea = alexander_novikov
+		is_ai = yes
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+		name = politics.212.a
+		remove_ideas = alexander_novikov
+		add_ideas = konstantin_vershinin
+	}
+}
+######USA#######
+#Craig Retires
+country_event = {
+	id = politics.213
+	title = politics.213.t
+	desc  = politics.213.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = USA
+		date > 1939.8.20
+	}
+	immediate = { set_country_flag = craig_retires }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+	}
+		name = "We wish him a happy retirement!"
+		remove_ideas = malin_craig
+	}
+	option = { 
+	trigger = {
+		is_ai = yes
+	}
+		name = politics.213.b
+		remove_ideas = malin_craig
+		add_ideas = george_marshall
+	}
+}
+#Westover Crashes
+country_event = {
+	id = politics.214
+	title = politics.214.t
+	desc  = politics.214.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = USA
+		date > 1938.9.20
+	}
+	immediate = { set_country_flag = westover_dead }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+		is_historical_focus_on = yes 
+	}
+		name = "A terrible tragedy!"
+		remove_ideas = oscar_westover
+	}
+	option = { 
+	trigger = {
+		is_ai = yes
+	}
+		name = politics.214.b
+		remove_ideas = oscar_westover
+		add_ideas = henry_arnold
+	}
+}
+#Arnold Retires
+country_event = {
+	id = politics.215
+	title = politics.215.t
+	desc  = politics.215.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = USA
+		date > 1946.2.1
+	}
+	immediate = { set_country_flag = arnold_retires }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+	}
+		name = "We wish him a happy retirement!"
+		remove_ideas = henry_arnold
+	}
+	option = { 
+	trigger = {
+		is_ai = yes
+	}
+		name = politics.215.b
+		remove_ideas = henry_arnold
+		add_ideas = carl_spaatz
+	}
+}
+#Leahy Retires
+country_event = {
+	id = politics.216
+	title = politics.216.t
+	desc  = politics.216.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = USA
+		date > 1939.8.1
+	}
+	immediate = { set_country_flag = leahy_retires }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+	}
+		name = "We wish him a happy retirement!"
+		remove_ideas = william_leahy
+	}
+	option = { 
+	trigger = {
+		is_ai = yes
+	}
+		name = politics.216.b
+		remove_ideas = william_leahy
+		add_ideas = harold_stark
+	}
+}
+#Stark Retires
+country_event = {
+	id = politics.217
+	title = politics.217.t
+	desc  = politics.217.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = USA
+		date > 1942.2.1
+		is_ai = yes
+		is_historical_focus_on = yes
+	}
+	immediate = { set_country_flag = stark_fired }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+
+	}
+		name = politics.217.a
+		remove_ideas = harold_stark
+		add_ideas = ernest_king
+	}
+}
+######UK#######
+#Ellington Replaced
+country_event = {
+	id = politics.218
+	title = politics.218.t
+	desc  = politics.218.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = ENG
+		date > 1937.8.1
+		is_ai = yes
+		is_historical_focus_on = yes
+		has_idea = edward_ellington
+	}
+	immediate = { set_country_flag = ellington_replaced }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+
+	}
+		name = politics.218.a
+		remove_ideas = edward_ellington
+		add_ideas = cyril_newall
+	}
+}
+#Newall Retires
+country_event = {
+	id = politics.219
+	title = politics.219.t
+	desc  = politics.219.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = ENG
+		date > 1940.10.1
+	}
+	immediate = { set_country_flag = newall_retires }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		
+	}
+		name = "We wish him a happy retirement!"
+		remove_ideas = cyril_newall
+		add_ideas = charles_portal
+	}
+}
+#Chatfield Retires
+country_event = {
+	id = politics.221
+	title = politics.221.t
+	desc  = politics.221.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = ENG
+		date > 1938.8.1
+	}
+	immediate = { set_country_flag = chatfield_retires }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		is_ai = yes
+	}
+		name = politics.221.a
+		remove_ideas = ernle_chatfield
+		add_ideas = dudley_pound
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+	}
+		name = "We wish him a happy retirement!"
+		remove_ideas = ernle_chatfield
+	}
+}
+#Pound Retires
+country_event = {
+	id = politics.222
+	title = politics.222.t
+	desc  = politics.222.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = ENG
+		date > 1943.10.1
+	}
+	immediate = { set_country_flag = pound_retires }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		is_ai = yes
+	}
+		name = politics.222.a
+		remove_ideas = dudley_pound
+		add_ideas = andrew_cunningham
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+	}
+		name = "We wish him a happy retirement!"
+		remove_ideas = dudley_pound
+		add_ideas = andrew_cunningham
+	}
+}
+#Deverell Retires
+country_event = {
+	id = politics.223
+	title = politics.223.t
+	desc  = politics.223.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = ENG
+		date > 1937.12.1
+	}
+	immediate = { set_country_flag = deverell_retires }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		is_ai = yes
+	}
+		name = politics.223.a
+		remove_ideas = cyril_deverell
+		add_ideas = john_vereker
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+	}
+		name = "We wish him a happy retirement!"
+		remove_ideas = cyril_deverell
+
+	}
+}
+#Vereker Fired
+country_event = { #GIVE PLAYER CHOICE IN EXCHANGE FOR PP EVENTUALLY
+	id = politics.224
+	title = politics.224.t
+	desc  = politics.224.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = ENG
+		date > 1939.9.1
+		is_historical_focus_on = yes
+		has_idea = john_vereker
+	}
+	immediate = { set_country_flag = vereker_fired }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+
+	}
+		name = politics.224.a
+		remove_ideas = john_vereker
+		add_ideas = edmund_ironside
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+		is_historical_focus_on = yes
+	}
+		name = "It's for the best."
+		remove_ideas = john_vereker
+
+	}
+}
+#Ironside Replaced
+country_event = {
+	id = politics.225
+	title = politics.225.t
+	desc  = politics.225.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = ENG
+		date > 1940.7.1
+		is_historical_focus_on = yes
+		has_idea = edmund_ironside
+	}
+	immediate = { set_country_flag = ironside_fired }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		is_ai = yes
+	}
+		name = politics.225.a
+		remove_ideas = edmund_ironside
+		add_ideas = john_dill
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+	}
+		name = "It's for the best."
+		remove_ideas = edmund_ironside
+
+	}
+}
+#Dill Replaced
+country_event = {
+	id = politics.226
+	title = politics.226.t
+	desc  = politics.226.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = ENG
+		date > 1941.12.1
+		is_historical_focus_on = yes
+		has_idea = john_dill
+	}
+	immediate = { set_country_flag = dill_fired }
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = { 
+	trigger = {
+		is_ai = yes
+	}
+		name = politics.226.a
+		remove_ideas = john_dill
+		add_ideas = alan_brooke
+	}
+	option = { 
+	trigger = {
+		NOT = { is_ai = yes }
+	}
+		name = "It's for the best."
+		remove_ideas = john_dill
+		if = { limit = { is_historical_focus_on = yes } }
+		add_ideas = alan_brooke
+		}
+	}
+}
+######ITALY#######
+
+######JAPAN#######
+
+
+######FRANCE#######
+
+
+### EOF ###

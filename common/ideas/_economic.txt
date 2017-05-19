@@ -23,9 +23,11 @@ ideas = {
 				lend_lease_tension = 0.50
 				send_volunteers_tension = 0.20
 				guarantee_tension = 0.75
-				political_power_factor = 0.10
+				political_power_factor = -0.10
+				unity_factor = 0.05
 				research_time_factor = 0.09
 				conscription = -0.02
+				line_change_production_efficiency_factor = -0.10
 			}
 			
 			allowed_to_remove = {
@@ -57,9 +59,11 @@ ideas = {
 				join_faction_tension = 0.20
 				send_volunteers_tension = 0.20
 				guarantee_tension = 0.5
-				political_power_factor = 0.05
+				political_power_factor = -0.05
+				unity_factor = 0.025
 				research_time_factor = 0.06
 				conscription = -0.01
+				line_change_production_efficiency_factor = -0.05
 			}
 			allowed_to_remove = {
 				OR = {
@@ -74,7 +78,7 @@ ideas = {
 			available = {
 				NOT = { has_country_flag = Mobilizing }
 			}
-			cost = 75
+			cost = 100
 			removal_cost = -1
 			
 			modifier = {
@@ -91,6 +95,7 @@ ideas = {
 				industrial_capacity_dockyard = -0.05
 				fascism_drift = -0.01
 				communism_drift = -0.01
+				line_change_production_efficiency_factor = -0.025
 			}
 			on_add = {
 				set_country_flag = civilian_economy
@@ -126,7 +131,7 @@ ideas = {
 				}			
 			}
 			
-			cost = 100
+			cost = 125
 			removal_cost = -1
 			
 			modifier = {
@@ -191,7 +196,7 @@ ideas = {
 				}			
 			}
 
-			cost = 150
+			cost = 200
 			removal_cost = -1
 			
 			modifier = {
@@ -207,6 +212,7 @@ ideas = {
 				production_speed_air_base_factor = 0.15
 				industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
+				line_change_production_efficiency_factor = 0.025
 			}
 			
 			on_add = {
@@ -264,7 +270,7 @@ ideas = {
 				}			
 			}
 		
-			cost = 225
+			cost = 300
 			removal_cost = -1
 			
 			modifier = {
@@ -283,6 +289,7 @@ ideas = {
 				production_speed_air_base_factor = 0.075
 				industrial_capacity_factory = 0.06
 				industrial_capacity_dockyard = 0.06
+				line_change_production_efficiency_factor = 0.05
 			}
 			
 			on_add = {
@@ -326,7 +333,7 @@ ideas = {
 				}
 			}
 			
-			cost = 300
+			cost = 450
 			removal_cost = -1
 			
 			modifier = {
@@ -337,12 +344,13 @@ ideas = {
 				production_speed_dockyard_factor = -0.10
 				conversion_cost_civ_to_mil_factor= -0.25
 				conversion_cost_mil_to_civ_factor = 0.25
-				political_power_factor = -0.10
+				political_power_factor = -0.15
 				research_time_factor = -0.06
 				enemy_partisan_effect = 0.10
 				unity_factor = -0.05
 				industrial_capacity_factory = 0.125
 				industrial_capacity_dockyard = 0.125
+				line_change_production_efficiency_factor = 0.075
 			}
 			
 			on_add = {
