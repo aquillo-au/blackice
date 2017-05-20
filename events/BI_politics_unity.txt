@@ -7,7 +7,7 @@ add_namespace = politics
 country_event = {
 	id = politics.1
 	title = politics.1.t
-	desc  = politics.1.d
+	desc  = politics.1.desc
 	
 	picture = GFX_news_event_002
 	
@@ -18,19 +18,19 @@ country_event = {
 	}
 	
 	immediate = {
-		
+	
 	}
 	
-	option = { #United Nation
-		name = "politics.1.a"
+	option = { #
+		name = politics.1.a
 		trigger = {
 
 		}
 		country_event = politics.998
 		country_event = politics.997
 	}
-	option = { #United Nation
-		name = "politics.1.b"
+	option = { #
+		name = politics.1.b
 		trigger = {
 			
 		}
@@ -68,7 +68,7 @@ country_event = {
 	}
 	
 	option = { #Ok
-		name = "politics.996.a"
+		name = politics.996.a
 		trigger = {
 			is_historical_focus_on = yes
 		}
@@ -100,7 +100,7 @@ country_event = {
 		}
 	}
 	option = { #Ok
-		name = "politics.996.b"
+		name = politics.996.a
 		trigger = {
 			NOT = { is_historical_focus_on = yes }
 		}
@@ -152,7 +152,7 @@ country_event = {
 	}
 	
 	option = { #Ok
-		name = "politics.997.a"
+		name = politics.996.a
 		trigger = {
 			is_historical_focus_on = yes
 		}
@@ -167,7 +167,7 @@ country_event = {
 		}
 	}
 	option = { #Ok
-		name = "politics.997.b"
+		name = politics.996.a
 		trigger = {
 			NOT = { is_historical_focus_on = yes }
 		}
@@ -184,7 +184,7 @@ country_event = {
 country_event = {
 	id = politics.998
 	title = politics.998.t
-	desc  = politics.998.d
+	desc  = politics.998.desc
 	
 	picture = GFX_news_event_002
 	
@@ -199,7 +199,7 @@ country_event = {
 	}
 	
 	option = { #Ok
-		name = "politics.998.a"
+		name = politics.996.a
 		trigger = {
 			
 		}
@@ -1054,7 +1054,7 @@ country_event = {
 			tag = AST
 			}
 		}
-			AND = {
+		AND = {
 			communism > 0.25
 			tag = FRA
 		}
@@ -1127,7 +1127,7 @@ country_event = {
 		days = 30
 	}
     option = {
-        name = "Fix me!"
+        name = politics.996.a
 		if = { limit = { has_government = fascism }
 			if = { limit = { conservatism > 0.15 }
 				add_popularity = {
@@ -1359,13 +1359,18 @@ country_event = {
 			remove_ideas_with_trait = neutral
 			remove_ideas_with_trait = liberal
 		}
+		if = { limit = { has_government = neutrality }
+			remove_ideas_with_trait = conservative
+			remove_ideas_with_trait = socialist
+			remove_ideas_with_trait = liberal
+		}
 	}
 }
 #Starting Opinions - Overrides Diff Democratic Ideologies
 country_event = {
 	id = politics.900
-	title = politics.900.t #"Democracies are all the same."
-	desc = politics.901.d #"We all are in this together."
+	title = politics.900.t
+	desc = politics.900.desc
 	hidden = yes
 	is_triggered_only = yes
 	
@@ -1432,7 +1437,7 @@ country_event = {
 	}
 	
 	option = {
-		name =  politics.900.a
+		name = politics.996.a
 		
 	}
 }

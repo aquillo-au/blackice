@@ -14,6 +14,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1936.5.10
+		NOT = { has_country_flag = wever_dead has_country_flag = wever_survived }
 	}
 
 	mean_time_to_happen = {
@@ -21,13 +22,24 @@ country_event = {
 	}
 	option = { 
 		name = politics.200.a
+		trigger = {
+			NOT = { is_historical_focus_on = yes }
+		}
 		random_list = {
 		85 = { 
 		set_country_flag = wever_dead
 		remove_ideas = walther_wever
 		}
-		15 = { }
+		15 = { set_country_flag = wever_survived }
 		}
+	}
+	option = { 
+		name = politics.214.a
+		trigger = {
+			is_historical_focus_on = yes
+		}
+		set_country_flag = wever_dead
+		remove_ideas = walther_wever
 	}
 }
 
@@ -41,20 +53,29 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1942.1.10
+		NOT = { has_country_flag = todt_dead has_country_flag = todt_survived }
 	}
 
 	mean_time_to_happen = {
 		days = 30
 	}
 	option = { 
-		name = politics.201.a
+		name = politics.200.a
 		random_list = {
 		85 = { 
 		set_country_flag = todt_dead
 		remove_ideas = todt
 		}
-		15 = { }
+		15 = { set_country_flag = todt_survived }
 		}
+	}
+	option = { 
+		name = politics.214.a
+		trigger = { 
+			is_historical_focus_on = yes
+		}
+		set_country_flag = todt_dead
+		remove_ideas = todt
 	}
 }
 #Beck Fired
@@ -68,8 +89,10 @@ country_event = {
 		tag = GER
 		date > 1938.7.10
 		has_idea = ludwig_beck
+		is_historical_focus_on = yes
+		NOT = { has_country_flag = beck_question }
 	}
-
+	immediate = { set_country_flag = beck_question }
 	mean_time_to_happen = {
 		days = 30
 	}
@@ -114,8 +137,9 @@ country_event = {
 			controls_state = 195
 				}
 			}
+		NOT = { has_country_flag = halder_question }
 		}
-
+	immediate = { set_country_flag = halder_question }
 	mean_time_to_happen = {
 		days = 120
 	}
@@ -160,15 +184,16 @@ country_event = {
 			controls_state = 202
 				}
 			}
+		NOT = { has_country_flag = zeitzler_question }
 		}
-
+	immediate = { set_country_flag = zeitzler_question }
 	mean_time_to_happen = {
 		days = 120
 	}
 	option = { 
 		name = politics.204.a
 		remove_ideas = kurt_zeitzler
-		set_country_flag = halder_fired
+		set_country_flag = zeitzler_fired
 	}
 	option = { 
 		name = politics.204.b
@@ -177,7 +202,7 @@ country_event = {
 		}
 		remove_ideas = kurt_zeitzler
 		add_ideas = guderian_coa
-		set_country_flag = halder_fired
+		set_country_flag = zeitzler_fired
 		ai_chance = {
 			factor = 1000
 		}
@@ -204,6 +229,7 @@ country_event = {
 			controls_state = 126
 				}
 			}
+		NOT = { has_country_flag = raeder_fired }
 		}
 
 	mean_time_to_happen = {
@@ -244,8 +270,12 @@ country_event = {
 		date > 1937.2.1
 		has_idea = alexander_yegorov
 		is_ai = yes
+		is_historical_focus_on = yes
+		NOT = { has_country_flag = yegorov_fired }
 	}
-
+	
+	immediate = { set_country_flag = yegorov_fired }
+	
 	mean_time_to_happen = {
 		days = 10
 	}
@@ -267,8 +297,12 @@ country_event = {
 		date > 1940.2.1
 		has_idea = shaposhnikov_coa
 		is_ai = yes
+		is_historical_focus_on = yes
+		NOT = { has_country_flag = shaposhnikov_fired }
 	}
-
+	
+	immediate = { set_country_flag = shaposhnikov_fired }
+	
 	mean_time_to_happen = {
 		days = 10
 	}
@@ -290,8 +324,12 @@ country_event = {
 		date > 1941.5.1
 		has_idea = kirill_meretskov
 		is_ai = yes
+		is_historical_focus_on = yes
+		NOT = { has_country_flag = meretskov_fired }
 	}
-
+	
+	immediate = { set_country_flag = meretskov_fired }
+	
 	mean_time_to_happen = {
 		days = 10
 	}
@@ -313,8 +351,12 @@ country_event = {
 		date > 1939.2.1
 		has_idea = aleksandr_loktionov
 		is_ai = yes
+		is_historical_focus_on = yes
+		NOT = { has_country_flag = loktionov_fired }
 	}
-
+	
+	immediate = { set_country_flag = loktionov_fired }
+	
 	mean_time_to_happen = {
 		days = 10
 	}
@@ -336,8 +378,12 @@ country_event = {
 		date > 1941.2.1
 		has_idea = yakov_smushkevich
 		is_ai = yes
+		is_historical_focus_on = yes
+		NOT = { has_country_flag = smushkevich_arrested }
 	}
-
+	
+	immediate = { set_country_flag = smushkevich_arrested }
+	
 	mean_time_to_happen = {
 		days = 10
 	}
@@ -359,8 +405,12 @@ country_event = {
 		date > 1946.4.1
 		has_idea = alexander_novikov
 		is_ai = yes
+		is_historical_focus_on = yes
+		NOT = { has_country_flag = novikov_fired }
 	}
-
+	
+	immediate = { set_country_flag = novikov_fired }
+	
 	mean_time_to_happen = {
 		days = 10
 	}
@@ -381,6 +431,7 @@ country_event = {
 	trigger = {
 		tag = USA
 		date > 1939.8.20
+		NOT = { has_country_flag = craig_retires }
 	}
 	immediate = { set_country_flag = craig_retires }
 	
@@ -391,7 +442,7 @@ country_event = {
 	trigger = {
 		NOT = { is_ai = yes }
 	}
-		name = "We wish him a happy retirement!"
+		name = politics.213.a
 		remove_ideas = malin_craig
 	}
 	option = { 
@@ -413,6 +464,7 @@ country_event = {
 	trigger = {
 		tag = USA
 		date > 1938.9.20
+		NOT = { has_country_flag = westover_dead }
 	}
 	immediate = { set_country_flag = westover_dead }
 	
@@ -424,7 +476,7 @@ country_event = {
 		NOT = { is_ai = yes }
 		is_historical_focus_on = yes 
 	}
-		name = "A terrible tragedy!"
+		name = politics.214.a
 		remove_ideas = oscar_westover
 	}
 	option = { 
@@ -446,6 +498,7 @@ country_event = {
 	trigger = {
 		tag = USA
 		date > 1946.2.1
+		NOT = { has_country_flag = arnold_retires }
 	}
 	immediate = { set_country_flag = arnold_retires }
 	
@@ -456,7 +509,7 @@ country_event = {
 	trigger = {
 		NOT = { is_ai = yes }
 	}
-		name = "We wish him a happy retirement!"
+		name = politics.213.a
 		remove_ideas = henry_arnold
 	}
 	option = { 
@@ -478,6 +531,7 @@ country_event = {
 	trigger = {
 		tag = USA
 		date > 1939.8.1
+		NOT = { has_country_flag = leahy_retires }
 	}
 	immediate = { set_country_flag = leahy_retires }
 	
@@ -488,7 +542,7 @@ country_event = {
 	trigger = {
 		NOT = { is_ai = yes }
 	}
-		name = "We wish him a happy retirement!"
+		name = politics.213.a
 		remove_ideas = william_leahy
 	}
 	option = { 
@@ -500,7 +554,7 @@ country_event = {
 		add_ideas = harold_stark
 	}
 }
-#Stark Retires
+#Stark Fired
 country_event = {
 	id = politics.217
 	title = politics.217.t
@@ -512,6 +566,8 @@ country_event = {
 		date > 1942.2.1
 		is_ai = yes
 		is_historical_focus_on = yes
+		has_idea = harold_stark
+		NOT = { has_country_flag = stark_fired }
 	}
 	immediate = { set_country_flag = stark_fired }
 	
@@ -522,7 +578,7 @@ country_event = {
 	trigger = {
 
 	}
-		name = politics.217.a
+		name = politics.213.a
 		remove_ideas = harold_stark
 		add_ideas = ernest_king
 	}
@@ -576,7 +632,7 @@ country_event = {
 	trigger = {
 		
 	}
-		name = "We wish him a happy retirement!"
+		name = politics.213.a
 		remove_ideas = cyril_newall
 		add_ideas = charles_portal
 	}
@@ -609,7 +665,7 @@ country_event = {
 	trigger = {
 		NOT = { is_ai = yes }
 	}
-		name = "We wish him a happy retirement!"
+		name = politics.213.a
 		remove_ideas = ernle_chatfield
 	}
 }
@@ -641,7 +697,7 @@ country_event = {
 	trigger = {
 		NOT = { is_ai = yes }
 	}
-		name = "We wish him a happy retirement!"
+		name = politics.213.a
 		remove_ideas = dudley_pound
 		add_ideas = andrew_cunningham
 	}
@@ -674,7 +730,7 @@ country_event = {
 	trigger = {
 		NOT = { is_ai = yes }
 	}
-		name = "We wish him a happy retirement!"
+		name = politics.213.a
 		remove_ideas = cyril_deverell
 
 	}
@@ -710,7 +766,7 @@ country_event = { #GIVE PLAYER CHOICE IN EXCHANGE FOR PP EVENTUALLY
 		NOT = { is_ai = yes }
 		is_historical_focus_on = yes
 	}
-		name = "It's for the best."
+		name = politics.224.a
 		remove_ideas = john_vereker
 
 	}
@@ -719,7 +775,7 @@ country_event = { #GIVE PLAYER CHOICE IN EXCHANGE FOR PP EVENTUALLY
 country_event = {
 	id = politics.225
 	title = politics.225.t
-	desc  = politics.225.desc
+	desc  = politics.224.desc
 	picture = GFX_news_event_002
 	
 	trigger = {
@@ -745,7 +801,7 @@ country_event = {
 	trigger = {
 		NOT = { is_ai = yes }
 	}
-		name = "It's for the best."
+		name = politics.224.a
 		remove_ideas = edmund_ironside
 
 	}
@@ -754,7 +810,7 @@ country_event = {
 country_event = {
 	id = politics.226
 	title = politics.226.t
-	desc  = politics.226.desc
+	desc  = politics.224.desc
 	picture = GFX_news_event_002
 	
 	trigger = {
@@ -780,7 +836,7 @@ country_event = {
 	trigger = {
 		NOT = { is_ai = yes }
 	}
-		name = "It's for the best."
+		name = politics.224.a
 		remove_ideas = john_dill
 		if = { limit = { is_historical_focus_on = yes } }
 		add_ideas = alan_brooke
@@ -789,10 +845,14 @@ country_event = {
 }
 ######ITALY#######
 
+
+
 ######JAPAN#######
 
 
+
 ######FRANCE#######
+
 
 
 ### EOF ###
