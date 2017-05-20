@@ -1,6 +1,6 @@
 equipments = {
 
-	patrol_boat  = {
+	torpedo_boat = {
 		is_archetype = yes
 		is_buildable = no
 		type = screen_ship
@@ -33,7 +33,7 @@ equipments = {
 	### KRIEGSMARINE ### ### GER ### ### START ##
 	#Type 23 Class
 	GER_pb_1 = {
-		archetype = patrol_boat
+		archetype = torpedo_boat 
 		priority = 30
 		type = { screen_ship  }
 
@@ -58,7 +58,8 @@ equipments = {
 	}
 	#Type 24 Class
 	GER_pb_2 = {
-		archetype = patrol_boat
+		archetype = torpedo_boat
+		parent = GER_pb_1
 		priority = 30
 		type = { screen_ship  }
 
@@ -87,8 +88,8 @@ equipments = {
 	### REGIA MARINA ### ### ITA ### ### START ##
 	
 	#Giuseppe Sirtori Class
-	ITA_patrol_boat_1 = {
-		archetype = patrol_boat
+	ITA_torpedo_boat_1 = {
+		archetype = torpedo_boat 
 		priority = 30
 		type = { screen_ship  }
 
@@ -112,8 +113,4 @@ equipments = {
 		
 		manpower = 85
 	}
-	
-	
-	
-	
 }

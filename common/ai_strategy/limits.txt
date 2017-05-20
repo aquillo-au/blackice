@@ -12,9 +12,6 @@ production_limit_infeq = {
 	ai_strategy = { type = unit_ratio id = mechanized	 						value = -600 	}
 }
 
-
-
-
 production_limit_moteq = {
 	enable = { has_equipment = { motorized_equipment < 1 }	}
 	abort = { has_equipment = { motorized_equipment > 0 }  }
@@ -73,7 +70,7 @@ default_SOV_production_lim_b = {
 
 default_SOV_production_lim_2_a = {
 	enable = {
-         original_tag = SOV
+        original_tag = SOV
 		num_of_military_factories > 103
 		num_of_military_factories < 251
 		has_army_size = { type = infantry size < 210 } 
@@ -224,4 +221,3 @@ manpower_limit_4 = {
 	ai_strategy = { type = unit_ratio id = cavalry	 						    value = -600 	}
 	ai_strategy = { type = unit_ratio id = mechanized	 						value = -600 	}
 }
-
