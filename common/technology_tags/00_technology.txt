@@ -124,6 +124,7 @@ technology_folders = {
 			NOT = { original_tag = BLR }
 			NOT = { original_tag = ROM }			
 			NOT = { original_tag = GER }
+			NOT = { original_tag = ENG }
 			NOT = { original_tag = FRA }
 			NOT = { original_tag = JAP }
 			NOT = { original_tag = ITA }
@@ -158,6 +159,7 @@ technology_folders = {
 			NOT = { original_tag = JAP }
 			NOT = { original_tag = ITA }
 			NOT = { original_tag = USA }
+			NOT = { original_tag = ENG }
 		}
 	}
 	naval_folder = {
@@ -175,7 +177,19 @@ technology_folders = {
 	luftwaffe_folder = { available = { original_tag = GER }}
 	kriegsmarine_folder = { available = { original_tag = GER }}
 	kriegsmarine_sub_folder = { available = { original_tag = GER }}
-	soviet_folder = { available = { or = { original_tag = SOV  original_tag = EST original_tag = LIT original_tag = LAT original_tag = SIK original_tag = MON original_tag = TAN } }}
+	soviet_folder = {
+		available = {
+			or = {
+				original_tag = SOV
+				original_tag = EST
+				original_tag = LIT
+				original_tag = LAT
+				original_tag = SIK
+				original_tag = MON
+				original_tag = TAN
+			}
+		}
+	}
 	sovietnaval_folder = { available = { original_tag = SOV }}
 	sovietair_folder = { available = { original_tag = SOV }}
 	british_folder = { available = { original_tag = ENG }}
