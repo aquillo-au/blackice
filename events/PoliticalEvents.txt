@@ -208,7 +208,9 @@ country_event = {
 			has_country_flag = communism_popular_movement
 		}
 	}
-	
+	immediate = {
+		remove_ideas = communist_partisans_recruiting
+	}
 	option = {
 		name = political.6.a
 		if = {
@@ -1385,18 +1387,24 @@ country_event = {
 
 	trigger = {
 		OR = {
-		liberalism > 0.4
-		conservatism > 0.4
-		socialism > 0.4
+			OR = {
+				liberalism > 0.5
+				conservatism > 0.5
+				socialism > 0.5
+			}
+			AND = {
+				liberalism > 0.2
+				socialism > 0.2
+				conservatism > 0.2
+			}
 		}
 		NOT = { 
-		OR = {
-					#has_government = democratic
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					} 
-					}
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+			} 
+		}
 		NOT = { has_idea = democratic_revolutionaries }
 		NOT = { has_idea = reign_of_terror }
 		is_puppet = no
@@ -2034,5 +2042,631 @@ country_event = {
 			}
 			ROOT = { annex_country = { target = PREV transfer_troops = yes } }
 		}
+	}
+}
+# Monarchism on the Rise
+country_event = {
+	id = political.30
+	title = political.30.t
+	desc = political.30.desc
+	picture = GFX_report_event_albanian_king_zog
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_government = monarchism }
+	}
+	
+	# Seek government support
+	option = {
+		name = political.30.a
+		trigger = {
+			OR = {
+				NOT = { tag = CHI }
+				AND = {
+					NOT = { country_exists = PRC }
+					tag = CHI
+				}			
+			}
+		}
+		custom_effect_tooltip = political.1.a.tt
+		clr_country_flag = monarchism_popular_movement
+		set_country_flag = monarchism_political_movement
+	}
+
+	# Seek popular support
+	option = {
+		name = political.30.b
+		custom_effect_tooltip = political.1.b.tt
+		clr_country_flag = monarchism_political_movement
+		clr_country_flag = monarchism_government_support
+		set_country_flag = monarchism_popular_movement
+	}
+}
+
+# Mnarchist Sympathies in Government
+country_event = {
+	id = political.31
+	title = political.31.t
+	desc = political.31.desc
+	picture = GFX_report_event_japanese_envoy
+
+	trigger = {
+		has_idea_with_trait = royalist_reformer
+		NOT = { has_government = monarchism }
+		NOT = { has_country_flag = monarchism_government_support }
+	}
+	
+	mean_time_to_happen = {
+		days = 500
+		modifier = {
+			factor = 0.5
+			has_country_flag = monarchism_political_movement
+		}
+	}
+	
+	option = {
+		name = political.31.a
+		custom_effect_tooltip = political.2.a.tt
+		clr_country_flag = monarchism_political_movement
+		set_country_flag = monarchism_government_support
+	}
+}
+
+# Monarchists Execute Coup
+country_event = {
+	id = political.32
+	title = political.32.t
+	desc = political.32.desc
+	picture = GFX_report_event_nationalist_volunteers
+	
+	trigger = {
+		has_idea_with_trait = royalist_reformer
+		NOT = { has_government = monarchism }
+		has_country_flag = monarchism_government_support
+		monarchism > 0.4
+		is_major = no
+		is_puppet = no
+		OR = {
+			NOT = { tag = CHI }
+			AND = {
+				NOT = { country_exists = PRC }
+				tag = CHI
+			}			
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 100
+		modifier = {
+			factor = 0.5
+			monarchism > 0.5
+		}
+	}
+
+	immediate = {
+		hidden_effect = { remove_ideas = monarchist_revolutionaries }
+	}
+	
+	option = {
+		name = political.32.a
+		set_politics = {
+			ruling_party = monarchism
+			elections_allowed = no
+		}
+		add_timed_idea = { idea = reign_of_terror days = 730 }
+	}
+}
+
+# Royalists Appear in [Root.GetName]
+country_event = {
+	id = political.33
+	title = political.33.t
+	desc = political.33.desc
+	picture = GFX_report_event_gathering_protest
+	
+	trigger = {
+		has_idea_with_trait = royalist_reformer
+		NOT = { has_government = monarchism }
+		monarchism > 0.2
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.5
+			has_country_flag = monarchism_popular_movement
+		}
+	}
+	
+	option = {
+		name = political.33.a
+		add_popularity = {
+			ideology = monarchism
+			popularity = 0.15
+		}
+		add_national_unity = -0.02
+	}
+}
+
+# [Root.GetAdjective] Royalist Movement Grows Stronger
+country_event = {
+	id = political.34
+	title = political.34.t
+	desc = political.34.desc
+	picture = GFX_report_event_royal_parade
+	
+	trigger = {
+		has_idea_with_trait = royalist_reformer
+		NOT = { has_government = monarchism }
+		monarchism > 0.3
+		NOT = { has_idea = royalist_resistance }
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.5
+			has_country_flag = monarchism_popular_movement
+		}
+	}
+	
+	option = {
+		name = political.34.a
+		add_popularity = {
+			ideology = monarchism
+			popularity = 0.15
+		}
+		add_ideas = royalist_resistance
+	}
+}
+
+# Monarchist Revolution
+country_event = {
+	id = political.35
+	title = political.35.t
+	desc = political.35.desc
+	picture = GFX_report_event_soldiers_marching
+
+	trigger = {
+		has_idea_with_trait = royalist_reformer
+		NOT = { has_government = monarchism }
+		monarchism > 0.4
+		OR = {
+			NOT = { tag = CHI }
+			AND = {
+				NOT = { country_exists = PRC }
+				tag = CHI
+			}			
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 365
+		modifier = {
+			factor = 0.75
+			has_country_flag = monarchism_popular_movement
+		}
+	}
+	immediate = {
+		remove_ideas = royalist_resistance
+	}
+	option = {
+		name = political.35.a
+		if = {
+			limit = {
+				has_government = conservatism
+			}
+			if = {
+				limit = { monarchism > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = conservatism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchism > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = conservatism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = socialism
+			}
+			if = {
+				limit = { monarchism > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = socialism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchism > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = socialism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+			}
+			if = {
+				limit = { monarchism > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = liberalism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchism > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = liberalism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			if = {
+				limit = { fascism > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = fascism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { fascism > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = fascism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			if = {
+				limit = { monarchism > 0.4 }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = neutrality
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { monarchism > 0.4 } }
+				start_civil_war = {
+					ruling_party = monarchism
+					ideology = neutrality
+					size = 0.7
+				}
+			}
+		} 
+		add_timed_idea = { idea = reign_of_terror days = 730 }
+		remove_ideas = monarchist_revolutionaries
+	}
+	option = {
+		name = political.35.b
+		if = {
+			limit = {
+				has_government = conservatism
+			}
+			if = {
+				limit = { conservatism > 0.3 }
+				start_civil_war = {
+					ruling_party = conservatism
+					ideology = monarchism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { conservatism > 0.3 } }
+				start_civil_war = {
+					ruling_party = conservatism
+					ideology = monarchism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = socialism
+			}
+			if = {
+				limit = { socialism > 0.3 }
+				start_civil_war = {
+					ruling_party = socialism
+					ideology = monarchism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { socialism > 0.3 } }
+				start_civil_war = {
+					ruling_party = socialism
+					ideology = monarchism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+			}
+			if = {
+				limit = { liberalism > 0.3 }
+				start_civil_war = {
+					ruling_party = liberalism
+					ideology = monarchism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { liberalism > 0.3 } }
+				start_civil_war = {
+					ruling_party = liberalism
+					ideology = monarchism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			if = {
+				limit = { fascism > 0.4 }
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = monarchism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { fascism > 0.4 } }
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = monarchism
+					size = 0.7
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			if = {
+				limit = { neutrality > 0.4 }
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = monarchism
+					size = 0.6
+				}
+			}
+			if = {
+				limit = { NOT = { neutrality > 0.4 } }
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = monarchism
+					size = 0.7
+				}
+			}
+		if = { 
+			limit = { 
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			} 
+			add_timed_idea = { idea = reign_of_terror days = 730 }
+		}  
+		
+		remove_ideas = monarchist_revolutionaries
+	}
+}
+}
+
+#Monarchist > 50% Support
+country_event = {
+	id = political.36
+	title = political.36.t
+	desc = political.36.desc
+	picture = GFX_report_event_royal_parade
+
+	trigger = {
+		monarchism > 0.5
+		NOT = { has_government = monarchism }
+		NOT = { has_idea = monarchist_revolutionaries }
+		is_puppet = no
+		NOT = { tag = PRC }
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = political.36.a
+		add_political_power = -100
+		add_popularity = {
+			ideology = monarchism
+			popularity = -0.10
+		}
+		add_timed_idea = {
+			idea = monarchist_revolutionaries
+			days = 365
+		}
+	}
+
+	option = {
+		name = political.36.b
+		add_timed_idea = {
+			idea = monarchist_revolutionaries
+			days = 365
+		}
+	}
+	option = {
+		name = political.19.c
+		trigger = {
+			
+		}
+		set_politics = {
+			ruling_party = monarchism
+			elections_allowed = no
+		}
+		add_national_unity = -0.05
+	}
+}
+
+# Monarchist Civil War - Large Majority
+country_event = {
+	id = political.37
+	title = political.37.t
+	desc = political.37.desc
+	picture = GFX_report_event_soldiers_marching
+
+	trigger = {
+	OR = {
+		monarchism > 0.6
+		}
+		has_idea = monarchist_revolutionaries
+		#Special case CHI PRC
+		OR = {
+			NOT = { tag = CHI }
+			AND = {
+				NOT = { country_exists = PRC }
+				tag = CHI
+			}			
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	immediate = {
+		hidden_effect = { remove_ideas = monarchist_revolutionaries }
+	}
+
+	option = {
+		name = political.37.a
+		if = {
+			limit = { monarchism > 0.6 }
+		start_civil_war = {
+			ideology = monarchism
+			size = 0.5
+			}
+		}
+	}
+	option = {
+		name = political.37.b
+		if = {
+			limit = {
+				has_government = neutrality
+				monarchism > 0.5
+			}
+			start_civil_war = {
+				ruling_party = monarchism
+				ideology = neutrality
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = fascism
+				monarchism > 0.5
+			}
+			add_timed_idea = { idea = fascism_defeated days = 730 }			
+			start_civil_war = {
+				ruling_party = monarchism
+				ideology = fascism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = communism
+				monarchism > 0.5
+			}
+			add_timed_idea = { idea = communism_defeated days = 730 }
+			start_civil_war = {
+				ruling_party = monarchism
+				ideology = communism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = conservatism
+				monarchism > 0.5
+			}
+			start_civil_war = {
+				ruling_party = monarchism
+				ideology = conservatism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = socialism
+				monarchism > 0.5
+			}
+			start_civil_war = {
+				ruling_party = monarchism
+				ideology = socialism
+				size = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_government = liberalism
+				monarchism > 0.5
+			}
+			start_civil_war = {
+				ruling_party = monarchism
+				ideology = liberalism
+				size = 0.5
+			}
+		}
+	}
+}
+
+# Monarchists Suppressed
+country_event = {
+	id = political.38
+	title = political.38.t
+	desc = political.38.desc
+	picture = GFX_report_event_generic_city
+
+	trigger = {
+	OR = {
+		monarchism < 0.3
+		}
+		has_idea = monarchist_revolutionaries
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = political.38.a
+		remove_ideas = monarchist_revolutionaries
 	}
 }

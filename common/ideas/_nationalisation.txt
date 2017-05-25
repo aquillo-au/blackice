@@ -21,8 +21,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				production_speed_industrial_complex_factor = 0.08
-				production_speed_dockyard_factor = 0.06
+				production_speed_industrial_complex_factor = -0.06
+				production_speed_dockyard_factor = -0.06
 				research_time_factor = -0.03
 				communism_drift = -0.02
 				fascism_drift = -0.02
@@ -31,10 +31,14 @@ ideas = {
 				political_power_factor = -0.05
 				production_factory_max_efficiency_factor = 0.05
 				production_factory_efficiency_gain_factor = 0.05
-				industrial_capacity_factory = -0.10
-				industrial_capacity_dockyard = -0.10
-				unity_factor = -0.02
-				line_change_production_efficiency_factor = 0.08
+
+				line_change_production_efficiency_factor = 0.05
+				industrial_capacity_factory = -0.08
+
+
+				industrial_capacity_dockyard = -0.08
+				unity_factor = -0.025
+				
 			}
 			
 			on_add = {
@@ -59,25 +63,32 @@ ideas = {
 			}
 		}
 		key_industries = {
-			
+
+			available = {
+				NOT = {
+					has_government = communism
+				}
+			}
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				production_speed_industrial_complex_factor = 0.03
-				production_speed_arms_factory_factor = 0.03
-				production_speed_dockyard_factor = 0.03
+				production_speed_industrial_complex_factor = -0.03
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = -0.03
 				research_time_factor = -0.01
 				political_power_factor = -0.025
 				production_factory_max_efficiency_factor = -0.025
 				production_factory_efficiency_gain_factor = -0.025
+				line_change_production_efficiency_factor = -0.025
 				unity_factor = 0.01
-				industrial_capacity_factory = 0.025
-				industrial_capacity_dockyard = 0.025
+				industrial_capacity_factory = -0.025
+				industrial_capacity_dockyard = -0.025
 				local_resources_factor = 0.025
 				socialism_drift = 0.01
 				liberalism_drift = 0.01
-				line_change_production_efficiency_factor = -0.025
+
+
 			}
 			
 			on_add = {
@@ -144,6 +155,7 @@ ideas = {
 				production_speed_dockyard_factor = 0.06
 				research_time_factor = 0.015
 				fascism_drift = 0.02
+				neutrality_drift = 0.02
 				political_power_factor = 0.05
 				production_factory_max_efficiency_factor = -0.05
 				production_factory_efficiency_gain_factor = -0.05
@@ -200,18 +212,18 @@ ideas = {
 			
 			modifier = {
 				production_speed_industrial_complex_factor = 0.1
-				production_speed_arms_factory_factor = 0.1
+				production_speed_arms_factory_factor = 0.15
 				production_speed_dockyard_factor = 0.10
 				research_time_factor = 0.03
 				communism_drift = 0.02
 				political_power_factor = 0.10
-				production_factory_max_efficiency_factor = -0.10
-				production_factory_efficiency_gain_factor = -0.10
+				production_factory_max_efficiency_factor = -0.075
+				production_factory_efficiency_gain_factor = -0.075
 				unity_factor = 0.05
 				industrial_capacity_factory = 0.1
 				industrial_capacity_dockyard = 0.1
-				local_resources_factor = 0.125
-				line_change_production_efficiency_factor = -0.10
+				local_resources_factor = 0.075
+				line_change_production_efficiency_factor = -0.075
 
 			}
 			
