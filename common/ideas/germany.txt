@@ -1770,7 +1770,9 @@ ideas = {
 					is_ai = yes
 					NOT = { has_country_flag = beck_fired }
 					}
-				NOT = { has_country_flag = beck_fired is_historical_focus_on = yes }
+				if = { limit = { is_historical_focus_on = yes }
+				NOT = { has_country_flag = beck_fired }
+					}
 				}
 			}
 			traits = { army_chief_organizational_2 }			

@@ -6,10 +6,9 @@ ideas = {
 			
 			available = {
 				OR = {
-						##has_government = democratic
-						has_government = liberalism
-						has_government = conservatism
-						has_government = socialism
+					has_government = monarchism
+					has_government = conservatism
+					has_government = neutrality
 				}
 			}
 			
@@ -17,17 +16,10 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				#conscription = -0.04
-				production_factory_max_efficiency_factor = 0.075
-				consumer_goods_factor = 0.10
-				production_factory_efficiency_gain_factor = 0.075
-				production_speed_industrial_complex_factor = 0.075
-				production_speed_dockyard_factor = 0.075
-				political_power_factor = 0.025
-				unity_factor = 0.02
-				industrial_capacity_factory = 0.04
-				industrial_capacity_dockyard = 0.04
-				line_change_production_efficiency_factor = 0.04
+				conscription = -0.02
+				consumer_goods_factor = 0.02
+				political_power_factor = 0.05
+				unity_factor = 0.04
 			}
 			
 			on_add = {
@@ -40,19 +32,30 @@ ideas = {
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-				factor = 10
+				factor = 1
 				modifier = {
 					factor = 5
+					has_government = neutrality
 					OR = {
-						##has_government = democratic
-						has_government = liberalism
-						has_government = conservatism
-						has_government = socialism
-							}
+						asian = yes
+						middle_eastern = yes
+						african = yes
+					}
 				}
 				modifier = {
 					factor = 0
 					has_war = yes
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						has_government = neutrality
+					OR = {
+						asian = yes
+						middle_eastern = yes
+						african = yes
+						}
+					}
 				}
 			}
 		}
@@ -62,13 +65,10 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				conscription = 0.01
-				unity_factor = 0.01
-				production_factory_max_efficiency_factor = 0.04
-				production_factory_efficiency_gain_factor = 0.04
-				production_speed_industrial_complex_factor = 0.04
-				production_speed_dockyard_factor = 0.04
-				line_change_production_efficiency_factor = 0.02
+				conscription = -0.01
+				consumer_goods_factor = 0.01
+				political_power_factor = 0.025
+				unity_factor = 0.025
 			}
 			
 			on_add = {
@@ -83,7 +83,7 @@ ideas = {
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-				factor = 1
+				factor = 5
 			
 				modifier = {
 					factor = 0
@@ -94,58 +94,30 @@ ideas = {
 		labor_encouraged = {
 			
 			available = {
-				OR = {
-					AND = {
-						OR = {
-						##has_government = democratic
-						has_government = liberalism
-						has_government = conservatism
-						has_government = socialism
-							}
-						has_war = yes
-						any_enemy_country = {
-							ic_ratio = { 
-								tag = ROOT 
-								ratio > 0.5
-							}
-						}
-					}
-					AND = {
-						NOT = { 
-						##has_government = democratic
-						has_government = liberalism
-						has_government = conservatism
-						has_government = socialism
-						}
-						OR = {
-							has_country_flag = partial_economic_mobilisation
-							has_country_flag = war_economy
-							has_country_flag = tot_economic_mobilisation
-						}
-					}
-				}
+				
 			}
 		
-			cost = 150
+			cost = 200
 			removal_cost = -1
 			
 			modifier = {
-				conscription = 0.02
-				army_morale_factor = -0.025
-
-				political_power_factor = -0.025
-				production_factory_max_efficiency_factor = -0.04
-				production_factory_efficiency_gain_factor = -0.04
-				production_speed_industrial_complex_factor = -0.04
-				production_speed_dockyard_factor = -0.04
-				line_change_production_efficiency_factor = -0.04
+				conscription = 0.015
+				consumer_goods_factor = -0.01
+				production_factory_max_efficiency_factor = -0.02
+				production_factory_efficiency_gain_factor = -0.02
+				line_change_production_efficiency_factor = -0.02
+				production_speed_industrial_complex_factor = -0.02
+				production_speed_dockyard_factor = -0.02
+				political_power_factor = -0.05
+				unity_factor = -0.025
 			}
 			
 			on_add = {
 				set_country_flag = labor_encouraged
-				clr_country_flag = labor_allowed
-				clr_country_flag = labor_none
-				clr_country_flag = labor_pressed
+				country_event = law.6
+				if = { limit = { OR = { has_country_flag = labor_none has_country_flag = labor_allowed } }
+				custom_effect_tooltip = labor_transition_TT
+				}
 			}
 			
 			cancel_if_invalid = no
@@ -183,28 +155,28 @@ ideas = {
 				}
 			}
 			
-			cost = 150
+			cost = 250
 			removal_cost = -1
 			
 			modifier = {
-				conscription = 0.04
-				army_morale_factor = -0.1
-				political_power_factor = -0.05
-				unity_factor = -0.03
-				production_factory_max_efficiency_factor = -0.08
-				production_factory_efficiency_gain_factor = -0.08
-				production_speed_industrial_complex_factor = -0.08
-				production_speed_dockyard_factor = -0.075
-				communism_drift = 0.01
-				fascism_drift = 0.01
-				line_change_production_efficiency_factor = -0.08
+				conscription = 0.03
+				consumer_goods_factor = -0.02
+				production_factory_max_efficiency_factor = -0.04
+				production_factory_efficiency_gain_factor = -0.04
+				line_change_production_efficiency_factor = -0.04
+				production_speed_industrial_complex_factor = -0.04
+				production_speed_dockyard_factor = -0.04
+				political_power_factor = -0.10
+				unity_factor = -0.05
+				army_morale_factor = -0.10
 			}
 
 			on_add = {
 				set_country_flag = labor_pressed
-				clr_country_flag = labor_allowed
-				clr_country_flag = labor_encouraged
-				clr_country_flag = labor_none
+				country_event = law.6
+				if = { limit = { OR = { has_country_flag = labor_none has_country_flag = labor_allowed has_country_flag = labor_encouraged } }
+				custom_effect_tooltip = labor_transition_TT
+				}
 			}
 			
 			cancel_if_invalid = no

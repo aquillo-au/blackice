@@ -2598,7 +2598,7 @@ country_event = {
 		exists = yes 
 		has_country_flag = SOV_partisan_uprisings 
 		has_global_flag = yes_partisans	
-		 NOT = { has_idea = SOV_partisan_attacks }
+		NOT = { has_idea = SOV_partisan_attacks }
 	}
 	immediate = {
 		add_timed_idea = {
@@ -2644,7 +2644,7 @@ country_event = {
 		exists = yes 
 		has_country_flag = SOV_partisan_uprisings 
 		NOT = { SOV = { controls_state = 94 }}
-		not = { has_idea = SOV_partisan_attacks_94 }
+		NOT = { has_idea = SOV_partisan_attacks_94 }
 		has_global_flag = yes_partisans
 	}
 	immediate = {
@@ -2877,7 +2877,7 @@ country_event = {
 				idea = SOV_partisan_attacks_840
 				days = 180
 			}
-		
+		 
 		}
 		
 	mean_time_to_happen = {
@@ -2967,7 +2967,7 @@ country_event = {
 				idea = SOV_partisan_attacks_195
 				days = 180
 			}
-		
+		 
 		}
 		
 	mean_time_to_happen = {
@@ -3102,7 +3102,7 @@ country_event = {
 				idea = SOV_partisan_attacks_246
 				days = 180
 			}
-		
+		 
 		}
 		
 	mean_time_to_happen = {
@@ -3192,7 +3192,7 @@ country_event = {
 				idea = SOV_partisan_attacks_223
 				days = 180
 			}
-		
+		 
 		}
 		
 	mean_time_to_happen = {
@@ -3282,7 +3282,7 @@ country_event = {
 				idea = SOV_partisan_attacks_222
 				days = 180
 			}
-		
+		 
 		}
 		
 	mean_time_to_happen = {
@@ -3905,6 +3905,32 @@ country_event = {
 	}
 	
 }
+country_event = {
+	id = soviet.400
+	title = soviet.400.t
+	desc = soviet.400.desc
+
+	picture = GFX_report_event_soviet_women
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+	}
+	
+	mean_time_to_happen = {
+		days = 60
+	}
+	
+	option = {
+		name = soviet.400.a
+		add_ideas = soviet_women
+		add_political_power = 10
+	}
+	
+}
+
 # Kirill I dies
 country_event = {
 	id = soviet.300

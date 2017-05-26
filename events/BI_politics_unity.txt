@@ -115,6 +115,9 @@ country_event = {
 				}
 			add_ideas = generic_supreme_commander_a1
 			}
+		if = { limit = { has_government = neutrality is_ai = yes }
+			add_ideas = generic_neutral_advisor
+			}
 		}
 	}
 	
@@ -135,6 +138,84 @@ country_event = {
 		country_event = blackiceevents.92
 		ai_chance = {
 			factor = 100
+		}
+	}
+}
+country_event = {
+	id = politics.995
+	title = politics.995.t
+	desc  = politics.995.desc
+	
+	picture = GFX_news_event_002
+	
+	trigger = {
+		OR = {
+			CAN = {
+				democratic_govt = yes
+				has_war = yes
+				NOT = { is_in_faction = yes }
+			}
+			SAF = {
+				democratic_govt = yes
+				has_war = yes
+				NOT = { is_in_faction = yes }
+			}
+			RAJ = {
+				democratic_govt = yes
+				has_war = yes
+				NOT = { is_in_faction = yes }
+			}
+			BUR = {
+				democratic_govt = yes
+				has_war = yes
+				NOT = { is_in_faction = yes }
+			}
+			AST = {
+				democratic_govt = yes
+				has_war = yes
+				NOT = { is_in_faction = yes }
+			}
+			NZL = {
+				democratic_govt = yes
+				has_war = yes
+				NOT = { is_in_faction = yes }
+			}
+		}
+		date < 1948.1.1
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	hidden = yes
+	
+	immediate = {
+	
+	}
+	
+	option = { #Ok
+		name = politics.996.a
+		trigger = {
+			is_historical_focus_on = yes
+		}
+		ENG = {
+			if = { limit = { CAN = { is_ai = yes } }
+			add_to_faction = CAN
+			}
+			if = { limit = { NZL = { is_ai = yes } }
+			add_to_faction = NZL
+			}
+			if = { limit = { SAF = { is_ai = yes } }
+			add_to_faction = SAF
+			}
+			if = { limit = { BUR = { is_ai = yes } }
+			add_to_faction = BUR
+			}
+			if = { limit = { AST = { is_ai = yes } }
+			add_to_faction = AST
+			}
+			if = { limit = { RAJ = { is_ai = yes } }
+			add_to_faction = RAJ
+			}
 		}
 	}
 }
@@ -1161,11 +1242,16 @@ country_event = {
 			tag = AST
 					}
 				}
+			tag = BUR
 			}
 		}
 		AND = {
 			communism > 0.25
 			tag = FRA
+		}
+		AND = {
+			fascism > 0.30
+			tag = AUS
 		}
 		AND = {
 			fascism > 0.15
@@ -1191,10 +1277,11 @@ country_event = {
 			tag = USA
 			tag = CAN
 			tag = AST
+			tag = BUR
 			}
 		}
 		AND = {
-			neutrality > 0.15
+			neutrality > 0.10
 		OR = {
 			tag = GER
 			tag = SOV
@@ -1230,6 +1317,7 @@ country_event = {
 			tag = JAP
 			has_government = fascism
 					}
+			tag = BUR
 				}
 			}
 		}		
@@ -1271,7 +1359,7 @@ country_event = {
 				popularity = -0.10
 				}
 			}
-			if = { limit = { neutrality > 0.15 }
+			if = { limit = { neutrality > 0.10 }
 				add_popularity = {
 				ideology = neutrality
 				popularity = -0.10
@@ -1309,7 +1397,7 @@ country_event = {
 				popularity = -0.10
 				}
 			}
-			if = { limit = { neutrality > 0.15 }
+			if = { limit = { neutrality > 0.10 }
 				add_popularity = {
 				ideology = neutrality
 				popularity = -0.10
@@ -1347,7 +1435,7 @@ country_event = {
 				popularity = -0.10
 				}
 			}
-			if = { limit = { neutrality > 0.15 }
+			if = { limit = { neutrality > 0.10 }
 				add_popularity = {
 				ideology = neutrality
 				popularity = -0.10
@@ -1411,7 +1499,7 @@ country_event = {
 				popularity = -0.10
 				}
 			}
-			if = { limit = { neutrality > 0.15 }
+			if = { limit = { neutrality > 0.10 }
 				add_popularity = {
 				ideology = neutrality
 				popularity = -0.10
@@ -1452,7 +1540,7 @@ country_event = {
 			tag = USA
 		}
 		AND = {
-			neutrality > 0.15
+			neutrality > 0.10
 		OR = {
 			tag = GER
 			tag = SOV
@@ -1504,7 +1592,7 @@ country_event = {
 				popularity = -0.10
 				}
 			}
-			if = { limit = { neutrality > 0.15 }
+			if = { limit = { neutrality > 0.10 }
 				add_popularity = {
 				ideology = neutrality
 				popularity = -0.10
@@ -1542,7 +1630,7 @@ country_event = {
 				popularity = -0.10
 				}
 			}
-			if = { limit = { neutrality > 0.15 }
+			if = { limit = { neutrality > 0.10 }
 				add_popularity = {
 				ideology = neutrality
 				popularity = -0.10
@@ -1580,7 +1668,7 @@ country_event = {
 				popularity = -0.10
 				}
 			}
-			if = { limit = { neutrality > 0.15 }
+			if = { limit = { neutrality > 0.10 }
 				add_popularity = {
 				ideology = neutrality
 				popularity = -0.10
@@ -1644,7 +1732,7 @@ country_event = {
 				popularity = -0.10
 				}
 			}
-			if = { limit = { neutrality > 0.15 }
+			if = { limit = { neutrality > 0.10 }
 				add_popularity = {
 				ideology = neutrality
 				popularity = -0.10
@@ -1653,64 +1741,7 @@ country_event = {
 		}
     }
 }
-#Minister Switch following Coup/Election
-country_event = {
-	id = politics.40
-	title = politics.40.t
-	desc  = politics.40.desc
-	picture = event_HQcommandIV
-	
-	is_triggered_only = yes
-	
-	option = { 
-		name = politics.40.a
-		
-		add_political_power = 600
-		if = { limit = { has_government = socialism }
-			remove_ideas_with_trait = conservative
-			remove_ideas_with_trait = fascist
-			remove_ideas_with_trait = monarchist
-			remove_ideas_with_trait = neutral
-		}
-		if = { limit = { has_government = monarchism }
-			remove_ideas_with_trait = communist
-			remove_ideas_with_trait = fascist
-			remove_ideas_with_trait = liberal
-			remove_ideas_with_trait = socialist
-		}
-		if = { limit = { has_government = conservatism }
-			remove_ideas_with_trait = socialist
-			remove_ideas_with_trait = fascist
-			remove_ideas_with_trait = monarchist
-			remove_ideas_with_trait = neutral
-		}
-		if = { limit = { has_government = liberalism }
-			remove_ideas_with_trait = communist
-			remove_ideas_with_trait = fascist
-			remove_ideas_with_trait = monarchist
-			remove_ideas_with_trait = neutral
-		}
-		if = { limit = { has_government = fascism }
-			remove_ideas_with_trait = communist
-			remove_ideas_with_trait = monarchist
-			remove_ideas_with_trait = neutral
-			remove_ideas_with_trait = socialist
-			remove_ideas_with_trait = liberal
-		}
-		if = { limit = { has_government = communism }
-			remove_ideas_with_trait = conservative
-			remove_ideas_with_trait = fascist
-			remove_ideas_with_trait = monarchist
-			remove_ideas_with_trait = neutral
-			remove_ideas_with_trait = liberal
-		}
-		if = { limit = { has_government = neutrality }
-			remove_ideas_with_trait = conservative
-			remove_ideas_with_trait = socialist
-			remove_ideas_with_trait = liberal
-		}
-	}
-}
+
 #Starting Opinions - Overrides Diff Democratic Ideologies
 country_event = {
 	id = politics.900
@@ -1839,7 +1870,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 10
+		days = 20
 	}
 
 	immediate = {

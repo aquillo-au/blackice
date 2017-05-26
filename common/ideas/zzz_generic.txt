@@ -606,7 +606,7 @@ ideas = {
 				always = no # Triggered via event
 			}
 			
-		}
+		}	
 		neutrality_idea = {
 			
 			
@@ -842,11 +842,12 @@ ideas = {
 			
 			removal_cost = -1
 			
-			picture = generic_pp_unity_bonus
+			picture = idea_FRA_swe
 			
 			modifier = {
 				unity_factor = 0.05
 				monarchism_drift = 0.02
+				political_power_factor = 0.02
 			}
 		}
 		general_strike = {
@@ -881,6 +882,42 @@ ideas = {
 				unity_factor = 0.02
 			}
 		}
+		labor_transition = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				production_factory_max_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.05
+				line_change_production_efficiency_factor = -0.05
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_dockyard_factor = -0.05
+			}
+		}
+		labor_transition2 = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				production_factory_max_efficiency_factor = -0.025
+				production_factory_efficiency_gain_factor = -0.025
+				line_change_production_efficiency_factor = -0.025
+				production_speed_industrial_complex_factor = -0.025
+				production_speed_dockyard_factor = -0.025
+			}
+		}
 	}
 ###############################
 ####Ministers
@@ -895,10 +932,12 @@ foreign_minister = {
 generic_foreign_minister = {
 			
 			allowed = {
-					has_available_idea_with_traits = { idea = compassionate_gentleman limit = 0 }
-					has_available_idea_with_traits = { idea = ideological_crusader limit = 0 }
-					has_available_idea_with_traits = { idea = iron_fisted_brute limit = 0 }
-					has_available_idea_with_traits = { idea = smooth_talking_charmer limit = 0 }
+				NOT = {
+					has_available_idea_with_traits = { idea = compassionate_gentleman limit = 1 }
+					has_available_idea_with_traits = { idea = ideological_crusader limit = 1 }
+					has_available_idea_with_traits = { idea = iron_fisted_brute limit = 1 }
+					has_available_idea_with_traits = { idea = smooth_talking_charmer limit = 1 }
+					}
 			}
 			
 
@@ -912,7 +951,7 @@ generic_foreign_minister = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
 			}
 		}
 }
@@ -922,11 +961,13 @@ interior_minister = {
 generic_interior_minister = {
 			
 			allowed = {
-					has_available_idea_with_traits = { idea = prince_of_terror limit = 0 }
-					has_available_idea_with_traits = { idea = backroom_backstabber limit = 0 }
-					has_available_idea_with_traits = { idea = efficient_sociopath limit = 0 }
-					has_available_idea_with_traits = { idea = crime_fighter limit = 0 }
-					has_available_idea_with_traits = { idea = hearts_and_minds limit = 0 }
+			NOT = {
+					has_available_idea_with_traits = { idea = prince_of_terror limit = 1 }
+					has_available_idea_with_traits = { idea = backroom_backstabber limit = 1 }
+					has_available_idea_with_traits = { idea = efficient_sociopath limit = 1 }
+					has_available_idea_with_traits = { idea = crime_fighter limit = 1 }
+					has_available_idea_with_traits = { idea = hearts_and_minds limit = 1 }
+					}
 			}
 			
 			traits = { crime_fighter }
@@ -938,7 +979,7 @@ generic_interior_minister = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
 			}
 		}
 }
@@ -948,8 +989,8 @@ intel_minister = {
 generic_intel_minister = {
 			
 			allowed = {
-					has_available_idea_with_traits = { idea = codebreaker limit = 0 }
-					has_available_idea_with_traits = { idea = dismal_enigma limit = 0 }
+					NOT = { has_available_idea_with_traits = { idea = codebreaker limit = 1 } }
+					NOT = { has_available_idea_with_traits = { idea = dismal_enigma limit = 1 } }
 			}
 				
 			traits = { dismal_enigma }
@@ -961,7 +1002,7 @@ generic_intel_minister = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
 			}
 		}
 }
@@ -997,19 +1038,21 @@ generic_captain_of_industry = {
 		generic_economic_minister = {
 			
 			allowed = {
-					has_available_idea_with_traits = { idea = capitalist limit = 0 }
-					has_available_idea_with_traits = { idea = theoretical_scientist limit = 0 }
-					has_available_idea_with_traits = { idea = administrative_genius limit = 0 }
-					has_available_idea_with_traits = { idea = resource_industrialist limit = 0 }
-					has_available_idea_with_traits = { idea = military_entrepreneur limit = 0 }
-					has_available_idea_with_traits = { idea = technical_especialist limit = 0 }
-					has_available_idea_with_traits = { idea = corrupt_kleptocrat limit = 0 }
-					has_available_idea_with_traits = { idea = fortification_engineer limit = 0 }
-					has_available_idea_with_traits = { idea = war_industrialist limit = 0 }
-					has_available_idea_with_traits = { idea = captain_of_industry limit = 0 }
-					has_available_idea_with_traits = { idea = industrial_planner limit = 0 }
-					has_available_idea_with_traits = { idea = armaments_organizer limit = 0 }
-					has_available_idea_with_traits = { idea = quartermaster_general limit = 0 }
+				NOT = {
+					has_available_idea_with_traits = { idea = capitalist limit = 1 }
+					has_available_idea_with_traits = { idea = theoretical_scientist limit = 1 }
+					has_available_idea_with_traits = { idea = administrative_genius limit = 1 }
+					has_available_idea_with_traits = { idea = resource_industrialist limit = 1 }
+					has_available_idea_with_traits = { idea = military_entrepreneur limit = 1 }
+					has_available_idea_with_traits = { idea = technical_especialist limit = 1 }
+					has_available_idea_with_traits = { idea = corrupt_kleptocrat limit = 1 }
+					has_available_idea_with_traits = { idea = fortification_engineer limit = 1 }
+					has_available_idea_with_traits = { idea = war_industrialist limit = 1 }
+					has_available_idea_with_traits = { idea = captain_of_industry limit = 1 }
+					has_available_idea_with_traits = { idea = industrial_planner limit = 1 }
+					has_available_idea_with_traits = { idea = armaments_organizer limit = 1 }
+					has_available_idea_with_traits = { idea = quartermaster_general limit = 1 }
+					}
 			}
 				
 			traits = { industrial_planner }
@@ -1021,7 +1064,7 @@ generic_captain_of_industry = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
 			}
 		}
 }
@@ -1051,7 +1094,11 @@ political_advisor = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
+				modifier = {
+					factor = 0
+					NOT = { has_government = communism }
+				}
 			}
 		}
 		
@@ -1079,7 +1126,11 @@ political_advisor = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
+				modifier = {
+					factor = 0
+					NOT = { has_government = conservatism }
+				}
 			}
 		}
 		
@@ -1107,7 +1158,11 @@ political_advisor = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
+				modifier = {
+					factor = 0
+					NOT = { has_government = socialism }
+				}
 			}
 		}
 		
@@ -1135,7 +1190,11 @@ political_advisor = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
+				modifier = {
+					factor = 0
+					NOT = { has_government = liberalism }
+				}
 			}
 		}
 		
@@ -1165,7 +1224,11 @@ political_advisor = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
+				modifier = {
+					factor = 0
+					NOT = { has_government = fascism }
+				}
 			}
 		}
 		generic_monarchist_advisor = {
@@ -1191,7 +1254,67 @@ political_advisor = {
 			}
 	
 			ai_will_do = {
-				factor = 0
+				factor = 1
+				modifier = {
+					factor = 0
+					NOT = { has_government = monarchism }
+				}
+			}
+		}
+		generic_neutral_advisor = {
+			
+			allowed = {
+				NOT = { has_government = fascism has_government = communism  }
+			}
+
+			traits = { staunch_traditionalist }
+
+			on_add = {
+				#country_event = political.30
+			}
+			
+			do_effect = {
+				NOT = {
+					has_government = neutrality
+				}
+			}
+	
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 0
+					NOT = { has_government = neutrality }
+				}
+			}
+		}
+		generic_speechwriter = {
+			
+			allowed = {
+				NOT = {
+					has_available_idea_with_traits = { idea = speechwriter limit = 1 }
+				}
+			}
+
+			traits = { speechwriter }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		generic_sympathetic_judge = {
+			
+			allowed = {
+				NOT = {
+					has_available_idea_with_traits = { idea = sympathetic_judge limit = 1 }
+				}
+			}
+
+			traits = { sympathetic_judge }
+			on_add = {
+				custom_effect_tooltip = judge_TT
+			}
+			ai_will_do = {
+				factor = 1
 			}
 		}
 	}

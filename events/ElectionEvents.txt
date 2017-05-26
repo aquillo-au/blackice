@@ -1238,11 +1238,12 @@ country_event = {
 
 	trigger = {
 		OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					}
-		NOT = { tag = USA date > 1945.1.1 }
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
+			has_government = neutrality 
+			}
+		NOT = { tag = USA date < 1945.1.1 }
 		is_puppet = no
 		
 	}
@@ -1274,107 +1275,19 @@ country_event = {
 				OR = {
 					AND = { 
 					has_government = socialism 
-					socialism > 0.35 
-					AND = {
-					conservatism < 0.35 
-					liberalism < 0.35 
-					monarchism < 0.35 
-					neutrality < 0.35 
-					fascism < 0.35 
-					communism < 0.35 
-						}		
+					highest_socialists = yes		
 					}
 					AND = { 
 					has_government = conservatism 
-					conservatism > 0.35 
-					AND = {
-					liberalism < 0.35 
-					socialism < 0.35 
-					monarchism < 0.35 
-					neutrality < 0.35 
-					fascism < 0.35 
-					communism < 0.35 
-						}
+					highest_conservatives = yes
 					}
 					AND = { 
 					has_government = liberalism 
-					liberalism > 0.35 
-					AND = {
-					conservatism < 0.35 
-					socialism < 0.35 
-					monarchism < 0.35 
-					neutrality < 0.35 
-					fascism < 0.35 
-					communism < 0.35 
-					#democratic < 0.35
-						}
+					highest_liberals = yes
 					}
 					AND = { 
 					has_government = neutrality 
-					neutrality > 0.35 
-					AND = {
-					conservatism < 0.35 
-					socialism < 0.35 
-					monarchism < 0.35 
-					liberalism < 0.35 
-					fascism < 0.35 
-					communism < 0.35 
-					#democratic < 0.35
-							}
-						}
-					}
-				OR = {
-					AND = { 
-					has_government = socialism 
-					socialism > 0.3 
-					AND = {
-					conservatism < 0.3 
-					liberalism < 0.3 
-					monarchism < 0.3 
-					neutrality < 0.3 
-					fascism < 0.3 
-					communism < 0.3 
-					#democratic < 0.3
-						}		
-					}
-					AND = { 
-					has_government = conservatism 
-					conservatism > 0.3 
-					AND = {
-					liberalism < 0.3 
-					socialism < 0.3 
-					monarchism < 0.3 
-					neutrality < 0.3
-					fascism < 0.3 
-					communism < 0.3
-					#democratic < 0.3
-						}
-					}
-					AND = { 
-					has_government = liberalism 
-					liberalism > 0.3 
-					AND = {
-					conservatism < 0.3 
-					socialism < 0.3 
-					monarchism < 0.3 
-					neutrality < 0.3 
-					fascism < 0.3 
-					communism < 0.3
-					#democratic < 0.3
-						}
-					}
-					AND = { 
-					has_government = neutrality 
-					neutrality > 0.3 
-					AND = {
-					conservatism < 0.3 
-					socialism < 0.3 
-					monarchism < 0.3 
-					liberalism < 0.3 
-					fascism < 0.3 
-					communism < 0.3 
-					#democratic < 0.3
-							}
+					highest_neutrals = yes
 						}
 					}
 				}
@@ -1388,38 +1301,7 @@ country_event = {
 			factor = 3
 			modifier = {
 				factor = 100
-			OR = {
-				AND = {
-					conservatism > 0.40
-					liberalism < 0.40 
-					socialism < 0.40 
-					monarchism < 0.40 
-					neutrality < 0.40 
-					fascism < 0.40 
-					communism < 0.40
-					#democratic < 0.35	
-					}
-				AND = {
-					conservatism > 0.35
-					liberalism < 0.35 
-					socialism < 0.35 
-					monarchism < 0.35 
-					neutrality < 0.35 
-					fascism < 0.35 
-					communism < 0.35
-					#democratic < 0.35	
-					}
-					AND = {
-					conservatism > 0.3
-					liberalism < 0.3 
-					socialism < 0.3 
-					monarchism < 0.3 
-					neutrality < 0.3 
-					fascism < 0.3 
-					communism < 0.3
-					#democratic < 0.3	
-					}
-				}
+			highest_conservatives = yes
 			}
 		}
 		trigger = {
@@ -1447,38 +1329,7 @@ country_event = {
 			factor = 3
 			modifier = {
 				factor = 100
-				OR = {
-				AND = {
-					liberalism > 0.40
-					conservatism < 0.40 
-					socialism < 0.40 
-					monarchism < 0.40 
-					neutrality < 0.40 
-					fascism < 0.40 
-					communism < 0.40
-					#democratic < 0.35	
-					}
-				AND = {
-					liberalism > 0.35
-					conservatism < 0.35 
-					socialism < 0.35 
-					monarchism < 0.35 
-					neutrality < 0.35 
-					fascism < 0.35 
-					communism < 0.35
-					#democratic < 0.35	
-					}
-					AND = {
-					liberalism > 0.3
-					conservatism < 0.3 
-					socialism < 0.3 
-					monarchism < 0.3 
-					neutrality < 0.3 
-					fascism < 0.3 
-					communism < 0.3
-					#democratic < 0.3	
-					}
-				}
+				highest_liberals = yes
 			}
 			modifier = {
 				factor = 1000
@@ -1504,38 +1355,7 @@ country_event = {
 			factor = 4
 			modifier = {
 				factor = 100
-				OR = {
-				AND = {
-					socialism > 0.40
-					liberalism < 0.40 
-					conservatism < 0.40 
-					monarchism < 0.40 
-					neutrality < 0.40 
-					fascism < 0.40 
-					communism < 0.40
-					#democratic < 0.35	
-					}
-				AND = {
-					socialism > 0.35
-					liberalism < 0.35 
-					conservatism < 0.35 
-					monarchism < 0.35 
-					neutrality < 0.35 
-					fascism < 0.35 
-					communism < 0.35
-					#democratic < 0.35	
-					}
-					AND = {
-					socialism > 0.3
-					liberalism < 0.3 
-					conservatism < 0.3 
-					monarchism < 0.3 
-					neutrality < 0.3 
-					fascism < 0.3 
-					communism < 0.3
-					#democratic < 0.3	
-					}
-				}
+				highest_socialists = yes
 			}
 			modifier = {
 				factor = 1000
@@ -1568,43 +1388,13 @@ country_event = {
 			factor = 1
 			modifier = {
 				factor = 100
-			OR = {
-				AND = {
-					monarchism > 0.40
-					liberalism < 0.40 
-					socialism < 0.40 
-					conservatism < 0.40 
-					neutrality < 0.40 
-					fascism < 0.40 
-					communism < 0.40
-					#democratic < 0.35	
-					}
-				AND = {
-					monarchism > 0.35
-					liberalism < 0.35 
-					socialism < 0.35 
-					conservatism < 0.35 
-					neutrality < 0.35 
-					fascism < 0.35 
-					communism < 0.35
-					#democratic < 0.35	
-					}
-					AND = {
-					monarchism > 0.3
-					liberalism < 0.3 
-					socialism < 0.3 
-					conservatism < 0.3 
-					neutrality < 0.3 
-					fascism < 0.3 
-					communism < 0.3
-					#democratic < 0.3	
-					}
-				}			}
+			highest_monarchists = yes
+			}
 		}
 		
 		set_politics = {
 			ruling_party = monarchism
-			elections_allowed = yes
+			elections_allowed = no
 		}
 		add_popularity = {
 			ideology = monarchism
@@ -1619,38 +1409,7 @@ country_event = {
 			factor = 3
 			modifier = {
 				factor = 100
-				OR = {
-				AND = {
-					neutrality > 0.40
-					liberalism < 0.40 
-					socialism < 0.40 
-					monarchism < 0.40 
-					conservatism < 0.40 
-					fascism < 0.40 
-					communism < 0.40
-					#democratic < 0.35	
-					}
-				AND = {
-					neutrality > 0.35
-					liberalism < 0.35 
-					socialism < 0.35 
-					monarchism < 0.35 
-					conservatism < 0.35 
-					fascism < 0.35 
-					communism < 0.35
-					#democratic < 0.35	
-					}
-					AND = {
-					neutrality > 0.3
-					liberalism < 0.3 
-					socialism < 0.3 
-					monarchism < 0.3 
-					conservatism < 0.3 
-					fascism < 0.3 
-					communism < 0.3
-					#democratic < 0.3	
-					}
-				}
+				highest_neutrals = yes
 			}
 		}	
 		trigger = {
@@ -1674,38 +1433,7 @@ country_event = {
 			factor = 3
 			modifier = {
 				factor = 100
-				OR = {
-				AND = {
-					communism > 0.40
-					liberalism < 0.40 
-					socialism < 0.40 
-					monarchism < 0.40 
-					neutrality < 0.40 
-					fascism < 0.40 
-					communism < 0.40
-					#democratic < 0.35	
-					}
-				AND = {
-					communism > 0.35
-					liberalism < 0.35 
-					socialism < 0.35 
-					monarchism < 0.35 
-					neutrality < 0.35 
-					fascism < 0.35 
-					communism < 0.35
-					#democratic < 0.35	
-					}
-					AND = {
-					communism > 0.3
-					liberalism < 0.3 
-					socialism < 0.3 
-					monarchism < 0.3 
-					neutrality < 0.3 
-					fascism < 0.3 
-					communism < 0.3
-					#democratic < 0.3	
-					}
-				}
+				highest_communists = yes
 			}
 		}
 		trigger = {
@@ -1730,38 +1458,8 @@ country_event = {
 			factor = 3
 			modifier = {
 				factor = 100
-			OR = {
-				AND = {
-					fascism > 0.40
-					liberalism < 0.40 
-					socialism < 0.40 
-					monarchism < 0.40 
-					neutrality < 0.40 
-					conservatism < 0.40 
-					communism < 0.40
-					#democratic < 0.35	
-					}
-				AND = {
-					fascism > 0.35
-					liberalism < 0.35 
-					socialism < 0.35 
-					monarchism < 0.35 
-					neutrality < 0.35 
-					conservatism < 0.35 
-					communism < 0.35
-					#democratic < 0.35	
-					}
-					AND = {
-					fascism > 0.3
-					liberalism < 0.3 
-					socialism < 0.3 
-					monarchism < 0.3 
-					neutrality < 0.3 
-					conservatism < 0.3 
-					communism < 0.3
-					#democratic < 0.3	
-					}
-				}			}
+			highest_fascists = yes
+			}
 		}
 		trigger = {
 			NOT = { has_government = fascism }

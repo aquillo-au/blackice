@@ -3861,6 +3861,139 @@ country_event = {
 		}
 	}
 }
+#Riots
+country_event = {
+	id = politics.36
+	title = politics.36.t
+	desc  = politics.36.desc
+	picture = GFX_report_event_protest
+	
+	is_triggered_only = yes
+	
+	option = { #Control it
+		name = politics.36.a
+		
+		random_list = {
+			90 = { add_national_unity = -0.03 add_political_power = -15 }
+			10 = { country_event = politics.39 }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 10
+				if = {
+					limit = { NOT = { has_government = fascism } fascism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = communism } communism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = monarchism } monarchism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = conservatism } conservatism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = liberalism } liberalism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = socialism } socialism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } neutrality < 0.20 }
+				}
+			}
+			modifier = {
+				factor = 0.5
+			OR = {
+				if = {
+					limit = { NOT = { has_government = fascism } fascism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = communism } communism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = monarchism } monarchism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = conservatism } conservatism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = liberalism } liberalism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = socialism } socialism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } neutrality > 0.30 }
+				}
+				}
+			}
+		}
+	}
+	option = { #Crush them
+		name = politics.36.b
+		trigger = { has_political_power > 25 }
+		add_political_power = -10
+		random_list = {
+			75 = { add_national_unity = -0.01 add_political_power = -20 }
+			25 = { country_event = politics.38 }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				if = {
+					limit = { NOT = { has_government = fascism } fascism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = communism } communism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = monarchism } monarchism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = conservatism } conservatism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = liberalism } liberalism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = socialism } socialism < 0.20 }
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } neutrality < 0.20 }
+				}
+			}
+			modifier = {
+				factor = 10
+			OR = {
+				if = {
+					limit = { NOT = { has_government = fascism } fascism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = communism } communism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = monarchism } monarchism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = conservatism } conservatism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = liberalism } liberalism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = socialism } socialism > 0.30 }
+				}
+				if = {
+					limit = { NOT = { has_government = neutrality } neutrality > 0.30 }
+				}
+				}
+			}
+		}
+	}
+}
 #Riots Get Worse!
 country_event = {
 	id = politics.38

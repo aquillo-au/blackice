@@ -867,12 +867,16 @@ country_event = {
 		36 = { NOT = { is_controlled_by = HOL } } # Axis controls Dutch coast
 		is_ai = yes
 		GER = {is_ai = no }
-		not = { has_country_flag = ENG_commando_raid }
+		NOT = { has_idea = ENG_commando_raid }
 		has_country_flag = ENG_commando_units
 	}
 	
 	immediate = {
-		set_country_flag = { flag = ENG_commando_raid days = 120 } 
+		add_timed_idea = {
+				idea = ENG_commando_raid
+				days = 120
+			}
+		
 	}
 	
 	mean_time_to_happen = {

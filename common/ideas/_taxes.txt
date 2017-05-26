@@ -6,11 +6,10 @@ ideas = {
 		
 			available = {
 				NOT = {
-					has_government = fascism
+				OR = {
 					has_government = communism
-					has_government = monarchism
-					has_government = neutrality
-					has_government = socialism
+					has_government = fascism
+					}
 				}
 			}
 			
@@ -18,7 +17,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = -0.05
+				political_power_factor = 0.05
 				industrial_capacity_factory = -0.05
 				industrial_capacity_dockyard = -0.05
 				production_factory_max_efficiency_factor = 0.10
@@ -31,7 +30,6 @@ ideas = {
 				#fascism_drift = -0.01
 				unity_factor = 0.05
 				#conservatism_drift = 0.01
-
 				line_change_production_efficiency_factor = 0.10
 			}
 			on_add = {
@@ -40,6 +38,7 @@ ideas = {
 				clr_country_flag = tax_low
 				clr_country_flag = tax_average
 				clr_country_flag = tax_extreme
+				custom_effect_tooltip = taxes_TT
 			}
 			
 			cancel_if_invalid = no
@@ -72,21 +71,14 @@ ideas = {
 			}
 		}
 		tax_low = {
-
-		available = {
-
-
-
-
-
-
+			available = {
 				
 			}
 			cost = 150
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = -0.025
+				political_power_factor = 0.025
 				industrial_capacity_factory = -0.025
 				industrial_capacity_dockyard = -0.025
 				production_factory_max_efficiency_factor = 0.05
@@ -106,6 +98,7 @@ ideas = {
 				clr_country_flag = tax_minimal
 				clr_country_flag = tax_average
 				clr_country_flag = tax_extreme
+				custom_effect_tooltip = taxes_TT
 			}
 
 			
@@ -148,7 +141,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = 0.05
+				political_power_factor = -0.025
 				unity_factor = 0.01
 				#socialism_drift = 0.01
 				industrial_capacity_factory = 0.02
@@ -164,6 +157,7 @@ ideas = {
 				clr_country_flag = tax_low
 				clr_country_flag = tax_high
 				clr_country_flag = tax_extreme
+				custom_effect_tooltip = taxes_TT
 			}
 			cancel_if_invalid = no
 
@@ -184,7 +178,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = -0.025
+				political_power_factor = -0.05
 				industrial_capacity_factory = 0.04
 				industrial_capacity_dockyard = 0.04
 				production_factory_max_efficiency_factor = -0.05
@@ -204,6 +198,7 @@ ideas = {
 				clr_country_flag = tax_low
 				clr_country_flag = tax_average
 				clr_country_flag = tax_extreme
+				custom_effect_tooltip = taxes_TT
 			}
 			
 			cancel_if_invalid = no
@@ -259,7 +254,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				political_power_factor = -0.05
+				political_power_factor = -0.075
 				industrial_capacity_factory = 0.08
 				industrial_capacity_dockyard = 0.08
 				production_factory_max_efficiency_factor = -0.10
@@ -279,6 +274,7 @@ ideas = {
 				clr_country_flag = tax_low
 				clr_country_flag = tax_average
 				clr_country_flag = tax_high
+				custom_effect_tooltip = taxes_TT
 			}
 			
 			cancel_if_invalid = no
