@@ -3870,12 +3870,13 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { #Control it
+	option = { #Control it 
 		name = politics.36.a
 		
 		random_list = {
 			90 = { add_national_unity = -0.03 add_political_power = -15 }
-			10 = { country_event = politics.39 }
+			10 = { add_national_unity = -0.05 add_political_power = -20 }
+			#10 = { country_event = politics.39 }
 		}
 		ai_chance = {
 			factor = 1
@@ -4006,7 +4007,7 @@ country_event = {
 	option = { 
 		name = politics.38.a
 		
-		add_national_unity = -0.03
+		add_national_unity = -0.06
 		add_political_power = -50
 	}
 }
