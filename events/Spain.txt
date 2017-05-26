@@ -2052,7 +2052,7 @@ country_event = {
 		#has_country_flag = impossible
 		is_ai = yes
 		has_civil_war = yes
-		
+		#has_global_flag = yes_partisans
 	}
 	fire_only_once = yes
 	
@@ -2084,7 +2084,7 @@ country_event = {
 		is_ai = yes
 		has_civil_war = yes
 		#has_country_flag = impossible 
-		
+		#has_global_flag = yes_partisans
 	}
 	fire_only_once = yes
 		
@@ -2115,11 +2115,16 @@ country_event = {
 		tag = SPR
 		NOT = { has_global_flag = scw_over }
 		is_ai = yes
-		not = { has_country_flag = SPR_partisan_attacks }
+		#has_global_flag = yes_partisans
 		has_country_flag = SPR_partisan_uprisings 
+		 NOT = { has_idea = SPR_partisan_attacks }
 	}
 	immediate = {
-		set_country_flag = { flag = SPR_partisan_attacks days = 90 } 
+		
+		add_timed_idea = {
+				idea = SPR_partisan_attacks
+				days = 90
+			}
 	}
 		
 	mean_time_to_happen = {
@@ -2148,11 +2153,15 @@ country_event = {
 		original_tag = SPR
 		NOT = { has_global_flag = scw_over }
 		is_ai = yes
-		not = { has_country_flag = SPA_partisan_attacks }
+		#has_global_flag = yes_partisans
 		has_country_flag = SPA_partisan_uprisings 
+		 NOT = { has_idea = SPA_partisan_attacks }
 	}
 	immediate = {
-		set_country_flag = { flag = SPA_partisan_attacks days = 90 } 
+		add_timed_idea = {
+				idea = SPA_partisan_attacks
+				days = 90
+			}
 	}
 		
 	mean_time_to_happen = {

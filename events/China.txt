@@ -1728,11 +1728,14 @@ country_event = {
 		is_ai = yes
 		is_puppet = no
 		exists = yes 
-		not = { has_country_flag =  partisan_uprisings }
-		
+		NOT = { has_idea = CHI_partisan_attacks }
+		has_global_flag = yes_partisans
 	}
 	immediate = {
-		set_country_flag = { flag = partisan_uprisings days = 180 } 
+		add_timed_idea = {
+				idea = CHI_partisan_attacks
+				days = 180
+			}
 		}
 		
 	mean_time_to_happen = {
@@ -1766,12 +1769,15 @@ country_event = {
 		JAP =  { is_in_faction_with = CHI }
 		CHI = {is_puppet_of = JAP }
 		has_country_flag =  PRC_state 
-		not = { has_country_flag =  partisan_uprisings_PRC }
+		NOT = { has_idea = PRC_partisan_attacks }
 		is_ai = yes
-		
+		has_global_flag = yes_partisans
 	}
 	immediate = {
-		set_country_flag = { flag = partisan_uprisings_PRC days = 240 } 
+		add_timed_idea = {
+				idea = PRC_partisan_attacks
+				days = 180
+			}
 		}
 		
 	mean_time_to_happen = {

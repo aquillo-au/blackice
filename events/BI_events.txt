@@ -1976,7 +1976,7 @@ country_event = {
 	picture = GFX_report_event_polish_tanks_01
 
 	trigger = {
-			has_country_flag = impossible
+			#has_country_flag = impossible
 		    num_divisions > 10 
 			num_divisions < 50 
 			is_ai = yes
@@ -1984,7 +1984,7 @@ country_event = {
 			NOT = { has_manpower > 11 }
 			#has_war = yes
 			#has_army_manpower = { size > 25000 }
-						
+			NOT = { has_idea = Manpower_draft }			
 			}
 			
 
@@ -1992,7 +1992,10 @@ country_event = {
 		days = 2
 	}
 	immediate = { 
-		
+			add_timed_idea = {
+				idea = Manpower_draft
+				days = 180
+			}
 	}
 	option = {
 		name = blackiceevents.91.a
@@ -2002,3 +2005,89 @@ country_event = {
 		}
 		
 	}
+	}
+	country_event = {
+	id = blackiceevents.92
+	title = blackiceevents.92.t
+	desc = blackiceevents.92.d
+	
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	is_triggered_only = yes
+			
+fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = blackiceevents.92.a	#yes to partisans
+			set_global_flag = yes_partisans
+			ai_chance = { factor = 100 }
+	}
+	option = {
+		name = blackiceevents.92.b # no to partisans...yes to a new pain
+			ai_chance = { factor = 0 }
+			set_global_flag = no_partisans
+		}
+		
+	}
+	country_event = {
+	id = blackiceevents.93
+	title = blackiceevents.93.t
+	desc = blackiceevents.93.d
+	
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+
+	trigger = {
+			has_global_flag = no_partisans
+			is_ai = no
+			and = { 
+			OR = {
+					has_government = fascism
+					tag = GER
+					has_war_with = SOV
+					
+				}
+			OR = {
+					has_government = fascism
+					tag = JAP
+					has_war_with = CHI
+					
+				}
+			OR = {
+					has_government = fascism
+					tag = JAP
+					has_war_with = PRC
+					
+				}
+			OR = {
+					tag = SPR
+					has_government = communism
+					has_war = yes
+					
+				}
+			OR = {
+					original_tag = SPR
+					has_government = fascism
+					has_war = yes
+					
+				}
+				}
+			}
+			
+fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = blackiceevents.93.a	#yes to partisans
+	
+			add_ideas = { Partisan_Hell }
+			
+		
+	}
+	
+	}
+	
