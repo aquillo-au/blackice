@@ -503,10 +503,14 @@ ideas = {
 			available = {
 				has_government = fascism
 			}			
+
+			on_add = {
+				custom_effect_tooltip = powerful_TT
+				set_country_flag = himmler_powerful
+			}
+			traits = { prince_of_terror fascist powerful ambitious pet_projects }
 			
-			traits = { prince_of_terror fascist powerful ambitious pet_projects}
-			
-			removal_cost = 250
+			#removal_cost = 250
 		}
 	himmler_ai = {
 			
@@ -686,6 +690,10 @@ ideas = {
 			traits = { captain_of_industry conservative}
 			ai_will_do = {
 				factor = 2
+				modifier = {
+					factor = 0
+					has_country_flag = schacht_fired
+				}
 			}
 		}
 		walther_funk = {
@@ -824,7 +832,7 @@ ideas = {
 				NOT = { has_country_flag = goebbels_dead }
 			}
 			
-			traits = { fascist_demagogue powerful loyal}
+			traits = { fascist_demagogue loyal}
 	
 			on_add = {
 				country_event = political.7
@@ -844,12 +852,13 @@ ideas = {
 			
 			allowed = {
 				original_tag = GER
-				has_government = fascism
+				#has_government = fascism
 				is_ai = yes
 				NOT = { has_country_flag = goebbels_dead }
 			}
 			available = {
 				is_ai = yes
+				has_government = fascism
 			}
 			traits = { fascist_demagogue }
 	
@@ -871,18 +880,24 @@ ideas = {
 			
 			allowed = {
 				original_tag = GER
-				is_ai = no
-				NOT = { has_country_flag = goering_dead }
+
+				NOT = { has_country_flag = goering_dead }				
 			}
 			available = {
-				
+
+				is_ai = no
+
 			}			
 			traits = { fascist loyal corrupt_kleptocrat powerful }
-			
-			removal_cost = 250
-			
+
+
+
+			on_add = {
+				custom_effect_tooltip = powerful_TT
+				set_country_flag = goering_powerful
+			}
 			ai_will_do = {
-				factor = 1
+				factor = 0
 			}
 		}
 		ernst_thalmann = {
@@ -950,11 +965,15 @@ ideas = {
 			
 			allowed = {
 				original_tag = GER
-				has_government = fascism
+
 				NOT = { has_country_flag = bormann_dead }
 			}
-			
-			traits = { silent_workhorse loyal fascist powerful}
+
+			available = {
+				has_government = fascism
+				date > 1939.1.1
+			}
+			traits = { silent_workhorse loyal fascist }
 		}
 		
 		goering_ai = {
@@ -1946,18 +1965,22 @@ ideas = {
 				original_tag = GER
 			}
 			available = {
-				OR = {
-				AND = {
-					is_ai = yes
-					NOT = { has_country_flag = raeder_fired }
-					}
-				NOT = { has_country_flag = raeder_fired is_historical_focus_on = yes }
-				}
+
+
+
+
+
+
+
+		
 			}
 			traits = { navy_chief_decisive_battle_2 }
 			
 			ai_will_do = {
 				factor = 1
+				modifier = {
+					NOT = { has_country_flag = raeder_fired }
+				}
 			}
 		}
 		

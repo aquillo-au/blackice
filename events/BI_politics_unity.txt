@@ -142,6 +142,33 @@ country_event = {
 	}
 }
 country_event = {
+	id = politics.994
+	title = politics.994.t
+	desc  = politics.994.desc
+	
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		NOT = { has_idea = goering_ai has_idea = himmler_ai }
+		date < 1936.2.1
+		}
+	mean_time_to_happen = {
+		days = 3
+	}
+	
+	option = {
+		name = politics.994.a
+		clr_country_flag = heinrich_himmler
+		clr_country_flag = hermann_goering
+		remove_ideas = heinrich_himmler
+		remove_ideas = hermann_goering
+		add_ideas = goering_ai
+		add_ideas = himmler_ai
+	}
+}
+country_event = {
 	id = politics.995
 	title = politics.995.t
 	desc  = politics.995.desc
