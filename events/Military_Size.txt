@@ -26,7 +26,8 @@ country_event = {
 		clr_country_flag = small_army
 		clr_country_flag = average_army
 		clr_country_flag = large_army
-		} 
+	}
+	
 	option = {
 		name = military_size.1.a
 		
@@ -410,7 +411,7 @@ country_event = {
 		clr_country_flag = tiny_navy
 		clr_country_flag = average_navy
 		clr_country_flag = large_navy
-		} 
+	} 
  
 	option = {
 		name = military_size.12.a
@@ -435,17 +436,20 @@ country_event = {
 		has_navy_size = { size < 110 }
 		has_navy_size = { size > 50 }
 		NOT = { has_idea = average_navy }
+		NOT = { has_country_flag = average_navy }
 	}
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	immediate = { 
 		set_country_flag = average_navy 
 		clr_country_flag = tiny_navy
 		clr_country_flag = small_navy
 		clr_country_flag = huge_navy
 		clr_country_flag = large_navy
-		} 
+	} 
  
 	option = {
 		name = military_size.13.a
@@ -455,7 +459,7 @@ country_event = {
 		remove_ideas = small_navy
 		remove_ideas = average_navy
 		remove_ideas = large_navy
-}
+	}
 }
 country_event = {
 	id = military_size.14
