@@ -67,6 +67,50 @@ country_event = {
 		}
 	}
 }
+#Powerful Minister - Workaround for PP removal cost issue
+#Goering
+country_event = {
+	id = politics.910
+	title = politics.910.t
+	desc  = politics.910.desc
+	picture = event_HQcommandIV
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = goering_powerful
+			NOT = { has_idea = hermann_goering }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = { 
+		name = politics.980.a
+		add_political_power = -100
+		clr_country_flag = goering_powerful
+	}
+}
+country_event = {
+	id = politics.911
+	title = politics.911.t
+	desc  = politics.911.desc
+	picture = event_HQcommandIV
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = himmler_powerful
+			NOT = { has_idea = heinrich_himmler }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = { 
+		name = politics.911.a
+		add_political_power = -100
+		clr_country_flag = himmler_powerful
+	}
+}
 ######GERMANY#######
 #Wever Crash
 country_event = {
@@ -319,6 +363,45 @@ country_event = {
 	option = { 
 		name = politics.205.c
 		add_political_power = -30
+	}
+}
+#Schacht Fired
+country_event = {
+	id = politics.227
+	title = politics.227.t
+	desc  = politics.227.desc
+	picture = GFX_news_event_002
+	
+	trigger = {
+		tag = GER
+		date > 1937.10.20
+		has_idea = hjalmar_schacht
+		}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+	option = { 
+		name = politics.205.a
+		remove_ideas = hjalmar_schacht
+		set_country_flag = schacht_fired
+		add_political_power = 50
+	}
+	option = { 
+		name = politics.205.b
+		trigger = {
+			is_ai = yes
+		}
+		remove_ideas = hjalmar_schacht
+		add_ideas = goering_e
+		set_country_flag = schacht_fired
+		ai_chance = {
+			factor = 1000
+		}
+	}
+	option = { 
+		name = politics.205.c
+		add_political_power = -35
 	}
 }
 ######USSR#######
