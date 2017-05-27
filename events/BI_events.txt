@@ -1977,7 +1977,7 @@ country_event = {
 
 	trigger = {
 			#has_country_flag = impossible
-		    num_divisions > 10 
+		    	#num_divisions > 10 
 			num_divisions < 50 
 			is_ai = yes
 			has_manpower < 10
@@ -2089,5 +2089,81 @@ fire_only_once = yes
 		
 	}
 	
+	}
+country_event = {
+	id = blackiceevents.94
+	title = blackiceevents.94.t
+	desc = blackiceevents.94.d
+	
+	picture = GFX_report_event_polish_tanks_01
+
+	trigger = {
+			#has_country_flag = impossible
+		    	num_divisions > 50 
+			num_divisions < 100 
+			is_ai = yes
+			has_manpower < 100
+			NOT = { has_manpower > 101}
+			#has_war = yes
+			#has_army_manpower = { size > 25000 }
+			NOT = { has_idea = Manpower_draft }			
+			}
+			
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	immediate = { 
+			add_timed_idea = {
+				idea = Manpower_draft
+				days = 180
+			}
+	}
+	option = {
+		name = blackiceevents.94.a
+		hidden_effect = {
+			add_manpower = 600
+			
+		}
+		
+	}
+	}
+country_event = {
+	id = blackiceevents.95
+	title = blackiceevents.95.t
+	desc = blackiceevents.95.d
+	
+	picture = GFX_report_event_polish_tanks_01
+
+	trigger = {
+			#has_country_flag = impossible
+		    	num_divisions > 100 
+			#num_divisions < 100 
+			is_ai = yes
+			has_manpower < 500
+			NOT = { has_manpower > 501}
+			#has_war = yes
+			#has_army_manpower = { size > 25000 }
+			NOT = { has_idea = Manpower_draft }			
+			}
+			
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	immediate = { 
+			add_timed_idea = {
+				idea = Manpower_draft
+				days = 180
+			}
+	}
+	option = {
+		name = blackiceevents.95.a
+		hidden_effect = {
+			add_manpower = 1200
+			
+		}
+		
+	}
 	}
 	
