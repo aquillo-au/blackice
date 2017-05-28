@@ -1731,7 +1731,18 @@ country_event = {
 			}
 			SLO = { transfer_state = 72 } # Give Slovakia Zaolzie
 		}
-
+		if = {
+			limit = {
+				73 = {
+					OR = {
+						is_owned_by = CZE
+						is_owned_by = GER
+					}
+				}
+				NOT = { country_exists = POL }
+			}
+			SLO = { transfer_state = 73 } # Give Slovakia Zaolzie
+		}
 		hidden_effect = {
 			country_event = { hours = 6 id = news.60 }
 			every_state = {

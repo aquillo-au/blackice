@@ -1027,9 +1027,9 @@ NAI = {
 		1.2,   -- air_range
 		1.0,   -- air_defence
 		1.0,   -- air_attack
-		0.0,   -- air_agility
+		1.2,   -- air_agility
 		1.0,   -- air_bombing
-		0.0,   -- air_superiority
+		0.5,   -- air_superiority
 		0.0,   -- naval_strike_attack
 		0.0,   -- naval_strike_targetting
 		1.0,   -- air_ground_attack
@@ -1037,15 +1037,15 @@ NAI = {
 		-- Common Values
 		0.0,   -- max_organisation
 		1.0,   -- 1.0 max_strength
-		0.0,  -- build_cost_ic
+		0.5,  -- build_cost_ic
 		0.0,   -- maximum_speed
 		1.0,   -- armor_value
-		0.0,   -- ap_attack
-		0.8,   -- reliability
+		0.5,   -- ap_attack
+		0.3,   -- reliability
 		0.0,   -- reliability_factor
 		0.0, -- weight
 		-- Special Values
-		0.0,   -- strategic_attack
+		0.5,   -- strategic_attack
 		2.0,   -- carrier_size
 	},
 	DIVISION_DESIGN_MANPOWER_WEIGHT = 0.000,
