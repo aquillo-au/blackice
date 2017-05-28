@@ -1976,8 +1976,11 @@ country_event = {
 	picture = GFX_report_event_soldiers_marching
 
 	trigger = {
-			#has_country_flag = impossible
-		    	#num_divisions > 10 
+			or = {
+			has_war = yes
+			is_in_faction = yes
+			threat > 0.5
+			}
 			num_divisions < 50 
 			is_ai = yes
 			has_manpower < 10
@@ -2000,7 +2003,7 @@ country_event = {
 	option = {
 		name = blackiceevents.91.a
 		hidden_effect = {
-			add_manpower = 300
+			add_manpower = 150
 			
 		}
 		
@@ -2098,7 +2101,11 @@ country_event = {
 	picture = GFX_report_event_soldiers_marching
 
 	trigger = {
-			#has_country_flag = impossible
+			or = {
+			has_war = yes
+			is_in_faction = yes
+			threat > 0.5
+			}
 		    	num_divisions > 50 
 			num_divisions < 100 
 			is_ai = yes
@@ -2136,7 +2143,11 @@ country_event = {
 	picture = GFX_report_event_soldiers_marching
 
 	trigger = {
-			#has_country_flag = impossible
+			or = {
+			has_war = yes
+			is_in_faction = yes
+			threat > 0.5
+			}
 		    	num_divisions > 100 
 			#num_divisions < 100 
 			is_ai = yes
