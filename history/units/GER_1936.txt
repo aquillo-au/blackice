@@ -23,7 +23,7 @@
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
 		engineer = { x = 0 y = 1 }
-       		artillery_medium = { x = 0 y = 2 }
+       	artillery_medium = { x = 0 y = 2 }
 		recon = { x = 0 y = 3 }
 		
 		maintenance_company = { x = 1 y = 0 }
@@ -156,7 +156,7 @@ division_template = {
 	template_counter = 61
 }
 division_template = {
-	name = "Grenzwacht art"	#
+	name = "Grenzwacht art"
 
 	regiments = {
 		artillery_brigade = { x = 0 y = 0 }
@@ -806,7 +806,7 @@ instant_effect = {
 			type = infantry_equipment_1
 			creator = "GER"
 		}
-		requested_factories = 12
+		requested_factories = 16
 		progress = 0.1
 		efficiency = 50
 	}
@@ -816,7 +816,7 @@ instant_effect = {
 			type = garrison_equipment_0
 			creator = "GER"
 		}
-		requested_factories = 3
+		requested_factories = 2
 		progress = 0.1
 		efficiency = 50
 	}
@@ -836,7 +836,7 @@ instant_effect = {
 			type = support_equipment_1
 			creator = "GER" 
 		}
-		requested_factories = 1
+		requested_factories = 10
 		progress = 0.3
 		efficiency = 50
 	}
@@ -906,7 +906,7 @@ instant_effect = {
 			type = panzer_i_equipment_1
 			creator = "GER" 
 		}
-		requested_factories = 1
+		requested_factories = 3
 		progress = 0.4
 		efficiency = 50
 	}
@@ -932,10 +932,19 @@ instant_effect = {
 	}
 	add_equipment_production = {
 		equipment = {
-			type = HMG_equipment_0
+			type = HMG_equipment_1
 			creator = "GER" 
 		}
-		requested_factories = 1
+		requested_factories = 2
+		progress = 0.4
+		efficiency = 50
+	}
+	add_equipment_production = {
+		equipment = {
+			type = infantrygun_equipment_0
+			creator = "GER" 
+		}
+		requested_factories = 2
 		progress = 0.4
 		efficiency = 50
 	}
@@ -944,7 +953,7 @@ instant_effect = {
 			type = mortar_equipment_0
 			creator = "GER" 
 		}
-		requested_factories = 1
+		requested_factories = 2
 		progress = 0.4
 		efficiency = 50
 	}
@@ -1323,4 +1332,21 @@ instant_effect = {
 	}
 	
 }
+instant_effect = {
+################# equipment stockpile
+	add_equipment_to_stockpile = {
+		type = infantrygun_equipment_0
+		amount = 500 
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = mortar_equipment_0
+		amount = 500 
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = HMG_equipment_1
+		amount = 500 
+		producer = GER
+	}
 #####################
