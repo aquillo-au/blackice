@@ -1814,7 +1814,7 @@ leader_traits = {
 		}
 	}
 
-	trait_mountaineer_CC = { 
+	mountaineer_CC = { 
 		type = corps_commander
 		gain_xp = {
 			is_fighting_in_terrain = mountain
@@ -1834,12 +1834,12 @@ leader_traits = {
 		}
 	}
 
-	trait_mountaineer_CC_II = { 
+	mountaineer_CC_II = { 
 		type = corps_commander
 		gain_xp = {
 			AND = {
-			has_trait = trait_mountaineer_CC
-			is_fighting_in_terrain = mountain
+				has_trait = mountaineer_CC
+				is_fighting_in_terrain = mountain
 			}
 		}
 		cost = 1000
@@ -1856,12 +1856,12 @@ leader_traits = {
 		}
 	}
 
-	trait_mountaineer_CC_III = { 
+	mountaineer_CC_III = { 
 		type = corps_commander
 		gain_xp = {
 			AND = {
-			has_trait = trait_mountaineer_CC_II
-			is_fighting_in_terrain = mountain
+				has_trait = mountaineer_CC_II
+				is_fighting_in_terrain = mountain
 			}
 		}
 		cost = 1300

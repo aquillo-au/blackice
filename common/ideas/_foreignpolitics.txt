@@ -42,6 +42,7 @@ ideas = {
 						has_government = liberalism
 					}
 					threat < 0.05
+					is_major = no
 				}
 				modifier = {
 					factor = 0
@@ -49,6 +50,11 @@ ideas = {
 						threat > 0.90
 						has_war = yes
 					}
+				}
+				modifier = {
+					factor = 10
+					tag = USA
+					date > 1941.6.1
 				}
 				modifier = {
 					factor = 0
@@ -108,6 +114,12 @@ ideas = {
 						tag = ENG
 						tag = FRA
 					}
+				}
+				modifier = {
+					factor = 100
+					tag = ITA
+					date < 1940.5.1
+					is_historical_focus_on = yes
 				}
 			}
 		}
@@ -274,6 +286,12 @@ ideas = {
 				modifier = {
 					factor = 1000
 					has_government = fascism
+				}
+				modifier = {
+					factor = 0
+					tag = ITA
+					date < 1940.5.1
+					is_historical_focus_on = yes
 				}
 				modifier = {
 					factor = 10

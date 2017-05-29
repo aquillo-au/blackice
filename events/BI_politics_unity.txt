@@ -18,7 +18,7 @@ country_event = {
 	}
 	
 	immediate = {
-
+	hidden_effect = {
 		every_country = {
 		if = { limit = {
 			OR = {
@@ -117,6 +117,7 @@ country_event = {
 			}
 		if = { limit = { has_government = neutrality is_ai = yes }
 			add_ideas = generic_neutral_advisor
+				}
 			}
 		}
 	}
@@ -126,16 +127,20 @@ country_event = {
 		trigger = {
 
 		}
+		hidden_effect = {
 		country_event = blackiceevents.92
 		country_event = politics.998
 		country_event = politics.997
+		}
 	}
 	option = { #
 		name = politics.1.b
 		trigger = {
 			
 		}
+		hidden_effect = {
 		country_event = blackiceevents.92
+		}
 		ai_chance = {
 			factor = 100
 		}

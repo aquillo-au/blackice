@@ -861,7 +861,9 @@ political_advisor = {
 			allowed = {
 				original_tag = JAP
 			}
-			
+			available = {
+				NOT = { has_country_flag = kotohito_retires }
+			}
 
 			
 			traits = { army_chief_offensive_1 }
@@ -913,13 +915,19 @@ political_advisor = {
 			allowed = {
 				original_tag = JAP
 			}
-			
+			available = {
+				#NOT = { has_country_flag = hiroyasu_leaves }
+			}
 
 			
 			traits = { navy_chief_naval_aviation_2 }
 			
 			ai_will_do = {
 				factor = 1
+				modifier = {
+					factor = 0
+					has_country_flag = hiroyasu_leaves
+				}
 			}
 		}
 		
@@ -936,6 +944,10 @@ political_advisor = {
 			
 			ai_will_do = {
 				factor = 1
+				modifier = {
+					factor = 0
+					has_country_flag = nagano_fired
+				}
 			}
 		}
 		
