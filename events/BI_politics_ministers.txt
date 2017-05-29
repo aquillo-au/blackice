@@ -404,6 +404,82 @@ country_event = {
 		add_political_power = -35
 	}
 }
+#Heydrich Assassination
+country_event = {
+	id = politics.50
+	title = politics.50.t
+	desc  = politics.50.desc
+	picture = GFX_event_generic_funeral
+	hidden = yes
+	trigger = {
+		tag = GER
+		date > 1941.6.1
+		NOT = { has_idea = reinhard_heydrich }
+		ENG = {
+			exists = yes
+			is_puppet = no
+			NOT = { has_government = fascism }
+			has_war_with = GER
+		}
+	}
+	mean_time_to_happen = {
+		days = 360
+	}
+	fire_only_once = yes
+	
+	option = { #Does he survive?
+		name = politics.50.a
+		trigger = {
+			
+		}		
+		if = { 
+			limit = { is_historical_focus_on = yes }
+			random_list = {
+				95 = { country_event = politics.51 }
+				5 = { country_event = politics.52 }
+			}
+		}
+		if = { 
+			limit = { NOT = { is_historical_focus_on = yes } }
+			random_list = {
+				60 = { country_event = politics.51 }
+				40 = { country_event = politics.52 }
+			}
+		}
+	}
+}
+country_event = {
+	id = politics.51
+	title = politics.51.t
+	desc  = politics.51.desc
+	picture = GFX_event_generic_funeral
+	
+	is_triggered_only = yes
+	
+	option = { #Heydrich Dies
+		name = politics.51.a
+		
+		remove_ideas = reinhard_heydrich 
+		set_country_flag = heydrich_dead 
+		add_political_power = -25 
+		add_national_unity = -0.02
+	}
+}
+country_event = {
+	id = politics.52
+	title = politics.52.t
+	desc  = politics.52.desc
+	picture = GFX_event_dead_soldiers
+	
+	is_triggered_only = yes
+	
+	option = { #Heydrich Survives
+		name = politics.52.a
+		
+		set_country_flag = heydrich_survived 
+		add_political_power = 15
+	}
+}
 ######USSR#######
 #AI Install Shaposhnikov
 country_event = {
@@ -996,6 +1072,83 @@ country_event = {
 
 ######JAPAN#######
 
+#Yamamoto Assassination
+country_event = {
+	id = politics.53
+	title = politics.53.t
+	desc  = politics.53.desc
+	picture = GFX_news_event_002
+	hidden = yes
+	trigger = {
+		tag = JAP
+		date > 1942.5.1
+		has_idea = isoroku_yamamoto
+		has_war_with = USA
+		NOT = { has_tech = advanced_encryption }
+		USA = {
+			exists = yes
+			is_puppet = no
+			NOT = { has_government = fascism }
+			has_tech = advanced_decryption
+		}
+	}
+	mean_time_to_happen = {
+		days = 720
+	}
+	fire_only_once = yes
+	
+	option = { #Does he survive?
+		name = politics.53.a
+		trigger = {
+			
+		}		
+		if = { 
+			limit = { is_historical_focus_on = yes }
+			random_list = {
+				95 = { country_event = politics.54 }
+				5 = { country_event = politics.55 }
+			}
+		}
+		if = { 
+			limit = { is_historical_focus_on = no }
+			random_list = {
+				70 = { country_event = politics.54 }
+				30 = { country_event = politics.55 }
+			}
+		}
+	}
+}
+country_event = {
+	id = politics.54
+	title = politics.54.t
+	desc  = politics.54.desc
+	picture = event_generic_funeral
+	
+	is_triggered_only = yes
+	
+	option = { #Yamamoto Dies
+		name = politics.54.a
+		
+		remove_ideas = isoroku_yamamoto 
+		set_country_flag = yamamoto_dead 
+		add_political_power = -25 
+		add_national_unity = -0.02
+	}
+}
+country_event = {
+	id = politics.55
+	title = politics.55.t
+	desc  = politics.55.desc
+	picture = GFX_event_japanese_officers
+	
+	is_triggered_only = yes
+	
+	option = { #Yamamoto Survives
+		name = politics.55.a
+		set_country_flag = yamamoto_survived 
+		add_political_power = 15
+	}
+}
 
 
 ######FRANCE#######
