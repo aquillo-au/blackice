@@ -2854,7 +2854,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_popularity = {	
-						ideology = monarchism
+						ideology = neutrality
 						popularity = 0.15
 			}
 			add_national_unity = 0.05
@@ -2867,7 +2867,7 @@ focus_tree = {
 		icon = GFX_ROM_alliance
 		prerequisite = { focus = FRA_papal_rehabilitation }
 		available = {
-			has_government = monarchism
+			has_government = neutrality
 			is_puppet = no
 			is_in_faction = no
 		}
@@ -2914,7 +2914,7 @@ focus_tree = {
 		icon = GFX_focus_generic_home_defense
 		prerequisite = { focus = FRA_papal_rehabilitation }
 		available = {
-	 		monarchism > 0.35
+	 		neutrality > 0.35
 		}
 		x = 28
 		y = 5
@@ -3576,9 +3576,11 @@ focus_tree = {
 			add_tech_bonus = {
 				name = FRA_capital_ship_focus
 				bonus = 0.5
-				uses = 1
+				uses = 3
 				category = bb_tech
 				category = bc_tech
+				category = ca_tech
+				category = fbb_tech
 			}
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = brest
@@ -3605,7 +3607,7 @@ focus_tree = {
 			add_tech_bonus = {
 				name = FRA_carrier_focus
 				bonus = 0.5
-				uses = 2
+				uses = 1
 				category = cv_tech
 			}
 			custom_effect_tooltip = available_designer
