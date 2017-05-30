@@ -2128,4 +2128,112 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = politics.40
+	title = politics.40.t
+	desc  = politics.40.desc
+	picture = event_HQcommandIV
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = politics.40.a
+		
+		add_political_power = 600
+		if = { limit = { has_government = socialism }
+			remove_ideas_with_trait = conservative
+			remove_ideas_with_trait = fascist
+			if = { limit = { NOT = { has_country_flag = const_monarchy } }
+			remove_ideas_with_trait = monarchist
+			}
+			remove_ideas_with_trait = neutral
+		}
+		if = { limit = { has_government = monarchism }
+			remove_ideas_with_trait = communist
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = liberal
+			remove_ideas_with_trait = socialist
+		}
+		if = { limit = { has_government = conservatism }
+			remove_ideas_with_trait = socialist
+			remove_ideas_with_trait = fascist
+			if = { limit = { NOT = { has_country_flag = const_monarchy } }
+			remove_ideas_with_trait = monarchist
+			}
+			remove_ideas_with_trait = neutral
+		}
+		if = { limit = { has_government = liberalism }
+			remove_ideas_with_trait = communist
+			remove_ideas_with_trait = fascist
+			if = { limit = { NOT = { has_country_flag = const_monarchy } }
+			remove_ideas_with_trait = monarchist
+			}
+			remove_ideas_with_trait = neutral
+		}
+		if = { limit = { has_government = fascism }
+			remove_ideas_with_trait = communist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+			remove_ideas_with_trait = socialist
+			remove_ideas_with_trait = liberal
+		}
+		if = { limit = { has_government = communism }
+			remove_ideas_with_trait = conservative
+			remove_ideas_with_trait = fascist
+			remove_ideas_with_trait = monarchist
+			remove_ideas_with_trait = neutral
+			remove_ideas_with_trait = liberal
+		}
+		if = { limit = { has_government = neutrality }
+			remove_ideas_with_trait = conservative
+			remove_ideas_with_trait = socialist
+			remove_ideas_with_trait = liberal
+		}
+	}
+}
+#Powerful Minister - Workaround for PP removal cost issue
+#Goering
+country_event = {
+	id = politics.910
+	title = politics.910.t
+	desc  = politics.910.desc
+	picture = event_HQcommandIV
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = goering_powerful
+			NOT = { has_idea = hermann_goering }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = { 
+		name = politics.980.a
+		add_political_power = -100
+		clr_country_flag = goering_powerful
+	}
+}
+country_event = {
+	id = politics.911
+	title = politics.911.t
+	desc  = politics.911.desc
+	picture = event_HQcommandIV
+	hidden = yes
+	trigger = {
+		AND = {
+			has_country_flag = himmler_powerful
+			NOT = { has_idea = heinrich_himmler }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = { 
+		name = politics.911.a
+		add_political_power = -100
+		clr_country_flag = himmler_powerful
+	}
+}
+
 ### EOF ###
