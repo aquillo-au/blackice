@@ -578,10 +578,12 @@ ideas = {
 				factor = 1
 			}
 		}
-		karl_arnold = { 
+	karl_arnold = { 
+	
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
 				OR = {
 					has_government = conservatism
@@ -589,21 +591,29 @@ ideas = {
 					has_government = socialism
 				}
 			}
+			
 			traits = { conservative crime_fighter }
+			
 			cancel_if_invalid = no
+			
 		}
-		helmuth_j_von_moltke = { 
+	helmuth_j_von_moltke = { 
+	
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
 				OR = {
 					has_government = conservatism
 					has_government = liberalism
 				}
 			}
+			
 			traits = { conservative anti_fascist hearts_and_minds }
+			
 			cancel_if_invalid = no
+			
 		}
 	}
 
@@ -1693,7 +1703,9 @@ ideas = {
 				original_tag = GER
 				NOT = { has_country_flag = wever_dead }
 			}
-			
+			available = {
+				NOT = { has_country_flag = wever_dead }
+			}
 			research_bonus = {
 				air_doctrine = 0.07
 			}
@@ -1746,10 +1758,12 @@ ideas = {
 			
 			allowed = {
 				original_tag = GER
-				is_ai = no
+				NOT = { is_ai = yes }
 				NOT = { has_country_flag = fritsch_fired }
 			}
-			
+			available = {
+				NOT = { is_ai = yes }
+			}
 			traits = { supreme_com_fritz reluctant_minister fascist }
 			
 			ai_will_do = {
@@ -1978,13 +1992,6 @@ ideas = {
 			}
 			available = {
 
-
-
-
-
-
-
-		
 			}
 			traits = { navy_chief_decisive_battle_2 }
 			
@@ -2021,7 +2028,7 @@ ideas = {
 			traits = { army_commando_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0
 			}
 		}
 		erwin_rommel = {
@@ -2037,7 +2044,7 @@ ideas = {
 			traits = { army_armored_3 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 3
 			}
 		}
 		gerd_von_rundstedt = {
@@ -2076,7 +2083,7 @@ ideas = {
 			traits = { air_close_air_support_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0
 			}
 		}
 		erhard_milch = {
@@ -2088,7 +2095,7 @@ ideas = {
 			traits = { air_bomber_interception_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 2
 			}
 		}
 		kurt_student = {
@@ -2100,7 +2107,7 @@ ideas = {
 			traits = { air_airborne_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0
 			}
 		}
 		erich_bey = {
@@ -2113,6 +2120,10 @@ ideas = {
 			
 			ai_will_do = {
 				factor = 1
+				modifier = {
+					factor = 0
+					date > 1943.6.1
+				}
 			}
 		}
 		gunther_lutjens = {
@@ -2124,7 +2135,7 @@ ideas = {
 			traits = { navy_fleet_logistics_2 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0
 			}
 		}
 		viktor_schutze = {
@@ -2136,7 +2147,7 @@ ideas = {
 			traits = { navy_anti_submarine_1 }
 			
 			ai_will_do = {
-				factor = 1
+				factor = 0
 			}
 		}
 	}

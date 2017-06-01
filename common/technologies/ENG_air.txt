@@ -32,22 +32,22 @@ technologies = {
 	}
 	tech_raf = {
 		
+		allow = {
+			always = no
+		}
+
 		path = {
 			leads_to_tech = tech_english_aircraft1
 			research_cost_coeff = 1 
-		}
-		
-		allow = {
-			always = no
 		}
 		
 		research_cost = 1
 		start_year = 1930
 		folder = {
 			name = britishair_folder
-			position = { x = -9 y = @1930 }
+			position = { x = 0 y = @1930 }
 		}
-
+		
 		ai_will_do = {
 			factor = 0
 		}
@@ -65,17 +65,17 @@ technologies = {
 			prewar_flying_boat_equipment_1
 			prewar_medium_bomber_equipment_1
 		}
-		
+
 		allow = {
 			always = no
 		}
 		
 		research_cost = 1
 		start_year = 1930
-		#folder = {
-		#	name = britishair_folder
-		#	position = { x = -9 y = @1930 }
-		#}
+		folder = {
+			name = britishair_folder
+			position = { x = 0 y = @1930 }
+		}
 
 		ai_will_do = {
 			factor = 0
@@ -1414,6 +1414,7 @@ technologies = {
 		}
 		dependencies = {
 			tech_english_aircraft1 = 1 
+			jet_technology = 1
 		}
 		categories = {
 			light_air
@@ -1438,6 +1439,7 @@ technologies = {
 		
 		dependencies = {
 			tech_english_aircraft1 = 1 
+			jet_technology = 1
 		}
 		categories = {
 			light_air
