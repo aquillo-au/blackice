@@ -2159,5 +2159,35 @@ country_event = {
 		}
 	}
 }
-
+#French NU monitor
+country_event = {
+	id = politics.940
+	title = politics.940.t
+	desc = politics.940.desc
+	
+	picture = GFX_report_event_dc
+	
+	trigger = {
+		tag = FRA
+		is_ai = yes
+		GER = {
+			is_ai = yes
+		}
+		has_national_unity > 0.70
+		is_historical_focus_on = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	immediate = {
+		
+	}
+	Option = {
+		name = politics.940.a
+		trigger = { }
+		add_national_unity = -0.15
+	}
+}
 ### EOF ###

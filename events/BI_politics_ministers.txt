@@ -15,7 +15,7 @@ country_event = {
 	option = { 
 		name = politics.40.a
 		
-		add_political_power = 600
+		add_political_power = 750
 		if = { limit = { has_government = socialism }
 			remove_ideas_with_trait = conservative
 			remove_ideas_with_trait = fascist
@@ -29,6 +29,7 @@ country_event = {
 			remove_ideas_with_trait = fascist
 			remove_ideas_with_trait = liberal
 			remove_ideas_with_trait = socialist
+			country_event = politics.920
 		}
 		if = { limit = { has_government = conservatism }
 			remove_ideas_with_trait = socialist
@@ -132,6 +133,45 @@ country_event = {
 		name = politics.912.a
 		add_political_power = -100
 		clr_country_flag = araki_powerful
+	}
+}
+#Set correct monarchs
+country_event = {
+	id = politics.920
+	title = politics.920.t
+	desc  = politics.920.desc
+	picture = event_HQcommandIV
+	hidden = yes
+	trigger = {
+		has_government = monarchism
+		OR = {
+			AND = { tag = GER NOT = { has_idea = wilhelm_iii } }
+			AND = { tag = SOV date < 1938.10.25 NOT = { has_idea = kirill_v_romanov } }
+			AND = { tag = SOV date > 1938.10.25 NOT = { has_idea = vladimir_k_romanov } }
+			AND = { tag = TUR date < 1944.6.10 NOT = { has_idea = abdulmejid_ii } }
+			AND = { tag = TUR date > 1944.6.10 NOT = { has_idea = ahmed_iv } }
+		}
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = { 
+		name = politics.920.a
+		if = { limit = { tag = GER }
+			add_ideas = wilhelm_iii
+		}
+		if = { limit = { tag = SOV date < 1938.10.25 }
+			add_ideas = kirill_v_romanov
+		}
+		if = { limit = { tag = SOV date > 1938.10.25 }
+			add_ideas = vladimir_k_romanov
+		}
+		if = { limit = { tag = TUR date < 1944.6.10 }
+			add_ideas = abdulmejid_ii
+		}
+		if = { limit = { tag = TUR date > 1944.6.10 }
+			add_ideas = ahmed_iv
+		}
 	}
 }
 ######GERMANY#######

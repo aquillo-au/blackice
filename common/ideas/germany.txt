@@ -345,8 +345,11 @@ ideas = {
 		beck_hos = {
 			allowed = {
 				original_tag = GER
-				OR = {
+				
+			}
+			available = {
 					has_country_flag = hitler_dead
+				OR = {
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -370,7 +373,7 @@ ideas = {
 				OR = {
 					has_government = conservatism
 					has_government = liberalism
-					has_government = monarchism
+					#has_government = monarchism
 				}
 			}
 			traits = { conservative ineffective_politician }
@@ -430,7 +433,7 @@ ideas = {
 			}
 			
 			available = {
-				has_government = fascism
+				NOT = { has_government = communism }
 			}
 			
 			traits = { smooth_talking_charmer apolitical }
@@ -443,6 +446,7 @@ ideas = {
 			
 			available = {
 				OR = {
+					has_government = monarchism
 					has_government = conservatism
 					has_government = liberalism
 				}
@@ -460,6 +464,7 @@ ideas = {
 			
 			available = {
 				OR = {
+					has_government = monarchism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -589,6 +594,7 @@ ideas = {
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
+					has_government = monarchism
 				}
 			}
 			
@@ -605,6 +611,7 @@ ideas = {
 			
 			available = {
 				OR = {
+					has_government = monarchism
 					has_government = conservatism
 					has_government = liberalism
 				}
@@ -770,6 +777,9 @@ ideas = {
 			
 			allowed = {
 				original_tag = GER
+
+			}
+			available = {
 				date > 1941.1.1
 			}
 			#Chance to also die in Todt crash
@@ -837,11 +847,12 @@ ideas = {
 			
 			allowed = {
 				original_tag = GER
-				has_government = fascism
-				is_ai = no
+				
+			}
+			available = {
+				#has_government = fascism
 				NOT = { has_country_flag = goebbels_dead }
 			}
-			
 			traits = { fascist_demagogue loyal}
 	
 			on_add = {
@@ -853,7 +864,7 @@ ideas = {
 					has_government = fascism
 				}
 			}
-			removal_cost = 75
+			removal_cost = -1
 			ai_will_do = {
 				factor = 0
 			}
@@ -862,13 +873,11 @@ ideas = {
 			
 			allowed = {
 				original_tag = GER
-				#has_government = fascism
-				is_ai = yes
-				NOT = { has_country_flag = goebbels_dead }
 			}
 			available = {
 				is_ai = yes
 				has_government = fascism
+				NOT = { has_country_flag = goebbels_dead }
 			}
 			traits = { fascist_demagogue }
 	
