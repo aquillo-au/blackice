@@ -727,14 +727,13 @@ equipments = {
 			chromium = 1
 		}
 	}
-
 	# AMX-13 1948
 	fra_light_main_tank_equipment_1 = {
-		archetype = fra_main_tank_equipment
+		archetype = fra_light_main_tank_equipment
 		priority = 50
 		visual_level = 0
 	}
-########################################################################################
+	########################################################################################
 	# Medium Tank
 	fra_medium_tank_equipment = {
 		is_archetype = yes
@@ -793,7 +792,6 @@ equipments = {
 		priority = 50
 		visual_level = 1
 	}
-	
 	#Renault D2
 	fra_medium_tank_equipment_2 = {
 		archetype = fra_medium_tank_equipment
@@ -824,7 +822,6 @@ equipments = {
 			steel = 6
 			tungsten = 1
 		}
-		
 	}
 	#Renault D2 bis
 	fra_medium_tank_equipment_3 = {
@@ -972,14 +969,12 @@ equipments = {
 			chromium = 2
 		}
 	}
-
 	# ARL 44
 	fra_main_tank_equipment_1 = {
 		archetype = fra_main_tank_equipment
 		priority = 60
 		visual_level = 0
 	}
-
 	# AMX-50
 	fra_main_tank_equipment_2 = {
 		archetype = fra_main_tank_equipment
@@ -1232,7 +1227,6 @@ equipments = {
 			chromium = 1
 		}
 	}
-	
 	# FCM F1
 	fra_superheavy_tank_equipment_3 = {
 		archetype = fra_superheavy_tank_equipment
@@ -1270,13 +1264,15 @@ equipments = {
 ########################################################################################
 #VARIANTS#
 ########################################################################################
-	# fra_medium_art_equipment = {
+	# Medium Artillery
+	fra_medium_art_equipment = {
 		is_archetype = yes
 		is_buildable = no
 		type = { 
 			armor
 			artillery
 		}
+		
 		group_by = archetype
 		
 		interface_category = interface_category_armor
@@ -1297,7 +1293,6 @@ equipments = {
 			tank_anti_inf_upgrade 
 		}
 
-		
 		#Misc Abilities
 		maximum_speed = 5
 		reliability = 0.6
@@ -1531,3 +1526,4 @@ equipments = {
 		visual_level = 0
 	}
 }
+### EOF ###
