@@ -178,6 +178,64 @@ country_event = {
 	}
 }
 country_event = {
+	id = politics.991
+	title = politics.991.t
+	desc  = politics.991.desc
+	
+	picture = GFX_news_event_002
+	
+	is_triggered_only = yes
+	
+	option = { #Country Flipping
+		name = politics.991.a
+		country_event = politics.992
+	}
+	option = { #Other Questions/Feedback
+		name = politics.991.b
+		country_event = politics.993
+	}
+	option = { #Finished
+		name = politics.991.c
+		
+	}
+}
+country_event = {
+	id = politics.992
+	title = politics.992.t
+	desc  = politics.992.desc
+	
+	picture = GFX_news_event_002
+	
+	is_triggered_only = yes
+	
+	option = { #Back
+		name = politics.992.a
+		country_event = politics.991
+	}
+	option = { #Finished
+		name = politics.991.c
+		
+	}
+}
+country_event = {
+	id = politics.993
+	title = politics.993.t
+	desc  = politics.993.desc
+	
+	picture = GFX_news_event_002
+	
+	is_triggered_only = yes
+	
+	option = { #Back
+		name = politics.992.a
+		country_event = politics.991
+	}
+	option = { #Finished
+		name = politics.991.c
+		
+	}
+}
+country_event = {
 	id = politics.994
 	title = politics.994.t
 	desc  = politics.994.desc
@@ -2169,7 +2227,6 @@ country_event = {
 	
 	trigger = {
 		tag = FRA
-		has_country_flag = impossible
 		is_ai = yes
 		GER = {
 			is_ai = yes
