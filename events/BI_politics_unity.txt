@@ -2225,18 +2225,22 @@ country_event = {
 	
 	picture = GFX_report_event_dc
 	
+	fire_only_once = yes
+
 	trigger = {
 		tag = FRA
+		
 		is_ai = yes
 		GER = {
 			is_ai = yes
 		}
+		has_war_with = GER
 		has_national_unity > 0.70
 		is_historical_focus_on = yes
 	}
 	
 	mean_time_to_happen = {
-		days = 5
+		days = 15
 	}
 	
 	immediate = {
@@ -2244,6 +2248,40 @@ country_event = {
 	}
 	Option = {
 		name = politics.940.a
+		trigger = { }
+		add_national_unity = -0.15
+	}
+}
+country_event = {
+	id = politics.941
+	title = politics.941.t
+	desc = politics.941.desc
+	
+	picture = GFX_report_event_dc
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		
+		is_ai = yes
+		GER = {
+			is_ai = yes
+		}
+		has_war_with = GER
+		has_national_unity > 0.70
+		is_historical_focus_on = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 90
+	}
+	
+	immediate = {
+		
+	}
+	Option = {
+		name = politics.941.a
 		trigger = { }
 		add_national_unity = -0.15
 	}
