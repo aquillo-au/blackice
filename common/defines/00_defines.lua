@@ -338,10 +338,10 @@ NMilitary = {
 	LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.03,    			-- air global damage modifier
 	LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.03,    			-- global damage modifier
 	LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2, 		-- how many CAS/TAC can enter a combat depending on enemy width there A: was 1
-	LAND_COMBAT_STR_ARMOR_ON_SOFT_DICE_SIZE = 2,   			-- extra damage dice if our armor outclasses enemy
-	LAND_COMBAT_ORG_ARMOR_ON_SOFT_DICE_SIZE = 5,   			-- extra damage dice if our armor outclasses enemy
-	LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.5, 			-- damage reduction if armor outclassing enemy
-	LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.5, 			-- damage reduction if armor outclassing enemy
+	LAND_COMBAT_STR_ARMOR_ON_SOFT_DICE_SIZE = 4,   			-- extra damage dice if our armor outclasses enemy
+	LAND_COMBAT_ORG_ARMOR_ON_SOFT_DICE_SIZE = 6,   			-- extra damage dice if our armor outclasses enemy
+	LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 2, 			-- damage reduction if armor outclassing enemy
+	LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 3.5, 			-- damage reduction if armor outclassing enemy
 	LAND_COMBAT_COLLATERAL_FACTOR = 0.002,		   			-- Factor to scale collateral damage to infra and forts with.
 	LAND_COMBAT_FORT_DAMAGE_CHANCE = 1,						-- chance to get a hit to damage on forts. (out of 100)
 	ATTRITION_DAMAGE_ORG = 0.12,					   		-- damage from attrition to Organisation
@@ -513,8 +513,8 @@ NMilitary = {
 	STRATEGIC_REDEPLOY_ORG_RATIO = 0.2,					-- Ratio of max org while strategic redeployment
 	BATALION_NOT_CHANGED_EXPERIENCE_DROP = 0.0,				-- Division experience drop if unit has same batalion
 	BATALION_CHANGED_EXPERIENCE_DROP = 0.4,					-- Division experience drop if unit has different batalion
-	ARMOR_VS_AVERAGE = 0.6,			                		-- how to weight in highest armor & pen vs the division average
-	PEN_VS_AVERAGE = 0.5,
+	ARMOR_VS_AVERAGE = 0.4,			                		-- how to weight in highest armor & pen vs the division average
+	PEN_VS_AVERAGE = 0.2,
 
 	DECRYPTION_ADVANTAGE_BONUS = 0.05,						-- How much unit base damage and base defense is increased per decryption level compared to enemies average encryption level (ex: dec. level is 5 and enemy average enc. level is 3 then 5-3 = 2 which gives 10 % increase)
 	
@@ -675,8 +675,8 @@ NNavy = {
 	COMBAT_LEAD_TOO_MANY_SHIPS_PENALTY_CHAOS_CHANCE = 0.6,				-- Chaos penalty - chance % of not taking a shot at the target.
 	COMBAT_BASE_CRITICAL_CHANCE = 0.05,									-- BICE 0.05,original 0.1 -- Base chance for receiving a critical chance. It get's scaled down with ship reliability.
 	COMBAT_CRITICAL_DAMAGE_MULT = 5.0,									-- BICE, Multiplier for the critical damage. Scaled down with the ship reliability.
-	COMBAT_ARMOR_PIERCING_CRITICAL_BONUS = 1,							-- BICE, original 3 --Bonus to critical chance when shooter armor piercing is higher then target armor.
-	COMBAT_ARMOR_PIERCING_DAMAGE_REDUCTION = -0.65,						-- BICE 0.65,DNM 0.9, to be consistent with changes to vanilla, makes armour more important, as it shold be -- All damage reduction % when target armor is >= then shooter armor piercing.
+	COMBAT_ARMOR_PIERCING_CRITICAL_BONUS = 3,							-- BICE, original 3 --Bonus to critical chance when shooter armor piercing is higher then target armor.
+	COMBAT_ARMOR_PIERCING_DAMAGE_REDUCTION = -0.9,						-- BICE 0.65,DNM 0.9, to be consistent with changes to vanilla, makes armour more important, as it shold be -- All damage reduction % when target armor is >= then shooter armor piercing.
 	REPAIR_AND_RETURN_PRIO_LOW = 0.4,									-- DNM, original 0.2 --  % of total Strength. When below, navy will go to home base to repair.
 	REPAIR_AND_RETURN_PRIO_MEDIUM = 0.6,								-- DNM, original 0.5 -- % of total Strength. When below, navy will go to home base to repair.
 	REPAIR_AND_RETURN_PRIO_HIGH = 0.9,									-- % of total Strength. When below, navy will go to home base to repair.
@@ -1039,8 +1039,8 @@ NAI = {
 		1.0,   -- 1.0 max_strength
 		0.5,  -- build_cost_ic
 		0.0,   -- maximum_speed
-		1.0,   -- armor_value
-		0.5,   -- ap_attack
+		1.8,   -- armor_value
+		1.2,   -- ap_attack
 		0.3,   -- reliability
 		0.0,   -- reliability_factor
 		0.0, -- weight
@@ -1082,8 +1082,8 @@ NAI = {
 	COMBINED_ARMS_LEVEL = 1,								-- 0 = Never, 1 = Infantry/Artillery, 2 = Go wild
 	MAX_DISTANCE_NALAV_INVASION = 100.0,					-- DNM, changed from 500 (AI Mod) -- AI is extremely unwilling to plan naval invasions above this naval distance limit.
 	ENEMY_NAVY_STRENGTH_DONT_BOTHER = 1.8,					-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
-	MIN_SUPPLY_USE_SANITY_CAP = 100,						-- Ignore supply cap if below this value when deciding on how many divisions to produce.
-	MAX_SUPPLY_DIVISOR = 2.5,								-- DNM, original 2 (AI mod) To make sure the AI does not overdeploy divisions. Higher number means more supply per unit.
+	MIN_SUPPLY_USE_SANITY_CAP = 1000,						-- Ignore supply cap if below this value when deciding on how many divisions to produce.
+	MAX_SUPPLY_DIVISOR = 100,								-- DNM, original 2 (AI mod) To make sure the AI does not overdeploy divisions. Higher number means more supply per unit.
 	MISSING_CONVOYS_BOOST_FACTOR = 15.0,					-- The more convoys a country is missing, the more resources it diverts to cover this.
 	TRANSPORTS_PER_PARATROOPER = 20,						-- Air transports only duty is to drop paratroopers.
 	MAX_MICRO_ATTACKS_PER_ORDER = 3,						-- AI goes through its orders and checks if there are situations to take advantage of

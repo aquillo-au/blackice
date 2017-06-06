@@ -1185,6 +1185,9 @@ technologies = {
 		enable_equipments = {
 			medium_tank_equipment_1 
 		}
+		enable_subunits = {
+			medium_armor
+		}
 		dependencies = {
 			generic_armor = 1
 		}
@@ -1192,7 +1195,30 @@ technologies = {
 			leads_to_tech = improved_medium_tank 
 			research_cost_coeff = 1
 		}
-		
+		on_research_complete = {
+			limit = {
+				NOT = {	has_template_containing_unit = medium_armor }
+				
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_tech = motorised_infantry
+					}
+
+					load_oob = "unlock_medium_tanks_mot"
+				}
+				if = {
+					limit = {
+						NOT = { has_tech = motorised_infantry }
+					}
+
+					load_oob = "unlock_medium_tanks"
+				}
+			}
+
+			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
+		}
 		research_cost = 2
 		start_year = 1939
 
@@ -1987,6 +2013,9 @@ technologies = {
 
 		enable_equipments = {
 			heavy_tank_equipment_1 
+		}
+		enable_subunits = {
+			heavy_armor
 		}
 		dependencies = {
 			generic_armor = 1
