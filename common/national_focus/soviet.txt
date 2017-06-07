@@ -1387,12 +1387,25 @@ focus_tree = {
 				owns_state = 190
 				190 = { is_claimed_by = ROOT }
 			}
+			OR = { 
+				owns_state = 191
+				191 = { is_claimed_by = ROOT }
+			}
+			OR = { 
+				owns_state = 13
+				13 = { is_claimed_by = ROOT }
+			}
 		}
 		completion_reward = {
+			#Lithuania
 			add_state_claim = 11
 			add_state_claim = 189
+			#Latvia
 			add_state_claim = 12
 			add_state_claim = 190
+			#Estonia
+			add_state_claim = 191 
+			add_state_claim = 13
 			add_named_threat = { threat = 1 name = SOV_claims_on_baltic }
 
 			every_other_country = {
@@ -1403,6 +1416,8 @@ focus_tree = {
 						owns_state = 12
 						owns_state = 189
 						owns_state = 190
+						owns_state = 191
+						owns_state = 13
 					}
 				}
 				add_opinion_modifier = { target = SOV modifier = threat_to_baltic }
@@ -1425,24 +1440,13 @@ focus_tree = {
 			}	
 		}
 		bypass = {
-			OR = { 
+						OR = { 
 				owns_state = 146
 				146 = { is_claimed_by = ROOT }
-			}
-			OR = { 
-				owns_state = 191
-				191 = { is_claimed_by = ROOT }
-			}
-			OR = { 
-				owns_state = 13
-				13 = { is_claimed_by = ROOT }
 			}
 		}
 		completion_reward = {
 			add_state_claim = 146 # Karjala
-			# Estonia
-			add_state_claim = 191 
-			add_state_claim = 13
 			add_named_threat = { threat = 1 name = SOV_baltic_security }
 			FIN = {
 				add_timed_idea = {
@@ -1967,7 +1971,8 @@ focus_tree = {
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = GER
-			} 
+			}
+			set_country_flag = sov_attacks_ger
 		}
 	}
 

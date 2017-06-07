@@ -3975,3 +3975,54 @@ country_event = {
 		}
 	}
 }
+#USSR
+country_event = {
+	id = soviet.301
+	title = soviet.301.t
+	desc = soviet.301.d
+	picture = GFX_report_event_soviet_soldiers2
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_country_flag = sov_attack_ger
+		has_war_with = GER
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = soviet.301.a
+		hidden_effect = {
+			
+		}
+
+	}
+}
+#Germany
+country_event = {
+	id = soviet.302
+	title = soviet.302.t
+	desc = soviet.302.d
+	picture = GFX_report_event_soviet_soldiers2
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		has_country_flag = sov_attack_ger
+		has_war_with = SOV
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.302.a
+		hidden_effect = {
+			
+		}
+
+	}
+}
