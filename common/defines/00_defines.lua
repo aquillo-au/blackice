@@ -508,7 +508,7 @@ NMilitary = {
 	COMBAT_OVER_WIDTH_PENALTY = -1,							-- over combat width penalty per %.
 	COMBAT_OVER_WIDTH_PENALTY_MAX = -0.33,					-- over combat width max (when you cant join no more).
 	RETREAT_SPEED_FACTOR = 0.25,                    		-- speed bonus when retreating
-	STRATEGIC_SPEED_BASE = 4.0,                 			-- Speed of strategic redeployment
+	STRATEGIC_SPEED_BASE = 6.0,                 			-- Speed of strategic redeployment
 	STRATEGIC_INFRA_SPEED = 12.0,                  			-- Max of additional speed gained trouh=gh level for strategic redeployment per infra
 	STRATEGIC_REDEPLOY_ORG_RATIO = 0.2,					-- Ratio of max org while strategic redeployment
 	BATALION_NOT_CHANGED_EXPERIENCE_DROP = 0.0,				-- Division experience drop if unit has same batalion
