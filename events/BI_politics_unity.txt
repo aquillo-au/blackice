@@ -22,6 +22,9 @@ country_event = {
 		every_country = {
 		country_event = politics.970
 		country_event = politics.978
+		if = { limit = { is_ai = yes }
+			set_country_flag = is_ai
+		}
 		if = { limit = { NOT = { tag = FRA } democratic_govt = yes }
 		set_country_flag = corruption_3
 		}
