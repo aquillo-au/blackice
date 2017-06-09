@@ -1,4 +1,4 @@
-﻿#Black I.C.E. Politics by Energico
+#Black I.C.E. Politics by Energico
 ###################################################
 
 add_namespace = politics
@@ -235,13 +235,15 @@ country_event = { #Add in dynamic tag exceptions for civil wars, or add country 
 					has_country_flag = kalmar_union_leader
 					has_country_flag = tur_faction_leader
 		}
+		NOT = { has_country_flag = asked_for_help }
 	}
 	mean_time_to_happen = {
 		days = 2
 	}
 	
 	immediate = {
-	
+		set_country_flag = at_war
+		set_country_flag = asked_for_help
 	}
 	
 	option = { #Yes
@@ -474,13 +476,15 @@ country_event = { #Add in dynamic tag exceptions for civil wars, or add country 
 					has_country_flag = in_tur_faction
 					has_country_flag = in_western_pacific_sphere
 				}
+		NOT = { has_country_flag = asked_for_help }
 	}
 	mean_time_to_happen = {
 		days = 2
 	}
 	
 	immediate = {
-	
+		set_country_flag = at_war
+		set_country_flag = asked_for_help
 	}
 	
 	option = { #Yes
@@ -1123,6 +1127,33 @@ country_event = { #Explanation
 			NOT = { is_ai = yes }
 		}
 		country_event = politics.991
+	}
+}
+country_event = { #No Longer in War cleanup event
+	id = politics.979
+	title = politics.979.t
+	desc  = politics.979.desc
+	hidden = yes
+	picture = GFX_news_event_002
+	
+	trigger = {
+		has_country_flag = at_war
+		NOT = { has_war = yes }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		clr_country_flag = at_war
+		clr_country_flag = asked_for_help
+	}
+	
+	option = { #
+		name = politics.979.a
+		trigger = {
+			
+		}
+		
 	}
 }
 ##Faction Flags
