@@ -1228,5 +1228,150 @@ default_area_priority = {
 		id = oceania
 		value = 80
 	}
+
+}
+
+default_stockpile_management = {
+	enable = {
+		num_divisions > 150
+	}
+
+	abort = {
+		num_divisions < 130
+	}
+
+	ai_strategy = {
+		type = equipment_stockpile
+		value = 35 # double base stockpile #from 25 to 35
+	}
+}
+
+
+DEFAULT_template_design = {
+	enable = {
+		NOT = { OR = { tag = GER tag = ENG tag = SOV tag = ITA tag = JAP tag = USA tag = POL } }	
+		date < 1940.1.1				
+	}
+	abort = { 
+		date > 1940.1.1
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = motorized
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = 50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = -10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = -50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 60
+	}
+}
+
+DEFAULT_template_design = {
+	enable = {
+		NOT = { OR = { tag = GER tag = ENG tag = SOV tag = ITA tag = JAP tag = USA tag = POL } }
+		date > 1940.1.1				
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = mechanized
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = cavalry
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = light_armor
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 20
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = modern_armor
+		value = 50
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = heavy_armor
+		value = 10
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = paratroopers
+		value = -50
+	}
+	
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 10
+	}
+}
+
+save_admiral_pp_for_later = {
+	enable = {
+		has_war = no
+		threat < 0.3
+		has_political_power < 200		
+	}
+	abort = {
+		OR = {
+			has_war = yes	
+			threat > 0.3
+			has_political_power > 200
+		}
+	}
+
+	ai_strategy = { # dont burn PP on admirals (can still get free ones)
+		type = pp_spend_priority
+		id = admiral
+		value = -100
+	}
 }
 ### EOF ###

@@ -1,11 +1,16 @@
 equipments = {
 
 	fighter_equipment = {
+		year = 1933
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_fighter_equipment
 		is_buildable = no
 		type = { fighter interceptor }
 		group_by = archetype
 		sprite = light_plane
+		air_map_icon_frame = 1
 		
 		interface_category = interface_category_air
 		
@@ -40,13 +45,18 @@ equipments = {
 	}
 
 	cv_fighter_equipment = {
+		year = 1933
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_fighter_equipment
 		is_buildable = no
 		type = { fighter interceptor }
 		group_by = archetype
 		sprite = light_plane
 		carrier_capable = yes
-		default_carrier_composition_weight = 10
+		default_carrier_composition_weight = 1
+		air_map_icon_frame = 1
 		
 		interface_category = interface_category_air
 		
@@ -81,11 +91,16 @@ equipments = {
 	}
 	
 	CAS_equipment = {
+		year = 1933
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_CAS_equipment
 		is_buildable = no
 		type = { cas fighter }
 		group_by = archetype
 		sprite = light_plane
+		air_map_icon_frame = 2
 		
 		interface_category = interface_category_air
 		
@@ -120,12 +135,17 @@ equipments = {
 	}
 
 	cv_CAS_equipment = {
+		year = 1933
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_CAS_equipment			
 		is_buildable = no
 		type = { cas fighter }
 		group_by = archetype
 		sprite = light_plane
 		carrier_capable = yes
+		air_map_icon_frame = 2
 		default_carrier_composition_weight = 1
 		
 		interface_category = interface_category_air
@@ -161,11 +181,16 @@ equipments = {
 	}
 	
 	nav_bomber_equipment = {
+		year = 1933
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
 		type = naval_bomber
 		group_by = archetype
 		sprite = light_plane
+		air_map_icon_frame = 3
 		
 		interface_category = interface_category_air
 		
@@ -197,13 +222,18 @@ equipments = {
 	}
 
 	cv_nav_bomber_equipment = {
+		year = 1933
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_fighter_equipment
 		is_buildable = no
 		type = naval_bomber
 		group_by = archetype
 		sprite = light_plane
 		carrier_capable = yes
-		default_carrier_composition_weight = 10
+		default_carrier_composition_weight = 1
+		air_map_icon_frame = 3
 		
 		interface_category = interface_category_air
 		
@@ -235,11 +265,16 @@ equipments = {
 	}
 	
 	jet_fighter_equipment = {
+		year = 1933
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_fighter_equipment
 		is_buildable = no
 		type = fighter
 		group_by = archetype
 		sprite = light_plane
+		air_map_icon_frame = 4
 		
 		interface_category = interface_category_air
 		
@@ -273,6 +308,8 @@ equipments = {
 
 	# Early Fighter
 	fighter_equipment_0 = {
+		year = 1933
+
 		archetype = fighter_equipment
 		priority = 5
 		
@@ -287,6 +324,8 @@ equipments = {
 	
 	# Basic Fighter
 	fighter_equipment_1 = {
+		year = 1936
+
 		archetype = fighter_equipment
 		parent = fighter_equipment_0
 		priority = 10
@@ -310,6 +349,8 @@ equipments = {
 
 	# Improved Fighter
 	fighter_equipment_2 = {
+		year = 1940
+
 		archetype = fighter_equipment
 		parent = fighter_equipment_1
 		priority = 10
@@ -332,6 +373,8 @@ equipments = {
 
 	# Advanced Fighter
 	fighter_equipment_3 = {
+		year = 1944
+
 		archetype = fighter_equipment
 		parent = fighter_equipment_2
 		priority = 10
@@ -355,6 +398,8 @@ equipments = {
 	
 	# Basic Jet Fighter
 	jet_fighter_equipment_1 = {
+		year = 1945
+
 		archetype = jet_fighter_equipment
 		priority = 20
 		
@@ -369,6 +414,8 @@ equipments = {
 
 	# Improved Jet Fighter
 	jet_fighter_equipment_2 = {
+		year = 1950
+
 		archetype = jet_fighter_equipment
 		parent = jet_fighter_equipment_1
 		priority = 20
@@ -389,6 +436,7 @@ equipments = {
 	}
 	
 	hawker_osprey_fighter_equipment_1 = { 
+		
 		archetype = cv_fighter_equipment
 		#parent = cv_fighter_equipment_0
 		carrier_capable = yes
@@ -404,6 +452,7 @@ equipments = {
 	}
 	# Early Carrier Fighter
 	nakajima_a2n_equipment_1 = {
+		
 		#archetype = nakajima_a2n_equipment
 		archetype = cv_fighter_equipment
 		parent = hawker_osprey_fighter_equipment_1
@@ -2088,11 +2137,17 @@ equipments = {
 	}
 	# ROCKET INTERCEPTORS ###############
 	rocket_interceptor_equipment = {
+		year = 1936
+
 		is_archetype = yes
+		is_convertable = yes
+		can_license = no
+		picture = archetype_fighter_equipment
 		is_buildable = no
 		type = interceptor
 		group_by = archetype
 		sprite = light_plane
+		air_map_icon_frame = 5
 		
 		interface_category = interface_category_air
 
@@ -2175,9 +2230,41 @@ equipments = {
 			rubber = 2
 		}					
 	}
+	# Suicide aircraft ###############
+	suicide_craft_equipment = {
+		year = 1936
 
-	# Rocket interceptor suicide craft!
+		is_archetype = yes
+		is_convertable = no
+		can_license = no
+		picture = archetype_rocket_interceptor_equipment
+		is_buildable = no
+		type = suicide
+		group_by = archetype
+		sprite = light_plane
+		air_map_icon_frame = 5
+		
+		interface_category = interface_category_air
+
+		upgrades = {
+		}
+
+		build_cost_ic = 14
+		resources = {
+			aluminium = 2
+			tungsten = 2
+			rubber = 1
+		}
+
+		air_superiority = 1
+
+		naval_strike_attack = 5
+		naval_strike_targetting = 10
+	}
+	# Rocket suicide aircraft ###############
 	rocket_suicide_equipment_1 = {
+		year = 1944
+		
 		archetype = rocket_interceptor_equipment
 		type = fighter
 		priority = 90

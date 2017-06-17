@@ -135,6 +135,21 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			
+			modifier = {
+				factor = 10
+				tag = CHI
+				
+				OR = {
+					date > "1937.1.1"
+					JAP = { is_ai = no }
+				}
+			}
+			
+			modifier = {
+				factor = 10
+				date > "1936.1.3"
+			}
 		}
 	}
 ############################ Early War HQ
@@ -1810,6 +1825,30 @@ technologies = {
 			jungle = {
 				attack = 0.05
 				movement = 0.1
+			}
+		}
+	}
+	HUN_light_infantry_tech = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+
+		#If you change these
+		#Change the custom tooltip too: HUN_light_infantry_divisions_doctrine_effect
+		infantry = {
+			forest = {
+				attack = 0.02
+				movement = 0.05
+			}
+
+			urban = {
+				attack = 0.05 
+				movement = 0.05
 			}
 		}
 	}
