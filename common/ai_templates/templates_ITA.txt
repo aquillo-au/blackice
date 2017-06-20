@@ -1,3 +1,14 @@
+armored_ITA = {
+
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.7
 light_armor_default_ITA = {
 	target_width = 19.9 
 	width_weight = 0.1
@@ -302,7 +313,19 @@ modern_armor_default_ITA = {
 		}
 	}
 }
+}
+infantry_ITA = {
 
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		infantry
+	}
+	
+	
+	match_to_count = 0.75
 infantry_default_ITA = {
 	target_width = 19.9
 	width_weight = 0.1
@@ -353,6 +376,19 @@ infantry_ITA = {
 		}
 	}
 }
+}
+mountaineers_ITA = {
+
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		mountaineers
+	}
+	
+	
+	match_to_count = 0.7
 light_mountaineers_default_ITA = {
 	target_width = 19.9
 	width_weight = 3
@@ -463,8 +499,29 @@ mountaineers_ITA = {
 		}
 	}
 }
+}
+marines_ITA = {
 
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		marines
+	}
+	
+	upgrade_prio = {
+		factor = 2
 
+		modifier = {
+			factor = 0
+			NOT = {
+				has_tech = marines
+			}
+		}
+	}
+	
+	match_to_count = 0.7
 marine_default_ITA = {
 	target_width = 19.9
 	width_weight = 0.1
@@ -484,7 +541,7 @@ marine_default_ITA = {
 		}
 	}
 }
-
+}
 
 paratrooper_default_ITA = {
 	target_width = 9.9
@@ -565,6 +622,7 @@ cavalry_ITA = {
 	}
 	
 }
+
 mechanized_default_ITA = {
 	target_width = 19.9
 	width_weight = 0.1
@@ -589,7 +647,26 @@ mechanized_default_ITA = {
 		}
 	}
 }
+garrison_ITA = {
 
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		garrison
+	}
+	
+	upgrade_prio = {
+		factor = 80
+
+		modifier = {
+			factor = 0
+			ai_has_role_template = garrison
+		}
+	}
+	
+	match_to_count = 0.8
 garrison_ITA = {
 	target_width = 24.9
 	width_weight = 0.1
@@ -613,6 +690,7 @@ garrison_ITA = {
 	replace_at_match = 1
 	replace_with = motorized_ITA
 	target_min_match = 1
+}
 }
 ######################## Militia
 cnn_default_ITA = {
