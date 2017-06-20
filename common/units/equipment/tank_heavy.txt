@@ -1,7 +1,11 @@
 equipments = {
 
 	heavy_tank_equipment = {
+		year = 1934
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_tank_equipment
 		is_buildable = no
 		type = armor
 		group_by = archetype
@@ -54,17 +58,23 @@ equipments = {
 
 	# 1934
 	heavy_tank_equipment_1 = {
+		year = 1934
+
 		archetype = heavy_tank_equipment		
 		priority = 90
 		visual_level = 0
+		is_convertable = yes
 	}
 
 	# 1941
 	heavy_tank_equipment_2 = {
+		year = 1941
+
 		archetype = heavy_tank_equipment
 		parent = heavy_tank_equipment_1
 		priority = 90
 		visual_level = 1
+		is_convertable = yes
 		
 		#Misc Abilities
 		maximum_speed = 4
@@ -90,10 +100,13 @@ equipments = {
 
 	# 1943
 	heavy_tank_equipment_3 = {
+		year = 1943
+
 		archetype = heavy_tank_equipment
 		parent = heavy_tank_equipment_2
 		priority = 90
 		visual_level = 2
+		is_convertable = yes
 
 		#Misc Abilities
 		maximum_speed = 5
@@ -118,7 +131,12 @@ equipments = {
 	}
 
 	heavy_tank_artillery_equipment = {
+		year = 1934
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_tank_equipment
+
 		is_buildable = no
 		family = heavy_tank_equipment
 		type = {
@@ -171,17 +189,28 @@ equipments = {
 	}
 
 	heavy_tank_artillery_equipment_1 = {
+		year = 1934
+
 		archetype = heavy_tank_artillery_equipment
 		family = heavy_tank_equipment_1
+		can_convert_from = { 
+			heavy_tank_equipment_1 
+		}
 		priority = 100
 		visual_level = 0
 		
 	}
 
 	heavy_tank_artillery_equipment_2 = {
+		year = 1941
+
 		archetype = heavy_tank_artillery_equipment
 		parent = heavy_tank_artillery_equipment_1
 		family = heavy_tank_equipment_2
+		can_convert_from = { 
+			heavy_tank_equipment_1 
+			heavy_tank_equipment_2
+		}
 		priority = 100
 		visual_level = 1
 
@@ -207,9 +236,15 @@ equipments = {
 	}
 
 	heavy_tank_artillery_equipment_3 = {
+		year = 1943
+
 		archetype = heavy_tank_artillery_equipment
 		parent = heavy_tank_artillery_equipment_2
 		family = heavy_tank_equipment_3
+		can_convert_from = { 
+			heavy_tank_equipment_2
+			heavy_tank_equipment_3
+		}
 		priority = 100
 		visual_level = 2
 
@@ -235,7 +270,11 @@ equipments = {
 	}
 
 	heavy_tank_destroyer_equipment = {
+		year = 1934
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_tank_equipment	
 		is_buildable = no
 		family = heavy_tank_equipment
 		type = {
@@ -287,17 +326,30 @@ equipments = {
 	}
 
 	heavy_tank_destroyer_equipment_1 = {
+		year = 1934
+
 		archetype = heavy_tank_destroyer_equipment
 		family = heavy_tank_equipment_1
+		can_convert_from = { 
+			heavy_tank_equipment_1 
+		}
+
 		priority = 120
 		visual_level = 0
 		
 	}
 
 	heavy_tank_destroyer_equipment_2 = {
+		year = 1941
+
 		archetype = heavy_tank_destroyer_equipment
 		parent = heavy_tank_destroyer_equipment_1
 		family = heavy_tank_equipment_2
+		can_convert_from = { 
+			heavy_tank_equipment_1
+			heavy_tank_equipment_2
+		}
+
 		priority = 120
 		visual_level = 1
 
@@ -325,9 +377,15 @@ equipments = {
 	}
 
 	heavy_tank_destroyer_equipment_3 = {
+		year = 1943
+
 		archetype = heavy_tank_destroyer_equipment
 		parent = heavy_tank_destroyer_equipment_2
 		family = heavy_tank_equipment_3
+		can_convert_from = { 
+			heavy_tank_equipment_2
+			heavy_tank_equipment_3
+		}
 		priority = 120
 		visual_level = 2
 		
@@ -355,7 +413,11 @@ equipments = {
 	}
 
 	heavy_tank_aa_equipment = {
+		year = 1934
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_tank_equipment
 		is_buildable = no
 		family = heavy_tank_equipment
 		type = {
@@ -408,17 +470,27 @@ equipments = {
 	}
 
 	heavy_tank_aa_equipment_1 = {
+		year = 1934
 		archetype = heavy_tank_aa_equipment
 		family = heavy_tank_equipment_1
+		can_convert_from = { 
+			heavy_tank_equipment_1
+		}
 		priority = 110
 		visual_level = 0
 			
 	}
 
 	heavy_tank_aa_equipment_2 = {
+		year = 1941
+
 		archetype = heavy_tank_aa_equipment
 		parent = heavy_tank_aa_equipment_1
 		family = heavy_tank_equipment_2
+		can_convert_from = { 
+			heavy_tank_equipment_1
+			heavy_tank_equipment_2
+		}
 		priority = 110
 		visual_level = 1
 
@@ -446,9 +518,15 @@ equipments = {
 	}
 
 	heavy_tank_aa_equipment_3 = {
+		year = 1943
+
 		archetype = heavy_tank_aa_equipment
 		parent = heavy_tank_aa_equipment_2
 		family = heavy_tank_equipment_3
+		can_convert_from = { 
+			heavy_tank_equipment_2
+			heavy_tank_equipment_3
+		}
 		priority = 110
 		visual_level = 2
 		
@@ -478,7 +556,11 @@ equipments = {
 	}
 ###################################################################################
 heavy_tank_equipment_axis = {
+		year = 1934
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_tank_equipment_axis
 		is_buildable = no
 		type = armor
 		group_by = archetype
@@ -531,19 +613,25 @@ heavy_tank_equipment_axis = {
 		
 	}
 
-	# T 28
+	
 	heavy_tank_equipment_axis_1 = {
+		year = 1934
+
 		archetype = heavy_tank_equipment_axis		
 		priority = 90
 		visual_level = 0
+		is_convertable = yes
 	}
 
-	# KV-1
+	
 	heavy_tank_equipment_axis_2 = {
+		year = 1941
+
 		archetype = heavy_tank_equipment_axis
 		parent = heavy_tank_equipment_axis_1
 		priority = 90
 		visual_level = 1
+		is_convertable = yes
 		
 		#Misc Abilities
 		maximum_speed = 4
@@ -573,12 +661,15 @@ heavy_tank_equipment_axis = {
 		}
 	}
 
-	# Tiger I
+	
 	heavy_tank_equipment_axis_3 = {
+		year = 1943
+
 		archetype = heavy_tank_equipment_axis
 		parent = heavy_tank_equipment_axis_2
 		priority = 90
 		visual_level = 2
+		is_convertable = yes
 
 		#Misc Abilities
 		maximum_speed = 4.5
@@ -610,7 +701,11 @@ heavy_tank_equipment_axis = {
 	}
 
 	heavy_tank_artillery_equipment_axis = {
+		year = 1934
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_tank_equipment_axis
 		is_buildable = no
 		family = heavy_tank_equipment_axis
 		type = {
@@ -663,17 +758,28 @@ heavy_tank_equipment_axis = {
 	}
 
 	heavy_tank_artillery_equipment_axis_1 = {
+		year = 1934
+
 		archetype = heavy_tank_artillery_equipment_axis
 		family = heavy_tank_equipment_axis_1
+		can_convert_from = { 
+			heavy_tank_equipment_axis_1 
+		}
 		priority = 100
 		visual_level = 0
 		
 	}
 
 	heavy_tank_artillery_equipment_axis_2 = {
+		year = 1941
+
 		archetype = heavy_tank_artillery_equipment_axis
 		parent = heavy_tank_artillery_equipment_axis_1
 		family = heavy_tank_equipment_axis_2
+		can_convert_from = { 
+			heavy_tank_equipment_axis_1 
+			heavy_tank_equipment_axis_2
+		}
 		priority = 100
 		visual_level = 1
 
@@ -699,9 +805,16 @@ heavy_tank_equipment_axis = {
 	}
 
 	heavy_tank_artillery_equipment_axis_3 = {
+		year = 1943
+
 		archetype = heavy_tank_artillery_equipment_axis
 		parent = heavy_tank_artillery_equipment_axis_2
 		family = heavy_tank_equipment_axis_3
+		can_convert_from = { 
+			heavy_tank_equipment_axis_2
+			heavy_tank_equipment_axis_3
+		}
+
 		priority = 100
 		visual_level = 2
 
@@ -727,7 +840,11 @@ heavy_tank_equipment_axis = {
 	}
 
 	heavy_tank_destroyer_equipment_axis = {
+		year = 1934
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_tank_equipment_axis
 		is_buildable = no
 		family = heavy_tank_equipment_axis
 		type = {
@@ -779,17 +896,28 @@ heavy_tank_equipment_axis = {
 	}
 
 	heavy_tank_destroyer_equipment_axis_1 = {
+		year = 1934
+
 		archetype = heavy_tank_destroyer_equipment_axis
 		family = heavy_tank_equipment_axis_1
+		can_convert_from = { 
+			heavy_tank_equipment_axis_1
+		}
 		priority = 120
 		visual_level = 0
 		
 	}
 
 	heavy_tank_destroyer_equipment_axis_2 = {
+		year = 1941
+
 		archetype = heavy_tank_destroyer_equipment_axis
 		parent = heavy_tank_destroyer_equipment_axis_1
 		family = heavy_tank_equipment_axis_2
+		can_convert_from = { 
+			heavy_tank_equipment_axis_1
+			heavy_tank_equipment_axis_2
+		}
 		priority = 120
 		visual_level = 1
 
@@ -817,9 +945,15 @@ heavy_tank_equipment_axis = {
 	}
 
 	heavy_tank_destroyer_equipment_axis_3 = {
+		year = 1943
+
 		archetype = heavy_tank_destroyer_equipment_axis
 		parent = heavy_tank_destroyer_equipment_axis_2
 		family = heavy_tank_equipment_axis_3
+		can_convert_from = { 
+			heavy_tank_equipment_axis_2
+			heavy_tank_equipment_axis_3
+		}
 		priority = 120
 		visual_level = 2
 		
@@ -847,7 +981,11 @@ heavy_tank_equipment_axis = {
 	}
 
 	heavy_tank_aa_equipment_axis = {
+		year = 1934
+
 		is_archetype = yes
+		is_convertable = yes
+		picture = archetype_heavy_tank_equipment_axis
 		is_buildable = no
 		family = heavy_tank_equipment_axis
 		type = {
@@ -900,17 +1038,28 @@ heavy_tank_equipment_axis = {
 	}
 
 	heavy_tank_aa_equipment_axis_1 = {
+		year = 1934
+
 		archetype = heavy_tank_aa_equipment_axis
 		family = heavy_tank_equipment_axis_1
+		can_convert_from = { 
+			heavy_tank_equipment_axis_1
+		}
 		priority = 110
 		visual_level = 0
 			
 	}
 
 	heavy_tank_aa_equipment_axis_2 = {
+		year = 1941
+
 		archetype = heavy_tank_aa_equipment_axis
 		parent = heavy_tank_aa_equipment_axis_1
 		family = heavy_tank_equipment_axis_2
+		can_convert_from = { 
+			heavy_tank_equipment_axis_1
+			heavy_tank_equipment_axis_2
+		}
 		priority = 110
 		visual_level = 1
 
@@ -938,9 +1087,15 @@ heavy_tank_equipment_axis = {
 	}
 
 	heavy_tank_aa_equipment_axis_3 = {
+		year = 1943
+
 		archetype = heavy_tank_aa_equipment_axis
 		parent = heavy_tank_aa_equipment_axis_2
 		family = heavy_tank_equipment_axis_3
+		can_convert_from = { 
+			heavy_tank_equipment_axis_2
+			heavy_tank_equipment_axis_3
+		}
 		priority = 110
 		visual_level = 2
 		
