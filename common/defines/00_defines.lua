@@ -334,7 +334,6 @@ NMilitary = {
 	CORPS_COMMANDER_CAP = 18,								-- how many a corps commander is limited to. 0 = inf
 	FIELD_MARSHALL_CAP = 60,									-- how many a marshall is limited to. 0 = inf
 	UNIT_LEADER_GENERATION_CAPITAL_CONTINENT_FACTOR = 100, 	--Integer factor to multiply manpower.
-	
 	RECON_SKILL_IMPACT = 5, 								-- how many skillpoints is a recon advantage worth when picking a tactic.
 	
 	MAX_DIVISION_BRIGADE_WIDTH = 5,							-- Max width of regiments in division designer.
@@ -345,6 +344,7 @@ NMilitary = {
 	BASE_DIVISION_BRIGADE_GROUP_COST = 15, 					--Base cost to unlock a regiment slot,
 	BASE_DIVISION_BRIGADE_CHANGE_COST = 5,					--Base cost to change a regiment column.
 	BASE_DIVISION_SUPPORT_SLOT_COST = 8, 					--Base cost to unlock a support slot
+	
 	
 	MAX_ARMY_EXPERIENCE = 800,								--Max army experience a country can store
 	MAX_NAVY_EXPERIENCE = 500,								--Max navy experience a country can store
@@ -574,16 +574,23 @@ NAir = {
 	AIR_WING_MAX_STATS_BOMBING = 100,
 	AIR_WING_MAX_SIZE = 1000, 								-- Max amount of airplanes in wing
 	AIR_WING_BOMB_DAMAGE_FACTOR = 2,						-- Used to balance the damage done while bombing.
+	BOMBERS_ENGAGE_PASSES = 1,							-- Combat simulations passes in single fight against the bombers and their escorts (more passes = more bloody)
+	SUPERIORITY_ENGAGE_PASSES = 1,						-- Combat simulations passes in single fight against superiority missions.
+	COMBAT_ESCORT_PASS_CHANCE_BASE = 0.25, 				-- Base % for chance for passing escorts, and attack directly bombers.
+	COMBAT_ESCORT_PASS_CHANCE_MULT = 0.25,	 			-- How much the difference in airplanes stats (agility+speed) affects the escort passing chance.
+	COMBAT_ESCORT_PASS_CHANCE_LIMIT = 0.95, 			-- So a big difference in airplanes stats never gives 100% chance for passing escorts.
 	COMBAT_STACK_LIMIT = 2,								-- The biggest allowed dogfight combination (1vs1 or 2vs1). Bigger value cause that amount of airplanes matters more then their stats. Only used in naval air combat, for land air combat see COMBAT_MULTIPLANE_CAP
 	COMBAT_STAT_IMPORTANCE_SPEED = 1, 				-- How important is speed when comparing stats.
 	COMBAT_STAT_IMPORTANCE_AGILITY = 1, 				-- How important is agility when comparing stats.
 	BIGGEST_AGILITY_FACTOR_DIFF = 2.5,					-- biggest factor difference in agility for doing damage (caps to this)
+	
 	COMBAT_DAMAGE_STATS_MULTILIER = 0.3,
 	COMBAT_BETTER_AGILITY_DAMAGE_REDUCTION = 0.45, 		-- How much the better agility (then opponent's) can reduce their damage to us.
 	COMBAT_AMOUNT_DIFF_AFFECT_GANG_CHANCE = 0.5, 		-- More aircrafts increases chance of situation 2vs1. ( Naval air combat only )
 	COMBAT_ONE_ON_ONE_CHANCE = 0.6, 					-- Base chance for 1vs1 situation. ( Naval air combat only )
 	COMBAT_SITUATION_WIN_CHANCE_FROM_STATS = 0.3, 		-- How much good stats difference (speed+agility) affects the winning chance (situation win = give a hit, not necessary kill).( Naval air combat only )
 	COMBAT_SITUATION_WIN_CHANCE_FROM_GANG = 0.3, 		-- How much bonus gives the airplanes amount advantage (2vs1), to winning the situation.( Naval air combat only )
+	COMBAT_SITUATION_PASS_CHANCE = 0.0, 				-- Chance for pass. Nobody hits nobody in current situation.
 	COMBAT_MAX_WINGS_AT_ONCE = 10000, 						-- Max amount of air wings in one combat simulation. The higher value, the quicker countries may loose their wings. It's a gameplay balance value.
 	COMBAT_MAX_WINGS_AT_GROUND_ATTACK = 10000,	        	-- we can really pounce a land strike and escalate
 	COMBAT_MAX_WINGS_AT_ONCE_PORT_STRIKE = 10000,        -- we can really pounce a naval strike and escalate
@@ -614,6 +621,8 @@ NAir = {
 	CLOSE_AIR_SUPPORT_EXPERIENCE_SCALE = 0.0005,			-- How much the experinence gained by CAS is scaled
 	PARADROP_EXPERIENCE_SCALE = 0.03,						-- How much the experinence gained by paradropping is scaled
 	BOMBING_DAMAGE_EXPERIENCE_SCALE = 0.0002,           	-- How much the experinence gained by bombing is scaled
+	AIR_EXPERIANCE_FROM_LEND_LEASE = 0.5,				-- How much of the experience gained in the air combat, we get from our equipment sent by lend lease.
+	
 	ACCIDENT_CHANCE_BASE = 0.05,							-- Base chance % (0 - 100) for accident to happen. Reduced with higher reliability stat.
 	ACCIDENT_CHANCE_CARRIER_MULT = 2.0,					-- The total accident chance is scaled up when it happens on the carrier ship.
 	ACCIDENT_CHANCE_BALANCE_MULT = 0.5,					-- Multiplier for balancing how often the air accident really happens. The higher mult, the more often.
@@ -640,8 +649,10 @@ NAir = {
 	SUPPLY_NEED_FACTOR = 0.3, 							-- multiplies supply usage
 	CAPACITY_PENALTY = 2,								-- scales penalty of having overcrowded bases.
 	AIR_COMBAT_FINAL_DAMAGE_SCALE = 0.015,               -- % how many max disrupted only planes are alloed to die in a single combat
+	AIR_COMBAT_FINAL_DAMAGE_SCALE_GROUND = 0.1,         -- scaling damage factor for fight in defense of bombers etc which can generally get bloodier
 	AIR_COMBAT_FINAL_DAMAGE_PLANES = 50,                -- scaling/control for when only very few planes exist to stop roundoff issues
 	AIR_COMBAT_FINAL_DAMAGE_PLANES_FACTOR = 0.1,
+	LAST_PLANE_DIE_FACTOR = 0.5,                        -- chance to kill last plane if our damage was too low to kill even one plane (1 = 50% chance if it had 50% dmg)
 	AA_INDUSTRY_AIR_DAMAGE_FACTOR = -0.12,				-- 5x levels = 60% defense from bombing
 	NAVAL_STRIKE_DETECTION_BALANCE_FACTOR = 0.7,		-- Value used to scale the surface_visibility stats to balance the gameplay, so 100% detection chance still won't spam the strikes.
 	LEND_LEASED_EQUIPMENT_EXPERIENCE_GAIN = 0.5,		-- Value used for equipment
