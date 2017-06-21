@@ -1,4 +1,4 @@
-armored_SOV = {
+light_armored_SOV = {
 
 	available_for = {
 		SOV
@@ -70,7 +70,18 @@ light_armor_SOV = {
 	replace_with = light_armor_SOV
 	target_min_match = 0.0
 }
+}
+heavy_armored_SOV = {
 
+	available_for = {
+		SOV
+	}
+	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.75
 heavy_armor_default_SOV = {
 	target_width = 20 
 	width_weight = 0.6
@@ -122,7 +133,18 @@ heavy_armor_SOV = {
 		}
 	}
 }
+}
+medium_armored_SOV = {
 
+	available_for = {
+		SOV
+	}
+	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.45
 medium_armor_default_SOV = {
 	target_width = 22.9 
 	width_weight = 0.6
@@ -184,9 +206,19 @@ medium_armor_SOV = {
 		}
 	}
 }
+}
 
+modern_armored_SOV = {
 
-
+	available_for = {
+		SOV
+	}
+	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.85
 
 modern_armor_default_SOV = {
 	target_width = 24.9 
@@ -371,7 +403,17 @@ mountaineers_default_SOV = {
 	}
 }
 }
+marines_SOV= {
 
+	available_for = {
+		SOV
+	}
+	
+	roles = {
+		marine
+	}
+	
+    match_to_count = 0.85
 
 marine_default_SOV = {
 	target_width = 21.9 
@@ -396,7 +438,18 @@ marine_default_SOV = {
 		}
 	}
 }
+}
+paratrooper_SOV= {
 
+	available_for = {
+		SOV
+	}
+	
+	roles = {
+		paratrooper
+	}
+	
+    match_to_count = 0.85
 
 paratrooper_default_SOV = {
 	target_width = 9.9
@@ -420,7 +473,18 @@ paratrooper_default_SOV = {
 		}
 	}
 }
+}
+cavalry_SOV= {
 
+	available_for = {
+		SOV
+	}
+	
+	roles = {
+		cavalry
+	}
+	
+    match_to_count = 0.65
 guards_cavalry_default_SOV = {
 	target_width = 12.0
 	width_weight = 0.6
@@ -520,7 +584,7 @@ cavalry_SOV = {
 	replace_with = cavalry_SOV
 	target_min_match = 0.6
 }
-
+}
 motorized_SOV = {
 
 	available_for = {
@@ -532,6 +596,7 @@ motorized_SOV = {
 	}
 	
 	match_to_count = 0.68
+
 guards_motorized_default_SOV = {
 	target_width = 25
 	width_weight = 0.6
@@ -644,10 +709,11 @@ motorized_SOV = {
 			artillery_brigade_mot  = 3
 		}
 	}
-}
+
     replace_at_match = 1
 	replace_with = motorized_SOV
 	target_min_match = 1
+	}
 }
 
 mechanized_SOV = {
@@ -660,6 +726,7 @@ mechanized_SOV = {
 		mechanized
 	}
 	match_to_count = 0.75
+
 mechanized_default_SOV = {
 	target_width = 24.9 
 	width_weight = 0.6
@@ -721,55 +788,7 @@ mechanized_SOV = {
 }
 
 }
-medium_tank_destroyer_default_SOV = {
-	target_width = 24.9 
-	width_weight = 0.6
-	column_swap_factor = 0.1
-	
 
-	target_template = {
-		weight =1
-		match_value = 25990.0
-		support = {
-			engineer = 1
-			recon_mot = 1
-			#artillery = 1
-		    maintenance_company = 1
-		    logistics_company = 1
-		}
-		
-		regiments = {
-		medium_sp_artillery_brigade = 1
-		medium_tank_destroyer_brigade = 2
-		heavy_tank_destroyer_brigade = 1
-		motorized = 5
-		}
-	}
-}
-
-medium_sp_artillery_default_SOV = {
-	target_width = 24.9 
-	width_weight = 0.6
-	column_swap_factor = 0.1
-
-	target_template = {
-		weight =1
-		match_value = 25990.0
-		support = {
-			engineer = 1
-			recon = 1
-			#artillery = 1
-		    maintenance_company = 1
-		    logistics_company = 1
-		}
-		
-		regiments = {
-		medium_sp_artillery_brigade = 2
-		heavy_sp_artillery_brigade = 2
-		motorized = 5
-		}
-	}
-}
 garrison_SOV = {
 
 	available_for = {

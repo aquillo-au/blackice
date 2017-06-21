@@ -1,5 +1,5 @@
 #armor
-armored_GER = {
+light_armored_GER = {
 
 	available_for = {
 		GER
@@ -9,7 +9,7 @@ armored_GER = {
 		armor
 	}
 	
-	match_to_count = 0.25
+	match_to_count = 0.65
 
 light_armor_default_GER = {
 	target_width = 21.9
@@ -82,7 +82,18 @@ light_armor_GER = {
 	replace_with = medium_armor_default_GER
 	target_min_match = 0.1
 }
+}
+medium_armored_GER = {
 
+	available_for = {
+		GER
+	}
+
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.55
 medium_armor_default_GER = {
 	target_width = 23.9 
 	width_weight = 0.5
@@ -153,7 +164,18 @@ medium_armor_GER = {
 	replace_with = heavy_armor_default_GER
 	target_min_match = 1
 }
+}
+heavy_armored_GER = {
 
+	available_for = {
+		GER
+	}
+
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.85
 heavy_armor_default_GER = {
 	target_width = 23.9
 	width_weight = 0.5
@@ -406,7 +428,7 @@ cavalry_GER = {
 		cavalry
 	}
 		
-	match_to_count = 0.75
+	match_to_count = 0.95
 cavalry_default_GER = {
 	target_width = 12.0
 	width_weight = 1.5

@@ -1,4 +1,4 @@
-armored_ENG = {
+light_armored_ENG = {
 
 	available_for = {
 		ENG
@@ -62,7 +62,18 @@ armored_ENG = {
 		replace_with = infantry_armor_ENG
 		target_min_match = 0.1
 	}
+}
+infantrytank_armored_ENG = {
+
+	available_for = {
+		ENG
+	}
 	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.65	
 	infantry_armor_default_ENG = {
 		target_width = 19.9 
 		width_weight = 0.1
@@ -95,7 +106,18 @@ armored_ENG = {
 			}
 		}
 	}
+}
+cruiser_armored_ENG = {
+
+	available_for = {
+		ENG
+	}
 	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.55	
 	crusier_armor_I_default_ENG = {
 		target_width = 19.9
 		width_weight = 3.0
@@ -292,7 +314,18 @@ armored_ENG = {
 			}
 		}
 	}
+}
+heavy_armored_ENG = {
+
+	available_for = {
+		ENG
+	}
 	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.65	
 	heavy_armor_default_ENG = {
 		target_width = 19.9
 		width_weight = 3.0
@@ -474,6 +507,7 @@ mountaineers_ENG = {
 		}
 	}
 }
+
 marines_ENG = {
 
 	available_for = {
@@ -486,7 +520,7 @@ marines_ENG = {
 
 	match_to_count = 0.6
 	
-	marine_default_ENG = {
+marine_default_ENG = {
 		target_width = 19.9
 		width_weight = 0.1
 		column_swap_factor = 0.1
@@ -506,7 +540,7 @@ marines_ENG = {
 		}
 	}
 
-	marine_ENG = {
+	marines_ENG = {
 		target_width = 19.9
 		width_weight = 0.1
 		column_swap_factor = 0.1
@@ -526,6 +560,17 @@ marines_ENG = {
 		}
 	}			
 }
+paratroopers_ENG = {
+
+	available_for = {
+		ENG
+	}
+	
+	roles = {
+		paratrooper
+	}
+
+	match_to_count = 0.6
 
 paratrooper_default_ENG = {
 	target_width = 9.9
@@ -547,7 +592,18 @@ paratrooper_default_ENG = {
 		}
 	}
 }
+}
+cavalry_ENG = {
 
+	available_for = {
+		ENG
+	}
+	
+	roles = {
+		cavalry
+	}
+
+	match_to_count = 0.9
 cavalry_default_ENG = {
 	target_width = 12.0
 	width_weight = 4.0
@@ -593,18 +649,18 @@ cavalry_ENG = {
 	replace_with = motorized_ENG
 	target_min_match = 0.1
 }
-
+}
 motorized_ENG = {
 
 	available_for = {
 		ENG
 	}
-
+	
 	roles = {
 		motorized
 	}
-	
-	match_to_count = 0.6
+
+	match_to_count = 0.4
 	
 	motorized_default_ENG = {
 		target_width = 19.9
@@ -670,12 +726,13 @@ mechanized_ENG = {
 	available_for = {
 		ENG
 	}
-
+	
 	roles = {
 		mechanized
 	}
-	
-	match_to_count = 0.6
+
+	match_to_count = 0.4
+
 	mechanized_default_ENG = {
 		target_width = 19.9
 		width_weight = 0.1

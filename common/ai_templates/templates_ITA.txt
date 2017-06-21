@@ -1,4 +1,4 @@
-armored_ITA = {
+light_armored_ITA = {
 
 	available_for = {
 		ITA
@@ -129,6 +129,19 @@ light_armor_II_ITA = {
 	replace_with = medium_armor_ITA
 	target_min_match = 0.2
 }
+}
+heavy_armored_ITA = {
+
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.9
+
 heavy_armor_default_ITA = {
 	target_width = 19.9
 	width_weight = 3.0
@@ -155,7 +168,18 @@ heavy_armor_default_ITA = {
 	replace_with = modern_armor_default_ITA
 	target_min_match = 0.2
 }
+}
+medium_armored_ITA = {
 
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.7
 medium_armor_default_ITA = {
 	target_width = 19.9
 	width_weight = 3.0
@@ -290,6 +314,18 @@ medium_armor_II_ITA = {
 	replace_with = modern_armor_ITA
 	target_min_match = 0.3
 }
+}
+modern_armored_ITA = {
+
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		armor
+	}
+	
+	match_to_count = 0.7
 modern_armor_default_ITA = {
 	target_width = 19.9
 	width_weight = 3.0
@@ -326,6 +362,7 @@ infantry_ITA = {
 	
 	
 	match_to_count = 0.75
+
 infantry_default_ITA = {
 	target_width = 19.9
 	width_weight = 0.1
@@ -377,18 +414,18 @@ infantry_ITA = {
 	}
 }
 }
-mountaineers_ITA = {
+light_infantry_ITA = {
 
 	available_for = {
 		ITA
 	}
 	
 	roles = {
-		mountaineers
+		infantry
 	}
 	
 	
-	match_to_count = 0.7
+	match_to_count = 0.85
 light_mountaineers_default_ITA = {
 	target_width = 19.9
 	width_weight = 3
@@ -451,6 +488,19 @@ light_mountaineers_ITA = {
 	replace_with = light_mountaineers_ITA
 	target_min_match = 1
 }
+}
+mountaineers_ITA = {
+
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		mountaineers
+	}
+	
+	
+	match_to_count = 0.7
 mountaineers_default_ITA = {
 	target_width = 19.9
 	width_weight = 3
@@ -500,6 +550,7 @@ mountaineers_ITA = {
 	}
 }
 }
+
 marines_ITA = {
 
 	available_for = {
@@ -507,7 +558,7 @@ marines_ITA = {
 	}
 	
 	roles = {
-		marines
+		marine
 	}
 	
 	upgrade_prio = {
@@ -522,6 +573,7 @@ marines_ITA = {
 	}
 	
 	match_to_count = 0.7
+
 marine_default_ITA = {
 	target_width = 19.9
 	width_weight = 0.1
@@ -542,7 +594,18 @@ marine_default_ITA = {
 	}
 }
 }
+paratrooper_ITA = {
 
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		paratrooper
+	}
+	
+	
+	match_to_count = 0.7
 paratrooper_default_ITA = {
 	target_width = 9.9
 	width_weight = 3.0
@@ -563,6 +626,19 @@ paratrooper_default_ITA = {
 		}
 	}
 }
+}
+cavalry_ITA = {
+
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		cavalry
+	}
+	
+	
+	match_to_count = 0.7
 
 cavalry_default_ITA = {
 	target_width = 12.0
@@ -622,7 +698,19 @@ cavalry_ITA = {
 	}
 	
 }
+}
+mechanized_ITA = {
 
+	available_for = {
+		ITA
+	}
+	
+	roles = {
+		mechanized
+	}
+	
+	
+	match_to_count = 0.7
 mechanized_ITA = {
 	target_width = 19.9
 	width_weight = 0.1
@@ -647,6 +735,8 @@ mechanized_ITA = {
 		}
 	}
 }
+}
+
 garrison_ITA = {
 
 	available_for = {
