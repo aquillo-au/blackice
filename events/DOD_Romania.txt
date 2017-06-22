@@ -331,14 +331,16 @@ country_event = {
 	id = DOD_romania.41 
 	title = DOD_romania.41.t
 	desc = DOD_romania.41.desc
-	picture = GFX_report_event_sign_treaty2
+	picture = GFX_report_event_generic_sign_treaty2
 	
 	is_triggered_only = yes
 
 	option = { #cool
 		name = DOD_romania.41.a
 		puppet = BUL
-		news_event = { id = news.318 days = 1 }
+		hidden_effect = {
+			news_event = { id = news.318 days = 1 }
+		}
 	}
 
 }
@@ -487,6 +489,7 @@ country_event = {
 			type = puppet_wargoal_focus
 			target = HUN
 		}
+		set_country_flag = HUN_ROM_puppet_war
 	}
 
 }

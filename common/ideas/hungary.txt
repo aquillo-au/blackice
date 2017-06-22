@@ -45,6 +45,7 @@ ideas = {
 			modifier = {
 				justify_war_goal_time = -0.5
 				planning_speed = 0.2
+				generate_wargoal_tension = -0.5
 			}
 		}
 
@@ -96,7 +97,7 @@ ideas = {
 			}
 			
 			modifier = {
-				fascism_drift = 0.025
+				fascism_drift = 0.03
 				unity_factor = 0.1
 			}
 		}
@@ -131,6 +132,7 @@ ideas = {
 				monarchism_drift = 0.02
 				unity_factor = 0.1
 				political_power_factor = 0.2
+				generate_wargoal_tension = -0.25
 			}
 		}
 
@@ -158,7 +160,7 @@ ideas = {
 			}
 		}
 
-		HUN_strengthen_fascists = {
+		HUN_lean_germany = {
 
 			picture = generic_fascism_drift_2
 			
@@ -234,7 +236,7 @@ ideas = {
 			
 			modifier = {
 				production_speed_infrastructure_factor = 0.1
-				production_speed_industrial_complex_factor = 0.1
+				production_speed_industrial_complex_factor = 0.10
 			}
 		}
 
@@ -260,7 +262,7 @@ ideas = {
 			}
 			
 			modifier = {
-				license_air_purchase_cost = -0.5
+				license_air_purchase_cost = -0.35
 			}
 		}
 
@@ -273,7 +275,7 @@ ideas = {
 			}
 			
 			modifier = {
-				industrial_capacity_dockyard = 0.1
+				industrial_capacity_dockyard = 0.075
 			}
 		}
 
@@ -300,7 +302,22 @@ ideas = {
 	}
 #MINISTERS
 head_of_state = {
-	
+		HUN_miklos_horthy = {
+
+			picture = generic_political_advisor_europe_2
+
+			allowed = {
+				original_tag = HUN
+			}
+			available = {
+				OR = {
+				has_government = monarchism
+				has_government = neutrality
+				has_government = conservatism
+				}
+			}
+			traits = { monarchist }
+		}
 	}
 	foreign_minister = {
 		HUN_kalman_kanya = {
@@ -372,7 +389,7 @@ head_of_state = {
 				original_tag = HUN
 			}
 			
-			traits = { apolitical war_industrialist }
+			traits = { monarchist war_industrialist }
 
 		}
 	HUN_tihamer_fabinyi = {
@@ -390,7 +407,7 @@ head_of_state = {
 					has_government = fascism
 				}
 			}
-			traits = { fascist capitalist }
+			traits = { apolitical capitalist }
 		}
 	}
 	political_advisor = {

@@ -337,7 +337,18 @@ country_event = {
 		name = DOD_hungary.12.a
 		puppet = CZE
 		set_autonomy = { target = CZE autonomy_state = autonomy_dominion }
-		
+		if = {
+			limit = {
+				is_in_faction = yes
+			}
+			random_country = {
+				limit = { 
+					is_in_faction_with = HUN 
+					is_faction_leader = yes
+				}
+				add_to_faction = CZE
+			}
+		}
 	}
 
 }
@@ -385,7 +396,8 @@ country_event = {
 	}
 
 	mean_time_to_happen = { days = 7 }
-
+	fire_only_once = yes
+	
 	option = { #stay out
 		name = DOD_hungary.20.a
 		ai_chance = {
@@ -1289,7 +1301,7 @@ country_event = {
 				factor = 2
 			}
 		}
-		remove_state_core = 77
+		remove_state_core = 76
 		remove_state_core = 83
 		remove_state_core = 84
 		HUN = { country_event = { id = DOD_hungary.51 } }
@@ -1355,6 +1367,13 @@ country_event = {
 				}
 				transfer_state = 84
 			}
+			if = {
+				limit = {
+					82 = { is_claimed_by = HUN }
+					82 = { is_controlled_by = FROM }
+				}
+				transfer_state = 82
+			}
 		}
 		add_threat = -1
 		if = {
@@ -1363,7 +1382,9 @@ country_event = {
 			}
 			remove_ideas = HUN_war_preparation
 		}
-		news_event = { id = news.301 days = 1 }
+		hidden_effect = {
+			news_event = { id = news.301 days = 1 }
+		}
 	}
 }
 
@@ -1408,7 +1429,9 @@ country_event = {
 		ROM = { country_event = { id = DOD_hungary.53 hours = 24} }
 		add_ideas = HUN_war_preparation
 		add_threat = 2
-		news_event = { id = news.302 days = 1 }
+		hidden_effect = {
+			news_event = { id = news.302 days = 1 }
+		}
 	}
 }
 
@@ -1844,18 +1867,18 @@ country_event = {
 		HUN = { add_opinion_modifier = { target = PREV modifier = betrayed_our_cause } }
 		if = {
 			limit = {
+				has_global_flag = HUN_rebuffed
+			}
+			HUN = { country_event = { id = DOD_hungary.63 } }
+		}
+		if = {
+			limit = {
 				NOT = {
 					has_global_flag = HUN_rebuffed
 				}
 			}
 			HUN = { country_event = { id = DOD_hungary.55 } }
 			set_global_flag = HUN_rebuffed
-		}
-		if = {
-			limit = {
-			 	has_global_flag = HUN_rebuffed
-			}
-			HUN = { country_event = { id = DOD_hungary.63 } }
 		}
 		clr_country_flag = HUN_mediation
 		set_country_flag = HUN_mediation_refused
@@ -1901,18 +1924,18 @@ country_event = {
 		ROM = { add_opinion_modifier = { target = PREV modifier = betrayed_our_cause } }
 		if = {
 			limit = {
+				has_global_flag = ROM_rebuffed
+			}
+			ROM = { country_event = { id = DOD_hungary.64 } }
+		}
+		if = {
+			limit = {
 				NOT = {
 					has_global_flag = ROM_rebuffed
 				}
 			}
 			ROM = { country_event = { id = DOD_hungary.56 } }
 			set_global_flag = ROM_rebuffed
-		}
-		if = {
-			limit = {
-			 	has_global_flag = ROM_rebuffed
-			}
-			ROM = { country_event = { id = DOD_hungary.64 } }
 		}
 		clr_country_flag = ROM_mediation
 		set_country_flag = ROM_mediation_refused	
@@ -3033,6 +3056,7 @@ country_event = {
 			}
 		}
 		HUN = { country_event = DOD_hungary.84 }
+		add_opinion_modifier = { target = FROM modifier = western_betrayal }
 		
 	}
 }
@@ -3852,7 +3876,9 @@ country_event = {
 				target = CZE
 				generator = { 70 71 72 73 }
 			}
-		news_event = { id = news.311 days = 1 }
+		hidden_effect = {
+			news_event = { id = news.311 days = 1 }
+		}
 	}	
 }
 
@@ -3882,7 +3908,9 @@ country_event = {
 			factor = 50
 		}
 		HUN = { country_event = DOD_hungary.108 }
-		news_event = { id = news.310 days = 1 }
+		hidden_effect = {
+			news_event = { id = news.310 days = 1 }
+		}
 	}
 
 	option = {# refuse
@@ -3932,7 +3960,9 @@ country_event = {
 				type = puppet_wargoal_focus
 				target = SLO
 			}
-		news_event = { id = news.311 days = 1 }
+		hidden_effect = {
+			news_event = { id = news.311 days = 1 }
+		}
 	}
 
 	
@@ -4824,7 +4854,7 @@ country_event = {
 	id = DOD_hungary.143
 	title = DOD_hungary.143.t
 	desc = DOD_hungary.143.desc 
-	picture = GFX_report_event_
+	picture = GFX_report_event_generic_read_write
 	
 	is_triggered_only = yes
 

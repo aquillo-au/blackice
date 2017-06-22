@@ -2891,8 +2891,14 @@ focus_tree = {
 		available = {
 			is_puppet = no
 			or = {
-			has_army_manpower = { size > 799999 } #80 div	
+			has_army_manpower = { size > 799999 } #85 div	
 			date > 1938.12.30
+			}
+			NOT = {
+				AND = {
+					CZE = { is_in_faction_with = GER }
+					has_war = yes
+				}
 			}
 		}
 		bypass = {
@@ -2907,7 +2913,7 @@ focus_tree = {
 				has_war_with = CZE
 			}
 		}
-		cancel_if_invalid = no
+		cancel_if_invalid = yes
 		x = 14
 		y = 2
 		cost = 9.9
@@ -3119,7 +3125,6 @@ focus_tree = {
 			if = {
 				limit = {
 					HUN = {
-						has_government = fascism
 						is_friend_or_potential_friend_of_GER = yes
 					}
 					ROM = {
@@ -3181,15 +3186,69 @@ focus_tree = {
 					has_government = fascism
 				}
 			}
+			OR = {
+			126 = {
+					controller = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+							}
+						}
+					}
+				}
+			AND = {
+				OR = {
+				118 = {
+					controller = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+							}
+						}
+					}
+				116 = {
+					controller = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+							}
+						}
+					}
+				453 = {
+					controller = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+							}
+						}
+					}
+				446 = {
+					controller = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+							}
+						}
+					}
+				}
+			}
+			has_navy_size = { size > 150 }
+			if = { limit = { USA = { NOT = { has_war_with = GER } } }
+				ENG = { has_navy_size = { size < 80 } }
+			}
+			if = { limit = { USA = { has_war_with = GER } }
+				ENG = { has_navy_size = { size < 75 } }
+				USA = { has_navy_size = { size < 75 } }
+			}
 		}
 		
-		#bypass = {
-		#	any_other_country = {
-		#		original_tag = SPR
-		#		has_government = fascism
-		#		is_in_faction_with = GER
-		#	}
-		#}
+		bypass = {
+			any_other_country = {
+				original_tag = SPR
+				has_government = fascism
+				is_in_faction_with = GER
+			}
+		}
 		x = 12
 		y = 7
 		cost = 16
@@ -4176,17 +4235,32 @@ focus_tree = {
 					}
 				}
 				hidden_effect = {
-					HUN = {
-						country_event = { id = hungary.6 days = 1 }
-						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
-						set_country_flag = GER_first_ljubljana_award
+					if = {
+						limit = { 
+							OR = {
+								45 = { is_owned_by = YUG }
+								45 = { is_owned_by = GER }
+							}
+						}
+						HUN = {
+							country_event = { id = hungary.6 days = 1 }
+							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+							set_country_flag = GER_first_ljubljana_award
+						}
 					}
 				}
 				effect_tooltip = {
-					HUN = {
-						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
-						transfer_state = 45
-						transfer_state = 914					
+					if = {
+						limit = {
+								OR = {
+									45 = { is_owned_by = YUG }
+									45 = { is_owned_by = GER }
+								}
+						}
+						HUN = {
+							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+							transfer_state = 45
+						}					
 					}
 				}
 				every_other_country = {
@@ -4205,16 +4279,32 @@ focus_tree = {
 					}
 				}
 				hidden_effect = {
-					BUL = { country_event = { id = bulgaria.3 days = 1 } 
-						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
-						set_country_flag = GER_first_ljubljana_award
+					if = {
+						limit = {
+							OR = {
+								106 = { is_owned_by = YUG }
+								106 = { is_owned_by = GER }
+							}
+						}
+						BUL = { 
+							country_event = { id = bulgaria.3 days = 1 } 
+							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+							set_country_flag = GER_first_ljubljana_award
+						}
 					}
 				}
 				effect_tooltip = {
-					BUL = {
-						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
-						transfer_state = 106
-						transfer_state = 905						
+					if = {
+						limit = {
+							OR = {
+								106 = { is_owned_by = YUG }
+								106 = { is_owned_by = GER }
+							}
+						}
+						BUL = {
+							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+							transfer_state = 106
+						}						
 					}
 				}
 				every_other_country = {

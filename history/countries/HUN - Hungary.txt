@@ -47,6 +47,12 @@ set_technology = {
 	
 }
 add_ideas = { 	
+		#Ministers
+		HUN_miklos_horthy
+		HUN_kalman_daranyi
+		HUN_vilmos_roder
+		
+		#Laws
 		export_focus
 		tax_high
 		tariffs_average
@@ -112,8 +118,8 @@ remove_ideas = HUN_treaty_of_triannon
 			HUN_treaty_of_triannon_3
 		}
 
-		unlock_national_focus = HUN_strengthen_fascists #To avoid leader ID clash
-		add_ideas = HUN_strengthen_fascists
+		unlock_national_focus = HUN_lean_germany #To avoid leader ID clash
+		add_ideas = HUN_lean_germany
 
 		else = {
 			#generic focuses
@@ -201,24 +207,24 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = yes
 }
-#Vanilla = Start Horty as neutral if DOD
-#BICE = Horthy starts monarchist, eventually make sure he turns fascist if not DOD
+
+#BICE = Horthy is monarchist and not fascist, fascist Szalasi will replace him if HUN is losing to SOV
 if = {
 	limit = {
 		has_dlc = "Death or Dishonor"
 	}
 	create_country_leader = { #DOD version modified for BICE
-		name = "Miklós Horthy"
+		name = "Regent Miklós Horthy"
 		desc = "POLITICS_MIKLOS_HORTHY_DESC"
 		picture = "Portrait_Hungary_Miklos_Horthy.dds"
 		expire = "1965.1.1"
 		ideology = absolutism
 		traits = {
 			monarchist
-			fascist_sympathies
 			anti_communist
+			political_dancer
 		}
-		id = 500 #Horthy Neutral
+		#id = 500 #Horthy Neutral
 	}
 	else = {
 		create_country_leader = { #BICE version
@@ -233,6 +239,18 @@ if = {
 			political_dancer
 			}
 		}
+		#create_country_leader = { #BICE version
+		#	name = "Miklós Horthy"
+		#	desc = "POLITICS_MIKLOS_HORTHY_DESC"
+		#	picture = "Portrait_Hungary_Miklos_Horthy.dds"
+		#	expire = "1965.1.1"
+		#	ideology = fascism_ideology
+		#traits = {
+		#	anti_communist
+		#	fascist
+		#	political_dancer
+		#	}
+		#}
 	}
 }
 
@@ -241,7 +259,7 @@ create_country_leader = {
 	desc = "Leader of the Arrow Cross Party"
 	picture = "Portrait_Europe_generic_5.dds"
 	expire = "1965.1.1"
-	ideology = fascism_ideology
+	ideology = nazism
 	traits = {
 		fascist
 		demagogue
