@@ -6,7 +6,7 @@
 		unique = {
 		}
 	}
-		patrol_submarine = {
+	patrol_submarine = {
 		prefix = ""
 		generic = { "Unterseeboot" }
 		unique = {
@@ -45,9 +45,9 @@
 			"U-1059" "U-1060" "U-1061" "U-1062" "U-1063" "U-1064" "U-1065" "U-1103" "U-1104" "U-1105" "U-1106" "U-1107" "U-1108" "U-1109" "U-1110" "U-1163" "U-1164" "U-1165" "U-1166" "U-1167"
 			"U-1168" "U-1169" "U-1170" "U-1171" "U-1172" "U-1271" "U-1272" "U-1273" "U-1274" "U-1275" "U-1276" "U-1277" "U-1278" "U-1279" "U-1301" "U-1302" "U-1303" "U-1304" "U-1305" "U-1306"
 			"U-1307" "U-1308"
-					}
+		}
 	}
-		lr_patrol_submarine = {
+	lr_patrol_submarine = {
 		prefix = ""
 		generic = { "Unterseeboot" }
 		unique = {
@@ -66,7 +66,7 @@
 			"U-3015" "U-3016" "U-3017" "U-3018" "U-3019" "U-3020" "U-3021" "U-3022" "U-3023" "U-3024" "U-3025" "U-3026" "U-3027" "U-3028" "U-3029" "U-3030" "U-3031" "U-3032" "U-3033" "U-3034"
 			"U-3035" "U-3037" "U-3038" "U-3039" "U-3040" "U-3041" "U-3044" "U-3501" "U-3502" "U-3503" "U-3504" "U-3505" "U-3506" "U-3507" "U-3508" "U-3509" "U-3510" "U-3511" "U-3512" "U-3513"
 			"U-3514" "U-3515" "U-3516" "U-3517" "U-3518" "U-3519" "U-3520" "U-3521" "U-3522" "U-3523" "U-3524" "U-3525" "U-3526" "U-3527" "U-3528" "U-3529" "U-3530" 
-					}
+		}
 	}
 	coastal_submarine = {
 		prefix = ""
@@ -81,7 +81,13 @@
 			"U-4701" "U-4702" "U-4703" "U-4704" "U-4705" "U-4706" "U-4707" "U-4709" "U-4710" "U-4711" "U-4712"
 		}
 	}
-
+	torpedo_boat = {
+		prefix = ""
+		generic = { "Torpedoboot" }
+		unique = {
+			"Möwe" "Falke" "Greif" "Kondor" "Albatros" "Seeadler" "Wolf" "Iltis" "Jaguar" "Leopard" "Luchs" "Tiger"
+		}
+	}
 	destroyer = {
 		prefix = ""
 		generic = { "Zerstörer" }
@@ -111,7 +117,7 @@
 		prefix = ""
 		generic = { "Kreuzer" }
 		unique = {
-			"Admiral Graf Spee" "Admiral Hipper" "Blücher" "Prinz Eugen" "Seydlitz" "Lützow" "Posen" "Preussen" "Pillau" "Roon" "Elsass" "Hessen" "Herta" 
+			"Admiral Hipper" "Blücher" "Prinz Eugen" "Seydlitz" "Lützow" "Posen" "Preussen" "Pillau" "Roon" "Elsass" "Hessen" "Herta" 
 			"Freya" "Vineta" "Siegfried" "Hansa" "Friedrich Carl" "Hela" "Gefion" "Helgoland" "Schwaben" "Wörth" "Wettin" "Wittelsbach"
 		}
 	}
@@ -123,13 +129,20 @@
 			"Bayern" "Sachsen" "Baden" "Weissenburg"  
 		}
 	}
+	pocket_battleship = {
+		prefix = ""
+		generic = { "Panzerschiffe" }
+		unique = {	
+			"Admiral Graf Spee"	"Deutschland" "Admiral Scheer"
+		}
+	}
 	battleship = {
 		prefix = ""
 		generic = { "Schlachtschiff" }
 		unique = {
 			"Gneisenau" "Scharnhorst" "Bismarck" "Tirpitz" 
 			"Hindenburg" "Friedrich der Große" "Großdeutschland" "Ulrich von Hutten" "Götz von Berlichingen"			
-			"Brandenburg" "Zähringen" "Mecklenburg" "Lothringen" "Hannover" "Nassau" "Pommern" "Westfalen" "Rheinland" "Thüringen" "Württemberg"
+			"Brandenburg" "Zähringen" "Mecklenburg" "Lothringen" "Hannover" "Nassau" "Pommern" "Schlesien" "Schleswig-Holstein" "Westfalen" "Rheinland" "Thüringen" "Württemberg"
 		}
 	}
 	light_carrier = {
@@ -147,6 +160,118 @@
 			"Graf Zeppelin" "Peter Strasser" "Seydlitz" "Europa" "Potsdam" 
 			
 		}
+	}
+	# Air
+	air_wing_names_template = AIR_WING_NAME_GER_FALLBACK
+
+	#Air wings can only be named through archetype
+	he_51_equipment = {
+		prefix = ""
+		generic = { "Jagdgeschwader" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+	ar_68_equipment = {
+		prefix = ""
+		generic = { "Jagdgeschwader" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+	jet_fighter_equipment = {
+		prefix = ""
+		generic = { "Sonder-Jagdverband" "Jagdverband" "Erprobungskommando" "Lehrgeschwader" "Erprobungsgruppe" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	heavy_fighter_equipment = {
+		prefix = ""
+		generic = { "Zerstörergeschwader" "Nachtjagdgeschwader"}
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	CAS_equipment = {
+		prefix = ""
+		generic = { "Schlachtgeschwader" "Stukageschwader" "Schnellkampfgeschwader" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	cv_fighter_equipment = {
+		prefix = ""
+		generic = { "Träger-Jagdgruppe" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	cv_CAS_equipment = {
+		prefix = ""
+		generic = { "Träger-Stukagruppe" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+	cv_nav_bomber_equipment = {
+		prefix = ""
+		generic = { "Torpedobombergruppe" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	tac_bomber_equipment = {
+		prefix = ""
+		generic = { "Kampfgeschwader" "Kampfschulgeschwader" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	jet_tac_bomber_equipment = {
+		prefix = ""
+		generic = { "Sonder-Kampfverband" "Erprobungskommando" "Lehrkampfgeschwader" "Schnellbombergeschwader" "Erprobungsgruppe" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	nav_bomber_equipment = {
+		prefix = ""
+		generic = { "Küstenfliegergruppe" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	strategic_bomber_equipment = {
+		prefix = ""
+		generic = { "Fernkampfgeschwader" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	jet_strategic_bomber_equipment = {
+		prefix = ""
+		generic = { "Fernkampfgeschwader zbV." "Schnellbombergeschwader" "Erprobungskommando" "Erprobungsgruppe" }
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
+	}
+
+	transport_plane_equipment = {
+		prefix = ""
+		generic = { "Transportgeschwader" "Kampfgeschwader zbV."}
+		generic_pattern = AIR_WING_NAME_GER_GENERIC
+		unique = {
+		}	
 	}
 	# Land
 	infantry = {
