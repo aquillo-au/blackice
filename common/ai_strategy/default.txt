@@ -460,19 +460,21 @@ GER_strategy_2 = {
 	enable = { tag = GER num_of_military_factories < 100 }
 	abort = { tag = GER  num_of_military_factories > 99 }
 	
-	ai_strategy = { type = role_ratio id = infantry 							value = 70		}	
+	ai_strategy = { type = role_ratio id = infantry 							value = 60		}	
 	ai_strategy = { type = role_ratio id = mountaineers 						value = 1 		}	
 	ai_strategy = { type = role_ratio id = marines 								value = 0		}	
 	ai_strategy = { type = role_ratio id = paratroopers							value = 1 		}	
-	ai_strategy = { type = role_ratio id = motorized 							value = 2 		}	
+	ai_strategy = { type = role_ratio id = motorized 							value = 1		}	
 	ai_strategy = { type = role_ratio id = cavalry 								value = 0 		}	
-	ai_strategy = { type = role_ratio id = armor 								value = 30		}	
-	ai_strategy = { type = role_ratio id = mechanized 							value = 30		}	
+	ai_strategy = { type = role_ratio id = armor 								value = 200		}	
+	ai_strategy = { type = role_ratio id = mechanized 							value = 200		}	
 	ai_strategy = { type = role_ratio id = garrison						    	value = 1		}
 	
 		
-	ai_strategy = { type = equipment_production_factor id = armor 				value = 20		}
-	ai_strategy = { type = equipment_production_factor id = motorized 			value = 10      }
+	ai_strategy = { type = equipment_production_factor id = armor 				value = 200		}
+	ai_strategy = { type = equipment_production_factor id = mechanized 			value = 200		}
+	ai_strategy = { type = equipment_production_factor id = motorized 			value = 5     }
+	ai_strategy = { type = equipment_production_factor id = infantry  			value = 60      }
 	
 	ai_strategy = { type = air_factory_balance value = 35 }
 	
@@ -514,12 +516,13 @@ GER_strategy_3 = {
 	ai_strategy = { type = role_ratio id = paratroopers							value = 1 		}	
 	ai_strategy = { type = role_ratio id = motorized 							value = 25		}	
 	ai_strategy = { type = role_ratio id = cavalry 								value = 0 		}	
-	ai_strategy = { type = role_ratio id = armor 								value = 25 		}	
-	ai_strategy = { type = role_ratio id = mechanized 							value = 25		}	
+	ai_strategy = { type = role_ratio id = armor 								value = 555 		}	
+	ai_strategy = { type = role_ratio id = mechanized 							value = 555		}	
 	ai_strategy = { type = role_ratio id = garrison						    	value = 16 		}
 	
 	
-	ai_strategy = { type = equipment_production_factor id = armor 				value = 25		}
+	ai_strategy = { type = equipment_production_factor id = armor 				value = 555		}
+	ai_strategy = { type = equipment_production_factor id = mechanized 			value = 555      }
 	ai_strategy = { type = equipment_production_factor id = motorized 			value = 20      }
 	
 	ai_strategy = { type = air_factory_balance value = 35 }
@@ -558,8 +561,8 @@ GER_strategy_4 = {
 	ai_strategy = { type = equipment_production_factor id = fighter 			value = 100 	}
 	
 	ai_strategy = { type = role_ratio id = infantry 							value = 30		}	
-	ai_strategy = { type = role_ratio id = armor 								value = 25 		}	
-	ai_strategy = { type = role_ratio id = mechanized 							value = 25 		}	
+	ai_strategy = { type = role_ratio id = armor 								value = 75 		}	
+	ai_strategy = { type = role_ratio id = mechanized 							value = 75 		}	
 }
 
 GER_strategy_5 = {
@@ -569,8 +572,8 @@ GER_strategy_5 = {
 	ai_strategy = { type = equipment_production_factor id = fighter 			value = 100     }
 	
 	ai_strategy = { type = role_ratio id = infantry 							value = 30		}
-	ai_strategy = { type = role_ratio id = armor 								value = 25 		}	
-	ai_strategy = { type = role_ratio id = mechanized 							value = 40 		}	
+	ai_strategy = { type = role_ratio id = armor 								value = 75 		}	
+	ai_strategy = { type = role_ratio id = mechanized 							value = 70 		}	
 }
 
 GER_strategy_6 = { 
@@ -1066,7 +1069,7 @@ USA_strategy_1 = {
 	
 	ai_strategy = { type = role_ratio id = infantry 							value = 50 	}	
 	ai_strategy = { type = role_ratio id = mountaineers 						value = 0 		}	
-	ai_strategy = { type = role_ratio id = marines 								value = 20 		}	
+	ai_strategy = { type = role_ratio id = marines 								value = 50 		}	
 	ai_strategy = { type = role_ratio id = paratroopers 						value = 0 		}	
 	ai_strategy = { type = role_ratio id = motorized 							value = 50 		}	
 	ai_strategy = { type = role_ratio id = cavalry 								value = 0 		}	
@@ -1076,6 +1079,7 @@ USA_strategy_1 = {
 	
 	
 	ai_strategy = { type = equipment_production_factor id = armor 				value = 10		}
+	ai_strategy = { type = equipment_production_factor id = marines 				value = 10		}
 
 	ai_strategy = { type = air_factory_balance value = 60 }
 	
@@ -1114,7 +1118,7 @@ USA_strategy_2 = {
 	
 	ai_strategy = { type = role_ratio id = infantry 							value = 30 	}	
 	ai_strategy = { type = role_ratio id = mountaineers 						value = 0 		}	
-	ai_strategy = { type = role_ratio id = marines 								value = 25 		}	
+	ai_strategy = { type = role_ratio id = marines 								value = 65 		}	
 	ai_strategy = { type = role_ratio id = paratroopers 						value = 2		}	
 	ai_strategy = { type = role_ratio id = motorized 							value = 60 	}	
 	ai_strategy = { type = role_ratio id = cavalry 								value = 0 		}	
@@ -1124,7 +1128,8 @@ USA_strategy_2 = {
 
 
     ai_strategy = { type = equipment_production_factor id = armor 				value = 50		}	
-
+	ai_strategy = { type = equipment_production_factor id = marines 			value = 10		}
+	
 	ai_strategy = { type = air_factory_balance value = 80 }
 	
 	ai_strategy = { type = equipment_production_factor id = fighter 			value = 150 	}	
