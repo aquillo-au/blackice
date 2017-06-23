@@ -8,7 +8,7 @@ light_armored_SOV = {
 		armor
 	}
 	
-	match_to_count = 0.65
+	match_to_count = 0.7
 	
 light_armor_default_SOV = {
 	target_width = 20
@@ -83,7 +83,7 @@ medium_armored_SOV = {
 		armor
 	}
 	
-	match_to_count = 0.45
+	match_to_count = 0.6
 	
 medium_armor_default_SOV = {
 	target_width = 22.9 
@@ -543,9 +543,7 @@ cavalry_default_SOV = {
 			semi_motorized = 1
 		}
 	}
-	replace_at_match = 0.6
-	replace_with = cavalry_default_SOV
-	target_min_match = 0.6
+	
 }
 
 cavalry_SOV = {
@@ -568,9 +566,7 @@ cavalry_SOV = {
 			semi_motorized = 1
 		}
 	}
-	replace_at_match = 0.6
-	replace_with = motorized_SOV
-	target_min_match = 0.6
+	
 }
 }
 guards_motorized_SOV = {
@@ -583,7 +579,7 @@ guards_motorized_SOV = {
 		motorized
 	}
 	
-	match_to_count = 0.95
+	match_to_count = 0.0
 
 guards_motorized_default_SOV = {
 	target_width = 25
@@ -653,15 +649,16 @@ motorized_SOV = {
 		motorized
 	}
 	
-	match_to_count = 0.68
+	match_to_count = 0.0
+
 motorized_default_SOV = {
 	target_width = 21.9 
 	width_weight = 0.6
-	column_swap_factor = 0.6
+	column_swap_factor = 0.0
 
 	target_template = {
 		weight = 1
-		match_value = 19990.0
+		match_value = 0
 		
 		support = {
 			engineer = 1
@@ -679,9 +676,7 @@ motorized_default_SOV = {
 			artillery_brigade_mot  = 3
 		}
 	}
-    replace_at_match = 1
-	replace_with = mechanized_default_SOV
-	target_min_match = 1
+ 
 }
 
 motorized_SOV = {
@@ -710,12 +705,9 @@ motorized_SOV = {
 		}
 	}
 
-    replace_at_match = 1
-	replace_with = mechanized_SOV
-	target_min_match = 1
-	}
+ 
 }
-
+}
 mechanized_SOV = {
 
 	available_for = {

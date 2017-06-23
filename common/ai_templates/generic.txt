@@ -101,6 +101,7 @@ medium_armor_generic = {
 		armor
 	}
 	match_to_count = 0.62
+	
 medium_armor_default = {
 	target_width = 22.9 
 	width_weight = 0.3
@@ -181,15 +182,13 @@ infantry_default = {
 			recon = 1
 			logistics_company = 1
 			field_hospital = 1
-			anti_air = 1
+			
 		}
 		
 		regiments = {
-		    infantry = 1
-			light_infantry = 5
-			artillery_brigade = 1
-			mountain_artillery_brigade = 1
-			anti_tank_brigade = 1
+			infantry = 9
+			artillery_brigade = 3
+			
 		}
 	}
 }
@@ -269,8 +268,7 @@ infantry_default_SWE = {
 		}
 		
 		regiments = {
-			infantry = 3
-			light_infantry = 3
+			infantry = 6
 			artillery_brigade = 3
 			anti_tank_brigade = 1
 		}
@@ -303,8 +301,7 @@ infantry_default_FIN = {
 		}
 		
 		regiments = {
-		    infantry = 2
-			light_infantry = 6
+		   infantry = 6
 			artillery_brigade = 1
 			mountain_artillery_brigade = 1
 			anti_tank_brigade = 1
@@ -336,8 +333,7 @@ infantry_default_TUR = {
 		}
 		
 		regiments = {
-		    infantry = 2
-			light_infantry = 7
+		   infantry = 9
 			artillery_brigade = 1
 			mountain_artillery_brigade = 1
 			anti_tank_brigade  = 1
@@ -369,8 +365,7 @@ infantry_default_YUG = {
 		}
 		
 		regiments = {
-		    infantry = 2
-			light_infantry = 6
+		  infantry = 8
 			artillery_brigade = 1
 			mountain_artillery_brigade = 1
 			anti_tank_brigade = 1
@@ -401,8 +396,7 @@ infantry_default_BRA = {
 		}
 		
 		regiments = {
-		    infantry = 1
-			light_infantry = 5
+		 infantry = 6
 			artillery_brigade = 1
 			mountain_artillery_brigade = 1
 			anti_tank_brigade = 1
@@ -433,8 +427,7 @@ infantry_default_SPR = {
 		}
 		
 		regiments = {
-		    infantry = 1
-			light_infantry = 5
+		   infantry = 6
 			artillery_brigade = 1
 			mountain_artillery_brigade = 1
 			anti_tank_brigade = 1
@@ -465,9 +458,7 @@ infantry_default_MEX = {
 		}
 		
 		regiments = {
-		    infantry = 1
-			light_infantry = 5
-			artillery_brigade = 1
+		   infantry = 6
 			mountain_artillery_brigade = 1
 			anti_tank_brigade = 1
 		}
@@ -498,8 +489,7 @@ infantry_default_NOR = {
 		}
 		
 		regiments = {
-		    infantry = 2
-			light_infantry = 6
+		  infantry = 8
 			artillery_brigade = 1
 			mountain_artillery_brigade = 1
 		}
@@ -530,8 +520,7 @@ infantry_default_DEN = {
 		}
 		
 		regiments = {
-		    infantry = 2
-			light_infantry = 4
+		   infantry = 6
 			artillery_brigade = 1
 			mountain_artillery_brigade = 1
 		}
@@ -562,8 +551,7 @@ infantry_default_ROM = {
 		}
 		
 		regiments = {
-		    infantry = 2
-			light_infantry = 6
+		   infantry = 8
 			artillery_brigade = 2
 			mountain_artillery_brigade = 1
 			anti_tank_brigade = 1
@@ -595,8 +583,7 @@ infantry_default_HUN = {
 		}
 		
 		regiments = {
-		    infantry = 2
-			light_infantry = 7
+		  infantry = 8
 			artillery_brigade = 2
 			#mountain_artillery_brigade = 1
 			anti_tank_brigade = 1
@@ -660,8 +647,7 @@ infantry_default_GRE = {
 		}
 		
 		regiments = {
-		    light_infantry = 8
-			infantry = 1
+		  infantry = 8
 			artillery_brigade = 1
 			mountain_artillery_brigade = 2
 			anti_tank_brigade = 1
@@ -692,8 +678,7 @@ infantry_default_EGY = {
 		}
 		
 		regiments = {
-		    infantry = 2
-			light_infantry = 5
+		   infantry = 6
 			artillery_brigade = 1
 			mountain_artillery_brigade = 1
 		}
@@ -724,7 +709,7 @@ infantry_default_CAN = {
 		}
 		
 		regiments = {
-			infantry = 8
+			infantry = 9
 			artillery_brigade = 2
 			anti_tank_brigade = 1
 		}
@@ -755,7 +740,7 @@ infantry_default_NZL = {
 		}
 		
 		regiments = {
-			infantry = 8
+			infantry = 9
 			artillery_brigade = 2
 			anti_tank_brigade = 1
 		}
@@ -785,8 +770,7 @@ infantry_default_SAF = {
 		}
 		
 		regiments = {
-		    infantry = 2
-			light_infantry = 4
+		   infantry = 9
 			artillery_brigade = 2
 			anti_tank_brigade = 1
 		}
@@ -1142,7 +1126,8 @@ cavalry_generic = {
 	
 
 	
-	match_to_count = 0.55
+	match_to_count = 0.75
+
 cavalry_default = {
 	target_width = 12.0
 	width_weight = 0.3
@@ -1187,9 +1172,6 @@ garrison_default = {
 	width_weight = 0.8
 	column_swap_factor = 0.4
 	
-	can_upgrade_in_field = {
-		has_equipment = { light_tank_equipment > 2500 } 
-	}
 	
 	target_template = {
 		weight = 1
@@ -1211,7 +1193,45 @@ garrison_default = {
 }
 
 }
+garrison_IRE = {
 
+	available_for = {
+		IRE
+	}
+	
+	roles = {
+		garrison
+	}
+		
+	match_to_count = 0.65
+	
+garrison_IRE  = {
+	target_width = 20.9 
+	width_weight = 0.8
+	column_swap_factor = 0.4
+	
+	
+	target_template = {
+		weight = 1
+		match_value = 25990.0
+		
+		support = {
+			DIV_HQ = 1
+			military_police = 1
+			recon_cav = 1
+			artillery_coastal = 1
+		}
+		
+		regiments = {
+			garrison = 4
+			militia = 4
+			artillery_brigade = 2
+
+		}
+	}
+}
+
+}
 ######################## Militia
 militia_default = {
 	target_width = 14.9 
