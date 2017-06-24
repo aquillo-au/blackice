@@ -1118,6 +1118,7 @@ cavalry_generic = {
 		USA
 		ITA
 		SOV
+		IRE
 	}
 
 	roles = {
@@ -1159,6 +1160,7 @@ garrison_generic = {
 		USA
 		ITA
 		SOV
+		IRE
 	}
 	
 	roles = {
@@ -1192,6 +1194,44 @@ garrison_default = {
 	}
 }
 
+}
+cavalry_IRE = {
+
+	available_for = {
+		IRE
+	}
+
+	roles = {
+		cavalry
+	}
+	
+
+	
+	match_to_count = 0.75
+
+cavalry_default = {
+	target_width = 12.0
+	width_weight = 0.3
+	column_swap_factor = 1.0
+	
+
+
+	target_template = {
+		weight = 1
+		match_value = 15990.0
+		
+		support = {
+			military_police = 1
+			recon_ac = 1
+			DIV_HQ = 1
+		}
+		
+		regiments = {
+			cavalry = 2
+			light_infantry = 1
+		}
+	}
+}
 }
 garrison_IRE = {
 
