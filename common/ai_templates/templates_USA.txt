@@ -10,40 +10,6 @@ light_armored_USA = {
 	
 	match_to_count = 0.85
 
-light_armor_default_USA = {
-	target_width = 19.9 
-	width_weight = 0.1
-		column_swap_factor = 0.9
-	
-	target_template = {
-		weight = 1
-		match_value = 1
-		
-		support = {
-			DIV_HQ = 1
-			engineer = 1
-			recon_ac = 1
-			recon_mot = 1
-			anti_air = 1
-			maintenance_company = 1
-			logistics_company = 1
-			field_hospital = 1
-		}
-		
-		regiments = {
-			mechanized = 2
-			american_light_tank = 1
-			motorized = 6
-			#semi_motorized = 4
-			mountain_artillery_brigade_mot = 1
-		}
-	}
-	
-	replace_at_match = 0.4
-	replace_with = medium_armor_default_USA
-	target_min_match = 0.2
-}
-
 light_armor_USA = {
 	target_width = 19.9 
 	width_weight = 0.1
@@ -78,38 +44,6 @@ light_armor_USA = {
 	target_min_match = 0.2
 }
 
-light_armor_II__default_USA = {
-	target_width = 19.9 
-	width_weight = 0.1
-	column_swap_factor = 0.9
-	
-	target_template = {
-		weight = 1
-		match_value = 1
-		
-		support = {
-			DIV_HQ = 1
-			engineer = 1
-			recon_ac = 1
-			maintenance_company = 1
-			logistics_company = 1
-			field_hospital = 1
-		}
-		
-		regiments = {
-			mechanized = 2
-			american_light_tank = 8
-			motorized = 5
-			artillery_brigade_mot = 2
-			anti_tank = 1
-		
-		}
-	}
-	
-	replace_at_match = 0.4
-	replace_with = medium_armor_default_USA
-	target_min_match = 0.2
-}
 light_armor_II_USA = {
 	target_width = 19.9
 	width_weight = 3.0
@@ -187,39 +121,7 @@ medium_armor_USA = {
 	replace_with = modern_armor_default_USA
 	target_min_match = 0.3
 }
-medium_armor_default_USA = {
-	target_width = 19.9
-	width_weight = 3.0
-		column_swap_factor = 0.9
-	
-	target_template = {
-		weight = 1
-		match_value = 1
-		
-		support = {
-			DIV_HQ = 1
-			engineer = 1
-			recon_ac = 1
-			maintenance_company = 1
-			logistics_company = 1
-			field_hospital = 1
-		}
-		
-		regiments = {
-			mechanized = 4
-			american_light_tank = 2
-			american_medium_tank = 6
-			motorized = 2
-			artillery_brigade_mot = 2
-			anti_tank = 1
-		
-		}
-	}
-	
-	replace_at_match = 0.65
-	replace_with = modern_armor_USA
-	target_min_match = 0.3
-}
+
 }
 heavy_armored_USA = {
 
@@ -232,7 +134,7 @@ heavy_armored_USA = {
 	}
 	
 	match_to_count = 0.75
-heavy_armor_default_USA = {
+heavy_armor_USA = {
 	target_width = 19.9
 	width_weight = 3.0
 	column_swap_factor = 0.1
@@ -272,29 +174,6 @@ modern_armored_USA = {
 	
 	match_to_count = 0.85
 
-modern_armor_default_USA = {
-	target_width = 19.9
-	width_weight = 3.0
-	column_swap_factor = 0.1
-
-	target_template = {
-		weight = 0.9
-		match_value = 500.0
-		
-		support = {
-			engineer = 1
-			recon = 1
-			maintenance_company = 1
-		    logistics_company = 1
-		}
-		
-		regiments = {
-			modern_armor = 4
-			mechanized = 3
-			medium_sp_artillery_brigade = 2
-		}
-	}
-}
 modern_armor_USA = {
 	target_width = 19.9
 	width_weight = 3.0
@@ -328,36 +207,6 @@ infantry_USA = {
 	}
 	match_to_count = 0.75
 
-infantry_default_USA = {
-	target_width = 19.9
-	width_weight = 0.1
-	column_swap_factor = 0.9
-	
-	target_template = {
-		weight = 1
-		match_value = 1
-		
-		support = {
-			DIV_HQ = 1
-			engineer = 1
-			recon_ac = 1
-			maintenance_company = 1
-			logistics_company = 1
-			field_hospital = 1
-			
-			artillery_medium_mot = 1
-		}
-		
-		regiments = {
-			infantry = 9
-			artillery_brigade_mot = 3
-			anti_tank = 1
-		}
-	}
-	replace_at_match = 0.6
-	replace_with = motorized_default_USA
-	target_min_match = 0.5
-}
 infantry_USA = {
 	target_width = 19.9
 	width_weight = 0.1
@@ -400,7 +249,7 @@ mountaineers_USA = {
 	}
 	
 	match_to_count = 0.85
-mountaineers_default_USA = {
+mountaineers_USA = {
 	target_width = 19.9
 	width_weight = 3
 	column_swap_factor = 0.2
@@ -435,27 +284,9 @@ marines_USA = {
 	}
 	
 	
-	match_to_count = 0.6
+	match_to_count = 0.5
 	
-marine_default_USA = {
-	target_width = 19.9
-	width_weight = 0.1
-	column_swap_factor = 0.1
 
-	target_template = {
-		weight = 1
-		match_value = 25990.0
-		
-		support = {
-			recon = 1
-			logistics_company = 1
-		}
-		
-		regiments = {
-			marine = 9
-		}
-	}
-}
 marines_USA = {
 	target_width = 19.9
 	width_weight = 0.1
@@ -466,12 +297,17 @@ marines_USA = {
 		match_value = 25990.0
 		
 		support = {
+			DIV_HQ = 1
 			recon = 1
-			logistics_company = 1
+			amph_support = 1
+			maintenance_company
+			engineer = 1
+			field_hospital = 1
 		}
 		
 		regiments = {
 			marine = 9
+			mountain_artillery_brigade_mot = 3
 		}
 	}
 }
@@ -522,28 +358,6 @@ cavalry_USA = {
 		
 	match_to_count = 0.85
 	
-cavalry_default_USA = {
-	target_width = 12.0
-	width_weight = 4.0
-	column_swap_factor = 1.0
-
-	target_template = {
-		weight = 1
-		match_value = 15990.0
-		
-		support = {
-			military_police = 1
-		}
-		
-		regiments = {
-			cavalry = 4
-		}
-	}
-	
-	replace_at_match = 0.1
-	replace_with = motorized_default
-	target_min_match = 0.1
-}
 cavalry_USA = {
 	target_width = 12.0
 	width_weight = 4.0
@@ -578,7 +392,8 @@ motorized_USA = {
 	}
 	
 	match_to_count = 0.25
-motorized_default_USA = {
+
+semi_motorized_USA = {
 	target_width = 19.9
 	width_weight = 0.1
 		column_swap_factor = 0.9
@@ -590,19 +405,24 @@ motorized_default_USA = {
 		support = {
 			DIV_HQ = 1
 			engineer = 1
-			artillery = 1
-			anti_tank = 1
+			recon_ac = 1
+			recon_mot = 1
 			maintenance_company = 1
+			logistics_company = 1
+			field_hospital = 1
 		}
 		
 		regiments = {
-			motorized = 8
-			medium_sp_artillery_brigade = 3
+			mechanized = 1
+			semi_motorized = 6
+			motorized = 1
+			american_light_tank = 1
+			mountain_artillery_brigade_mot = 3
 		}
 	}
 
 	replace_at_match = 0.6
-	replace_with = mechanized_default_USA
+	replace_with = mechanized_USA
 	target_min_match = 0.5
 }
 motorized_USA = {
@@ -617,14 +437,19 @@ motorized_USA = {
 		support = {
 			DIV_HQ = 1
 			engineer = 1
-			artillery = 1
-			anti_tank = 1
+			recon_ac = 1
+			recon_mot = 1
 			maintenance_company = 1
+			logistics_company = 1
+			field_hospital = 1
 		}
 		
 		regiments = {
-			motorized = 8
-			medium_sp_artillery_brigade = 3
+			mechanized = 3
+			motorized = 6
+		
+			american_medium_tank = 1
+			artillery_brigade_mot = 3
 		}
 	}
 
@@ -643,30 +468,7 @@ mechanized_USA = {
 		mechanized
 	}
 	match_to_count = 0.25
-mechanized_default_USA = {
-	target_width = 19.9
-	width_weight = 0.1
-	column_swap_factor = 1.0
 
-	target_template = {
-		weight = 1
-		match_value = 25990.0
-		
-		support = {
-			engineer = 1
-			artillery = 1
-			anti_tank = 1
-			maintenance_company = 1
-			logistics_company = 1
-		}
-		
-		regiments = {
-			mechanized = 7
-			medium_sp_artillery_brigade = 1
-			medium_tank_destroyer_brigade = 1
-		}
-	}
-}
 mechanized_USA = {
 	target_width = 19.9
 	width_weight = 0.1
@@ -677,17 +479,19 @@ mechanized_USA = {
 		match_value = 25990.0
 		
 		support = {
+			DIV_HQ = 1
 			engineer = 1
-			artillery = 1
-			anti_tank = 1
+			recon_ac = 1
+			recon_mot = 1
 			maintenance_company = 1
 			logistics_company = 1
+			field_hospital = 1
 		}
 		
 		regiments = {
-			mechanized = 7
-			medium_sp_artillery_brigade = 1
-			medium_tank_destroyer_brigade = 1
+			mechanized = 9
+			american_medium_tank = 1
+			artillery_brigade_mot = 3
 		}
 	}
 }
