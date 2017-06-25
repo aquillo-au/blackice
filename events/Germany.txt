@@ -5378,7 +5378,7 @@ country_event = {
 		set_country_flag = GERinfdiv_II
 	}
 }
-# 1 Welle Inf.-Div. => 31., 32., 35., 37. Infanterie-Division
+# 1 Welle Inf.-Div. => 31., 32., 35., 36. Infanterie-Division
 country_event = {
 	id = germany.225
 	title = germany.225.t
@@ -5490,9 +5490,9 @@ country_event = {
 	trigger = {
 		tag = GER
 		or = {
-		has_tech = tech_panzer_iii_equipment_1
-		has_tech = tech_panzer_iv_equipment_1 
-			}
+			has_tech = tech_panzer_iii_equipment_1
+			has_tech = tech_panzer_iv_equipment_1 
+		}
 		not = { has_country_flag = panzer_35t }
 		not = { has_country_flag = panzer_38t }
 		owns_state = 9
@@ -5553,9 +5553,9 @@ country_event = {
 		tag = GER
 		has_country_flag = panzer_35t
 		or = {
-		has_tech = tech_panzer_iii_equipment_1
-		has_tech = tech_panzer_iv_equipment_1 
-			}
+			has_tech = tech_panzer_iii_equipment_1
+			has_tech = tech_panzer_iv_equipment_1 
+		}
 		not = { has_country_flag = panzer_38t }
 		owns_state = 9
 	}
@@ -5603,6 +5603,7 @@ country_event = {
 		set_country_flag = panzer_38t
 	}
 }
+# 72. Infantry-Division Wehrmacht
 country_event = {
 	id = germany.230
 	title = germany.230.t
