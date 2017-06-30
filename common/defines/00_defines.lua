@@ -34,8 +34,8 @@ NDiplomacy = {
 	BASE_PEACE_FORCE_GOVERNMENT_COST = 100, 							-- Base cost for forcing a country to change government.
 	BASE_IMPROVE_RELATION_COST = 10,                					-- Political power cost to initiate relation improvement
 	BASE_IMPROVE_RELATION_SAME_IDEOLOGY_GROUP_MAINTAIN_COST = 0.2, 		-- Political power cost each update when boosting relations with nation of same ideology
-	BASE_IMPROVE_RELATION_DIFFERENT_IDEOLOGY_GROUP_MAINTAIN_COST = 0.4, -- Political power cost each update when boosting relations with nation of different ideology
-	BASE_GENERATE_WARGOAL_DAILY_PP = 0.8,								-- Daily pp cost for generation of wargoals # was 0.2
+	BASE_IMPROVE_RELATION_DIFFERENT_IDEOLOGY_GROUP_MAINTAIN_COST = 0.5, -- Political power cost each update when boosting relations with nation of different ideology
+	BASE_GENERATE_WARGOAL_DAILY_PP = 0.9,								-- Daily pp cost for generation of wargoals # was 0.2
 	WARGOAL_VERSUS_MAJOR_AT_WAR_REDUCTION = -0.4, 						-- reduction of pp cost for wargoal vs major at war. # was -0.75
 	WARGOAL_WORLD_TENSION_REDUCTION = -0.7,								-- Reduction of pp cost for wargoal at 100% world tension, scales linearly # was -0.5
 	WARGOAL_JUSTIFY_TENSION_FROM_PRODUCTION = 30.0,						-- Base value scaled by production capacity of country compared to biggest country
@@ -345,7 +345,6 @@ NMilitary = {
 	BASE_DIVISION_BRIGADE_CHANGE_COST = 5,					--Base cost to change a regiment column.
 	BASE_DIVISION_SUPPORT_SLOT_COST = 8, 					--Base cost to unlock a support slot
 	
-	
 	MAX_ARMY_EXPERIENCE = 800,								--Max army experience a country can store
 	MAX_NAVY_EXPERIENCE = 500,								--Max navy experience a country can store
 	MAX_AIR_EXPERIENCE = 500,								--Max air experience a country can store
@@ -574,11 +573,6 @@ NAir = {
 	AIR_WING_MAX_STATS_BOMBING = 100,
 	AIR_WING_MAX_SIZE = 1000, 								-- Max amount of airplanes in wing
 	AIR_WING_BOMB_DAMAGE_FACTOR = 2,						-- Used to balance the damage done while bombing.
-	BOMBERS_ENGAGE_PASSES = 1,							-- Combat simulations passes in single fight against the bombers and their escorts (more passes = more bloody)
-	SUPERIORITY_ENGAGE_PASSES = 1,						-- Combat simulations passes in single fight against superiority missions.
-	COMBAT_ESCORT_PASS_CHANCE_BASE = 0.25, 				-- Base % for chance for passing escorts, and attack directly bombers.
-	COMBAT_ESCORT_PASS_CHANCE_MULT = 0.25,	 			-- How much the difference in airplanes stats (agility+speed) affects the escort passing chance.
-	COMBAT_ESCORT_PASS_CHANCE_LIMIT = 0.95, 			-- So a big difference in airplanes stats never gives 100% chance for passing escorts.
 	COMBAT_STACK_LIMIT = 2,								-- The biggest allowed dogfight combination (1vs1 or 2vs1). Bigger value cause that amount of airplanes matters more then their stats. Only used in naval air combat, for land air combat see COMBAT_MULTIPLANE_CAP
 	COMBAT_STAT_IMPORTANCE_SPEED = 1, 				-- How important is speed when comparing stats.
 	COMBAT_STAT_IMPORTANCE_AGILITY = 1, 				-- How important is agility when comparing stats.
@@ -590,7 +584,6 @@ NAir = {
 	COMBAT_ONE_ON_ONE_CHANCE = 0.6, 					-- Base chance for 1vs1 situation. ( Naval air combat only )
 	COMBAT_SITUATION_WIN_CHANCE_FROM_STATS = 0.3, 		-- How much good stats difference (speed+agility) affects the winning chance (situation win = give a hit, not necessary kill).( Naval air combat only )
 	COMBAT_SITUATION_WIN_CHANCE_FROM_GANG = 0.3, 		-- How much bonus gives the airplanes amount advantage (2vs1), to winning the situation.( Naval air combat only )
-	COMBAT_SITUATION_PASS_CHANCE = 0.0, 				-- Chance for pass. Nobody hits nobody in current situation.
 	COMBAT_MAX_WINGS_AT_ONCE = 10000, 						-- Max amount of air wings in one combat simulation. The higher value, the quicker countries may loose their wings. It's a gameplay balance value.
 	COMBAT_MAX_WINGS_AT_GROUND_ATTACK = 10000,	        	-- we can really pounce a land strike and escalate
 	COMBAT_MAX_WINGS_AT_ONCE_PORT_STRIKE = 10000,        -- we can really pounce a naval strike and escalate
@@ -621,8 +614,6 @@ NAir = {
 	CLOSE_AIR_SUPPORT_EXPERIENCE_SCALE = 0.0005,			-- How much the experinence gained by CAS is scaled
 	PARADROP_EXPERIENCE_SCALE = 0.03,						-- How much the experinence gained by paradropping is scaled
 	BOMBING_DAMAGE_EXPERIENCE_SCALE = 0.0002,           	-- How much the experinence gained by bombing is scaled
-	AIR_EXPERIANCE_FROM_LEND_LEASE = 0.5,				-- How much of the experience gained in the air combat, we get from our equipment sent by lend lease.
-	
 	ACCIDENT_CHANCE_BASE = 0.05,							-- Base chance % (0 - 100) for accident to happen. Reduced with higher reliability stat.
 	ACCIDENT_CHANCE_CARRIER_MULT = 2.0,					-- The total accident chance is scaled up when it happens on the carrier ship.
 	ACCIDENT_CHANCE_BALANCE_MULT = 0.5,					-- Multiplier for balancing how often the air accident really happens. The higher mult, the more often.
@@ -649,10 +640,8 @@ NAir = {
 	SUPPLY_NEED_FACTOR = 0.3, 							-- multiplies supply usage
 	CAPACITY_PENALTY = 2,								-- scales penalty of having overcrowded bases.
 	AIR_COMBAT_FINAL_DAMAGE_SCALE = 0.015,               -- % how many max disrupted only planes are alloed to die in a single combat
-	AIR_COMBAT_FINAL_DAMAGE_SCALE_GROUND = 0.1,         -- scaling damage factor for fight in defense of bombers etc which can generally get bloodier
 	AIR_COMBAT_FINAL_DAMAGE_PLANES = 50,                -- scaling/control for when only very few planes exist to stop roundoff issues
 	AIR_COMBAT_FINAL_DAMAGE_PLANES_FACTOR = 0.1,
-	LAST_PLANE_DIE_FACTOR = 0.5,                        -- chance to kill last plane if our damage was too low to kill even one plane (1 = 50% chance if it had 50% dmg)
 	AA_INDUSTRY_AIR_DAMAGE_FACTOR = -0.12,				-- 5x levels = 60% defense from bombing
 	NAVAL_STRIKE_DETECTION_BALANCE_FACTOR = 0.7,		-- Value used to scale the surface_visibility stats to balance the gameplay, so 100% detection chance still won't spam the strikes.
 	LEND_LEASED_EQUIPMENT_EXPERIENCE_GAIN = 0.5,		-- Value used for equipment
@@ -757,6 +746,7 @@ NNavy = {
 	NO_LEADER_MAX_SHIPS = 25,											-- #30 Max amount of ships that can be used in the unit
 	UNIT_EXPERIENCE_PER_COMBAT_HOUR = 48,								-- #10
 	UNIT_EXPERIENCE_SCALE = 1,
+	
 	EXPERIENCE_FACTOR_CONVOY_ATTACK = 0.02,								-- #2 DNM, original 0.05, increased because sub XP gain very slow.
 	EXPERIENCE_FACTOR_NON_CARRIER_GAIN = 0.05,							-- DNM, original 0.05 -- Xp gain by non-carrier ships in the combat
 	EXPERIENCE_FACTOR_CARRIER_GAIN = 0.01,								-- DNM, original 0.1, and they still level up quickly.  Xp gain by carrier ships in the combat
@@ -1033,6 +1023,7 @@ NAI = {
 	SHIPS_PRODUCTION_BASE_COST = 10000,					-- Used by the AI to normalize IC values when picking what ship to build.
 	NEEDED_NAVAL_FACTORIES_EXPENSIVE_SHIP_BONUS = 6,   	-- Amount of naval yards you need to get a bonus to building really expensive ships
 
+	
 	AIR_WING_REINFORCEMENT_LIMIT = 60,					-- number of aircraft needed for reserves before the ai will deploy more, I think.
 	AIR_BASE_DANGER_ZONE_WEIGHT = 100,					-- Score used per province taken by enemy in a state to determine how dangerous it is to use an air base
 
@@ -1113,6 +1104,7 @@ NAI = {
 	BUILD_ARMOR_STRENGTH_MULTIPLIER_WEIGHT = 100.0,
 	BUILD_ARMOR_ORGANIZATION_MULTIPLIER_WEIGHT = 500.0,
 
+	
 	UPGRADE_DIVISION_RELUCTANCE = 18,						-- 5.5 DNM, original 7, changed to be consistent with AI mod
 	UPGRADE_PERCENTAGE_OF_FORCES = 0.02,					-- How big part of the army that should be considered for upgrading
 
@@ -1234,7 +1226,6 @@ NAI = {
 
 	LAND_DEFENSE_FIGHERS_PER_PLANE = 1.1,					-- Amount of air superiority planes requested per enemy plane
 	LAND_DEFENSE_INTERSEPTORS_PER_BOMBERS = 2.0,			-- Amount of air interceptor planes requested per enemy plane A: was 0.2
-	
 	LAND_COMBAT_AIR_SUPERIORITY_IMPORTANCE = 0.20,			-- Strategic importance of air superiority ( amount of enemy planes in area )
 	LAND_COMBAT_OUR_ARMIES_AIR_IMPORTANCE = 12,				-- Strategic importance of our armies
 	LAND_COMBAT_OUR_COMBATS_AIR_IMPORTANCE = 55,			-- Strategic importance of our armies in the combats

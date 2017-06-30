@@ -34,8 +34,14 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					HUN = { has_completed_focus = HUN_reintegrate_the_railroads } 
-					AUS = { has_opinion = { target = HUN value > 75 } } 
+					AND = {
+						HUN = { has_completed_focus = HUN_reintegrate_the_railroads } 
+						NOT = { AUS = { has_opinion = { target = HUN value > 75 } } }
+					}
+					AND = {
+						NOT = { HUN = { has_completed_focus = HUN_reintegrate_the_railroads } }
+						AUS = { has_opinion = { target = HUN value > 75 } } 
+					}
 				}
 			}
 			random_list = {
@@ -1696,6 +1702,48 @@ country_event = {
 			set_country_flag = HUN_mediation
 		}
 	}
+option = { # Nobody is eligible
+		name = DOD_hungary.55.f
+		trigger = {
+			AND = {
+				GER = {
+					OR = {
+						has_war_with = HUN
+						has_war_with = ROM
+						is_in_faction_with = ROM
+						has_country_flag = HUN_mediation_refused
+					}
+				}
+				ENG = {
+					OR = {
+						has_war_with = HUN
+						has_war_with = ROM
+						is_in_faction_with = ROM
+						has_country_flag = HUN_mediation_refused
+					}
+				}
+				FRA = {
+					OR = {
+						has_war_with = HUN
+						has_war_with = ROM
+						is_in_faction_with = ROM
+						has_country_flag = HUN_mediation_refused
+					}
+				}
+				ITA = {
+					OR = {
+						has_war_with = HUN
+						has_war_with = ROM
+						is_in_faction_with = ROM
+						has_country_flag = HUN_mediation_refused
+					}
+				}
+			}
+		}
+		HUN = {
+			country_event = { id = DOD_hungary.63 }
+		}
+	}
 
 }
 
@@ -1810,6 +1858,51 @@ country_event = {
 		ITA = { 
 			country_event = { id = DOD_hungary.59 } 
 			set_country_flag = ROM_mediation
+		}
+	}
+option = { # Nobody is eligible
+		name = DOD_hungary.55.f
+		trigger = {
+			AND = {
+				GER = {
+					OR = {
+						has_war_with = HUN
+						has_war_with = ROM
+						is_in_faction_with = HUN
+						has_country_flag = ROM_mediation_refused
+					}
+				}
+				ENG = {
+					OR = {
+						has_war_with = HUN
+						has_war_with = ROM
+						is_in_faction_with = HUN
+						has_country_flag = ROM_mediation_refused
+					}
+				}
+				FRA = {
+					OR = {
+						has_war_with = HUN
+						has_war_with = ROM
+						is_in_faction_with = HUN
+						has_country_flag = ROM_mediation_refused
+					}
+				}
+				AND = {
+					SOV = {
+						OR = {
+							has_war_with = HUN
+							has_war_with = ROM
+							is_in_faction_with = HUN
+							has_country_flag = ROM_mediation_refused
+						}
+					}
+					has_government = communism
+				}
+			}
+		}
+		ROM = {
+			country_event = { id = DOD_hungary.64 }
 		}
 	}
 }
@@ -2196,7 +2289,7 @@ country_event = {
 	id = DOD_hungary.64
 	title = DOD_hungary.64.t
 	desc = {
-		text = DOD_hungary.63.desc_ROM_refused #Romania found no supporter
+		text = DOD_hungary.63.desc_HUN_refused #Romania found no supporter
 		trigger = {
 			NOT = { 
 				OR = {
@@ -2207,7 +2300,7 @@ country_event = {
 		}
 	}
 	desc = {
-		text = DOD_hungary.63.desc_ROM_nothing #Mediation went against Romania
+		text = DOD_hungary.63.desc_HUN_nothing #Mediation went against Romania
 		trigger = {
 				OR = {
 			 		has_global_flag = HUN_mediation_HUN_all

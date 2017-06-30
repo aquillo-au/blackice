@@ -904,6 +904,12 @@ focus_tree = {
 					has_war_with = HUN
 				}
 			}
+NOT = {
+				any_other_country = {
+					is_in_faction_with = ENG
+					has_war_with = HUN	
+				}
+			}
 		}
 
 		bypass = {
@@ -1196,6 +1202,7 @@ focus_tree = {
 			if = { limit = { GER = { has_government = fascism } }
 				HUN = { NOT = { has_government = communism } }
 			}
+
 		}
 
 		bypass = {
@@ -1657,6 +1664,12 @@ focus_tree = {
 			NOT = { has_war_with = GER }
 			is_subject = no
 			is_in_faction = no
+NOT = {
+				any_other_country = {
+					is_in_faction_with = GER
+					has_war_with = HUN	
+				}
+			}
 			GER = {
 				is_faction_leader = yes
 				is_subject = no
@@ -2298,6 +2311,12 @@ focus_tree = {
 
 		available = {
 			NOT = { has_war_with = SOV }
+NOT = {
+				any_other_country = {
+					is_in_faction_with = SOV
+					has_war_with = HUN	
+				}
+			}
 			is_subject = no
 			SOV = { is_faction_leader = yes }
 			communism > 0.5
