@@ -1212,7 +1212,7 @@ NAI = {
 	NAVAL_STRIKE_PLANES_PER_ARMY = 15,						-- Amount of planes requested per enemy army
 	NAVAL_STRIKE_PLANES_PER_SHIP = 5,						-- Amount of bombers requested per enemy ship
 	PORT_STRIKE_PLANES_PER_SHIP = 10,						-- Amount of bombers request per enemy ship in the port
-	NAVAL_MIN_EXCORT_WINGS = 1,								-- Min amount of airwings requested to excort operations
+	NAVAL_MIN_EXCORT_WINGS = 0,								-- Min amount of airwings requested to excort operations
 	
 	LAND_DEFENSE_AIR_SUPERIORITY_IMPORTANCE = 0.10,			-- Strategic importance of air superiority ( amount of enemy planes in area )
 	LAND_DEFENSE_CIVIL_FACTORY_IMPORTANCE = 50,				-- Strategic importance of civil factories
