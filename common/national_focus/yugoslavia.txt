@@ -50,11 +50,9 @@ focus_tree = {
 #
 #		}
 #	}
-
 	###############################
-	##### Democratic/Fascist ######
+	##### conservatism/Fascist ######
 	###############################
-
 	focus = {
 		id = YUG_western_focus
 		icon = GFX_goal_generic_position_armies
@@ -88,7 +86,6 @@ focus_tree = {
 			add_political_power = 120
 		}
 	}
-
 	focus = {
 		id = YUG_friendship_treaty_with_italy
 		icon = GFX_goal_generic_improve_relations
@@ -133,7 +130,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = YUG_reinforce_old_alliances
 		icon = GFX_goal_generic_major_alliance
@@ -207,7 +203,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = YUG_attract_foreign_capital
 		icon = GFX_goal_generic_intelligence_exchange
@@ -1264,6 +1259,17 @@ NOT = {
 			remove_ideas = YUG_idea_croatian_opposition
 			remove_ideas = YUG_idea_macedonian_opposition
 			remove_ideas = YUG_idea_slovene_nationalism
+			if = { 
+				limit = { has_idea = YUG_idea_serbian_general_staff }
+				add_ideas = YUG_serbian_anger
+			}
+			if = { 
+				limit = {
+					NOT = { has_idea = YUG_idea_serbian_general_staff }
+				}
+				add_ideas = YUG_serbian_anger2
+			}
+			add_political_power = -50
 		}
 	}
 
@@ -1348,7 +1354,7 @@ NOT = {
 		id = YUG_federal_defense_council
 		icon = GFX_goal_demand_sudetenland
 		prerequisite = { focus = YUG_form_the_federal_republic }
-		x = 0
+		x = -2
 		y = 2
 		relative_position_id = YUG_yugoslavian_path_to_communism
 
@@ -1380,6 +1386,7 @@ NOT = {
 					has_idea = YUG_idea_serbian_general_staff
 				}
 				swap_ideas = { remove_idea = YUG_idea_serbian_general_staff add_idea = YUG_idea_federal_defense_council }
+				swap_ideas = { remove_idea = YUG_serbian_anger add_idea = YUG_serbian_anger2 }
 			}
 			if = {
 				limit = {
@@ -1389,7 +1396,50 @@ NOT = {
 			}
 		}
 	}
+	
+	focus = {
+		id = YUG_serbian_question
+		icon = GFX_goal_demand_sudetenland
+		prerequisite = { focus = YUG_form_the_federal_republic }
+		x = 0
+		y = 2
+		relative_position_id = YUG_yugoslavian_path_to_communism
 
+		cost = 10
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		available = {
+			OR = {
+				has_idea = YUG_serbian_anger
+				has_idea = YUG_serbian_anger2
+				has_idea = YUG_serbian_anger3
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 10
+			custom_effect_tooltip = serbian_question_TT
+			hidden_effect = {
+				country_event = DOD_yugoslavia.166
+			}
+		}
+	}
+	
 	focus = {
 		id = YUG_invite_bulgaria
 		icon = GFX_goal_generic_alliance

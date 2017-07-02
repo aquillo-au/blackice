@@ -25,7 +25,7 @@ country_event = {
 		if = { limit = { is_ai = yes }
 			set_country_flag = is_ai
 		}
-		if = { limit = { NOT = { tag = FRA } democratic_govt = yes }
+		if = { limit = { NOT = { tag = FRA } conservatism_govt = yes }
 		set_country_flag = corruption_3
 		}
 		if = { limit = { tag = FRA }
@@ -281,32 +281,32 @@ country_event = {
 #	trigger = {
 #		OR = {
 #			CAN = {
-#				democratic_govt = yes
+#				conservatism_govt = yes
 #				has_war = yes
 #				NOT = { is_in_faction = yes }
 #			}
 #			SAF = {
-#				democratic_govt = yes
+#				conservatism_govt = yes
 #				has_war = yes
 #				NOT = { is_in_faction = yes }
 #			}
 #			RAJ = {
-#				democratic_govt = yes
+#				conservatism_govt = yes
 #				has_war = yes
 #				NOT = { is_in_faction = yes }
 #			}
 #			BUR = {
-#				democratic_govt = yes
+#				conservatism_govt = yes
 #				has_war = yes
 #				NOT = { is_in_faction = yes }
 #			}
 #			AST = {
-#				democratic_govt = yes
+#				conservatism_govt = yes
 #				has_war = yes
 #				NOT = { is_in_faction = yes }
 #			}
 #			NZL = {
-#				democratic_govt = yes
+#				conservatism_govt = yes
 #				has_war = yes
 #				NOT = { is_in_faction = yes }
 #			}
@@ -430,7 +430,7 @@ country_event = {
 #			if = { limit = { RAJ = { is_ai = yes } }
 #			add_to_faction = RAJ
 #			}
-#		if = { limit = { FRA = { democratic_govt = yes NOT = { is_in_faction = yes is_faction_leader = yes } } }
+#		if = { limit = { FRA = { conservatism_govt = yes NOT = { is_in_faction = yes is_faction_leader = yes } } }
 #			if = { limit = { FRA = { is_ai = yes } }
 #			add_to_faction = FRA
 #				}
@@ -438,6 +438,34 @@ country_event = {
 #		}
 #	}
 #}
+country_event = {
+	id = politics.997
+	title = politics.997.t
+	desc  = politics.997.desc
+	
+	picture = GFX_news_event_002
+	
+	trigger = {
+		has_war = yes
+		NOT = { has_country_flag = readiness_reminder }
+		NOT = { has_country_flag = mob_general }
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	immediate = {
+		set_country_flag = readiness_reminder
+	}
+	
+	option = { #Ok
+		name = politics.997.a
+		trigger = {
+			
+		}
+		
+	}
+}
 country_event = {
 	id = politics.998
 	title = politics.998.t
@@ -1839,7 +1867,7 @@ country_event = {
     }
 }
 
-#Starting Opinions - Overrides Diff Democratic Ideologies
+#Starting Opinions - Overrides Diff conservatism Ideologies
 country_event = {
 	id = politics.900
 	title = politics.900.t
@@ -1850,12 +1878,12 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				democratic_govt = yes
+				conservatism_govt = yes
 			}
 			every_country = {
 				limit = {
 					AND = {
-						democratic_govt = yes
+						conservatism_govt = yes
 						NOT = { same_ideology = yes }
 					}
 				}
@@ -1992,12 +2020,12 @@ country_event = {
 		}
 		if = {
 			limit = {
-				democratic_govt = yes
+				conservatism_govt = yes
 			}
 			every_country = {
 				limit = {
 					AND = {
-						democratic_govt = yes
+						conservatism_govt = yes
 						NOT = { same_ideology = yes }
 					}
 				}

@@ -1,8 +1,6 @@
 ﻿#Black I.C.E. Politics by Energico
 ###################################################
-
 add_namespace = politics
-
 #Minister Switch following Coup/Election
 country_event = {
 	id = politics.40
@@ -16,33 +14,46 @@ country_event = {
 		name = politics.40.a
 		
 		add_political_power = 750
-		if = { limit = { has_government = socialism }
+		if = {
+			limit = { has_government = socialism }
 			remove_ideas_with_trait = conservative
 			remove_ideas_with_trait = fascist
-			if = { limit = { NOT = { has_country_flag = const_monarchy } }
-			remove_ideas_with_trait = monarchist
+			if = {
+				limit = {
+					NOT = { has_country_flag = const_monarchy }
+				}
+				remove_ideas_with_trait = monarchist
 			}
 			remove_ideas_with_trait = neutral
 		}
-		if = { limit = { has_government = monarchism }
+		if = {
+			limit = { has_government = monarchism }
 			remove_ideas_with_trait = communist
 			remove_ideas_with_trait = fascist
 			remove_ideas_with_trait = liberal
 			remove_ideas_with_trait = socialist
 			country_event = politics.920
 		}
-		if = { limit = { has_government = conservatism }
+		if = {
+			limit = { has_government = conservatism }
 			remove_ideas_with_trait = socialist
 			remove_ideas_with_trait = fascist
-			if = { limit = { NOT = { has_country_flag = const_monarchy } }
-			remove_ideas_with_trait = monarchist
+			if = {
+				limit = {
+					NOT = { has_country_flag = const_monarchy }
+				}
+				remove_ideas_with_trait = monarchist
 			}
 			remove_ideas_with_trait = neutral
 		}
-		if = { limit = { has_government = liberalism }
+		if = {
+			limit = { has_government = liberalism }
 			remove_ideas_with_trait = communist
 			remove_ideas_with_trait = fascist
-			if = { limit = { NOT = { has_country_flag = const_monarchy } }
+			if = {
+				limit = {
+					NOT = { has_country_flag = const_monarchy }
+				}
 			remove_ideas_with_trait = monarchist
 			}
 			remove_ideas_with_trait = neutral
@@ -82,9 +93,11 @@ country_event = {
 			NOT = { has_idea = hermann_goering }
 		}
 	}
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	option = { 
 		name = politics.980.a
 		add_political_power = -100
@@ -104,9 +117,11 @@ country_event = {
 			NOT = { has_idea = heinrich_himmler }
 		}
 	}
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	option = { 
 		name = politics.911.a
 		add_political_power = -100
@@ -126,9 +141,11 @@ country_event = {
 			NOT = { has_idea = sadao_araki }
 		}
 	}
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	option = { 
 		name = politics.912.a
 		add_political_power = -100
@@ -142,6 +159,7 @@ country_event = {
 	desc  = politics.920.desc
 	picture = event_HQcommandIV
 	hidden = yes
+	
 	trigger = {
 		has_government = monarchism
 		OR = {
@@ -152,9 +170,11 @@ country_event = {
 			AND = { tag = TUR date > 1944.6.10 NOT = { has_idea = ahmed_iv } }
 		}
 	}
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	option = { 
 		name = politics.920.a
 		if = { limit = { tag = GER }
@@ -208,7 +228,6 @@ country_event = {
 #		remove_ideas = walther_wever
 #	}
 #}
-
 #Todt Crash
 country_event = {
 	id = politics.201
@@ -225,6 +244,7 @@ country_event = {
 	mean_time_to_happen = {
 		days = 30
 	}
+	
 	option = { 
 		name = politics.200.a
 		random_list = {
@@ -235,6 +255,7 @@ country_event = {
 		15 = { set_country_flag = todt_survived }
 		}
 	}
+	
 	option = { 
 		name = politics.214.a
 		trigger = { 
@@ -258,15 +279,19 @@ country_event = {
 		is_historical_focus_on = yes
 		NOT = { has_country_flag = beck_question }
 	}
+	
 	immediate = { set_country_flag = beck_question }
+	
 	mean_time_to_happen = {
 		days = 30
 	}
+	
 	option = { 
 		name = politics.202.a
 		remove_ideas = ludwig_beck
 		set_country_flag = beck_fired
 	}
+	
 	option = { 
 		name = politics.202.b
 		trigger = {
@@ -279,6 +304,7 @@ country_event = {
 			factor = 1000
 		}
 	}
+	
 	option = { 
 		name = politics.202.c
 		add_political_power = -40
@@ -298,22 +324,25 @@ country_event = {
 		has_war_with = SOV
 		GER = {
 			NOT = { 
-			controls_state = 845
-			controls_state = 217
-			controls_state = 195
-				}
+				controls_state = 845
+				controls_state = 217
+				controls_state = 195
 			}
-		NOT = { has_country_flag = halder_question }
 		}
+		NOT = { has_country_flag = halder_question }
+	}
 	immediate = { set_country_flag = halder_question }
+	
 	mean_time_to_happen = {
 		days = 120
 	}
+	
 	option = { 
 		name = politics.203.a
 		remove_ideas = franz_halder
 		set_country_flag = halder_fired
 	}
+	
 	option = { 
 		name = politics.203.b
 		trigger = {
@@ -326,6 +355,7 @@ country_event = {
 			factor = 1000
 		}
 	}
+	
 	option = { 
 		name = politics.203.c
 		add_political_power = -30
@@ -345,11 +375,11 @@ country_event = {
 		has_war_with = SOV
 		GER = {
 			NOT = { 
-			controls_state = 209
-			controls_state = 242
-			controls_state = 202
-				}
+				controls_state = 209
+				controls_state = 242
+				controls_state = 202
 			}
+		}
 		NOT = { has_country_flag = zeitzler_question }
 		}
 	immediate = { set_country_flag = zeitzler_question }
@@ -391,21 +421,21 @@ country_event = {
 		has_idea = raeder
 		has_war_with = ENG
 		GER = {
-			NOT = { 
-			controls_state = 126
-				}
-			}
-		NOT = { has_country_flag = raeder_fired }
+			NOT = { controls_state = 126 }
 		}
+		NOT = { has_country_flag = raeder_fired }
+	}
 
 	mean_time_to_happen = {
 		days = 60
 	}
+	
 	option = { 
 		name = politics.205.a
 		remove_ideas = raeder
 		set_country_flag = raeder_fired
 	}
+	
 	option = { 
 		name = politics.205.b
 		trigger = {
@@ -418,6 +448,7 @@ country_event = {
 			factor = 1000
 		}
 	}
+	
 	option = { 
 		name = politics.205.c
 		add_political_power = -30
@@ -434,8 +465,11 @@ country_event = {
 		tag = GER
 		date > 1937.10.20
 		has_idea = hjalmar_schacht
-		NOT = { has_country_flag = schacht_fired }
+		NOT = { 
+			has_country_flag = schacht_fired
+			has_country_flag = schacht_kept
 		}
+	}
 
 	mean_time_to_happen = {
 		days = 60
@@ -461,6 +495,7 @@ country_event = {
 	option = { 
 		name = politics.205.c
 		add_political_power = -35
+		set_country_flag = schacht_kept
 	}
 }
 #Heydrich Assassination

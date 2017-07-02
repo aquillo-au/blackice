@@ -728,7 +728,7 @@ focus = {
 		icon = GFX_goal_support_fascism
 		prerequisite = { focus = FIN_imitate_sweden }
 		mutually_exclusive = { focus = FIN_communist_support }
-        mutually_exclusive = { focus = FIN_democratic_support }
+        mutually_exclusive = { focus = FIN_conservatism_support }
         mutually_exclusive = { focus = FIN_cautious_politics }
 
 		x = 13
@@ -749,7 +749,7 @@ focus = {
 		icon = GFX_goal_support_communism
 		prerequisite = { focus = FIN_imitate_sweden }
 		mutually_exclusive = { focus = FIN_nationalist_support }
-        mutually_exclusive = { focus = FIN_democratic_support }
+        mutually_exclusive = { focus = FIN_conservatism_support }
         mutually_exclusive = { focus = FIN_cautious_politics }
 
 		x = 15
@@ -766,7 +766,7 @@ focus = {
 	}
     
     	focus = {
-		id = FIN_democratic_support
+		id = FIN_conservatism_support
 		icon = GFX_goal_support_democracy
 		prerequisite = { focus = FIN_imitate_sweden }
 		mutually_exclusive = { focus = FIN_communist_support }
@@ -781,8 +781,8 @@ focus = {
 			factor = 10
 		}
 		completion_reward = {
-			add_ideas = democratic_influence
-			#Increase in Democratic Support
+			add_ideas = conservatism_influence
+			#Increase in conservatism Support
 		}
 	}
     
@@ -795,7 +795,7 @@ focus = {
 		prerequisite = { focus = FIN_imitate_sweden }
         mutually_exclusive = { focus = FIN_communist_support }
         mutually_exclusive = { focus = FIN_nationalist_support }
-        mutually_exclusive = { focus = FIN_democratic_support }
+        mutually_exclusive = { focus = FIN_conservatism_support }
 		x = 9
 		y = 1
 		cost = 10
@@ -850,7 +850,7 @@ focus = {
 		id = FIN_liberal_unity
 		icon = GFX_goal_generic_demand_territory
 	 	prerequisite = {
-	 		focus = FIN_democratic_support
+	 		focus = FIN_conservatism_support
 	 	}
 		x = 11
 		y = 2
@@ -874,7 +874,7 @@ focus = {
 			is_puppet = no
 			is_in_faction = no
 			OR = {
-            #has_government = democratic
+            #has_government = conservatism
 			has_government = liberalism
 			has_government = conservatism
 			has_government = socialism
@@ -882,7 +882,7 @@ focus = {
             SWE = {
 				exists = yes
 				OR = {
-            #has_government = democratic
+            #has_government = conservatism
 			has_government = liberalism
 			has_government = conservatism
 			has_government = socialism
@@ -939,7 +939,7 @@ focus = {
             NOR = {
 				exists = yes
 				OR = {
-            #has_government = democratic
+            #has_government = conservatism
 			has_government = liberalism
 			has_government = conservatism
 			has_government = socialism
@@ -987,7 +987,7 @@ focus = {
             DEN = {
 				exists = yes
 				OR = {
-            #has_government = democratic
+            #has_government = conservatism
 			has_government = liberalism
 			has_government = conservatism
 			has_government = socialism
@@ -1034,7 +1034,7 @@ focus = {
 		available = {
 			is_puppet = no
 			OR = {
-            #has_government = democratic
+            #has_government = conservatism
 			has_government = liberalism
 			has_government = conservatism
 			has_government = socialism
@@ -1042,7 +1042,7 @@ focus = {
 			ENG = {
 				exists = yes
 				OR = {
-            #has_government = democratic
+            #has_government = conservatism
 			has_government = liberalism
 			has_government = conservatism
 			has_government = socialism
@@ -1225,7 +1225,7 @@ completion_reward = {
 					limit = {
 						ROOT = { 
 						OR = {
-            #has_government = democratic
+            #has_government = conservatism
 			has_government = liberalism
 			has_government = conservatism
 			has_government = socialism
@@ -1233,7 +1233,7 @@ completion_reward = {
 			}
 						NOT = { 
 						OR = {
-            #has_government = democratic
+            #has_government = conservatism
 			has_government = liberalism
 			has_government = conservatism
 			has_government = socialism

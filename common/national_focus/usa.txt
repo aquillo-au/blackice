@@ -133,10 +133,10 @@ focus_tree = {
 		prerequisite = { focus = USA_wartime_industry }
 		available = {
 			OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-				}
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+			}
 			controls_state = 369
 		}
 		x = 2
@@ -151,7 +151,7 @@ focus_tree = {
 				amount = 10
 				state = 369 #Kentucky
 			}
-		369 = {
+			369 = {
 				add_extra_state_shared_building_slots = 3
 				
 				add_building_construction = {
@@ -353,15 +353,6 @@ focus_tree = {
 			358 = {
 				add_extra_state_shared_building_slots = 3
 
-
-
-
-
-
-
-
-
-
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -508,7 +499,7 @@ focus_tree = {
 						}
 					}
 				}
-			random_owned_controlled_state = {
+				random_owned_controlled_state = {
 					limit = { 
 						free_building_slots = {
 							building = infrastructure
@@ -589,20 +580,8 @@ focus_tree = {
 			add_ideas = cons_expanded_draft
 		}
 		completion_reward = {
-
-
-
 			370 = {
 				add_extra_state_shared_building_slots = 1
-
-
-
-
-
-
-
-
-
 
 				add_building_construction = {
 					type = arms_factory
@@ -932,16 +911,12 @@ focus_tree = {
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
-			
-				add_timed_idea = {
+			add_timed_idea = {
 				idea = liberty_ships_focus
-
 				days = 730
 			}
-			
-			
 		}
 	}
 
@@ -965,7 +940,7 @@ available_if_capitulated = yes
 				}
 			}
 		}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		continue_if_invalid = yes
 		x = 8
 		y = 0
@@ -1021,7 +996,7 @@ available_if_capitulated = yes
 		}
 
 		continue_if_invalid = yes
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		x = 8
 		y = 3
 		cost = 10
@@ -1030,7 +1005,10 @@ available_if_capitulated = yes
 		#}
 		completion_reward = {
 			GER = { 
-				add_opinion_modifier = { target = USA modifier = embargo } 
+				add_opinion_modifier = {
+					target = USA 
+					modifier = embargo
+				} 
 			}
 		}
 	}
@@ -1051,7 +1029,7 @@ available_if_capitulated = yes
 				has_government = socialism
 				} 
 		}
-	bypass = {
+		bypass = {
 			NOT = { 696 = { is_controlled_by = ENG } }
 			NOT = { 331 = { is_controlled_by = ENG } }
 			NOT = { 308 = { is_controlled_by = ENG } } 
@@ -1103,10 +1081,13 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			SOV = {
-				add_opinion_modifier = { target = USA modifier = war_plan_white }
+				add_opinion_modifier = {
+					target = USA
+					modifier = war_plan_white
+				}
 			}
 		}
 	}
@@ -1130,10 +1111,13 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			SOV = {
-				add_opinion_modifier = { target = USA modifier = embargo }
+				add_opinion_modifier = {
+					target = USA
+					modifier = embargo
+				}
 			}
 		}
 	}
@@ -1145,7 +1129,7 @@ available_if_capitulated = yes
 		available = {
 			#any_other_country = {
 			#	has_defensive_war_with = ENG
-			#	#has_government = democratic
+			#	has_government = conservatism
 			#}
 			country_exists = ENG
 			NOT = { 
@@ -1162,10 +1146,13 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			ENG = {
-				add_opinion_modifier = { target = USA modifier = war_plan_red }
+				add_opinion_modifier = {
+					target = USA
+					modifier = war_plan_red
+				}
 			}
 		}
 	}
@@ -1189,10 +1176,13 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			ENG = {
-				add_opinion_modifier = { target = USA modifier = embargo }
+				add_opinion_modifier = {
+					target = USA
+					modifier = embargo
+				}
 			}
 		}
 	}
@@ -1204,7 +1194,7 @@ available_if_capitulated = yes
 		available = { 
 			country_exists = ENG
 			has_government = communism 
-			}
+		}
 
 		x = 12
 		y = 4
@@ -1212,10 +1202,13 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			SOV = {
-				add_opinion_modifier = { target = USA modifier = anti_imperialist }
+				add_opinion_modifier = {
+					target = USA
+					modifier = anti_imperialist
+				}
 			}
 			hidden_effect = {
 				news_event = { hours = 6 id = news.206 }
@@ -1238,7 +1231,7 @@ available_if_capitulated = yes
 			NOT = { has_government = fascism }
 		}
 		continue_if_invalid = yes
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		x = 14
 		y = 2
 		cost = 10
@@ -1247,7 +1240,10 @@ available_if_capitulated = yes
 		#}
 		completion_reward = {
 			JAP = {
-				add_opinion_modifier = { target = USA modifier = war_plan_orange }
+				add_opinion_modifier = {
+					target = USA
+					modifier = war_plan_orange
+				}
 			}
 		}
 	}
@@ -1265,7 +1261,7 @@ available_if_capitulated = yes
 		}
 
 		continue_if_invalid = yes
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		x = 14
 		y = 3
 		cost = 10
@@ -1274,7 +1270,10 @@ available_if_capitulated = yes
 		#}
 		completion_reward = {
 			JAP = {
-				add_opinion_modifier = { target = USA modifier = embargo }
+				add_opinion_modifier = {
+					target = USA
+					modifier = embargo
+				}
 			}
 		}
 	}
@@ -1282,14 +1281,10 @@ available_if_capitulated = yes
 	focus = {
 		id = USA_prepare_intervention
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		prerequisite = {
-			focus = USA_war_propaganda
-		}
-		available = {
-			threat > 0.25
-		}
+		prerequisite = { focus = USA_war_propaganda }
+		available = { threat > 0.25 }
 		continue_if_invalid = yes
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		x = 10
 		y = 1
 		cost = 10
@@ -1297,11 +1292,9 @@ available_if_capitulated = yes
 		#	factor = 1
 		#}
 		completion_reward = {
-
 			if = {
 				limit = {
 					NOT = { has_idea = undisturbed_isolation }
-
 					NOT = { has_country_flag = USA_prepare_intervention_added_isolation }
 				}
 				add_political_power = 100
@@ -1310,7 +1303,6 @@ available_if_capitulated = yes
 				limit = {
 					OR = {
 						has_idea = undisturbed_isolation
-
 						has_country_flag = USA_prepare_intervention_added_isolation						
 					}
 				}
@@ -1333,7 +1325,7 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -1350,7 +1342,7 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			376 = {
 				if = {
@@ -1416,10 +1408,16 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
-			add_opinion_modifier = { target = GER modifier = unholy_alliance_opinion }
-			add_opinion_modifier = { target = GER modifier = unholy_alliance_trade }
+			add_opinion_modifier = { 
+				target = GER 
+				modifier = unholy_alliance_opinion
+			}
+			add_opinion_modifier = {
+				target = GER
+				modifier = unholy_alliance_trade
+			}
 		}
 	}
 
@@ -1440,7 +1438,7 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			if = {
 				limit = { 
@@ -1452,7 +1450,6 @@ available_if_capitulated = yes
 				}
 				add_ideas = cons_two
 			}
-			
 			add_ideas = limited_interventionism
 			set_rule = { can_send_volunteers = yes }
 		}
@@ -1477,10 +1474,7 @@ available_if_capitulated = yes
 		#}
 available_if_capitulated = yes
 		completion_reward = {
-
 			if = {
-
-
 				limit = {
 					NOT = { has_idea = undisturbed_isolation }
 					NOT = { has_idea = isolation }
@@ -1499,10 +1493,6 @@ available_if_capitulated = yes
 				add_ideas = civilian_economy
 				set_country_flag = USA_the_giant_wakes_added_civ_eco
 			}
-
-
-
-
 		}
 	}
 
@@ -1510,13 +1500,11 @@ available_if_capitulated = yes
 		id = USA_pearl_harbor_gambit
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = USA_embargo_japan }
-	available = {
+		available = {
 			country_exists = JAP
-
 			threat > 0.90
 		}
-
-bypass = {
+		bypass = {
 			has_war_with = JAP
 		}
 		x = 14
@@ -1596,13 +1584,10 @@ bypass = {
 		prerequisite = { focus = USA_limited_intervention }
 		available = {
 			OR = {
-
-
 				ENG = {
 					exists = yes
 					NOT = { has_government = ROOT }
 				}
-				
 				CAN = {
 					exists = yes
 					NOT = { has_government = ROOT } 
@@ -1630,7 +1615,7 @@ bypass = {
 				target = ENG
 				generator = { 689 690 693 308 691 692 696 } # Carribean Islands
 			}
-				hidden_effect = {
+			hidden_effect = {
 				news_event = { hours = 6 id = news.207 }
 			}
 		}
@@ -1642,7 +1627,6 @@ bypass = {
 		prerequisite = { focus = USA_pearl_harbor_gambit }
 		prerequisite = { focus = USA_limited_intervention }
 		available = {
-
 			JAP = {
 				exists = yes
 				NOT = { has_government = ROOT }
@@ -1672,14 +1656,13 @@ bypass = {
 
 	focus = {
 		id = USA_war_department
-			icon = GFX_goal_generic_occupy_states_ongoing_war
+		icon = GFX_goal_generic_occupy_states_ongoing_war
 		x = 19
 		y = 0
 		cost = 8
 		#ai_will_do = {
 		#	factor = 1
 		#}
-		
 		available_if_capitulated = yes
 		completion_reward = {
 			army_experience = 15
@@ -1852,8 +1835,8 @@ bypass = {
 		#}
 		available = {
 			OR = {
-			has_war = yes
-			threat > 0.90
+				has_war = yes
+				threat > 0.90
 			}
 		}
 		available_if_capitulated = yes
@@ -1904,8 +1887,8 @@ bypass = {
 		#}
 		available = {
 			OR = {
-			has_war = yes
-			threat > 0.20
+				has_war = yes
+				threat > 0.20
 			}
 		}
 		available_if_capitulated = yes
@@ -2075,7 +2058,6 @@ bypass = {
 		#}
 available_if_capitulated = yes
 		completion_reward = {
-
 			army_experience = 15
 			navy_experience = 10
 			add_ideas = USMC
@@ -2092,7 +2074,7 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-available_if_capitulated = yes
+		available_if_capitulated = yes
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 0.5
@@ -2218,7 +2200,6 @@ available_if_capitulated = yes
 		}
 	}
 
-
 	focus = {
 		id = USA_volunteers_women
 		icon = GFX_goal_generic_position_armies
@@ -2231,7 +2212,6 @@ available_if_capitulated = yes
 		}
 		continue_if_invalid = yes
 		available_if_capitulated = yes
-
 		x = 32
 		y = 0
 		cost = 2
@@ -2239,7 +2219,7 @@ available_if_capitulated = yes
 			factor = 2
 		}
 		completion_reward = {
-        			add_manpower = 250000
+        	add_manpower = 250000
 		}
 	}
 
@@ -2256,7 +2236,6 @@ available_if_capitulated = yes
 		}
 		continue_if_invalid = yes
 		available_if_capitulated = yes
-
 		x = 32
 		y = 1
 		cost = 5
@@ -2264,7 +2243,7 @@ available_if_capitulated = yes
 			factor = 2
 		}
 		completion_reward = {
-        			add_manpower = 750000
+        	add_manpower = 750000
 		}
 	}
 
@@ -2281,7 +2260,6 @@ available_if_capitulated = yes
 		}
 		continue_if_invalid = yes
 		available_if_capitulated = yes
-
 		x = 32
 		y = 2
 		cost = 5
@@ -2289,7 +2267,7 @@ available_if_capitulated = yes
 			factor = 2
 		}
 		completion_reward = {
-        			add_manpower = 1500000
+        	add_manpower = 1500000
 		}
 	}
 
@@ -2298,13 +2276,12 @@ available_if_capitulated = yes
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = USA_volunteers_II }
 		available = {
-				threat > 0.95
-				has_war = yes
+			threat > 0.95
+			has_war = yes
 			NOT = { has_government = fascism }
 		}
 		continue_if_invalid = yes
 		available_if_capitulated = yes
-
 		x = 32
 		y = 3
 		cost = 5
@@ -2312,7 +2289,7 @@ available_if_capitulated = yes
 			factor = 2
 		}
 		completion_reward = {
-        			add_manpower = 2500000
+        	add_manpower = 2500000
 		}
 	}
 
@@ -2363,9 +2340,7 @@ available_if_capitulated = yes
 		#ai_will_do = {
 		#	factor = 1
 		#}
-
-		#You're on your own scripter bro... /Jakob
-
+		###You're on your own scripter bro... /Jakob
 		completion_reward = {
 			if = {
 				limit = { 
@@ -2382,7 +2357,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -2390,7 +2365,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				HAI = {
@@ -2400,7 +2375,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -2408,7 +2383,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				DOM = {
@@ -2418,7 +2393,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -2426,21 +2401,21 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				every_other_country = {
 					limit = { 
 						NOT = { has_country_flag = usa_influence_fired }
 						OR = {
-							has_idea = american_influence_defence_democratic
-							has_idea = american_influence_drift_democratic
+							has_idea = american_influence_defence_conservatism
+							has_idea = american_influence_drift_conservatism
 						}
 					}
 					country_event = { id = usa.20 }
 				}				
 			}
-
+			### If communism
 			if = {
 				limit = { has_government = communism }
 				CUB = {
@@ -2483,8 +2458,8 @@ available_if_capitulated = yes
 					}
 					country_event = { id = usa.21 }
 				}				
-			}			
-
+			}
+			### If facsim
 			if = {
 				limit = { has_government = fascism }
 				CUB = {
@@ -2557,16 +2532,18 @@ available_if_capitulated = yes
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							} }
-						add_ideas = american_influence_defence_democratic
+							}
+						}
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							 } }
-						add_ideas = american_influence_drift_democratic
+							}
+						}
+						add_ideas = american_influence_drift_conservatism
 					}				
 				} 
 				ELS = {
@@ -2575,16 +2552,18 @@ available_if_capitulated = yes
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							} }
-						add_ideas = american_influence_defence_democratic
+							}
+						}
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							 } }
-						add_ideas = american_influence_drift_democratic
+							}
+						}
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				HON = {
@@ -2593,16 +2572,18 @@ available_if_capitulated = yes
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							} }
-						add_ideas = american_influence_defence_democratic
+							}
+						}
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							 } }
-						add_ideas = american_influence_drift_democratic
+							}
+						}
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				NIC = {
@@ -2611,16 +2592,18 @@ available_if_capitulated = yes
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							} }
-						add_ideas = american_influence_defence_democratic
+							}
+						}
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							 } }
-						add_ideas = american_influence_drift_democratic
+							}
+						}
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				COS = {
@@ -2629,16 +2612,18 @@ available_if_capitulated = yes
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							} }
-						add_ideas = american_influence_defence_democratic
+							}
+						}
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							 } }
-						add_ideas = american_influence_drift_democratic
+							}
+						}
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				"PAN" = {
@@ -2647,24 +2632,26 @@ available_if_capitulated = yes
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							} }
-						add_ideas = american_influence_defence_democratic
+							}
+						}
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = {
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							 } }
-						add_ideas = american_influence_drift_democratic
+							}
+						}
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				every_other_country = {
 					limit = { 
 						NOT = { has_country_flag = usa_influence_fired }
 						OR = {
-							has_idea = american_influence_defence_democratic
-							has_idea = american_influence_drift_democratic
+							has_idea = american_influence_defence_conservatism
+							has_idea = american_influence_drift_conservatism
 						}
 					}
 					country_event = { id = usa.20 }
@@ -2848,16 +2835,18 @@ available_if_capitulated = yes
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							} }
-						add_ideas = american_influence_defence_democratic
+							}
+						}
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							 } }
-						add_ideas = american_influence_drift_democratic
+							}
+						}
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				MEX =  {
@@ -2867,7 +2856,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -2875,15 +2864,15 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				every_other_country = {
 					limit = { 
 						NOT = { has_country_flag = usa_influence_fired }
 						OR = {
-							has_idea = american_influence_defence_democratic
-							has_idea = american_influence_drift_democratic
+							has_idea = american_influence_defence_conservatism
+							has_idea = american_influence_drift_conservatism
 						}
 					}
 					country_event = { id = usa.20 }
@@ -2957,7 +2946,6 @@ available_if_capitulated = yes
 					country_event = { id = usa.22 }
 				}				
 			}
-			
 			add_political_power = 150
 		}
 	}
@@ -2988,7 +2976,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -2996,7 +2984,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				VEN = {
@@ -3006,7 +2994,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -3014,7 +3002,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				ECU = {
@@ -3024,7 +3012,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -3032,7 +3020,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				PRU = {
@@ -3042,7 +3030,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -3050,7 +3038,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				BRA = {
@@ -3060,7 +3048,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -3068,7 +3056,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				BOL = {
@@ -3078,7 +3066,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -3086,7 +3074,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				PAR = {
@@ -3096,7 +3084,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -3104,7 +3092,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				URG = {
@@ -3114,15 +3102,16 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							 } }
-						add_ideas = american_influence_drift_democratic
+							}
+						}
+						add_ideas = american_influence_drift_conservatism
 					}
 				}
 				ARG = {
@@ -3131,16 +3120,18 @@ available_if_capitulated = yes
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							} }
-						add_ideas = american_influence_defence_democratic
+							}
+						}
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
 							has_government = conservatism
 							has_government = socialism
 							has_government = liberalism
-							 } }
-						add_ideas = american_influence_drift_democratic
+							}
+						}
+						add_ideas = american_influence_drift_conservatism
 					}				
 				}
 				CHL = {
@@ -3150,7 +3141,7 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							} }
-						add_ideas = american_influence_defence_democratic
+						add_ideas = american_influence_defence_conservatism
 					}
 					if = {
 						limit = { NOT = { 
@@ -3158,15 +3149,15 @@ available_if_capitulated = yes
 							has_government = socialism
 							has_government = liberalism
 							 } }
-						add_ideas = american_influence_drift_democratic
+						add_ideas = american_influence_drift_conservatism
 					}			
 				}
 				every_other_country = {
 					limit = { 
 						NOT = { has_country_flag = usa_influence_fired }
 						OR = {
-							has_idea = american_influence_defence_democratic
-							has_idea = american_influence_drift_democratic
+							has_idea = american_influence_defence_conservatism
+							has_idea = american_influence_drift_conservatism
 						}
 					}
 					country_event = { id = usa.20 }
@@ -3437,7 +3428,7 @@ available_if_capitulated = yes
 							has_government = liberalism
 							}
 						}
-						add_ideas = american_protection_defence_democratic
+						add_ideas = american_protection_defence_conservatism
 					}
 					every_other_country = {
 						limit = { 
@@ -3448,7 +3439,7 @@ available_if_capitulated = yes
 							has_government = liberalism
 							 }
 						}
-						add_ideas = american_protection_drift_democratic
+						add_ideas = american_protection_drift_conservatism
 						country_event = { id = usa.23 }
 					}
 				}
@@ -3500,8 +3491,8 @@ available_if_capitulated = yes
 							has_country_flag = monroe_doctrine
 						}
 					}
-					remove_ideas = american_influence_defence_democratic
-					remove_ideas = american_influence_drift_democratic
+					remove_ideas = american_influence_defence_conservatism
+					remove_ideas = american_influence_drift_conservatism
 					remove_ideas = american_influence_defence_communism
 					remove_ideas = american_influence_drift_communism
 					remove_ideas = american_influence_defence_fascism
@@ -3544,16 +3535,16 @@ available_if_capitulated = yes
 			#}
 			#Too long and annoying tooltip to write. Will redo if someone complains
 			#every_other_country = {
-			#	limit = { has_country_flag = USA_black_chamber_democratic_CivWar }
+			#	limit = { has_country_flag = USA_black_chamber_conservatism_CivWar }
 			#	start_civil_war = {
-			#		ideology = democratic
+			#		ideology = conservatism
 			#		size = 0.5
 			#	}
 			#}
 			#every_other_country = {
-			#	limit = { has_country_flag = USA_black_chamber_democratic_SetGov }
+			#	limit = { has_country_flag = USA_black_chamber_conservatism_SetGov }
 			#	set_politics = {
-			#		ruling_party = democratic
+			#		ruling_party = conservatism
 			#		elections_allowed = yes
 			#	}			
 			#}
@@ -3567,7 +3558,7 @@ available_if_capitulated = yes
 			set_rule = {
 				can_boost_other_ideologies = yes
 			}
-			#US Conservatism
+			#US conservatism
 			if = {
 				limit = { 
 						has_government = conservatism
@@ -3599,7 +3590,7 @@ available_if_capitulated = yes
 							ruling_party = conservatism
 							elections_allowed = yes
 						}						
-						set_country_flag = USA_black_chamber_democratic_SetGov
+						set_country_flag = USA_black_chamber_conservatism_SetGov
 					}
 					if = {
 						limit = { 
@@ -3611,7 +3602,7 @@ available_if_capitulated = yes
 							ideology = conservatism
 							size = 0.5
 						}
-						set_country_flag = USA_black_chamber_democratic_CivWar
+						set_country_flag = USA_black_chamber_conservatism_CivWar
 					}
 				}
 
@@ -3643,7 +3634,7 @@ available_if_capitulated = yes
 							ruling_party = conservatism
 							elections_allowed = yes
 						}						
-						set_country_flag = USA_black_chamber_democratic_SetGov
+						set_country_flag = USA_black_chamber_conservatism_SetGov
 					}
 					if = {
 						limit = { 
@@ -3655,7 +3646,7 @@ available_if_capitulated = yes
 							ideology = conservatism
 							size = 0.5
 						}
-						set_country_flag = USA_black_chamber_democratic_CivWar
+						set_country_flag = USA_black_chamber_conservatism_CivWar
 					}
 				}
 			    #If none matches a trigger above, we have a fallback, so the focus isn't wasted
@@ -3750,7 +3741,7 @@ available_if_capitulated = yes
 							ruling_party = liberalism
 							elections_allowed = yes
 						}						
-						set_country_flag = USA_black_chamber_democratic_SetGov
+						set_country_flag = USA_black_chamber_conservatism_SetGov
 					}
 					if = {
 						limit = { 
@@ -3762,7 +3753,7 @@ available_if_capitulated = yes
 							ideology = liberalism
 							size = 0.5
 						}
-						set_country_flag = USA_black_chamber_democratic_CivWar
+						set_country_flag = USA_black_chamber_conservatism_CivWar
 					}
 				}
 
@@ -3793,7 +3784,7 @@ available_if_capitulated = yes
 							ruling_party = liberalism
 							elections_allowed = yes
 						}						
-						set_country_flag = USA_black_chamber_democratic_SetGov
+						set_country_flag = USA_black_chamber_conservatism_SetGov
 					}
 					if = {
 						limit = { 
@@ -3805,7 +3796,7 @@ available_if_capitulated = yes
 							ideology = liberalism
 							size = 0.5
 						}
-						set_country_flag = USA_black_chamber_democratic_CivWar
+						set_country_flag = USA_black_chamber_conservatism_CivWar
 					}
 				}				
 
@@ -3901,7 +3892,7 @@ available_if_capitulated = yes
 							ruling_party = socialism
 							elections_allowed = yes
 						}						
-						set_country_flag = USA_black_chamber_democratic_SetGov
+						set_country_flag = USA_black_chamber_conservatism_SetGov
 					}
 					if = {
 						limit = { 
@@ -3913,7 +3904,7 @@ available_if_capitulated = yes
 							ideology = socialism
 							size = 0.5
 						}
-						set_country_flag = USA_black_chamber_democratic_CivWar
+						set_country_flag = USA_black_chamber_conservatism_CivWar
 					}
 				}
 
@@ -3944,7 +3935,7 @@ available_if_capitulated = yes
 							ruling_party = socialism
 							elections_allowed = yes
 						}						
-						set_country_flag = USA_black_chamber_democratic_SetGov
+						set_country_flag = USA_black_chamber_conservatism_SetGov
 					}
 					if = {
 						limit = { 
@@ -3956,7 +3947,7 @@ available_if_capitulated = yes
 							ideology = socialism
 							size = 0.5
 						}
-						set_country_flag = USA_black_chamber_democratic_CivWar
+						set_country_flag = USA_black_chamber_conservatism_CivWar
 					}
 				}				
 
@@ -4246,7 +4237,7 @@ available_if_capitulated = yes
 			}
 		}
 		completion_reward = {
-			# US democratic
+			# US conservatism
 			if = {
 				limit = { 
 					OR = {
@@ -4277,7 +4268,7 @@ available_if_capitulated = yes
 								has_government = conservatism
 								has_government = socialism
 								has_government = liberalism
-								#has_government = democratic
+								#has_government = conservatism
 							}
 						}
 					}
@@ -4306,7 +4297,7 @@ available_if_capitulated = yes
 								has_government = conservatism
 								has_government = socialism
 								has_government = liberalism
-								#has_government = democratic
+								#has_government = conservatism
 								has_government = fascism
 							}
 						}
@@ -4330,7 +4321,7 @@ available_if_capitulated = yes
 								has_government = conservatism
 								has_government = socialism
 								has_government = liberalism
-								#has_government = democratic
+								#has_government = conservatism
 								has_government = fascism
 							}
 						}
@@ -4350,7 +4341,7 @@ available_if_capitulated = yes
 								has_government = conservatism
 								has_government = socialism
 								has_government = liberalism
-								#has_government = democratic
+								#has_government = conservatism
 								has_government = communism
 							}
 						}
@@ -4374,7 +4365,7 @@ available_if_capitulated = yes
 								has_government = conservatism
 								has_government = socialism
 								has_government = liberalism
-								#has_government = democratic
+								#has_government = conservatism
 								has_government = communism
 							}
 						}

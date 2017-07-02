@@ -93,10 +93,10 @@ country_event = {
 	picture = GFX_report_event_lost_battle
 	
 	trigger = {
-	OR = {
-		has_government = conservatism
-		has_government = liberalism
-		has_government = socialism
+		OR = {
+			has_government = conservatism
+			has_government = liberalism
+			has_government = socialism
 		}
 		has_country_flag = const_monarchy
 		NOT = { has_country_flag = royal_restoration }
@@ -266,14 +266,14 @@ country_event = {
 	hidden = yes
 	trigger = { 
 		NOT = {
-		OR = {
-			has_government = monarchism
-			AND = {
-			has_country_flag = const_monarchy
 			OR = {
-				has_government = conservatism
-				has_government = liberalism
-				has_government = socialism
+				has_government = monarchism
+				AND = {
+					has_country_flag = const_monarchy
+					OR = {
+						has_government = conservatism
+						has_government = liberalism
+						has_government = socialism
 					}
 				}
 			}
@@ -289,11 +289,9 @@ country_event = {
 	}
 	option = { 
 		name = politics.74.a 
-			remove_ideas = royal_restoration
-		}	
+		remove_ideas = royal_restoration
+	}	
 }
-
-
 
 ########## Communism ############
 
@@ -307,7 +305,7 @@ country_event = {
 
 
 
-########## Conservatism ############
+########## conservatism ############
 
 
 

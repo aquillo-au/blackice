@@ -43,7 +43,6 @@ country_event = {
 		set_country_flag = communism_popular_movement
 	}
 }
-
 # Marxist Sympathies in Government
 country_event = {
 	id = political.2
@@ -72,7 +71,6 @@ country_event = {
 		set_country_flag = communism_government_support
 	}
 }
-
 # Communists Execute Coup
 country_event = {
 	id = political.3
@@ -118,7 +116,6 @@ country_event = {
 		add_timed_idea = { idea = reign_of_terror days = 730 }
 	}
 }
-
 # Class Conflicts Divide [Root.GetName]
 country_event = {
 	id = political.4
@@ -149,7 +146,6 @@ country_event = {
 		add_national_unity = -0.02
 	}
 }
-
 # Soldiers Desert to Communist Partisans
 country_event = {
 	id = political.5
@@ -209,9 +205,11 @@ country_event = {
 			has_country_flag = communism_popular_movement
 		}
 	}
+	
 	immediate = {
 		remove_ideas = communist_partisans_recruiting
 	}
+	
 	option = {
 		name = political.6.a
 		country_event = politics.40
@@ -344,6 +342,7 @@ country_event = {
 		add_timed_idea = { idea = reign_of_terror days = 730 }
 		remove_ideas = communist_revolutionaries
 	}
+	
 	option = {
 		name = political.6.b
 		if = {
@@ -492,7 +491,6 @@ country_event = {
 		add_political_power = -25
 	}
 }
-
 # Fascism on the Rise
 country_event = {
 	id = political.7
@@ -505,7 +503,6 @@ country_event = {
 	trigger = {
 		NOT = { has_government = fascism }
 	}
-	
 	# Seek government support
 	option = {
 		name = political.7.a
@@ -513,7 +510,6 @@ country_event = {
 		clr_country_flag = fascism_popular_movement
 		set_country_flag = fascism_political_movement
 	}
-
 	# Seek popular support
 	option = {
 		name = political.7.b
@@ -552,7 +548,6 @@ country_event = {
 		set_country_flag = fascism_government_support
 	}
 }
-
 # Fascist Coup d'état
 country_event = {
 	id = political.9
@@ -629,7 +624,6 @@ country_event = {
 		add_timed_idea = { idea = reign_of_terror days = 730 }
 	}
 }
-
 # Civil War for Fascism
 country_event = {
 	id = political.10
@@ -1001,7 +995,7 @@ country_event = {
 	trigger = {
 		NOT = { 
 		OR = {
-					#has_government = democratic
+					#has_government = conservatism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -1043,7 +1037,7 @@ country_event = {
 		}
 		NOT = { 
 			OR = {
-				#has_government = democratic
+				#has_government = conservatism
 				has_government = conservatism
 				has_government = liberalism
 				has_government = socialism
@@ -1075,7 +1069,7 @@ country_event = {
 	}
 }
 
-# Democratic Opposition Forming
+# conservatism Opposition Forming
 country_event = {
 	id = political.15
 	title = political.15.t
@@ -1090,7 +1084,7 @@ country_event = {
 		}
 		NOT = { 
 		OR = {
-					#has_government = democratic
+					#has_government = conservatism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -1150,14 +1144,14 @@ country_event = {
 		}
 		NOT = { 
 		OR = {
-					#has_government = democratic
+					#has_government = conservatism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
 					} 
 					}
 		has_country_flag = democracy_opposition_formed
-		NOT = { has_idea = democratic_opposition_voicing_protests }
+		NOT = { has_idea = conservatism_opposition_voicing_protests }
 	}
 	
 	mean_time_to_happen = {
@@ -1171,7 +1165,7 @@ country_event = {
 	option = {
 		name = political.16.b
 		add_political_power = -20
-		add_ideas = democratic_opposition_voicing_protests
+		add_ideas = conservatism_opposition_voicing_protests
 	}
 }
 
@@ -1189,7 +1183,7 @@ country_event = {
 		}
 		NOT = { 
 		OR = {
-					#has_government = democratic
+					#has_government = conservatism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -1247,7 +1241,7 @@ country_event = {
 		}
 		}
 		hold_election = ROOT
-		remove_ideas = democratic_revolutionaries
+		remove_ideas = conservatism_revolutionaries
 	}
 	option = {
 		name = political.17.b
@@ -1408,7 +1402,7 @@ country_event = {
 	}
 }
 
-# political.20 Democratic
+# political.20 conservatism
 
 country_event = {
 	id = political.20
@@ -1436,7 +1430,7 @@ country_event = {
 				has_government = socialism
 			} 
 		}
-		NOT = { has_idea = democratic_revolutionaries }
+		NOT = { has_idea = conservatism_revolutionaries }
 		NOT = { has_idea = reign_of_terror }
 		is_puppet = no
 	}
@@ -1470,7 +1464,7 @@ country_event = {
 		}
 		}
 		add_timed_idea = {
-			idea = democratic_revolutionaries
+			idea = conservatism_revolutionaries
 			days = 365
 		}
 	}
@@ -1478,7 +1472,7 @@ country_event = {
 	option = {
 		name = political.20.b
 		add_timed_idea = {
-			idea = democratic_revolutionaries
+			idea = conservatism_revolutionaries
 			days = 365
 		}
 	}
@@ -1776,7 +1770,7 @@ country_event = {
 		}
 	}
 }
-# political.23 Democratic
+# political.23 conservatism
 country_event = {
 	id = political.23
 	title = political.23.t
@@ -1789,7 +1783,7 @@ country_event = {
 		liberalism > 0.6
 		socialism > 0.6
 		}
-		has_idea = democratic_revolutionaries
+		has_idea = conservatism_revolutionaries
 		#Special case CHI PRC
 		OR = {
 			NOT = { tag = CHI }
@@ -1805,7 +1799,7 @@ country_event = {
 	}
 
 	immediate = {
-		hidden_effect = { remove_ideas = democratic_revolutionaries }
+		hidden_effect = { remove_ideas = conservatism_revolutionaries }
 	}
 
 	option = {
@@ -1974,7 +1968,7 @@ country_event = {
 		}
 		}
 		hold_election = ROOT
-		remove_ideas = democratic_revolutionaries
+		remove_ideas = conservatism_revolutionaries
 	}
 }
 
@@ -2021,7 +2015,7 @@ country_event = {
 		remove_ideas = communist_revolutionaries
 	}
 }
-# political.26 Democratic
+# political.26 conservatism
 country_event = {
 	id = political.26
 	title = political.26.t
@@ -2034,7 +2028,7 @@ country_event = {
 		liberalism < 0.3
 		socialism < 0.3
 		}
-		has_idea = democratic_revolutionaries
+		has_idea = conservatism_revolutionaries
 	}
 
 	mean_time_to_happen = {
@@ -2043,7 +2037,7 @@ country_event = {
 
 	option = {
 		name = political.26.a
-		remove_ideas = democratic_revolutionaries
+		remove_ideas = conservatism_revolutionaries
 	}
 }
 

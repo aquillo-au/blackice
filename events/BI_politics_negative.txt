@@ -61,48 +61,48 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.8
-	OR ={
-		AND = {
-			has_government = fascism
-			OR = {
-				communism > 0.15
-				liberalism > 0.20
-				conservatism > 0.20
-				socialism > 0.20
-				monarchism > 0.20
-			}
-		}
-		AND = {
-			has_government = communism
-			OR = {
-				fascism > 0.15
-				liberalism > 0.20
-				conservatism > 0.20
-				socialism > 0.20
-				monarchism > 0.20
-			}
-		}
-		AND = {
-			has_government = monarchism
-			OR = {
-				communism > 0.15
-				liberalism > 0.20
-				socialism > 0.20
-				fascism > 0.15
-			}
-		}
-		AND = {
-			OR= {
-			has_government = liberalism
-			has_government = socialism
-			has_government = conservatism
-			#
-			has_government = neutrality
-			}
-			OR = {
-				communism > 0.15
-				monarchism > 0.15
-				fascism > 0.15
+			OR ={
+				AND = {
+					has_government = fascism
+					OR = {
+						communism > 0.15
+						liberalism > 0.20
+						conservatism > 0.20
+						socialism > 0.20
+						monarchism > 0.20
+					}
+				}
+				AND = {
+					has_government = communism
+					OR = {
+						fascism > 0.15
+						liberalism > 0.20
+						conservatism > 0.20
+						socialism > 0.20
+						monarchism > 0.20
+					}
+				}
+				AND = {
+					has_government = monarchism
+					OR = {
+						communism > 0.15
+						liberalism > 0.20
+						socialism > 0.20
+						fascism > 0.15
+					}
+				}
+				AND = {
+					OR= {
+						has_government = liberalism
+						has_government = socialism
+						has_government = conservatism
+						#
+						has_government = neutrality
+					}
+					OR = {
+						communism > 0.15
+						monarchism > 0.15
+						fascism > 0.15
 					}
 				}
 			}
@@ -113,7 +113,6 @@ country_event = {
 		#set_country_flag = { flag = march days = 60 }
 	}
 	
-	
 	option = { #
 		name = politics.2.a
 		trigger = {
@@ -121,14 +120,14 @@ country_event = {
 			communism > 0.12
 		}
 		
-			add_political_power = -20
-			#set_country_flag = { flag = communist_march days = 30 }
-			add_national_unity = -0.01
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			
+		add_political_power = -20
+		#set_country_flag = { flag = communist_march days = 30 }
+		add_national_unity = -0.01
+		add_popularity = {
+			ideology = communism
+			popularity = 0.02
+		}
+		
 		if = { 
 			limit = { has_government = socialism }
 			add_popularity = {
@@ -274,7 +273,7 @@ country_event = {
 			}
 		}
 	}
-	option = { #Democratic March
+	option = { #conservatism March
 		name = politics.2.d 
 		trigger = {
 			NOT = { 
@@ -290,7 +289,7 @@ country_event = {
 		}
 		
 			add_political_power = -20
-			#set_country_flag = { flag = democratic_march days = 30 }
+			#set_country_flag = { flag = conservatism_march days = 30 }
 			add_national_unity = -0.01
 			if = { limit = { liberalism > 0.12 }
 			add_popularity = {
@@ -643,7 +642,7 @@ country_event = {
 			}
 		}
 	}
-	option = { #Democratic Protests
+	option = { #conservatism Protests
 		name = politics.3.d 
 		trigger = {
 			NOT = { 
@@ -674,7 +673,7 @@ country_event = {
 		}
 		
 			add_political_power = -15
-			#set_country_flag = { flag = democratic_protests days = 60 }
+			#set_country_flag = { flag = conservatism_protests days = 60 }
 			add_national_unity = -0.01
 			if = { limit = { liberalism > 0.2 }
 			add_popularity = {

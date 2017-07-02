@@ -1018,6 +1018,7 @@ country_event = {
 		if = {
 			limit = { CZE = { is_in_faction = no } }
 			add_to_faction = CZE
+			CZE = { set_country_flag = in_allies }
 		}
 		CZE = {
 			add_ai_strategy = {
@@ -1251,7 +1252,7 @@ country_event = {
 			add_ai_strategy = {
 				type = alliance
 				id = "ENG"
-				value = 200
+				value = 200000
 			}
 if = {
 			limit = {
@@ -1261,6 +1262,7 @@ if = {
 				NOT = { is_in_faction_with = ENG }
 			}
 			add_to_faction = ENG #Britain joins the little entente
+			ENG = { set_country_flag = in_little_entente }
 		}
 		}
 		add_opinion_modifier = { target = GER modifier = condemn_aggression }
@@ -1284,7 +1286,7 @@ if = {
 	option = {
 		name = germany.42.b
 		trigger = {
-			NOT = { is_in_faction_with = ENG }
+			NOT = { is_in_faction_with = ENG has_country_flag = in_allies }
 			NOT = { is_in_faction_with = CZE }
 		}
 		ai_chance = { 
@@ -1474,10 +1476,14 @@ country_event = {
 	if = {
 					limit = {
 						CZE = {
-							is_in_faction_with = GER
+							OR = { 
+								is_in_faction_with = GER 
+								has_country_flag = in_axis
+							 }
 						}
 					}		
 					GER = { remove_from_faction = CZE }
+					CZE = { clr_country_flag = in_axis }
 				}
 				create_wargoal = {
 					type = take_state_focus
@@ -1556,14 +1562,18 @@ country_event = {
 		}
 		add_state_claim = 69
 		add_state_claim = 74
-if = {
-			limit = {
-				CZE = {
-					is_in_faction_with = GER
+		if = {
+					limit = {
+						CZE = {
+							OR = { 
+								is_in_faction_with = GER 
+								has_country_flag = in_axis
+							 }
+						}
+					}		
+					GER = { remove_from_faction = CZE }
+					CZE = { clr_country_flag = in_axis }
 				}
-			}
-			GER = { remove_from_faction = CZE }
-		}
 		hidden_effect = {
 			country_event = { hours = 6 id = news.59 }
 		}
@@ -3399,7 +3409,7 @@ country_event = {
 				CZE = {
 					exists = yes
 					is_subject = no
-					democratic_govt = yes
+					conservatism_govt = yes
 					NOT = { is_in_faction_with = GER }
 				}	
 			}	
@@ -3440,7 +3450,7 @@ country_event = {
 						has_government = fascism 
 					}
 					OR = {
-					#has_government = democratic
+					#has_government = conservatism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -3478,7 +3488,7 @@ country_event = {
 			every_other_country = {
 				limit = {
 					OR = {
-					#has_government = democratic
+					#has_government = conservatism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -4707,7 +4717,7 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		#A democratic faction leader whose faction holds at least one German core state while SOV holds another can get this.
+		#A conservatism faction leader whose faction holds at least one German core state while SOV holds another can get this.
 		has_war_with = GER
 		GER = {
 			surrender_progress > 0.5
@@ -4720,7 +4730,7 @@ country_event = {
 			}
 		}
 		OR = {
-					#has_government = democratic
+					#has_government = conservatism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
@@ -5465,7 +5475,7 @@ country_event = {
 				add = 1
 				OR = {
 					has_government = communism
-					#has_government = democratic
+					#has_government = conservatism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = socialism
