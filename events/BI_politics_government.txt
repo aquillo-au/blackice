@@ -13,15 +13,14 @@ country_event = {
 	picture = GFX_report_event_lost_battle
 	
 	trigger = {
-		
 		has_government = monarchism
-		NOT = { 
-		has_country_flag = monarchy_set
-		}
+		NOT = { has_country_flag = monarchy_set }
 	}
+	
 	mean_time_to_happen = {
 		days = 30
 	}
+	
 	immediate = {
 		set_country_flag = royal_restoration
 		set_country_flag = monarchy_set
@@ -29,54 +28,56 @@ country_event = {
 	
 	option = { 
 		name = politics.70.a 
+		
 		trigger = {
 			monarchism > 0.50
 			highest_monarchists = yes
 		}
-			set_politics = {
-				ruling_party = monarchism
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.05
-			}
-			add_national_unity = 0.05
-			add_political_power = 50
-			add_ideas = royal_restoration
-		}	
+		set_politics = {
+			ruling_party = monarchism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = monarchism
+			popularity = 0.05
+		}
+		add_national_unity = 0.05
+		add_political_power = 50
+		add_ideas = royal_restoration
+	}
+	
 	option = { 
 		name = politics.70.b
+		
 		trigger = {
 			monarchism < 0.50
 			highest_monarchists = yes
 		}
-			set_politics = {
-				ruling_party = monarchism
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.05
-			}
-			add_national_unity = 0.01
-			add_political_power = 15
-			add_ideas = royal_restoration
+		set_politics = {
+			ruling_party = monarchism
+			elections_allowed = no
 		}
+		add_popularity = {
+			ideology = monarchism
+			popularity = 0.05
+		}
+		add_national_unity = 0.01
+		add_political_power = 15
+		add_ideas = royal_restoration
+	}
+	
 	option = { 
 		name = politics.70.c
-		trigger = {
-			
-		}
-			country_event = election.100
-			add_ideas = royal_restoration
-			if = { limit = { monarchism > 0.35 }
+
+		country_event = election.100
+		add_ideas = royal_restoration
+		if = { limit = { monarchism > 0.35 }
 			add_popularity = {
 				ideology = monarchism
 				popularity = -0.15
-				}
 			}
-			if = { limit = { monarchism < 0.35 }
+		}
+		if = { limit = { monarchism < 0.35 }
 			add_popularity = {
 				ideology = monarchism
 				popularity = -0.10
@@ -84,7 +85,6 @@ country_event = {
 		}
 	}
 }
-
 #Royal Restoration - Absolutism?
 country_event = {
 	id = politics.71
@@ -103,6 +103,7 @@ country_event = {
 		monarchism > 0.40
 		highest_monarchists = yes
 	}
+	
 	mean_time_to_happen = {
 		days = 720
 		modifier = {
@@ -115,37 +116,40 @@ country_event = {
 			monarchism > 0.50
 		}
 	}
+	
 	immediate = {
 		#add_timed_idea = { idea = royal_check days = 720 }
-
 	}
+	
 	option = { 
 		name = politics.71.a 
-			clr_country_flag = const_monarchy
-			set_politics = {
-				ruling_party = monarchism
-				elections_allowed = no
-			}
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.10
-			}
-		}	
+		
+		clr_country_flag = const_monarchy
+		set_politics = {
+			ruling_party = monarchism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = monarchism
+			popularity = 0.10
+		}
+	}	
 	option = { 
 		name = politics.71.b 
+		
 		trigger = {
 			has_political_power > 15
 		}
-			add_political_power = -35
-			add_national_unity = -0.05
-			country_event = election.100
-			if = { limit = { monarchism > 0.50 }
+		add_political_power = -35
+		add_national_unity = -0.05
+		country_event = election.100
+		if = { limit = { monarchism > 0.50 }
 			add_popularity = {
 				ideology = monarchism
 				popularity = -0.10
-				}
 			}
-			if = { limit = { monarchism < 0.50 }
+		}
+		if = { limit = { monarchism < 0.50 }
 			add_popularity = {
 				ideology = monarchism
 				popularity = -0.05
@@ -164,10 +168,11 @@ country_event = {
 		has_government = monarchism
 		NOT = { has_country_flag = royal_restoration }
 		OR = {
-		NOT = { highest_monarchists = yes }
-		monarchism < 0.40
+			NOT = { highest_monarchists = yes }
+			monarchism < 0.40
 		}
 	}
+	
 	mean_time_to_happen = {
 		days = 720
 		modifier = {
@@ -182,52 +187,53 @@ country_event = {
 	}
 	immediate = {
 		#add_timed_idea = { idea = royal_check days = 720 }
-
 	}
 	
 	option = { 
 		name = politics.72.a 
-			set_country_flag = const_monarchy
-			country_event = election.100
-			if = { limit = { monarchism > 0.40 }
-			add_popularity = {
-				ideology = monarchism
-				popularity = -0.15
-				}
-			}
-			if = { limit = { monarchism > 0.30 monarchism < 0.40}
-			add_popularity = {
-				ideology = monarchism
-				popularity = -0.10
-				}
-			}
-			if = { limit = { monarchism > 0.20 monarchism < 0.30 }
-			add_popularity = {
-				ideology = monarchism
-				popularity = -0.05
-				}
+		set_country_flag = const_monarchy
+		country_event = election.100
+		if = { limit = { monarchism > 0.40 }
+		add_popularity = {
+			ideology = monarchism
+			popularity = -0.15
 			}
 		}
+		if = { limit = { monarchism > 0.30 monarchism < 0.40}
+		add_popularity = {
+			ideology = monarchism
+			popularity = -0.10
+			}
+		}
+		if = { limit = { monarchism > 0.20 monarchism < 0.30 }
+		add_popularity = {
+			ideology = monarchism
+			popularity = -0.05
+			}
+		}
+	}
+	
 	option = { 
 		name = politics.72.b 
+		
 		trigger = {
 			has_political_power > 15
 		}
-			add_political_power = -50
-			add_national_unity = -0.05
-			if = { limit = { monarchism > 0.35 }
+		add_political_power = -50
+		add_national_unity = -0.05
+		if = { limit = { monarchism > 0.35 }
 			add_popularity = {
 				ideology = monarchism
 				popularity = -0.7
-				}
 			}
-			if = { limit = { monarchism > 0.25 monarchism < 0.35 }
+		}
+		if = { limit = { monarchism > 0.25 monarchism < 0.35 }
 			add_popularity = {
 				ideology = monarchism
 				popularity = -0.05
-				}
 			}
-			if = { limit = { monarchism < 0.25 }
+		}
+		if = { limit = { monarchism < 0.25 }
 			add_popularity = {
 				ideology = monarchism
 				popularity = -0.03
@@ -235,7 +241,6 @@ country_event = {
 		}
 	}
 }
-
 #Royal Restoration - Remove Royal Restoration Idea
 country_event = {
 	id = politics.73
@@ -243,19 +248,24 @@ country_event = {
 	desc  = politics.73.desc
 	picture = GFX_report_event_lost_battle
 	hidden = yes
+	
 	trigger = {
 		has_country_flag = royal_restoration
 	}
+	
 	mean_time_to_happen = {
 		days = 720
 	}
+	
 	immediate = {
 		clr_country_flag = royal_restoration
 	}
+	
 	option = { 
 		name = politics.73.a 
-			remove_ideas = royal_restoration
-		}	
+		
+		remove_ideas = royal_restoration
+	}	
 }
 #Royal Restoration - Monarchy Gone Clean Up
 country_event = {
@@ -264,6 +274,7 @@ country_event = {
 	desc  = politics.74.desc
 	picture = GFX_report_event_lost_battle
 	hidden = yes
+	
 	trigger = { 
 		NOT = {
 			OR = {
@@ -279,42 +290,33 @@ country_event = {
 			}
 		}
 	}
+	
 	mean_time_to_happen = {
 		days = 30
 	}
+	
 	immediate = {
 		clr_country_flag = royal_restoration
 		clr_country_flag = const_monarchy
 		clr_country_flag = monarchy_set
 	}
+	
 	option = { 
 		name = politics.74.a 
+		
 		remove_ideas = royal_restoration
 	}	
 }
-
 ########## Communism ############
-
-
 
 ########## Fascism ############
 
-
-
 ########## Liberalism ############
-
-
 
 ########## conservatism ############
 
-
-
 ########## Socialism ############
 
-
-
 ########## Neutrality/Authoritarianism ############
-
-
 
 ### EOF ###
