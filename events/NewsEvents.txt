@@ -2207,14 +2207,14 @@ news_event = {
 	trigger = {
 		has_global_flag = spanish_civil_war
 		NOT = { has_global_flag = scw_over }
-		SPR = { has_civil_war = no }
+		SPA = { has_war = no }
 		any_other_country = {
-			original_tag = SPR
+			original_tag = SPA
 			has_government = fascism
 		}
 		all_country = {
 			OR = {
-				NOT = { original_tag = SPR }
+				NOT = { original_tag = SPA }
 				has_government = fascism
 			}
 		}
@@ -2232,12 +2232,12 @@ news_event = {
 	option = {
 		name = news.64.a
 		trigger = {
-			NOT = { original_tag = SPR }
+			NOT = { original_tag = SPA }
 		}
 	}
 	option = {
 		name = news.64.b
-		trigger = { original_tag = SPR }
+		trigger = { original_tag = SPA }
 	}
 }
 
@@ -2253,7 +2253,7 @@ news_event = {
 	trigger = {
 		has_global_flag = spanish_civil_war
 		NOT = { has_global_flag = scw_over }
-		SPR = { has_civil_war = no }
+		SPR = { has_war = no }
 		any_other_country = {
 			original_tag = SPR
 			NOT = { has_government = fascism }

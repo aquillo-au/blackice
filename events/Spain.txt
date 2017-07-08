@@ -10,24 +10,26 @@ country_event = {
 	title = spain.1.t
 	desc = spain.1.d
 	picture = GFX_report_event_spain_civil_war
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = SPR
 		has_defensive_war = no
 		NOT = { has_government = fascism }
 		NOT = { has_global_flag = scw_over }
-		date > 1936.2.16 # Trigger at some point after 1936 elections
+		date > 1936.7.15 # Trigger at some point after 1936 elections
 	}
 
 	mean_time_to_happen = {
-		days = 30	# Historical outbreak time after elections
+		days = 1	# Historical outbreak time after elections
 	}
 	
 	option = { # Support Nationalists
 		name = spain.1.a
+		
 		trigger = { is_ai = no }
+		
 		hidden_effect = {
 			#set_capital = 176
 			
@@ -38,8 +40,6 @@ country_event = {
 			#	capital = 41
 			#	states = { 41 165 167 168 172 173 175 }
 			#}
-			
-			country_event = { id = spain.105 }
 			#random_country = {
 			#	limit = {
 			#		original_tag = SPR
@@ -47,7 +47,6 @@ country_event = {
 			#	}
 			#	add_ideas = SPR_desperate_defences
 			#	add_ideas = neutrality_idea_spr
-				
 			#	load_oob = SPR_Civil_War
 			#	set_equipment_fraction = 0.45
 			#	set_national_unity = 0.75
@@ -58,18 +57,18 @@ country_event = {
 			#	}
 			#}
 			
-				add_ideas = SPR_desperate_defences
-				add_ideas = neutrality_idea_spr
-				
-								
+			country_event = { id = spain.105 }
+			
+			add_ideas = SPR_desperate_defences
+			add_ideas = neutrality_idea_spr
+			
 			news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
-			
-		
+
 			#set_equipment_fraction = 0.5
-			#
+
 			#set_national_unity = 0.75
-			#
+
 			#add_ideas = SPA_desperate_defences
 			#add_ideas = neutrality_idea_spa
 
@@ -2265,10 +2264,10 @@ country_event = {
 	fire_only_once = yes
 
 	is_triggered_only = yes
-	
-	
+
 	option = {
 		name =spain.105.a
+		
 		SPA = { 
 			add_manpower = 300000
 			add_political_power = 600
@@ -2276,54 +2275,53 @@ country_event = {
 			if = {
 				limit = { 
 					SPR = { 
-						controls_state = 41
-						controls_state = 165
-						controls_state = 167
-						controls_state = 168
-						controls_state = 172
-						controls_state = 173
-						controls_state = 175
-						
-						} 
-					}
-				transfer_state = 41
-				transfer_state = 165
-				transfer_state = 167
-				transfer_state = 168
-				transfer_state = 172
-				transfer_state = 173
-				transfer_state = 175
-				41 = { add_core_of = SPA}
-				165 = { add_core_of = SPA}
-				167 = { add_core_of = SPA}
-				168 = { add_core_of = SPA}
-				172 = { add_core_of = SPA}
-				173 = { add_core_of = SPA}
-				175 = { add_core_of = SPA}
-				
+						controls_state = 166
+						controls_state = 169
+						controls_state = 170
+						controls_state = 171
+						controls_state = 174
+						controls_state = 176
+						controls_state = 178
+						controls_state = 290
+						controls_state = 699
+					} 
+				}
+				transfer_state = 166
+				transfer_state = 169
+				transfer_state = 170
+				transfer_state = 171
+				transfer_state = 174
+				transfer_state = 176
+				transfer_state = 178
+				transfer_state = 290
+				transfer_state = 699
 			}
 			hidden_effect = {
-			load_oob = SPA_Civil_War
+				load_oob = SPA_Civil_War
 			
-			set_national_unity = 0.70
+				set_national_unity = 0.70
 			}
 		}
-	
-			SPA = { add_ideas = SPA_desperate_defences}
-			SPA = { add_ideas = neutrality_idea_spa }
+		set_country_flag = scw
+		SPA = {
+			add_ideas = SPA_desperate_defences
+			add_ideas = neutrality_idea_spa
+		}
 		#declare_war_on = {
 		#	target = SPA
 		#	type = annex_everything
 		#}
-		SPA = { declare_war_on = {
-			target = SPR
-			type = annex_everything
-		}
+		SPA = { 
+			declare_war_on = {
+				target = SPR
+				type = annex_everything
+			}
 		}
 		country_event = { id = spain.106 days = 45 }
 	}
-	}
-	country_event = {
+}
+
+country_event = {
 	id = spain.106
 	title = spain.106.t
 	desc = spain.106.d
@@ -2333,13 +2331,12 @@ country_event = {
 
 	is_triggered_only = yes
 	
-	
 	option = {
 		name =spain.106.a
-		SPA = { 
 		
+		SPA = {
 			hidden_effect = {
-		load_oob = SPA_Civil_War
+				load_oob = SPA_Civil_War
 			}
 		}
 		#SPR = { 
@@ -2350,8 +2347,7 @@ country_event = {
 		#}
 	country_event = { id = spain.107 days = 90 }
 	}
-	
-	}
+}
 country_event = {
 	id = spain.107
 	title = spain.107.t
@@ -2362,23 +2358,16 @@ country_event = {
 
 	is_triggered_only = yes
 	
-	
 	option = {
 		name =spain.107.a
-		SPA = { 
 		
-			hidden_effect = {
-		load_oob = "SPA_1936"
-			}
+		SPA = {
+			hidden_effect = { load_oob = "SPA_1936" }
 		}
-		SPR = { 
-		
-			hidden_effect = {
-		load_oob = SPR_Civil_War
-			}
+		SPR = {
+			hidden_effect = { load_oob = SPR_Civil_War }
 		}
 	
 	}
-	
-	}
+}
 ### EOF ###

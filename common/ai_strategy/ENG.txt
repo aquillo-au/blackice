@@ -24,16 +24,8 @@ protect_poland_against_germany = {
 		NOT = { country_exists = POL }
 	}
 	
-	ai_strategy = {
-		type = befriend
-		id = "POL"			
-		value = 200
-	}
-	ai_strategy = {
-		type = alliance
-		id = "POL"			
-		value = 200
-	}	
+	ai_strategy = { type = befriend id = "POL"						value = 200 		}
+	ai_strategy = { type = alliance id = "POL"						value = 200 		}	
 }
 
 defend_poland_against_germany = {
@@ -46,48 +38,23 @@ defend_poland_against_germany = {
 		NOT = { country_exists = POL }
 	}
 	
-	ai_strategy = {
-		type = befriend
-		id = "POL"			
-		value = 200
-	}
-	ai_strategy = {
-		type = alliance
-		id = "POL"			
-		value = 200
-	}	
+	ai_strategy = { type = befriend id = "POL"						value = 200 		}
+	ai_strategy = { type = alliance id = "POL"						value = 200 		}	
 }
 
 defend_bel_against_germany = {
 	enable = {
 		tag = ENG
-		GER = { has_war_with = BEL }
+		GER = {
+			has_war_with = BEL }
 		country_exists = BEL
 	}
 	abort = {
 		NOT = { country_exists = BEL }
 	}
 	
-	ai_strategy = {
-		type = befriend
-		id = "BEL"			
-		value = 200
-	}
-	ai_strategy = {
-		type = alliance
-		id = "BEL"			
-		value = 200
-	}	
-	ai_strategy = {
-		type = befriend
-		id = "HOL"			
-		value = 200
-	}
-	ai_strategy = {
-		type = alliance
-		id = "HOL"			
-		value = 200
-	}	
+	ai_strategy = { type = befriend id = "BEL"		   				value = 200 		}
+	ai_strategy = { type = alliance id = "BEL"	 					value = 200 		}	
 }
 
 defend_hol_against_germany = {
@@ -100,26 +67,8 @@ defend_hol_against_germany = {
 		NOT = { country_exists = HOL }
 	}
 	
-	ai_strategy = {
-		type = befriend
-		id = "BEL"			
-		value = 200
-	}
-	ai_strategy = {
-		type = alliance
-		id = "BEL"			
-		value = 200
-	}	
-	ai_strategy = {
-		type = befriend
-		id = "HOL"			
-		value = 200
-	}
-	ai_strategy = {
-		type = alliance
-		id = "HOL"			
-		value = 200
-	}	
+	ai_strategy = { type = befriend id = "HOL"						value = 200 		}
+	ai_strategy = { type = alliance id = "HOL"						value = 200 		}	
 }
 
 turkey_ignore_eng = {
@@ -131,16 +80,8 @@ turkey_ignore_eng = {
 		NOT = { country_exists = ENG }
 	}
 	
-	ai_strategy = {
-		type = befriend
-		id = "ENG"			
-		value = -200
-	}
-	ai_strategy = {
-		type = ignore
-		id = "ENG"			
-		value = 200
-	}	
+	ai_strategy = { type = befriend id = "ENG"						value = -200 	}
+	ai_strategy = { type = ignore id = "ENG"						value = 200 		}	
 }
 
 disable_invasion = {  # just complete bullshit invasions
@@ -152,29 +93,11 @@ disable_invasion = {  # just complete bullshit invasions
 	abort = {
 		date > 1942.1.1
 	}
-	ai_strategy = {
-		type = invade
-		id = "FIN"
-		value = -1000
-	}
 	
-	ai_strategy = {
-		type = invade
-		id = "GER"
-		value = -200
-	}
-	
-	ai_strategy = {
-		type = invade
-		id = "ITA"
-		value = -200
-	}
-	
-	ai_strategy = {
-		type = invade
-		id = "D02"
-		value = -1000
-	}	
+	ai_strategy = { type = invade id = "FIN" 						value = -1000 	}
+	ai_strategy = { type = invade id = "GER" 						value = -200 	}
+	ai_strategy = { type = invade id = "ITA" 						value = -200 	}
+	ai_strategy = { type = invade id = "D02" 						value = -1000 	}	
 }
 
 royal_air_force = {
@@ -189,12 +112,9 @@ royal_air_force = {
 		}
 	}
 	
-	ai_strategy = {
-		type = air_factory_balance
-		value = 100
-	}
-
+	ai_strategy = { type = air_factory_balance 						value = 100 		}
 }
+
 stay_in_commonwealth = {
     enable = {
 		OR = {
@@ -227,15 +147,17 @@ stay_in_commonwealth = {
         ENG = { is_faction_leader = yes }
     }
     abort = {
-       ENG = { is_faction_leader = no NOT = { has_government = communism has_government = fascism } }
+       ENG = { is_faction_leader = no
+			NOT = {
+				has_government = communism
+				has_government = fascism
+			}
+		}
     }
 
-    ai_strategy = {
-        type = alliance
-        id = "ENG"     
-        value = 1000
-    }
+    ai_strategy = { type = alliance id = "ENG"     			        value = 1000     }
 }
+
 canada_stay_in_commonwealth = {
     enable = {
 		tag = CAN
@@ -246,89 +168,87 @@ canada_stay_in_commonwealth = {
        ENG = { is_faction_leader = no }
     }
 
-    ai_strategy = {
-        type = alliance
-        id = "ENG"     
-        value = 300000
-    }
+    ai_strategy = { type = alliance id = "ENG"     			        value = 300000     }
 }
+
 southafrica_stay_in_commonwealth = {
     enable = {
 		tag = SAF
+
 		democratic_govt = yes
-        ENG = { is_faction_leader = yes has_country_flag = allies_leader }
+        ENG = {
+			is_faction_leader = yes
+			has_country_flag = allies_leader
+		}
     }
     abort = {
        ENG = { is_faction_leader = no }
     }
 
-    ai_strategy = {
-        type = alliance
-        id = "ENG"     
-        value = 300000
-    }
+    ai_strategy = { type = alliance id = "ENG"     					value = 300000     }
 }
+
 newzealand_stay_in_commonwealth = {
     enable = {
 		tag = NZL
 		democratic_govt = yes
-        ENG = { is_faction_leader = yes has_country_flag = allies_leader }
+        ENG = {
+			is_faction_leader = yes
+			has_country_flag = allies_leader
+		}
     }
     abort = {
        ENG = { is_faction_leader = no }
     }
 
-    ai_strategy = {
-        type = alliance
-        id = "ENG"     
-        value = 300000
-    }
+    ai_strategy = { type = alliance id = "ENG"      		        value = 300000     }
 }
+
 australia_stay_in_commonwealth = {
     enable = {
 		tag = AST
 		democratic_govt = yes
-        ENG = { is_faction_leader = yes has_country_flag = allies_leader }
+        ENG = {
+			is_faction_leader = yes
+			has_country_flag = allies_leader
+		}
     }
     abort = {
        ENG = { is_faction_leader = no }
     }
 
-    ai_strategy = {
-        type = alliance
-        id = "ENG"     
-        value = 300000
-    }
+    ai_strategy = { type = alliance id = "ENG"     			        value = 300000     }
 }
+
 burma_stay_in_commonwealth = {
     enable = {
 		tag = BUR
 		democratic_govt = yes
-        ENG = { is_faction_leader = yes has_country_flag = allies_leader }
+        ENG = {
+			is_faction_leader = yes
+			has_country_flag = allies_leader
+		}
     }
     abort = {
        ENG = { is_faction_leader = no }
     }
 
-    ai_strategy = {
-        type = alliance
-        id = "ENG"     
-        value = 300000
-    }
+    ai_strategy = { type = alliance id = "ENG"     				     value = 300000     }
 }
+
 raj_stay_in_commonwealth = {
     enable = {
 		tag = RAJ
 		democratic_govt = yes
-        ENG = { is_faction_leader = yes has_country_flag = allies_leader }
+        ENG = {
+			is_faction_leader = yes
+			has_country_flag = allies_leader
+		}
     }
     abort = {
        ENG = { is_faction_leader = no }
     }
 
-    ai_strategy = {
-        type = alliance
-        id = "ENG"     
-        value = 300000
-    }
+    ai_strategy = { type = alliance id = "ENG"      				value = 300000     }
 }
+### EOF ###
