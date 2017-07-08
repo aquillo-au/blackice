@@ -39,10 +39,43 @@ country_event = {
 				add_core_of = GER
 			}
 		}
-		
-		annex_country = {
-			target = AUS
-			transfer_troops = yes
+		if = { limit = { 
+			153 = { is_owned_by = AUS }
+				}
+			annex_country = {
+				target = AUS
+				transfer_troops = yes
+			}
+		}
+		if = { limit = { #Tyrol
+			153 = { is_owned_by = ITA }
+				}
+			annex_country = {
+				target = AUS
+				transfer_troops = yes
+				}
+			ITA = { transfer_state = 153 }	
+			add_state_claim = 153
+		}
+		if = { limit = { #Carinthia-Styria
+			897 = { is_owned_by = ITA }
+				}
+			annex_country = {
+				target = AUS
+				transfer_troops = yes
+				}
+			ITA = { transfer_state = 897 }	
+			add_state_claim = 897
+		}
+		if = { limit = { #Salzburg
+			910 = { is_owned_by = ITA }
+				}
+			annex_country = {
+				target = AUS
+				transfer_troops = yes
+				}
+			ITA = { transfer_state = 910 }	
+			add_state_claim = 910
 		}
 		add_political_power = 75
 		add_named_threat = {
@@ -1591,6 +1624,28 @@ country_event = {
 	
 	option = {
 		name = germany.50.a
+		ROM = {
+			diplomatic_relation = {
+				country = CZE
+				relation = guarantee
+				active = no
+			}
+			diplomatic_relation = {
+				country = GRE
+				relation = guarantee
+				active = no
+			}
+			diplomatic_relation = {
+				country = TUR
+				relation = guarantee
+				active = no
+			}
+			diplomatic_relation = {
+				country = YUG
+				relation = guarantee
+				active = no
+			}
+		}
 		69 = { add_core_of = GER }
 		GER = { transfer_state = 69 }
 		74 = { add_core_of = GER }
@@ -1607,7 +1662,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = { hours = 6 id = news.56 }
-	if = {
+			if = {
 				limit = {
 					has_dlc = "Death or Dishonor"
 					country_exists = YUG
@@ -2257,10 +2312,10 @@ country_event = {
 			}
 			custom_effect_tooltip = germany.60.a.tt
 			effect_tooltip = {
-				start_civil_war = {
-					ideology = communism
-					size = 0.2
-				}
+				#start_civil_war = {
+				#	ideology = communism
+				#	size = 0.2
+				#}
 			}
 		}
 	}
@@ -2388,10 +2443,10 @@ country_event = {
 			limit = { has_idea = FRA_disjointed_government }
 			custom_effect_tooltip = germany.60.a.tt
 			effect_tooltip = {
-				start_civil_war = {
-					ideology = communism
-					size = 0.2
-				}
+				#start_civil_war = {
+				#	ideology = communism
+				#	size = 0.2
+				#}
 			}
 		}
 	}
@@ -2419,10 +2474,10 @@ country_event = {
 			limit = { has_idea = FRA_disjointed_government }
 			custom_effect_tooltip = germany.60.a.tt
 			effect_tooltip = {
-				start_civil_war = {
-					ideology = communism
-					size = 0.2
-				}
+				#start_civil_war = {
+				#	ideology = communism
+				#	size = 0.2
+				#}
 			}
 		}
 	}
@@ -2462,10 +2517,10 @@ country_event = {
 			country_event = germany.92
 			if = {
 				limit = { has_idea = FRA_disjointed_government }
-				start_civil_war = {
-					ideology = communism
-					size = 0.2
-				}
+				#start_civil_war = {
+				#	ideology = communism
+				#	size = 0.2
+				#}
 			}
 		}
 		hidden_effect = {
@@ -2526,10 +2581,10 @@ country_event = {
 			country_event = germany.92
 			if = {
 				limit = { has_idea = FRA_disjointed_government }
-				start_civil_war = {
-					ideology = communism
-					size = 0.2
-				}
+				#start_civil_war = {
+				#	ideology = communism
+				#	size = 0.2
+				#}
 			}
 		}
 		hidden_effect = {
@@ -2728,11 +2783,11 @@ country_event = {
 					has_national_unity < 60
 				}
 			}
-			start_civil_war = {
-				ruling_party = conservatism
-				ideology = fascism
-				size = 0.5
-			}
+			#start_civil_war = {
+			#	ruling_party = conservatism
+			#	ideology = fascism
+			#	size = 0.5
+			#}
 		}
 		if = {
 			limit =  {
@@ -2741,11 +2796,11 @@ country_event = {
 					has_national_unity < 60
 				}
 			}
-			start_civil_war = {
-				ruling_party = conservatism
-				ideology = fascism
-				size = 0.7
-			}
+			#start_civil_war = {
+			#	ruling_party = conservatism
+			#	ideology = fascism
+			#	size = 0.7
+			#}
 		}
 		hidden_effect = {
 			news_event = { hours = 6 id = news.31 }
@@ -2771,10 +2826,10 @@ country_event = {
 					has_national_unity < 60
 				}
 			}
-			start_civil_war = {
-				ideology = conservatism
-				size = 0.5
-			}
+			#start_civil_war = {
+			#	ideology = conservatism
+			#	size = 0.5
+			#}
 		}
 		if = {
 			limit =  {
@@ -2783,10 +2838,10 @@ country_event = {
 					has_national_unity < 60
 				}
 			}
-			start_civil_war = {
-				ideology = conservatism
-				size = 0.3
-			}
+			#start_civil_war = {
+			#	ideology = conservatism
+			#	size = 0.3
+			#}
 		}
 		hidden_effect = {
 			news_event = { hours = 6 id = news.31 }
@@ -2812,10 +2867,10 @@ country_event = {
 					has_national_unity < 60
 				}
 			}
-			start_civil_war = {
-				ideology = conservatism
-				size = 0.5
-			}
+			#start_civil_war = {
+			#	ideology = conservatism
+			#	size = 0.5
+			#}
 		}
 		if = {
 			limit =  {
@@ -2824,10 +2879,10 @@ country_event = {
 					has_national_unity < 60
 				}
 			}
-			start_civil_war = {
-				ideology = conservatism
-				size = 0.3
-			}
+			#start_civil_war = {
+			#	ideology = conservatism
+			#	size = 0.3
+			#}
 		}
 		hidden_effect = {
 			news_event = { hours = 6 id = news.31 }
@@ -3409,7 +3464,7 @@ country_event = {
 				CZE = {
 					exists = yes
 					is_subject = no
-					conservatism_govt = yes
+					democratic_govt = yes
 					NOT = { is_in_faction_with = GER }
 				}	
 			}	

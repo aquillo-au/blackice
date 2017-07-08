@@ -1,15 +1,15 @@
-# Logic for conservatism AI on how to deal in peace conferences
-# Should favor liberating conservatism countries and forcing government upon other states
+# Logic for democratic AI on how to deal in peace conferences
+# Should favor liberating democratic countries and forcing government upon other states
 # Written by Henrik "Groogy" Hansson
 
 #Adjustments
-#The generic conservatism AI will generally prefer liberation and will mostly seek to install government. 
-#Major conservatism nations and minors with overseas colonies can take colonies in peace deals and will prefer to do so after taking cores.
+#The generic democratic AI will generally prefer liberation and will mostly seek to install government. 
+#Major democratic nations and minors with overseas colonies can take colonies in peace deals and will prefer to do so after taking cores.
 #Democracies will never annex.
 
-conservatism_peace = {
+democratic_peace = {
 	enable = {
-		has_government = conservatism
+		democratic_govt = yes
 	}
 
 	annex_randomness = 0 #100
@@ -55,7 +55,7 @@ conservatism_peace = {
 			factor = 10
 
 			FROM = {
-				has_government = conservatism
+				democratic_govt = yes
 			}
 		}
 		modifier = {
@@ -120,7 +120,7 @@ conservatism_peace = {
 		#	FROM = { tag = SLO }
 		#	CZE = {
 		#		OR = {
-		#			has_government = conservatism
+		#			democratic_govt = yes
 		#			has_government = neutrality
 		#		}
 		#	}
@@ -162,14 +162,14 @@ conservatism_peace = {
 			factor = 5
 
 			FROM = {
-				has_government = conservatism
+				democratic_govt = yes
 			}
 		}
 
 		modifier = {
 			factor = 10
 			FROM = {
-				NOT = { has_government = conservatism }
+				NOT = { democratic_govt = yes }
 			}
 		}
 
@@ -623,7 +623,7 @@ conservatism_peace = {
 			factor = -1
 
 			FROM = {
-				has_government = conservatism
+				democratic_govt = yes
 			}
 		}
 	}

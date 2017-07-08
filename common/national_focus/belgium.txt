@@ -254,7 +254,7 @@ focus_tree = {
 			}
 						}
 					}
-					add_ideas = conservatism_influence
+					add_ideas = democratic_influence
 				}
 				country_event = { id = generic.1 }
 			}
@@ -307,7 +307,7 @@ focus_tree = {
 			}
 						}
 					}
-					add_ideas = conservatism_influence
+					add_ideas = democratic_influence
 				}
 				country_event = { id = generic.1 }
 			}			
@@ -768,7 +768,7 @@ focus_tree = {
         }
     }
     focus = {
-        id = tblra_conservatism_influence
+        id = tblra_democratic_influence
         icon = GFX_goal_BEL_support_democracy
         x = 7
         y = 1
@@ -791,7 +791,7 @@ focus_tree = {
         x = 5
         y = 1
         cost = 10
-        mutually_exclusive = { focus = tblra_conservatism_influence }
+        mutually_exclusive = { focus = tblra_democratic_influence }
         prerequisite = { focus = tblra_form_coalition_government }
         completion_reward = {
             if = {
@@ -830,7 +830,7 @@ focus_tree = {
         x = 6
         y = 2
         cost = 10
-		prerequisite = {focus = tblra_stay_neutral focus = tblra_conservatism_influence}
+		prerequisite = {focus = tblra_stay_neutral focus = tblra_democratic_influence}
         completion_reward = {
 			army_experience = -5
 			add_political_power = 50
@@ -840,7 +840,7 @@ focus_tree = {
     focus = {
         id = tblra_benelux_economic_cooperation
         icon = GFX_goal_trade_pact
-        prerequisite = { focus = tblra_conservatism_influence }
+        prerequisite = { focus = tblra_democratic_influence }
         bypass = {
 			BEL = {has_idea = tdlra_economic_cooperation_within_benelux4}
 			HOL = {has_idea = tdlra_economic_cooperation_within_benelux4}
@@ -930,7 +930,7 @@ focus_tree = {
     focus = {
         id = tblra_join_britain_alliance
         icon = GFX_goal_BEL_allies
-        prerequisite = { focus = tblra_conservatism_influence}
+        prerequisite = { focus = tblra_democratic_influence}
         mutually_exclusive = { focus = tblra_benelux_faction }
         available = {
             is_puppet = no

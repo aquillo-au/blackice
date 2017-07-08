@@ -1384,12 +1384,12 @@ focus = {
 			}
 			every_other_country = {
 				limit = { 
-					has_government = conservatism
+					democratic_govt = yes
 					num_of_factories > 30
 				}
 				add_opinion_modifier = { 
 					target = ROOT
-					modifier = FRA_leftist_rhetoric_conservatism
+					modifier = FRA_leftist_rhetoric_democratic
 				}
 			}
 			every_other_country = {
@@ -1733,10 +1733,10 @@ completion_reward = {
 				if = {
 					limit = {
 						PRC = {
-							has_government = conservatism
+							democratic_govt = yes
 						}
 					}
-					add_ideas = conservatism_influence
+					add_ideas = democratic_influence
 				}
 				country_event = { id = generic.1 }
 			}

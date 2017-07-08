@@ -18,60 +18,65 @@ country_event = {
 		has_defensive_war = no
 		NOT = { has_government = fascism }
 		NOT = { has_global_flag = scw_over }
-		date > 1936.7.16
+		date > 1936.2.16 # Trigger at some point after 1936 elections
 	}
 
 	mean_time_to_happen = {
-		days = 1 # Historical outbreak time after elections
+		days = 30	# Historical outbreak time after elections
 	}
 	
 	option = { # Support Nationalists
 		name = spain.1.a
 		trigger = { is_ai = no }
 		hidden_effect = {
-			set_capital = 176
+			#set_capital = 176
 			
-			start_civil_war = {
-				ruling_party = fascism
-				ideology = communism
-				size = 0.5
-				capital = 41
-				states = { 41 165 167 168 172 173 175 }
-			}
+			#start_civil_war = {
+			#	ruling_party = fascism
+			#	ideology = communism
+			#	size = 0.5
+			#	capital = 41
+			#	states = { 41 165 167 168 172 173 175 }
+			#}
 			
-			random_country = {
-				limit = {
-					original_tag = SPR
-					has_government = communism
-				}
+			country_event = { id = spain.105 }
+			#random_country = {
+			#	limit = {
+			#		original_tag = SPR
+			#		has_government = communism
+			#	}
+			#	add_ideas = SPR_desperate_defences
+			#	add_ideas = neutrality_idea_spr
+				
+			#	load_oob = SPR_Civil_War
+			#	set_equipment_fraction = 0.45
+			#	set_national_unity = 0.75
+			#	#country_event = { id = spain.3 days = 1 }
+			#	add_popularity = {
+			#		ideology = socialism
+			#		popularity = 0.35
+			#	}
+			#}
+			
 				add_ideas = SPR_desperate_defences
 				add_ideas = neutrality_idea_spr
 				
-				load_oob = SPR_Civil_War
-				set_equipment_fraction = 0.45
-				set_national_unity = 0.75
-				#country_event = { id = spain.3 days = 1 }
-				add_popularity = {
-					ideology = socialism
-					popularity = 0.35
-				}
-			}
-			
+								
 			news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
 			
-			load_oob = "SPA_Civil_War"
-			set_equipment_fraction = 0.5
-			
-			set_national_unity = 0.75
-			
-			add_ideas = SPA_desperate_defences
-			add_ideas = neutrality_idea_spa
+		
+			#set_equipment_fraction = 0.5
+			#
+			#set_national_unity = 0.75
+			#
+			#add_ideas = SPA_desperate_defences
+			#add_ideas = neutrality_idea_spa
 
-			add_popularity = {
-				ideology = fascism
-				popularity = 1
-			}
+			#add_popularity = {
+			#	ideology = fascism
+			#	popularity = 1
+			#}
 
 			#country_event = { id = spain.2 days = 7 }
 			169 = {
@@ -413,26 +418,27 @@ country_event = {
 	option = { # Support Republicans
 		name = spain.1.b
 		hidden_effect = {
-			start_civil_war = {
-				ideology = fascism
-				size = 0.5
-				capital = 176
-				states = { 166 699 178 290 169 170 176 174 171 177 297 }
-			}
+			#start_civil_war = {
+			#	ideology = fascism
+			#	size = 0.5
+			#	capital = 176
+			#	states = { 166 699 178 290 169 170 176 174 171 177 297 }
+			#}
+			country_event = { id = spain.105 }
 			
-			random_country = {
-				limit = {
-					original_tag = SPR
-					has_government = fascism
-				}
-				add_ideas = SPA_desperate_defences
-				add_ideas = neutrality_idea_spa
+			#random_country = {
+			#	limit = {
+			#		original_tag = SPR
+			#		has_government = fascism
+			#	}
+			#	add_ideas = SPA_desperate_defences
+			#	add_ideas = neutrality_idea_spa
 
-				set_equipment_fraction = 0.5
-				set_national_unity = 0.75
-				#country_event = { id = spain.2 days = 1 }
-				load_oob = SPA_Civil_War
-			}
+			#	set_equipment_fraction = 0.5
+			#	set_national_unity = 0.75
+			#	#country_event = { id = spain.2 days = 1 }
+			#	load_oob = SPA_Civil_War
+			#}
 			
 			news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
@@ -452,10 +458,9 @@ country_event = {
 			
 			add_ideas = SPR_desperate_defences
 			add_ideas = neutrality_idea_spr
-			
-			load_oob = SPR_Civil_War
-			set_equipment_fraction = 0.45
-			set_national_unity = 0.75
+		
+			#set_equipment_fraction = 0.45
+			#set_national_unity = 0.75
 			
 			#country_event = { id = spain.3 days = 7 }
 			169 = {
@@ -1059,83 +1064,95 @@ country_event = {
 		NOT = { has_global_flag = scw_over }
 		has_country_flag = SPR_communist_civil_war
 		has_defensive_war = no
-		date > 1936.7.16 # Trigger at some point after 1936 elections
+		date > 1936.2.16 # Trigger at some point after 1936 elections
 	}
 
 	mean_time_to_happen = {
-		days = 1	# Historical outbreak time after elections
+		days = 151	# Historical outbreak time after elections
 	}
 	
-	option = { # Support Nationalists
-		name = spain.1.a
+option = { # Support Nationalists
+		name = spain.10.a
 		trigger = { is_ai = no }
 		hidden_effect = {
-			set_capital = 176
+			#set_capital = 176
 			
-			start_civil_war = {
-				ruling_party = fascism
-				ideology = communism
-				size = 0.5
-				capital = 41
-				states = { 41 165 167 168 172 173 175 }
-			}
-			random_country = {
-				limit = {
-					original_tag = SPR
-					has_government = communism
-				}
-				
-				load_oob = "SPR_Civil_War"
-				set_equipment_fraction = 0.7
-				
-				set_national_unity = 0.7
-				
-				add_popularity = {
-					ideology = socialism
-					popularity = 0.35
-				}
-			}
+			#start_civil_war = {
+			#	ruling_party = fascism
+			#	ideology = communism
+			#	size = 0.5
+			#	capital = 41
+			#	states = { 41 165 167 168 172 173 175 }
+			#}
 			
+			country_event = { id = spain.105 }
+			#random_country = {
+			#	limit = {
+			#		original_tag = SPR
+			#		has_government = communism
+			#	}
+			#	add_ideas = SPR_desperate_defences
+			#	add_ideas = neutrality_idea_spr
+				
+			#	load_oob = SPR_Civil_War
+			#	set_equipment_fraction = 0.45
+			#	set_national_unity = 0.75
+			#	#country_event = { id = spain.3 days = 1 }
+			#	add_popularity = {
+			#		ideology = socialism
+			#		popularity = 0.35
+			#	}
+			#}
+			
+				add_ideas = SPR_desperate_defences
+				add_ideas = neutrality_idea_spr
+				
+								
 			news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
 			
-			load_oob = "SPA_Civil_War"
-			set_equipment_fraction = 0.7
-			
-			set_national_unity = 0.9
-			
-			add_popularity = {
-				ideology = fascism
-				popularity = 1
-			}
+		
+			#set_equipment_fraction = 0.5
+			#
+			#set_national_unity = 0.75
+			#
+			#add_ideas = SPA_desperate_defences
+			#add_ideas = neutrality_idea_spa
+
+			#add_popularity = {
+			#	ideology = fascism
+			#	popularity = 1
+			#}
+
+			#country_event = { id = spain.2 days = 7 }
 			169 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 7183
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 1178
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 1048
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 879
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 875
 					instant_build = yes
 				}
@@ -1143,25 +1160,25 @@ country_event = {
 			174 = {
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 918
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 4024
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 726
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9699
 					instant_build = yes
 				}
@@ -1169,19 +1186,19 @@ country_event = {
 			171 = {
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 11677
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 11692
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 758
 					instant_build = yes
 				}
@@ -1189,25 +1206,25 @@ country_event = {
 			173 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 9979
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 747
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 1192
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 7196
 					instant_build = yes
 				}
@@ -1215,19 +1232,19 @@ country_event = {
 			168 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 10024
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 11807
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 11884
 					instant_build = yes
 				}
@@ -1235,25 +1252,25 @@ country_event = {
 			176 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 11825
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 885
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 884
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3887
 					instant_build = yes
 				}
@@ -1261,25 +1278,25 @@ country_event = {
 			175 = {
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6800
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9778
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9757
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3945
 					instant_build = yes
 				}
@@ -1287,7 +1304,7 @@ country_event = {
 			172 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 2
 					province = 740
 					instant_build = yes
 				}
@@ -1307,31 +1324,31 @@ country_event = {
 			167 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 6906
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 962
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9896
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3873
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6856
 					instant_build = yes
 				}
@@ -1339,7 +1356,7 @@ country_event = {
 			166 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 2
 					province = 3816
 					instant_build = yes
 				}
@@ -1359,43 +1376,43 @@ country_event = {
 			41 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 3938
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6914
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 896
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3794
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9767
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3858
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 858
 					instant_build = yes
 				}
@@ -1403,7 +1420,7 @@ country_event = {
 			165 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 2
 					province = 9764
 					instant_build = yes
 				}
@@ -1429,13 +1446,13 @@ country_event = {
 			170 = {
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6954
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6948
 					instant_build = yes
 				}
@@ -1447,22 +1464,27 @@ country_event = {
 	option = { # Support Republicans
 		name = spain.10.b
 		hidden_effect = {
-			start_civil_war = {
-				ideology = fascism
-				size = 0.5
-				capital = 176
-				states = { 166 699 178 290 169 170 176 174 171 177 297 }
-			}
+			#start_civil_war = {
+			#	ideology = fascism
+			#	size = 0.5
+			#	capital = 176
+			#	states = { 166 699 178 290 169 170 176 174 171 177 297 }
+			#}
+			country_event = { id = spain.105 }
 			
-			random_country = {
-				limit = {
-					original_tag = SPR
-					has_government = fascism
-				}
-				set_equipment_fraction = 0.7
-				set_national_unity = 0.9
-				load_oob = "SPA_Civil_War"
-			}
+			#random_country = {
+			#	limit = {
+			#		original_tag = SPR
+			#		has_government = fascism
+			#	}
+			#	add_ideas = SPA_desperate_defences
+			#	add_ideas = neutrality_idea_spa
+
+			#	set_equipment_fraction = 0.5
+			#	set_national_unity = 0.75
+			#	#country_event = { id = spain.2 days = 1 }
+			#	load_oob = SPA_Civil_War
+			#}
 			
 			news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
@@ -1471,52 +1493,50 @@ country_event = {
 				ruling_party = communism
 				elections_allowed = no
 			}
-			
-			load_oob = "SPR_Civil_War"
-			set_equipment_fraction = 0.7
-			
-			set_national_unity = 0.7
-			
+			add_popularity = {
+				ideology = communism
+				popularity = 0.5
+			}
 			add_popularity = {
 				ideology = fascism
 				popularity = -1
 			}
-			add_popularity = {
-				ideology = communism
-				popularity = 1
-			}	
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.35
-			}
+			
+			add_ideas = SPR_desperate_defences
+			add_ideas = neutrality_idea_spr
+		
+			#set_equipment_fraction = 0.45
+			#set_national_unity = 0.75
+			
+			#country_event = { id = spain.3 days = 7 }
 			169 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 7183
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 1178
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 1048
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 879
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 875
 					instant_build = yes
 				}
@@ -1524,25 +1544,25 @@ country_event = {
 			174 = {
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 918
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 4024
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 726
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9699
 					instant_build = yes
 				}
@@ -1550,19 +1570,19 @@ country_event = {
 			171 = {
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 11677
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 11692
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 758
 					instant_build = yes
 				}
@@ -1570,25 +1590,25 @@ country_event = {
 			173 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 9979
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 747
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 1192
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 7196
 					instant_build = yes
 				}
@@ -1596,19 +1616,19 @@ country_event = {
 			168 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 10024
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 11807
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 11884
 					instant_build = yes
 				}
@@ -1616,51 +1636,51 @@ country_event = {
 			176 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 11825
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 885
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 884
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3887
 					instant_build = yes
-				}
+				}	
 			}
 			175 = {
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6800
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9778
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9757
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3945
 					instant_build = yes
 				}
@@ -1668,7 +1688,7 @@ country_event = {
 			172 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 2
 					province = 740
 					instant_build = yes
 				}
@@ -1688,31 +1708,31 @@ country_event = {
 			167 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 6906
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 962
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9896
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3873
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6856
 					instant_build = yes
 				}
@@ -1720,7 +1740,7 @@ country_event = {
 			166 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 2
 					province = 3816
 					instant_build = yes
 				}
@@ -1736,47 +1756,47 @@ country_event = {
 					province = 11821
 					instant_build = yes
 				}
-			}
+			}	
 			41 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 6
 					province = 3938
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6914
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 896
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3794
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 9767
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 3858
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 858
 					instant_build = yes
 				}
@@ -1784,7 +1804,7 @@ country_event = {
 			165 = {
 				add_building_construction = {
 					type = bunker
-					level = 4
+					level = 2
 					province = 9764
 					instant_build = yes
 				}
@@ -1810,19 +1830,19 @@ country_event = {
 			170 = {
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6954
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = bunker
-					level = 2
+					level = 6
 					province = 6948
 					instant_build = yes
 				}
 			}
+			custom_effect_tooltip = republicans_chosen
 		}
-		custom_effect_tooltip = republicans_chosen
 	}
 }
 
@@ -2233,4 +2253,132 @@ country_event = {
 		add_national_unity = -0.15
 	}
 }
+#################################################
+#Nationalist Spain
+#################################################
+country_event = {
+	id = spain.105
+	title = spain.105.t
+	desc = spain.105.d
+	picture = GFX_report_event_spanish_parade
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name =spain.105.a
+		SPA = { 
+			add_manpower = 300000
+			add_political_power = 600
+		
+			if = {
+				limit = { 
+					SPR = { 
+						controls_state = 41
+						controls_state = 165
+						controls_state = 167
+						controls_state = 168
+						controls_state = 172
+						controls_state = 173
+						controls_state = 175
+						
+						} 
+					}
+				transfer_state = 41
+				transfer_state = 165
+				transfer_state = 167
+				transfer_state = 168
+				transfer_state = 172
+				transfer_state = 173
+				transfer_state = 175
+				41 = { add_core_of = SPA}
+				165 = { add_core_of = SPA}
+				167 = { add_core_of = SPA}
+				168 = { add_core_of = SPA}
+				172 = { add_core_of = SPA}
+				173 = { add_core_of = SPA}
+				175 = { add_core_of = SPA}
+				
+			}
+			hidden_effect = {
+			load_oob = SPA_Civil_War
+			
+			set_national_unity = 0.70
+			}
+		}
+	
+			SPA = { add_ideas = SPA_desperate_defences}
+			SPA = { add_ideas = neutrality_idea_spa }
+		#declare_war_on = {
+		#	target = SPA
+		#	type = annex_everything
+		#}
+		SPA = { declare_war_on = {
+			target = SPR
+			type = annex_everything
+		}
+		}
+		country_event = { id = spain.106 days = 45 }
+	}
+	}
+	country_event = {
+	id = spain.106
+	title = spain.106.t
+	desc = spain.106.d
+	picture = GFX_report_event_spanish_parade
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name =spain.106.a
+		SPA = { 
+		
+			hidden_effect = {
+		load_oob = SPA_Civil_War
+			}
+		}
+		#SPR = { 
+		#
+		#	hidden_effect = {
+		#load_oob = SPR_Civil_War
+		#	}
+		#}
+	country_event = { id = spain.107 days = 90 }
+	}
+	
+	}
+country_event = {
+	id = spain.107
+	title = spain.107.t
+	desc = spain.107.d
+	picture = GFX_report_event_spanish_parade
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name =spain.107.a
+		SPA = { 
+		
+			hidden_effect = {
+		load_oob = "SPA_1936"
+			}
+		}
+		SPR = { 
+		
+			hidden_effect = {
+		load_oob = SPR_Civil_War
+			}
+		}
+	
+	}
+	
+	}
 ### EOF ###

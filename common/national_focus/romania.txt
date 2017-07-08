@@ -273,7 +273,7 @@ focus_tree = {
 			is_in_faction = no
 			NOT = { has_war_with = SOV }
 			is_subject = no
-NOT = {
+			NOT = {
 				any_other_country = {
 					is_in_faction_with = SOV
 					has_war_with = ROM
@@ -449,7 +449,7 @@ NOT = {
 			is_in_faction = no
 			NOT = { has_war_with = GER }
 			is_subject = no
-NOT = {
+			NOT = {
 				any_other_country = {
 					is_in_faction_with = GER
 					has_war_with = ROM
@@ -852,7 +852,7 @@ NOT = {
 			is_in_faction = no
 			NOT = { has_war_with = ENG }
 			is_subject = no
-NOT = {
+			NOT = {
 				any_other_country = {
 					is_in_faction_with = ENG
 					has_war_with = ROM
@@ -1969,7 +1969,7 @@ NOT = {
 				desc = "POLITICS_MICHAEL_I_DESC"
 				picture = GFX_Portrait_romania_michael_i				
 				expire = "1965.1.1"
-				ideology = imperial
+				ideology = absolutism
 				traits = {
 				}
 			}
@@ -2697,7 +2697,7 @@ NOT = {
 			is_subject = no
 			ENG = {
 				is_faction_leader = yes
-				conservatism_govt = yes
+				democratic_govt = yes
 				NOT = { has_war_with = ROM }
 			}
 		}
@@ -2825,7 +2825,7 @@ NOT = {
 					tooltip = ROM_carol_current_leader_trigger
 					has_country_leader = { id = 550 }
 				}
-				conservatism_govt = yes
+				democratic_govt = yes
 			}
 		}
 		bypass = {
@@ -2849,7 +2849,7 @@ NOT = {
 			}
 			if = {
 				limit = {
-					NOT = { conservatism_govt = yes }
+					NOT = { democratic_govt = yes }
 				}
 				set_politics = {
 					ruling_party = conservatism

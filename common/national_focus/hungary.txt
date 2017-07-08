@@ -173,7 +173,7 @@ focus_tree = {
 		id = HUN_invite_the_habsburg_prince
 		icon = GFX_goal_generic_dangerous_deal
 		prerequisite = { focus = HUN_elect_a_king }
-		mutually_exclusive = { focus =  HUN_elect_a_conservatism_king }
+		mutually_exclusive = { focus =  HUN_elect_a_democratic_king }
 		mutually_exclusive = { focus =  HUN_elect_a_fascist_king }
 		x = -3
 		y = 1
@@ -335,7 +335,7 @@ focus_tree = {
 
 	focus = {
 		id = HUN_proclaim_the_restoration_of_austria_hungary
-		icon = GFX_focus_proclaim_the_restauration_of_austria_hungary
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
 		prerequisite = { focus = HUN_demand_a_referendum focus = HUN_take_austria_by_force }
 		x = 0
 		y = 2
@@ -702,11 +702,11 @@ focus_tree = {
 	}
 
 	############################
-	##### conservatism KING ######
+	##### DEMOCRATIC KING ######
 	############################
 
 	focus = {
-		id = HUN_elect_a_conservatism_king
+		id = HUN_elect_a_democratic_king
 		icon = GFX_focus_generic_home_defense
 		prerequisite = { focus = HUN_elect_a_king }
 		mutually_exclusive = { focus =  HUN_elect_a_fascist_king }
@@ -739,7 +739,7 @@ focus_tree = {
 
 		completion_reward = {
 			swap_ideas = {
-				add_idea = HUN_hungarian_monarchy_conservatism
+				add_idea = HUN_hungarian_monarchy_democratic
 				remove_idea = HUN_hungarian_monarchy_2
 			}
 			add_ideas = HUN_dynastic_ties
@@ -758,10 +758,10 @@ focus_tree = {
 	focus = {
 		id = HUN_responsible_government
 		icon = GFX_goal_support_democracy
-		prerequisite = { focus = HUN_elect_a_conservatism_king }
+		prerequisite = { focus = HUN_elect_a_democratic_king }
 		x = 0
 		y = 1
-		relative_position_id = HUN_elect_a_conservatism_king
+		relative_position_id = HUN_elect_a_democratic_king
 
 		cost = 10
 
@@ -793,7 +793,7 @@ focus_tree = {
 			hold_election = HUN
 			swap_ideas = {
 				add_idea = HUN_his_majestys_government
-				remove_idea = HUN_hungarian_monarchy_conservatism
+				remove_idea = HUN_hungarian_monarchy_democratic
 			}
 		}
 	}
@@ -804,7 +804,7 @@ focus_tree = {
 		prerequisite = { focus = HUN_responsible_government }
 		x = 0
 		y = 2
-		relative_position_id = HUN_elect_a_conservatism_king
+		relative_position_id = HUN_elect_a_democratic_king
 
 		cost = 10
 
@@ -878,7 +878,7 @@ focus_tree = {
 		mutually_exclusive = { focus = HUN_the_balkan_pact }
 		x = -1
 		y = 3
-		relative_position_id = HUN_elect_a_conservatism_king
+		relative_position_id = HUN_elect_a_democratic_king
 
 		cost = 10
 
@@ -904,7 +904,7 @@ focus_tree = {
 					has_war_with = HUN
 				}
 			}
-NOT = {
+			NOT = {
 				any_other_country = {
 					is_in_faction_with = ENG
 					has_war_with = HUN	
@@ -936,7 +936,7 @@ NOT = {
 		mutually_exclusive = { focus = HUN_join_allies }
 		x = 1
 		y = 3
-		relative_position_id = HUN_elect_a_conservatism_king
+		relative_position_id = HUN_elect_a_democratic_king
 
 		cost = 10
 
@@ -974,7 +974,7 @@ NOT = {
 		prerequisite = { focus = HUN_the_balkan_pact }
 		x = 1
 		y = 4
-		relative_position_id = HUN_elect_a_conservatism_king
+		relative_position_id = HUN_elect_a_democratic_king
 
 		cost = 10
 
@@ -1011,7 +1011,7 @@ NOT = {
 		prerequisite = { focus = HUN_join_allies }
 		x = -1
 		y = 4
-		relative_position_id = HUN_elect_a_conservatism_king
+		relative_position_id = HUN_elect_a_democratic_king
 
 		cost = 10
 
@@ -1023,7 +1023,7 @@ NOT = {
 			is_in_faction_with = ENG
 			ENG = {
 				is_faction_leader = yes
-				conservatism_govt = yes
+				democratic_govt = yes
 			}
 		}
 
@@ -1054,7 +1054,7 @@ NOT = {
 		id = HUN_elect_a_fascist_king
 		icon = GFX_goal_molotov_ribbentrop_pact
 		prerequisite = { focus = HUN_elect_a_king }
-		mutually_exclusive = { focus =  HUN_elect_a_conservatism_king }
+		mutually_exclusive = { focus =  HUN_elect_a_democratic_king }
 		mutually_exclusive = { focus =  HUN_invite_the_habsburg_prince }
 		x = 3
 		y = 1
@@ -1523,7 +1523,7 @@ NOT = {
 				limit = {
 					ITA = { is_in_faction = no }
 				}
-				ITA = {
+				HUN = {
 					set_rule = { can_create_factions = yes }
 					if = {
 						limit = { is_in_faction = no }
@@ -1531,13 +1531,15 @@ NOT = {
 						set_country_flag = in_hun_pact_of_rome
 						set_country_flag = hun_pact_of_rome_leader
 					}
-					add_to_faction = HUN
-					HUN = { set_country_flag = in_hun_pact_of_rome }
+					ITA = { country_event = generic.5 }
+					ITA = { set_country_flag = in_hun_pact_of_rome }
 					if = {
 						limit = {
 							country_exists = AUS
 						}
-						add_to_faction = AUS
+						AUS = {
+							country_event = generic.5
+						}
 						AUS = { set_country_flag = in_hun_pact_of_rome }
 					}
 				}
@@ -1664,7 +1666,7 @@ NOT = {
 			NOT = { has_war_with = GER }
 			is_subject = no
 			is_in_faction = no
-NOT = {
+			NOT = {
 				any_other_country = {
 					is_in_faction_with = GER
 					has_war_with = HUN	
@@ -2311,7 +2313,7 @@ NOT = {
 
 		available = {
 			NOT = { has_war_with = SOV }
-NOT = {
+			NOT = {
 				any_other_country = {
 					is_in_faction_with = SOV
 					has_war_with = HUN	
@@ -4396,7 +4398,7 @@ NOT = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = HUN_armored_warfare
-				bonus = 0.5
+				bonus = 0.35
 				uses = 1
 				category = armor
 			}

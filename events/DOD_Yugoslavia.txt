@@ -70,12 +70,12 @@ country_event = {
 				}
 			}
 		}
-		start_civil_war = { 
-			ideology = conservatism 
-			size = 0.6 
-			capital = 107 
-			states = { 108 107 106 105 }
-			}
+		#start_civil_war = { 
+		#	ideology = conservatism 
+		#	size = 0.6 
+		#	capital = 107 
+		#	states = { 108 107 106 105 }
+		#	}
 		random_country = {
 			limit = {
 				original_tag = YUG
@@ -3076,7 +3076,7 @@ country_event = {
 		days = 365
 	}
 	option = {#We must preserve the Federal Republic!
-		name = DOD_yugoslavia.166.a
+		name = DOD_yugoslavia.167.a
 		set_country_flag = yug_serbian_war
 		add_national_unity = -0.15
 		add_manpower = -300000
@@ -3127,7 +3127,7 @@ country_event = {
 	}
 	
 	option = {#Let them go
-		name = DOD_yugoslavia.166.b
+		name = DOD_yugoslavia.167.b
 		custom_effect_tooltip = serbian_compromise_TT
 		set_country_flag = yug_serbian_independence #create independence scripted effects for future
 		add_national_unity = -0.10
@@ -3162,6 +3162,135 @@ country_event = {
 			load_oob = "SER"
 			set_national_unity = 0.80
 			}
+		}
+	}
+}
+
+# Event to remove minority ideas if YUG loses a minority
+country_event = {
+	id = DOD_yugoslavia.168
+	title = DOD_yugoslavia.168.t
+	desc = DOD_yugoslavia.168.desc
+	picture = GFX_report_event_german_inspect_troops
+	
+	trigger = { 
+		tag = YUG
+		OR = {
+			AND = {
+				OR = { 
+					has_idea = YUG_idea_slovene_nationalism
+					has_idea = YUG_idea_slovene_nationalism_2
+					has_idea = YUG_idea_slovene_nationalism_3
+				}
+				NOT = {
+					owns_state = 102 #Slovenia
+					owns_state = 913 #Ljubljana
+				}
+			}
+			AND = {
+					has_idea = YUG_idea_macedonian_opposition
+				NOT = {
+					owns_state = 106 #Macedonia
+					owns_state = 903 #Debar
+				}
+			}
+			AND = {
+				OR = { 
+					has_idea = YUG_idea_croatian_opposition
+					has_idea = YUG_idea_croats_suppressed
+				}
+				NOT = {
+					owns_state = 915 #Southern Dalmatia
+					owns_state = 902 #Livanjski
+					owns_state = 900 #Central Dalmatia
+					owns_state = 103 #Northern Dalmatia
+					owns_state = 916 #Fiume
+					owns_state = 109 #Croatia
+					owns_state = 908 #Slavonia
+				}
+			}
+			AND = {
+				OR = { 
+					has_idea = YUG_serbian_anger
+					has_idea = YUG_serbian_anger2
+					has_idea = YUG_serbian_anger3
+					has_idea = YUG_idea_serbian_general_staff
+				}
+				NOT = {
+					owns_state = 904 #Prizren
+					owns_state = 907 #Pristina
+					owns_state = 108 #Morava
+					owns_state = 107 #Serbia
+					owns_state = 901 #Visegrad
+					owns_state = 917 #Syrmia
+					owns_state = 906 #Serbo-Banat
+					owns_state = 45 #Vojvodina
+					owns_state = 908 #Slavonia
+					owns_state = 905 #Bosilegrad
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 10
+	}
+	#Remove it
+	option = {
+		name = DOD_yugoslavia.168.a
+		if = {
+			limit = {
+				NOT = {
+					owns_state = 915 #Southern Dalmatia
+					owns_state = 902 #Livanjski
+					owns_state = 900 #Central Dalmatia
+					owns_state = 103 #Northern Dalmatia
+					owns_state = 916 #Fiume
+					owns_state = 109 #Croatia
+					owns_state = 908 #Slavonia
+				}
+			}
+			remove_ideas = YUG_idea_croatian_opposition
+			remove_ideas = YUG_idea_croats_suppressed
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns_state = 102 #Slovenia
+					owns_state = 913 #Ljubljana
+				}
+			}
+			remove_ideas = YUG_idea_slovene_nationalism
+			remove_ideas = YUG_idea_slovene_nationalism_2
+			remove_ideas = YUG_idea_slovene_nationalism_3
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns_state = 106 #Macedonia
+					owns_state = 903 #Debar
+				}
+			}
+			remove_ideas = YUG_idea_macedonian_opposition
+		}
+		if = {
+			limit = {
+				NOT = {
+					owns_state = 904 #Prizren
+					owns_state = 907 #Pristina
+					owns_state = 108 #Morava
+					owns_state = 107 #Serbia
+					owns_state = 901 #Visegrad
+					owns_state = 917 #Syrmia
+					owns_state = 906 #Serbo-Banat
+					owns_state = 45 #Vojvodina
+					owns_state = 908 #Slavonia
+					owns_state = 905 #Bosilegrad
+				}
+			}
+			remove_ideas = YUG_serbian_anger
+			remove_ideas = YUG_serbian_anger2
+			remove_ideas = YUG_serbian_anger3
+			swap_ideas = { remove_idea = YUG_idea_serbian_general_staff add_idea = YUG_idea_yugoslavian_general_staff }
 		}
 	}
 }

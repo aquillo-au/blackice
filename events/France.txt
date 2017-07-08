@@ -568,12 +568,12 @@ country_event = {
 						set_state_controller = 31
 					}
 			}
-			start_civil_war = {
-				ideology = fascism
-				size = 0.5
-				capital = 26
-				states = { 26 21 22 31 25 20 32 33 1 735 677 680 554 458 459 460 461 462 514 665 557 272 556 671 670 741 286 513 553 543 708 706 268 713 310 694 730 }
-			}
+			#start_civil_war = {
+			#	ideology = fascism
+			#	size = 0.5
+			#	capital = 26
+			#	states = { 26 21 22 31 25 20 32 33 1 735 677 680 554 458 459 460 461 462 514 665 557 272 556 671 670 741 286 513 553 543 708 706 268 713 310 694 730 }
+			#}
 		}
 		random_other_country = {
 			limit = { original_tag = FRA has_government = fascism }
@@ -1209,7 +1209,7 @@ country_event = {
 	
 	trigger = {
         tag = FRA
-		conservatism_govt = yes
+		democratic_govt = yes
 		has_start_date < 1936.01.02
 		date > 1936.5.03
 	}
@@ -1337,7 +1337,7 @@ country_event = {
 
 	trigger = {
         tag = FRA
-		conservatism_govt = yes
+		democratic_govt = yes
 		has_start_date < 1936.01.02
 		date > 1936.6.08
 	}
@@ -1681,7 +1681,10 @@ country_event = {
 	
 	option = {
 		name = france.46.a
-		FRA = { transfer_state = 34 } 
+		FRA = { 
+			transfer_state = 34 
+			transfer_state = 887 
+			} 
 		add_named_threat = { threat = 3 name = FRA_demand_wallonia }
 	}
 }

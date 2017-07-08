@@ -68,7 +68,7 @@ country_event = {
 		ai_chance = {
 			factor = 20
 			modifier = {
-				conservatism_govt = yes
+				democratic_govt = yes
 				factor = 0
 			}
 		}
@@ -395,7 +395,7 @@ country_event = {
 		NOT = { has_government = communism }
 		HUN = {
 			has_war = yes
-			conservatism_govt = yes
+			democratic_govt = yes
 			has_idea = HUN_dynastic_ties
 			NOT = { has_war_with = SWE }
 		}
@@ -889,7 +889,7 @@ country_event = {
 
 }
 
-#Rearmament denied - appeal to major conservatism nations?
+#Rearmament denied - appeal to major democratic nations?
 country_event = {
 	id = DOD_hungary.32
 	title = DOD_hungary.32.t
@@ -923,7 +923,7 @@ country_event = {
 			FRA = {
 				NOT = { has_war_with = HUN }
 				NOT = { has_completed_focus = FRA_little_entente } #would be super awkward
-				conservatism_govt = yes
+				democratic_govt = yes
 			}
 		}
 		FRA = { 
@@ -942,7 +942,7 @@ country_event = {
 		trigger = {
 			ENG = {
 				NOT = { has_war_with = HUN }
-				conservatism_govt = yes
+				democratic_govt = yes
 			}
 		}
 		ENG = { 
@@ -1524,7 +1524,7 @@ country_event = {
 			limit = { 
 				FRA = {
 					has_war = no
-					conservatism_govt = yes
+					democratic_govt = yes
 				}
 			}
 			FRA = { country_event = { id = DOD_hungary.60 } } #France given option to intervene, if they don't have bigger problems
@@ -1533,7 +1533,7 @@ country_event = {
 			limit = { 
 				ENG = {
 					has_war = no
-					conservatism_govt = yes
+					democratic_govt = yes
 					has_completed_focus = uk_balkan_strategy
 				}
 			}
@@ -3394,7 +3394,7 @@ country_event = {
 		ai_chance = {
 			factor = 10
 			modifier = {
-				conservatism_govt = yes
+				democratic_govt = yes
 				factor = 10
 			}
 		}
@@ -3871,7 +3871,7 @@ country_event = {
 		ai_chance = {
 			factor = 75
 			modifier = {
-				conservatism_govt = yes
+				democratic_govt = yes
 				factor = 0
 			}
 		}
@@ -4083,7 +4083,7 @@ country_event = {
 				factor = 0.25
 			}
 			modifier = {
-				conservatism_govt = yes
+				democratic_govt = yes
 				factor = 0.25
 			}
 		}
@@ -4827,9 +4827,13 @@ country_event = {
 			}
 			modifier = {
 				HUN = {
-					conservatism_govt = yes
+					democratic_govt = yes
 				}
 				factor = 3
+			}
+			modifier = {
+				factor = 10
+				is_in_faction_with = HUN
 			}
 		}
 		if = { 

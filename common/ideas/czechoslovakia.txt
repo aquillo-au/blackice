@@ -1,6 +1,6 @@
 ideas = {
 	country = {
-		CZE_conservatism_bastion = {
+		CZE_democratic_bastion = {
 			allowed = {
 				always = no
 			}
@@ -9,7 +9,7 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_conservatism_drift_bonus
+			picture = generic_democratic_drift_bonus
 
 			removal_cost = -1
 			
@@ -29,16 +29,16 @@ ideas = {
 				always = yes
 			}
 			
-			picture = generic_conservatism_drift_bonus
+			picture = generic_democratic_drift_bonus
 
 			removal_cost = -1
 			
 			modifier = {
-				neutrality_drift = -0.02
-				monarchism_drift = -0.02
+				neutrality_drift = -0.01
+				monarchism_drift = -0.01
 				communism_drift = -0.02
 				fascism_drift = -0.02
-				drift_defence_factor = 0.3
+				drift_defence_factor = 0.25
 				army_core_defence_factor = 0.075
 				research_time_factor = -0.03
 			}
@@ -102,9 +102,9 @@ ideas = {
 						}
 					}
 					AND = {
-						conservatism_govt = yes
+						democratic_govt = yes
 						GER = {
-							conservatism_govt = yes
+							democratic_govt = yes
 						}
 					}
 				}
@@ -134,8 +134,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				planning_speed = 0.1
-				military_leader_cost_factor = -0.50
+				planning_speed = 0.075
+				military_leader_cost_factor = -0.25
 				army_leader_start_level = 1
 			}
 		}
@@ -176,7 +176,7 @@ ideas = {
 
 			equipment_bonus = {
 				naval_equipment = {
-					build_cost_ic = -0.1 instant = yes
+					build_cost_ic = -0.075 instant = yes
 				}
 			}
 		}
@@ -195,8 +195,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				consumer_goods_factor = -0.02
-				production_factory_efficiency_gain_factor = 0.04
+				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
 		CZE_export_focus2 = {
@@ -214,8 +213,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				consumer_goods_factor = -0.04
-				production_factory_efficiency_gain_factor = 0.08
+				consumer_goods_factor = -0.025
+				production_factory_efficiency_gain_factor = 0.05
 			}
 			
 			equipment_bonus = {
@@ -239,8 +238,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				consumer_goods_factor = -0.06
-				production_factory_efficiency_gain_factor = 0.12
+				consumer_goods_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.1
 			}
 
 			equipment_bonus = {
@@ -385,9 +384,28 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				unity_factor = -0.2
-				conscription = -0.005
+				unity_factor = -0.15
+				conscription = -0.003
 				consumer_goods_factor = 0.01
+			}
+		}
+		CZE_army_aggression = {
+			allowed = {
+				original_tag = CZE
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			picture = generic_fascism_drift_bonus
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.02
+				political_power_factor = 0.05
+				justify_war_goal_time = -0.15
 			}
 		}
 		CZE_czech_fascism_idea = {
@@ -499,7 +517,7 @@ ideas = {
 				NOT = { has_government = fascism }
 			}
 			
-			picture = generic_conservatism_europe
+			picture = generic_democratic_europe
 			
 			traits = { conservative ideological_crusader }
 			cancel_if_invalid = yes
