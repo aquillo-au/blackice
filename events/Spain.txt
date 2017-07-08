@@ -9,7 +9,7 @@ country_event = {
 	id = spain.1
 	title = spain.1.t
 	desc = spain.1.d
-	picture = GFX_report_event_spain_civil_war
+	picture = GFX_report_event_spain_civil_war_soldiers
 	
 	fire_only_once = yes
 	
@@ -62,7 +62,7 @@ country_event = {
 				add_ideas = neutrality_idea_spr
 				
 								
-			news_event = { hours = 6 id = news.63 }
+			#news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
 			
 		
@@ -440,7 +440,7 @@ country_event = {
 			#	load_oob = SPA_Civil_War
 			#}
 			
-			news_event = { hours = 6 id = news.63 }
+			#news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
 			
 			set_politics = {
@@ -809,8 +809,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_civil_war = yes
-		original_tag = SPR
+	or = {
+		has_global_flag = spanish_civil_war
+		has_civil_war = yes }
+		tag = SPA
 	}
 
 	option = {
@@ -847,7 +849,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_civil_war = yes
+		or = {
+		has_global_flag = spanish_civil_war
+		has_civil_war = yes }
+		tag = SPR
 	}
 
 	option = {
@@ -883,7 +888,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		SPR = { has_civil_war = yes }
+		tag = SPA
+		or = {
+		has_global_flag = spanish_civil_war
+		has_civil_war = yes } 
 	}
 
 	option = {
@@ -907,7 +915,10 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		SPR = { has_civil_war = yes }
+		tag = SPR 
+		or = {
+		has_global_flag = spanish_civil_war
+		has_civil_war = yes } 
 	}
 
 	option = {
@@ -930,7 +941,9 @@ country_event = {
 	
 	trigger = {
 		has_country_flag = promised_help_nationalist_spain
-		SPR = { has_civil_war = yes }
+		or = {
+		has_global_flag = spanish_civil_war
+		has_civil_war = yes } 
 		any_other_country = {
 			original_tag = SPR
 			has_government = fascism
@@ -963,7 +976,9 @@ country_event = {
 	
 	trigger = {
 		has_country_flag = promised_help_republican_spain
-		SPR = { has_civil_war = yes }
+		or = {
+		has_global_flag = spanish_civil_war
+		has_civil_war = yes }
 		is_lend_leasing = SPR
 	}
 
@@ -985,7 +1000,7 @@ country_event = {
 	picture = GFX_report_event_generic_city
 	
 	trigger = {
-		original_tag = SPR
+		tag = SPA
 		has_government = fascism
 		has_global_flag = nationalist_victory
 		owns_state = 41
@@ -1108,7 +1123,7 @@ option = { # Support Nationalists
 				add_ideas = neutrality_idea_spr
 				
 								
-			news_event = { hours = 6 id = news.63 }
+			#news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
 			
 		
@@ -1486,7 +1501,7 @@ option = { # Support Nationalists
 			#	load_oob = SPA_Civil_War
 			#}
 			
-			news_event = { hours = 6 id = news.63 }
+			#news_event = { hours = 6 id = news.63 }
 			set_global_flag = spanish_civil_war
 			
 			set_politics = {
@@ -1853,7 +1868,9 @@ country_event = {
 	picture = GFX_report_event_spanish_parade
 	
 	trigger = {
+	or = {
 		tag = SPR
+		tag = SPA }
 		OR = {
 			date > 1938.1.1
 			has_global_flag = scw_over
@@ -1888,7 +1905,9 @@ country_event = {
 		NOT = { has_global_flag = scw_over }
 		#has_country_flag = impossible
 		is_ai = yes
-		has_civil_war = yes
+		or = {
+		has_global_flag = spanish_civil_war
+		has_civil_war = yes }
 		#has_global_flag = yes_partisans
 	}
 
@@ -1919,10 +1938,12 @@ country_event = {
 	picture = GFX_report_event_spain_civil_war_volunteers_01
 
 	trigger = {
-		original_tag = SPR
+		tag = SPA
 		NOT = { has_global_flag = scw_over }
 		is_ai = yes
-		has_civil_war = yes
+		or = {
+		has_global_flag = spanish_civil_war
+		has_civil_war = yes }
 		#has_country_flag = impossible 
 		#has_global_flag = yes_partisans
 	}
@@ -1998,7 +2019,7 @@ country_event = {
 	picture = GFX_report_event_spain_civil_war_volunteers_01
 
 	trigger = {
-		original_tag = SPR
+		tag = SPA
 		NOT = { has_global_flag = scw_over }
 		is_ai = yes
 		#has_global_flag = yes_partisans
@@ -2041,7 +2062,7 @@ country_event = {
 	picture = GFX_report_event_spain_civil_war_volunteers_01
 
 	trigger = {
-		original_tag = SPR
+		tag = SPA
 		NOT = { has_global_flag = scw_over }
 		is_ai = yes
 		not = { has_country_flag = SPA_partisan_attacks }
@@ -2076,7 +2097,7 @@ country_event = {
 	trigger = {
 		OR = {
 			tag = SPR
-			tag = D01
+			tag = SPA
 		}
 		OR = {
 			has_government = monarchism
@@ -2131,7 +2152,9 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		original_tag = SPR
+	
+		tag = SPA
+		
 		NOT = { has_global_flag = scw_over }
 		#is_ai = yes
 		date > 1939.1.1
@@ -2164,7 +2187,9 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		original_tag = SPR
+	
+		tag = SPA
+		
 		NOT = { has_global_flag = scw_over }
 		#is_ai = yes
 		date > 1939.1.1
@@ -2260,7 +2285,7 @@ country_event = {
 	id = spain.105
 	title = spain.105.t
 	desc = spain.105.d
-	picture = GFX_report_event_spanish_parade
+	picture = GFX_report_event_franco
 
 	fire_only_once = yes
 
@@ -2270,7 +2295,7 @@ country_event = {
 	option = {
 		name =spain.105.a
 		SPA = { 
-			add_manpower = 300000
+			add_manpower = 3000000
 			add_political_power = 600
 		
 			if = {

@@ -2184,13 +2184,13 @@ news_event = {
 	option = {
 		name = news.63.a
 		trigger = {
-			NOT = { original_tag = SPR }
+			NOT = { tag = SPA }
 		}
 	}
 	option = {
 		name = news.63.b
 		trigger = { 
-			original_tag = SPR
+			tag = SPA
 		}
 	}
 }
@@ -2207,17 +2207,19 @@ news_event = {
 	trigger = {
 		has_global_flag = spanish_civil_war
 		NOT = { has_global_flag = scw_over }
-		SPR = { has_civil_war = no }
-		any_other_country = {
-			original_tag = SPR
-			has_government = fascism
-		}
-		all_country = {
-			OR = {
-				NOT = { original_tag = SPR }
-				has_government = fascism
-			}
-		}
+		tag = SPA
+		SPR = { exists = no }
+		#SPR = { has_civil_war = no }
+		#any_other_country = {
+		#	original_tag = SPR
+		#	has_government = fascism
+		#}
+		#all_country = {
+		#	OR = {
+		#		NOT = { original_tag = SPR }
+		#		has_government = fascism
+		#	}
+		#}
 	}
 	
 	mean_time_to_happen = {
@@ -2232,12 +2234,12 @@ news_event = {
 	option = {
 		name = news.64.a
 		trigger = {
-			NOT = { original_tag = SPR }
+			NOT = { tag = SPA }
 		}
 	}
 	option = {
 		name = news.64.b
-		trigger = { original_tag = SPR }
+		trigger = { tag = SPA }
 	}
 }
 
@@ -2253,17 +2255,19 @@ news_event = {
 	trigger = {
 		has_global_flag = spanish_civil_war
 		NOT = { has_global_flag = scw_over }
-		SPR = { has_civil_war = no }
-		any_other_country = {
-			original_tag = SPR
-			NOT = { has_government = fascism }
-		}
-		all_country = {
-			OR = {
-				NOT = { original_tag = SPR }
-				NOT = { has_government = fascism }
-			}
-		}
+		tag = SPR
+		SPA = { exists = no }
+		#SPR = { has_civil_war = no }
+		#any_other_country = {
+		#	tag = SPA
+		##	NOT = { has_government = fascism }
+		#}
+		#all_country = {
+		#	OR = {
+		#		NOT = { tag = SPA }
+		#		NOT = { has_government = fascism }
+		#	}
+		#}
 	}
 	
 	mean_time_to_happen = {
@@ -2278,12 +2282,12 @@ news_event = {
 	option = {
 		name = news.65.a
 		trigger = {
-			NOT = { original_tag = SPR }
+			NOT = { tag = SPR }
 		}
 	}
 	option = {
 		name = news.64.b
-		trigger = { original_tag = SPR }
+		trigger = { tag = SPR }
 	}
 }
 
@@ -4729,13 +4733,16 @@ news_event = {
 	
 	trigger = {
 		any_other_country = {
-			original_tag = SPR
+			tag = SPA
 			controls_state = 118
 			has_war_with = ENG
 		}
 		118 = { is_owned_by = ENG }
 		NOT = {
-			SPR = { has_civil_war = yes }
+		tag = SPR
+				or = {
+			has_global_flag = spanish_civil_war
+			has_civil_war = yes}
 		}
 		NOT = { has_global_flag = fall_of_gibraltar_spa }
 	}
@@ -4751,14 +4758,14 @@ news_event = {
 	option = {
 		name = news.145.a
 		trigger = {
-			NOT = { original_tag = SPR }
+			NOT = { tag = SPA }
 			NOT = { tag = ENG }
 		}
 	}
 	option = {
 		name = news.132.b
 		trigger = { 
-			original_tag = SPR
+			tag = SPA
 		}
 	}
 	option = {
@@ -5256,15 +5263,17 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		has_global_flag = spanish_civil_war
-		SPR = { has_civil_war = no }
+		
+		or = {
+			has_global_flag = spanish_civil_war
+			has_civil_war = yes}
 		NOT = { has_global_flag = scw_over }
 		any_other_country = {
-			original_tag = SPR
+			tag = SPA
 			has_government = fascism
 		}
 		any_other_country = {
-			original_tag = SPR
+			tag = SPR
 			NOT = { has_government = fascism }
 		}
 	}
@@ -5280,12 +5289,12 @@ news_event = {
 	option = {
 		name = news.162.a
 		trigger = {
-			NOT = { original_tag = SPR }
+			NOT = { tag = SPA }
 		}
 	}
 	option = {
 		name = news.162.b
-		trigger = { original_tag = SPR }
+		trigger = { tag = SPA }
 	}
 }
 
@@ -6173,7 +6182,7 @@ news_event = {
 				tag = GER
 				tag = ITA
 				AND = {
-					original_tag = SPR
+					tag = SPA
 					has_government = fascism
 				}
 				tag = SOV
@@ -6201,7 +6210,7 @@ news_event = {
 				tag = ITA
 				tag = SOV
 				AND = {
-					original_tag = SPR
+					tag = SPR
 					NOT = {
 						has_government = fascism
 					}
@@ -8882,7 +8891,7 @@ news_event = {
 		hidden_effect = {
 			random_other_country = {
 				limit = {
-					original_tag = SPR
+					tag = SPA
 				}
 				save_event_target_as = Spain
 			}
@@ -8892,7 +8901,7 @@ news_event = {
 	option = {
 		name = news.224.a
 		trigger = {
-			original_tag = SPR
+			tag = SPA
 		}
 	}
 
@@ -8900,7 +8909,7 @@ news_event = {
 		name = news.224.b
 		trigger = {
 			NOT = {
-				original_tag = SPR
+				tag = SPA
 			}
 			OR = {
 				has_government = fascism
@@ -8914,7 +8923,8 @@ news_event = {
 		trigger = {
 			NOT = {
 				OR = {
-					original_tag = SPR
+					
+					tag = SPR
 					has_government = fascism
 					has_government = communism
 				}
