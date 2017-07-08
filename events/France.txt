@@ -606,62 +606,62 @@ country_event = {
 #				unity_divided_nation	
 #				foreign_neutral
 #				neutrality_idea_vichy
+#			}
+#			set_politics = {
+#				ruling_party = fascism
+#				elections_allowed = no
+#				parties = {
+#					socialism = { 
+#						popularity = 22
+#					}
+#
+#					fascism = {
+#						popularity = 76
+#					}
+#					
+#					communism = {
+#						popularity = 2
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					FRA = { 
+#						has_completed_focus = FRA_cagoule_coup
+#					}
+#				}
+#				hidden_effect =  {
+#					retire_country_leader = yes
+#					create_country_leader = {
+#						name = "Jacques Doriot"
+#						desc = "POLITICS_JACQUES_DORIOT_DESC"
+#						picture = "Portrait_France_Jacques_Doriot.dds"
+#						expire = "1965.1.1"
+#						ideology = fascism_ideology
+#					}
+#				}
+#			}
+#			# FRA Player Switches to Vichy
+#			if = {
+#				limit = { FRA = { has_country_flag = become_vichy } }
+#				change_tag_from = FRA
+#			}
+#		}
+#		country_event = { hours = 6 id = news.34 }
+#		hidden_effect =  {
+#			FRA = { news_event = { id = france.20 days = 1 } }
+#		}
+#	}
+#	option = { # Conquer everything!
+#		name = france.14.b
+#		ai_chance = {
+#			factor = 0
+#		}
+#		FRA = {
+#			country_event = { hours = 6 id = france.15 }
+#		}
+#	}
 #}
-			set_politics = {
-				ruling_party = fascism
-				elections_allowed = no
-				parties = {
-					socialism = { 
-						popularity = 22
-					}
-
-					fascism = {
-						popularity = 76
-					}
-					
-					communism = {
-						popularity = 2
-					}
-				}
-			}
-			if = {
-				limit = {
-					FRA = { 
-						has_completed_focus = FRA_cagoule_coup
-					}
-				}
-				hidden_effect =  {
-					retire_country_leader = yes
-					create_country_leader = {
-						name = "Jacques Doriot"
-						desc = "POLITICS_JACQUES_DORIOT_DESC"
-						picture = "Portrait_France_Jacques_Doriot.dds"
-						expire = "1965.1.1"
-						ideology = fascism_ideology
-					}
-				}
-			}
-			# FRA Player Switches to Vichy
-			if = {
-				limit = { FRA = { has_country_flag = become_vichy } }
-				change_tag_from = FRA
-			}
-		}
-		country_event = { hours = 6 id = news.34 }
-		hidden_effect =  {
-			FRA = { news_event = { id = france.20 days = 1 } }
-		}
-	}
-	option = { # Conquer everything!
-		name = france.14.b
-		ai_chance = {
-			factor = 0
-		}
-		FRA = {
-			country_event = { hours = 6 id = france.15 }
-		}
-	}
-}
 
 # Germany refuses armistice! (France)
 country_event = {
