@@ -1,0 +1,183 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "Division d'Infanterie"		
+	# Represents: Division d'Infanterie (Series A and B)
+	# Division d'Infanterie Nord-Africaine, Division d'Infanterie de Forteresse
+	# Difference is their equipment
+	regiments = {
+		light_infantry = { x = 0 y = 0 }
+		light_infantry = { x = 0 y = 1 }
+		
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		
+		cavalry = { x = 3 y = 0 }
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		recon_cav = { x = 0 y = 1 }
+		
+		maintenance_company = { x = 1 y = 0 }
+		logistics_company = { x = 1 y = 1 }
+		field_hospital = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Division d'Infanterie Coloniale"		
+	# Represents: Division d'Infanterie (Series A and B) 
+	# Division d'Infanterie Nord-Africaine, Division d'Infanterie de Forteresse
+	# Difference is their equipment
+	regiments = {
+		light_infantry = { x = 0 y = 0 }
+		light_infantry = { x = 0 y = 1 }
+		
+		cavalry = { x = 3 y = 0 }
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		recon_cav = { x = 0 y = 1 }
+		
+		maintenance_company = { x = 1 y = 0 }
+		logistics_company = { x = 1 y = 1 }
+		field_hospital = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Brigade d'Infanterie"			# Represents: 2xRgt colonial forces and , usually with old equipment
+
+	regiments = {
+		light_infantry = { x = 0 y = 0 }
+		light_infantry = { x = 0 y = 1 }
+		light_infantry= { x = 0 y = 2 }
+		
+	}
+	support = {
+		recon_cav = { x = 0 y = 0 }
+	}
+	priority = 0
+}
+division_template = {
+	name = "Brigade Coloniale"			# Represents: 2xRgt colonial forces and , usually with old equipment
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		
+	}
+	support = {
+		recon_cav = { x = 0 y = 0 }
+	}
+	priority = 0
+}
+units = {
+	# Troupes de France
+	division= {	
+		name = "7ème Division d'Infanterie"
+		location = 3594
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+	division= {	
+		name = "14ème Division d'Infanterie"
+		location = 6644
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+	division= {	
+		name = "15ème Division d'Infanterie"
+		location = 6613
+		division_template = "Division d'Infanterie Coloniale"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+	#Armée Métropolitaine
+	division= {	
+		name = "12ème Division d'Infanterie"
+		location = 11834
+		division_template = "Division d'Infanterie"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+	division= {	
+		name = "16ème Division d'Infanterie"
+		location = 9898
+		division_template = "Division d'Infanterie Coloniale"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+	division= {	
+		name = "9ème Division d'Infanterie"
+		location = 620
+		division_template = "Division d'Infanterie Coloniale"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+	division= {	
+		name = "13ème Division d'Infanterie"
+		location = 752
+		division_template = "Division d'Infanterie Coloniale"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+	division= {	
+		name = "17ème Division d'Infanterie"
+		location = 11720
+		division_template = "Division d'Infanterie Coloniale"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.75
+	}
+	#Troupes de Levant
+	division= {	
+		name = "Troupes de Levant"
+		location = 4111
+		division_template = "Brigade Coloniale"
+		start_experience_factor = 0.2
+		#start_equipment_factor = 0.75
+	}
+	#Troupes de Maroc
+	division= {	
+		name = "Troupes de Maroc"
+		location = 7069
+		division_template = "Brigade d'Infanterie"
+		start_experience_factor = 0.2
+		#start_equipment_factor = 0.75
+	}
+	#Troupes de Madagascar
+	division= {	
+		name = "Troupes de Madagascar"
+		location = 5222
+		division_template = "Brigade Coloniale"
+		start_experience_factor = 0.2
+		#start_equipment_factor = 0.75
+	}
+	#Troupes de Djibouti
+	division= {	
+		name = "Troupes de Djibouti"
+		location = 8124
+		division_template = "Brigade Coloniale"
+		start_experience_factor = 0.2
+		#start_equipment_factor = 0.75
+	}
+	#Troupes de Guyanne
+	division= {	
+		name = "Troupes de Guyanne"
+		location = 12885
+		division_template = "Brigade Coloniale"
+		start_experience_factor = 0.2
+		#start_equipment_factor = 0.75
+	}
+	#Troupes de Senegal
+	division= {	
+		name = "Troupes de Senegal"
+		location = 4948
+		division_template = "Brigade Coloniale"
+		start_experience_factor = 0.2
+		#start_equipment_factor = 0.75
+	}
+}
