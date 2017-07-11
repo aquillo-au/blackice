@@ -183,16 +183,25 @@ country_event = {
 			has_government = socialism
 		}
 		has_war_with = GER
-		16 = { is_controlled_by = GER }
+		844 = { is_controlled_by = GER }
+		or = {
+		and = {
+		14 = { is_controlled_by = GER }
+		19 = { is_controlled_by = GER }
+		29 = { is_controlled_by = GER }
+		}
+		surrender_progress > 0.45
+		
+		}
 		is_in_faction_with = ENG
 		ENG = { has_war_with = GER }
-		surrender_progress > 0.7
+		
 		GER = {
 			is_faction_leader = yes
 		}
-		NOT = {
-			has_civil_war = yes
-		}
+		#NOT = {
+		#	has_civil_war = yes
+		#}
 	}
 	
 	mean_time_to_happen = {
@@ -507,7 +516,7 @@ country_event = {
 					transfer_state = 31
 				}
 			}
-			country_event = { id = france.65 }
+			FRA = { country_event = { id = france.65 } }
 			FRA = { news_event = { id = france.20 days = 1 } }
 		}
 		
@@ -2133,7 +2142,7 @@ country_event = {
 	}
 	#### END MOD #### -------------------------------------------------------------------------------------------
 }
-### Froming Vichy
+### Forming Vichy
 country_event = {
 	id = france.65
 	title = france.65.t
@@ -2153,68 +2162,258 @@ country_event = {
 		}
 		
 		hidden_effect = {
-			FRA = {
-				transfer_state = 26
-				transfer_state = 22
-				transfer_state = 25
-				transfer_state = 20
-				transfer_state = 33
-				transfer_state = 268
-				transfer_state = 272
-				transfer_state = 310
-				transfer_state = 556
-				transfer_state = 515
-				transfer_state = 513
-				transfer_state = 543
-				transfer_state = 459
-				transfer_state = 460
-				transfer_state = 694
-				transfer_state = 706
-				transfer_state = 708
-				transfer_state = 713
-			}
+		VIC = {
+			if = {
+				limit = { 
+					GER = { 
+						controls_state = 26
+				}
+				}
+					transfer_state = 26
+												
+					26 = { add_core_of = VIC}
+			
+				}
+				if = {
+				limit = { 
+					GER = { 
+						controls_state = 22
+				}
+				}
+					
+						transfer_state = 22
+					
+						22 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 25
+				}
+				}
+					
+						transfer_state = 25
+						
+						25 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 20
+				}
+				}
+					
+						transfer_state = 20
+						
+						20 = { add_core_of = VIC}
+				
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 31
+				}
+				}
+				
+						transfer_state = 31
+						
+						31 = { add_core_of = VIC}
+				
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 32
+				}
+				}
+				
+						transfer_state = 32
+						
+						32 = { add_core_of = VIC}
+				
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 33
+				}
+				}
+				
+						transfer_state = 33
+						
+						33 = { add_core_of = VIC}
+				
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 268
+				}
+				}
+				
+						transfer_state = 268
+						
+						268 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 272
+				}
+				}
+				
+						transfer_state = 272
+					
+						272 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 310
+				}
+				}
+					
+						transfer_state = 310
+					
+						310 = { add_core_of = VIC}
+				
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 556
+				}
+				}
+				
+						transfer_state = 556
+						
+						556 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 515
+				}
+				}
+				
+						transfer_state = 515
+					
+						515 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 513
+				}
+				}
+					
+						transfer_state = 513
+					
+						513 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 543
+				}
+				}
+					
+						transfer_state = 543
+					
+						543 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 459
+				}
+				}
+				
+						transfer_state = 459
+					
+						459 = { add_core_of = VIC}
+				
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 460
+				}
+				}
+					
+						transfer_state = 460
+				
+						460 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 694
+				}
+				}
+				
+						transfer_state = 694
+						
+						694 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 706
+				}
+				}
+				
+						transfer_state = 706
+					
+						706 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 708
+				}
+				}
+					
+						transfer_state = 708
+					
+						708 = { add_core_of = VIC}
+			
+				}
+					if = {
+				limit = { 
+					GER = { 
+						controls_state = 713
+				}
+				}
+				
+						transfer_state = 713
+			
+						713 = { add_core_of = VIC}
+				}
+					
+			
+		
 			# FRA Player Switches to Vichy
 			if = {
 				limit = { FRA = { has_country_flag = become_vichy } }
 				change_tag_from = FRA
 			}
 			
-			load_oob = "VIC_1940"
+			#load_oob = "VIC_1940"
 
-			set_politics = {
-				ruling_party = fascism
-				elections_allowed = no
-				parties = {
-					conservatism = { 
-						popularity = 1
-					}
-					liberalism = {
-						popularity = 1
-					}
-					socialism = {
-						popularity = 21
-					}
-					fascism = {
-						popularity = 76
-					}
-					communism = {
-						popularity = 1
-					}
-				}
-			}
-			
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Philippe Pétain"
-				desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
-				picture = "Portrait_France_Philippe_Petain.dds"
-				expire = "1965.1.1"
-				ideology = vichy
-				traits = {
-					fascist
-				}
-			}
 			set_country_flag = philipe_petain
+		}
 		}
 		#Set same cosmetic tag they would get on capitulation
 		FRA = {
