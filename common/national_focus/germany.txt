@@ -2264,7 +2264,37 @@ focus_tree = {
 		prerequisite = { focus = GER_ussr_war_goal }
 		prerequisite = { focus = GER_italy_ally }
 		available = { 
+			date > 1942.1.1
 			is_puppet = no 
+			OR = {
+				AND = {
+					217 = { #Stalingrad
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+					845 = { #Stalingrad
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						}
+					195 = { #Stalingrad
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						}
+					}
+				SOV = { has_capitulated = yes }
+			}
 			NOT = { has_war_with = TUR }
 			TUR = {
 				exists = yes
@@ -2275,6 +2305,31 @@ focus_tree = {
 					tooltip = GER_alone_or_peace_faction_tt
 					is_alone_or_in_faction_at_peace_with_GER = yes
 				}
+			}
+			OR = {
+				TUR = { has_government = neutrality}
+				AND = {
+					has_government = fascism
+					TUR = { has_government = fascism }
+				}
+				AND = {
+					has_government = communism
+					TUR = { has_government = communism }
+				}
+				AND = {
+					has_government = monarchism
+					TUR = { has_government = monarchism }
+				}
+				AND = {
+					democratic_govt = yes
+					TUR = { democratic_govt = yes }
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				TUR = { is_in_faction_with = GER }
+				#NOT = { country_exists = TUR }
 			}
 		}
 		#bypass = {
@@ -3325,7 +3380,7 @@ focus_tree = {
 		}
 		x = 12
 		y = 7
-		cost = 16
+		cost = 15
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -4445,6 +4500,7 @@ focus_tree = {
 			is_puppet = no
 			NOT = { has_war_with = YUG }
 			NOT = { is_in_faction_with = YUG }
+			strength_ratio = { tag = YUG ratio > 1.1 }
 		}
 		bypass = {
 			OR = {
