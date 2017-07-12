@@ -15,10 +15,11 @@ country_event = {
 	
 	option = { #sure
 		name = DOD_hungary.1.a
+		
 		ai_chance = {
 			factor = 80
-
 		}
+		
 		if = {
 			limit = {
 				AND = {
@@ -27,8 +28,12 @@ country_event = {
 				}
 			}
 			random_list = {
-				70 = { AUS = { country_event = { id = DOD_hungary.2 hours = 24 } } } #country votes yes
-				30 = { AUS = { country_event = { id = DOD_hungary.3 hours = 24 } } } #country votes no
+				70 = { #country votes yes
+					AUS = { country_event = { id = DOD_hungary.2 hours = 24 } }
+				} 
+				30 = { #country votes no
+					AUS = { country_event = { id = DOD_hungary.3 hours = 24 } }
+				}
 			}
 		}
 		if = {
@@ -45,8 +50,12 @@ country_event = {
 				}
 			}
 			random_list = {
-				80 = { AUS = { country_event = { id = DOD_hungary.2 hours = 24 } } } #country votes yes
-				20 = { AUS = { country_event = { id = DOD_hungary.3 hours = 24 } } } #country votes no
+				80 = { #country votes yes
+					AUS = { country_event = { id = DOD_hungary.2 hours = 24 } }
+				}
+				20 = { #country votes no
+					AUS = { country_event = { id = DOD_hungary.3 hours = 24 } }
+				}
 			}
 		}
 		if = {
@@ -57,14 +66,19 @@ country_event = {
 				}
 			}
 			random_list = {
-				95 = { AUS = { country_event = { id = DOD_hungary.2 hours = 24 } } } #country votes yes
-				5 = { AUS = { country_event = { id = DOD_hungary.3 hours = 24 } } } #country votes no
+				95 = { #country votes yes
+					AUS = { country_event = { id = DOD_hungary.2 hours = 24 } }
+				} 
+				5 = { #country votes no
+					AUS = { country_event = { id = DOD_hungary.3 hours = 24 } }
+				} 
 			}
 		}
 	}
 
 	option = { #no
 		name = DOD_hungary.1.b
+		
 		ai_chance = {
 			factor = 20
 			modifier = {
@@ -72,18 +86,22 @@ country_event = {
 				factor = 0
 			}
 		}
+		
 		HUN = { country_event = { id = DOD_hungary.6 hours = 6 } }
 	}
 
 	option = { #sure, but we'll make sure it gets the right result
 		name = DOD_hungary.1.c
+		
 		ai_chance = { factor = 160 }
+		
 		trigger = {
 			OR = {
 				has_government = communism
 				has_government = fascism
 			}
 		}
+		
 		add_threat = -2
 		add_political_power = -50
 		AUS = { country_event = { id = DOD_hungary.7 hours = 24 } }
@@ -101,13 +119,13 @@ country_event = {
 
 	option = {
 		name = DOD_hungary.2.a
-		custom_effect_tooltip = GAME_OVER_TT
-		HUN = { country_event = { id = DOD_hungary.4 } }
 		
+		custom_effect_tooltip = GAME_OVER_TT
+		HUN = {
+			country_event = { id = DOD_hungary.4 }
+		}
 	}
-
 }
-
 #country votes no
 country_event = {
 	id = DOD_hungary.3 
@@ -119,7 +137,9 @@ country_event = {
 
 	option = {
 		name = DOD_hungary.3.a
-		HUN = { country_event = { id = DOD_hungary.5 } }
+		HUN = {
+			country_event = { id = DOD_hungary.5 }
+		}
 	}
 
 }
@@ -134,11 +154,13 @@ country_event = {
 
 	option = {
 		name = DOD_hungary.4.a
-		HUN = { annex_country = { target = AUS transfer_troops = yes } }
+		
+		HUN = {
+			annex_country = { target = AUS transfer_troops = yes }
+		}
 		news_event = { id = news.291 days = 1 }
 		add_manpower = 500000
 	}
-
 }
 #country votes no - hungary
 country_event = {
@@ -151,6 +173,7 @@ country_event = {
 
 	option = { #TO WAR
 		name = DOD_hungary.5.a
+		
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -158,15 +181,16 @@ country_event = {
 				factor = 2
 			}
 		}
+		
 		create_wargoal = {
 					type = annex_everything
 					target = AUS
 				}
 		news_event = { id = news.294 days = 1 }
-		
 	}
 	option = { #Let it go
 		name = DOD_hungary.5.b
+		
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -174,9 +198,9 @@ country_event = {
 				factor = 3
 			}
 		}
+		
 		news_event = { id = news.293 days = 1 }
 	}
-
 }
 #Austria refuses
 country_event = {
@@ -189,6 +213,7 @@ country_event = {
 
 	option = { #TO WAR
 		name = DOD_hungary.6.a
+		
 		ai_chance = {
 			factor = 30
 			modifier = {
@@ -209,20 +234,20 @@ country_event = {
 				factor = 2
 			}
 		}
+		
 		create_wargoal = {
 					type = annex_everything
 					target = AUS
 				}
 		news_event = { id = news.315 days = 1 }
-		
 	}
 	option = { #Let it go
 		name = DOD_hungary.6.b
+		
 		ai_chance = {
 			factor = 70
 		}
 	}
-
 }
 #Cheat on the Referendum
 country_event = {
@@ -235,24 +260,29 @@ country_event = {
 
 	option = { #say no
 		name = DOD_hungary.7.a
+		
 		ai_chance = {
 			factor = 80
 		}
-		HUN = { country_event = { id = DOD_hungary.5 } }
 		
+		HUN = {
+			country_event = { id = DOD_hungary.5 }
+		}
 	}
 	option = { #say yes
 		name = DOD_hungary.7.b
+		
 		ai_chance = {
 			factor = 20 #brilliant plan
 		}
+		
 		custom_effect_tooltip = GAME_OVER_TT
-		HUN = { country_event = { id = DOD_hungary.4 } }
-		news_event = { id = news.29 days = 1 }
+		HUN = {
+			country_event = { id = DOD_hungary.4 }
+		}
+		news_event = { id = news.292 days = 1 }
 	}
-
 }
-
 #protect Czechoslovakia
 country_event = {
 	id = DOD_hungary.10 
@@ -1078,6 +1108,7 @@ country_event = {
 	title = DOD_hungary.40.t
 	desc = DOD_hungary.40.desc
 	picture = GFX_report_event_antonescu
+	
 	is_triggered_only = yes
 
 	option = { #challenge
@@ -1201,6 +1232,7 @@ country_event = {
 				CZE = { 
 					is_puppet = no 
 					is_in_faction = no
+					has_capitulated = no
 				}
 			}
 			CZE = { country_event = { id = DOD_hungary.45 } } #invite CZE
@@ -1212,6 +1244,7 @@ country_event = {
 				YUG = { 
 					is_puppet = no 
 					is_in_faction = no
+					has_capitulated = no
 				}
 			}
 			YUG = { country_event = { id = DOD_hungary.45 } } #invite YUG
@@ -5168,6 +5201,7 @@ country_event = {
 		HUN = { country_event = DOD_hungary.148 }
 		FROM = { add_opinion_modifier = { target = PREV modifier = HUN_stubborn_fools } }
 		HUN = { add_opinion_modifier = { target = FROM modifier = offered_support } }
+		set_country_flag = bled_refusal_stood_firm
 	}
 
 }
@@ -5199,8 +5233,37 @@ country_event = {
 		}
 		add_threat = 5
 		remove_ideas = HUN_treaty_of_triannon
+		every_country = { 
+			limit = { has_country_flag = bled_refusal_stood_firm }
+			country_event = DOD_hungary.171
+		}
 	}
+}
 
+#Bled Agreement - Hungary stands firm, FRA/ROM chance to go to war
+country_event = {
+	id = DOD_hungary.171
+	title = DOD_hungary.171.t
+	desc = DOD_hungary.171.desc 
+	picture = GFX_report_event_generic_military_parade
+	
+	is_triggered_only = yes
+
+	option = {#We shall put an end to this!
+		name = DOD_hungary.171.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = HUN
+		}
+		add_political_power = -25
+		add_national_unity = -0.05
+		opposition_pop_plus_7 = yes
+	}
+	option = {#We have gone too far, back down
+		name = DOD_hungary.171.b
+		ruling_pop_minus_10 = yes
+		clr_country_flag = bled_refusal_stood_firm
+	}
 }
 
 #fighter competition - initial choice for Hungary
