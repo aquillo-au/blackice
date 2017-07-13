@@ -270,4 +270,25 @@ play_nice_with_fra = {
 	ai_strategy = { type = befriend id = "ENG" 					value = -100 	}
 	ai_strategy = { type = befriend id = "ENG" 					value = -100 	}
 }
+
+stay_in_HUN_pact_of_rome = {
+    enable = {
+		tag = ITA
+		has_country_flag = in_hun_pact_of_rome
+        HUN = { is_faction_leader = yes has_country_flag = hun_pact_of_rome_leader }
+    }
+    abort = {
+       HUN = { 
+		is_faction_leader = no
+		NOT = { has_country_flag = in_hun_pact_of_rome }
+		}
+	   NOT = { has_country_flag = in_hun_pact_of_rome }
+    }
+
+    ai_strategy = {
+        type = alliance
+        id = "HUN"     
+        value = 300000
+    }
+}
 ### EOF ###
