@@ -2193,7 +2193,7 @@ country_event = {
 	option = {
 		name =spain.101.a
 
-		add_national_unity = -0.15
+		add_national_unity = -0.25
 	}
 }
 
@@ -2209,9 +2209,9 @@ country_event = {
 		tag = SPA
 		NOT = { has_global_flag = scw_over }
 		#is_ai = yes
-		
+		date > 1939.1.1
 		OR = {
-			date > 1939.1.1
+			
 			NOT = { controls_state = 41 } 
 			surrender_progress > 0.7
 		}
@@ -2227,7 +2227,7 @@ country_event = {
 	option = {
 		name = spain.102.a
 
-		add_national_unity = -0.15
+		add_national_unity = -0.25
 	}
 }
 
@@ -2260,7 +2260,7 @@ country_event = {
 	option = {
 		name =spain.103.a
 
-		add_national_unity = -0.15
+		add_national_unity = -0.25
 	}
 }
 
@@ -2275,9 +2275,9 @@ country_event = {
 	trigger = {
 		tag = SPR
 		NOT = { has_global_flag = scw_over }
-		
+		date > 1939.1.1
 		OR = {
-			date > 1939.1.1
+			
 			NOT = { controls_state = 41 } 
 			surrender_progress > 0.7
 		}
@@ -2293,7 +2293,7 @@ country_event = {
 	option = {
 		name =spain.104.a
 
-		add_national_unity = -0.15
+		add_national_unity = -0.25
 	}
 }
 #################################################
@@ -2353,7 +2353,7 @@ country_event = {
 			hidden_effect = {
 				load_oob = SPA_Civil_War
 			
-				set_national_unity = 0.70
+				set_national_unity = 0.50
 			}
 		}
 
