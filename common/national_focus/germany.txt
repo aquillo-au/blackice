@@ -1838,7 +1838,92 @@ focus_tree = {
 		}
 	}
 	
-		
+####################################################		
+######### FOREIGN POLICY ##############
+####################################################
+	focus = {
+		id = GER_rhineland
+		icon = GFX_goal_generic_military_sphere
+		x = 14
+		y = 0
+		cost = 8
+		available = { is_puppet = no }
+		bypass = {
+     		895 = { is_demilitarized_zone = no }
+     		42 = { is_demilitarized_zone = no }
+			51 = { is_demilitarized_zone = no }
+		}
+		ai_will_do = {
+			factor = 15
+		}	
+		completion_reward = {
+			hidden_effect = {
+				increase_allied_anger = yes
+			}
+     		#900 = { is_demilitarized_zone = no }
+     		42 = {
+				set_demilitarized_zone = no 
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+				add_resource = {
+					type = aluminium
+					amount = 20
+				}
+			}
+			51 = {
+				set_demilitarized_zone = no
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+			}
+			895 = {
+				set_demilitarized_zone = no
+				add_resource = {
+					type = steel
+					amount = 30
+				}
+				add_resource = {
+					type = aluminium
+					amount = 5
+				}
+			}
+			28 = {
+				add_resource = {
+					type = steel
+					amount = -65
+				}
+				add_resource = {
+					type = aluminium
+					amount = -15
+				}
+			}
+			122 = {
+				add_resource = {
+					type = steel
+					amount = -65
+				}
+				add_resource = {
+					type = aluminium
+					amount = -10
+				}
+			}
+			custom_effect_tooltip = GER_rhineland_ultimatum
+			add_political_power = 120
+			army_experience = 5
+			add_named_threat = { threat = 2 name = GER_rhineland }
+			if = {
+				limit = { FRA = { is_puppet = no } }
+				FRA = {
+					country_event = { id = germany.60 }
+					custom_effect_tooltip = may_provoke_hostility
+				}
+			}
+		}		
+	}
+	
 	focus = { #should already be signed in 39
 		id = GER_mol_rib_pact
 		icon = GFX_goal_molotov_ribbentrop_pact
@@ -1969,159 +2054,7 @@ focus_tree = {
 			TUR = { country_event = { id = germany.79 days = 1 } }
 		}
 	}
-
-	focus = {
-		id = GER_rhineland
-		icon = GFX_goal_generic_military_sphere
-		x = 12
-		y = 0
-		cost = 8
-		available = { is_puppet = no }
-		bypass = {
-     		895 = { is_demilitarized_zone = no }
-     		42 = { is_demilitarized_zone = no }
-			51 = { is_demilitarized_zone = no }
-		}
-		ai_will_do = {
-			factor = 15
-		}	
-		completion_reward = {
-     		#900 = { is_demilitarized_zone = no }
-     		42 = {
-				set_demilitarized_zone = no 
-				add_resource = {
-					type = steel
-					amount = 50
-				}
-				add_resource = {
-					type = aluminium
-					amount = 20
-				}
-			}
-			51 = {
-				set_demilitarized_zone = no
-				add_resource = {
-					type = steel
-					amount = 50
-				}
-			}
-			895 = {
-				set_demilitarized_zone = no
-				add_resource = {
-					type = steel
-					amount = 30
-				}
-				add_resource = {
-					type = aluminium
-					amount = 5
-				}
-			}
-			28 = {
-				add_resource = {
-					type = steel
-					amount = -65
-				}
-				add_resource = {
-					type = aluminium
-					amount = -15
-				}
-			}
-			122 = {
-				add_resource = {
-					type = steel
-					amount = -65
-				}
-				add_resource = {
-					type = aluminium
-					amount = -10
-				}
-			}
-			custom_effect_tooltip = GER_rhineland_ultimatum
-			add_political_power = 120
-			army_experience = 5
-			add_named_threat = { threat = 2 name = GER_rhineland }
-			if = {
-				limit = { FRA = { is_puppet = no } }
-				FRA = {
-					country_event = { id = germany.60 }
-					custom_effect_tooltip = may_provoke_hostility
-				}
-			}
-		}		
-	}
-
-	focus = {
-		id = GER_japan_friend
-		icon = GFX_goal_generic_military_deal
-		prerequisite = { focus = GER_rhineland }
-		mutually_exclusive = { focus = GER_china_friend }
-		available = {
-			OR = {
-				country_exists = JAP
-				JAP = { is_puppet = no }
-				NOT = { has_war_with = JAP }
-				JAP = {
-					custom_trigger_tooltip = {
-						tooltip = GER_alone_or_peace_faction_tt
-						is_alone_or_in_faction_at_peace_with_GER = yes
-					}
-				}
-			}
-		}
-		x = 13
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		ai_will_do = {
-			factor = 5
-		}	
-		completion_reward = {
-			JAP = {
-				add_opinion_modifier = { target = GER modifier = ger_jap_diplomacy_focus }
-			}
-			CHI = {
-				add_opinion_modifier = { target = GER modifier = withdrew_advisors }
-			}
-		}
-	}
-
-	focus = {
-		id = GER_china_friend
-		icon = GFX_goal_generic_military_deal
-		prerequisite = { focus = GER_rhineland }
-		mutually_exclusive = { focus = GER_japan_friend }
-		available = {
-			OR = {
-				country_exists = CHI
-				CHI = { is_puppet = no }
-				NOT = { has_war_with = CHI }
-				CHI = {
-					custom_trigger_tooltip = {
-						tooltip = GER_alone_or_peace_faction_tt
-						is_alone_or_in_faction_at_peace_with_GER = yes
-					}
-				}
-			}
-		}
-		x = 11
-		y = 1
-		cost = 10
-		available_if_capitulated = yes
-
-		ai_will_do = {
-			factor = 0.25
-		}	
-		completion_reward = {
-			CHI = {
-				add_opinion_modifier = { target = GER modifier = ger_chi_diplomacy_focus }
-			}
-			JAP = {
-				add_opinion_modifier = { target = GER modifier = supported_the_chinese }
-			}
-		}
-	}
+	
 
 	focus = {
 		id = GER_anti_comitern_pact
@@ -2147,6 +2080,9 @@ focus_tree = {
 					NOT = { tag = GER }
 					NOT = { has_war_with = GER }
 					NOT = { is_in_faction_with = SOV }
+					if = { limit = { USA = { NOT = { has_government = fascism } } }
+						NOT = { tag = USA }
+					}
 					OR = {
 						capital_scope = {
 								is_on_continent = europe
@@ -2228,7 +2164,19 @@ focus_tree = {
 			is_puppet = no
 			has_army_manpower = { size > 1239999 } 
 			is_neighbor_of = SOV
-			FRA = { has_capitulated = yes }
+			hidden_trigger = {
+				if = { limit = { is_ai = yes }
+					if = { limit = { has_war_with = FRA }
+						FRA = { has_capitulated = yes }
+						}
+					if = { limit = { has_war_with = POL }
+						POL = { has_capitulated = yes }
+						}
+					if = { limit = { has_war_with = YUG }
+						YUG = { has_capitulated = yes }
+					}
+				}
+			}
 		}
 		x = 10
 		y = 5
@@ -2274,7 +2222,37 @@ focus_tree = {
 		prerequisite = { focus = GER_ussr_war_goal }
 		prerequisite = { focus = GER_italy_ally }
 		available = { 
+			date > 1942.1.1
 			is_puppet = no 
+			OR = {
+				AND = {
+					217 = { #Stalingrad
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+					845 = { #Stalingrad
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						}
+					195 = { #Stalingrad
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						}
+					}
+				SOV = { has_capitulated = yes }
+			}
 			NOT = { has_war_with = TUR }
 			TUR = {
 				exists = yes
@@ -2286,6 +2264,31 @@ focus_tree = {
 					is_alone_or_in_faction_at_peace_with_GER = yes
 				}
 			}
+			OR = {
+				TUR = { has_government = neutrality}
+				AND = {
+					has_government = fascism
+					TUR = { has_government = fascism }
+				}
+				AND = {
+					has_government = communism
+					TUR = { has_government = communism }
+				}
+				AND = {
+					has_government = monarchism
+					TUR = { has_government = monarchism }
+				}
+				AND = {
+					democratic_govt = yes
+					TUR = { democratic_govt = yes }
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				TUR = { is_in_faction_with = GER }
+				#NOT = { country_exists = TUR }
+			}
 		}
 		#bypass = {
 		#	OR = {
@@ -2295,7 +2298,7 @@ focus_tree = {
 		#}
 		x = 10
 		y = 7
-		cost = 12
+		cost = 15
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -3251,6 +3254,81 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = GER_japan_friend
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { }
+		mutually_exclusive = { focus = GER_china_friend }
+		available = {
+			date > 1938.1.1
+			OR = {
+				country_exists = JAP
+				JAP = { is_puppet = no }
+				NOT = { has_war_with = JAP }
+				JAP = {
+					custom_trigger_tooltip = {
+						tooltip = GER_alone_or_peace_faction_tt
+						is_alone_or_in_faction_at_peace_with_GER = yes
+					}
+				}
+			}
+		}
+		x = 12
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 5
+		}	
+		completion_reward = {
+			JAP = {
+				add_opinion_modifier = { target = GER modifier = ger_jap_diplomacy_focus }
+			}
+			CHI = {
+				add_opinion_modifier = { target = GER modifier = withdrew_advisors }
+			}
+		}
+	}
+
+	focus = {
+		id = GER_china_friend
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { }
+		mutually_exclusive = { focus = GER_japan_friend }
+		available = {
+			date > 1938.1.1
+			OR = {
+				country_exists = CHI
+				CHI = { is_puppet = no }
+				NOT = { has_war_with = CHI }
+				CHI = {
+					custom_trigger_tooltip = {
+						tooltip = GER_alone_or_peace_faction_tt
+						is_alone_or_in_faction_at_peace_with_GER = yes
+					}
+				}
+			}
+		}
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 0.25
+		}	
+		completion_reward = {
+			CHI = {
+				add_opinion_modifier = { target = GER modifier = ger_chi_diplomacy_focus }
+			}
+			JAP = {
+				add_opinion_modifier = { target = GER modifier = supported_the_chinese }
+			}
+		}
+	}
+	
 	
 	focus = {
 		id = GER_nationalist_spain_ally
@@ -3335,7 +3413,7 @@ focus_tree = {
 		}
 		x = 12
 		y = 7
-		cost = 16
+		cost = 15
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -3536,6 +3614,8 @@ focus_tree = {
 			add_research_slot = 1
 		}
 	}
+	
+#########KRIESGMARINE##############
 	focus = {
 		id = GER_naval_rearmament
 		text = GER_naval_rearmament
@@ -3936,7 +4016,7 @@ focus_tree = {
 
 	focus = {
 		id = GER_norway_friend
-		icon = GFX_goal_generic_military_deal
+		icon = GFX_goal_generic_improve_relations
 		prerequisite = { focus = GER_denmark_friend }
 		available = {
 			NOT = { has_war_with = NOR }
@@ -4455,6 +4535,20 @@ focus_tree = {
 			is_puppet = no
 			NOT = { has_war_with = YUG }
 			NOT = { is_in_faction_with = YUG }
+			strength_ratio = { tag = YUG ratio > 1.1 }
+			hidden_trigger = {
+				if = { limit = { is_ai = yes }
+					if = { limit = { has_war_with = FRA }
+						FRA = { has_capitulated = yes }
+						}
+					if = { limit = { has_war_with = POL }
+						POL = { has_capitulated = yes }
+						}
+					if = { limit = { has_war_with = SOV }
+						SOV = { has_capitulated = yes }
+					}
+				}
+			}
 		}
 		bypass = {
 			OR = {

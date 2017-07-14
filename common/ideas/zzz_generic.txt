@@ -83,6 +83,10 @@ ideas = {
 					instant = yes
 					build_cost_ic = -0.20
 				}
+				CAS_equipment = {
+					instant = yes
+					build_cost_ic = -0.20
+				}
 				nav_bomber_equipment = {
 					instant = yes
 					build_cost_ic = -0.20
@@ -100,6 +104,10 @@ ideas = {
 					build_cost_ic = -0.20
 				}
 				jet_tac_bomber_equipment = {
+					instant = yes
+					build_cost_ic = -0.20
+				}
+				jet_strat_bomber_equipment = {
 					instant = yes
 					build_cost_ic = -0.20
 				}
@@ -175,6 +183,24 @@ ideas = {
 			modifier = {
 				fascism_drift = 0.03
 				fascism_acceptance = 85
+			}
+		}
+		monarchist_influence = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = monarchism
+			}
+
+			removal_cost = -1
+
+			picture = generic_fascism_drift_bonus
+			
+			modifier = {
+				monarchism_drift = 0.03
+				monarchism_acceptance = 85
 			}
 		}
 		communist_influence = {
@@ -1422,6 +1448,12 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = light_aircraft_manufacturer limit = 1 }
 				}
+				if = {
+					limit = {
+						has_dlc = "Death or Dishonor"
+					}
+					NOT = { tag = ROM } NOT = { tag = YUG }
+				}
 			}
 			
 			cost = 150
@@ -1440,6 +1472,12 @@ ideas = {
 				NOT = { OR  = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
 				NOT = {
 					has_available_idea_with_traits = { idea = medium_aircraft_manufacturer limit = 1 }
+				}
+				if = {
+					limit = {
+						has_dlc = "Death or Dishonor"
+					}
+					NOT = { tag = YUG }
 				}
 			}
 			
@@ -1460,6 +1498,12 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = heavy_aircraft_manufacturer limit = 1 }
 				}
+				if = {
+					limit = {
+						has_dlc = "Death or Dishonor"
+					}
+					NOT = { tag = YUG }
+				}
 			}
 			
 			cost = 150
@@ -1475,7 +1519,7 @@ ideas = {
 			picture = generic_naval_manufacturer_2
 
 			allowed = {
-				NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = CAN tag = ROM tag = YUG } }
 				NOT = {
 					has_available_idea_with_traits = { idea = naval_aircraft_manufacturer limit = 1 }
 				}
@@ -1496,7 +1540,7 @@ ideas = {
 			picture = generic_industrial_concern_1
 
 			allowed = {
-				NOT = { OR =  { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA } }
+				NOT = { OR { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = HUN } }
 				NOT = {
 					has_available_idea_with_traits = { idea = industrial_concern limit = 1 }
 				}

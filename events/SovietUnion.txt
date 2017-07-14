@@ -2169,6 +2169,7 @@ country_event = {
 		
 		hidden_effect = {
 			set_technology = { hiddentech_conscripts = 1 }
+			set_technology = { tech_heavy_soviet_tank_c = 1 }
 			load_oob = "SOV_Leningradoffense"
 			set_country_flag = SOVleningradoffense
 			}
@@ -4421,5 +4422,217 @@ country_event = {
 			
 		}
 
+	}
+}
+
+#ROM Attacked, Asks for Help
+country_event = {
+	id = soviet.304
+	title = soviet.304.t
+	desc = soviet.304.desc
+	picture = GFX_report_event_soviet_soldiers2
+	fire_only_once = yes
+	trigger = {
+		#OR = {
+		#	has_global_flag = sov_dobrogea_no
+		#	has_global_flag = sov_east_rom_no
+		#	has_global_flag = sov_annex_rom
+		#}
+		has_global_flag = sov_puppet_rom
+		has_war_with = SOV
+		is_in_faction = no
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = { #Asks Axis
+		name = soviet.304.a
+		GER = { country_event = soviet.309 }
+		set_global_flag = rom_asks_axis
+		ai_chance = {
+			base = 90
+		}
+	}
+	option = { #Asks Allies
+		name = soviet.304.b
+		ENG = { country_event = soviet.309 }
+		set_global_flag = rom_asks_allies
+		ai_chance = {
+			base = 10
+		}
+	}
+	#option = { #Asks Balkans
+	#	name = soviet.304.c
+	#	
+	#}
+}
+
+#ROM asks for help
+country_event = {
+	id = soviet.305
+	title = soviet.305.t
+	desc = soviet.305.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #We will help
+		name = soviet.305.a
+		if = { limit = { has_global_flag = rom_asks_axis }
+			GER = { add_to_faction = ROM }
+			ROM = { 
+				set_country_flag = in_axis
+				country_event = soviet.310
+			}
+		}
+		if = { limit = { has_global_flag = rom_asks_allies }
+			ENG = { add_to_faction = ROM }
+			ROM = { 
+				set_country_flag = in_allies
+				country_event = soviet.311
+			}
+		}
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+		}
+	}	
+	option = { #No help
+		name = soviet.305.b
+		if = { limit = { has_global_flag = rom_asks_axis }
+			ROM = { 
+				clr_global_flag = rom_asks_axis
+				country_event = soviet.312
+				set_global_flag = ger_rom_says_no
+			}
+		}
+		if = { limit = { has_global_flag = rom_asks_allies }
+			ROM = { 
+				clr_global_flag = rom_asks_allies
+				country_event = soviet.313
+				set_global_flag = eng_rom_says_no
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+#Germany helps Rom
+country_event = {
+	id = soviet.306
+	title = soviet.306.t
+	desc = soviet.306.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #I hope they can save us
+		name = soviet.306.a
+		
+	}
+}
+
+#Allies help ROM
+country_event = {
+	id = soviet.307
+	title = soviet.307.t
+	desc = soviet.307.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #I hope they can save us
+		name = soviet.307.a
+		
+	}
+}
+
+#GER says no
+country_event = {
+	id = soviet.308
+	title = soviet.308.t
+	desc = soviet.308.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #Ask Allies
+		name = soviet.308.a
+		trigger = {
+			NOT = { has_global_flag = ger_rom_says_no }
+		}
+		ENG = { country_event = soviet.309 }
+		set_global_flag = rom_asks_allies
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { #Pray
+		name = soviet.308.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+#ENG says no
+country_event = {
+	id = soviet.309
+	title = soviet.309.t
+	desc = soviet.309.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #Ask Allies
+		name = soviet.309.a
+		trigger = {
+			NOT = {
+				has_global_flag = eng_rom_says_no
+			}
+		}
+		GER = { country_event = soviet.309 }
+		set_global_flag = rom_asks_axis
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { #Pray
+		name = soviet.309.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+#Axis Intervene!
+country_event = {
+	id = soviet.310
+	title = soviet.310.t
+	desc = soviet.310.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #No deal!
+		name = soviet.310.a
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+#Allies Intervene!
+country_event = {
+	id = soviet.311
+	title = soviet.311.t
+	desc = soviet.311.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #No deal!
+		name = soviet.311.a
+		ai_chance = {
+			base = 1
+		}
 	}
 }

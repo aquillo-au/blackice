@@ -396,4 +396,57 @@ greece_war_join = {  # Why should Italy have all the fun
 	ai_strategy = { type = antagonize id = "GRE"  					value = 200 		}	
 	ai_strategy = { type = conquer  id = "GRE"						value = 200 		}		
 }
+
+GER_stay_in_berlin_moscow_axis = {
+    enable = {
+		tag = GER
+		has_country_flag = in_berlin_moscow_axis
+		NOT = { has_country_flag = berlin_moscow_leader }
+		SOV = {
+			has_country_flag = berlin_moscow_leader
+		}
+    }
+    abort = {
+		NOT = { has_country_flag = in_berlin_moscow_axis }
+		SOV = { 
+			NOT = { 
+				exists = yes
+				has_country_flag = berlin_moscow_leader
+				is_faction_leader = yes
+			}
+		}
+    }
+
+    ai_strategy = {
+        type = alliance
+        id = "SOV"     
+        value = 300000
+    }
+}
+SOV_stay_in_berlin_moscow_axis = {
+    enable = {
+		tag = SOV
+		has_country_flag = in_berlin_moscow_axis
+		NOT = { has_country_flag = berlin_moscow_leader }
+		GER = {
+			has_country_flag = berlin_moscow_leader
+		}
+    }
+    abort = {
+		NOT = { has_country_flag = in_berlin_moscow_axis }
+		GER = { 
+			NOT = { 
+				exists = yes
+				has_country_flag = berlin_moscow_leader
+				is_faction_leader = yes
+			}
+		}
+    }
+
+    ai_strategy = {
+        type = alliance
+        id = "GER"     
+        value = 300000
+    }
+}
 ### EOF ###

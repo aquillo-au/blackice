@@ -191,40 +191,46 @@ country_event = {
 				}
 			}
 		}
-		add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
-		custom_effect_tooltip = germany.11.a.tt
-		add_state_claim = 96
-		add_state_claim = 11
-		add_state_claim = 12
-		add_state_claim = 13
-		add_state_claim = 190
-		add_state_claim = 191
-		add_state_claim = 146
-		add_state_claim = 147
-		add_state_claim = 722
-		add_state_claim = 189
-		add_state_claim = 78
-		add_state_claim = 89
-		add_state_claim = 91
-		add_state_claim = 93
-		add_state_claim = 94
-		add_state_claim = 95
-		add_state_claim = 96
-		add_state_claim = 97
-		add_state_claim = 80
-		add_state_claim = 840
-		hidden_effect =  {
-			add_timed_idea = {
-				idea = SOV_molotov_ribbentrop_pact days = 650
+		if = { limit = { GER = { NOT = { is_in_faction_with = CZE } } }
+			add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
+			custom_effect_tooltip = germany.11.a.tt
+			add_state_claim = 96
+			add_state_claim = 11
+			add_state_claim = 12
+			add_state_claim = 13
+			add_state_claim = 190
+			add_state_claim = 191
+			add_state_claim = 146
+			add_state_claim = 147
+			add_state_claim = 722
+			add_state_claim = 189
+			add_state_claim = 78
+			add_state_claim = 89
+			add_state_claim = 91
+			add_state_claim = 93
+			add_state_claim = 94
+			add_state_claim = 95
+			add_state_claim = 96
+			add_state_claim = 97
+			add_state_claim = 80
+			add_state_claim = 840
+			hidden_effect =  {
+				add_timed_idea = {
+					idea = SOV_molotov_ribbentrop_pact days = 650
+				}
 			}
-		}
-		GER = {
-			country_event = { days = 1 id = germany.12 }
-			effect_tooltip = {
-				add_opinion_modifier = { target = SOV modifier = MR_pact }# pact
+			GER = {
+				country_event = { days = 1 id = germany.12 }
+				effect_tooltip = {
+					add_opinion_modifier = { target = SOV modifier = MR_pact }# pact
+				}
 			}
+			set_global_flag = sov_yes_pact
 		}
-		set_global_flag = sov_yes_pact
+		
+		if = { limit = { GER = { is_in_faction_with = CZE } }
+			GER = { country_event = germany.321 }
+		}
 	}
 	
 	option = {
@@ -252,6 +258,379 @@ country_event = {
 		set_global_flag = sov_no_pact
 	}
 }
+# SOV says yes, should we include CZE?
+country_event = {
+	id = germany.321
+	title = germany.321.t
+	desc = germany.321.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.321.a	#yes
+		country_event = germany.322
+		ai_chance = {
+			base = 35
+			modifier = {
+				factor = 3
+				CZE = { is_ai = no }
+			}
+		}
+	}
+	option = {
+		name = germany.321.b	#no
+		CZE = { country_event = germany.327 }
+		SOV = {
+			add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
+			custom_effect_tooltip = germany.11.a.tt
+			add_state_claim = 96
+			add_state_claim = 11
+			add_state_claim = 12
+			add_state_claim = 13
+			add_state_claim = 190
+			add_state_claim = 191
+			add_state_claim = 146
+			add_state_claim = 147
+			add_state_claim = 722
+			add_state_claim = 189
+			add_state_claim = 78
+			add_state_claim = 89
+			add_state_claim = 91
+			add_state_claim = 93
+			add_state_claim = 94
+			add_state_claim = 95
+			add_state_claim = 96
+			add_state_claim = 97
+			add_state_claim = 80
+			add_state_claim = 840
+			hidden_effect =  {
+				add_timed_idea = {
+					idea = SOV_molotov_ribbentrop_pact days = 650
+					}
+				}
+			}
+			GER = {
+				country_event = { days = 1 id = germany.12 }
+				effect_tooltip = {
+					add_opinion_modifier = { target = SOV modifier = MR_pact }# pact
+				}
+			}
+			set_global_flag = sov_yes_pact
+		ai_chance = {
+			base = 65
+			modifier = {
+				factor = 0
+				CZE = { is_ai = no }
+			}
+		}
+	}
+}
+# GER asks to include CZE in POL Partition
+country_event = {
+	id = germany.322
+	title = germany.322.t
+	desc = germany.322.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.322.a	#Sure
+		country_event = germany.323
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 1.5
+				CZE = { is_ai = no }
+			}
+		}
+	}
+	option = {
+		name = germany.322.b	#No, we want it all!
+		country_event = germany.325
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0.5
+				CZE = { is_ai = no }
+			}
+		}
+	}
+}
+# SOV Agrees to SOV-CZE Partition
+country_event = {
+	id = germany.323
+	title = germany.323.t
+	desc = germany.323.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.323.a	#neat
+		set_country_flag = MR_pact_CZE_yes
+		CZE = { country_event = germany.324 }
+		SOV = {
+			add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
+			custom_effect_tooltip = germany.11.a.tt
+			add_state_claim = 96
+			add_state_claim = 11
+			add_state_claim = 12
+			add_state_claim = 13
+			add_state_claim = 190
+			add_state_claim = 191
+			add_state_claim = 146
+			add_state_claim = 147
+			add_state_claim = 722
+			add_state_claim = 189
+			add_state_claim = 78
+			add_state_claim = 89
+			add_state_claim = 91
+			add_state_claim = 93
+			add_state_claim = 94
+			add_state_claim = 95
+			add_state_claim = 96
+			add_state_claim = 97
+			add_state_claim = 80
+			add_state_claim = 840
+			hidden_effect =  {
+				add_timed_idea = {
+					idea = SOV_molotov_ribbentrop_pact days = 650
+					}
+				}
+			}
+			GER = {
+				country_event = { days = 1 id = germany.12 }
+				effect_tooltip = {
+					add_opinion_modifier = { target = SOV modifier = MR_pact }# pact
+				}
+			}
+			set_global_flag = sov_yes_pact
+	}
+}
+
+# GER Tells CZE of SOV agreement - Contingent on combat performance
+country_event = {
+	id = germany.324
+	title = germany.324.t
+	desc = germany.324.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.324.a	#neat
+	}
+}
+
+# SOV says no to SOV-CZE Partition
+country_event = {
+	id = germany.325
+	title = germany.325.t
+	desc = germany.325.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.325.a	#oh well
+		CZE = { country_event = germany.326 }
+		SOV = {
+			add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
+			custom_effect_tooltip = germany.11.a.tt
+			add_state_claim = 96
+			add_state_claim = 11
+			add_state_claim = 12
+			add_state_claim = 13
+			add_state_claim = 190
+			add_state_claim = 191
+			add_state_claim = 146
+			add_state_claim = 147
+			add_state_claim = 722
+			add_state_claim = 189
+			add_state_claim = 78
+			add_state_claim = 89
+			add_state_claim = 91
+			add_state_claim = 93
+			add_state_claim = 94
+			add_state_claim = 95
+			add_state_claim = 96
+			add_state_claim = 97
+			add_state_claim = 80
+			add_state_claim = 840
+			hidden_effect =  {
+				add_timed_idea = {
+					idea = SOV_molotov_ribbentrop_pact days = 650
+					}
+				}
+			}
+			GER = {
+				country_event = { days = 1 id = germany.12 }
+				effect_tooltip = {
+					add_opinion_modifier = { target = SOV modifier = MR_pact }# pact
+				}
+			}
+			set_global_flag = sov_yes_pact
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { #For future: Figure out GER-CZE partition of Poland
+		name = germany.325.b	#Deal is off!
+		ai_chance = {
+			base = 0
+		}
+		SOV = { country_event = germany.337 }
+	}
+}
+
+# Germany has rejected the Pact over CZE
+country_event = {
+	id = germany.337
+	title = germany.337.t
+	desc = germany.337.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.337.a	#Fools!
+		add_political_power = -50	
+		add_opinion_modifier = { target = GER modifier = refused_MR_pact }# no pact 
+		GER = {
+			country_event = { days = 1 id = germany.13 }
+		}
+		set_global_flag = sov_no_pact
+	}
+}
+
+#GER tells CZE of SOV refusal
+country_event = {
+	id = germany.326
+	title = germany.326.t
+	desc = germany.326.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.326.a	#maybe this alliance isnt in our best interests
+		
+	}
+}
+#GER doesn't include CZE in POL Partition
+country_event = {
+	id = germany.327
+	title = germany.327.t
+	desc = germany.327.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.327.a	#oh well
+		ruling_pop_minus_7 = yes
+		add_political_power = -25
+	}
+	option = {
+		name = germany.327.b	#threaten to leave faction
+		CZE = { country_event = germany.328 }
+	}
+}
+#CZE threatens to leave Axis
+country_event = {
+	id = germany.328
+	title = germany.328.t
+	desc = germany.328.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.328.a	#Give them Krakow if they do well
+		CZE = { country_event = germany.329 }
+	}
+	option = {
+		name = germany.328.b	#Leave at your own risk!
+		CZE = { country_event = germany.330 }
+	}
+}
+#GER offers Krakow
+country_event = {
+	id = germany.329
+	title = germany.329.t
+	desc = germany.329.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.329.a	#We will prove our worthiness!
+		CZE = { country_event = germany.332 }
+		set_country_flag = MR_pact_CZE_concession
+	}
+	option = {
+		name = germany.329.b	#Not enough, leave!
+		CZE = { country_event = germany.331 }
+		GER = { remove_from_faction = CZE }
+		clr_country_flag = in_axis
+	}
+}
+#GER threatens consequences if we leave
+country_event = {
+	id = germany.330
+	title = germany.330.t
+	desc = germany.330.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.330.a	#Leave anyway!
+		GER = { remove_from_faction = CZE }
+		clr_country_flag = in_axis
+		GER = { country_event = germany.331 }
+	}
+	option = {
+		name = germany.330.b	#We were just joking!
+		
+	}
+}
+
+#CZE leaves anyway
+country_event = {
+	id = germany.331
+	title = germany.331.t
+	desc = germany.331.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.331.a	#We will deal with these upstarts
+		create_wargoal = {
+			type = annex_everything
+			target = CZE
+		}
+	}
+}
+
+#CZE accepts Krakow offer
+country_event = {
+	id = germany.332
+	title = germany.332.t
+	desc = germany.332.desc
+	picture = GFX_report_event_molotov_signing_pact
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.332.a	#Good
+
+	}
+}
+
 # Soviets Sign MR Pact
 country_event = {
 	id = germany.12
@@ -369,7 +748,7 @@ country_event = {
 	
 	option = {
 		ai_chance = {
-			base = 1
+			base = 50
 			modifier = {
 				factor = 0
 				AND = {
@@ -522,6 +901,14 @@ country_event = {
 				}
 			}
 		}
+		if = { limit = { 
+			OR = {
+				has_country_flag = MR_pact_CZE_yes
+				has_country_flag = MR_pact_CZE_concession
+				}
+			}
+			country_event = germany.320
+		}
 		SOV = { country_event = germany.16 }
 		clr_global_flag = sov_yes_pact
 		diplomatic_relation = {
@@ -538,13 +925,285 @@ country_event = {
 			add_state_claim = 91
 			add_state_claim = 97
 			add_state_claim = 89
-	effect_tooltip = {
+			effect_tooltip = {
 				create_wargoal = {
 					type = annex_everything
 					target = GER
 				}
 			}
 		}
+	}
+	option = { #Partially Split with CZE-SOV
+		name = germany.14.c
+		trigger = {
+			has_country_flag = MR_pact_CZE_yes
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 35
+				is_in_faction_with = CZE
+				CZE = { is_ai = yes }
+			}
+			modifier = {
+				factor = 90
+				CZE = { is_ai = no }
+				is_in_faction_with = CZE
+			}
+		}
+		if = {
+			limit = {
+				96 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 96
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 96 }
+		}
+		if = {
+			limit = {
+				840 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 840
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 840 }
+		}
+		if = {
+			limit = {
+				95 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 95
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 95 }
+		}
+		if = {
+			limit = {
+				94 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 94
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 94 }
+		}
+		if = {
+			limit = {
+				93 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 93
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 93 }
+		}
+		if = {
+			limit = {
+				91 = {
+					is_controlled_by = GER
+				}
+			}
+			SOV = { transfer_state = 91 }
+		}
+		if = {
+			limit = {
+				97 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 97
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 97 }
+		}
+		if = {
+			limit = {
+				89 = {
+					is_controlled_by = GER
+				}
+			}
+			SOV = { transfer_state = 89 }
+		}
+		CZE = { transfer_state = 88 }
+		if = { limit = { 
+			CZE = {
+				controls_state = 89
+				}
+			}
+			CZE = { transfer_state = 89 }
+			}
+		if = { limit = { 
+			CZE = {
+				controls_state = 91
+				}
+			}
+			CZE = { transfer_state = 91 }
+		}
+	}
+	option = { #No SOV-CZE Partition, give them Krakow
+		name = germany.14.d
+		trigger = {
+			has_country_flag = MR_pact_CZE_concession
+		}
+		ai_chance = {
+			base = 100
+		}
+		if = {
+			limit = {
+				96 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 96
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 96 }
+		}
+		if = {
+			limit = {
+				840 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 840
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 840 }
+		}
+		if = {
+			limit = {
+				95 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 95
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 95 }
+		}
+		if = {
+			limit = {
+				94 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 94
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 94 }
+		}
+		if = {
+			limit = {
+				93 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 93
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 93 }
+		}
+		if = {
+			limit = {
+				91 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 91
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 91 }
+		}
+		if = {
+			limit = {
+				97 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 97
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 97 }
+		}
+		if = {
+			limit = {
+				89 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 89
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 89 }
+		}
+		CZE = { transfer_state = 88 }
+		remove_state_claim = 88
+		remove_state_core = 88
 	}
 }
 # Germany honors MR Pact (Soviets)
@@ -558,7 +1217,7 @@ country_event = {
 	
 	option = {
 		name = germany.12.a
-if = {
+		if = {
 			limit = {
 				SOV = {
 					controls_state = 93
@@ -586,6 +1245,211 @@ country_event = {
 	create_wargoal = {
 			type = annex_everything
 			target = GER
+		}
+	}
+}
+
+# MR Pact Betrayal - Give CZE their due?
+country_event = {
+	id = germany.320
+	title = germany.320.t
+	desc = germany.320.desc
+	picture = GFX_report_event_german_polish_border
+
+	is_triggered_only = yes
+	
+	option = { #They are worthy allies
+		name = germany.320.a
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 0
+				CZE = { is_ai = yes }
+				CZE = { num_divisions < 80 }
+			}
+		}
+		CZE = { transfer_state = 88 }
+		CZE = { transfer_state = 89 }
+		if = { limit = { 
+			CZE = {
+				controls_state = 91
+				}
+			}
+			CZE = { transfer_state = 91 }
+		}
+		if = { limit = { 
+			CZE = {
+				controls_state = 90
+				}
+			}
+			CZE = { transfer_state = 90 }
+		}
+		if = { limit = { 
+			CZE = {
+				controls_state = 92
+				}
+			}
+			CZE = { transfer_state = 92 }
+		}
+		if = { limit = { 
+			CZE = {
+				controls_state = 93
+				}
+			}
+			CZE = { transfer_state = 93 }
+		}
+	}
+	option = { #All ours!
+		name = germany.320.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 2
+				CZE = { num_divisions < 80 }
+				CZE = { is_ai = no }
+			}
+			modifier = {
+				factor = 4
+				CZE = { is_ai = yes }
+				CZE = { num_divisions < 80 }
+			}
+			modifier = {
+				factor = 5
+				CZE = { num_divisions > 80 }
+			}
+		}
+		CZE = { country_event = germany.333 }
+	}
+}
+
+# GER takes all of POL for herself!
+country_event = {
+	id = germany.333
+	title = germany.333.t
+	desc = germany.333.desc
+	picture = GFX_report_event_german_polish_border
+
+	is_triggered_only = yes
+	
+	option = { #Demand compentation or leave faction!
+		name = germany.333.a
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 2
+				CZE = { num_divisions > 80 }
+			}
+		}
+		GER = { country_event = germany.334 }
+	}
+	option = { #We can't fight Germany
+		name = germany.333.b
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 2
+				CZE = { num_divisions < 80 }
+			}
+		}
+		ruling_pop_minus_5 = yes
+		add_political_power = -15
+	}
+}
+
+# CZE demands compensation
+country_event = {
+	id = germany.334
+	title = germany.334.t
+	desc = germany.334.desc
+	picture = GFX_report_event_german_polish_border
+
+	is_triggered_only = yes
+	
+	option = { #Offer Krakow and Stanislawow
+		name = germany.334.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				CZE = { num_divisions > 80 }
+			}
+		}
+		CZE = { country_event = germany.335 }
+	}
+	option = { #Leave if they dare!
+		name = germany.334.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				CZE = { num_divisions < 80 }
+			}
+		}
+		CZE = { country_event = germany.336 }
+	}
+}
+
+# GER offers small compensation
+country_event = {
+	id = germany.335
+	title = germany.335.t
+	desc = germany.335.desc
+	picture = GFX_report_event_german_polish_border
+
+	is_triggered_only = yes
+	
+	option = { #Best we can get
+		name = germany.335.a
+		ai_chance = {
+			base = 60
+			
+		}
+		CZE = { transfer_state = 88 }
+		CZE = { transfer_state = 89 }
+	}
+	option = { #Not Enough!
+		name = germany.335.b
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				num_divisions < 100
+			}
+			modifier = {
+				factor = 2
+				num_divisions > 120
+			}
+		}
+		CZE = { country_event = germany.336 }
+		GER = { remove_from_faction = CZE }
+		clr_country_flag = in_axis
+		add_state_claim = 88
+		add_state_claim = 89
+		add_state_claim = 90
+		add_state_claim = 91
+		add_state_claim = 92
+		add_state_claim = 93
+	}
+}
+
+# CZE refuses GER offer
+country_event = {
+	id = germany.336
+	title = germany.336.t
+	desc = germany.336.desc
+	picture = GFX_report_event_german_polish_border
+
+	is_triggered_only = yes
+	
+	option = { #They will regret this
+		name = germany.336.a
+		ai_chance = {
+			base = 1
+
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = CZE
 		}
 	}
 }
@@ -1210,7 +2074,7 @@ country_event = {
 				add_ai_strategy = {
 					type = alliance
 					id = "FRA"
-					value = 200
+					value = 200000
 				}
 			}
 		}
@@ -1234,8 +2098,44 @@ country_event = {
 				add_ai_strategy = {
 					type = alliance
 					id = "FRA"
-					value = 200
+					value = 200000
 				}
+			}
+		}
+		if = {
+			limit = {
+				is_in_faction = yes
+				is_faction_leader = yes
+				NOT = { is_in_faction_with = ENG }
+				NOT = { is_in_faction_with = GER }
+				NOT = { is_in_faction_with = CZE }
+				CZE = { is_in_faction = yes }
+			}
+			create_wargoal = {
+				type = take_state_focus
+				target = GER
+				generator = { 42 895 }
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_in_faction = no
+					is_faction_leader = no
+				}
+				CZE = { 
+					is_in_faction = yes
+					is_faction_leader = yes
+				}
+			}
+			if = { limit = { CZE = { has_country_flag = in_little_entente } }
+			set_country_flag = in_little_entente
+			}
+			CZE = { add_to_faction = FRA }
+			add_ai_strategy = {
+				type = alliance
+				id = "CZE"
+				value = 200000
 			}
 		}
 		if = {
@@ -1501,12 +2401,15 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
+		if = { limit = { HUN = { controls_state = 69 } }
+			GER = { country_event = germany.338 }
+		}
 		GER = {
 			add_opinion_modifier = { target = ROOT modifier = GER_demand_sudetenland_rejected }
 			set_global_flag = CZE_refused_sudetenland
 			country_event = germany.49
 			effect_tooltip = {
-	if = {
+				if = {
 					limit = {
 						CZE = {
 							OR = { 
@@ -1609,6 +2512,99 @@ country_event = {
 				}
 		hidden_effect = {
 			country_event = { hours = 6 id = news.59 }
+		}
+	}
+	option = {
+		name = germany.338.b
+		add_state_claim = 69
+		add_state_claim = 74
+		add_political_power = -35
+		ruling_pop_minus_7 = yes
+		add_national_unity = -0.03
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = CZE ratio < 1.1 }
+			}
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = CZE ratio > 1.3 }
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = CZE ratio > 1.5 }
+			}
+		}
+	}
+}
+
+# Austria-Hungary Refuses to Hand Over Sudetenland
+country_event = {
+	id = germany.338
+	title = germany.338.t
+	desc = germany.338.desc
+	picture = GFX_report_event_french_british_officers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.338.a
+		create_wargoal = {
+			type = take_state_focus
+			target = HUN
+			generator = { 69 74 }
+		}
+		add_state_claim = 69
+		add_state_claim = 74
+		if = {
+					limit = {
+						HUN = {
+							OR = { 
+								is_in_faction_with = GER 
+								has_country_flag = in_axis
+							 }
+						}
+					}		
+					GER = { remove_from_faction = HUN }
+					HUN = { clr_country_flag = in_axis }
+				}
+		hidden_effect = {
+			country_event = { hours = 6 id = news.59 }
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = HUN ratio < 1.1 }
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = { tag = HUN ratio > 1.5 }
+			}
+		}
+	}
+	option = {
+		name = germany.338.b
+		add_state_claim = 69
+		add_state_claim = 74
+		add_political_power = -35
+		ruling_pop_minus_7 = yes
+		add_national_unity = -0.03
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = HUN ratio < 1.1 }
+			}
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = HUN ratio > 1.3 }
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = HUN ratio > 1.5 }
+			}
 		}
 	}
 }
