@@ -63,7 +63,6 @@ guiTypes = {
 					position = { x=0 y=0 }
 					allwaystransparent = yes
 				}
-				
 				# YEARS #
 				containerWindowType = {
 					name = "infantry_year_left"
@@ -14294,70 +14293,101 @@ guiTypes = {
 				position = { x = 50 y = 40 }
 				textureFile = ""
 				font = "hoi_22tech"
-				borderSize = {x = 0 y = 4}
+				borderSize = { x = 0 y = 4 }
 				text = "WW1_INFANTRY_DOCTRINE_LABEL"
 				maxWidth = 550
 				maxHeight = 122
 				format = center
-				Orientation = "UPPER_LEFT"
+				orientation = "UPPER_LEFT"
 			}
 			instantTextBoxType = {
 				name = "complex_trench_systems_title"
 				position = { x = 50 y = 675 }
 				textureFile = ""
 				font = "hoi_22tech"
-				borderSize = {x = 0 y = 4}
+				borderSize = { x = 0 y = 4 }
 				text = "COMPLEX_TRENCH_SYSTEMS_LABEL"
 				maxWidth = 550
 				maxHeight = 122
 				format = center
-				Orientation = "UPPER_LEFT"
+				orientation = "UPPER_LEFT"
+			}
+			instantTextBoxType = {
+				name = "ww1_artillery_title"
+				position = { x = 600 y = 40 }
+				textureFile = ""
+				font = "hoi_22tech"
+				borderSize = { x = 0 y = 4 }
+				text = "WW1_ARTILLERY_DOCTRINE_LABEL"
+				maxWidth = 550
+				maxHeight = 122
+				format = center
+				orientation = "UPPER_LEFT"
+			}
+			instantTextBoxType = {
+				name = "ww1_artillery_observer_title"
+				position = { x = 600 y = 1115 }
+				textureFile = ""
+				font = "hoi_22tech"
+				borderSize = { x = 0 y = 4 }
+				text = "WW1_ARTILLERY_OBSERVER_LABEL"
+				maxWidth = 550
+				maxHeight = 122
+				format = center
+				orientation = "UPPER_LEFT"
 			}
 			gridboxtype = {
 				name = "ww1_infantry_tree"
-				position = { x=25 y=172 }
-				size = { width = 600 height = 1300 }
-				slotsize = { width=60 height=60 }
+				position = { x = 25 y = 172 }
+				size = { width = 600 height = 1475 }
+				slotsize = { width = 60 height = 60 }
 				format = "UP"
 			
 				background = {
 					name = "Background"
 					quadTextureSprite ="GFX_fullborder_tiled"
-					position = { x=0 y=-150 }					
+					position = { x = 0 y = -150 }					
 				}				
 			}
 			gridboxtype = {
 				name = "complex_trench_systems_tree"
-				position = { x=25 y=700 }
+				position = { x = 25 y = 700 }
 				size = { width = 600 height = 1000 }
-				slotsize = { width=60 height=60 }
+				slotsize = { width = 60 height = 60 }
 				format = "UP"				
 			}
 			gridboxtype = {
 				name = "ww1_artillery_tree"
-				position = { x=625 y=172 }
-				size = { width = 600 height = 1300 }
-				slotsize = { width=60 height=60 }
+				position = { x = 625 y = 172 }
+				size = { width = 600 height = 1475 }
+				slotsize = { width = 60 height = 60 }
 				format = "UP"
 			
 				background = {
 					name = "Background"
 					quadTextureSprite ="GFX_fullborder_tiled"
-					position = { x=0 y=-150 }					
+					position = { x = 0 y = -150 }					
 				}				
 			}
 			gridboxtype = {
 				name = "artillery_observers_tree"
-				position = { x=625 y=1150 }
+				position = { x = 625 y = 1150 }
 				size = { width = 600 height = 1000 }
-				slotsize = { width=60 height=60 }
+				slotsize = { width = 60 height = 60 }
+				format = "UP"				
+			}
+			gridboxtype = {
+				name = "foot_runners_tree"
+				position = { x = 625 y = 1150 }
+				size = { width = 600 height = 1000 }
+				slotsize = { width = 60 height = 60 }
 				format = "UP"				
 			}
 		}
 		# Land Doctrine
 		containerWindowType = {
 			name = "land_doctrine_folder"
-			position = { x=0 y=47 }
+			position = { x = 0 y = 47 }
 			size = { width = 100%% height = 100%% }
 			margin = { top = 13 left = 13 bottom = 24 right = 25}
 			drag_scroll = { left middle }
@@ -14620,7 +14650,7 @@ guiTypes = {
 				position = { x = 1310 y = 575 }
 				textureFile = ""
 				font = "hoi_22tech"
-				borderSize = {x = 0 y = 4}
+				borderSize = { x = 0 y = 4 }
 				text = "INFILTRATION_LABEL"
 				maxWidth = 200
 				maxHeight = 122
@@ -14633,7 +14663,7 @@ guiTypes = {
 				position = { x = 1560 y = 435 }
 				textureFile = ""
 				font = "hoi_22tech"
-				borderSize = {x = 0 y = 4}
+				borderSize = { x = 0 y = 4 }
 				text = "DEEP_BATTLE_LABEL"
 				maxWidth = 150
 				maxHeight = 122
@@ -14646,7 +14676,7 @@ guiTypes = {
 				position = { x = 1816 y = 435 }
 				textureFile = ""
 				font = "hoi_22tech"
-				borderSize = {x = 0 y = 4}
+				borderSize = { x = 0 y = 4 }
 				text = "MASS_MOBILIZATION_LABEL"
 				maxWidth = 150
 				maxHeight = 122
@@ -14657,9 +14687,9 @@ guiTypes = {
 			
 			gridboxtype = {
 				name = "mobile_warfare_tree"
-				position = { x=80 y=172 }
+				position = { x = 80 y = 172 }
 				size = { width = 478 height = 1350 }
-				slotsize = { width=60 height= 60 }
+				slotsize = { width = 60 height = 60 }
 				format = "UP"
 
 				background = {
