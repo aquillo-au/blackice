@@ -191,9 +191,16 @@ country_event = {
 				}
 			}
 		}
-		if = { limit = { GER = { NOT = { is_in_faction_with = CZE } } }
+		if = {
+			limit = {
+				GER = {
+					NOT = { is_in_faction_with = CZE }
+				}
+			}
 			add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
+			
 			custom_effect_tooltip = germany.11.a.tt
+			
 			add_state_claim = 96
 			add_state_claim = 11
 			add_state_claim = 12
@@ -214,6 +221,8 @@ country_event = {
 			add_state_claim = 97
 			add_state_claim = 80
 			add_state_claim = 840
+			add_state_claim = 930
+			
 			hidden_effect =  {
 				add_timed_idea = {
 					idea = SOV_molotov_ribbentrop_pact days = 650
@@ -283,7 +292,9 @@ country_event = {
 		CZE = { country_event = germany.327 }
 		SOV = {
 			add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
+			
 			custom_effect_tooltip = germany.11.a.tt
+			
 			add_state_claim = 96
 			add_state_claim = 11
 			add_state_claim = 12
@@ -304,19 +315,22 @@ country_event = {
 			add_state_claim = 97
 			add_state_claim = 80
 			add_state_claim = 840
+			add_state_claim = 930
+			
 			hidden_effect =  {
 				add_timed_idea = {
 					idea = SOV_molotov_ribbentrop_pact days = 650
-					}
 				}
 			}
-			GER = {
-				country_event = { days = 1 id = germany.12 }
-				effect_tooltip = {
-					add_opinion_modifier = { target = SOV modifier = MR_pact }# pact
-				}
+		}
+		GER = {
+			country_event = { days = 1 id = germany.12 }
+			effect_tooltip = {
+				add_opinion_modifier = { target = SOV modifier = MR_pact }# pact
 			}
-			set_global_flag = sov_yes_pact
+		}
+		set_global_flag = sov_yes_pact
+		
 		ai_chance = {
 			base = 65
 			modifier = {
@@ -373,7 +387,9 @@ country_event = {
 		CZE = { country_event = germany.324 }
 		SOV = {
 			add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
+			
 			custom_effect_tooltip = germany.11.a.tt
+			
 			add_state_claim = 96
 			add_state_claim = 11
 			add_state_claim = 12
@@ -394,6 +410,8 @@ country_event = {
 			add_state_claim = 97
 			add_state_claim = 80
 			add_state_claim = 840
+			add_state_claim = 930
+			
 			hidden_effect =  {
 				add_timed_idea = {
 					idea = SOV_molotov_ribbentrop_pact days = 650
@@ -438,7 +456,9 @@ country_event = {
 		CZE = { country_event = germany.326 }
 		SOV = {
 			add_opinion_modifier = { target = GER modifier = MR_pact }# pact		
+			
 			custom_effect_tooltip = germany.11.a.tt
+			
 			add_state_claim = 96
 			add_state_claim = 11
 			add_state_claim = 12
@@ -459,6 +479,8 @@ country_event = {
 			add_state_claim = 97
 			add_state_claim = 80
 			add_state_claim = 840
+			add_state_claim = 930
+			
 			hidden_effect =  {
 				add_timed_idea = {
 					idea = SOV_molotov_ribbentrop_pact days = 650
@@ -688,6 +710,7 @@ country_event = {
 			OR = {
 				owns_state = 96
 				owns_state = 840
+				owns_state = 930
 				owns_state = 95
 				owns_state = 94
 				owns_state = 93
@@ -700,6 +723,7 @@ country_event = {
 				OR = {
 					controls_state = 96
 					controls_state = 840
+					controls_state = 930
 					controls_state = 95
 					controls_state = 94
 					controls_state = 93
@@ -717,6 +741,7 @@ country_event = {
 					OR = {
 						owns_state = 96
 						owns_state = 840
+						owns_state = 930
 						owns_state = 95
 						owns_state = 94
 						owns_state = 93
@@ -728,6 +753,7 @@ country_event = {
 							OR = {
 								controls_state = 96
 								controls_state = 840
+								controls_state = 930
 								controls_state = 95
 								controls_state = 94
 								controls_state = 93
@@ -790,6 +816,21 @@ country_event = {
 				}
 			}
 			SOV = { transfer_state = 840 }
+		}
+		if = {
+			limit = {
+				930 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 930
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 930 }
 		}
 		if = {
 			limit = {
@@ -919,12 +960,14 @@ country_event = {
 		SOV = {
 			add_state_claim = 96
 			add_state_claim = 840
+			add_state_claim = 930
 			add_state_claim = 95
 			add_state_claim = 94
 			add_state_claim = 93
 			add_state_claim = 91
 			add_state_claim = 97
 			add_state_claim = 89
+			
 			effect_tooltip = {
 				create_wargoal = {
 					type = annex_everything
@@ -980,6 +1023,21 @@ country_event = {
 				}
 			}
 			SOV = { transfer_state = 840 }
+		}
+		if = {
+			limit = {
+				930 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 930
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 930 }
 		}
 		if = {
 			limit = {
@@ -1113,6 +1171,21 @@ country_event = {
 		}
 		if = {
 			limit = {
+				930 = {
+					OR = {
+						is_controlled_by = GER
+						any_other_country = {
+							controls_state = 930
+							is_in_faction_with = GER
+							GER = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			SOV = { transfer_state = 930 }
+		}
+		if = {
+			limit = {
 				95 = {
 					OR = {
 						is_controlled_by = GER
@@ -1242,7 +1315,7 @@ country_event = {
 	
 	option = {
 		name = germany.16.a
-	create_wargoal = {
+		create_wargoal = {
 			type = annex_everything
 			target = GER
 		}
@@ -1827,9 +1900,7 @@ country_event = {
 		}
 	}
 }
-
 ### Munich Conference
-
 # Britain
 country_event = {
 	id = germany.40
@@ -1854,7 +1925,7 @@ country_event = {
 		CZE = {
 			add_opinion_modifier = { target = ENG modifier = western_betrayal }
 		}
-	if = {
+		if = {
 			limit = {
 				CZE = { is_guaranteed_by = ENG }
 			}
@@ -1911,7 +1982,6 @@ country_event = {
 			}
 		}
 		
-		
 		if = {
 			limit = { CZE = { is_in_faction = no } }
 			add_to_faction = CZE
@@ -1937,7 +2007,6 @@ country_event = {
 		}
 	}
 }
-
 # France (Britain Backs Down)
 country_event = {
 	id = germany.41
@@ -1980,7 +2049,7 @@ country_event = {
 				remove_from_faction = FRA
 			}
 			}
-	if = {
+		if = {
 			limit = {
 				CZE = { is_guaranteed_by = FRA }
 			}
