@@ -2792,6 +2792,17 @@ focus_tree = {
 				NOT = { BEL = { is_in_faction_with = GER } }
 				NOT = { LUX = { is_in_faction_with = GER } }
 			}
+			if = { limit = { is_ai = yes }
+				if = { limit = { has_war_with = POL }
+					POL = { has_capitulated = YES }
+				}
+				if = { limit = { has_war_with = SOV }
+					SOV = { has_capitulated = YES }
+				}
+				if = { limit = { has_war_with = YUG }
+					YUG = { has_capitulated = YES }
+				}
+			}
 		}
 
 		bypass = {
