@@ -600,6 +600,33 @@ ideas = {
 			}
 			traits = { monarchist ideological_crusader }
 		}
+		willi_muenzenberg = { 
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist smooth_talking_charmer }
+		}
+		lothar_bolz = { 
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist tough_negotiator }
+		}
+		anton_ackermann = { 
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist ideological_crusader }
+		}
 	}
 	
 	#Security Ministers
@@ -780,295 +807,368 @@ ideas = {
 			}
 			traits = { monarchist efficient_sociopath }
 		}
-	}
-
-	#Intel Ministers	
-	intel_minister = {
-		wilhelm_canaris = {
-			
+		albert_kuntz = { 
 			allowed = {
 				original_tag = GER
 			}
 			available = {
-				OR = {
-				has_government = fascism
+				has_government = communism
+			}
+			traits = { communist prince_of_terror }
+		}
+		erich_weinert = { 
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist hearts_and_minds }
+		}
+		ernst_wollweber = { 
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				has_government = communism
+			}
+			traits = { communist crime_fighter }
+		}
+	
+	}
+
+#Intel Ministers	
+intel_minister = {
+	wilhelm_canaris = {
+		
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
+			has_government = fascism
+			has_government = monarchism
+			}
+		}
+		
+		traits = { codebreaker anti_communist schemer}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	ernst_kaltenbrunner_intel = {
+		
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			has_government = fascism
+		}
+		
+		traits = { dismal_enigma fascist }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}		
+	hans_dohnanyi = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+			}
+		}
+		traits = { conservative dismal_enigma }
+	}
+	georg_hansen = {
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
 				has_government = monarchism
-				}
-			}
-			
-			traits = { codebreaker anti_communist schemer}
-
-			ai_will_do = {
-				factor = 1
+				has_government = conservatism
+				has_government = liberalism
 			}
 		}
-		ernst_kaltenbrunner_intel = {
-			
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				has_government = fascism
-			}
-			
-			traits = { dismal_enigma fascist }
-
-			ai_will_do = {
-				factor = 1
-			}
-		}		
-		hans_dohnanyi = { 
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-				}
-			}
-			traits = { conservative dismal_enigma }
-		}
-		georg_hansen = {
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				OR = {
-					has_government = monarchism
-					has_government = conservatism
-					has_government = liberalism
-				}
-			}
-			traits = { monarchist dismal_enigma }
-		}
-		hans_oster = {
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				OR = {
-					has_government = monarchism
-					has_government = conservatism
-					has_government = liberalism
-				}
-			}
-			traits = { monarchist codebreaker }
-		}
+		traits = { monarchist dismal_enigma }
 	}
+	hans_oster = {
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+			}
+		}
+		traits = { monarchist codebreaker }
+	}
+	wilhelm_zaisser = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			has_government = communism
+		}
+		traits = { communist codebreaker }
+	}
+}
 	
 	#Econ Ministers	
 	economic_minister = {
 	
 	goering_e = {
-			
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				has_completed_focus = GER_Goering_Plan
-				NOT = { has_country_flag = goering_dead }
-				has_government = fascism
-			}			
-			traits = { industrial_planner pet_projects fascist }
-			
-			removal_cost = 50
-			
-			ai_will_do = {
-				factor = 1
-			}
+		
+		allowed = {
+			original_tag = GER
 		}
-		hjalmar_schacht = {
-			
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				NOT = { has_government = communism has_government = socialism }
-			}
-			traits = { captain_of_industry conservative}
-			ai_will_do = {
-				factor = 2
-				modifier = {
-					factor = 0
-					has_country_flag = schacht_fired
-				}
-			}
-		}
-		walther_funk = {
-			
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				NOT = { has_government = communism has_government = socialism }
-			}
-			traits = { war_industrialist anti_communist }
-
-			ai_will_do = {
-				factor = 3
-			}
-		}
-		fritz_schaeffer = { 
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-				}
-			}
-			traits = { conservative capitalist }
-		}
-
-		ludwig_erhard = { 
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-				}
-			}
-			traits = { conservative captain_of_industry }
-			cancel_if_invalid = no
-		}
-		todt = {
-			
-			allowed = {
-				original_tag = GER
-				NOT = { has_country_flag = todt_dead }
-			}
-			available = {
-				has_completed_focus = GER_west_wall_med
-			}
-			
-			cancel_if_invalid = yes
-			
-			traits = {fascist fortification_engineer }
-			#Dies in air crash Feb 1942
-			ai_will_do = {
-				factor = 0.5
-			}
-		}
-		speer = {
-			
-			allowed = {
-				original_tag = GER
-
-			}
-			available = {
-				date > 1941.1.1
-			}
-			#Chance to also die in Todt crash
-			traits = { fascist armaments_organizer apolitical}
-			ai_will_do = {
-				factor = 2
-			}
-		}
-		otto_gessler = { 
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-			OR = {
-				has_government = conservatism
-				has_government = monarchism
-				}
-			}
-			traits = { conservative war_industrialist }
-		}
-		adam_stegerwald = { 
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-			OR = {
-				has_government = conservatism
-				has_government = monarchism
-				has_government = liberalism
-				}
-			}
-			traits = { conservative public_works_focus }
-		}
-		alfried_krupp = { 
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-			OR = {
-				has_government = fascism
-				has_government = monarchism
-				has_government = conservatism
-				}
-			}
-			traits = { fascist captain_of_industry }
-		}
-		konstantin_hierl = { 
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				has_government = fascism
-			}
-			traits = { fascist fortification_engineer }
-		}
-		alfred_hugenberg = {
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				OR = {
-					has_government = monarchism
-					has_government = conservatism
-				}
-			}
-			traits = { monarchist captain_of_industry }
-		}
-		fritz_thyssen = {
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				OR = {
-					has_government = monarchism
-					has_government = conservatism
-					has_government = liberalism
-				}
-			}
-			traits = { monarchist resource_industrialist }
-		}
-		paul_lejeune_jung = {
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				OR = {
-					has_government = monarchism
-					has_government = conservatism
-					has_government = liberalism
-				}
-			}
-			traits = { monarchist administrative_genius }
-		}
-		johannes_popitz = {
-			allowed = {
-				original_tag = GER
-			}
-			available = {
-				OR = {
-					has_government = monarchism
-					has_government = conservatism
-					has_government = liberalism
-				}
-			}
-			traits = { monarchist technical_especialist }
+		available = {
+			has_completed_focus = GER_Goering_Plan
+			NOT = { has_country_flag = goering_dead }
+			has_government = fascism
+		}			
+		traits = { industrial_planner pet_projects fascist }
+		
+		removal_cost = 50
+		
+		ai_will_do = {
+			factor = 1
 		}
 	}
+	hjalmar_schacht = {
+		
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			NOT = { has_government = communism has_government = socialism }
+		}
+		traits = { captain_of_industry conservative}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_country_flag = schacht_fired
+			}
+		}
+	}
+	walther_funk = {
+		
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			NOT = { has_government = communism has_government = socialism }
+		}
+		traits = { war_industrialist anti_communist }
+
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	fritz_schaeffer = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+			}
+		}
+		traits = { conservative capitalist }
+	}
+
+	ludwig_erhard = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
+				has_government = conservatism
+				has_government = liberalism
+				has_government = socialism
+			}
+		}
+		traits = { conservative captain_of_industry }
+		cancel_if_invalid = no
+	}
+	todt = {
+		
+		allowed = {
+			original_tag = GER
+			NOT = { has_country_flag = todt_dead }
+		}
+		available = {
+			has_completed_focus = GER_west_wall_med
+		}
+		
+		cancel_if_invalid = yes
+		
+		traits = {fascist fortification_engineer }
+		#Dies in air crash Feb 1942
+		ai_will_do = {
+			factor = 0.5
+		}
+	}
+	speer = {
+		
+		allowed = {
+			original_tag = GER
+
+		}
+		available = {
+			date > 1941.1.1
+		}
+		#Chance to also die in Todt crash
+		traits = { fascist armaments_organizer apolitical}
+		ai_will_do = {
+			factor = 2
+		}
+	}
+	otto_gessler = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+		OR = {
+			has_government = conservatism
+			has_government = monarchism
+			}
+		}
+		traits = { conservative war_industrialist }
+	}
+	adam_stegerwald = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+		OR = {
+			has_government = conservatism
+			has_government = monarchism
+			has_government = liberalism
+			}
+		}
+		traits = { conservative public_works_focus }
+	}
+	alfried_krupp = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+		OR = {
+			has_government = fascism
+			has_government = monarchism
+			has_government = conservatism
+			}
+		}
+		traits = { fascist captain_of_industry }
+	}
+	konstantin_hierl = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			has_government = fascism
+		}
+		traits = { fascist fortification_engineer }
+	}
+	alfred_hugenberg = {
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
+				has_government = monarchism
+				has_government = conservatism
+			}
+		}
+		traits = { monarchist captain_of_industry }
+	}
+	fritz_thyssen = {
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+			}
+		}
+		traits = { monarchist resource_industrialist }
+	}
+	paul_lejeune_jung = {
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+			}
+		}
+		traits = { monarchist administrative_genius }
+	}
+	johannes_popitz = {
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			OR = {
+				has_government = monarchism
+				has_government = conservatism
+				has_government = liberalism
+			}
+		}
+		traits = { monarchist technical_especialist }
+	}
+	julius_leber = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			has_government = communism
+		}
+		traits = { communist war_industrialist }
+	}
+	hans_loch = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			has_government = communism
+		}
+		traits = { communist captain_of_industry }
+	}
+	willy_rumpf = { 
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			has_government = communism
+		}
+		traits = { communist technical_especialist }
+	}
+	erwin_kramer = { #infra
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			has_government = communism
+		}
+		traits = { communist armaments_organizer }
+	}
+}
 
 	#Advisors
 	political_advisor = {

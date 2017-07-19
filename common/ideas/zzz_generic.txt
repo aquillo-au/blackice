@@ -1111,21 +1111,21 @@ ideas = {
 	economic_minister = {
 		generic_captain_of_industry = {
 			allowed = {
-				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
+				NOT = { has_available_idea_with_traits = { idea = captain_of_industry limit = 1 } }
 			}
 			
 			traits = { captain_of_industry }
 		}
 		generic_fortification_engineer = {
 			allowed = {
-				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
+				NOT = { has_available_idea_with_traits = { idea = fortification_engineer limit = 1 } }
 			}
 			
 			traits = { fortification_engineer }
 		}
 		generic_war_industrialist = {
 			allowed = {
-				OR = { original_tag = KOR original_tag = SER original_tag = ICE original_tag = SYR original_tag = LEB original_tag = EGY original_tag = JOR original_tag = CRO original_tag = LBA original_tag = INS original_tag = MAL original_tag = AZR original_tag = UKR original_tag = GEO original_tag = ARM original_tag = VIN original_tag = CAM original_tag = MNT original_tag = LIB original_tag = LAO original_tag = PAL }
+				NOT = { has_available_idea_with_traits = { idea = war_industrialist limit = 1 } }
 			}
 			
 			traits = { war_industrialist }
@@ -1140,16 +1140,65 @@ ideas = {
 					has_available_idea_with_traits = { idea = military_entrepreneur limit = 1 }
 					has_available_idea_with_traits = { idea = technical_especialist limit = 1 }
 					has_available_idea_with_traits = { idea = corrupt_kleptocrat limit = 1 }
-					has_available_idea_with_traits = { idea = fortification_engineer limit = 1 }
-					has_available_idea_with_traits = { idea = war_industrialist limit = 1 }
-					has_available_idea_with_traits = { idea = captain_of_industry limit = 1 }
 					has_available_idea_with_traits = { idea = industrial_planner limit = 1 }
 					has_available_idea_with_traits = { idea = armaments_organizer limit = 1 }
 					has_available_idea_with_traits = { idea = quartermaster_general limit = 1 }
+					has_available_idea_with_traits = { idea = financier limit = 1 }
+					has_available_idea_with_traits = { idea = committed_pacifist limit = 1 }
+					has_available_idea_with_traits = { idea = econ_interventionist limit = 1 }
 				}
 			}
 			
 			traits = { industrial_planner }
+			
+			do_effect = {
+				
+			}
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		generic_economic_minister2 = {
+			allowed = {
+				NOT = {
+					has_available_idea_with_traits = { idea = capitalist limit = 1 }
+					has_available_idea_with_traits = { idea = theoretical_scientist limit = 1 }
+					has_available_idea_with_traits = { idea = administrative_genius limit = 1 }
+					has_available_idea_with_traits = { idea = resource_industrialist limit = 1 }
+					has_available_idea_with_traits = { idea = military_entrepreneur limit = 1 }
+					has_available_idea_with_traits = { idea = technical_especialist limit = 1 }
+					has_available_idea_with_traits = { idea = corrupt_kleptocrat limit = 1 }
+					has_available_idea_with_traits = { idea = industrial_planner limit = 1 }
+					has_available_idea_with_traits = { idea = armaments_organizer limit = 1 }
+					has_available_idea_with_traits = { idea = quartermaster_general limit = 1 }
+					has_available_idea_with_traits = { idea = financier limit = 1 }
+					has_available_idea_with_traits = { idea = committed_pacifist limit = 1 }
+					has_available_idea_with_traits = { idea = econ_interventionist limit = 1 }
+				}
+			}
+			
+			traits = { financier }
+			
+			do_effect = {
+				
+			}
+	
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		generic_economic_minister3 = {
+			allowed = {
+				NOT = {
+					has_available_idea_with_traits = { idea = military_entrepreneur limit = 1 }
+					has_available_idea_with_traits = { idea = armaments_organizer limit = 1 }
+					has_available_idea_with_traits = { idea = quartermaster_general limit = 1 }
+					has_available_idea_with_traits = { idea = guns_over_butter_advocate limit = 1 }
+				}
+			}
+			
+			traits = { military_entrepreneur }
 			
 			do_effect = {
 				
@@ -1339,7 +1388,11 @@ ideas = {
 		}
 		generic_neutral_advisor = {
 			allowed = {
-				NOT = { has_government = fascism has_government = communism  }
+				NOT = { 
+					has_government = fascism
+					has_government = communism
+					has_available_idea_with_traits = { idea = royalist_reformer limit = 1 }
+				}
 			}
 
 			traits = { staunch_traditionalist }
@@ -1380,13 +1433,13 @@ ideas = {
 				NOT = {
 					has_available_idea_with_traits = { idea = sympathetic_judge limit = 1 }
 				}
-				NOT = { has_idea = roland_freisler }
 			}
 
 			traits = { sympathetic_judge }
 			on_add = {
 				custom_effect_tooltip = judge_TT
 				increase_corruption = yes
+				set_country_flag = has_sympth_judge
 			}
 			ai_will_do = {
 				factor = 10

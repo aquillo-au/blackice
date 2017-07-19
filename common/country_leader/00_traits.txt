@@ -145,30 +145,13 @@ leader_traits = {
 	
 	union_man = {
 		random = no
+
 		
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
-	political_dancer = {
-		random = no
-		political_power_factor = 0.15
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	staunch_constitutionalist = {
-		random = no
-		drift_defence_factor = 0.5
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
+	
 	cornered_fox = {
 		random = no
 		army_defence_factor = 0.15
@@ -245,6 +228,21 @@ leader_traits = {
 	}
 	### IDEA TRAITS ###
 	##Head of State/Government/General Traits##
+
+	union_leader = {
+		random = no
+		
+		unity_factor = 0.05
+		political_power_factor = 0.03
+		industrial_capacity_dockyard = 0.03
+		industrial_capacity_factory = 0.03
+		line_change_production_efficiency_factor = -0.03
+		production_factory_max_efficiency_factor = -0.03
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	political_dancer = {
 		random = no
 		political_power_factor = 0.08
@@ -301,7 +299,7 @@ leader_traits = {
 		random = no
 		sprite = 13
 		unity_factor = 0.05 
-		political_power_factor = 0.05
+		political_power_factor = 0.07
 		
 		ai_will_do = {
 			factor = 1
@@ -681,6 +679,7 @@ leader_traits = {
 		production_speed_bunker_factor = 0.30
 		production_speed_coastal_bunker_factor = 0.30
 		production_speed_anti_air_building_factor = 0.30
+		production_speed_radar_station_factor = 0.15
 		
 		ai_will_do = {
 			factor = 1
@@ -732,7 +731,7 @@ leader_traits = {
 	armaments_organizer = {
 		sprite = 10
 		random = yes
-		conversion_cost_civ_to_mil_factor = -0.20
+		conversion_cost_civ_to_mil_factor = -0.25
 		production_speed_smallarms_factory_factor = 0.15
 		production_speed_ammo_factory_factor = 0.15
 		
@@ -795,6 +794,17 @@ leader_traits = {
 		industrial_capacity_factory = 0.025
 		industrial_capacity_dockyard = 0.025
 		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	guns_over_butter_advocate = {
+		sprite = 10
+		random = yes
+		consumer_goods_factor = 0.03
+		production_speed_arms_factory_factor = 0.1
+		production_speed_dockyard_factor = 0.1
+		conversion_cost_civ_to_mil_factor= -0.1
 		ai_will_do = {
 			factor = 1
 		}
