@@ -2319,35 +2319,62 @@ country_event = {
 			if = {
 				limit = { 
 					SPR = { 
+						controls_state = 41
+						controls_state = 165
 						controls_state = 166
+						controls_state = 167
+						controls_state = 168
 						controls_state = 169
 						controls_state = 170
 						controls_state = 171
+						controls_state = 172
+						controls_state = 173
 						controls_state = 174
+						controls_state = 175
 						controls_state = 176
+						controls_state = 177
 						controls_state = 178
 						controls_state = 290
+						controls_state = 297
 						controls_state = 699
 					} 
 				}
+				transfer_state = 41
+				transfer_state = 165
 				transfer_state = 166
+				transfer_state = 167
+				transfer_state = 168
 				transfer_state = 169
 				transfer_state = 170
 				transfer_state = 171
+				transfer_state = 172
+				transfer_state = 173
 				transfer_state = 174
+				transfer_state = 175
 				transfer_state = 176
+				transfer_state = 177
 				transfer_state = 178
 				transfer_state = 290
+				transfer_state = 297
 				transfer_state = 699
 				
+				41 = { add_core_of = SPA}
+				165 = { add_core_of = SPA}
 				166 = { add_core_of = SPA}
+				167 = { add_core_of = SPA}
+				168 = { add_core_of = SPA}
 				169 = { add_core_of = SPA}
 				170 = { add_core_of = SPA}
 				171 = { add_core_of = SPA}
+				172 = { add_core_of = SPA}
+				173 = { add_core_of = SPA}
 				174 = { add_core_of = SPA}
+				175 = { add_core_of = SPA}
 				176 = { add_core_of = SPA}
+				177 = { add_core_of = SPA}
 				178 = { add_core_of = SPA}
 				290 = { add_core_of = SPA}
+				297 = { add_core_of = SPA}
 				699 = { add_core_of = SPA}
 			}
 			hidden_effect = {
@@ -2390,6 +2417,12 @@ country_event = {
 		
 		SPA = {
 			hidden_effect = { load_oob = SPA_Civil_War 	}
+		}
+		SPR = { 
+			declare_war_on = {
+				target = SPA
+				type = annex_everything
+			}
 		}
 		#SPR = { 
 		#
