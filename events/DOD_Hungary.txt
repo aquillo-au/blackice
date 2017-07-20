@@ -160,6 +160,7 @@ country_event = {
 		}
 		news_event = { id = news.291 days = 1 }
 		add_manpower = 500000
+		add_named_threat = { threat = 2 name = HUN_annex_AUS }
 	}
 }
 #country votes no - hungary
@@ -320,7 +321,7 @@ country_event = {
 		}
 		custom_effect_tooltip =  GAME_OVER_TT
 		HUN = { country_event = { id = DOD_hungary.11 hours = 6 } }
-		
+		add_named_threat = { threat = 2 name = HUN_annex_CZE }
 	}
 	option = { #A close association status
 		name = DOD_hungary.10.b
@@ -328,6 +329,7 @@ country_event = {
 			factor = 50
 		}
 		HUN = { country_event = { id = DOD_hungary.12 hours = 6 } }
+		add_named_threat = { threat = 1 name = HUN_puppet_CZE }
 	}
 	option = { #Refuse
 		name = DOD_hungary.10.c
@@ -1408,8 +1410,9 @@ country_event = {
 			}
 			if = {
 				limit = {
-					82 = { is_claimed_by = HUN }
-					82 = { is_controlled_by = FROM }
+					FROM = {
+						controls_state = 82
+					}
 				}
 				transfer_state = 82
 			}

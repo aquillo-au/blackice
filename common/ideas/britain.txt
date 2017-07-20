@@ -299,25 +299,65 @@ ideas = {
 ####Politicians
 ##################
 #HoS
-	head_of_state = {
-		mosley_hos = {
+head_of_state = {
+	mosley_hos = {
+		allowed = {
+			original_tag = ENG
+			has_government = fascism
+		}
+		traits = { fascist }
+	}
+	pollitt_hos = {
+		allowed = {
+			original_tag = ENG
+			has_government = communism
+		}
+		traits = { communist }
+	}
+	george_v = {
+
 			allowed = {
 				original_tag = ENG
-				has_government = fascism
+				NOT = { has_country_flag = ENG_king_died }
 			}
-			traits = { fascist }
+			available = {
+				NOT = { has_country_flag = ENG_king_died }
+			}
+			allowed_civil_war = {
+				NOT ={
+					has_government = communism
+				}
+				NOT = {
+					any_other_country = {
+						original_tag = ENG
+						OR = {
+							has_government = conservatism
+							has_government = liberalism
+							has_government = socialism
+						}
+						NOT = {
+							tag = ROOT
+						}
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			traits = { monarchist popular_figurehead }
+
+
 		}
-		pollitt_hos = {
+		
+		edward_viii = {
+
 			allowed = {
 				original_tag = ENG
 				has_government = communism
 			}
-			traits = { communist }
-		}
-		george_v = {
-			allowed = {
-				original_tag = ENG
-				NOT = { has_country_flag = ENG_king_died }
+			available = {
+				has_country_flag = ENG_king_died
+				NOT = { has_country_flag = edward_abdicates }
 			}
 
 			allowed_civil_war = {
@@ -341,11 +381,16 @@ ideas = {
 
 			removal_cost = -1
 
-			traits = { monarchist popular_figurehead }
+			traits = { fascist ineffective_politician }
+
+
 		}
 		ENG_george_vi = {
 			allowed = {
 				original_tag = ENG
+				
+			}
+			available = {
 				has_country_flag = ENG_king_died
 			}
 

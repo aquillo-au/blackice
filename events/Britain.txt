@@ -541,6 +541,7 @@ country_event = {
 			set_country_flag = ENG_king_died
 			remove_ideas = george_v
 			add_ideas = ENG_king_edward
+			add_ideas = edward_viii
 		}		
 	}
 	
@@ -549,6 +550,7 @@ country_event = {
 		effect_tooltip = {
 			remove_ideas = george_v		
 			add_ideas = ENG_king_edward
+			add_ideas = edward_viii
 		}
 	}
 }
@@ -571,7 +573,9 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
+			set_country_flag = edward_abdicates
 			remove_ideas = ENG_king_edward
+			remove_ideas = edward_viii
 			add_ideas = ENG_george_vi		
 		}
 	}
@@ -580,6 +584,7 @@ country_event = {
 		name = britain.17.a
 		effect_tooltip = {
 			remove_ideas = ENG_king_edward
+			remove_ideas = edward_viii
 			add_ideas = ENG_george_vi		
 		}
 	}
@@ -603,7 +608,8 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
-			remove_ideas = ENG_george_vi		
+			remove_ideas = ENG_george_vi	
+			clr_country_flag = edward_abdicates
 		}
 	}
 
@@ -612,6 +618,7 @@ country_event = {
 		effect_tooltip = {
 			remove_ideas = ENG_george_vi	
 		}
+		add_ideas = edward_viii
 		create_country_leader = {
 			name = "Edward VIII"
 			desc = "POLITICS_EDWARD_EDWARD_DESC"
@@ -630,6 +637,7 @@ country_event = {
 			remove_ideas = ENG_george_vi	
 		}
 		add_ideas = ENG_king_edward_fascism
+		add_ideas = edward_viii
 	}
 }
 #Britain receives warning of the Indian National Army

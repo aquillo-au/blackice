@@ -13,8 +13,22 @@ country_event = {
 	picture = GFX_report_event_king_george_inspects_canadian_army
 	
 	trigger = {
-		has_government = monarchism
-		NOT = { has_country_flag = monarchy_set }
+		OR = {
+			AND = {
+				has_government = monarchism
+				NOT = { has_country_flag = monarchy_set }
+			}
+			AND = {
+				tag = HUN
+				has_government = monarchism
+				NOT = { has_country_flag = monarchy_set }
+				OR = {
+					has_completed_focus = HUN_elect_a_democratic_king
+					has_completed_focus = HUN_elect_a_fascist_king
+					has_completed_focus = HUN_invite_the_habsburg_prince
+				}
+			}
+		}
 	}
 	
 	mean_time_to_happen = {

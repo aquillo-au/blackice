@@ -910,6 +910,81 @@ head_of_state = {
 	traits = { apolitical elder_statesman }
 
 	}
+	benoit_frachon_hos = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist union_leader }
+			
+		}
+	duclos_hos = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist effective_leader }
+			
+		}
+	georges_valois= { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist tough_guy }
+			
+		}
+	hubert_lagardelle = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist intellectual }
+			
+		}
+	pierre_laval = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist elder_statesman }
+			
+		}
+	charles_maurras = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				OR = {
+					has_government = fascism	
+					has_government = monarchism
+				}
+			}
+			
+			traits = { monarchist demagogue}
+			
+		}
 }
 
 #Foreign
@@ -921,11 +996,11 @@ foreign_minister = {
 			}
 			available = {
 				OR = {
-				has_government = liberalism
-				has_government = socialism
+					has_government = fascism	
+					has_government = monarchism
 				}
 			}
-			traits = { socialist smooth_talking_charmer }
+			traits = { monarchist compassionate_gentleman }
 
 			ai_will_do = {
 				factor = 1
@@ -1045,6 +1120,18 @@ foreign_minister = {
 				factor = 1
 			}
 		}
+		pierre_laval_foreign = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist tough_negotiator }
+			
+		}	
 }
 
 #Propaganda/Security
@@ -1148,18 +1235,54 @@ interior_minister = {
 				factor = 1
 			}
 		}
-}
-
-#Intelligence
-intel_minister = {
+		adrien_marquet = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist hearts_and_minds }
+			
+		}
+		pierre_costantini= { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist prince_of_terror }
+			
+		}
+		rene_bousquet = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist crime_fighter }
+			
+		}
+	}
+	#Intelligence
+	intel_minister = {
 		maurice_henri_gauche = {
-
 			allowed = {
 				original_tag = "FRA"
 			}
+		
 			available = {
 				NOT = { has_government = communism has_government = fascism }
 			}
+			
 			picture = idea_maurice_henri_gauche
 
 			traits = { dismal_enigma apolitical }
@@ -1172,11 +1295,12 @@ intel_minister = {
 			allowed = {
 				original_tag = FRA
 			}
+			
 			available = {
 				has_government = communism
 			}
+			
 			traits = { communist codebreaker }
-
 		}
 		zivony_peshkov_intel = {
 
@@ -1193,6 +1317,18 @@ intel_minister = {
 			ai_will_do = {
 				factor = 1
 			}
+		}
+		rene_bousquet_int = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist codebreaker }
+			
 		}
 }
 
@@ -1409,9 +1545,69 @@ economic_minister = {
 			traits = { socialist quartermaster_general }
 			cancel_if_invalid = no
 		}
-}
-#Advisors
-political_advisor = {
+		marcel_deat = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist war_industrialist }
+			
+		}
+		rene_belin = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist econ_interventionist }
+			
+		}
+		eugene_schueller = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist captain_of_industry }
+			
+		}
+		jacques_correze = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist financier }
+			
+		}
+		eugene_deloncle = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist fortification_engineer}
+			
+		}
+	}
+	#Advisors
+	political_advisor = {
 		maurice_thorez = {
 
 			allowed = {
@@ -1513,11 +1709,21 @@ political_advisor = {
 				factor = 1
 			}
 		}
+		philippe_henriot = { 
+			allowed = { 
+				original_tag = FRA
+			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist speechwriter}
+			
+		}
 
 	}
-
 	# MILITARY
-# MILITARY
 	supreme_commander = {
 		de_gaulle_sc = {
 			
