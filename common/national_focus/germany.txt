@@ -2798,110 +2798,6 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = GER_around_maginot
-		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = GER_danzig_or_war }
-		
-		bypass = {
-		}		
-		
-		available = {
-			has_war_with = FRA
-			OR = {
-				NOT = { HOL = { is_in_faction_with = GER } }
-				NOT = { BEL = { is_in_faction_with = GER } }
-				NOT = { LUX = { is_in_faction_with = GER } }
-			}
-			if = { limit = { is_ai = yes }
-				if = { limit = { has_war_with = POL }
-					POL = { has_capitulated = YES }
-				}
-				if = { limit = { has_war_with = SOV }
-					SOV = { has_capitulated = YES }
-				}
-				if = { limit = { has_war_with = YUG }
-					YUG = { has_capitulated = YES }
-				}
-			}
-		}
-
-		bypass = {
-			HOL = { is_in_faction_with = GER }
-			BEL = { is_in_faction_with = GER }
-			LUX = { is_in_faction_with = GER }
-		}
-
-		historical_ai = {
-			date > 1939.1.1
-			NOT = {
-				any_home_area_neighbor_country = {
-					NOT = { tag = FRA }
-					has_war_with = ROOT
-					surrender_progress < 0.5
-				}
-			}
-		}
-		will_lead_to_war_with = BEL
-		will_lead_to_war_with = HOL
-		will_lead_to_war_with = LUX
-		will_lead_to_war_with = FRA
-		x = 15
-		y = 7
-		cost = 3.1
-		ai_will_do = {
-			factor = 12
-			modifier = {
-				factor = 0
-				date < 1939.1.1
-			}			
-			modifier = {
-				factor = 0.2
-				any_home_area_neighbor_country = {
-					NOT = { tag = FRA }
-					has_war_with = ROOT
-					surrender_progress < 0.5
-				}
-			}
-		}	
-		completion_reward = {
-			if = { 
-				limit = { 
-					NOT = { BEL = { is_in_faction_with = GER } }
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = BEL
-					generator = { 6 }
-				}
-			}
-			if =  {
-				limit = {
-					NOT = { HOL = { is_in_faction_with = GER } }
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = HOL
-					generator = { 7 }
-				}
-			}
-			if = {
-				limit = {
-					NOT = { LUX = { is_in_faction_with = GER } }
-				}
-				create_wargoal = {
-					type = take_state_focus
-					target = LUX
-					generator = { 8 }
-				}
-				ENG = { add_to_faction = LUX }
-			}
-			hidden_effect = {
-				news_event = { hours = 6 id = news.234 }
-			}
-		}
-	}
-	
-	focus = {
 		id = GER_czech_friend
 		icon = GFX_goal_generic_improve_relations
 		prerequisite = { focus = GER_anschluss }
@@ -2990,6 +2886,7 @@ focus_tree = {
 			}
 		}
 	}
+
 	
 	focus = {
 		id = GER_demand_sudetenland
@@ -3028,10 +2925,7 @@ focus_tree = {
 			}
 		}
 		cancel = {
-			OR = {
-				NOT = { CZE = { owns_state = 69 } }
-				has_war_with = CZE
-			}
+			NOT = { CZE = { owns_state = 69 } HUN = { owns_state = 69 } }
 		}
 		cancel_if_invalid = yes
 		x = 14
@@ -3253,6 +3147,172 @@ focus_tree = {
 					}
 				}
 				country_event = { id = germany.20 }
+			}
+		}
+	}
+
+focus = {
+		id = GER_poland_friend
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = GER_danzig_vs_slovakia }
+		available = {
+			NOT = { has_global_flag = sov_yes_pact }
+			NOT = { has_war_with = POL }
+			POL = {
+				custom_trigger_tooltip = {
+					tooltip = GER_alone_or_peace_faction_tt
+					is_alone_or_in_faction_at_peace_with_GER = yes
+				}
+			}
+		}
+		bypass = {
+			is_in_faction_with = POL
+			is_alone_or_in_faction_at_peace_with_GER = no
+		}
+		x = 14
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 0
+		}	
+		completion_reward = {
+			POL = {
+				add_opinion_modifier = { target = GER modifier = ger_pol_diplomacy_focus }
+				if = {
+					limit = {
+						GER = {
+							has_government = fascism
+						}
+					}
+					add_ideas = fascist_influence
+				}
+				if = {
+					limit = {
+						GER = {
+							has_government = communism
+						}
+					}
+					add_ideas = communist_influence
+				}
+				if = {
+					limit = {
+						GER = {
+							OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
+							}
+						}
+					}
+					add_ideas = democratic_influence
+				}
+				country_event = { id = generic.1 }
+			}
+		}
+	}
+	focus = {
+		id = GER_around_maginot
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = GER_danzig_or_war }
+		
+		bypass = {
+		}		
+		
+		available = {
+			has_war_with = FRA
+			OR = {
+				NOT = { HOL = { is_in_faction_with = GER } }
+				NOT = { BEL = { is_in_faction_with = GER } }
+				NOT = { LUX = { is_in_faction_with = GER } }
+			}
+			if = { limit = { is_ai = yes }
+				if = { limit = { has_war_with = POL }
+					POL = { has_capitulated = YES }
+				}
+				if = { limit = { has_war_with = SOV }
+					SOV = { has_capitulated = YES }
+				}
+				if = { limit = { has_war_with = YUG }
+					YUG = { has_capitulated = YES }
+				}
+				if = { limit = { has_war_with = HUN }
+					HUN = { has_capitulated = YES }
+				}
+			}
+		}
+
+		bypass = {
+			HOL = { is_in_faction_with = GER }
+			BEL = { is_in_faction_with = GER }
+			LUX = { is_in_faction_with = GER }
+		}
+
+		historical_ai = {
+			date > 1939.1.1
+			NOT = {
+				any_home_area_neighbor_country = {
+					NOT = { tag = FRA }
+					has_war_with = ROOT
+					surrender_progress < 0.5
+				}
+			}
+		}
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = HOL
+		will_lead_to_war_with = LUX
+		will_lead_to_war_with = FRA
+		x = 15
+		y = 7
+		cost = 3.1
+		ai_will_do = {
+			factor = 12
+			modifier = {
+				factor = 0
+				date < 1939.1.1
+			}			
+			modifier = {
+				factor = 0.2
+				any_home_area_neighbor_country = {
+					NOT = { tag = FRA }
+					has_war_with = ROOT
+					surrender_progress < 0.5
+				}
+			}
+		}	
+		completion_reward = {
+			if = { 
+				limit = { 
+					NOT = { BEL = { is_in_faction_with = GER } }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = BEL
+					generator = { 6 }
+				}
+			}
+			if =  {
+				limit = {
+					NOT = { HOL = { is_in_faction_with = GER } }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = HOL
+					generator = { 7 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { LUX = { is_in_faction_with = GER } }
+				}
+				create_wargoal = {
+					type = take_state_focus
+					target = LUX
+					generator = { 8 }
+				}
+				ENG = { add_to_faction = LUX }
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.234 }
 			}
 		}
 	}
@@ -3533,65 +3593,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = GER_poland_friend
-		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = GER_danzig_vs_slovakia }
-		available = {
-			NOT = { has_global_flag = sov_yes_pact }
-			NOT = { has_war_with = POL }
-			POL = {
-				custom_trigger_tooltip = {
-					tooltip = GER_alone_or_peace_faction_tt
-					is_alone_or_in_faction_at_peace_with_GER = yes
-				}
-			}
-		}
-		bypass = {
-			is_in_faction_with = POL
-			is_alone_or_in_faction_at_peace_with_GER = no
-		}
-		x = 14
-		y = 6
-		cost = 10
-		ai_will_do = {
-			factor = 0
-		}	
-		completion_reward = {
-			POL = {
-				add_opinion_modifier = { target = GER modifier = ger_pol_diplomacy_focus }
-				if = {
-					limit = {
-						GER = {
-							has_government = fascism
-						}
-					}
-					add_ideas = fascist_influence
-				}
-				if = {
-					limit = {
-						GER = {
-							has_government = communism
-						}
-					}
-					add_ideas = communist_influence
-				}
-				if = {
-					limit = {
-						GER = {
-							OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							}
-						}
-					}
-					add_ideas = democratic_influence
-				}
-				country_event = { id = generic.1 }
-			}
-		}
-	}
+	
 
 	focus = {
 		id = GER_war_with_france
@@ -3612,6 +3614,14 @@ focus_tree = {
 			OR = {
 				NOT = { country_exists = FRA }
 				#has_war_with = FRA     ## Need to leave this there, so AI always has to run it, so it can get Paris Wargoal - cost shall be low however
+
+
+
+
+
+
+
+
 			}
 		}
 		#historical_ai = {   ## removing because this causes AI to skip this NF
@@ -3637,7 +3647,9 @@ focus_tree = {
  				generator = { 28 }
  			}
 		}
-	}
+	}	
+	
+	
 #########KRIESGMARINE##############
 	focus = {
 		id = GER_naval_rearmament
@@ -4573,7 +4585,7 @@ focus_tree = {
 						SOV = { has_capitulated = yes }
 					}
 					if = { limit = { has_war_with = HUN }
-						HUN = { has_capitulated = YES }
+					HUN = { has_capitulated = YES }
 					}
 				}
 			}
