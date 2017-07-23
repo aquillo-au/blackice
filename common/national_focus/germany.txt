@@ -113,7 +113,7 @@ focus_tree = {
 		prerequisite = { focus = GER_autobahn_I }
 		x = -18
 		y = 2
-		cost = 12
+		cost = 10
 		available = {
 			date > 1937.1.1
 		}
@@ -188,7 +188,7 @@ focus_tree = {
 		prerequisite = { focus = GER_autobahn_II }
 		x = -18
 		y = 3
-		cost = 10
+		cost = 12
 		available = {
 			date > 1938.1.1
 		}
@@ -274,7 +274,7 @@ focus_tree = {
 		prerequisite = { focus = GER_autobahn_III }
 		x = -18
 		y = 4
-		cost = 10
+		cost = 12
 		available = {
 			date > 1939.1.1
 		}
@@ -1978,7 +1978,7 @@ focus_tree = {
 			}
 		}
 		x = 8
-		y = 5
+		y = 6
 		cost = 14
 		ai_will_do = {
 			factor = 0.01
@@ -2031,7 +2031,7 @@ focus_tree = {
 			}
 		}
 		x = 8
-		y = 7
+		y = 8
 		cost = 12
 		ai_will_do = {
 			factor = 1
@@ -2172,7 +2172,7 @@ focus_tree = {
 			}
 		}
 		x = 10
-		y = 5
+		y = 6
 		cost = 5.2
 		historical_ai = {
 			#NOT = {
@@ -2895,9 +2895,9 @@ focus_tree = {
 		mutually_exclusive = { focus = GER_czech_friend }
 		available = {
 			is_puppet = no
-			or = {
-			has_army_manpower = { size > 799999 } #85 div	
-			date > 1938.12.30
+			OR = {
+				has_army_manpower = { size > 799999 } #85 div	
+				date > 1938.12.30
 			}
 			NOT = {
 				AND = {
@@ -2925,7 +2925,10 @@ focus_tree = {
 			}
 		}
 		cancel = {
-			NOT = { CZE = { owns_state = 69 } HUN = { owns_state = 69 } }
+			NOT = {
+				CZE = { owns_state = 69 }
+				HUN = { owns_state = 69 }
+			}
 		}
 		cancel_if_invalid = yes
 		x = 14
@@ -4969,6 +4972,7 @@ focus = {
 		x = 26
 		y = 2
 		cost = 1.8
+		
 		available = {
 			date > 1937.1.1
 		}
@@ -4999,6 +5003,68 @@ focus = {
 		}
 	}
 	##################### expands starting OOB template #focus to be repeated multiple times
+	## Player only ###
+	focus = {
+		id = GER_SS_LSSAH
+		#text = Schutzstaffel_divisions
+		icon = GFX_goal_LSSAH_focus
+		prerequisite = { focus = GER_historical_Schutzstaffel }
+		prerequisite = { focus = GER_VT_Schutzstaffel }
+		x = 27
+		y = 3
+		cost = 5
+		
+		available = {
+			is_ai = no
+			date > 1938.8.1
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				GER = {
+					country_event = ss_event.664	# LSSAH full infantry regiment
+				}
+			}
+		}
+	}
+	focus = {
+		id = GER_SS_TK
+		#text = Schutzstaffel_divisions
+		icon = GFX_goal_TK_focus
+		prerequisite = { focus = GER_historical_Schutzstaffel }
+		prerequisite = { focus = GER_TV_Schutzstaffel }
+		x = 27
+		y = 4
+		cost = 5
+		
+		available = {
+			is_ai = no
+			date > 1939.10.1
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				GER = {
+					country_event = ss_event.6...	# Totenkopf-division formed from 3 SA standarte (1st Oberbayern, 2nd Brandenburg and 3rd Thuringen)
+				}
+			}
+		}
+	}
+	#### To be AI only ####
 	focus = {
 		id = GER_Schutzstaffel_divisions
 		#text = Schutzstaffel_divisions
@@ -5010,11 +5076,12 @@ focus = {
 		cost = 5
 		
 		available = {
-			date > 1939.1.1
+			#is_ai = yes
+			date > 1939.9.15
 		}
 		
 		ai_will_do = {
-			factor = 5
+			factor = 100
 		}	
 		
 		completion_reward = {
@@ -5162,7 +5229,7 @@ focus = {
 		#text = Schutzstaffel_junkerschulen	
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_focus }
-		x = 27
+		x = 29
 		y = 3
 		cost = 5
 		available = {
@@ -5181,7 +5248,7 @@ focus = {
 		#text = Schutzstaffel_junkerschulen	
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_junkerschulen }
-		x = 27
+		x = 29
 		y = 4
 		cost = 5
 		available = {
@@ -5208,7 +5275,7 @@ focus = {
 		#text = Schutzstaffel_foreign_ss_units
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_focus }
-		x = 27
+		x = 29
 		y = 5
 		cost = 5
 		available = {
@@ -5230,7 +5297,7 @@ focus = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_divisions_V }
 		prerequisite = { focus = GER_Schutzstaffel_junkerschulen }
-		x = 27
+		x = 29
 		y = 7
 		cost = 1
 		available = {
@@ -5250,7 +5317,7 @@ focus = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_focus }
 		mutually_exclusive = { focus = GER_historical_Schutzstaffel }
-		x = 29
+		x = 31
 		y = 1
 		cost = 5
 		
@@ -5264,7 +5331,7 @@ focus = {
 			country_event = ss_event.675
 			set_country_flag = focus_ahistorical_SS
 			hidden_effect = {
-				army_experience = 40
+				army_experience = 20
 			}
 		}
 	}
@@ -5273,7 +5340,7 @@ focus = {
 		#text = LSSAH_Division
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_ahistorical_Schutzstaffel }
-		x = 29
+		x = 31
 		y = 2
 		cost = 5
 		
@@ -5294,7 +5361,7 @@ focus = {
 		#text = Reich_Division
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_LSSAH_division }
-		x = 29
+		x = 31
 		y = 3
 		cost = 5
 		
@@ -5316,7 +5383,7 @@ focus = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Das_Reich_division }
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
-		x = 29
+		x = 31
 		y = 4
 		cost = 5
 		
@@ -5337,7 +5404,7 @@ focus = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Wiking_division }
-		x = 29
+		x = 31
 		y = 5
 		cost = 5
 		
@@ -5355,4 +5422,5 @@ focus = {
 	}
 	
 	#######################################################
-} #### EOF
+}
+#### EOF

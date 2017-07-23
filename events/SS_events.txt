@@ -1,12 +1,8 @@
 ﻿###########################
 # German SS Events
 ###########################
-
 add_namespace = ss_event
-
 ###########################
-
-
 # LSSAH Starting OOB player
 country_event = {
 	id = ss_event.665
@@ -30,7 +26,7 @@ country_event = {
 	}
 }
 
-# Starting SS Regiments
+# Starting SS Battalion
 country_event = {
 	id = ss_event.666
 	title = ss_event.666.t
@@ -101,8 +97,163 @@ country_event = {
 			set_country_flag = SS_VT
 		}
 		ai_chance = { factor = 100 }
-}
 	}
+}
+### LSSAH event chain
+country_event = {
+	id = ss_event.664
+	title = ss_event.664.t
+	desc = ss_event.664.d
+	
+	picture = GFX_report_event_historical_SS
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.664.a
+		hidden_effect = {
+			load_oob = "GER_LSSAH_regiment_39"
+			set_country_flag = LSSAH_regiment_38
+		}
+	}
+}
+### Adding 1 SS Arty-Btl, 1 SS Enigeer Comp, 1 SS Recon Comp(mot)
+country_event = {
+	id = ss_event.663
+	title = ss_event.663.t
+	desc = ss_event.663.d
+	picture = GFX_report_event_historical_SS
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		date >1939.2.1
+		has_country_flag = LSSAH_regiment_38
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.663.a
+		hidden_effect = {
+			if = {
+				limit = {
+					has_army_experience < 50
+				}
+				army_experience = 44
+			}
+			set_country_flag = LSSAH_regiment_39_exp
+		}
+	}
+}
+### Motorize regiment to mot Inf.-Btl and mot Art.-Btl
+country_event = {
+	id = ss_event.662
+	title = ss_event.662.t
+	desc = ss_event.662.d
+	picture = GFX_report_event_historical_SS
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		date >1939.10.1
+		has_country_flag = LSSAH_regiment_39_exp
+		has_tech = vehicle_radio
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.662.a
+		hidden_effect = {
+			if = {
+				limit = {
+					has_army_experience < 40
+				}
+				army_experience = 35
+			}
+			set_country_flag = LSSAH_regiment_39_mot
+		}
+	}
+}
+### ss_event.661 early 1940 Expand LSSAH Regt 1 Flak Batterie, 1 more Arty btl, 1 Assaultgun btl
+country_event = {
+	id = ss_event.661
+	title = ss_event.661.t
+	desc = ss_event.661.d
+	picture = GFX_report_event_historical_SS
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		date >1940.2.1
+		has_country_flag = LSSAH_regiment_39_mot
+		has_tech = subtech_light_assault_panzer_equipment_1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.661.a
+		hidden_effect = {
+			if = {
+				limit = {
+					has_army_experience < 15
+				}
+				army_experience = 18
+			}
+			set_country_flag = LSSAH_regiment_40_mot
+		}
+	}
+}
+### ss_event.660 June 1940 Expand LSSAH Rgt to LSSAH Brigade (2 mot-Inf.-Rgt)
+country_event = {
+	id = ss_event.660
+	title = ss_event.660.t
+	desc = ss_event.660.d
+	picture = GFX_report_event_historical_SS
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		date >1940.6.1
+		has_country_flag = LSSAH_regiment_40_mot
+		has_tech = subtech_panzer_iii_td_equipment_1
+		#
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.660.a
+		hidden_effect = {
+			if = {
+				limit = {
+					has_army_experience < 15
+				}
+				army_experience = 10
+			}
+			army_experience = 35
+			set_country_flag = LSSAH_regiment_40_brig
+		}
+	}
+}
 # Schutzstaffel_divisions 1 
 country_event = {
 	id = ss_event.669
@@ -142,12 +293,11 @@ country_event = {
 	option = {
 		name = ss_event.670.a
 		hidden_effect = {
-			load_oob = "GER_LSSAH_division"	#Leibstandarte SS Adolf Hitler Expands
+			load_oob = "GER_LSSAH_division"	#Leibstandarte SS Adolf Hitler Expands to regiment
 			#set_country_flag = 
 		}
 		ai_chance = { factor = 100 }
 	}
-	
 }
 # Schutzstaffel_divisions 3
 country_event = {
@@ -170,7 +320,6 @@ country_event = {
 		}
 		ai_chance = { factor = 100 }
 	}
-	
 }
 # Schutzstaffel_divisions 4
 country_event = {
