@@ -13,6 +13,7 @@ technologies = {
 	@1944 = 20
 	@1945 = 22
 	@1946 = 24
+	@1948 = 26
 	
 	@RC = -3
 	@EG = 0
@@ -83,10 +84,7 @@ technologies = {
 			leads_to_tech = tech_engineers2
 			research_cost_coeff = 1
 		}
-		path = {
-			leads_to_tech = tech_flamethrower_squad
-			research_cost_coeff = 0.75
-		}
+		
 		
 		research_cost = 2
 		start_year = 1934
@@ -103,13 +101,14 @@ technologies = {
 			factor = 8
 		}
 	}
+	
 	tech_flamethrower_squad = {
 
 		enable_equipments = { 
 			flamethrowers_0
 		}
 		
-		engineer = {
+		combat_engineer = {
 			need = {
                	flamethrowers = 1
          	}
@@ -121,7 +120,7 @@ technologies = {
 			}
 			supply_consumption = 0.04
 		}
-		ss_engineer = {
+		ss_combat_engineer = {
 			need = {
                	flamethrowers = 1
          	}
@@ -167,6 +166,11 @@ technologies = {
 			leads_to_tech = tech_engineers_bridges
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_airborne_engineers
+			research_cost_coeff = 1
+		}
+		
 		engineer = {
 			entrenchment  = 2
 			fort = {
@@ -262,7 +266,51 @@ technologies = {
 			factor = 7
 		}
 	}	
+	tech_combat_engineers = {
+
+		enable_subunits = {
+			combat_engineer
+		}
+		path = {
+			leads_to_tech = tech_flamethrower_squad
+			research_cost_coeff = 0.75
+		}
+		research_cost = 2
+		start_year = 1934
+		folder = {
+			name = support_folder
+			position = { x = @1942 y = @FT }
+		}
+		
+		categories = {
+			support_tech
+		}
+		
+		ai_will_do = {
+			factor = 8
+		}
+	}
+	tech_airborne_engineers = {
+
+		enable_subunits = {
+			airborne_engineer
+		}
 	
+		research_cost = 2
+		start_year = 1940
+		folder = {
+			name = support_folder
+			position = { x = @1945 y = @FT }
+		}
+		
+		categories = {
+			support_tech
+		}
+		
+		ai_will_do = {
+			factor = 8
+		}
+	}
 ################################################################################	
 	tech_engineers_bridges = {
 
