@@ -2912,9 +2912,7 @@ technologies = {
 	################### Battalion Composition ###########
 	tech_ger_Bat_comp = {
 
-			
 		panzer_ii = {
-		
 			soft_attack = 0.3			
 			maximum_speed = 0.5
 			reliability = 0.5
@@ -2924,13 +2922,12 @@ technologies = {
 			armor_value = 0.3
 			ap_attack = 0.2
 			hard_attack = 0.25
-				need = {
-					panzer_i_equipment = -10
-					panzer_ii_equipment = 10
+			need = {
+				panzer_i_equipment = -10
+				panzer_ii_equipment = 10
          	}
 		}
 		panzer_iii = {
-		
 			soft_attack = 0.4
 			maximum_speed = 0.5
 			reliability = 0.5
@@ -2940,13 +2937,12 @@ technologies = {
 			armor_value = 0.3
 			ap_attack = 0.2
 			hard_attack = 0.25
-				need = {
-					panzer_ii_equipment = -10
-					panzer_iii_equipment = 10
+			need = {
+				panzer_ii_equipment = -10
+				panzer_iii_equipment = 10
          	}
 		}
 		panzer_iv = {
-		
 			soft_attack = 0.5
 			maximum_speed = 0.5
 			reliability = 0.5
@@ -2956,9 +2952,9 @@ technologies = {
 			armor_value = 0.3
 			ap_attack = 0.2
 			hard_attack = 0.25
-				need = {
-					panzer_ii_equipment = -10
-					panzer_iv_equipment = 10
+			need = {
+				panzer_ii_equipment = -10
+				panzer_iv_equipment = 10
          	}
 		}
 		
@@ -2971,11 +2967,12 @@ technologies = {
 		dependencies = {
 			tech_panzer_iv_equipment_1 = 1
 		}
+		
 		research_cost = 4
 		start_year = 1940
 		folder = {
 			name = german_pz_folder
-			position = { x = 0 y = 16 }
+			position = { x = 0 y = @1940 }
 		}
 		
 		categories = {
@@ -2990,15 +2987,12 @@ technologies = {
 
 		dependencies = {
 			german_tech = 1
-		}		
-		
+		}
 		dependencies = {
 			tech_panzer_v_equipment_1 = 1
 		}
-		
-		
+
 		panzer_v = {
-		
 			soft_attack = 0.6			
 			maximum_speed = 0.5
 			reliability = 0.5
@@ -3008,18 +3002,17 @@ technologies = {
 			armor_value = 0.4
 			ap_attack = 0.4
 			hard_attack = 0.4		
-				need = {
-					panzer_iv_equipment = -10
-					panzer_v_equipment = 10
+			need = {
+				panzer_iv_equipment = -10
+				panzer_v_equipment = 10
          	}
 		}
-		
 		
 		research_cost = 4
 		start_year = 1943
 		folder = {
 			name = german_pz_folder
-			position = { x = 0 y = 18 }
+			position = { x = 0 y = @1942 }
 		}
 		
 		categories = {
@@ -3031,4 +3024,4 @@ technologies = {
 		}
 	}
 }
-#EOF#
+###EOF###

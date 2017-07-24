@@ -27,6 +27,7 @@ technologies = {
 		enable_equipments = { 
 			mountain_artillery_equipment_0
 		}
+		
 		path = {
 			leads_to_tech = interwar_artillery 
 			research_cost_coeff = 1
@@ -36,7 +37,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		path = {
-			leads_to_tech = interwar_antiair 
+			leads_to_tech = interwar_antiair
 			research_cost_coeff = 1
 		}
 		path = {
@@ -75,7 +76,6 @@ technologies = {
 		enable_equipments = {
 			anti_air_equipment_1
 		}
-
 		enable_building = {
 			building = anti_air
 			level = 5
@@ -87,9 +87,7 @@ technologies = {
 		}
 		
 		research_cost = 1
-
 		start_year = 1936
-		
 		folder = {
 			name = artillery_folder
 			position = { x = -12 y = @1936 }
@@ -107,7 +105,6 @@ technologies = {
 			artillery
 		}
 	}
-	
 	antiair1 = {
 
 		anti_air = {
@@ -125,16 +122,18 @@ technologies = {
 			leads_to_tech = HVantiair2
 			research_cost_coeff = 1
 		}
-		research_cost = 1
-
-		start_year = 1939
+		path = {
+			leads_to_tech = garrison_aa_tech
+			research_cost_coeff = 1
+		}
 		
+		research_cost = 1
+		start_year = 1939
 		folder = {
 			name = artillery_folder
 			position = { x = -12 y = @1939 }
 		}
-		
-		
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -147,29 +146,19 @@ technologies = {
 			artillery
 		}
 	}
-	
 	antiair2 = {
 	
 		enable_equipments = {
 			anti_air_equipment_2
 		}
 
-		#anti_air = {
-		#	air_attack = 0.1
-		#}
-		#anti_air_heavy = {
-		#	air_attack = 0.1
-		#}
-		
 		path = {
 			leads_to_tech = antiair3
 			research_cost_coeff = 1
 		}
 		
 		research_cost = 1
-
 		start_year = 1940
-		
 		folder = {
 			name = artillery_folder
 			position = { x = -12 y = @1940 }
@@ -187,7 +176,6 @@ technologies = {
 			artillery
 		}
 	}
-	
 	antiair3 = {
 
 		anti_air = {
@@ -203,9 +191,7 @@ technologies = {
 		}
 		
 		research_cost = 1
-
 		start_year = 1941
-		
 		folder = {
 			name = artillery_folder
 			position = { x = -12 y = @1941 }
@@ -223,7 +209,6 @@ technologies = {
 			artillery
 		}
 	}
-	
 	antiair4 = {
 
 		anti_air = {
@@ -239,9 +224,7 @@ technologies = {
 		}
 		
 		research_cost = 1
-
 		start_year = 1942
-		
 		folder = {
 			name = artillery_folder
 			position = { x = -12 y = @1942 }
@@ -259,24 +242,14 @@ technologies = {
 			artillery
 		}
 	}
-	
 	antiair5 = {
 
 		enable_equipments = {
 			anti_air_equipment_3
 		}
-		
-		#anti_air = {
-		#	air_attack = 0.1
-		#}
-		#anti_air_heavy = {
-		#	air_attack = 0.1
-		#}
-		
-		research_cost = 1
 
+		research_cost = 1
 		start_year = 1943
-		
 		folder = {
 			name = artillery_folder
 			position = { x = -12 y = @1943 }
@@ -295,7 +268,6 @@ technologies = {
 		}
 	}
 	####### HV AA ###############
-		
 	HVantiair2 = {
 	
 		enable_equipments = {
@@ -304,22 +276,14 @@ technologies = {
 		enable_subunits = {
 			anti_air_heavy
 		}
-		#anti_air = {
-		#	air_attack = 0.1
-		#}
-		#anti_air_heavy = {
-		#	air_attack = 0.1
-		#}
-		
+
 		path = {
 			leads_to_tech = HVantiair3
 			research_cost_coeff = 1
 		}
 		
 		research_cost = 1
-
 		start_year = 1940
-		
 		folder = {
 			name = artillery_folder
 			position = { x = -8 y = @1940 }
@@ -341,7 +305,6 @@ technologies = {
 			artillery
 		}
 	}
-	
 	HVantiair3 = {
 
 		anti_air = {
@@ -357,9 +320,7 @@ technologies = {
 		}
 		
 		research_cost = 1
-
 		start_year = 1941
-		
 		folder = {
 			name = artillery_folder
 			position = { x = -8 y = @1941 }
@@ -381,10 +342,8 @@ technologies = {
 			artillery
 		}
 	}
-	
 	HVantiair4 = {
 
-		
 		anti_air_heavy = {
 			air_attack = 0.1
 		}
@@ -395,9 +354,7 @@ technologies = {
 		}
 		
 		research_cost = 1
-
 		start_year = 1942
-		
 		folder = {
 			name = artillery_folder
 			position = { x = -8 y = @1942 }
@@ -426,13 +383,6 @@ technologies = {
 			HVanti_air_equipment_3
 		}
 		
-		#anti_air = {
-		#	air_attack = 0.1
-		#}
-		#anti_air_heavy = {
-		#	air_attack = 0.1
-		#}
-		
 		research_cost = 1
 		start_year = 1943
 		folder = {
@@ -460,7 +410,6 @@ technologies = {
 
 		enable_equipments = {
 			garrison_aa_0
-			
 		}
 		
 		garrison = {
@@ -477,10 +426,10 @@ technologies = {
 		}
 		
 		research_cost = 1
-		start_year = 1940
+		start_year = 1939
 		folder = {
 			name = artillery_folder
-			position = { x = -8 y = @1945 }
+			position = { x = -10 y = @1939 }
 		}
 		
 		ai_will_do = {
