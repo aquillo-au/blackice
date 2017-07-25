@@ -1580,6 +1580,29 @@ focus_tree = {
 			show_ideas_tooltip = walther_von_brauchitsch			
 		}
 	}
+	focus = {
+		id = GER_Grossdeutschland
+		text = GER_Grossdeutschland 
+		icon = GFX_goal_grossdeutschland
+		prerequisite = { focus = GER_Wehrmacht }
+		available = {
+			date > 1939.5.1
+		}
+		x = 2
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			#army_experience = 20
+			GER = {
+				country_event = germany.400
+			}
+			
+		}
+	}
 	# Achtung Panzer
 	focus = {
 		id = GER_achtung_panzer
@@ -1625,12 +1648,11 @@ focus_tree = {
 					is_ai = no
 				}
 		
-			hidden_effect = {
-				load_oob = "GER_leichte_division"		# template
-			}
+				hidden_effect = {
+					load_oob = "GER_leichte_division"		# template
+				}
 			}
 			# Balance research bonus to 2 techs in armor, also in event
-			
 			add_tech_bonus = {
                 name = armor_bonus
                 technology = tech_panzer_ii_equipment_2     # Liecht divison tech template
@@ -1661,7 +1683,7 @@ focus_tree = {
 
 		x = 7
 		y = 3
-		cost = 10
+		cost = 8
 		ai_will_do = {
 			factor = 10
 		}	
@@ -1694,23 +1716,21 @@ focus_tree = {
 			hidden_effect = {
 				load_oob = "GER_Panzer_Division_1937"		# template
 			}
-				add_tech_bonus = {
+			add_tech_bonus = {
 				name = armor_bonus
 				bonus = 0.25
 				uses = 2
 				category = cat_medium_armor
 			}
-			
-			}
 		}
+	}
 	
 	focus = {
 		id = GER_Heavy_panzer
 		text = GER_Heavy_panzer
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = GER_soviet_treaty }
-				
-	
+
 		x = 5
 		y = 4
 		cost = 14
@@ -1719,23 +1739,20 @@ focus_tree = {
 		}
 		available_if_capitulated = yes	
 		completion_reward = {
-			
-				add_tech_bonus = {
-					name = heavy_armor_bonus
-					bonus = 0.5
-					uses = 1
-					category = cat_heavy_armor
-				}
-				
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_heavy_armor
 			}
 		}
-	
+	}
 	focus = {
 		id = GER_Heer_expansion
 		text = GER_Heer_expansion
 		icon = GFX_goal_generic_axis_build_infantry
 		prerequisite = { focus = GER_Wehrmacht }
-			
+
 		x = 0
 		y = 1
 		cost = 10
@@ -1794,11 +1811,11 @@ focus_tree = {
 			# Balance research bonus to 2 techs in land_doctrine
 			army_experience = 10
 			add_tech_bonus = {
-					name = artillery_bonus
-					bonus = 0.5
-					uses = 1
-					category = artillery
-				}
+				name = artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
 		}
 	}
 	focus = {
@@ -1817,14 +1834,13 @@ focus_tree = {
 		available_if_capitulated = yes	
 		completion_reward = {
 			#kampfgruppe
-				add_tech_bonus = {
+			add_tech_bonus = {
 				name = Kampgruppes		
 				bonus = 1
 				uses = 1
 				ahead_reduction = 0.25
 				technology = kampfgruppe	
-				
-				}
+			}
 		}
 	}
 	

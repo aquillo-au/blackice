@@ -7983,9 +7983,7 @@ country_event = {
 
 ########################################################################
 ########### Tank destroyer conversions ################################
-
 ###### Pz 1 >  Pzj1
-
 country_event = {
 	id = germany.266
 	title = germany.266.t
@@ -8021,11 +8019,7 @@ country_event = {
 		}     
 		hidden_effect = {
 			load_oob = "GER_PanzerJaeger1"
-
 		}
-
-
-
 	}
 	
 	option = {
@@ -8097,7 +8091,6 @@ country_event = {
 }
 ########################################################
 ###### French Chassis >  Marder
-
 country_event = {
 	id = germany.269
 	title = germany.269.t
@@ -8144,7 +8137,6 @@ country_event = {
 	}
 }
 ###### Pz II >  Marder 2
-
 country_event = {
 	id = germany.270
 	title = germany.270.t
@@ -8193,7 +8185,6 @@ country_event = {
 	}
 }
 ###### Czech tank >  Marder 3
-
 country_event = {
 	id = germany.271
 	title = germany.271.t
@@ -8213,7 +8204,7 @@ country_event = {
 	
 	immediate = {
 		set_country_flag = { flag = marder_3 days = 180 } 
-		}
+	}
 		
 	mean_time_to_happen = {
 		months = 12
@@ -8232,9 +8223,6 @@ country_event = {
 			load_oob = "GER_marder3"
 
 		}
-
-
-
 	}
 	
 	option = {
@@ -8389,7 +8377,6 @@ country_event = {
 		#		days = 365
 		#	}
 		set_country_flag = GER_VIIC_41_ship
-		
 	}
 }
 # Type VIIC/42	tech_patrol_submarine6 x5
@@ -8449,7 +8436,6 @@ country_event = {
 		#		days = 365
 		#	}
 		set_country_flag = GER_VIIC_43_ship
-		
 	}
 }
 #Fritsch Affair
@@ -8513,7 +8499,6 @@ country_event = {
 	id = germany.280
 	title = "Germany Setup"
 	desc = "Setup event for AI"
-
 
 	hidden = yes
 	is_triggered_only = yes
@@ -8622,7 +8607,6 @@ country_event = {
 		}
 	}
 }
-
 #Which Kaiser should we have?
 country_event = {
 	id = germany.302
@@ -8761,6 +8745,38 @@ country_event = {
 				has_country_flag = wilhelm_iii_chosen
 				monarchism > 0.50
 			}
+		}
+	}
+}
+#### Gross Deutschland Regiment ####
+country_event = {
+	id = germany.400
+	title = germany.400.t
+	desc = germany.400.d
+	picture = GFX_...
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.400.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			if = {
+				limit = { 
+					is_ai = yes
+				}
+				load_oob = "GER_grossdeutschland_39"
+			}
+			if = {
+				limit = { 
+					is_ai = no
+				}
+				load_oob = "GER_grossdeutschland_regt_39"
+			}
+			set_country_flag = gd_regt_39
 		}
 	}
 }
