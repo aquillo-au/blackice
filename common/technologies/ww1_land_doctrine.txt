@@ -301,7 +301,7 @@ technologies = {
 		
 		category_army = {
 			breakthrough = 0.10
-			
+			entrenchment  = 1
 		}
 		
 		
@@ -340,7 +340,7 @@ technologies = {
 
 		category_army = {
 			defense = 0.10
-		
+			entrenchment  = 2
 		}
 		
 		path = {
@@ -641,12 +641,190 @@ technologies = {
 			
 		}
 	}
-	# basic machine gun defences
-	# multiple MG posts
-	# infiltrating MG fire fields
-	# rifle team/ MG coordination
-	# MG support infantry doctrine
-	# Infantry support MG doctrine
+
+	basic_MG_defences = {
+	
+		category_army = {
+			defense = 0.05
+		
+		}
+	
+		
+		doctrine = yes	
+		research_cost = 2
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+		
+		folder = {
+			name = ww1_land_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		ai_research_weights = {
+			
+		}
+	}	
+	multiple_MG_nests	= {
+	
+		category_army = {
+			defense = 0.05
+		
+		}
+		
+		
+		doctrine = yes	
+		research_cost = 2
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+		
+		folder = {
+			name = ww1_land_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		ai_research_weights = {
+			
+		}
+	}	
+	enfilade_MG_fire_fields = {
+	
+		category_army = {
+			defense = 0.05
+		
+		}
+		
+		
+		doctrine = yes	
+		research_cost = 2
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+		
+		folder = {
+			name = ww1_land_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		ai_research_weights = {
+			
+		}
+	}	
+	infantry_MG_coordination = {
+	
+		infantry = {
+			default_morale = 0.30
+		}
+		
+		doctrine = yes	
+		research_cost = 2
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+		
+		folder = {
+			name = ww1_land_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		ai_research_weights = {
+			
+		}
+	}	
+	MG_support_infantry_doctrine = {
+	
+		xor ={
+			Infantry_support_MG_doctrine
+		} 
+		category_army = {
+			defense = 0.05
+		
+		}
+		infantry = {
+			default_morale = 0.30
+		}
+		
+		doctrine = yes	
+		research_cost = 2
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+		
+		folder = {
+			name = ww1_land_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		ai_research_weights = {
+			
+		}
+	}	
+	Infantry_support_MG_doctrine = {
+	
+		xor ={
+			MG_support_infantry_doctrine
+		}
+		
+		category_army = {
+			defense = 0.05
+		
+		}
+		infantry = {
+			default_morale = 0.30
+		}
+		
+		doctrine = yes	
+		research_cost = 2
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+		
+		folder = {
+			name = ww1_land_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		ai_research_weights = {
+			
+		}
+	}	
 	
 	#############################################
 	############ END INFANTRY TREE ##############
@@ -1238,7 +1416,10 @@ technologies = {
 	cavalry_charges = {
 	
 		#enable_tactic = tactic_
-
+		
+		cavalry = {
+			breakthrough = 0.05
+		}	
 		path = {
 			leads_to_tech = cavalry_dismounting
 			research_cost_coeff = 1
@@ -1269,6 +1450,9 @@ technologies = {
 	
 		#enable_tactic = tactic_
 		
+		cavalry = {
+			breakthrough = 0.05
+		}	
 		path = {
 			leads_to_tech = cavalry_exploitation
 			research_cost_coeff = 1
@@ -1299,6 +1483,9 @@ technologies = {
 	
 		#enable_tactic = tactic_
 		
+		cavalry = {
+			max_organisation = 1
+		}	
 		doctrine = yes	
 		research_cost = 2
 		
@@ -1321,9 +1508,12 @@ technologies = {
 		}
 	}
 	armor_support = {
-		# EFFECT ########
-		###########
+	
+		#enable_tactic = tactic_
 		
+		category_all_armor = {
+			soft_attack = 0.1
+		}	
 		path = {
 			leads_to_tech = infantry_tank_coordination
 			research_cost_coeff = 1
@@ -1348,9 +1538,12 @@ technologies = {
 		}
 	}
 	infantry_tank_coordination = {
-		# EFFECT ########
-		###########
+	
+		#enable_tactic = tactic_
 		
+		category_all_armor = {
+			breakthrough = 0.05
+		}
 		path = {
 			leads_to_tech = infantry_tank_artillery_coordination
 			research_cost_coeff = 1
@@ -1378,9 +1571,13 @@ technologies = {
 		}
 	}
 	infantry_tank_artillery_coordination = {
-		# EFFECT ########
-		###########
-
+	
+		#enable_tactic = tactic_
+		
+		category_all_armor = {
+			breakthrough = 0.1
+		}
+		
 		doctrine = yes	
 		research_cost = 2
 		
@@ -1402,7 +1599,64 @@ technologies = {
 			
 		}
 	}
-	# Infantry AT defences
+	Anti_tank_traps = {
+	
+			category_army = {
+			
+			hard_attack = 0.05
+			
+		}
+		
+		doctrine = yes	
+		research_cost = 2
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+		
+		folder = {
+			name = ww1_land_doctrine_folder
+			position = { x = 2 y = 7 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		ai_research_weights = {
+			
+		}
+	}
+	Infantry_AT_defences = {
+	
+		
+		category_all_infantry = {
+			hard_attack = 0.05
+		}
+		
+		doctrine = yes	
+		research_cost = 2
+		
+		categories = {
+			land_doctrine
+			cat_mass_assault
+		}
+		
+		folder = {
+			name = ww1_land_doctrine_folder
+			position = { x = 2 y = 7 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+		ai_research_weights = {
+			
+		}
+	}
+		
 	##############################################
 	armored_car_recon = {
 		
@@ -1668,7 +1922,7 @@ technologies = {
 	AA_positions = {
 	
 		category_army = {
-		
+			air_attack = 0.1
 		}
 		doctrine = yes	
 		
