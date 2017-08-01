@@ -2349,4 +2349,462 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = usa.58
+	title = usa.58.t
+	desc = usa.58.d
+	picture = GFX_report_event_british_artillery
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		surrender_progress > 0.7
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.58.a
+		
+		hidden_effect = {
+			load_oob = "USA_defences"
+		}
+		add_ideas = USA_defence
+		add_manpower = 5500000
+	}
+}
+country_event = {
+	id = usa.59
+	title = usa.59.t
+	desc = usa.59.d
+	picture = GFX_report_event_british_artillery
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+	
+		BRA = {		
+				and = { 
+				or { 
+
+				controls_state = 278 #argentina
+				 controls_state = 303	#peru
+				 controls_state = 279	#chili	
+				  or = {
+				   is_in_faction_with = CHL
+				    is_in_faction_with = ARG
+					 is_in_faction_with = PER
+					 
+						USA = { has_war_with = BRA }
+							is_in_faction_with = GER 
+							}
+						}
+					}
+				}
+		}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.59.a
+		
+		hidden_effect = {
+			hidden_effect = {
+			load_oob = "USA_invasion_I"
+		}
+			create_wargoal = {
+					type = annex_everything
+					target = BRA
+				}
+	
+		
+		BRA = { 
+						
+			add_timed_idea = {
+				idea = BRA_economic_sanctions
+				days = 900
+				}
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = usa.60
+	title = usa.60.t
+	desc = usa.60.d
+	picture = GFX_report_event_british_artillery
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		is_ai = yes
+	
+		BRA = {		
+				and = { 
+				or { 
+
+				controls_state = 278 #argentina
+				 controls_state = 303	#peru
+				 controls_state = 279	#chili
+				  or = {
+				   is_in_faction_with = CHL
+				    is_in_faction_with = ARG
+					 is_in_faction_with = PER
+					ENG = { has_war_with = BRA }
+							is_in_faction_with = GER 
+							}
+						}
+					}
+				}
+		}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.60.a
+		
+		hidden_effect = {
+			hidden_effect = {
+			load_oob = "ENG_invasion_I"
+		}
+			create_wargoal = {
+					type = annex_everything
+					target = BRA
+				}
+		}
+		
+	}
+}
+country_event = {
+	id = usa.61
+	title = usa.61.t
+	desc = usa.61.d
+	picture = GFX_report_event_british_artillery
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+		is_ai = yes
+	
+		BRA = {		
+				and = { 
+				or { 
+
+				controls_state = 278 #argentina
+				 controls_state = 303	#peru
+				 controls_state = 279	#chili
+				   or = {
+				   is_in_faction_with = ARG
+				    is_in_faction_with = PER
+					 is_in_faction_with = CHL
+					 
+						FRA = { has_war_with = BRA }
+							is_in_faction_with = GER 
+							}
+						}
+					}
+				}
+		}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.61.a
+		
+		hidden_effect = {
+			hidden_effect = {
+			load_oob = "FRA_invasion_I"
+		}
+			create_wargoal = {
+					type = annex_everything
+					target = BRA
+				}
+		}
+		
+	}
+}
+country_event = {
+	id = usa.62
+	title = usa.62.t
+	desc = usa.62.d
+	picture = GFX_report_event_british_artillery
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+	
+		ARG = {		
+				and = { 
+				or { 
+				controls_state = 500 #brazil
+				 controls_state = 303	#peru
+				 controls_state = 279	#chili
+				  or = {
+				   is_in_faction_with = BRA
+				    is_in_faction_with = PER
+					 is_in_faction_with = CHL
+					 
+						USA = { has_war_with = ARG }
+							is_in_faction_with = GER
+						}
+					}
+				}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.62.a
+		
+		hidden_effect = {
+			hidden_effect = {
+			load_oob = "USA_invasion_II"
+		}
+			create_wargoal = {
+					type = annex_everything
+					target = ARG
+				}
+	
+		
+		ARG = { 
+						
+			add_timed_idea = {
+				idea = ARG_economic_sanctions
+				days = 900
+				}
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = usa.63
+	title = usa.63.t
+	desc = usa.63.d
+	picture = GFX_report_event_british_artillery
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		
+		CHL = {		
+				and = { 
+				or { 
+				controls_state = 500 #brazil
+				 controls_state = 303	#peru
+				  controls_state = 278 #argentina
+				  or = {
+				   is_in_faction_with = BRA
+				    is_in_faction_with = ARG
+					 is_in_faction_with = PER
+					 
+						USA = { has_war_with = CHL }
+							is_in_faction_with = GER
+							}
+						}
+					}
+				}
+		}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.63.a
+		
+		hidden_effect = {
+			hidden_effect = {
+			load_oob = "USA_invasion_III"
+		}
+			create_wargoal = {
+					type = annex_everything
+					target = CHL
+				}
+	
+		
+		CHL = { 
+						
+			add_timed_idea = {
+				idea = CHL_economic_sanctions
+				days = 900
+				}
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = usa.64
+	title = usa.64.t
+	desc = usa.64.d
+	picture = GFX_report_event_british_artillery
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		
+		PER = {		
+				and = { 
+				or { 
+				controls_state = 500 #brazil
+				controls_state = 279	#chili
+				  controls_state = 278 #argentina
+				  or = {
+				   is_in_faction_with = BRA
+				    is_in_faction_with = ARG
+					 is_in_faction_with = CHL
+					 
+						USA = { has_war_with = PER }
+							is_in_faction_with = GER
+							}
+						}
+					}
+				}
+		}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.64.a
+		
+		hidden_effect = {
+			hidden_effect = {
+			load_oob = "USA_invasion_IV"
+		}
+			create_wargoal = {
+					type = annex_everything
+					target = PER
+				}
+	
+		
+		PER = { 
+						
+			add_timed_idea = {
+				idea = PER_economic_sanctions
+				days = 900
+				}
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = usa.65
+	title = usa.65.t
+	desc = usa.65.d
+	picture = GFX_report_event_british_artillery
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		or = { 
+		has_war_with = CAN
+		CAN = { is_in_faction_with = GER }
+	
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.65.a
+		
+		hidden_effect = {
+			hidden_effect = {
+			load_oob = "USA_invasion_V"
+		}
+			create_wargoal = {
+					type = annex_everything
+					target = CAN
+				}
+	
+		
+		CAN = { 
+						
+			add_timed_idea = {
+				idea = CAN_economic_sanctions
+				days = 900
+				}
+			}
+		}
+		
+	}
+}
+country_event = {
+	id = usa.66
+	title = usa.66.t
+	desc = usa.66.d
+	picture = GFX_report_event_british_artillery
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		is_ai = yes
+		or = { 
+		has_war_with = MEX
+		MEX = { is_in_faction_with = GER }
+	
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = usa.66.a
+		
+		hidden_effect = {
+			hidden_effect = {
+			load_oob = "USA_invasion_VI"
+		}
+			create_wargoal = {
+					type = annex_everything
+					target = MEX
+				}
+	
+		
+		MEX = { 
+						
+			add_timed_idea = {
+				idea = MEX_economic_sanctions
+				days = 900
+				}
+			}
+		}
+		
+	}
+}
 ### EOF ###

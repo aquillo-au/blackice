@@ -1459,13 +1459,7 @@ country_event = {
 	option = {
 		name = BICE_britain.50.a
 		ai_chance = { factor = 100 }
-		create_production_license = {
-				target = ENG
-				equipment = {
-					type = british_light_tank_equipment_2
-				}
-				cost_factor = 0
-			}
+		
 		hidden_effect = {
 		ENG = { country_event = BICE_britain.51 }
 		}
@@ -1488,6 +1482,7 @@ country_event = {
 	option = {
 		name = BICE_britain.51.a
 		set_technology = {lend_lease_1 = 1}
+		set_technology = { tech_british_light_tank_equipment_2 = 1 }
 		hidden_effect = {
 			load_oob = "ENG_M3_Honey"
 		}
