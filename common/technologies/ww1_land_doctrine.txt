@@ -8,7 +8,14 @@ technologies = {
 			leads_to_tech = infantry_charge
 			research_cost_coeff = 1
 		}		
-
+		category_all_infantry = { 
+				maximum_speed = -0.05
+				defense = 0.1
+		}
+		org_loss_when_moving = 0.05
+		
+		attrition = 0.1
+		
 		doctrine = yes	
 		research_cost = 1.5
 		
@@ -32,8 +39,15 @@ technologies = {
 	}
 	infantry_charge = {
 	
+		category_all_infantry = {
+			breakthrough = 0.02
+		}
+		
+		category_all_infantry = {
+			max_organisation = -8
+		}
 		category_light_infantry = {
-			breakthrough = 0.05
+			max_organisation = -6
 		}
 		
 		enable_tactic = tactic_infantry_advance
@@ -70,6 +84,12 @@ technologies = {
 	}
 	small_unit_raids = {
 	
+		category_all_infantry = {
+			default_morale = 0.02
+		}
+		category_light_infantry = {
+			default_morale = 0.05
+		}
 		recon = {
 			recon = 1
 		}
@@ -126,7 +146,7 @@ technologies = {
 	}
 	night_patrols = {
 	
-		land_night_attack = 0.1
+		land_night_attack = 0.15
 
 		doctrine = yes	
 		research_cost = 2
@@ -152,10 +172,17 @@ technologies = {
 	dispersed_infantry_attacks = {
 
 		category_light_infantry = {
-			breakthrough = 0.05
+			breakthrough = 0.02
 		}
 		enable_tactic = tactic_dispersed_infantry
 
+		category_all_infantry = {
+			default_morale = 0.02
+		}
+		category_light_infantry = {
+			default_morale = 0.05
+		}
+		
 		path = {
 			leads_to_tech = stormtroopers
 			research_cost_coeff = 1
@@ -188,11 +215,12 @@ technologies = {
 	}
 	infiltration_attacks = {
 	
-		category_light_infantry = {
-			breakthrough = 0.08
+		category_all_infantry = {
+			breakthrough = 0.05
 		}
 		enable_tactic = tactic_infiltration_infantry
 		
+		org_loss_when_moving = -0.1
 			
 		doctrine = yes	
 		research_cost = 2
@@ -218,8 +246,10 @@ technologies = {
 	stormtroopers = {
 
 		category_light_infantry = {
-			breakthrough = 0.15
+			breakthrough = 0.1
 		}
+		
+		org_loss_when_moving = 0.1
 		
 		enable_tactic = tactic_stormtroopers
 		no_supply_grace = 24 
@@ -300,7 +330,7 @@ technologies = {
 		dig_in_speed_factor = 0.15
 		
 		category_army = {
-			breakthrough = 0.10
+			breakthrough = 0.05
 			entrenchment  = 1
 		}
 
@@ -336,7 +366,7 @@ technologies = {
 		#dig_in_speed_factor = #0.25 #25% bonus
 
 		category_army = {
-			defense = 0.10
+			defense = 0.05
 			entrenchment  = 2
 		}
 		
@@ -374,10 +404,6 @@ technologies = {
 	}
 	reserve_trenches = {
 	
-		category_army = {
-			defense = 0.05
-		
-		}
 		land_reinforce_rate = 0.05
 		
 		doctrine = yes	
@@ -432,8 +458,8 @@ technologies = {
 		category_army = {
 			max_organisation = 5
 		}
-		supply_consumption_factor = -0.10
-		no_supply_grace = 24 
+		supply_consumption_factor = -0.02
+		
 		
 		doctrine = yes	
 		research_cost = 2
@@ -461,7 +487,7 @@ technologies = {
 		enable_tactic = tactic_barbed_wire
 
 		category_army = {
-			defense = 0.05
+			defense = 0.02
 		
 		}
 		
@@ -489,7 +515,7 @@ technologies = {
 	pillboxes = {
 	
 		category_army = {
-			defense = 0.25
+			defense = 0.1
 		}
 		
 		path = {
@@ -545,9 +571,10 @@ technologies = {
 	}
 	nomans_land_saps = {
 		doctrine = yes
-		category_light_infantry = {
 		
-			breakthrough = 0.05
+		category_all_infantry = {
+		
+			breakthrough = 0.02
 		}
 
 		path = {
@@ -576,8 +603,9 @@ technologies = {
 	}
 	tunnel_mines = {
 		doctrine = yes
+		
 		category_all_infantry = {
-			breakthrough = 0.2
+			breakthrough = 0.05
 		}
 		enable_tactic = tactic_tunnel_mine
 		
@@ -602,12 +630,13 @@ technologies = {
 	}
 	fortress_trenches = {
 		doctrine = yes	
+		
 		attrition = -0.1 #take 10% less attrition losses
 		infantry = {
-			default_morale = 0.30
+			default_morale = 0.1
 		}
 		category_all_infantry = {
-			defense = 0.25
+			defense = 0.15
 		}
 		max_dig_in = 6
 		
@@ -634,8 +663,8 @@ technologies = {
 	basic_MG_defences = {
 		doctrine = yes
 		
-		category_army = {
-			defense = 0.05
+		category_all_infantry = {
+			defense = 0.02
 		}
 		
 		path = {
@@ -665,8 +694,8 @@ technologies = {
 	multiple_MG_nests = {
 		doctrine = yes
 		
-		category_army = {
-			defense = 0.05
+		category_all_infantry = {
+			defense = 0.03
 		}
 		path = {
 			leads_to_tech = enfilade_MG_fire_fields
@@ -694,7 +723,8 @@ technologies = {
 	}	
 	enfilade_MG_fire_fields = {
 		doctrine = yes
-		category_army = {
+		
+		category_all_infantry = {
 			defense = 0.05
 		}
 		path = {
@@ -723,8 +753,9 @@ technologies = {
 	}
 	infantry_MG_coordination = {
 		doctrine = yes
+		
 		infantry = {
-			default_morale = 0.30
+			default_morale = 0.05
 		}
 		path = {
 			leads_to_tech = MG_support_infantry_doctrine
@@ -759,11 +790,8 @@ technologies = {
 			Infantry_support_MG_doctrine
 		}
 		
-		category_army = {
-			defense = 0.05
-		}
-		infantry = {
-			default_morale = 0.30
+		category_all_infantry = {
+			defense = 0.1
 		}
 		
 		research_cost = 2
@@ -791,11 +819,8 @@ technologies = {
 			MG_support_infantry_doctrine
 		}
 		
-		category_army = {
-			defense = 0.05
-		}
-		infantry = {
-			default_morale = 0.30
+		category_all_infantry = {
+			breakthrough = 0.1
 		}
 		
 		research_cost = 2
@@ -822,11 +847,13 @@ technologies = {
 	#############################################
 	ww1_artillery = {
 	
-		category_army = {
+		category_artillery = {
 			defense = 0.20
 		
 		}
-		
+		category_line_artillery = {
+			maximum_speed = -0.1
+		}
 		path = {
 			leads_to_tech = artillery_concentration
 			research_cost_coeff = 1
@@ -856,8 +883,9 @@ technologies = {
 	}
 	artillery_concentration = {
 			
-		category_line_artillery = {
-			soft_attack = 0.2
+		category_artillery = {
+			
+			combat_width = -0.1
 		}
 		path = {
 			leads_to_tech = offensive_prep_fire
@@ -920,8 +948,8 @@ technologies = {
 	}
 	continous_fire = {
 	
-		category_line_artillery = {
-			soft_attack = 0.2
+		category_artillery = {
+			soft_attack = 0.1
 		}
 		supply_consumption_factor = 0.02
 
@@ -1076,6 +1104,9 @@ technologies = {
 	box_barrage = {
 	
 		#enable_tactic = tactic_
+		category_artillery = {
+			soft_attack = 0.05
+		}
 		
 		path = {
 			leads_to_tech = block_barrage
@@ -1115,6 +1146,9 @@ technologies = {
 	
 		#enable_tactic = tactic_
 
+		category_artillery = {
+			soft_attack = 0.05
+		}
 		doctrine = yes	
 		research_cost = 2
 		
@@ -1139,6 +1173,10 @@ technologies = {
 	creeping_barrage = {
 	
 		#enable_tactic = tactic_
+		
+		category_artillery = {
+			soft_attack = 0.05
+		}
 		
 		doctrine = yes	
 		research_cost = 2
@@ -1165,6 +1203,10 @@ technologies = {
 	
 		#enable_tactic = tactic_
 
+		category_artillery = {
+			soft_attack = 0.05
+		}
+		
 		doctrine = yes	
 		research_cost = 2
 		
@@ -1187,14 +1229,14 @@ technologies = {
 		}
 	}
 	artillery_observers = {
-		# EFFECT ########
-		###########
-
-		path = {
+	
+		category_artillery = {
+			max_organisation = 2
+		}
+			path = {
 			leads_to_tech = ballooon_observers
 			research_cost_coeff = 1
 		}
-		
 		doctrine = yes	
 		research_cost = 2
 		
@@ -1217,9 +1259,10 @@ technologies = {
 		}
 	}
 	ballooon_observers  = {
-		# EFFECT ########
-		###########
-
+	
+		category_artillery = {
+			max_organisation = 4
+		}
 		path = {
 			leads_to_tech = aircraft_observers
 			research_cost_coeff = 1
@@ -1247,9 +1290,10 @@ technologies = {
 		}
 	}
 	aircraft_observers  = {
-		# EFFECT ########
-		###########
-
+	
+			category_artillery = {
+			max_organisation = 4
+		}
 		doctrine = yes	
 		research_cost = 2
 		
@@ -1359,9 +1403,13 @@ technologies = {
 	############ END ARTILLERY TREE ##############
 	##############################################
 	mobile_doctrines = {
+	
 		doctrine = yes	
-		# EFFECT #
-		##########
+		
+		category_army = {
+		
+				maximum_speed = -0.1
+		}
 		path = {
 			leads_to_tech = cavalry_charges
 			research_cost_coeff = 1
@@ -1405,6 +1453,7 @@ technologies = {
 	cavalry_charges = {
 		doctrine = yes	
 		#enable_tactic = tactic_
+		
 		cavalry = {
 			breakthrough = 0.05
 		}
@@ -1438,7 +1487,8 @@ technologies = {
 		#enable_tactic = tactic_
 		
 		cavalry = {
-			breakthrough = 0.05
+			defense = 0.05
+			maximum_speed = -0.05
 		}	
 		path = {
 			leads_to_tech = cavalry_exploitation
@@ -1471,7 +1521,7 @@ technologies = {
 		#enable_tactic = tactic_
 		
 		cavalry = {
-			max_organisation = 1
+			maximum_speed = 0.05
 		}	
 		doctrine = yes	
 		research_cost = 2
@@ -1531,6 +1581,9 @@ technologies = {
 		category_all_armor = {
 			breakthrough = 0.05
 		}
+			category_all_infantry = {
+			default_morale = 0.05
+		}
 		path = {
 			leads_to_tech = infantry_tank_artillery_coordination
 			research_cost_coeff = 1
@@ -1564,7 +1617,12 @@ technologies = {
 		category_all_armor = {
 			breakthrough = 0.1
 		}
-
+		category_all_infantry = {
+			default_morale = 0.05
+		}
+		category_artillery = {
+			default_morale = 0.05
+		}
 		research_cost = 2
 		folder = {
 			name = ww1_land_doctrine_folder
@@ -1586,6 +1644,7 @@ technologies = {
 	}
 	anti_tank_traps = {
 		doctrine = yes	
+		
 		category_army = {
 			hard_attack = 0.05
 		}
@@ -1610,7 +1669,8 @@ technologies = {
 		}
 	}
 	infantry_AT_defences = {
-		doctrine = yes	
+		doctrine = yes
+		
 		category_all_infantry = {
 			hard_attack = 0.05
 		}
@@ -1639,11 +1699,13 @@ technologies = {
 		
 		recon_ac = {
 			recon = 2
+			max_organisation = 4
 		}
 		ss_recon_ac = {
 			recon = 2
+			max_organisation = 4
 		}
-		
+	
 		doctrine = yes	
 		research_cost = 2
 		
@@ -1736,8 +1798,10 @@ technologies = {
 	
 		category_army = {
 		
-			default_morale = 0.2
+			default_morale = -0.2
 		}
+		planning_speed = -0.2
+		org_loss_when_moving = 0.2
 		
 		path = {
 			leads_to_tech = battlefield_commissions
