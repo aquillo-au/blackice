@@ -4923,24 +4923,18 @@ focus_tree = {
 		prerequisite = { focus = GER_historical_Schutzstaffel }
 		x = 24
 		y = 2
-		#cost = 10
-		
-		available = {
-			
-		}
 		
 		ai_will_do = {
 			factor = 8
 		}
-		
-		#available_if_capitulated = yes	
+			
 		completion_reward = {
 			country_event = ss_event.667
 		}
 	}
-	# SS-Verfugungstruppe combat division
+	# SS-Verfugungstruppe combat Brigade 2 Regiments 
 	focus = {
-		id = GER_VT_Schutzstaffel	# SS-Verfugungstruppe combat division
+		id = GER_VT_Schutzstaffel	# SS-Verfugungstruppe combat Brigade
 		#text = VT_Schutzstaffel_division
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_historical_Schutzstaffel }
@@ -4949,7 +4943,7 @@ focus_tree = {
 		cost = 1.8
 		
 		available = {
-			date > 1937.1.1
+			date > 1936.2.1
 		}
 		
 		ai_will_do = {
@@ -5017,11 +5011,41 @@ focus_tree = {
 		prerequisite = { focus = GER_TV_Schutzstaffel }
 		x = 27
 		y = 4
-		cost = 5
+		cost = 2
 		
 		available = {
 			is_ai = no
 			date > 1939.10.1
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				GER = {
+					country_event = ss_event.650	# Totenkopf-division formed from 3 SA standarte (1st Oberbayern, 2nd Brandenburg and 3rd Thuringen)
+				}
+			}
+		}
+	}
+	focus = {
+		id = GER_VT_Division
+		#text = GER_VT_Division
+		icon = GFX_goal_REICH_focus
+		prerequisite = { focus = GER_historical_Schutzstaffel }
+		prerequisite = { focus = GER_VT_Schutzstaffel }
+		x = 27
+		y = 5
+		cost = 2
+		
+		available = {
+			is_ai = no
+			date > 1939.10.10
 		}
 		
 		ai_will_do = {
