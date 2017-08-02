@@ -1,0 +1,4554 @@
+﻿###########################
+# Soviet Events
+###########################
+
+add_namespace = soviet
+
+# Border Skirmish with the Japanese
+country_event = {
+	id = soviet.1
+	title = soviet.1.t
+	desc = soviet.1.d
+	picture = GFX_report_event_russian_defensive
+	
+	is_triggered_only = yes
+	
+	option = { # Push back
+		name = soviet.1.a
+		ai_chance = { factor = 100 } # historical mod
+		add_political_power = -25
+		hidden_effect = {
+			random_list = {
+				0 = { # historical mod
+					JAP = {
+						country_event = { days = 1 id = japan.3 }
+					}
+				}
+				100 = { # historical mod
+					JAP = {
+						country_event = { days = 1 id = japan.4 }
+					}
+				}
+			}
+		}
+		effect_tooltip = {
+			random_list = {
+				0 = { # historical mod
+					country_event = soviet.2
+				}
+				100 = { # historical mod
+					country_event = soviet.3
+				}
+			}
+		}
+	}
+	option = { # Yield
+		name = soviet.1.b
+		ai_chance = { factor = 0 } # historical Mod
+		JAP = {
+			effect_tooltip = {
+				add_national_unity = 0.05
+			}
+			country_event = { days = 1 id = japan.5 }
+		}
+	}
+}
+
+# Successful Raid
+country_event = {
+	id = soviet.2
+	title = soviet.2.t
+	desc = soviet.2.d
+	picture = GFX_report_event_russians_charging
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.2.a
+		if = {
+			limit = {
+				561 = { 
+					is_owned_by = SOV 
+						any_neighbor_state = { 
+						OR = {
+							is_owned_by = JAP							
+							is_owned_by = MAN								
+						}
+					} 
+				}
+			}
+			561 = { add_manpower = -30000 }
+		}		
+		if = {
+			limit = { 
+				NOT = { 
+					561 = { 
+						is_owned_by = SOV 
+						any_neighbor_state = { 
+							OR = {
+								is_owned_by = JAP
+								is_owned_by = MAN
+							} 	
+						}
+					}
+				}
+			}
+			random_owned_state = {
+				limit = { 
+					any_neighbor_state = { 
+						OR = {
+							is_owned_by = JAP
+							is_owned_by = MAN
+						}
+					} 
+				} 
+				add_manpower = -30000
+			}
+		}
+
+		army_experience = 10
+	}
+}
+# Failed Raid
+country_event = {
+	id = soviet.3
+	title = soviet.3.t
+	desc = soviet.3.d
+	picture = GFX_report_event_fallen_soviet
+	
+	is_triggered_only = yes
+	
+	option = {
+		if = {
+			limit = {
+				561 = { 
+					is_owned_by = SOV 
+					any_neighbor_state = { 
+						OR = {
+							is_owned_by = JAP
+							is_owned_by = MAN							
+						} 
+					} 
+				}
+			}
+			561 = { add_manpower = -20000 }
+		}		
+		if = {
+			limit = { 
+				NOT = { 
+					561 = { 
+						is_owned_by = SOV 
+							any_neighbor_state = { 
+							OR = {
+								is_owned_by = JAP
+								is_owned_by = MAN
+							}
+						}
+					}
+				}
+			}
+			random_owned_state = {
+				limit = { 
+					any_neighbor_state = { 
+						OR = {
+							is_owned_by = JAP
+							is_owned_by = MAN
+						}
+					} 
+				}
+				add_manpower = -20000
+			}
+		}
+
+		add_political_power = -25
+		army_experience = 5
+		name = soviet.3.a
+	}
+}
+# Romania surrenders Bessarabia
+country_event = {
+	id = soviet.4
+	title = soviet.4.t
+	desc = soviet.4.d
+	picture = GFX_report_event_soviet_tank_parade
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.4.a
+		SOV = { 
+			transfer_state = 78
+			transfer_state = 80
+		}
+		hidden_effect = {
+			SOV = {
+				country_event = { days = 1 id = news.10 }
+			}
+			news_event = { id = news.199 }
+		}
+	}
+}
+# Romania refuses to surrender Bessarabia
+country_event = {
+	id = soviet.5
+	title = soviet.5.t
+	desc = soviet.5.d
+	picture = GFX_report_event_soviet_tanks
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.5.a
+		create_wargoal = {
+			type = take_state
+			target = ROM
+			generator = { 78 }
+		}
+		hidden_effect = {
+			SOV = {
+				country_event = { days = 1 id = news.11 }
+			}
+		}
+	}
+}
+# Estonia Surrenders
+country_event = {
+	id = soviet.6
+	title = soviet.6.t
+	desc = soviet.6.d
+	picture = GFX_report_event_soviets_reach_vienna
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.6.a
+		annex_country = { target = EST }
+	}
+}
+# Estonia Refuses
+country_event = {
+	id = soviet.7
+	title = soviet.7.t
+	desc = soviet.7.d
+	picture = GFX_report_event_soviet_bikes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.7.a
+		create_wargoal = {
+			type = annex_everything
+			target = EST
+		}		
+	}
+}
+# Latvia Surrenders
+country_event = {
+	id = soviet.8
+	title = soviet.8.t
+	desc = soviet.8.d
+	picture = GFX_report_event_soviets_reach_vienna
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.8.a
+		annex_country = { target = LAT }
+	}
+}
+# Latvia Refuses
+country_event = {
+	id = soviet.9
+	title = soviet.9.t
+	desc = soviet.9.d
+	picture = report_event_soviet_infantry_and_t34_assault
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.9.a
+		create_wargoal = {
+			type = annex_everything
+			target = LAT
+		}		
+	}
+}
+# Lithuania Surrenders
+country_event = {
+	id = soviet.10
+	title = soviet.10.t
+	desc = soviet.10.d
+	picture = GFX_report_event_soviets_reach_vienna
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.10.a
+		annex_country = { target = LIT }
+	}
+}
+# Lithuania Refuses
+country_event = {
+	id = soviet.11
+	title = soviet.11.t
+	desc = soviet.11.d
+	picture = report_event_soviet_infantry_and_t34_assault
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.11.a
+		create_wargoal = {
+			type = annex_everything
+			target = LIT
+		}		
+	}
+}
+# Finland Accepts Demands
+country_event = {
+	id = soviet.12
+	title = soviet.12.t
+	desc = soviet.12.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.12.a
+		SOV = { 
+			transfer_state = 146
+		}
+		hidden_effect = {
+			SOV = {
+				country_event = { days = 1 id = news.13 }
+			}
+		}
+	}
+}
+# Finland Refuses Demands
+country_event = {
+	id = soviet.13
+	title = soviet.13.t
+	desc = soviet.13.d
+	picture = GFX_report_event_soviet_tanks_snow
+	
+	is_triggered_only = yes
+	
+	#fire_only_once = yes
+	
+	option = {
+		name = soviet.13.a
+		create_wargoal = {
+			type = take_state
+			target = FIN
+			generator = { 146 }
+		}				
+		hidden_effect = {
+			SOV = {
+				country_event = { days = 1 id = news.12 }				
+
+			}
+		}
+	}
+}
+# Tannu Tuva is asked to join the USSR
+country_event = {
+	id = soviet.14
+	title = soviet.14.t
+	desc = soviet.14.d
+	picture = GFX_report_event_stalin_01
+	
+	is_triggered_only = yes
+	
+	option = { # Accept
+		name = soviet.14.a
+		ai_chance = { factor = 100 }
+		SOV = {
+			country_event = { id = soviet.16 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	option = { # Refuse
+		name = soviet.14.b
+		SOV = {
+			country_event = { id = soviet.15 }
+		}
+	}
+}
+# Tannu Tuva declines the offer
+country_event = {
+	id = soviet.15
+	title = soviet.15.t
+	desc = soviet.15.d
+	picture = GFX_report_event_soviet_soldiers2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.15.a
+	}
+}
+# Tannu Tuva accepts the offer
+country_event = {
+	id = soviet.16
+	title = soviet.16.t
+	desc = soviet.16.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.16.a
+		annex_country = { target = TAN }
+		hidden_effect = {
+			SOV = {
+				country_event = { days = 1 id = news.14 }
+			}
+		}
+	}
+}
+# Improving the Stalin Line
+country_event = {
+	id = soviet.17
+	title = soviet.17.t
+	desc = soviet.17.d
+	picture = GFX_report_event_bunker_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.17.a
+
+		209 = {
+			add_building_construction = {
+				type = bunker
+				province = 11202
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6324
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11392
+				level = 5
+			}
+		}
+		210 = {
+			add_building_construction = {
+				type = bunker
+				province = 6242
+				level = 5
+			}
+		}
+		207 = {
+			add_building_construction = {
+				type = bunker
+				province = 6249
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9241
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3331
+				level = 5
+			}
+		}
+		206 = {
+			add_building_construction = {
+				type = bunker
+				province = 9289
+				level = 5
+			}
+		}
+		202 = {
+			add_building_construction = {
+				type = bunker
+				province = 9568
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 3543
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 504
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 6497
+				level = 5
+			}
+		}
+		203 = {		
+			add_building_construction = {
+				type = bunker
+				province = 9451
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11409
+				level = 5
+			}
+		}
+		192 = {
+			add_building_construction = {
+				type = bunker
+				province = 3757
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 9714
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 741
+				level = 5
+			}
+			add_building_construction = {
+				type = bunker
+				province = 11670
+				level = 5
+			}
+		}
+	}
+}
+# Xi'an Incident
+country_event = {
+	id = soviet.18
+	title = soviet.18.t
+	desc = soviet.18.d
+	picture = GFX_report_event_japanese_envoy
+	
+	trigger = {
+		date > 1936.11.1
+		tag = CHI
+		has_opinion_modifier = hostile_status
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 50
+	}
+	
+	# Enter negotiations with Communist China
+	option = {
+	ai_chance = {
+			modifier = {
+				factor = 0
+				has_war_with = PRC
+			}
+		}
+		name = soviet.18.a
+		PRC = { country_event = { id = soviet.19 days = 1 } }
+	}
+
+	# Refuse to negotiate
+	option = {
+		name = soviet.18.b
+		#SOV = { country_event = { id = soviet.20 days = 1 } }
+		ai_chance = { factor = 0 }
+		set_global_flag = CHI_no_national_front_flag
+		custom_effect_tooltip = CHI_no_united_front
+	}
+}
+# Xi'an Incident - Communist China
+country_event = {
+	id = soviet.19
+	title = soviet.19.t
+	desc = soviet.19.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	is_triggered_only = yes
+	
+	# Agree to a truce
+	option = {
+		name = soviet.19.a
+		remove_opinion_modifier = { target = CHI modifier = hostile_status }
+		CHI = {
+			remove_opinion_modifier = { target = PRC modifier = hostile_status }
+			country_event = { id = soviet.21 days = 1 }
+		}
+		hidden_effect = {
+			605 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			620 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			607 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+			622 = {
+				if = {
+					limit = { is_border_conflict = yes }
+					set_border_war = no
+				}
+			}
+		}
+	effect_tooltip = {
+			CHI = {
+				white_peace = PRC
+			}
+		}
+		#SOV = { country_event = { id = soviet.21 days = 1 } }
+	}
+
+	# Refuse to negotiate
+	option = {
+		name = soviet.19.b
+		country_event = { id = soviet.22 days = 1 }
+		set_global_flag = CHI_no_national_front_flag
+		ai_chance = { factor = 0 }
+		custom_effect_tooltip = CHI_no_united_front
+	}
+}
+# Xi'an Incident - Kuomintang Refuses
+country_event = {
+	id = soviet.20
+	title = soviet.20.t
+	desc = soviet.20.d
+	picture = GFX_report_event_natl_china
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.20.a
+	}
+}
+# Xi'an Incident - Truce
+country_event = {
+	id = soviet.21
+	title = soviet.21.t
+	desc = soviet.21.d
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.21.a
+		white_peace = PRC
+		effect_tooltip = {
+			PRC = { remove_opinion_modifier = { target = CHI modifier = hostile_status } }
+			CHI = { remove_opinion_modifier = { target = PRC modifier = hostile_status } }
+		}
+	}
+}
+# Xi'an Incident - Communists Refuse
+country_event = {
+	id = soviet.22
+	title = soviet.22.t
+	desc = soviet.22.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.22.a
+	}
+}
+# Soviet Union Cedes Land (Japan)
+country_event = {
+	id = soviet.23
+	title = soviet.23.t
+	desc = soviet.23.d
+	picture = GFX_report_event_soviet_bikes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.23.a
+		transfer_state = 655
+	}
+}
+# Great Purge - Begins
+country_event = {
+	id = soviet.24
+	title = soviet.24.t
+	desc = soviet.24.d
+	picture = GFX_report_event_soviet_purge_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.24.a
+	}
+}
+# Great Purge - Trial of the Anti-Soviet Trotskyist Center
+country_event = {
+	id = soviet.25
+	title = soviet.25.t
+	desc = soviet.25.d
+	picture = GFX_report_event_soviet_purge_trial
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		NOT = { has_completed_focus = SOV_great_purge }
+		focus_progress = {
+			focus = SOV_great_purge
+			progress > 0.25
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		name = soviet.25.a
+		custom_effect_tooltip = remove_political_advisor
+		show_ideas_tooltip = mikhail_kalinin
+		set_country_flag = purged_kalinin
+		hidden_effect = {
+			remove_ideas = mikhail_kalinin
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		name = soviet.25.b
+		custom_effect_tooltip = remove_political_advisor
+		show_ideas_tooltip = nikita_khrushchev
+		set_country_flag = purged_khrushchev
+		hidden_effect = {
+			remove_ideas = nikita_khrushchev
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 30
+		}
+		name = soviet.25.c
+		add_political_power = -75
+		set_country_flag = purged_party_members
+	}
+	option = {
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		name = soviet.25.e
+		set_country_flag = no_political_purge
+		custom_effect_tooltip = soviet.27_tt2
+	}
+}
+# Great Purge - Secret Trial of the Generals
+country_event = {
+	id = soviet.26
+	title = soviet.26.t
+	desc = soviet.26.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		NOT = { has_completed_focus = SOV_great_purge }
+		focus_progress = {
+			focus = SOV_great_purge
+			progress > 0.5
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		name = soviet.26.a
+		set_country_flag = purge_1_group_a
+		custom_effect_tooltip = remove_theorist
+		show_ideas_tooltip = mikhail_tukhachevsky
+		custom_effect_tooltip = remove_chief_of_army
+		show_ideas_tooltip = alexander_yegorov
+		show_ideas_tooltip = vasily_blucher
+		custom_effect_tooltip = remove_chief_of_navy
+		show_ideas_tooltip = pyotr_smirnov
+		show_ideas_tooltip = mikhail_frinovsky
+		remove_unit_leader = 401 #mikhail_tukhachevsky, field marshal
+		custom_effect_tooltip = soviet.27_tt
+		hidden_effect = {
+			remove_ideas = mikhail_tukhachevsky
+			remove_ideas = alexander_yegorov
+			remove_ideas = vasily_blucher
+			remove_ideas = pyotr_smirnov
+			remove_ideas = mikhail_frinovsky
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 75
+		}
+		name = soviet.26.b
+		set_country_flag = purge_1_group_b
+		custom_effect_tooltip = remove_chief_of_army
+		show_ideas_tooltip = semyon_timoshenko
+		show_ideas_tooltip = kliment_voroshilov
+		custom_effect_tooltip = remove_chief_of_navy
+		show_ideas_tooltip = ivan_yumashev
+		custom_effect_tooltip = remove_military_high_command
+		show_ideas_tooltip = konstantin_rokossovsky
+		show_ideas_tooltip = vladimir_kasatonov
+		remove_unit_leader = 405 #kliment_voroshilov, field marshal
+		remove_unit_leader = 402 #konstantin_rokossovsky, general
+		remove_unit_leader = 404 #semyon_timoshenko, general
+		remove_unit_leader = 403 #vladimir_kasatonov, naval commander
+		custom_effect_tooltip = soviet.27_tt
+		hidden_effect = {
+			remove_ideas = semyon_timoshenko
+			remove_ideas = kliment_voroshilov
+			remove_ideas = ivan_yumashev
+			remove_ideas = konstantin_rokossovsky
+			remove_ideas = vladimir_kasatonov
+		}	
+	}
+	# REVISIT Balance, since the latter removes more unit leaders
+	option = {
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		name = soviet.26.c
+		set_country_flag = purge_1_no_purge 
+		custom_effect_tooltip = soviet.27_tt2
+	}
+}
+# Great Purge - Trial of the 21
+country_event = {
+	id = soviet.27
+	title = soviet.27.t
+	desc = soviet.27.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		NOT = { has_completed_focus = SOV_great_purge }
+		focus_progress = {
+			focus = SOV_great_purge
+			progress > 0.75
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		name = soviet.27.a
+		set_country_flag = purge_2_group_a
+		custom_effect_tooltip = remove_political_advisor
+		show_ideas_tooltip = SOV_nikolai_yezhov
+		custom_effect_tooltip = remove_chief_of_airforce
+		show_ideas_tooltip = yakov_smushkevich
+		show_ideas_tooltip = pavel_rychagov
+		show_ideas_tooltip = alexander_novikov
+		custom_effect_tooltip = remove_military_high_command
+		show_ideas_tooltip = gordey_levchenko
+		remove_unit_leader = 406 #gordey_levchenko, naval commander
+		custom_effect_tooltip = soviet.27_tt
+		hidden_effect = {
+			remove_ideas = SOV_nikolai_yezhov
+			remove_ideas = yakov_smushkevich
+			remove_ideas = pavel_rychagov
+			remove_ideas = alexander_novikov
+			remove_ideas = gordey_levchenko
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 45
+		}
+		name = soviet.27.b
+		set_country_flag = purge_2_group_b
+		custom_effect_tooltip = remove_chief_of_navy
+		show_ideas_tooltip = nikolay_kuznetsov
+		custom_effect_tooltip = remove_chief_of_airforce
+		show_ideas_tooltip = konstantin_vershinin
+		custom_effect_tooltip = remove_military_high_command
+		show_ideas_tooltip = sergei_khudyakov
+		show_ideas_tooltip = aleksandr_vasilevsky
+		remove_unit_leader = 407 #aleksandr_vasilevsky, general
+		custom_effect_tooltip = soviet.27_tt
+		hidden_effect = {
+			remove_ideas = nikolay_kuznetsov
+			remove_ideas = konstantin_vershinin
+			remove_ideas = sergei_khudyakov
+			remove_ideas = aleksandr_vasilevsky
+		}
+	}
+	option = {
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		name = soviet.27.c
+		set_country_flag = purge_2_no_purge
+		custom_effect_tooltip = soviet.27_tt2
+	}
+}
+# Trotsykist Coup
+country_event = {
+	id = soviet.28
+	title = soviet.28.t
+	desc = soviet.28.d
+	picture = GFX_report_event_soviet_purge_politicians
+
+	fire_only_once = yes
+	
+	trigger = {
+		has_country_flag = SOV_soviet.48_trotsky
+		tag = SOV
+	}
+
+	mean_time_to_happen = {
+		days = 90
+		#modifier = {
+		#	factor = 1.25
+		#	OR = {
+		#		has_country_flag = purged_kalinin
+		#		has_country_flag = purged_khrushchev
+		#		has_country_flag = purged_party_members
+		#	}
+		#}	
+	}
+
+	option = {
+		name = soviet.28.a
+		set_country_flag = counter_purge
+		if = {
+			limit = { has_idea = trotskyite_plot_purged }
+			remove_ideas = trotskyite_plot_purged
+		}
+		if = {
+			limit = { has_idea = trotskyite_plot }
+			remove_ideas = trotskyite_plot
+		}
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Leon Trotsky"
+			desc = "POLITICS_LEON_TROTSKY_DESC"
+			picture = "Portrait_Leon_Trotsky.dds"
+			expire = "1965.1.1"
+			ideology = leninism
+			traits = {
+				permanent_revolutionary
+			}
+		}
+		remove_ideas = mikhail_kalinin
+		remove_ideas = ivan_konev
+		remove_unit_leader = 408
+		remove_ideas = pavel_zhigarev
+		remove_ideas = stepan_krasovsky
+		remove_ideas = arseniy_golovko
+		remove_unit_leader = 409
+		remove_ideas = georgy_zhukov
+		remove_unit_leader = 410
+		remove_ideas = sergey_gorshkov
+		remove_unit_leader = 411
+		remove_ideas = sergei_rudenko
+		remove_ideas = nikita_khrushchev
+		remove_ideas = konstantin_rodzaevsky
+		add_timed_idea = {
+			idea = officers_purged_7
+			days = 584
+		}
+		hidden_effect = {
+			country_event = { id = soviet.43 days = 146 }				
+		}
+		#start_civil_war = {
+		#	ideology = neutrality
+		#	size = 0.18
+		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 404 }
+		#}
+		hidden_effect = {
+			random_other_country = {
+				limit = {
+					original_tag = SOV
+					has_government = neutrality
+				}
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Ivan Konev"
+					desc = "POLITICS_IVAN_KONEV_DESC"
+					picture = "Portrait_Soviet_Ivan_Konev.dds"
+					expire = "1965.1.1"
+					ideology = oligarchism
+					traits = {
+					}
+				}
+			}
+			news_event = { hours = 6 id = news.221 }
+		}
+	}
+}
+# France national focus -  requests to join commitern
+country_event = {
+	id = soviet.29
+	title = soviet.29.t
+	desc = soviet.29.d
+	picture = GFX_report_event_stalin_approves
+
+	is_triggered_only = yes
+		
+	option = {
+		name = soviet.29.a
+		SOV = { add_to_faction = FRA }
+		FRA = {
+			add_ai_strategy = {
+				type = alliance
+				id = "SOV"
+				value = 200
+			}
+		}
+		hidden_effect = {
+			news_event = { hours = 6 id = news.180 }
+		}
+	}
+	option = {
+		name = soviet.29.b
+		ai_chance = { factor = 0 }
+		FRA = {
+			add_opinion_modifier = {
+				target = SOV
+				modifier = SOV_FRA_join_comintern_reject
+			}
+		}
+	}
+}
+# comintern_influence removed due to war with common enemy
+country_event = {
+	id = soviet.100
+	title = soviet.100.t
+	desc = soviet.100.d
+	picture = GFX_report_event_new_zealand_communist
+	
+	trigger = {
+		has_idea = comintern_influence
+		has_war = yes
+		SOV = { has_war = yes }
+		NOT = { has_war_with = SOV }
+		any_enemy_country = {
+			has_war_with = SOV
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {
+		name = soviet.100.a
+		remove_ideas = comintern_influence
+	}
+}
+# Demand Bessarabia
+country_event = {
+	id = soviet.30
+	title = soviet.30.t
+	desc = soviet.30.d
+	picture = GFX_report_event_soviet_bikes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SOV
+			FROM = { tag = ROM }
+		NOT = { has_country_flag = bessarabia_demand }
+		78 = {
+			is_claimed_by = SOV
+			is_owned_by = ROM
+		}
+	}
+	immediate = { set_country_flag = bessarabia_demand } 
+		
+	option = {
+		name = soviet.30.a
+		ai_chance = { factor = 100 } # historical mod
+		hidden_effect = { 
+			set_country_flag = bessarabia_demand
+			ROM = { 
+				country_event = { days = 2 id = romania.1 }
+			}
+		}
+	}	
+	option = {
+		name = soviet.30.b
+		ai_chance = { factor = 0 }
+		#
+	}
+}
+# Demand Karjala
+country_event = {
+	id = soviet.31
+	title = soviet.31.t
+	desc = soviet.31.d
+	picture = GFX_report_event_soviet_bikes
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		FROM = { tag = FIN }
+		NOT = { has_country_flag = karjala_demand }
+		146 = {
+			is_claimed_by = SOV
+			is_owned_by = FIN
+
+
+		}
+	}
+	
+	immediate = { set_country_flag = karjala_demand } 
+		
+	option = {
+		name = soviet.31.a
+		FIN = { country_event = { days = 2 id = finland.1 } }
+	}
+	option = {
+		name = soviet.31.b
+		ai_chance = { factor = 0 }
+		#
+	}
+}
+# Oppress Estonia
+country_event = {
+	id = soviet.32
+	title = soviet.32.t
+	desc = soviet.32.d
+	picture = GFX_report_event_soviet_soldiers
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SOV
+		FROM = {
+			tag = EST
+			any_owned_state = { is_claimed_by = SOV }
+		}
+		NOT = { has_country_flag = estonia_demand }
+	}
+	
+	immediate = { set_country_flag = estonia_demand } 
+		
+	option = {
+		name = soviet.32.a
+		EST = { country_event = { days = 2 id = baltic.1 } }
+	}
+	option = {
+		name = soviet.32.b
+		ai_chance = { factor = 0 }
+		#
+	}
+}
+# Oppress Latvia
+country_event = {
+	id = soviet.33
+	title = soviet.33.t
+	desc = soviet.33.d
+	picture = GFX_report_event_soviet_soldiers
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SOV
+		FROM = {
+			tag = LAT
+			any_owned_state = { is_claimed_by = SOV }
+		}
+		NOT = { has_country_flag = latvia_demand }
+	}
+	
+	immediate = { set_country_flag = latvia_demand } 
+		
+	option = {
+		name = soviet.33.a
+		LAT = { country_event = { days = 2 id = baltic.2 } }
+	}
+	option = {
+		name = soviet.33.b
+		ai_chance = { factor = 0 }
+		#
+	}
+}
+# Oppress Lithuania 
+country_event = {
+	id = soviet.34
+	title = soviet.34.t
+	desc = soviet.34.d
+	picture = GFX_report_event_soviet_soldiers
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SOV
+		FROM = {
+			tag = LIT
+			any_owned_state = { is_claimed_by = SOV }
+		}
+		NOT = { has_country_flag = lithuania_demand }
+	}
+	
+	immediate = { set_country_flag = lithuania_demand } 
+		
+	option = {
+		name = soviet.34.a
+		LIT = { country_event = { days = 2 id = baltic.3 } }
+	}
+	option = {
+		name = soviet.34.b
+		ai_chance = { factor = 0 }
+		#
+	}
+}
+# Communist government in FROM baltic country and they wish to be annexed
+country_event = {
+	id = soviet.35
+	title = soviet.35.t
+	desc = soviet.35.d
+	picture = GFX_report_event_stalin_approves
+
+	is_triggered_only = yes
+
+	option = {
+		name = soviet.35.a
+		ai_chance = { factor = 100 }
+
+		effect_tooltip = {
+			if = {
+				limit = { FROM = { tag = LIT } }
+			 	SOV = {
+			 		annex_country = {
+					target = LIT
+					transfer_troops = yes } 
+					add_named_threat = { threat = 2 name = soviet.35_threat_LIT }
+				}
+			}
+			if = {
+				limit = { FROM = { tag = FIN } } 
+			 	SOV = { 
+			 		annex_country = {
+					target = FIN
+					transfer_troops = yes } 
+					add_named_threat = { threat = 5 name = soviet.35_threat_FIN }
+				}
+			}
+			if = {
+				limit = { FROM = { tag = EST } } 
+			 	SOV = { 
+			 		annex_country = {
+					target = EST
+					transfer_troops = yes } 
+					add_named_threat = { threat = 2 name = soviet.35_threat_EST }
+				}
+			}
+			if = {
+				limit = { FROM = { tag = LAT } } 
+			 	SOV = {
+			 		annex_country = {
+					target = LAT
+					transfer_troops = yes } 
+					add_named_threat = { threat = 2 name = soviet.35_threat_LAT }
+				}
+			}
+		} 
+
+		hidden_effect = {
+
+			 FROM = {
+			 	country_event = { id = baltic.6 hours = 6}
+			 }			
+		}
+	}
+	option = {
+		name = soviet.35.b
+		ai_chance = { factor = 0 }
+	}
+}
+# Communist government in FROM baltic country and they wish to be part puppet
+country_event = {
+	id = soviet.36
+	title = soviet.36.t
+	desc = soviet.36.d
+	picture = GFX_report_event_stalin_approves
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				save_event_target_as = baltic
+			}
+		}
+	}
+
+	option = {
+		name = soviet.36.a
+		if = {
+			limit = {
+				FROM = { is_puppet = no }
+			}
+			SOV = { puppet = FROM }
+		}
+		ai_chance = { factor = 100 }
+			if = {
+				limit = { FROM = { tag = LIT } }
+				add_named_threat = { threat = 1 name = soviet.36_threat_LIT }
+			}	
+			if = {
+				limit = { FROM = { tag = FIN } }
+				add_named_threat = { threat = 2 name = soviet.36_threat_FIN }
+			}			
+			if = {
+				limit = { FROM = { tag = EST } }
+				add_named_threat = { threat = 1 name = soviet.36_threat_EST }
+			}			
+			if = {
+				limit = { FROM = { tag = LAT } }
+				add_named_threat = { threat = 1 name = soviet.36_threat_LAT }
+			}		
+
+		#trigger news event
+		hidden_effect = {
+			news_event =  { id = news.70 days = 1}
+		}		
+	}
+	option = {
+		name = soviet.36.b
+		ai_chance = { factor = 0 }
+	}
+}
+# Purge - New officers less dumb. Regaining org
+country_event = {
+	id = soviet.37
+	title = soviet.37.t
+	desc = soviet.37.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	is_triggered_only = yes
+
+	trigger = {	has_idea = officers_purged }
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = officers_purged
+			add_timed_idea = {
+				idea = officers_purged_2
+				days = 1314
+			}
+			country_event = { id = soviet.38 days = 146 }
+		}
+	}
+	option = {
+		name = soviet.37.a
+		custom_effect_tooltip = soviet.37.a_tt
+	}
+}
+# Purge - New officers less dumb. Regaining org
+country_event = {
+	id = soviet.38
+	title = soviet.37.t
+	desc = soviet.37.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	is_triggered_only = yes
+
+	trigger = {	has_idea = officers_purged_2 }
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = officers_purged_2
+			add_timed_idea = {
+				idea = officers_purged_3
+				days = 1168
+			}
+			if = {
+				limit = { has_idea = SOV_great_patriotic_war }
+				remove_ideas = SOV_great_patriotic_war
+				add_ideas = SOV_great_patriotic_war_2
+			}
+			country_event = { id = soviet.39 days = 146 }
+		}
+	}
+	option = {
+		name = soviet.37.a
+		custom_effect_tooltip = soviet.37.a_tt
+	}
+}
+# Purge - New officers less dumb. Regaining org
+country_event = {
+	id = soviet.39
+	title = soviet.37.t
+	desc = soviet.37.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	is_triggered_only = yes
+
+	trigger = {	has_idea = officers_purged_3 }
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = officers_purged_3
+			add_timed_idea = {
+				idea = officers_purged_4
+				days = 1022
+			}
+			country_event = { id = soviet.40 days = 146 }
+		}
+	}
+	option = {
+		name = soviet.37.a
+		custom_effect_tooltip = soviet.37.a_tt
+	}
+}
+# Purge - New officers less dumb. Regaining org
+country_event = {
+	id = soviet.40
+	title = soviet.37.t
+	desc = soviet.37.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	is_triggered_only = yes
+
+	trigger = {	has_idea = officers_purged_4 }
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = officers_purged_4
+			add_timed_idea = {
+				idea = officers_purged_5
+				days = 876
+			}
+			if = {
+				limit = { has_idea = SOV_great_patriotic_war_2 }
+				remove_ideas = SOV_great_patriotic_war_2
+				add_ideas = SOV_great_patriotic_war_3
+			}			
+			country_event = { id = soviet.41 days = 146 }
+		}
+	}
+	option = {
+		name = soviet.37.a
+		custom_effect_tooltip = soviet.37.a_tt
+	}
+}
+# Purge - New officers less dumb. Regaining org
+country_event = {
+	id = soviet.41
+	title = soviet.37.t
+	desc = soviet.37.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	is_triggered_only = yes
+
+	trigger = {	has_idea = officers_purged_5 }
+
+	immediate = {
+	hidden_effect = {
+			remove_ideas = officers_purged_5
+			add_timed_idea = {
+				idea = officers_purged_6
+				days = 730
+			}		
+			country_event = { id = soviet.42 days = 146 }
+		}
+	}
+	option = {
+		name = soviet.37.a
+		custom_effect_tooltip = soviet.37.a_tt
+	}
+}
+# Purge - New officers less dumb. Regaining org
+country_event = {
+	id = soviet.42
+	title = soviet.37.t
+	desc = soviet.37.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	is_triggered_only = yes
+
+	trigger = {	has_idea = officers_purged_6 }
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = officers_purged_6
+			add_timed_idea = {
+				idea = officers_purged_7
+				days = 584
+			}
+			if = {
+				limit = { has_idea = SOV_great_patriotic_war_3 }
+				remove_ideas = SOV_great_patriotic_war_3
+				add_ideas = SOV_great_patriotic_war_4
+			}			
+			country_event = { id = soviet.43 days = 146 }
+		}
+	}
+	option = {
+		name = soviet.37.a
+		custom_effect_tooltip = soviet.37.a_tt
+	}
+}
+# Purge - New officers less dumb. Regaining org
+country_event = {
+	id = soviet.43
+	title = soviet.37.t
+	desc = soviet.37.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	is_triggered_only = yes
+
+	trigger = {	has_idea = officers_purged_7 }
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = officers_purged_7
+			add_timed_idea = {
+				idea = officers_purged_8
+				days = 438
+			}
+			country_event = { id = soviet.44 days = 146 }
+		}
+	}
+	option = {
+		name = soviet.37.a
+		custom_effect_tooltip = soviet.37.a_tt
+	}
+}
+# Purge - New officers less dumb. Regaining org
+country_event = {
+	id = soviet.44
+	title = soviet.37.t
+	desc = soviet.37.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	is_triggered_only = yes
+
+	trigger = {	has_idea = officers_purged_8 }
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = officers_purged_8
+			add_timed_idea = {
+				idea = officers_purged_9
+				days = 292
+			}
+			if = {
+				limit = { has_idea = SOV_great_patriotic_war_4 }
+				remove_ideas = SOV_great_patriotic_war_4
+				add_ideas = SOV_great_patriotic_war_5
+			}					
+			country_event = { id = soviet.45 days = 146 }
+		}
+	}
+	option = {
+		name = soviet.37.a
+		custom_effect_tooltip = soviet.37.a_tt
+	}
+}
+# Purge - New officers less dumb. Regaining org
+country_event = {
+	id = soviet.45
+	title = soviet.37.t
+	desc = soviet.37.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	is_triggered_only = yes
+
+	trigger = {	has_idea = officers_purged_9 }
+
+	immediate = {
+		hidden_effect = {
+			remove_ideas = officers_purged_9
+			add_timed_idea = {
+				idea = officers_purged_10
+				days = 146
+			}
+		}
+		country_event = { id = soviet.47 days = 146 }
+	}
+	option = {
+		name = soviet.37.a
+		custom_effect_tooltip = soviet.37.a_tt
+	}
+}
+# Purge - Fighting defensive war against major
+country_event = {
+	id = soviet.46
+	title = soviet.46.t
+	desc = soviet.46.d
+	picture = GFX_report_event_russian_defense_with_injured_soldier
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+						has_idea = officers_purged
+						has_idea = officers_purged_2
+					}
+				}
+				add_ideas = SOV_great_patriotic_war
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = officers_purged_3	
+						has_idea = officers_purged_4	
+					}
+				}
+				add_ideas = SOV_great_patriotic_war_2
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = officers_purged_5	
+						has_idea = officers_purged_6	
+					}
+				}
+				add_ideas = SOV_great_patriotic_war_3
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = officers_purged_7	
+						has_idea = officers_purged_8	
+					}
+				}
+				add_ideas = SOV_great_patriotic_war_4
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = officers_purged_9	
+						has_idea = officers_purged_10	
+					}
+				}
+				add_ideas = SOV_great_patriotic_war_5
+			}
+		}
+	}
+
+	option = {
+		name = soviet.46.a
+		custom_effect_tooltip = soviet.46.a_tt
+	}
+}
+# Purge - Special event to remove patriotic war if it has been added
+country_event = {
+	id = soviet.47
+
+	hidden = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { has_idea = SOV_great_patriotic_war_5 }
+			remove_ideas = SOV_great_patriotic_war_5
+		}	
+	}
+}
+#No purges completed - decide what to do
+country_event = {
+	id = soviet.48
+	title = soviet.48.t
+	desc = soviet.48.d
+	picture = GFX_report_event_soviet_purge_trial
+
+	trigger = {
+		has_government = communism
+		tag = SOV
+		has_global_flag = SOV_fourth_international_fired
+		NOT = { has_completed_focus = SOV_great_purge }
+		AND = { 
+			has_country_flag = no_political_purge
+			has_country_flag = purge_1_no_purge
+			has_country_flag = purge_2_no_purge
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	fire_only_once = yes
+
+	#Don't invite trotsky
+	option = {
+		name = soviet.48.a
+		custom_effect_tooltip = soviet.48.a_tt
+		set_country_flag = SOV_soviet.48_notrotsky
+	}
+
+	#Invite back Trotsky
+	option = {
+		name = soviet.48.b
+		custom_effect_tooltip = soviet.48.b_tt
+		set_country_flag = SOV_soviet.48_trotsky
+	}
+
+}
+#No purges massive civil war
+country_event = {
+	id = soviet.49
+	title = soviet.49.t
+	desc = soviet.49.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = SOV_soviet.48_notrotsky
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 10 }
+
+	option = {
+		name = soviet.49.a
+		#start_civil_war = {
+		#	ideology = neutrality
+		#	size = 0.5
+		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
+		#}
+		hidden_effect = {
+			remove_unit_leader = 412 #Remove Andrey Vlasov
+			random_country = {
+				limit = {
+					original_tag = SOV
+					has_government = neutrality
+				}
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Andrey Vlasov"
+					desc = "POLITICS_ANDREY_VLASOV_DESC"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
+					expire = "1965.1.1"
+					ideology = moderatism
+					traits = {
+					}
+				}
+			}
+			news_event = { hours = 3 id = news.220 }
+		}
+	}
+}
+#1/4 purges
+country_event = {
+	id = soviet.50
+	title = soviet.50.t
+	desc = soviet.50.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_country_flag = SOV_purged_1
+	}
+
+	mean_time_to_happen = { days = 90 }
+
+	option = {
+		name = soviet.50.a
+		remove_unit_leader = 412 #Remove Andrey Vlasov
+		#start_civil_war = {
+		#	ideology = neutrality
+		#	size = 0.3
+		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
+		#}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					original_tag = SOV
+					has_government = neutrality
+				}
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Andrey Vlasov"
+					desc = "POLITICS_ANDREY_VLASOV_DESC"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
+					expire = "1965.1.1"
+					ideology = moderatism
+					traits = {
+					}
+				}
+			}
+			news_event = { hours = 3 id = news.220 }
+		}
+	}
+}
+#2/4 purges
+country_event = {
+	id = soviet.51
+	title = soviet.51.t
+	desc = soviet.51.d
+	picture = GFX_report_event_soviet_purge_officers
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_country_flag = SOV_purged_2
+	}
+
+	mean_time_to_happen = { days = 90 }
+
+	option = {
+		name = soviet.51.a
+		remove_unit_leader = 412 #Remove Andrey Vlasov
+		#start_civil_war = {
+		#	ideology = neutrality
+		#	size = 0.25
+		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
+		#}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					original_tag = SOV
+					has_government = neutrality
+				}
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Andrey Vlasov"
+					desc = "POLITICS_ANDREY_VLASOV_DESC"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
+					expire = "1965.1.1"
+					ideology = moderatism
+					traits = {
+					}
+				}
+			}
+			news_event = { hours = 3 id = news.220 }
+		}
+	}
+}
+#3/4 purges
+country_event = {
+	id = soviet.52
+	title = soviet.52.t
+	desc = soviet.52.d
+	picture = GFX_report_event_stalin_purge_politicians
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_country_flag = SOV_purged_3
+	}
+
+	mean_time_to_happen = { days = 90 }
+
+	option = {
+		name = soviet.52.a
+		remove_unit_leader = 412 #Remove Andrey Vlasov
+		#start_civil_war = {
+		#	ideology = neutrality
+		#	size = 0.2
+		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
+		#}
+		hidden_effect = {
+			random_country = {
+				limit = {
+					original_tag = SOV
+					has_government = neutrality
+				}
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Andrey Vlasov"
+					desc = "POLITICS_ANDREY_VLASOV_DESC"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
+					expire = "1965.1.1"
+					ideology = moderatism
+					traits = {
+					}
+				}
+			}
+			news_event = { hours = 3 id = news.220 }
+		}
+	}
+}
+#4/4 purges
+country_event = {
+	id = soviet.53
+	title = soviet.53.t
+	desc = soviet.53.d
+	picture = GFX_report_event_soviet_purge_trial
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_country_flag = SOV_purged_4
+	}
+
+	mean_time_to_happen = { days = 2 }
+
+	option = {
+		name = soviet.53.a
+		remove_ideas = trotskyite_plot_purged
+		#remove_unit_leader = 412 #Remove Andrey Vlasov
+		#hidden_effect = {
+		#	random_country = {
+		#		limit = {
+		#			original_tag = SOV
+		#			has_government = neutrality
+		#		}
+		#		kill_country_leader = yes
+		#		create_country_leader = {
+		#			name = "Andrey Vlasov"
+		#			desc = "POLITICS_ANDREY_VLASOV_DESC"
+		#			picture = "Portrait_Soviet_Andrey_Vlasov.dds"
+		#			expire = "1965.1.1"
+		#			ideology = moderatism
+		#			traits = {
+		#			}
+		#		}
+		#	}
+		#}
+	}
+}
+#New Leadership in Russia
+country_event = {
+	id = soviet.54
+	title = soviet.54.t
+	desc = {
+		text = soviet.54.d_nopurge
+		trigger = {
+			NOT = {
+				has_completed_focus = SOV_great_purge
+			}
+		}
+	}
+	desc = {
+		text = soviet.54.d_purge
+		trigger = {
+			has_completed_focus = SOV_great_purge
+		}
+	}
+	picture = GFX_report_event_soviet_purge_speech
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		NOT = {
+			has_government = communism
+		}
+		has_civil_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = soviet.54.a
+		if = {
+			limit = {
+				has_idea = trotskyite_plot
+			}
+			remove_ideas = trotskyite_plot
+		}
+		if = {
+			limit = {
+				has_idea = trotskyite_plot_purged
+			}
+			remove_ideas = trotskyite_plot_purged
+		}
+		remove_ideas = home_of_revolution
+	}
+}
+################# Soviet winter counter offensive
+country_event = {
+	id = soviet.55
+	title = soviet.55.t
+	desc = soviet.55.d
+	picture = GFX_report_event_soviet_winter_offensive
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = { has_country_flag = SOVwintercounteroffense }
+		has_war_with = GER
+		
+		# german advance check
+		or = {
+		NOT = { SOV = { controls_state = 260 }}
+		NOT = { SOV = { controls_state = 223 }}
+		NOT = { SOV = { controls_state = 246 }}
+		
+		NOT = { SOV = { controls_state = 222 }}
+		NOT = { SOV = { controls_state = 207 }}
+		NOT = { SOV = { controls_state = 243 }}
+		NOT = { SOV = { controls_state = 224 }}
+		NOT = { has_idea = Rodina_II }
+		}
+				
+		
+		#SOV = { owns_state = 219 } # controls moscow 6380
+		
+		#controls = 6380
+		is_ai = yes
+		
+		GER = {is_ai = no}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.55.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "SOV_winteroffense"
+			set_technology = { hiddentech_conscripts = 1 }
+			set_country_flag = SOVwintercounteroffense
+
+		add_timed_idea = {
+				idea = winter_offensive
+				days = 90
+			}
+		add_timed_idea = {
+				idea = soviet_desperate_defence
+				days = 180
+			}
+		}
+	}
+}
+country_event = {
+	id = soviet.56
+	title = soviet.56.t
+	desc = soviet.56.d
+	picture = GFX_report_event_soviet_soldiers_city
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = { has_country_flag = SOVleningradoffense }
+		has_war_with = GER
+		
+		# german advance check
+		or = {
+		NOT = { SOV = { controls_state = 263 }}
+		NOT = { SOV = { controls_state = 208 }}
+		
+		NOT = { SOV = { controls_state = 191 }}
+		NOT = { SOV = { controls_state = 12 }}
+		NOT = { SOV = { controls_state = 209 }}
+		NOT = { SOV = { controls_state = 210 }}
+		NOT = { has_idea = Rodina_II }
+
+		has_war_with = FIN
+		}
+		#controls = 3151
+		SOV = { owns_state = 195 } # controls leningrad 3151
+		is_ai = yes
+		
+		#GER = {is_ai = no}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.56.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			set_technology = { hiddentech_conscripts = 1 }
+			set_technology = { tech_heavy_soviet_tank_c = 1 }
+			load_oob = "SOV_Leningradoffense"
+			set_country_flag = SOVleningradoffense
+			}
+	}
+
+}
+country_event = {
+	id = soviet.57
+	title = soviet.57.t
+	desc = soviet.57.d
+	picture = GFX_report_event_soviet_tank_parade
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = { has_country_flag = SOVstalingraddefence }
+		has_war_with = GER
+		
+		# german advance check
+		or = {
+		NOT = { SOV = { controls_state = 245 }}
+		NOT = { SOV = { controls_state = 217 }}
+
+		NOT = { SOV = { controls_state = 228 }}
+		NOT = { SOV = { controls_state = 260 }}
+		NOT = { SOV = { controls_state = 218 }}
+		NOT = { SOV = { controls_state = 234 }}
+		NOT = { has_idea = Rodina_II }
+		}
+		SOV = { owns_state = 217 } # controls stalingrad 3529
+		#controls = 3529
+		is_ai = yes
+		
+		#GER = {is_ai = no}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.57.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			set_technology = { hiddentech_conscripts = 1 }
+			load_oob = "SOV_stalingrad_defence"
+			set_country_flag = SOVstalingraddefence
+			add_timed_idea = {
+				idea = Stalingrad_offensive
+				days = 180
+			}
+			#add_timed_idea = {
+			#	idea = soviet_desperate_defence
+			#	days = 180
+			#}
+		}
+	}
+}
+#################################################
+country_event = {
+	id = soviet.58
+	title = soviet.58.t
+	desc = soviet.58.d
+	picture = GFX_event_arms_producer
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		date > 1936.1.1
+		SOV = { controls_state = 251 }
+		SOV = { controls_state = 572 }
+		SOV = { owns_state = 571 } 
+		SOV = { owns_state = 570 }
+		SOV = { owns_state = 653 }
+		is_ai = yes
+		}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.58.a
+		
+		251  = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		572  = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		571  = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		570  = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		653 = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+
+}
+country_event = {
+	id = soviet.59
+	title = soviet.59.t
+	desc = soviet.59.d
+	picture = GFX_event_artillery_producer
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		date > 1936.1.1
+		SOV = { controls_state = 251 }
+		SOV = { controls_state = 572 }
+		SOV = { owns_state = 571 } 
+		SOV = { owns_state = 570 }
+		SOV = { owns_state = 653 }
+		has_war_with = GER
+		is_ai = yes
+		#GER = { is_ai = no }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.59.a
+		
+		202 = {
+			remove_building = { type = arms_factory level = 2 } 
+			remove_building = { type = smallarms_factory level = 1 }
+			remove_building = { type = artillery_factory level = 1 }
+		}
+		219 = { 
+			remove_building = { type = arms_factory level = 7 } 
+			remove_building = { type = tank_factory level = 1 }
+			remove_building = { type = Ltaircraft_factory level = 2 }
+			remove_building = { type = artillery_factory level = 1 }
+			remove_building = { type = Hvaircraft_factory level = 1 }
+		}
+		240 = { 
+			remove_building = { type = Ltaircraft_factory level = 2 }
+		}
+		209 = { 
+			remove_building = { type = Ltaircraft_factory level = 2 }
+		}
+		195 = {
+			remove_building = { type = arms_factory level = 5 } 
+			remove_building = { type = tank_factory level = 1 }
+			remove_building = { type = shipyard level = 1 }
+		}
+		221 = {
+			remove_building = { type = arms_factory level = 7 } 
+			remove_building = { type = tank_factory level = 1 }
+			remove_building = { type = smallarms_factory level = 1 }
+			remove_building = { type = artillery_factory level = 2 }
+		}
+		227 = {
+			remove_building = { type = smallarms_factory level = 1 }
+			remove_building = { type = artillery_factory level = 1 }
+		}
+		223 = {
+			remove_building = { type = arms_factory level = 2 } 
+			remove_building = { type = smallarms_factory level = 1 }
+		}
+		251  = {
+			add_extra_state_shared_building_slots = 10
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = smallarms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = artillery_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		572  = {
+			add_extra_state_shared_building_slots = 10
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = smallarms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = artillery_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		571  = {
+			add_extra_state_shared_building_slots = 10
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = tank_factory
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = artillery_factory
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = Hvaircraft_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		570  = {
+			add_extra_state_shared_building_slots = 8
+			add_building_construction = {
+				type = arms_factory
+				level = 5
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = tank_factory
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = Ltaircraft_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		653 = {
+			add_extra_state_shared_building_slots = 8
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = Ltaircraft_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+# Poland conquered... honor MR Pact?
+country_event = {
+	id = soviet.60
+	title = soviet.60.t
+	desc = soviet.60.d
+	picture = GFX_report_event_soviet_tanks
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_global_flag = sov_yes_pact
+		GER = { exists = yes }
+		NOT =  { has_war_with = GER }
+		OR = {
+			OR = {
+				owns_state = 88
+				owns_state = 92
+				owns_state = 90
+				owns_state = 86
+				owns_state = 87
+				owns_state = 85
+				owns_state = 98
+				owns_state = 10
+				owns_state = 928
+			}
+			AND = {
+				POL = { has_capitulated = yes }
+				OR = {
+					controls_state = 88
+					controls_state = 92
+					controls_state = 90
+					controls_state = 86
+					controls_state = 87
+					controls_state = 85
+					controls_state = 98
+					controls_state = 10
+					controls_state = 928
+				}
+			}
+			OR = {
+				any_other_country = {
+					is_in_faction_with = SOV
+					SOV = {
+						is_faction_leader = yes
+					}
+					OR = {
+						owns_state = 88
+						owns_state = 92
+						owns_state = 90
+						owns_state = 86
+						owns_state = 87
+						owns_state = 85
+						owns_state = 98
+						owns_state = 10
+						owns_state = 928
+						AND = {
+							POL = { has_capitulated = yes }
+							OR = {
+								controls_state = 88
+								controls_state = 92
+								controls_state = 90
+								controls_state = 86
+								controls_state = 87
+								controls_state = 85
+								controls_state = 98
+								controls_state = 10
+								controls_state = 928
+							}
+						}		
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 0
+				AND = {
+					POL = {
+						is_ai = no
+						has_civil_war = no
+					}
+					is_in_faction_with = POL
+				}
+			}
+		}
+		name = soviet.60.a
+		if = {
+			limit = {
+				88 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 88
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 88 }
+		}
+		if = {
+			limit = {
+				92 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 92
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 92 }
+		}
+		if = {
+			limit = {
+				90 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 90
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 90 }
+		}
+		if = {
+			limit = {
+				86 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 86
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 86 }
+		}
+		if = {
+			limit = {
+				87 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 87
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 87 }
+		}
+		if = {
+			limit = {
+				85 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 85
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 85 }
+		}
+		if = {
+			limit = {
+				98 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 98
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 98 }
+		}
+		if = {
+			limit = {
+				10 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 10
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 10 }
+		}
+		if = {
+			limit = {
+				928 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 928
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 928 }
+		}
+		if = {
+			limit = {
+				has_global_flag = poland_swap_danzig
+				70 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 70
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 70 }
+		}
+		if = {
+			limit = {
+				has_global_flag = poland_swap_danzig
+				664 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 664
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 664 }
+		}
+		if = {
+			limit = {
+				72 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 72
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 72 }
+		}
+		if = {
+			limit = {
+				has_global_flag = poland_swap_danzig
+				70 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 70
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 70 }
+		}
+		GER = { country_event = soviet.61 }
+	}
+	option = {
+		name = soviet.60.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = -1
+				is_historical_focus_on = yes
+				NOT = {
+					AND = {
+						POL = {
+							is_ai = no
+							has_civil_war = no
+						}
+						is_in_faction_with = POL
+					}
+				}
+			}
+		}
+		GER = { country_event = soviet.62 }
+		clr_global_flag = sov_yes_pact
+		diplomatic_relation = {
+			country = GER
+			relation = non_aggression_pact
+			active = no
+		}
+		GER = {
+			add_state_claim = 88
+			add_state_claim = 92
+			add_state_claim = 90
+			add_state_claim = 86
+			add_state_claim = 87
+			add_state_claim = 85
+			add_state_claim = 98
+			add_state_claim = 10
+			add_state_claim = 928
+			
+			effect_tooltip = {
+				create_wargoal = {
+					type = annex_everything
+					target = SOV
+				}
+			}
+		}
+	}
+}
+# Soviet honors MR Pact (Germany)
+country_event = {
+	id = soviet.61
+	title = soviet.61.t
+	desc = soviet.61.d
+	picture = GFX_report_event_soviet_german_soldier_handshake
+
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.12.a
+		if = {
+			limit = {
+				GER = {
+					controls_state = 85
+					controls_state = 86
+					controls_state = 87
+				}
+			}
+			hidden_effect = {
+				news_event = { hours = 6 id = news.287 }
+			}
+		}
+	}
+}
+# Soviet betrays MR Pact (Germany)
+country_event = {
+	id = soviet.62
+	title = soviet.62.t
+	desc = soviet.62.d
+	picture = GFX_report_event_soviet_tanks
+
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.62.a
+		create_wargoal = {
+			type = annex_everything
+			target = SOV
+		}
+	}
+}
+###### Veren's SOV Events for Sov-Jap War ######
+country_event = {
+	id = soviet.360
+	title = soviet.360.t
+	desc = soviet.360.d
+	picture = GFX_report_event_japanese_soldiers_hong_kong
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes 
+	option = {
+		name = soviet.60.a
+		
+		ai_chance = {
+			factor = 80
+		}
+		
+		JAP = { transfer_state = 408 }
+		JAP = { transfer_state = 409 }
+		JAP = { transfer_state = 560 }
+		JAP = { transfer_state = 657 }
+		JAP = { transfer_state = 561 }
+		JAP = { transfer_state = 563 }
+		JAP = { transfer_state = 564 }
+		JAP = { transfer_state = 565 }
+		JAP = { transfer_state = 566 }
+		JAP = { transfer_state = 655 }
+		JAP = { transfer_state = 574 }
+		JAP = { transfer_state = 562 }
+		JAP = { transfer_state = 644 }
+		JAP = { transfer_state = 637 }
+		JAP = { transfer_state = 575 }
+		
+		white_peace = JAP
+		
+		ITA = { add_opinion_modifier = { target = JAP modifier = very_large_decrease } }
+		JAP = { annex_country = { target = MON } }
+		JAP = { country_event = { id = japan.24 }}
+	}
+	
+	option = {
+		name = soviet.360.b
+		
+		ai_chance = {
+			factor = 20
+		}
+		JAP = { country_event = { id = japan.25 }}
+	}
+}
+################# Soviet T 34
+country_event = {
+	id = soviet.361
+	title = soviet.361.t
+	desc = soviet.361.d
+	picture = GFX_report_event_t34
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_tech = tech_medium_soviet_tank_c
+		is_ai = yes
+		has_war_with = GER
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.361.a
+		ai_chance = { factor = 100 }
+		set_country_flag = T34_tank 
+		
+		hidden_effect = {
+			load_oob = "SOV_T_34_40"
+
+		}
+	}
+}
+################# Soviet KV1
+country_event = {
+	id = soviet.362
+	title = soviet.362.t
+	desc = soviet.362.d
+	picture = GFX_report_event_kv1
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_tech = tech_heavy_soviet_tank_c
+		is_ai = yes
+		has_war_with = GER
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.362.a
+		ai_chance = { factor = 100 }
+		set_country_flag = KV1_tank
+		
+		hidden_effect = {
+			load_oob = "SOV_KV1_40"
+		}
+	}
+}
+################# Soviet partisans
+country_event = {
+	id = soviet.363
+	title = soviet.363.t
+	desc = soviet.363.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_global_flag = yes_partisans
+	}
+	
+	fire_only_once = yes
+		
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = soviet.363.a
+		ai_chance = { factor = 100 }
+		set_country_flag = SOV_partisan_uprisings 
+		hidden_effect = {
+			set_technology = {partisans = 1}
+			load_oob = "SOV_Partisans"		#template
+		}
+	}
+}
+#### 1941 partisans
+country_event = {
+	id = soviet.64
+	title = soviet.64.t
+	desc = soviet.64.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		has_global_flag = yes_partisans	
+		NOT = { has_idea = SOV_partisan_attacks }
+	}
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks
+			days = 120
+		}
+	}
+		
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.64.a
+		ai_chance = { factor = 10 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_I"  
+		}
+	}
+	
+	option = {
+		name = soviet.64.b
+		ai_chance = { factor = 90 }
+	}
+}
+
+country_event = {
+	id = soviet.65
+	title = soviet.65.t
+	desc = soviet.65.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 94 }}
+		NOT = { has_idea = SOV_partisan_attacks_94 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_94
+			days = 180
+		}
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.65.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_94"  
+		}
+	}
+	
+	option = {
+		name = soviet.65.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.66
+	title = soviet.66.t
+	desc = soviet.66.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 95 }}
+		not = { has_idea = SOV_partisan_attacks_95 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_95
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.66.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_95"  
+		}
+	}
+	
+	option = {
+		name = soviet.66.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.67
+	title = soviet.67.t
+	desc = soviet.67.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 96 }}
+		not = { has_idea = SOV_partisan_attacks_96 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_96
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.67.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_96"  
+		}
+	}
+	
+	option = {
+		name = soviet.67.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.68
+	title = soviet.68.t
+	desc = soviet.68.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 12 }}
+		not = { has_idea = SOV_partisan_attacks_12 }
+		has_global_flag = yes_partisans
+	}
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_12
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.68.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_12"  
+		}
+	}
+	
+	option = {
+		name = soviet.68.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.69
+	title = soviet.69.t
+	desc = soviet.69.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 13 }}
+		not = { has_idea = SOV_partisan_attacks_13 }
+		has_global_flag = yes_partisans
+	}
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_13
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.69.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_13"  
+		}
+	}
+	
+	option = {
+		name = soviet.69.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.70
+	title = soviet.70.t
+	desc = soviet.70.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 840 }}
+		not = { has_idea = SOV_partisan_attacks_840 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_840
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.70.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_840"  
+		}
+	}
+	
+	option = {
+		name = soviet.70.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.71
+	title = soviet.71.t
+	desc = soviet.71.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 209 }}
+		not = { has_idea = SOV_partisan_attacks_209 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_209
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.71.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_209"  
+		}
+	}
+	
+	option = {
+		name = soviet.71.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.72
+	title = soviet.72.t
+	desc = soviet.65.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 195 }}
+		not = { has_idea = SOV_partisan_attacks_195 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_195
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.72.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_195"  
+		}
+	}
+	
+	option = {
+		name = soviet.72.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.73
+	title = soviet.73.t
+	desc = soviet.65.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 202 }}
+		not = { has_idea = SOV_partisan_attacks_202 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_202
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.73.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_202"  
+		}
+	}
+	
+	option = {
+		name = soviet.73.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.74
+	title = soviet.74.t
+	desc = soviet.74.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 240 }}
+		not = { has_idea = SOV_partisan_attacks_240 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_240
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.74.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_240"  
+		}
+	}
+	
+	option = {
+		name = soviet.74.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.75
+	title = soviet.75.t
+	desc = soviet.75.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 246 }}
+		not = { has_idea = SOV_partisan_attacks_246 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_246
+			days = 180
+		}
+	}
+		
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.75.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_246"  
+		}
+	}
+	
+	option = {
+		name = soviet.75.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.76
+	title = soviet.76.t
+	desc = soviet.76.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 260 }}
+		not = { has_idea = SOV_partisan_attacks_260 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_260
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.76.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_260"  
+		}
+	}
+	
+	option = {
+		name = soviet.76.b
+		ai_chance = { factor = 70 }
+	
+	}
+}
+country_event = {
+	id = soviet.77
+	title = soviet.77.t
+	desc = soviet.77.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 223 }}
+		not = { has_idea = SOV_partisan_attacks_223 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_223
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.77.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_223"  
+		}
+	}
+	
+	option = {
+		name = soviet.77.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.78
+	title = soviet.78.t
+	desc = soviet.78.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 263 }}
+		not = { has_idea = SOV_partisan_attacks_263 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_263
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.78.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_263"  
+		}
+	}
+	
+	option = {
+		name = soviet.78.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.79
+	title = soviet.79.t
+	desc = soviet.79.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 222 }}
+		not = { has_idea = SOV_partisan_attacks_222 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_222
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.79.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_222"  
+		}
+	}
+	
+	option = {
+		name = soviet.79.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.80
+	title = soviet.80.t
+	desc = soviet.80.d
+	picture = GFX_report_event_soviet_KV
+
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		has_country_flag = SOV_partisan_uprisings 
+		NOT = { SOV = { controls_state = 226 }}
+		not = { has_idea = SOV_partisan_attacks_226 }
+		has_global_flag = yes_partisans
+	}
+	
+	immediate = {
+		add_timed_idea = {
+			idea = SOV_partisan_attacks_226
+			days = 180
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	option = {
+		name = soviet.80.a
+		ai_chance = { factor = 30 }
+	
+		hidden_effect = {
+			load_oob = "SOV_Partisans_226"  
+		}
+	}
+	option = {
+		name = soviet.80.b
+		ai_chance = { factor = 70 }
+	}
+}
+country_event = {
+	id = soviet.81
+	title = soviet.81.t
+	desc = soviet.81.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = forthemotherland
+		OR = {
+			date > 1941.9.1
+			NOT = { has_idea = Rodina_III }
+		}
+		has_war_with = GER
+		is_puppet = no
+		exists = yes 
+		SOV = { controls_state = 251 } 
+		NOT = { has_country_flag = SOVguardssept }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.81.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		set_country_flag = SOVguardssept
+		hidden_effect = {
+			set_technology = { guards_motorized_tech =1 }
+			set_technology = { guards_infantry_tech =1 }
+			set_technology = { guards_artillery_tech =1 }
+			set_technology = { guards_artillery_mot_tech =1 }
+			load_oob = "SOV_guards_sept_ai"  
+		}
+	}
+	
+	option = {
+		name = soviet.81.b
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		set_country_flag = SOVguardssept
+		hidden_effect = {
+			set_technology = { guards_motorized_tech =1 }
+			set_technology = { guards_infantry_tech =1 }
+			set_technology = { guards_artillery_tech =1 }
+			set_technology = { guards_artillery_mot_tech =1 }
+			load_oob = "SOV_guards_sept"  
+		}
+	}
+}
+country_event = {
+	id = soviet.82
+	title = soviet.82.t
+	desc = soviet.82.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = forthemotherland
+		OR = {
+			date > 1941.11.1
+			NOT = { has_idea = Rodina_II }
+		}
+		has_war_with = GER
+		is_puppet = no
+		exists = yes 
+		SOV = { controls_state = 251 } 
+		NOT = { has_country_flag = SOVguardsnov }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.82.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		set_country_flag = SOVguardsnov
+		hidden_effect = {
+			set_technology = { guards_cavalry_tech = 1 }
+			load_oob = "SOV_guards_nov_ai"  
+		}
+	}
+	
+	option = {
+		name = soviet.82.b
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		set_country_flag = SOVguardsnov
+		hidden_effect = {
+			set_technology = { guards_cavalry_tech = 1 } 
+			load_oob = "SOV_guards_nov"  
+		}
+	}
+}
+country_event = {
+	id = soviet.83
+	title = soviet.83.t
+	desc = soviet.83.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = forthemotherland
+		OR = {
+			date > 1941.12.1
+			NOT = { has_idea = Rodina_II }
+		}
+		has_war_with = GER
+		is_puppet = no
+		exists = yes 
+		SOV = { controls_state = 251 } 
+		NOT = { has_country_flag = SOVguardsdec }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 14
+	}
+	
+	option = {
+		name = soviet.83.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		set_country_flag = SOVguardsdec
+		hidden_effect = {
+			load_oob = "SOV_guards_dec_ai"
+		}
+	}
+	
+	option = {
+		name = soviet.83.b
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		set_country_flag = SOVguardsdec
+		hidden_effect = {
+			load_oob = "SOV_guards_dec"
+		}
+	}
+}
+country_event = {
+	id = soviet.84
+	title = soviet.84.t
+	desc = soviet.84.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = forthemotherland
+		OR = {
+			date > 1942.1.1
+			NOT = { has_idea = Rodina_II }
+		}
+		has_war_with = GER
+		
+		is_puppet = no
+		exists = yes 
+		SOV = { controls_state = 251 }
+		NOT = { has_country_flag = SOVguardsjan }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 28
+	}
+	
+	option = {
+		name = soviet.84.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		set_country_flag = SOVguardsjan
+		hidden_effect = {
+			load_oob = "SOV_guards_jan_ai"  
+		}
+	}
+	
+	option = {
+		name = soviet.84.b
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		set_country_flag = SOVguardsjan
+		hidden_effect = {
+			load_oob = "SOV_guards_jan"  
+		}
+	}
+}
+country_event = {
+	id = soviet.85
+	title = soviet.85.t
+	desc = soviet.85.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = forthemotherland
+		OR = {
+			date > 1942.2.1
+			NOT = { has_idea = Rodina_II }
+		}
+		has_war_with = GER
+		is_puppet = no
+		exists = yes 
+		SOV = { controls_state = 251 } 
+		NOT = { has_country_flag = SOVguardsfeb }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = soviet.85.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		set_country_flag = SOVguardsfeb
+		hidden_effect = {
+			load_oob = "SOV_guards_feb_ai"  
+		}
+	}
+	
+	option = {
+		name = soviet.85.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		set_country_flag = SOVguardsfeb
+		hidden_effect = {
+			load_oob = "SOV_guards_feb"  
+		}
+	}
+}
+country_event = {
+	id = soviet.86
+	title = soviet.86.t
+	desc = soviet.86.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = forthemotherland
+		OR = {
+			date > 1942.3.1
+			NOT = { has_idea = Rodina_II }
+		}
+		has_war_with = GER
+		
+		is_puppet = no
+		exists = yes 
+		SOV = { controls_state = 251 } 
+		NOT = { has_country_flag = SOVguardsmar }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = soviet.86.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		set_country_flag = SOVguardsmar
+		hidden_effect = {
+			load_oob = "SOV_guards_mar_ai"  
+		}
+	}
+	
+	option = {
+		name = soviet.86.b
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		set_country_flag = SOVguardsmar
+		hidden_effect = {
+			load_oob = "SOV_guards_mar"  
+		}
+	}
+}
+country_event = {
+	id = soviet.87
+	title = soviet.87.t
+	desc = soviet.87.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = forthemotherland
+		OR = {
+			date > 1942.6.1
+			NOT = { has_idea = Rodina_I }
+		}
+		has_war_with = GER
+		
+		is_puppet = no
+		exists = yes 
+		SOV = { controls_state = 251 } 
+		NOT = { has_country_flag = SOVguardsjun }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.87.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		set_country_flag = SOVguardsjun
+		hidden_effect = {
+			set_technology = { guards_sov_t_34_tank = 1 }
+			set_technology = { guards_sov_kv_tank = 1 }
+			set_technology = { guards_motorized_rocket_brigade_tech = 1 }
+			load_oob = "SOV_guards_jun_ai"  
+		}
+	}
+	
+	option = {
+		name = soviet.87.b
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		set_country_flag = SOVguardsjun
+		hidden_effect = {
+			set_technology = { guards_sov_t_34_tank = 1 }
+			set_technology = { guards_sov_kv_tank = 1 }
+			set_technology = { guards_motorized_rocket_brigade_tech = 1 }
+			load_oob = "SOV_guards_jun"  
+		}
+	}
+}
+country_event = {
+	id = soviet.88
+	title = soviet.88.t
+	desc = soviet.88.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = forthemotherland
+		OR = {
+			date > 1942.10.1
+			NOT = { has_idea = Rodina_I }
+		}
+		has_war_with = GER
+		is_puppet = no
+		exists = yes 
+		SOV = { controls_state = 251 }
+		NOT = { has_country_flag = SOVguardsoct }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = soviet.88.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		set_country_flag = SOVguardsoct
+		hidden_effect = {
+			load_oob = "SOV_guards_oct_ai"  
+		}
+	}
+	
+	option = {
+		name = soviet.88.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = no }
+		set_country_flag = SOVguardsoct
+		hidden_effect = {
+			load_oob = "SOV_guards_oct"  
+		}
+	}
+}
+country_event = {
+	id = soviet.89
+	title = soviet.89.t
+	desc = soviet.89.d
+	picture = GFX_report_event_soviet_soldiers
+
+	trigger = {
+		tag = SOV
+		has_country_flag = forthemotherland
+		OR = {
+			date > 1942.12.1
+			NOT = { has_idea = Rodina_I }
+		}
+		has_war_with = GER
+		is_puppet = no
+		exists = yes 
+		SOV = { controls_state = 251 } 
+		NOT = { has_country_flag = SOVguardsdec42 }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	option = {
+		name = soviet.89.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		set_country_flag = SOVguardsdec42
+		hidden_effect = {
+			set_technology = { guards_paratrooper_tech = 1 }
+			load_oob = "SOV_guards_dec42_ai"  
+		}
+	}
+	
+	option = {
+		name = soviet.89.b
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		set_country_flag = SOVguardsdec42
+		hidden_effect = {
+			set_technology = { guards_paratrooper_tech = 1 }
+			load_oob = "SOV_guards_dec42"  
+		}
+	}
+}
+country_event = {
+	id = soviet.90
+	title = soviet.90.t
+	desc = { 
+		text = soviet.90.desc.a
+		trigger = { 
+			has_tech = tech_rf_bbv
+			is_ai = no
+		}
+	}
+	desc = { 
+		text = soviet.90.desc.b
+		trigger = { 
+			has_tech = tech_rf_bbv2
+			is_ai = no
+		}
+	}
+	desc = { 
+		text = soviet.90.desc.c
+		trigger = { 
+			has_tech = tech_rf_bbv3
+			is_ai = no
+		}
+	}
+	picture = GFX_report_event_project_1058
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = no
+		date > 1938.1.1
+		OR = {
+			has_tech = tech_rf_bbv
+			has_tech = tech_rf_bbv2
+			has_tech = tech_rf_bbv3
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = soviet.90.a
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			set_technology = { tech_rf_bbv = 1 }
+			}
+		trigger = { 
+			is_ai = no
+		}
+	}
+	
+	option = {
+		name = soviet.90.b
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			set_technology = { tech_rf_bbv2 = 1 }
+			}
+		trigger = { 
+			is_ai = no
+		}
+	}
+	
+	option = {
+		name = soviet.90.c
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			set_technology = { tech_rf_bbv3 = 1 }
+			}
+		trigger = { 
+			is_ai = no
+		}
+	}
+}
+#308th_division_decision stalingrad 1942.3.1
+#120_Guard_decision stalingrad 1942.12.1
+country_event = {
+	id = soviet.91
+	title = soviet.91.t
+	desc = soviet.91.d
+	picture = GFX_report_event_chamberlain
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		is_ai = yes
+		date > 1936.1.1	
+
+	}
+
+	option = {
+		name = soviet.91.a
+
+		hidden_effect = {
+			load_oob = "SOV_AI_starting_equipment"
+		}
+	}
+}
+country_event = {
+	id = soviet.400
+	title = soviet.400.t
+	desc = soviet.400.desc
+	picture = GFX_report_event_soviet_women
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+	}
+	
+	mean_time_to_happen = {
+		days = 60
+	}
+	
+	option = {
+		name = soviet.400.a
+		add_ideas = soviet_women
+		add_political_power = 10
+	}
+}
+# Kirill I dies
+country_event = {
+	id = soviet.300
+	title = soviet.300.t
+	desc = soviet.300.d
+	picture = GFX_report_event_generic_funeral
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV #change to RUS?
+		OR = {
+			has_government = monarchism
+			has_country_flag = const_tsar
+		}
+		date > 1938.6.10
+	}
+	
+	immediate = { set_country_flag = kirill_dead }
+	
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			factor = 0.3
+			date > 1938.10.1
+		}
+	}
+
+	option = {
+		name = soviet.300.a
+		kill_country_leader = yes
+		remove_ideas = kirill_v_romanov
+		add_ideas = vladimir_k_romanov
+		create_country_leader = {
+		name = "Vladimir I"
+		desc = "Emperor and Autocrat of all the Russias"
+		picture = "gfx/leaders/SOV/vladimir_k_romanov.dds"
+		expire = "1992.6.4"
+		ideology = imperial
+		traits = {
+			monarchist
+			silent_workhorse
+			}
+		}
+	}
+}
+#USSR
+country_event = {
+	id = soviet.301
+	title = soviet.301.t
+	desc = soviet.301.d
+	picture = GFX_report_event_soviet_soldiers2
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = SOV
+		has_country_flag = sov_attack_ger
+		has_war_with = GER
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.301.a
+	}
+}
+#Germany
+country_event = {
+	id = soviet.302
+	title = soviet.302.t
+	desc = soviet.302.d
+	picture = GFX_report_event_soviet_soldiers2
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		has_country_flag = sov_attack_ger
+		has_war_with = SOV
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = soviet.302.a
+	}
+}
+#ROM Attacked, Asks for Help
+country_event = {
+	id = soviet.304
+	title = soviet.304.t
+	desc = soviet.304.desc
+	picture = GFX_report_event_soviet_soldiers2
+	
+	fire_only_once = yes
+	
+	trigger = {
+		#OR = {
+		#	has_global_flag = sov_dobrogea_no
+		#	has_global_flag = sov_east_rom_no
+		#	has_global_flag = sov_annex_rom
+		#}
+		has_global_flag = sov_puppet_rom
+		has_war_with = SOV
+		is_in_faction = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Asks Axis
+		name = soviet.304.a
+		GER = { country_event = soviet.309 }
+		set_global_flag = rom_asks_axis
+		ai_chance = {
+			base = 90
+		}
+	}
+	
+	option = { #Asks Allies
+		name = soviet.304.b
+		ENG = { country_event = soviet.309 }
+		set_global_flag = rom_asks_allies
+		ai_chance = {
+			base = 10
+		}
+	}
+	#option = { #Asks Balkans
+	#	name = soviet.304.c
+	#	
+	#}
+}
+#ROM asks for help
+country_event = {
+	id = soviet.305
+	title = soviet.305.t
+	desc = soviet.305.desc
+	picture = GFX_report_event_soviet_soldiers2
+	
+	is_triggered_only = yes
+	
+	option = { #We will help
+		name = soviet.305.a
+		if = { limit = { has_global_flag = rom_asks_axis }
+			GER = { add_to_faction = ROM }
+			ROM = { 
+				set_country_flag = in_axis
+				country_event = soviet.310
+			}
+		}
+		if = { limit = { has_global_flag = rom_asks_allies }
+			ENG = { add_to_faction = ROM }
+			ROM = { 
+				set_country_flag = in_allies
+				country_event = soviet.311
+			}
+		}
+		ai_chance = {
+			base = 75
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+		}
+	}
+	
+	option = { #No help
+		name = soviet.305.b
+		if = { limit = { has_global_flag = rom_asks_axis }
+			ROM = { 
+				clr_global_flag = rom_asks_axis
+				country_event = soviet.312
+				set_global_flag = ger_rom_says_no
+			}
+		}
+		if = { limit = { has_global_flag = rom_asks_allies }
+			ROM = { 
+				clr_global_flag = rom_asks_allies
+				country_event = soviet.313
+				set_global_flag = eng_rom_says_no
+			}
+		}
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+#Germany helps Rom
+country_event = {
+	id = soviet.306
+	title = soviet.306.t
+	desc = soviet.306.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #I hope they can save us
+		name = soviet.306.a
+		
+	}
+}
+#Allies help ROM
+country_event = {
+	id = soviet.307
+	title = soviet.307.t
+	desc = soviet.307.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #I hope they can save us
+		name = soviet.307.a
+		
+	}
+}
+#GER says no
+country_event = {
+	id = soviet.308
+	title = soviet.308.t
+	desc = soviet.308.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #Ask Allies
+		name = soviet.308.a
+		trigger = {
+			NOT = { has_global_flag = ger_rom_says_no }
+		}
+		ENG = { country_event = soviet.309 }
+		set_global_flag = rom_asks_allies
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = { #Pray
+		name = soviet.308.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#ENG says no
+country_event = {
+	id = soviet.309
+	title = soviet.309.t
+	desc = soviet.309.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #Ask Allies
+		name = soviet.309.a
+		trigger = {
+			NOT = {
+				has_global_flag = eng_rom_says_no
+			}
+		}
+		GER = { country_event = soviet.309 }
+		set_global_flag = rom_asks_axis
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = { #Pray
+		name = soviet.309.b
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#Axis Intervene!
+country_event = {
+	id = soviet.310
+	title = soviet.310.t
+	desc = soviet.310.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #No deal!
+		name = soviet.310.a
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#Allies Intervene!
+country_event = {
+	id = soviet.311
+	title = soviet.311.t
+	desc = soviet.311.desc
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	
+	option = { #No deal!
+		name = soviet.311.a
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+### EOF ###
