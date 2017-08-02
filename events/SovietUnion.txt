@@ -2048,12 +2048,8 @@ country_event = {
 		NOT = { SOV = { controls_state = 207 }}
 		NOT = { SOV = { controls_state = 243 }}
 		NOT = { SOV = { controls_state = 224 }}
-		NOT = { has_idea = Rodina_II }
 		}
-				
-		
-		#SOV = { owns_state = 219 } # controls moscow 6380
-		
+		SOV = { owns_state = 219 } # controls moscow 6380
 		#controls = 6380
 		is_ai = yes
 		
@@ -2061,7 +2057,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 20
+		days = 1
 	}
 	
 	option = {
@@ -2076,10 +2072,6 @@ country_event = {
 		add_timed_idea = {
 				idea = winter_offensive
 				days = 90
-			}
-		add_timed_idea = {
-				idea = soviet_desperate_defence
-				days = 180
 			}
 		}
 	}
@@ -2106,8 +2098,6 @@ country_event = {
 		NOT = { SOV = { controls_state = 12 }}
 		NOT = { SOV = { controls_state = 209 }}
 		NOT = { SOV = { controls_state = 210 }}
-		NOT = { has_idea = Rodina_II }
-
 		has_war_with = FIN
 		}
 		#controls = 3151
@@ -2156,7 +2146,7 @@ country_event = {
 		NOT = { SOV = { controls_state = 260 }}
 		NOT = { SOV = { controls_state = 218 }}
 		NOT = { SOV = { controls_state = 234 }}
-		NOT = { has_idea = Rodina_II }
+		
 		}
 		SOV = { owns_state = 217 } # controls stalingrad 3529
 		#controls = 3529
@@ -2179,12 +2169,9 @@ country_event = {
 			set_country_flag = SOVstalingraddefence
 			add_timed_idea = {
 				idea = Stalingrad_offensive
-				days = 180
+				days = 60
 			}
-			#add_timed_idea = {
-			#	idea = soviet_desperate_defence
-			#	days = 180
-			#}
+		
 		}
 	}
 }

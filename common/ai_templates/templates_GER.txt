@@ -43,7 +43,7 @@ light_armor_GER = {
 		}
 	}
 	replace_at_match = 0.2
-	replace_with = medium_armor_default_GER
+	replace_with = medium_armor_GER
 	target_min_match = 0.1
 }
 }
@@ -89,9 +89,7 @@ medium_armor_GER = {
 			anti_tank_brigade = 1
 		}
 	}
-	replace_at_match = 1
-	replace_with = heavy_armor_default_GER
-	target_min_match = 1
+	
 }
 }
 heavy_armored_GER = {
@@ -123,12 +121,11 @@ heavy_armor_GER = {
 		}
 		
 		regiments = {
-			panzer_iv  = 3
-			panzer_vi  = 3
+			panzer_iv  = 4
+			panzer_vi  = 2
 			motorized = 5
 			artillery_brigade_mot = 1
-			medium_tank_destroyer_brigade = 1
-			medium_sp_artillery_brigade = 1
+			
 		}
 	}
 }
@@ -214,9 +211,7 @@ mountaineers_default_GER = {
 			anti_tank_brigade = 1
 		}
 	}
-	replace_at_match = 0.7
-	replace_with = infantry_default_GER
-	target_min_match = 0.6
+	
 }
 }
 marines_GER = {
@@ -325,7 +320,7 @@ cavalry_GER = {
 		}
 	}
 	replace_at_match = 0.6
-	replace_with = semi_motorized_default_GER
+	replace_with = semi_motorized_GER
 	target_min_match = 0.6
 }
 }
@@ -444,46 +439,13 @@ mechanized_GER = {
 		}
 		
 		regiments = {
-			motorized = 8
-			medium_sp_artillery_brigade = 1
-			medium_tank_destroyer_brigade = 1
-			heavy_sp_artillery_brigade = 1
-			heavy_tank_destroyer_brigade = 1
+			mechanized = 8
 			heavy_armor = 1
 			medium_armor = 1
 		}
 	}
 }
 
-mechanized_GER = {
-	target_width = 24.9
-	width_weight = 0.5
-	column_swap_factor = 0.3
-	
-	target_template = {
-		weight = 1
-		match_value = 23990.0
-		
-		support = {
-			engineer = 1
-			#artillery = 1
-			recon_mot = 1
-			maintenance_company = 1
-			logistics_company = 1
-			DIV_HQ = 1
-		}
-		
-		regiments = {
-			motorized = 8
-			medium_sp_artillery_brigade = 1
-			medium_tank_destroyer_brigade = 1
-			heavy_sp_artillery_brigade = 1
-			heavy_tank_destroyer_brigade = 1
-			heavy_armor = 1
-			medium_armor = 1
-		}
-	}
-}
 }
 garrison_GER = {
 
@@ -523,7 +485,7 @@ ss_garrison_GER = {
 	}
 	
 	replace_at_match = 1.0
-	replace_with = ss_infantry_default_GER
+	replace_with = ss_infantry_GER
 	target_min_match = 1.0
 }
 
@@ -553,9 +515,7 @@ garrison_GER = {
 			artillery_brigade = 1
 		}
 	}
-	replace_at_match = 1
-	replace_with = motorized_default_GER
-	target_min_match = 1
+
 }
 
 garrison_art_GER = {
@@ -611,9 +571,7 @@ militia_default_GER = {
 			#anti_air = 1
 		}
 	}
-	replace_at_match = 1
-	replace_with = motorized_default_GER
-	target_min_match = 1
+	
 }
 
 militia_GER = {
@@ -642,9 +600,7 @@ militia_GER = {
 			#anti_air = 1
 		}
 	}
-	replace_at_match = 1
-	replace_with = motorized_default_GER
-	target_min_match = 1
+	
 }
 
 #HQ_Command = {
