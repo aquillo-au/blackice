@@ -20,9 +20,11 @@ focus_tree = {
 		x = -16
 		y = 0
 		cost = 10
+		
 		available = {
 			date > 1936.4.22
 		}
+		
 		ai_will_do = {
 			factor = 12
 		}
@@ -43,9 +45,11 @@ focus_tree = {
 		x = -18
 		y = 1
 		cost = 4
+		
 		available = {
 			date > 1936.1.1
 		}
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -124,9 +128,11 @@ focus_tree = {
 		x = -18
 		y = 2
 		cost = 10
+		
 		available = {
 			date > 1937.1.1
 		}
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -199,9 +205,11 @@ focus_tree = {
 		x = -18
 		y = 3
 		cost = 12
+		
 		available = {
 			date > 1938.1.1
 		}
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -285,6 +293,7 @@ focus_tree = {
 		x = -18
 		y = 4
 		cost = 12
+		
 		available = {
 			date > 1939.1.1
 		}
@@ -1596,6 +1605,7 @@ focus_tree = {
 		icon = GFX_goal_grossdeutschland
 		prerequisite = { focus = GER_Wehrmacht }
 		available = {
+			is_ai = no
 			date > 1939.5.1
 		}
 		x = 2
@@ -1610,7 +1620,6 @@ focus_tree = {
 			GER = {
 				country_event = germany.400
 			}
-			
 		}
 	}
 	# Achtung Panzer
@@ -1947,12 +1956,11 @@ focus_tree = {
 		icon = GFX_goal_molotov_ribbentrop_pact
 		prerequisite = { focus = GER_soviet_treaty }
 		mutually_exclusive = { focus = GER_anti_soviet_pact }
-		available =
-		{
+		available = {
 			is_puppet = no
-			or = {
-			has_army_manpower = { size > 849999 } 
-			date > 1939.8.24
+			OR = {
+				has_army_manpower = { size > 849999 } 
+				date > 1939.8.24
 			}
 			SOV = {
 				NOT = { has_war_with = GER }
@@ -1969,6 +1977,7 @@ focus_tree = {
 		x = 7
 		y = 4
 		cost = 12
+		
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -1976,6 +1985,7 @@ focus_tree = {
 				NOT = { has_completed_focus = GER_anti_comitern_pact }
 			}
 		}	
+		
 		completion_reward = {
 			# REVISIT Rework event series to fit new design or retain old design
 			SOV = {
@@ -2421,7 +2431,8 @@ focus_tree = {
 				limit = {
 					country_exists = AUS
 					AUS = {
-						has_civil_war = no
+						has_war = no
+						#has_civil_war = no
 						OR = {
 							owns_state = 4
 							owns_state = 152
@@ -2438,7 +2449,8 @@ focus_tree = {
 				limit = {
 					any_other_country = {
 						original_tag = AUS
-						has_civil_war = yes
+						has_war = yes
+						#has_civil_war = yes
 						OR = {
 							owns_state = 4
 							owns_state = 152
@@ -2575,7 +2587,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = GER_danzig_or_war
 		icon = GFX_goal_generic_demand_territory
@@ -2583,9 +2594,8 @@ focus_tree = {
 		mutually_exclusive = { focus = GER_danzig_vs_slovakia }
 		will_lead_to_war_with = POL
 		available = {
-			
 			is_puppet = no
-			or = {
+			OR = {
 				has_army_manpower = { size > 999999 } 
 				date > 1939.9.1
 			}			
@@ -2598,27 +2608,25 @@ focus_tree = {
 					original_tag = POL
 				}
 			}
-			#OR = {
-			#	POL = {
-			#		has_civil_war = no
-			#	}
-				#custom_trigger_tooltip = {
-					#tooltip = GER_danzig_trigger_polish_civil_war
-					#AND = {
-						#any_other_country = {
-							#original_tag = POL
-							#has_civil_war = yes
-							#OR = {
-								#is_in_faction_with = ROOT
-								#has_volunteers_amount_from = {
-									#tag = GER
-									#count > 0
-								#}
-							#}
-						#}
-					#}
-				#}
-			#}
+			OR = {
+				POL = {
+					has_war = no
+					#has_civil_war = no
+				}
+				
+				any_other_country = {
+					original_tag = POL
+					has_war = yes
+					#has_civil_war = yes
+					OR = {
+						is_in_faction_with = ROOT
+						has_volunteers_amount_from = {
+							tag = GER
+							count > 0
+						}
+					}
+				}
+			}
 		}
 
 		bypass = {
@@ -2640,7 +2648,8 @@ focus_tree = {
 		cancel_if_invalid = no
 		x = 16
 		y = 5
-		cost = 1
+		cost = 1.1
+		
 		ai_will_do = {
 			factor = 15	
 			modifier = {
@@ -2657,7 +2666,8 @@ focus_tree = {
 					}
 				}
 			}
-		}	
+		}
+		
 		completion_reward = {
 			add_named_threat = { threat = 5 name = GER_danzig_or_war }
 			if = {
@@ -2665,7 +2675,8 @@ focus_tree = {
 					85 = {
 						controller = {
 							tag = POL
-							has_civil_war = no
+							has_war = no
+							#has_civil_war = no
 						}
 					}
 				}
@@ -2709,7 +2720,8 @@ focus_tree = {
 				random_country = {
 					limit = {
 						original_tag = POL
-						has_civil_war = yes
+						has_war = yes
+						#has_civil_war = yes
 						OR = {
 							is_in_faction_with = GER
 							has_volunteers_amount_from = {
@@ -2724,6 +2736,7 @@ focus_tree = {
 			}
 		}
 	}
+	
 	
 	focus = {
 		id = GER_weserubung
@@ -3354,9 +3367,12 @@ focus_tree = {
 		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus = GER_italy_ally }
 		available = {
-			SPR = { has_civil_war = no }
+			SPR = { 
+				has_war = no
+				#has_civil_war = no
+			}
 			any_other_country = {
-				original_tag = SPR
+				original_tag = SPA
 				has_government = fascism
 				NOT = { has_war_with = GER }
 			}
@@ -3368,71 +3384,87 @@ focus_tree = {
 				}
 			}
 			OR = {
-			126 = {
+				126 = {
 					controller = {
 						OR = {
 							tag = GER
 							is_in_faction_with = GER
-							}
 						}
 					}
 				}
+			}
 			AND = {
 				OR = {
-				118 = {
-					controller = {
-						OR = {
-							tag = GER
-							is_in_faction_with = GER
+					118 = {
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
 							}
 						}
 					}
-				116 = {
-					controller = {
-						OR = {
-							tag = GER
-							is_in_faction_with = GER
+					116 = {
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
 							}
 						}
 					}
-				453 = {
-					controller = {
-						OR = {
-							tag = GER
-							is_in_faction_with = GER
+					453 = {
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
 							}
 						}
 					}
-				446 = {
-					controller = {
-						OR = {
-							tag = GER
-							is_in_faction_with = GER
+					446 = {
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
 							}
 						}
 					}
 				}
 			}
 			has_navy_size = { size > 150 }
-			if = { limit = { USA = { NOT = { has_war_with = GER } } }
-				ENG = { has_navy_size = { size < 80 } }
+			if = {
+				limit = {
+					USA = {
+						NOT = { has_war_with = GER }
+					}
+				}
+				ENG = { 
+					has_navy_size = { size < 80 }
+				}
 			}
-			if = { limit = { USA = { has_war_with = GER } }
-				ENG = { has_navy_size = { size < 75 } }
-				USA = { has_navy_size = { size < 75 } }
+			if = { 
+				limit = {
+					USA = { has_war_with = GER }
+				}
+				ENG = { 
+					has_navy_size = { size < 75 }
+				}
+				USA = { 
+					has_navy_size = { size < 75 }
+				}
 			}
 		}
 		
 		bypass = {
 			any_other_country = {
-				original_tag = SPR
+				original_tag = SPA
 				has_government = fascism
 				is_in_faction_with = GER
 			}
 		}
+		
 		x = 12
 		y = 7
 		cost = 15
+		
 		ai_will_do = {
 			factor = 10
 			modifier = {
@@ -3461,8 +3493,6 @@ focus_tree = {
 		}
 	}
 
-
-
 	focus = {
 		id = GER_danzig_vs_slovakia
 		icon = GFX_goal_generic_intelligence_exchange
@@ -3486,9 +3516,11 @@ focus_tree = {
 		x = 14
 		y = 5
 		cost = 10
+		
 		ai_will_do = {
 			factor = 0
-		}	
+		}
+		
 		completion_reward = {
 			POL = {
 				country_event = { id = germany.80 days = 1 }
@@ -3500,6 +3532,7 @@ focus_tree = {
 		id = GER_poland_friend
 		icon = GFX_goal_generic_improve_relations
 		prerequisite = { focus = GER_danzig_vs_slovakia }
+		
 		available = {
 			NOT = { has_global_flag = sov_yes_pact }
 			NOT = { has_war_with = POL }
@@ -3510,6 +3543,7 @@ focus_tree = {
 				}
 			}
 		}
+		
 		bypass = {
 			is_in_faction_with = POL
 			is_alone_or_in_faction_at_peace_with_GER = no
@@ -3517,9 +3551,11 @@ focus_tree = {
 		x = 14
 		y = 6
 		cost = 10
+		
 		ai_will_do = {
 			factor = 0
 		}	
+		
 		completion_reward = {
 			POL = {
 				add_opinion_modifier = { target = GER modifier = ger_pol_diplomacy_focus }
@@ -3560,6 +3596,7 @@ focus_tree = {
 		id = GER_war_with_france
 		icon = GFX_goal_generic_major_war
 		prerequisite = { focus = GER_poland_friend focus = GER_danzig_or_war }
+		
 		available = { 
 			is_puppet = no
 			OR = {
@@ -3571,20 +3608,14 @@ focus_tree = {
 		x = 16
 		y = 8
 		cost = 3
+		
 		bypass = {
 			OR = {
 				NOT = { country_exists = FRA }
 				#has_war_with = FRA     ## Need to leave this there, so AI always has to run it, so it can get Paris Wargoal - cost shall be low however
-
-
-
-
-
-
-
-
 			}
 		}
+		
 		#historical_ai = {   ## removing because this causes AI to skip this NF
 		#	date > 1939.1.1
 		#	NOT = {
@@ -3593,6 +3624,7 @@ focus_tree = {
 		#		}		
 		#	}
 		#}
+		
 		ai_will_do = {
 			factor = 10			
 			modifier = {
@@ -3600,6 +3632,7 @@ focus_tree = {
 				date < 1939.1.1
 			}
 		}	
+		
 		completion_reward = {
 			add_named_threat = { threat = 3 name = GER_war_with_france_threat }
  			create_wargoal = {
@@ -3618,6 +3651,7 @@ focus_tree = {
 		x = 16
 		y = 9
 		cost = 10
+		
 		available = { 
 			is_puppet = no
 			POL = { has_capitulated = yes }
@@ -3625,15 +3659,17 @@ focus_tree = {
 			controls_state = 10
 			controls_state = 16
 		}
+		
 		ai_will_do = {
 			factor = 10
 		}
+		
 		available_if_capitulated = yes	
+		
 		completion_reward = {
 			add_research_slot = 1
 		}
 	}
-	
 #########KRIESGMARINE##############
 	focus = {
 		id = GER_naval_rearmament

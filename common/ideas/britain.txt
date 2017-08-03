@@ -1350,54 +1350,109 @@ head_of_state = {
 		}
 	}
 	naval_manufacturer = {
+
 		designer = yes
 
-		yarrow_shipbuilders = {
+		fairfield_shipbuilding = {
 			allowed = {
-				original_TAG = ENG
+				original_tag = ENG
 			}
 
 			research_bonus = {
 				naval_equipment = 0.10
 			}
 
-			traits = { convoy_escort_naval_manufacturer }
+			traits = { carrier_battlegroup_naval_manufacturer }
+
+			modifier = {
+			}
+		}
+		vickers_armstrongs = {
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			traits = { armored_carrier_battlegroup_naval_manufacturer }
+
+			available = {
+				132 = {	dockyard > 6 }
+			}
+			
+			modifier = {
+			}
 		}
 		harland_wolff = {
 			allowed = {
-				original_TAG = ENG
+				original_tag = ENG
 			}
 
 			research_bonus = {
 				naval_equipment = 0.10
 			}
 
-			traits = { pacific_fleet_naval_manufacturer }
+			traits = { support_carrier_naval_manufacturer }
+
+			available = {
+				119 = {	dockyard > 6 }
+			}
+			
+			modifier = {
+			}
 		}
 		cammell_laird = {
 			allowed = {
-				original_TAG = ENG
+				original_tag = ENG
 			}
 
 			research_bonus = {
 				naval_equipment = 0.10
 			}
 
-			traits = { atlantic_fleet_naval_manufacturer }
+			traits = { grand_battlefleet_naval_manufacturer }
 
+			available = {
+				132 = {	dockyard > 4 }
+			}
+			
 			modifier = {
 			}
 		}
 		john_brown_company = {
 			allowed = {
-				original_TAG = ENG
+				original_tag = ENG
 			}
 
 			research_bonus = {
 				naval_equipment = 0.10
 			}
 
-			traits = { coastal_defence_naval_manufacturer }
+			traits = { fleet_escort_naval_manufacturer }
+
+			modifier = {
+			}
+		}
+		yarrow_shipbuilders = {
+			allowed = {
+				original_tag = ENG
+			}
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			traits = { convoy_defense_naval_manufacturer }
+			
+			available = {
+				132 = {	dockyard > 6 }
+				date > 1939.1.1
+			}
+			
+			modifier = {
+			}
 		}
 	}
 	aircraft_manufacturer = {

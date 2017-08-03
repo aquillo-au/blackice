@@ -1626,43 +1626,87 @@ intel_minister = {
 		}
 	}
 	####
-	naval_manufacturer = { 
-		
+	naval_manufacturer = {
+
 		designer = yes
-		
-		germaniawerft = {
-			
+
+		kriegsmarine_werft = {
+
+
 			allowed = {
 				original_tag = GER
 			}
-			
+
 			research_bonus = {
 				naval_equipment = 0.10
 			}
-			
-			equipment_bonus = {
-				
+
+			traits = { grand_battlefleet_naval_manufacturer }
+
+			available = {
+				56 = { dockyard > 6 }
+				date > 1939.1.1
 			}
 			
-			traits = { atlantic_fleet_naval_manufacturer }
+			modifier = {
+			}
 		}
-		
-		blohm_und_voss = {
-			
+		deschimag = {
+
+
 			allowed = {
 				original_tag = GER
 			}
-			
+
 			research_bonus = {
 				naval_equipment = 0.10
 			}
-			
-			traits = { raiding_fleet_naval_manufacturer }
-			
-			equipment_bonus = {
-				
+
+			traits = { fleet_escort_naval_manufacturer }
+
+			modifier = {
 			}
-		}	
+		}
+		deutsche_werke_kiel = {
+
+
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			traits = { surface_raider_naval_manufacturer }
+
+			available = {
+				58 = { dockyard > 6 }
+			}
+			
+			modifier = {
+			}
+		}
+		blohm_und_voss  = {
+
+
+			allowed = {
+				original_tag = GER
+			}
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			traits = { submarine_raiding_naval_manufacturer }
+
+			available = {
+				58 = { dockyard > 8 }
+			}
+			
+			modifier = {
+			}
+		}
 	}
 	
 	aircraft_manufacturer = { 

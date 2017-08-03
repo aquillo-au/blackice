@@ -1303,74 +1303,127 @@ political_advisor = {
 		
 	# TECHNOLOGY
 	naval_manufacturer = {
-		
+
 		designer = yes
-		
-		kure_naval_arsenal = {
-			
-			
-			allowed = {
-				original_tag = JAP
-			}
-						
-			research_bonus = {
-				naval_equipment = 0.10
-			}
-			
-			traits = { atlantic_fleet_naval_manufacturer } # built Yamato
 
-		}
-		
 		yokosuka_naval_arsenal = {
-						
+
+
 			allowed = {
 				original_tag = JAP
 			}
-			
+
+
+
 			research_bonus = {
 				naval_equipment = 0.10
 			}
-			
-			traits = { pacific_fleet_naval_manufacturer } #built best CVs
 
-			equipment_bonus = {
-				# 
+			traits = { carrier_battlegroup_naval_manufacturer }
+
+			modifier = {
 			}
 		}
-		
+		kawasaki_heavy_industries = {
+
+
+			allowed = {
+				original_tag = JAP
+			}
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			traits = { armored_carrier_battlegroup_naval_manufacturer }
+
+			available = {
+				531 = { dockyard > 6 }
+				date > 1939.1.1
+			}
+			
+			modifier = {
+			}
+		}
+		mitsubishi_heavy_industries = {
+
+
+			allowed = {
+				original_tag = JAP
+			}
+
+
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			traits = { support_carrier_naval_manufacturer }
+
+			available = {
+				528 = { dockyard > 6 }
+			}
+			
+			modifier = {
+			}
+		}
+		kure_naval_arsenal = {
+
+
+			allowed = {
+				original_tag = JAP
+			}
+
+
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			traits = { grand_battlefleet_naval_manufacturer }
+
+			available = {
+				529 = { dockyard > 6 }
+			}
+			
+			modifier = {
+			}
+		}
 		maizuru_naval_arsenal = {
-						
+
+
 			allowed = {
 				original_tag = JAP
 			}
-				
+
+
+
 			research_bonus = {
 				naval_equipment = 0.10
 			}
-			
-			traits = { convoy_escort_naval_manufacturer } #destroyer R&D
 
-			equipment_bonus = {
-				# 
+			traits = { fleet_escort_naval_manufacturer }
+
+			modifier = {
+			}
+		}
+		sasebo_naval_arsenal = {
+
+
+			allowed = {
+				original_tag = JAP
+			}
+
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+
+			traits = { convoy_escort_naval_manufacturer }
+
+			modifier = {
 			}
 		}
 		
-		sasebo_naval_arsenal = {
-			
-			allowed = {
-				original_tag = JAP
-			}
-			
-			research_bonus = {
-				naval_equipment = 0.10
-			}
-			
-			traits = { coastal_defence_naval_manufacturer } #used for many repairs and conversions
-			
-			equipment_bonus = {
-				
-			}
-		}	
 	}
 	
 	aircraft_manufacturer = { 
