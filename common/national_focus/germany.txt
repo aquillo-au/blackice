@@ -2583,6 +2583,7 @@ focus_tree = {
 		mutually_exclusive = { focus = GER_danzig_vs_slovakia }
 		will_lead_to_war_with = POL
 		available = {
+			
 			is_puppet = no
 			or = {
 				has_army_manpower = { size > 999999 } 
@@ -2597,10 +2598,10 @@ focus_tree = {
 					original_tag = POL
 				}
 			}
-			OR = {
-				POL = {
-					has_civil_war = no
-				}
+			#OR = {
+			#	POL = {
+			#		has_civil_war = no
+			#	}
 				#custom_trigger_tooltip = {
 					#tooltip = GER_danzig_trigger_polish_civil_war
 					#AND = {
@@ -2617,7 +2618,7 @@ focus_tree = {
 						#}
 					#}
 				#}
-			}
+			#}
 		}
 
 		bypass = {
@@ -4882,7 +4883,7 @@ focus_tree = {
 		mutually_exclusive = { focus = GER_ahistorical_Schutzstaffel }
 		x = 25
 		y = 1
-		#cost = 10
+		cost = 0
 		
 		available = {
 			
@@ -4923,7 +4924,7 @@ focus_tree = {
 		prerequisite = { focus = GER_historical_Schutzstaffel }
 		x = 24
 		y = 2
-		
+		cost = 0
 		ai_will_do = {
 			factor = 8
 		}
