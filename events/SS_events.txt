@@ -75,7 +75,8 @@ country_event = {
 
 	}
 }
-# SS-Verfügungstruppe combat division
+# SS-Verfügungstruppe combat brigade
+## Adding 3 SS Infantry (s-mot), 1 SS Artillery-Btl (mot) and 1 SS Div-stab
 country_event = {
 	id = ss_event.668
 	title = ss_event.668.t
@@ -91,8 +92,15 @@ country_event = {
 	option = {
 		name = ss_event.668.a
 		hidden_effect = {
-			load_oob = "GER_SS_VT"
-			set_country_flag = SS_VT
+			if = {
+				limit = {
+					has_army_experience < 44
+				}
+				army_experience = 43
+			}
+			
+			#load_oob = "GER_SS_VT_brig"
+			set_country_flag = SS_VT_brig
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -102,8 +110,7 @@ country_event = {
 	id = ss_event.664
 	title = ss_event.664.t
 	desc = ss_event.664.d
-	
-	picture = GFX_report_event_historical_SS
+	picture = GFX_event_ss_division_lssah
 	
 	is_triggered_only = yes
 	
@@ -124,7 +131,7 @@ country_event = {
 	id = ss_event.663
 	title = ss_event.663.t
 	desc = ss_event.663.d
-	picture = GFX_report_event_historical_SS
+	picture = GFX_report_event_lssah_regiment_38
 	
 	fire_only_once = yes
 	
@@ -143,7 +150,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_army_experience < 50
+					has_army_experience < 45
 				}
 				army_experience = 44
 			}
@@ -156,7 +163,7 @@ country_event = {
 	id = ss_event.662
 	title = ss_event.662.t
 	desc = ss_event.662.d
-	picture = GFX_report_event_historical_SS
+	picture = GFX_report_event_lssah_regiment_39
 	
 	fire_only_once = yes
 	
@@ -176,7 +183,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_army_experience < 40
+					has_army_experience < 36
 				}
 				army_experience = 35
 			}
@@ -189,7 +196,7 @@ country_event = {
 	id = ss_event.661
 	title = ss_event.661.t
 	desc = ss_event.661.d
-	picture = GFX_report_event_historical_SS
+	picture = GFX_report_event_lssah_regiment_40
 	
 	fire_only_once = yes
 	
@@ -209,7 +216,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_army_experience < 15
+					has_army_experience < 19
 				}
 				army_experience = 18
 			}
@@ -222,7 +229,7 @@ country_event = {
 	id = ss_event.660
 	title = ss_event.660.t
 	desc = ss_event.660.d
-	picture = GFX_report_event_historical_SS
+	picture = GFX_report_event_lssah_brigade_40
 	
 	fire_only_once = yes
 	
@@ -242,11 +249,11 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_army_experience < 15
+					has_army_experience < 11
 				}
 				army_experience = 10
 			}
-			army_experience = 35
+
 			set_country_flag = LSSAH_regiment_40_brig
 		}
 	}
@@ -257,7 +264,7 @@ country_event = {
 	id = ss_event.650
 	title = ss_event.650.t
 	desc = ss_event.650.d
-	picture = GFX_report_event_historical_SS
+	picture = GFX_report_event_totenkopf_division
 	
 	fire_only_once = yes
 	
@@ -297,11 +304,42 @@ country_event = {
 		name = ss_event.651.a
 		hidden_effect = {
 			load_oob = "GER_Totenkopf_division"
-			set_country_flag = totenkopf_div_39
+			set_country_flag = totenkopf_div_42
 		}
 	}
 }
 #### End Totenkopf-division event-chain ####
+#### Reich-division event-chain ####
+### Forming the SS-VT Division   ###
+country_event = {
+	id = ss_event.640
+	title = ss_event.640.t
+	desc = ss_event.640.d
+	picture = GFX_report_event_SS_VT_Division
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.640.a
+		hidden_effect = {
+			if = {
+				limit = {
+					has_army_experience < 42
+				}
+				army_experience = 41
+			}
+
+			set_country_flag = ss_vt_division_39
+		}
+	}
+}
+#### End Reich-division event-chain ####
 # Schutzstaffel_divisions 1 
 country_event = {
 	id = ss_event.669
@@ -981,13 +1019,13 @@ country_event = {
 			load_oob = "GER_SS_Danzig_ahist"	# Danzig Heimwehr
 		}
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 0 }
 	}
 	option = {
 		name = ss_event.686.c
 		set_country_flag = ss_danzig_heimwehr_no
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 0 }
 	}
 }
 # SS junkerschulen

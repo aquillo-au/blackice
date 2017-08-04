@@ -2773,75 +2773,8 @@ economic_minister = {
 	}
 naval_manufacturer = {
 		designer = yes
+		arsenal_de_brest = {
 
-		dakar = { #MOD
-			allowed = {
-				original_tag = FRA
-
-
-			}
-			research_bonus = {
-				naval_equipment = 0.07
-			}
-
-			cost = 75
-			traits = { naval_manufacturer }
-		}
-
-
-
-
-
-
-
-
-
-
-
-
-		oran = { #MOD
-			allowed = {
-				original_tag = FRA
-			}
-			research_bonus = {
-				naval_equipment = 0.07
-			}
-
-			cost = 75
-			traits = { ship_producer_mass }
-		}
-
-		loire_nav = { #MOD
-			allowed = {
-				original_tag = FRA
-			}
-			research_bonus = {
-				naval_equipment = 0.10
-			}
-			traits = { coastal_defence_naval_manufacturer }
-		}
-
-
-
-
-
-
-
-		penhoet = { #MOD
-			allowed = {
-				original_tag = FRA
-			}
-
-			research_bonus = {
-				naval_equipment = 0.10
-			}
-
-
-			traits = { atlantic_fleet_naval_manufacturer }
-		}
-
-
-		caer = { #MOD
 
 			allowed = {
 				original_tag = FRA
@@ -2851,31 +2784,36 @@ naval_manufacturer = {
 				naval_equipment = 0.10
 			}
 
-			traits = { pacific_fleet_naval_manufacturer }
-		}
-
-
-		brest = { #MOD
-
-			allowed = {
-				original_tag = FRA
-			}
-
-			research_bonus = {
-				naval_equipment = 0.10
-			}
+			traits = { grand_battlefleet_naval_manufacturer }
 
 			available = {
-				has_completed_focus = FRA_capital_ship_focus
+				14 = { dockyard > 4 }
 			}
-			cost = 50
-			traits = { raiding_fleet_naval_manufacturer }
+			
+			modifier = {
+			}
 		}
+		aresenal_de_Lorient = {
+
+
+			allowed = {
+				original_tag = FRA
+			}
 
 
 
+			research_bonus = {
+				naval_equipment = 0.10
+			}
 
-		fcm = {
+			traits = { fleet_escort_naval_manufacturer }
+
+			modifier = {
+			}
+		}
+		fcm_la_seyne = {
+
+
 			allowed = {
 				original_tag = FRA
 			}
@@ -2884,14 +2822,11 @@ naval_manufacturer = {
 				naval_equipment = 0.10
 			}
 
-
-			available = {
-				has_completed_focus = FRA_carrier_focus
+			traits = { carrier_battlegroup_naval_manufacturer }
+			
+			modifier = {
 			}
-			cost = 50
-			traits = { convoy_escort_naval_manufacturer } #MOD
 		}
-
 	}
 
 industrial_concern = {

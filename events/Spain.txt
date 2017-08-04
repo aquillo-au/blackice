@@ -2179,7 +2179,7 @@ country_event = {
 		date > 1939.1.1
 		OR = {
 			NOT = { controls_state = 41 } 
-			surrender_progress > 0.7
+			surrender_progress > 0.55
 		}
 	}
 	
@@ -2246,7 +2246,7 @@ country_event = {
 		date > 1939.1.1
 		OR = {
 			NOT = { controls_state = 41 } 
-			surrender_progress > 0.7
+			surrender_progress > 0.55
 		}
 	}
 	
@@ -2254,8 +2254,6 @@ country_event = {
 		days = 15
 	}
 	
-	immediate = {
-	}
 	
 	option = {
 		name =spain.103.a
@@ -2287,8 +2285,6 @@ country_event = {
 		days = 90
 	}
 	
-	immediate = {
-	}
 	
 	option = {
 		name =spain.104.a
@@ -2311,7 +2307,7 @@ country_event = {
 
 	option = {
 		name =spain.105.a
-		
+		SPA = { set_country_flag = Natspaindow }
 		SPA = { 
 			add_manpower = 300000
 			add_political_power = 600
@@ -2389,7 +2385,13 @@ country_event = {
 				type = annex_everything
 			}
 		}
-		country_event = { id = spain.106 days = 45 }
+		SPR = { declare_war_on = {
+				target = SPA
+				type = annex_everything
+			
+					}
+		}
+		#country_event = { id = spain.106  }
 	}
 }
 
@@ -2401,26 +2403,34 @@ country_event = {
 
 	fire_only_once = yes
 
-	is_triggered_only = yes
+	trigger = {
+		tag = SPR
+		NOT = { has_global_flag = scw_over }
+		SPA = { has_country_flag = Natspaindow }
+		is_ai = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
 	
 	option = {
 		name =spain.106.a
-		
+		set_country_flag = Repspaindow
 		SPA = {
 			hidden_effect = { load_oob = SPA_Civil_War 	}
 		}
-		SPR = { 
-			declare_war_on = {
-				target = SPA
-				type = annex_everything
-			}
-		}
-		#SPR = { 
-		#
+		
+			
+			699 = { add_core_of = SPR }
+			178 = { add_core_of = SPR }
+			290 = { add_core_of = SPR }
+			297 = { add_core_of = SPR }				
+		
 		#	hidden_effect = {
 		#		load_oob = SPR_Civil_War
 		#	}
-		#}
+		
 		country_event = { id = spain.107 days = 90 }
 	}
 }
@@ -2432,7 +2442,16 @@ country_event = {
 
 	fire_only_once = yes
 
-	is_triggered_only = yes
+	trigger = {
+		tag = SPR
+		NOT = { has_global_flag = scw_over }
+		has_country_flag = Repspaindow 
+		is_ai = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 90
+	}
 	
 	option = {
 		name =spain.107.a

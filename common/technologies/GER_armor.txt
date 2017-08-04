@@ -191,10 +191,10 @@ technologies = {
 		}
 		
 		enable_equipments = {
-			GER_captured_light_tank_equipment_0
+			GER_captured_light_tank_equipment
 		}
 		enable_equipments = {
-			GER_captured_tank_equipment_0
+			GER_captured_tank_equipment
 		}
 		enable_subunits = {
 			german_captured_light_armor
@@ -2793,7 +2793,18 @@ technologies = {
 		enable_equipments = {
 			command_tank_equipment_0
 		}
-		
+		dependencies = {
+			tech_panzer_iii_equipment_1 = 1
+		}
+		dependencies = {
+			tech_panzer_iv_equipment_1 = 1
+		}
+		dependencies = {
+			tech_panzer_v_equipment_1 = 1
+		}
+		dependencies = {
+			tech_heavy_panzer_equipment_1 = 1
+		}
 		category_all_armor = {
 			breakthrough = 0.05
 			max_organisation = 10
@@ -2851,6 +2862,19 @@ technologies = {
 		enable_equipments = {
 			recovery_tank_equipment_0
 		}
+		dependencies = {
+			tech_panzer_iii_equipment_1 = 1
+		}
+		dependencies = {
+			tech_panzer_iv_equipment_1 = 1
+		}
+		dependencies = {
+			tech_panzer_v_equipment_1 = 1
+		}
+		dependencies = {
+			tech_heavy_panzer_equipment_1 = 1
+		}
+		
 		panzer_i = {
 			reliability_factor = 0.05
 			casualty_trickleback = 0.05
@@ -2976,11 +3000,12 @@ technologies = {
 		}
 		
 		categories = {
-			support_tech
+			armor
+			cat_light_armor
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 20
 		}
 	}
 	tech_ger_Bat_comp_II = {
@@ -3016,11 +3041,12 @@ technologies = {
 		}
 		
 		categories = {
-			support_tech
+			armor
+			
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 20
 		}
 	}
 }

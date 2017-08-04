@@ -176,6 +176,7 @@ country_event = {
 	
 	option = {
 		name = germany.11.a	#sounds good
+		
 		ai_chance = { 
 			factor = 90 
 			modifier = {
@@ -191,6 +192,7 @@ country_event = {
 				}
 			}
 		}
+		
 		if = {
 			limit = {
 				GER = {
@@ -7118,6 +7120,7 @@ country_event = {
 		not = { has_country_flag = GERgrossdeutschland_stug }
 		date > 1939.6.6	#
 		is_ai = yes
+		has_country_flag = impossible
 	}
 	
 	mean_time_to_happen = {
@@ -8767,7 +8770,9 @@ country_event = {
 			if = {
 				limit = { 
 					is_ai = yes
+					has_tech = tech_panzer_iv_equipment_1
 				}
+				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
 				load_oob = "GER_grossdeutschland_39"
 			}
 			if = {
