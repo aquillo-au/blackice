@@ -6982,21 +6982,20 @@ country_event = {
 		set_country_flag = GER_InfDiv_72
 	}
 }
-
+### Grossdeutschland
 country_event = {
 	id = germany.231
 	title = germany.231.t
 	desc = germany.231.d
-	picture = GFX_report_event_german_elite_troops_inspected
-
+	picture = GFX_report_event_wachregiment_berlin
 	fire_only_once = yes
 	
 	trigger = {
 		tag = GER
-		is_ai = yes
-		not = { has_country_flag = GERgrossdeutschland }
-		date > 1939.9.15 	#date = 1939.9.15
-		has_tech = subtech_panzer_iii_td_equipment_1
+		is_ai = no
+		not = { has_country_flag = wachrgt_berlin }
+		date > 1937.6.1 	
+		
 	}
 	
 	mean_time_to_happen = {
@@ -7008,14 +7007,20 @@ country_event = {
 		ai_chance = { factor = 0 }
 		
 		hidden_effect = {
-			load_oob = "GER_grossdeutschland_39"
-			set_country_flag = GERgrossdeutschland
+			if = {
+				limit = {
+					has_army_experience < 9
+				}
+				army_experience = 8
+			}
+
+			set_country_flag = wachrgt_berlin
 		}
 	}
 	option = {
-		name = germany.231.b	#refuse
-		ai_chance = { factor = 100 }
-		set_country_flag = GERgrossdeutschland
+		name = germany.231.b
+		ai_chance = { factor = 0 }
+		set_country_flag = wachrgt_berlin
 	}
 }
 ####### AI Autarky
@@ -7113,14 +7118,13 @@ country_event = {
 	id = germany.234
 	title = germany.234.t
 	desc = germany.234.d
-	picture = GFX_report_event_german_elite_troops_inspected
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = GER
 		not = { has_country_flag = GERgrossdeutschland_stug }
-		date > 1939.6.6	#
+		date > 1939.6.6
 		is_ai = yes
 		has_country_flag = impossible
 	}
@@ -7163,9 +7167,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		load_oob = "Czech_Equipment"
 		set_country_flag = czech_equipment
-		
 	}
-	
 }
 country_event = {
 	id = germany.236
@@ -7188,17 +7190,14 @@ country_event = {
 	option = {
 		name = germany.236.a
 		ai_chance = { factor = 100 }
-			load_oob = "French_Equipment"
-			set_country_flag = French_equipment
-		
+		load_oob = "French_Equipment"
+		set_country_flag = French_equipment
 	}
-	
 }
 country_event = {
 	id = germany.237
 	title = germany.237.t
 	desc = germany.237.d
-	picture = GFX_report_event_armored_car
 
 	fire_only_once = yes
 	
@@ -7216,11 +7215,9 @@ country_event = {
 	option = {
 		name = germany.237.a
 		ai_chance = { factor = 100 }
-			load_oob = "Mobilisation_Equipment"
-			set_country_flag = war_equipment
-		
+		load_oob = "Mobilisation_Equipment"
+		set_country_flag = war_equipment
 	}
-	
 }
 country_event = {
 	id = germany.238
@@ -7261,7 +7258,7 @@ country_event = {
 #Panzer-Lehr  date > 1943.5.1
 #116_Panzer  date > 1944.3.1
 
-#1. Leichte Division  date >  1938.11.10
+### 1. Leichte Division  date >  1938.11.10
 ### 2. Leichte Division date >  1938.11.10
 ### 3. Leichte Division date >  1938.11.10
 #################################
@@ -7291,16 +7288,13 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_4_Panzer_Division"
 			set_country_flag = panzer_4
-			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.240
 	title = germany.240.t
 	desc = germany.240.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7325,13 +7319,11 @@ country_event = {
 			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.241
 	title = germany.241.t
 	desc = germany.241.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7362,7 +7354,6 @@ country_event = {
 	id = germany.242
 	title = germany.242.t
 	desc = germany.242.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7387,13 +7378,11 @@ country_event = {
 			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.243
 	title = germany.243.t
 	desc = germany.243.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7418,13 +7407,11 @@ country_event = {
 			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.244
 	title = germany.244.t
 	desc = germany.244.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7446,16 +7433,13 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_12_Panzer_Division"
 			set_country_flag = panzer_12
-			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.245
 	title = germany.245.t
 	desc = germany.245.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7480,13 +7464,11 @@ country_event = {
 			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.246
 	title = germany.246.t
 	desc = germany.246.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7508,16 +7490,13 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_14_Panzer_Division"
 			set_country_flag = panzer_14
-			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.247
 	title = germany.247.t
 	desc = germany.247.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7539,16 +7518,13 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_16_Panzer_Division"
 			set_country_flag = panzer_16
-			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.248
 	title = germany.248.t
 	desc = germany.248.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7570,16 +7546,13 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_17_Panzer_Division"
 			set_country_flag = panzer_17
-			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.249
 	title = germany.249.t
 	desc = germany.249.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7601,16 +7574,13 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_18_Panzer_Division"
 			set_country_flag = panzer_18
-			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.250
 	title = germany.250.t
 	desc = germany.250.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7632,16 +7602,13 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_19_Panzer_Division"
 			set_country_flag = panzer_19
-			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.251
 	title = germany.251.t
 	desc = germany.251.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7663,16 +7630,13 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_20_Panzer_Division"
 			set_country_flag = panzer_20
-			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.252
 	title = germany.252.t
 	desc = germany.252.d
-	picture = GFX_report_event_panzer38
 
 	fire_only_once = yes
 	
@@ -7694,12 +7658,10 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_24_Panzer_Division"
 			set_country_flag = panzer_24
-			
 		}
 	}
-	
 }
-### 29. Infanterie Division mot date>1937.10.12
+### 29. Infanterie Division mot date > 1937.10.12
 country_event = {
 	id = germany.253
 	title = germany.253.t
@@ -7710,9 +7672,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		
 		not = { has_country_flag = mot_29 }
-		#is_ai = no
 		date > 1937.10.11
 	}
 	
@@ -7730,7 +7690,7 @@ country_event = {
 		}
 	}
 }
-### 2. Infanterie Division mot forming-date=1937.10.12
+### 2. Infanterie Division mot forming-date > 1937.10.12
 country_event = {
 	id = germany.254
 	title = germany.254.t
@@ -7743,7 +7703,6 @@ country_event = {
 		tag = GER
 		not = { has_country_flag = mot_2 }
 		has_country_flag = mot_29
-		#is_ai = no
 		date > 1937.10.12
 	}
 	
@@ -7774,7 +7733,6 @@ country_event = {
 		tag = GER
 		not = { has_country_flag = mot_13 }
 		has_country_flag = mot_29
-		#is_ai = no
 		date > 1937.10.11
 	}
 	
@@ -7792,7 +7750,7 @@ country_event = {
 		}
 	}
 }
-### 20. Infanterie Division mot date>1937.10.11
+### 20. Infanterie Division mot date > 1937.10.11
 country_event = {
 	id = germany.256
 	title = germany.256.t
@@ -7803,10 +7761,9 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		#9347 = { is_controlled_by = GER } # doesnt work
+		58 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_20 }
 		has_country_flag = mot_29
-		#is_ai = no
 		date > 1937.10.11
 	}
 	
@@ -7836,9 +7793,8 @@ country_event = {
 	trigger = {
 		tag = GER
 		is_ai = no
-		#date > 1936.1.1
-		has_army_size = { type = infantry size > 50 }
-		not = { has_country_flag = ger_army_inf_50 }
+		has_army_size = { type = infantry size > 100 }
+		not = { has_country_flag = ger_army_inf_100 }
 	}
 	
 	mean_time_to_happen = {
@@ -7847,7 +7803,7 @@ country_event = {
 	
 	option = {
 		name = germany.257.a
-		set_country_flag = ger_army_inf_50
+		set_country_flag = ger_army_inf_100
 	}
 }
 country_event = {
@@ -7925,10 +7881,9 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_equipment = { anti_tank_equipment > 24 }
-		#9347 = { is_controlled_by = GER } # doesnt work
+		58 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_16 }
 		has_country_flag = mot_16
-		#is_ai = no
 		date > 1940.8.6
 	}
 	
@@ -7947,6 +7902,37 @@ country_event = {
 	}
 }
 ### 25. Infanterie Division mot date >1941.3.15  #event 260
+country_event = {
+	id = germany.260
+	title = germany.260.t
+	desc = germany.260.d
+	picture = GFX_report_event_german_halftrack_with_arty_in_city
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_equipment = { anti_tank_equipment > 24 }
+		50 = { is_controlled_by = GER }
+		not = { has_country_flag = mot_25 }
+		has_country_flag = mot_25
+		date > 1941.3.15
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.260.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_25_mot_Division"
+			set_country_flag = mot_25
+		}
+	}
+}
 ### 3. Infanterie Division mot date >1940.10.27  #event 261
 country_event = {
 	id = germany.261
@@ -7959,10 +7945,9 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_equipment = { anti_tank_equipment > 24 }
-		#9347 = { is_controlled_by = GER } # doesnt work
+		68 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_3 }
 		has_country_flag = mot_3
-		#is_ai = no
 		date > 1940.10.27
 	}
 	
@@ -8131,9 +8116,6 @@ country_event = {
 			load_oob = "GER_marder1"
 			# AI probably won't use them at this stage
 		}
-
-
-
 	}
 	
 	option = {
@@ -8177,11 +8159,7 @@ country_event = {
 		}     
 		hidden_effect = {
 			load_oob = "GER_marder2"
-
 		}
-
-
-
 	}
 	
 	option = {
@@ -8226,7 +8204,6 @@ country_event = {
 		}     
 		hidden_effect = {
 			load_oob = "GER_marder3"
-
 		}
 	}
 	
@@ -8256,14 +8233,12 @@ country_event = {
 			load_oob = "GER_AI_SHIPS"
 		}
 		add_timed_idea = {
-				idea = GER_AI_ship_production 
-				days = 365
-			}
+			idea = GER_AI_ship_production 
+			days = 365
+		}
 		set_country_flag = GER_start_ships
-		
 	}
 }
-
 # Bismarck tech_kr_bb2 date = 1940.8.24
 country_event = {
 	id = germany.273
@@ -8291,7 +8266,6 @@ country_event = {
 		#		days = 365
 		#	}
 		set_country_flag = GER_Bismarck_ship
-		
 	}
 }
 # Tirpitz tech_kr_bb2 date = 1941.2.25
@@ -8321,10 +8295,8 @@ country_event = {
 		#		days = 365
 		#	}
 		set_country_flag = GER_Bismarck_ship
-		
 	}
 }
-
 # Type VIIC 	tech_patrol_submarine4 x10
 country_event = {
 	id = germany.275
@@ -8352,7 +8324,6 @@ country_event = {
 		#		days = 365
 		#	}
 		set_country_flag = GER_VIIC_ship
-		
 	}
 }
 # Type VIIC/41	tech_patrol_submarine5 x10
@@ -8573,21 +8544,23 @@ country_event = {
 
 	trigger = {
 		tag = GER
-				OR = { 
-				has_government = monarchism
-				AND = {
-					OR = {
+		OR = { 
+			has_government = monarchism
+			AND = {
+				OR = {
 					has_government = conservatism
 					has_government = socialism
 					has_government = liberalism
-						}
-					has_country_flag = const_kaiser
 				}
+				has_country_flag = const_kaiser
 			}
+		}
 		date > 1951.3.10
 		has_country_flag = wilhelm_iii_chosen
 	}
+	
 	immediate = { set_country_flag = wilhelm_iii_dead clr_country_flag = wilhelm_iii_chosen }
+	
 	mean_time_to_happen = {
 		days = 120
 		modifier = {
@@ -8623,17 +8596,17 @@ country_event = {
 
 	trigger = {
 		tag = GER
-				OR = { 
-				has_government = monarchism
-				AND = {
-					OR = {
+		OR = { 
+			has_government = monarchism
+			AND = {
+				OR = {
 					has_government = conservatism
 					has_government = socialism
 					has_government = liberalism
-						}
-					has_country_flag = const_kaiser
 				}
+				has_country_flag = const_kaiser
 			}
+		}
 		NOT = { has_country_flag = kaiser_chosen }
 	}
 
@@ -8670,14 +8643,15 @@ country_event = {
 		country_event = germany.303
 	}
 }
-
 #Which Chancellor should we have?
 country_event = {
 	id = germany.303
 	title = germany.303.t
 	desc = germany.303.desc
 	picture = GFX_report_event_generic_funeral
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
 
 	immediate = { set_country_flag = chancellor_chosen }
@@ -8753,7 +8727,7 @@ country_event = {
 		}
 	}
 }
-#### Gross Deutschland Regiment ####
+#### Forming Infanterie Regiment Grossdeutschland ####
 country_event = {
 	id = germany.400
 	title = germany.400.t
@@ -8766,28 +8740,23 @@ country_event = {
 	
 	option = {
 		name = germany.400.a
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
 		
 		hidden_effect = {
 			if = {
 				limit = { 
-					is_ai = yes
-					has_tech = tech_panzer_iv_equipment_1
-				}
-				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
-				load_oob = "GER_grossdeutschland_39"
-			}
-			if = {
-				limit = { 
 					is_ai = no
+					has_army_experience < 66
 				}
-				load_oob = "GER_grossdeutschland_regt_39"
+				army_experience = 65
+				#use army_experience to enhance division_template Wacht Regiment Berlin
+				#load_oob = "GER_grossdeutschland_regt_39"
 			}
 			set_country_flag = gd_regt_39
 		}
 	}
 }
-#### Infantry Division (mot) Gross Deutschland ####
+#### Motorize Infantry Division (mot) Grossdeutschland ####
 country_event = {
 	id = germany.401
 	title = germany.401.t
@@ -8799,7 +8768,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		is_ai = no
-		date > 1942.5.18
+		date > 1939.10.1
 		has_country_flag = gd_regt_39
 	}
 	
@@ -8809,20 +8778,22 @@ country_event = {
 	
 	option = {
 		name = germany.401.a
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
 		
 		hidden_effect = {
 			if = {
 				limit = { 
 					is_ai = no
+					has_army_experience < 44
 				}
-				#use army_experience to enhance division_template
+				#use army_experience to enhance division_template Inf.Rgt. Grossdeutschland
+				army_experience = 43
 			}
-			set_country_flag = gd_div_mot_42
+			set_country_flag = gd_div_mot_39
 		}
 	}
 }
-#### Infantry Division (mot) Gross Deutschland ####
+#### Upgrade to Divisionlevel Infantry Division (mot) Grossdeutschland ####
 country_event = {
 	id = germany.402
 	title = germany.402.t
@@ -8833,8 +8804,11 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		date > 1943.5.18
-		has_country_flag = gd_div_mot_42
+		date > 1942.5.1
+		OR = {
+			has_country_flag = gd_div_mot_39
+			has_country_flag = GERgrossdeutschland_stug
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -8844,33 +8818,69 @@ country_event = {
 	option = {
 		name = germany.402.a
 		ai_chance = { factor = 0 }
-		
+		trigger = {
+			is_ai = no
+			has_country_flag = gd_div_mot_39
+		}
 		hidden_effect = {
 			if = {
 				limit = { 
 					is_ai = no
+					has_army_experience > 51
 				}
-				#use army_experience to enhance division_template
+				#use army_experience to enhance division_template 
+				army_experience = 50
 			}
 			set_country_flag = gd_div_mot_42
 		}
 	}
 	option = {
-		name = germany.402.a
+		name = germany.402.b
 		trigger = {
-			is_ai = no
-			has_country_flag = gd_regt_39
+			is_ai = yes
+			has_country_flag = GERgrossdeutschland_stug
 		}
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_grossdeutschland_43"
+			set_country_flag = gd_div_mot_42
+		}
+	}
+}
+#### Upgrade to Panzergrenadier Division Grossdeutschland ####
+country_event = {
+	id = germany.403
+	title = germany.403.t
+	desc = germany.403.d
+	picture = GFX_report_event_ger_grossdeutschland_div
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		date > 1942.5.1
+		has_country_flag = gd_div_mot_42
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.403.a
 		ai_chance = { factor = 0 }
 		
 		hidden_effect = {
 			if = {
 				limit = { 
 					is_ai = no
+					has_army_experience > 51
 				}
-				load_oob = "GER_grossdeutschland_43"
+				#use army_experience to enhance division_template 
+				army_experience = 50
 			}
-			set_country_flag = gd_div_mot_42
+			set_country_flag = gd_div_pzgren_43
 		}
 	}
 }
