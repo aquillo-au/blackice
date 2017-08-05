@@ -4539,4 +4539,399 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = soviet.312
+	title = soviet.312.t
+	desc = soviet.312.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }
+		NOT = { has_idea = CounterAttack_II }
+		NOT = { has_idea = CounterAttack_III }
+		NOT = { has_idea = CounterAttack_IV }
+		or = {
+		NOT = { controls_state = 97 }
+		NOT = { controls_state = 91 }
+		NOT = { controls_state = 94 }
+		NOT = { controls_state = 93 }
+		
+		}
+		has_country_flag = forthemotherland
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = soviet.312.a
+		hidden_effect = {
+			
+			add_timed_idea = {
+				idea = CounterAttack_I
+				days = 7
+			}
+	}
+	set_country_flag = CounterAttackone
+	GER = { country_event = soviet.318 }
+}
+}
+country_event = {
+	id = soviet.313
+	title = soviet.313.t
+	desc = soviet.313.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }
+		NOT = { has_idea = CounterAttack_I }
+		NOT = { has_idea = CounterAttack_III }
+		NOT = { has_idea = CounterAttack_IV }
+		or = {
+		NOT = { controls_state = 206 }
+		NOT = { controls_state = 202 }
+		NOT = { controls_state = 192 }
+		NOT = { controls_state = 840 }
+		
+		}
+		has_country_flag = forthemotherland
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = soviet.313.a
+		hidden_effect = {
+			
+			add_timed_idea = {
+				idea = CounterAttack_II
+				days = 7
+			}
+	}
+	set_country_flag = CounterAttacktwo
+	GER = { country_event = soviet.319 }
+}
+}
+country_event = {
+	id = soviet.314
+	title = soviet.314.t
+	desc = soviet.314.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER 
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }
+		NOT = { has_idea = CounterAttack_I }
+		NOT = { has_idea = CounterAttack_II }
+		NOT = { has_idea = CounterAttack_IV }
+		or = {
+		NOT = { controls_state = 209 }
+		NOT = { controls_state = 224 }
+		NOT = { controls_state = 207 }
+		NOT = { controls_state = 221 }
+		
+		}
+		#has_country_flag = forthemotherland
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = soviet.314.a
+		hidden_effect = {
+			
+			add_timed_idea = {
+				idea = CounterAttack_III
+				days = 7
+			}
+	}
+	set_country_flag = CounterAttackthree
+	GER = { country_event = soviet.320 }
+}
+}
+country_event = {
+	id = soviet.315
+	title = soviet.315.t
+	desc = soviet.315.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER 
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }
+		NOT = { has_idea = CounterAttack_I }
+		NOT = { has_idea = CounterAttack_II }
+		NOT = { has_idea = CounterAttack_III }
+		or = {
+		NOT = { controls_state = 242 }
+		NOT = { controls_state = 227 }
+		NOT = { controls_state = 220 }
+		NOT = { controls_state = 208 }
+		}
+		#has_country_flag = forthemotherland
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = soviet.315.a
+		hidden_effect = {
+			
+			add_timed_idea = {
+				idea = CounterAttack_IV
+				days = 7
+			}
+	}
+	set_country_flag = CounterAttackfour
+	GER = { country_event = soviet.321 }
+}
+}
+country_event = {
+	id = soviet.316
+	title = soviet.316.t
+	desc = soviet.316.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = { has_war_with = GER }
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }
+		
+		or = {
+		11 = { is_owned_by = GER }
+		GER = { controls_state = 11 } # LIT
+		
+		LIT = { is_in_faction_with = GER }
+		}
+		not = { has_country_flag = forthemotherland}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = soviet.316.a
+		hidden_effect = {
+			declare_war_on = {
+				target = GER
+				type = take_state_focus
+				generator = { 11 } 
+			}
+			add_timed_idea = {
+				idea = BalticAttack_I
+				days = 90
+			}
+	}
+	set_country_flag = BalticAttackone
+}
+}
+country_event = {
+	id = soviet.317
+	title = soviet.317.t
+	desc = soviet.317.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = { has_war_with = GER }
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_III }
+		
+		or = {
+		12 = { is_owned_by = GER }
+		GER = { controls_state = 12 } # LAT
+		
+		LAT = { is_in_faction_with = GER }
+		}
+		not = { has_country_flag = forthemotherland}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = soviet.317.a
+		hidden_effect = {
+			declare_war_on = {
+				target = GER
+				type = take_state_focus
+				generator = { 12 } 
+			}
+			add_timed_idea = {
+				idea = BalticAttack_II
+				days = 90
+			}
+	}
+	set_country_flag = BalticAttacktwo
+}
+}
+country_event = {
+	id = soviet.318
+	title = soviet.318.t
+	desc = soviet.318.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = { has_war_with = GER }
+		is_ai = yes
+		GER = {is_ai = no}
+		is_puppet = no
+		exists = yes 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }
+		
+		or = {
+		13 = { is_owned_by = GER }
+		GER = { controls_state = 13 } # EST
+	
+		EST = { is_in_faction_with = GER }
+		}
+		not = { has_country_flag = forthemotherland}
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { 
+		name = soviet.318.a
+		hidden_effect = {
+			declare_war_on = {
+				target = GER
+				type = take_state_focus
+				generator = { 13 } 
+			}
+			add_timed_idea = {
+				idea = BalticAttack_III
+				days = 90
+			}
+	}
+	set_country_flag = BalticAttackthree
+}
+}
+
+country_event = {
+	id = soviet.319
+	title = soviet.319.t
+	desc = soviet.318.d
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = soviet.319.a
+		add_timed_idea = {
+				idea = Red_beasts_I
+				days = 7
+			}
+	}
+}
+country_event = {
+	id = soviet.320
+	title = soviet.320.t
+	desc = soviet.320.d
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = soviet.320.a
+			add_timed_idea = {
+				idea = Red_beasts_II
+				days = 7
+			}
+	}
+}
+country_event = {
+	id = soviet.321
+	title = soviet.321.t
+	desc = soviet.321.d
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = soviet.321.a
+			add_timed_idea = {
+				idea = Red_beasts_III
+				days = 7
+			}
+	}
+}
+country_event = {
+	id = soviet.322
+	title = soviet.322.t
+	desc = soviet.322.d
+	picture = GFX_report_event_soviet_soldiers2
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = soviet.322.a
+			add_timed_idea = {
+				idea = Red_beasts_IV
+				days = 7
+			}
+	}
+}
 ### EOF ###

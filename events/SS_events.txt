@@ -760,8 +760,15 @@ country_event = {
 		has_tech = tech_panzer_iii_equipment_1
 		not = { has_country_flag = hiddentech_ss_panzer_iii }
 		or = {
+		and = {
 			has_country_flag = ahistorical_ss
 			date > 1940.1.1
+			}
+		
+		and = {
+			has_country_flag = SS_Start
+			date > 1943.6.1
+			}
 		}
 	}
 	
@@ -807,8 +814,15 @@ country_event = {
 		has_tech = tech_panzer_iv_equipment_1
 		not = { has_country_flag = hiddentech_ss_panzer_iv }
 		or = {
+		and = {
 			has_country_flag = ahistorical_ss
 			date > 1940.1.1
+			}
+		
+		and = {
+			has_country_flag = SS_Start
+			date > 1943.6.1
+			}
 		}
 	}
 	
@@ -855,8 +869,15 @@ country_event = {
 		has_tech = tech_panzer_v_equipment_1
 		not = { has_country_flag = hiddentech_ss_panzer_v }
 		or = {
+			and = {
 			has_country_flag = ahistorical_ss
 			date > 1940.7.31
+		}
+		
+		and = {
+			has_country_flag = SS_Start
+			date > 1943.6.1
+			}
 		}
 	}
 	
