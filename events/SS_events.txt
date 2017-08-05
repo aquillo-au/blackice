@@ -137,7 +137,8 @@ country_event = {
 	
 	trigger = {
 		is_ai = no
-		date >1939.2.1
+		date > 1939.2.1
+		has_tech = tech_combat_engineers
 		has_country_flag = LSSAH_regiment_38
 	}
 	
@@ -169,7 +170,7 @@ country_event = {
 	
 	trigger = {
 		is_ai = no
-		date >1939.10.1
+		date > 1939.10.1
 		has_country_flag = LSSAH_regiment_39_exp
 		has_tech = vehicle_radio
 	}
@@ -202,9 +203,9 @@ country_event = {
 	
 	trigger = {
 		is_ai = no
-		date >1940.2.1
+		date > 1940.2.1
 		has_country_flag = LSSAH_regiment_39_mot
-		has_tech = subtech_light_assault_panzer_equipment_1
+		has_tech = subtech_panzer_iii_td_equipment_1
 	}
 	
 	mean_time_to_happen = {
@@ -235,9 +236,8 @@ country_event = {
 	
 	trigger = {
 		is_ai = no
-		date >1940.6.1
+		date > 1940.6.1
 		has_country_flag = LSSAH_regiment_40_mot
-		has_tech = subtech_panzer_iii_td_equipment_1
 	}
 	
 	mean_time_to_happen = {
@@ -246,6 +246,7 @@ country_event = {
 	
 	option = {
 		name = ss_event.660.a
+		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = {
@@ -255,6 +256,118 @@ country_event = {
 			}
 
 			set_country_flag = LSSAH_regiment_40_brig
+		}
+	}
+}
+### ss_event.659 Febr 1942 Expand LSSAH Brigade to Division 
+### adding 1 Pz-Rgt (2xPZ III and 1 PzIV Btl),1 Recon AC Comp.
+### AI gets SS Pzgren-Div LSSAH #make option B
+country_event = {
+	id = ss_event.659
+	title = ss_event.659.t
+	desc = ss_event.659.d
+	picture = GFX_report_event_lssah_div_42
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		date > 1942.2.12
+		has_country_flag = LSSAH_regiment_40_brig
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.659.a
+		trigger = { is_ai = no }
+		hidden_effect = {
+			if = {
+				limit = {
+					has_army_experience < 44
+				}
+				# Use army XP to upgrade
+				army_experience = 43
+			}
+
+			set_country_flag = LSSAH_brig_42_div
+		}
+	}
+}
+### ss_event.658 Nov 1942 Mechanize to SS Pzgren-Div LSSAH
+### Mechanise the Inf.Rgt.(mot), Change 1 Pz.III to Pz.VI
+country_event = {
+	id = ss_event.658
+	title = ss_event.658.t
+	desc = ss_event.658.d
+	picture = GFX_report_event_lssah_div_42
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		date > 1942.11.12
+		has_tech = mechanised_infantry2
+		has_tech = tech_heavy_panzer_equipment_2
+		has_country_flag = LSSAH_brig_42_div
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.658.a
+		trigger = { is_ai = no }
+		hidden_effect = {
+			if = {
+				limit = {
+					has_army_experience < 36
+				}
+				# Use army XP to upgrade
+				army_experience = 35
+			}
+
+			set_country_flag = LSSAH_pzgren_div_42
+		}
+	}
+}
+### ss_event.657 Nov 1942 Refit SS Pzgren-Div LSSAH to SS Pz.-Div LSSAH
+### Change Art-Rgt.(mot to Pz-Art-Rgt. Add 1 SS Rocket-Art-Btl. Move StuG to 5th Rgt
+### AI gets also SS Pz.-Div. LSSAH full. #make option B
+country_event = {
+	id = ss_event.657
+	title = ss_event.657.t
+	desc = ss_event.657.d
+	picture = GFX_report_event_lssah_div_42
+	
+	fire_only_once = yes
+	
+	trigger = {
+		is_ai = no
+		date > 1943.11.12
+		has_country_flag = LSSAH_pzgren_div_42
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.657.a
+		trigger = { is_ai = no }
+		hidden_effect = {
+			if = {
+				limit = {
+					has_army_experience < 16
+				}
+				# Use army XP to upgrade
+				army_experience = 15
+			}
+
+			set_country_flag = LSSAH_pzgren_div_42
 		}
 	}
 }
