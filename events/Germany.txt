@@ -8843,8 +8843,22 @@ country_event = {
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_tech = tech_panzer_v_equipment_1 }
+					NOT = { has_tech = subtech_panzer_v_spaa_equipment_1 }
+					NOT = { has_tech = subtech_heavy_panzer_art_equipment_1 }
+					NOT = { has_tech = subtech_panzer_iii_td_equipment_3 }
+					NOT = { has_tech = tech_heavy_panzer_equipment_2 }
+				}
+				set_technology = { tech_panzer_v_equipment_1 = 1 }
+				set_technology = { subtech_heavy_panzer_art_equipment_1 = 1 }
+				set_technology = { subtech_panzer_v_spaa_equipment_1 = 1 }
+				set_technology = { subtech_panzer_iii_td_equipment_3 = 1 }
+				set_technology = { tech_heavy_panzer_equipment_2 = 1 }
+			}
 			load_oob = "GER_grossdeutschland_43"
-			set_country_flag = gd_div_mot_42
+			set_country_flag = gd_pzgren_div_43_ai
 		}
 	}
 }
