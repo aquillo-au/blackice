@@ -2802,7 +2802,30 @@ country_event = {
 			
 						459 = { add_core_of = VIC}
 				}
+					if = {
+				limit = { 
+					ITA = { 
+						not = { controls_state = 735 }
+						is_in_faction_with = GER
+				}
+				}
 				
+						transfer_state = 735
+			
+						735 = { add_core_of = VIC}
+				}
+				if = {
+				limit = { 
+					ITA = { 
+						not = { controls_state = 590 }
+						is_in_faction_with = GER
+				}
+				}
+				
+						transfer_state = 590
+			
+						590 = { add_core_of = VIC}
+				}
 					if = {
 				limit = { 
 					ITA = { 
