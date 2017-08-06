@@ -120,13 +120,14 @@ country_event = {
 	
 	option = {
 		name = ss_event.664.a
+		trigger = { is_ai = no }
 		hidden_effect = {
 			load_oob = "GER_LSSAH_regiment_39"
 			set_country_flag = LSSAH_regiment_38
 		}
 	}
 }
-### Adding 1 SS Arty-Btl, 1 SS Enigeer Comp, 1 SS Recon Comp(mot)
+### Adding 1 SS Arty-Btl, 1 SS Enigeer Comp, 1 SS Motorcycle Recon Comp
 country_event = {
 	id = ss_event.663
 	title = ss_event.663.t
@@ -148,6 +149,7 @@ country_event = {
 	
 	option = {
 		name = ss_event.663.a
+		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = {
@@ -181,6 +183,7 @@ country_event = {
 	
 	option = {
 		name = ss_event.662.a
+		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = {
@@ -214,6 +217,7 @@ country_event = {
 	
 	option = {
 		name = ss_event.661.a
+		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = {
@@ -271,7 +275,6 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		is_ai = no
 		date > 1942.2.12
 		has_country_flag = LSSAH_regiment_40_brig
 	}
@@ -292,6 +295,14 @@ country_event = {
 				army_experience = 43
 			}
 
+			set_country_flag = LSSAH_brig_42_div
+		}
+	}
+	option = {
+		name = ss_event.659.b
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_LSSAH_pzgrendiv_42"
 			set_country_flag = LSSAH_brig_42_div
 		}
 	}
@@ -329,7 +340,6 @@ country_event = {
 				# Use army XP to upgrade
 				army_experience = 35
 			}
-
 			set_country_flag = LSSAH_pzgren_div_42
 		}
 	}
@@ -367,6 +377,14 @@ country_event = {
 				army_experience = 15
 			}
 
+			set_country_flag = LSSAH_pzgren_div_42
+		}
+	}
+	option = {
+		name = ss_event.657.b
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_LSSAH_pzdiv_43"
 			set_country_flag = LSSAH_pzgren_div_42
 		}
 	}

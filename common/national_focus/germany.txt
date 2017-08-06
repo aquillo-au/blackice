@@ -1599,23 +1599,21 @@ focus_tree = {
 			show_ideas_tooltip = walther_von_brauchitsch			
 		}
 	}
+	#Start of the player only Grossdeutschland event-chain
 	focus = {
 		id = GER_Grossdeutschland
 		text = GER_Grossdeutschland 
 		icon = GFX_goal_grossdeutschland
 		prerequisite = { focus = GER_Wehrmacht }
 		available = {
+			is_ai = no
 			date > 1939.5.1
 		}
 		x = 2
 		y = 1
 		cost = 4
-		ai_will_do = {
-			factor = 10
-		}
 		available_if_capitulated = yes	
 		completion_reward = {
-			#army_experience = 20
 			GER = {
 				country_event = germany.400
 			}

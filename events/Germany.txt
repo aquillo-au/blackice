@@ -8741,7 +8741,7 @@ country_event = {
 	option = {
 		name = germany.400.a
 		ai_chance = { factor = 0 }
-		
+		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = { 
@@ -8750,7 +8750,6 @@ country_event = {
 				}
 				army_experience = 65
 				#use army_experience to enhance division_template Wacht Regiment Berlin
-				#load_oob = "GER_grossdeutschland_regt_39"
 			}
 			set_country_flag = gd_regt_39
 		}
@@ -8758,7 +8757,7 @@ country_event = {
 	option = {					# placeholder to prevent AI crash
 		name = germany.400.a
 		ai_chance = { factor = 100 }
-		
+		trigger = { is_ai = yes }
 		hidden_effect = {
 			if = {
 				limit = { 
@@ -8766,10 +8765,7 @@ country_event = {
 					has_army_experience < 66
 				}
 				army_experience = 65
-				#use army_experience to enhance division_template Wacht Regiment Berlin
-				#load_oob = "GER_grossdeutschland_regt_39"
 			}
-			#set_country_flag = gd_regt_39
 		}
 	}
 }
@@ -8796,7 +8792,7 @@ country_event = {
 	option = {
 		name = germany.401.a
 		ai_chance = { factor = 0 }
-		
+		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = { 
@@ -8902,7 +8898,7 @@ country_event = {
 	option = {
 		name = germany.403.a
 		ai_chance = { factor = 0 }
-		
+		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = { 
@@ -8918,17 +8914,15 @@ country_event = {
 	option = {				# placeholder to prevent AI crash
 		name = germany.403.b
 		ai_chance = { factor = 100 }
-		
+		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = { 
 					is_ai = yes
 					has_army_experience > 51
-				}
-				#use army_experience to enhance division_template 
+				} 
 				army_experience = 50
 			}
-			#set_country_flag = gd_div_pzgren_43
 		}
 	}
 }
