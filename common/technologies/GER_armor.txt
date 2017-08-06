@@ -22,6 +22,7 @@ technologies = {
 			leads_to_tech = tech_panzer_i_equipment_1
 			research_cost_coeff = 1
 		}
+		
 		allow = {
 			always = no
 		}
@@ -211,6 +212,26 @@ technologies = {
 		folder = {
 			name = german_pz_folder
 			position = { x = 0 y = 9 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GER_ostketten_tech = {
+		
+		dependencies = {
+			german_tech = 1
+		}
+		
+		enable_tactic = tactic_winterketten
+
+		
+		research_cost = 1
+		start_year = 1934
+		folder = {
+			name = german_pz_folder
+			position = { x = 12 y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -1959,7 +1980,6 @@ technologies = {
 			cat_heavy_armor
 		}
 	}
-
 	#Panzer 35 (t)
 	tech_czech_ger_panzer_1 = {
 		
@@ -1999,7 +2019,6 @@ technologies = {
 			cat_light_armor
 		}
 	}
-	
 	#Panzer 38 (t) A-D
 	tech_czech_ger_panzer_2 = {
 		
@@ -2033,8 +2052,7 @@ technologies = {
 			armor
 			cat_light_armor
 		}
-	}	
-	
+	}
 	# Panzer 38 (t) G
 	tech_czech_ger_panzer_3 = {
 		
@@ -2072,8 +2090,7 @@ technologies = {
 			armor
 			cat_light_armor
 		}
-	}		
-
+	}
 	# Marder III M
 	subtech_light_panzer_td_equipment_4 = {
 
@@ -2121,8 +2138,7 @@ technologies = {
 #			armor
 #			cat_medium_armor
 #		}
-#	}		
-	
+#	}
 	# Flakpanzer 38(t)
 	subtech_panzer_spaa_equipment_2 = {
 
@@ -2147,8 +2163,7 @@ technologies = {
 			armor
 			cat_light_armor
 		}
-	}		
-	
+	}
 	# Aufklärungspanzer 38 (t)
 	tech_czech_ger_panzer_4 = {
 		
@@ -2182,8 +2197,7 @@ technologies = {
 			armor
 			cat_light_armor
 		}
-	}	
-	
+	}
 	# Hetzer
 	subtech_light_panzer_td_equipment_5 = {
 
@@ -2207,8 +2221,7 @@ technologies = {
 			armor
 			cat_light_armor
 		}
-	}	
-
+	}
 	# Panzerjäger 38 D
 	tech_light_panzer_td_equipment_6 = {
 
@@ -2292,9 +2305,7 @@ technologies = {
 #			cat_light_armor
 #		}
 #	}	
-
 #### Allied conversions					# hidden techs
-
 #	victory_west_tech = {
 #
 #		path = {
@@ -2331,9 +2342,9 @@ technologies = {
 		enable_equipments = {
 			conversion_td_equipment_1
 		}
-#		enable_subunits = {
-#			conversion_td
-#		}
+		#enable_subunits = {
+		#	conversion_td
+		#}
 		dependencies = {
 			german_tech = 1
 		}
@@ -2346,17 +2357,16 @@ technologies = {
 			armor
 			cat_light_armor
 		}
-	}	
-	
+	}
 	# Marder I on Lorraine-Schlepper SdKfz 135
 	tech_marder_conversion_td_equipment_1 = {
 
 		enable_equipments = {
 			marder_conversion_td_equipment_1
 		}
-#		enable_subunits = {
-#			marder_conversion_td
-#		}
+		#enable_subunits = {
+		#	marder_conversion_td
+		#}
 		
 		dependencies = {
 			german_tech = 1
@@ -2371,7 +2381,6 @@ technologies = {
 			cat_light_armor
 		}
 	}
-
 	# Marder I on Hotchkiss H39
 	tech_marder_conversion_td_equipment_2 = {
 
@@ -2391,16 +2400,15 @@ technologies = {
 			cat_light_armor
 		}
 	}
-
 	# Geschützwagen Mk.VI(e), 10.5cm leFH 16
 	tech_conversion_art_equipment_1 = {
 
 		enable_equipments = {
 			conversion_art_equipment_1
 		}
-#		enable_subunits = {
-#			conversion_art
-#		}
+		#enable_subunits = {
+		#	conversion_art
+		#}
 		
 		dependencies = {
 			german_tech = 1
@@ -2415,7 +2423,6 @@ technologies = {
 			cat_light_armor
 		}
 	}
-
 	# Geschützwagen Lorraine-Schlepper(f), 10.5cm leFH 18
 	tech_conversion_art_equipment_2 = {
 
@@ -2436,7 +2443,6 @@ technologies = {
 			cat_light_armor
 		}
 	}
-
 	# Geschützwagen 39H(f), 10.5cm leFH 18
 	tech_conversion_art_equipment_3 = {
 
@@ -2457,8 +2463,6 @@ technologies = {
 			cat_light_armor
 		}
 	}
-
-	
 	################### Armored car Recon ###########
 	tech_ger_ac_recon = {
 
@@ -2481,7 +2485,7 @@ technologies = {
 		start_year = 1930
 		folder = {
 			name = german_pz_folder
-			position = { x = 12 y = @1930 }
+			position = { x = 16 y = @1930 }
 		}
 		
 		categories = {
@@ -2511,7 +2515,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = german_pz_folder
-			position = { x = 12 y = @1936 }
+			position = { x = 16 y = @1936 }
 		}
 		
 		categories = {
@@ -2541,7 +2545,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = german_pz_folder
-			position = { x = 12 y = @1939 }
+			position = { x = 16 y = @1939 }
 		}
 		
 		categories = {
@@ -2569,7 +2573,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = german_pz_folder
-			position = { x = 12 y = @1942 }
+			position = { x = 16 y = @1942 }
 		}
 		
 		categories = {
@@ -2595,7 +2599,7 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = german_pz_folder
-			position = { x = 12 y = @1945 }
+			position = { x = 16 y = @1945 }
 		}
 		
 		categories = {
@@ -2629,7 +2633,7 @@ technologies = {
 		start_year = 1933
 		folder = {
 			name = german_pz_folder
-			position = { x = 15 y = @1932 }
+			position = { x = 19 y = @1932 }
 		}
 		
 		categories = {
@@ -2659,7 +2663,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = german_pz_folder
-			position = { x = 15 y = @1938 }
+			position = { x = 19 y = @1938 }
 		}
 		
 		categories = {
@@ -2688,7 +2692,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = german_pz_folder
-			position = { x = 15 y = @1940 }
+			position = { x = 19 y = @1940 }
 		}
 		
 		categories = {
@@ -2699,7 +2703,6 @@ technologies = {
 			factor = 1
 		}
 	}
-
 ################### Liaison Vehicles ###########
 	tech_ger_Gun_Carriers = {
 
@@ -2717,7 +2720,7 @@ technologies = {
 		start_year = 1932
 		folder = {
 			name = german_pz_folder
-			position = { x = 18 y = @1932 }
+			position = { x = 22 y = @1932 }
 		}
 		
 		categories = {
@@ -2744,7 +2747,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = german_pz_folder
-			position = { x = 18 y = @1936 }
+			position = { x = 22 y = @1936 }
 		}
 		
 		categories = {
@@ -2776,7 +2779,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = german_pz_folder
-			position = { x = 18 y = @1939 }
+			position = { x = 22 y = @1939 }
 		}
 		
 		categories = {

@@ -1155,3 +1155,25 @@ tactic_infantry_artillery_armor = {
 	
 	attacker = 0.05	
 }
+tactic_winterketten = {
+	is_attacker = yes
+	trigger = {
+		is_attacker = yes
+		hardness > 0.5
+		phase = no
+		OR = {
+			skill > 2
+			has_trait = winter_specialist_CC
+			has_trait = winter_specialist_CC_II
+			has_trait = winter_specialist_CC_III
+			skill_advantage > 1
+		}
+	}
+	
+	active = no
+	picture = blitz
+	
+	attacker_movement_speed = 0.5
+	attacker = 0.15
+	defender = 0.10
+}
