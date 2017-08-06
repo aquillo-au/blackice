@@ -849,7 +849,7 @@ technologies = {
 	
 		category_artillery = {
 			defense = 0.20
-		
+			combat_width = 0.1
 		}
 		category_line_artillery = {
 			maximum_speed = -0.1
@@ -1023,7 +1023,7 @@ technologies = {
 	}
 	rear_area_bombardment = {
 	
-		#enable_tactic = tactic_
+		enable_tactic = tactic_rear_area_fire
 		
 		path = {
 			leads_to_tech = dummy_barrage
@@ -1053,7 +1053,7 @@ technologies = {
 	}
 	dummy_barrage = {
 	
-		#enable_tactic = tactic_
+		enable_tactic = tactic_dummy_barrage
 		
 		doctrine = yes	
 		research_cost = 2
@@ -1078,7 +1078,7 @@ technologies = {
 	}
 	standing_barrage = {
 	
-		#enable_tactic = tactic_
+		enable_tactic = tactic_standing_barrage
 		
 		doctrine = yes	
 		research_cost = 2
@@ -1103,11 +1103,8 @@ technologies = {
 	}
 	box_barrage = {
 	
-		#enable_tactic = tactic_
-		category_artillery = {
-			soft_attack = 0.05
-		}
-		
+		enable_tactic = tactic_box_barrage
+	
 		path = {
 			leads_to_tech = block_barrage
 			research_cost_coeff = 1
@@ -1144,11 +1141,8 @@ technologies = {
 	}
 	block_barrage = {
 	
-		#enable_tactic = tactic_
+		enable_tactic = tactic_block_barrage
 
-		category_artillery = {
-			soft_attack = 0.05
-		}
 		doctrine = yes	
 		research_cost = 2
 		
@@ -1172,11 +1166,8 @@ technologies = {
 	}
 	creeping_barrage = {
 	
-		#enable_tactic = tactic_
+		enable_tactic = tactic_creeping_barrage
 		
-		category_artillery = {
-			soft_attack = 0.05
-		}
 		
 		doctrine = yes	
 		research_cost = 2
@@ -1201,11 +1192,8 @@ technologies = {
 	}
 	rolling_barrage  = {
 	
-		#enable_tactic = tactic_
+		enable_tactic = tactic_rolling_barrage
 
-		category_artillery = {
-			soft_attack = 0.05
-		}
 		
 		doctrine = yes	
 		research_cost = 2
@@ -1549,8 +1537,8 @@ technologies = {
 		#enable_tactic = tactic_
 		
 		category_all_armor = {
-			soft_attack = 0.1
-		}	
+			max_organisation = 4
+			}
 		path = {
 			leads_to_tech = infantry_tank_coordination
 			research_cost_coeff = 1
@@ -1576,7 +1564,7 @@ technologies = {
 	}
 	infantry_tank_coordination = {
 	
-		#enable_tactic = tactic_
+		enable_tactic = tactic_infantry_armor
 		
 		category_all_armor = {
 			breakthrough = 0.05
@@ -1612,7 +1600,7 @@ technologies = {
 	}
 	infantry_tank_artillery_coordination = {
 		doctrine = yes	
-		#enable_tactic = tactic_
+		enable_tactic = tactic_infantry_artillery_armor
 		
 		category_all_armor = {
 			breakthrough = 0.1
@@ -1705,7 +1693,8 @@ technologies = {
 			recon = 2
 			max_organisation = 4
 		}
-	
+		army_speed_factor = 0.1
+		
 		doctrine = yes	
 		research_cost = 2
 		
@@ -1730,7 +1719,7 @@ technologies = {
 	motorcycle_liaison = {
 	
 		planning_speed = 0.02
-		org_loss_when_moving = -0.02
+		org_loss_when_moving = -0.05
 		
 		
 		category_army = {
@@ -1762,7 +1751,7 @@ technologies = {
 	staff_officer_vehicles = {
 	
 		planning_speed = 0.05
-		org_loss_when_moving = -0.05
+		org_loss_when_moving = -0.1
 		
 		category_army = {
 			max_organisation = 2
@@ -1879,8 +1868,8 @@ technologies = {
 	}
 	weather_reporting = {
 	
-		army_speed_factor = 0.05
-		org_loss_when_moving = -0.05
+		army_speed_factor = 0.1
+		org_loss_when_moving = -0.1
 		
 		doctrine = yes	
 		research_cost = 2
@@ -1909,7 +1898,7 @@ technologies = {
 			max_organisation = 2
 			
 		}
-		army_speed_factor = 0.05
+		army_speed_factor = 0.1
 
 		doctrine = yes	
 		research_cost = 2

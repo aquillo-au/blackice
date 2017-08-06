@@ -7035,7 +7035,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		not = { has_country_flag = GER_aiautarky }
-		date > 1936.1.1 	
+		has_war = yes	
 		is_ai = yes
 	}
 	
@@ -7050,22 +7050,22 @@ country_event = {
 		hidden_effect = {
 		add_resource = {
 				type = rubber
-				amount = 6
+				amount = 60
 				state = 58
 			}
 		add_resource = {
 				type = tungsten
-				amount = 6
+				amount = 30
 				state = 53
 			}
 		add_resource = {
 				type = chromium
-				amount = 6
+				amount = 30
 				state = 64
 			}
 		add_resource = {
 				type = oil
-				amount = 8
+				amount = 80
 				state = 59
 			}
 			set_country_flag =  GER_aiautarky 
@@ -8755,6 +8755,23 @@ country_event = {
 			set_country_flag = gd_regt_39
 		}
 	}
+	option = {					# placeholder to prevent AI crash
+		name = germany.400.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			if = {
+				limit = { 
+					is_ai = yes
+					has_army_experience < 66
+				}
+				army_experience = 65
+				#use army_experience to enhance division_template Wacht Regiment Berlin
+				#load_oob = "GER_grossdeutschland_regt_39"
+			}
+			#set_country_flag = gd_regt_39
+		}
+	}
 }
 #### Motorize Infantry Division (mot) Grossdeutschland ####
 country_event = {
@@ -8792,6 +8809,7 @@ country_event = {
 			set_country_flag = gd_div_mot_39
 		}
 	}
+	
 }
 #### Upgrade to Divisionlevel Infantry Division (mot) Grossdeutschland ####
 country_event = {
@@ -8895,6 +8913,22 @@ country_event = {
 				army_experience = 50
 			}
 			set_country_flag = gd_div_pzgren_43
+		}
+	}
+	option = {				# placeholder to prevent AI crash
+		name = germany.403.b
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			if = {
+				limit = { 
+					is_ai = yes
+					has_army_experience > 51
+				}
+				#use army_experience to enhance division_template 
+				army_experience = 50
+			}
+			#set_country_flag = gd_div_pzgren_43
 		}
 	}
 }

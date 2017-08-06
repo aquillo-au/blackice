@@ -3015,23 +3015,16 @@ country_event = {
 	option = {# tell Hungary to go ahead
 		name = DOD_hungary.83.a
 		ai_chance = {
-			factor = 75
-			modifier = {
-				is_in_faction_with = HUN
-				factor = 10
-			}
-			modifier = {
-				NOT = { is_in_faction_with = HUN }
-				factor = 0.1
-			}
-		}
+			factor = 100
+						}
+		
 		HUN = { country_event = DOD_hungary.81 }
 	}
 
 	option = {# tell Hungary to back off
 		name = DOD_hungary.83.b
 		ai_chance = {
-			factor = 25
+			factor = 0
 		}
 		HUN = { country_event = DOD_hungary.85 }
 	}
