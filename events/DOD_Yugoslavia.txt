@@ -48,6 +48,7 @@ country_event = {
 				is_in_faction_with = GER
 			}
 			remove_from_faction = YUG
+			clr_country_flag = in_axis
 		}
 	}
 	option = { #resistance to the coup, call on Germans for support
@@ -3293,4 +3294,75 @@ country_event = {
 			swap_ideas = { remove_idea = YUG_idea_serbian_general_staff add_idea = YUG_idea_yugoslavian_general_staff }
 		}
 	}
+}
+
+# YUG asks to join Axis 
+country_event = {
+	id = DOD_yugoslavia.169
+	title = DOD_yugoslavia.169.t
+	desc = DOD_yugoslavia.169.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	#Accept
+	option = {
+		name = DOD_yugoslavia.169.a
+		YUG = { country_event = DOD_yugoslavia.170 }
+		effect_tooltip = {
+			add_to_faction = YUG
+			YUG = {
+				set_country_flag = in_axis
+				add_political_power = 15
+				add_national_unity = 0.02
+				ruling_pop_plus_3 = yes
+			}
+		}
+	}
+	
+	#Reject
+	option = {
+		name = DOD_yugoslavia.169.b
+		YUG = { country_event = DOD_yugoslavia.171 }
+	}
+}
+
+# GER accepts YUG's alliance request 
+country_event = {
+	id = DOD_yugoslavia.170
+	title = DOD_yugoslavia.170.t
+	desc = DOD_yugoslavia.170.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	#Excellent
+	option = {
+		name = DOD_yugoslavia.170.a
+		GER = { add_to_faction = YUG }
+		set_country_flag = in_axis
+		add_political_power = 15
+		add_national_unity = 0.02
+		ruling_pop_plus_3 = yes
+	}
+	
+}
+
+# GER rejects YUG's alliance request 
+country_event = {
+	id = DOD_yugoslavia.171
+	title = DOD_yugoslavia.171.t
+	desc = DOD_yugoslavia.171.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	#Darn
+	option = {
+		name = DOD_yugoslavia.171.a
+		add_political_power = -15
+		add_national_unity = -0.02
+		ruling_pop_minus_3 = yes
+	}
+	
 }

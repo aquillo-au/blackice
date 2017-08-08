@@ -198,6 +198,10 @@ set_country_flag = age_19
 set_country_flag = export_focus
 set_country_flag = civilian_economy
 set_country_flag = labor_allowed
+set_country_flag = security_liberty_first
+set_country_flag = officer_train_low
+
+set_country_flag = const_monarchy
 # DIPLOMACY
 if = {
 	limit = {
@@ -458,6 +462,17 @@ create_country_leader = {
 	traits = {
 		socialist
 		silent_workhorse
+	}
+}
+create_country_leader = {
+	name = "George V"
+	desc = ""
+	picture = "gfx/leaders/ENG/Portrait_George_V.dds"
+	expire = "1965.1.1"
+	ideology = absolutism
+	traits = {
+		monarchist
+		effective_leader
 	}
 }
 ###### Army ######

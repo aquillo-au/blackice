@@ -38,9 +38,13 @@ country_event = {
 		
 	option = { # stay neutral
 		name = vichy.2.a
+		trigger = {
+			is_ai = yes
+			
+		}
 		add_timed_idea = {
 				idea = USA_demands
-				days = 180
+				days = 365
 			}
 			ai_chance = { factor = 100 }
 
@@ -48,11 +52,19 @@ country_event = {
 	}
 	option = { # join allies
 		name = vichy.2.b
+		trigger = {
+			is_ai = no
+			
+		}
 			USA = {add_to_faction = VIC	}
 			ai_chance = { factor = 0 }
 	}
 	option = { # join axis
 		name = vichy.2.c
+		trigger = {
+			is_ai = no
+			
+		}
 			GER = {add_to_faction = VIC	}	
 			ai_chance = { factor = 0 }
 	}
@@ -98,6 +110,10 @@ country_event = {
 		
 	option = { # stay neutral
 		name = vichy.4.a
+		trigger = {
+			is_ai = yes
+			
+		}
 			add_timed_idea = {
 				idea = USA_demands_II
 				days = 90
@@ -109,11 +125,19 @@ country_event = {
 	}
 	option = { # join allies
 		name = vichy.4.b
+		trigger = {
+			is_ai = no
+			
+		}
 			USA = {add_to_faction = VIC	}
 			ai_chance = { factor = 0 }
 	}
 	option = { # join axis
 		name = vichy.4.c
+		trigger = {
+			is_ai = no
+			
+		}
 			GER = {add_to_faction = VIC	}	
 			ai_chance = { factor = 0 }
 	}
@@ -306,7 +330,7 @@ country_event = {
 
 				}
 			}
-			
+		GER = {add_to_faction = VIC	}	
 		add_timed_idea = {
 				idea = USA_demands_III
 				days = 5
@@ -331,7 +355,7 @@ country_event = {
 				}
 			}
 		load_oob = "USA_Torch_east_coast"
-		
+		GER = {add_to_faction = VIC	}
 		add_timed_idea = {
 				idea = USA_demands_III
 				days = 5
@@ -397,7 +421,7 @@ country_event = {
 
 				}
 			}
-				
+		GER = {add_to_faction = VIC	}		
 			add_timed_idea = {
 				idea = USA_demands_III
 				days = 2
@@ -421,7 +445,7 @@ country_event = {
 				}
 			}
 		load_oob = "USA_Torch_historical"
-		
+		GER = {add_to_faction = VIC	}
 			add_timed_idea = {
 				idea = USA_demands_III
 				days = 2
