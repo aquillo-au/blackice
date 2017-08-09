@@ -31,17 +31,7 @@ ideas = {
 			
 			removal_cost = -1
 		}
-		USA_demands_III = {
-			
-			
-			allowed = {
-				always = no
-			}
-
-			removal_cost = -1
-	
 		
-		}
 		great_depression = {
 
 
@@ -2151,14 +2141,14 @@ political_advisor = {
 
 
 
-			traits = { navy_chief_reform_2 }
+			traits = { navy_chief_offensive_naval_doctrine }
 
 			ai_will_do = {
 				factor = 1
 			}
 		}
 
-		chester_nimitz = {
+		chester_nimitz_submarine_raider_doctrine = {
 
 
 			allowed = {
@@ -2167,7 +2157,7 @@ political_advisor = {
 
 
 
-			traits = { navy_chief_commerce_raiding_2 }
+			traits = { navy_chief_submarine_raider_doctrine }
 
 			ai_will_do = {
 				factor = 1
@@ -2183,7 +2173,7 @@ political_advisor = {
 
 
 
-			traits = { navy_chief_naval_aviation_2 }
+			traits = { navy_chief_naval_aviation_doctrine }
 
 			ai_will_do = {
 				factor = 1
@@ -2200,7 +2190,7 @@ political_advisor = {
 			}
 
 
-			traits = { navy_chief_reform_1 }
+			traits = { navy_chief_defensive_naval_doctrine }
 
 			ai_will_do = {
 				factor = 1
@@ -2222,7 +2212,22 @@ political_advisor = {
 				}
 			}
 
-			traits = { navy_chief_maneuver_1 }
+			traits = { navy_chief_naval_reformer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		william_standley = {
+
+
+			allowed = {
+				original_tag = USA
+			}
+
+
+
+			traits = { navy_chief_naval_maneuvering }
 
 			ai_will_do = {
 				factor = 1
@@ -2375,54 +2380,106 @@ political_advisor = {
 			}
 		}
 
-		raymond_spruance = {
-
-
+		john_mccain = {
+			
+			
 			allowed = {
 				original_tag = USA
 			}
-
-
-
-			traits = { navy_naval_air_defense_2 }
-
+						
+			traits = { usa_navy_high_command_carrier_naval_aviation_1 }
+			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-
-		frank_jack_fletcher = {
-
-
+		
+		marc_mitscher_carrier_naval_aviation_2 = {
+			
+			
 			allowed = {
 				original_tag = USA
 			}
-
-
-
-			traits = { navy_carrier_2 }
-
+						
+			traits = { usa_navy_high_command_carrier_naval_aviation_2 }
+			
 			ai_will_do = {
-				factor = 2
+				factor = 1
 			}
 		}
-
-		thomas_kinkaid = {
-
-
+		
+		chester_nimitz = {
+			
+			
 			allowed = {
 				original_tag = USA
 			}
-
-
-
-			traits = { navy_amphibious_assault_2 }
-
+						
+			traits = { usa_navy_high_command_fleet_admiral_1 }
+						
 			ai_will_do = {
-				factor = 2
+				factor = 1
 			}
 		}
+		
+		raymond_spruance = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+						
+			traits = { usa_navy_high_command_grand_battlefleet_commander_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		ralph_mitchell = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+						
+			traits = { usa_navy_high_command_land_based_naval_air_support_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		francis_mulcahy = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+						
+			traits = { usa_navy_high_command_land_based_naval_air_support_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		richmond_turner = {
+			
+			
+			allowed = {
+				original_tag = USA
+			}
+						
+			traits = { usa_navy_high_command_amphibious_landing_1 }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
 	}
+    
 
 	tank_manufacturer = {
 
@@ -2499,7 +2556,11 @@ political_advisor = {
 
 
 			research_bonus = {
-				naval_equipment = 0.10
+				cv_tech = 0.10
+				cvl_tech = 0.10
+				dd_tech = 0.05
+				cl_tech = 0.05
+				aacl_tech = 0.05
 			}
 
 			traits = { carrier_battlegroup_naval_manufacturer }
@@ -2515,7 +2576,11 @@ political_advisor = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				cv_tech = 0.10
+				cvb_tech = 0.10
+				dd_tech = 0.05
+				cl_tech = 0.05
+				aacl_tech = 0.05
 			}
 
 			traits = { armored_carrier_battlegroup_naval_manufacturer }
@@ -2538,7 +2603,11 @@ political_advisor = {
 
 
 			research_bonus = {
-				naval_equipment = 0.10
+				cve_tech = 0.10
+				cvl_tech = 0.10
+				dd_tech = 0.05
+				cl_tech = 0.05
+				aacl_tech = 0.05
 			}
 
 			traits = { support_carrier_naval_manufacturer }
@@ -2560,7 +2629,10 @@ political_advisor = {
 
 
 			research_bonus = {
-				naval_equipment = 0.10
+				ca_tech = 0.10
+				bc_tech = 0.10
+				bb_tech = 0.10
+				shbb_tech = 0.10
 			}
 
 			traits = { grand_battlefleet_naval_manufacturer }
@@ -2582,7 +2654,9 @@ political_advisor = {
 
 
 			research_bonus = {
-				naval_equipment = 0.10
+				dd_tech = 0.10
+				cl_tech = 0.10
+				aacl_tech = 0.10
 			}
 
 			traits = { fleet_escort_naval_manufacturer }
@@ -2600,7 +2674,7 @@ political_advisor = {
 
 
 			research_bonus = {
-				naval_equipment = 0.10
+				ss_tech = 0.10
 			}
 
 			traits = { submarine_raiding_naval_manufacturer }
@@ -2620,7 +2694,9 @@ political_advisor = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				dd_tech = 0.10
+				cl_tech = 0.10
+				aacl_tech = 0.10
 			}
 
 			traits = { convoy_escort_naval_manufacturer }

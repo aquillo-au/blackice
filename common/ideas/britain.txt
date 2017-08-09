@@ -1161,7 +1161,7 @@ head_of_state = {
 				NOT = { has_country_flag = chatfield_retires }
 			}
 
-			traits = { navy_chief_maneuver_2 }
+			traits = { navy_chief_defensive_naval_doctrine }
 
 			ai_will_do = {
 				factor = 1
@@ -1176,7 +1176,7 @@ head_of_state = {
 				NOT = { has_country_flag = pound_retires }
 			}
 
-			traits = { navy_chief_decisive_battle_1 }
+			traits = { navy_chief_convoy_defense_doctrine }
 			# REVISIT Secondary trait for anti-sub efforts?
 
 			ai_will_do = {
@@ -1188,7 +1188,18 @@ head_of_state = {
 				original_tag = ENG
 			}
 
-			traits = { navy_chief_naval_aviation_2 }
+			traits = { navy_chief_naval_aviation_doctrine }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		roger_backhouse = { 
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { navy_chief_naval_maneuvering }
 
 			ai_will_do = {
 				factor = 1
@@ -1304,7 +1315,7 @@ head_of_state = {
 				original_tag = ENG
 			}
 
-			traits = { air_naval_strike_2 }
+			traits = { uk_navy_high_command_land_based_naval_air_support_1 }
 
 			ai_will_do = {
 				factor = 1
@@ -1315,7 +1326,7 @@ head_of_state = {
 				original_tag = ENG
 			}
 
-			traits = { navy_amphibious_assault_3 }
+			traits = { uk_navy_high_command_amphibious_landing_1 }
 
 			ai_will_do = {
 				factor = 2
@@ -1330,19 +1341,43 @@ head_of_state = {
 				original_tag = ENG
 			}
 
-			traits = { navy_screen_2 }
+			traits = { uk_navy_high_command_convoy_defense_1 }
 
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		max_horton = {
+		james_sommerville = {
 
 			allowed = {
 				original_tag = ENG
 			}
 
-			traits = { navy_submarine_2 }
+			traits = { uk_navy_high_command_carrier_naval_aviation_2 }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		bruce_fraser = {
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { uk_navy_high_command_grand_battlefleet_commander_1 }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		john_tovey = {
+
+			allowed = {
+				original_tag = ENG
+			}
+
+			traits = { uk_navy_high_command_fleet_admiral_1 }
 
 			ai_will_do = {
 				factor = 0
@@ -1359,7 +1394,11 @@ head_of_state = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				cv_tech = 0.10
+				cvl_tech = 0.10
+				dd_tech = 0.05
+				cl_tech = 0.05
+				aacl_tech = 0.05
 			}
 
 			traits = { carrier_battlegroup_naval_manufacturer }
@@ -1373,7 +1412,11 @@ head_of_state = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				cv_tech = 0.10
+				cvb_tech = 0.10
+				dd_tech = 0.05
+				cl_tech = 0.05
+				aacl_tech = 0.05
 			}
 
 			traits = { armored_carrier_battlegroup_naval_manufacturer }
@@ -1391,7 +1434,11 @@ head_of_state = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				cve_tech = 0.10
+				cvl_tech = 0.10
+				dd_tech = 0.05
+				cl_tech = 0.05
+				aacl_tech = 0.05
 			}
 
 			traits = { support_carrier_naval_manufacturer }
@@ -1409,7 +1456,10 @@ head_of_state = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				ca_tech = 0.10
+				bc_tech = 0.10
+				bb_tech = 0.10
+				shbb_tech = 0.10
 			}
 
 			traits = { grand_battlefleet_naval_manufacturer }
@@ -1427,7 +1477,9 @@ head_of_state = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				dd_tech = 0.10
+				cl_tech = 0.10
+				aacl_tech = 0.10
 			}
 
 			traits = { fleet_escort_naval_manufacturer }
@@ -1441,7 +1493,11 @@ head_of_state = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				dd_tech = 0.10
+				cl_tech = 0.10
+				aacl_tech = 0.10
+				cve_tech = 0.05
+				cvl_tech = 0.05
 			}
 
 			traits = { convoy_defense_naval_manufacturer }

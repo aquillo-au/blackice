@@ -1730,7 +1730,7 @@ political_advisor = {
 
 			
 			# PURGED
-			traits = { navy_chief_naval_aviation_1 }
+			traits = { navy_chief_naval_maneuvering }
 			
 			ai_will_do = {
 				factor = 1
@@ -1752,14 +1752,14 @@ political_advisor = {
 
 			
 			# PURGED
-			traits = { navy_chief_commerce_raiding_1 }
+			traits = { navy_chief_submarine_raider_doctrine }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 		
-		nikolay_kuznetsov = {
+		nikolay_kuznetsov_defensive_naval_doctrine = {
 			
 			
 			allowed = {
@@ -1774,33 +1774,13 @@ political_advisor = {
 
 			
 			# Not Purged, but eventually demoted
-			traits = { navy_chief_reform_2 }
+			traits = { navy_chief_defensive_naval_doctrine }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 		
-		ivan_yumashev = {
-			
-			
-			allowed = {
-				original_tag = SOV
-
-			}
-			available = 
-			{
-				NOT = { has_country_flag = purge_1_group_b }
-			}
-			
-
-			
-			traits = { navy_chief_decisive_battle_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}	
 	}
 	
 	air_chief = {
@@ -2094,7 +2074,7 @@ political_advisor = {
 			
 
 			
-			traits = { navy_submarine_2 }
+			traits = { sov_navy_high_command_submarine_raiding_commander_1 }
 			
 			ai_will_do = {
 				factor = 1
@@ -2125,7 +2105,7 @@ political_advisor = {
 
 			
 			# Not purged, but arrested and released
-			traits = { navy_capital_ship_2 }
+			traits = { sov_navy_high_command_grand_battlefleet_commander_1 }
 			
 			ai_will_do = {
 				factor = 1
@@ -2155,12 +2135,28 @@ political_advisor = {
 			
 
 			
-			traits = { navy_amphibious_assault_2 }
+			traits = { sov_navy_high_command_convoy_defense_1 }
 			
 			ai_will_do = {
 				factor = 1
 			}
-		}	
+		}
+
+		nikolay_kuznetsov = {
+
+
+			allowed = {
+				original_tag = SOV
+			}
+
+
+
+			traits = { sov_navy_high_command_fleet_admiral_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 		
 	tank_manufacturer = {
@@ -2705,7 +2701,10 @@ political_advisor = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				ca_tech = 0.10
+				bc_tech = 0.10
+				bb_tech = 0.10
+				bbv_tech = 0.10
 			}
 
 			traits = { grand_battlefleet_naval_manufacturer }
@@ -2725,7 +2724,10 @@ political_advisor = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				ca_tech = 0.10
+				bc_tech = 0.10
+				bb_tech = 0.10
+				bbv_tech = 0.10
 			}
 
 			traits = { coastal_defence_naval_manufacturer }

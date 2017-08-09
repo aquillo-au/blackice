@@ -1636,7 +1636,11 @@ intel_minister = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				ca_tech = 0.10
+				pbb_tech = 0.10
+				bc_tech = 0.10
+				bb_tech = 0.10
+				shbb_tech = 0.10
 			}
 
 			traits = { grand_battlefleet_naval_manufacturer }
@@ -1655,7 +1659,8 @@ intel_minister = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				dd_tech = 0.10
+				cl_tech = 0.10
 			}
 
 			traits = { fleet_escort_naval_manufacturer }
@@ -1669,7 +1674,11 @@ intel_minister = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				ca_tech = 0.10
+				pbb_tech = 0.10
+				bc_tech = 0.10
+				bb_tech = 0.10
+				shbb_tech = 0.10
 			}
 
 			traits = { surface_raider_naval_manufacturer }
@@ -2409,7 +2418,7 @@ intel_minister = {
 			available = {
 
 			}
-			traits = { navy_chief_decisive_battle_2 }
+			traits = { navy_chief_surface_raider_doctrine }
 			
 			ai_will_do = {
 				factor = 1
@@ -2425,7 +2434,7 @@ intel_minister = {
 				original_tag = GER
 			}
 			
-			traits = { navy_chief_commerce_raiding_3 }
+			traits = { navy_chief_submarine_raider_doctrine }
 			
 			ai_will_do = {
 				factor = 1
@@ -2526,46 +2535,90 @@ intel_minister = {
 				factor = 0
 			}
 		}
-		erich_bey = {
+		hans_georg_von_friedeburg = {
+			
 			
 			allowed = {
 				original_tag = GER
 			}
-			
-			traits = { navy_naval_air_defense_2 }
+						
+			traits = { ger_navy_high_command_submarine_raiding_commander_1 }
 			
 			ai_will_do = {
 				factor = 1
-				modifier = {
-					factor = 0
-					date > 1943.6.1
-				}
 			}
 		}
+		
 		gunther_lutjens = {
 			
-			allowed = {
-				original_tag = GER
-			}
-			
-			traits = { navy_fleet_logistics_2 }
-			
-			ai_will_do = {
-				factor = 0
-			}
-		}
-		viktor_schutze = {
 			
 			allowed = {
 				original_tag = GER
 			}
-			
-			traits = { navy_anti_submarine_1 }
+						
+			traits = { ger_navy_high_command_surface_raiding_commander_1 }
 			
 			ai_will_do = {
-				factor = 0
+				factor = 1
 			}
 		}
+		
+		oskar_kummetz = {
+			
+			
+			allowed = {
+				original_tag = GER
+			}
+						
+			traits = { ger_navy_high_command_grand_battlefleet_commander_1 }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		otto_schniewind = {
+			
+			
+			allowed = {
+				original_tag = GER
+			}
+						
+			traits = { ger_navy_high_command_fleet_admiral_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		alfred_saalwachter_naval_maneuvering = {
+			
+			
+			allowed = {
+				original_tag = GER
+			}
+						
+			traits = { ger_navy_high_command_naval_maneuvering_commander_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		martin_harlinghausen = {
+			
+			
+			allowed = {
+				original_tag = GER
+			}
+						
+			traits = { ger_navy_high_command_land_based_naval_air_support_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+				
 	}
 }
 ## EOF ##

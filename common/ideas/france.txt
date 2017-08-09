@@ -1873,14 +1873,14 @@ economic_minister = {
 
 
 
-			traits = { navy_chief_decisive_battle_2 }
+			traits = { navy_chief_defensive_naval_doctrine }
 
 			ai_will_do = {
 				factor = 1
 			}
 		}
 
-		marcel_gensoul = {
+		georges_durand_viel = {
 
 
 			allowed = {
@@ -1889,14 +1889,14 @@ economic_minister = {
 
 
 
-			traits = { navy_chief_naval_aviation_1 }
+			traits = { navy_chief_offensive_naval_doctrine }
 
 			ai_will_do = {
 				factor = 1
 			}
 		}
 
-		jean_marie_abrial = {
+		gabriel_auphan = {
 
 
 			allowed = {
@@ -1905,7 +1905,23 @@ economic_minister = {
 
 
 
-			traits = { navy_chief_commerce_raiding_2 }
+			traits = { navy_chief_naval_maneuvering }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		andre_lemonier = {
+
+
+			allowed = {
+				original_tag = FRA
+			}
+
+
+
+			traits = { navy_chief_naval_reformer }
 
 			ai_will_do = {
 				factor = 1
@@ -2059,6 +2075,38 @@ economic_minister = {
 			}
 		}
 
+		marcel_gensoul = {
+
+
+			allowed = {
+				original_tag = FRA
+			}
+
+
+
+			traits = { fra_navy_high_command_grand_battlefleet_commander_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		jean_marie_abrial = {
+
+
+			allowed = {
+				original_tag = FRA
+			}
+
+
+
+			traits = { fra_navy_high_command_convoy_defense_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
 		jean_de_laborde = {
 
 
@@ -2068,39 +2116,7 @@ economic_minister = {
 
 
 
-			traits = { navy_capital_ship_1 }
-
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		emile_muselier = {
-
-
-			allowed = {
-				original_tag = FRA
-			}
-
-
-
-			traits = { navy_fleet_logistics_2 }
-
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		rene_emile_godfroy = {
-
-
-			allowed = {
-				original_tag = FRA
-			}
-
-
-
-			traits = { navy_screen_2 }
+			traits = { fra_navy_high_command_carrier_naval_aviation_2 }
 
 			ai_will_do = {
 				factor = 1
@@ -2781,7 +2797,10 @@ naval_manufacturer = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				ca_tech = 0.10
+				bc_tech = 0.10
+				bb_tech = 0.10
+				shbb_tech = 0.10
 			}
 
 			traits = { grand_battlefleet_naval_manufacturer }
@@ -2803,7 +2822,8 @@ naval_manufacturer = {
 
 
 			research_bonus = {
-				naval_equipment = 0.10
+				dd_tech = 0.10
+				cl_tech = 0.10
 			}
 
 			traits = { fleet_escort_naval_manufacturer }
@@ -2819,7 +2839,10 @@ naval_manufacturer = {
 			}
 
 			research_bonus = {
-				naval_equipment = 0.10
+				cv_tech = 0.10
+				cvl_tech = 0.10
+				dd_tech = 0.05
+				cl_tech = 0.05
 			}
 
 			traits = { carrier_battlegroup_naval_manufacturer }
