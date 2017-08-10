@@ -109,7 +109,7 @@ NMapIcons = {
 		STRATEGIC_AIR_PRIORITY_NAVAL_COMBAT_RESULTS = 19,
 		STRATEGIC_AIR_PRIORITY_LAND_COMBAT = 20,
 		STRATEGIC_AIR_PRIORITY_NAVAL_MISSION = 13,
-		STRATEGIC_AIR_PRIORITY_AIR_MISSION = 29,
+		STRATEGIC_AIR_PRIORITY_AIR_MISSION = 290,
 		STRATEGIC_AIR_PRIORITY_SUPPLY = 14,
 		STRATEGIC_AIR_PRIORITY_CAPITAL = 5,
 		STRATEGIC_AIR_PRIORITY_PEACE_COST = 3,
@@ -490,7 +490,7 @@ NGraphics = {
 	SNAPPED_OFF_FRONT_SMOOTHEN_PASSES = 2,
 	ROOT_FRONT_SMOOTHNESS = 0.5,
 	ROOT_FRONT_SMOOTHEN_PASSES = 1,
-	ROOT_FRONT_OFFSET = 1.5,							-- How far the defensive line is offset from the front.
+	ROOT_FRONT_OFFSET = 2.0,							-- 1.5 How far the defensive line is offset from the front.
 	ROOT_FRONT_MAX_INTERSECTION_TESTS_FRONT = 30,		-- How many points before the current one to check for intersections against (optimization)
 	ROOT_FRONT_MAX_INTERSECTION_TESTS_ORDER = 25,		-- How many points before the current one to check for intersections against (optimization)
 	ORDER_FRONT_MAX_OFFSETS = 4,						-- Max amount, the overlapping defensive lines can offset from the border.
@@ -548,8 +548,8 @@ NGraphics = {
 	GRADIENT_BORDERS_COUNTRY_CENTER_THICKNESS = 2.0, -- The center gradient is linear 1/255 per pixel for this many pixels
 	GRADIENT_BORDERS_THICKNESS_COUNTRY_HIGH = 17.0, --25
 	GRADIENT_BORDERS_THICKNESS_STATE = 7.0, --11
-	GRADIENT_BORDERS_THICKNESS_SUPPLY_AREA_A = 2.0,
-	GRADIENT_BORDERS_THICKNESS_SUPPLY_AREA_B = 20.0,
+	GRADIENT_BORDERS_THICKNESS_SUPPLY_AREA_A = 2.0,	-- 2.0
+	GRADIENT_BORDERS_THICKNESS_SUPPLY_AREA_B = 20.0,	-- 20.0
 	GRADIENT_BORDERS_THICKNESS_STRATEGIC_REGIONS = 30.0, --80
 	GRADIENT_BORDERS_THICKNESS_RESISTANCE = 10.0,
 	GRADIENT_BORDERS_THICKNESS_RADARS = 20.0, -- (OBSOLETE)
@@ -570,16 +570,16 @@ NGraphics = {
 	GRADIENT_BORDERS_CAMERA_DISTANCE_OVERRIDE_FACTIONS = 0.0, 
 	GRADIENT_BORDERS_OPTIMIZATION_RANGE = 30.0, -- smaller value = faster gradient borders but may have artifacts on large provinces (value to balance)
 	GRADIENT_BORDERS_REFRESH_FREQ = 0.12, -- how frequent is gradient borders repainting (optimization for high-speed gameplay)
-	STRATEGIC_AIR_COLOR_BAD = {0.8, 0, 0, 1}, -- rgb
-	STRATEGIC_AIR_COLOR_GOOD = {0, 0.8, 0, 1},
-	STRATEGIC_AIR_COLOR_AVERAGE = {0.8, 0.8, 0, 1},
-	STRATEGIC_AIR_COLOR_NEUTRAL = {140.0/255, 131.0/255, 119.0/255, 1},
-	RESISTANCE_COLOR_GOOD = {0.8, 0.8, 0, 1}, -- rgb
-	RESISTANCE_COLOR_AVERAGE = {0.8, 0.4, 0, 1},
-	RESISTANCE_COLOR_BAD = {0.8, 0, 0, 1},
+	STRATEGIC_AIR_COLOR_BAD = {0.65, 0, 0, 1}, -- rgb						{0.8, 0, 0, 1}
+	STRATEGIC_AIR_COLOR_GOOD = {0, 0.65, 0, 1}, --							{0, 0.8, 0, 1},
+	STRATEGIC_AIR_COLOR_AVERAGE = {0.8, 0.8, 0, 1}, --						{0.8, 0.8, 0, 1},
+	STRATEGIC_AIR_COLOR_NEUTRAL = {130.0/255, 130.0/255, 130.0/255, 1},	--	{140.0/255, 131.0/255, 119.0/255, 1},
+	RESISTANCE_COLOR_GOOD = {0.0, 0.65, 0, 1}, -- rgb						{0.8, 0.8, 0, 1},
+	RESISTANCE_COLOR_AVERAGE = {0.65, 0.65, 0, 1},	--						{0.8, 0.4, 0, 1},
+	RESISTANCE_COLOR_BAD = {0.65, 0, 0, 1},	--								{0.8, 0, 0, 1},
 	CONSTRUCTION_CONVERSION_COLOR = { 0.9, 0.9, 0.3, 1},
-	STRATEGIC_NAVY_COLOR_MISSION = {1.0, 0.7, 0.0, 1},
-	STRATEGIC_NAVY_COLOR_NEUTRAL = {0.5, 0.5, 0.5, 1},
+	STRATEGIC_NAVY_COLOR_MISSION = {0.65, 0.65, 0.0, 1}, --					{1.0, 0.7, 0.0, 1},
+	STRATEGIC_NAVY_COLOR_NEUTRAL = {130.0/255, 130.0/255, 130.0/255, 1},	 --					{0.5, 0.5, 0.5, 1},
 	VIRTUAL_BATTLEPLANS_COLOR = { 0.2, 1.0, 0.2, 1 },
 	ALLIED_BATTLEPLANS_COLOR = { 0.3, 0.4, 1.0, 1 },
 	ORDERS_ARROW_SNAP_MIN_DIST = 20, -- distance in "map pixels" when snapping arrows works
@@ -605,7 +605,7 @@ NGraphics = {
 	VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {200, 500, 1000},  -- At what camera distance the VP name text disappears.
 	VICTORY_POINTS_DISTANCE_CUTOFF = {225, 550, 1100}, -- At what distance VPs are hidden
 	AIRBASE_ICON_DISTANCE_CUTOFF = 900, -- At what distance air bases are hidden
-	NAVALBASE_ICON_DISTANCE_CUTOFF = 1200, -- At what distance naval bases are hidden
+	NAVALBASE_ICON_DISTANCE_CUTOFF = 900, -- 1200 At what distance naval bases are hidden
 	RADAR_ICON_DISTANCE_CUTOFF = 900, -- At what distance the radars are hidden
 	RESOURCE_MAP_ICON_TEXT_CUTOFF = 800,  -- At what camera distance the resource name/amount text disappears.
 	PROVINCE_ANIM_TEXT_DISTANCE_CUTOFF = 750,
@@ -620,16 +620,16 @@ NGraphics = {
 	PROV_CONSTRUCTION_ICON_DISTANCE_CUTOFF = 400,
 	STATE_CONSTRUCTION_ICON_DISTANCE_CUTOFF = 800,
 	MAP_ICONS_GROUP_MAX_SIZE = 15, -- max size in screen pixels of the group of merged icons
-	MAP_ICONS_GROUP_CAM_DISTANCE = 125.0, -- 100 camera distance at which the icons begin to group up
-	MAP_ICONS_STATE_GROUP_CAM_DISTANCE = 225.0, -- Camera distance at which the icons begin to group up on state level
-	MAP_ICONS_STRATEGIC_GROUP_CAM_DISTANCE = 375, -- second camera distance at which the icons begin to group up
+	MAP_ICONS_GROUP_CAM_DISTANCE = 250.0, -- 100 camera distance at which the icons begin to group up
+	MAP_ICONS_STATE_GROUP_CAM_DISTANCE = 325.0, -- 225 Camera distance at which the icons begin to group up on state level
+	MAP_ICONS_STRATEGIC_GROUP_CAM_DISTANCE = 400, -- 375 second camera distance at which the icons begin to group up
 	MAP_ICONS_STRATEGIC_AREA_HUGE = 220,
 	MAP_ICONS_STATE_HUGE = 100,
 	MAPICON_GROUP_PASSES = 20, -- how many mapicons get processed per frame for grouping. more = quicker response, fewer = better performance
 	MAPICON_GROUP_STRATEGIC_SIZE = 1000, -- for strategic areas of this size or bigger we dont do strategic area grouping
-	MAP_ICONS_GROUP_SPLIT_SELECTED_LIMIT = 8,   -- Maximum number of units selected that will cause icon stacks to split
-	MAP_ICONS_COARSE_COUNTRY_GROUPING_DISTANCE = 350, -- Distance at which icon grouping becomes very coarse and merges different types of units
-	MAP_ICONS_COARSE_COUNTRY_GROUPING_DISTANCE_STRATEGIC = 350, -- Distance at which icon grouping becomes very coarse and merges different types of units for strategic mapmodes
+	MAP_ICONS_GROUP_SPLIT_SELECTED_LIMIT = 10,   -- 8 Maximum number of units selected that will cause icon stacks to split
+	MAP_ICONS_COARSE_COUNTRY_GROUPING_DISTANCE = 300, -- 350 Distance at which icon grouping becomes very coarse and merges different types of units
+	MAP_ICONS_COARSE_COUNTRY_GROUPING_DISTANCE_STRATEGIC = 0, -- 350 Distance at which icon grouping becomes very coarse and merges different types of units for strategic mapmodes
 	RIVER_FADE_FROM = 20.0, -- the last river endings got faded out, X distance from the ending...
 	RIVER_FADE_TO = 3.0,
 	TOOLTIP_DELAYED_DELAY = 1, 						--How long before showing delayed tooltip.
@@ -726,16 +726,16 @@ NGraphics = {
 	COUNTRY_UI_COLOR_BRIGHTNESS_MODIFIER = 1.0,
 	
 	COMMANDGROUP_PRESET_COLORS_HSV = {
-		90.0/360.0, 0.95, 0.86,
-		60.0/360.0, 0.95, 0.86,
-		30.0/360.0, 0.95, 0.86,
-		00.0/360.0, 0.95, 0.86,
-		330.0/360.0, 0.95, 0.86,
-		300.0/360.0, 0.95, 0.86,
-		270.0/360.0, 0.95, 0.86,
-		240.0/360.0, 0.95, 0.86,
-		210.0/360.0, 0.95, 0.86,
-		180.0/360.0, 0.95, 0.86
+		0.0/360.0, 1.0, 1.0,		-- red 			90.0/360.0, 0.95, 0.86,
+		10.0/360.0, 1.0, 1.0,		-- orange		60.0/360.0, 0.95, 0.86,
+		60.0/360.0, 1.0, 1.0,		-- yellow		30.0/360.0, 0.95, 0.86,
+		120.0/360.0, 0.75, 1.0,		-- green		00.0/360.0, 0.95, 0.86,
+		180.0/360.0, 1.0, 1.0,		-- turq			330.0/360.0, 0.95, 0.86,
+		235.0/360.0, 1.0, 1.0,		-- blue			300.0/360.0, 0.95, 0.86,
+		260.0/360.0, 1.0, 1.0,		-- dark purple	270.0/360.0, 0.95, 0.86,
+		300.0/360.0, 1.0, 1.0,		-- light purple	240.0/360.0, 0.95, 0.86,
+		330.0/360.0, 0, 1.0,		-- white		210.0/360.0, 0.95, 0.86,
+		--180.0/360.0, 0.95, 0.86
 	},
 	
 	CAMERA_OUTSIDE_MAP_DISTANCE_TOP = 200.0,
@@ -743,7 +743,7 @@ NGraphics = {
 
 	CAMERA_ZOOM_SPEED = 50,
 	CAMERA_ZOOM_KEY_SCALE = 0.02,
-	CAMERA_ZOOM_SPEED_DISTANCE_MULT = 6.0,				-- Zoom speed multiplier. When camera is max zoome out, the zooming in speed will get 100% of CAMERA_ZOOM_SPEED_DISTANCE_MULT zooming speed.
+	CAMERA_ZOOM_SPEED_DISTANCE_MULT = 20.0,				-- 6 Zoom speed multiplier. When camera is max zoome out, the zooming in speed will get 100% of CAMERA_ZOOM_SPEED_DISTANCE_MULT zooming speed.
 	
 	ORDERS_MOUSE_INTERSECT_DISTANCE_MULT = 2.6, 		-- For balancing the collision distance with painted arrows and fronts.
 	FRONTS_MOUSE_INTERSECT_DISTANCE_MULT = 6.6, 		-- For balancing the collision distance with painted arrows and fronts.
