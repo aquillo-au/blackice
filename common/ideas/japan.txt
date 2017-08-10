@@ -417,10 +417,38 @@ head_of_state = {
 	nosaka_hos = {
 		allowed = {
 			original_tag = "JAP"
-			has_government = communism
 		}
-		traits = { communist }
+		
+		available = {
+			has_government = communism		
+		}
+		
+		traits = { communist great_leader }
 	}
+	asanuma_inejiro = {
+			allowed = {
+				original_tag = JAP
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist demagogue }
+
+		}
+	hitoshi_yamakawa = {
+			allowed = {
+				original_tag = JAP
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist intellectual }
+
+		}
 	hirohito_hos = {
 		allowed = {
 			original_tag = "JAP"
@@ -520,81 +548,140 @@ foreign_minister = {
 			traits = { conservative ideological_crusader}
 			cancel_if_invalid = no
 		}
+		tokuda_kyuichi = {
+			allowed = {
+				original_tag = JAP
+			}
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist ideological_crusader }
+
+		}
+		tanahashi_kotora = {
+			allowed = {
+				original_tag = JAP
+			}
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist smooth_talking_charmer }
+
+		}
 }
 
 #Propaganda/Security
 interior_minister = {
-		shizuichi_tanaka = {
-			
-			picture = idea_shizuichi_tanaka
-			
-			allowed = {
-				original_tag = JAP
-			}
-			available = {
-			OR = {
-				has_government = fascism
-				has_government = monarchism
-				}
-			}
-			
-			traits = { fascist prince_of_terror }
+	shizuichi_tanaka = {
+		
+		picture = idea_shizuichi_tanaka
+		
+		allowed = {
+			original_tag = JAP
 		}
-		kingoro_hashimoto_interior = { 
-			allowed = {
-				original_tag = JAP
+		available = {
+		OR = {
+			has_government = fascism
+			has_government = monarchism
 			}
-			available = {
-			OR = {
-				has_government = fascism
-				has_government = monarchism
-				}
-			}
-			traits = {schemer fascist prince_of_terror }
-			cancel_if_invalid = no
-		}
-		sadao_araki_interior = { 
-			allowed = {
-				original_tag = JAP
-			}
-			available = {
-			OR = {
-				has_government = fascism
-				has_government = monarchism
-				}
-			}
-			traits = { fascist efficient_sociopath }
-			cancel_if_invalid = no
 		}
 		
-		ueki_koshiro = { 
-			allowed = {
-				original_tag = JAP
-			}
-			available = {
-				OR = {
-					has_government = conservatism
-					has_government = monarchism
-					has_government = liberalism
-				}
-			}
-			traits = { conservative crime_fighter }
-			cancel_if_invalid = no
+		traits = { fascist prince_of_terror }
+	}
+	kingoro_hashimoto_interior = { 
+		allowed = {
+			original_tag = JAP
 		}
+		available = {
+		OR = {
+			has_government = fascism
+			has_government = monarchism
+			}
+		}
+		traits = {schemer fascist prince_of_terror }
+		cancel_if_invalid = no
+	}
+	sadao_araki_interior = { 
+		allowed = {
+			original_tag = JAP
+		}
+		available = {
+		OR = {
+			has_government = fascism
+			has_government = monarchism
+			}
+		}
+		traits = { fascist efficient_sociopath }
+		cancel_if_invalid = no
+	}
+	
+	ueki_koshiro = { 
+		allowed = {
+			original_tag = JAP
+		}
+		available = {
+			OR = {
+				has_government = conservatism
+				has_government = monarchism
+				has_government = liberalism
+			}
+		}
+		traits = { conservative crime_fighter }
+		cancel_if_invalid = no
+	}
 
-		iwao_yamazaki = { 
+	iwao_yamazaki = { 
+		allowed = {
+			original_tag = JAP
+		}
+		available = {
+			OR = {
+				has_government = conservatism
+				has_government = monarchism
+				has_government = liberalism
+			}
+		}
+		traits = { conservative prince_of_terror }
+		cancel_if_invalid = no
+	}
+	fukumoto_kazuo_interior = { 
+	
+		allowed = {
+			original_tag = JAP
+		}
+		
+		available = {
+			has_government = communism
+		}
+		
+		traits = { communist prince_of_terror }
+
+	}
+	kanson_arahata = { 
+	
 			allowed = {
 				original_tag = JAP
 			}
 			available = {
-				OR = {
-					has_government = conservatism
-					has_government = monarchism
-					has_government = liberalism
-				}
+				has_government = communism
 			}
-			traits = { conservative prince_of_terror }
-			cancel_if_invalid = no
+			
+			traits = { communist hearts_and_minds }
+	
+		}
+	kenzo_yamamoto = { 
+			allowed = {
+				original_tag = JAP
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist crime_fighter }
+	
 		}
 }
 
@@ -633,6 +720,19 @@ intel_minister = {
 			traits = { conservative dismal_enigma }
 			
 			cancel_if_invalid = no
+		}
+		kyuichi_tokuda = { 
+	
+			allowed = {
+				original_tag = JAP
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist codebreaker }
+
 		}
 }
 
@@ -771,6 +871,56 @@ economic_minister = {
 				factor = 100
 			}
 		}
+	hajime_kawakami = { 
+	
+			allowed = {
+				original_tag = JAP
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist econ_interventionist}
+
+		}
+	fukumoto_kazuo = { 
+	
+			allowed = {
+				original_tag = JAP
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist guns_over_butter_advocate }
+
+		}
+	kanju_kato = { 
+			allowed = {
+				original_tag = JAP
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist committed_pacifist }
+
+		}
+	ninagawa_toruzo = { 
+			allowed = {
+				original_tag = JAP
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist quartermaster_general }
+			
+		}
 }
 
 #Advisors
@@ -887,6 +1037,33 @@ political_advisor = {
 			}
 			
 			traits = { silent_workhorse }
+		}
+		
+		takiji_kobayashi = { 
+
+		allowed = {
+			original_tag = JAP
+		}
+		
+		available = {
+			has_government = communism
+		}
+		
+		traits = { communist speechwriter }
+
+	}
+		miwa_masanori = { 
+	
+			allowed = {
+				original_tag = JAP
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist sympathetic_judge }
+	
 		}
 	}
 		

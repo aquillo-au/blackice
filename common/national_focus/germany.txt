@@ -2201,6 +2201,9 @@ focus_tree = {
 					if = { limit = { has_war_with = YUG }
 						YUG = { has_capitulated = yes }
 					}
+					if = { limit = { has_war_with = HUN }
+						HUN = { has_capitulated = YES }
+					}
 				}
 			}
 		}
@@ -2593,6 +2596,23 @@ focus_tree = {
 		mutually_exclusive = { focus = GER_danzig_vs_slovakia }
 		will_lead_to_war_with = POL
 		available = {
+			hidden_trigger = {
+				if = { limit = { is_ai = yes }
+					if = { limit = { has_war_with = FRA }
+						FRA = { has_capitulated = yes }
+						}
+					if = { limit = { has_war_with = SOV }
+						SOV = { has_capitulated = yes }
+						}
+					if = { limit = { has_war_with = YUG }
+						YUG = { has_capitulated = yes }
+					}
+					if = { limit = { has_war_with = HUN }
+						HUN = { has_capitulated = YES }
+					}
+				}
+			}
+					
 			is_puppet = no
 			OR = {
 				has_army_manpower = { size > 999999 } 
@@ -2834,6 +2854,20 @@ focus_tree = {
 				NOT = { BEL = { is_in_faction_with = GER } }
 				NOT = { LUX = { is_in_faction_with = GER } }
 			}
+			if = { limit = { is_ai = yes }
+				if = { limit = { has_war_with = POL }
+					POL = { has_capitulated = YES }
+				}
+				if = { limit = { has_war_with = SOV }
+					SOV = { has_capitulated = YES }
+				}
+				if = { limit = { has_war_with = YUG }
+					YUG = { has_capitulated = YES }
+				}
+				if = { limit = { has_war_with = HUN }
+					HUN = { has_capitulated = YES }
+				}
+			}
 		}
 
 		bypass = {
@@ -3023,14 +3057,16 @@ focus_tree = {
 		bypass = {
 			OR = {
 				CZE = { is_puppet_of = GER }
-				GER = { owns_state = 69 }			
+				GER = { controls_state = 69 }
+				69 = { 
+					CONTROLLER = {
+						has_war_with = GER
+					}
+				}
 			}
 		}
 		cancel = {
-			OR = {
-				NOT = { CZE = { owns_state = 69 } }
-				has_war_with = CZE
-			}
+			NOT = { CZE = { controls_state = 69 } HUN = { controls_state = 69 } }
 		}
 		cancel_if_invalid = yes
 		x = 14
@@ -3040,59 +3076,17 @@ focus_tree = {
 			factor = 10
 		}	
 		completion_reward = {
-			if =  {
-				limit = {
-					OR = {
-						has_war_with = ENG
-						has_war_with = FRA
-						CZE = { is_puppet = yes }
-						CZE = { has_war_with = ENG }
-					}
+			if = { 
+				limit = { 
 					CZE = { owns_state = 69 }
 				}
-				create_wargoal = {
-					type = take_state_focus
-					target = CZE
-					generator = { 69 }
-				}
+				country_event = germany.348			
 			}
-			if = {
-				limit = {
-					NOT = { has_war_with = ENG }
-					NOT = { has_war_with = FRA }
-					CZE = { is_puppet = no }
-					CZE = { NOT = { has_war_with = ENG } }
-					CZE = { owns_state = 69 }
+			if = { 
+				limit = { 
+					HUN = { owns_state = 69 }
 				}
-				ENG = {
-					country_event = germany.40
-				}
-				add_named_threat = { threat = 2 name = GER_demand_sudetenland_threat }
-			}
-			69 = {
-				add_claim_by = GER
-			}
-			if = {
-				limit = {
-					NOT = { CZE = { controls_state = 69 } }
-					69 = {
-						controller = {
-							NOT = { is_in_faction_with = GER }
-						}
-					}
-				}
-				add_named_threat = { threat = 2 name = GER_demand_sudetenland_threat }
-				69 = {
-					controller = {
-						GER = {
-							create_wargoal = {
-								type = take_state_focus
-								target = PREV
-								generator = { 69 }
-							}
-						}
-					}
-				}
+				country_event = germany.349			
 			}
 		}
 	}
@@ -3670,7 +3664,7 @@ focus_tree = {
 			add_research_slot = 1
 		}
 	}
-#########KRIESGMARINE##############
+#########KRIEGSMARINE##############
 	focus = {
 		id = GER_naval_rearmament
 		text = GER_naval_rearmament
@@ -4008,6 +4002,7 @@ focus_tree = {
 		mutually_exclusive = { focus = GER_weserubung }
 
 		available = {
+			date > 1939.10.1
 			country_exists = DEN
 			NOT = {
 				has_war_with = DEN
@@ -4018,6 +4013,7 @@ focus_tree = {
 					is_alone_or_in_faction_at_peace_with_GER = yes
 				}
 			}
+			has_completed_focus = GER_rhineland
 		}
 		bypass = {
 			OR = {
@@ -4601,6 +4597,9 @@ focus_tree = {
 						}
 					if = { limit = { has_war_with = SOV }
 						SOV = { has_capitulated = yes }
+					}
+					if = { limit = { has_war_with = HUN }
+						HUN = { has_capitulated = yes }
 					}
 				}
 			}

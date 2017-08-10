@@ -828,112 +828,103 @@ ideas = {
 			}
 		}
 	}
-
-##################
-####Politicians
-##################
-#HoS
-head_of_state = {
-	mikhail_kalinin = {
-			
-			
+	##################
+	####Politicians
+	##################
+	#HoS
+	head_of_state = {
+		mikhail_kalinin = {
 			allowed = {
 				original_tag = "SOV"
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purged_kalinin }
 				NOT = { has_country_flag = counter_purge }
 			}
-			
 
-			
 			traits = { communist popular_figurehead }
 		}
-	kirill_v_romanov = {
-
-
+		kirill_v_romanov = {
 			allowed = {
 				original_tag = "SOV"
-
 			}
+
 			cancel_if_invalid = yes
+			
 			available = {
-			NOT = { has_country_flag = kirill_dead }
+				NOT = { has_country_flag = kirill_dead }
 				original_tag = SOV
 				OR = { 
-				has_government = monarchism
-				AND = {
-					OR = {
-					has_government = conservatism
-					has_government = socialism
-					has_government = liberalism
+					has_government = monarchism
+					AND = {
+						OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
 						}
-					has_country_flag = const_tsar
+						has_country_flag = const_tsar
 					}
 				}
 			}
-
-
-
+			
 			traits = { monarchist popular_figurehead }
 		}
-	vladimir_k_romanov = {
-			
-
+		vladimir_k_romanov = {
 			allowed = {
 				original_tag = "SOV"
-
 			}
+			
 			available = {
-			has_country_flag = kirill_dead
+				has_country_flag = kirill_dead
 				original_tag = SOV
 				OR = { 
-				has_government = monarchism
-				AND = {
-					OR = {
-					has_government = conservatism
-					has_government = socialism
-					has_government = liberalism
+					has_government = monarchism
+					AND = {
+						OR = {
+							has_government = conservatism
+							has_government = socialism
+							has_government = liberalism
 						}
-					has_country_flag = const_tsar
+						has_country_flag = const_tsar
 					}
 				}
 			}
-
-
-
+			
 			traits = { monarchist popular_figurehead }
 		}
-	khrushchev_hos = {
-		allowed = {
+		khrushchev_hos = {
+			allowed = {
 				original_tag = SOV
 				has_government = communism
-		}
-		traits = { communist }
-	}
-	kerensky_hos = {
-		allowed = {
-				original_tag = SOV
-			OR= {
-				has_government = liberalism
-				has_government = conservatism
-				has_government = socialism
 			}
+			traits = { communist }
 		}
-		traits = { socialist effective_leader }
-	}
-	rodzaevsky_hos = {
-		allowed = {
+		kerensky_hos = {
+			allowed = {
+				original_tag = SOV
+				OR= {
+					has_government = liberalism
+					has_government = conservatism
+					has_government = socialism
+				}
+			}
+			
+			traits = { socialist effective_leader }
+		}
+		rodzaevsky_hos = {
+			allowed = {
 				original_tag = SOV
 				has_government = fascism
+			}
+			
+			traits = { fascist }
 		}
-		traits = { fascist }
-	}
-	pavel_milyukov = { 
+		pavel_milyukov = { 
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
 				OR = {
 					has_government = conservatism
@@ -941,24 +932,28 @@ head_of_state = {
 					has_government = liberalism
 				}
 			}
+			
 			traits = { conservative intellectual }
+			
 			cancel_if_invalid = no
 		}
-
-	iraklij_tsereteliy = { 
+		iraklij_tsereteliy = { 
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
 				OR = {
 					has_government = socialism
 					has_government = liberalism
 				}
 			}
+			
 			traits = { socialist ineffective_politician }
+			
 			cancel_if_invalid = no
 		}
-	viktor_baydalakov = { 
+		viktor_baydalakov = { 
 			allowed = { 
 				original_tag = SOV
 			}
@@ -971,9 +966,8 @@ head_of_state = {
 			}
 			
 			traits = { fascist tough_guy }
-			
 		}
-	vasily_biskupsky = { 
+		vasily_biskupsky = { 
 			allowed = { 
 				original_tag = SOV
 			}
@@ -986,9 +980,8 @@ head_of_state = {
 			}
 			
 			traits = { fascist war_hero }
-			
 		}
-	sergei_leuchtenberg = { 
+		sergei_leuchtenberg = { 
 			allowed = { 
 				original_tag = SOV
 			}
@@ -1001,55 +994,58 @@ head_of_state = {
 			}
 			
 			traits = { fascist popular_figurehead }
-			
 		}
-}
-#Foreign
-foreign_minister = {
-
-
+	}
+	#Foreign
+	foreign_minister = {
 		SOV_vyacheslav_molotov = {
-			
 			picture = idea_vyacheslav_molotov
 			
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
 				has_government = communism
 			}
 			
 			traits = { communist smooth_talking_charmer }
-	}
-	vasily_maklakov = { 
+		}
+		vasily_maklakov = { 
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
-			OR = {
-				has_government = conservatism
-				has_government = monarchism
-				has_government = liberalism
+				OR = {
+					has_government = conservatism
+					has_government = monarchism
+					has_government = liberalism
 				}
 			}
+			
 			traits = { conservative smooth_talking_charmer }
+			
 			cancel_if_invalid = no
 		}
-	mikhail_tereshchenko = { 
+		mikhail_tereshchenko = { 
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
-			OR = {
-				has_government = conservatism
-				has_government = socialism
-				has_government = liberalism
+				OR = {
+					has_government = conservatism
+					has_government = socialism
+					has_government = liberalism
 				}
 			}
+			
 			traits = { liberal ideological_crusader }
+			
 			cancel_if_invalid = no
 		}
-			aleksandr_kazembek = { 
+		aleksandr_kazembek = { 
 			allowed = { 
 				original_tag = SOV
 			}
@@ -1062,7 +1058,6 @@ foreign_minister = {
 			}
 			
 			traits = { fascist tough_negotiator }
-			
 		}
 		aleksandr_dikgof_derental = { 
 			allowed = { 
@@ -1077,23 +1072,18 @@ foreign_minister = {
 			}
 			
 			traits = { fascist compassionate_gentleman }
-			
-		}	
-	
-}
-
-#Propaganda/Security
-interior_minister = {
-	SOV_lavrentiy_beria = {
-			
+		}
+	}
+	#Propaganda/Security
+	interior_minister = {
+		SOV_lavrentiy_beria = {
 			picture = idea_lavrentiy_beria
 			
 			allowed = {
 				original_tag = SOV
 			}
 
-			available = 
-			{
+			available = {
 				custom_trigger_tooltip = {
 					tooltip =  SOV_beria_idea
 					has_country_flag = purge_2_group_a
@@ -1107,18 +1097,17 @@ interior_minister = {
 			traits = { communist prince_of_terror }
 		}
 		SOV_nikolai_yezhov = {
-			
 			picture = idea_nikolai_yezhov
 			
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
 				has_government = communism
 			}
 
-			available = 
-			{
+			available = {
 				NOT = { has_country_flag = counter_purge }
 				NOT = { has_country_flag = purge_2_group_a }
 			}
@@ -1129,27 +1118,33 @@ interior_minister = {
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
-			OR = {
-				has_government = socialism
-				has_government = liberalism
+				OR = {
+					has_government = socialism
+					has_government = liberalism
 				}
 			}
+		
 			traits = { socialist crime_fighter}
+			
 			cancel_if_invalid = no
 		}
 		aleksandr_protopopov = {  
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
-			OR = {
-				has_government = conservatism
-				has_government = liberalism
-				has_government = monarchism
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = monarchism
 				}
 			}
+			
 			traits = { conservative backroom_backstabber }
+			
 			cancel_if_invalid = no
 		}
 		vladimir_zenzinov = { #socialist
@@ -1161,8 +1156,7 @@ interior_minister = {
 				democratic_govt = yes
 			}
 			
-		traits = { socialist hearts_and_minds }
-		
+			traits = { socialist hearts_and_minds }
 		}
 		pavel_shatilov = { 
 			allowed = { 
@@ -1177,7 +1171,6 @@ interior_minister = {
 			}
 			
 			traits = { fascist crime_fighter }
-			
 		}
 		grigorij_semyonov = { 
 			allowed = { 
@@ -1192,7 +1185,6 @@ interior_minister = {
 			}
 			
 			traits = { fascist prince_of_terror }
-			
 		}
 		bronislav_kaminski = { 
 			allowed = { 
@@ -1207,7 +1199,6 @@ interior_minister = {
 			}
 			
 			traits = { fascist efficient_sociopath }
-			
 		}
 		pyotr_krasnov = { 
 			allowed = { original_tag = SOV }
@@ -1218,20 +1209,17 @@ interior_minister = {
 				}
 			}
 			traits = { monarchist hearts_and_minds }
-			
 		}
-		
-}
-
-#Intelligence
-intel_minister = {
+	}
+	#Intelligence
+	intel_minister = {
 		viktor_abakumov = {
-			
 			picture = idea_viktor_abakumov
 			
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
 				has_government = communism
 			}
@@ -1242,196 +1230,207 @@ intel_minister = {
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
-			OR = {
-				has_government = socialism
-				has_government = liberalism
+				OR = {
+					has_government = socialism
+					has_government = liberalism
 				}
 			}
+			
 			traits = { socialist codebreaker }
+			
 			cancel_if_invalid = no
 		}
 		vasily_shulgin = { 
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
-			OR = {
-				has_government = conservatism
-				has_government = liberalism
-				has_government = monarchism
-				has_government = fascism
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = monarchism
+					has_government = fascism
 				}
 			}
+			
 			traits = { conservative dismal_enigma }
+			
 			cancel_if_invalid = no
 		}
-		
-}
-
-#Economic
-economic_minister = {
-	SOV_nikolai_voznesensky = {
-		
-		picture = generic_political_advisor_europe_2
-		
-		allowed = {
-			original_tag = SOV
-		}
-		available = {
-			has_government = communism
-		}
-		
-		traits = { communist captain_of_industry }
 	}
-	valery_mezhlauk = {
-		
-		picture = idea_valery_mezhlauk
-		
-		allowed = {
-			original_tag = SOV
-		}
-		available = {
-			has_government = communism
-		}
-		
-		traits = { communist industrial_planner }
-	}
-	aleksandr_konovalov = { 
-		allowed = {
-			original_tag = SOV
-		}
-		available = {
-		OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = monarchism
-			}
-		}
-		traits = { conservative military_entrepreneur }
-		cancel_if_invalid = no
-	}
-	sergei_bulgakov = { 
-		allowed = {
-			original_tag = SOV
-		}
-		available = {
-		OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = monarchism
-			}
-		}
-		traits = { conservative public_works_focus }
-		cancel_if_invalid = no
-	}
-	dimitry_ustinov = { 
-		allowed = {
-			original_tag = SOV
-			}
-		available = {
-			has_government = communism
-		}
-		traits = { communist armaments_organizer }
-		cancel_if_invalid = no
-	}
-
-	lazar_kaganovich = { 
-		allowed = {
-			original_tag = SOV
-			}
-		available = {
-			has_government = communism
-		}
-		traits = { communist resource_industrialist }
-		cancel_if_invalid = no
-	}
-	boris_vannikov = { 
-		allowed = {
-			original_tag = SOV
-			}
-		available = {
-			has_government = communism
-		}
-		traits = { communist theoretical_scientist }
-		cancel_if_invalid = no
-	}
-	aleksei_putilov = { #monarchist
-	allowed = { 
-		original_tag = SOV
-	}
-	available = {
-		OR = {
-			has_government = monarchism		
-			has_government = fascism
-		}
-	}
-	traits = { monarchist industrial_planner }
-		
-	}
-	nikolai_krasnov = { 
-		allowed = { 
-			original_tag = SOV
-		}
-		
-		available = {
-			OR = {
-				has_government = monarchism		
-				has_government = fascism
-			}
-		}
-		
-		traits = { fascist quartermaster_general }
-		
-	}	
-	vladimir_kokovtsov = { 
-		allowed = { 
+	#Economic
+	economic_minister = {
+		SOV_nikolai_voznesensky = {
+			picture = generic_political_advisor_europe_2
+			
+			allowed = {
 				original_tag = SOV
 			}
 			
-		available = {
-			OR = {
-				has_government = monarchism		
-				has_government = fascism
+			available = {
+				has_government = communism
 			}
+			
+			traits = { communist captain_of_industry }
 		}
-		traits = { monarchist financier }
-		
-	}
-	ivan_ilyin = { #monarchist/fascist
-		allowed = { 
-			original_tag = SOV
-		}
-		
-		available = {
-			OR = {
-				has_government = monarchism		
-				has_government = fascism
+		valery_mezhlauk = {
+			picture = idea_valery_mezhlauk
+			
+			allowed = {
+				original_tag = SOV
 			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist industrial_planner }
 		}
-		
-		traits = { fascist econ_interventionist }
-		
+		aleksandr_konovalov = { 
+			allowed = {
+				original_tag = SOV
+			}
+			
+			available = {
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = monarchism
+				}
+			}
+			
+			traits = { conservative military_entrepreneur }
+			
+			cancel_if_invalid = no
+		}
+		sergei_bulgakov = { 
+			allowed = {
+				original_tag = SOV
+			}
+			
+			available = {
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = monarchism
+				}
+			}
+			
+			traits = { conservative public_works_focus }
+			
+			cancel_if_invalid = no
+		}
+		dimitry_ustinov = { 
+			allowed = {
+				original_tag = SOV
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist armaments_organizer }
+			
+			cancel_if_invalid = no
+		}
+		lazar_kaganovich = { 
+			allowed = {
+				original_tag = SOV
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist resource_industrialist }
+			
+			cancel_if_invalid = no
+		}
+		boris_vannikov = { 
+			allowed = {
+				original_tag = SOV
+			}
+			
+			available = {
+				has_government = communism
+			}
+			
+			traits = { communist theoretical_scientist }
+			
+			cancel_if_invalid = no
+		}
+		aleksei_putilov = { #monarchist
+			allowed = { 
+				original_tag = SOV
+			}
+			
+			available = {
+				OR = {
+					has_government = monarchism		
+					has_government = fascism
+				}
+			}
+			
+			traits = { monarchist industrial_planner }
+		}
+		nikolai_krasnov = { 
+			allowed = { 
+				original_tag = SOV
+			}
+			
+			available = {
+				OR = {
+					has_government = monarchism		
+					has_government = fascism
+				}
+			}
+			
+			traits = { fascist quartermaster_general }
+		}	
+		vladimir_kokovtsov = { 
+			allowed = { 
+				original_tag = SOV
+			}
+				
+			available = {
+				OR = {
+					has_government = monarchism		
+					has_government = fascism
+				}
+			}
+			
+			traits = { monarchist financier }
+		}
+		ivan_ilyin = { #monarchist/fascist
+			allowed = { 
+				original_tag = SOV
+			}
+			
+			available = {
+				OR = {
+					has_government = monarchism		
+					has_government = fascism
+				}
+			}
+			
+			traits = { fascist econ_interventionist }
+		}
 	}
-}
-
-#Advisors
-political_advisor = {
-		
+	#Advisors
+	political_advisor = {
 		nikita_khrushchev = {
-			
-			
 			allowed = {
 				original_tag = "SOV"
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purged_khrushchev }
 				NOT = { has_country_flag = counter_purge }
 			}
-			
 
-			
 			traits = { communist_revolutionary }
 	
 			on_add = {
@@ -1447,16 +1446,11 @@ political_advisor = {
 			ai_will_do = {
 				factor = 0
 			}
-		}	
-			
+		}
 		alexander_kerensky = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			traits = { socialist_reformer }
 	
@@ -1476,20 +1470,15 @@ political_advisor = {
 				factor = 0
 			}
 		}
-		
 		konstantin_rodzaevsky = {
-			
-			
 			allowed = {
 				original_tag = "SOV"
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = counter_purge }
 			}
-			
 
-			
 			traits = { fascist_demagogue }
 	
 			on_add = {
@@ -1512,21 +1501,19 @@ political_advisor = {
 			}
 
 			traits = { socialist_reformer }
+			
 			cancel_if_invalid = no
 		}
 	}
-		
+	## Army Chiefs
 	army_chief = {
-		
-		
 		semyon_timoshenko = {
 			#Also unit leader: 404
-			
 			allowed = {
 				original_tag = SOV
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_1_group_b }
 				hidden_trigger = {
 					NOT = { 
@@ -1538,24 +1525,20 @@ political_advisor = {
 					}
 				}
 			}
-			
 
-			
 			traits = { army_chief_reform_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		kliment_voroshilov = {
 			#Also unit leader: 405
-			
 			allowed = {
 				original_tag = SOV
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_1_group_b }
 				hidden_trigger = {
 					NOT = { 
@@ -1568,26 +1551,20 @@ political_advisor = {
 				}
 			}
 			
-
-			
 			traits = { army_chief_drill_1 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		alexander_yegorov = { #36-37
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_1_group_a }
 			}
-			
 			# PURGED
 			traits = { army_chief_morale_1 }
 			
@@ -1596,11 +1573,10 @@ political_advisor = {
 			}
 		}
 		shaposhnikov_coa = { #37-40
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
 				date < 1942.4.1
 			}
@@ -1612,11 +1588,10 @@ political_advisor = {
 			}
 		}
 		kirill_meretskov = { #40-41
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available = {
 				NOT = { has_country_flag = meretskov_arrested }
 			}
@@ -1628,11 +1603,10 @@ political_advisor = {
 			}
 		}
 		vasilevsky_coa = { #41-45
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
+			
 			available =	{
 				
 			}
@@ -1644,20 +1618,14 @@ political_advisor = {
 			}
 		}
 		vasily_blucher = {
-			
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available =	{
 				NOT = { has_country_flag = blucher_sacked }
 				NOT = { has_country_flag = purge_1_group_a }
 			}
-			
-
-			
 			# PURGED
 			traits = { army_chief_maneuver_2 }
 			
@@ -1666,15 +1634,12 @@ political_advisor = {
 			}
 		}	
 	}
+	## Supreme Commanders
 	supreme_commander = {
 		zhukov_sc = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			traits = { supreme_com_organizer }
 			
@@ -1683,14 +1648,10 @@ political_advisor = {
 			}
 		}
 		stalin_sc = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
 
-			
 			traits = { supreme_com_political }
 			
 			ai_will_do = {
@@ -1698,14 +1659,10 @@ political_advisor = {
 			}
 		}
 		timoshenko_sc = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
 
-			
 			traits = { supreme_com_reformer }
 			
 			ai_will_do = {
@@ -1713,22 +1670,16 @@ political_advisor = {
 			}
 		}
 	}
+	# Naval Chiefs
 	navy_chief = {
-		
 		pyotr_smirnov = {
-			
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_1_group_a }
 			}
-			
-
-			
 			# PURGED
 			traits = { navy_chief_naval_maneuvering }
 			
@@ -1736,21 +1687,14 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		
 		mikhail_frinovsky = {
-			
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_1_group_a }
 			}
-			
-
-			
 			# PURGED
 			traits = { navy_chief_submarine_raider_doctrine }
 			
@@ -1758,21 +1702,14 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		
 		nikolay_kuznetsov_defensive_naval_doctrine = {
-			
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_2_group_b }
 			}
-			
-
-			
 			# Not Purged, but eventually demoted
 			traits = { navy_chief_defensive_naval_doctrine }
 			
@@ -1780,24 +1717,32 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		
-	}
-	
-	air_chief = {
-		
-		
-		alexander_novikov = { #41-46
-						
+		ivan_yumashev = {
 			allowed = {
 				original_tag = SOV
-
 			}
+			
+			available = {
+				NOT = { has_country_flag = purge_1_group_b }
+			}
+
+			traits = { navy_chief_decisive_battle_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+	}
+	## Air Chiefs
+	air_chief = {
+		alexander_novikov = { #41-46
+			allowed = {
+				original_tag = SOV
+			}
+			
 			available = {
 				NOT = { has_country_flag = purge_2_group_a has_country_flag = novikov_fired }
 			}
-			
-
-			
 			# Not Purged, but imprisoned
 			traits = { air_chief_reform_3 }
 			
@@ -1805,42 +1750,28 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		
 		konstantin_vershinin = { #46-49
-			
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			available = {
 				NOT = { has_country_flag = purge_2_group_b }
 			}
-			
 
-			
 			traits = { air_chief_ground_support_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		yakov_smushkevich = { #39-41
-			
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_2_group_a has_country_flag = smushkevich_arrested }
 			}
-			
-
-			
 			# PURGED
 			traits = { air_chief_safety_2 } # Could also have reform
 			
@@ -1849,19 +1780,13 @@ political_advisor = {
 			}
 		}
 		aleksandr_loktionov = { #36-39
-			
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_2_group_a has_country_flag = loktionov_fired }
 			}
-			
-
-			
 			# PURGED
 			traits = { air_chief_ground_support_1 }
 			
@@ -1869,20 +1794,14 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		pavel_rychagov = { 
-			
-			
+		pavel_rychagov = {
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_2_group_a }
 			}
-			
-
-			
 			# PURGED
 			traits = { air_chief_all_weather_2 }
 			
@@ -1891,18 +1810,15 @@ political_advisor = {
 			}
 		}	
 	}
-	
-	
+	#High Commanders
 	high_command = {
-	
 		ivan_konev = {
 			#Also unit leader: 408
-			
 			allowed = {
 				original_tag = SOV
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = counter_purge }
 				custom_trigger_tooltip = {
 				tooltip = SOV_konev_civil_war
@@ -1916,25 +1832,19 @@ political_advisor = {
 				}
 			}
 			
-
-			
 			traits = { army_concealment_2 }
 			# Almost certainly a psychopath
-			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		aleksandr_vasilevsky = {
 			#Also unit leader: 407
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_2_group_b }
 				hidden_trigger = {
 					NOT = { 
@@ -1947,18 +1857,14 @@ political_advisor = {
 				}
 			}
 			
-
-			
 			traits = { army_regrouping_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		konstantin_rokossovsky = {
 			#Also unit leader: 402
-			
 			allowed = {
 				original_tag = SOV # Unlocked via focus
 				hidden_trigger = {
@@ -1971,35 +1877,26 @@ political_advisor = {
 					}
 				}
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_1_group_b }
 				has_completed_focus = SOV_positive_heroism
 			}
-			
-
-			
 			# Not purged, but tried and tortured, then released
 			traits = { army_armored_3 }
 			
 			ai_will_do = {
 				factor = 1
 			}
-		}	
-		
+		}
 		pavel_zhigarev = {
-			
-			
 			allowed = {
 				original_tag = SOV
-
-			}
-			available = 
-			{
-				NOT = { has_country_flag = counter_purge }
 			}
 			
-
+			available = {
+				NOT = { has_country_flag = counter_purge }
+			}
 			
 			traits = { air_airborne_1 }
 			
@@ -2007,21 +1904,14 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		
 		sergei_khudyakov = {
-			
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_2_group_b }
 			}
-			
-
-			
 			# Purged, but post-war
 			traits = { air_close_air_support_2 }
 			
@@ -2029,37 +1919,28 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		
 		stepan_krasovsky = {
-			
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = counter_purge }
 			}
-			
 
-			
 			traits = { air_air_combat_training_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
-		}	
-		
+		}
 		vladimir_kasatonov = {
 			#Also unit leader: 403
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_1_group_b }
 				hidden_trigger = {
 					NOT = { 
@@ -2071,25 +1952,20 @@ political_advisor = {
 					}
 				}
 			}
-			
 
-			
 			traits = { sov_navy_high_command_submarine_raiding_commander_1 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		gordey_levchenko = {
 			#Also unit leader: 406
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_2_group_a }
 				hidden_trigger = {
 					NOT = { 
@@ -2101,9 +1977,6 @@ political_advisor = {
 					}
 				}
 			}
-			
-
-			
 			# Not purged, but arrested and released
 			traits = { sov_navy_high_command_grand_battlefleet_commander_1 }
 			
@@ -2111,16 +1984,13 @@ political_advisor = {
 				factor = 1
 			}
 		}
-		
 		arseniy_golovko = {
 			#Also unit leader: 409
-			
 			allowed = {
 				original_tag = SOV
-
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = counter_purge }
 				hidden_trigger = {
 					NOT = { 
@@ -2133,23 +2003,16 @@ political_advisor = {
 				}
 			}
 			
-
-			
 			traits = { sov_navy_high_command_convoy_defense_1 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-
 		nikolay_kuznetsov = {
-
-
 			allowed = {
 				original_tag = SOV
 			}
-
-
 
 			traits = { sov_navy_high_command_fleet_admiral_1 }
 
@@ -2158,7 +2021,6 @@ political_advisor = {
 			}
 		}
 	}
-		
 	tank_manufacturer = {
 		
 		designer = yes
