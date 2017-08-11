@@ -864,53 +864,50 @@ ideas = {
 				communism_drift = -0.05
 			}
 		}
-
 	}
+	##################
+	####Politicians
+	##################
+	#HoS
+	head_of_state = {
+		thorez_hos = {
+			allowed = {
+				original_tag = "FRA"
 
-##################
-####Politicians
-##################
-#HoS
-head_of_state = {
-	thorez_hos = {
-		allowed = {
-			original_tag = "FRA"
-
+				}
+			available = {
+				has_government = communism
 			}
-		available = {
-			has_government = communism
+				traits = { communist }
 		}
-			traits = { communist }
-	}
-	bucard_hos = {
-		allowed = {
-			original_tag = "FRA"
-		}
-		available = {
-			has_government = fascism
-		}
-		traits = { fascist }
-	}
-	albert_lebrun = {
-
-		allowed = {
-			original_tag = "FRA"
-
-		}
-
-		available = {
-			OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
+		bucard_hos = {
+			allowed = {
+				original_tag = "FRA"
 			}
+			
+			available = {
+				has_government = fascism
+			}
+			
+			traits = { fascist }
 		}
-	picture = idea_albert_lebrun
+		albert_lebrun = {
+			allowed = {
+				original_tag = "FRA"
+			}
 
-	traits = { apolitical elder_statesman }
+			available = {
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+				}
+			}
 
-	}
-	benoit_frachon_hos = { 
+			traits = { apolitical elder_statesman }
+
+		}
+		benoit_frachon_hos = { 
 			allowed = { 
 				original_tag = FRA
 			}
@@ -922,7 +919,7 @@ head_of_state = {
 			traits = { communist union_leader }
 			
 		}
-	duclos_hos = { 
+		duclos_hos = {
 			allowed = { 
 				original_tag = FRA
 			}
@@ -934,7 +931,7 @@ head_of_state = {
 			traits = { communist effective_leader }
 			
 		}
-	georges_valois= { 
+		georges_valois = { 
 			allowed = { 
 				original_tag = FRA
 			}
@@ -946,7 +943,7 @@ head_of_state = {
 			traits = { fascist tough_guy }
 			
 		}
-	hubert_lagardelle = { 
+		hubert_lagardelle = { 
 			allowed = { 
 				original_tag = FRA
 			}
@@ -958,7 +955,7 @@ head_of_state = {
 			traits = { fascist intellectual }
 			
 		}
-	pierre_laval = { 
+		pierre_laval = { 
 			allowed = { 
 				original_tag = FRA
 			}
@@ -970,7 +967,7 @@ head_of_state = {
 			traits = { fascist elder_statesman }
 			
 		}
-	charles_maurras = { 
+		charles_maurras = { 
 			allowed = { 
 				original_tag = FRA
 			}
@@ -985,15 +982,14 @@ head_of_state = {
 			traits = { monarchist demagogue}
 			
 		}
-}
-
-#Foreign
-foreign_minister = {
-	FRA_paul_baudouin = {
-
+	}
+	#Foreign
+	foreign_minister = {
+		paul_baudouin = {
 			allowed = {
 				original_tag = "FRA"
 			}
+			
 			available = {
 				OR = {
 					has_government = fascism	
@@ -1007,18 +1003,16 @@ foreign_minister = {
 			}
 		}
 		yvon_delbos = {
-
 			allowed = {
 				original_tag = "FRA"
 			}
+			
 			available = {
 				OR = {
-				has_government = liberalism
-				has_government = socialism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
-
-			picture = idea_yvon_delbos
 
 			traits = { socialist compassionate_gentleman}
 
@@ -1037,14 +1031,14 @@ foreign_minister = {
 			allowed = {
 				original_tag = "FRA"
 			}
+			
 			available = {
 				OR = {
-				has_government = liberalism
-				has_government = monarchism
-				has_government = conservatism
+					has_government = liberalism
+					has_government = monarchism
+					has_government = conservatism
 				}
 			}
-			picture = idea_georges_bonnet
 
 			traits = { conservative smooth_talking_charmer }
 
@@ -1056,13 +1050,16 @@ foreign_minister = {
 			allowed = {
 				original_tag = "FRA"
 			}
+			
 			available = {
 				OR = {
-				has_government = liberalism
-				has_government = socialism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
+			
 			traits = { ideological_crusader liberal}
+			
 			ai_will_do = {
 				factor = 1
 			}
@@ -1071,15 +1068,18 @@ foreign_minister = {
 			allowed = {
 				original_tag = "FRA"
 			}
+			
 			available = {
 				has_completed_focus = FRA_support_daladier
 				OR = {
-				has_government = liberalism
-				has_government = conservatism
-				has_government = socialism
+					has_government = liberalism
+					has_government = conservatism
+					has_government = socialism
 				}
 			}
+			
 			traits = { liberal naive_appeaser }
+			
 			ai_will_do = {
 				factor = 0
 			}
@@ -1088,10 +1088,13 @@ foreign_minister = {
 			allowed = {
 				original_tag = FRA
 			}
+			
 			available = {
 				has_government = communism
 			}
+			
 			traits = { communist ideological_crusader }
+			
 			ai_will_do = {
 				factor = 1
 			}
@@ -1100,10 +1103,13 @@ foreign_minister = {
 			allowed = {
 				original_tag = FRA
 			}
+			
 			available = {
 				has_government = communism
 			}
+			
 			traits = { communist compassionate_gentleman }
+			
 			ai_will_do = {
 				factor = 1
 			}
@@ -1112,10 +1118,13 @@ foreign_minister = {
 			allowed = {
 				original_tag = FRA
 			}
+			
 			available = {
 				has_government = communism
 			}
+			
 			traits = { communist smooth_talking_charmer }
+			
 			ai_will_do = {
 				factor = 1
 			}
@@ -1130,20 +1139,15 @@ foreign_minister = {
 			}
 			
 			traits = { fascist tough_negotiator }
-			
 		}	
-}
-
-#Propaganda/Security
-interior_minister = {
+	}
+	#Propaganda/Security
+	interior_minister = {
 		marx_dormoy = {
-
 			allowed = {
 				original_tag = "FRA"
 				has_government = socialism
 			}
-
-			picture = idea_marx_dormoy
 
 			traits = { socialist crime_fighter }
 
@@ -1158,13 +1162,10 @@ interior_minister = {
 			}
 		}
 		albert_sarraut = {
-
 			allowed = {
 				original_tag = "FRA"
 				has_government = conservatism
 			}
-
-			picture = idea_albert_sarraut
 
 			traits = { conservative crime_fighter }
 
@@ -1178,13 +1179,10 @@ interior_minister = {
 				factor = 1
 			}
 		}
-		FRA_jacques_duclos = {
-
+		jacques_duclos_interior = {
 			allowed = {
 				original_tag = "FRA"
 			}
-
-			picture = generic_political_advisor_europe_3
 
 			traits = { communist backroom_backstabber }
 
@@ -1196,10 +1194,13 @@ interior_minister = {
 			allowed = {
 				original_tag = FRA
 			}
+			
 			available = {
 				has_government = communism
 			}
+			
 			traits = { prince_of_terror communist}
+			
 			cancel_if_invalid = no
 		}
 		henri_gourdeaux = {
@@ -1216,11 +1217,12 @@ interior_minister = {
 			allowed = {
 				original_tag = FRA
 			}
+			
 			available = {
 				has_government = fascism
 			}
+			
 			traits = { prince_of_terror fascist}
-
 		}
 		jean_moulin = { #MOD
 			allowed = {
@@ -1230,7 +1232,9 @@ interior_minister = {
 					has_government = socialism
 				}
 			}
+			
 			traits = { liberal backroom_backstabber }
+			
 			ai_will_do = {
 				factor = 1
 			}
@@ -1245,9 +1249,8 @@ interior_minister = {
 			}
 			
 			traits = { fascist hearts_and_minds }
-			
 		}
-		pierre_costantini= { 
+		pierre_costantini = { 
 			allowed = { 
 				original_tag = FRA
 			}
@@ -1257,7 +1260,6 @@ interior_minister = {
 			}
 			
 			traits = { fascist prince_of_terror }
-			
 		}
 		rene_bousquet = { 
 			allowed = { 
@@ -1269,7 +1271,6 @@ interior_minister = {
 			}
 			
 			traits = { fascist crime_fighter }
-			
 		}
 	}
 	#Intelligence
@@ -1635,15 +1636,10 @@ economic_minister = {
 				factor = 0
 			}
 		}
-
 		leon_blum = {
-
-
 			allowed = {
 				original_tag = "FRA"
 			}
-
-
 
 			traits = { socialist_reformer }
 
@@ -1661,7 +1657,6 @@ economic_minister = {
 				factor = 0
 			}
 		}
-
 		marcel_bucard = {
 
 

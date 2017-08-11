@@ -9054,7 +9054,6 @@ country_event = {
 			
 		}
 	}
-	
 }
 country_event = {
 	id = germany.242
@@ -9391,7 +9390,13 @@ country_event = {
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "GER_29_mot_Division"
+			if = {
+				limit = {
+					has_army_experience > 75
+				}
+				army_experience = 75
+			}
+			#load_oob = "GER_29_mot_Division"
 			set_country_flag = mot_29
 		}
 	}
