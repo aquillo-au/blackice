@@ -181,7 +181,7 @@ ideas = {
 			picture = generic_fascism_drift_bonus
 			
 			modifier = {
-				fascism_drift = 0.03
+				fascism_drift = 0.05
 				fascism_acceptance = 85
 			}
 		}
@@ -199,7 +199,7 @@ ideas = {
 			picture = generic_fascism_drift_bonus
 			
 			modifier = {
-				monarchism_drift = 0.03
+				monarchism_drift = 0.05
 				monarchism_acceptance = 85
 			}
 		}
@@ -217,7 +217,7 @@ ideas = {
 			picture = generic_communism_drift_bonus
 			
 			modifier = {
-				communism_drift = 0.03
+				communism_drift = 0.05
 				communism_acceptance = 85
 			}
 		}
@@ -239,13 +239,13 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				communism_drift = -0.03
+				communism_drift = -0.05
 				communism_acceptance = -85
-				fascism_drift = -0.03
+				fascism_drift = -0.05
 				fascism_acceptance = -85
-				neutrality_drift = -0.03
+				neutrality_drift = -0.05
 				neutrality_acceptance = -85
-				monarchism_drift = -0.03
+				monarchism_drift = -0.05
 				monarchism_acceptance = -85
 			}
 		}
@@ -263,7 +263,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				liberalism_drift = 0.03
+				liberalism_drift = 0.05
 				liberalism_acceptance = 85
 			}
 		}
@@ -281,7 +281,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				socialism_drift = 0.03
+				socialism_drift = 0.05
 				socialism_acceptance = 85
 			}
 		}
@@ -299,7 +299,7 @@ ideas = {
 			picture = generic_democratic_drift_bonus
 			
 			modifier = {
-				conservatism_drift = 0.03
+				conservatism_drift = 0.05
 				conservatism_acceptance = 85
 			}
 		}
@@ -1253,7 +1253,7 @@ ideas = {
 			}
 
 			modifier = {
-				political_power_factor = -0.20
+				political_power_factor = -0.10
 				unity_factor = -0.05
 			}
 		}
@@ -1269,8 +1269,40 @@ ideas = {
 			}
 
 			modifier = {
-				political_power_factor = -0.20
+				political_power_factor = -0.15
 				unity_factor = -0.05
+			}
+		}
+		fighting_foreign_influence_propaganda2 = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = -0.10
+				unity_factor = -0.04
+			}
+		}
+		fighting_foreign_influence_propaganda3 = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = -0.05
+				unity_factor = -0.03
 			}
 		}
 		fighting_foreign_influence_arrest = {
@@ -1286,6 +1318,38 @@ ideas = {
 
 			modifier = {
 				political_power_factor = -0.20
+				unity_factor = -0.075
+			}
+		}
+		fighting_foreign_influence_arrest2 = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = -0.15
+				unity_factor = -0.06
+			}
+		}
+		fighting_foreign_influence_arrest3 = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = -0.10
 				unity_factor = -0.05
 			}
 		}
@@ -1301,8 +1365,507 @@ ideas = {
 			}
 
 			modifier = {
+				political_power_factor = -0.30
+				unity_factor = -0.10
+			}
+		}
+		fighting_foreign_influence_kill2 = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = -0.25
+				unity_factor = -0.09
+			}
+		}
+		fighting_foreign_influence_kill3 = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
 				political_power_factor = -0.20
+				unity_factor = -0.08
+			}
+		}
+		
+############SUB IDEOLOGY IDEAS##########
+	#Conservatism
+		sub_ideology_moderate = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = 0.025
+				drift_defence_factor = -0.10
+			}
+		}
+		sub_ideology_classical_liberalism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = -0.075
+				production_factory_max_efficiency_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		sub_ideology_social_conservatism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.05
+				drift_defence_factor = 0.20
+			}
+		}
+		sub_ideology_nationalism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.05
+				enemy_partisan_effect = 0.10
+				foreign_subversive_activites = -0.05
+			}
+		}
+	#Liberalism
+		sub_ideology_centrism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = 0.025
+				drift_defence_factor = -0.10
+			}
+		}
+		sub_ideology_social_liberalism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = -0.05
+				industrial_capacity_dockyard = 0.025
+				industrial_capacity_factory = 0.025
+			}
+		}
+		sub_ideology_progressivism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.025
+				political_power_factor = 0.01
+				consumer_goods_factor = 0.025
+			}
+		}
+		sub_ideology_populism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.05
+				production_factory_max_efficiency_factor = -0.025
+				production_factory_efficiency_gain_factor = -0.025
+			}
+		}
+	#Socialism
+		sub_ideology_social_democracy = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.05
+				political_power_factor = -0.025
+				consumer_goods_factor = 0.025
+			}
+		}
+		sub_ideology_syndicalism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.025
+				industrial_capacity_dockyard = 0.025
+				production_factory_max_efficiency_factor = -0.025
+				production_factory_efficiency_gain_factor = -0.025
+			}
+		}
+	#Communism
+		sub_ideology_marxism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				political_power_factor = 0.025
+				drift_defence_factor = -0.10
+			}
+		}
+		sub_ideology_leninism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+				unity_factor = -0.025
+				production_factory_efficiency_gain_factor = -0.025
+				production_factory_max_efficiency_factor = -0.025
+				political_power_factor = 0.025
+				communism_drift = 0.01
+			}
+		}
+		sub_ideology_stalinism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				foreign_subversive_activites = -0.10
+				enemy_partisan_effect = 0.075
 				unity_factor = -0.05
+				political_power_factor = 0.025
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		sub_ideology_anti_revisionism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.05
+				enemy_partisan_effect = 0.10
+				foreign_subversive_activites = -0.05
+			}
+		}
+		sub_ideology_anarchist_communism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.05
+				enemy_partisan_effect = 0.10
+				foreign_subversive_activites = -0.05
+			}
+		}
+	#Fascism
+		sub_ideology_nazism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				enemy_partisan_effect = 0.10
+				political_power_factor = 0.075
+				production_factory_efficiency_gain_factor = -0.025
+				production_factory_max_efficiency_factor = -0.025
+				industrial_capacity_factory = 0.025
+				industrial_capacity_dockyard = 0.025
+			}
+		}
+		sub_ideology_fascism_ideology = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				enemy_partisan_effect = 0.05
+				political_power_factor = 0.025
+				production_factory_efficiency_gain_factor = -0.01
+				production_factory_max_efficiency_factor = -0.01
+				industrial_capacity_factory = 0.01
+				industrial_capacity_dockyard = 0.01
+			}
+		}
+		sub_ideology_falangism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				industrial_capacity_dockyard = 0.025
+				industrial_capacity_factory = 0.025
+				unity_factor = -0.03
+			}
+		}
+		sub_ideology_vichy = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				industrial_capacity_dockyard = 0.025
+				industrial_capacity_factory = 0.025
+				unity_factor = -0.03
+			}
+		}
+		sub_ideology_rexism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				industrial_capacity_dockyard = 0.025
+				industrial_capacity_factory = 0.025
+				unity_factor = -0.03
+			}
+		}
+	#Neutrality
+		sub_ideology_despotism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				
+			}
+		}
+		sub_ideology_oligarchism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				
+			}
+		}
+		sub_ideology_moderatism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				
+			}
+		}
+		sub_ideology_the_peoples_tutelage = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				
+			}
+		}
+	#Monarchism
+		sub_ideology_absolutism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.025
+				drift_defence_factor = -0.05
+			}
+		}
+		sub_ideology_emiratism = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.05
+				drift_defence_factor = -0.10
+			}
+		}
+		sub_ideology_imperial = {
+			picture = generic_democratic_drift_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				unity_factor = 0.05
+				drift_defence_factor = -0.10
 			}
 		}
 	}

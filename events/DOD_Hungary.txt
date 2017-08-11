@@ -7610,3 +7610,144 @@ country_event = {
 	}
 }
 
+#AH - Austrian Manpower
+country_event = {
+	id = DOD_hungary.188
+	title = DOD_hungary.188.t
+	desc = DOD_hungary.188.desc 
+	picture = GFX_report_event_horthy2
+	trigger = {
+		tag = HUN
+		4 = { #Lower Austria
+			owner = { tag = HUN }
+		 }
+		NOT = {
+			9 = { #Bohemia
+				owner = { tag = HUN }
+			}
+		}
+		NOT = { 
+			has_country_flag = HUN_austrian_manpower_check
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {#Excellent
+		name = DOD_hungary.188.a
+		add_ideas = HUN_austrian_manpower
+		remove_ideas = HUN_czech_manpower
+		set_country_flag = HUN_austrian_manpower_check
+		clr_country_flag = HUN_combined_manpower_check
+	}
+}
+
+#AH - Czech Manpower
+country_event = {
+	id = DOD_hungary.189
+	title = DOD_hungary.189.t
+	desc = DOD_hungary.189.desc 
+	picture = GFX_report_event_horthy2
+	trigger = {
+		tag = HUN
+		9 = { #Bohemia
+			owner = { tag = HUN }
+		 }
+		NOT = {
+			4 = { #Lower Austria
+				owner = { tag = HUN }
+			}
+		}
+		NOT = { 
+			has_country_flag = HUN_czech_manpower_check
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {#Excellent
+		name = DOD_hungary.189.a
+		add_ideas = HUN_czech_manpower
+		remove_ideas = HUN_austrian_manpower
+		set_country_flag = HUN_czech_manpower_check
+		clr_country_flag = HUN_combined_manpower_check
+	}
+}
+
+#AH - Combined Manpower
+country_event = {
+	id = DOD_hungary.191
+	title = DOD_hungary.191.t
+	desc = DOD_hungary.191.desc 
+	picture = GFX_report_event_horthy2
+	trigger = {
+		tag = HUN
+		AND = {
+			4 = {
+				owner = { tag = HUN }
+			}
+			9 = {
+				owner = { tag = HUN }
+			}		
+		}
+		NOT = { 
+			has_country_flag = HUN_combined_manpower_check
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {#Excellent
+		name = DOD_hungary.191.a
+		remove_ideas = HUN_austrian_manpower
+		remove_ideas = HUN_czech_manpower
+		add_ideas = HUN_combined_manpower
+		set_country_flag = HUN_combined_manpower_check
+		clr_country_flag = HUN_czech_manpower_check
+		clr_country_flag = HUN_austrian_manpower_check
+	}
+}
+
+#AH - Lost both Austria/Czechoslovakia
+country_event = {
+	id = DOD_hungary.192
+	title = DOD_hungary.192.t
+	desc = DOD_hungary.192.desc 
+	picture = GFX_report_event_horthy2
+	trigger = {
+		tag = HUN
+		OR = {
+			has_idea = HUN_combined_manpower
+			has_idea = HUN_austrian_manpower
+			has_idea = HUN_czech_manpower
+		}
+		NOT = {
+			4 = { #Lower Austria
+				owner = { tag = HUN }
+			}
+			9 = { #Bohemia
+				owner = { tag = HUN }
+			}		
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = {#Damn
+		name = DOD_hungary.192.a
+		remove_ideas = HUN_combined_manpower
+		remove_ideas = HUN_austrian_manpower
+		remove_ideas = HUN_czech_manpower
+		clr_country_flag = HUN_combined_manpower_check
+		clr_country_flag = HUN_austrian_manpower_check
+		clr_country_flag = HUN_czech_manpower_check
+	}
+}

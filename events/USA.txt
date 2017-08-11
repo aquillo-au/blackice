@@ -256,7 +256,9 @@ country_event = {
 		}
 		
 		add_ideas = frank_knox
+		add_ideas = landon_hos
 		remove_ideas = john_nance_garner
+		remove_ideas = fdr_hos
 		create_country_leader = {
 			name = "Alf Landon"
 			desc = "POLITICS_ALF_LANDON_DESC"
@@ -264,13 +266,14 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = classical_liberalism
 			traits = {
+				conservative
 				staunch_constitutionalist
 			}
 		}
 	}
 }
 
-# Election of 1940: Roosevelt vs Wendell Wilkie
+# Election of 1940: Roosevelt vs Wendell Willkie
 country_event = {
 	id = usa.7
 	title = usa.7.t
@@ -328,11 +331,14 @@ country_event = {
 			expire = "1944.1.1"
 			ideology = moderate
 			traits = {
-				
+				conservative
+				business_tycoon
 			}
 		}
 		
 		add_ideas = charles_mcnary
+		add_ideas = wilkie_hos
+		remove_ideas = fdr_hos
 		remove_ideas = john_nance_garner
 		remove_ideas = great_depression
 	}
@@ -377,6 +383,8 @@ country_event = {
 		add_ideas = new_deal
 		retire_country_leader = yes
 		remove_ideas = great_depression
+		remove_ideas = landon_hos
+		add_ideas = fdr_hos
 		add_ideas = henry_wallace
 		remove_ideas = frank_knox
 		
@@ -431,7 +439,9 @@ country_event = {
 		}
 		
 		add_ideas = john_bricker
+		add_ideas = dewey_hos
 		remove_ideas = henry_wallace
+		remove_ideas = fdr_hos
 		create_country_leader = {
 			name = "Thomas E. Dewey"
 			desc = "POLITICS_THOMAS_DEWEY_DESC"
@@ -439,13 +449,14 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = moderate
 			traits = {
-				
+				conservative
+				effective_leader
 			}
 		}
 	}
 }
 
-# Election of 1944: Roosevelt vs Incumbent
+# Election of 1944: Roosevelt vs Incumbent Willkie
 country_event = {
 	id = usa.10
 	title = usa.10.t
@@ -479,8 +490,9 @@ country_event = {
 			ruling_party = liberalism
 			elections_allowed = yes
 		}
-		
+		add_ideas = fdr_hos
 		add_ideas = henry_wallace
+		remove_ideas = wilkie_hos
 		remove_ideas = charles_mcnary
 		
 		if = {
@@ -540,6 +552,8 @@ country_event = {
 			elections_allowed = yes
 		}
 		add_ideas = john_bricker
+		add_ideas = macarthur_hos
+		remove_ideas = fdr_hos
 		remove_ideas = henry_wallace
 		create_country_leader = {
 			name = "Douglas MacArthur"
@@ -548,7 +562,8 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = nationalism
 			traits = {
-				
+				conservative
+				war_hero
 			}
 		}
 		remove_unit_leader = 57
@@ -566,11 +581,7 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-		}
+		democratic_govt = yes
 		date > 1944.1.1
 		date < 1945.1.1
 		has_idea = new_deal
@@ -580,6 +591,13 @@ country_event = {
 	option = { 
 		name = usa.12.a
 		country_event = { id = usa.9 }
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
 	}
 
 	option = { 
@@ -597,7 +615,7 @@ country_event = {
 
 	trigger = {
 		tag = USA
-		date > 1945.3.29
+		date > 1944.7.29
 		has_idea = new_deal
 		has_government = liberalism
 	}
@@ -605,12 +623,13 @@ country_event = {
 	fire_only_once = yes
 
 	mean_time_to_happen = {
-		days = 365
+		days = 200
 	}
 	
 	option = {
 		name = usa.13.a
 		add_political_power = -40
+		add_national_unity = -0.05
 		kill_country_leader = yes
 		remove_ideas = harry_truman
 		create_country_leader = {
@@ -620,7 +639,8 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = progressivism
 			traits = {
-				
+				liberal
+				tough_guy
 			}
 		}
 	}

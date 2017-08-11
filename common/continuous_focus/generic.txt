@@ -26,7 +26,7 @@ continuous_focus_palette = {
 		
 		supports_ai_strategy = ai_focus_naval
 		
-		daily_cost = 0.9
+		daily_cost = 1
 		
 		available_if_capitulated = yes
 	}
@@ -47,7 +47,7 @@ continuous_focus_palette = {
 		
 		supports_ai_strategy = ai_focus_aviation
 		
-		daily_cost = 0.9
+		daily_cost = 1
 		
 		available_if_capitulated = yes
 	}
@@ -79,7 +79,7 @@ continuous_focus_palette = {
 		
 		supports_ai_strategy = ai_focus_defense
 		
-		daily_cost = 0.9
+		daily_cost = 1
 		
 		available_if_capitulated = yes
 	}
@@ -102,7 +102,7 @@ continuous_focus_palette = {
 		
 		supports_ai_strategy = ai_focus_defense
 		
-		daily_cost = 0.9
+		daily_cost = 1
 		
 		available_if_capitulated = yes
 	}
@@ -129,7 +129,7 @@ continuous_focus_palette = {
 		
 		supports_ai_strategy = ai_focus_military_advancements
 		
-		daily_cost = 0.9
+		daily_cost = 1
 		
 		available_if_capitulated = yes
 	}
@@ -157,7 +157,7 @@ continuous_focus_palette = {
 		
 		supports_ai_strategy = ai_focus_military_advancements
 		
-		daily_cost = 0.9
+		daily_cost = 1
 		
 		available_if_capitulated = yes
 	}
@@ -201,7 +201,7 @@ continuous_focus_palette = {
 		
 		supports_ai_strategy = ai_focus_military_advancements
 		
-		daily_cost = 0.9
+		daily_cost = 1
 		
 		available_if_capitulated = yes
 	}
@@ -285,6 +285,33 @@ continuous_focus_palette = {
 				factor = 10
 				has_national_unity < 0.40
 			}
+		}
+		
+		supports_ai_strategy = ai_focus_defense
+		
+		daily_cost = 1
+		
+		available_if_capitulated = no
+	}
+	focus = {
+		id = continuous_invest_research
+		
+		icon = GFX_focus_research
+		
+		available = {
+
+		}
+
+		enabled = {
+			
+		}
+
+		modifier = {
+			research_time_factor = -0.03
+		}
+		
+		ai_will_do = {
+			factor = 1
 		}
 		
 		supports_ai_strategy = ai_focus_defense
