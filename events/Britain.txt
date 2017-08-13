@@ -244,7 +244,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 40
+		days = 30
 	}
 
 	immediate = { set_country_flag = chamberlain_resigned }
@@ -296,6 +296,17 @@ country_event = {
 	option = {
 		name = britain.10.a
 		kill_country_leader = yes
+		create_country_leader = {
+			name = "Winston Churchill"
+			desc = "POLITICS_WINSTON_CHURCHILL_DESC"
+			picture = "Portrait_Britain_Winston_Churchill.dds"
+			expire = "1965.1.1"
+			ideology = social_conservatism
+			traits = {
+				conservative
+				great_leader
+			}
+		}
 	}
 	option = {
 		name = britain.10.b

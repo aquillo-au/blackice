@@ -83,6 +83,7 @@ country_event = {
 			name = germany.4.t
 		}
 		set_country_flag = AUS_annexed
+		set_country_flag = recent_major_land_acquisition
 		if = {
 			limit = {
 				has_dlc = "Death or Dishonor"
@@ -3342,6 +3343,7 @@ country_event = {
 		74 = { add_core_of = GER }
 		GER = { transfer_state = 74 }
 		set_country_flag = sudetenland_acquired
+		set_country_flag = recent_major_land_acquisition
 
 		if = {
 			limit = {
@@ -4474,6 +4476,7 @@ country_event = {
 	immediate = {
 		remove_opinion_modifier = { target = ENG modifier = early_ENG_GER_relations }
 		ENG = { remove_opinion_modifier = { target = GER modifier = early_ENG_GER_relations } }
+		set_country_flag = recent_major_land_acquisition
 	}
 	option = {
 		name = germany.55.a
@@ -5983,7 +5986,7 @@ country_event = {
 			POL = { transfer_state = 664 }
 		}
 		transfer_state = 85
-
+		set_country_flag = recent_major_land_acquisition
 		hidden_effect = {
 			news_event = { hours= 6 id = news.202 }
 			set_global_flag = poland_swap_danzig
@@ -6217,6 +6220,7 @@ country_event = {
 		name = germany.87.a
 		transfer_state = 85
 		remove_state_claim = 86
+		set_country_flag = recent_major_land_acquisition
 	}
 }
 
@@ -6558,7 +6562,14 @@ country_event = {
 	picture = GFX_report_event_german_inspect_troops
 	
 	is_triggered_only = yes
-	
+	immediate = { 
+		if = { 
+			limit = { 
+				NOT = { OR = { has_war_with = ENG has_war_with = FRA } }
+			}
+			set_country_flag = recent_major_land_acquisition
+		}
+	}
 	option = {
 		name = germany.98.a
 		ai_chance = { 
@@ -9054,6 +9065,7 @@ country_event = {
 			
 		}
 	}
+	
 }
 country_event = {
 	id = germany.242
@@ -10774,9 +10786,8 @@ country_event = {
 
 	option = { #Back down
 		name = germany.311.a
-		add_political_power = -25
-		add_national_unity = -0.01
-		ruling_pop_minus_5 = yes
+		add_political_power = 10
+		ruling_pop_minus_1 = yes
 		remove_state_claim = 39 #South Tyrol
 		ai_chance = {
 			base = 75
@@ -10793,6 +10804,9 @@ country_event = {
 			target = ITA
 			generator = { 39 }
 		}
+		add_political_power = -30
+		add_national_unity = -0.03
+		ruling_pop_minus_3 = yes
 		ai_chance = {
 			base = 25
 			modifier = {
@@ -10818,7 +10832,7 @@ country_event = {
 
 	option = { #Propose a Referendum
 		name = germany.312.a
-		
+		BEL = { country_event = germany.313 }
 		ai_chance = {
 			factor = 1
 			
@@ -10826,7 +10840,7 @@ country_event = {
 	}
 	option = { #Demand its Return
 		name = germany.312.b
-		
+		BEL = { country_event = germany.341 }
 		ai_chance = {
 			factor = 1
 			
@@ -11265,6 +11279,129 @@ country_event = {
 			factor = 0
 			
 		}
+	}
+}
+
+######## Austria-Hungary owns Slovenia, GER NF Demands it ###########
+#AH receives demand
+country_event = {
+	id = germany.373
+	title = germany.373.t
+	desc = germany.373.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.373.a	#We have no choice...
+		GER = { country_event = germany.374 }
+		effect_tooltip = {
+			GER = {
+				transfer_state = 102
+			}
+		}
+	}
+	option = {
+		name = germany.373.b	#Hell no!
+		effect_tooltip = {
+			GER = {
+				create_wargoal = {
+					type = take_state_focus
+					target = HUN
+					generator = { 102 }
+				}
+			}
+		}
+		GER = { country_event = germany.375 }
+	}
+}
+
+#AH agrees
+country_event = {
+	id = germany.374
+	title = germany.374.t
+	desc = germany.374.desc
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.374.a	#Excellent
+		GER = { transfer_state = 102 }
+		set_country_flag = slovenia_acquired
+		hidden_effect = {
+			news_event = { id = news.163 hours = 6 }
+		}
+	}
+}
+
+#AH refuses
+country_event = {
+	id = germany.375
+	title = germany.375.t
+	desc = germany.375.desc
+	picture = GFX_report_event_german_politician_speech
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = germany.375.a	#Then we shall take it!
+		create_wargoal = {
+					type = take_state_focus
+					target = HUN
+					generator = { 102 }
+		}
+		add_political_power = -35
+	}
+	
+	option = {
+		name = germany.375.b	#We must back down for now...
+		add_state_claim = 102
+		ruling_pop_minus_5 = yes
+		add_national_unity = -0.03
+		add_political_power = 10
+	}
+}
+
+############ ALLIED ANGER EVENTS #############
+
+#Allied Anger: Trigger to time how long until reduction event can fire
+country_event = {
+	id = germany.376
+	title = germany.376.t
+	desc = germany.376.desc
+	picture = GFX_report_event_german_politician_speech
+	hidden = yes
+	trigger = {
+		has_country_flag = recent_major_land_acquisition
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+
+	option = {
+		name = germany.376.a	
+		set_country_flag = good_boy_GER
+		clr_country_flag = recent_major_land_acquisition
+	}
+}
+
+#Allied Anger: Been awhile since GER did something, goes down a level
+country_event = {
+	id = germany.378
+	title = germany.378.t
+	desc = germany.378.desc
+	picture = GFX_report_event_german_politician_speech
+	hidden = yes
+	trigger = {
+		has_country_flag = good_boy_GER
+	}
+	mean_time_to_happen = {
+		days = 365
+	}
+	option = {
+		name = germany.378.a	
+		decrease_allied_anger = yes
 	}
 }
 

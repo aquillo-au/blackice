@@ -1,7 +1,7 @@
 ﻿
 add_namespace = blackicenavalevents
 
-country_event = { #IJN Hiryu-class 
+news_event = { #IJN Hiryu-class 
 	id = blackicenavalevents.1
 	title = blackicenavalevents.1.t
 	desc = blackicenavalevents.1.d
@@ -20,9 +20,17 @@ country_event = { #IJN Hiryu-class
 	
 	option = {
 		name = blackicenavalevents.1.a
+		trigger = { tag = JAP }
+	}	
+	option = {
+        name = blackicenavalevents.1.b
+        trigger = { 
+            NOT = { tag = JAP }
+            JAP = { has_war = no }
+        }
 	}
 }
-country_event = { #IJN Shokaku-class 
+news_event = { #IJN Shokaku-class 
 	id = blackicenavalevents.2
 	title = blackicenavalevents.2.t
 	desc = blackicenavalevents.2.d
@@ -41,9 +49,17 @@ country_event = { #IJN Shokaku-class
 	
 	option = {
 		name = blackicenavalevents.2.a
+		trigger = { tag = JAP }
+	}
+	option = {
+        name = blackicenavalevents.2.b
+        trigger = { 
+            NOT = { tag = JAP }
+            JAP = { has_war = no }
+        }
 	}
 }	
-country_event = { #IJN Shinano-class 
+news_event = { #IJN Shinano-class 
 	id = blackicenavalevents.3
 	title = blackicenavalevents.3.t
 	desc = blackicenavalevents.3.d
@@ -62,9 +78,17 @@ country_event = { #IJN Shinano-class
 	
 	option = {
 		name = blackicenavalevents.3.a
+		trigger = { tag = JAP }
+	}
+	option = {
+        name = blackicenavalevents.3.b
+        trigger = { 
+            NOT = { tag = JAP }
+            JAP = { has_war = no }
+        }
 	}
 }
-country_event = { #IJN Taiho-class 
+news_event = { #IJN Taiho-class 
 	id = blackicenavalevents.4
 	title = blackicenavalevents.4.t
 	desc = blackicenavalevents.4.d
@@ -83,9 +107,17 @@ country_event = { #IJN Taiho-class
 	
 	option = {
 		name = blackicenavalevents.4.a
+		trigger = { tag = JAP }
+	}
+	option = {
+        name = blackicenavalevents.4.b
+        trigger = { 
+            NOT = { tag = JAP }
+            JAP = { has_war = no }
+        }
 	}
 }
-country_event = { #IJN Hiyo-class 
+news_event = { #IJN Hiyo-class 
 	id = blackicenavalevents.5
 	title = blackicenavalevents.5.t
 	desc = blackicenavalevents.5.d
@@ -104,9 +136,17 @@ country_event = { #IJN Hiyo-class
 	
 	option = {
 		name = blackicenavalevents.5.a
+		trigger = { tag = JAP }
+	}
+	option = {
+        name = blackicenavalevents.5.b
+        trigger = { 
+            NOT = { tag = JAP }
+            JAP = { has_war = no }
+        }
 	}
 }
-country_event = { #IJN Unryu-class 
+news_event = { #IJN Unryu-class 
 	id = blackicenavalevents.6
 	title = blackicenavalevents.6.t
 	desc = blackicenavalevents.6.d
@@ -125,9 +165,17 @@ country_event = { #IJN Unryu-class
 	
 	option = {
 		name = blackicenavalevents.6.a
+		trigger = { tag = JAP }
+	}
+	option = {
+        name = blackicenavalevents.6.b
+        trigger = { 
+            NOT = { tag = JAP }
+            JAP = { has_war = no }
+        }
 	}
 }	
-country_event = { #IJN Yamato-class 
+news_event = { #IJN Yamato-class 
 	id = blackicenavalevents.7
 	title = blackicenavalevents.7.t
 	desc = blackicenavalevents.7.d
@@ -146,9 +194,17 @@ country_event = { #IJN Yamato-class
 	
 	option = {
 		name = blackicenavalevents.7.a
+		trigger = { tag = JAP }
+	}
+	option = {
+        name = blackicenavalevents.7.b
+        trigger = { 
+            NOT = { tag = JAP }
+            JAP = { has_war = no }
+        }
 	}
 }
-country_event = { #US Essex-class 
+news_event = { #US Essex-class 
 	id = blackicenavalevents.8
 	title = blackicenavalevents.8.t
 	desc = blackicenavalevents.8.d
@@ -167,9 +223,17 @@ country_event = { #US Essex-class
 	
 	option = {
 		name = blackicenavalevents.8.a
+		trigger = { tag = USA }
+	}
+	option = {
+        name = blackicenavalevents.9.b
+        trigger = { 
+            NOT = { tag = USA }
+            USA = { has_war = no }
+        }
 	}
 }
-country_event = { #US Midway-class  
+news_event = { #US Midway-class  
 	id = blackicenavalevents.9
 	title = blackicenavalevents.9.t
 	desc = blackicenavalevents.9.d
@@ -188,9 +252,17 @@ country_event = { #US Midway-class
 	
 	option = {
 		name = blackicenavalevents.9.a
+		trigger = { tag = USA }
+	}
+	option = {
+        name = blackicenavalevents.9.b
+        trigger = { 
+            NOT = { tag = USA }
+            USA = { has_war = no }
+        }
 	}
 }	
-country_event = { #US Iowa-class  
+news_event = { #US Iowa-class  
 	id = blackicenavalevents.10
 	title = blackicenavalevents.10.t
 	desc = blackicenavalevents.10.d
@@ -209,9 +281,17 @@ country_event = { #US Iowa-class
 	
 	option = {
 		name = blackicenavalevents.10.a
+		trigger = { tag = USA }
+	}
+	option = {
+        name = blackicenavalevents.10.b
+        trigger = { 
+            NOT = { tag = USA }
+            USA = { has_war = no }
+        }
 	}
 }
-country_event = { #US Montana-class 
+news_event = { #US Montana-class 
 	id = blackicenavalevents.11
 	title = blackicenavalevents.11.t
 	desc = blackicenavalevents.11.d
@@ -230,9 +310,17 @@ country_event = { #US Montana-class
 	
 	option = {
 		name = blackicenavalevents.11.a
+		trigger = { tag = USA }
+	}
+	option = {
+        name = blackicenavalevents.11.b
+        trigger = { 
+            NOT = { tag = USA }
+            USA = { has_war = no }
+        }
 	}
 }
-country_event = { #US Casablanca-class  
+news_event = { #US Casablanca-class  
 	id = blackicenavalevents.12
 	title = blackicenavalevents.12.t
 	desc = blackicenavalevents.12.d
@@ -251,9 +339,17 @@ country_event = { #US Casablanca-class
 	
 	option = {
 		name = blackicenavalevents.12.a
+		trigger = { tag = USA }
+	}
+	option = {
+        name = blackicenavalevents.12.b
+        trigger = { 
+            NOT = { tag = USA }
+            USA = { has_war = no }
+        }
 	}
 }
-country_event = { #US Fletcher-class 
+news_event = { #US Fletcher-class 
 	id = blackicenavalevents.13
 	title = blackicenavalevents.13.t
 	desc = blackicenavalevents.13.d
@@ -272,9 +368,17 @@ country_event = { #US Fletcher-class
 	
 	option = {
 		name = blackicenavalevents.13.a
+		trigger = { tag = USA }
+	}
+	option = {
+        name = blackicenavalevents.13.b
+        trigger = { 
+            NOT = { tag = USA }
+            USA = { has_war = no }
+        }
 	}
 }		
-country_event = { #Kriegsmarine Scharnhorst-class
+news_event = { #Kriegsmarine Scharnhorst-class
 	id = blackicenavalevents.14
 	title = blackicenavalevents.14.t
 	desc = blackicenavalevents.14.d
@@ -293,9 +397,17 @@ country_event = { #Kriegsmarine Scharnhorst-class
 	
 	option = {
 		name = blackicenavalevents.14.a
+		trigger = { tag = GER }
+	}
+	option = {
+        name = blackicenavalevents.14.b
+        trigger = { 
+            NOT = { tag = GER }
+            GER = { has_war = no }
+        }
 	}
 }
-country_event = { #Kriegsmarine Bismarck-class
+news_event = { #Kriegsmarine Bismarck-class
 	id = blackicenavalevents.15
 	title = blackicenavalevents.15.t
 	desc = blackicenavalevents.15.d
@@ -314,9 +426,17 @@ country_event = { #Kriegsmarine Bismarck-class
 	
 	option = {
 		name = blackicenavalevents.15.a
+		trigger = { tag = GER }
+	}
+	option = {
+        name = blackicenavalevents.15.b
+        trigger = { 
+            NOT = { tag = GER }
+            GER = { has_war = no }
+        }
 	}
 }
-country_event = { #Kriegsmarine Graf Zeppelin-class 
+news_event = { #Kriegsmarine Graf Zeppelin-class 
 	id = blackicenavalevents.16
 	title = blackicenavalevents.16.t
 	desc = blackicenavalevents.16.d
@@ -335,9 +455,17 @@ country_event = { #Kriegsmarine Graf Zeppelin-class
 	
 	option = {
 		name = blackicenavalevents.16.a
+		trigger = { tag = GER }
+	}
+	option = {
+        name = blackicenavalevents.16.b
+        trigger = { 
+            NOT = { tag = GER }
+            GER = { has_war = no }
+        }
 	}
 }	
-country_event = { #Kriegsmarine Prinz Eugen-class  
+news_event = { #Kriegsmarine Prinz Eugen-class  
 	id = blackicenavalevents.17
 	title = blackicenavalevents.17.t
 	desc = blackicenavalevents.17.d
@@ -356,9 +484,17 @@ country_event = { #Kriegsmarine Prinz Eugen-class
 	
 	option = {
 		name = blackicenavalevents.17.a
+		trigger = { tag = GER }
+	}
+	option = {
+        name = blackicenavalevents.17.b
+        trigger = { 
+            NOT = { tag = GER }
+            GER = { has_war = no }
+        }
 	}
 }
-country_event = { #Kriegsmarine Type VIIC Submarine
+news_event = { #Kriegsmarine Type VIIC Submarine
 	id = blackicenavalevents.18
 	title = blackicenavalevents.18.t
 	desc = blackicenavalevents.18.d
@@ -377,9 +513,17 @@ country_event = { #Kriegsmarine Type VIIC Submarine
 	
 	option = {
 		name = blackicenavalevents.18.a
+		trigger = { tag = GER }
+	}
+	option = {
+        name = blackicenavalevents.18.b
+        trigger = { 
+            NOT = { tag = GER }
+            GER = { has_war = no }
+        }
 	}
 }
-country_event = { #Kriegsmarine Type XXI Submarine 
+news_event = { #Kriegsmarine Type XXI Submarine 
 	id = blackicenavalevents.19
 	title = blackicenavalevents.19.t
 	desc = blackicenavalevents.19.d
@@ -398,9 +542,17 @@ country_event = { #Kriegsmarine Type XXI Submarine
 	
 	option = {
 		name = blackicenavalevents.19.a
+		trigger = { tag = GER }
+	}
+	option = {
+        name = blackicenavalevents.19.b
+        trigger = { 
+            NOT = { tag = GER }
+            GER = { has_war = no }
+        }
 	}
 }
-country_event = { #Kriegsmarine Type XXIII Submarine 
+news_event = { #Kriegsmarine Type XXIII Submarine 
 	id = blackicenavalevents.20
 	title = blackicenavalevents.20.t
 	desc = blackicenavalevents.20.d
@@ -419,9 +571,17 @@ country_event = { #Kriegsmarine Type XXIII Submarine
 	
 	option = {
 		name = blackicenavalevents.20.a
+		trigger = { tag = GER }
+	}
+	option = {
+        name = blackicenavalevents.20.b
+        trigger = { 
+            NOT = { tag = GER }
+            GER = { has_war = no }
+        }
 	}
 }
-country_event = { #Royal Navy King George-class
+news_event = { #Royal Navy King George-class
 	id = blackicenavalevents.21
 	title = blackicenavalevents.21.t
 	desc = blackicenavalevents.21.d
@@ -440,9 +600,17 @@ country_event = { #Royal Navy King George-class
 	
 	option = {
 		name = blackicenavalevents.21.a
+		trigger = { tag = ENG }
+	}
+	option = {
+        name = blackicenavalevents.21.b
+        trigger = { 
+            NOT = { tag = ENG }
+            ENG = { has_war = no }
+        }
 	}
 }
-country_event = { #Royal Navy Lion-class 
+news_event = { #Royal Navy Lion-class 
 	id = blackicenavalevents.22
 	title = blackicenavalevents.22.t
 	desc = blackicenavalevents.22.d
@@ -461,9 +629,17 @@ country_event = { #Royal Navy Lion-class
 	
 	option = {
 		name = blackicenavalevents.22.a
+		trigger = { tag = ENG }
+	}
+	option = {
+        name = blackicenavalevents.22.b
+        trigger = { 
+            NOT = { tag = ENG }
+            ENG = { has_war = no }
+        }
 	}
 }	
-country_event = { #Royal Navy Illustrious-class  
+news_event = { #Royal Navy Illustrious-class  
 	id = blackicenavalevents.23
 	title = blackicenavalevents.23.t
 	desc = blackicenavalevents.23.d
@@ -482,9 +658,17 @@ country_event = { #Royal Navy Illustrious-class
 	
 	option = {
 		name = blackicenavalevents.23.a
+		trigger = { tag = ENG }
+	}
+	option = {
+        name = blackicenavalevents.23.b
+        trigger = { 
+            NOT = { tag = ENG }
+            ENG = { has_war = no }
+        }
 	}
 }
-country_event = { #Royal Navy Implacable-class  
+news_event = { #Royal Navy Implacable-class  
 	id = blackicenavalevents.24
 	title = blackicenavalevents.24.t
 	desc = blackicenavalevents.24.d
@@ -503,9 +687,17 @@ country_event = { #Royal Navy Implacable-class
 	
 	option = {
 		name = blackicenavalevents.24.a
+		trigger = { tag = ENG }
+	}
+	option = {
+        name = blackicenavalevents.24.b
+        trigger = { 
+            NOT = { tag = ENG }
+            ENG = { has_war = no }
+        }
 	}
 }
-country_event = { #Royal Navy Colossus-class  
+news_event = { #Royal Navy Colossus-class  
 	id = blackicenavalevents.25
 	title = blackicenavalevents.25.t
 	desc = blackicenavalevents.25.d
@@ -524,9 +716,17 @@ country_event = { #Royal Navy Colossus-class
 	
 	option = {
 		name = blackicenavalevents.25.a
+		trigger = { tag = ENG }
+	}
+	option = {
+        name = blackicenavalevents.25.b
+        trigger = { 
+            NOT = { tag = ENG }
+            ENG = { has_war = no }
+        }
 	}
 }
-country_event = { #Royal Navy Hunter Destroyer Escort-class   
+news_event = { #Royal Navy Hunter Destroyer Escort-class   
 	id = blackicenavalevents.26
 	title = blackicenavalevents.26.t
 	desc = blackicenavalevents.26.d
@@ -545,5 +745,13 @@ country_event = { #Royal Navy Hunter Destroyer Escort-class
 	
 	option = {
 		name = blackicenavalevents.26.a
+		trigger = { tag = ENG }
+	}
+	option = {
+        name = blackicenavalevents.26.b
+        trigger = { 
+            NOT = { tag = ENG }
+            ENG = { has_war = no }
+        }
 	}
 }		
