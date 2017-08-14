@@ -1561,3 +1561,26 @@ country_event = {
 	}
 	
 }
+country_event = { #Night Harrasment
+	id = blackiceairevents.77
+	title = blackiceairevents.77.t
+	desc = blackiceairevents.77.d
+
+	picture = GFX_event_aircraft_producer
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = GER
+		date > 1943.1.1
+		has_war_with = SOV 
+	}
+	mean_time_to_happen = {
+		days = 60
+	}
+	
+	option = {
+		name = blackiceairevents.77.a
+		load_oob = "GER_nightharrasment"
+	}
+}

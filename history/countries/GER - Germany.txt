@@ -72,7 +72,6 @@ set_technology = {
 	mobile_warfare = 1
 	trade_interdiction = 1
 	formation_flying = 1
-	tech_ju_52_bomber_equipment_1 = 1
 	tech_ar_68_equipment_1 = 1
 	############ Naval ##########
 	#ww1_submarine = 1
@@ -1016,10 +1015,34 @@ create_equipment_variant = {
 }
 ##################Aircraft Variants#####################
 	create_equipment_variant = {
-		name = "He 51 B-1"
+		name = "He 51 D"
 		type = he_51_equipment_1
 		upgrades = {
-			he_51_b_upgrade = 1 
+			he_51_b2_s3_upgrade = 1 
+		}
+		obsolete = yes 
+	}
+	create_equipment_variant = {
+		name = "Ar 65 F"
+		type = ar_65_equipment_1
+		upgrades = {
+			ar_65_f_upgrade = 1 
+		}
+	}
+	create_equipment_variant = {
+		name = "Do 13 C"
+		type = do_11_bomber_equipment_1
+		upgrades = {
+			do_11_engines_upgrade = 1 			
+		}
+		obsolete = yes
+	}	
+	create_equipment_variant = {
+		name = "Do 23 G"
+		type = do_11_bomber_equipment_1
+		upgrades = {
+			do_11_engines_upgrade = 1 
+			do_23_upgrade = 1 
 		}
 	}
 ################
