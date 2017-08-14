@@ -5642,39 +5642,12 @@ focus_tree = {
 		}
 	}
 	#### To be AI only ####
-	### Totenkopf-division
-	focus = {
-		id = GER_Schutzstaffel_divisions
-		#text = Schutzstaffel_divisions
-		icon = GFX_goal_generic_SS_focus
-		prerequisite = { focus = GER_VT_Schutzstaffel }
-		prerequisite = { focus = GER_TV_Schutzstaffel }
-		x = 30
-		y = 3
-		cost = 5
-		
-		available = {
-			is_ai = yes
-			date > 1939.9.15
-		}
-		
-		ai_will_do = {
-			factor = 100
-		}	
-		
-		completion_reward = {
-			
-			GER = {
-				country_event = ss_event.669 # Totenkopf-Division
-			}
-		}
-	}
 	##################### expands starting OOB template #focus to be repeated multiple times
 	focus = {
 		id = GER_Schutzstaffel_divisions_II
 		#text = Schutzstaffel_divisions
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = { focus = GER_Schutzstaffel_divisions }
+		prerequisite = { focus = focus = GER_VT_Schutzstaffel }
 		x = 30
 		y = 4
 		cost = 5
@@ -5748,59 +5721,6 @@ focus_tree = {
 		# expands templates for ss starting units
 	}
 	##################### expands starting OOB template #focus to be repeated multiple times
-	focus = {
-		id = GER_Schutzstaffel_divisions_V
-		#text = Schutzstaffel_divisions
-		icon = GFX_goal_generic_SS_focus
-		prerequisite = { focus = GER_Schutzstaffel_divisions_IV }
-		x = 30
-		y = 7
-		cost = 5
-		
-		ai_will_do = {
-			factor = 5
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					is_ai = no
-				}
-				GER = {
-					country_event = ss_event.670	# LSSAH Division
-				}
-			}
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					is_ai = yes
-				}
-				hidden_effect = {
-					add_equipment_to_stockpile = {
-						type = infantry_equipment_2
-						amount = 2000
-						producer = GER
-					}
-					add_equipment_to_stockpile = {
-						type = infantry_uniforms_2
-						amount = 2000
-						producer = GER
-					}
-					add_equipment_to_stockpile = {
-						type = support_equipment_1
-						amount = 2000
-						producer = GER
-					}
-					add_equipment_to_stockpile = {
-						type = motorized_equipment_2
-						amount = 2000
-						producer = GER
-					}
-				}
-			}
-		}
-		# expands templates for ss starting units
-	}
 	#####################SS junkerschulen	
 	focus = {
 		id = GER_Schutzstaffel_junkerschulen
