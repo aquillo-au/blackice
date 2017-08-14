@@ -9400,15 +9400,31 @@ country_event = {
 	option = {
 		name = germany.253.a
 		ai_chance = { factor = 100 }
-		
+		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = {
+					is_ai = no
 					has_army_experience > 75
 				}
 				army_experience = 75
 			}
 			#load_oob = "GER_29_mot_Division"
+			set_country_flag = mot_29
+		}
+	}
+	option = {
+		name = germany.253.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				army_experience = 75
+			}
+			load_oob = "GER_29_mot_Division"
 			set_country_flag = mot_29
 		}
 	}

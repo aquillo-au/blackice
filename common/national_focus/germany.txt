@@ -5533,7 +5533,7 @@ focus_tree = {
 		cost = 5
 		
 		available = {
-			is_ai = no
+			#is_ai = no
 			date > 1938.8.1
 		}
 		
@@ -5548,6 +5548,35 @@ focus_tree = {
 				}
 				GER = {
 					country_event = ss_event.664	# LSSAH infantry regiment
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				hidden_effect = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 500
+						producer = GER
+					}
+					add_equipment_to_stockpile = {
+						type = ss_infantry_uniforms_1
+						amount = 500
+						producer = GER
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 500
+						producer = GER
+					}
+					add_equipment_to_stockpile = {
+						type = motorized_equipment_1
+						amount = 500
+						producer = GER
+					}
 				}
 			}
 		}
@@ -5607,7 +5636,7 @@ focus_tree = {
 					is_ai = no
 				}
 				GER = {
-					country_event = ss_event.650	# Totenkopf-division formed from 3 SA standarte (1st Oberbayern, 2nd Brandenburg and 3rd Thuringen)
+					country_event = ss_event.640	# Totenkopf-division formed from 3 SA standarte (1st Oberbayern, 2nd Brandenburg and 3rd Thuringen)
 				}
 			}
 		}
@@ -5625,7 +5654,7 @@ focus_tree = {
 		cost = 5
 		
 		available = {
-			#is_ai = yes
+			is_ai = yes
 			date > 1939.9.15
 		}
 		

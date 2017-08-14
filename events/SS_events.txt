@@ -137,10 +137,21 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		is_ai = no
-		date > 1939.2.1
-		has_tech = tech_combat_engineers
-		has_country_flag = LSSAH_regiment_38
+		if = {
+			limit = {
+				is_ai = no
+			}
+			date > 1939.2.1
+			has_tech = tech_combat_engineers
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			date > 1939.2.1
+			has_tech = tech_combat_engineers
+			has_country_flag = LSSAH_regiment_38
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -158,6 +169,14 @@ country_event = {
 				army_experience = 44
 			}
 			set_country_flag = LSSAH_regiment_39_exp
+		}
+	}
+	option = {
+		name = ss_event.663.b
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_LSSAH_inf_division_39"
+			set_country_flag = LSSAH_in_division_39_ai
 		}
 	}
 }
@@ -239,9 +258,20 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		is_ai = no
-		date > 1940.6.1
-		has_country_flag = LSSAH_regiment_40_mot
+		if = {
+			limit = {
+				is_ai = no
+			}
+			date > 1940.6.1
+			has_country_flag = LSSAH_inf_division_39_ai
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			date > 1940.6.1
+			has_country_flag = LSSAH_regiment_40_mot
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -262,6 +292,14 @@ country_event = {
 			set_country_flag = LSSAH_regiment_40_brig
 		}
 	}
+	option = {
+		name = ss_event.660.b
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_LSSAH_mot_division_40"
+			set_country_flag = LSSAH_mot_division_40_ai
+		}
+	}
 }
 ### ss_event.659 Febr 1942 Expand LSSAH Brigade to Division 
 ### adding 1 Pz-Rgt (2xPZ III and 1 PzIV Btl),1 Recon AC Comp.
@@ -275,8 +313,20 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		date > 1942.2.12
-		has_country_flag = LSSAH_regiment_40_brig
+		if = {
+			limit = {
+				is_ai = no
+			}
+			date > 1942.2.12
+			has_country_flag = LSSAH_mot_division_40_ai
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			date > 1942.2.12
+			has_country_flag = LSSAH_regiment_40_brig
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -303,7 +353,7 @@ country_event = {
 		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_LSSAH_pzgrendiv_42"
-			set_country_flag = LSSAH_brig_42_div
+			set_country_flag = LSSAH_pzgren_div_42_ai
 		}
 	}
 }
@@ -356,9 +406,20 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		is_ai = no
-		date > 1943.11.12
-		has_country_flag = LSSAH_pzgren_div_42
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			date > 1943.11.12
+			has_country_flag = LSSAH_pzgren_div_42_ai
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			date > 1943.11.12
+			has_country_flag = LSSAH_pzgren_div_42
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -377,7 +438,7 @@ country_event = {
 				army_experience = 15
 			}
 
-			set_country_flag = LSSAH_pzgren_div_42
+			set_country_flag = LSSAH_pz_div_43
 		}
 	}
 	option = {
@@ -385,7 +446,7 @@ country_event = {
 		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_LSSAH_pzdiv_43"
-			set_country_flag = LSSAH_pzgren_div_42
+			set_country_flag = LSSAH_pz_div_43_ai
 		}
 	}
 }
@@ -395,7 +456,7 @@ country_event = {
 	id = ss_event.650
 	title = ss_event.650.t
 	desc = ss_event.650.d
-	picture = GFX_report_event_totenkopf_division
+	picture = GFX_report_event_totenkopf_inf_division
 	
 	fire_only_once = yes
 	
@@ -417,14 +478,25 @@ country_event = {
 	id = ss_event.651
 	title = ss_event.651.t
 	desc = ss_event.651.d
-	picture = GFX_report_event_historical_SS
+	picture = GFX_report_event_totenkopf_pzgren_division
 	
 	fire_only_once = yes
 	
 	trigger = {
-		is_ai = no
-		date > 1942.11.8
-		has_tech = mechanised_infantry2
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			date > 1942.11.8
+			has_tech = mechanised_infantry2
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			date > 1942.11.8
+			has_tech = mechanised_infantry2
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -432,10 +504,74 @@ country_event = {
 	}
 	
 	option = {
-		name = ss_event.651.a
+		name = ss_event.651.b
 		hidden_effect = {
-			load_oob = "GER_Totenkopf_division"
-			set_country_flag = totenkopf_div_42
+			if = {
+				limit = {
+					has_army_experience < 36
+				}
+				# Use army XP to upgrade
+				army_experience = 35
+			}
+			set_country_flag = totenkopf_pzgren_div_42
+		}
+	}
+	option = {
+		name = ss_event.651.b
+		hidden_effect = {
+			load_oob = "GER_Totenkopf_pzgren_div_42"
+			set_country_flag = totenkopf_pzgren_div_42_ai
+		}
+	}
+}
+country_event = {
+	id = ss_event.652
+	title = ss_event.652.t
+	desc = ss_event.652.d
+	picture = GFX_report_event_totenkopf_pz_division
+	
+	fire_only_once = yes
+	
+	trigger = {
+		if = {
+			limit = {
+				is_ai = yes
+			}
+			date > 1943.10.21
+			has_country_flag = totenkopf_pzgren_div_42_ai
+		}
+		if = {
+			limit = {
+				is_ai = no
+			}
+			date > 1943.10.21
+			has_country_flag = totenkopf_pzgren_div_42
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.652.b
+		hidden_effect = {
+			if = {
+				limit = {
+					has_army_experience < 16
+				}
+				# Use army XP to upgrade
+				army_experience = 15
+			}
+
+			set_country_flag = totenkopf_pz_div_44
+		}
+	}
+	option = {
+		name = ss_event.652.b
+		hidden_effect = {
+			load_oob = "GER_Totenkopf_pz_div_44"
+			set_country_flag = totenkopf_pz_div_44_ai
 		}
 	}
 }
