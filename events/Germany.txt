@@ -11620,4 +11620,31 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = germany.404
+	title = germany.404.t
+	desc = germany.404.d
+	picture = GFX_report_event_german_defence_with_at_gun
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		51 =  { is_demilitarized_zone = no }
+		NOT = { has_country_flag = hds_8_9 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.404.a
+		ai_chance = { factor = 100 }
+		hidden_effect = {
+			load_oob = GER_heeresdienststelle_8_9
+			set_country_flag = hds_8_9
+		}
+	}
+}
 ### EOF ###
