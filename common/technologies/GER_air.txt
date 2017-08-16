@@ -190,35 +190,12 @@ technologies = {
 			name = luftwaffe_folder
 			position = { x = -8 y = @1939 }
 		}
-		
-		sub_technologies = {
-			subtech_me_109_t_fighter_equipment_1
-		}
-		
+
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	subtech_me_109_t_fighter_equipment_1 = {
 	
-		enable_equipments = { 
-			me_109_t_fighter_equipment_1 #Needs to be checked
-		}
-		dependencies = {
-			tech_german_aircraft1 = 1 
-		}
-		categories = {
-			light_air
-			light_fighter
-			air_equipment
-		}
-		research_cost = 1 
-		start_year = 1941 #?
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
 	tech_me_109_late_fighter_equipment_1 = {
 	
 		enable_equipments = { me_109_late_fighter_equipment_1 }
@@ -269,9 +246,6 @@ technologies = {
 			light_fighter
 			air_equipment
 		}
-		sub_technologies = {
-			subtech_me_155_fighter_equipment_1
-		}
 		research_cost = 0.5 
 		start_year = 1942
 		folder = {
@@ -284,24 +258,6 @@ technologies = {
 		}
 	}
 	
-	subtech_me_155_fighter_equipment_1 = {
-	
-		enable_equipments = { me_155_fighter_equipment_1 }
-		dependencies = {
-			tech_german_aircraft1 = 1 
-		}
-		categories = {
-			light_air
-			light_fighter
-			air_equipment
-		}
-		research_cost = 2
-		start_year = 1943 #?
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
 	tech_me_109_late_fighter_equipment_3 = {
 	
 		enable_equipments = { me_109_late_fighter_equipment_3 }
@@ -415,9 +371,6 @@ technologies = {
 		dependencies = {
 			tech_german_aircraft1 = 1 
 		}
-		sub_technologies = {
-			subtech_ar_197_fighter_equipment_1
-		}
 		research_cost = 1
 		start_year = 1936
 		folder = {
@@ -433,23 +386,7 @@ technologies = {
 			factor = 10
 		}
 	}
-	subtech_ar_197_fighter_equipment_1 = {
 	
-		enable_equipments = { ar_197_fighter_equipment_1 }
-		dependencies = {
-			tech_german_aircraft1 = 1 
-		}
-		categories = {
-			naval_air
-			air_equipment
-		}
-		research_cost = 1 
-		start_year = 1937
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
 	tech_he_100_equipment_1 = {
 	
 		enable_equipments = { he_100_equipment_1 }
@@ -1236,9 +1173,7 @@ technologies = {
 			leads_to_tech = tech_ju_87_equipment_3
 			research_cost_coeff = 1 
 		}
-		sub_technologies = {
-			subtech_ju_87_cv_equipment_1
-		}
+		
 		categories = {
 			medium_air
 			tactical_bomber
@@ -1256,24 +1191,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 20
-		}
-	}
-	subtech_ju_87_cv_equipment_1 = {
-	
-		enable_equipments = { ju_87_cv_equipment_1 }
-		dependencies = {
-			tech_german_aircraft1 = 1 
-		}
-		categories = {
-			medium_air
-			tactical_bomber
-			air_equipment
-		}
-		research_cost = 1 
-		start_year = 1938
-		
-		ai_will_do = {
-			factor = 0
 		}
 	}
 	tech_hs_129_equipment_1 = {
@@ -1307,9 +1224,7 @@ technologies = {
 			leads_to_tech = tech_ju_87_equipment_4
 			research_cost_coeff = 1 
 		}
-		sub_technologies = {
-			subtech_ju_87_cv_equipment_2
-		}
+		
 		categories = {
 			medium_air
 			tactical_bomber
@@ -1327,24 +1242,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 10
-		}
-	}
-	subtech_ju_87_cv_equipment_2 = {
-	
-		enable_equipments = { ju_87_cv_equipment_2 }
-		dependencies = {
-			tech_german_aircraft1 = 1 
-		}
-		categories = {
-			medium_air
-			tactical_bomber
-			air_equipment
-		}
-		research_cost = 1 
-		start_year = 1942
-		
-		ai_will_do = {
-			factor = 0
 		}
 	}
 	tech_fw_190_f_equipment_1 = {
@@ -2339,14 +2236,105 @@ technologies = {
 			factor = 10
 		}
 	}
+	tech_ar_197_fighter_equipment_1 = {
+	
+		enable_equipments = { ar_197_fighter_equipment_1 }
+		dependencies = {
+			tech_german_aircraft1 = 1 
+			tech_ar_68_equipment_1 = 1 
+		}
+		categories = {
+			naval_air
+			air_equipment
+		}
+		research_cost = 1 
+		start_year = 1937
+		folder = {
+			name = luftwaffe_folder
+			position = { x = 51 y = @1937 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	tech_me_109_t_fighter_equipment_1 = {
+	
+		enable_equipments = { 
+			me_109_t_fighter_equipment_1 #Needs to be checked
+		}
+		dependencies = {
+			tech_german_aircraft1 = 1 
+			tech_me_109_mid_fighter_equipment_1 = 1 
+		}
+		categories = {
+			light_air
+			light_fighter
+			air_equipment
+		}
+		research_cost = 1 
+		start_year = 1941 #?
+		folder = {
+			name = luftwaffe_folder
+			position = { x = 51 y = @1941 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	tech_me_155_fighter_equipment_1 = {
+	
+		enable_equipments = { me_155_fighter_equipment_1 }
+		
+		dependencies = {
+			tech_german_aircraft1 = 1 
+			tech_me_109_late_fighter_equipment_2 = 1 
+		}
+		categories = {
+			light_air
+			light_fighter
+			air_equipment
+		}
+		research_cost = 1
+		start_year = 1943 
+		folder = {
+			name = luftwaffe_folder
+			position = { x = 51 y = @1943 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	tech_ju_87_cv_equipment_1 = {
+	
+		enable_equipments = { ju_87_cv_equipment_1 }
+		dependencies = {
+			tech_german_aircraft1 = 1 
+			tech_ju_87_equipment_2 = 1 
+		}
+		categories = {
+			medium_air
+			tactical_bomber
+			air_equipment
+		}
+		research_cost = 1 
+		start_year = 1938
+		folder = {
+			name = luftwaffe_folder
+			position = { x = 54 y = @1938 } 
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
 	tech_ju_87_cv_equipment_3 = {
 	
 		enable_equipments = { ju_87_cv_equipment_3 }
 		
 		
-		sub_technologies = {
-			subtech_ju_87_cv_equipment_4
-		}
 		categories = {
 			medium_air
 			tactical_bomber
@@ -2360,26 +2348,8 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 51 y = @1943 } 
+			position = { x = 54 y = @1943 } 
 		}
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	subtech_ju_87_cv_equipment_4 = {
-	
-		enable_equipments = { ju_87_cv_equipment_4 }
-		dependencies = {
-			tech_german_aircraft1 = 1 
-		}
-		categories = {
-			medium_air
-			tactical_bomber
-			air_equipment
-		}
-		research_cost = 1 
-		start_year = 1943
 		
 		ai_will_do = {
 			factor = 0
@@ -2402,13 +2372,61 @@ technologies = {
 		start_year = 1938 
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 54 y = @1938 } 
+			position = { x = 57 y = @1938 } 
 		}
 		
 		ai_will_do = {
 			factor = 2
 		}
 	}
+	tech_ju_87_cv_equipment_2 = {
+	
+		enable_equipments = { ju_87_cv_equipment_2 }
+		
+		dependencies = {
+			tech_german_aircraft1 = 1 
+			tech_ju_87_equipment_3 = 1 
+		}
+		categories = {
+			medium_air
+			tactical_bomber
+			air_equipment
+		}
+		research_cost = 1 
+		start_year = 1942
+		folder = {
+			name = luftwaffe_folder
+			position = { x = 57 y = @1942 } 
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	tech_ju_87_cv_equipment_4 = {
+	
+		enable_equipments = { ju_87_cv_equipment_4 }
+		
+		dependencies = {
+			tech_german_aircraft1 = 1 
+			tech_ju_87_equipment_4 = 1 
+		}
+		categories = {
+			medium_air
+			tactical_bomber
+			air_equipment
+		}
+		research_cost = 1 
+		start_year = 1943
+		folder = {
+			name = luftwaffe_folder
+			position = { x = 57 y = @1943 } 
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	
 	tech_do_18_equipment_1 = {
 	
 		enable_equipments = { do_18_equipment_1 }
@@ -2426,7 +2444,7 @@ technologies = {
 		start_year = 1937
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 57 y = @1937 } 
+			position = { x = 60 y = @1937 } 
 		}
 		
 		ai_will_do = {
@@ -2450,7 +2468,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 57 y = @1938 } 
+			position = { x = 60 y = @1938 } 
 		}
 		
 		ai_will_do = {
@@ -2474,7 +2492,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 57 y = @1939 } 
+			position = { x = 60 y = @1939 } 
 		}
 		
 		ai_will_do = {
@@ -2498,7 +2516,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 57 y = @1944 } 
+			position = { x = 60 y = @1944 } 
 		}
 		
 		ai_will_do = {
