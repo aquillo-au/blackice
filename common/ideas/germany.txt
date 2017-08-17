@@ -2443,7 +2443,7 @@ intel_minister = {
 			
 			allowed = {
 				original_tag = GER
-				NOT = { is_ai = yes }
+				is_ai = no
 				NOT = { has_country_flag = keitel_dead }
 			}
 			
@@ -2456,17 +2456,19 @@ intel_minister = {
 			}
 		}
 		keitel_ai  = {
-			
+			picture = idea_wilhelm_keitel
 			allowed = {
 				original_tag = GER
 				is_ai = yes
 				NOT = { has_country_flag = keitel_dead }
 			}
+			
 			available = {
 				is_ai = yes
 			}
+			
 			traits = { army_chief_drill_2 }
-			picture = idea_wilhelm_keitel
+			
 			ai_will_do = {
 				factor = 1
 			}
@@ -2499,11 +2501,11 @@ intel_minister = {
 			available = {
 				date > 1941.1.1
 				OR = {
-				AND = {
-					is_ai = yes
-					NOT = { has_country_flag = zeitzler_fired }
+					AND = {
+						is_ai = yes
+						NOT = { has_country_flag = zeitzler_fired }
 					}
-				NOT = { has_country_flag = zeitzler_fired is_historical_focus_on = yes }
+					NOT = { has_country_flag = zeitzler_fired is_historical_focus_on = yes }
 				}
 			}
 			traits = { army_chief_organizational_2 }
@@ -2535,10 +2537,10 @@ intel_minister = {
 			}
 		}
 		walther_von_brauchitsch = {
-			
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
 				has_completed_focus = GER_Wehrmacht
 			}

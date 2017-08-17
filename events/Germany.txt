@@ -9399,13 +9399,13 @@ country_event = {
 	
 	option = {
 		name = germany.253.a
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		hidden_effect = {
 			if = {
 				limit = {
 					is_ai = no
-					has_army_experience > 75
+					has_army_experience < 75
 				}
 				army_experience = 75
 			}
@@ -9418,12 +9418,6 @@ country_event = {
 		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		hidden_effect = {
-			if = {
-				limit = {
-					is_ai = yes
-				}
-				army_experience = 75
-			}
 			load_oob = "GER_29_mot_Division"
 			set_country_flag = mot_29
 		}
@@ -9451,8 +9445,15 @@ country_event = {
 	
 	option = {
 		name = germany.254.a
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
 		
+		set_country_flag = mot_2
+	}
+	option = {
+		name = germany.254.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_2_mot_Division"
 			set_country_flag = mot_2
@@ -9481,8 +9482,15 @@ country_event = {
 	
 	option = {
 		name = germany.255.a
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
 		
+		set_country_flag = mot_13
+	}
+	option = {
+		name = germany.255.a
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_13_mot_Division"
 			set_country_flag = mot_13
@@ -9512,8 +9520,15 @@ country_event = {
 	
 	option = {
 		name = germany.256.a
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
 		
+		set_country_flag = mot_20
+	}
+	option = {
+		name = germany.256.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_20_mot_Division"
 			set_country_flag = mot_20
