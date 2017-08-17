@@ -7200,7 +7200,11 @@ country_event = {
 		HUN = { country_event = DOD_hungary.173 }
 		add_political_power = 10
 		ai_chance = {
-			base = 75
+			base = 65
+			modifier = {
+				factor = 0.5
+				HUN = { is_ai = no }
+			}
 		}
 	}
 	option = {#Allow it
@@ -7209,7 +7213,11 @@ country_event = {
 		add_political_power = -15
 		ruling_pop_minus_3 = yes
 		ai_chance = {
-			base = 25
+			base = 35
+			modifier = {
+				factor = 2
+				HUN = { is_ai = no }
+			}
 		}
 	}
 }

@@ -2394,6 +2394,10 @@ country_event = {
 				add = 100
 				GER = { has_army_size = { size > 39 } }
 			}
+			modifier = {
+				add = 20
+				is_in_faction_with = GER
+			}
 		}
 		GER = {
 			country_event = { hours = 2 id = germany.4 }
@@ -2404,10 +2408,29 @@ country_event = {
 		name = germany.28.b
 		ai_chance = {
 			base = 10			
-
+			modifier = {
+				factor = 2 
+				OR = {
+					has_global_flag = allied_anger_4
+					has_global_flag = allied_anger_5
+				}
+			}
+			modifier = {
+				factor = 6
+				OR = {
+					has_global_flag = allied_anger_6
+					has_global_flag = allied_anger_7
+				}
+			}
+			modifier = {
+				factor = 8 
+				OR = {
+					has_global_flag = allied_anger_8
+					has_global_flag = allied_anger_9
+				}
+			}
 			modifier = {
 				factor = 0
-
 				is_historical_focus_on = yes
 				NOT = { HUN = { has_completed_focus = HUN_protect_austria } }
 			}
@@ -2423,13 +2446,115 @@ country_event = {
 				add = 100
 				HUN = { has_completed_focus = HUN_protect_austria }
 			}
+			modifier = {
+				factor = 2
+				is_in_faction = yes
+				NOt = { is_in_faction_with = GER }
+			}
+			modifier = {
+				any_other_country = {
+					has_guaranteed = AUS
+				}
+				factor = 5
+			}
 		}
 		GER = {
 			add_opinion_modifier = { target = ROOT modifier = GER_anschluss_rejected }
-			country_event = { hours = 2 id = germany.29 }
 			if = { limit = { is_in_faction_with = AUS }
 				remove_from_faction = AUS
+				AUS = { clr_country_flag = in_axis }
 			}
+		}
+		if = {
+			limit = {
+				ENG = {
+					is_in_faction = yes
+					has_country_flag = in_allies
+				}
+			}
+			ENG = { country_event = germany.379 }
+		}
+	}
+}
+
+# Anschluss: AUS asks Allies for help
+country_event = {
+	id = germany.379
+	title = germany.379.t
+	desc = germany.379.desc
+	picture = GFX_report_event_panzer_and_infantry_advance
+	
+	is_triggered_only = yes
+	
+	option = { #We must help them
+		name = germany.379.a
+		add_to_faction = AUS
+		AUS = { set_country_flag = in_allies }
+		AUS = {
+			add_ai_strategy = {
+				type = alliance
+				id = "ENG"
+				value = 200000
+			}
+		}
+		GER = { country_event = germany.381 }
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 1.5 
+				OR = {
+					has_global_flag = allied_anger_4
+					has_global_flag = allied_anger_5
+				}
+			}
+			modifier = {
+				factor = 2.5
+				OR = {
+					has_global_flag = allied_anger_6
+					has_global_flag = allied_anger_7
+				}
+			}
+			modifier = {
+				factor = 4 
+				OR = {
+					has_global_flag = allied_anger_8
+					has_global_flag = allied_anger_9
+				}
+			}
+		}
+	}
+	option = { #Let them die
+		name = germany.379.b
+		AUS = { country_event = germany.380 }
+		ruling_pop_minus_5 = yes
+		add_political_power = -25
+		ai_chance = {
+			base = 80
+		}
+	}
+}
+
+# Anschluss: Allies Refuse to Help
+country_event = {
+	id = germany.380
+	title = germany.380.t
+	desc = germany.380.desc
+	picture = GFX_report_event_panzer_and_infantry_advance
+	
+	is_triggered_only = yes
+	
+	option = { #Accept our fate
+		name = germany.380.a
+		GER = { country_event = germany.4 }
+		ai_chance = {
+			base = 80
+		}
+	}
+	option = { #Fight on!
+		name = germany.380.b
+		GER = { country_event = { hours = 2 id = germany.29 } }
+		ai_chance = {
+			base = 20
 		}
 	}
 }
@@ -2455,6 +2580,102 @@ country_event = {
 		}
 	}
 }
+
+# Anschluss: Allies Choose to Help Austria
+country_event = {
+	id = germany.381
+	title = germany.381.t
+	desc = germany.381.desc
+	picture = GFX_report_event_panzer_and_infantry_advance
+	
+	is_triggered_only = yes
+	
+	option = { #Back down for now...
+		name = germany.381.a
+		ruling_pop_minus_10 = yes
+		add_political_power = -50
+		add_national_unity = -0.05
+		ENG = { country_event = germany.384 }
+		AUS = { country_event = germany.384 }
+		ai_chance = {
+			base = 40
+		}
+	}
+	option = { #Invade anyways!
+		name = germany.381.b
+		ruling_pop_plus_3 = yes
+		add_national_unity = 0.03
+		add_state_claim = 4
+		add_state_claim = 152
+		add_state_claim = 153
+		create_wargoal = {
+			type = take_state_focus
+			target = AUS
+			generator = { 4 152 153 }
+		}
+		ENG = { country_event = germany.382 }
+		ai_chance = {
+			base = 60
+		}
+	}
+}
+
+# Anschluss: Germans Prepare to Invade Despite Allied Support
+country_event = {
+	id = germany.382
+	title = germany.382.t
+	desc = germany.382.desc
+	picture = GFX_report_event_panzer_and_infantry_advance
+	
+	is_triggered_only = yes
+	
+	option = { #Let them come!
+		name = germany.382.a
+		ruling_pop_plus_3 = yes
+		add_political_power = 50
+		add_national_unity = 0.03
+		AUS = { country_event = germany.383 }
+		if = {
+			limit = { FRA = { is_in_faction_with = ENG } }
+			FRA = { country_event = germany.383 }			
+		}
+	}
+}
+
+# Anschluss: Germans Prepare to Invade Notification
+country_event = {
+	id = germany.383
+	title = germany.383.t
+	desc = germany.383.desc
+	picture = GFX_report_event_panzer_and_infantry_advance
+	
+	is_triggered_only = yes
+	
+	option = { #Let them come!
+		name = germany.383.a
+		ruling_pop_plus_3 = yes
+		add_political_power = 50
+		add_national_unity = 0.03
+	}
+}
+
+# Anschluss: Germans Give Up!
+country_event = {
+	id = germany.384
+	title = germany.384.t
+	desc = germany.384.desc
+	picture = GFX_report_event_panzer_and_infantry_advance
+	
+	is_triggered_only = yes
+	
+	option = { #Diplomacy Wins the Day!
+		name = germany.384.a
+		ruling_pop_plus_7 = yes
+		add_political_power = 50
+		add_national_unity = 0.03
+	}
+}
+
 ############## CZECHOSLOVAKIA ####################
 
 #### SUDETENLAND ##########
@@ -2472,29 +2693,83 @@ country_event = {
 		name = germany.348.a
 		ai_chance = { base = 90 } 
 		trigger = {  }
+			
 			if =  {
 				limit = {
 					OR = {
+						ENG = { exists = no }
+						ENG = {
+							is_subject = yes
+						}
 						has_war_with = ENG
 						has_war_with = FRA
-						CZE = { is_puppet = yes }
+						AND = {
+							CZE = { is_subject = yes }
+							OR = {
+								CZE = { 
+									NOT = {
+										is_puppet_of = HUN
+									}
+								}
+								NOT = { has_dlc = "Death or Dishonor" }
+							}
+						}
 						CZE = { has_war_with = ENG }
+						CZE = { has_war_with = FRA }
+						CZE = { is_in_faction_with = GER }
 					}
-					CZE = { owns_state = 69 }
+					CZE = { controls_state = 69 }
 				}
-				create_wargoal = {
-					type = take_state_focus
-					target = CZE
-					generator = { 69 }
+				if = {
+					limit = {
+						CZE = { is_subject = no }
+					}
+					CZE = {
+						country_event = { id = germany.122 }
+					}
+					else = {
+						CZE = {
+							OVERLORD = { country_event = { id = germany.122 } }
+						}
+					}
 				}
 			}
+			#if = {
+			#	limit = {
+			#		has_dlc = "Death or Dishonor"
+			#		CZE = { NOT = { is_in_faction_with = GER } } #in case AH is in faction with GER and dragged a subject CZE along.
+			#		OR = {
+			#			69 = { is_owned_by = HUN } #AH restored
+			#			AND = {
+			#				CZE = { is_subject_of = HUN }
+			#				69 = { is_owned_by = CZE }
+			#			}
+			#		}
+			#	}
+			#	HUN = {
+			#		country_event = germany.122
+			#	}
+			#}
 			if = {
 				limit = {
+					ENG = { exists = yes }
+					ENG = { is_subject = no }
 					NOT = { has_war_with = ENG }
 					NOT = { has_war_with = FRA }
-					CZE = { is_puppet = no }
+					CZE = { is_subject = no }
+					CZE = { NOT = { is_in_faction_with = GER } }
 					CZE = { NOT = { has_war_with = ENG } }
-					CZE = { owns_state = 69 }
+					CZE = { controls_state = 69 }
+					OR = {
+						HUN = {
+							NOT = {
+								has_completed_focus = HUN_protect_czechoslovakia #DOD only
+							}
+						}
+						CZE = {
+							has_country_flag = HUN_AH_CZE_refused
+						}
+					}
 				}
 				ENG = {
 					country_event = germany.40
@@ -2507,6 +2782,10 @@ country_event = {
 			if = {
 				limit = {
 					NOT = { CZE = { controls_state = 69 } }
+					NOT = {
+						69 = { is_controlled_by = HUN }
+						HUN = { has_completed_focus = HUN_protect_czechoslovakia }
+					}
 					69 = {
 						controller = {
 							NOT = { is_in_faction_with = GER }
@@ -2520,7 +2799,7 @@ country_event = {
 							create_wargoal = {
 								type = take_state_focus
 								target = PREV
-								generator = { 69 }
+								generator = { 69 74 960 }
 							}
 						}
 					}
@@ -2532,7 +2811,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = CZE
-			generator = { 69 74 }
+			generator = { 69 74 960 }
 		}
 		ai_chance = {
 			base = 5 # from 0, from 10
@@ -2675,7 +2954,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -2809,7 +3088,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -2976,7 +3255,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -3024,7 +3303,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}		
@@ -3064,7 +3343,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -3087,7 +3366,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -3188,7 +3467,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 74 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -3209,10 +3488,11 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = CZE
-			generator = { 69 74 }
+			generator = { 69 74 960 }
 		}
 		add_state_claim = 69
 		add_state_claim = 74
+		add_state_claim = 960
 		hidden_effect = {
 			news_event = { hours = 6 id = news.57 }
 		}
@@ -3234,10 +3514,11 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = CZE
-			generator = { 69 74 }
+			generator = { 69 74 960 }
 		}
 		add_state_claim = 69
 		add_state_claim = 74
+		add_state_claim = 960
 		hidden_effect = {
 			country_event = { hours = 6 id = news.58 }
 		}
@@ -3258,10 +3539,11 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = CZE
-			generator = { 69 74 }
+			generator = { 69 74 960 }
 		}
 		add_state_claim = 69
 		add_state_claim = 74
+		add_state_claim = 960
 		if = {
 					limit = {
 						CZE = {
@@ -3282,6 +3564,7 @@ country_event = {
 		name = germany.338.b
 		add_state_claim = 69
 		add_state_claim = 74
+		add_state_claim = 960
 		add_political_power = -35
 		ruling_pop_minus_7 = yes
 		add_national_unity = -0.03
@@ -3399,7 +3682,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = HUN
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 			if = {
@@ -3434,7 +3717,7 @@ country_event = {
 							create_wargoal = {
 								type = take_state_focus
 								target = PREV
-								generator = { 69 }
+								generator = { 69 74 960 }
 							}
 						}
 					}
@@ -3449,6 +3732,7 @@ country_event = {
 			#modifier = {
 			#	factor = 0
 			#	is_historical_focus_on = yes
+			#	HUN = { is_ai = yes }
 			#}
 		}
 	}
@@ -3506,7 +3790,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = HUN
-			generator = { 69 74 }
+			generator = { 69 74 960 }
 		}
 		ai_chance = {
 			base = 0 # from 0, from 10
@@ -3593,7 +3877,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = HUN
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -3729,7 +4013,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = HUN
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -3860,7 +4144,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = HUN
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -3908,7 +4192,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = HUN
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}		
@@ -3948,7 +4232,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = HUN
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -3971,7 +4255,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = HUN
-					generator = { 69 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -4072,7 +4356,7 @@ country_event = {
 				create_wargoal = {
 					type = take_state_focus
 					target = HUN
-					generator = { 69 74 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -4093,10 +4377,11 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = HUN
-			generator = { 69 74 }
+			generator = { 69 74 960 }
 		}
 		add_state_claim = 69
 		add_state_claim = 74
+		add_state_claim = 960
 		hidden_effect = {
 			news_event = { hours = 6 id = news.57 }
 		}
@@ -4118,10 +4403,11 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = HUN
-			generator = { 69 74 }
+			generator = { 69 74 960 }
 		}
 		add_state_claim = 69
 		add_state_claim = 74
+		add_state_claim = 960
 		hidden_effect = {
 			country_event = { hours = 6 id = news.58 }
 		}
@@ -4142,10 +4428,11 @@ country_event = {
 		create_wargoal = {
 			type = take_state_focus
 			target = HUN
-			generator = { 69 74 }
+			generator = { 69 74 960 }
 		}
 		add_state_claim = 69
 		add_state_claim = 74
+		add_state_claim = 960
 		if = {
 			limit = {
 				HUN = {
@@ -4177,6 +4464,7 @@ country_event = {
 		name = germany.338.b
 		add_state_claim = 69
 		add_state_claim = 74
+		add_state_claim = 960
 		add_political_power = -35
 		ruling_pop_minus_7 = yes
 		add_national_unity = -0.03
@@ -5654,7 +5942,17 @@ country_event = {
 	
 	option = {
 		name = germany.79.b
-		ai_chance = { factor = 10 }
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				GER = { surrender_progress > 0.25 }
+				factor = 5 #seems safe
+			}
+			modifier = {
+				democratic_govt = yes
+				factor = 5
+			}
+			}
 		trigger = {
 			TUR = {
 				is_puppet = no
@@ -5688,7 +5986,34 @@ country_event = {
 	
 	option = {
 		name = germany.79.c
-		ai_chance = { factor = 20 }
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				NOT = {
+					has_government = fascism
+				}
+				factor = 5
+			}
+			modifier = {
+			
+				AND = {
+					ENG = { 
+						has_capitulated = no 
+						has_war_with = GER
+					}
+					SOV = { 
+						has_capitulated = no 
+						has_war_with = GER
+					}
+					USA = { 
+						has_capitulated = no 
+						has_war_with = GER
+					}
+				}
+			
+				factor = 5 #lol come at me bro
+			}
+		}
 		GER = {
 			declare_war_on = {
 				target = TUR
@@ -5707,7 +6032,7 @@ country_event = {
 country_event = {
 	id = germany.340
 	title = germany.340.t
-	desc = germany.340.d
+	desc = germany.340.desc
 	picture = GFX_report_event_german_polish_border
 
 	is_triggered_only = yes
@@ -8179,10 +8504,11 @@ country_event = {
 			GER = {
 				add_state_claim = 69
 				add_state_claim = 74
+				add_state_claim = 960
 				create_wargoal = {
 					type = take_state_focus
 					target = CZE
-					generator = { 69 74 }
+					generator = { 69 74 960 }
 				}
 			}
 		}
@@ -8228,6 +8554,7 @@ country_event = {
 		name = germany.123.a
 		add_state_claim = 69
 		add_state_claim = 74
+		add_state_claim = 960
 		if = {
 			limit = {
 				CZE = { is_subject_of = FROM }
@@ -8245,7 +8572,7 @@ country_event = {
 					create_wargoal = {
 						type = take_state_focus
 						target = PREV
-						generator = { 69 74 }
+						generator = { 69 74 960 }
 					}
 				}
 			}

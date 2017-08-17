@@ -62,7 +62,10 @@ country_event = {
 				factor = 0
 				OR = {
 				any_other_country = {
-					is_major = yes
+					OR = {
+						is_major = yes
+						tag = YUG
+					}
 					NOT = { tag = ITA }
 					OR = {
 						has_guaranteed = ALB
@@ -70,6 +73,13 @@ country_event = {
 						}
 					}
 				is_in_faction_with = YUG
+				}
+			}
+			modifier = {
+				factor = 0.5
+				OR = {
+					has_government = communism
+					has_government = fascism #glorious Albania will never yield!
 				}
 			}
 		}

@@ -2327,7 +2327,8 @@ focus_tree = {
 				factor = 0
 				is_historical_focus_on = yes
 			}
-		}	
+		}
+		available_if_capitulated = no
 		completion_reward = {
 			TUR = {
 				add_opinion_modifier = { target = GER modifier = ger_tur_diplomacy_focus }
@@ -2341,8 +2342,12 @@ focus_tree = {
 							NOT = {
 								is_puppet = yes
 							}
+							has_government = ROOT
 						}
 						GER = { is_faction_leader = yes }
+					}
+					TUR = {
+						country_event = generic.5
 					}
 					GER = { add_to_faction = TUR } # REVISIT Might be a better way to handle this
 					TUR = { set_country_flag = in_axis }
@@ -2409,12 +2414,12 @@ focus_tree = {
 		}
 		bypass = {
 			AUS = {
-			OR = {
-				has_war = yes
-				NOT = { is_ai = yes }
+				OR = {
+					has_war = yes
+					is_in_faction = yes
+					exists = no
+					is_puppet = yes
 				}
-			is_in_faction = yes
-			NOT = { exists = yes }
 			}
 		}
 		cancel_if_invalid = no
@@ -3280,8 +3285,16 @@ focus_tree = {
 				country_event = germany.348			
 			}
 			if = { 
-				limit = { 
-					HUN = { owns_state = 69 }
+				limit = {
+					has_dlc = "Death or Dishonor"
+					CZE = { NOT = { is_in_faction_with = GER } } #in case AH is in faction with GER and dragged a subject CZE along.
+					OR = {
+						69 = { is_owned_by = HUN } #AH restored
+						AND = {
+							CZE = { is_subject_of = HUN }
+							69 = { is_owned_by = CZE }
+						}
+					}
 				}
 				country_event = germany.349			
 			}
@@ -3637,7 +3650,7 @@ focus_tree = {
 			}
 			FRA = {
 				OR = {
-					NOT = { country_exists = THIS }
+					exists = no
 					has_capitulated = yes
 					has_government = fascism
 				}
@@ -4620,7 +4633,9 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { HUN = { owns_state = 102 } }
+				limit = { 
+					102 = { is_owned_by = HUN }
+				}
 				HUN = { 
 					add_opinion_modifier = { target = GER modifier = GER_demand_slovenia_YUG }
 					country_event = germany.373
