@@ -602,7 +602,7 @@ NGraphics = {
 	
 	VICTORY_POINT_LEVELS = 2,
 	VICTORY_POINT_MAP_ICON_AFTER = {0, 20}, -- After this amount of VP the map icon becomes bigger dot.
-	VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {200, 500, 1000},  -- At what camera distance the VP name text disappears.
+	VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {400, 900, 1500},  -- 200, 500, 1000 At what camera distance the VP name text disappears.
 	VICTORY_POINTS_DISTANCE_CUTOFF = {225, 550, 1100}, -- At what distance VPs are hidden
 	AIRBASE_ICON_DISTANCE_CUTOFF = 900, -- At what distance air bases are hidden
 	NAVALBASE_ICON_DISTANCE_CUTOFF = 900, -- 1200 At what distance naval bases are hidden
