@@ -474,6 +474,7 @@ focus_tree = {
 
 		completion_reward = {
 			remove_ideas = anti_german_military
+			set_country_flag = removed_anti_german_military
 		}
 	}
 
@@ -518,12 +519,6 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			if = {
-				limit = {
-					has_idea = anti_german_military
-				}
-				country_event = DOD_yugoslavia.1
-			}
 			GER = { country_event = DOD_yugoslavia.169 }
 		}
 	}

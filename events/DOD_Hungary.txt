@@ -141,7 +141,6 @@ country_event = {
 			country_event = { id = DOD_hungary.5 }
 		}
 	}
-
 }
 #country votes yes - hungary
 country_event = {
@@ -161,6 +160,7 @@ country_event = {
 		news_event = { id = news.291 days = 1 }
 		add_manpower = 90000
 		add_named_threat = { threat = 2 name = HUN_annex_AUS }
+		39 = { add_core_of = HUN }
 	}
 }
 #country votes no - hungary
@@ -284,6 +284,33 @@ country_event = {
 		news_event = { id = news.292 days = 1 }
 	}
 }
+
+#If AH gets Austria through war, needs the South Tyrol core
+country_event = {
+	id = DOD_hungary.193 
+	title = DOD_hungary.193.t
+	desc = DOD_hungary.193.desc
+	picture = GFX_report_event_vote
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HUN
+		controls_state = 153
+		has_completed_focus = HUN_demand_a_referendum
+	}
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+	option = { 
+		name = DOD_hungary.193.a
+		39 = { add_core_of = HUN }	
+	}
+}
+
+
 #protect Czechoslovakia
 country_event = {
 	id = DOD_hungary.10 
