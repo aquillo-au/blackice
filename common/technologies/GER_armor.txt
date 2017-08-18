@@ -1726,7 +1726,7 @@ technologies = {
 		}
 		
 		enable_subunits = {
-			heavy_panzer
+			nbfz
 		}
 		
 		path = {
@@ -1759,6 +1759,9 @@ technologies = {
 
 		enable_equipments = {
 			panzer_vi_equipment_2
+		}
+		enable_subunits = {
+			panzer_vi
 		}
 		
 		path = {
@@ -1854,6 +1857,7 @@ technologies = {
 		enable_equipments = {
 			panzer_vi_equipment_3
 		}
+		
 		path = {
 			leads_to_tech = tech_heavy_panzer_equipment_4
 			research_cost_coeff = 1
@@ -1945,7 +1949,6 @@ technologies = {
 		enable_equipments = {
 			panzer_vii_equipment_1
 		}
-		
 		enable_subunits = {
 			panzer_vii
 		}
@@ -2860,7 +2863,17 @@ technologies = {
                	command_tank_equipment = 1
          	}
 		}
-		heavy_panzer  = {
+		nbfz  = {
+			need = {
+               	command_tank_equipment = 1
+         	}
+		}
+		panzer_vi  = {
+			need = {
+               	command_tank_equipment = 1
+         	}
+		}
+		panzer_vii  = {
 			need = {
                	command_tank_equipment = 1
          	}
@@ -2935,7 +2948,21 @@ technologies = {
                	recovery_tank_equipment = 1
          	}
 		}
-		heavy_panzer  = {
+		nbfz  = {
+			reliability_factor = 0.05
+			casualty_trickleback = 0.05
+			need = {
+               	recovery_tank_equipment = 1
+         	}
+		}
+		panzer_vi = {
+			reliability_factor = 0.05
+			casualty_trickleback = 0.05
+			need = {
+               	recovery_tank_equipment = 1
+         	}
+		}
+		panzer_vii = {
 			reliability_factor = 0.05
 			casualty_trickleback = 0.05
 			need = {
