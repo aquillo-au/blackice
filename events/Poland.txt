@@ -589,7 +589,7 @@ country_event = {
 		tag = ENG
 			POL = {
 			    has_war_with = GER
-			    surrender_progress > 0.50 # to make sure germany overwhelms poland before moving units to france
+			    surrender_progress > 0.60 # to make sure germany overwhelms poland before moving units to france
 		        NOT = {
 			        is_in_faction_with = ENG
 			    }
@@ -623,7 +623,7 @@ country_event = {
 
 	option = {
 		name = poland.13.a
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 		ENG = { add_to_faction = POL}
 		POL = { set_country_flag = in_allies }
 	}

@@ -15,7 +15,7 @@ technologies = {
 	@1944 = 24
 	@1945 = 26
 	@1946 = 28
-	
+		
 	german_tech = {
 
 		path = {
@@ -1857,7 +1857,6 @@ technologies = {
 		enable_equipments = {
 			panzer_vi_equipment_3
 		}
-		
 		path = {
 			leads_to_tech = tech_heavy_panzer_equipment_4
 			research_cost_coeff = 1
@@ -1949,6 +1948,7 @@ technologies = {
 		enable_equipments = {
 			panzer_vii_equipment_1
 		}
+		
 		enable_subunits = {
 			panzer_vii
 		}
@@ -2827,11 +2827,10 @@ technologies = {
 		dependencies = {
 			tech_panzer_iv_equipment_1 = 1
 		}
-		dependencies = {
-			tech_panzer_v_equipment_1 = 1
-		}
-		dependencies = {
-			tech_heavy_panzer_equipment_1 = 1
+		
+		path = {
+			leads_to_tech = tech_ger_command_tanks_II
+			research_cost_coeff = 1
 		}
 		category_all_armor = {
 			breakthrough = 0.05
@@ -2858,29 +2857,55 @@ technologies = {
                	command_tank_equipment = 1
          	}
 		}
+	
+		}
+		
+		research_cost = 4
+		start_year = 1938
+		folder = {
+			name = german_pz_folder
+			position = { x = 0 y = 11 }
+		}
+		
+		categories = {
+			support_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tech_ger_command_tanks_II = {
+
+		enable_equipments = {
+			command_tank_equipment_1
+		}
+		
+		dependencies = {
+			tech_panzer_v_equipment_1 = 1
+		}
+		dependencies = {
+			tech_heavy_panzer_equipment_1 = 1
+		}
+		category_all_armor = {
+			breakthrough = 0.05
+			max_organisation = 10
+		}
+		
+		
 		panzer_v = {
 			need = {
                	command_tank_equipment = 1
          	}
 		}
-		nbfz  = {
-			need = {
-               	command_tank_equipment = 1
-         	}
-		}
-		panzer_vi  = {
-			need = {
-               	command_tank_equipment = 1
-         	}
-		}
-		panzer_vii  = {
-			need = {
-               	command_tank_equipment = 1
-         	}
-		}
+		#heavy_panzer = {
+		#	need = {
+        #       	command_tank_equipment = 1
+       #  	}
+		#}
 		
 		research_cost = 4
-		start_year = 1938
+		start_year = 1944
 		folder = {
 			name = german_pz_folder
 			position = { x = 0 y = 11 }
@@ -2906,13 +2931,11 @@ technologies = {
 		dependencies = {
 			tech_panzer_iv_equipment_1 = 1
 		}
-		dependencies = {
-			tech_panzer_v_equipment_1 = 1
+	
+		path = {
+			leads_to_tech = tech_ger_recovery_tanks_II
+			research_cost_coeff = 1
 		}
-		dependencies = {
-			tech_heavy_panzer_equipment_1 = 1
-		}
-		
 		panzer_i = {
 			reliability_factor = 0.05
 			casualty_trickleback = 0.05
@@ -2941,6 +2964,37 @@ technologies = {
                	recovery_tank_equipment = 1
          	}
 		}
+		
+		
+		research_cost = 4
+		start_year = 1939
+		folder = {
+			name = german_pz_folder
+			position = { x = 0 y = 13 }
+		}
+		
+		categories = {
+			support_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	tech_ger_recovery_tanks_II = {
+
+		enable_equipments = {
+			recovery_tank_equipment_1
+		}
+		
+		dependencies = {
+			tech_panzer_v_equipment_1 = 1
+		}
+		dependencies = {
+			tech_heavy_panzer_equipment_1 = 1
+		}
+		
+		
 		panzer_v = {
 			reliability_factor = 0.05
 			casualty_trickleback = 0.05
@@ -2948,27 +3002,13 @@ technologies = {
                	recovery_tank_equipment = 1
          	}
 		}
-		nbfz  = {
-			reliability_factor = 0.05
-			casualty_trickleback = 0.05
-			need = {
-               	recovery_tank_equipment = 1
-         	}
-		}
-		panzer_vi = {
-			reliability_factor = 0.05
-			casualty_trickleback = 0.05
-			need = {
-               	recovery_tank_equipment = 1
-         	}
-		}
-		panzer_vii = {
-			reliability_factor = 0.05
-			casualty_trickleback = 0.05
-			need = {
-               	recovery_tank_equipment = 1
-         	}
-		}
+		#heavy_panzer  = {
+		#	reliability_factor = 0.05
+		#	casualty_trickleback = 0.05
+		#	need = {
+        #       	recovery_tank_equipment = 1
+       #  	}
+		#}
 		
 		research_cost = 4
 		start_year = 1944

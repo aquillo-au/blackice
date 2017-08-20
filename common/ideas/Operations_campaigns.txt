@@ -53,7 +53,7 @@ ideas = {
 			
 			modifier = {
 				army_org_factor = -0.3
-				land_reinforce_rate = -0.1
+				land_reinforce_rate = -0.05
 				army_morale_factor = -0.2
 				attrition = 0.3
 				army_speed_factor = -0.05
@@ -884,15 +884,40 @@ ideas = {
 				army_org_factor = 0.5
 				land_reinforce_rate = 0.15
 				army_morale_factor = 0.1
+				
+				army_core_defence_factor = 0.6
+				
+	   			army_armor_defence_factor = 0.3
+				
+				motorized_defence_factor =0.3
+				
+				army_artillery_defence_factor = 0.15
+			}
+			
+			removal_cost = -1
+		}
+	}
+	country = {
+	
+		Operation_uranus = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			#traits = { army_chief_offensive_2 }
+			modifier = {
+				army_org_factor = 0.5
+				land_reinforce_rate = 0.15
+				army_morale_factor = 0.1
 				#attrition = 0.025
 				army_speed_factor = 0.15
-				army_core_attack_factor = 0.3
+				army_core_attack_factor = 0.5
 				army_core_defence_factor = 0.5
 				army_armor_attack_factor = 0.6
 	   			army_armor_defence_factor = 0.3
 				motorized_attack_factor = 0.5
 				motorized_defence_factor =0.3
-				army_artillery_attack_factor = 0.3
+				army_artillery_attack_factor = 0.5
 				army_artillery_defence_factor = 0.15
 			}
 			
