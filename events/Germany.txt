@@ -12192,4 +12192,31 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = germany.405
+	title = germany.405.t
+	desc = germany.405.d
+	picture = GFX_report_event_german_defence_with_at_gun
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_tech = tech_fw_200_bomber_equipment_1
+		NOT = { has_country_flag = condors }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.405.a
+		ai_chance = { factor = 100 }
+		hidden_effect = {
+			load_oob = GER_condor_equipment
+			set_country_flag = condors
+		}
+	}
+}
 ### EOF ###
