@@ -1717,4 +1717,130 @@ country_event = {
 		}
 	}
 }
+country_event = { 
+	id = BICE_britain.60
+	title = BICE_britain.60.t
+	desc = BICE_britain.60.d
+	picture = GFX_report_event_british_armour_crew
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		not = { has_country_flag = uk7_8divs }
+		is_ai = yes
+		date > 1938.9.29
+		#has_war_with = ITA 
+		controls_state = 446
+		
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.60.a
+		hidden_effect = {
+			load_oob = "ENG_7_8_divisons"
+			set_country_flag = uk7_8divs
+		}
+	}
+}
+country_event = { 
+	id = BICE_britain.61
+	title = BICE_britain.61.t
+	desc = BICE_britain.61.d
+	picture = GFX_report_event_british_armour_crew
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		not = { has_country_flag = wdf }
+		is_ai = yes
+		#date > 1938.9.29
+		has_war_with = ITA 
+		controls_state = 446
+		
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.61.a
+		hidden_effect = {
+			load_oob = "ENG_western_desert_force"
+			set_country_flag = wdf
+		}
+	}
+}
+country_event = { 
+	id = BICE_britain.62
+	title = BICE_britain.62.t
+	desc = BICE_britain.62.d
+	picture = GFX_report_event_british_armour_crew
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		not = { has_country_flag = xxcorps}
+		is_ai = yes
+		date > 1941.1.1
+		has_war_with = ITA 
+		controls_state = 446
+		
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.62.a
+		hidden_effect = {
+			load_oob = "ENG_XXX_corps"
+			set_country_flag = xxxcorps
+		}
+	}
+}
+country_event = { 
+	id = BICE_britain.63
+	title = BICE_britain.63.t
+	desc = BICE_britain.63.d
+	picture = GFX_report_event_british_armour_crew
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		not = { has_country_flag = uk22arm}
+		is_ai = yes
+		date > 1941.12.1
+		has_war_with = ITA 
+		controls_state = 446
+		
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.63.a
+		hidden_effect = {
+			load_oob = "ENG_22_armoured_brigade"
+			set_country_flag = uk22arm
+		}
+	}
+}
+# Australian 6th inf div
+# Australian 7th inf div
+# Australian 9th inf div
+# NZ 2nd division 1940
+# SAF 1st and 2nd inf div july 1941
+# 50 infantry division april 1942
+# Indian 8th and 10th Inf division may 1942
+# 1st Free French brigade, 44 inf div, 8th armoured div aug 1942
+# Canadian 5th armoured div, Canadian 1st Inf div
+# Canadian 4th armored div, Canadian 2nd Inf div, Canadian 3rd Inf div
 ### EOF ###
