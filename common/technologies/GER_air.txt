@@ -686,10 +686,10 @@ technologies = {
 			cat_heavy_fighter
 		}
 		research_cost = 0.5 
-		start_year = 1941
+		start_year = 1942
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 9 y = @1941 }
+			position = { x = 9 y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -2087,11 +2087,35 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 48 y = @1938 } 
+			position = { x = 48 y = @1937 } 
 		}
 		
 		ai_will_do = {
 			factor = 10
+		}
+	}
+	tech_he_111_j_bomber_equipment_1 = {
+	
+		enable_equipments = { he_111_j_bomber_equipment_1 }
+		
+		categories = {
+			naval_air
+			naval_bomber
+			air_equipment
+		}
+		dependencies = {
+			tech_german_aircraft1 = 1 
+			tech_he_111_bomber_equipment_2 = 1 
+		}
+		research_cost = 0.5
+		start_year = 1938 
+		folder = {
+			name = luftwaffe_folder
+			position = { x = 48 y = @1938 } 
+		}
+		
+		ai_will_do = {
+			factor = 2
 		}
 	}
 	tech_he_115_bomber_equipment_1 = {
@@ -2138,30 +2162,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 60
-		}
-	}
-	tech_he_111_j_bomber_equipment_1 = {
-	
-		enable_equipments = { he_111_j_bomber_equipment_1 }
-		
-		categories = {
-			naval_air
-			naval_bomber
-			air_equipment
-		}
-		dependencies = {
-			tech_german_aircraft1 = 1 
-			tech_he_111_bomber_equipment_2 = 1 
-		}
-		research_cost = 0.5
-		start_year = 1941 
-		folder = {
-			name = luftwaffe_folder
-			position = { x = 48 y = @1941 } 
-		}
-		
-		ai_will_do = {
-			factor = 2
 		}
 	}
 	tech_ju_88_a17_bomber_equipment_1 = {
