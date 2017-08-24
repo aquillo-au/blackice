@@ -1075,6 +1075,7 @@ country_event = {
 		not = { has_country_flag = first_airborne_div }
 		date > 1941.11.4	
 		126 = { is_controlled_by = ENG }
+		has_tech = paratroop_equipment
 	}
 	
 	mean_time_to_happen = {
@@ -1086,7 +1087,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 	
 		hidden_effect = {
-			set_technology = {paratroop_equipment = 1 }
+			set_technology = {tech_airborne_engineers = 1 }
 			load_oob = "ENG_1st_Airborne_Division"	#6103
 			set_country_flag = first_airborne_div
 		}
@@ -1111,6 +1112,8 @@ country_event = {
 		not = { has_country_flag = six_airborne_div }
 		date > 1943.5.3	
 		126 = { is_controlled_by = ENG }
+		has_tech = paratroop_equipment
+		has_tech = tech_airborne_engineers 
 	}
 	
 	mean_time_to_happen = {
@@ -1122,7 +1125,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			set_technology = {paratroop_equipment = 1 } #para_support activation tech
+			
 			load_oob = "ENG_6th_Airborne_Division"	#6103
 			set_country_flag = six_airborne_div
 		}

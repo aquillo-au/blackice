@@ -138,7 +138,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 20
+			factor = 60
 		}
 	}
 	tech_me_109_early_fighter_equipment_1 = {
@@ -165,7 +165,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 80
 		}
 	}
 	tech_me_109_mid_fighter_equipment_1 = {
@@ -192,7 +192,7 @@ technologies = {
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 80
 		}
 	}
 	
@@ -221,7 +221,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 50
 		}
 	}
 	
@@ -254,7 +254,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 50
 		}
 	}
 	
@@ -279,7 +279,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 30
 		}
 	}
 	
@@ -337,7 +337,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 50
 		}
 	}
 	tech_ta_152_fighter_equipment_1 = {
@@ -360,7 +360,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 	}
 	tech_ar_68_equipment_1 = {
@@ -462,7 +462,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 30
 		}
 	}
 	tech_bv_155_fighter_equipment_1 = {
@@ -536,7 +536,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 30
 		}
 	}
 	tech_bf_110_fighter_equipment_2 = {
@@ -686,10 +686,10 @@ technologies = {
 			cat_heavy_fighter
 		}
 		research_cost = 0.5 
-		start_year = 1941
+		start_year = 1942
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 9 y = @1941 }
+			position = { x = 9 y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -1265,7 +1265,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 	}
 	tech_ju_87_equipment_4 = {
@@ -1312,7 +1312,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 1
+			factor = 20
 		}
 	}
 	tech_hs_132_equipment_1 = {
@@ -1335,7 +1335,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 5
+			factor = 20
 		}
 	}
 	
@@ -1385,7 +1385,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 30
 		}
 	}
 	tech_ju_86_r_bomber_equipment_1 = {
@@ -1437,7 +1437,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 20
 		}
 	}
 	tech_ju_388_bomber_equipment_1 = {
@@ -1488,7 +1488,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 60
 		}
 	}
 	tech_he_70_bomber_equipment_2 = {
@@ -1543,7 +1543,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 50
 		}
 	}
 	tech_ju_88_s_bomber_equipment_1 = {
@@ -1671,7 +1671,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 60
 		}
 	}
 	tech_he_111_bomber_equipment_2 = {
@@ -2087,11 +2087,35 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = luftwaffe_folder
-			position = { x = 48 y = @1938 } 
+			position = { x = 48 y = @1937 } 
 		}
 		
 		ai_will_do = {
 			factor = 10
+		}
+	}
+	tech_he_111_j_bomber_equipment_1 = {
+	
+		enable_equipments = { he_111_j_bomber_equipment_1 }
+		
+		categories = {
+			naval_air
+			naval_bomber
+			air_equipment
+		}
+		dependencies = {
+			tech_german_aircraft1 = 1 
+			tech_he_111_bomber_equipment_2 = 1 
+		}
+		research_cost = 0.5
+		start_year = 1938 
+		folder = {
+			name = luftwaffe_folder
+			position = { x = 48 y = @1938 } 
+		}
+		
+		ai_will_do = {
+			factor = 2
 		}
 	}
 	tech_he_115_bomber_equipment_1 = {
@@ -2137,31 +2161,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
-		}
-	}
-	tech_he_111_j_bomber_equipment_1 = {
-	
-		enable_equipments = { he_111_j_bomber_equipment_1 }
-		
-		categories = {
-			naval_air
-			naval_bomber
-			air_equipment
-		}
-		dependencies = {
-			tech_german_aircraft1 = 1 
-			tech_he_111_bomber_equipment_2 = 1 
-		}
-		research_cost = 0.5
-		start_year = 1941 
-		folder = {
-			name = luftwaffe_folder
-			position = { x = 48 y = @1941 } 
-		}
-		
-		ai_will_do = {
-			factor = 2
+			factor = 60
 		}
 	}
 	tech_ju_88_a17_bomber_equipment_1 = {
@@ -2233,7 +2233,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 10
+			factor = 30
 		}
 	}
 	tech_ar_197_fighter_equipment_1 = {
@@ -2448,7 +2448,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 10
 		}
 	}
 	tech_do_24_equipment_1 = {
@@ -2472,7 +2472,7 @@ technologies = {
 		}
 		
 		ai_will_do = {
-			factor = 2
+			factor = 20
 		}
 	}
 	tech_bv_138_equipment_1 = {

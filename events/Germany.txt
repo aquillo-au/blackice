@@ -6314,7 +6314,8 @@ country_event = {
 		name = germany.80.a
 		
 		ai_chance = {
-			factor = 10	
+			base = 30
+			
 		}
 
 		GER = { country_event = { id = germany.81 days = 1 } }
@@ -6346,7 +6347,7 @@ country_event = {
 	option = {	
 		name = germany.80.b
 		ai_chance = { 
-			factor = 1
+			base = 70
 			modifier = {
 				factor = 0
 				is_in_faction_with = GER
@@ -6397,6 +6398,7 @@ country_event = {
 	
 	option = {
 		name = germany.81.a
+		set_country_flag = peaceful_danzig
 		if = {
 			limit = { SLO = { exists = yes } }
 			POL = { annex_country = { target = SLO } }
@@ -6567,6 +6569,24 @@ country_event = {
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
+				CZE = { exists = no }
+			}
+			modifier = {
+				factor = 3
+				CZE = { 
+					exists = yes
+					NOT = {
+						has_war_with = GER
+						is_subject_of = GER
+					}
+				}
+				GER = {
+					NOT = {
+						has_completed_focus = GER_end_of_czechoslovakia
+						has_war_with = FRA
+						has_war_with = ENG
+					}
+				}
 			}
 		}
 		GER = { country_event = { id = germany.87 days = 1 } }
@@ -6650,6 +6670,7 @@ country_event = {
 	
 	option = {
 		name = germany.87.a
+		set_country_flag = peaceful_danzig
 		transfer_state = 85
 		remove_state_claim = 86
 		set_country_flag = recent_major_land_acquisition
@@ -10929,114 +10950,33 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	immediate = {  }
-
 	option = { #Demand West Poland
 		name = germany.304.a
 		add_named_threat = { threat = 5 name = GER_west_poland }
-		if = { limit = { NOT = { has_global_flag = sov_yes_pact} }
-			add_state_claim = 86
-			add_state_claim = 87
-			add_state_claim = 88
-			add_state_claim = 90
-			add_state_claim = 98
-			add_state_claim = 10
-		}
-			if = {
-				limit = {
-					86 = {
-						controller = {
-							tag = POL
-							has_civil_war = no
-						}
-					}
-				}
-				effect_tooltip = {
-					transfer_state = 86
-					transfer_state = 87
-					transfer_state = 90
-					transfer_state = 10
-					transfer_state = 98
-					transfer_state = 88
-					
-				}
-				POL = {
-					country_event = { id = germany.307 }
-					if = {
-						limit = { NOT = { is_in_faction_with = ROOT } }
-						custom_effect_tooltip = needs_approval
-					}
-					if = {
-						limit = { 
-							is_in_faction_with = ROOT 
-							ROOT = { is_faction_leader = yes }
-						}
-						custom_effect_tooltip = GER_danzig_or_war_POL_faction_GER_leader
-					}
-					if = {
-						limit = {
-							is_in_faction_with = ROOT 
-							NOT = { ROOT = { is_faction_leader = yes } }
-						}
-						custom_effect_tooltip = GER_danzig_or_war_POL_faction_GER_noleader
-					}
-				}
-			}
-			if = {
-				limit = {
-					85 = {
-						owner = {
-							OR = {
-								original_tag = POL
-								tag = POL
-							}
-						}
-					}
-				}
-				random_country = {
-					limit = {
-						original_tag = POL
-						has_civil_war = yes
-						OR = {
-							is_in_faction_with = GER
-							has_volunteers_amount_from = {
-								tag = GER
-								count > 0
-							}
-						}
-					}
-					country_event = { id = germany.113 days = 1 }
-				}
-				custom_effect_tooltip = GER_danzig_or_war_POL_civil_war
-			}
+		add_state_claim = 86
+		POL = { country_event = germany.305 }
 		ai_chance = {
-			base = 75	
-			modifier = {
-				factor = 10
-				is_historical_focus_on = yes
-			}
+			base = 95	
 		}
 	}
 	option = { #Puppet Them
 		name = germany.304.b
+		set_global_flag = GER_puppet_invasion_POL
+		add_political_power = -25
+		add_state_claim = 86
 		create_wargoal = {
 			type = puppet_wargoal_focus
 			target = POL
 		}
+		POL = { country_event = germany.386 }
+		increase_allied_anger2 = yes
+		custom_effect_tooltip = allied.anger.plus.2
 		ai_chance = {
-			factor = 20
-			
-		}
-	}
-	option = { #Annex them
-		name = germany.306.c
-		create_wargoal = {
-			type = annex_everything
-			target = POL
-		}
-		ai_chance = {
-			factor = 5
-			
+			base = 5
+			modifier = {
+				factor = 0
+				democratic_govt = yes
+			}
 		}
 	}
 }
@@ -11049,38 +10989,27 @@ country_event = {
 	picture = GFX_report_event_generic_funeral
 	fire_only_once = yes
 	is_triggered_only = yes
-
-	immediate = {  }
-
-	option = { 
+	
+	option = { #Never!
 		name = germany.305.a
-		
+		GER = { country_event = germany.307 }
+		add_political_power = 100
+		ruling_pop_plus_7 = yes
+		add_national_unity = 0.07
 		ai_chance = {
-			factor = 1
+			factor = 100
 			
 		}
 	}
-	option = { 
+	option = { #We have no choice....
 		name = germany.305.b
-		
+		GER = { country_event = germany.306 }
+		add_political_power = -100
+		ruling_pop_minus_10 = yes
+		ruling_pop_minus_5 = yes
+		add_national_unity = -0.07
 		ai_chance = {
-			factor = 1
-			
-		}
-	}
-	option = { 
-		name = germany.305.c
-		
-		ai_chance = {
-			factor = 1
-			
-		}
-	}
-	option = {
-		name = germany.305.d
-		
-		ai_chance = {
-			factor = 1
+			factor = 0
 			
 		}
 	}
@@ -11095,15 +11024,12 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	immediate = {  }
-
 	option = { 
 		name = germany.306.a
-		
-		ai_chance = {
-			factor = 1
-			
-		}
+		transfer_state = 86
+		add_political_power = 75
+		ruling_pop_plus_7 = yes
+		add_national_unity = 0.05
 	}
 }
 
@@ -11116,11 +11042,14 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 
-	immediate = {  }
-
 	option = { #We have our war at last!
 		name = germany.307.a
-		
+		create_wargoal = {
+			type = take_state_focus
+			target = POL
+			generator = { 86 }
+		}
+		POL = { country_event = germany.386 }
 		ai_chance = {
 			factor = 1
 			
@@ -11128,7 +11057,12 @@ country_event = {
 	}
 	option = { #Back Down
 		name = germany.307.b
-		
+		ruling_pop_minus_7 = yes
+		add_political_power = -75
+		add_national_unity = -0.05
+		custom_effect_tooltip = allied.anger.minus.1
+		decrease_allied_anger = yes
+		POL = { country_event = germany.391 }
 		ai_chance = {
 			factor = 1
 			
@@ -11136,6 +11070,126 @@ country_event = {
 	}
 }
 
+#POL - GER is invading POL
+country_event = {
+	id = germany.386
+	title = germany.386.t
+	desc = germany.386.desc
+	picture = GFX_report_event_generic_funeral
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Let them come!
+		name = germany.386.a
+		ENG = { country_event = germany.387 }
+	}
+}
+
+#ENG hears of GER's impending invasion of POL
+country_event = {
+	id = germany.387
+	title = germany.387.t
+	desc = germany.387.desc
+	picture = GFX_report_event_generic_funeral
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #They shall not fight alone
+		name = germany.387.a
+		POL = { country_event = germany.388 }
+		add_political_power = 15
+		ruling_pop_plus_3 = yes
+		ai_chance = {
+			factor = 95
+			
+		}
+	}
+	option = { #We cant help them
+		name = germany.387.b
+		POL = { country_event = germany.390 }
+		add_political_power = -25
+		ruling_pop_minus_5 = yes
+		ai_chance = {
+			factor = 5
+			
+		}
+	}
+}
+
+#POL - ENG says yes
+country_event = {
+	id = germany.388
+	title = germany.388.t
+	desc = germany.388.desc
+	picture = GFX_report_event_generic_funeral
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Excellent!
+		name = germany.388.a
+		ENG = { add_to_faction = POL }
+		set_country_flag = in_allies
+		add_national_unity = 0.03
+		add_political_power = 25
+		add_ai_strategy = {
+				type = alliance
+				id = "ENG"
+				value = 200000
+		}
+		GER = { country_event = germany.389 }
+	}
+}
+
+#GER - ENG comes to POL's defence
+country_event = {
+	id = germany.389
+	title = germany.389.t
+	desc = germany.389.desc
+	picture = GFX_report_event_generic_funeral
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Damn
+		name = germany.389.a
+		add_political_power = -25
+		add_national_unity = -0.03
+		ruling_pop_minus_3 = yes
+	}
+}
+
+#POL - ENG says no
+country_event = {
+	id = germany.390
+	title = germany.390.t
+	desc = germany.390.desc
+	picture = GFX_report_event_generic_funeral
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Damn
+		name = germany.390.a
+		add_political_power = -25
+		add_national_unity = -0.03
+		ruling_pop_minus_3 = yes
+	}
+}
+
+#POL - GER backs down after demand rejection
+country_event = {
+	id = germany.391
+	title = germany.391.t
+	desc = germany.391.desc
+	picture = GFX_report_event_generic_funeral
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #We stood up to our bully
+		name = germany.391.a
+		add_political_power = 75
+		add_national_unity = 0.07
+		ruling_pop_plus_10 = yes
+	}
+}
 ############ SOUTH TYROL ###############
 
 #South Tyrol Solution
@@ -11159,7 +11213,7 @@ country_event = {
 		ai_chance = {
 			base = 90
 			modifier = {
-				factor = 10
+				factor = 2
 				is_historical_focus_on = yes				
 			}
 		}
@@ -11254,7 +11308,7 @@ country_event = {
 	option = { #Back down
 		name = germany.311.a
 		add_political_power = 10
-		ruling_pop_minus_1 = yes
+		ruling_pop_minus_2 = yes
 		remove_state_claim = 39 #South Tyrol
 		ai_chance = {
 			base = 75
@@ -12190,6 +12244,72 @@ country_event = {
 			load_oob = GER_heeresdienststelle_8_9
 			set_country_flag = hds_8_9
 		}
+	}
+}
+country_event = {
+	id = germany.405
+	title = germany.405.t
+	desc = germany.405.d
+	picture = GFX_event_better_canada.50
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_tech = tech_fw_200_bomber_equipment_1
+		NOT = { has_country_flag = condors }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.405.a
+		ai_chance = { factor = 100 }
+		hidden_effect = {
+			load_oob = GER_condor_equipment
+			set_country_flag = condors
+		}
+	}
+}
+country_event = {
+	id = germany.406
+	title = germany.406.t
+	desc = germany.406.d
+	picture = GFX_report_event_kubelwagon_in_afrika
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_in_faction_with = ITA
+		has_war = yes
+		is_puppet = no
+		has_country_flag = GERafrikakorp 
+		has_tech =  paratroop_equipment	
+		ITA = { owns_state = 448 } # controls tripoli
+		date > 1942.7.1	
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.406.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			set_technology = {tech_airborne_engineers = 1 }
+			load_oob = "GER_afrikakorps_II"
+			set_country_flag = GERafrikakorpII
+		}
+	}
+	option = {
+		name = germany.406.b		#refuse
+		ai_chance = { factor = 0 }
+		set_country_flag = GERafrikakorpII
 	}
 }
 ### EOF ###
