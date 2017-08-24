@@ -138,21 +138,10 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		if = {
-			limit = {
-				is_ai = yes
-			}
-			date > 1939.2.1
-			has_tech = ss_combat_engineer_tech
-		}
-		if = {
-			limit = {
-				is_ai = no
-			}
-			date > 1939.2.1
-			has_tech = ss_combat_engineer_tech
-			has_country_flag = LSSAH_regiment_38
-		}
+		is_ai = no
+		date > 1939.2.1
+		has_tech = ss_combat_engineer_tech
+		has_country_flag = LSSAH_regiment_38
 	}
 	
 	mean_time_to_happen = {
@@ -172,12 +161,31 @@ country_event = {
 			set_country_flag = LSSAH_regiment_39_exp
 		}
 	}
+}
+country_event = {
+	id = ss_event.596
+	title = ss_event.596.t
+	desc = ss_event.596.d
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1939.2.1
+		has_tech = ss_combat_engineer_tech
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
 	option = {
-		name = ss_event.663.b
-		trigger = { is_ai = yes }
+		name = ss_event.596.a
+		ia_chance = { factor = 100 }
 		hidden_effect = {
 			load_oob = "GER_LSSAH_inf_division_39"
-			set_country_flag = LSSAH_in_division_39_ai
+			set_country_flag = LSSAH_inf_division_39_ai
 		}
 	}
 }
@@ -260,20 +268,9 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		if = {
-			limit = {
-				is_ai = yes
-			}
-			date > 1940.6.1
-			has_country_flag = LSSAH_inf_division_39_ai
-		}
-		if = {
-			limit = {
-				is_ai = no
-			}
-			date > 1940.6.1
-			has_country_flag = LSSAH_regiment_40_mot
-		}
+		is_ai = no
+		date > 1940.6.1
+		has_country_flag = LSSAH_regiment_40_mot
 	}
 	
 	mean_time_to_happen = {
@@ -282,7 +279,7 @@ country_event = {
 	
 	option = {
 		name = ss_event.660.a
-		trigger = { is_ai = no }
+		
 		hidden_effect = {
 			if = {
 				limit = {
@@ -294,9 +291,29 @@ country_event = {
 			set_country_flag = LSSAH_regiment_40_brig
 		}
 	}
+}
+## AI
+country_event = {
+	id = ss_event.595
+	title = ss_event.595.t
+	desc = ss_event.595.d
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1940.6.1
+		has_country_flag = LSSAH_inf_division_39_ai
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
 	option = {
-		name = ss_event.660.b
-		trigger = { is_ai = yes }
+		name = ss_event.595.a
+		ai_chance = { factor = 100 }
 		hidden_effect = {
 			load_oob = "GER_LSSAH_mot_division_40"
 			set_country_flag = LSSAH_mot_division_40_ai
@@ -316,20 +333,9 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		if = {
-			limit = {
-				is_ai = yes
-			}
-			date > 1942.2.12
-			has_country_flag = LSSAH_mot_division_40_ai
-		}
-		if = {
-			limit = {
-				is_ai = no
-			}
-			date > 1942.2.12
-			has_country_flag = LSSAH_regiment_40_brig
-		}
+		is_ai = no
+		date > 1942.2.12
+		has_country_flag = LSSAH_regiment_40_brig
 	}
 	
 	mean_time_to_happen = {
@@ -338,7 +344,7 @@ country_event = {
 	
 	option = {
 		name = ss_event.659.a
-		trigger = { is_ai = no }
+		
 		hidden_effect = {
 			if = {
 				limit = {
@@ -351,8 +357,27 @@ country_event = {
 			set_country_flag = LSSAH_brig_42_div
 		}
 	}
+}
+country_event = {
+	id = ss_event.594
+	title = ss_event.594.t
+	desc = ss_event.594.d
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1942.2.12
+		has_country_flag = LSSAH_mot_division_40_ai
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
 	option = {
-		name = ss_event.659.b
+		name = ss_event.594.a
 		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_LSSAH_pzgrendiv_42"
@@ -410,20 +435,9 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		if = {
-			limit = {
-				is_ai = yes
-			}
-			date > 1943.11.12
-			has_country_flag = LSSAH_pzgren_div_42_ai
-		}
-		if = {
-			limit = {
-				is_ai = no
-			}
-			date > 1943.11.12
-			has_country_flag = LSSAH_pzgren_div_42
-		}
+		is_ai = no
+		date > 1943.11.12
+		has_country_flag = LSSAH_pzgren_div_42
 	}
 	
 	mean_time_to_happen = {
@@ -445,9 +459,30 @@ country_event = {
 			set_country_flag = LSSAH_pz_div_43
 		}
 	}
+}
+## AI-event
+country_event = {
+	id = ss_event.593
+	title = ss_event.593.t
+	desc = ss_event.593.d
+	picture = GFX_report_event_ss_lssah_pzdiv_43
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1943.11.12
+		has_country_flag = LSSAH_pzgren_div_42_ai
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
 	option = {
-		name = ss_event.657.b
-		trigger = { is_ai = yes }
+		name = ss_event.593.a
+		ai_chance = { faktor = 100 }
 		hidden_effect = {
 			load_oob = "GER_LSSAH_pzdiv_43"
 			set_country_flag = LSSAH_pz_div_43_ai
@@ -478,6 +513,33 @@ country_event = {
 		}
 	}
 }
+## AI
+country_event = {
+	id = ss_event.592
+	title = ss_event.592.t
+	desc = ss_event.592.d
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1939.10.8
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.592.b
+		hidden_effect = {
+			load_oob = "GER_Totenkopf_division"
+			set_country_flag = totenkopf_div_39_ai
+		}
+	}
+}
+## PLAYER
 country_event = {
 	id = ss_event.651
 	title = ss_event.651.t
@@ -488,20 +550,10 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		if = {
-			limit = {
-				is_ai = yes
-			}
-			date > 1942.11.8
-			has_tech = mechanised_infantry2
-		}
-		if = {
-			limit = {
-				is_ai = no
-			}
-			date > 1942.11.8
-			has_tech = mechanised_infantry2
-		}
+		is_ai = no
+		date > 1942.11.8
+		has_tech = mechanised_infantry2
+		has_country_flag = totenkopf_div_39
 	}
 	
 	mean_time_to_happen = {
@@ -521,14 +573,36 @@ country_event = {
 			set_country_flag = totenkopf_pzgren_div_42
 		}
 	}
+}
+## AI ##
+country_event = {
+	id = ss_event.591
+	title = ss_event.591.t
+	desc = ss_event.591.d
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1942.11.8
+		has_tech = mechanised_infantry2
+		has_country_flag = totenkopf_div_39_ai
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
 	option = {
-		name = ss_event.651.b
+		name = ss_event.591.a
 		hidden_effect = {
 			load_oob = "GER_Totenkopf_pzgren_div_42"
 			set_country_flag = totenkopf_pzgren_div_42_ai
 		}
 	}
 }
+## PLAYER ##
 country_event = {
 	id = ss_event.652
 	title = ss_event.652.t
@@ -539,20 +613,9 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		if = {
-			limit = {
-				is_ai = yes
-			}
-			date > 1943.10.21
-			has_country_flag = totenkopf_pzgren_div_42_ai
-		}
-		if = {
-			limit = {
-				is_ai = no
-			}
-			date > 1943.10.21
-			has_country_flag = totenkopf_pzgren_div_42
-		}
+		is_ai = no
+		date > 1943.10.21
+		has_country_flag = totenkopf_pzgren_div_42
 	}
 	
 	mean_time_to_happen = {
@@ -573,8 +636,29 @@ country_event = {
 			set_country_flag = totenkopf_pz_div_44
 		}
 	}
+}
+## AI ##
+country_event = {
+	id = ss_event.590
+	title = ss_event.590.t
+	desc = ss_event.590.d
+	picture = GFX_report_event_totenkopf_pz_division
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1943.10.21
+		has_country_flag = totenkopf_pzgren_div_42_ai
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
 	option = {
-		name = ss_event.652.b
+		name = ss_event.590.a
 		hidden_effect = {
 			load_oob = "GER_Totenkopf_pz_div_44"
 			set_country_flag = totenkopf_pz_div_44_ai
