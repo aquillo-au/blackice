@@ -12857,7 +12857,7 @@ guiTypes = {
 				format = "UP"
 			}
 		}
-		# France Marine Nationale
+		# France Marine Nationale Surface Fleet
 		containerWindowType = {
 			name = "frenchnaval_folder"
 			position = { x=0 y=47 }
@@ -13287,6 +13287,231 @@ guiTypes = {
 				slotsize = { width = 70 height = 70 }
 				format = "UP"
 			}
+		}
+		# France Marine Nationale Submerged Fleet
+		containerWindowType = {
+			name = "frenchnaval_sub_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			#containerWindowType = {
+				#name = "size_filler"
+				#position = { x=0 y=0 }
+				#size = { width = 1700 height = 1200 }
+			#}
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = {
+					width = 2500 height = 2700
+					min = { width=100%% height=100%% }
+				}
+				clipping = no
+
+				background = {
+					name = "Background"
+					quadTextureSprite ="GFX_techtree_stripes"
+				}
+				iconType = {
+					name ="kriegsmarine_sub_techtree_bg"
+					spriteType = "GFX_naval_techtree_bg"
+					position = { x=0 y=0 }
+				}
+				containerWindowType = {
+					name = "kriegsmarine_sub_year_left"
+					position = { x=10 y=100 }
+					size = { width = 80 height = 100%% }
+					orientation = upper_left
+				
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year1"
+						position = { x = 20 y = 2 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1922"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year2"
+						position = { x = 20 y = 212 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1933"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year3"
+						position = { x = 20 y = 422 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1935"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year4"
+						position = { x = 20 y = 632 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1936"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year5"
+						position = { x = 20 y = 842 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = { x = 0 y = 4 }
+						text = "1937"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year6"
+						position = { x = 20 y = 1052 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = { x = 0 y = 4 }
+						text = "1938"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year7"
+						position = { x = 20 y = 1262 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = { x = 0 y = 4 }
+						text = "1939"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year8"
+						position = { x = 20 y = 1472 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = { x = 0 y = 4 }
+						text = "1940"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year9"
+						position = { x = 20 y = 1682 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = { x = 0 y = 4 }
+						text = "1941"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year10"
+						position = { x = 20 y = 1892 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = { x = 0 y = 4 }
+						text = "1942"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year11"
+						position = { x = 20 y = 2102 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = { x = 0 y = 4 }
+						text = "1943"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year12"
+						position = { x = 20 y = 2312 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = { x = 0 y = 4 }
+						text = "1944"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					instantTextBoxType = {
+						name = "frenchnaval_sub_year13"
+						position = { x = 20 y = 2522 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = { x = 0 y = 4 }
+						text = "1945"
+						maxWidth = 170
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
+					
+					instantTextBoxType = {
+						name = "naval_subtitle_sub"
+						position = { x = 30 y = 55 }
+						textureFile = ""
+						font = "hoi_33"
+						borderSize = { x = 0 y = 4 }
+						text = "NAVAL_TITLE_SUBMARINES_COASTAL"
+						maxWidth = 600
+						maxHeight = 62
+						format = left
+						orientation = "UPPER_LEFT"
+						pdx_tooltip = "submarine_desc"
+					}
+				}
+			}
+			
+			#gridboxtype = {
+			#	name = "tech_frenchnaval_sub_tree"
+			#	position = { x = 10% y = 172 }
+			#	size = { width = 80% height = 80% }
+			#	slotsize = { width = 70 height = 70 }
+			#	format = "UP"
+			#}
 		}
 		# Japan Armor-folder
 		containerWindowType = {
@@ -16606,6 +16831,14 @@ guiTypes = {
 				frame = 1
 				clicksound = click_default
 			}
+			# FRA naval sub tab
+			buttonType = {
+				position = { x=1260 y = 0 }
+				name = "frenchnaval_sub_folder_tab"
+				quadTextureSprite = "GFX_frenchnaval_sub_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
 			## USA tabs ##
 			# USA Armor tab
 			buttonType = {
@@ -19342,7 +19575,7 @@ guiTypes = {
 			}
 		}
 	}
-	# France techtree naval
+	# France techtree naval Surface Fleet
 	containerWindowType = {
 		name = "techtree_frenchnaval_folder_small_item" 
 		position = { x=0 y=5 }
@@ -19379,6 +19612,88 @@ guiTypes = {
 	}
 	containerWindowType = {
 		name = "techtree_frenchnaval_folder_item"
+		position = { x=-131 y=1 }
+		size = { width = 204 height = 72 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=167 y=34 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes		
+			allwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "Name"
+			position = { x = 3 y = -1 }
+			textureFile = ""
+			font = "hoi_20bs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 270
+			maxHeight = 20
+			fixedsize = yes
+			format = left
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=261 y=-18 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 275 y = -18 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+	}
+	# France techtree naval Submerged Fleet
+	containerWindowType = {
+		name = "techtree_frenchnaval_sub_folder_small_item" 
+		position = { x=0 y=5 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=3 y=3 }
+			spriteType = "GFX_technology_medium"
+			allwaystransparent = yes
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=3 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = 17 y = -22 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+		}
+	}
+	containerWindowType = {
+		name = "techtree_frenchnaval_sub_folder_item"
 		position = { x=-131 y=1 }
 		size = { width = 204 height = 72 }
 		clipping = no
