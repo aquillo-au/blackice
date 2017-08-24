@@ -1834,9 +1834,126 @@ country_event = {
 	}
 }
 # Australian 6th inf div
+country_event = { 
+	id = BICE_britain.64
+	title = BICE_britain.64.t
+	desc = BICE_britain.64.d
+	picture = GFX_report_event_british_armour_crew
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = AST
+		not = { has_country_flag = ast6 }
+		is_ai = yes
+		date > 1940.11.1
+		has_war_with = ITA 
+		ENG = { controls_state = 446 }
+		is_in_faction_with = ENG
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.64.a
+		hidden_effect = {
+			load_oob = "AST_6_div" 
+			set_country_flag = ast6
+		}
+	}
+}
 # Australian 7th inf div
+country_event = { 
+	id = BICE_britain.65
+	title = BICE_britain.65.t
+	desc = BICE_britain.65.d
+	picture = GFX_report_event_british_armour_crew
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = AST
+		not = { has_country_flag = ast7 }
+		is_ai = yes
+		date > 1941.4.1
+		has_war_with = ITA 
+		ENG = { controls_state = 446 }
+		is_in_faction_with = ENG
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.65.a
+		hidden_effect = {
+			 load_oob = "AST_7_div" 
+			set_country_flag = ast7
+		}
+	}
+}
 # Australian 9th inf div
+country_event = { 
+	id = BICE_britain.66
+	title = BICE_britain.66.t
+	desc = BICE_britain.66.d
+	picture = GFX_report_event_british_armour_crew
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = AST
+		not = { has_country_flag = ast9 }
+		is_ai = yes
+		date > 1941.2.1
+		has_war_with = ITA 
+		ENG = { controls_state = 446 }
+		is_in_faction_with = ENG
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.66.a
+		hidden_effect = {
+			 load_oob = "AST_9_div" 
+			set_country_flag = ast9
+		}
+	}
+}
 # NZ 2nd division 1940
+country_event = { 
+	id = BICE_britain.67
+	title = BICE_britain.67.t
+	desc = BICE_britain.67.d
+	picture = GFX_report_event_british_armour_crew
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = NZL
+		not = { has_country_flag = nzl2 }
+		is_ai = yes
+		date > 1940.11.1
+		has_war_with = ITA 
+		ENG = { controls_state = 446 }
+		is_in_faction_with = ENG
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = BICE_britain.67.a
+		
+		hidden_effect = {
+			 load_oob = "NZL_2_div" 
+			set_country_flag = nzl2
+		}
+	}
+}
 # SAF 1st and 2nd inf div july 1941
 # 50 infantry division april 1942
 # Indian 8th and 10th Inf division may 1942
