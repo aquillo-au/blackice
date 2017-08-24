@@ -12273,4 +12273,43 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = germany.406
+	title = germany.406.t
+	desc = germany.406.d
+	picture = GFX_report_event_kubelwagon_in_afrika
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_in_faction_with = ITA
+		has_war = yes
+		is_puppet = no
+		has_country_flag = GERafrikakorp 
+		has_tech =  paratroop_equipment	
+		ITA = { owns_state = 448 } # controls tripoli
+		date > 1942.7.1	
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.406.a
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			set_technology = {tech_airborne_engineers = 1 }
+			load_oob = "GER_afrikakorps_II"
+			set_country_flag = GERafrikakorpII
+		}
+	}
+	option = {
+		name = germany.406.b		#refuse
+		ai_chance = { factor = 0 }
+		set_country_flag = GERafrikakorpII
+	}
+}
 ### EOF ###
