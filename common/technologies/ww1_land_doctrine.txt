@@ -8,25 +8,26 @@ technologies = {
 			leads_to_tech = infantry_charge
 			research_cost_coeff = 1
 		}		
+		
 		category_all_infantry = { 
-				maximum_speed = -0.05
-				defense = 0.1
+			maximum_speed = -0.05
+			defense = 0.1
 		}
+		
 		org_loss_when_moving = 0.05
 		
 		attrition = 0.1
 		
 		doctrine = yes	
 		research_cost = 1.5
+		folder = {
+			name = ww1_land_doctrine_folder
+			position = { x = -3 y = -1 }
+		}
 		
 		categories = {
 			land_doctrine
 			
-		}
-		
-		folder = {
-			name = ww1_land_doctrine_folder
-			position = { x = -3 y = -1 }
 		}
 		
 		ai_will_do = {
@@ -42,7 +43,9 @@ technologies = {
 		category_all_infantry = {
 			breakthrough = 0.02
 		}
+		
 		army_infantry_attack_factor = 0.05
+		
 		category_all_infantry = {
 			max_organisation = -8
 		}
@@ -63,17 +66,16 @@ technologies = {
 		
 		doctrine = yes	
 		research_cost = 2
-		
-		categories = {
-			land_doctrine
-			
-		}
-		
 		folder = {
 			name = ww1_land_doctrine_folder
 			position = { x = -1 y = 0 }
 		}
 		
+		categories = {
+			land_doctrine
+			
+		}
+
 		ai_will_do = {
 			factor = 0
 		}
@@ -454,8 +456,7 @@ technologies = {
 		}
 	}
 	logisitics_trenches = {
-	
-		
+
 		category_army = {
 			max_organisation = 5
 		}
@@ -1442,7 +1443,9 @@ technologies = {
 	cavalry_charges = {
 		doctrine = yes	
 		#enable_tactic = tactic_
-		army_cavalry_speed_factor = 0.05
+		
+		cavalry_attack_factor = 0.05
+		
 		cavalry = {
 			breakthrough = 0.05
 		}
@@ -1508,7 +1511,7 @@ technologies = {
 	cavalry_exploitation = {
 	
 		#enable_tactic = tactic_
-		army_cavalry_speed_factor = 0.05
+		cavalry_attack_factor = 0.05
 		cavalry = {
 			maximum_speed = 0.05
 		}	
