@@ -1,0 +1,869 @@
+equipments = {
+
+	usn_patrol_submarine = {
+		is_archetype = yes
+		is_buildable = no
+		type = submarine
+		group_by = archetype
+		
+		upgrades = {
+			ship_quality_upgrade
+			sub_engine_upgrade
+			sub_stealth_upgrade
+			sub_torpedo_upgrade
+			ship_range_upgrade
+		}
+		
+		interface_category = interface_category_other_ships
+
+		ap_attack = 4.17
+		attack = 52.13
+		fire_range = 15
+		torpedo_attack = 41.25
+		
+		anti_air_attack = 0.01
+		
+		armor_value = 0
+		evasion = 103
+		
+		surface_detection = 43
+		sub_detection = 30
+		surface_visibility = 6
+		sub_visibility = 40
+		naval_speed = 8 #DNM - original 14, BICE use submerged speed
+		reliability = 0.65
+		
+		naval_range = 4207 #DNM - original 2000
+		
+		max_strength = 30 #DNM - original 10
+		
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1917
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+		
+		manpower = 25
+		
+	}
+	#US Navy Patrol Submarine Track
+	usn_patrol_submarine_0 = {
+		archetype = usn_patrol_submarine
+		type = { 
+			submarine
+		}
+		priority = 80
+		
+		year = 1916
+		
+		naval_range = 819 # 7200nm
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# O-Class
+	usn_patrol_submarine_1 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# R-Class
+	usn_patrol_submarine_2 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_1
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# S-Class
+	usn_patrol_submarine_3 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_2
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# V-1/V-2/V-3 Barracuda Class
+	usn_patrol_submarine_4 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_3
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# V-4 Argonaut Class
+	usn_patrol_submarine_5 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_4
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# V-5/V-6 Narwahl/Nautilus Class
+	usn_patrol_submarine_6 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_5
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# V-7 Dolphin Class
+	usn_patrol_submarine_7 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_6
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# V-8/V-9 Cachalot/Cuttlefish Class
+	usn_patrol_submarine_8 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_7
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Porpoise Class
+	usn_patrol_submarine_9 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_8
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Salmon Class
+	usn_patrol_submarine_10 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_9
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Sargo Class
+	usn_patrol_submarine_11 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_10
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Tambor Class
+	usn_patrol_submarine_12 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_11
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Mackerel Class
+	usn_patrol_submarine_13 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_12
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Gato Class
+	usn_patrol_submarine_14 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_13
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Balao Class
+	usn_patrol_submarine_15 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_14
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Tench Class
+	usn_patrol_submarine_16 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_15
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Barracuda Class
+	usn_patrol_submarine_17 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_16
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Tang Type I Class
+	usn_patrol_submarine_18 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_17
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Tang Type II Class
+	usn_patrol_submarine_19 = {
+		archetype = usn_patrol_submarine
+		parent = usn_patrol_submarine_18
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+}
+### EOF ###

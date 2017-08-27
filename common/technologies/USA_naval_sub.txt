@@ -1,0 +1,437 @@
+technologies = {
+	#Vertical position
+	@1922 = -1 	
+	@1928 = 1
+	@1933 = 3	
+	@1935 = 5	
+	@1936 = 8	
+	@1937 = 11	
+	@1938 = 14	
+	@1939 = 17	
+	@1940 = 20	
+	@1941 = 23	
+	@1942 = 26	
+	@1943 = 29	
+	@1944 = 32
+	@1945 = 35
+	@1949 = 42
+	@1950 = 45
+	
+	tech_usn_sub = {
+		
+		allow = {
+			always = no
+		}
+		
+		research_cost = 2
+		start_year = 1922
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = 0 y = -4 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	tech_usn_patrol_submarine_0 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_1
+			usn_patrol_submarine_2
+			usn_patrol_submarine_3
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_1
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1922
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1922 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_1 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_4
+			usn_patrol_submarine_5
+			usn_patrol_submarine_6
+			usn_patrol_submarine_7
+			usn_patrol_submarine_8
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_2
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1928
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1928 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_2 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_9
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_3
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1933
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1933 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_3 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_10
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_4
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1936
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1936 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_4 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_11
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_5
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1937
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1937 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_5 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_12
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_6
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_7
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1939
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1939 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_6 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_13
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_50
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1939
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = 0 y = @1939 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_7 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_14
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_8
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1940
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1940 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_8 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_15
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_9
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1940
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1940 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_9 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_16
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_10
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1943
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1943 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_10 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_17
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_11
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1949
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -8 y = @1949 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_11 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_18
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_12
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1949
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = 0 y = @1949 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_12 = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_19
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_13
+			research_cost_coeff = 1
+		}
+			
+		research_cost = 1.5
+		start_year = 1950
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = 0 y = @1950 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+}

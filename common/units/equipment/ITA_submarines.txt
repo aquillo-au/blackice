@@ -1,0 +1,964 @@
+equipments = {
+
+	rm_patrol_submarine = {
+		is_archetype = yes
+		is_buildable = no
+		type = submarine
+		group_by = archetype
+		
+		upgrades = {
+			ship_quality_upgrade
+			sub_engine_upgrade
+			sub_stealth_upgrade
+			sub_torpedo_upgrade
+			ship_range_upgrade
+		}
+		
+		interface_category = interface_category_other_ships
+
+		ap_attack = 4.17
+		attack = 52.13
+		fire_range = 15
+		torpedo_attack = 41.25
+		
+		anti_air_attack = 0.01
+		
+		armor_value = 0
+		evasion = 103
+		
+		surface_detection = 43
+		sub_detection = 30
+		surface_visibility = 6
+		sub_visibility = 40
+		naval_speed = 8 #DNM - original 14, BICE use submerged speed
+		reliability = 0.65
+		
+		naval_range = 4207 #DNM - original 2000
+		
+		max_strength = 30 #DNM - original 10
+		
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1917
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+		
+		manpower = 25
+		
+	}
+	#Regia Marina Patrol Submarine Track
+	rm_patrol_submarine_0 = {
+		archetype = rm_patrol_submarine
+		type = { 
+			submarine
+		}
+		priority = 80
+		
+		year = 1916
+		
+		naval_range = 819 # 7200nm
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Pisani Class
+	rm_patrol_submarine_1 = {
+		archetype = rm_patrol_submarine
+		parent = rm_patrol_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Archimede Class
+	rm_patrol_submarine_2 = {
+		archetype = rm_patrol_submarine
+		parent = rm_patrol_submarine_1
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Glauco Class
+	rm_patrol_submarine_3 = {
+		archetype = rm_patrol_submarine
+		parent = rm_patrol_submarine_2
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Brin Class
+	rm_patrol_submarine_4 = {
+		archetype = rm_patrol_submarine
+		parent = rm_patrol_submarine_3
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Marcello Class
+	rm_patrol_submarine_5 = {
+		archetype = rm_patrol_submarine
+		parent = rm_patrol_submarine_4
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Marconi Class
+	rm_patrol_submarine_6 = {
+		archetype = rm_patrol_submarine
+		parent = rm_patrol_submarine_5
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	
+	rm_lr_patrol_submarine = {
+		is_archetype = yes
+		is_buildable = no
+		type = submarine
+		group_by = archetype
+		
+		upgrades = {
+			ship_quality_upgrade
+			sub_engine_upgrade
+			sub_stealth_upgrade
+			sub_torpedo_upgrade
+			ship_range_upgrade
+		}
+		
+		interface_category = interface_category_other_ships
+
+		ap_attack = 4.17
+		attack = 52.13
+		fire_range = 15
+		torpedo_attack = 41.25
+		
+		anti_air_attack = 0.01
+		
+		armor_value = 0
+		evasion = 103
+		
+		surface_detection = 43
+		sub_detection = 30
+		surface_visibility = 6
+		sub_visibility = 40
+		naval_speed = 8 #DNM - original 14, BICE use submerged speed
+		reliability = 0.65
+		
+		naval_range = 4207 #DNM - original 2000
+		
+		max_strength = 30 #DNM - original 10
+		
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1917
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+		
+		manpower = 25
+		
+	}
+	#Regia Marina Long Range Submarine Track
+	rm_lr_patrol_submarine_0 = {
+		archetype = rm_lr_patrol_submarine
+		type = { 
+			submarine
+		}
+		priority = 80
+		
+		year = 1916
+		
+		naval_range = 819 # 7200nm
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Balilla Class
+	rm_lr_patrol_submarine_1 = {
+		archetype = rm_lr_patrol_submarine
+		parent = rm_lr_patrol_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Calvi Class
+	rm_lr_patrol_submarine_2 = {
+		archetype = rm_lr_patrol_submarine
+		parent = rm_lr_patrol_submarine_1
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Liuzzi Class
+	rm_lr_patrol_submarine_3 = {
+		archetype = rm_lr_patrol_submarine
+		parent = rm_lr_patrol_submarine_2
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Cagni Class
+	rm_lr_patrol_submarine_4 = {
+		archetype = rm_lr_patrol_submarine
+		parent = rm_lr_patrol_submarine_3
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	
+	rm_coastal_submarine = {
+		is_archetype = yes
+		is_buildable = no
+		type = submarine
+		group_by = archetype
+		
+		upgrades = {
+			ship_quality_upgrade
+			sub_engine_upgrade
+			sub_stealth_upgrade
+			sub_torpedo_upgrade
+			ship_range_upgrade
+		}
+		
+		interface_category = interface_category_other_ships
+
+		ap_attack = 4.17
+		attack = 52.13
+		fire_range = 15
+		torpedo_attack = 41.25
+		
+		anti_air_attack = 0.01
+		
+		armor_value = 0
+		evasion = 103
+		
+		surface_detection = 43
+		sub_detection = 30
+		surface_visibility = 6
+		sub_visibility = 40
+		naval_speed = 8 #DNM - original 14, BICE use submerged speed
+		reliability = 0.65
+		
+		naval_range = 4207 #DNM - original 2000
+		
+		max_strength = 30 #DNM - original 10
+		
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1917
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+		
+		manpower = 25
+		
+	}
+	#Regia Marina Coastal Submarine Track
+	rm_coastal_submarine_0 = {
+		archetype = rm_coastal_submarine
+		type = { 
+			submarine
+		}
+		priority = 80
+		
+		year = 1916
+		
+		naval_range = 819 # 7200nm
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Mameli Class
+	rm_coastal_submarine_1 = {
+		archetype = rm_coastal_submarine
+		parent = rm_coastal_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Luigi Settembrini
+	rm_coastal_submarine_1b = {
+		archetype = rm_coastal_submarine
+		parent = rm_coastal_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Argonauta Class
+	rm_coastal_submarine_2 = {
+		archetype = rm_coastal_submarine
+		parent = rm_coastal_submarine_1
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Argo Class
+	rm_coastal_submarine_3 = {
+		archetype = rm_coastal_submarine
+		parent = rm_coastal_submarine_2
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Sirena Class
+	rm_coastal_submarine_4 = {
+		archetype = rm_coastal_submarine
+		parent = rm_coastal_submarine_3
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Perla Class
+	rm_coastal_submarine_5 = {
+		archetype = rm_coastal_submarine
+		parent = rm_coastal_submarine_4
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Adua Class
+	rm_coastal_submarine_6 = {
+		archetype = rm_coastal_submarine
+		parent = rm_coastal_submarine_5
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	# Acciaio Class
+	rm_coastal_submarine_7 = {
+		archetype = rm_coastal_submarine
+		parent = rm_coastal_submarine_6
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1933
+		
+		ap_attack = 0
+		attack = 0
+		fire_range = 0 #DNM - original value 6
+		torpedo_attack = 24 #DNM - original 16 #3 tubes, 5 torpedoes on board
+		
+		anti_air_attack = 1
+		
+		armor_value = 0
+		evasion = 173
+		
+		surface_detection = 39
+		sub_detection = 30
+		surface_visibility = 4
+		sub_visibility = 13
+		naval_speed = 6.9 #knots
+		reliability = 0.7
+
+		naval_range = 1250 # 2000nm -> 3704km naval_range is around halve the way.
+		
+		max_strength = 17 #DNM - original 20
+		manpower = 25
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1500 # 488 #DNM - Origin value 500
+
+		resources = {
+			oil = 1
+			steel = 2 
+            chromium = 0
+		}
+	}
+	
+}
+### EOF ###
