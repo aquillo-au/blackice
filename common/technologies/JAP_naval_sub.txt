@@ -1,7 +1,8 @@
 technologies = {
 	#Vertical position
 	@1922 = -1 	
-	@1933 = 2	
+	@1933 = 2
+	@1934 = 4	
 	@1935 = 5	
 	@1936 = 8	
 	@1937 = 11	
@@ -72,7 +73,6 @@ technologies = {
 			ijn_coastal_submarine_7
 			ijn_coastal_submarine_8
 			ijn_coastal_submarine_9
-			ijn_coastal_submarine_10
 		}
 		dependencies = {
 			tech_ijn_sub = 1
@@ -102,6 +102,36 @@ technologies = {
 	tech_ijn_coastal_submarine_2 = {
 
 		enable_equipments = { 
+			ijn_coastal_submarine_10
+		}
+		dependencies = {
+			tech_ijn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_ijn_coastal_submarine_3
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1934
+		folder = {
+			name = japannaval_sub_folder
+			position = { x = -8 y = @1934 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_ijn_coastal_submarine_3 = {
+
+		enable_equipments = { 
 			ijn_coastal_submarine_11
 		}
 		dependencies = {
@@ -109,7 +139,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = tech_ijn_coastal_submarine3
+			leads_to_tech = tech_ijn_coastal_submarine_4
 			research_cost_coeff = 1
 		}
 				
@@ -118,6 +148,31 @@ technologies = {
 		folder = {
 			name = japannaval_sub_folder
 			position = { x = -8 y = @1941 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_ijn_coastal_submarine_4 = {
+
+		enable_equipments = { 
+			ijn_coastal_submarine_12
+		}
+		dependencies = {
+			tech_ijn_sub = 1
+		}
+					
+		research_cost = 1.5
+		start_year = 1942
+		folder = {
+			name = japannaval_sub_folder
+			position = { x = -8 y = @1942 }
 		}
 		
 		ai_will_do = {
