@@ -789,8 +789,17 @@ technologies = {
 		research_cost = 0.5
 		start_year = 1940
 		
+		on_research_complete = {
+			if = {
+				limit = { tag = GER }
+				hidden_effect = {
+					set_technology = { subtech_ss_panzer_iii_td_1 = 1 }
+				}
+			}
+		}
+		
 		ai_will_do = {
-			factor = 0
+			factor = 5
 		}
 		
 		categories = {
