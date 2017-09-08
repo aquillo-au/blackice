@@ -9,7 +9,7 @@ country_event = {
 
 	trigger = {
 		country_exists = GER
-		date > 1936.6.3 #Really june 3, but this eases testing.
+		date > 1936.6.3 
 	}
 	
 	immediate = {
@@ -1505,4 +1505,356 @@ country_event = { #Night Harrasment
 		name = blackiceairevents.77.a
 		load_oob = "GER_nightharrasment"
 	}
+}
+country_event = { #Italian Series 0 design competition
+	id = blackiceairevents.78
+	title = blackiceairevents.78.t
+	desc = blackiceairevents.78.d
+
+	picture = GFX_event_aircraft_producer
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = blackiceairevents.78.a #G.50
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_g50_multirole_equipment_1
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.78.b #MC.200
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_mc200_fighter_equipment_1
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.78.c #Re.2000
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_re2000_multirole_equipment_1
+		}
+		ai_chance = { factor = 0 }
+		
+	}
+	option = {
+		name = blackiceairevents.78.e #All. Historical
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.15
+			uses = 1
+			technology = tech_g50_multirole_equipment_1
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.15
+			uses = 1
+			technology = tech_mc200_fighter_equipment_1
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.15
+			uses = 1
+			technology = tech_re2000_multirole_equipment_1
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.78.f #all, AI
+		trigger = {
+			is_ai = yes
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_g50_multirole_equipment_1
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_mc200_fighter_equipment_1
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_re2000_multirole_equipment_1
+		}
+		ai_chance = { factor = 10 }
+	}
+	
+}
+country_event = { #Italian Series 5 design competition
+	id = blackiceairevents.79
+	title = blackiceairevents.79.t
+	desc = blackiceairevents.79.d
+
+	picture = GFX_event_aircraft_producer
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = blackiceairevents.79.a #G.55
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_g55_fighter_equipment_1
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.79.b #MC.205
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_mc205_fighter_equipment_1 
+			technology = tech_mc205n_fighter_equipment_1 
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.79.c #Re.2005
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_re2005_multirole_equipment_1
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.79.e #All. Historical
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.15
+			uses = 1
+			technology = tech_g55_fighter_equipment_1
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.15
+			uses = 1
+			technology = tech_mc205_fighter_equipment_1 
+			technology = tech_mc205n_fighter_equipment_1 
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.15
+			uses = 1
+			technology = tech_re2005_multirole_equipment_1
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.79.f #all, AI
+		trigger = {
+			is_ai = yes
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_g55_fighter_equipment_1
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_mc205_fighter_equipment_1 
+			technology = tech_mc205n_fighter_equipment_1 
+		}
+		add_tech_bonus = {
+			name = fighter_bonus
+			bonus = 0.5
+			uses = 1
+			technology = tech_re2005_multirole_equipment_1
+		}
+		ai_chance = { factor = 10 }
+	}
+	
+}
+country_event = { #Italian cas aircraft
+	id = blackiceairevents.80
+	title = blackiceairevents.80.t
+	desc = blackiceairevents.80.d
+
+	picture = GFX_event_aircraft_producer
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = blackiceairevents.80.a #Single engine
+		add_tech_bonus = {
+			name = ITA_bomber_effort
+			bonus = 0.15
+			uses = 4
+			technology = tech_ca355_cas_equipment_1 
+			technology = tech_ba201_cas_equipment_1
+			technology = tech_re2002_multirole_equipment_1 
+			technology = tech_sm93_cas_equipment_1
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.80.b #Twin engine
+		add_tech_bonus = {
+			name = ITA_bomber_effort
+			bonus = 0.15
+			uses = 7
+			technology = tech_ca309_light_bomber_equipment_1 
+			technology = tech_ca310_light_bomber_equipment_1 
+			technology = tech_ca311_light_bomber_equipment_1
+			technology = tech_ca313_light_bomber_equipment_1 
+			technology = tech_ca314_light_bomber_equipment_1
+			technology = tech_fc20_cas_equipment_1
+			technology = tech_sm89_cas_equipment_1
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.80.c #AI
+		trigger = {
+			is_ai = yes
+		}
+		
+		add_tech_bonus = {
+			name = ITA_bomber_effort
+			bonus = 0.50
+			uses = 11
+			technology = tech_ca355_cas_equipment_1 
+			technology = tech_ba201_cas_equipment_1
+			technology = tech_re2002_multirole_equipment_1 
+			technology = tech_sm93_cas_equipment_1
+			technology = tech_ca309_light_bomber_equipment_1 
+			technology = tech_ca310_light_bomber_equipment_1
+			technology = tech_ca311_light_bomber_equipment_1 
+			technology = tech_ca313_light_bomber_equipment_1
+			technology = tech_ca314_light_bomber_equipment_1
+			technology = tech_fc20_cas_equipment_1
+			technology = tech_sm89_cas_equipment_1
+		}
+		ai_chance = { factor = 10 }
+	}
+	
+}
+country_event = { #Italian NAV aircraft
+	id = blackiceairevents.81
+	title = blackiceairevents.81.t
+	desc = blackiceairevents.81.d
+
+	picture = GFX_event_aircraft_producer
+	
+	is_triggered_only = yes
+
+	
+	option = {
+		name = blackiceairevents.81.a #Small
+		add_tech_bonus = {
+			name = ITA_naval_air_effort
+			bonus = 0.15
+			uses = 5
+			technology = tech_z506b_naval_bomber_equipment_1 
+			technology = tech_ca313s_naval_bomber_equipment_1
+			technology = tech_z1018a_naval_bomber_equipment_1 
+			technology = tech_z1018_naval_bomber_equipment_1
+			technology = tech_g55s_naval_bomber_equipment_1
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.81.b #large
+		add_tech_bonus = {
+			name = ITA_naval_air_effort
+			bonus = 0.15
+			uses = 4
+			technology = tech_mc99_flying_boat_equipment_1 
+			technology = tech_sm79_naval_bomber_equipment_1 
+			technology = tech_sm84_naval_bomber_equipment_1
+			technology = tech_p108_naval_bomber_equipment_1 
+		}
+		ai_chance = { factor = 0 }
+	}
+	option = {
+		name = blackiceairevents.81.c #AI
+		trigger = {
+			is_ai = yes
+		}
+		
+		add_tech_bonus = {
+			name = ITA_naval_air_effort
+			bonus = 0.50
+			uses = 9
+			technology = tech_z506b_naval_bomber_equipment_1 
+			technology = tech_ca313s_naval_bomber_equipment_1
+			technology = tech_z1018a_naval_bomber_equipment_1 
+			technology = tech_z1018_naval_bomber_equipment_1
+			technology = tech_g55s_naval_bomber_equipment_1 
+			technology = tech_mc99_flying_boat_equipment_1
+			technology = tech_sm79_naval_bomber_equipment_1 
+			technology = tech_sm84_naval_bomber_equipment_1
+			technology = tech_p108_naval_bomber_equipment_1
+		}
+		ai_chance = { factor = 10 }
+	}
+	
+}
+country_event = { #Italian engines
+	id = blackiceairevents.82
+	title = blackiceairevents.82.t
+	desc = blackiceairevents.82.d
+
+	picture = GFX_event_aircraft_producer
+	
+	
+	fire_only_once = yes 
+	
+	trigger = {
+		tag = ITA
+		OR = {
+			is_in_faction_with = GER
+			is_in_faction_with = ENG
+			is_in_faction_with = USA
+			is_in_faction_with = FRA
+			}
+	}
+	
+	mean_time_to_happen = { days = 60 }
+	
+	option = {
+		name = blackiceairevents.82.a 
+		add_tech_bonus = {
+				name = ITA_air_engine
+				ahead_reduction = 1
+				uses = 3
+				technology = tech_mediumengine1 
+				technology = tech_heavyengine1 
+				technology = tech_heavyengine2
+			}
+		add_tech_bonus = {
+				name = ITA_air_engine
+				bonus = 0.50
+				uses = 3
+				technology = tech_mediumengine1 
+				technology = tech_heavyengine1 
+				technology = tech_heavyengine2
+			}
+		ai_chance = { factor = 10 }
+	}
+	
 }

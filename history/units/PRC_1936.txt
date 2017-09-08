@@ -201,7 +201,82 @@ units = {
 		start_experience_factor = 0.2
 	}
 }
-
+air_wings = {
+	### Cuerpo de Aviación del Perú -- Lima
+	303 = {
+		# Fighter Air Group -- Curtis F11s, NiD 123s, Ca.114s
+		fighter_equipment_0 =  {
+			owner = "PRU" 
+			amount = 27
+		}
+		exported_interceptor_equipment_1 =  {
+			owner = "PRU" 
+			creator = "ITA"
+			version_name = "Caproni Ca.114"
+			amount = 12
+		}
+		# CAS Air Group -- Ca.111s, Fairey Foxes
+		CAS_equipment_1 =  {
+			owner = "PRU" 
+			amount = 18
+		}
+		prewar_bomber_equipment_1 =  { #For bolivia, confiscated in 1941. Move to event later
+			owner = "PRU" 
+			creator = "USA"
+			version_name = "Curtiss BT-32 Condor II"
+			amount = 4
+		}
+		pre_war_mr_equipment_1 =  { 
+			owner = "PRU" 
+			creator = "USA"
+			version_name = "Vought V-80"
+			amount = 3
+		}
+		pre_war_mr_equipment_1 =  { 
+			owner = "PRU" 
+			creator = "USA"
+			version_name = "Curtiss Sea Hawk II"
+			amount = 2
+		}
+		pre_war_mr_equipment_1 =  { 
+			owner = "PRU" 
+			creator = "USA"
+			version_name = "Curtiss Hawk II"
+			amount = 1
+		}
+		ca111_bomber_equipment_1 =  {  #Peru bought Idro, then converted all to bomber. Used some as transports.
+			owner = "PRU" 
+			creator = "ITA"
+			version_name = "Caproni Ca.111 RC"
+			amount = 8
+		}
+		ca111_transport_plane_equipment_1 =  { #See above.
+			owner = "PRU" 
+			creator = "ITA"
+			amount = 4
+		}
+	}
+}
+##### Naval OOB #####
+	navy = {				
+		name = "Marina de Guerra"			
+		base = 12997 
+		location = 12997 # Lima
+		ship = { name = "BAP Almirante Grau" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = PRU } } }
+		ship = { name = "BAP Coronel Bolognesi" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = PRU } } }
+		ship = { name = "BAP Almirante Villar" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = PRU } } }
+		ship = { name = "BAP Almirante Guise" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = PRU } } }
+	}				
+	navy = {				
+		name = "Flotilla de Submarinos"			
+		base = 12997 
+		location = 12997 # Lima
+		ship = { name = "BAP R1" definition = submarine equipment = { submarine_1 = { amount = 1 owner = PRU } } }
+		ship = { name = "BAP R2" definition = submarine equipment = { submarine_1 = { amount = 1 owner = PRU } } }
+		ship = { name = "BAP R3" definition = submarine equipment = { submarine_1 = { amount = 1 owner = PRU } } }
+		ship = { name = "BAP R4" definition = submarine equipment = { submarine_1 = { amount = 1 owner = PRU } } }
+	}				
+}
 ##### STARTING PRODUCTION #####
 instant_effect = {
 	add_equipment_production = {
@@ -220,6 +295,15 @@ instant_effect = {
 		}
 		requested_factories = 1
 		progress = 0.50
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_0
+			creator = "PRU"
+		}
+		requested_factories = 1
+		progress = 0.27
 		efficiency = 100
 	}
 	add_equipment_to_stockpile = {
