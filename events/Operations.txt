@@ -184,6 +184,7 @@ country_event = {
 	
 	option = {
 		name = operation.50.a
+		trigger = { date < 1942.1.1 }
 		hidden_effect = {
 			
 			add_timed_idea = {
@@ -197,6 +198,49 @@ country_event = {
 			add_timed_idea = {
 				idea = Rodina_III
 				days = 90
+			}
+		}
+		set_country_flag = forthemotherland
+	}
+option = {
+		name = operation.50.b
+		trigger = { date > 1943.1.1
+			not = { date < 1944.1.1 }
+		 }
+		hidden_effect = {
+			
+			add_timed_idea = {
+				idea = Rodina_I
+				days = 180
+			}
+			add_timed_idea = {
+				idea = Rodina_II
+				days = 90
+			}
+			add_timed_idea = {
+				idea = Rodina_III
+				days = 45
+			}
+		}
+		set_country_flag = forthemotherland
+	}
+	option = {
+		name = operation.50.c
+		trigger = { date > 1944.1.1
+		 }
+		hidden_effect = {
+			
+			add_timed_idea = {
+				idea = Rodina_I
+				days = 90
+			}
+			add_timed_idea = {
+				idea = Rodina_II
+				days = 45
+			}
+			add_timed_idea = {
+				idea = Rodina_III
+				days = 20
 			}
 		}
 		set_country_flag = forthemotherland
@@ -452,11 +496,11 @@ country_event = {
 		
 			add_timed_idea = {
 				idea = French_shock
-				days = 90
+				days = 60
 			}
 			add_timed_idea = {
 				idea = French_Dismay
-				days = 365
+				days = 240
 			}
 			add_timed_idea = {
 				idea = French_Malaise
