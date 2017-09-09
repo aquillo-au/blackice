@@ -222,6 +222,40 @@ technologies = {
 
 		enable_equipments = { 
 			sn_patrol_submarine_2
+			
+		}
+		dependencies = {
+			tech_sn_sub = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_sn_patrol_submarine_2
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_sn_patrol_submarine_1b
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1933
+		folder = {
+			name = sovietnaval_sub_folder
+			position = { x = 2 y = @1933 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_sn_patrol_submarine_1b = {
+
+		enable_equipments = { 
 			sn_patrol_submarine_3
 		}
 		dependencies = {
@@ -237,7 +271,7 @@ technologies = {
 		start_year = 1933
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 2 y = @1933 }
+			position = { x = 7 y = @1933 }
 		}
 		
 		ai_will_do = {

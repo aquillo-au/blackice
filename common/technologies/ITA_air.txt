@@ -1,19 +1,44 @@
 technologies = {
+	## Vertical position
+	@1930 = 0
+	@1933 = 2
+	@1936 = 4
+	@1937 = 6
+	@1938 = 8
+	@1939 = 10
+	@1940 = 12
+	@1941 = 14
+	@1942 = 16
+	@1943 = 18
+	@1944 = 20
+	@1945 = 22
+	@1947 = 24
+	@1949 = 26
+	@1950 = 28
+	@1951 = 30
 	
-	@1930 = -1
-	@1933 = 1
-	@1936 = 3
-	@1937 = 5
-	@1938 = 7
-	@1939 = 9
-	@1940 = 11
-	@1941 = 13
-	@1942 = 15
-	@1943 = 17
-	@1944 = 19
-	@1945 = 21
-	@1947 = 23
-	@1949 = 25
+	## Horizontal position
+	@ENG = -9
+	@LFTR = -6
+	@INT = -3
+	@MR = 0
+	@CVFTR = 3
+	@CVTORB = 6
+	@CVCAS = 9
+	@MR1 = 12
+	@LCAS = 15
+	@HCAS = 18
+	@HFTR = 21
+	@HNB = 24
+	@LNB = 27
+	@LB = 30
+	@TB = 33
+	@TB2 = 36
+	@NFTR = 39
+	@HSB = 42
+	@HTRP = 45
+	@TRP = 48
+	@GUIDED = 51
 	
 	#######HIDDEN AND COUNTRY DEFINING TECHS
 	
@@ -26,7 +51,7 @@ technologies = {
 		start_year = 1930
 		folder = {
 			name = italyair_folder
-			position = { x = 0 y = @1930 }
+			position = { x = 0 y = -2 }
 		}
 		
 		ai_will_do = {
@@ -75,9 +100,26 @@ technologies = {
 			factor = 0
 		}
 	}
+	####### ENIGINE #######
+	tech_italianmotorjet1 = {
+
+		dependencies = {
+			tech_ita = 1
+		}
+		
+		research_cost = 2
+		start_year = 1943
+		folder = {
+			name = italyair_folder
+			position = { x = @ENG y = @1943 }
+		}
+
+		ai_will_do = {
+			factor = 30
+		}
+	}
 	tech_mediumengine1 = {
-		
-		
+
 		dependencies = {
 			tech_ita = 1
 		}
@@ -90,7 +132,7 @@ technologies = {
 		start_year = 1950
 		folder = {
 			name = italyair_folder
-			position = { x = 3 y = @1930 }
+			position = { x = @ENG y = @1949 }
 		}
 
 		ai_will_do = {
@@ -98,8 +140,7 @@ technologies = {
 		}
 	}
 	tech_heavyengine1 = {
-		
-		
+
 		dependencies = {
 			tech_ita = 1
 		}
@@ -112,7 +153,7 @@ technologies = {
 		start_year = 1950
 		folder = {
 			name = italyair_folder
-			position = { x = 6 y = @1930 }
+			position = { x = @ENG y = @1950 }
 		}
 
 		ai_will_do = {
@@ -120,7 +161,6 @@ technologies = {
 		}
 	}
 	tech_heavyengine2 = {
-		
 		
 		dependencies = {
 			tech_ita = 1
@@ -130,31 +170,14 @@ technologies = {
 		start_year = 1950
 		folder = {
 			name = italyair_folder
-			position = { x = 9 y = @1930 }
+			position = { x = @ENG y = @1951 }
 		}
 
 		ai_will_do = {
 			factor = 30
 		}
 	}
-	tech_italianmotorjet1 = {
-		
-		
-		dependencies = {
-			tech_ita = 1
-		}
-		
-		research_cost = 2
-		start_year = 1943
-		folder = {
-			name = italyair_folder
-			position = { x = 12 y = @1930 }
-		}
-
-		ai_will_do = {
-			factor = 30
-		}
-	}
+	
 	tech_g50_multirole_equipment_1 = {
 	
 		enable_equipments = { g50_multirole_equipment_1 }
@@ -189,7 +212,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 6 y = @1938 }
+			position = { x = @MR y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -215,7 +238,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 6 y = @1941 }
+			position = { x = @MR y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -265,7 +288,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 6 y = @1943 }
+			position = { x = @MR y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -291,7 +314,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 6 y = @1944 }
+			position = { x = @MR y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -318,16 +341,14 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = italyair_folder
-			position = { x = 6 y = @1945 }
+			position = { x = @MR y = @1945 }
 		}
 		
 		ai_will_do = {
 			factor = 10
 		}
 	}
-	
-#############################MultiRole##############
-	
+#############################MultiRole##############	
 	tech_ba65_multirole_equipment_1 = {
 	
 		enable_equipments = { ba65_multirole_equipment_1 }
@@ -350,7 +371,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = italyair_folder
-			position = { x = 18 y = @1936 }
+			position = { x = @MR1 y = @1936 }
 		}
 		
 		ai_will_do = {
@@ -387,7 +408,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = italyair_folder
-			position = { x = 18 y = @1939 }
+			position = { x = @MR1 y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -420,7 +441,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = italyair_folder
-			position = { x = 18 y = @1940 }
+			position = { x = @MR1 y = @1940 }
 		}
 		
 		ai_will_do = {
@@ -467,7 +488,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 18 y = @1941 }
+			position = { x = @MR1 y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -494,7 +515,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 18 y = @1942 }
+			position = { x = @MR1 y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -544,7 +565,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 18 y = @1943 }
+			position = { x = @MR1 y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -570,14 +591,14 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 18 y = @1944 }
+			position = { x = @MR1 y = @1944 }
 		}
 		
 		ai_will_do = {
 			factor = 20
 		}
 	}
-	
+	## Interceptor ##
 	tech_ca165_interceptor_equipment_1 = {
 	
 		enable_equipments = { ca165_interceptor_equipment_1 }
@@ -596,7 +617,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 3 y = @1938 }
+			position = { x = @INT y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -627,7 +648,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = italyair_folder
-			position = { x = 3 y = @1939 }
+			position = { x = @INT y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -659,7 +680,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 3 y = @1941 }
+			position = { x = @INT y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -690,7 +711,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 3 y = @1942 }
+			position = { x = @INT y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -721,7 +742,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 3 y = @1943 }
+			position = { x = @INT y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -749,7 +770,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 3 y = @1944 }
+			position = { x = @INT y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -770,11 +791,12 @@ technologies = {
 			air_equipment
 			fiat_air
 		}
+		
 		research_cost = 0.5
 		start_year = 1936
 		folder = {
 			name = italyair_folder
-			position = { x = 0 y = @1936 }
+			position = { x = @LFTR y = @1936 }
 		}
 		
 		ai_will_do = {
@@ -799,7 +821,7 @@ technologies = {
 		start_year = 1937
 		folder = {
 			name = italyair_folder
-			position = { x = 0 y = @1937 }
+			position = { x = @LFTR y = @1937 }
 		}
 		
 		ai_will_do = {
@@ -824,7 +846,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = italyair_folder
-			position = { x = 0 y = @1939 }
+			position = { x = @LFTR y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -850,7 +872,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = italyair_folder
-			position = { x = 0 y = @1940 }
+			position = { x = @LFTR y = @1940 }
 		}
 		
 		ai_will_do = {
@@ -881,7 +903,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 0 y = @1941 }
+			position = { x = @LFTR y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -928,7 +950,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 0 y = @1942 }
+			position = { x = @LFTR y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -953,7 +975,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 0 y = @1943 }
+			position = { x = @LFTR y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -982,7 +1004,7 @@ technologies = {
 		start_year = 1937
 		folder = {
 			name = italyair_folder
-			position = { x = 9 y = @1937 }
+			position = { x = @CVFTR y = @1937 }
 		}
 		
 		ai_will_do = {
@@ -1016,7 +1038,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = italyair_folder
-			position = { x = 9 y = @1940 }
+			position = { x = @CVFTR y = @1940 }
 		}
 		
 		ai_will_do = {
@@ -1051,7 +1073,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 9 y = @1941 }
+			position = { x = @CVFTR y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -1086,7 +1108,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 9 y = @1942 }
+			position = { x = @CVFTR y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -1121,7 +1143,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 9 y = @1944 }
+			position = { x = @CVFTR y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -1151,7 +1173,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 27 y = @1938 }
+			position = { x = @HFTR y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -1160,7 +1182,6 @@ technologies = {
 				factor = 0
 				has_tech = tech_ro57_fighter_equipment_1
 			}
-			
 		}
 	}
 	tech_ro57_fighter_equipment_1 = {
@@ -1187,7 +1208,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = italyair_folder
-			position = { x = 27 y = @1939 }
+			position = { x = @HFTR y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -1196,7 +1217,6 @@ technologies = {
 				factor = 0
 				has_tech = tech_ca380_fighter_equipment_1
 			}
-			
 		}
 	}
 	tech_ro58_fighter_equipment_1 = {
@@ -1218,7 +1238,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 27 y = @1942 }
+			position = { x = @HFTR y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -1227,7 +1247,6 @@ technologies = {
 				factor = 0
 				has_tech = tech_ca380_fighter_equipment_1
 			}
-			
 		}
 	}
 	tech_ca380_fighter_equipment_1 = {
@@ -1249,7 +1268,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 27 y = @1944 }
+			position = { x = @HFTR y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -1276,7 +1295,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 45 y = @1943 }
+			position = { x = @NFTR y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -1307,15 +1326,14 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 45 y = @1944 }
+			position = { x = @NFTR y = @1944 }
 		}
 		
 		ai_will_do = {
 			factor = 5
 		}
 	}
-	
-	
+	### Light CAS ###
 	tech_ca355_cas_equipment_1 = {
 	
 		enable_equipments = { ca355_cas_equipment_1 }
@@ -1335,7 +1353,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = italyair_folder
-			position = { x = 21 y = @1940 }
+			position = { x = @LCAS y = @1940 }
 		}
 		
 		ai_will_do = {
@@ -1362,7 +1380,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 21 y = @1941 }
+			position = { x = @LCAS y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -1392,7 +1410,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 21 y = @1942 }
+			position = { x = @LCAS y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -1419,16 +1437,14 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 21 y = @1944 }
+			position = { x = @LCAS y = @1944 }
 		}
 		
 		ai_will_do = {
 			factor = 20
 		}
 	}
-	
-
-		
+	## Light bomber ##
 	tech_ca309_light_bomber_equipment_1 = {
 	
 		enable_equipments = { ca309_light_bomber_equipment_1 }
@@ -1450,7 +1466,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = italyair_folder
-			position = { x = 24 y = @1936 }
+			position = { x = @HCAS y = @1936 }
 		}
 		
 		ai_will_do = {
@@ -1478,7 +1494,7 @@ technologies = {
 		start_year = 1937
 		folder = {
 			name = italyair_folder
-			position = { x = 24 y = @1937 }
+			position = { x = @HCAS y = @1937 }
 		}
 		
 		ai_will_do = {
@@ -1502,7 +1518,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 24 y = @1938 }
+			position = { x = @HCAS y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -1532,7 +1548,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = italyair_folder
-			position = { x = 24 y = @1940 }
+			position = { x = @HCAS y = @1940 }
 		}
 		
 		ai_will_do = {
@@ -1556,7 +1572,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 24 y = @1941 }
+			position = { x = @HCAS y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -1580,7 +1596,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 24 y = @1943 }
+			position = { x = @HCAS y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -1604,7 +1620,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 24 y = @1944 }
+			position = { x = @HCAS y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -1630,7 +1646,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 15 y = @1938 }
+			position = { x = @CVCAS y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -1664,7 +1680,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 15 y = @1942 }
+			position = { x = @CVCAS y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -1698,7 +1714,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 15 y = @1944 }
+			position = { x = @CVCAS y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -1709,8 +1725,7 @@ technologies = {
 			}
 		}
 	}
-	
-	######################light bombers#######################
+	###################### light bombers #######################
 	tech_sm79_light_bomber_equipment_1 = {
 	
 		enable_equipments = { sm79_light_bomber_equipment_1 }
@@ -1728,7 +1743,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = italyair_folder
-			position = { x = 36 y = @1936 }
+			position = { x = @LB y = @1936 }
 		}
 		
 		ai_will_do = {
@@ -1756,7 +1771,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 36 y = @1938 }
+			position = { x = @LB y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -1781,7 +1796,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = italyair_folder
-			position = { x = 36 y = @1939 }
+			position = { x = @LB y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -1806,7 +1821,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 36 y = @1941 }
+			position = { x = @LB y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -1833,7 +1848,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 36 y = @1944 }
+			position = { x = @LB y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -1863,7 +1878,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = italyair_folder
-			position = { x = 42 y = @1936 }
+			position = { x = @TB2 y = @1936 }
 		}
 		
 		ai_will_do = {
@@ -1896,7 +1911,7 @@ technologies = {
 		start_year = 1937
 		folder = {
 			name = italyair_folder
-			position = { x = 39 y = @1937 }
+			position = { x = @TB y = @1937 }
 		}
 		
 		ai_will_do = {
@@ -1921,7 +1936,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 39 y = @1938 }
+			position = { x = @TB y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -1950,7 +1965,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = italyair_folder
-			position = { x = 42 y = @1939 }
+			position = { x = @TB2 y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -1983,7 +1998,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 39 y = @1941 }
+			position = { x = @TB y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -2008,7 +2023,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 42 y = @1942 }
+			position = { x = @TB2 y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -2049,7 +2064,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 39 y = @1943 }
+			position = { x = @TB y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -2074,7 +2089,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 39 y = @1944 }
+			position = { x = @TB y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -2100,7 +2115,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 48 y = @1938 }
+			position = { x = @HSB y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -2125,7 +2140,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = italyair_folder
-			position = { x = 48 y = @1939 }
+			position = { x = @HSB y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -2158,7 +2173,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 48 y = @1941 }
+			position = { x = @HSB y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -2183,7 +2198,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 48 y = @1944 }
+			position = { x = @HSB y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -2208,7 +2223,7 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = italyair_folder
-			position = { x = 48 y = @1945 }
+			position = { x = @HSB y = @1945 }
 		}
 		
 		ai_will_do = {
@@ -2235,7 +2250,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 33 y = @1938 }
+			position = { x = @LNB y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -2261,7 +2276,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = italyair_folder
-			position = { x = 33 y = @1940 }
+			position = { x = @LNB y = @1940 }
 		}
 		
 		ai_will_do = {
@@ -2287,7 +2302,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 33 y = @1942 }
+			position = { x = @LNB y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -2313,7 +2328,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 33 y = @1943 }
+			position = { x = @LNB y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -2343,7 +2358,7 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = italyair_folder
-			position = { x = 33 y = @1945 }
+			position = { x = @LNB y = @1945 }
 		}
 		
 		ai_will_do = {
@@ -2372,7 +2387,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 30 y = @1938 }
+			position = { x = @HNB y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -2399,7 +2414,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = italyair_folder
-			position = { x = 30 y = @1939 }
+			position = { x = @HNB y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -2424,7 +2439,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = italyair_folder
-			position = { x = 30 y = @1940 }
+			position = { x = @HNB y = @1940 }
 		}
 		
 		ai_will_do = {
@@ -2450,7 +2465,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 30 y = @1943 }
+			position = { x = @HNB y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -2482,8 +2497,7 @@ technologies = {
 	#		factor = 0
 	#	}
 	#}
-	
-	
+	## CV Tropedo bombers ##
 	tech_g50_cv_nav_bomber_equipment_1 = {
 	
 		enable_equipments = { g50_cv_nav_bomber_equipment_1 }
@@ -2503,7 +2517,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = italyair_folder
-			position = { x = 12 y = @1938 }
+			position = { x = @CVTORB y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -2537,7 +2551,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 12 y = @1942 }
+			position = { x = @CVTORB y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -2571,7 +2585,7 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = italyair_folder
-			position = { x = 12 y = @1945 }
+			position = { x = @CVTORB y = @1945 }
 		}
 		
 		ai_will_do = {
@@ -2603,7 +2617,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = italyair_folder
-			position = { x = 54 y = @1941 }
+			position = { x = @TRP y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -2631,7 +2645,7 @@ technologies = {
 		start_year = 1947
 		folder = {
 			name = italyair_folder
-			position = { x = 54 y = @1947 }
+			position = { x = @TRP y = @1947 }
 		}
 		
 		ai_will_do = {
@@ -2642,6 +2656,7 @@ technologies = {
 			}
 		}
 	}
+	## Heavy Transport ##
 	tech_p108t_transport_plane_equipment_1 = {
 	
 		enable_equipments = { p108t_transport_plane_equipment_1 }
@@ -2659,7 +2674,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = italyair_folder
-			position = { x = 51 y = @1942 }
+			position = { x = @HTRP y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -2692,7 +2707,7 @@ technologies = {
 		start_year = 1949
 		folder = {
 			name = italyair_folder
-			position = { x = 51 y = @1949 }
+			position = { x = @HTRP y = @1949 }
 		}
 		
 		ai_will_do = {
@@ -2728,7 +2743,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = italyair_folder
-			position = { x = 57 y = @1943 }
+			position = { x = @GUIDED y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -2752,7 +2767,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = italyair_folder
-			position = { x = 57 y = @1944 }
+			position = { x = @GUIDED y = @1944 }
 		}
 		
 		ai_will_do = {

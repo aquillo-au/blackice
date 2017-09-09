@@ -258,6 +258,13 @@ upgrades = {
 	
 #################################German Upgrades########################
 
+	ai_likey_upgrade = {
+		max_level = 10
+		
+		cost = air 
+		
+		build_cost_ic = -0.05
+	}
 	me_109_gun_upgrade = { 
 		max_level = 1
 		
@@ -1153,9 +1160,9 @@ upgrades = {
 		
 		cost = air
 		
-		air_attack = 0.423
-		air_ground_attack = 0.5
-		naval_strike_attack = 0.5
+		air_attack = 0.308
+		air_ground_attack = 0.233
+		naval_strike_attack = 0.333
 		maximum_speed = -0.046 
 		#air_agility = -0.01
 		build_cost_ic = 0.05
@@ -1165,23 +1172,24 @@ upgrades = {
 		
 		cost = air
 		
-		air_attack = 0.462
-		air_ground_attack = 0.667
-		naval_strike_attack = 1
+		air_attack = 0.23 #should be 461, but me 262 has enough weapons already
+		air_ground_attack = 0.1 #same as above, with 0.666 
+		naval_strike_attack = 0.358
 		maximum_speed = -0.03 #Possibly wrong.
 		air_agility = -0.05 #probably needs tweaking
 		build_cost_ic = 0.05
 	}
 	me_262_engine_upgrade = { #now bombs
-		max_level = 2
+		max_level = 1 #ex 2
 		
 		cost = air
 		
 		#maximum_speed = 0.1 #might need tweaking
 		#air_agility = 0.1
 		#reliability = -0.05
-		air_ground_attack = 0.167
-		naval_strike_attack = 0.258
+		air_attack = -0.423
+		air_ground_attack = 0.333 #was 0.167
+		naval_strike_attack = 0.667
 		build_cost_ic = 0.05
 	}
 	me_262_reliability_upgrade = {
@@ -1353,8 +1361,8 @@ upgrades = {
 		
 		cost = air
 		
-		air_ground_attack = -0.067 
-		air_attack = 2.5 
+		air_ground_attack = 0.024
+		air_attack = 2
 		#maximum_speed = -0.1 don't know
 		build_cost_ic = 0.05
 	}
@@ -1389,11 +1397,11 @@ upgrades = {
 		max_level = 1
 		
 		cost = air 
-		air_attack = 3
-		air_ground_attack = 0.033
+		air_attack = 1
+		air_ground_attack = 0.1
 		naval_strike_attack = 0.182
 		maximum_speed = -0.028
-		build_cost_ic = 0.15
+		build_cost_ic = 0.1
 	}
 	ju_87_d_range_upgrade = {
 		max_level = 1 
@@ -1415,9 +1423,9 @@ upgrades = {
 		
 		cost = air 
 		air_attack = 1.5 
-		air_ground_attack = 0.3
+		air_ground_attack = 0.2
 		naval_strike_attack = -0.273
-		build_cost_ic = 0.1
+		build_cost_ic = 0.15
 	}
 	ju_87_g2_upgrade = {
 		max_level = 1 

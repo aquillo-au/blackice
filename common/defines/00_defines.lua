@@ -175,9 +175,9 @@ NCountry = {
 	RESOURCE_EXPORT_PRIORITY = 1,					-- Default convoy priority for export trade
 	RESOURCE_LENDLEASE_PRIORITY = 1,					-- Default convoy priority for export lend lease
 	SUPPLY_CONVOY_FACTOR = 0.15,						-- How many convoys each supply needs
-	CONVOY_RANGE_FACTOR = 1.2,                        	-- how much range affects convoy need
+	CONVOY_RANGE_FACTOR = 1,                        	-- how much range affects convoy need
 	LOCAL_MANPOWER_ACCESSIBLE_FACTOR = 0.35,         	-- was 0.45 accessible recruitable factor base
-	LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 0.03,  	-- accessible recruitable factor base
+	LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 0.04,  	-- accessible recruitable factor base
 	STATE_CONTROLLER_VP_RATIO_FLIP = 0.5,				-- If current state controller has less share than this of state total and no armies in it the state changes controller
 	DEFAULT_NATIONAL_UNITY = 0.7,						-- Default national unity if not scripted otherwise.
 	MAX_NATIONAL_UNITY = 0.90,
@@ -198,8 +198,8 @@ NCountry = {
 	ARMY_IMPORTANCE_FACTOR = 8.0,						-- Army factor for AI and calculations
 	VICTORY_POINTS_IMPORTANCE_FACTOR = 5.0,				-- State victory points importance factor for AI and calculations
 	BUILDING_IMPORTANCE_FACTOR = 3.0,					-- State building importance factor for AI and calculations
-	RESOURCE_IMPORTANCE_FACTOR = 0.2,					-- State resource importance factor for AI and calculations
-	INTERPOLATED_FRONT_STEPS_SHORT = 2,					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
+	RESOURCE_IMPORTANCE_FACTOR = 0.1,					-- State resource importance factor for AI and calculations
+	INTERPOLATED_FRONT_STEPS_SHORT = 4,					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 	MIN_AIR_RESERVE_RATIO = 0.33,						-- Min manpower ratio to show air reserves alert
 	THEATRES_BIND_BORDER_DISTANCE = 25000,				-- Map distance (before sqrt) between the center of the borders that determines if theatres should be bound or not.
 	POLITICAL_POWER_CAP = 2000.0,						-- Max amount of political power country should have
@@ -230,11 +230,11 @@ NProduction = {
 	MAX_LINE_RESOURCE_PENALTY = 85,							-- Max penalty factor for production lines lacking strategic resources in %.
 	RESOURCE_PENALTY_WARNING_CRITICAL_RATIO = 0.8, 			-- Switch to red progress bar if penalty is over threshold 
 	BASE_FACTORY_SPEED = 4.2, 								-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
-	BASE_FACTORY_SPEED_MIL = 6.4, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
-	BASE_FACTORY_SPEED_NAV = 4.3, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
-	BASE_FACTORY_START_EFFICIENCY_FACTOR = 12,				-- Base start efficiency for factories expressed in %.
-	BASE_FACTORY_MAX_EFFICIENCY_FACTOR = 55,				-- Base max efficiency for factories expressed in %.
-	BASE_FACTORY_EFFICIENCY_GAIN = 1.2,					-- Base efficiency gain for factories per unit produced in %.
+	BASE_FACTORY_SPEED_MIL = 5.8, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
+	BASE_FACTORY_SPEED_NAV = 3.8, 							-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
+	BASE_FACTORY_START_EFFICIENCY_FACTOR = 20,				-- Base start efficiency for factories expressed in %.
+	BASE_FACTORY_MAX_EFFICIENCY_FACTOR = 60,				-- Base max efficiency for factories expressed in %.
+	BASE_FACTORY_EFFICIENCY_GAIN = 1,						-- Base efficiency gain for factories per unit produced in %.
 	BASE_FACTORY_EFFICIENCY_BALANCE_FACTOR = 0.1, 			-- Factory efficiency balancing factor
 	BASE_FACTORY_EFFICIENCY_VARIANT_CHANGE_FACTOR = 85,		-- Base factor for changing production variants in %.
 	BASE_FACTORY_EFFICIENCY_PARENT_CHANGE_FACTOR = 50,		-- Base factor for changing production parent<->children in %.
@@ -546,8 +546,8 @@ NMilitary = {
 	LAND_EQUIPMENT_RAMP_COST = 5,					
 	NAVAL_EQUIPMENT_BASE_COST = 25,
 	NAVAL_EQUIPMENT_RAMP_COST = 2,
-	AIR_EQUIPMENT_BASE_COST = 25,
-	AIR_EQUIPMENT_RAMP_COST = 2,
+	AIR_EQUIPMENT_BASE_COST = 5,
+	AIR_EQUIPMENT_RAMP_COST = 5,
 	
 	FASTER_ORG_REGAIN_LEVEL = 0.25,
 	FASTER_ORG_REGAIN_MULT = 1.0,
@@ -589,10 +589,10 @@ NAir = {
 	AIR_REGION_SUPERIORITY_PIXEL_SCALE = 0.04,           -- air superiority scale = superiority/(pixels*this)
 	COMBAT_SUP_VS_SUP_ATTACK_CHANCE_SPEED_DIFF = 0.25, 	-- How much diff in speed between aircrafts affects the chance of who attacks first in superiority vs superiority.( Naval air combat only )
 	COMBAT_MULTIPLANE_CAP = 3.0,						-- How many planes can shoot at each plane on other side ( if there are 100 planes we are atttacking COMBAT_MULTIPLANE_CAP * 100 of our planes can shoot )
-	COMBAT_DAMAGE_SCALE = 0.1,							-- Higher value = more shot down planes
+	COMBAT_DAMAGE_SCALE = 0.5,							-- Higher value = more shot down planes ALEN 0.1
 	DETECT_CHANCE_FROM_OCCUPATION = 0.10, 				-- How much the controlled provinces in area affects the air detection base value.
 	DETECT_CHANCE_FROM_RADARS = 0.5, 					-- How much the radars in area affects detection chance.
-	DETECT_CHANCE_FROM_AIRCRAFTS_EFFECTIVE_COUNT = 3000, -- Max amount of aircrafts in region to give full detection bonus.
+	DETECT_CHANCE_FROM_AIRCRAFTS_EFFECTIVE_COUNT = 600, -- Max amount of aircrafts in region to give full detection bonus. ALEN 3000
 	DETECT_CHANCE_FROM_AIRCRAFTS = 0.8,					-- How much aircrafts in region improves air detection (up to effective count).
 	DETECT_CHANCE_FROM_NIGHT = -0.2,					-- How much the night can reduce the air detection. (see static modifiers to check how weather affects it too.)
 	DETECT_EFFICIENCY_BASE = 0.1,						-- Base value for detection efficiency (once something detected, efficiency says how many airplanes was detected).
@@ -666,7 +666,7 @@ NAir = {
 	DISRUPTION_DEFENCE_SPEED_FACTOR = 1.0,
 	DISRUPTION_DEFENCE_ATTACK_FACTOR = 0.5,
 	
-	CAS_NIGHT_ATTACK_FACTOR = 0.1,                      -- CAS damaged get multiplied by this in land combats at night
+	CAS_NIGHT_ATTACK_FACTOR = 0.25,                      -- CAS damaged get multiplied by this in land combats at night ALEN 0.1
 },
 
 NNavy = {
@@ -733,7 +733,7 @@ NNavy = {
 	REPAIR_AND_RETURN_UNIT_DYING_STR = 0.2,								-- Str below this point is considering a single ship "dying", and a high priority to send to repair.
 	EXPERIENCE_LOSS_FACTOR = 1.00,                 						-- percentage of experienced solders who die when manpower is removed
 	NAVY_EXPENSIVE_IC = 5500,											-- How much IC is considering the fleet to be expensive. Those expensive will triger the alert, when are on low STR.
-	MISSION_MAX_REGIONS = 3,											-- was 0 Limit of the regions that can be assigned to naval mission. Set to 0 for unlimited.
+	MISSION_MAX_REGIONS = 0,											-- Limit of the regions that can be assigned to naval mission. Set to 0 for unlimited.
 	CONVOY_EFFICIENCY_LOSS_MODIFIER = 0.8,								-- How much efficiency drops when losing convoys. If modifier is 0.5, then losing 100% of convoys in short period, the efficiency will drop by 50%.
 	CONVOY_EFFICIENCY_REGAIN_AFTER_DAYS = 3,							-- Convoy starts regaining it's efficiency after X days without any convoys being sink.
 	CONVOY_EFFICIENCY_REGAIN_BASE_SPEED = 0.05,							-- How much efficiency regains every day.
@@ -801,27 +801,27 @@ NTrade = {
 	DISTANCE_TRADE_FACTOR = -0.02,			-- DNM, original -0.02 (AI mod) -- Trade factor is modified by distance times this
 	RELATION_TRADE_FACTOR = 1,					-- Trade factor is modified by Opinion value times this
 	FEAR_TRADE_FACTOR = 1,
-	ALLOW_TRADE_CUT_OFF = 0,					-- If trade factor is less than this, no trade will be allowed
+	ALLOW_TRADE_CUT_OFF = 5,					-- If trade factor is less than this, no trade will be allowed
 	MONTH_TRADE_FACTOR = 2,						-- Each month a trade gets this much boost to it's trade factor
 	MAX_MONTH_TRADE_FACTOR = 50,				-- This is the maximum bonus that can be gained from time
-	BASE_TRADE_FACTOR = 75,						-- This is the base trade factor
+	BASE_TRADE_FACTOR = 85,						-- This is the base trade factor
 	PUPPET_MASTER_TRADE_FACTOR = 600,			-- This is priority for puppet master
 	PUPPET_TRADE_FACTOR = 0,					-- This is unpriority for puppets
 	LACK_OF_CONVOYS_TRADE_FACTOR = -0.1,		-- Every hour without convoys will lower trade factor this much (regain is the same)
-	BASE_LAND_TRADE_RANGE = 1000,
-	PARTY_SUPPORT_TRADE_FACTOR = 50,			-- Trade factor bonus at the other side having 100 % party popularity for my party
+	BASE_LAND_TRADE_RANGE = 200,
+	PARTY_SUPPORT_TRADE_FACTOR = 60,			-- Trade factor bonus at the other side having 100 % party popularity for my party
 	ANTI_MONOPOLY_TRADE_FACTOR_THRESHOLD = 0.5,	-- What percentage of resources has to be sold to the buyer for the anti-monopoly factor to take effect
-	ANTI_MONOPOLY_TRADE_FACTOR = -10,			-- This is added to the factor value when anti-monopoly threshold is exceeded
+	ANTI_MONOPOLY_TRADE_FACTOR = -70,			-- This is added to the factor value when anti-monopoly threshold is exceeded
 },
 
 NAI = {
 	GARRISON_FRACTION = 0, 							-- DNM, vanilla is 0, and apparently this screws with the AI (shuffling troops to and from fronts) -- How large part of a front should always be holding the line rather than advancing at the enemy
 	
 	DIPLOMATIC_ACTION_GOOD_BAD_RATIO_THRESHOLD = 1,
-	BASE_RELUCTANCE = 20, 								-- Base reluctance applied to all diplomatic offers
-	DIPLOMATIC_ACTION_RANDOM_FACTOR = 0.5, 				-- How much of the AI diplomatic action scoring is randomly determined (1.0 = half random, 2.0 = 2/3rd random, etc)
-	DIPLOMATIC_ACTION_PROPOSE_SCORE = 50, 				-- AI must score a diplomatic action at least this highly to propose it themselves
-	DILPOMATIC_ACTION_DECLARE_WAR_WARGOAL_BASE = 50, 	-- Base diplomatic action score bonus to go to war per wargoal
+	BASE_RELUCTANCE = 30, 								-- Base reluctance applied to all diplomatic offers
+	DIPLOMATIC_ACTION_RANDOM_FACTOR = 0.4, 				-- How much of the AI diplomatic action scoring is randomly determined (1.0 = half random, 2.0 = 2/3rd random, etc)
+	DIPLOMATIC_ACTION_PROPOSE_SCORE = 60, 				-- AI must score a diplomatic action at least this highly to propose it themselves
+	DILPOMATIC_ACTION_DECLARE_WAR_WARGOAL_BASE = 60, 	-- Base diplomatic action score bonus to go to war per wargoal
 	DIPLOMATIC_ACTION_BREAK_SCORE = -10, 				-- AI must score a diplomatic action less than this to break it off	
 	DIPLOMACY_CREATE_FACTION_FACTOR = 0.75,				-- Factor for AI desire to create a new faction. Val < 1.0 makes it less likely to create than to join.
 	DIPLOMACY_FACTION_WRONG_IDEOLOGY_PENALTY = 25, 		-- AI penalty for diplomatic faction acitons between nations of different ideologies
@@ -866,17 +866,17 @@ NAI = {
 	NAVAL_THEATRE_PRIO_MIN_DISTANCE = 2000,				-- Minimum distance (in km) between priority theatres for naval assignment, to spread navy out
 	PRODUCTION_UNAVAILABLE_RESORCE_FACTORY_FACTOR = 0.7, -- was 0.75 Assign/queue this proportion of desired factories when resources are short 
 	PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.15,			-- Base value for how much of currently used equipment the AI will at least strive to have in stock
-	AIR_CONTROLLED_TERRITORY_INTERCEPT_SCORE = 6,		-- Interception score per controlled state in mission region
+	AIR_CONTROLLED_TERRITORY_INTERCEPT_SCORE = 3,		-- Interception score per controlled state in mission region ALEN 6
 	AIR_ALLY_TERRITORY_INTERCEPT_SCORE = -400,				-- Interception score per ally controlled state in mission region
-	INTERCEPT_NAVAL_BOMBING_FACTOR = 15.0,				-- Factors the weight of intercepting naval bombers in sea regions where friendly ships are
+	INTERCEPT_NAVAL_BOMBING_FACTOR = 20.0,				-- Factors the weight of intercepting naval bombers in sea regions where friendly ships are ALEN 15.0
 	AIR_CAS_SCORE_FACTOR = 20,							-- Factor applied to (friendly units) x (enemy units)) to get CAS score for region
-	AIR_ENEMY_SUPERIORITY_FACTOR = 3.0,					-- How much enemy air superiority counts relative to own
-	AIR_SUPERIORITY_FACTOR = 3.0,						-- Factor for air superiority score
-	AIR_MIN_ASSIGN_SCORE = 1,							-- Minimum total score for region to be considered for air missions
-	AIR_MIN_REASSIGN_SCORE = 1,						-- Minimum total score for region to be considered for reassigning air missions
-	AIR_WING_SIZE_FACTOR = 500.0,							-- Impact on air score of assigning wings to mission
-	AIR_MISSION_MIN_COVEREAGE = 0.2,					-- Between 0 and 1, limit for % coverage for air mission to be considered
-	AIR_BASE_PRIORITY_DISTANCE_FACTOR = 25.0,			-- Weight of distance between region and airbase for airbase priority score
+	AIR_ENEMY_SUPERIORITY_FACTOR = 5.0,					-- How much enemy air superiority counts relative to own ALEN 3
+	AIR_SUPERIORITY_FACTOR = 5.0,						-- Factor for air superiority score ALEN 3
+	AIR_MIN_ASSIGN_SCORE = 10,							-- Minimum total score for region to be considered for air missions ALEN 1
+	AIR_MIN_REASSIGN_SCORE = 25,						-- Minimum total score for region to be considered for reassigning air missions ALEN 1
+	AIR_WING_SIZE_FACTOR = 1.0,							-- Impact on air score of assigning wings to mission ALEN 500
+	AIR_MISSION_MIN_COVEREAGE = 0.25,					-- Between 0 and 1, limit for % coverage for air mission to be considered ALEN 0.2
+	AIR_BASE_PRIORITY_DISTANCE_FACTOR = 50.0,			-- Weight of distance between region and airbase for airbase priority score ALEN 25
 	MAX_VOLUNTEER_ARMY_FRACTION = 0.25,					-- Countries will not send more than their forces time this number to aid another country
 	WANTED_UNITS_INDUSTRY_FACTORY = 0.0, 				-- How many units a country wants is partially based on how much military industry that is available
 	DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.55,			-- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
@@ -891,7 +891,7 @@ NAI = {
 	VARIANT_UPGRADE_MIN_XP = 800,						-- Minimum XP before attempting to create a new variant.
 	UPGRADE_XP_RUSH_UPDATE = 500,						-- If XP is above this on the daily tick the AI will attempt to spend it
 	FOCUS_TREE_CONTINUE_FACTOR = 0.95,					-- Factor for score of how likely the AI is to keep going down a focus tree rather than starting a new path.
-	VP_GARRISON_VALUE_FACTOR = 0.6,						-- BICE, originally 0.5, not sure why changed, might help with repressing partisans? -- Extent to which VP garrisons are prioritized, based on VP value and compared to other priority values.
+	VP_GARRISON_VALUE_FACTOR = 0.8,						-- BICE, originally 0.5, not sure why changed, might help with repressing partisans? -- Extent to which VP garrisons are prioritized, based on VP value and compared to other priority values.
 	PLAN_VALUE_TO_EXECUTE = 0.1,						-- AI will typically avoid carrying out a plan it below this value (0.0 is considered balanced).
 	DECLARE_WAR_NOT_NEIGHBOR_FACTOR = 0.25,				-- Multiplier applied before force factor if country is not neighbor with the one it is considering going to war
 	CALL_ALLY_BASE_DESIRE = 20,							-- exactly what it says
@@ -920,19 +920,19 @@ NAI = {
 	PLAN_ATTACK_MIN_STRENGTH_FACTOR_MED = 0.3,	
 	PLAN_ATTACK_MIN_ORG_FACTOR_HIGH = 0.2,		
 	PLAN_ATTACK_MIN_STRENGTH_FACTOR_HIGH = 0.15,	
-	PLAN_FRONTUNIT_DISTANCE_FACTOR = 20,					-- Factor for candidate units distance to front positions.
+	PLAN_FRONTUNIT_DISTANCE_FACTOR = 10,					-- Factor for candidate units distance to front positions.
 	PLAN_ATTACK_DEPTH_FACTOR = 0.5,						-- Factor applied to size or enemy being attacked.
-	PLAN_STEP_COST_LIMIT = 12,							-- When stepping to draw a plan this cost makes it break if it hits hard terrain (multiplied by number of desired steps)
+	PLAN_STEP_COST_LIMIT = 11,							-- When stepping to draw a plan this cost makes it break if it hits hard terrain (multiplied by number of desired steps)
 	PLAN_STEP_COST_LIMIT_REDUCTION = 3,					-- Cost limit is reduced per iteration, making hard terrain less likely to be crossed the further into enemy territory it is
-	PLAN_FRONT_SECTION_MAX_LENGTH = 16,					-- When a front is longer than this it will be split in two sections for the AI
-	PLAN_FRONT_SECTION_MIN_LENGTH = 9,					-- When two front sections together are this short they will be merged for the AI
-	PLAN_MIN_SIZE_FOR_FALLBACK = 6500,					-- A country with less provinces than this will not draw fallback plans, but rather station their troops along the front
+	PLAN_FRONT_SECTION_MAX_LENGTH = 12,					-- When a front is longer than this it will be split in two sections for the AI
+	PLAN_FRONT_SECTION_MIN_LENGTH = 5,					-- When two front sections together are this short they will be merged for the AI
+	PLAN_MIN_SIZE_FOR_FALLBACK = 50,					-- A country with less provinces than this will not draw fallback plans, but rather station their troops along the front
 	SEND_VOLUNTEER_EVAL_BASE_DISTANCE = 105.0,  			-- DNM, original 300 (AI mod) -- How far away it will evaluate sending volunteers if not a major power
 	SEND_VOLUNTEER_EVAL_MAJOER_POWER = 1.0, 			-- How willing major powers are to send volunteers.
 	SEND_VOLUNTEER_EVAL_CONTAINMENT_FACTOR = 0.1, 		-- How much AI containment factors into its evaluation of sending volunteers.
 	GIVE_STATE_CONTROL_MIN_CONTROLLED = 1,				-- AI needs to control more than this number of states before considering giving any away
 	GIVE_STATE_CONTROL_MIN_CONTROL_DIFF = 2,			-- The difference in number of controlled states compared to war participation needs to be bigger than this for the AI to consider giving a state to a country
-	RELATIVE_STRENGTH_TO_INVADE = 0.15,					-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend.
+	RELATIVE_STRENGTH_TO_INVADE = 0.25,					-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend.
 	RELATIVE_STRENGTH_TO_INVADE_DEFENSIVE = 0.7,		-- Compares the estimated strength of the country/faction compared to it's enemies to see if it should invade or stay at home to defend, but while being a defensive country.
 	GIVE_STATE_CONTROL_BASE_SCORE = 50,					-- Base diplo score for giving away control of states
 	GIVE_STATE_CONTROL_DIFF_FACTOR = 2.0,				-- Diplo score multiplier for state control compared to war participation difference
@@ -1032,9 +1032,9 @@ NAI = {
 	AIR_BASE_DANGER_ZONE_WEIGHT = 100,					-- Score used per province taken by enemy in a state to determine how dangerous it is to use an air base
 
 	MANPOWER_FREE_USAGE_THRESHOLD = 90000,				-- If AI has this much manpower he doesn't care about the percentage
-	MANPOWER_RESERVED_THRESHOLD = 0.3,					-- The AI will not deploy more units if he goes below this percentage
-	START_TRAINING_EQUIPMENT_LEVEL = 0.9,              -- was 0.95 ai will not start to train if equipment drops below this level
-	STOP_TRAINING_EQUIPMENT_LEVEL = 0.75,                -- was 0.9 ai will not train if equipment drops below this level
+	MANPOWER_RESERVED_THRESHOLD = 0.7,					-- The AI will not deploy more units if he goes below this percentage
+	START_TRAINING_EQUIPMENT_LEVEL = 0.98,              -- was 0.95 ai will not start to train if equipment drops below this level
+	STOP_TRAINING_EQUIPMENT_LEVEL = 0.95,                -- was 0.9 ai will not train if equipment drops below this level
 	BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.007,	-- was 0.001 How much lack of resources are worth when evaluating what to build.
 	DIVISION_DESIGN_WEIGHTS = {							-- Base values used by AI to evaluate value of a stat
 		-- Army Values
@@ -1073,7 +1073,7 @@ NAI = {
 		0.0,   -- patrol_coordination
 		0.0,   -- search_and_destroy_coordination
 		-- Air Values
-		3.0,   -- air_range
+		0.1,   -- air_range
 		3.0,   -- air_defence
 		3.0,   -- air_attack
 		1.0,   -- air_agility
@@ -1087,7 +1087,7 @@ NAI = {
 		0.0,   -- max_organisation
 		1.0,   -- 1.0 max_strength
 		0.0,  -- build_cost_ic
-		0.0,   -- maximum_speed
+		0.5,   -- maximum_speed
 		1.0,   -- armor_value
 		0.0,   -- ap_attack
 		0.5,   -- reliability
@@ -1123,7 +1123,7 @@ NAI = {
 	REGION_CONVOY_DANGER_DAILY_DECAY = 1,					-- When convoys are sunk it generates threat in the region which the AI uses to prio nalval missions
 
 	ESCORT_BOMBERS_IMPORTANCE_MODIFIER = 3.0,				-- DNM, original 1 (AI Mod)
-	PRODUCTION_LINE_SWITCH_SURPLUS_NEEDED_MODIFIER = 0.1,	-- Is modified by efficency modifiers.
+	PRODUCTION_LINE_SWITCH_SURPLUS_NEEDED_MODIFIER = 0.15,	-- Is modified by efficency modifiers.
 	PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 0.0,				-- AI countries will hold on activating plans if stronger countries have plans in the same location. Majors count extra (value of 1 will negate this)
 	PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 0.0,			-- AI countries will hold on activating plans if player controlled countries have plans in the same location. Majors count extra (value of 1 will negate this)
 	AREA_DEFENSE_BASE_IMPORTANCE = 3,						-- Area defense order base importance value (used for determining order of troop selections)
@@ -1144,12 +1144,12 @@ NAI = {
 	MAX_EXTRA_WARGOAL_GENERATION = 2,						-- AI may want to generate wargoals against weak minors to get at larger enemy, but never more that this at any given time.
 	NAVAL_MISSION_DISTANCE_BASE = 3000,						-- Base value when AI is evaluating distance score to places
 	NAVAL_MISSION_INVASION_BASE = 8500,						-- Base score for region with naval invasion (modified dynamically by prioritizing orders)
-	NAVAL_MISSION_AGGRESSIVE_PATROL_DIVISOR = 1,			-- Divides patrol score when not defending
+	NAVAL_MISSION_AGGRESSIVE_PATROL_DIVISOR = 30,			-- Divides patrol score when not defending
 	NAVAL_MISSION_AGGRESSIVE_ESCORT_DIVISOR = 2,			-- Divides escort score when not defending
-	NAVAL_MISSION_PATROL_NEAR_OWNED = 60000,				-- Extra patrol mission score near owned provinces
+	NAVAL_MISSION_PATROL_NEAR_OWNED = 30000,				-- Extra patrol mission score near owned provinces
 	NAVAL_MISSION_ESCORT_NEAR_OWNED = 20000,				-- Extra escort mission score near owned provinces
-	NAVAL_MISSION_PATROL_NEAR_CONTROLLED = 12000,			-- Extra patrol mission score near controlled provinces
-	NAVAL_MISSION_ESCORT_NEAR_CONTROLLED = 5500,			-- Extra escort mission score near controlled provinces
+	NAVAL_MISSION_PATROL_NEAR_CONTROLLED = 15000,			-- Extra patrol mission score near controlled provinces
+	NAVAL_MISSION_ESCORT_NEAR_CONTROLLED = 7500,			-- Extra escort mission score near controlled provinces
 	NEW_LEADER_EXTRA_PP_FACTOR = 5.0,						-- Country must have at least this many times extra PP to get new admirals or army leaders
 	SCARY_LEVEL_AVERAGE_DEFENSE = -0.65,               	 	-- average front defense modifier to make it consider it as a PITA to go for
 	ATTACK_HEAVILY_DEFENDED_LIMIT = 0.9,					-- DNM, original 0.95 (ai overhaul mod) -- AI will not launch attacks against heavily defended fronts unless they consider to have this level of advantage (1.0 = 100%)
@@ -1225,26 +1225,26 @@ NAI = {
 	LAND_DEFENSE_AA_IMPORTANCE_FACTOR = 1.0,				-- Factor of AA influence on strategic importance ( 0.0 - 1.0 )
 	LAND_DEFENSE_INFRA_IMPORTANCE_FACTOR = 0.5,				-- Factor of infrastructure influence on strategic importance ( 0.0 - 1.0 )
 	LAND_DEFENSE_IMPORTANCE_SCALE = 1.5,					-- Lend defence total importance scale (every land defence score get's multiplied by it)
-	LAND_DEFENSE_MIN_FACTORIES_FOR_AIR_IMPORTANCE = 4,		-- If amount of factories is less importance of factories won't apply
+	LAND_DEFENSE_MIN_FACTORIES_FOR_AIR_IMPORTANCE = 6,		-- If amount of factories is less importance of factories won't apply ALEN 4
 
 	LAND_DEFENSE_FIGHERS_PER_PLANE = 1.8,					-- Amount of air superiority planes requested per enemy plane
 	LAND_DEFENSE_INTERSEPTORS_PER_BOMBERS = 2.0,			-- Amount of air interceptor planes requested per enemy plane A: was 0.2
 	LAND_COMBAT_AIR_SUPERIORITY_IMPORTANCE = 1,			-- Strategic importance of air superiority ( amount of enemy planes in area )
-	LAND_COMBAT_OUR_ARMIES_AIR_IMPORTANCE = 80,				-- Strategic importance of our armies
+	LAND_COMBAT_OUR_ARMIES_AIR_IMPORTANCE = 15,				-- Strategic importance of our armies ALEN 80
 	LAND_COMBAT_OUR_COMBATS_AIR_IMPORTANCE = 80,			-- Strategic importance of our armies in the combats
-	LAND_COMBAT_FRIEND_ARMIES_AIR_IMPORTANCE = 80,			-- Strategic importance of friendly armies
-	LAND_COMBAT_FRIEND_COMBATS_AIR_IMPORTANCE = 80,			-- Strategic importance of friendly armies in the combat
+	LAND_COMBAT_FRIEND_ARMIES_AIR_IMPORTANCE = 10,			-- Strategic importance of friendly armies ALEN 80
+	LAND_COMBAT_FRIEND_COMBATS_AIR_IMPORTANCE = 20,			-- Strategic importance of friendly armies in the combat ALEN 80
 	LAND_COMBAT_ENEMY_ARMIES_AIR_IMPORTANCE = 8,			-- Strategic importance of our armies
 	LAND_COMBAT_ENEMY_LAND_FORTS_AIR_IMPORTANCE = 5,		-- Strategic importance of enemy land forts in the region
 	LAND_COMBAT_ENEMY_COASTAL_FORTS_AIR_IMPORTANCE = 3,		-- Strategic importance of enemy coastal fronts in the region
 	LAND_COMBAT_IMPORTANCE_SCALE = 1.5,						-- Lend combat total importance scale (every land combat score get's multiplied by it)
-	LAND_COMBAT_FIGHTERS_PER_PLANE = 2,				-- Amount of air superiority planes requested per enemy plane
-	LAND_COMBAT_CAS_WINGS_PER_ENEMY_ARMY_LIMIT = 4,		-- Limit of CAS wings requested by enemy armies
-	LAND_COMBAT_CAS_PER_ENEMY_ARMY = 80,				-- Amount of CAS planes requested per enemy army
-	LAND_COMBAT_CAS_PER_COMBAT = 50,					-- Amount of CAS requested per combat
+	LAND_COMBAT_FIGHTERS_PER_PLANE = 1.5,				-- Amount of air superiority planes requested per enemy plane ALEN 2
+	LAND_COMBAT_CAS_WINGS_PER_ENEMY_ARMY_LIMIT = 50,		-- Limit of CAS wings requested by enemy armies ALEN 4
+	LAND_COMBAT_CAS_PER_ENEMY_ARMY = 300,				-- Amount of CAS planes requested per enemy army ALEN 80
+	LAND_COMBAT_CAS_PER_COMBAT = 60,					-- Amount of CAS requested per combat ALEN 50
 
-	LAND_COMBAT_BOMBERS_PER_LAND_FORT_LEVEL = 2,		-- Amount of bomber planes requested per enemy land fort level
-	LAND_COMBAT_BOMBERS_PER_COASTAL_FORT_LEVEL = 1,	-- Amount of bomber planes requested per enemy coastal fort level
+	LAND_COMBAT_BOMBERS_PER_LAND_FORT_LEVEL = 10,		-- Amount of bomber planes requested per enemy land fort level ALEN 2
+	LAND_COMBAT_BOMBERS_PER_COASTAL_FORT_LEVEL = 5,	-- Amount of bomber planes requested per enemy coastal fort level ALEN 1
 	LAND_COMBAT_MIN_EXCORT_WINGS = 2,					-- Min amount of airwings requested to excort operations
 
 	STR_BOMB_AIR_SUPERIORITY_IMPORTANCE = 0.10,		-- Strategic importance of air superiority ( amount of enemy planes in area )
@@ -1255,10 +1255,10 @@ NAI = {
 	STR_BOMB_INFRA_IMPORTANCE_FACTOR = 0.25,			-- Factor of infrastructure influence on strategic importance ( 0.0 - 1.0 )
 	STR_BOMB_IMPORTANCE_SCALE = 1.0,					-- str bombing total importance scale (every str bombing score get's multiplied by it)
 
-	STR_BOMB_MIN_ENEMY_FIGHTERS_IN_AREA = 400,		-- If amount of enemy fighters is higher than this mission won't perform
+	STR_BOMB_MIN_ENEMY_FIGHTERS_IN_AREA = 500,		-- If amount of enemy fighters is higher than this mission won't perform ALEN 400
 	STR_BOMB_FIGHTERS_PER_PLANE = 2,				-- Amount of air superiority planes requested per enemy plane
-	STR_BOMB_PLANES_PER_CIV_FACTORY = 20,			-- Amount of planes requested per enemy civ factory
-	STR_BOMB_PLANES_PER_MIL_FACTORY = 25,			-- Amount of planes requested per enemy military factory
+	STR_BOMB_PLANES_PER_CIV_FACTORY = 30,			-- Amount of planes requested per enemy civ factory ALEN 20
+	STR_BOMB_PLANES_PER_MIL_FACTORY = 30,			-- Amount of planes requested per enemy military factory ALEN 25
 	STR_BOMB_PLANES_PER_NAV_FACTORY = 15,			-- Amount of planes requested per enemy naval factory
 	STR_BOMB_MIN_EXCORT_WINGS = 2,						-- Min amount of airwings requested to excort operations
 	
