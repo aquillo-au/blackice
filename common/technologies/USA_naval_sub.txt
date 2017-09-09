@@ -1,62 +1,61 @@
 technologies = {
 	#Vertical position
+
 	@1922 = -1 	
 	@1928 = 1
-	@1933 = 3	
-	@1935 = 5	
-	@1936 = 8	
-	@1937 = 11	
-	@1938 = 14	
-	@1939 = 17	
-	@1940 = 20	
-	@1941 = 23	
-	@1942 = 26	
-	@1943 = 29	
-	@1944 = 32
-	@1945 = 35
-	@1949 = 42
-	@1950 = 45
-	@1951 = 47
-	@1952 = 49
+	@1933 = 3		
+	@1936 = 5	
+	@1937 = 7	
+	@1938 = 9	
+	@1939 = 11	
+	@1940 = 13	
+	@1941 = 15	
+	@1942 = 17	
+	@1943 = 19	
+	@1944 = 21
+	@1945 = 23
+	@1946 = 25
+	@1947 = 27
+	@1948 = 29
 	
 	tech_usn_sub = {
 		
 		allow = {
 			always = no
 		}
-		
-		research_cost = 2
-		start_year = 1922
-		folder = {
-			name = usanaval_sub_folder
-			position = { x = 0 y = -4 }
-		}
-		
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	tech_usn_patrol_submarine_0 = {
 
 		enable_equipments = { 
 			usn_patrol_submarine_1
 			usn_patrol_submarine_2
 			usn_patrol_submarine_3
 		}
+
 		dependencies = {
-			tech_usn_sub = 1
+			tech_usn = 1
 		}
 		
-		path = {
-			leads_to_tech = tech_usn_patrol_submarine_1a
-			research_cost_coeff = 1
-		}
-						
-		research_cost = 1.5
+		research_cost = 2
 		start_year = 1922
 		folder = {
 			name = usanaval_sub_folder
 			position = { x = -8 y = @1922 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	tech_project_kayo = {
+
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		research_cost = 1
+		start_year = 1946
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = -3 y = @1922 }
 		}
 		
 		ai_will_do = {
@@ -68,7 +67,29 @@ technologies = {
 			ss_tech
 		}
 	}
-	tech_usn_patrol_submarine_1a = {
+	tech_guppy = {
+
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		research_cost = 1
+		start_year = 1947
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = 2 y = @1922 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_1 = {
 
 		enable_equipments = { 
 			usn_patrol_submarine_4
@@ -76,10 +97,6 @@ technologies = {
 		}
 		dependencies = {
 			tech_usn_sub = 1
-		}
-		path = {
-			leads_to_tech = tech_usn_patrol_submarine_1b
-			research_cost_coeff = 1
 		}				
 		research_cost = 1.5
 		start_year = 1928
@@ -101,15 +118,12 @@ technologies = {
 
 		enable_equipments = { 
 			usn_patrol_submarine_5
-			
+			usn_patrol_submarine_6			
 		}
 		dependencies = {
 			tech_usn_sub = 1
 		}
-		path = {
-			leads_to_tech = tech_usn_patrol_submarine_1c
-			research_cost_coeff = 1
-		}				
+		
 		research_cost = 1.5
 		start_year = 1928
 		folder = {
@@ -129,64 +143,7 @@ technologies = {
 	tech_usn_patrol_submarine_1c = {
 
 		enable_equipments = { 
-			usn_patrol_submarine_6
-			
-		}
-		dependencies = {
-			tech_usn_sub = 1
-		}
-		path = {
-			leads_to_tech = tech_usn_patrol_submarine_1d
-			research_cost_coeff = 1
-		}				
-		research_cost = 1.5
-		start_year = 1928
-		folder = {
-			name = usanaval_sub_folder
-			position = { x = 2 y = @1928 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			naval_equipment
-			ss_tech
-		}
-	}
-	tech_usn_patrol_submarine_1d = {
-
-		enable_equipments = { 
 			usn_patrol_submarine_7
-			
-		}
-		dependencies = {
-			tech_usn_sub = 1
-		}
-		path = {
-			leads_to_tech = tech_usn_patrol_submarine_1e
-			research_cost_coeff = 1
-		}
-		research_cost = 1.5
-		start_year = 1928
-		folder = {
-			name = usanaval_sub_folder
-			position = { x = 7 y = @1928 }
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		categories = {
-			naval_equipment
-			ss_tech
-		}
-	}
-	tech_usn_patrol_submarine_1e = {
-
-		enable_equipments = { 
 			usn_patrol_submarine_8
 			
 		}
@@ -198,12 +155,12 @@ technologies = {
 			leads_to_tech = tech_usn_patrol_submarine_2
 			research_cost_coeff = 1
 		}
-				
+		
 		research_cost = 1.5
 		start_year = 1928
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = 12 y = @1928 }
+			position = { x = 2 y = @1928 }
 		}
 		
 		ai_will_do = {
@@ -237,7 +194,7 @@ technologies = {
 		start_year = 1933
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1933 }
+			position = { x = 2 y = @1933 }
 		}
 		
 		ai_will_do = {
@@ -262,7 +219,7 @@ technologies = {
 		start_year = 1935
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -3 y = @1935 }
+			position = { x = 7 y = @1933 }
 		}
 		
 		ai_will_do = {
@@ -292,7 +249,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1936 }
+			position = { x = 2 y = @1936 }
 		}
 		
 		ai_will_do = {
@@ -322,7 +279,7 @@ technologies = {
 		start_year = 1937
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1937 }
+			position = { x = 2 y = @1937 }
 		}
 		
 		ai_will_do = {
@@ -344,7 +301,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = tech_usn_patrol_submarine_6
+			leads_to_tech = tech_usn_patrol_submarine_7
 			research_cost_coeff = 1
 		}
 						
@@ -352,7 +309,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1938 }
+			position = { x = 2 y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -371,11 +328,6 @@ technologies = {
 		}
 		dependencies = {
 			tech_usn_sub = 1
-		}
-		
-		path = {
-			leads_to_tech = tech_usn_patrol_submarine_7
-			research_cost_coeff = 1
 		}
 				
 		research_cost = 1.5
@@ -412,7 +364,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1940 }
+			position = { x = 2 y = @1940 }
 		}
 		
 		ai_will_do = {
@@ -437,12 +389,42 @@ technologies = {
 			leads_to_tech = tech_usn_patrol_submarine_9
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_8_guppy
+			research_cost_coeff = 1
+		}
 				
 		research_cost = 1.5
 		start_year = 1941
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1941 }
+			position = { x = 2 y = @1941 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_8_guppy = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_16b
+		}
+		dependencies = {
+			tech_usn_sub = 1
+			tech_guppy = 1
+		}
+				
+		research_cost = 0.75
+		start_year = 1947
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = 7 y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -462,9 +444,8 @@ technologies = {
 		dependencies = {
 			tech_usn_sub = 1
 		}
-		
 		path = {
-			leads_to_tech = tech_usn_patrol_submarine_10
+			leads_to_tech = tech_usn_patrol_submarine_9_guppy
 			research_cost_coeff = 1
 		}
 				
@@ -472,7 +453,33 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1943 }
+			position = { x = 2 y = @1943 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_9_guppy = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_17b
+		}
+		dependencies = {
+			tech_usn_sub = 1
+			tech_guppy = 1
+		}
+				
+		research_cost = 0.75
+		start_year = 1947
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = 7 y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -491,18 +498,15 @@ technologies = {
 		}
 		dependencies = {
 			tech_usn_sub = 1
-		}
-		
-		path = {
-			leads_to_tech = tech_usn_patrol_submarine_11
-			research_cost_coeff = 1
+			tech_project_kayo = 1
+			tech_guppy = 1
 		}
 				
 		research_cost = 1.5
 		start_year = 1949
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1949 }
+			position = { x = -8 y = @1946 }
 		}
 		
 		ai_will_do = {
@@ -521,6 +525,7 @@ technologies = {
 		}
 		dependencies = {
 			tech_usn_sub = 1
+			tech_guppy = 1
 		}
 		
 		path = {
@@ -536,7 +541,7 @@ technologies = {
 		start_year = 1950
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1950 }
+			position = { x = 2 y = @1947 }
 		}
 		
 		ai_will_do = {
@@ -557,11 +562,11 @@ technologies = {
 			tech_usn_sub = 1
 		}
 		
-		research_cost = 1.5
-		start_year = 1950
+		research_cost = 0.5
+		start_year = 1952
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -2 y = @1950 }
+			position = { x = 2 y = @1948 }
 		}
 		
 		ai_will_do = {
@@ -573,7 +578,7 @@ technologies = {
 			ss_tech
 		}
 	}
-	tech_usn_patrol_submarine_13 = {
+	tech_usn_patrol_submarine_nuclear = {
 
 		enable_equipments = { 
 			usn_patrol_submarine_21
@@ -583,11 +588,11 @@ technologies = {
 			nuclear_reactor = 1
 		}
 		
-		research_cost = 1.5
-		start_year = 1952
+		research_cost = 2.5
+		start_year = 1951
 		folder = {
 			name = usanaval_sub_folder
-			position = { x = -8 y = @1952 }
+			position = { x = -3 y = @1948 }
 		}
 		
 		ai_will_do = {
