@@ -134,7 +134,7 @@
  SOV_naval_doctrine_folder_desc:0 "Naval doctrine, how your Navy fights"
  ENG_naval_doctrine_folder:0 "Royal Navy doctrine"
  ENG_naval_doctrine_folder_desc:0 "Naval doctrine, how your Navy fights"
- JAP_naval_doctrine_folder:0 "IJ Navy doctrine"
+ JAP_naval_doctrine_folder:0 "IJN doctrine"
  JAP_naval_doctrine_folder_desc:0 "Naval doctrine, how your Navy fights"
  FRA_naval_doctrine_folder:0 "French Navy doctrine"
  FRA_naval_doctrine_folder_desc:0 "Naval doctrine, how your Navy fights"
@@ -1713,7 +1713,7 @@
  kriegsmarine_sub_folder_desc:0 "U-boats of the Kriegsmarine"
  japanarmor_folder:0 "Imperial Japanese Armor"
  japanarmor_folder_desc:0 "Tanks and their variants"
- japanair_folder:0 "Imperial Japanese Airforce"
+ japanair_folder:0 "Imperial Japanese Army and Navy Air Service"
  japanair_folder_desc:0 "Army and Navy Air Service planes"
  japannaval_folder:0 "Imperial Japanese Navy"
  japannaval_folder_desc:0 "Imperial Japanese Surface Fleet"
@@ -1723,10 +1723,12 @@
  italyarmor_folder_desc:0 "Tanks and their variants"
  italynavy_folder:0 "Italian Navy"
  italynavy_folder_desc:0 "Ships and submarines"
- soviet_folder:0 "Soviet Armored Forces"
+ soviet_folder:0 "Soviet Tank Forces"
  soviet_folder_desc:0 "Soviet tanks and their variants"
- sovietnaval_folder:0 "Soviet Navy"
+ sovietnaval_folder:0 "Soviet Surface Fleet"
  sovietnaval_folder_desc:0 "Soviet Surface Red Fleet ships"
+ sovietnaval_sub_folder:0 "Soviet Submarine Fleet"
+ sovietnaval_sub_folder_desc:0 "Soviet Submarine Fleet ships"
  sovietair_folder:0 "Soviet Air Force"
  sovietair_folder_desc:0 "Soviet Airforce aircraft"
  british_folder:0 "British Armor"
@@ -1735,6 +1737,8 @@
  britishair_folder_desc:0 "British Aircraft"
  britishnaval_folder:0 "Royal Navy"
  britishnaval_folder_desc:0 "British ships and submarines"
+ britishnaval_sub_folder:0 "Royal Navy Submarines"
+ britishnaval_sub_folder_desc:0 "British ships and submarines"
  usa_folder:0 "US Armor"
  usa_folder_desc:0 "US armor and their variants"
  usair_folder:0 "US Air Force"
@@ -1743,8 +1747,8 @@
  tech_usaaf_desc:0 "US Army Air Corps became in '41 the US Army Air Force"
  usanaval_folder:0 "US Navy"
  usanaval_folder_desc:0 "Surface Fleet of the US Navy (USN)"
- usanaval_sub_folder:0 "US Navy submarines"
- usanaval_sub_folder_desc:0 "Submerged Fleet of US Navy (USS)"
+ usanaval_sub_folder:0 "USN Submarine Service"
+ usanaval_sub_folder_desc:0 "Submarine Fleet of the US Navy (SS)"
  frencharmor_folder:0 "French Armor"
  frencharmor_folder_desc:0 "French Tanks and Variants"
  frenchair_folder:0 "Armée de l'air"
@@ -1763,7 +1767,7 @@
  ### KRIEGSMARINE ### ### GER ### ### START ###
  tech_kr:0 "Kriegsmarine Surface Fleet"
  tech_kr_desc:0 ""
- tech_kriegsmarine_sub:0 "Kriegsmarine Submarines"
+ tech_kriegsmarine_sub:0 "Kriegsmarine U-boots"
  tech_kriegsmarine_sub_desc:0 ""
  tech_kr_transport:0 "Transport Ship"
  tech_kr_transport_desc:0 "Ship designed solely for troop movement, without any defensive capabilities."
@@ -2529,7 +2533,7 @@
  
  ### IMPERIAL JAPANESE NAVY ### ### SUB TECH ###
  
- tech_ijn_sub:0 "IJN Submersive Fleet"
+ tech_ijn_sub:0 "IJN Submarine Fleet"
  tech_ijn_sub_desc:0 ""
  
  ### IMPERIAL JAPANESE NAVY ### ### JAPAN ### ### END ###
@@ -2609,6 +2613,25 @@
  tech_usn_cve3:0 "Sanagamon Class"
  tech_usn_cve4:0 "Casablanca Class"
  tech_usn_cve5:0 "Commencement Bay Class"
+
+ ### UNITED STATES NAVY ### ### Submarines TECH ###
+
+ tech_usn_sub:0 "USN Submarine Service"
+ tech_usn_sub_desc:0 "During the war, submarines of the United States Navy were responsible for 55% of Japan's merchant marine losses. The war against shipping was the single most decisive factor in the collapse of the Japanese economy"
+ tech_usn_patrol_submarine_1:1 "Fast Sub V-boat program"
+ tech_usn_patrol_submarine_1_desc:1 "The V-boats were a group of nine United States Navy submarines built between World War I and World War II from 1921 to 1934. These were not a ship class in the usual sense of a series of nearly identical ships built from the same design, but shared authorization under the "fleet boat" program. The term "V-boats" is used to includes five separate classes of submarines. They broke down into three large, fast fleet submarines (V-1 through V-3), three large long-range submarines (V-4 through V-6), and three medium-sized submarines (V-7 through V-9). This tech represents V-1 Through V-3."
+ tech_usn_patrol_submarine_1b:0 "Long range Fleet Sub V-boat program"
+ tech_usn_patrol_submarine_1b_desc:0 "The V-boats were a group of nine United States Navy submarines built between World War I and World War II from 1921 to 1934. These were not a ship class in the usual sense of a series of nearly identical ships built from the same design, but shared authorization under the "fleet boat" program. The term "V-boats" is used to includes five separate classes of submarines. They broke down into three large, fast fleet submarines (V-1 through V-3), three large long-range submarines (V-4 through V-6), and three medium-sized submarines (V-7 through V-9). This tech represents V-4 Through V-6."
+ tech_usn_patrol_submarine_1c:0 "Med range Fleet Sub V-boat program"
+ tech_usn_patrol_submarine_1c_desc:0 "The V-boats were a group of nine United States Navy submarines built between World War I and World War II from 1921 to 1934. These were not a ship class in the usual sense of a series of nearly identical ships built from the same design, but shared authorization under the "fleet boat" program. The term "V-boats" is used to includes five separate classes of submarines. They broke down into three large, fast fleet submarines (V-1 through V-3), three large long-range submarines (V-4 through V-6), and three medium-sized submarines (V-7 through V-9). This tech represents V-7 Through V-9."
+ tech_project_kayo:0 "Project Kayo"
+ tech_project_kayo_desc:0 "Project Kayo was a research and development effort begun immediately after World War II by the United States Navy to 'solve the problem of using submarines to attack and destroy enemy submarines.'"
+ tech_guppy:0 "Greater Underwater Propulsion Power Program (GUPPY)"
+ tech_guppy_desc:0 "The Greater Underwater Propulsion Power Program (GUPPY) was initiated by the United States Navy after World War II to improve the submerged speed, maneuverability, and endurance of its submarines. (The "Y" in the acronym was added for pronounceability.) The navy began the program by testing and reverse engineering two captured German Type XXI U-boats: U-2513 and U-3008. That analysis led to four goals—increasing the submarines' battery capacity, streamlining the boats' structures, adding snorkels, and improving fire control systems. The navy immediately focused on designing a new class of submarines, but the Bureau of Ships believed the fleet of existing Gato, Balao, and Tench class submarines could be modified to incorporate the desired improvements."
+ tech_usn_patrol_submarine_8_guppy:0 "Balao Class (GUPPY)"
+ tech_usn_patrol_submarine_8_guppy_desc:0 "The Greater Underwater Propulsion Power Program (GUPPY) was initiated by the United States Navy after World War II to improve the submerged speed, maneuverability, and endurance of its submarines. (The "Y" in the acronym was added for pronounceability.) The navy began the program by testing and reverse engineering two captured German Type XXI U-boats: U-2513 and U-3008. That analysis led to four goals—increasing the submarines' battery capacity, streamlining the boats' structures, adding snorkels, and improving fire control systems. The navy immediately focused on designing a new class of submarines, but the Bureau of Ships believed the fleet of existing Balao, and Tench class submarines could be modified to incorporate the desired improvements."
+ tech_usn_patrol_submarine_9_guppy:0 "Tench Class (GUPPY)"
+ tech_usn_patrol_submarine_9_guppy_desc:0 "The Greater Underwater Propulsion Power Program (GUPPY) was initiated by the United States Navy after World War II to improve the submerged speed, maneuverability, and endurance of its submarines. (The "Y" in the acronym was added for pronounceability.) The navy began the program by testing and reverse engineering two captured German Type XXI U-boats: U-2513 and U-3008. That analysis led to four goals—increasing the submarines' battery capacity, streamlining the boats' structures, adding snorkels, and improving fire control systems. The navy immediately focused on designing a new class of submarines, but the Bureau of Ships believed the fleet of existing Balao, and Tench class submarines could be modified to incorporate the desired improvements."
  
  ### UNITED STATES NAVY ### ### USA ### ### END ###
  ##################################################
@@ -2620,6 +2643,7 @@
  ### ROYAL NAVY ### ### ENG ### ### START #########
   
  tech_rn:0 "Royal Navy"
+ tech_rn_desc:0 ""
  tech_rn_transport:0 "Transport Ship"
  tech_rn_transport_desc:0 "Ship designed solely for troop movement, without any defensive capabilities."
  tech_rn_landing_craft:0 "Landing Craft"
@@ -2717,7 +2741,8 @@
  ##############################################
  ### RED FLEET ### ### SOV ### ### START ######
  
- tech_rf:0 "Red Fleet"
+ tech_rf:0 "Voyenno-Morskoy Flot SSSR"
+ tech_rf_desc:0 "Red Fleet"
  tech_rf_transport:0 "Transport Ship"
  tech_rf_transport_desc:0 "Ship designed solely for troop movement, without any defensive capabilities."
  tech_rf_landing_craft:0 "Landing Craft"
@@ -2811,6 +2836,7 @@
  ### REGIA MARINA ### ### ITA ### ### START ####
 
  tech_rm:0 "Regia Marina"
+ tech_rm_desc:0 ""
  tech_rm_transport:0 "Transport Ship"
  tech_rm_transport_desc:0 "Ship designed solely for troop movement, without any defensive capabilities."
  tech_rm_landing_craft:0 "Landing Craft"
@@ -2889,6 +2915,7 @@
  ### MARINE NATIONALE ### ### FRA ### ### START ###
  
  tech_mn:0 "Marine Nationale"
+ tech_mn_desc:0 ""
  tech_mn_transport:0 "Transport Ship"
  tech_mn_transport_desc:0 "Ship designed solely for troop movement, without any defensive capabilities."
  tech_mn_landing_craft:0 "Landing Craft"
