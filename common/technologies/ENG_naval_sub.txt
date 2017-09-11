@@ -66,18 +66,22 @@ technologies = {
 			ss_tech
 		}
 	}
-	tech_rn_patrol_submarine_1 = { #Odin Parthian Rainbow Class
+	tech_rn_patrol_submarine_1 = { #O Classes
 
 		enable_equipments = { 
 			rn_patrol_submarine_4
-			rn_patrol_submarine_5
-			rn_patrol_submarine_6
+			rn_patrol_submarine_4b
+			rn_patrol_submarine_4c
 			
 		}
 		dependencies = {
 			tech_britishnaval_sub = 1
 		}
 		
+		path = {
+			leads_to_tech = tech_rn_patrol_submarine_1b
+			research_cost_coeff = 1
+		}
 		path = {
 			leads_to_tech = tech_rn_patrol_submarine_2
 			research_cost_coeff = 1
@@ -99,6 +103,63 @@ technologies = {
 			ss_tech
 		}
 	}
+	tech_rn_patrol_submarine_1b = { #Parthian Class
+
+		enable_equipments = { 
+			rn_patrol_submarine_5
+						
+		}
+		dependencies = {
+			tech_britishnaval_sub = 1
+		}
+		path = {
+			leads_to_tech = tech_rn_patrol_submarine_1c
+			research_cost_coeff = 1
+		}
+				
+		research_cost = 1.5
+		start_year = 1928
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = -3 y = @1928 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_rn_patrol_submarine_1c = { #Rainbow Class
+
+		enable_equipments = { 
+			rn_patrol_submarine_6
+						
+		}
+		dependencies = {
+			tech_britishnaval_sub = 1
+		}
+		
+				
+		research_cost = 1.5
+		start_year = 1928
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = 2 y = @1928 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
 	tech_rn_patrol_submarine_2 = { #S Class 
 
 		enable_equipments = { 
@@ -109,7 +170,7 @@ technologies = {
 		}
 		
 		path = {
-			leads_to_tech = tech_rn_patrol_submarine_3 #Grampus Class
+			leads_to_tech = tech_rn_patrol_submarine_2b #River Class
 			research_cost_coeff = 1
 		}
 		path = {
@@ -151,7 +212,7 @@ technologies = {
 		start_year = 1935
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -2 y = @1935 }
+			position = { x = -8 y = @1935 }
 		}
 		
 		ai_will_do = {
@@ -422,5 +483,37 @@ technologies = {
 			ss_tech
 		}
 	}
+	
+	
+	
+	tech_rn_lr_patrol_submarine_0 = { #X1 Class
+
+		enable_equipments = { 
+			rn_lr_patrol_submarine_1
+			
+		}
+		dependencies = {
+			tech_britishnaval_sub = 1
+		}
+		
+				
+		research_cost = 1.5
+		start_year = 1922
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = 8 y = @1922 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	
+	
 		
 }

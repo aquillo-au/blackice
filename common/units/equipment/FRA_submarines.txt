@@ -387,6 +387,78 @@ equipments = {
             
 		}
 	}
+	# Gustav Zede Class
+	fn_coastal_submarine_0b = {
+		archetype = fn_coastal_submarine
+		parent = fn_coastal_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1911
+		
+		ap_attack = 2.36
+		attack = 29.54
+		fire_range = 8.5
+		torpedo_attack = 55.00
+		anti_air_attack = 4.7
+		armor_value = 0
+		evasion = 80.00
+		surface_detection = 58
+		sub_detection = 50
+        sub_visibility = 40
+		surface_visibility = 8
+		naval_speed = 14.5
+		reliability = 0.5
+		naval_range = 1425 
+		max_strength = 37 
+		port_capacity_usage = 1
+		manpower = 47
+		build_cost_ic = 840
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	# Lagrange Class
+	fn_coastal_submarine_0c = {
+		archetype = fn_coastal_submarine
+		parent = fn_coastal_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1913
+		
+		ap_attack = 2.41
+		attack = 30.17
+		fire_range = 8.5
+		torpedo_attack = 55.00
+		anti_air_attack = 0
+		armor_value = 0
+		evasion = 62.00
+		surface_detection = 55
+		sub_detection = 50
+        sub_visibility = 40
+		surface_visibility = 8
+		naval_speed = 13.8
+		reliability = 0.5
+		naval_range = 1975 
+		max_strength = 45 
+		port_capacity_usage = 1
+		manpower = 47
+		build_cost_ic = 700
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
 	# Sirene Class
 	fn_coastal_submarine_1 = {
 		archetype = fn_coastal_submarine
@@ -740,6 +812,221 @@ equipments = {
 		port_capacity_usage = 1
 		manpower = 43
 		build_cost_ic = 616
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	
+	
+	
+	
+	fn_ger_patrol_submarine = {
+		is_archetype = yes
+		is_buildable = no
+		type = submarine
+		group_by = archetype
+		
+		upgrades = {
+			ship_quality_upgrade
+			sub_engine_upgrade
+			sub_stealth_upgrade
+			sub_torpedo_upgrade
+			ship_range_upgrade
+		}
+		
+		interface_category = interface_category_other_ships
+
+		ap_attack = 4.17
+		attack = 52.13
+		fire_range = 15
+		torpedo_attack = 41.25
+		
+		anti_air_attack = 0.01
+		
+		armor_value = 0
+		evasion = 103
+		
+		surface_detection = 43
+		sub_detection = 30
+		surface_visibility = 6
+		sub_visibility = 40
+		naval_speed = 8 #DNM - original 14, BICE use submerged speed
+		reliability = 0.65
+		
+		naval_range = 4207 #DNM - original 2000
+		
+		max_strength = 30 #DNM - original 10
+		
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1917
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+		
+		manpower = 25
+		
+	}
+	#German WW1 Submarine Track
+	fn_ger_patrol_submarine_0 = {
+		archetype = fn_ger_patrol_submarine
+		type = { 
+			submarine
+		}
+		priority = 80
+		
+		year = 1916
+		
+		naval_range = 819 # 7200nm
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	#Jean Autric
+	fn_ger_patrol_submarine_1 = {
+		archetype = fn_ger_patrol_submarine
+		parent = fn_ger_patrol_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1916
+		
+		ap_attack = 2.99
+		attack = 37.35
+		fire_range = 10.6
+		torpedo_attack = 53.00
+		anti_air_attack = 8.8
+		armor_value = 0
+		evasion = 82.00
+		surface_detection = 49
+		sub_detection = 50
+        sub_visibility = 40
+		surface_visibility = 8
+		naval_speed = 12.4
+		reliability = 0.5
+		naval_range = 4275 
+		max_strength = 34 
+		port_capacity_usage = 1
+		manpower = 36
+		build_cost_ic = 1166
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	#Rene Audry
+	fn_ger_patrol_submarine_2 = {
+		archetype = fn_ger_patrol_submarine
+		parent = fn_ger_patrol_submarine_1
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1916
+		
+		ap_attack = 5.77
+		attack = 72.13
+		fire_range = 20
+		torpedo_attack = 39.00
+		anti_air_attack = 0
+		armor_value = 0
+		evasion = 48.00
+		surface_detection = 43
+		sub_detection = 50
+        sub_visibility = 26
+		surface_visibility = 9
+		naval_speed = 10.9
+		reliability = 0.5
+		naval_range = 6425 
+		max_strength = 52 
+		port_capacity_usage = 1
+		manpower = 40
+		build_cost_ic = 777
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	#Pierre Marrast
+	fn_ger_patrol_submarine_3 = {
+		archetype = fn_ger_patrol_submarine
+		parent = fn_ger_patrol_submarine_2
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1917
+		
+		ap_attack = 4.17
+		attack = 52.13
+		fire_range = 15
+		torpedo_attack = 53.00
+		anti_air_attack = 0
+		armor_value = 0
+		evasion = 80.00
+		surface_detection = 48
+		sub_detection = 50
+        sub_visibility = 40
+		surface_visibility = 8
+		naval_speed = 12.2
+		reliability = 0.5
+		naval_range = 3925 
+		max_strength = 34 
+		port_capacity_usage = 1
+		manpower = 39
+		build_cost_ic = 750
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	#Jean Corre
+	fn_ger_patrol_submarine_4 = {
+		archetype = fn_ger_patrol_submarine
+		parent = fn_ger_patrol_submarine_3
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1917
+		
+		ap_attack = 4.17
+		attack = 52.13
+		fire_range = 15
+		torpedo_attack = 41.00
+		anti_air_attack = 0
+		armor_value = 0
+		evasion = 102.00
+		surface_detection = 42
+		sub_detection = 50
+        sub_visibility = 26
+		surface_visibility = 6
+		naval_speed = 10.5
+		reliability = 0.5
+		naval_range = 3275 
+		max_strength = 22 
+		port_capacity_usage = 1
+		manpower = 34
+		build_cost_ic = 622
 		
 		resources = {
 			oil = 1

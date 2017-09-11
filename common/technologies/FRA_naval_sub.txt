@@ -22,7 +22,12 @@ technologies = {
 		allow = {
 			always = no
 		}
-		
+		enable_equipments = { 
+			fn_coastal_submarine_0b
+			fn_coastal_submarine_0c
+			
+			
+		}
 		research_cost = 2
 		start_year = 1922
 		folder = {
@@ -416,6 +421,36 @@ technologies = {
 		folder = {
 			name = frenchnaval_sub_folder
 			position = { x = -2 y = @1938 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	
+	
+	tech_fn_ger_patrol_submarine_0 = { # German WW1 Submarines
+
+		enable_equipments = { 
+			fn_ger_patrol_submarine_1
+			fn_ger_patrol_submarine_2
+			fn_ger_patrol_submarine_3
+			fn_ger_patrol_submarine_4
+		}
+		dependencies = {
+			tech_fn_sub = 1
+		}
+							
+		research_cost = 1.5
+		start_year = 1922
+		folder = {
+			name = frenchnaval_sub_folder
+			position = { x = 15 y = @1922 }
 		}
 		
 		ai_will_do = {

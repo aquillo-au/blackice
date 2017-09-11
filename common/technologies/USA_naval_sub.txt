@@ -189,6 +189,10 @@ technologies = {
 			leads_to_tech = tech_usn_patrol_submarine_2b
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = tech_usn_patrol_submarine_2c
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 1.5
 		start_year = 1933
@@ -220,6 +224,31 @@ technologies = {
 		folder = {
 			name = usanaval_sub_folder
 			position = { x = 7 y = @1933 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			naval_equipment
+			ss_tech
+		}
+	}
+	tech_usn_patrol_submarine_2c = {
+
+		enable_equipments = { 
+			usn_patrol_submarine_9b
+		}
+		dependencies = {
+			tech_usn_sub = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1933
+		folder = {
+			name = usanaval_sub_folder
+			position = { x = 12 y = @1933 }
 		}
 		
 		ai_will_do = {

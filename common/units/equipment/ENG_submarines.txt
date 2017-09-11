@@ -211,6 +211,78 @@ equipments = {
             
 		}
 	}
+	# Oberon Class
+	rn_patrol_submarine_4b = {
+		archetype = rn_patrol_submarine
+		parent = rn_patrol_submarine_4
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1924
+		
+		ap_attack = 2.99
+		attack = 37.35
+		fire_range = 10.6
+		torpedo_attack = 69.00
+		anti_air_attack = 0
+		armor_value = 0
+		evasion = 37.00
+		surface_detection = 42
+		sub_detection = 50
+        sub_visibility = 33
+		surface_visibility = 9
+		naval_speed = 10.6
+		reliability = 0.5
+		naval_range = 2315 
+		max_strength = 63 
+		port_capacity_usage = 1
+		manpower = 54
+		build_cost_ic = 810
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	# Oxley Class
+	rn_patrol_submarine_4c = {
+		archetype = rn_patrol_submarine
+		parent = rn_patrol_submarine_4b
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1925
+		
+		ap_attack = 2.99
+		attack = 37.35
+		fire_range = 10.6
+		torpedo_attack = 69.00
+		anti_air_attack = 0
+		armor_value = 0
+		evasion = 40.00
+		surface_detection = 47
+		sub_detection = 50
+        sub_visibility = 33
+		surface_visibility = 9
+		naval_speed = 11.8
+		reliability = 0.5
+		naval_range = 2111 
+		max_strength = 64 
+		port_capacity_usage = 1
+		manpower = 55
+		build_cost_ic = 801
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
 	# Parthian Class
 	rn_patrol_submarine_5 = {
 		archetype = rn_patrol_submarine
@@ -672,6 +744,110 @@ equipments = {
 		port_capacity_usage = 1
 		manpower = 61
 		build_cost_ic = 1161
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	
+	rn_lr_patrol_submarine = {
+		is_archetype = yes
+		is_buildable = no
+		type = submarine
+		group_by = archetype
+		
+		upgrades = {
+			ship_quality_upgrade
+			sub_engine_upgrade
+			sub_stealth_upgrade
+			sub_torpedo_upgrade
+			ship_range_upgrade
+		}
+		
+		interface_category = interface_category_other_ships
+
+		ap_attack = 4.17
+		attack = 52.13
+		fire_range = 15
+		torpedo_attack = 41.25
+		
+		anti_air_attack = 0.01
+		
+		armor_value = 0
+		evasion = 103
+		
+		surface_detection = 43
+		sub_detection = 30
+		surface_visibility = 6
+		sub_visibility = 40
+		naval_speed = 8 #DNM - original 14, BICE use submerged speed
+		reliability = 0.65
+		
+		naval_range = 4207 #DNM - original 2000
+		
+		max_strength = 30 #DNM - original 10
+		
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1917
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+		
+		manpower = 25
+		
+	}
+	#Royal Navy Long Range Submarine Track
+	rn_lr_patrol_submarine_0 = {
+		archetype = rn_lr_patrol_submarine
+		type = { 
+			submarine
+		}
+		priority = 80
+		
+		year = 1916
+		
+		naval_range = 819 # 7200nm
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	# X1 Class
+	rn_lr_patrol_submarine_1 = {
+		archetype = rn_lr_patrol_submarine
+		parent = rn_lr_patrol_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1921
+		
+		ap_attack = 6.20
+		attack = 77.46
+		fire_range = 21.0
+		torpedo_attack = 51.00
+		anti_air_attack = 0
+		armor_value = 0
+		evasion = 27.00
+		surface_detection = 55
+		sub_detection = 50
+        sub_visibility = 33
+		surface_visibility = 12
+		naval_speed = 13.8
+		reliability = 0.5
+		naval_range = 8650 
+		max_strength = 124 
+		port_capacity_usage = 1
+		manpower = 110
+		build_cost_ic = 1107
 		
 		resources = {
 			oil = 1

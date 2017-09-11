@@ -14,15 +14,24 @@ technologies = {
 	@1944 = 32
 	@1945 = 35
 	@1949 = 38
-	@1950 = 40
-	@1952 = 41
-	
+	@1950 = 41
+	@1952 = 44
+	#Horizontal position
+	@COASTAL = -8
+	@PATROL = -2
+	@PATROL2 = 4
+	@PATROL3 = 9
+	@PATROL4 = 11
 	tech_sn_sub = {
 		
 		allow = {
 			always = no
 		}
-		
+		enable_equipments = { 
+			sn_coastal_submarine_0c
+			sn_coastal_submarine_0b
+			
+		}
 		research_cost = 2
 		start_year = 1922
 		folder = {
@@ -53,7 +62,7 @@ technologies = {
 		start_year = 1933
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = -8 y = @1933 }
+			position = { x = @COASTAL y = @1933 }
 		}
 		
 		ai_will_do = {
@@ -84,7 +93,7 @@ technologies = {
 		start_year = 1935
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = -8 y = @1935 }
+			position = { x = @COASTAL y = @1935 }
 		}
 		
 		ai_will_do = {
@@ -115,7 +124,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = -8 y = @1938 }
+			position = { x = @COASTAL y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -145,7 +154,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = -8 y = @1942 }
+			position = { x = @COASTAL y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -170,7 +179,7 @@ technologies = {
 		start_year = 1950
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = -8 y = @1950 }
+			position = { x = @COASTAL y = @1950 }
 		}
 		
 		ai_will_do = {
@@ -182,12 +191,7 @@ technologies = {
 			ss_tech
 		}
 	}
-	
-	
-	
-	
-	
-	
+	#### Patrol submarines ####
 	tech_sn_patrol_submarine_0 = {
 
 		enable_equipments = { 
@@ -201,12 +205,12 @@ technologies = {
 			leads_to_tech = tech_sn_patrol_submarine_1
 			research_cost_coeff = 1
 		}
-				
+		
 		research_cost = 1.5
 		start_year = 1922
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 2 y = @1922 }
+			position = { x = @PATROL y = @1922 }
 		}
 		
 		ai_will_do = {
@@ -241,7 +245,7 @@ technologies = {
 		start_year = 1933
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 2 y = @1933 }
+			position = { x = @PATROL y = @1933 }
 		}
 		
 		ai_will_do = {
@@ -271,7 +275,7 @@ technologies = {
 		start_year = 1933
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 7 y = @1933 }
+			position = { x = @PATROL2 y = @1933 }
 		}
 		
 		ai_will_do = {
@@ -305,7 +309,7 @@ technologies = {
 		start_year = 1935
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 2 y = @1935 }
+			position = { x = @PATROL y = @1935 }
 		}
 		
 		ai_will_do = {
@@ -330,13 +334,12 @@ technologies = {
 			leads_to_tech = tech_sn_patrol_submarine_4
 			research_cost_coeff = 1
 		}
-			
-				
+		
 		research_cost = 1.5
 		start_year = 1936
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 14 y = @1936 }
+			position = { x = @PATROL4 y = @1936 }
 		}
 		
 		ai_will_do = {
@@ -361,7 +364,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 14 y = @1939 }
+			position = { x = @PATROL4 y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -395,7 +398,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 2 y = @1936 }
+			position = { x = @PATROL y = @1936 }
 		}
 		
 		ai_will_do = {
@@ -420,7 +423,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 10 y = @1938 }
+			position = { x = @PATROL3 y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -452,7 +455,7 @@ technologies = {
 		start_year = 1937
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 2 y = @1937 }
+			position = { x = @PATROL y = @1937 }
 		}
 		
 		ai_will_do = {
@@ -480,7 +483,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 6 y = @1939 }
+			position = { x = @PATROL2 y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -505,7 +508,7 @@ technologies = {
 		start_year = 1941
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 6 y = @1941 }
+			position = { x = @PATROL2 y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -530,7 +533,7 @@ technologies = {
 		start_year = 1949
 		folder = {
 			name = sovietnaval_sub_folder
-			position = { x = 2 y = @1949 }
+			position = { x = @PATROL y = @1949 }
 		}
 		
 		ai_will_do = {
@@ -542,7 +545,7 @@ technologies = {
 			ss_tech
 		}
 	}
-	
+	#### Longrange Submarines ####
 	tech_sn_lr_patrol_submarine_0 = {
 
 		enable_equipments = { 
@@ -581,7 +584,7 @@ technologies = {
 		dependencies = {
 			tech_sn_sub = 1
 		}
-					
+		
 		research_cost = 1.5
 		start_year = 1952
 		folder = {

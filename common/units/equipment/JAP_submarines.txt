@@ -391,6 +391,42 @@ equipments = {
             
 		}
 	}
+	# Kai-Toku-Chu
+	ijn_coastal_submarine_9b = {
+		archetype = ijn_coastal_submarine
+		parent = ijn_coastal_submarine_9b
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1921
+		
+		ap_attack = 4.48
+		attack = 56.03
+		fire_range = 16
+		torpedo_attack = 34.00
+		anti_air_attack = 0
+		armor_value = 0
+		evasion = 63.00
+		surface_detection = 42
+		sub_detection = 50
+        sub_visibility = 26
+		surface_visibility = 8
+		naval_speed = 10.5
+		reliability = 0.5
+		naval_range = 3700 
+		max_strength = 35 
+		port_capacity_usage = 1
+		manpower = 43
+		build_cost_ic = 591
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
 	# Kaichu VI
 	ijn_coastal_submarine_10 = {
 		archetype = ijn_coastal_submarine
@@ -1525,6 +1561,109 @@ equipments = {
 		port_capacity_usage = 1
 		manpower = 144
 		build_cost_ic = 2644
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	ijn_minelayer_submarine = {
+		is_archetype = yes
+		is_buildable = no
+		type = submarine
+		group_by = archetype
+		
+		upgrades = {
+			ship_quality_upgrade
+			sub_engine_upgrade
+			sub_stealth_upgrade
+			sub_torpedo_upgrade
+			ship_range_upgrade
+		}
+		
+		interface_category = interface_category_other_ships
+
+		ap_attack = 4.17
+		attack = 52.13
+		fire_range = 15
+		torpedo_attack = 41.25
+		
+		anti_air_attack = 0.01
+		
+		armor_value = 0
+		evasion = 103
+		
+		surface_detection = 43
+		sub_detection = 30
+		surface_visibility = 6
+		sub_visibility = 40
+		naval_speed = 8 #DNM - original 14, BICE use submerged speed
+		reliability = 0.65
+		
+		naval_range = 4207 #DNM - original 2000
+		
+		max_strength = 30 #DNM - original 10
+		
+		port_capacity_usage = 1
+		
+		build_cost_ic = 1917
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+		
+		manpower = 25
+		
+	}
+	#IJN Minelayer Submarine Track
+	ijn_minelayer_submarine_0 = {
+		archetype = ijn_minelayer_submarine
+		type = { 
+			submarine
+		}
+		priority = 80
+		
+		year = 1916
+		
+		naval_range = 819 # 7200nm
+		
+		resources = {
+			oil = 1
+			steel = 2 
+            
+		}
+	}
+	# Kiraisen Class
+	ijn_minelayer_submarine_1 = {
+		archetype = ijn_minelayer_submarine
+		parent = ijn_minelayer_submarine_0
+		type = { 
+			submarine
+		}
+		priority = 1
+
+		year = 1924
+		
+		ap_attack = 4.61
+		attack = 57.67
+		fire_range = 16
+		torpedo_attack = 38.00
+		anti_air_attack = 0
+		armor_value = 0
+		evasion = 41.00
+		surface_detection = 43
+		sub_detection = 50
+        sub_visibility = 26
+		surface_visibility = 9
+		naval_speed = 10.8
+		reliability = 0.50
+		naval_range = 4875 
+		max_strength = 61 
+		port_capacity_usage = 1
+		manpower = 70
+		build_cost_ic = 695
 		
 		resources = {
 			oil = 1
