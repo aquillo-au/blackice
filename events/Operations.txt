@@ -204,8 +204,8 @@ country_event = {
 	}
 option = {
 		name = operation.50.b
-		trigger = { date > 1943.1.1
-			not = { date < 1944.1.1 }
+		trigger = { date > 1942.1.1
+			not = { date > 1944.1.1 }
 		 }
 		hidden_effect = {
 			
@@ -259,7 +259,7 @@ country_event = {
 		not = { has_country_flag = redarmydisarry}
 		GER = { is_ai = yes }
 		has_offensive_war_with = GER 
-
+		
 		NOT = { has_idea = BalticAttack_I }
 		NOT = { has_idea = BalticAttack_II }
 		NOT = { has_idea = BalticAttack_III }
@@ -297,9 +297,9 @@ country_event = {
 	trigger = {
 		tag = SOV
 		has_country_flag = SOVstalingraddefence
-		GER = { is_ai = yes }
+		#GER = { is_ai = yes }
 		SOV = { owns_state =  407}
-		
+		is_ai = yes
 		not = { has_idea =  Stalingrad_offensive}
 	}
 	mean_time_to_happen = {
