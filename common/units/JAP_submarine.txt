@@ -44,7 +44,7 @@ sub_units = {
 		
 		supply_consumption = 0.06
 	}
-	# Sen-Toku-class
+	# IJN Submarine Aircraft Carriers
 	ijn_carrier_submarine = {
 		sprite = submarine
 		map_icon_category = ship
@@ -52,6 +52,21 @@ sub_units = {
 		active = yes
 		type = { submarine }
 		need = { ijn_carrier_submarine = 1 }
+		
+		max_organisation = 40
+		
+		anti_air_attack = 1
+		
+		supply_consumption = 0.06
+	}
+	# IJN Minelayer Submarines
+	ijn_minelayer_submarine = {
+		sprite = submarine
+		map_icon_category = ship
+		priority = 1
+		active = yes
+		type = { submarine }
+		need = { ijn_minelayer_submarine = 1 }
 		
 		max_organisation = 40
 		

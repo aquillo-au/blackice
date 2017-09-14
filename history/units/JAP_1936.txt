@@ -591,13 +591,6 @@ units = {
 	}
 	#Yokosuka (Tokyo)
 	navy = {
-		name = "Test"
-		base = 9998
-		location = 9998  #Yokosuka
-		#Test
-		ship = { name = "Test" definition = seaplane_tender equipment = { JAP_seaplane_tender_1 = { amount = 1 owner = JAP } } }
-	}
-	navy = {
 		name = "1 Kantai"
 		base = 9998
 		location = 9998  #Yokosuka
@@ -618,6 +611,7 @@ units = {
 		location = 9998  #Yokosuka
 		#Flagship
 		ship = { name = "Abukuma" definition = light_cruiser equipment = { JAP_light_cruiser_4 = {amount = 1 owner = JAP } } }
+		ship = { name = "Kamoi" definition = seaplane_tender equipment = { JAP_seaplane_tender_1 = { amount = 1 owner = JAP } } }
 		#Dai 9 Kuchikutai
 		ship = { name = "Ariake" definition = destroyer equipment = { JAP_destroyer_9 = {amount = 1 owner = JAP } } }
 		ship = { name = "Yugure" definition = destroyer equipment = { JAP_destroyer_9 = {amount = 1 owner = JAP } } }
@@ -638,7 +632,7 @@ units = {
 		base = 9998
 		location = 9998  #Yokosuka
 		#Kaidai-class Submarines
-		ship = { name = "I-51" definition = submarine equipment = { submarine_1 = {amount = 1 owner = JAP version_name = "Kaidai I Class"} } }
+		ship = { name = "I-51" definition = submarine equipment = { submarine_1 = {amount = 1 owner = JAP } } }
 		ship = { name = "I-52" definition = submarine equipment = { submarine_1 = {amount = 1 owner = JAP version_name = "Kaidai II Class"} } }		
 		ship = { name = "I-53" definition = submarine equipment = { submarine_1 = {amount = 1 owner = JAP version_name = "Kaidai III Class"} } }			
 		ship = { name = "I-54" definition = submarine equipment = { submarine_1 = {amount = 1 owner = JAP version_name = "Kaidai III Class"} } }	
@@ -825,6 +819,14 @@ units = {
 		ship = { name = "Akebono" definition = destroyer equipment = { JAP_destroyer_7 = {amount = 1 owner = JAP } } }	
 		ship = { name = "Sazanami" definition = destroyer equipment = { JAP_destroyer_7 = {amount = 1 owner = JAP } } }
 		ship = { name = "Ushio" definition = destroyer equipment = { JAP_destroyer_7 = {amount = 1 owner = JAP } } }
+	}
+	#Hiroshima (Kure)
+	navy = {
+		name = "IJA Landing Craft Ship"
+		base = 1092
+		location = 1092  #Hiroshima
+		#Flagship
+		ship = { name = "Shinshū Maru" definition = seaplane_tender equipment = { JAP_seaplane_tender_2 = { amount = 1 owner = JAP } } }
 	}
 	navy = {
 		name = "3 Sensui Kantai"
@@ -1263,6 +1265,24 @@ instant_effect = {
 	add_equipment_production = {				# Tone Class "Chikuma"
 		equipment = {
 			type = JAP_aviation_cruiser_1
+			creator = "JAP"
+		}
+		requested_factories = 1
+		progress = 0.05
+		amount = 1
+	}	
+	add_equipment_production = {				# Chitose Class AV "Chitose"
+		equipment = {
+			type = JAP_seaplane_tender_3
+			creator = "JAP"
+		}
+		requested_factories = 1
+		progress = 0.30
+		amount = 1
+	}	
+	add_equipment_production = {				# Chitose Class AV "Chiyoda"
+		equipment = {
+			type = JAP_seaplane_tender_3
 			creator = "JAP"
 		}
 		requested_factories = 1
