@@ -3961,7 +3961,7 @@ guiTypes = {
 		#		format = "UP"
 		#	}
 		#}
-		# Germany Panzer-folder
+		### Germany Panzer-folder ###
 		containerWindowType = {
 			name = "german_pz_folder"
 			position = { x=0 y=47 }
@@ -3976,24 +3976,11 @@ guiTypes = {
 				quadTextureSprite ="GFX_tiled_window_2b_border"
 			}
 
-			#instantTextBoxType = {
-				#name = "armour_title"
-				#position = { x = 30 y = 35 }
-				#textureFile = ""
-				#font = "hoi_80"
-				#borderSize = {x = 0 y = 4}
-				#text = "ARMOUR_TITLE"
-				#maxWidth = 570
-				#maxHeight = 162
-				#format = left
-				#orientation = "UPPER_LEFT"
-			#}
-
 			containerWindowType = {
 				name = "techtree_stripes"
 				position = { x= 0 y= 0 }
 				size = { 
-					width = 2450 height = 2250 
+					width = 3200 height = 2300 
 					min = { width = 100%% height = 100%% }
 				}
 				clipping = no
@@ -4184,6 +4171,18 @@ guiTypes = {
 						format = left
 						orientation = "UPPER_LEFT"
 					}
+					instantTextBoxType = {
+						name = "germany_year14"
+						position = { x = 20 y = 1990 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1946"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
 				}
 
 				containerWindowType = {
@@ -4360,6 +4359,18 @@ guiTypes = {
 						format = left
 						orientation = "UPPER_LEFT"
 					}
+					instantTextBoxType = {
+						name = "germany_year14_left"
+						position = { x = 0 y = 1990 }
+						textureFile = ""
+						font = "hoi_36header"
+						borderSize = {x = 0 y = 4}
+						text = "1946"
+						maxWidth = 80
+						maxHeight = 32
+						format = left
+						orientation = "UPPER_LEFT"
+					}
 				}			
 			}
 
@@ -4374,7 +4385,7 @@ guiTypes = {
 					name = "germany_subtitle_panzer"
 					position = { x = 165 y = -180  } #55
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "GERMAN PANZER"
 					maxWidth = 500
@@ -4386,7 +4397,7 @@ guiTypes = {
 					name = "germany_subtitle_ac_tankette_vehicle"
 					position = { x = 165 y = -150 } #55
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "AC - TANKETTE - LIGHT VEHICLES"
 					maxWidth = 500
@@ -4398,7 +4409,7 @@ guiTypes = {
 					name = "germany_subtitle_light"
 					position = { x = -250 y = 200  } #55
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "ARMOUR_TITLE_LIGHT"
 					maxWidth = 200
@@ -4410,7 +4421,7 @@ guiTypes = {
 					name = "germany_subtitle_medium"
 					position = { x = 165 y = 475 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "ARMOUR_TITLE_MEDIUM"
 					maxWidth = 200
@@ -4420,9 +4431,9 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "germany_subtitle_cmd_pz"
-					position = { x = 220 y = 730 }
+					position = { x = 1090 y = 800 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "STAB PZ."
 					maxWidth = 200
@@ -4432,9 +4443,9 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "germany_subtitle_recovery_pz"
-					position = { x = 220 y = 870 }
+					position = { x = 1350 y = 940 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "BERGER PZ."
 					maxWidth = 500
@@ -4444,9 +4455,9 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "germany_subtitle_captured_armor"
-					position = { x = 220 y = 590 }
+					position = { x = 870 y = 240 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "BEUTE PZ."
 					maxWidth = 500
@@ -4456,11 +4467,35 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "germany_subtitle_bat_comp"
-					position = { x = 220 y = 1080 }
+					position = { x = 1200 y = 1080 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
-					text = "Btl Comp."
+					text = "Btl Comp I."
+					maxWidth = 500
+					maxHeight = 62
+					format = left
+					orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "germany_subtitle_ostketten"
+					position = { x = 1210 y = 1360 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = {x = 0 y = 4}
+					text = "OST-KETTEN"
+					maxWidth = 500
+					maxHeight = 62
+					format = left
+					orientation = "UPPER_LEFT"
+				}
+				instantTextBoxType = {
+					name = "germany_subtitle_skirts"
+					position = { x = 1490 y = 1360 }
+					textureFile = ""
+					font = "hoi_36header"
+					borderSize = {x = 0 y = 4}
+					text = "SCHÜRZEN"
 					maxWidth = 500
 					maxHeight = 62
 					format = left
@@ -4468,9 +4503,9 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "germany_subtitle_bat_compII"
-					position = { x = 220 y = 1360 }
+					position = { x = 1200 y = 1500 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "Btl Comp II."
 					maxWidth = 500
@@ -4480,9 +4515,9 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "germany_subtitle_heavy"
-					position = { x = 550 y = 200 }
+					position = { x = 555 y = 200 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "ARMOUR_TITLE_HEAVY"
 					maxWidth = 200
@@ -4492,9 +4527,9 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "germany_subtitle_ac"
-					position = { x = 1010 y = -40 }
+					position = { x = 1770 y = -45 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "AC RECON"
 					maxWidth = 200
@@ -4504,9 +4539,9 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "germany_subtitle_tankette"
-					position = { x = 1220 y = 100 }
+					position = { x = 1990 y = -45 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "TANKETTE"
 					maxWidth = 200
@@ -4516,15 +4551,26 @@ guiTypes = {
 				}
 				instantTextBoxType = {
 					name = "germany_subtitle_light_vehicle"
-					position = { x = 1460 y = 100 }
+					position = { x = 2050 y = -45 }
 					textureFile = ""
-					font = "hoi_33"
+					font = "hoi_36header"
 					borderSize = {x = 0 y = 4}
 					text = "LIGHT VEHICLE"
-					maxWidth = 200
+					maxWidth = 400
 					maxHeight = 62
 					format = right
 					orientation = "UPPER_LEFT"
+				}
+				containerWindowType = {
+					name = "tiled_research_bg_ger_reconac"
+					position = { x = 1805 y = -12 }
+					size = { width = 655 height = 1930 }
+					clipping = no
+				
+					background = {
+						name = "Background"
+						quadTextureSprite ="GFX_tiled_research_bg"
+					}			
 				}
 			}	
 

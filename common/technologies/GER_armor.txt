@@ -15,7 +15,16 @@ technologies = {
 	@1944 = 24
 	@1945 = 26
 	@1946 = 28
-		
+	#Horizontal position
+	@BEUTE = 9
+	@COM = 12
+	@OSTK = 14
+	@BERGER = 16
+	@SKT = 18
+	@RECONAC = 23
+	@TANK = 26
+	@LVEH = 29
+	
 	german_tech = {
 
 		path = {
@@ -211,7 +220,7 @@ technologies = {
 		start_year = 1934
 		folder = {
 			name = german_pz_folder
-			position = { x = 0 y = 9 }
+			position = { x = @BEUTE y = @1934 }
 		}
 		
 		ai_will_do = {
@@ -231,7 +240,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = german_pz_folder
-			position = { x = 12 y = @1942 }
+			position = { x = @OSTK y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -253,7 +262,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = german_pz_folder
-			position = { x = 12 y = @1943 }
+			position = { x = @SKT y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -2141,29 +2150,29 @@ technologies = {
 			cat_light_armor
 		}
 	}	
-#	# Grille
-#	light_assault_panzer_equipment_4 = {
-#
-#		enable_equipments = {
-#			light_assault_panzer_equipment_4
-#		}
-#	
-#		dependencies = {
-#			czech_protectorate_tech = 1
-#		}
-#
-#		research_cost = 1
-#		start_year = 1943
-#		
-#		ai_will_do = {
-#			factor = 0
-#		}
-#		
-#		categories = {
-#			armor
-#			cat_medium_armor
-#		}
-#	}
+	## Grille
+	#light_assault_panzer_equipment_4 = {
+	#
+	#	enable_equipments = {
+	#		light_assault_panzer_equipment_4
+	#	}
+	#	
+	#	dependencies = {
+	#		czech_protectorate_tech = 1
+	#	}
+	#
+	#	research_cost = 1
+	#	start_year = 1943
+	#		
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#		
+	#	categories = {
+	#		armor
+	#		cat_medium_armor
+	#	}
+	#}
 	# Flakpanzer 38(t)
 	subtech_panzer_spaa_equipment_2 = {
 
@@ -2189,7 +2198,7 @@ technologies = {
 			cat_light_armor
 		}
 	}
-	# Aufklärungspanzer 38 (t)
+	# Aufklärungspanzer 38(t)
 	tech_czech_ger_panzer_4 = {
 		
 		enable_equipments = {
@@ -2510,7 +2519,7 @@ technologies = {
 		start_year = 1930
 		folder = {
 			name = german_pz_folder
-			position = { x = 16 y = @1930 }
+			position = { x = @RECONAC y = @1930 }
 		}
 		
 		categories = {
@@ -2540,7 +2549,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = german_pz_folder
-			position = { x = 16 y = @1936 }
+			position = { x = @RECONAC y = @1936 }
 		}
 		
 		categories = {
@@ -2570,7 +2579,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = german_pz_folder
-			position = { x = 16 y = @1939 }
+			position = { x = @RECONAC y = @1939 }
 		}
 		
 		categories = {
@@ -2598,7 +2607,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = german_pz_folder
-			position = { x = 16 y = @1942 }
+			position = { x = @RECONAC y = @1942 }
 		}
 		
 		categories = {
@@ -2624,7 +2633,7 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = german_pz_folder
-			position = { x = 16 y = @1945 }
+			position = { x = @RECONAC y = @1945 }
 		}
 		
 		categories = {
@@ -2658,7 +2667,7 @@ technologies = {
 		start_year = 1933
 		folder = {
 			name = german_pz_folder
-			position = { x = 19 y = @1932 }
+			position = { x = @TANK y = @1932 }
 		}
 		
 		categories = {
@@ -2688,7 +2697,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = german_pz_folder
-			position = { x = 19 y = @1938 }
+			position = { x = @TANK y = @1938 }
 		}
 		
 		categories = {
@@ -2717,7 +2726,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = german_pz_folder
-			position = { x = 19 y = @1940 }
+			position = { x = @TANK y = @1940 }
 		}
 		
 		categories = {
@@ -2745,7 +2754,7 @@ technologies = {
 		start_year = 1932
 		folder = {
 			name = german_pz_folder
-			position = { x = 22 y = @1932 }
+			position = { x = @LVEH y = @1932 }
 		}
 		
 		categories = {
@@ -2772,7 +2781,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = german_pz_folder
-			position = { x = 22 y = @1936 }
+			position = { x = @LVEH y = @1936 }
 		}
 		
 		categories = {
@@ -2804,7 +2813,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = german_pz_folder
-			position = { x = 22 y = @1939 }
+			position = { x = @LVEH y = @1939 }
 		}
 		
 		categories = {
@@ -2857,14 +2866,12 @@ technologies = {
                	command_tank_equipment = 1
          	}
 		}
-	
-		}
 		
 		research_cost = 4
 		start_year = 1938
 		folder = {
 			name = german_pz_folder
-			position = { x = 0 y = 11 }
+			position = { x = @COM y = @1938 }
 		}
 		
 		categories = {
@@ -2901,14 +2908,14 @@ technologies = {
 		#heavy_panzer = {
 		#	need = {
         #       	command_tank_equipment = 1
-       #  	}
+		#  	}
 		#}
 		
 		research_cost = 4
 		start_year = 1944
 		folder = {
 			name = german_pz_folder
-			position = { x = 0 y = 11 }
+			position = { x = @COM y = @1944 }
 		}
 		
 		categories = {
@@ -2965,12 +2972,11 @@ technologies = {
          	}
 		}
 		
-		
 		research_cost = 4
 		start_year = 1939
 		folder = {
 			name = german_pz_folder
-			position = { x = 0 y = 13 }
+			position = { x = @BERGER y = @1939 }
 		}
 		
 		categories = {
@@ -2993,8 +2999,7 @@ technologies = {
 		dependencies = {
 			tech_heavy_panzer_equipment_1 = 1
 		}
-		
-		
+
 		panzer_v = {
 			reliability_factor = 0.05
 			casualty_trickleback = 0.05
@@ -3007,14 +3012,14 @@ technologies = {
 		#	casualty_trickleback = 0.05
 		#	need = {
         #       	recovery_tank_equipment = 1
-       #  	}
+		#  	}
 		#}
 		
 		research_cost = 4
 		start_year = 1944
 		folder = {
 			name = german_pz_folder
-			position = { x = 0 y = 13 }
+			position = { x = @BERGER y = @1944 }
 		}
 		
 		categories = {
@@ -3088,7 +3093,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = german_pz_folder
-			position = { x = 0 y = @1940 }
+			position = { x = @OSTK y = @1940 }
 		}
 		
 		categories = {
@@ -3129,7 +3134,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = german_pz_folder
-			position = { x = 0 y = @1942 }
+			position = { x = @OSTK y = @1943 }
 		}
 		
 		categories = {
