@@ -282,6 +282,7 @@ technologies = {
 	complex_trench_systems = {
 
 		army_speed_factor = -0.2
+		supply_consumption_factor = 0.02
 		
 		path = {
 			leads_to_tech = offensive_trenches
@@ -1811,10 +1812,14 @@ technologies = {
 	############ Battlefield_support_doctrines
 	ww1_battlefield_support = {
 	
-		category_army = {
 		
+		category_army = {
 			default_morale = -0.2
+			initiative = -0.03
+			casualty_trickleback = -0.03
+			experience_loss_factor = 0.03
 		}
+		
 		planning_speed = -0.2
 		org_loss_when_moving = 0.2
 		
