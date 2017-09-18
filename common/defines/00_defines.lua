@@ -175,7 +175,7 @@ NCountry = {
 	RESOURCE_EXPORT_PRIORITY = 0.85,					-- Default convoy priority for export trade
 	RESOURCE_LENDLEASE_PRIORITY = 0.85,					-- Default convoy priority for export lend lease
 	SUPPLY_CONVOY_FACTOR = 0.15,						-- How many convoys each supply needs
-	CONVOY_RANGE_FACTOR = 1.2,                        	-- how much range affects convoy need
+	CONVOY_RANGE_FACTOR = 1,                        	-- how much range affects convoy need
 	LOCAL_MANPOWER_ACCESSIBLE_FACTOR = 0.35,         	-- was 0.45 accessible recruitable factor base
 	LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 0.03,  	-- accessible recruitable factor base
 	STATE_CONTROLLER_VP_RATIO_FLIP = 0.5,				-- If current state controller has less share than this of state total and no armies in it the state changes controller
@@ -1114,8 +1114,8 @@ NAI = {
 
 	STRATEGIC_BOMBING_DEFENCE_IMPORTANCE = 400.0,			-- DNM, original 400, changed to be consistent with AI mod
 	
-	NAVAL_MISSION_MIN_FLEET_SIZE = 20,						-- AI will not send too small fleets on missions. Ignored if total number of ships country has is below	this.
-	NAVY_PREFERED_MAX_SIZE = 100,							-- DNM, original 20 - BICE thought 50 was good as well.  AI will generally attempt to merge fleets into this size, but as a soft limit.
+	NAVAL_MISSION_MIN_FLEET_SIZE = 12,						-- AI will not send too small fleets on missions. Ignored if total number of ships country has is below	this.
+	NAVY_PREFERED_MAX_SIZE = 60,							-- DNM, original 20 - BICE thought 50 was good as well.  AI will generally attempt to merge fleets into this size, but as a soft limit.
 	INVASION_COASTAL_PROVS_PER_ORDER = 12,					-- AI will consider one extra invasion per number of provinces stated here (num orders = total coast / this)
 
 	CONVOY_NEED_SAFETY_BUFFER = 0.45,						-- AI will try and keep 15% more convoys than what it needs.
