@@ -1057,7 +1057,7 @@ NAI = {
 		1.0,   -- surface_detection
 		1.0,   -- sub_detection
 		0.0,   -- surface_visibility
-		0.5,   -- sub_visibility
+		0.0,   -- sub_visibility
 		1.0,   -- shore_bombardment
 		1.0,   -- fire_range
 		1.0,   -- evasion
