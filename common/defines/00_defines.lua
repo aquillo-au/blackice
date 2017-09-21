@@ -366,10 +366,10 @@ NMilitary = {
 	LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 3.5, 			-- damage reduction if armor outclassing enemy
 	LAND_COMBAT_COLLATERAL_FACTOR = 0.002,		   			-- Factor to scale collateral damage to infra and forts with.
 	LAND_COMBAT_FORT_DAMAGE_CHANCE = 1,						-- chance to get a hit to damage on forts. (out of 100)
-	ATTRITION_DAMAGE_ORG = 0.12,					   		-- damage from attrition to Organisation
-	ATTRITION_EQUIPMENT_LOSS_CHANCE = 0.18,		   			-- Chance for loosing equipment when suffer attrition. Scaled up the stronger attrition is. Then scaled down by equipment reliability.
+	ATTRITION_DAMAGE_ORG = 0.14,					   		-- damage from attrition to Organisation
+	ATTRITION_EQUIPMENT_LOSS_CHANCE = 0.12,		   			-- Chance for loosing equipment when suffer attrition. Scaled up the stronger attrition is. Then scaled down by equipment reliability.
 	ATTRITION_EQUIPMENT_PER_TYPE_LOSS_CHANCE = 0.1, 		-- Chance for loosing equipment when suffer attrition. Scaled up the stronger attrition is. Then scaled down by equipment reliability.
-	ATTRITION_WHILE_MOVING_FACTOR = 0.7,
+	ATTRITION_WHILE_MOVING_FACTOR = 0.5,
 	BASE_CHANCE_TO_AVOID_HIT = 85,                			-- Base chance to avoid hit if defences left.
 	CHANCE_TO_AVOID_HIT_AT_NO_DEF = 65,	          			-- chance to avoid hit if no defences left.
 	COMBAT_MOVEMENT_SPEED = 0.25,	               			-- speed reduction base modifier in combat
@@ -424,7 +424,7 @@ NMilitary = {
 	EXPERIENCE_COMBAT_FACTOR = 0.08,
 	ALERT_VERY_LOW_SUPPLY_LEVEL = 0.3,			   			-- At which point we show up the low and very low supply level alert. Value is in % of supplies supported vs required.
 	ALERT_LOW_SUPPLY_LEVEL = 0.8,
-	UNIT_DIGIN_CAP = 5,                           			-- how "deep" you can dig you can dig in until hitting max bonus
+	UNIT_DIGIN_CAP = 3,                           			-- how "deep" you can dig you can dig in until hitting max bonus
 	UNIT_DIGIN_SPEED = 1,						   			-- how "deep" you can dig a day.
 	PARACHUTE_FAILED_EQUIPMENT_DIV = 50.0,		   			-- When the transport plane was shot down, we drop unit with almost NONE equipment
 	PARACHUTE_FAILED_MANPOWER_DIV = 100.0,		   			-- When the transport plane was shot down, we drop unit with almost NONE manpower
@@ -915,11 +915,11 @@ NAI = {
 	DIFFERENT_FACTION_THREAT = 50,						-- Threat caused by not being in the same faction
 	PLAN_MOVE_MIN_ORG_TO_ENEMY_PROVINCE = 20.0,			-- Minimum organization a unit must have to consider moving into an enemy province (not attack move)
 	PLAN_ATTACK_MIN_ORG_FACTOR_LOW = 0.85,				-- Minimum org % for a unit to actively attack an enemy unit when executing a plan
-	PLAN_ATTACK_MIN_STRENGTH_FACTOR_LOW = 0.55,			-- Minimum strength for a unit to actively attack an enemy unit when executing a plan
+	PLAN_ATTACK_MIN_STRENGTH_FACTOR_LOW = 0.4,			-- Minimum strength for a unit to actively attack an enemy unit when executing a plan
 	PLAN_ATTACK_MIN_ORG_FACTOR_MED = 0.75,				-- (LOW,MED,HIGH) corresponds to the plan execution agressiveness level.
-	PLAN_ATTACK_MIN_STRENGTH_FACTOR_MED = 0.45,	
-	PLAN_ATTACK_MIN_ORG_FACTOR_HIGH = 0.25,		
-	PLAN_ATTACK_MIN_STRENGTH_FACTOR_HIGH = 0.2,	
+	PLAN_ATTACK_MIN_STRENGTH_FACTOR_MED = 0.3,	
+	PLAN_ATTACK_MIN_ORG_FACTOR_HIGH = 0.2,		
+	PLAN_ATTACK_MIN_STRENGTH_FACTOR_HIGH = 0.15,	
 	PLAN_FRONTUNIT_DISTANCE_FACTOR = 10,					-- Factor for candidate units distance to front positions.
 	PLAN_ATTACK_DEPTH_FACTOR = 0.5,						-- Factor applied to size or enemy being attacked.
 	PLAN_STEP_COST_LIMIT = 11,							-- When stepping to draw a plan this cost makes it break if it hits hard terrain (multiplied by number of desired steps)
@@ -964,11 +964,11 @@ NAI = {
 	BASE_DISTANCE_TO_CARE = 800.0,						-- Countries that are too far away are less interesting in diplomacy
 	MIN_FORCE_RATIO_TO_PROTECT = 0.5,					-- Tiny countries should not feel protective or really large ones
 	
-	ORG_UNIT_STRONG = 0.85,								-- DNM, original 0.9 (ai overhaul mod) -- Organization % for unit to be considered strong
+	ORG_UNIT_STRONG = 0.80,								-- DNM, original 0.9 (ai overhaul mod) -- Organization % for unit to be considered strong
 	ORG_UNIT_WEAK = 0.2,								-- DNM, original 0.15 (ai mod) -- Organization % for unit to be considered weak
-	STR_UNIT_STRONG = 0.6,								-- Strength (equipment) % for unit to be considered strong
-	STR_UNIT_WEAK = 0.2,								-- DNM, original 0.1 (ai mod) -- Strength (equipment) % for unit to be considered weak
-	PLAN_FACTION_STRONG_TO_EXECUTE = 0.55,				-- % or more of units in an order to consider ececuting the plan
+	STR_UNIT_STRONG = 0.65,								-- Strength (equipment) % for unit to be considered strong
+	STR_UNIT_WEAK = 0.25,								-- DNM, original 0.1 (ai mod) -- Strength (equipment) % for unit to be considered weak
+	PLAN_FACTION_STRONG_TO_EXECUTE = 0.50,				-- % or more of units in an order to consider ececuting the plan
 	PLAN_FACTION_WEAK_TO_ABORT = 0.65,					-- DNM, original 0.8 (AI mod) -- % or more of units in an order to consider ececuting the plan
 	PLAN_AVG_PREPARATION_TO_EXECUTE = 0.6,				-- % or more average plan preparation before executing
 	STATE_GARRISON_MAX_UNITS = 1,						-- DNM, original 4 (AI mod) -- Max units to guard a garrison under normal circumstances (isolated core areas like England has is excempt)
@@ -1057,7 +1057,7 @@ NAI = {
 		1.0,   -- surface_detection
 		1.0,   -- sub_detection
 		0.0,   -- surface_visibility
-		0.0,   -- sub_visibility
+		0.5,   -- sub_visibility
 		1.0,   -- shore_bombardment
 		1.0,   -- fire_range
 		1.0,   -- evasion
@@ -1153,7 +1153,7 @@ NAI = {
 	NEW_LEADER_EXTRA_PP_FACTOR = 5.0,						-- Country must have at least this many times extra PP to get new admirals or army leaders
 	SCARY_LEVEL_AVERAGE_DEFENSE = -0.65,               	 	-- average front defense modifier to make it consider it as a PITA to go for
 	ATTACK_HEAVILY_DEFENDED_LIMIT = 0.95,					-- DNM, original 0.95 (ai overhaul mod) -- AI will not launch attacks against heavily defended fronts unless they consider to have this level of advantage (1.0 = 100%)
-	HOUR_BAD_COMBAT_REEVALUATE = 60,                  		-- DNM, original 60.0 (ai overhaul mod) -- if we are in combat for this amount and it goes shitty then try skipping it 
+	HOUR_BAD_COMBAT_REEVALUATE = 18,                  		-- DNM, original 60.0 (ai overhaul mod) -- if we are in combat for this amount and it goes shitty then try skipping it 
 	MIN_PLAN_VALUE_TO_MICRO_INACTIVE = 0.2,					-- The AI will not consider members of groups which plan is not activated AND evaluates lower than this.
 	
 	MAX_UNITS_FACTOR_AREA_ORDER = 1.0,						-- Factor for max number of units to assign to area defense orders
@@ -1266,7 +1266,7 @@ NAI = {
 	RELUCTANCE_TO_CHANGE_FRONT_FACTOR = 0.35,			-- Factor for how reluctant the AI is to change a units order group.
 	REVISITED_PROV_PENALTY_FACTOR = 1.5,				-- When the AI picks units for a front, it tries to spread out a bit which units it grabs.
 	
-	PLAN_ACTIVATION_SUPERIORITY_AGGRO = 0.25,			-- How aggressive a country is in activating a plan based on how superiour their force is.
+	PLAN_ACTIVATION_SUPERIORITY_AGGRO = 0.85,			-- How aggressive a country is in activating a plan based on how superiour their force is.
 	WAIT_YEARS_BEFORE_FREER_BUILDING = 1,				-- The AI will skip considering certain buildings during the buildup phase, after htese many years it starts building them regardless of threat.
 	
 	STRIKE_FLEET_MAX_DISTANCE_TO_COMBAT = 500.0,		-- The strike fleet will not attempt to intervene in combats further away than this.
