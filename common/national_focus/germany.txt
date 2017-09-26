@@ -13,6 +13,7 @@ focus_tree = {
 	default = no
 
 	continuous_focus_position = { x = 50 y = 1100 }
+	##############################################################
 	########################## Goering 4 year plan ###############
 	focus = {
 		id = GER_Goering_Plan
@@ -4516,7 +4517,6 @@ focus_tree = {
 	############################################
 	############## BALKAN BRANCH ###############
 	############################################
-
 	focus = {
 		id = GER_demand_slovenia
 		prerequisite = { focus = GER_anschluss }
@@ -5148,7 +5148,7 @@ focus_tree = {
 		
 			GRE = { country_event = { id = greece.3 hours = 6 } }
 		}
-}
+	}
 	focus = { #added
 		id = GER_eupen_malmedy
 		icon = GFX_goal_anschluss
@@ -5359,14 +5359,6 @@ focus_tree = {
 	#		OR = {
 	#			NOT = { country_exists = FRA }
 	#			#has_war_with = FRA     ## Need to leave this there, so AI always has to run it, so it can get Paris Wargoal - cost shall be low however
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    #
 	#		}
 	#	}
 	#	#historical_ai = {   ## removing because this causes AI to skip this NF
@@ -5393,6 +5385,41 @@ focus_tree = {
  	#		}
 	#	}
 	#}
+	############################################
+	############## AFRIKA BRANCH ###############
+	############################################
+	focus = {
+		id = GER_afrika_korps
+		icon = GFX_goal_generic_small_arms
+		cost = 10
+		x = 20
+		y = 6
+		prerequisite = { focus = GER_italy_ally }
+		prerequisite = { focus = GER_around_maginot }
+		available = {
+			date > 1941.1.1
+			ITA={
+				controls_state=448 #Tripoli
+			}
+			ITA = {
+				is_in_faction_with = GER
+			}
+			ITA = {
+				OR = {
+					has_war_with = EGY
+					has_war_with = ENG
+				}
+			}
+			OR = {
+				has_war_with = EGY
+				has_war_with = ENG	
+			}
+		}
+		completion_reward = { 
+			load_oob = "Afrika_Korps"
+		}
+	}
+	
 	###################### Schutzstaffel National Focus ####################
 	focus = {
 		id = GER_Schutzstaffel_focus
