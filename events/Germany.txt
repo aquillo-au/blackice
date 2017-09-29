@@ -9255,17 +9255,7 @@ country_event = {
 
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		is_in_faction_with = ITA
-		has_war = yes
-		is_puppet = no
-		not = { has_country_flag = GERafrikakorp }
-		NOT = { ITA = { controls_state = 450 }} # benghazi
-	
-		ITA = { owns_state = 448 } # controls tripoli
-		#date > 1940.2.1	
-	}
+	is_triggered_only = yes
 	
 	mean_time_to_happen = {
 		days = 1
@@ -9273,17 +9263,37 @@ country_event = {
 	
 	option = {
 		name = germany.233.a
+		trigger = { 
+			tag = GER
+			is_ai = yes
+		}
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			set_technology = {desert_equipment = 1 }
-			set_technology = {HVantiair2 =  1 }
+			set_technology = { desert_equipment = 1 }
+			set_technology = { HVantiair2 =  1 }
+			load_oob = "GER_afrikakorps_ai"
+			set_country_flag = GERafrikakorp
+		}
+	}
+	option = {
+		name = germany.233.b
+		trigger = {
+			tag = GER
+			date > 1941.2.9
+			is_ai = no
+			GER = { has_tech = desert_equipment }
+			GER = { has_tech = HVantiair2 }
+		}
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
 			load_oob = "GER_afrikakorps"
 			set_country_flag = GERafrikakorp
 		}
 	}
 	option = {
-		name = germany.233.b		#refuse
+		name = germany.233.c		#refuse
 		ai_chance = { factor = 0 }
 		set_country_flag = GERafrikakorp
 	}

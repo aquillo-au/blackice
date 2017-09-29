@@ -2496,17 +2496,20 @@ intel_minister = {
 				original_tag = GER
 				NOT = { has_country_flag = beck_dead }
 			}
+			
 			available = {
-			OR = {
-				AND = {
-					is_ai = yes
-					NOT = { has_country_flag = beck_fired }
+				OR = {
+					AND = {
+						is_ai = yes
+						NOT = { has_country_flag = beck_fired }
 					}
-				if = { limit = { is_historical_focus_on = yes }
-				NOT = { has_country_flag = beck_fired }
+					if = {
+						limit = { is_historical_focus_on = yes }
+						NOT = { has_country_flag = beck_fired }
 					}
 				}
 			}
+			
 			traits = { army_chief_organizational_2 }			
 			
 			ai_will_do = {
@@ -2519,6 +2522,10 @@ intel_minister = {
 				original_tag = GER
 				is_ai = no
 				NOT = { has_country_flag = keitel_dead }
+			}
+			
+			available = {
+				is_ai = no
 			}
 			
 			traits = { army_chief_drill_2 military_yesman }
@@ -2554,11 +2561,11 @@ intel_minister = {
 			}
 			available = {
 				OR = {
-				AND = {
-					is_ai = yes
-					NOT = { has_country_flag = halder_fired }
+					AND = {
+						is_ai = yes
+						NOT = { has_country_flag = halder_fired }
 					}
-				NOT = { has_country_flag = halder_fired is_historical_focus_on = yes }
+					NOT = { has_country_flag = halder_fired is_historical_focus_on = yes }
 				}
 			}
 			traits = { army_chief_offensive_2 }
