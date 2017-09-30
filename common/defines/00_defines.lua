@@ -43,7 +43,7 @@ NDiplomacy = {
 	WARGOAL_PER_JUSTIFY_AND_WAR_COST_FACTOR = 1.5,						-- Cost factor per nation at war with or justifying against
 	BASE_BOOST_PARTY_POPULARITY_DAILY_PP = 100, 						-- Daily pp cost for boost party popularity
 	BASE_BOOST_PARTY_POPULARITY_DAILY_DRIFT = 0.00, 						-- Daily amount of popularity that will be added by the activity.
-	BASE_STAGE_COUP_DAILY_PP = 100,										-- Daily pp cost for staging a coup
+	BASE_STAGE_COUP_DAILY_PP = 1000,										-- Daily pp cost for staging a coup
 	BASE_STAGE_COUP_TOTAL_COST = 500, 									-- Equipment consume factor for stage coup.
 	NAP_EXPIRY_MONTHS = 36,                        						-- NAPs expire after this many months
 	NAP_UNBREAKABLE_MONTHS = 12,                					    -- NAPS cannot be broken for this many months
@@ -174,7 +174,7 @@ NCountry = {
 	RESOURCE_ORIGIN_PRIORITY = 1,						-- Default convoy priority for resources shipped internally
 	RESOURCE_EXPORT_PRIORITY = 0.85,					-- Default convoy priority for export trade
 	RESOURCE_LENDLEASE_PRIORITY = 0.85,					-- Default convoy priority for export lend lease
-	SUPPLY_CONVOY_FACTOR = 0.15,						-- How many convoys each supply needs
+	SUPPLY_CONVOY_FACTOR = 0.2,						-- How many convoys each supply needs
 	CONVOY_RANGE_FACTOR = 1,                        	-- how much range affects convoy need
 	LOCAL_MANPOWER_ACCESSIBLE_FACTOR = 0.35,         	-- was 0.45 accessible recruitable factor base
 	LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 0.03,  	-- accessible recruitable factor base
@@ -199,7 +199,7 @@ NCountry = {
 	VICTORY_POINTS_IMPORTANCE_FACTOR = 5.0,				-- State victory points importance factor for AI and calculations
 	BUILDING_IMPORTANCE_FACTOR = 3.0,					-- State building importance factor for AI and calculations
 	RESOURCE_IMPORTANCE_FACTOR = 0.25,					-- State resource importance factor for AI and calculations
-	INTERPOLATED_FRONT_STEPS_SHORT = 4,					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
+	INTERPOLATED_FRONT_STEPS_SHORT = 2,					-- Performance optimization - The amount of steps for interpolated fronts. Non-AI countries got full interpolated fronts, the rest has optimized version of it.
 	MIN_AIR_RESERVE_RATIO = 0.33,						-- Min manpower ratio to show air reserves alert
 	THEATRES_BIND_BORDER_DISTANCE = 25000,				-- Map distance (before sqrt) between the center of the borders that determines if theatres should be bound or not.
 	POLITICAL_POWER_CAP = 2000.0,						-- Max amount of political power country should have
@@ -244,7 +244,7 @@ NProduction = {
 	EQUIPMENT_BASE_LEND_LEASE_WEIGHT = 1.0, 				-- Base equipment lend lease weight
 	EQUIPMENT_LEND_LEASE_WEIGHT_FACTOR = 0.01,				-- Base equipment lend lease factor
 	ANNEX_STOCKPILES_RATIO = 0.75,							-- How much stockpiled equipment will be transferred on annexation
-	ANNEX_FIELD_EQUIPMENT_RATIO = 0.3,						-- How much equipment from deployed divisions will be transferred on annexation
+	ANNEX_FIELD_EQUIPMENT_RATIO = 0.45,						-- How much equipment from deployed divisions will be transferred on annexation
 	ANNEX_CONVOYS_RATIO = 0.2,								-- How many convoys will be transferred on annexation
 	MIN_POSSIBLE_TRAINING_MANPOWER = 100000,				-- How many deployment lines minimum can be training
 	MIN_FIELD_TO_TRAINING_MANPOWER_RATIO = 0.60,			-- Ratio which % of army in field can be trained
@@ -557,7 +557,7 @@ NMilitary = {
 	DISBAND_MANPOWER_LOSS = 0.7,
 	MIN_DIVISION_DEPLOYMENT_TRAINING = 0.4,					-- Min level of division training
 	
-	FRONT_MIN_PATH_TO_REDEPLOY = 3,							-- If a units path is at least this long to reach its front location, it will strategically redeploy.
+	FRONT_MIN_PATH_TO_REDEPLOY = 6,							-- If a units path is at least this long to reach its front location, it will strategically redeploy.
 	ARMY_INITIATIVE_REINFORCE_FACTOR = 0.25,				-- scales initiative for reinforce chance
 },
 
@@ -680,20 +680,20 @@ NNavy = {
 
 	DETECTION_CHANCE_BALANCE = 2.5,										-- Value to balance gameplay. The higher value = smaller detection chance. Notice: it doesn't affect the displayed detection chance numbers, as well balanced numbers could be a very small fractions like 0.012
 	DETECTION_SUBS_CHANCE_BALANCE = 50.0,								-- 10 Same as above, but for sub detection. It should be very hard to detect just the subs.
-	INTERCEPT_CONVOYS_BALANCE = 3.0,									-- Balance number to distinguish the chance of intercepting convoys in comparison to the interception of naval transfers. (Intercepting convoys happens 2x less often than naval transfers and invasions)
+	INTERCEPT_CONVOYS_BALANCE = 2.0,									-- Balance number to distinguish the chance of intercepting convoys in comparison to the interception of naval transfers. (Intercepting convoys happens 2x less often than naval transfers and invasions)
 	BEST_CAPITALS_TO_SCREENS_RATIO = 0.25, 								-- capitals / screens ratio used for creating FEX groups in naval combat
 	COMBAT_MIN_WIN_CHANCE_TO_ADVANCE_WITHOUT_WAIT = 0.85, 				-- compare our forces with enemy forces. 1.0 is equal win chances. Less then 1.0 is we have low chances. If we have at least X chances, then ships will attept to attack without waiting for the other ships that are on the way.
 	COMBAT_MIN_WIN_CHANCE_TO_KEEP_FIGHTING = 0.65,		 				-- DNM - original 0.2 - being at 60 per cent of the enemy's strength would usually lead to one side disengaging, and seems to work reasonably in tests -- compare our forces with enemy forces. 1.0 is equal win chances. Less then 1.0 is we have low chances. If we have at least X chances, then ships will attept to attack without waiting for the other ships that are on the way.
 	COMBAT_MIN_WIN_CHANCE_TO_KEEP_FIGHTING_DESPITE_NO_ENGAGE = 10.0,	-- compare our forces with enemy forces. 1.0 is equal win chances. Less then 1.0 is we have low chances. If we have at least X chances, then ships will attept to attack without waiting for the other ships that are on the way.
-	COMBAT_BASE_HIT_CHANCE = 0.4,										-- base chance for hit
+	COMBAT_BASE_HIT_CHANCE = 0.09,										-- base chance for hit
 	COMBAT_MIN_HIT_CHANCE = 0.01,										-- never less hit chance then 1%?
 	COMBAT_TORPEDO_ATTACK_MAX_RANGE = 4.1,								-- DNM, consistent with vanilla changes, better for naval combat -- max range for torpedo attack
 	COMBAT_TORPEDO_ATTACK_USE_CHANCE = 0.26,							-- DNM, 0.5 is too high, vessels make more torpedo attacks than they would have been able too historically -- chance of using torpedo attack (to avoid torpedo spam when at close distance)
-	COMBAT_CLOSE_DISTANCE_MAX_HIT_CHANCE_BONUS = 0.3,					-- DNM, original 0.1.  Being closer is generally a very good thin in naval combat.  May increase again later -- max bonus to hit chance when target is near. So if base is 0.5, dist.bonus is 0.1, and we are facing enemy at distance 0, the total hit chance is 0.6 (60%). When enemy is barely at our max shooting range, the bonus is 0.
+	COMBAT_CLOSE_DISTANCE_MAX_HIT_CHANCE_BONUS = 0.4,					-- DNM, original 0.1.  Being closer is generally a very good thin in naval combat.  May increase again later -- max bonus to hit chance when target is near. So if base is 0.5, dist.bonus is 0.1, and we are facing enemy at distance 0, the total hit chance is 0.6 (60%). When enemy is barely at our max shooting range, the bonus is 0.
 	COMBAT_EVASION_TO_HIT_CHANCE = 0.009,								-- BICE, we take ship evasion stats, and mult by this value, so it gives hit chance reduction. So if reduction is 0.025 and ship evasion = 10, then there will be 0.25 (25%) lower hit chance. (Fe. 50% base -25% from evasion +10% bcoz it's very close).
 	COMBAT_EVASION_TO_HIT_CHANCE_TORPEDO_MULT = 2.0,					-- the above evasion hit chance is multiplied by 150% if shooting with torpedos. Torpedoes are slow, so evasion matters more.
 	MAX_EVASION_BONUS = 0.3,											-- largest evasion penalty to hitting
-	TARGETING_STACKING_HIT_CHANCE_PENALTY = 0.08,                    	-- penalty to hit chance for each ship targeting same target
+	TARGETING_STACKING_HIT_CHANCE_PENALTY = 0.1,                    	-- penalty to hit chance for each ship targeting same target
 	COMBAT_LOW_ORG_HIT_CHANCE_PENALTY = -0.75,							-- % of penalty applied to hit chance when ORG is very low.
 	COMBAT_DAMAGE_RANDOMNESS = 0.6,										-- DNM, original 0.3, BICE had 0.4 -- random factor in damage. So if max damage is fe. 10, and randomness is 30%, then damage will be between 7-10.
 	COMBAT_TORPEDO_CRITICAL_CHANCE = 0.3,								--# chance for critical hit from torpedo.
@@ -720,17 +720,17 @@ NNavy = {
 	COMBAT_CRITICAL_DAMAGE_MULT = 5.0,									-- BICE, Multiplier for the critical damage. Scaled down with the ship reliability.
 	COMBAT_ARMOR_PIERCING_CRITICAL_BONUS = 3,							-- BICE, original 3 --Bonus to critical chance when shooter armor piercing is higher then target armor.
 	COMBAT_ARMOR_PIERCING_DAMAGE_REDUCTION = -0.9,						-- BICE 0.65,DNM 0.9, to be consistent with changes to vanilla, makes armour more important, as it shold be -- All damage reduction % when target armor is >= then shooter armor piercing.
-	REPAIR_AND_RETURN_PRIO_LOW = 0.4,									-- DNM, original 0.2 --  % of total Strength. When below, navy will go to home base to repair.
-	REPAIR_AND_RETURN_PRIO_MEDIUM = 0.6,								-- DNM, original 0.5 -- % of total Strength. When below, navy will go to home base to repair.
-	REPAIR_AND_RETURN_PRIO_HIGH = 0.9,									-- % of total Strength. When below, navy will go to home base to repair.
-	REPAIR_AND_RETURN_PRIO_LOW_COMBAT = 0.3,							-- DNM, original 0.1, BICE had 0.25 -- % of total Strength. When below, navy will go to home base to repair (in combat).
-	REPAIR_AND_RETURN_PRIO_MEDIUM_COMBAT = 0.5,							-- DNM, original 0.5 -- % of total Strength. When below, navy will go to home base to repair (in combat).
-	REPAIR_AND_RETURN_PRIO_HIGH_COMBAT = 0.6,							-- DNM, original 0.6 -- % of total Strength. When below, navy will go to home base to repair (in combat).
-	REPAIR_AND_RETURN_AMOUNT_SHIPS_LOW = 0.33,							-- % of total damaged ships, that will be sent for repair-and-return in one call.
-	REPAIR_AND_RETURN_AMOUNT_SHIPS_MEDIUM = 0.5,						-- % of total damaged ships, that will be sent for repair-and-return in one call.
-	REPAIR_AND_RETURN_AMOUNT_SHIPS_HIGH = 0.8,							-- % of total damaged ships, that will be sent for repair-and-return in one call.
-	REPAIR_AND_RETURN_MAX_STR_DAMAGE = 0.9,								-- Ships that STR is below this value will be sent for repair and return.
-	REPAIR_AND_RETURN_UNIT_DYING_STR = 0.3,								-- Str below this point is considering a single ship "dying", and a high priority to send to repair.
+	REPAIR_AND_RETURN_PRIO_LOW = 0.7,								-- #DNM, vanilla 0.2 -- % of total Strength. When below, navy will go to home base to repair.
+	REPAIR_AND_RETURN_PRIO_MEDIUM = 0.8,							-- #DNM, vanilla 0.5 -- % of total Strength. When below, navy will go to home base to repair.
+	REPAIR_AND_RETURN_PRIO_HIGH = 0.9,								-- % of total Strength. When below, navy will go to home base to repair.
+	REPAIR_AND_RETURN_PRIO_LOW_COMBAT = 0.6,						-- #DNM, vanilla 0.1, far too low -- % of total Strength. When below, navy will go to home base to repair (in combat).
+	REPAIR_AND_RETURN_PRIO_MEDIUM_COMBAT = 0.65,					-- #DNM, vanilla 0.3, felt too low -- % of total Strength. When below, navy will go to home base to repair (in combat).
+	REPAIR_AND_RETURN_PRIO_HIGH_COMBAT = 0.8,						-- #DNM, vanilla 0.5 -- % of total Strength. When below, navy will go to home base to repair (in combat).
+	REPAIR_AND_RETURN_AMOUNT_SHIPS_LOW = 0.75,						-- #DNM, vanilla 0.2 -- % of total damaged ships, that will be sent for repair-and-return in one call.
+	REPAIR_AND_RETURN_AMOUNT_SHIPS_MEDIUM = 0.85,					-- #DNM, vanilla 0.4 -- % of total damaged ships, that will be sent for repair-and-return in one call.
+	REPAIR_AND_RETURN_AMOUNT_SHIPS_HIGH = 1.0,						-- #DNM, vanilla 0.8 -- % of total damaged ships, that will be sent for repair-and-return in one call.
+	REPAIR_AND_RETURN_MAX_STR_DAMAGE = 0.9,							-- Ships that STR is below this value will be sent for repair and return.
+	REPAIR_AND_RETURN_UNIT_DYING_STR = 0.4,								-- Str below this point is considering a single ship "dying", and a high priority to send to repair.
 	EXPERIENCE_LOSS_FACTOR = 1.00,                 						-- percentage of experienced solders who die when manpower is removed
 	NAVY_EXPENSIVE_IC = 5500,											-- How much IC is considering the fleet to be expensive. Those expensive will triger the alert, when are on low STR.
 	MISSION_MAX_REGIONS = 0,											-- Limit of the regions that can be assigned to naval mission. Set to 0 for unlimited.
@@ -772,10 +772,10 @@ NNavy = {
 	NAVAL_MISSION_COVERAGE_DEFAULT_PROVINCES = 13.0,					-- Amount of provinces for spotting efficiency for naval missions (Ex. If a ship has a 1.3 spotting efficiency then there is a 100 % effective spotting efficiency in a region with 13 provinces ( 10 * 1.3) )
 	NAVAL_INVASION_PREPARE_HOURS = 168,									-- base hours needed to prepare an invasion
 	NAVAL_COMBAT_RESULT_TIMEOUT_YEARS = 1,								-- after that many years, we clear the naval combat results, so they don't get stuck forever in the memory.
-	NAVAL_TRANSFER_BASE_SPEED = 5,                                 		-- base speed of units on water being transported
+	NAVAL_TRANSFER_BASE_SPEED = 6,                                 		-- base speed of units on water being transported
 	NAVAL_TRANSFER_BASE_NAVAL_DIST_ADD = 100,							-- Extra cost for naval movement ( compared to land movement ) when deciding what ports to use for a naval transfer
 	NAVAL_TRANSFER_BASE_NAVAL_DIST_MULT = 20,							-- Multiplier for the cost of naval movement ( compared to land movement ) when deciding what ports to use for naval transfer
-	NAVY_VISIBILITY_BONUS_ON_RETURN_FOR_REPAIR = 1.3,					-- DNM - original value 0.9 -- Multiplier for the surface/sub visiblity when the heavily damaged fleet is returning to the home base for reparation. 1.0 = no bonus. 0.0 = invisible.
+	NAVY_VISIBILITY_BONUS_ON_RETURN_FOR_REPAIR = 0.5,					-- DNM - original value 0.9 -- Multiplier for the surface/sub visiblity when the heavily damaged fleet is returning to the home base for reparation. 1.0 = no bonus. 0.0 = invisible.
 	NAVAL_SUPREMACY_INTEL_LOW = 0.3,									-- we need more intel than this to get any supremacy
 	NAVAL_SUPREMACY_CAN_INVADE = 0.75,									-- required naval supremacy to perform invasions on an area
 	BATTLE_ARRIVAL_SPEED_BONUS_ON_ENEMY_WITH_NO_MISSION = 3.0,			-- Idle fleet with no pending mission has a bit of advantage over spreaded ones. To balance it, increase the speed for ships that are on it's way to arrive on the battle. Value is a speed MULTIPLIER.
@@ -971,16 +971,16 @@ NAI = {
 	PLAN_FACTION_STRONG_TO_EXECUTE = 0.50,				-- % or more of units in an order to consider ececuting the plan
 	PLAN_FACTION_WEAK_TO_ABORT = 0.65,					-- DNM, original 0.8 (AI mod) -- % or more of units in an order to consider ececuting the plan
 	PLAN_AVG_PREPARATION_TO_EXECUTE = 0.6,				-- % or more average plan preparation before executing
-	STATE_GARRISON_MAX_UNITS = 1,						-- DNM, original 4 (AI mod) -- Max units to guard a garrison under normal circumstances (isolated core areas like England has is excempt)
+	STATE_GARRISON_MAX_UNITS = 2,						-- DNM, original 4 (AI mod) -- Max units to guard a garrison under normal circumstances (isolated core areas like England has is excempt)
 	
 	REDEPLOY_DISTANCE_VS_ORDER_SIZE = 1.0,				-- Factor applied to the path length of a unit compared to length of an order to determine if it should use strategic redeployment
-	UNIT_ASSIGNMENT_TERRAIN_IMPORTANCE = 20.0,			-- DNM, original 10 -- Terrain score for units are multiplied by this when the AI is deciding which front they should be assigned to
+	UNIT_ASSIGNMENT_TERRAIN_IMPORTANCE = 9.0,			-- DNM, original 10 -- Terrain score for units are multiplied by this when the AI is deciding which front they should be assigned to
 	
 	MIN_STATE_VALUE_TO_PROTECT = 7.5,					-- When AI is considering which states to protect it looks at state values to consider if it is worth it.
 	
 	SUPPLY_CRISIS_LIMIT = 0.9,							-- If a unit is standing in an area with 
 	
-	MAX_ALLOWED_NAVAL_DANGER = 80,						-- AI will ignore naval paths that has danger value of above this threshold while assigning units
+	MAX_ALLOWED_NAVAL_DANGER = 60,						-- AI will ignore naval paths that has danger value of above this threshold while assigning units
 	TRANSFER_DANGER_HOSTILE_SHIPS = 50, 				-- max danger from complete enemy naval supriority over ai in an area
 	
 	FASCISTS_BEFRIEND_FASCISTS = 10,
@@ -1114,62 +1114,62 @@ NAI = {
 
 	STRATEGIC_BOMBING_DEFENCE_IMPORTANCE = 400.0,			-- DNM, original 400, changed to be consistent with AI mod
 	
-	NAVAL_MISSION_MIN_FLEET_SIZE = 12,						-- AI will not send too small fleets on missions. Ignored if total number of ships country has is below	this.
+	NAVAL_MISSION_MIN_FLEET_SIZE = 10,						-- AI will not send too small fleets on missions. Ignored if total number of ships country has is below	this.
 	NAVY_PREFERED_MAX_SIZE = 60,							-- DNM, original 20 - BICE thought 50 was good as well.  AI will generally attempt to merge fleets into this size, but as a soft limit.
 	INVASION_COASTAL_PROVS_PER_ORDER = 12,					-- AI will consider one extra invasion per number of provinces stated here (num orders = total coast / this)
 
-	CONVOY_NEED_SAFETY_BUFFER = 0.45,						-- AI will try and keep 15% more convoys than what it needs.
+	CONVOY_NEED_SAFETY_BUFFER = 0.9,						-- AI will try and keep 15% more convoys than what it needs.
 	REGION_THREAT_PER_SUNK_CONVOY = 40,						-- Threat value per convoy sunk in a region. Decays over time.
 	REGION_CONVOY_DANGER_DAILY_DECAY = 1,					-- When convoys are sunk it generates threat in the region which the AI uses to prio nalval missions
 
 	ESCORT_BOMBERS_IMPORTANCE_MODIFIER = 3.0,				-- DNM, original 1 (AI Mod)
 	PRODUCTION_LINE_SWITCH_SURPLUS_NEEDED_MODIFIER = 0.2,	-- Is modified by efficency modifiers.
-	PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 0.0,				-- AI countries will hold on activating plans if stronger countries have plans in the same location. Majors count extra (value of 1 will negate this)
-	PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 0.0,			-- AI countries will hold on activating plans if player controlled countries have plans in the same location. Majors count extra (value of 1 will negate this)
+	PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 1.0,				-- AI countries will hold on activating plans if stronger countries have plans in the same location. Majors count extra (value of 1 will negate this)
+	PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 3.0,			-- AI countries will hold on activating plans if player controlled countries have plans in the same location. Majors count extra (value of 1 will negate this)
 	AREA_DEFENSE_BASE_IMPORTANCE = 3,						-- Area defense order base importance value (used for determining order of troop selections)
 	AREA_DEFENSE_CIVIL_WAR_IMPORTANCE = 10000,				-- Area defense order importance value when a country is in a civil war as target or revolter.
 
 	COMBINED_ARMS_LEVEL = 1,								-- 0 = Never, 1 = Infantry/Artillery, 2 = Go wild
-	MAX_DISTANCE_NALAV_INVASION = 150.0,					-- DNM, changed from 500 (AI Mod) -- AI is extremely unwilling to plan naval invasions above this naval distance limit.
-	ENEMY_NAVY_STRENGTH_DONT_BOTHER = 1.25,					-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
+	MAX_DISTANCE_NALAV_INVASION = 75.0,					-- DNM, changed from 500 (AI Mod) -- AI is extremely unwilling to plan naval invasions above this naval distance limit.
+	ENEMY_NAVY_STRENGTH_DONT_BOTHER = 2.0,					-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
 	MIN_SUPPLY_USE_SANITY_CAP = 1000,						-- Ignore supply cap if below this value when deciding on how many divisions to produce.
 	MAX_SUPPLY_DIVISOR = 100,								-- DNM, original 2 (AI mod) To make sure the AI does not overdeploy divisions. Higher number means more supply per unit.
 	MISSING_CONVOYS_BOOST_FACTOR = 8.0,					-- The more convoys a country is missing, the more resources it diverts to cover this.
 	TRANSPORTS_PER_PARATROOPER = 20,						-- Air transports only duty is to drop paratroopers.
-	MAX_MICRO_ATTACKS_PER_ORDER = 7,						-- AI goes through its orders and checks if there are situations to take advantage of
+	MAX_MICRO_ATTACKS_PER_ORDER = 3,						-- AI goes through its orders and checks if there are situations to take advantage of
 	FALLBACK_LOSING_FACTOR = 1.0,							-- The lower this number, the longer the AI will hold the line before sending them to the fallback line
-	PRODUCTION_MAX_PROGRESS_TTO_SWITCH_NAVAL = 0.5,		-- AI will not replace ships being built by newer types if progress is above this
+	PRODUCTION_MAX_PROGRESS_TTO_SWITCH_NAVAL = 0.3,		-- AI will not replace ships being built by newer types if progress is above this
 	STATE_CONTROL_FOR_AREA_DEFENSE = 0.15,					-- To avoid AI sending area defense to area with very little foothold
 	FORCE_FACTOR_AGAINST_EXTRA_MINOR = 0.15,					-- AI considers generating wargoals against minors below this % of force compared to themselves to get at a bigger enemy.
 	MAX_EXTRA_WARGOAL_GENERATION = 2,						-- AI may want to generate wargoals against weak minors to get at larger enemy, but never more that this at any given time.
-	NAVAL_MISSION_DISTANCE_BASE = 3000,						-- Base value when AI is evaluating distance score to places
-	NAVAL_MISSION_INVASION_BASE = 8500,						-- Base score for region with naval invasion (modified dynamically by prioritizing orders)
-	NAVAL_MISSION_AGGRESSIVE_PATROL_DIVISOR = 30,			-- Divides patrol score when not defending
+	NAVAL_MISSION_DISTANCE_BASE = 3500,						-- Base value when AI is evaluating distance score to places
+	NAVAL_MISSION_INVASION_BASE = 1000,						-- Base score for region with naval invasion (modified dynamically by prioritizing orders)
+	NAVAL_MISSION_AGGRESSIVE_PATROL_DIVISOR = 1,			-- Divides patrol score when not defending
 	NAVAL_MISSION_AGGRESSIVE_ESCORT_DIVISOR = 2,			-- Divides escort score when not defending
-	NAVAL_MISSION_PATROL_NEAR_OWNED = 26000,				-- Extra patrol mission score near owned provinces
+	NAVAL_MISSION_PATROL_NEAR_OWNED = 50000,				-- Extra patrol mission score near owned provinces
 	NAVAL_MISSION_ESCORT_NEAR_OWNED = 20000,				-- Extra escort mission score near owned provinces
-	NAVAL_MISSION_PATROL_NEAR_CONTROLLED = 15000,			-- Extra patrol mission score near controlled provinces
-	NAVAL_MISSION_ESCORT_NEAR_CONTROLLED = 7500,			-- Extra escort mission score near controlled provinces
+	NAVAL_MISSION_PATROL_NEAR_CONTROLLED = 12000,			-- Extra patrol mission score near controlled provinces
+	NAVAL_MISSION_ESCORT_NEAR_CONTROLLED = 5500,			-- Extra escort mission score near controlled provinces
 	NEW_LEADER_EXTRA_PP_FACTOR = 5.0,						-- Country must have at least this many times extra PP to get new admirals or army leaders
 	SCARY_LEVEL_AVERAGE_DEFENSE = -0.65,               	 	-- average front defense modifier to make it consider it as a PITA to go for
 	ATTACK_HEAVILY_DEFENDED_LIMIT = 0.95,					-- DNM, original 0.95 (ai overhaul mod) -- AI will not launch attacks against heavily defended fronts unless they consider to have this level of advantage (1.0 = 100%)
 	HOUR_BAD_COMBAT_REEVALUATE = 18,                  		-- DNM, original 60.0 (ai overhaul mod) -- if we are in combat for this amount and it goes shitty then try skipping it 
 	MIN_PLAN_VALUE_TO_MICRO_INACTIVE = 0.2,					-- The AI will not consider members of groups which plan is not activated AND evaluates lower than this.
 	
-	MAX_UNITS_FACTOR_AREA_ORDER = 1.0,						-- Factor for max number of units to assign to area defense orders
-	DESIRED_UNITS_FACTOR_AREA_ORDER = 0.25,					-- Factor for desired number of units to assign to area defense orders
-	MIN_UNITS_FACTOR_AREA_ORDER = 0.25,						-- DNM, original 0.5 (AI mod) -- Factor for min number of units to assign to area defense orders
+	MAX_UNITS_FACTOR_AREA_ORDER = 1.0,					-- Factor for max number of units to assign to area defense orders
+	DESIRED_UNITS_FACTOR_AREA_ORDER = 1.0,				-- Factor for desired number of units to assign to area defense orders
+	MIN_UNITS_FACTOR_AREA_ORDER = 1.0,					-- Factor for min number of units to assign to area defense orders
 
-	MAX_UNITS_FACTOR_FRONT_ORDER = 5.0,						-- DNM, original 1 (AI mod) -- Factor for max number of units to assign to area front orders
-	DESIRED_UNITS_FACTOR_FRONT_ORDER = 5.5,					-- DNM, original 1 (AI mod) -- Factor for desired number of units to assign to area front orders
-	MIN_UNITS_FACTOR_FRONT_ORDER = 3.0,						-- Factor for min number of units to assign to area front orders
+	MAX_UNITS_FACTOR_FRONT_ORDER = 1.5,					-- Factor for max number of units to assign to area front orders
+	DESIRED_UNITS_FACTOR_FRONT_ORDER = 1.5,				-- Factor for desired number of units to assign to area front orders
+	MIN_UNITS_FACTOR_FRONT_ORDER = 1.0,					-- Factor for min number of units to assign to area front orders
 
-	MAX_UNITS_FACTOR_INVASION_ORDER = 0.8,					-- Factor for max number of units to assign to naval invasion orders
-	DESIRED_UNITS_FACTOR_INVASION_ORDER = 0.5,				-- Factor for desired number of units to assign to naval invasion orders
-	MIN_UNITS_FACTOR_INVASION_ORDER = 3.0,					-- Factor for min number of units to assign to naval invasion orders
-
+	MAX_UNITS_FACTOR_INVASION_ORDER = 1.0,				-- Factor for max number of units to assign to naval invasion orders
+	DESIRED_UNITS_FACTOR_INVASION_ORDER = 1.0,			-- Factor for desired number of units to assign to naval invasion orders
+	MIN_UNITS_FACTOR_INVASION_ORDER = 1.0,				-- Factor for min number of units to assign to naval invasion orders
+	
 	FRONT_UNITS_CAP_FACTOR = 15.0,							-- A factor applied to total front size and supply use. Primarily effects small fronts
-	MAX_DIST_PORT_RUSH = 30.0,								-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
+	MAX_DIST_PORT_RUSH = 20.0,								-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
 
 	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.2,				-- Cancel unit production if below this to get resources out to units in the field
 	MIN_MANPOWER_TO_BUILD_UNITS = 0.2,						-- Cancel unit production if below this to get resources out to units in the field
