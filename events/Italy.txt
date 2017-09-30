@@ -57,7 +57,7 @@ country_event = {
 	option = { # Yield
 		name = italy.3.a
 		ai_chance = {
-			base = 40
+			base = 0
 			modifier = {
 				factor = 0
 				OR = {
@@ -91,7 +91,7 @@ country_event = {
 	option = { # Resist
 		name = italy.3.b
 		ai_chance = {
-			factor = 20 
+			factor = 100
 			modifier = {
 				factor = 0
 				OR = {
@@ -885,6 +885,7 @@ country_event = {
 		name = italy.26.a
 		hidden_effect = {
 			set_technology = {  tech_ita_medium_armor_equipment_1 = 1 }
+			set_technology = {  tech_ita_light_armor_equipment_1 = 1 }
 			load_oob = "ITA_ariete_trento_divisions"
 			set_country_flag = ariete_trento
 		}
@@ -988,8 +989,8 @@ country_event = {
 		tag = ITA
 		
 		is_ai = yes
-	
-		has_war_with = ETH
+		controls_state = 271
+		not = {has_war_with = ETH}
 		
 	}
 	mean_time_to_happen = {
@@ -999,11 +1000,20 @@ country_event = {
 	option = {
 		name = italy.30.a
 		hidden_effect = {
-			create_wargoal = {
-					type = puppet_wargoal_focus
-					target = ETH
-					generator = { 271 }
+	if = {
+		limit = {
+			has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = ETH
+		autonomous_state = autonomy_integrated_puppet
 				}
+	
+		else = {
+			puppet = ETH
+		
+				}
+			}
 		}
 	}
 }
