@@ -138,7 +138,7 @@ NDiplomacy = {
 NCountry = {
 	EVENT_PROCESS_OFFSET = 14,							-- Events are checked every X day per character or province (1 is ideal, but CPU heavy)
 	BASE_RESEARCH_SLOTS = 2,							-- Base number of research slots per country.
-	VP_TO_SUPPLY_BASE = 1,								-- Bonus to supply from a VP, no matter the level
+	VP_TO_SUPPLY_BASE = 0.5,								-- Bonus to supply from a VP, no matter the level
 	VP_TO_SUPPLY_BONUS_CONVERSION = 0.1,				-- Bonus to supply local supplies from Victory Points, multiplied by this aspect and rounded to closest integer
 	SUPPLY_FROM_DAMAGED_INFRA = 0.5,                	-- damaged infrastructure counts as this in supply calcs
 	SUPPLY_BASE_MULT = 1,								-- multiplier on supply base values
@@ -1277,7 +1277,7 @@ NAI = {
 NFocus = {
 	FOCUS_POINT_DAYS = 7,						-- Each point takes a week
 	FOCUS_PROGRESS_PEACE = 1,					-- Progress during peace
-	FOCUS_PROGRESS_WAR = 1,					-- Progress during war
+	FOCUS_PROGRESS_WAR = 1,						-- Progress during war
 	MAX_SAVED_FOCUS_PROGRESS = 10,				-- This much progress can be saved while not having a focus selected
 	},
 }

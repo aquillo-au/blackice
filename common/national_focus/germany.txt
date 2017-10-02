@@ -1673,7 +1673,7 @@ focus_tree = {
 			# Balance research bonus to 2 techs in armor, also in event
 			add_tech_bonus = {
                 name = armor_bonus
-                technology = tech_panzer_ii_equipment_2     # Liecht divison tech template
+                technology = tech_panzer_ii_equipment_3     # Liecht divison tech template
                 bonus = 0.25
                 uses = 2
                 category = cat_light_armor
@@ -4537,6 +4537,11 @@ focus_tree = {
 					NOT = { HUN = { is_puppet_of = GER } }
 					NOT = { is_in_faction_with = HUN }
 				}
+				AND = {
+					YUG = { owns_state = 913 }
+					NOT = { YUG = { is_puppet_of = GER } }
+					NOT = { is_in_faction_with = YUG }
+				}
 			}
 		}
 		cancel = {
@@ -4552,6 +4557,11 @@ focus_tree = {
 					NOT = { HUN = { owns_state = 102 } }
 					is_in_faction_with = HUN
 					HUN = { is_puppet_of = GER }
+				}
+				AND = {
+					NOT = { YUG = { owns_state = 913 } }
+					is_in_faction_with = YUG
+					YUG = { is_puppet_of = GER }				
 				}
 			}
 		}
@@ -4606,8 +4616,18 @@ focus_tree = {
 			}
 			add_named_threat = { threat = 2 name = GER_demand_slovenia_threat }
 			if = {
-				limit = { YUG = { owns_state = 102 } }
-				YUG = { add_opinion_modifier = { target = GER modifier = GER_demand_slovenia_YUG } }
+				limit = {
+					YUG = {
+						owns_state = 102
+						owns_state = 913
+					}
+				}
+				YUG = {
+					add_opinion_modifier = {
+						target = GER
+						modifier = GER_demand_slovenia_YUG
+					}
+				}
 				if = {
 					limit = {
 						NOT = { has_war_with = ENG }
@@ -4639,7 +4659,10 @@ focus_tree = {
 					102 = { is_owned_by = HUN }
 				}
 				HUN = { 
-					add_opinion_modifier = { target = GER modifier = GER_demand_slovenia_YUG }
+					add_opinion_modifier = {
+						target = GER
+						modifier = GER_demand_slovenia_YUG
+					}
 					country_event = germany.373
 				}
 			}
