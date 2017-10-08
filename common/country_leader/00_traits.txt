@@ -3028,10 +3028,29 @@ leader_traits = {
 			factor = 1
 		}
 	}
-	submarine_raiding_naval_manufacturer = { 
+	ger_submarine_raiding_naval_manufacturer = { 
 		random = no
 		equipment_bonus = {
-			submarine = {
+			coastal_submarine = {
+				reliability = 0.1 torpedo_attack = 0.25 naval_speed = 0.1 sub_visibility = -0.1 instant = yes
+			}
+			patrol_submarine = {
+				reliability = 0.1 torpedo_attack = 0.25 naval_speed = 0.1 sub_visibility = -0.1 instant = yes
+			}
+			lr_patrol_submarine = {
+				reliability = 0.1 torpedo_attack = 0.25 naval_speed = 0.1 sub_visibility = -0.1 instant = yes
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	usa_submarine_raiding_naval_manufacturer = { 
+		random = no
+		equipment_bonus = {
+			
+			usn_patrol_submarine = {
 				reliability = 0.1 torpedo_attack = 0.25 naval_speed = 0.1 sub_visibility = -0.1 instant = yes
 			}
 		}
