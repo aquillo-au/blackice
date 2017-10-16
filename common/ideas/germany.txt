@@ -2451,7 +2451,7 @@ intel_minister = {
 			available = {
 				NOT = { is_ai = yes }
 			}
-			traits = { supreme_com_fritz reluctant_minister fascist }
+			traits = { supreme_com_fritz fascist reluctant_minister }
 			
 			ai_will_do = {
 				factor = 1
@@ -2468,7 +2468,7 @@ intel_minister = {
 				is_ai = yes
 			}
 			traits = { supreme_com_fritz fascist }
-			picture = idea_werner_von_fritsch
+
 			ai_will_do = {
 				factor = 1
 			}
@@ -2520,7 +2520,7 @@ intel_minister = {
 			
 			allowed = {
 				original_tag = GER
-				is_ai = no
+				
 				NOT = { has_country_flag = keitel_dead }
 			}
 			
@@ -2536,8 +2536,7 @@ intel_minister = {
 				factor = 1
 			}
 		}
-		keitel_ai  = {
-			picture = idea_wilhelm_keitel
+		wilhelm_keitel_ai  = {
 			allowed = {
 				original_tag = GER
 				is_ai = yes
@@ -2555,7 +2554,6 @@ intel_minister = {
 			}
 		}
 		franz_halder = { #38-42
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2568,6 +2566,7 @@ intel_minister = {
 					NOT = { has_country_flag = halder_fired is_historical_focus_on = yes }
 				}
 			}
+			
 			traits = { army_chief_offensive_2 }
 			
 			ai_will_do = {
@@ -2575,7 +2574,6 @@ intel_minister = {
 			}
 		}
 		kurt_zeitzler = { #42-44
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2586,9 +2584,13 @@ intel_minister = {
 						is_ai = yes
 						NOT = { has_country_flag = zeitzler_fired }
 					}
-					NOT = { has_country_flag = zeitzler_fired is_historical_focus_on = yes }
+					NOT = { 
+						has_country_flag = zeitzler_fired
+						is_historical_focus_on = yes
+					}
 				}
 			}
+			
 			traits = { army_chief_organizational_2 }
 			
 			ai_will_do = {
@@ -2596,7 +2598,6 @@ intel_minister = {
 			}
 		}
 		guderian_coa = { #44-45
-			
 			allowed = {
 				original_tag = GER
 				NOT = { has_country_flag = guderian_dead }
@@ -2611,6 +2612,7 @@ intel_minister = {
 				NOT = { has_country_flag = guderian_fired is_historical_focus_on = yes }
 				}
 			}
+			
 			traits = { army_chief_maneuver_3 }
 			
 			ai_will_do = {
@@ -2635,9 +2637,7 @@ intel_minister = {
 	}
 	##### AIRFORCE
 	air_chief = {
-		
 		goering = {
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2651,7 +2651,6 @@ intel_minister = {
 			}
 		}
 		ritter_von_greim = {
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2666,7 +2665,6 @@ intel_minister = {
 			}
 		}
 		albert_kesselring = {
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2679,16 +2677,17 @@ intel_minister = {
 		}
 	}
 	##### NAVY
-	navy_chief = { #CHIEF OF NAVY
-		
+	## CHIEF OF NAVY
+	navy_chief = { 
 		raeder = {
-			
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
 
 			}
+			
 			traits = { navy_chief_surface_raider_doctrine }
 			
 			ai_will_do = {
@@ -2698,9 +2697,7 @@ intel_minister = {
 				}
 			}
 		}
-		
 		donitz = {
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2714,9 +2711,7 @@ intel_minister = {
 	}
 	##### STAFF
 	high_command = {
-
 		ferdinand_schorner = {
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2728,7 +2723,6 @@ intel_minister = {
 			}
 		}
 		erwin_rommel = {
-
 			allowed = {
 				original_tag = GER
 			}
@@ -2744,7 +2738,6 @@ intel_minister = {
 			}
 		}
 		gerd_von_rundstedt = {
-
 			allowed = {
 				original_tag = GER
 			}
@@ -2768,7 +2761,6 @@ intel_minister = {
 		#	}
 		#}
 		hugo_sperrle = {
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2783,7 +2775,6 @@ intel_minister = {
 			}
 		}
 		erhard_milch = {
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2795,7 +2786,6 @@ intel_minister = {
 			}
 		}
 		kurt_student = {
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -2807,68 +2797,54 @@ intel_minister = {
 			}
 		}
 		hans_georg_von_friedeburg = {
-			
-			
 			allowed = {
 				original_tag = GER
 			}
-						
+			
 			traits = { ger_navy_high_command_submarine_raiding_commander_1 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		gunther_lutjens = {
-			
-			
 			allowed = {
 				original_tag = GER
 			}
-						
+			
 			traits = { ger_navy_high_command_surface_raiding_commander_1 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		oskar_kummetz = {
-			
-			
 			allowed = {
 				original_tag = GER
 			}
-						
+			
 			traits = { ger_navy_high_command_grand_battlefleet_commander_1 }
-						
+			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
 		otto_schniewind = {
-			
-			
 			allowed = {
 				original_tag = GER
 			}
-						
+			
 			traits = { ger_navy_high_command_fleet_admiral_1 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		
-		alfred_saalwachter_naval_maneuvering = {
-			
-			
+		alfred_saalwachter_naval = {
 			allowed = {
 				original_tag = GER
 			}
-						
+			
 			traits = { ger_navy_high_command_naval_maneuvering_commander_1 }
 			
 			ai_will_do = {
@@ -2877,19 +2853,16 @@ intel_minister = {
 		}
 		
 		martin_harlinghausen = {
-			
-			
 			allowed = {
 				original_tag = GER
 			}
-						
+			
 			traits = { ger_navy_high_command_land_based_naval_air_support_1 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-				
 	}
 }
 ## EOF ##
