@@ -11446,25 +11446,25 @@ country_event = {
 	title = germany.312.t
 	desc = germany.312.desc
 	picture = GFX_report_event_generic_funeral
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
 
-	immediate = {  }
+	immediate = {}
 
 	option = { #Propose a Referendum
 		name = germany.312.a
 		BEL = { country_event = germany.313 }
 		ai_chance = {
-			factor = 1
-			
+			factor = 75
 		}
 	}
 	option = { #Demand its Return
 		name = germany.312.b
 		BEL = { country_event = germany.341 }
 		ai_chance = {
-			factor = 1
-			
+			factor = 25
 		}
 	}
 }
@@ -11475,7 +11475,9 @@ country_event = {
 	title = germany.313.t
 	desc = germany.313.desc
 	picture = GFX_report_event_generic_funeral
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
 
 	immediate = {  }
@@ -11485,7 +11487,6 @@ country_event = {
 		GER = { country_event = germany.314 }
 		ai_chance = {
 			factor = 75
-			
 		}
 	}
 	option = { #Refuse
@@ -11555,9 +11556,13 @@ country_event = {
 	title = germany.315.t
 	desc = germany.315.desc
 	picture = GFX_report_event_generic_funeral
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
+	
 	hidden = yes
+	
 	immediate = {  }
 
 	option = { 
@@ -11587,7 +11592,9 @@ country_event = {
 	title = germany.316.t
 	desc = germany.316.desc
 	picture = GFX_report_event_generic_funeral
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
 
 	immediate = {  }
@@ -11659,20 +11666,25 @@ country_event = {
 	title = germany.318.t
 	desc = germany.318.desc
 	picture = GFX_report_event_generic_funeral
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
 
 	immediate = {  }
 
 	option = { 
 		name = germany.318.a
+		
 		BEL = { transfer_state = 887 } #E-M
-		887 = { add_core_of = GER }
+		
 		add_political_power = 20
 		add_national_unity = 0.01
+		
 		ruling_pop_plus_3 = yes
+		
 		ai_chance = {
-			factor = 1
+			factor = 100
 			
 		}
 	}
