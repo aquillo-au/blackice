@@ -2419,10 +2419,14 @@ country_event = {
 				  or = {
 				   is_in_faction_with = CHL
 				    is_in_faction_with = ARG
-					 is_in_faction_with = PER
-					 
-						USA = { has_war_with = BRA }
-							is_in_faction_with = GER 
+				    is_in_faction_with = PER
+																
+							}
+					or = {
+					and = {
+					is_in_faction_with = GER 
+					GER = { has_war = yes }
+								}
 							}
 						}
 					}
@@ -2480,9 +2484,14 @@ country_event = {
 				   is_in_faction_with = CHL
 				    is_in_faction_with = ARG
 					 is_in_faction_with = PER
-					ENG = { has_war_with = BRA }
-							is_in_faction_with = GER 
+					 }
+					or = {
+					and = {
+					is_in_faction_with = GER 
+					GER = { has_war = yes }
+								}
 							}
+							
 						}
 					}
 				}
@@ -2530,9 +2539,13 @@ country_event = {
 				   is_in_faction_with = ARG
 				    is_in_faction_with = PER
 					 is_in_faction_with = CHL
-					 
-						FRA = { has_war_with = BRA }
-							is_in_faction_with = GER 
+					 					
+							}
+							or = {
+					and = {
+					is_in_faction_with = GER 
+					GER = { has_war = yes }
+								}
 							}
 						}
 					}
@@ -2580,10 +2593,13 @@ country_event = {
 				   is_in_faction_with = BRA
 				    is_in_faction_with = PER
 					 is_in_faction_with = CHL
-					 
-						USA = { has_war_with = ARG }
-							is_in_faction_with = GER
-						}
+					 }
+						or = {
+					and = {
+					is_in_faction_with = GER 
+					GER = { has_war = yes }
+								}
+							}
 					}
 				}
 		}
@@ -2639,9 +2655,12 @@ country_event = {
 				   is_in_faction_with = BRA
 				    is_in_faction_with = ARG
 					 is_in_faction_with = PER
-					 
-						USA = { has_war_with = CHL }
-							is_in_faction_with = GER
+					 }
+						or = {
+					and = {
+					is_in_faction_with = GER 
+					GER = { has_war = yes }
+								}
 							}
 						}
 					}
@@ -2698,9 +2717,12 @@ country_event = {
 				   is_in_faction_with = BRA
 				    is_in_faction_with = ARG
 					 is_in_faction_with = CHL
-					 
-						USA = { has_war_with = PER }
-							is_in_faction_with = GER
+					 }
+						or = {
+					and = {
+					is_in_faction_with = GER 
+					GER = { has_war = yes }
+								}
 							}
 						}
 					}
@@ -2746,12 +2768,11 @@ country_event = {
 	trigger = {
 		tag = USA
 		is_ai = yes
-		or = { 
-		has_war_with = CAN
-		CAN = { is_in_faction_with = GER }
-	
+		CAN = {is_in_faction_with = GER }
+		GER = { has_war = yes }
+						
 		}
-	}
+	
 	
 	mean_time_to_happen = {
 		days = 1
@@ -2792,11 +2813,9 @@ country_event = {
 	trigger = {
 		tag = USA
 		is_ai = yes
-		or = { 
-		has_war_with = MEX
-		MEX = { is_in_faction_with = GER }
-	
-		}
+		MEX = {is_in_faction_with = GER }
+		GER = { has_war = yes }
+						
 	}
 	
 	mean_time_to_happen = {
