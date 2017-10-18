@@ -512,8 +512,8 @@ NMilitary = {
 	PLAN_PROVINCE_PRIO_DISTRIBUTION_DPP_LOW = 2.0,	-- At what divisions per province should we use PLAN_PROVINCE_PRIO_DISTRIBUTION_MAX
 	
 	PLAN_EXECUTE_CAREFUL_LIMIT = 25,						-- When looking for an attach target, this score limit is required in the battle plan to consider province for attack
-	PLAN_EXECUTE_BALANCED_LIMIT = 5,						-- When looking for an attach target, this score limit is required in the battle plan to consider province for attack
-	PLAN_EXECUTE_RUSH = -100,								-- When looking for an attach target, this score limit is required in the battle plan to consider province for attack
+	PLAN_EXECUTE_BALANCED_LIMIT = 0,						-- When looking for an attach target, this score limit is required in the battle plan to consider province for attack
+	PLAN_EXECUTE_RUSH = -200,								-- When looking for an attach target, this score limit is required in the battle plan to consider province for attack
 	PLAN_EXECUTE_CAREFUL_MAX_FORT = 5,						-- If execution mode is set to careful, units will not attack provinces with fort levels greater than or equal to this
 	
 	PLAN_MAX_PROGRESS_TO_JOIN = 0.50,						-- If Lower progress than this, probably needs support
@@ -915,11 +915,11 @@ NAI = {
 	DIFFERENT_FACTION_THREAT = 50,						-- Threat caused by not being in the same faction
 	PLAN_MOVE_MIN_ORG_TO_ENEMY_PROVINCE = 20.0,			-- Minimum organization a unit must have to consider moving into an enemy province (not attack move)
 	PLAN_ATTACK_MIN_ORG_FACTOR_LOW = 0.85,				-- Minimum org % for a unit to actively attack an enemy unit when executing a plan
-	PLAN_ATTACK_MIN_STRENGTH_FACTOR_LOW = 0.4,			-- Minimum strength for a unit to actively attack an enemy unit when executing a plan
+	PLAN_ATTACK_MIN_STRENGTH_FACTOR_LOW = 0.7,			-- Minimum strength for a unit to actively attack an enemy unit when executing a plan
 	PLAN_ATTACK_MIN_ORG_FACTOR_MED = 0.75,				-- (LOW,MED,HIGH) corresponds to the plan execution agressiveness level.
-	PLAN_ATTACK_MIN_STRENGTH_FACTOR_MED = 0.3,	
-	PLAN_ATTACK_MIN_ORG_FACTOR_HIGH = 0.2,		
-	PLAN_ATTACK_MIN_STRENGTH_FACTOR_HIGH = 0.15,	
+	PLAN_ATTACK_MIN_STRENGTH_FACTOR_MED = 0.5,	
+	PLAN_ATTACK_MIN_ORG_FACTOR_HIGH = 0.3,		
+	PLAN_ATTACK_MIN_STRENGTH_FACTOR_HIGH = 0.2,	
 	PLAN_FRONTUNIT_DISTANCE_FACTOR = 10,					-- Factor for candidate units distance to front positions.
 	PLAN_ATTACK_DEPTH_FACTOR = 0.5,						-- Factor applied to size or enemy being attacked.
 	PLAN_STEP_COST_LIMIT = 11,							-- When stepping to draw a plan this cost makes it break if it hits hard terrain (multiplied by number of desired steps)

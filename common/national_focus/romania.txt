@@ -3993,9 +3993,10 @@ focus_tree = {
 							motorized = { x = 3 y = 1 }
 						}
 						support = {
-							engineer = { x = 0 y = 0 }
-							artillery_medium = { x = 0 y = 1 }
-							recon = { x = 0 y = 2 }
+							DIV_HQ = { x = 0 y = 0 }
+							engineer = { x = 0 y = 1 }
+							artillery_medium = { x = 0 y = 2 }
+							recon = { x = 0 y = 3 }
 						}
 					}
 					else = {
@@ -4022,9 +4023,10 @@ focus_tree = {
 									motorized = { x = 3 y = 1 }
 								}
 								support = {
-									engineer = { x = 0 y = 0 }
-									artillery_medium = { x = 0 y = 1 }
-									recon = { x = 0 y = 2 }
+									DIV_HQ = { x = 0 y = 0 }
+									engineer = { x = 0 y = 1 }
+									artillery_medium = { x = 0 y = 2 }
+									recon = { x = 0 y = 3 }
 								}
 							}
 							else = {
@@ -4051,9 +4053,10 @@ focus_tree = {
 											motorized = { x = 3 y = 1 }
 										}
 										support = {
-											engineer = { x = 0 y = 0 }
-											artillery_medium = { x = 0 y = 1 }
-											recon = { x = 0 y = 2 }
+											DIV_HQ = { x = 0 y = 0 }
+											engineer = { x = 0 y = 1 }
+											artillery_medium = { x = 0 y = 2 }
+											recon = { x = 0 y = 3 }
 										}
 									}
 									else = {
@@ -4080,9 +4083,10 @@ focus_tree = {
 												motorized = { x = 3 y = 1 }
 											}
 											support = {
-												engineer = { x = 0 y = 0 }
-												artillery_medium = { x = 0 y = 1 }
-												recon = { x = 0 y = 2 }
+												DIV_HQ = { x = 0 y = 0 }
+												engineer = { x = 0 y = 1 }
+												artillery_medium = { x = 0 y = 2 }
+												recon = { x = 0 y = 3 }
 											}
 										}
 									}
@@ -4091,18 +4095,46 @@ focus_tree = {
 						}
 					}
 				}
+				}
+				if = {
+					limit = {
+					has_tech = basic_medium_tank_axis 
+					has_tech = tech_recon
+					}
 				random_owned_controlled_state = {
-					limit = { ROOT = { has_full_control_of_state = PREV } }
+					limit = { ROOT = { has_full_control_of_state = PREV } 
+						}
+					
+					
 					prioritize = { 46 }
 					create_unit = {
-						division = "name = \"Armored Division\" division_template = \"Armored Division\" start_experience_factor = 0.7" 
+						division = "name = \"Blindata Divizia\" division_template = \"Blindata Pz Division\" start_experience_factor = 0.5" 
 						owner = ROM
+					}
+				}
+				else = {
+					if = {
+					limit = {
+					has_tech = basic_light_tank_axis 
+					has_tech = tech_recon
+					}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } 
+					}
+					
+					prioritize = { 46 }
+					create_unit = {
+						division = "name = \"Blindata(Lt) Divizia\" division_template = \"Lt Blindata Pz Division\" start_experience_factor = 0.5" 
+						owner = ROM
+								}
+							}
+						}
 					}
 				}
 			}			
 		}
 	}
-}
+
 	focus = {
 		id = ROM_acquire_modern_tanks
 		icon = GFX_goal_generic_army_tanks
