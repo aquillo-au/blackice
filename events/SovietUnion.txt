@@ -2067,6 +2067,7 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "SOV_winteroffense"
+			set_technology = { SOV_defence_winter = 1 }
 			set_technology = { hiddentech_conscripts = 1 }
 			set_country_flag = SOVwintercounteroffense
 
@@ -2166,6 +2167,7 @@ country_event = {
 		
 		hidden_effect = {
 			set_technology = { hiddentech_conscripts = 1 }
+			set_technology = { SOV_defence_stalingrad = 1 }
 			load_oob = "SOV_stalingrad_defence"
 			set_country_flag = SOVstalingraddefence
 			add_timed_idea = {
@@ -3711,6 +3713,7 @@ country_event = {
 			set_technology = { guards_infantry_tech =1 }
 			set_technology = { guards_artillery_tech =1 }
 			set_technology = { guards_artillery_mot_tech =1 }
+			set_technology = { SOV_defence_guards =1 }
 			load_oob = "SOV_guards_sept_ai"  
 		}
 	}
@@ -4577,7 +4580,7 @@ country_event = {
 	option = { 
 		name = soviet.312.a
 		hidden_effect = {
-			
+			set_technology = { SOV_defence_I_start = 1 }
 			add_timed_idea = {
 				idea = CounterAttack_I
 				days = 7
@@ -4625,7 +4628,7 @@ country_event = {
 	option = { 
 		name = soviet.313.a
 		hidden_effect = {
-			
+			set_technology = { SOV_defence_II_start = 1 }
 			add_timed_idea = {
 				idea = CounterAttack_II
 				days = 7
@@ -4673,7 +4676,7 @@ country_event = {
 	option = { 
 		name = soviet.314.a
 		hidden_effect = {
-			
+			set_technology = { SOV_defence_III_start = 1 }
 			add_timed_idea = {
 				idea = CounterAttack_III
 				days = 7
@@ -4720,7 +4723,7 @@ country_event = {
 	option = { 
 		name = soviet.315.a
 		hidden_effect = {
-			
+			set_technology = { SOV_defence_IV_start = 1 }
 			add_timed_idea = {
 				idea = CounterAttack_IV
 				days = 7
@@ -4933,5 +4936,185 @@ country_event = {
 				days = 7
 			}
 	}
+}
+country_event = {
+	id = soviet.323
+	title = soviet.323.t
+	desc = soviet.323.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		
+		NOT = { has_idea = CounterAttack_I }
+		has_country_flag = CounterAttackone
+	}
+	
+	mean_time_to_happen = {
+		days = 12
+	}
+	
+	option = { 
+		name = soviet.323.a
+		hidden_effect = {
+			set_technology = { SOV_defence_I_end = 1 }
+			
+	}
+	
+}
+}
+country_event = {
+	id = soviet.324
+	title = soviet.324.t
+	desc = soviet.324.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		
+		NOT = { has_idea = CounterAttack_II }
+		has_country_flag = CounterAttacktwo
+	}
+	
+	mean_time_to_happen = {
+		days = 12
+	}
+	
+	option = { 
+		name = soviet.324.a
+		hidden_effect = {
+			set_technology = { SOV_defence_II_end = 1 }
+			
+	}
+	
+}
+}
+country_event = {
+	id = soviet.325
+	title = soviet.325.t
+	desc = soviet.325.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		
+		NOT = { has_idea = CounterAttack_III }
+		has_country_flag = CounterAttackthree
+	}
+	
+	mean_time_to_happen = {
+		days = 12
+	}
+	
+	option = { 
+		name = soviet.325.a
+		hidden_effect = {
+			set_technology = { SOV_defence_III_end = 1 }
+			
+	}
+	
+}
+}
+country_event = {
+	id = soviet.326
+	title = soviet.326.t
+	desc = soviet.326.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		
+		NOT = { has_idea = CounterAttack_IV }
+		has_country_flag = CounterAttackfour
+	}
+	
+	mean_time_to_happen = {
+		days = 12
+	}
+	
+	option = { 
+		name = soviet.326.a
+		hidden_effect = {
+			set_technology = { SOV_defence_IV_end = 1 }
+			
+	}
+	
+}
+}
+country_event = {
+	id = soviet.327
+	title = soviet.327.t
+	desc = soviet.327.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		
+		NOT = { has_idea = winter_offensive }
+		has_country_flag = SOVwintercounteroffense
+	}
+	
+	mean_time_to_happen = {
+		days = 12
+	}
+	
+	option = { 
+		name = soviet.327.a
+		hidden_effect = {
+			set_technology = { SOV_defence_winter_end = 1 }
+			
+	}
+	
+}
+}
+country_event = {
+	id = soviet.328
+	title = soviet.328.t
+	desc = soviet.328.desc
+	picture = GFX_report_event_soviet_soldiers2
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_war_with = GER
+		is_ai = yes
+		
+		NOT = { has_idea = Stalingrad_offensive }
+		has_country_flag = SOVstalingraddefence
+	}
+	
+	mean_time_to_happen = {
+		days = 12
+	}
+	
+	option = { 
+		name = soviet.328.a
+		hidden_effect = {
+			set_technology = { SOV_defence_stalingrad_end = 1 }
+			
+	}
+	
+}
 }
 ### EOF ###

@@ -164,6 +164,7 @@ infantry_generic = {
 		AUS
 		FRA
 		RAJ
+		IRE
 	}
 
 	roles = {
@@ -208,6 +209,7 @@ light_infantry_generic = {
 		CHI
 		FRA
 		FIN
+		IRE
 	}
 
 	roles = {
@@ -1955,6 +1957,10 @@ cavalry_generic = {
 		SOV
 		IRE
 		HUN
+		ROM
+		RAJ
+		FIN
+		CAN
 	}
 
 	roles = {
@@ -2032,6 +2038,65 @@ garrison_default = {
 }
 
 }
+infantry_IRE = {
+	available_for = { IRE }
+	roles = { infantry }
+	match_to_count = 0.65
+
+infantry_default_IRE = {
+	target_width = 21.5 
+	width_weight = 0.3
+	column_swap_factor = 0.6
+	
+	
+	target_template = {
+		weight = 1
+		match_value = 35990.0
+		
+		support = {
+			engineer = 1
+			recon = 1
+			DIV_HQ = 1
+			
+		}
+		
+		regiments = {
+		   	infantry = 6
+			artillery_brigade = 2
+			
+		}
+	}
+}
+}
+light_infantry_IRE = {
+	available_for = { IRE }
+	roles = { infantry }
+	match_to_count = 0.35
+
+light_infantry_default_IRE = {
+	target_width = 21.5 
+	width_weight = 0.3
+	column_swap_factor = 0.6
+	
+	
+	target_template = {
+		weight = 1
+		match_value = 35990.0
+		
+		support = {
+			
+			recon_cav = 1
+			DIV_HQ = 1
+			
+		}
+		
+		regiments = {
+		   	light_infantry = 3
+			
+		}
+	}
+}
+}
 cavalry_IRE = {
 
 	available_for = {
@@ -2044,7 +2109,7 @@ cavalry_IRE = {
 	
 
 	
-	match_to_count = 0.55
+	match_to_count = 0.65
 
 cavalry_IRE = {
 	target_width = 12.0
@@ -2080,7 +2145,7 @@ garrison_IRE = {
 		garrison
 	}
 		
-	match_to_count = 0.60
+	match_to_count = 0.55
 	
 garrison_IRE  = {
 	target_width = 20.9 
@@ -2096,12 +2161,12 @@ garrison_IRE  = {
 			DIV_HQ = 1
 			military_police = 1
 			recon_cav = 1
-			artillery_coastal = 1
+			#artillery_coastal = 1
 		}
 		
 		regiments = {
-			garrison = 4
-			militia = 2
+			garrison = 2
+			militia = 1
 			artillery_brigade = 1
 
 		}

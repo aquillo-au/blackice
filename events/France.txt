@@ -220,7 +220,7 @@ country_event = {
 		trigger = { is_ai = no }
 		set_country_flag = become_vichy
 		set_global_flag = fall_of_france
-		GER = { country_event = france.14 }
+		#GER = { country_event = france.14 }
 		custom_effect_tooltip = france.10.a_tt
 		# Switches to Vichy if GER accepts
 		add_national_unity = -0.95
@@ -231,7 +231,7 @@ country_event = {
 			factor = 100
 		}
 		set_global_flag = fall_of_france
-		GER = { country_event = france.14 }
+		#GER = { country_event = france.14 }
 		custom_effect_tooltip = france.10.b_tt
 		add_national_unity = -0.95
 	}
@@ -332,14 +332,14 @@ country_event = {
 		trigger = { is_ai = no }
 		set_country_flag = become_vichy
 		set_global_flag = fall_of_france
-		GER = { country_event = france.14 }
+		#GER = { country_event = france.14 }
 		custom_effect_tooltip = france.10.a_tt
 		# Switches to Vichy if GER accepts
 	}
 	
 	option = { # Become Free France
 		name = france.13.b
-		GER = { country_event = france.14 }
+		#GER = { country_event = france.14 }
 		custom_effect_tooltip = france.10.b_tt
 		set_global_flag = fall_of_france
 	}
@@ -352,8 +352,18 @@ country_event = {
 	desc = france.14.d
 	picture = GFX_report_event_german_parade_paris
 	
-	is_triggered_only = yes
+	fire_only_once = yes
 	
+	trigger = {
+		tag = GER
+		has_global_flag = fall_of_france
+
+		}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+
 	option = { # Agree
 		name = france.14.a
 		
@@ -520,7 +530,8 @@ country_event = {
 					transfer_state = 31
 				}
 			}
-			FRA = { country_event = { id = france.65 } }
+			#FRA = { country_event = { id = france.65 } }
+			set_country_flag = french_armistice
 			FRA = { news_event = { id = france.20 days = 1 } }
 		}
 		
@@ -2156,7 +2167,15 @@ country_event = {
 	
 	fire_only_once = yes
 	
-	is_triggered_only = yes
+	trigger = {
+		tag = FRA
+		has_global_flag = fall_of_france
+		has_country_flag = french_armistice
+		}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
 	
 	option = {
 		name = france.65.a

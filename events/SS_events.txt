@@ -1597,13 +1597,13 @@ country_event = {
 			add_manpower = 500000
 		}
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 	}
 	option = {
 		name = ss_event.684.b
 		set_country_flag = focus_foreign_SS_units_no
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 0 }
 	}
 }
 country_event = {
@@ -1638,13 +1638,13 @@ country_event = {
 			load_oob = "GER_Nord"	# SS-Division Nord
 		}
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 	}
 	option = {
 		name = ss_event.685.b
 		set_country_flag = ss_division_nord_no
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 0 }
 	}
 }
 country_event = {
@@ -1896,6 +1896,33 @@ country_event = {
 			set_technology = { ss_panzer_iii_td_tech = 1 }
 		}
 		ai_chance = { factor = 100 }
+	}
+}
+country_event = {
+	id = ss_event.692
+	title = ss_event.692.t
+	desc = ss_event.692.d
+	picture = GFX_event_ger_ss_panzer_iii
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		date > 1943.1.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.692.a
+				
+		hidden_effect = {
+			set_technology = { GER_defence_ss = 1 }
+		}
+		
 	}
 }
 ## EOF ##
