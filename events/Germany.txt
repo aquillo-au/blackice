@@ -10194,7 +10194,7 @@ country_event = {
 		has_equipment = { anti_tank_equipment > 24 }
 		58 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_16 }
-		has_country_flag = mot_16
+		has_country_flag = mot_29
 		date > 1940.8.6
 	}
 	
@@ -10226,7 +10226,7 @@ country_event = {
 		has_equipment = { anti_tank_equipment > 24 }
 		50 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_25 }
-		has_country_flag = mot_25
+		has_country_flag = mot_29
 		date > 1941.3.15
 	}
 	
@@ -10258,7 +10258,7 @@ country_event = {
 		has_equipment = { anti_tank_equipment > 24 }
 		68 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_3 }
-		has_country_flag = mot_3
+		has_country_flag = mot_29
 		date > 1940.10.27
 	}
 	
@@ -11845,7 +11845,7 @@ country_event = {
 			}
 		
 		ai_chance = {
-			factor = 1
+			factor = 100
 			
 		}
 	}
@@ -11854,7 +11854,7 @@ country_event = {
 		add_political_power = -15
 		ruling_pop_minus_3 = yes
 		ai_chance = {
-			factor = 1
+			factor = 0
 			
 		}
 	}
@@ -11873,20 +11873,20 @@ country_event = {
 
 	option = { #Never!
 		name = germany.345.a
-		GER = { country_event = germany.347 }
+		#GER = { country_event = germany.347 }
 		ruling_pop_plus_5 = yes
 		add_political_power = -35
 		add_national_unity = 0.05
-		effect_tooltip = {
-			GER = {
-				create_wargoal = {
-					type = take_state_focus
-					target = FRA
-					generator = { 28 }
-				}
-				country_event = { days = 1 id = germany.347 }
-			}
-		}
+		#effect_tooltip = {
+		#	GER = {
+		#		create_wargoal = {
+		#			type = take_state_focus
+		#			target = FRA
+		#			generator = { 28 }
+		#		}
+		#		country_event = { days = 1 id = germany.347 }
+		#	}
+		#}
 		ai_chance = {
 			base = 100
 			
@@ -11926,7 +11926,7 @@ country_event = {
 		add_political_power = 75
 		add_national_unity = 0.10
 		ai_chance = {
-			factor = 1
+			factor = 0
 			
 		}
 	}
@@ -11940,7 +11940,7 @@ country_event = {
 		add_national_unity = -0.05
 		ruling_pop_minus_5 = yes
 		ai_chance = {
-			factor = 1
+			factor = 100
 			
 		}
 	}

@@ -30,7 +30,7 @@ country_event = {
 			}
 			modifier = {
 				factor = 75
-				16 = { NOT = { is_controlled_by = FRA } } #Paris	
+				844 = { NOT = { is_controlled_by = FRA } } #Paris	
 			}
 		} 
 		JAP = {
@@ -366,7 +366,7 @@ country_event = {
 
 	option = { # Agree
 		name = france.14.a
-		
+		FRA = { set_country_flag = french_armistice }
 		ai_chance = {
 			factor = 100
 		}
@@ -531,7 +531,7 @@ country_event = {
 				}
 			}
 			#FRA = { country_event = { id = france.65 } }
-			set_country_flag = french_armistice
+			
 			FRA = { news_event = { id = france.20 days = 1 } }
 		}
 		
@@ -649,7 +649,7 @@ country_event = {
 
 	trigger = {
 		TAG = FRA
-		16 = { controller = { NOT = { tag = FRA } } }
+		844 = { controller = { NOT = { tag = FRA } } }
 		#16 = { is_owned_by = FRA }
 	}
 	
