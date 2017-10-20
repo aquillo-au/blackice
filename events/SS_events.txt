@@ -3,7 +3,7 @@
 ###########################
 add_namespace = ss_event
 ###########################
-# LSSAH Starting OOB player
+# LSSAH Starting OOB player WachBtl
 country_event = {
 	id = ss_event.665
 	title = ss_event.665.t
@@ -283,9 +283,9 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_army_experience < 11
+					has_army_experience < 21
 				}
-				army_experience = 10
+				army_experience = 20
 			}
 
 			set_country_flag = LSSAH_regiment_40_brig
@@ -353,7 +353,6 @@ country_event = {
 				# Use army XP to upgrade
 				army_experience = 43
 			}
-
 			set_country_flag = LSSAH_brig_42_div
 		}
 	}
@@ -388,8 +387,15 @@ country_event = {
 				}
 				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
 			}
+			if = {
+				limit = { 
+					NOT = { has_tech = mechanised_infantry2 }
+				}
+				set_technology = { mechanised_infantry2 = 1 }
+			}
 			add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 50 producer = GER }
 			add_equipment_to_stockpile = { type = panzer_vi_equipment_2 amount = 12 producer = GER }
+			add_equipment_to_stockpile = { type = mechanized_equipment_2 amount = 100 producer = GER }
 			load_oob = "GER_LSSAH_pzgrendiv_42"
 			set_country_flag = LSSAH_pzgren_div_42_ai
 		}
@@ -1429,12 +1435,11 @@ country_event = {
 		OR = {
 			AND = {
 				has_country_flag = ahistorical_ss
-				date > 1940.1.1
-				}
-			
+				date > 1939.1.1
+			}
 			AND = {
 				has_country_flag = SS_Start
-				date > 1943.6.1
+				date > 1940.6.1
 			}
 		}
 	}
@@ -1452,14 +1457,13 @@ country_event = {
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_iii = 1 }
 		}
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
 	}
 	option = {
 		name = ss_event.681.b
 		set_country_flag = hiddentech_ss_panzer_iii
 		trigger = {
 			has_country_flag = SS_Start
-			date > 1940.7.31
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_iii = 1 }
@@ -1480,15 +1484,14 @@ country_event = {
 		original_tag = GER
 		has_tech = tech_panzer_iv_equipment_1
 		not = { has_country_flag = hiddentech_ss_panzer_iv }
-		or = {
-		and = {
-			has_country_flag = ahistorical_ss
-			date > 1940.1.1
+		OR = {
+			AND = {
+				has_country_flag = ahistorical_ss
+				date > 1939.2.1
 			}
-		
-		and = {
-			has_country_flag = SS_Start
-			date > 1943.6.1
+			AND = {
+				has_country_flag = SS_Start
+				date > 1941.6.1
 			}
 		}
 	}
@@ -1507,14 +1510,13 @@ country_event = {
 			set_technology = { hiddentech_ss_panzer_iv = 1 }
 			
 		}
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
 	}
 	option = {
 		name = ss_event.682.b
 		set_country_flag = hiddentech_ss_panzer_iv
 		trigger = {
 			has_country_flag = SS_Start
-			date > 1943.6.1
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_iv = 1 }
@@ -1535,15 +1537,14 @@ country_event = {
 		original_tag = GER
 		has_tech = tech_panzer_v_equipment_1
 		not = { has_country_flag = hiddentech_ss_panzer_v }
-		or = {
-			and = {
-			has_country_flag = ahistorical_ss
-			date > 1940.7.31
-		}
-		
-		and = {
-			has_country_flag = SS_Start
-			date > 1943.6.1
+		OR = {
+			AND = {
+				has_country_flag = ahistorical_ss
+				date > 1939.3.1
+			}
+			AND = {
+				has_country_flag = SS_Start
+				date > 1942.6.1
 			}
 		}
 	}
@@ -1561,19 +1562,18 @@ country_event = {
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_v = 1 }
 		}
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 0 }
 	}
 	option = {
 		name = ss_event.683.b
 		set_country_flag = hiddentech_ss_panzer_v
 		trigger = {
 			has_country_flag = SS_Start
-			date > 1943.6.1
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_v = 1 }
 		}
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 	}
 }
 country_event = {
@@ -1693,7 +1693,7 @@ country_event = {
 			load_oob = "GER_SS_Danzig"	# Danzig Heimwehr
 		}
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 	}
 	option = {
 		name = ss_event.686.b
@@ -1773,7 +1773,10 @@ country_event = {
 		not = { has_country_flag = hiddentech_ss_panzer_vi }
 		or = {
 			has_country_flag = ahistorical_ss
-			date > 1942.9.1
+			AND = { 
+				date > 1943.1.1
+				has_country_flag = SS_Start
+			}
 		}
 	}
 	
@@ -1790,19 +1793,18 @@ country_event = {
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_vi = 1 }
 		}
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 0 }
 	}
 	option = {
 		name = ss_event.688.b
 		set_country_flag = hiddentech_ss_panzer_vi
 		trigger = {
 			has_country_flag = SS_Start
-			date > 1943.1.1
 		}
 		hidden_effect = {
 			set_technology = { hiddentech_ss_panzer_vi = 1 }
 		}
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 	}
 }
 #SS Standarte 'Der Führer' 1938_3.1 in Vienna
@@ -1878,10 +1880,13 @@ country_event = {
 		has_tech = subtech_panzer_iii_td_equipment_1
 		not = { has_country_flag = ss_panzer_iii_td_flag }
 		OR = {
+			AND = {
+				has_country_flag = SS_Start
+				date > 1940.1.1
+			}
+			
 			has_country_flag = ahistorical_ss
-			has_country_flag = SS_Start
 		}
-		date > 1940.1.1
 	}
 	
 	mean_time_to_happen = {
@@ -1918,11 +1923,65 @@ country_event = {
 	
 	option = {
 		name = ss_event.692.a
-				
+		
 		hidden_effect = {
 			set_technology = { GER_defence_ss = 1 }
 		}
+	}
+}
+country_event = {
+	id = ss_event.693
+	title = ss_event.693.t
+	desc = ss_event.693.d
+	picture = GFX_event_ger_ss_panzer_iii
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		date > 1940.1.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.693.a
 		
+		hidden_effect = {
+			set_technology = { ss_mechinfantry_tech = 1 }
+		}
+	}
+}
+country_event = {
+	id = ss_event.694
+	title = ss_event.694.t
+	desc = ss_event.694.d
+	picture = GFX_event_ger_panzerjagd_lt
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		date > 1938.1.1
+		OR = {
+			has_country_flag = SS_start
+			has_country_flag = ahistorical_ss
+		}
+		has_tech = subtech_light_panzer_td_equipment_1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.694.a
+		
+		hidden_effect = {
+			set_technology = { ss_light_panzer_td_tech = 1 }
+		}
 	}
 }
 ## EOF ##

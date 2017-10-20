@@ -2931,6 +2931,18 @@ technologies = {
 			mechanized
 		}
 		
+		on_research_complete = {
+			if = {
+				limit = {
+					tag = GER
+					has_tech = mechanised_infantry
+				}
+				hidden_effect = {
+					set_technology = { ss_mechinfantry_tech = 1 }
+				}
+			}
+		}
+		
 		path = {
 			leads_to_tech = mechanised_infantry2
 			research_cost_coeff = 1
@@ -2957,18 +2969,6 @@ technologies = {
 
 		enable_equipments = {
 			mechanized_equipment_2
-		}
-		
-		on_research_complete = {
-			if = {
-				limit = {
-					tag = GER
-					has_tech = mechanised_infantry2
-				}
-				hidden_effect = {
-					set_technology = { ss_mechinfantry_tech = 1 }
-				}
-			}
 		}
 		
 		path = {

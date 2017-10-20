@@ -119,9 +119,7 @@ technologies = {
 		}
 	}
 	ss_mechinfantry_tech = {
-		dependencies = {
-			mechanised_infantry2 = 1
-		}
+		
 		enable_subunits = {
 			ss_mechanized
 		}
@@ -168,6 +166,14 @@ technologies = {
 			ss_artillery_medium_mot
 		}
 	}
+	ss_artillery_heavy_tech = {
+		dependencies = {
+			interwar_Hvartillery = 1
+		}
+		enable_subunits = {
+			ss_artillery_heavy
+		}
+	}
 	ss_infantry_uniforms_tech = {
 		
 		enable_equipments = {
@@ -193,9 +199,27 @@ technologies = {
 		}
 	}
 	hiddentech_ss_panzer_i = {
-	
+		
 		enable_subunits = {
 			ss_panzer_i
+		}
+	}
+	ss_light_panzer_td_tech = {
+
+		enable_subunits = {
+			ss_light_panzer_td
+		}
+	}
+	ss_light_assault_panzer_tech = {
+
+		enable_subunits = {
+			ss_light_assault_panzer
+		}
+	}
+	ss_panzer_spaa_tech = {
+
+		enable_subunits = {
+			ss_panzer_spaa
 		}
 	}
 	hiddentech_ss_panzer_ii = {
@@ -215,7 +239,7 @@ technologies = {
 			subtech_panzer_iii_td_equipment_1 = 1
 		}
 		enable_subunits = {
-			ss_panzer_iii_td
+			ss_panzer_iii_td ## Stug IIIa
 		}
 	}
 	ss_assault_panzer_tech = {
