@@ -9,7 +9,10 @@
 #Name is how you refer to the rule in adjecencies.csv
 
 #Suez Canal
-adjacency_rule = {
+adjacency_rule
+{
+	name = "SUEZ_CANAL"
+
 	contested = {
 		army = no
 		navy = no
@@ -39,11 +42,13 @@ adjacency_rule = {
 	
 	icon = 12049
 	offset = { 1 0 -6 }
-
-	name = "SUEZ_CANAL"
 }
+
 #Gibraltar Strait
-adjacency_rule = {
+adjacency_rule
+{
+	name = "GIBRALTAR_STRAIT"
+
 	contested = {
 		army = no
 		navy = no
@@ -73,11 +78,13 @@ adjacency_rule = {
 	
 	icon = 5407	
 	offset = { -31.0 0.0 -2.0 }
-	
-	name = "GIBRALTAR_STRAIT"
 }
+
 #Øresund - (Østersøen <-> Kattegat/Skagerak/Nordsøen)
-adjacency_rule = {
+adjacency_rule
+{
+	name = "DANISH_BELTS_STRAIT"
+
 	contested = {
 		army = no
 		navy = no
@@ -107,11 +114,12 @@ adjacency_rule = {
 	
 	icon = 2455
 	offset = { -26 0 -13 }
-
-	name = "DANISH_BELTS_STRAIT"
 }
 #Panama Canal
-adjacency_rule = {
+adjacency_rule
+{
+	name = "PANAMA_CANAL"
+
 	contested = {
 		army = no
 		navy = no
@@ -141,11 +149,12 @@ adjacency_rule = {
 	
 	icon = 7617
 	offset = { -3 0 -2 }
-
-	name = "PANAMA_CANAL"
 }
 #Turkish Straits
-adjacency_rule = {
+adjacency_rule
+{
+	name = "BOSPHORUS_STRAIT"
+
 	contested = {
 		army = no
 		navy = no
@@ -175,18 +184,20 @@ adjacency_rule = {
 	
 	icon = 9833
 	offset = { -2 0 -9 }
-
-	name = "BOSPHORUS_STRAIT"
 }
+
 #Kiel Canal
-adjacency_rule = {
-	contested = {
+adjacency_rule
+{
+	name = "KIEL_CANAL"
+
+	contested =	{
 		army = no
 		navy = no
 		submarine = no
 		trade = no
 	}
-	enemy = {
+	enemy =	{
 		army = no
 		navy = no
 		submarine = no
@@ -209,11 +220,47 @@ adjacency_rule = {
 	
 	icon = 11366
 	offset = { 5 0 -6 }
-
-	name = "KIEL_CANAL"
 }
-#Dover Strait - 34 km
-adjacency_rule = {
+#Dover Strait
+adjacency_rule
+{
+	name = "DOVER_STRAIT"
+
+	contested =	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy =	{
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend = {
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral = {
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 11548 3501 }
+	
+	icon = 3501
+	offset = { 5 0 -6 }
+}
+#North Channel/Strait of Moyle (Scotland to Ireland) - 21km
+adjacency_rule
+{
+	name = "MOYLE_STRAIT"
+	
 	contested = {
 		army = no
 		navy = no
@@ -239,15 +286,51 @@ adjacency_rule = {
 		trade = yes
 	}
 	
-	required_provinces = { 3501 11548 }
+	required_provinces = { 6062 3178 }
 	
-	icon = 8450	
-	offset = { 10 0 7 }
+	icon = 3590
+	offset = { 5 0 9 }
+}
+#Irish Sea - 21km
+adjacency_rule
+{
+	name = "IRISH_SEA"
 	
-	name = "DOVER_STRAIT"
+	contested = {
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy = {
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend = {
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral = {
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 11293 6363 }
+	
+	icon = 3990
+	offset = { -13 0 9 }
 }
 #Kerch Strait (east Crimea) - 3.1 km
-adjacency_rule = {
+adjacency_rule
+{
+	name = "KERCH_STRAIT"
+	
 	contested = {
 		army = no
 		navy = no
@@ -277,45 +360,12 @@ adjacency_rule = {
 	
 	icon = 8282
 	offset = { -2 0 -18 }
-	
-	name = "KERCH_STRAIT"
-}
-#North Channel/Strait of Moyle (Scotland to Ireland) - 21km
-adjacency_rule = {
-	contested = {
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = no
-	}
-	enemy = {
-		army = no
-		navy = no
-		submarine = yes
-		trade = no
-	}
-	friend = {
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	neutral = {
-		army = yes
-		navy = yes
-		submarine = yes
-		trade = yes
-	}
-	
-	required_provinces = { 3379 6350 }
-	
-	icon = 8340
-	offset = { -13 0 18 }
-	
-	name = "MOYLE_STRAIT"
 }
 #CapeTown
-adjacency_rule = {
+adjacency_rule
+{
+	name = "CAPETOWN_STRAIT"
+	
 	contested = {
 		army =no
 		navy = no
@@ -343,13 +393,14 @@ adjacency_rule = {
 	
 	required_provinces = { 12589 }
 	
-	icon = 12589
+	icon = 2495
 	offset = { -10 0 18 }
-	
-	name = "CapeTown_STRAIT"
 }
 #Falkands
-adjacency_rule = {
+adjacency_rule
+{
+	name = "FALKLANDS_STRAIT"
+	
 	contested = {
 		army =no
 		navy = no
@@ -377,8 +428,8 @@ adjacency_rule = {
 	
 	required_provinces = { 12960 }
 	
-	icon = 12960
+	icon = 5854
 	offset = { 13 0 14 }
 	
-	name = "Falklands_STRAIT"
+	
 }

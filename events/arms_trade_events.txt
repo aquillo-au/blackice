@@ -133,69 +133,67 @@ country_event = {
             is_ai = no
 			NOT = { has_idea = Arms_Shipment_Sent }
 			NOT = { has_idea = Arms_Shipment_New_Deal }
-			
             has_government = fascism
-			
             has_equipment = {
-            infantry_equipment > 5000
+				infantry_equipment > 5000
             }
         }
-		JAP = { has_equipment = {
-                    infantry_equipment < 200
-                }
+		JAP = {
+			has_equipment = {
+                infantry_equipment < 200
+            }
 		}
 		NOT = { has_war_with = JAP } 
 		JAP = { NOT = { has_idea = Arms_Shipment } }
-     }
+    }
+	
     mean_time_to_happen = {
         days = 2
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
 				tag = ROOT
                 has_government = fascism
-               
                 NOT = { has_war_with = JAP } 
-                }
+            }
      
 			random_list = {
 				80 = { 
-				 send_equipment = {
-					target = JAP			
-					type = infantry_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = JAP			
+						type = infantry_equipment
+						amount = 500
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = JAP			
-					type = infantry_equipment
-					amount = 1000
-                }     
+					send_equipment = {
+						target = JAP			
+						type = infantry_equipment
+						amount = 1000
+					}     
 				}
-              }
+            }
+		}
     }
-    }
-        option = {
+    option = {
         name = lend_lease.1.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		JAP = {
 			country_event = { days = 2 id = human_lend_lease.101 }
 		}
-        }
-		 option = {
+    }
+	option = {
         name = lend_lease.1.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id = human_lend_lease.101
@@ -208,10 +206,10 @@ country_event = {
 	option = {
         name = lend_lease.101.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+    }
 }
 ###################################
 country_event = {
@@ -232,9 +230,10 @@ country_event = {
 				artillery_equipment > 1000
             }
         }
-		JAP = { has_equipment = {
-                    artillery_equipment < 50
-                }
+		JAP = {
+			has_equipment = {
+                artillery_equipment < 50
+            }
 		}
 		
 		JAP = { NOT = { has_idea = Arms_Shipment } }
@@ -244,49 +243,48 @@ country_event = {
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
                 has_government = fascism
                
                 NOT = { has_war_with = JAP } 
-                }
+            }
      
             random_list = {
 				80 = { 
-				 send_equipment = {
-					target = JAP			
-					type = artillery_equipment
-					amount = 300
-                }     
+					send_equipment = {
+						target = JAP			
+						type = artillery_equipment
+						amount = 300
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = JAP			
-					type = artillery_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = JAP			
+						type = artillery_equipment
+						amount = 500
+					}     
 				}
-              }
+            }
+		}
     }
-    }
-        option = {
+    option = {
         name = lend_lease.2.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		JAP = {
 			country_event = { days = 2 id = lend_lease.102 }
 		}
-        }
-		option = {
+    }
+	option = {
         name = lend_lease.2.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id =lend_lease.102
@@ -299,10 +297,10 @@ country_event = {
 	option = {
         name = lend_lease.102.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+    }
 }
 country_event = {
     id =human_lend_lease.2
@@ -322,9 +320,10 @@ country_event = {
 				artillery_equipment > 1000
             }
         }
-		JAP = { has_equipment = {
-                    artillery_equipment < 50
-                }
+		JAP = {
+			has_equipment = {
+                artillery_equipment < 50
+            }
 		}
 		
 		JAP = { NOT = { has_idea = Arms_Shipment } }
@@ -334,50 +333,48 @@ country_event = {
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
 				tag = ROOT
                 has_government = fascism
-               
                 NOT = { has_war_with = JAP } 
-                }
+			}
      
-             random_list = {
+            random_list = {
 				80 = { 
-				 send_equipment = {
-					target = JAP			
-					type = artillery_equipment
-					amount = 300
-                }     
+					send_equipment = {
+						target = JAP			
+						type = artillery_equipment
+						amount = 300
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = JAP			
-					type = artillery_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = JAP			
+						type = artillery_equipment
+						amount = 500
+					}     
 				}
-              }
+            }
+		}
     }
-    }
-        option = {
+    option = {
         name = lend_lease.2.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		JAP = {
 			country_event = { days = 2 id = human_lend_lease.102 }
 		}
-        }
-		option = {
+    }
+	option = {
         name = lend_lease.2.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id =human_lend_lease.102
@@ -390,10 +387,10 @@ country_event = {
 	option = {
         name = lend_lease.102.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+    }
 }
 ########################################
 country_event = {
@@ -505,62 +502,62 @@ country_event = {
 				motorized_AC_equipment > 1000
             }
         }
-		JAP = { has_equipment = {
-                    motorized_AC_equipment < 50
-                }
+		JAP = {
+			has_equipment = {
+                motorized_AC_equipment < 50
+            }
 		}
 		
 		JAP = { NOT = { has_idea = Arms_Shipment } }
-    } 
+    }
+	
     mean_time_to_happen = {
         days = 2
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
 				tag = ROOT
                 has_government = fascism
-               
                 NOT = { has_war_with = JAP } 
-                }
+            }
      
             random_list = {
 				80 = { 
-				 send_equipment = {
-					target = JAP			
-					type = motorized_AC_equipment
-					amount = 300
-                }     
+					send_equipment = {
+						target = JAP			
+						type = motorized_AC_equipment
+						amount = 300
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = JAP			
-					type = motorized_AC_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = JAP			
+						type = motorized_AC_equipment
+						amount = 500
+					}     
 				}
-              }
+			}
+		}
     }
-    }
-        option = {
+    option = {
         name = lend_lease.3.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		JAP = {
 			country_event = { days = 2 id = human_lend_lease.103 }
 		}
-        }
-		 option = {
+    }
+	option = {
         name = lend_lease.3.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id =human_lend_lease.103
@@ -573,10 +570,10 @@ country_event = {
 	option = {
         name = lend_lease.103.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+    }
 }
 ###################################################
 country_event = {
@@ -687,62 +684,62 @@ country_event = {
 				recon_mot_equipment > 1000
             }
         }
-		JAP = { has_equipment = {
-                    recon_mot_equipment < 50
-                }
+		JAP = {
+			has_equipment = {
+                recon_mot_equipment < 50
+            }
 		}
 		
 		JAP = { NOT = { has_idea = Arms_Shipment } }
-    } 
+    }
+	
     mean_time_to_happen = {
         days = 2
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
 				tag = ROOT
                 has_government = fascism
-               
                 NOT = { has_war_with = JAP } 
-                }
+            }
      
-           random_list = {
+			random_list = {
 				80 = { 
-				 send_equipment = {
-					target = JAP			
-					type = recon_mot_equipment
-					amount = 300
-                }     
+					send_equipment = {
+						target = JAP			
+						type = recon_mot_equipment
+						amount = 300
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = JAP			
-					type = recon_mot_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = JAP			
+						type = recon_mot_equipment
+						amount = 500
+					}     
 				}
-              }
+            }
+		}
     }
-    }
-        option = {
+    option = {
         name = lend_lease.4.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		JAP = {
 			country_event = { days = 2 id = human_lend_lease.104 }
 		}
-        }
-		 option = {
+    }
+	option = {
         name = lend_lease.4.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id =human_lend_lease.104
@@ -755,10 +752,10 @@ country_event = {
 	option = {
         name = lend_lease.104.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+    }
 }
 #######################################################
 ################## GERMANY ###########################
@@ -868,69 +865,67 @@ country_event = {
             is_ai = no
 			NOT = { has_idea = Arms_Shipment_Sent }
 			NOT = { has_idea = Arms_Shipment_New_Deal }
-			
             has_government = fascism
-			
             has_equipment = {
-            infantry_equipment > 5000
+				infantry_equipment > 5000
             }
         }
-		GER = { has_equipment = {
-                    infantry_equipment < 200
-                }
+		GER = {
+			has_equipment = {
+                infantry_equipment < 200
+            }
 		}
 		NOT = { has_war_with = GER } 
 		GER = { NOT = { has_idea = Arms_Shipment } }
-     }
+    }
+	
     mean_time_to_happen = {
         days = 2
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
 				tag = ROOT
                 has_government = fascism
-               
                 NOT = { has_war_with = GER } 
-                }
+            }
      
-           random_list = {
+			random_list = {
 				80 = { 
-				 send_equipment = {
-					target = GER			
-					type = infantry_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = GER			
+						type = infantry_equipment
+						amount = 500
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = GER			
-					type = infantry_equipment
-					amount = 1000
-                }     
+					send_equipment = {
+						target = GER			
+						type = infantry_equipment
+						amount = 1000
+					}     
 				}
-              }
+			}
+		}
     }
-    }
-        option = {
+	option = {
         name = lend_lease.10.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		GER = {
 			country_event = { days = 2 id = human_lend_lease.100 }
 		}
-        }
-		 option = {
+    }
+	option = {
         name = lend_lease.10.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id = human_lend_lease.100
@@ -943,10 +938,10 @@ country_event = {
 	option = {
         name = lend_lease.100.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+    }
 }
 ###################################
 country_event = {
@@ -964,64 +959,64 @@ country_event = {
 			NOT = { has_idea = Arms_Shipment_New_Deal }
             has_government = fascism
             has_equipment = {
-            artillery_equipment > 1000
-            }
-        }
-		GER = { has_equipment = {
-                    artillery_equipment < 50
-                }
+				artillery_equipment > 1000
+			}
+		}
+		GER = {
+			has_equipment = {
+				artillery_equipment < 50
+			}
+		}
+	
+		GER = { NOT = { has_idea = Arms_Shipment } }
     }
 	
-	 GER = { NOT = { has_idea = Arms_Shipment } }
-    } 
     mean_time_to_happen = {
         days = 2
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
                 has_government = fascism
-               
                 NOT = { has_war_with = GER } 
-                }
+            }
      
-           random_list = {
+			random_list = {
 				80 = { 
-				 send_equipment = {
-					target = GER			
-					type = artillery_equipment
-					amount = 300
-                }     
+					send_equipment = {
+						target = GER			
+						type = artillery_equipment
+						amount = 300
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = GER			
-					type = artillery_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = GER			
+						type = artillery_equipment
+						amount = 500
+					}     
 				}
-              }
+            }
+		}
     }
-    }
-        option = {
+    option = {
         name = lend_lease.11.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		GER = {
 			country_event = { days = 2 id = lend_lease.111 }
 		}
-        }
-		 option = {
+    }
+	option = {
         name = lend_lease.11.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+	}
 }
 country_event = {
 	id =lend_lease.111
@@ -1034,10 +1029,10 @@ country_event = {
 	option = {
         name = lend_lease.111.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+	}
 }
 country_event = {
     id =human_lend_lease.11
@@ -1057,9 +1052,10 @@ country_event = {
 				artillery_equipment > 1000
             }
         }
-		GER = { has_equipment = {
-                    artillery_equipment < 50
-                }
+		GER = {
+			has_equipment = {
+                artillery_equipment < 50
+            }
 		}
 		
 		GER = { NOT = { has_idea = Arms_Shipment } }
@@ -1069,50 +1065,48 @@ country_event = {
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
 				tag = ROOT
                 has_government = fascism
-               
                 NOT = { has_war_with = GER } 
-                }
+            }
      
-           random_list = {
+			random_list = {
 				80 = { 
-				 send_equipment = {
-					target = GER			
-					type = artillery_equipment
-					amount = 300
-                }     
+					send_equipment = {
+						target = GER			
+						type = artillery_equipment
+						amount = 300
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = GER			
-					type = artillery_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = GER			
+						type = artillery_equipment
+						amount = 500
+					}     
 				}
-              }
+			}
+		}
     }
-    }
-        option = {
+    option = {
         name = lend_lease.11.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		GER = {
 			country_event = { days = 2 id = human_lend_lease.111 }
 		}
-        }
-		option = {
+    }
+	option = {
         name = lend_lease.11.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id =human_lend_lease.111
@@ -1125,12 +1119,11 @@ country_event = {
 	option = {
         name = lend_lease.111.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+    }
 }
-
 ########################################
 ##################### ROMANIA #################################
 country_event = {
@@ -1237,69 +1230,67 @@ country_event = {
             is_ai = no
 			NOT = { has_idea = Arms_Shipment_Sent }
 			NOT = { has_idea = Arms_Shipment_New_Deal }
-			
             has_government = fascism
-			
             has_equipment = {
-            infantry_equipment > 5000
+				infantry_equipment > 5000
             }
         }
-		ROM = { has_equipment = {
-                    infantry_equipment < 200
-                }
+		ROM = {
+			has_equipment = {
+                infantry_equipment < 200
+            }
 		}
 		NOT = { has_war_with = ROM } 
 		ROM = { NOT = { has_idea = Arms_Shipment } }
-     }
+	}
+	
     mean_time_to_happen = {
         days = 2
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
 				tag = ROOT
                 has_government = fascism
-               
                 NOT = { has_war_with = ROM } 
-                }
+            }
      
             random_list = {
 				80 = { 
-				 send_equipment = {
-					target = ROM			
-					type = infantry_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = ROM			
+						type = infantry_equipment
+						amount = 500
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = ROM		
-					type = infantry_equipment
-					amount = 1000
-                }     
+					send_equipment = {
+						target = ROM		
+						type = infantry_equipment
+						amount = 1000
+					}     
 				}
-              }
+            }
+		}
     }
-    }
-        option = {
+    option = {
         name = lend_lease.20.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		ROM = {
 			country_event = { days = 2 id = human_lend_lease.200 }
 		}
-        }
-		 option = {
+    }
+	option = {
         name = lend_lease.20.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id = human_lend_lease.200
@@ -1312,10 +1303,10 @@ country_event = {
 	option = {
         name = lend_lease.200.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+    }
 }
 ###################################
 country_event = {
@@ -7150,67 +7141,65 @@ country_event = {
             is_ai = yes
 			NOT = { has_idea = Arms_Shipment_Sent }
 			NOT = { has_idea = Arms_Shipment_New_Deal }
-			
-             has_government = fascism
-			
+            has_government = fascism
             has_equipment = {
-           motorized_equipment > 5000 	
+				motorized_equipment > 5000 	
             }
         }
-		ITA = { has_equipment = {
-                     motorized_equipment < 100
-                }
+		ITA = {
+			has_equipment = {
+                motorized_equipment < 100
+            }
+		}
+		
+		ITA = { NOT = { has_idea = Arms_Shipment } }
     }
-	ITA = { NOT = { has_idea = Arms_Shipment } }
-     }
     mean_time_to_happen = {
         days = 2
     }
  
     immediate = {
-            random_country = {
-                limit = {
-                 has_government = fascism
-               
+        random_country = {
+            limit = {
+                has_government = fascism
                 NOT = { has_war_with = ITA } 
-                }
+            }
      
-             random_list = {
+            random_list = {
 				80 = { 
-				 send_equipment = {
-					target = ITA			
-					type = motorized_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = ITA			
+						type = motorized_equipment
+						amount = 500
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = ITA			
-					type = motorized_equipment
-					amount = 1000
-                }     
+					send_equipment = {
+						target = ITA			
+						type = motorized_equipment
+						amount = 1000
+					}     
 				}
-              }
+            }
+		}
     }
-    }
-       option = {
+    option = {
         name = lend_lease.90.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		ITA = {
 			country_event = { days = 2 id = lend_lease.905 }
 		}
-        }
-		option = {
+    }
+	option = {
         name = lend_lease.90.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id =lend_lease.905
@@ -7248,61 +7237,62 @@ country_event = {
            motorized_equipment > 5000 	
             }
         }
-		ITA = { has_equipment = {
-                     motorized_equipment < 100
-                }
+		ITA = {
+			has_equipment = {
+                motorized_equipment < 100
+            }
+		}
+		
+		ITA = { NOT = { has_idea = Arms_Shipment } }
     }
-	ITA = { NOT = { has_idea = Arms_Shipment } }
-     }
+	
     mean_time_to_happen = {
         days = 2
     }
  
     immediate = {
-            random_country = {
-                limit = {
+        random_country = {
+            limit = {
 				tag = ROOT
-                 has_government = fascism
-               
+                has_government = fascism
                 NOT = { has_war_with = ITA } 
-                }
+            }
      
-             random_list = {
+            random_list = {
 				80 = { 
-				 send_equipment = {
-					target = ITA			
-					type = motorized_equipment
-					amount = 500
-                }     
+					send_equipment = {
+						target = ITA			
+						type = motorized_equipment
+						amount = 500
+					}     
 				}
 				20 = { 
-				 send_equipment = {
-					target = ITA			
-					type = motorized_equipment
-					amount = 1000
-                }     
+					send_equipment = {
+						target = ITA			
+						type = motorized_equipment
+						amount = 1000
+					}     
 				}
-              }
+            }
+		}
     }
-    }
-       option = {
+    option = {
         name = lend_lease.90.a
 		add_timed_idea = {
-				idea = Arms_Shipment_Sent
-				days = 90
-			}
+			idea = Arms_Shipment_Sent
+			days = 90
+		}
 		ITA = {
 			country_event = { days = 2 id = human_lend_lease.905 }
 		}
-        }
-		option = {
+    }
+	option = {
         name = lend_lease.90.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id =human_lend_lease.905
@@ -7315,10 +7305,10 @@ country_event = {
 	option = {
         name = lend_lease.905.a
 		add_timed_idea = {
-				idea = Arms_Shipment
-				days = 90
-			}
-        }
+			idea = Arms_Shipment
+			days = 90
+		}
+    }
 }
 ###########################################################################
 ####################### INDIA #########################################
