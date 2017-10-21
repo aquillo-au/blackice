@@ -386,11 +386,8 @@ country_event = {
 	
 	option = {
 		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				has_army_size = { size > 75 }
-			}
+			factor = 0
+		
 		}
 		name = italy.12.a
 		ITA = {
@@ -1000,22 +997,13 @@ country_event = {
 	option = {
 		name = italy.30.a
 		hidden_effect = {
-	if = {
-		limit = {
-			has_dlc = "Together for Victory"
-	}
-	set_autonomy = {
-		target = ETH
-		autonomous_state = autonomy_integrated_puppet
-				}
-	
-		else = {
-			puppet = ETH
 		
+		release = ETH
+			puppet = ETH
+				ETH = {load_oob = "ETH_puppet"}
 				}
 			}
-		}
-	}
+	
 }
 country_event = {
 	id = italy.31
