@@ -207,18 +207,13 @@ country_event = {
 		NOT = { has_war_with = ITA }
 		ITA = { NOT = { is_in_faction = yes } }
 		ITA = { is_ai = yes }
-		FRA = {
-		    is_in_faction_with = ENG
+		FRA = { is_in_faction_with = ENG }
 		    OR = {
-				844 = { NOT = { is_controlled_by = FRA } } #Paris	
-			   # surrender_progress > 0.7
-			    AND = {
-					is_historical_focus_on = yes
-					date > 1940.6.6
+				NOT = {FRA = { controls_state = 844 }}
+				date > 1940.6.6
 				}
-		    }
+		    
 		}# make sure that they join
-	}
 	
 	immediate = {
 		hidden_effect = {
