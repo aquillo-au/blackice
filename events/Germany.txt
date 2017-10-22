@@ -8911,6 +8911,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_country_flag = welle_one
+		42 = { is_demilitarized_zone = no }
 		not = { has_country_flag = GERinfdiv_III }
 		date > 1936.10.26 	#date = 1936.10.28
 	}
@@ -9947,6 +9948,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		not = { has_country_flag = mot_29 }
+		not = { has_country_flag = mot_29_no }
 		date > 1937.10.11
 	}
 	
@@ -9979,6 +9981,11 @@ country_event = {
 			set_country_flag = mot_29
 		}
 	}
+	option = {
+		name = germany.253.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_29_no
+	}
 }
 ### 2. Infanterie Division mot forming-date > 1937.10.12
 country_event = {
@@ -9992,6 +9999,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		not = { has_country_flag = mot_2 }
+		not = { has_country_flag = mot_2_no }
 		has_country_flag = mot_29
 		date > 1937.10.12
 	}
@@ -10016,6 +10024,11 @@ country_event = {
 			set_country_flag = mot_2
 		}
 	}
+	option = {
+		name = germany.254.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_2_no
+	}
 }
 ### 13. Infanterie Division mot forming-date>1937.10.12
 country_event = {
@@ -10029,6 +10042,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		not = { has_country_flag = mot_13 }
+		not = { has_country_flag = mot_13_no }
 		has_country_flag = mot_29
 		date > 1937.10.11
 	}
@@ -10053,6 +10067,11 @@ country_event = {
 			set_country_flag = mot_13
 		}
 	}
+	option = {
+		name = germany.255.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_13_no
+	}
 }
 ### 20. Infanterie Division mot date > 1937.10.11
 country_event = {
@@ -10067,6 +10086,7 @@ country_event = {
 		tag = GER
 		58 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_20 }
+		not = { has_country_flag = mot_20_no }
 		has_country_flag = mot_29
 		date > 1937.10.11
 	}
@@ -10091,8 +10111,13 @@ country_event = {
 			set_country_flag = mot_20
 		}
 	}
+	option = {
+		name = germany.256.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_20_no
+	}
 }
-
+#
 country_event = {
 	id = germany.257
 	title = germany.257.t
@@ -10194,6 +10219,7 @@ country_event = {
 		has_equipment = { anti_tank_equipment > 24 }
 		58 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_16 }
+		not = { has_country_flag = mot_16_no }
 		has_country_flag = mot_29
 		date > 1940.8.6
 	}
@@ -10204,12 +10230,24 @@ country_event = {
 	
 	option = {
 		name = germany.259.a
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
 		
+		set_country_flag = mot_16
+	}
+	option = {
+		name = germany.259.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_16_mot_Division"
 			set_country_flag = mot_16
 		}
+	}
+	option = {
+		name = germany.259.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_16_no
 	}
 }
 ### 25. Infanterie Division mot date >1941.3.15  #event 260
@@ -10226,6 +10264,7 @@ country_event = {
 		has_equipment = { anti_tank_equipment > 24 }
 		50 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_25 }
+		not = { has_country_flag = mot_25_no }
 		has_country_flag = mot_29
 		date > 1941.3.15
 	}
@@ -10236,12 +10275,24 @@ country_event = {
 	
 	option = {
 		name = germany.260.a
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
 		
+		set_country_flag = mot_25
+	}
+	option = {
+		name = germany.260.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_25_mot_Division"
 			set_country_flag = mot_25
 		}
+	}
+	option = {
+		name = germany.260.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_25_no
 	}
 }
 ### 3. Infanterie Division mot date >1940.10.27  #event 261
@@ -10258,6 +10309,7 @@ country_event = {
 		has_equipment = { anti_tank_equipment > 24 }
 		68 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_3 }
+		not = { has_country_flag = mot_3_no }
 		has_country_flag = mot_29
 		date > 1940.10.27
 	}
@@ -10268,20 +10320,206 @@ country_event = {
 	
 	option = {
 		name = germany.261.a
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
 		
+		set_country_flag = mot_3
+	}
+	option = {
+		name = germany.261.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_3_mot_Division"
 			set_country_flag = mot_3
 		}
 	}
+	option = {
+		name = germany.261.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_3_no
+	}
 }
 ### 10. Infanterie Division mot date >1941.5.1  #event 262
+country_event = {
+	id = germany.262
+	title = germany.262.t
+	desc = germany.262.d
+	picture = GFX_report_event_german_halftrack_with_arty_in_city
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_equipment = { anti_tank_equipment > 24 }
+		53 = { is_controlled_by = GER }
+		not = { has_country_flag = mot_10 }
+		not = { has_country_flag = mot_10_no }
+		has_country_flag = mot_29
+		date > 1941.5.1
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.262.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		
+		set_country_flag = mot_10
+	}
+	option = {
+		name = germany.262.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_10_mot_Division"
+			set_country_flag = mot_10
+		}
+	}
+	option = {
+		name = germany.262.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_10_no
+	}
+}
 ### 14. Infanterie Division mot  date >1940.10.15  #event 263
+country_event = {
+	id = germany.263
+	title = germany.263.t
+	desc = germany.263.d
+	picture = GFX_report_event_german_halftrack_with_arty_in_city
 
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_equipment = { anti_tank_equipment > 24 }
+		65 = { is_controlled_by = GER }
+		not = { has_country_flag = mot_14 }
+		not = { has_country_flag = mot_14_no }
+		has_country_flag = mot_29
+		date > 1940.10.1
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.263.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		
+		set_country_flag = mot_14
+	}
+	option = {
+		name = germany.263.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_14_mot_Division"
+			set_country_flag = mot_14
+		}
+	}
+	option = {
+		name = germany.263.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_14_no
+	}
+}
 ### 18. Infanterie Division mot date >1940.11.1  #event 264
-### 36. Infanterie Division mot date >1940.11.1 #event 265
+country_event = {
+	id = germany.264
+	title = germany.264.t
+	desc = germany.264.d
+	picture = GFX_report_event_german_halftrack_with_arty_in_city
 
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_equipment = { anti_tank_equipment > 24 }
+		66 = { is_controlled_by = GER }
+		not = { has_country_flag = mot_18 }
+		not = { has_country_flag = mot_18_no }
+		has_country_flag = mot_29
+		date > 1940.11.1
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.264.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		
+		set_country_flag = mot_18
+	}
+	option = {
+		name = germany.264.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_18_mot_Division"
+			set_country_flag = mot_18
+		}
+	}
+	option = {
+		name = germany.264.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_18_no
+	}
+}
+### 36. Infanterie Division mot date >1940.11.1 #event 265
+country_event = {
+	id = germany.265
+	title = germany.265.t
+	desc = germany.265.d
+	picture = GFX_report_event_german_halftrack_with_arty_in_city
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_equipment = { anti_tank_equipment > 24 }
+		42 = { is_controlled_by = GER }
+		not = { has_country_flag = mot_36 }
+		not = { has_country_flag = mot_36_no }
+		has_country_flag = mot_29
+		date > 1940.11.1
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.265.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		
+		set_country_flag = mot_36
+	}
+	option = {
+		name = germany.265.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_36_mot_Division"
+			set_country_flag = mot_36
+		}
+	}
+	option = {
+		name = germany.265.c
+		ai_chance = { factor = 0 }
+		set_country_flag = mot_36_no
+	}
+}
 ########################################################################
 ########### Tank destroyer conversions ################################
 ###### Pz 1 >  Pzj1
