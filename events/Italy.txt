@@ -1000,7 +1000,8 @@ country_event = {
 		
 		release = ETH
 			puppet = ETH
-				ETH = {load_oob = "ETH_puppet"}
+				#ETH = {load_oob = "ETH_puppet"}
+				
 				}
 			}
 	
@@ -1061,6 +1062,21 @@ country_event = {
 		name = italy.32.a
 		hidden_effect = {
 				remove_ideas = ITA_warweary
+		}
+	}
+}
+country_event = {
+	id = italy.33
+	title = italy.33.t
+	desc = italy.33.desc
+	picture = GFX_report_event_mussolini_flag
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = italy.33.a
+		hidden_effect = {
+				GER = { remove_from_faction = ITA }
 		}
 	}
 }
