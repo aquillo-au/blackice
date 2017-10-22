@@ -12527,4 +12527,215 @@ country_event = {
 		set_country_flag = GERafrikakorpII
 	}
 }
+country_event = {
+    id = germany.407
+    title = germany.407.t
+    desc = germany.407.d
+    picture = GFX_report_event_kubelwagon_in_afrika
+
+    fire_only_once = yes
+    
+    trigger = {
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						tag = GER
+						is_ai = no
+					}
+					AND = {
+						tag = SOV
+						is_ai = no
+					}
+				}
+			}
+		}
+        is_in_faction_with = ITA
+        has_war = yes
+        is_puppet = no
+        has_country_flag = GERafrikakorp 
+        OR = {
+            ITA={ controls_state = 454 }
+            GER={ controls_state = 454 } # Germany controls isreal(palestine)
+        }
+    }
+    
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = germany.407.a #Why not Lebensraum
+        ai_chance = { factor = 75 }
+        
+        hidden_effect = {
+            add_manpower = -384078
+            454 = { add_core_of=GER }
+            454 = { remove_core_of=ISR }
+        }
+    }
+    option = {
+        name = germany.407.b        #No Lebensraum but we will occupy
+        ai_chance = { factor = 15 }
+        
+    }
+    option = {
+        name = germany.407.c        #A puppet Palestine Gov
+        ai_chance = { factor = 10 }
+		hidden_effect = {  
+			release = PAL
+			puppet = PAL
+			PAL = {
+				add_manpower = 384078
+			}
+			454 = { remove_core_of=ISR }
+		}
+    }
+}
+country_event = {
+    id = germany.408
+    title = germany.408.t
+    desc = germany.408.d
+    picture = GFX_report_event_kubelwagon_in_afrika
+   
+	fire_only_once = yes
+    
+	trigger = {
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						tag = GER
+						is_ai = no
+					}
+					AND = {
+						tag = SOV
+						is_ai = no
+					}
+				}
+			}
+		}
+        is_in_faction_with = ITA
+        has_war = yes
+        is_puppet = no
+        has_country_flag = GERafrikakorp 
+		GER = { has_war_with = SOV }
+		GER = { has_war_together_with = ITA }
+		OR ={
+			OR = {
+				ITA={ controls_state = 677 }
+				GER={ controls_state = 677 } # Germany controls Aleppo
+			}
+			OR = {
+				ITA={ controls_state = 680 }
+				GER={ controls_state = 680 } # Germany controls Delil-azur
+			}
+		}
+    }
+    
+    mean_time_to_happen = {
+        days = 1
+    }
+    
+    option = {
+        name = germany.408.a #Ask Turkey to join our faction
+        ai_chance = { factor = 50 }
+      
+		hidden_effect = {
+			TUR = {
+				country_event = { days = 1 id = turkey.101 }
+			}
+        }
+    }
+    option = {
+        name = germany.408.b        #Ask Turkey to became puppet
+        ai_chance = { factor = 40 }
+		
+        hidden_effect = {
+			TUR = {
+				country_event = { days = 1 id = turkey.102 }
+			}
+        }
+    }
+    option = {
+        name = germany.408.c        #Ask Turkey give us all anatolian territory 
+        ai_chance = { factor = 10 }   
+		
+		hidden_effect = {
+			TUR = {
+				country_event = { days = 1 id = turkey.103 }
+			}
+		}
+    }
+}
+country_event = {
+    id = germany.409
+    title = germany.409.t
+    desc = germany.409.d
+    picture = GFX_report_event_kubelwagon_in_afrika
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.409.a #They Deserve to die
+        ai_chance = { factor = 90 }
+        
+        hidden_effect = {
+           create_wargoal = { type = annex_everything target = TUR }
+        }
+    }
+    option = {
+        name = germany.409.b        #Will do nothing
+        ai_chance = { factor = 10 }
+    }
+}
+country_event = {
+    id = germany.410
+    title = germany.410.t
+    desc = germany.410.d
+    picture = GFX_report_event_kubelwagon_in_afrika
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+    option = {
+        name = germany.410.a #They Deserve to die
+        ai_chance = { factor = 90 }
+        
+        hidden_effect = {
+           create_wargoal = { type = annex_everything target = TUR }
+        }
+    }
+    option = {
+        name = germany.410.b        #Will do nothing
+        ai_chance = { factor = 10 }
+    }
+}
+country_event = {
+    id = germany.411
+    title = germany.411.t
+    desc = germany.411.d
+    picture = GFX_report_event_kubelwagon_in_afrika
+
+    fire_only_once = yes
+	is_triggered_only = yes
+    trigger = {
+		tag = GER
+	}
+    option = {
+        name = germany.411.a #They Deserve to die
+        ai_chance = { factor = 90 }
+        
+        hidden_effect = {
+           create_wargoal = { type = annex_everything target = TUR }
+        }
+    }
+    option = {
+        name = germany.411.b        #Will do nothing
+        ai_chance = { factor = 10 }
+    }
+}
 ### EOF ###
