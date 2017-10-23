@@ -984,8 +984,6 @@ country_event = {
 	
 	trigger = {
 		tag = ITA
-		
-		is_ai = yes
 		controls_state = 271
 		not = {has_war_with = ETH}
 		
@@ -996,15 +994,48 @@ country_event = {
 	
 	option = {
 		name = italy.30.a
+		ai_chance = { factor = 100 }
 		hidden_effect = {
 		
 		release = ETH
 			puppet = ETH
-				#ETH = {load_oob = "ETH_puppet"}
+				ETH = {load_oob = "ETH_puppet"}
+				ETH = { set_cosmetic_tag = ETH_IEA }
+				ETH = {
+				if = {
+				limit = { 
+					ITA = { 
+						controls_state = 550
+						
+				}
+				}
+					
+						transfer_state = 550
+						
+						550 = { add_core_of = ETH}
+					}
+					
+					if = {
+				limit = { 
+					ITA = { 
+						controls_state = 559
+						
+				}
+				}
+					
+						transfer_state = 559
+						
+						559 = { add_core_of = ETH}
 				
+				
+						}
+					}
 				}
 			}
-	
+	option = {
+		name = italy.30.b
+		ai_chance = { factor = 0 }
+			}
 }
 country_event = {
 	id = italy.31
