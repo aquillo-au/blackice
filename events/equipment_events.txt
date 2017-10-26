@@ -1695,16 +1695,18 @@ country_event = {
 	id = equipment.106
 	title = equipment.106.t
 	desc = equipment.106.desc
-	
 	picture = GFX_report_event_ft_17_gfxaddon
+	hidden = yes
+	
 	fire_only_once = yes
 	
 	trigger = {
 		
 		tag = GER
 		or = {
-		has_war = yes
-		GER = { has_country_flag = AUS_annexed } }
+			has_war = yes
+			GER = { has_country_flag = AUS_annexed }
+		}
 		
 	}
 	
@@ -1716,7 +1718,6 @@ country_event = {
 		name = equipment.106.a
 			hidden_effect = {
 			set_technology = {GER_captured_armor_unlock_tech =  1 }
-			
 		}
 	}
 }
