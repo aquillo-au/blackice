@@ -6957,9 +6957,8 @@ country_event = {
 	option = {
 		name = germany.95.a
 		create_wargoal = {
-			type = take_state_focus
+			type = annex_everything
 			target = YUG
-			generator = { 102 }
 		}
 		hidden_effect = {
 			news_event = { id = news.166 hours = 6 }
@@ -6979,10 +6978,9 @@ country_event = {
 	option = {
 		name = germany.96.a
 		create_wargoal = {
-			type = take_state_focus
+			type = annex_everything
 			target = YUG
-			generator = { 102 }
-		}		
+		}
 		hidden_effect = {
 			news_event = { id = news.167 hours = 6 }		
 		}
@@ -7001,9 +6999,8 @@ country_event = {
 	option = {
 		name = germany.97.a
 		create_wargoal = {
-			type = take_state_focus
+			type = annex_everything
 			target = YUG
-			generator = { 102 }
 		}
 		hidden_effect = {
 			news_event = { id = news.165 hours = 6 }
@@ -9287,8 +9284,9 @@ country_event = {
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			set_technology = { desert_equipment = 1 }
-			set_technology = { HVantiair2 =  1 }
+
+
+		
 			load_oob = "GER_afrikakorps_ai"
 			set_country_flag = GERafrikakorp
 		}
@@ -9302,7 +9300,7 @@ country_event = {
 			GER = { has_tech = desert_equipment }
 			GER = { has_tech = HVantiair2 }
 		}
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
 		
 		hidden_effect = {
 			load_oob = "GER_afrikakorps"
@@ -12985,5 +12983,48 @@ country_event = {
         name = germany.411.b        #Will do nothing
         ai_chance = { factor = 10 }
     }
+}
+country_event = {
+    id = germany.412
+    title = germany.412.t
+    desc = germany.412.d
+    picture = GFX_report_event_kubelwagon_in_afrika
+
+    fire_only_once = yes
+	
+    trigger = {
+			tag = GER
+			is_ai = yes
+			ITA={
+				owns_state=448 #Tripoli
+			}
+			NOT = {
+				ITA = { controls_state = 450 }
+			} # benghazi
+			ITA = {
+				is_in_faction_with = GER
+			}
+			ITA = {
+				OR = {
+					has_war_with = EGY
+					has_war_with = ENG
+				}
+			}
+			OR = {
+				has_war_with = EGY
+				has_war_with = ENG	
+			}
+	}
+    option = {
+        name = germany.412.a 
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+       country_event = { id = germany.233 } 
+				set_technology = { desert_equipment = 1 }
+			set_technology = { HVantiair2 =  1 }	
+        }
+    }
+  
 }
 ### EOF ###

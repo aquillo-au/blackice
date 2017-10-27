@@ -998,7 +998,21 @@ country_event = {
 		hidden_effect = {
 		
 		release = ETH
+		if = {
+		limit = {
+			has_dlc = "Together for Victory"
+	}
+	set_autonomy = {
+		target = ETH
+		autonomous_state = autonomy_colony
+				}
+	
+		else = {
 			puppet = ETH
+		
+				}
+			}
+		
 				ETH = {load_oob = "ETH_puppet"}
 				ETH = { set_cosmetic_tag = ETH_IEA }
 				ETH = {
@@ -1108,6 +1122,38 @@ country_event = {
 		name = italy.33.a
 		hidden_effect = {
 				GER = { remove_from_faction = ITA }
+		}
+	}
+}
+country_event = {
+	id = italy.34
+	title = italy.34.t
+	desc = italy.34.desc
+	picture = GFX_report_event_mussolini_flag
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		#GER = {is_ai = yes}
+		is_in_faction_with = GER
+		not = { is_in_faction_with = YUG }
+		GER = {has_war_with = YUG}
+		
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = italy.34.a
+		hidden_effect = {
+				create_wargoal = {
+			type = take_state_focus
+			target = YUG
+			generator = { 102 103 913 916 }
+		}
 		}
 	}
 }

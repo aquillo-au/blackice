@@ -317,7 +317,10 @@ focus_tree = {
 			factor = 6
 		}
 		available = {
+		or = {
 			has_country_flag = Five_Ministers_North
+			has_country_flag = Turn_North
+			}
 		}
 		completion_reward = {
 		army_experience = 20
@@ -359,7 +362,10 @@ focus_tree = {
 			factor = 6
 		}
 		available = {
+		or = {
 			has_country_flag = Five_Ministers_South
+			has_country_flag = Turn_South
+			}					
 		}
 		completion_reward = {
 			add_tech_bonus = {
@@ -554,6 +560,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			country_event = { id = japan.42 }
 		}
 	}
 	
@@ -649,7 +656,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 5
 		}
-		prerequisite = { focus = JAP_North_Tech_2 }
+		#prerequisite = { focus = JAP_North_Tech_2 }
 		
 		completion_reward = {
 			add_tech_bonus = {
@@ -2020,6 +2027,8 @@ focus_tree = {
 		}	
 		completion_reward = {
 			add_ideas = imperial_glory_idea
+			country_event = { id = japan.41 }
+			
 		}
 	}
 	
