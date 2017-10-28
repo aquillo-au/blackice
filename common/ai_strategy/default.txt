@@ -175,7 +175,7 @@ minors_profile_1 = {
 
 minors_profile_2 = {
 	enable = {
-		num_of_military_factories > 16
+		num_of_military_factories > 15
 		num_of_military_factories < 21
 		is_major = no
 		NOT = {
@@ -228,7 +228,7 @@ minors_profile_2 = {
 
 minors_profile_2_b = {
 	enable = {
-		num_of_military_factories > 16
+		num_of_military_factories > 15
 		num_of_military_factories < 21
 		is_major = no
 		NOT = {
@@ -250,11 +250,17 @@ minors_profile_2_b = {
 	ai_strategy = { type = role_ratio id = mountaineers 						value = 250		}	
 	ai_strategy = { type = role_ratio id = marines 								value = 1		}	
 	ai_strategy = { type = role_ratio id = paratroopers 							value = 0 		}	
-	ai_strategy = { type = role_ratio id = motorized	 						value = 5		}	
+	ai_strategy = { type = role_ratio id = motorized	 						value = 50		}	
 	ai_strategy = { type = role_ratio id = cavalry 								value = 150 		}	
 	ai_strategy = { type = role_ratio id = armor 								value = 2		}	
 	ai_strategy = { type = role_ratio id = mechanized 							value = 2		}	
-	ai_strategy = { type = role_ratio id = garrison						    	value = 5		}
+	ai_strategy = { type = role_ratio id = garrison						    	value = 50		}
+	
+	ai_strategy = { type = equipment_production_factor id = armor 					value = 2		}
+	ai_strategy = { type = equipment_production_factor id = mechanized 				value = 2		}
+	ai_strategy = { type = equipment_production_factor id = motorized 				value = 50    	}
+	ai_strategy = { type = equipment_production_factor id = infantry  				value = 550     }
+	ai_strategy = { type = equipment_production_factor id = cavalry   				value = 250     }
 
 	ai_strategy = { type = equipment_production_factor id = fighter 			value = 50 		}	
 	ai_strategy = { type = equipment_production_factor id = interceptor 		value = -200 	}	
@@ -288,7 +294,7 @@ minors_profile_2_b = {
 
 minors_profile_3 = {
 	enable = {
-		num_of_military_factories > 22
+		num_of_military_factories > 21
 		num_of_military_factories < 24
 		is_major = no
 		NOT = {
@@ -357,7 +363,7 @@ minors_profile_3 = {
 
 minors_profile_4 = {
 	enable = {
-		num_of_military_factories > 24
+		num_of_military_factories > 23
 		num_of_military_factories < 31
 		is_major = no
 		NOT = {
@@ -419,7 +425,7 @@ minors_profile_4 = {
 
 minors_profile_5 = {
 	enable = {
-		num_of_military_factories > 31
+		num_of_military_factories > 30
 		num_of_military_factories < 37
 		is_major = no
 		NOT = {
@@ -1017,15 +1023,15 @@ JAP_strategy_2 = {
 	ai_strategy = { type = build_army id = cas 									value = 50 		}	
 	ai_strategy = { type = build_army id = air_transport 							value = -200 	}
 
-ai_strategy = { type = unit_ratio id = capital_ship 							value = 135 		}	
-	ai_strategy = { type = unit_ratio id = carrier								value = 70		}
+ai_strategy = { type = unit_ratio id = capital_ship 							value = 25		}	
+	ai_strategy = { type = unit_ratio id = carrier								value = 150		}
 	ai_strategy = { type = unit_ratio id = submarine 								value = -1000		}	
-	ai_strategy = { type = unit_ratio id = screen_ship 							value = 85 		}
+	ai_strategy = { type = unit_ratio id = screen_ship 							value = 600	 	}
    	ai_strategy = { type = unit_ratio id = convoy 								value = 0		}
 	
-	ai_strategy = { type = equipment_production_factor id = carrier		 			value = 70		}
-	ai_strategy = { type = equipment_production_factor id = screen_ship		 		value = 85		}
-	ai_strategy = { type = equipment_production_factor id = capital_ship 				value = 135		}
+	ai_strategy = { type = equipment_production_factor id = carrier		 			value = 150		}
+	ai_strategy = { type = equipment_production_factor id = screen_ship		 		value = 600		}
+	ai_strategy = { type = equipment_production_factor id = capital_ship 				value = 25		}
 	ai_strategy = { type = equipment_production_factor id = convoy 					value = -75		}
 	
 }
