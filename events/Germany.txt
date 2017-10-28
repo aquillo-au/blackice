@@ -9180,7 +9180,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = no
+		#is_ai = no
 		not = { has_country_flag = wachrgt_berlin }
 		date > 1937.6.1
 		
@@ -9210,6 +9210,7 @@ country_event = {
 		ai_chance = { factor = 0 }
 		set_country_flag = wachrgt_berlin
 	}
+	
 }
 ####### AI Autarky
 country_event = {
@@ -9325,7 +9326,7 @@ country_event = {
 		not = { has_country_flag = GERgrossdeutschland_stug }
 		date > 1939.6.6
 		is_ai = yes
-		has_country_flag = impossible
+		
 	}
 	
 	mean_time_to_happen = {
@@ -9337,10 +9338,19 @@ country_event = {
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			set_technology = {subtech_panzer_iii_td_equipment_1 = 1 }
+			if = {
+				limit = {
+					NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
+					
+				}
+				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
+			
+			}
+			
 			load_oob = "GER_grossdeutschland_39"
-			set_country_flag = GERgrossdeutschland_stug
+			
 		}
+		set_country_flag = GERgrossdeutschland_stug
 	}
 	
 }
@@ -13026,5 +13036,1135 @@ country_event = {
         }
     }
   
+}
+country_event = {
+    id = germany.413
+    title = germany.413.t
+    desc = germany.413.d
+    picture = GFX_report_event_nationalist_volunteers
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.413.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.25
+				uses = 1
+				category = cat_mobile_warfare
+			}
+			add_tech_bonus = {
+				name = op_dest_bonus
+				bonus = 0.25
+				uses = 1
+				category = battlefield_support_tree
+			}
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 0.30
+				uses = 1
+				ahead_reduction = 0.50
+				technology = HVantiair2	
+			}
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.50
+				uses = 1
+				technology = tech_ju_87_equipment_1				
+			}
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.30
+				uses = 1
+				technology = tech_ju_87_equipment_2			
+			}
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.50
+				uses = 1
+				technology = tech_me_109_fighter_equipment_1		
+			}
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.30
+				uses = 1
+				technology = tech_me_109_early_fighter_equipment_1		
+			}
+			
+        }
+    }
+   
+}
+country_event = {
+    id = germany.414
+    title = germany.414.t
+    desc = germany.414.d
+    picture = GFX_report_event_german_troops
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.414.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+			set_technology = {luftwaffe_troops = 1 }
+			set_technology = {luftwaffe_penalty_I = 1 }
+			load_oob = "GER_Luftwaffe_ground_42"
+			set_country_flag = Luftwaffeground
+			
+        }
+    }
+	option = {
+        name = germany.414.b # No
+        ai_chance = { factor = 0 }
+        
+    }
+   
+}
+country_event = {
+    id = germany.415
+    title = germany.415.t
+    desc = germany.415.d
+    picture = GFX_report_event_german_troops
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.415.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
+					
+				}
+				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
+			
+			}
+			load_oob = "GER_Luftwaffe_ground_43"
+			set_country_flag = Luftwaffegroundtwo
+			set_technology = {luftwaffe_penalty_II = 1 }
+			
+        }
+    }
+	option = {
+        name = germany.415.b # No
+        ai_chance = { factor = 0 }
+        
+    }
+   
+}
+country_event = {
+    id = germany.416
+    title = germany.416.t
+    desc = germany.416.d
+    picture = GFX_report_event_german_troops
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.416.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+				36 = {
+									
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6336
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11318
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9335
+							instant_build = yes
+						}
+						
+					}
+				
+			}
+			
+			7 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 3314
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 4
+							province = 391
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 4
+							province = 9498
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 68
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 3211
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9431
+							instant_build = yes
+						}
+					}
+				
+			}
+			
+			6 = {		
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6560
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6446
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6598
+							instant_build = yes
+						}
+					}
+							
+			}
+			29 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 575
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 4
+							province = 11548
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 9500
+							instant_build = yes
+						}
+						
+					}
+				
+			}
+			
+			886 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11420
+							instant_build = yes
+						}
+						
+					}
+				
+			}
+			
+			15 = {		
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 485
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 9434
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6599
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11535
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 3579
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6449
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9550
+							instant_build = yes
+						}
+					}
+								
+			}
+			14 = {		
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11508
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9525
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6572
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 3552
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 542
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 6536
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9510
+							instant_build = yes
+						}
+					}
+								
+			}
+			30 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 11465
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11616
+							instant_build = yes
+						}
+						
+					}
+				
+			}
+			23 = {
+				
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11600
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 6657
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9597
+							instant_build = yes
+						}
+					}
+				
+			}
+			19 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 11565
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6777
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9710
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 743
+							instant_build = yes
+						}
+					}
+				}
+        }
+    }
+	option = {
+        name = germany.416.b # No
+        ai_chance = { factor = 0 }
+        
+    }
+   
+}
+country_event = {
+    id = germany.417
+    title = germany.417.t
+    desc = germany.417.d
+    picture = GFX_report_event_german_troops
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.417.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+			36 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6336
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11318
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9335
+							instant_build = yes
+						}
+						
+					}
+				
+			}
+			
+			7 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 3314
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 391
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 9498
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 68
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 3211
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9431
+							instant_build = yes
+						}
+					}
+				
+			}
+			
+			6 = {		
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6560
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6446
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6598
+							instant_build = yes
+						}
+					}
+							
+			}
+			29 = {
+			
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 575
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11548
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 9500
+							instant_build = yes
+						}
+						
+					}
+				
+			}
+			
+			886 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11420
+							instant_build = yes
+						}
+						
+					
+				}
+			}
+			
+			15 = {		
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 485
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 9434
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6599
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11535
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 3579
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6449
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9550
+							instant_build = yes
+						}
+					}
+								
+			}
+			14 = {		
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11508
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9525
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6572
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 3552
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 542
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 6536
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9510
+							instant_build = yes
+						}
+					}
+								
+			}
+			30 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 11465
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11616
+							instant_build = yes
+						}
+						
+					}
+				
+			}
+			23 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11600
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 6657
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9597
+							instant_build = yes
+						}
+					}
+				
+			}
+			19 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 11565
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6777
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9710
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 743
+							instant_build = yes
+						}
+					}
+				
+			}
+        }
+    }
+	option = {
+        name = germany.417.b # No
+        ai_chance = { factor = 0 }
+        
+    }
+   
+}
+country_event = {
+    id = germany.418
+    title = germany.418.t
+    desc = germany.418.d
+    picture = GFX_report_event_german_troops
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.418.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+			36 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6336
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11318
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9335
+							instant_build = yes
+						}
+						
+					}
+				
+			}
+			
+			7 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 3314
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 391
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 9498
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 68
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 3211
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9431
+							instant_build = yes
+						}
+					}
+				
+			}
+			
+			6 = {		
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6560
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6446
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6598
+							instant_build = yes
+						}
+					}
+								
+			}
+			29 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 575
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11548
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 9500
+							instant_build = yes
+						}
+						
+					}
+				}
+			
+			886 = {
+				if = {
+										
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11420
+							instant_build = yes
+						}
+						
+					}
+				}
+			}
+			
+			15 = {		
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 485
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 9434
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6599
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11535
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 3579
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 6449
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9550
+							instant_build = yes
+						}
+					}
+								
+			}
+			14 = {		
+				
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11508
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9525
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6572
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 3552
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 542
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 6536
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9510
+							instant_build = yes
+						}
+					}
+								
+			}
+			30 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 11465
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11616
+							instant_build = yes
+						}
+						
+					}
+				
+			}
+			23 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 11600
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 6657
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9597
+							instant_build = yes
+						}
+					}
+				
+			}
+			19 = {
+				
+					
+					hidden_effect = {
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 11565
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 6777
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							province = 9710
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = coastal_bunker
+							level = 2
+							province = 743
+							instant_build = yes
+						}
+					}
+				}
+        }
+    }
+	option = {
+        name = germany.418.b # No
+        ai_chance = { factor = 0 }
+        
+    }
+   
 }
 ### EOF ###

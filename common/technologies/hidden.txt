@@ -274,6 +274,12 @@ technologies = {
 			ss_panzer_vii
 		}
 	}
+	luftwaffe_troops = {
+
+		enable_subunits = {
+			luftwaffe_infantry
+		}
+	}
 	partisans = {
 
 		enable_equipments = { 
@@ -1687,6 +1693,41 @@ FRA_defence_I_end = {
 			entrenchment  = -2
 		}
 	}
+luftwaffe_penalty_I = {
+
+		research_cost = 1
+		# only from event
+		allow = {
+			always = no
+		}
+		air_intercept_efficiency = -0.025
+			air_superiority_efficiency = -0.025
+			army_bonus_air_superiority_factor = -0.025
+			air_strategic_bomber_bombing_factor = -0.025
+			air_strategic_bomber_night_penalty = 0.025
+			air_escort_efficiency = -0.025
+			air_cas_efficiency = -0.025
+			air_cas_present_factor = -0.025
+			air_nav_efficiency = -0.025
+	}
+luftwaffe_penalty_II = {
+
+		research_cost = 1
+		# only from event
+		allow = {
+			always = no
+		}
+		air_intercept_efficiency = -0.05
+			air_superiority_efficiency = -0.05
+			army_bonus_air_superiority_factor = -0.05
+			air_strategic_bomber_bombing_factor = -0.05
+			air_strategic_bomber_night_penalty = 0.05
+			air_escort_efficiency = -0.05
+			air_cas_efficiency = -0.05
+			air_cas_present_factor = -0.05
+			air_nav_efficiency = -0.05
+	}
+
 ### EOF ###
 
 }

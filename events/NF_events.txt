@@ -1184,10 +1184,19 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		date > 1941.2.1
+		#date > 1941.2.1
+		YUG = {
+			OR = {
+			and = {
+				not = { 107 = { is_controlled_by = YUG }}
+				not = { 109 = { is_controlled_by = YUG }}}
+				has_capitulated = yes
+				is_subject_of = GER
+			}
+		}
 		GRE = { 
 			exists = yes
-			has_war = yes
+			#has_war = yes
 		}
 		NOT = { is_in_faction_with = GRE }
 		is_ai = yes
