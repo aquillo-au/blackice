@@ -1873,7 +1873,7 @@ focus_tree = {
 	
 		x = 1
 		y = 4
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 		}	
@@ -2124,7 +2124,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		x = 8
 		y = 1
-		cost = 12
+		cost = 11
 		
 		ai_will_do = {
 			factor = 10
@@ -3013,7 +3013,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		x = 10
 		y = 1
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 15	
 			modifier = {
@@ -3153,7 +3153,7 @@ focus_tree = {
 	focus = {
 		id = GER_around_maginot
 		icon = GFX_goal_generic_attack_allies
-		prerequisite = { focus = GER_alsace_lorraine }
+		prerequisite = { focus = GER_industrial_effort_40 }
 		
 		bypass = {
 		}		
@@ -5845,7 +5845,7 @@ focus_tree = {
 	focus = {
 		id = GER_SS_LSSAH
 		#text = Schutzstaffel_divisions
-		icon = GFX_goal_LSSAH_focus
+		icon = GFX_goal_ss_lssah_focus
 		prerequisite = { focus = GER_historical_Schutzstaffel }
 		prerequisite = { focus = GER_VT_Schutzstaffel }
 		x = 32
@@ -6040,7 +6040,7 @@ focus_tree = {
 		}
 		# expands templates for ss starting units
 	}
-	##################### expands starting OOB template #focus to be repeated multiple times
+	
 	#####################SS junkerschulen	
 	focus = {
 		id = GER_Schutzstaffel_junkerschulen
@@ -6087,48 +6087,7 @@ focus_tree = {
 			}
 		}
 	}
-	#####################Foreign SS units recruitment
-	focus = {
-		id = GER_Schutzstaffel_foreign_ss_units
-		#text = Schutzstaffel_foreign_ss_units
-		icon = GFX_goal_generic_SS_focus
-		prerequisite = { focus = GER_Schutzstaffel_focus }
-		x = 34
-		y = 5
-		cost = 5
-		available = {
-			date > 1938.3.1	
-		}
-		ai_will_do = {
-			factor = 2
-		}
-		completion_reward = {
-			country_event = ss_event.684
-			set_country_flag = focus_foreign_SS_units
-			add_ideas = GER_foreign_SS_unit_recruitment
-		}
-	}
-	##################### Expansion of SS in aug 1940 with Himmler command
-	focus = {
-		id = GER_Schutzstaffel_Expansion
-		#text = Schutzstaffel_expansion
-		icon = GFX_goal_generic_SS_focus
-		prerequisite = { focus = GER_Schutzstaffel_divisions_IV }
-		prerequisite = { focus = GER_Schutzstaffel_junkerschulen }
-		x = 33
-		y = 8
-		cost = 1
-		available = {
-			date > 1940.8.1
-		}
-		ai_will_do = {
-			factor = 5
-		}	
-		completion_reward = {
-			country_event = ss_event.674
-		}
-		# makes SS units buildable
-	}
+	
 	##################### Ahistorical SS Choice # enables buildable units 
 	focus = {
 		id = GER_ahistorical_Schutzstaffel
@@ -6241,11 +6200,1577 @@ focus_tree = {
 	
 	#######################################################
 		
+	# ss 1. and 2. TK-Reiter-Standarten/ SS Kavallerie brigade 1941 aug
+	focus = {
+		id = GER_SS_Kavallerie_brigade
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_Schutzstaffel_focus }
+		x = 27
+		y = 3
+		cost = 2
+		
+		available = {
+			date > 1941.8.1
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.695
+		}
+	}
+	
+	#1st ss infantry brigade 
+	focus = {
+		id = GER_1_ss_infantry_brigade
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_Schutzstaffel_focus }
+		
+		x = 27
+		y = 4
+		cost = 2
+		
+		available = {
+			date > 1941.3.1
+			10 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.696
+		}
+	}
+	#2nd ss infantry brigade 
+	focus = {
+		id = GER_2_ss_infantry_brigade
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_1_ss_infantry_brigade }
+		x = 27
+		y = 5
+		cost = 2
+		
+		available = {
+			date > 1941.5.1
+			88 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.697
+		}
+	}
+	#SS Brigade Schuldt 
+	focus = {
+		id = GER_SS_Brigade_Schuldt
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_2_ss_infantry_brigade }
+		x = 27
+		y = 6
+		cost = 2
+		
+		available = {
+			date > 1941.11.1
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.698
+		}
+	}
+	#####################Foreign SS units recruitment
+	focus = {
+		id = GER_Schutzstaffel_foreign_ss_units
+		#text = Schutzstaffel_foreign_ss_units
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_Schutzstaffel_focus }
+		x = 34
+		y = 5
+		cost = 5
+		available = {
+			date > 1938.3.1	
+		}
+		ai_will_do = {
+			factor = 2
+		}
+		completion_reward = {
+			country_event = ss_event.684
+			set_country_flag = focus_foreign_SS_units
+			add_ideas = GER_foreign_SS_unit_recruitment
+		}
+	}
+	##################### Expansion of SS in aug 1940 with Himmler command
+	focus = {
+		id = GER_Schutzstaffel_Expansion
+		#text = Schutzstaffel_expansion
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = { focus = GER_Schutzstaffel_divisions_IV }
+		prerequisite = { focus = GER_Schutzstaffel_junkerschulen }
+		x = 33
+		y = 6
+		cost = 1
+		available = {
+			date > 1940.8.1
+		}
+		ai_will_do = {
+			factor = 5
+		}	
+		completion_reward = {
+			country_event = ss_event.674
+		}
+		# makes SS units buildable
+	}
+	#7. SS-Freiw.Geb.Div. 'Prinz Eugen'
+	focus = {
+		id = GER_ss_7_prinz_eugen
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 7
+		cost = 10
+		
+		available = {
+			date > 1942.3.1
+			or = {
+			106 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+			107 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+				}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.699
+		}
+	}
+	
+	#8. SS-Kavallerie Division 'Florian Geyer'
+	focus = {
+		id = GER_ss_8_florian_geyer
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			
+		}
+		x = 32
+		y = 7
+		cost = 10
+		
+		available = {
+			date > 1942.6.1
+			has_war_with = SOV
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.700
+		}
+	}
+	
+	#Freiw-korps der SS '(Serbis.)
+	focus = {
+		id = GER_SS_Serbis
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus =	GER_SS_Brigade_Schuldt
+		}
+		x = 34
+		y = 7
+		cost = 3
+		
+		available = {
+			date > 1942.1.1
+			107 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.701
+		}
+	}
+	#Waffen.Sturm.Brig. der SS 'RONA'
+	focus = {
+		id = GER_SS_RONA
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus =	GER_SS_Brigade_Schuldt
+		}
+		x = 36
+		y = 7
+		cost = 3
+		
+		available = {
+			date > 1942.10.1
+			has_war_with = SOV
+				206 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.702
+		}
+	}
+	# 9. SS-Panzer-Division "Hohenstaufen"
+	focus = {
+		id = GER_ss_9_hohenstaufen
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			
+		}
+		x = 30
+		y = 8
+		cost = 10
+		
+		available = {
+			date > 1943.3.1
+			has_tech = tech_panzer_v_equipment_1
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.703
+		}
+	}
+	# 10. SS-Panzer-Division "Frundsberg"
+	focus = {
+		id = GER_ss_10_frundsberg
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_ss_9_hohenstaufen
+			
+		}
+		x = 32
+		y = 8
+		cost = 4.5
+		
+		available = {
+			date > 1943.3.1
+			
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.704
+		}
+	}
+	# 12. SS-Panzer-Division "Hitlerjugend"
+	focus = {
+		id = GER_ss_12_hitlerjugend
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_ss_10_frundsberg
+			
+		}
+		x = 34
+		y = 8
+		cost = 10
+		
+		available = {
+			date > 1943.7.1
+			
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.705
+		}
+	}
+	#16. SS-Panzergrenadier-Division "Reichsführer-SS"
+	focus = {
+		id = GER_ss_16_reichsfuhrer
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			
+		}
+		x = 30
+		y = 9
+		cost = 10
+		
+		available = {
+			date > 1943.10.1
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.706
+		}
+	}
+	#17. SS-Panzergrenadier-Division "Götz von Berlichingen"
+	focus = {
+		id = GER_ss_17_gotzvonberlichingen
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_ss_16_reichsfuhrer
+			
+		}
+		x = 32
+		y = 9
+		cost = 10
+		
+		available = {
+			date > 1943.10.1
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.707
+		}
+	}
+	#11. SS-Freiwilligen-Panzergrenadier Division "Nordland"	
+	focus = {
+		id = GER_ss_11_nordland
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 34
+		y = 9
+		cost = 10
+		
+		available = {
+			date > 1943.4.1
+			or = {
+			37 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+			110 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+				}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.708
+		}
+	}
+	
+	#13. Waffen-Geb.Div.der SS 'Handschar'
+	focus = {
+		id = GER_ss_13_handschar
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_ss_7_prinz_eugen
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 10
+		cost = 8
+		
+		available = {
+			date > 1943.2.1
+			or = {
+			106 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+			107 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+				}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.709 #
+		}
+	}
+	#14. Waffen Grenadier-Div. der SS
+	focus = {
+		id = GER_ss_14_waffendiv
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+			
+		}
+		x = 32
+		y = 10
+		cost = 8
+		
+		available = {
+			date > 1943.3.1
+			has_war_with = SOV
+			10 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.710 #SS-Waffen-Gren-Div
+		}
+	}
+	#15. Waffen.Gren.Div. der SS (lett.Nr.1) 
+	focus = {
+		id = GER_ss_15_waffendiv
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		
+		}
+		x = 34
+		y = 10
+		cost = 8
+		
+		available = {
+			date > 1943.1.1
+			has_war_with = SOV
+			not = { has_war_with = LAT }
+				12 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.711 #SS-Waffen-Gren-Div
+		}
+	}
+	#18. SS-Freiw.PzGren.Div. 'Horst Wessel'
+	focus = {
+		id = GER_ss_18_horst_wessel
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 11
+		cost = 8
+		
+		available = {
+			date > 1943.11.1
+			is_in_faction_with = HUN
+			109 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.712
+		}
+	}
+	#19. Waffen.Gren.Div. der SS (lett.Nr.2)
+	focus = {
+		id = GER_ss_19_waffendiv
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 32
+		y = 11
+		cost = 8
+		
+		available = {
+			date > 1943.11.1
+			has_war_with = SOV
+			not = { has_war_with = LAT }
+				12 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.713 #SS-Waffen-Gren-Div
+		}
+	}
+	#20. Waffen.Gren.Div. der SS (est.Nr.1)
+	focus = {
+		id = GER_ss_20_waffendiv
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 34
+		y = 11
+		cost = 8
+		
+		available = {
+			date > 1943.10.1
+			has_war_with = SOV
+			not = { has_war_with = EST }
+				13 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.714 #SS-Waffen-Gren-Div
+		}
+	}
+	#21. Waffen.Geb.Div. der SS 'Skanderbeg'
+	focus = {
+		id = GER_ss_21_skanderbeg
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_ss_7_prinz_eugen
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 12
+		cost = 5
+		
+		available = {
+			date > 1944.4.1
+			904 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.715 #SS-Waffen-Gren-Div
+		}
+	}
+	#22. Freiw.Kav.Div. 'Maria Theresia'
+	focus = {
+		id = GER_ss_22_maria_theresia
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_ss_8_florian_geyer
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 32
+		y = 12
+		cost = 5
+		
+		available = {
+			date > 1944.3.1
+			968 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.716 
+		}
+	}
+	#23. Waffen.Geb.Div. 'Kama' (kroat.Nr.2) 1944 june beograd skopje sombor yug not axis
+	focus = {
+		id = GER_ss_23_kama
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_ss_7_prinz_eugen
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 34
+		y = 12
+		cost = 5
+		
+		available = {
+			date > 1944.6.1
+			or = {
+			106 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+			107 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+				}
+		}
+		
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.717 #SS-Waffen-Gren-Div
+		}
+	}
+	#SS-Regiment 'Ney'
+	focus = {
+		id = GER_ss_ney
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus =	GER_SS_Brigade_Schuldt
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 36
+		y = 12
+		cost = 3
+		
+		available = {
+			date > 1944.10.1
+			is_in_faction_with = HUN
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.718
+		}
+	}
+	
+	#24. Waffen.Geb.Div. der SS 'Karstjager'
+	focus = {
+		id = GER_ss_24_karstjager
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_ss_7_prinz_eugen
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 13
+		cost = 5
+		
+		available = {
+			date > 1944.9.1
+			is_in_faction_with = ITA
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.719 #SS-Waffen-Gren-Div
+		}
+	}
+	#25. Waffen.Gren.Div.der SS 'Hunyadi'
+	focus = {
+		id = GER_ss_25_hunyadi
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 32
+		y = 13
+		cost = 5
+		
+		available = {
+			date > 1944.10.1
+			is_in_faction_with = HUN
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.720 #SS-Waffen-Gren-Div
+		}
+	}
+	#26. Waffen.Gren.Div.der SS (ung.Nr.2)
+	focus = {
+		id = GER_ss_26_waffendiv
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 34
+		y = 13
+		cost = 5
+		
+		available = {
+			date > 1944.11.1
+			is_in_faction_with = HUN
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.721 #SS-Waffen-Gren-Div
+		}
+	}
+	#27. SS-Freiw.Gren.Div. 'Langemarck'
+	focus = {
+		id = GER_ss_27_langemarck
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 36
+		y = 13
+		cost = 5
+		
+		available = {
+			date > 1944.9.1
+			has_war_with = SOV
+			886 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.722 #SS-Infanterie-Div
+		}
+	}
+	
+	#28. SS-Freiw.Gren.Div. 'Wallonien'
+	focus = {
+		id = GER_ss_28_wallonien
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 14
+		cost = 5
+		
+		available = {
+			date > 1944.9.1
+		has_war_with = SOV
+			34 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.723 #SS-Infanterie-Div
+		}
+	}
+	#30. Waffen.Gren.Div.der SS
+	focus = {
+		id = GER_ss_30_waffendiv
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 32
+		y = 14
+		cost = 5
+		
+		available = {
+			date > 1944.8.1
+		has_war_with = SOV
+			60 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.724 #SS-Waffen-Gren-Div
+		}
+	}
+	#Waffen-Gren-Regt. (bulgaris.Nr 1)
+	focus = {
+		id = GER_ss_bulgaris_regt
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 34
+		y = 14
+		cost = 5
+		
+		available = {
+			date > 1944.8.1
+			has_war_with = SOV
+			is_in_faction_with = BUL
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.725 #SS-Waffen-Gren-Div
+		}
+	}
+	#31. SS-Freiw.Gren.Division
+	focus = {
+		id = GER_ss_31_waffendiv
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 36
+		y = 14
+		cost = 5
+		
+		available = {
+			date > 1944.10.1
+			is_in_faction_with = HUN
+			has_war_with = SOV
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.726 #SS-Waffen-Gren-Div
+		}
+	}
+	
+	#Waffen.Verband der SS (Osttürkis.)
+	focus = {
+		id = GER_ss_ostturkis
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 15
+		cost = 2
+		
+		available = {
+			date > 1944.3.1
+			has_war_with = SOV
+				60 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.727 #SS-Waffen-Gren-Div
+		}
+	}
+	#Waffen Verband der SS 'Kaukasien'
+	focus = {
+		id = GER_ss_kaukasien
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 32
+		y = 15
+		cost = 2
+		
+		available = {
+			date > 1944.11.1
+			has_war_with = SOV
+				86 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.728 #SS-Waffen-Gren-Div
+		}
+	}
+	#Waffen-Gren-Regt. (Rumänis.Nr 2)
+	focus = {
+		id = GER_ss_rumanis_regt
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 34
+		y = 15
+		cost = 2
+		
+		available = {
+			date > 1944.10.1
+		has_war_with = SOV
+				4 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.729 #SS-Waffen-Gren-Div
+		}
+	}
+	
+	#33. Waffen.Gren.Div.  'Charlemagne' 
+	focus = {
+		id = GER_ss_33_charlemagne
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 16
+		cost = 3
+		
+		available = {
+			date > 1945.1.1
+			has_war_with = SOV
+			844 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+			28 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.730 #SS-Infanterie-Div
+		}
+	}
+	#34. Freiw.Gren.Div. 'Landstorm Nederland'
+	focus = {
+		id = GER_ss_34_landstorm
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 32
+		y = 16
+		cost = 3
+		
+		available = {
+			date > 1945.1.1
+			844 = { 
+						controller = {
+							OR = {
+								tag = USA
+								is_in_faction_with = USA
+								}
+							}
+						} 
+			7 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.731 #SS-Waffen-Gren-Div
+		}
+	}
+	#37. SS-Freiw.Kav.Div. 'Lützow'
+	focus = {
+		id = GER_ss_37_lutzow
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_ss_8_florian_geyer
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 34
+		y = 16
+		cost = 2
+		
+		available = {
+			date > 1945.1.1
+			has_war_with = SOV
+				70 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.732 #SS-Waffen-Gren-Div
+		}
+	}
+	#29. Waffen.Gren.Div. der SS (ital.Nr.1)
+	focus = {
+		id = GER_ss_29_waffendiv
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 36
+		y = 16
+		cost = 3
+		
+		available = {
+			date > 1945.1.1
+				158 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.733 #SS-Waffen-Gren-Div
+		}
+	}
+	
+	#Freiw.PzGren.Div. 'Nederland' 
+	focus = {
+		id = GER_ss_nederland
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 17
+		cost = 2
+		
+		available = {
+			date > 1945.1.1
+			28 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.734 
+		}
+	}
+	#1. Ungarisches SS-Sturmjäger Regiment
+	focus = {
+		id = GER_ss_1_ungarische_regt
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus =	GER_SS_Brigade_Schuldt
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 32
+		y = 17
+		cost = 1
+		
+		available = {
+			date > 1945.1.1
+			is_in_faction_with = HUN
+			has_war_with = SOV
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.735
+		}
+	}
+	
+	#36. Waffen.Gren.Div. der SS 
+	focus = {
+		id = GER_ss_36_waffendiv
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 30
+		y = 18
+		cost = 1
+		
+		available = {
+			date > 1945.1.1
+			has_war_with = SOV
+			has_war_with = USA
+			not = {is_in_faction_with = BUL }
+			not = {is_in_faction_with = ROM }
+			not = {is_in_faction_with = FIN }
+			not = {is_in_faction_with = ITA }
+			10 = { 
+						controller = {
+							OR = {
+								not = {tag = GER }
+								not = {is_in_faction_with = GER}
+								}
+							}
+						} 
+			844 = { 
+						controller = {
+							OR = {
+								not = {tag = GER }
+								not = {is_in_faction_with = GER}
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.736 #SS-Waffen-Gren-Div
+		}
+	}
+	#35. Polizei.Gren.Div. der SS 
+	focus = {
+		id = GER_ss_35_polizei
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 32
+		y = 18
+		cost = 1
+		
+		available = {
+			date > 1945.1.1
+		has_war_with = SOV
+			has_war_with = USA
+			not = {is_in_faction_with = BUL }
+			not = {is_in_faction_with = ROM }
+			not = {is_in_faction_with = FIN }
+			not = {is_in_faction_with = ITA }
+			10 = { 
+						controller = {
+							OR = {
+								not = {tag = GER }
+								not = {is_in_faction_with = GER}
+								}
+							}
+						} 
+			844 = { 
+						controller = {
+							OR = {
+								not = {tag = GER }
+								not = {is_in_faction_with = GER}
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.737 #SS-Infanterie-Div
+		}
+	}
+	#32. Freiw.Gren.Div. der SS '30.Januar' USA eng
+	focus = {
+		id = GER_ss_32_januar
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 34
+		y = 18
+		cost = 1
+		
+		available = {
+			date > 1945.1.1
+		has_war_with = SOV
+			has_war_with = USA
+			not = {is_in_faction_with = BUL }
+			not = {is_in_faction_with = ROM }
+			not = {is_in_faction_with = FIN }
+			not = {is_in_faction_with = ITA }
+			10 = { 
+						controller = {
+							OR = {
+								not = {tag = GER }
+								not = {is_in_faction_with = GER}
+								}
+							}
+						} 
+			844 = { 
+						controller = {
+							OR = {
+								not = {tag = GER }
+								not = {is_in_faction_with = GER}
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.738 #SS-Waffen-Gren-Div
+		}
+	}
+	#38. SS-Grenadier-Division 'Nibelungen'USA eng
+	focus = {
+		id = GER_ss_38_nibelungen
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_SS_focus
+		prerequisite = {
+			focus = GER_Schutzstaffel_Expansion
+			focus = GER_Schutzstaffel_foreign_ss_units
+		}
+		x = 36
+		y = 18
+		cost = 1
+		
+		available = {
+			date > 1945.1.1
+		has_war_with = SOV
+			has_war_with = USA
+			not = {is_in_faction_with = BUL }
+			not = {is_in_faction_with = ROM }
+			not = {is_in_faction_with = FIN }
+			not = {is_in_faction_with = ITA }
+			10 = { 
+						controller = {
+							OR = {
+								not = {tag = GER }
+								not = {is_in_faction_with = GER}
+								}
+							}
+						} 
+			844 = { 
+						controller = {
+							OR = {
+								not = {tag = GER }
+								not = {is_in_faction_with = GER}
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = ss_event.739 #SS-Infanterie-Div
+		}
+	}
+
+	
 	#ost wall focus
 	#expand the rockets focus
 	#expand the jets focus
 	#Tiger tank focus
 	#Pather tank focus
 	#nuke weapons focus expansion
+
+
+
+
+
+
+
+
+
+	
 }
 #### EOF

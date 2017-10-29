@@ -3253,12 +3253,64 @@ focus_tree = {
 #######################################################
 	
 ###################### Tank Corps National Focus ####################
-	
+	#T34 focus
+	focus = {
+		id = SOV_T34_focus
+		icon = GFX_goal_generic_army_tanks
+		#prerequisite = { focus =   }
+		x = 30
+		y = 0
+		cost = 7
+		available = {
+			date > 1939.6.1
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+				add_tech_bonus = {
+                name = armor_bonus
+                technology = tech_medium_soviet_tank_c
+                bonus = 0.3
+                uses = 1
+                category = cat_medium_armor
+            }			
+			
+			}
+		}
+		
+	focus = {
+		id = SOV_KV1_focus
+		icon = GFX_goal_generic_army_tanks
+		#prerequisite = { focus =   }
+		x = 32
+		y = 0
+		cost = 7
+		available = {
+			date > 1939.6.1
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+				add_tech_bonus = {
+                name = armor_bonus
+                technology = tech_heavy_soviet_tank_c
+                bonus = 0.3
+                uses = 1
+                category = cat_heavy_armor
+            }			
+			
+			}
+		}
 	focus = {
 		id = SOV_Tank_Corps_focus
 		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = SOV_T34_focus  }
 		x = 30
-		y = 0
+		y = 1
 		cost = 5
 		available = {
 			date > 1942.3.01
@@ -3287,7 +3339,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SOV_Tank_Corps_focus  }
 		x = 30
-		y = 1
+		y = 2
 		cost = 5
 		available = {
 			date > 1942.4.10
@@ -3314,7 +3366,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SOV_Tank_Corps_wave_two_focus  }
 		x = 30
-		y = 2
+		y = 3
 		cost = 5
 		available = {
 			date > 1942.5.20
@@ -3342,7 +3394,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = SOV_Tank_Corps_wave_three_focus  }
 		x = 32
-		y = 3
+		y = 4
 		cost = 5
 		available = {
 			date > 1942.9.01
@@ -3367,7 +3419,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SOV_Tank_Corps_wave_three_focus  }
 		x = 28
-		y = 3
+		y = 4
 		cost = 5
 		available = {
 			date > 1942.12.01
@@ -3395,7 +3447,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SOV_Tank_Corps_wave_four_focus  }
 		x = 28
-		y = 4
+		y = 5
 		cost = 5
 		available = {
 			date > 1943.3.01
@@ -3422,7 +3474,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SOV_Tank_Corps_wave_five_focus  }
 		x = 28
-		y = 5
+		y = 6
 		cost = 5
 		available = {
 			date > 1943.7.01
@@ -3449,7 +3501,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SOV_Tank_Corps_upgrade_one_focus  }
 		x = 28
-		y = 6
+		y = 7
 		cost = 5
 		available = {
 			date > 1943.10.10
@@ -3474,7 +3526,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SOV_Tank_Corps_upgrade_two_focus  }
 		x = 28
-		y = 7
+		y = 8
 		cost = 5
 		available = {
 			date > 1944.01.10
@@ -3501,7 +3553,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = SOV_Mechanised_Corps_focus  }
 		x = 32
-		y = 4
+		y = 5
 		cost = 5
 		available = {
 			date > 1943.9.01
@@ -3521,4 +3573,30 @@ focus_tree = {
 			}
 		}
 	}	
+	#industrial boost
+	#resources boost
+		#steel production
+		#oil production
+		#chromium/ tungsten
+		#aluminium 
+		#synthetic rubber
+	
+		
+	#motorised army -army speed boost
+	#aircraft research  -tech boosts
+		#fighter
+		#cas
+		#long range bombers
+	#motRocket artillery -tech boost
+	#artillery firepower -doctrines boost
+	
+	#not one more setp back - army entrenchment boost
+	#city defence - urban defence boost
+	#remove commisioners - morale boost
+	
+		#urals tank factory - tank factories
+	#support partisans
+	
+	#
+	############################################################
 }
