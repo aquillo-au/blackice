@@ -7755,7 +7755,445 @@ focus_tree = {
 		}
 	}
 
+	#Nazi party secret projects
+	focus = {
+		id = GER_Nazi_party_secret_projects
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		
+		}
+		x = 65
+		y = 0
+		cost = 1
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+		}
+	}
+	#Arctic base
+	#Die Glocke
+	#specialised rockets
 	
+	#Himmler's occult quests
+	focus = {
+		id = GER_Himmlers_occult_quests
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Nazi_party_secret_projects
+		}
+		x = 61
+		y = 1
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			 country_event = { id = germany.419 }
+		}
+	}
+	#Project Riese
+	focus = {
+		id = GER_Project_Riese
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Himmlers_occult_quests
+		}
+		x = 61
+		y = 2
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			 country_event = { id = germany.420 }
+		}
+	}
+	#Ksiaz Castle
+	focus = {
+		id = GER_Ksiaz_Castle
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Project_Riese
+		}
+		x = 61
+		y = 3
+		cost = 10
+		
+		available = {
+		67 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.421 }
+		}
+	}
+	#Complex Rzeczka
+	focus = {
+		id = GER_Complex_Rzeczka
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Ksiaz_Castle
+		}
+		x = 61
+		y = 4
+		cost = 8
+		
+		available = {
+		67 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			 country_event = { id = germany.422 }
+		}
+	}
+	#Complex Wlodarz
+	focus = {
+		id = GER_Complex_Wlodarz
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Complex_Rzeczka
+		}
+		x = 61
+		y = 5
+		cost = 8
+		
+		available = {
+		67 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.423 }
+		}
+	}
+	#Complex Osówka
+	focus = {
+		id = GER_Complex_Osowka
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Complex_Wlodarz
+		}
+		x = 61
+		y = 6
+		cost = 8
+		
+		available = {
+		67 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			 country_event = { id = germany.424 }
+		}
+	}
+	#Complex Sokolec
+	focus = {
+		id = GER_Complex_Sokolec
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Complex_Osowka
+		}
+		x = 61
+		y = 7
+		cost = 5
+		
+		available = {
+		67 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.425 }
+		}
+	}
+	#Complex Jugowice
+	focus = {
+		id = GER_Complex_Jugowice
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Complex_Sokolec
+		}
+		x = 61
+		y = 8
+		cost = 5
+		
+		available = {
+		67 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.426 }
+		}
+	}
+	#Complex Soboń
+	focus = {
+		id = GER_Complex_Sobon
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Complex_Jugowice
+		}
+		x = 61
+		y = 9
+		cost = 5
+		
+		available = {
+		67 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			 country_event = { id = germany.427 }
+		}
+	}
+	#Ahnenerbe
+	focus = {
+		id = GER_Ahnenerbe_studies
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Himmlers_occult_quests
+		}
+		x = 63
+		y = 2
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.428 }
+		}
+	}
+	#Wewelsburg SS School
+	focus = {
+		id = GER_Wewelsburg_castle
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Himmlers_occult_quests
+		}
+		x = 65
+		y = 2
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.429 }
+		}
+	}	
+	#angora rabbits
+	focus = {
+		id = GER_angora_rabbits
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Himmlers_occult_quests
+		}
+		x = 67
+		y = 2
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.430 }
+		}
+	}	
+	#Hitler's Dog
+	focus = {
+		id = GER_Hitlers_Dog
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Nazi_party_secret_projects
+		}
+		x = 69
+		y = 1
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.431 }
+		}
+	}	
+	
+	#Goering's art collection
+	focus = {
+		id = GER_Goerings_art
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Nazi_party_secret_projects
+		}
+		x = 71
+		y = 1
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			 country_event = { id = germany.432 }
+		}
+	}	
+	#Goebbel's media
+	focus = {
+		id = GER_Goebbels_massmedia
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Nazi_party_secret_projects
+		}
+		x = 73
+		y = 1
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.433 }
+		}
+	}
+	#perfect Horse
 	#ost wall focus
 	#expand the rockets focus
 	#expand the jets focus

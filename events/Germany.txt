@@ -9524,21 +9524,36 @@ country_event = {
 	mean_time_to_happen = {
 		days = 1
 	}
-	
+		
 	option = {
 		name = germany.240.a
-		ai_chance = { factor = 100 }
-		
-		hidden_effect = {
+		ai_chance = { factor = 0 }
+			if = {
+				limit = {
+					is_ai = no
+					}
 			load_oob = "GER_5_Panzer_Division"
 			set_country_flag = panzer_5
-			
 		}
 	}
 	option = {
 		name = germany.240.b
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 100 }
 		
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = { has_tech = tech_panzer_ii_equipment_1 }
+					NOT = { has_tech = tech_panzer_iv_equipment_1 }
+				}
+				set_technology = { tech_panzer_ii_equipment_1 = 1 }
+				set_technology = { tech_panzer_iv_equipment_1 = 1 }
+			}
+			load_oob = "GER_5_Panzer_Division_ai"
+			set_country_flag = panzer_5
+			
+		}
 	}
 }
 country_event = {
@@ -14166,5 +14181,388 @@ country_event = {
         
     }
    
+}
+
+country_event = {
+    id = germany.419
+    title = germany.419.t
+    desc = germany.419.d
+   picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.419.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_ideas = Himmler_occult
+			
+        }
+    }
+	
+}
+country_event = {
+    id = germany.420
+    title = germany.420.t
+    desc = germany.420.d
+   picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.420.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_ideas = Project_Riese
+			
+        }
+    }
+	
+}
+country_event = {
+    id = germany.421
+    title = germany.421.t
+    desc = germany.421.d
+   picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.421.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		67 = {
+				
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 3
+							province = 6512
+							instant_build = yes
+						}
+			
+					}
+			}
+		}
+	}
+}
+
+country_event = {
+    id = germany.422
+    title = germany.422.t
+    desc = germany.422.d
+  picture = GFX_report_event_ss_junkerschulen
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.422.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		67 = {
+				
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 9511
+							instant_build = yes
+						}
+			
+					}
+			}
+		}
+	}
+}
+
+country_event = {
+    id = germany.423
+    title = germany.423.t
+    desc = germany.423.d
+    picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.423.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+	67 = {
+				
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 9457
+							instant_build = yes
+						}
+			
+					}
+			}
+		}
+	}
+}
+
+country_event = {
+    id = germany.424
+    title = germany.424.t
+    desc = germany.424.d
+    picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.424.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		67 = {
+				
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 11467
+							instant_build = yes
+						}
+			
+					}
+			}
+		}
+	}
+}
+
+country_event = {
+    id = germany.425
+    title = germany.425.t
+    desc = germany.425.d
+    picture = GFX_report_event_ss_junkerschulen
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.425.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+	67 = {
+				
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 479
+							instant_build = yes
+						}
+			
+					}
+			}
+		}
+	}
+}
+
+country_event = {
+    id = germany.426
+    title = germany.426.t
+    desc = germany.426.d
+   picture = GFX_report_event_ss_junkerschulen
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.426.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		67 = {
+				
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 479
+							instant_build = yes
+						}
+			
+					}
+			}
+		}
+	}
+}
+
+country_event = {
+    id = germany.427
+    title = germany.427.t
+    desc = germany.427.d
+   picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.427.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		67 = {
+				
+					hidden_effect = {
+						add_building_construction = {
+							type = bunker
+							level = 1
+							province = 11467
+							instant_build = yes
+						}
+			
+					}
+			}
+		}
+	}
+}
+
+country_event = {
+    id = germany.428
+    title = germany.428.t
+    desc = germany.428.d
+   picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.428.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_ideas = Ahnenerbe_influence
+			
+        }
+    }
+	
+}
+country_event = {
+    id = germany.429
+    title = germany.429.t
+    desc = germany.429.d
+    picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.429.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_ideas = Wewelsburg_ss
+			
+        }
+    }
+	
+}
+country_event = {
+    id = germany.430
+    title = germany.430.t
+    desc = germany.430.d
+    picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.430.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_ideas = Angora_rabbits
+			
+        }
+    }
+	
+}
+country_event = {
+    id = germany.431
+    title = germany.431.t
+    desc = germany.431.d
+   picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.431.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		
+			add_ideas = Hitlers_dog
+        }
+    }
+	
+}
+country_event = {
+    id = germany.432
+    title = germany.432.t
+    desc = germany.432.d
+  picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.432.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_ideas = Goerings_art
+			
+        }
+    }
+	
+}
+country_event = {
+    id = germany.433
+    title = germany.433.t
+    desc = germany.433.d
+  picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.433.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_ideas = Goebbels_propaganda
+			
+        }
+    }
+	
 }
 ### EOF ###
