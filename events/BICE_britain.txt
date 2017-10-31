@@ -1955,7 +1955,26 @@ country_event = {
 		}
 	}
 }
+country_event = { 
+	id = BICE_britain.68
+	title = BICE_britain.68.t
+	desc = BICE_britain.68.d
+	picture = GFX_report_event_british_armour_crew
 
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = BICE_britain.68.a
+		
+		hidden_effect = {
+			set_technology = { Gurkha_tech = 1 }
+			 load_oob = "ENG_Gurkha" 
+			
+		}
+	}
+}
 # SAF 1st and 2nd inf div july 1941
 # 50 infantry division april 1942
 # Indian 8th and 10th Inf division may 1942

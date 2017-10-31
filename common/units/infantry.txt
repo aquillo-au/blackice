@@ -469,8 +469,6 @@ sub_units = {
 		suppression = 0.5
 		weight = 0.25
 		
-		soft_attack = 0.2
-		defense = -0.25
 
 		supply_consumption = 0.12
 
@@ -531,6 +529,69 @@ sub_units = {
 		}
 		amphibious = {
 			attack = 0.25
+		}
+	}
+
+	gurkha = {
+		sprite = infantry
+		map_icon_category = infantry
+		special_forces = yes
+		mountaineers = yes
+
+		priority = 601
+		ai_priority = 200
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 2
+		
+		#Size Definitions
+		max_strength = 20
+		max_organisation = 25
+		default_morale = 0.5
+		manpower = 1000
+
+		#Misc Abilities
+		training_time = 120
+		suppression = 1
+		weight = 0.5
+		
+		supply_consumption = 0.15
+
+		soft_attack = 0.2
+		defense = 0.25
+
+		can_be_parachuted = yes
+
+		transport = infantry_equipment
+
+		need = {
+			infantry_equipment = 100
+			mount_equipment = 50
+			infantry_uniforms = 100
+		}
+
+		hills = {
+			attack = 0.2
+			defence = 0.2
+			movement = 0.2
+		}
+		mountain = {
+			attack = 0.3
+			defence = 0.3
+			movement = 0.3
 		}
 	}
 	mountaineers = {
