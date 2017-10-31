@@ -5845,7 +5845,7 @@ focus_tree = {
 	focus = {
 		id = GER_SS_LSSAH
 		#text = Schutzstaffel_divisions
-		icon = GFX_goal_SS_LSSAH
+		icon = GFX_goal_ss_lssah_focus
 		prerequisite = { focus = GER_historical_Schutzstaffel }
 		prerequisite = { focus = GER_VT_Schutzstaffel }
 		x = 32
@@ -5901,7 +5901,7 @@ focus_tree = {
 			}
 		}
 	}
-	### Focus Totenkopf-Division ###
+	
 	focus = {
 		id = GER_SS_TK
 		#text = Schutzstaffel_divisions
@@ -8146,6 +8146,30 @@ focus_tree = {
 		}
 	}	
 	
+#perfect Horse
+	focus = {
+		id = GER_perfect_Horse
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Nazi_party_secret_projects
+		}
+		x = 71
+		y = 1
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.434 }
+		}
+	}	
 	#Goering's art collection
 	focus = {
 		id = GER_Goerings_art
@@ -8154,7 +8178,8 @@ focus_tree = {
 		prerequisite = {
 		focus = GER_Nazi_party_secret_projects
 		}
-		x = 71
+
+		x = 73
 		y = 1
 		cost = 10
 		
@@ -8178,7 +8203,8 @@ focus_tree = {
 		prerequisite = {
 		focus = GER_Nazi_party_secret_projects
 		}
-		x = 73
+
+		x = 75
 		y = 1
 		cost = 10
 		
@@ -8194,6 +8220,19 @@ focus_tree = {
 			country_event = { id = germany.433 }
 		}
 	}
+	
+	#Arctic base
+	#Die Glocke
+	#specialised rockets
+	#fritz x
+	
+	#microwave death ray
+	#Goliah
+	#Flying wing
+	#V3 cannon
+	#vortex cannon
+	#Sonic Cannon
+	#Landkreuzer P. 1000 Ratte
 	#perfect Horse
 	#ost wall focus
 	#expand the rockets focus
@@ -8201,15 +8240,430 @@ focus_tree = {
 	#Tiger tank focus
 	#Pather tank focus
 	#nuke weapons focus expansion
-
-
-
-
-
-
-
-
-
 	
+	#Berghof 
+	focus = {
+		id = GER_Berghof
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		
+		}
+		x = 40
+		y = 0
+		cost = 5
+		
+		available = {
+		52 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			52 = {
+						add_building_construction = {
+							type = bunker
+							level = 5
+							province = 707
+							instant_build = yes
+							}
+						}
+		}
+	}
+	
+	#Fuhrerbunker 
+	focus = {
+		id = GER_Fuhrerbunker
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		
+		}
+		x = 40
+		y = 1
+		cost = 10
+		
+		available = {
+		896 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			896 = {
+						add_building_construction = {
+							type = bunker
+							level = 10
+							province = 13283
+							instant_build = yes
+							}
+						}
+		}
+	}
+	#Führersonderzug
+	#Wolfsschanze Führerhauptquartiere
+	focus = {
+		id = GER_Wolfsschanze
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		focus = GER_Fuhrerbunker
+		}
+		x = 40
+		y = 2
+		cost = 10
+		
+		available = {
+		839 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			839 = {
+						add_building_construction = {
+							type = bunker
+							level = 10
+							province = 6375
+							instant_build = yes
+							}
+						}
+		}
+	}
+	#Tannenberg Führerhauptquartiere
+	focus = {
+		id = GER_Tannenberg
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		focus = GER_Fuhrerbunker
+		}
+		x = 40
+		y = 3
+		cost = 1
+		
+		available = {
+		50 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}	
+		
+		completion_reward = {
+			50 = {
+						add_building_construction = {
+							type = bunker
+							level = 5
+							province = 9545
+							instant_build = yes
+							}
+						}
+		}
+	}
+	#Wolfsschlucht I Führerhauptquartiere
+	focus = {
+		id = GER_Wolfsschlucht_I
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		focus = GER_Fuhrerbunker
+		}
+		x = 40
+		y = 4
+		cost = 5
+		
+		available = {
+		34 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			34 = {
+						add_building_construction = {
+							type = bunker
+							level = 5
+							province = 9536
+							instant_build = yes
+							}
+						}
+		}
+	}
+	#Wolfsschlucht II Führerhauptquartiere
+	focus = {
+		id = GER_Wolfsschlucht_II
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		focus = GER_Fuhrerbunker
+		}
+		x = 40
+		y = 5
+		cost = 5
+		
+		available = {
+		18 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			18 = {
+						add_building_construction = {
+							type = bunker
+							level = 5
+							province = 13011
+							instant_build = yes
+							}
+						}
+		}
+	}
+	#Adlerhorst Führerhauptquartiere
+	focus = {
+		id = GER_Adlerhorst
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		focus = GER_Fuhrerbunker
+		}
+		x = 40
+		y = 6
+		cost = 5
+		
+		available = {
+		55 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			55 = {
+						add_building_construction = {
+							type = bunker
+							level = 5
+							province = 3524
+							instant_build = yes
+							}
+						}
+		}
+	}
+	#Anlage Süd Führerhauptquartiere
+	focus = {
+		id = GER_Anlage_Sud
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		focus = GER_Fuhrerbunker
+		}
+		x = 40
+		y = 7
+		cost = 3
+		
+		available = {
+		88 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			88 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 6499
+							instant_build = yes
+							}
+						}
+		}
+	}
+	#Felsennest Führerhauptquartiere
+	focus = {
+		id = GER_Felsennest
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		focus = GER_Fuhrerbunker
+		}
+		x = 40
+		y = 8
+		cost = 3
+		
+		available = {
+		51 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+						51 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 529
+							instant_build = yes
+							}
+						}
+						
+		}
+	}
+	#Werwolf
+	focus = {
+		id = GER_Werwolf
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		focus = GER_Fuhrerbunker
+		}
+		x = 40
+		y = 9
+		cost = 3
+		
+		available = {
+		199 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			
+						199 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 6509
+							instant_build = yes
+							}
+						}
+						
+		}
+	}
+	#Kehlsteinhaus
+	focus = {
+		id = GER_Kehlsteinhaus
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		focus = GER_Berghof
+		}
+		x = 40
+		y = 10
+		cost = 3
+		
+		available = {
+		52 = { 
+						controller = {
+							OR = {
+								tag = GER
+								is_in_faction_with = GER
+								}
+							}
+						} 
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}	
+		
+		completion_reward = {
+			52 = {
+						add_building_construction = {
+							type = bunker
+							level = 2
+							province = 707
+							instant_build = yes
+							}
+						}
+		}
+	}	
 }
 #### EOF
