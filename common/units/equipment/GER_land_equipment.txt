@@ -1242,7 +1242,71 @@
 			rubber = 3
 		}
 	}
+Landkreuzer_equipment = {
+		year = 1944
 
+		is_archetype = yes
+		
+		picture = archetype_Landkreuzer_equipment
+		is_buildable = no
+		type = armor
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			tank_gun_upgrade
+
+			tank_aa_upgrade
+			#tank_at_upgrade
+			#tank_art_upgrade 
+			tank_sights_upgrade
+			tank_radio_upgrade
+
+			tank_sloped_upgrade
+			tank_anti_inf_upgrade 
+		}
+		
+		#Misc Abilities
+		maximum_speed =1
+		reliability = 0.2
+
+		#Defensive Abilities
+		defense = 20
+		breakthrough = 100
+		hardness = 1
+		armor_value = 250
+
+		#Offensive Abilities
+		soft_attack = 56
+		hard_attack = 64
+		ap_attack = 270
+		air_attack = 10
+
+		#Space taken in convoy
+		lend_lease_cost = 1000
+		
+		build_cost_ic = 2500
+		resources = {
+			oil = 16
+			steel = 28
+			tungsten = 10
+			chromium = 10
+			rubber = 6
+		}
+	}
+	# Landkreuzer
+	Landkreuzer_equipment_1 = {
+		year = 1943
+
+		archetype = Landkreuzer_equipment
+		priority = 70
+		visual_level = 0
+		
+	}
 #Czech tanks
 
 	# vz. Archetype
