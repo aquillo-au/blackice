@@ -9997,9 +9997,9 @@ country_event = {
 			if = {
 				limit = {
 					is_ai = no
-					has_army_experience < 75
+					has_army_experience < 80
 				}
-				army_experience = 75
+				army_experience = 80
 			}
 			#load_oob = "GER_29_mot_Division"
 			set_country_flag = mot_29
@@ -13119,7 +13119,7 @@ country_event = {
     id = germany.414
     title = germany.414.t
     desc = germany.414.d
-    picture = GFX_report_event_atlantic_wall_gfxaddon
+    picture = GFX_report_event_german_wm_lw_gfxaddon
     
 	fire_only_once = yes
 	
@@ -13148,7 +13148,7 @@ country_event = {
     id = germany.415
     title = germany.415.t
     desc = germany.415.d
-    picture = GFX_report_event_german_troops
+    picture = GFX_report_event_german_wm_lw_gfxaddon
     
 	fire_only_once = yes
 	
@@ -14117,7 +14117,7 @@ country_event = {
         ai_chance = { factor = 100 }
         
         hidden_effect = {
-			add_ideas = Project_Riese
+			
         }
     }
 }
@@ -14595,6 +14595,52 @@ country_event = {
         
         hidden_effect = {
 			set_technology = { arctic_weather_tech = 1 }
+        }
+    }
+	
+}
+country_event = {
+    id = germany.442
+    title = germany.442.t
+    desc = germany.442.d
+  picture = GFX_report_event_afrika_bf109_trop_gfxaddon
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.442.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_timed_idea = {
+			idea = wildesau_tactics
+			days = 420
+		}
+		
+			
+        }
+    }
+	
+}
+country_event = {
+    id = germany.443
+    title = germany.443.t
+    desc = germany.443.d
+  picture = GFX_report_event_bomber_navigation_gfxaddon
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.443.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_ideas = Zahme_Sau_tactics
+			
         }
     }
 	
