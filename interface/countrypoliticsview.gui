@@ -43,14 +43,14 @@ guiTypes = {
 		iconType ={
 			name ="pol_faction_icon"
 			spriteType = "GFX_pol_factions_strip"
-			position = { x= 19 y = 305 }
+			position = { x= 237 y = 65 }
 			Orientation = "UPPER_LEFT"
 			frame = 1
 		}			
 		
 		containerWindowType = {
 			name = "chart_explanation"
-			position = { x = 18 y = 116 }
+			position = { x = 10 y = -40 }
 			size = { width = 330 height = 90 }
 			clipping = no
 			
@@ -61,16 +61,16 @@ guiTypes = {
 
 			gridBoxType = {
 				name = "parties_grid"
-				position = { x = 260 y = 180 }  # x = 260 y = 184
+				position = { x = 245 y = 180 }  # x = 260 y = 184
 				size = { width = 100%% height = 100%% }
-				slotsize = { width = 230 height = 16 }
+				slotsize = { width = 240 height = 16 }
 				format = "UPPER_LEFT"
 			}
 		}
 
 		containerWindowType = {
 			name = "political_pie_chart"
-			position = { x= 270 y = 304 }
+			position = { x= 245 y = 140 }
 			size = { width=100 height=100 }
 			clipping = no
 
@@ -88,7 +88,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "ruling_party_info"
-			position = { x = 88 y = 305 }
+			position = { x = 245 y = 60 }
 			size = { width = 255 height = 60 }
 			clipping = no
 			
@@ -103,7 +103,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "ideology"
-				position = { x = 9 y = 8 }
+				position = { x = 75 y = 10 }
 				font = "hoi_18mbs"
 				text = "ideology"
 				maxWidth = 155
@@ -111,28 +111,26 @@ guiTypes = {
 			}
 			instantTextboxType = {
 				name = "elections"
-				position = { x = 9 y = 34 }
+				position = { x = 75 y = 40 }
 				font = "hoi_16mbs"
 				text = "elections"
-				maxWidth = 155
+				maxWidth = 110
 				maxHeight = 20
 			}
 			instantTextboxType = {
 				name = "faction_name"
-				position = { x = 103 y = -45 }
+				position = { x = 90 y = 10 }
 				font = "hoi_18mbs"
 				text = "faction"
 				maxWidth = 193
 				maxHeight = 20
-				format = centre				
+				format = right				
 			}
 			buttonType = {
 				name = "dismantle_faction"
-				position = { x = 302 y = -50 }
+				position = { x = 250 y = 40 }
 				quadTextureSprite = "GFX_dismantle_faction_button"
 				pdx_tooltip = "DIPLOMACY_DISMANTLE_FACTION_TITLE"
-				#buttonFont = "hoi_16mbs"
-				#buttonText = "DIPLOMACY_DISMANTLE_FACTION_TITLE"
 			}
 		}
 		
@@ -227,8 +225,8 @@ guiTypes = {
 		# Select National Focus
 		containerWindowType = {
 			name = "active_goal"
-			position = { x = 179 y = 48 }
-			size = { width = 330 height = 50 }
+			position = { x = 179 y = 263 }
+			size = { width = 330 height = 50 } #330x50
 			clipping = no
 			
 			background = {
@@ -314,13 +312,13 @@ guiTypes = {
 		#National Spirit view
 		containerWindowType = {
 			name = "national_spirit"
-			position = { x = 81 y = 153 }
-			size = { width = 360 height = 50 }
+			position = { x = 0 y = 340 }
+			size = { width = 540 height = 175 }
 			clipping = no
 			
 			instantTextboxType = {
 				name = "title"
-				position = { x = 110 y = -2 }
+				position = { x = 30 y = -20 }
 				font = "hoi_18mbs"
 				text = "POLITICS_NATIONAL_SPIRIT"
 				maxWidth = 200
@@ -329,18 +327,18 @@ guiTypes = {
 			}
 			gridboxtype = {
 				name = "spirit_grid"
-				position = { x = 98 y = 22 }
-				size = { width = 100%% height = 100%% }
-				slotsize = { width = 60 height = 68 }
-				max_slots = { x = 8 y = 1 }
+				position = { x = 20 y = 15 }
+				size = { width = 520 height = 140 }
+				slotsize = { width = 55 height = 55 }
+				max_slots = { x = 9 y = 2 }
 				format = "UPPER_LEFT"
 			}
 			gridboxtype = {
 				name = "spirit_grid_over_defined"
-				position = { x = 90 y = 5 }
+				position = { x = 0 y = 5 }
 				size = { width = 100%% height = 100%% }
-				slotsize = { width = 33 height = 32 }
-				max_slots = { x = 10 y = 2 }
+				slotsize = { width = 35 height = 35 }
+				max_slots = { x = 15 y = 3 }
 				format = "UPPER_LEFT"
 			}			
 			
@@ -369,7 +367,7 @@ guiTypes = {
 		# Ideas view
 		containerWindowType = {
 			name = "ideas"
-			position = { x = 0 y = 410 } #391
+			position = { x = 0 y = 510 } #org391 y=410
 			size = { width=100%% height=100%% }
 			verticalScrollbar = "right_vertical_slider"
 			margin = { top = 14 bottom = 13}
@@ -421,18 +419,18 @@ guiTypes = {
 		}
 		buttonType = {
 			name = "manage_occupied_button"
-			position = { x = 15 y = 382 } #x = -534 y = -620
+			position = { x = 46 y = 482 } #x = -534 y = -620
 			quadTextureSprite = "GFX_button_205x25"
 			buttonFont = "hoi_16mbs"
-			Orientation = "UPPER_LEFT"
+			Orientation = "CENTRE"
 			buttonText = "MANAGE_OCCUPIED_TERRITORIES"
 		}
 		buttonType = {
 			name = "show_subjects_button"
-			position = { x = 225 y = 382 }
-			quadTextureSprite = "GFX_button_110x25"
+			position = { x = 300 y = 482 }
+			quadTextureSprite = "GFX_button_205x25"
 			buttonFont = "hoi_16mbs"
-			Orientation = "UPPER_LEFT"
+			Orientation = "CENTRE"
 			buttonText = "MANAGE_SUBJECTS"
 		}
 	}
