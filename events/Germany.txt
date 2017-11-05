@@ -7227,6 +7227,7 @@ country_event = {
 			}
 		}
 
+	
 		if = {
 			limit = {
 				YUG = {
@@ -7346,8 +7347,20 @@ country_event = {
 			}
 		}
 	}
-}
 
+option = {
+		name = germany.98.e
+		ai_chance = { factor = 100 }
+	trigger = {
+		and = {
+			ITA = { is_ai = yes }
+			GER = { is_ai = yes }
+				not = { country_exists = YUG }
+				}
+			}
+		}
+	
+	}
 # Germany: Carve up Greece - Give land to Italy?
 country_event = {
 	id = germany.99
@@ -9321,18 +9334,8 @@ country_event = {
 
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		not = { has_country_flag = GERgrossdeutschland_stug }
-		date > 1939.6.6
-		is_ai = yes
-		
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
+	is_triggered_only = yes
+
 	option = {
 		name = germany.234.a
 		ai_chance = { factor = 100 }
@@ -11728,14 +11731,14 @@ country_event = {
 		name = germany.312.a
 		BEL = { country_event = germany.313 }
 		ai_chance = {
-			factor = 75
+			factor = 25
 		}
 	}
 	option = { #Demand its Return
 		name = germany.312.b
 		BEL = { country_event = germany.341 }
 		ai_chance = {
-			factor = 25
+			factor = 75
 		}
 	}
 }
@@ -11974,7 +11977,7 @@ country_event = {
 
 	option = { #Demand EM anyways
 		name = germany.385.a
-		GER = { country_event = germany.341 }
+		BEL = { country_event = germany.341 }
 		ai_chance = {
 			base = 60
 			
@@ -12007,7 +12010,7 @@ country_event = {
 		name = germany.341.a
 		GER = { country_event = germany.342 }
 		ai_chance = {
-			factor = 1
+			factor = 0
 			
 		}
 	}
@@ -12027,7 +12030,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 1
+			factor = 100
 			
 		}
 	}
@@ -13194,9 +13197,10 @@ country_event = {
         name = germany.416.a #
         ai_chance = { factor = 100 }
         
-        hidden_effect = {
-				36 = {
-				hidden_effect = {
+            hidden_effect = {
+			36 = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13217,9 +13221,12 @@ country_event = {
 					}
 					
 				}
-			}
-			7 = {	
-				hidden_effect = {
+
+
+
+			
+			7 = {
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13228,13 +13235,13 @@ country_event = {
 					}
 					add_building_construction = {
 						type = coastal_bunker
-						level = 4
+						level = 3
 						province = 391
 						instant_build = yes
 					}
 					add_building_construction = {
 						type = coastal_bunker
-						level = 4
+						level = 3
 						province = 9498
 						instant_build = yes
 					}
@@ -13257,9 +13264,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
-			6 = {
-				hidden_effect = {
+
+			
+			6 = {	
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -13279,9 +13288,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
-			29 = {	
-				hidden_effect = {
+
+			
+			29 = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13290,7 +13301,7 @@ country_event = {
 					}
 					add_building_construction = {
 						type = coastal_bunker
-						level = 4
+						level = 3
 						province = 11548
 						instant_build = yes
 					}
@@ -13300,22 +13311,28 @@ country_event = {
 						province = 9500
 						instant_build = yes
 					}
-					
+
 				}
-			}
+
+			
 			886 = {
-				hidden_effect = {
-					add_building_construction = {
-						type = coastal_bunker
-						level = 3
-						province = 11420
-						instant_build = yes
+
+				
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11420
+							instant_build = yes
+						}
+						
 					}
-					
-				}
-			}
-			15 = {
-				hidden_effect = {
+
+
+
+			
+			15 = {			
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13359,9 +13376,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
 			14 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -13404,10 +13423,12 @@ country_event = {
 						province = 9510
 						instant_build = yes
 					}
-				}
+
+				
 			}
 			30 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 2
@@ -13420,10 +13441,13 @@ country_event = {
 						province = 11616
 						instant_build = yes
 					}
+					
 				}
-			}
+
+			
 			23 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -13443,9 +13467,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
 			19 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 2
@@ -13471,7 +13497,8 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
         }
     }
 	option = {
@@ -13495,8 +13522,10 @@ country_event = {
         ai_chance = { factor = 100 }
         
         hidden_effect = {
+		
 			36 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13517,9 +13546,11 @@ country_event = {
 					}
 					
 				}
-			}
+
+			
 			7 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13557,9 +13588,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
-			6 = {
-				hidden_effect = {
+
+			
+			6 = {	
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -13579,9 +13612,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
 			29 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13600,21 +13635,27 @@ country_event = {
 						province = 9500
 						instant_build = yes
 					}
-					
+
 				}
-			}
+
+			
 			886 = {
-				hidden_effect = {
-					add_building_construction = {
-						type = coastal_bunker
-						level = 3
-						province = 11420
-						instant_build = yes
+
+				
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11420
+							instant_build = yes
+						}
+						
 					}
-				}
-			}
-			15 = {		
-				hidden_effect = {
+
+
+			
+			15 = {			
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13658,9 +13699,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
-			14 = {		
-				hidden_effect = {
+
+			
+			14 = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -13703,10 +13746,12 @@ country_event = {
 						province = 9510
 						instant_build = yes
 					}
-				}
+
+				
 			}
 			30 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 2
@@ -13721,9 +13766,11 @@ country_event = {
 					}
 					
 				}
-			}
+
+			
 			23 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -13743,9 +13790,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
 			19 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 2
@@ -13771,7 +13820,8 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
         }
     }
 	option = {
@@ -13796,7 +13846,8 @@ country_event = {
         
         hidden_effect = {
 			36 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13817,9 +13868,11 @@ country_event = {
 					}
 					
 				}
-			}
+
+			
 			7 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13857,9 +13910,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
 			6 = {	
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -13879,9 +13934,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
 			29 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13901,10 +13958,12 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
 			886 = {
-				if = {
-					hidden_effect = {
+
+
+				
 						add_building_construction = {
 							type = coastal_bunker
 							level = 3
@@ -13913,10 +13972,12 @@ country_event = {
 						}
 						
 					}
-				}
-			}
+
+
+			
 			15 = {			
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 3
@@ -13960,9 +14021,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
 			14 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -14005,10 +14068,12 @@ country_event = {
 						province = 9510
 						instant_build = yes
 					}
-				}
+
+				
 			}
 			30 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 2
@@ -14023,9 +14088,11 @@ country_event = {
 					}
 					
 				}
-			}
+
+			
 			23 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 1
@@ -14045,9 +14112,11 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
 			19 = {
-				hidden_effect = {
+
+				
 					add_building_construction = {
 						type = coastal_bunker
 						level = 2
@@ -14073,7 +14142,8 @@ country_event = {
 						instant_build = yes
 					}
 				}
-			}
+
+			
         }
     }
 	option = {
@@ -14640,6 +14710,28 @@ country_event = {
         
         hidden_effect = {
 		add_ideas = Zahme_Sau_tactics
+			
+        }
+    }
+	
+}
+#die glocke
+country_event = {
+    id = germany.444
+    title = germany.444.t
+    desc = germany.444.d
+ picture = GFX_report_event_ss_junkerschulen
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+        name = germany.444.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		add_ideas = die_glocke
 			
         }
     }

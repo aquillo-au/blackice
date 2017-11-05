@@ -20,7 +20,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construction
 		x = -24
 		y = 0
-		cost = 3
+		cost = 2.9
 		
 		available = {
 			date > 1936.4.22
@@ -43,7 +43,7 @@ focus_tree = {
 		id = GER_autobahn_I
 		prerequisite = { focus = GER_Goering_Plan }
 		icon = GFX_goal_generic_construct_infrastructure
-		x = -26
+		x = -28
 		y = 1
 		cost = 3
 		
@@ -126,7 +126,7 @@ focus_tree = {
 		id = GER_autobahn_II
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = GER_autobahn_I }
-		x = -26
+		x = -28
 		y = 2
 		cost = 3
 		
@@ -203,7 +203,7 @@ focus_tree = {
 		id = GER_autobahn_III
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = GER_autobahn_II }
-		x = -26
+		x = -28
 		y = 3
 		cost = 3
 		
@@ -291,7 +291,7 @@ focus_tree = {
 		id = GER_autobahn_IV
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = GER_autobahn_III }
-		x = -26
+		x = -28
 		y = 4
 		cost = 3
 		
@@ -386,7 +386,7 @@ focus_tree = {
 	focus = {
 		id = GER_requistion_trucks
 		icon = GFX_goal_generic_army_motorized
-		x = -28
+		x = -30
 		y = 1
 		cost = 4.2
 		
@@ -400,7 +400,7 @@ focus_tree = {
 		completion_reward = {
 					add_timed_idea = {
 				idea = german_trucks
-				days = 180
+				days = 365
 			}				
 				add_equipment_to_stockpile = {
 						type = motorized_equipment_1
@@ -445,7 +445,7 @@ focus_tree = {
 	focus = {
 		id = GER_requistion_cars
 		icon = GFX_goal_generic_army_motorized
-		x = -28
+		x = -30
 		y = 2
 		cost = 4.2
 		
@@ -459,7 +459,7 @@ focus_tree = {
 		completion_reward = {
 				add_timed_idea = {
 				idea = german_cars
-				days = 180
+				days = 365
 			}					
 				add_equipment_to_stockpile = {
 						type = motorized_lia_equipment_01
@@ -504,7 +504,7 @@ focus_tree = {
 		id = GER_requistion_motorcycles
 		icon = GFX_goal_generic_army_motorized
 		#prerequisite = { focus = GER_autobahn_III }
-		x = -28
+		x = -30
 		y = 3
 		cost = 4.2
 		
@@ -560,7 +560,7 @@ focus_tree = {
 		id = GER_ration_petrol
 		icon = GFX_goal_generic_oil_refinery
 		#prerequisite = { focus = GER_autobahn_III }
-		x = -28
+		x = -30
 		y = 5
 		cost = 4.2
 		
@@ -580,6 +580,21 @@ focus_tree = {
 				amount = 5
 				state = 896
 			}
+			add_resource = {
+				type = oil
+				amount = 3
+				state = 55
+			}
+			add_resource = {
+				type = oil
+				amount = 2
+				state = 4
+			}
+			add_resource = {
+				type = oil
+				amount = 2
+				state = 5
+			}
 		}
 	}
 	
@@ -588,12 +603,12 @@ focus_tree = {
 		id = GER_collect_metals
 		icon = GFX_goal_generic_consumer_goods
 		#prerequisite = { focus = GER_autobahn_III }
-		x = -28
+		x = -30
 		y = 6
 		cost = 4.2
 		
 		available = {
-		has_war = yes
+		has_war_with = SOV
 		}
 		ai_will_do = {
 			factor = 3
@@ -606,8 +621,63 @@ focus_tree = {
 				type = steel
 				amount = 20
 				state = 896
+				}
+			add_resource = {
+				type = tungsten
+				amount = 3
+				state = 896
+			}
+			add_resource = {
+				type = chromium
+				amount = 2
+				state = 896
+			}
+			add_resource = {
+				type = steel
+				amount = 30
+				state = 55
+				}
+			add_resource = {
+				type = tungsten
+				amount = 2
+				state = 53
+			}
+			add_resource = {
+				type = chromium
+				amount = 1
+				state = 55
+			}
+			add_resource = {
+				type = steel
+				amount = 20
+				state = 4
+				}	
+			add_resource = {
+				type = tungsten
+				amount = 1
+				state = 4
+			}
+			add_resource = {
+				type = chromium
+				amount = 1
+				state = 4
+			}
+			add_resource = {
+				type = steel
+				amount = 10
+				state = 5
 				}		
-	
+			add_resource = {
+				type = tungsten
+				amount = 1
+				state = 5
+			}
+			add_resource = {
+				type = chromium
+				amount = 1
+				state = 5
+			}
+			
 		}
 	}
 	# round up horses I, II, III
@@ -615,7 +685,7 @@ focus_tree = {
 		id = GER_round_up_horses_I
 		icon = GFX_goal_generic_cavalry
 		#prerequisite = { focus = GER_autobahn_III }
-		x = -30
+		x = -32
 		y = 1
 		cost = 3
 		
@@ -629,7 +699,7 @@ focus_tree = {
 		completion_reward = {
 				add_timed_idea = {
 				idea = german_horses
-				days = 180
+				days = 365
 			}
 				
 				add_equipment_to_stockpile = {
@@ -649,7 +719,7 @@ focus_tree = {
 	id = GER_round_up_horses_II
 		icon = GFX_goal_generic_cavalry
 		#prerequisite = { focus = GER_autobahn_III }
-		x = -30
+		x = -32
 		y = 2
 		cost = 3
 		
@@ -699,7 +769,7 @@ focus_tree = {
 	id = GER_round_up_horses_III
 		icon = GFX_goal_generic_cavalry
 		#prerequisite = { focus = GER_autobahn_III }
-		x = -30
+		x = -32
 		y = 3
 		cost = 3
 		
@@ -1040,7 +1110,7 @@ focus_tree = {
 		prerequisite = { focus = GER_west_wall_lite }
 		x = -24
 		y = 4
-		cost = 10
+		cost = 25.8
 		
 		available = {
 			36 = { is_controlled_by = GER }
@@ -1061,17 +1131,299 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
-			country_event = { id = germany.416 }
+			
+			36 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6336
+						instant_build = yes
 					}
-	}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11318
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9335
+						instant_build = yes
+					}
+					
+				}
+			
+			7 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 3314
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 391
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 9498
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 68
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 3211
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9431
+						instant_build = yes
+					}
+				}
+			
+			6 = {	
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6560
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6446
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6598
+						instant_build = yes
+					}
+				}
+			
+			29 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 575
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 11548
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 9500
+						instant_build = yes
+					}
+				}
+			
+			886 = {
+				
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11420
+							instant_build = yes
+						}
+						
+					}
+			
+			15 = {			
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 485
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 9434
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6599
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11535
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 3579
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6449
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9550
+						instant_build = yes
+					}
+				}
+			
+			14 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11508
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9525
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6572
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 3552
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 542
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 6536
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9510
+						instant_build = yes
+					}
+				
+			}
+			30 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 11465
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11616
+						instant_build = yes
+					}
+					
+				}
+			
+			23 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11600
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 6657
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9597
+						instant_build = yes
+					}
+				}
+			
+			19 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 11565
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6777
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9710
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 743
+						instant_build = yes
+					}
+				}
+			
+        
+		#country_event = { id = germany.416 }
+    }
+			
+					}
+	
 	focus = {
 		id = GER_atlantic_wall_med_focus
 		#text = Totenkopf_Division
 		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = GER_atlantic_wall_lite_focus }
+		mutually_exclusive = { focus = GER_ost_wall_medium_focus }
 		x = -24
 		y = 5
-		cost = 10
+		cost = 25.8
 		
 		available = {
 			36 = { is_controlled_by = GER }
@@ -1092,17 +1444,299 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
-			country_event = { id = germany.417 }
+		
+			36 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6336
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11318
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9335
+						instant_build = yes
+					}
+					
+				}
+			
+			7 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 3314
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 391
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 9498
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 68
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 3211
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9431
+						instant_build = yes
+					}
+				}
+			
+			6 = {	
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6560
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6446
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6598
+						instant_build = yes
+					}
+				}
+			
+			29 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 575
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 11548
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 9500
+						instant_build = yes
+					}
+				}
+			
+			886 = {
+				
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11420
+							instant_build = yes
+						}
+						
+					}
+			
+			15 = {			
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 485
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 9434
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6599
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11535
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 3579
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6449
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9550
+						instant_build = yes
+					}
+				}
+			
+			14 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11508
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9525
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6572
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 3552
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 542
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 6536
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9510
+						instant_build = yes
+					}
+				
+			}
+			30 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 11465
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11616
+						instant_build = yes
+					}
+					
+				}
+			
+			23 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11600
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 6657
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9597
+						instant_build = yes
+					}
+				}
+			
+			19 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 11565
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6777
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9710
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 743
+						instant_build = yes
+					}
+				}
+			
+        
+		#country_event = { id = germany.417 }
+			}
+			
 		}
-	}
+	
 	focus = {
 		id = GER_atlantic_wall_heavy_focus
 		#text = Totenkopf_Division
 		icon = GFX_focus_generic_coastal_fort
 		prerequisite = { focus = GER_atlantic_wall_med_focus }
+		mutually_exclusive = { focus = GER_ost_wall_heavy_focus }
 		x = -24
 		y = 6
-		cost = 10
+		cost = 25.8
 		
 		available = {
 			36 = { is_controlled_by = GER }
@@ -1123,8 +1757,421 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
-			country_event = { id = germany.418 }
+		
+			36 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6336
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11318
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9335
+						instant_build = yes
+					}
+					
+				}
+			
+			7 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 3314
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 391
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 9498
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 68
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 3211
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9431
+						instant_build = yes
+					}
+				}
+			
+			6 = {	
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6560
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6446
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6598
+						instant_build = yes
+					}
+				}
+			
+			29 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 575
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 11548
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 9500
+						instant_build = yes
+					}
+				}
+			
+			886 = {
+				
+						add_building_construction = {
+							type = coastal_bunker
+							level = 3
+							province = 11420
+							instant_build = yes
+						}
+						
+					}
+			
+			15 = {			
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 485
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 9434
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6599
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11535
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 3579
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 3
+						province = 6449
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9550
+						instant_build = yes
+					}
+				}
+			
+			14 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11508
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9525
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6572
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 3552
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 542
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 6536
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9510
+						instant_build = yes
+					}
+				
+			}
+			30 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 11465
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11616
+						instant_build = yes
+					}
+					
+				}
+			
+			23 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 11600
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 6657
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9597
+						instant_build = yes
+					}
+				}
+			
+			19 = {
+				
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 11565
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 6777
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						province = 9710
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = coastal_bunker
+						level = 2
+						province = 743
+						instant_build = yes
+					}
+				}
+			
+			
+		#country_event = { id = germany.418 }
 		}
+			
+	}
+	
+	#ost wall focus
+	focus = {
+		id = GER_ost_wall_lite_focus
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = GER_west_wall_lite }
+		
+		x = -26
+		y = 4
+		cost = 5
+		
+		available = {
+			893 = { is_controlled_by = GER }
+			
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}	
+		
+		completion_reward = {
+		
+			893 = {
+				
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11478
+						instant_build = yes
+					}
+					
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 444
+						instant_build = yes
+					}
+					
+				}
+			
+			
+		}
+			
+	}
+	focus = {
+		id = GER_ost_wall_medium_focus
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = GER_ost_wall_lite_focus }
+		mutually_exclusive = { focus = GER_atlantic_wall_med_focus }
+		
+		x = -26
+		y = 5
+		cost = 5
+		
+		available = {
+			893 = { is_controlled_by = GER }
+			
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}	
+		
+		completion_reward = {
+		
+			893 = {
+				
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 11478
+						instant_build = yes
+					}
+					
+					add_building_construction = {
+						type = bunker
+						level = 3
+						province = 444
+						instant_build = yes
+					}
+					
+				}
+			
+			
+		}
+			
+	}
+	focus = {
+		id = GER_ost_wall_heavy_focus
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = GER_ost_wall_medium_focus }
+		mutually_exclusive = { focus = GER_atlantic_wall_heavy_focus }
+		
+		x = -26
+		y = 6
+		cost = 10
+		
+		available = {
+			893 = { is_controlled_by = GER }
+			
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}	
+		
+		completion_reward = {
+		
+			893 = {
+				
+					add_building_construction = {
+						type = bunker
+						level = 6
+						province = 11478
+						instant_build = yes
+					}
+					
+					add_building_construction = {
+						type = bunker
+						level = 6
+						province = 444
+						instant_build = yes
+					}
+					
+				}
+			
+			
+		}
+			
 	}
 	focus = {
 		id = GER_industrial_effort_36
@@ -1760,6 +2807,247 @@ focus_tree = {
 			}
 		}
 	}
+
+	focus = {
+		id = GER_jets_focus_engines
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -21
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = jet_engines			
+			}
+		}
+	}
+	focus = {
+		id = GER_jets_focus_I
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -21
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = tech_hs_132_equipment_1
+			}
+		}
+	}
+	focus = {
+		id = GER_jets_focus_II
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -19
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = tech_he_162_fighter_equipment_1
+			}
+		}
+	}
+	focus = {
+		id = GER_jets_focus_III
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -17
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 2
+				technology = tech_me_163_interceptor_equipment_1	
+				technology = tech_me_163_c_interceptor_equipment_1
+			}
+		}
+	}
+	
+	focus = {
+		id = GER_jets_focus_IV
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -15
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = tech_ba_349_interceptor_equipment_1
+			}
+		}
+	}
+	focus = {
+		id = GER_jets_focus_V
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -13
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = tech_me_262_fighter_equipment_1
+			}
+		}
+	}
+	
+	
+	focus = {
+		id = GER_jets_focus_VI
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -11
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = tech_go_229_fighter_equipment_1
+			}
+		}
+	}
+	
+	focus = {
+		id = GER_jets_focus_VII
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -9
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = tech_ar_234_bomber_equipment_1
+			}
+		}
+	}
+	
+	focus = {
+		id = GER_jets_focus_VIII
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -7
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = tech_ar_234_bomber_equipment_2
+			}
+		}
+	}
+	
+	focus = {
+		id = GER_jets_focus_IX
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -5
+		y = 12
+		cost = 1.4
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = tech_ju_287_bomber_equipment_1
+			}
+		}
+	}
+	
+	focus = {
+		id = GER_jets_focus_X
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = GER_air_innovation_2 }
+		x = -3
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 5
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = jet_bonus
+				bonus = 0.25
+				uses = 1
+				technology = tech_ju_287_bomber_equipment_2
+			}
+		}
+	}
+		
 	#Peenemünde research centre
 	focus = {
 		id = GER_rocketry_Peenemunde
@@ -1832,7 +3120,12 @@ focus_tree = {
 		}
 		available_if_capitulated = yes	
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.25
+				uses = 1
+				technology = rocket_engines
+			}
 		}
 	}
 	#strategic rocket II
@@ -1849,7 +3142,12 @@ focus_tree = {
 		}
 		available_if_capitulated = yes	
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.25
+				uses = 1
+				technology = improved_rocket_engines
+			}
 		}
 	}
 	#guided anti-ship glide bomb 
@@ -1866,6 +3164,7 @@ focus_tree = {
 		}
 		available_if_capitulated = yes	
 		completion_reward = {
+			set_technology = { fritz_x_tech = 1 }
 			
 		}
 	}
@@ -1883,6 +3182,7 @@ focus_tree = {
 		}
 		available_if_capitulated = yes	
 		completion_reward = {
+			set_technology = { rheinbote_tech = 1 }
 			
 		}
 	}
@@ -1900,6 +3200,7 @@ focus_tree = {
 		}
 		available_if_capitulated = yes	
 		completion_reward = {
+			set_technology = { r4m_tech = 1 }
 			
 		}
 	}
@@ -1918,10 +3219,37 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = secret_bonus
-				bonus = 0.25
+				bonus = 0.15
+				uses = 1
+				category = rocketry
+			}
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.05
 				uses = 1
 				category = nuclear
-				category = rocketry
+				}
+		}
+	}
+	focus = {
+		id = GER_norwegian_Hv_water
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = GER_wunderwaffe }
+		x = -23
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.1
+				uses = 1
+				category = nuclear
+				
 			}
 		}
 	}
@@ -1935,7 +3263,7 @@ focus_tree = {
 		}
 
 		x = -23
-		y = 11
+		y = 13
 		cost = 10
 		
 		available = {
@@ -1962,7 +3290,7 @@ focus_tree = {
 		}
 
 		x = -15
-		y = 12
+		y = 14
 		cost = 20
 		
 		available = {
@@ -1989,7 +3317,7 @@ focus_tree = {
 		}
 
 		x = -17
-		y = 12
+		y = 14
 		cost = 20
 		
 		available = {
@@ -2015,7 +3343,7 @@ focus_tree = {
 		}
 
 		x = -19
-		y = 12
+		y = 14
 		cost = 20
 		
 		available = {
@@ -2041,7 +3369,7 @@ focus_tree = {
 		}
 
 		x = -21
-		y = 12
+		y = 14
 		cost = 20
 		
 		available = {
@@ -2067,7 +3395,7 @@ focus_tree = {
 		}
 
 		x = -23
-		y = 13
+		y = 15
 		cost = 20
 		
 		available = {
@@ -2828,8 +4156,7 @@ focus_tree = {
 			}
 		}
 	}
-				
-	
+		
 	focus = {
 		id = GER_naval_air_effort
 		text = naval_air_effort
@@ -3312,19 +4639,22 @@ focus_tree = {
 			show_ideas_tooltip = walther_von_brauchitsch			
 		}
 	}
-	#Start of the player only Grossdeutschland event-chain
+	
 	focus = {
 		id = GER_Grossdeutschland
 		text = GER_Grossdeutschland 
 		icon = GFX_goal_grossdeutschland
 		prerequisite = { focus = GER_Wehrmacht }
 		available = {
-			is_ai = no
+			
 			date > 1939.5.1
 		}
 		x = 1
 		y = 1
-		cost = 2.1
+		cost = 1.3
+		ai_will_do = {
+			factor = 12
+		}
 		available_if_capitulated = yes	
 		completion_reward = {
 			GER = {
@@ -3629,6 +4959,228 @@ focus_tree = {
 			}
 		}
 	
+	focus = {
+		id = GER_Lt_TD
+		#text = GER_stug
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = GER_liecht_division }
+		prerequisite = { focus = GER_infanterie_tactics }
+		prerequisite = { focus = GER_artillery_expansion  }
+				
+		x = 5
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_light_panzer_td_equipment_1
+				
+			}
+			
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_light_assault_panzer_equipment_1 }
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_light_panzer_art_equipment_1 }
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_light_assault_panzer_equipment_2 }
+			
+			 add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology =subtech_light_panzer_art_equipment_2 }
+			 add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology =subtech_light_assault_panzer_equipment_3 }
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_light_panzer_td_equipment_2
+				
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_light_panzer_td_equipment_3
+				
+			}
+			 add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology =subtech_light_panzer_td_equipment_4 }
+			 add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology =subtech_light_panzer_td_equipment_5 }
+			 add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology =tech_light_panzer_td_equipment_6 }
+			 add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology =subtech_panzer_spaa_equipment_1 }
+			 add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology =subtech_panzer_spaa_equipment_2 }
+						
+		}
+	}
+	focus = {
+		id = GER_Med_TD
+		#text = GER_stug
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = GER_Lt_TD }
+				
+		x = 7
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+		add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_panzer_iii_td_equipment_1
+				
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_panzer_iii_td_equipment_2
+				
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_panzer_iii_td_equipment_3 }
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_assault_panzer_equipment_1 }
+			
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_medium_panzer_td_equipment_1 }
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = tech_medium_panzer_td_equipment_3 }
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_panzer_spaa_equipment_3 }
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_panzer_spaa_equipment_4 }
+			
+		}
+	}
+	focus = {
+		id = GER_Hv_TD
+		#text = GER_stug
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = GER_Med_TD }
+		prerequisite = { focus = GER_Heavy_panzer }	
+		x = 9
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_heavy_panzer_art_equipment_1
+			}
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_heavy_panzer_td_slow_equipment_1 }
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_heavy_panzer_td_fast_equipment_1
+				
+			}
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_assault_panzer_equipment_2 }
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_assault_panzer_equipment_3 }
+			
+			
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_medium_panzer_td_equipment_2 }
+						
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_heavy_panzer_td_fast_equipment_2 }
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_heavy_panzer_td_slow_equipment_2 }
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.2
+				uses = 1
+				technology = subtech_panzer_v_spaa_equipment_1 }
+		}
+	}
 	
 	focus = {
 		id = GER_Heavy_panzer
@@ -3895,7 +5447,7 @@ focus_tree = {
 		prerequisite = { focus = GER_infanterie_tactics }
 		prerequisite = { focus = GER_liecht_division }
 		x = -1
-		y = 7
+		y = 5
 		cost = 3.5
 		ai_will_do = {
 			factor = 8
@@ -4228,7 +5780,7 @@ focus_tree = {
 	focus = {
 		id = GER_ussr_war_goal
 		icon = GFX_goal_generic_war_with_comintern
-		prerequisite = { focus = GER_anti_comitern_pact }
+		prerequisite = { focus = GER_anti_comitern_pact  }
 		mutually_exclusive = { focus = GER_soviet_ally }
 		will_lead_to_war_with = SOV
 
@@ -4258,7 +5810,7 @@ focus_tree = {
 		}
 		x = 6
 		y = 3
-		cost = 4.2
+		cost = 6.9
 		historical_ai = {
 			#NOT = {
 			#	any_neighbor_country = {
@@ -4293,7 +5845,7 @@ focus_tree = {
 			}
 		}
 	}
-
+	
 	focus = {
 		id = GER_turkey_friend
 		icon = GFX_goal_generic_improve_relations
@@ -4475,7 +6027,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		x = 16
 		y = 1
-		cost = 7.3
+		cost = 7.2
 		ai_will_do = {
 			factor = 15
 			modifier = {
@@ -5562,7 +7114,7 @@ focus_tree = {
     
 		x = 10
 		y = 2
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 0
 		}	
@@ -5631,7 +7183,7 @@ focus_tree = {
 		}
 		x = 12
 		y = 5
-		cost = 10
+		cost = 4.2
 
 		available_if_capitulated = yes
 
@@ -5669,7 +7221,7 @@ focus_tree = {
 		}
 		x = 10
 		y = 5
-		cost = 10
+		cost = 4.2
 		available_if_capitulated = yes
 
 		ai_will_do = {
@@ -6319,7 +7871,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		x = 16
 		y = 2
-		cost = 1.5
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}	
@@ -6394,14 +7946,14 @@ focus_tree = {
 				if = {
 					limit = {
 						OR = {
-							YUG = { is_puppet = yes }
+							YUG = { is_puppet = no }
 							YUG = { has_war_with = ENG }
 							has_war_with = ENG
 						}
 					}
-					create_wargoal = {
-						type = annex_everything
-						target = YUG
+					declare_war_on = {
+							target = YUG
+							type = annex_everything
 					}
 				}
 			}
@@ -6431,7 +7983,7 @@ focus_tree = {
 				AND = {
 					country_exists = YUG
 					NOT = { has_war_with = YUG }
-					owns_state = 102
+					#owns_state = 102
 				}
 				AND = {
 					NOT = { country_exists = YUG }
@@ -6440,6 +7992,28 @@ focus_tree = {
 					owns_state = 106
 					owns_state = 103
 					owns_state = 105
+				}
+				AND = {
+					NOT = { country_exists = YUG }
+					ITA = {owns_state = 102}
+					ITA = {owns_state = 45}
+					ITA = {owns_state = 106}
+					ITA = {owns_state = 103}
+					ITA = {owns_state = 105}
+				}
+				AND = {
+					NOT = { country_exists = YUG }
+					or = {
+					SER = {owns_state = 102}
+					SER = {owns_state = 45}
+					SER = {owns_state = 106}
+					SER = {owns_state = 103}
+					SER = {owns_state = 105}
+					CRO = {owns_state = 102}
+					CRO = {owns_state = 45}
+					CRO = {owns_state = 106}
+					CRO = {owns_state = 103}
+					CRO = {owns_state = 105}}
 				}
 			}
 			OR = {
@@ -6660,7 +8234,7 @@ focus_tree = {
 		}
 		bypass = {
 			OR = {
-				NOT = { country_exists = YUG }
+				#NOT = { country_exists = YUG }
 				any_other_country = {
 					is_in_faction_with = ROOT
 					YUG = {
@@ -6671,7 +8245,7 @@ focus_tree = {
 		}
 		x = 16
 		y = 4
-		cost = 5
+		cost = 1.7
 		ai_will_do = {
 			factor = 10
 		}	
@@ -6904,7 +8478,7 @@ focus_tree = {
 		}
 		x = 16
 		y = 6
-		cost = 2.8
+		cost = 5
 		ai_will_do = {
 			factor = 10
 		}	
@@ -7643,7 +9217,7 @@ focus_tree = {
 		}
 		x = 38
 		y = 2
-		cost = 2.1
+		cost = 4.2
 		
 		available = {
 		has_war = yes
@@ -9421,10 +10995,7 @@ focus_tree = {
 			
 		}
 	}
-	
-	#Die Glocke
-	#specialised rockets
-	
+			
 	#Himmler's occult quests
 	focus = {
 		id = GER_Himmlers_occult_quests
@@ -9768,6 +11339,33 @@ focus_tree = {
 			country_event = { id = germany.429 }
 		}
 	}	
+	#Die Glocke
+	focus = {
+		id = GER_die_glocke
+		#text = Totenkopf_Division
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = {
+		focus = GER_Wewelsburg_castle
+		}
+		prerequisite = {
+		focus = GER_Complex_Sobon
+		}
+		x = 65
+		y = 3
+		cost = 10
+		
+		available = {
+		
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.444 }
+		}
+	}
 	#angora rabbits
 	focus = {
 		id = GER_angora_rabbits
@@ -9923,7 +11521,7 @@ focus_tree = {
 		add_ideas = Hitler_meddles
 		add_timed_idea = {
 				idea = Berghof_HQ
-				days = 1095
+				days = 1200
 			}
 			52 = {
 						add_building_construction = {
@@ -9942,7 +11540,7 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
-		
+			focus =	GER_Berghof
 		}
 		x = 42
 		y = 1
@@ -9983,11 +11581,11 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
-		focus = GER_Fuhrerbunker
+		focus = GER_Berghof
 		}
 		x = 42
 		y = 2
-		cost = 10
+		cost = 5
 		
 		available = {
 		NOT = { 
@@ -10019,12 +11617,12 @@ focus_tree = {
 		completion_reward = {
 		add_timed_idea = {
 				idea = Wolfsschanze_HQ
-				days = 365
+				days = 240
 			} 
 			839 = {
 						add_building_construction = {
 							type = bunker
-							level = 10
+							level = 5
 							province = 6375
 							instant_build = yes
 							}
@@ -10037,7 +11635,7 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
-		focus = GER_Fuhrerbunker
+		focus = GER_Berghof
 		}
 		x = 42
 		y = 3
@@ -10090,7 +11688,7 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
-		focus = GER_Fuhrerbunker
+		focus = GER_Berghof
 		}
 		x = 42
 		y = 4
@@ -10143,7 +11741,7 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
-		focus = GER_Fuhrerbunker
+		focus = GER_Berghof
 		}
 		x = 42
 		y = 5
@@ -10196,7 +11794,7 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
-		focus = GER_Fuhrerbunker
+		focus = GER_Berghof
 		}
 		x = 42
 		y = 6
@@ -10249,7 +11847,7 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
-		focus = GER_Fuhrerbunker
+		focus = GER_Berghof
 		}
 		x = 42
 		y = 7
@@ -10302,7 +11900,7 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
-		focus = GER_Fuhrerbunker
+		focus = GER_Berghof
 		}
 		x = 42
 		y = 8
@@ -10356,7 +11954,7 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
-		focus = GER_Fuhrerbunker
+		focus = GER_Berghof
 		}
 		x = 42
 		y = 9
@@ -10457,15 +12055,7 @@ focus_tree = {
 						}
 		}
 	}	
-	
-	#Die Glocke
-			
-	#ost wall focus
-	
-	#expand the jets focus
-	
-	#nuke weapons focus expansion
-				
+
 		
 }
 #### EOF

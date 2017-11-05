@@ -434,6 +434,15 @@ country_event = {
 			set_province_controller = 3034
 			set_province_controller = 11366
 			set_province_controller = 317
+			if = {
+				limit = {
+				
+					NOT = { has_tech = paratroopers }
+					
+				}
+				set_technology = { paratroopers = 1 }
+				
+			}
 			load_oob = "GER_invade_Norway"
 			unlock_national_focus = GER_weserubung
 		}

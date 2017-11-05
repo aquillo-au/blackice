@@ -1220,3 +1220,41 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = italy.36
+	title = italy.36.t
+	desc = italy.36.desc
+	picture = GFX_report_event_german_troops_paris
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	fire_only_once = yes
+	trigger = {
+		tag = ITA
+		is_ai = yes
+		GER = { focus_progress = { focus = GER_demand_slovenia progress > 0.7 }}
+		NOT = { has_war_with = YUG }
+		NOT = { has_war_with = GER }
+		YUG = { exists = yes	}
+		NOT = { is_in_faction_with = YUG }
+		NOT = { GER = { is_in_faction_with = YUG }}
+	}
+	
+	option = { # put the squeeze on them
+		name = italy.36.a
+		ai_chance = {
+			factor = 100
+		}
+		
+		hidden_effect = {
+		declare_war_on = {
+			target = YUG
+			type = annex_everything
+		}	
+		}
+		
+	}	
+			
+	
+}

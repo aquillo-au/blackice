@@ -1443,7 +1443,7 @@ SOV_defence_I_start = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 1.5
+			entrenchment  = 0.5
 		}
 	}
 SOV_defence_I_end = {
@@ -1455,7 +1455,7 @@ SOV_defence_I_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -1.5
+			entrenchment  = -0.5
 		}
 	}
 SOV_defence_II_start = {
@@ -1467,7 +1467,7 @@ SOV_defence_II_start = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 2
+			entrenchment  = 1
 		}
 	}
 SOV_defence_II_end = {
@@ -1479,7 +1479,7 @@ SOV_defence_II_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -2
+			entrenchment  = -1
 		}
 	}
 SOV_defence_III_start = {
@@ -1491,7 +1491,7 @@ SOV_defence_III_start = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 2
+			entrenchment  = 1.5
 		}
 	}
 SOV_defence_III_end = {
@@ -1503,7 +1503,7 @@ SOV_defence_III_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -2
+			entrenchment  = -1.5
 		}
 	}
 SOV_defence_IV_start = {
@@ -1515,7 +1515,7 @@ SOV_defence_IV_start = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 3
+			entrenchment  = 2
 		}
 	}
 SOV_defence_IV_end = {
@@ -1527,7 +1527,7 @@ SOV_defence_IV_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -3
+			entrenchment  = -2
 		}
 	}
 SOV_defence_winter = {
@@ -1539,7 +1539,7 @@ SOV_defence_winter = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 3
+			entrenchment  = 2
 		}
 	}
 SOV_defence_winter_end = {
@@ -1551,7 +1551,7 @@ SOV_defence_winter_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -3
+			entrenchment  = -2
 		}
 	}
 SOV_defence_stalingrad = {
@@ -1563,7 +1563,7 @@ SOV_defence_stalingrad = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 8
+			entrenchment  = 2
 		}
 	}
 SOV_defence_stalingrad_end = {
@@ -1575,7 +1575,7 @@ SOV_defence_stalingrad_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -3
+			entrenchment  = -2
 		}
 	}
 SOV_defence_guards = {
@@ -1677,7 +1677,7 @@ JAP_defence_I = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 3
+			entrenchment  = 1
 		}
 	}
 ENG_defence_I = {
@@ -1689,7 +1689,7 @@ ENG_defence_I = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 2
+			entrenchment  = 0.5
 		}
 	}
 Gurkha_tech = {
@@ -1715,7 +1715,7 @@ ENG_defence_II = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 2
+			entrenchment  = 0.5
 		}
 	}
 ENG_defence_III = {
@@ -1727,7 +1727,7 @@ ENG_defence_III = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 2
+			entrenchment  = 0.5
 		}
 	}
 ENG_defence_I_end = {
@@ -1739,7 +1739,7 @@ ENG_defence_I_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -2
+			entrenchment  = -0.5
 		}
 	}
 ENG_defence_II_end = {
@@ -1751,7 +1751,7 @@ ENG_defence_II_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -2
+			entrenchment  = -0.5
 		}
 	}
 ENG_defence_III_end = {
@@ -1763,7 +1763,7 @@ ENG_defence_III_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -2
+			entrenchment  = -0.5
 		}
 	}
 FRA_defence_I = {
@@ -1775,7 +1775,7 @@ FRA_defence_I = {
 		}
 		dig_in_speed_factor = 10
 		category_army = {
-			entrenchment  = 2
+			entrenchment  = 0.5
 		}
 	}
 FRA_defence_I_end = {
@@ -1787,7 +1787,7 @@ FRA_defence_I_end = {
 		}
 		dig_in_speed_factor = -10
 		category_army = {
-			entrenchment  = -2
+			entrenchment  = -0.5
 		}
 	}
 luftwaffe_penalty_I = {
@@ -1867,6 +1867,51 @@ arctic_weather_tech = {
 			surface_detection = 0.1
 			convoy_raiding_coordination = 0.05
 		}
+	}
+fritz_x_tech = {
+
+		research_cost = 1
+		# only from event
+		allow = {
+			always = no
+		}
+		fw_200_bomber = {
+			naval_strike_attack = 0.15
+		}
+		
+	}
+rheinbote_tech = {
+
+		research_cost = 1
+		# only from event
+		allow = {
+			always = no
+		}
+		artillery_heavy = {
+			soft_attack = 1.0
+		}
+		
+	}
+r4m_tech = {
+
+		research_cost = 1
+		# only from event
+		allow = {
+			always = no
+		}
+		jet_heavyfighter = {
+			air_attack = 0.25
+			
+		}
+		me_262 = {
+			air_attack = 0.25
+			
+		}
+		jet_cas = {
+			
+			air_ground_attack = 0.25 
+		}
+		
 	}
 ### EOF ###
 
