@@ -26,7 +26,7 @@ sub_units = {
 		
 		#Size Definitions
 		max_organisation = 50
-		max_strength = 30
+		max_strength = 15
 		default_morale = 0.4
 		manpower = 1100
 
@@ -53,31 +53,37 @@ sub_units = {
 			horse_equipment = 90
 		}
 
-		forest = {
-			attack = 0.05
+		plains = {
+			attack = -0.25
+			defence = -0.25
+			
+		}
+		marsh = {
+			attack = 0.2
+			movement = 0.05
+		}
+		jungle = {
+			attack = 0.2
 			movement = 0.05
 		}
 		hills = {
 			attack = 0.05
-			movement = 0.05
-		}
-		marsh = {
-			attack = 0.1
-			movement = 0.1
+
 		}
 		mountain = {
-			attack = 0.05
+			attack = 0.2
 			movement = 0.05
 		}
-		jungle = {
-			attack = -0.1
+		forest = {
+			attack = 0.2
 			movement = 0.05
 		}
+	
 		urban = {
 			attack = -0.05
 		}
 		amphibious = {
-			attack = -0.05
+			attack = -0.2
 		}
 	}
 	partisan = {
@@ -102,7 +108,7 @@ sub_units = {
 		
 		#Size Definitions
 		max_organisation = 10
-		max_strength = 2
+		max_strength = 5
 		default_morale = 0.1
 		manpower = 10
 
@@ -114,7 +120,7 @@ sub_units = {
 		supply_consumption = 0.0
 
 		#Offensive Abilities
-		suppression = 0
+		suppression = 1
 
 		#hard_attack = -0.2
 		#soft_attack = -0.2
@@ -192,14 +198,14 @@ sub_units = {
 		}
 			
 		#Size Definitions
-		max_strength = 15
+		max_strength = 8
 		max_organisation = 20
 		default_morale = 0.1
 		manpower = 1000
 
 		#Misc Abilities
 		training_time = 20
-		#suppression = 1
+		suppression = 0.1
 		weight = 0.3
 	
 		reliability = -0.4

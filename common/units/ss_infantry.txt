@@ -32,7 +32,7 @@ sub_units = {
 		}
 		
 		#Size Definitions
-		max_strength = 35
+		max_strength = 18
 		max_organisation = 25
 		default_morale = 0.25
 		manpower = 1600
@@ -53,7 +53,7 @@ sub_units = {
 		
 		priority = 600
 		active = no
-
+		cavalry = yes
 		type = {
 			infantry
 		}
@@ -76,7 +76,7 @@ sub_units = {
 		}
 		
 		#Size Definitions
-		max_strength = 22
+		max_strength = 11
 		max_organisation = 25
 		default_morale = 0.25
 		manpower =1600
@@ -171,7 +171,7 @@ sub_units = {
 		
 		#Size Definitions
 		max_organisation = 50
-		max_strength = 35
+		max_strength = 18
 		default_morale = 0.3
 		manpower = 1100
 
@@ -198,31 +198,37 @@ sub_units = {
 			horse_equipment = 90
 		}
 
-		forest = {
-			attack = 0.05
+		plains = {
+			attack = -0.25
+			defence = -0.25
+			
+		}
+		marsh = {
+			attack = 0.3
+			movement = 0.05
+		}
+		jungle = {
+			attack = 0.2
 			movement = 0.05
 		}
 		hills = {
 			attack = 0.05
-			movement = 0.05
-		}
-		marsh = {
-			attack = 0.1
-			movement = 0.1
+
 		}
 		mountain = {
-			attack = 0.05
+			attack = 0.3
 			movement = 0.05
 		}
-		jungle = {
-			attack = -0.1
+		forest = {
+			attack = 0.25
 			movement = 0.05
 		}
+	
 		urban = {
 			attack = -0.05
 		}
 		amphibious = {
-			attack = -0.05
+			attack = -0.2
 		}
 	}
 	ss_mountaineers = {
@@ -251,7 +257,7 @@ sub_units = {
 		combat_width = 2
 		
 		#Size Definitions
-		max_strength = 40
+		max_strength = 20
 		max_organisation = 20
 		default_morale = 0.2
 		manpower = 1000
@@ -273,14 +279,14 @@ sub_units = {
 		}
 
 		hills = {
-			attack = 0.1
-			defence = 0.1
+			attack = 0.3
+			defence = 0.3
 			movement = 0.15
 		}
 		mountain = {
-			attack = 0.25
-			defence = 0.25
-			movement = 0.2
+			attack = 0.45
+			defence = 0.45
+			movement = 0.25
 		}
 	}
 	fascist_militia  = {
@@ -290,7 +296,7 @@ sub_units = {
 		priority = 250
 		ai_priority = 200
 		active = no
-
+		cavalry = yes
 		type = {
 			infantry
 		}
@@ -313,7 +319,7 @@ sub_units = {
 		}
 			
 		#Size Definitions
-		max_strength = 15
+		max_strength = 8
 		max_organisation = 10
 		default_morale = 0.02
 		manpower = 1000
@@ -387,7 +393,7 @@ sub_units = {
 
 		priority = 609
 		active = no
-
+		cavalry = yes
 		type = {
 			motorized
 		}
@@ -403,7 +409,7 @@ sub_units = {
 		combat_width = 2
 		
 		#Size Definitions
-		max_strength = 37
+		max_strength = 18
 		max_organisation = 25
 		default_morale = 0.25
 		manpower = 1800
@@ -489,7 +495,7 @@ sub_units = {
 		combat_width = 2
 		
 		#Size Definitions
-		max_strength = 40
+		max_strength = 20
 		max_organisation = 25
 		default_morale = 0.25
 		manpower = 2000
@@ -587,7 +593,7 @@ sub_units = {
 		
 		#Size Definitions
 		maximum_speed = 0.3
-		max_strength = 50
+		max_strength = 25
 		max_organisation = 25
 		default_morale = 0.25
 		manpower = 2500
