@@ -437,7 +437,12 @@ focus_tree = {
 						amount = 100
 						producer = ITA
 					}
-				
+				random_owned_controlled_state = {
+					add_resource = {
+						type = rubber
+						amount = 4
+					}
+				}
 				
 		}
 	}
@@ -496,6 +501,12 @@ focus_tree = {
 						amount = 200
 						producer = ITA
 					}
+					random_owned_controlled_state = {
+					add_resource = {
+						type = rubber
+						amount = 2
+					}
+				}
 			}		
 		
 	}
@@ -552,6 +563,12 @@ focus_tree = {
 						amount = 20
 						producer = ITA
 					}
+					random_owned_controlled_state = {
+					add_resource = {
+						type = rubber
+						amount = 1
+					}
+				}
 			}		
 		}
 # ration petrol
@@ -575,26 +592,32 @@ focus_tree = {
 		
 				add_ideas = petrol_ration
 			
-			add_resource = {
-				type = oil
-				amount = 5
-				state = 896
-			}
-			add_resource = {
-				type = oil
-				amount = 3
-				state = 55
-			}
-			add_resource = {
-				type = oil
-				amount = 2
-				state = 4
-			}
-			add_resource = {
-				type = oil
-				amount = 2
-				state = 5
-			}
+			
+			random_owned_controlled_state = {
+					add_resource = {
+						type = oil
+						amount = 5
+					}
+				}
+			
+			random_owned_controlled_state = {
+					add_resource = {
+						type = oil
+						amount = 3
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = oil
+						amount = 2
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = oil
+						amount = 2
+					}
+				}
 		}
 	}
 	
@@ -617,66 +640,79 @@ focus_tree = {
 		completion_reward = {
 		
 			add_ideas = metal_collection
-			add_resource = {
-				type = steel
-				amount = 20
-				state = 896
+			
+			random_owned_controlled_state = {
+					add_resource = {
+						type = steel
+						amount = 20
+					}
 				}
-			add_resource = {
-				type = tungsten
-				amount = 3
-				state = 896
-			}
-			add_resource = {
-				type = chromium
-				amount = 2
-				state = 896
-			}
-			add_resource = {
-				type = steel
-				amount = 30
-				state = 55
+			random_owned_controlled_state = {
+					add_resource = {
+						type = steel
+						amount = 30
+					}
 				}
-			add_resource = {
-				type = tungsten
-				amount = 2
-				state = 53
-			}
-			add_resource = {
-				type = chromium
-				amount = 1
-				state = 55
-			}
-			add_resource = {
-				type = steel
-				amount = 20
-				state = 4
+			random_owned_controlled_state = {
+					add_resource = {
+						type = steel
+						amount = 20
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = steel
+						amount = 10
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = tungsten
+						amount = 3
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = tungsten
+						amount = 2
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = tungsten
+						amount = 1
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = tungsten
+						amount = 1
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = chromium
+						amount = 1
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = chromium
+						amount = 1
+					}
+				}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = chromium
+						amount = 2
+					}
 				}	
-			add_resource = {
-				type = tungsten
-				amount = 1
-				state = 4
-			}
-			add_resource = {
-				type = chromium
-				amount = 1
-				state = 4
-			}
-			add_resource = {
-				type = steel
-				amount = 10
-				state = 5
-				}		
-			add_resource = {
-				type = tungsten
-				amount = 1
-				state = 5
-			}
-			add_resource = {
-				type = chromium
-				amount = 1
-				state = 5
-			}
+			random_owned_controlled_state = {
+					add_resource = {
+						type = chromium
+						amount = 1
+					}
+				}
 			
 		}
 	}
@@ -2777,7 +2813,9 @@ focus_tree = {
 		id = GER_air_innovation_2
 		text = GER_air_innovation_2
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_strategic_air_effort focus = GER_tactical_air_effort focus = GER_soviet_treaty }
+		prerequisite = {focus = GER_strategic_air_effort }
+		prerequisite = {focus = GER_tactical_air_effort }
+		prerequisite = {focus = GER_soviet_treaty }
 		x = -21
 		y = 7
 		cost = 10
@@ -2832,7 +2870,8 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_I
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+		
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -21
 		y = 11
 		cost = 10
@@ -2853,7 +2892,8 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_II
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+		
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -19
 		y = 11
 		cost = 10
@@ -2874,7 +2914,8 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_III
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+	
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -17
 		y = 11
 		cost = 10
@@ -2897,7 +2938,7 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_IV
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -15
 		y = 11
 		cost = 10
@@ -2918,7 +2959,7 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_V
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -13
 		y = 11
 		cost = 10
@@ -2941,7 +2982,7 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_VI
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -21
 		y = 12
 		cost = 10
@@ -2963,7 +3004,7 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_VII
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -19
 		y = 12
 		cost = 10
@@ -2985,7 +3026,7 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_VIII
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -17
 		y = 12
 		cost = 10
@@ -3007,7 +3048,7 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_IX
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -15
 		y = 12
 		cost = 1.4
@@ -3029,7 +3070,7 @@ focus_tree = {
 	focus = {
 		id = GER_jets_focus_X
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = GER_air_innovation_2 }
+		prerequisite = { focus = GER_jets_focus_engines }
 		x = -13
 		y = 12
 		cost = 10
@@ -3047,7 +3088,7 @@ focus_tree = {
 			}
 		}
 	}
-		
+	
 	#Peenemünde research centre
 	focus = {
 		id = GER_rocketry_Peenemunde
@@ -3074,14 +3115,55 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = GER_advanced_science_funding
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = GER_industrial_effort_40 }
+		
+		x = -23
+		y = 8
+		cost = 25.8
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+		add_ideas = GER_advanced_science_funding
+		}
+	}
+	focus = {
+		id = GER_wunderwaffe
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = GER_rocketry_focus }
+		x = -23
+		y = 11
+		cost = 15
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			add_ideas = GER_advanced_science_funding_II
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.15
+				uses = 1
+				category = rocketry
+			}
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.05
+				uses = 1
+				category = nuclear
+				}
+		}
+	}
+	focus = {
 		id = GER_extra_tech_slot
 		icon = GFX_focus_research
 		text = extra_tech_slot
-		prerequisite = { 
-			focus = GER_rocketry_focus
-		}
+		prerequisite = { focus = GER_wunderwaffe }
 		x = -23
-		y = 8
+		y = 12
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -3092,12 +3174,35 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = GER_norwegian_Hv_water
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = GER_wunderwaffe }
+		x = -23
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.1
+				uses = 1
+				category = nuclear
+				
+			}
+		}
+	}
+	focus = {
 		id = GER_rocketry_focus 
 		icon = GFX_focus_rocketry
-		prerequisite = { focus = GER_industrial_effort_40  }
+		prerequisite = { focus = GER_advanced_science_funding }
 		prerequisite = { focus = GER_rocketry_Peenemunde }
+		prerequisite = { focus = GER_air_innovation_2 }
 		x = -25
-		y = 8
+		y = 9
 		cost = 5
 		ai_will_do = {
 			factor = 1
@@ -3115,7 +3220,7 @@ focus_tree = {
 		prerequisite = { focus = GER_wunderwaffe }
 		prerequisite = { focus = GER_rocketry_focus  }
 		x = -25
-		y = 9
+		y = 10
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3137,7 +3242,7 @@ focus_tree = {
 		prerequisite = { focus = GER_rocketry_v1 }
 		#prerequisite = { focus = GER_air_innovation_2 }
 		x = -25
-		y = 10
+		y = 11
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3159,7 +3264,7 @@ focus_tree = {
 		prerequisite = { focus = GER_wunderwaffe }
 		#prerequisite = { focus = GER_air_innovation_2 }
 		x = -25
-		y = 11
+		y = 12
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3177,7 +3282,7 @@ focus_tree = {
 		prerequisite = { focus = GER_wunderwaffe }
 		#prerequisite = { focus = GER_air_innovation_2 }
 		x = -25
-		y = 12
+		y = 13
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3195,7 +3300,7 @@ focus_tree = {
 		prerequisite = { focus = GER_wunderwaffe }
 		#prerequisite = { focus = GER_air_innovation_2 }
 		x = -25
-		y = 13
+		y = 14
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3207,54 +3312,7 @@ focus_tree = {
 		}
 	}
 	
-	focus = {
-		id = GER_wunderwaffe
-		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = GER_rocketry_focus }
-		x = -23
-		y = 9
-		cost = 15
-		ai_will_do = {
-			factor = 1
-		}
-		available_if_capitulated = yes	
-		completion_reward = {
-			add_tech_bonus = {
-				name = secret_bonus
-				bonus = 0.15
-				uses = 1
-				category = rocketry
-			}
-			add_tech_bonus = {
-				name = secret_bonus
-				bonus = 0.05
-				uses = 1
-				category = nuclear
-				}
-		}
-	}
-	focus = {
-		id = GER_norwegian_Hv_water
-		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = GER_wunderwaffe }
-		x = -23
-		y = 10
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		available_if_capitulated = yes	
-		completion_reward = {
-			
-			add_tech_bonus = {
-				name = secret_bonus
-				bonus = 0.1
-				uses = 1
-				category = nuclear
-				
-			}
-		}
-	}
+	
 	
 	focus = {
 		id = GER_air_innovation					## Luftwaffe
@@ -3439,7 +3497,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_nightfighter_effort
-		icon = GFX_goal_generic_air_bomber
+		icon = GFX_goal_generic_night_fighter2  
 		prerequisite = { focus = GER_heavyfighter_effort }
 		
 		x = -18
@@ -3464,7 +3522,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_wildesau
-		icon = GFX_goal_generic_air_fighter
+		icon = GFX_goal_generic_night_fighter2 
 		prerequisite = { focus = GER_nightfighter_effort }
 		
 		x = -18
@@ -3481,7 +3539,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_Zahme_Sau
-		icon = GFX_goal_generic_air_bomber
+		icon = GFX_goal_generic_night_fighter2 
 		prerequisite = { focus = GER_nightfighter_effort }
 		
 		x = -18
@@ -4458,7 +4516,99 @@ focus_tree = {
 			}
 		}
 	}
-	# Wehrmacht
+
+focus = {
+		id = GER_submarine_pens
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = GER_u_boat_effort }
+		x = -5
+		y = 4
+		cost = 25.8
+		
+		available = {
+			date > 1942.1.1
+			
+			844 = { 
+				controller = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+					}
+				}
+			} 
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			if = {
+				limit = { controls_state = 58 }
+				58 = {
+					set_building_level = {
+						type = subyard
+						level = 2
+						
+					}
+				}
+			}			
+			if = {
+				limit = { controls_state = 19 }
+				19 = {
+					set_building_level = {
+						type = subyard
+						level = 1
+						
+					}
+				}
+			}			
+			if = {
+				limit = { controls_state = 14 }
+				14 = {
+					set_building_level = {
+						type = subyard
+						level = 3
+						
+					}
+				}
+			}			
+			if = {
+				limit = { controls_state = 23 }
+				23 = {
+					set_building_level = {
+						type = subyard
+						level = 1
+						
+					}
+				}
+			}			
+			
+			if = {
+				limit = { controls_state = 30 }
+				30 = {
+					set_building_level = {
+						type = subyard
+						level = 1
+						
+					}
+				}
+			}			
+			if = {
+				limit = { controls_state = 142 }
+				142 = {
+					set_building_level = {
+						type = subyard
+						level = 1
+						
+					}
+				}
+			}			
+			}
+			
+		}
+
+	# Wehrmacht##########################################
 	focus = {
 		id = GER_Wehrmacht
 		text = GER_Wehrmacht
@@ -4597,13 +4747,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}	
+		available = {
+		has_tech = tech_panzer_iii_equipment_1 
+		}
 		available_if_capitulated = yes
 		completion_reward = {
 			#custom_effect_tooltip = GER_Pz_focus_tooltip
 
-			hidden_effect = {
-				load_oob = "GER_Panzer_Division_1937"		# template
-			}
 			add_tech_bonus = {
 				name = armor_bonus
 				bonus = 0.25
@@ -4633,13 +4783,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}	
+		available = {
+		has_tech = tech_panzer_iv_equipment_1
+		}
 		available_if_capitulated = yes
 		completion_reward = {
 			#custom_effect_tooltip = GER_Pz_focus_tooltip
 
-			hidden_effect = {
-				load_oob = "GER_Panzer_Division_1937"		# template
-			}
 			add_tech_bonus = {
 				name = armor_bonus
 				bonus = 0.25
@@ -4663,6 +4813,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}	
+		available = {
+	
+		has_tech = tech_panzer_iii_equipment_3
+		
+		}
 		available_if_capitulated = yes
 		completion_reward = {
 			#custom_effect_tooltip = GER_Pz_focus_tooltip
@@ -4696,6 +4851,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}	
+		available = {
+			has_tech = tech_panzer_iv_equipment_2
+				}
 		available_if_capitulated = yes
 		completion_reward = {
 			#custom_effect_tooltip = GER_Pz_focus_tooltip
@@ -4729,6 +4887,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}	
+		available = {
+		
+		has_tech = tech_panzer_iii_equipment_5
+		
+		}
 		available_if_capitulated = yes
 		completion_reward = {
 			#custom_effect_tooltip = GER_Pz_focus_tooltip
@@ -4756,10 +4919,13 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}	
+		available = {
+			has_tech = tech_panzer_iv_equipment_4
+				}
 		available_if_capitulated = yes
 		completion_reward = {
 			#custom_effect_tooltip = GER_Pz_focus_tooltip
-
+			
 			
 			add_tech_bonus = {
 				name = armor_bonus
@@ -5240,7 +5406,7 @@ focus_tree = {
 	focus = {
 		id = GER_luftwaffe_ground_troops_focus_one
 		#text = Totenkopf_Division
-		icon = GFX_goal_generic_axis_build_infantry 
+		icon = GFX_focus_generic_military_mission 
 		#prerequisite = { focus = GER_Flak_defences }
 		x = -3
 		y = 5
@@ -5267,7 +5433,7 @@ focus_tree = {
 	focus = {
 		id = GER_luftwaffe_ground_troops_focus_two
 		#text = Totenkopf_Division
-		icon = GFX_goal_generic_axis_build_infantry 
+		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = GER_luftwaffe_ground_troops_focus_one }
 		x = -3
 		y = 6
@@ -5283,6 +5449,51 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = { id = germany.415 }
+		}
+	}
+	#ostruppen
+	focus = {
+		id = GER_ostruppen
+		icon = GFX_goal_focus_communist_army
+		prerequisite = { focus = GER_Heer_expansion }
+		x = -3
+		y = 7
+		cost = 25.8
+		
+		available = {
+			has_war_with = SOV
+			218 = { 
+				controller = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+					}
+				}
+			} 
+			223 = { 
+				controller = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+					}
+				}
+			} 
+			208 = { 
+				controller = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+					}
+				}
+			} 
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			country_event = { id = germany.445 }
 		}
 	}
 	focus = {
@@ -5656,7 +5867,7 @@ focus_tree = {
 		}
 		x = 6
 		y = 3
-		cost = 6.9
+		cost = 7.4
 		historical_ai = {
 			#NOT = {
 			#	any_neighbor_country = {
@@ -7797,10 +8008,8 @@ focus_tree = {
 							has_war_with = ENG
 						}
 					}
-					declare_war_on = {
-							target = YUG
-							type = annex_everything
-					}
+					country_event = germany.446
+					
 				}
 			}
 			if = {
@@ -7823,6 +8032,7 @@ focus_tree = {
 		prerequisite = { focus = GER_demand_slovenia }
 		icon = GFX_goal_generic_military_deal
 		available = {
+			is_ai = no
 			is_puppet = no
 			NOT = { is_in_faction_with = YUG }
 			OR = {
@@ -8054,6 +8264,7 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		available = {
 			is_puppet = no
+			is_ai = no
 			NOT = { has_war_with = YUG }
 			NOT = { is_in_faction_with = YUG }
 			strength_ratio = { tag = YUG ratio > 1.1 }
@@ -9146,7 +9357,7 @@ focus_tree = {
 			}
 		}
 	}
-	##################### Ahistorical SS Choice # enables buildable units 
+##################### Ahistorical SS Choice # enables buildable units 
 	focus = {
 		id = GER_ahistorical_Schutzstaffel
 		icon = GFX_goal_generic_SS_focus
@@ -9173,7 +9384,6 @@ focus_tree = {
 	# SS 1 Division (1939)
 	focus = {
 		id = GER_LSSAH_division 
-		#text = LSSAH_Division
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_ahistorical_Schutzstaffel }
 		x = 35
@@ -9216,6 +9426,7 @@ focus_tree = {
 	# SS 3 Division (operational jan 1941)
 	focus = {
 		id = GER_Wiking_division 
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_Das_Reich_division
@@ -9239,6 +9450,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_Totenkopf_division # SS 3 Division (1941)
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Wiking_division }
 		x = 35
@@ -9257,10 +9469,13 @@ focus_tree = {
 			country_event = ss_event.678
 		}
 	}
+
 	#######################################################
+
 	# ss 1. and 2. TK-Reiter-Standarten/ SS Kavallerie brigade 1941 aug
 	focus = {
 		id = GER_SS_Kavallerie_brigade
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_focus }
 		x = 27
@@ -9279,9 +9494,11 @@ focus_tree = {
 			country_event = ss_event.695
 		}
 	}
+
 	#1st ss infantry brigade 
 	focus = {
 		id = GER_1_ss_infantry_brigade
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_focus }
 		
@@ -9293,9 +9510,13 @@ focus_tree = {
 			date > 1941.3.1
 			10 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9312,6 +9533,7 @@ focus_tree = {
 	#2nd ss infantry brigade 
 	focus = {
 		id = GER_2_ss_infantry_brigade
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_1_ss_infantry_brigade }
 		x = 27
@@ -9322,9 +9544,13 @@ focus_tree = {
 			date > 1941.5.1
 			88 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9410,22 +9636,32 @@ focus_tree = {
 		y = 7
 		cost = 4.2
 		
-		available = {
+			available = {
 			date > 1942.3.1
+
 			OR = {
 				106 = { 
 					controller = {
+
 						OR = {
 							tag = GER
 							is_in_faction_with = GER
+
+
+
 						}
 					}
 				} 
 				107 = { 
 					controller = {
+
 						OR = {
 							tag = GER
 							is_in_faction_with = GER
+
+
+
+
 						}
 					}
 				} 
@@ -9483,9 +9719,13 @@ focus_tree = {
 			date > 1942.1.1
 			107 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9516,9 +9756,13 @@ focus_tree = {
 			has_war_with = SOV
 			206 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9656,9 +9900,12 @@ focus_tree = {
 	#11. SS-Freiwilligen-Panzergrenadier Division "Nordland"	
 	focus = {
 		id = GER_ss_11_nordland
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 34
 		y = 9
 		cost = 10
@@ -9668,17 +9915,26 @@ focus_tree = {
 			or = {
 				37 = { 
 					controller = {
+
 						OR = {
 							tag = GER
 							is_in_faction_with = GER
+
+
+
 						}
 					}
 				} 
 				110 = { 
 					controller = {
+
 						OR = {
 							tag = GER
 							is_in_faction_with = GER
+
+
+
+
 						}
 					}
 				} 
@@ -9693,9 +9949,11 @@ focus_tree = {
 			country_event = ss_event.708
 		}
 	}
+	
 	#13. Waffen-Geb.Div.der SS 'Handschar'
 	focus = {
 		id = GER_ss_13_handschar
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_ss_7_prinz_eugen
@@ -9707,20 +9965,30 @@ focus_tree = {
 		
 		available = {
 			date > 1943.2.1
+
 			OR = {
 				106 = { 
 					controller = {
+
 						OR = {
 							tag = GER
 							is_in_faction_with = GER
+
+
+
 						}
 					}
 				} 
 				107 = { 
 					controller = {
+
 						OR = {
 							tag = GER
 							is_in_faction_with = GER
+
+
+
+
 						}
 					}
 				} 
@@ -9738,9 +10006,13 @@ focus_tree = {
 	#14. Waffen Grenadier-Div. der SS
 	focus = {
 		id = GER_ss_14_waffendiv
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
+
 		x = 32
 		y = 10
 		cost = 8
@@ -9750,9 +10022,13 @@ focus_tree = {
 			has_war_with = SOV
 			10 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9769,9 +10045,13 @@ focus_tree = {
 	#15. Waffen.Gren.Div. der SS (lett.Nr.1) 
 	focus = {
 		id = GER_ss_15_waffendiv
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
+
 		x = 34
 		y = 10
 		cost = 8
@@ -9782,9 +10062,13 @@ focus_tree = {
 			not = { has_war_with = LAT }
 			12 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9801,9 +10085,12 @@ focus_tree = {
 	#18. SS-Freiw.PzGren.Div. 'Horst Wessel'
 	focus = {
 		id = GER_ss_18_horst_wessel
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 30
 		y = 11
 		cost = 8
@@ -9813,9 +10100,13 @@ focus_tree = {
 			is_in_faction_with = HUN
 			109 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9832,9 +10123,12 @@ focus_tree = {
 	#19. Waffen.Gren.Div. der SS (lett.Nr.2)
 	focus = {
 		id = GER_ss_19_waffendiv
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 32
 		y = 11
 		cost = 8
@@ -9845,9 +10139,13 @@ focus_tree = {
 			not = { has_war_with = LAT }
 			12 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9864,9 +10162,12 @@ focus_tree = {
 	#20. Waffen.Gren.Div. der SS (est.Nr.1)
 	focus = {
 		id = GER_ss_20_waffendiv
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 34
 		y = 11
 		cost = 8
@@ -9877,9 +10178,13 @@ focus_tree = {
 			not = { has_war_with = EST }
 			13 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9896,6 +10201,7 @@ focus_tree = {
 	#21. Waffen.Geb.Div. der SS 'Skanderbeg'
 	focus = {
 		id = GER_ss_21_skanderbeg
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_ss_7_prinz_eugen
@@ -9909,9 +10215,13 @@ focus_tree = {
 			date > 1944.4.1
 			904 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9928,6 +10238,7 @@ focus_tree = {
 	#22. Freiw.Kav.Div. 'Maria Theresia'
 	focus = {
 		id = GER_ss_22_maria_theresia
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_ss_8_florian_geyer
@@ -9941,9 +10252,13 @@ focus_tree = {
 			date > 1944.3.1
 			968 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -9960,6 +10275,7 @@ focus_tree = {
 	#23. Waffen.Geb.Div. 'Kama' (kroat.Nr.2) 1944 june beograd skopje sombor yug not axis
 	focus = {
 		id = GER_ss_23_kama
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_ss_7_prinz_eugen
@@ -9971,20 +10287,30 @@ focus_tree = {
 		
 		available = {
 			date > 1944.6.1
+
 			OR = {
 				106 = { 
 					controller = {
+
 						OR = {
 							tag = GER
 							is_in_faction_with = GER
+
+
+
 						}
 					}
 				} 
 				107 = { 
 					controller = {
+
 						OR = {
 							tag = GER
 							is_in_faction_with = GER
+
+
+
+
 						}
 					}
 				} 
@@ -10003,6 +10329,7 @@ focus_tree = {
 	#SS-Regiment 'Ney'
 	focus = {
 		id = GER_ss_ney
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus =	GER_SS_Brigade_Schuldt
@@ -10029,6 +10356,7 @@ focus_tree = {
 	#24. Waffen.Geb.Div. der SS 'Karstjager'
 	focus = {
 		id = GER_ss_24_karstjager
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_ss_7_prinz_eugen
@@ -10054,9 +10382,12 @@ focus_tree = {
 	#25. Waffen.Gren.Div.der SS 'Hunyadi'
 	focus = {
 		id = GER_ss_25_hunyadi
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 32
 		y = 13
 		cost = 5
@@ -10077,9 +10408,12 @@ focus_tree = {
 	#26. Waffen.Gren.Div.der SS (ung.Nr.2)
 	focus = {
 		id = GER_ss_26_waffendiv
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 34
 		y = 13
 		cost = 5
@@ -10100,9 +10434,12 @@ focus_tree = {
 	#27. SS-Freiw.Gren.Div. 'Langemarck'
 	focus = {
 		id = GER_ss_27_langemarck
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 36
 		y = 13
 		cost = 5
@@ -10112,9 +10449,13 @@ focus_tree = {
 			has_war_with = SOV
 			886 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10132,9 +10473,12 @@ focus_tree = {
 	#28. SS-Freiw.Gren.Div. 'Wallonien'
 	focus = {
 		id = GER_ss_28_wallonien
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 30
 		y = 14
 		cost = 5
@@ -10144,9 +10488,13 @@ focus_tree = {
 			has_war_with = SOV
 			34 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10163,9 +10511,12 @@ focus_tree = {
 	#30. Waffen.Gren.Div.der SS
 	focus = {
 		id = GER_ss_30_waffendiv
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 32
 		y = 14
 		cost = 5
@@ -10175,9 +10526,13 @@ focus_tree = {
 			has_war_with = SOV
 			60 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10194,9 +10549,12 @@ focus_tree = {
 	#Waffen-Gren-Regt. (bulgaris.Nr 1)
 	focus = {
 		id = GER_ss_bulgaris_regt
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 34
 		y = 14
 		cost = 5
@@ -10218,9 +10576,12 @@ focus_tree = {
 	#31. SS-Freiw.Gren.Division
 	focus = {
 		id = GER_ss_31_waffendiv
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 36
 		y = 14
 		cost = 5
@@ -10246,7 +10607,9 @@ focus_tree = {
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 30
 		y = 15
 		cost = 2
@@ -10256,9 +10619,13 @@ focus_tree = {
 			has_war_with = SOV
 			60 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10275,9 +10642,12 @@ focus_tree = {
 	#Waffen Verband der SS 'Kaukasien'
 	focus = {
 		id = GER_ss_kaukasien
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 32
 		y = 15
 		cost = 2
@@ -10287,9 +10657,13 @@ focus_tree = {
 			has_war_with = SOV
 			86 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10306,9 +10680,12 @@ focus_tree = {
 	#Waffen-Gren-Regt. (Rumänis.Nr 2)
 	focus = {
 		id = GER_ss_rumanis_regt
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 34
 		y = 15
 		cost = 2
@@ -10316,11 +10693,16 @@ focus_tree = {
 		available = {
 			date > 1944.10.1
 			has_war_with = SOV
+
 			4 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10338,9 +10720,12 @@ focus_tree = {
 	#33. Waffen.Gren.Div.  'Charlemagne' 
 	focus = {
 		id = GER_ss_33_charlemagne
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 30
 		y = 16
 		cost = 3
@@ -10350,17 +10735,26 @@ focus_tree = {
 			has_war_with = SOV
 			844 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
 			28 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
+
 					}
 				}
 			}
@@ -10377,9 +10771,12 @@ focus_tree = {
 	#34. Freiw.Gren.Div. 'Landstorm Nederland'
 	focus = {
 		id = GER_ss_34_landstorm
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 32
 		y = 16
 		cost = 3
@@ -10388,17 +10785,25 @@ focus_tree = {
 			date > 1945.1.1
 			844 = { 
 				controller = {
+
 					OR = {
 						tag = USA
 						is_in_faction_with = USA
+
+
+
 					}
 				}
 			} 
 			7 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10415,9 +10820,12 @@ focus_tree = {
 	#37. SS-Freiw.Kav.Div. 'Lützow'
 	focus = {
 		id = GER_ss_37_lutzow
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 34
 		y = 16
 		cost = 2
@@ -10427,9 +10835,13 @@ focus_tree = {
 			has_war_with = SOV
 			70 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10447,9 +10859,12 @@ focus_tree = {
 	#29. Waffen.Gren.Div. der SS (ital.Nr.1)
 	focus = {
 		id = GER_ss_29_waffendiv
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 36
 		y = 16
 		cost = 3
@@ -10458,9 +10873,13 @@ focus_tree = {
 			date > 1945.1.1
 			158 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10478,9 +10897,12 @@ focus_tree = {
 	#Freiw.PzGren.Div. 'Nederland' 
 	focus = {
 		id = GER_ss_nederland
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 30
 		y = 17
 		cost = 2
@@ -10489,9 +10911,13 @@ focus_tree = {
 			date > 1945.1.1
 			28 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10508,9 +10934,12 @@ focus_tree = {
 	#1. Ungarisches SS-Sturmjäger Regiment
 	focus = {
 		id = GER_ss_1_ungarische_regt
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 32
 		y = 17
 		cost = 1
@@ -10533,9 +10962,12 @@ focus_tree = {
 	#36. Waffen.Gren.Div. der SS 
 	focus = {
 		id = GER_ss_36_waffendiv
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 30
 		y = 18
 		cost = 1
@@ -10550,17 +10982,25 @@ focus_tree = {
 			not = {is_in_faction_with = ITA }
 			10 = { 
 				controller = {
+
 					OR = {
 						not = {tag = GER }
 						not = {is_in_faction_with = GER}
+
+
+
 					}
 				}
 			} 
 			844 = { 
 				controller = {
+
 					OR = {
 						not = {tag = GER }
 						not = {is_in_faction_with = GER}
+
+
+
 					}
 				}
 			} 
@@ -10577,9 +11017,12 @@ focus_tree = {
 	#35. Polizei.Gren.Div. der SS 
 	focus = {
 		id = GER_ss_35_polizei
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 32
 		y = 18
 		cost = 1
@@ -10594,17 +11037,25 @@ focus_tree = {
 			not = {is_in_faction_with = ITA }
 			10 = { 
 				controller = {
+
 					OR = {
 						not = {tag = GER }
 						not = {is_in_faction_with = GER}
+
+
+
 					}
 				}
 			} 
 			844 = { 
 				controller = {
+
 					OR = {
 						not = {tag = GER }
 						not = {is_in_faction_with = GER}
+
+
+
 					}
 				}
 			} 
@@ -10621,9 +11072,12 @@ focus_tree = {
 	#32. Freiw.Gren.Div. der SS '30.Januar' USA eng
 	focus = {
 		id = GER_ss_32_januar
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+
 		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
+
 		x = 34
 		y = 18
 		cost = 1
@@ -10638,17 +11092,25 @@ focus_tree = {
 			not = {is_in_faction_with = ITA }
 			10 = { 
 				controller = {
+
 					OR = {
 						not = {tag = GER }
 						not = {is_in_faction_with = GER}
+
+
+
 					}
 				}
 			} 
 			844 = { 
 				controller = {
+
 					OR = {
 						not = {tag = GER }
 						not = {is_in_faction_with = GER}
+
+
+
 					}
 				}
 			} 
@@ -10665,6 +11127,7 @@ focus_tree = {
 	#38. SS-Grenadier-Division 'Nibelungen'USA eng
 	focus = {
 		id = GER_ss_38_nibelungen
+
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_Schutzstaffel_Expansion
@@ -10684,17 +11147,25 @@ focus_tree = {
 			not = {is_in_faction_with = ITA }
 			10 = { 
 				controller = {
+
 					OR = {
 						not = {tag = GER }
 						not = {is_in_faction_with = GER}
+
+
+
 					}
 				}
 			} 
 			844 = { 
 				controller = {
+
 					OR = {
 						not = {tag = GER }
 						not = {is_in_faction_with = GER}
+
+
+
 					}
 				}
 			} 
@@ -10793,9 +11264,13 @@ focus_tree = {
 		available = {
 			67 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10805,7 +11280,7 @@ focus_tree = {
 			factor = 10
 		}	
 		
-		completion_reward = {
+			completion_reward = {
 			add_timed_idea = {
 				idea = Ksiaz_Castle
 				days = 180
@@ -10816,6 +11291,7 @@ focus_tree = {
 	#Complex Rzeczka
 	focus = {
 		id = GER_Complex_Rzeczka
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Ksiaz_Castle
@@ -10827,9 +11303,13 @@ focus_tree = {
 		available = {
 			67 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10850,6 +11330,7 @@ focus_tree = {
 	#Complex Wlodarz
 	focus = {
 		id = GER_Complex_Wlodarz
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Complex_Rzeczka
@@ -10861,9 +11342,13 @@ focus_tree = {
 		available = {
 			67 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10884,6 +11369,7 @@ focus_tree = {
 	#Complex Osówka
 	focus = {
 		id = GER_Complex_Osowka
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Complex_Wlodarz
@@ -10895,9 +11381,13 @@ focus_tree = {
 		available = {
 			67 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10918,6 +11408,7 @@ focus_tree = {
 	#Complex Sokolec
 	focus = {
 		id = GER_Complex_Sokolec
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Complex_Osowka
@@ -10929,9 +11420,13 @@ focus_tree = {
 		available = {
 			67 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10952,6 +11447,7 @@ focus_tree = {
 	#Complex Jugowice
 	focus = {
 		id = GER_Complex_Jugowice
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Complex_Sokolec
@@ -10963,9 +11459,13 @@ focus_tree = {
 		available = {
 			67 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -10986,6 +11486,7 @@ focus_tree = {
 	#Complex Soboń
 	focus = {
 		id = GER_Complex_Sobon
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Complex_Jugowice
@@ -10997,9 +11498,13 @@ focus_tree = {
 		available = {
 			67 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
+
+
+
 					}
 				}
 			} 
@@ -11022,6 +11527,7 @@ focus_tree = {
 	#Ahnenerbe
 	focus = {
 		id = GER_Ahnenerbe_studies
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Himmlers_occult_quests
@@ -11045,6 +11551,7 @@ focus_tree = {
 	#Wewelsburg SS School
 	focus = {
 		id = GER_Wewelsburg_castle
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Himmlers_occult_quests
@@ -11068,6 +11575,7 @@ focus_tree = {
 	#Die Glocke
 	focus = {
 		id = GER_die_glocke
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Wewelsburg_castle
@@ -11094,6 +11602,7 @@ focus_tree = {
 	#angora rabbits
 	focus = {
 		id = GER_angora_rabbits
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Himmlers_occult_quests
@@ -11117,6 +11626,7 @@ focus_tree = {
 	#Hitler's Dog
 	focus = {
 		id = GER_Hitlers_Dog
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Nazi_party_secret_projects
@@ -11141,6 +11651,7 @@ focus_tree = {
 #perfect Horse
 	focus = {
 		id = GER_perfect_Horse
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Nazi_party_secret_projects
@@ -11164,6 +11675,7 @@ focus_tree = {
 	#Goering's art collection
 	focus = {
 		id = GER_Goerings_art
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Nazi_party_secret_projects
@@ -11188,6 +11700,7 @@ focus_tree = {
 	#Goebbel's media
 	focus = {
 		id = GER_Goebbels_massmedia
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_Nazi_party_secret_projects
@@ -11212,6 +11725,7 @@ focus_tree = {
 		#Goliah
 	focus = {
 		id = GER_goliah
+
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
 			focus = GER_wunderwaffe
@@ -11239,7 +11753,9 @@ focus_tree = {
 		id = GER_death_ray
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
-			focus = GER_Nazi_party_secret_projects
+			focus = GER_Nazi_party_secret_projects 
+		}
+		prerequisite = {
 			focus = GER_wunderwaffe
 		}
 
@@ -11265,7 +11781,9 @@ focus_tree = {
 		id = GER_V3_cannon
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
-			focus = GER_Nazi_party_secret_projects
+			focus = GER_Nazi_party_secret_projects 
+		}
+		prerequisite = {
 			focus = GER_wunderwaffe
 		}
 
@@ -11290,7 +11808,9 @@ focus_tree = {
 		id = GER_vortex_cannon
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
-			focus = GER_Nazi_party_secret_projects
+			focus = GER_Nazi_party_secret_projects 
+		}
+		prerequisite = {
 			focus = GER_wunderwaffe
 		}
 
@@ -11315,7 +11835,9 @@ focus_tree = {
 		id = GER_Sonic_Cannon
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
-			focus = GER_Nazi_party_secret_projects
+			focus = GER_Nazi_party_secret_projects 
+		}
+		prerequisite = {
 			focus = GER_wunderwaffe
 		}
 
@@ -11340,7 +11862,9 @@ focus_tree = {
 		id = GER_Landkreuzer
 		icon = GFX_goal_generic_secret_weapon
 		prerequisite = {
-			focus = GER_Nazi_party_secret_projects
+			focus = GER_Nazi_party_secret_projects 
+		}
+		prerequisite = {
 			focus = GER_wunderwaffe
 		}
 
@@ -11375,6 +11899,7 @@ focus_tree = {
 		available = {
 			52 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
@@ -11387,7 +11912,7 @@ focus_tree = {
 			factor = 10
 		}	
 		
-		completion_reward = {
+	completion_reward = {
 			add_ideas = Hitler_meddles
 			add_timed_idea = {
 				idea = Berghof_HQ
@@ -11419,6 +11944,7 @@ focus_tree = {
 		available = {
 			896 = { 
 				controller = {
+
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
@@ -11433,6 +11959,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_ideas = Fuhrerbunker_HQ
+
 			
 			896 = {
 				add_building_construction = {
@@ -11706,6 +12233,8 @@ focus_tree = {
 					level = 5
 					province = 3524
 					instant_build = yes
+
+
 				}
 			}
 		}
@@ -11713,7 +12242,6 @@ focus_tree = {
 	#Anlage Süd Führerhauptquartiere
 	focus = {
 		id = GER_Anlage_Sud
-		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
 		focus = GER_Berghof
@@ -11759,6 +12287,8 @@ focus_tree = {
 					level = 2
 					province = 6499
 					instant_build = yes
+
+
 				}
 			}
 		}
@@ -11766,7 +12296,6 @@ focus_tree = {
 	#Felsennest Führerhauptquartiere
 	focus = {
 		id = GER_Felsennest
-		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
 		focus = GER_Berghof
@@ -11806,12 +12335,16 @@ focus_tree = {
 				idea = Felsennest_HQ
 				days = 30
 			} 
+
 			51 = {
 				add_building_construction = {
 					type = bunker
 					level = 2
 					province = 529
 					instant_build = yes
+
+
+
 				}
 			}
 		}
@@ -11819,7 +12352,6 @@ focus_tree = {
 	#Werwolf
 	focus = {
 		id = GER_Werwolf
-		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
 		focus = GER_Berghof
@@ -11865,6 +12397,9 @@ focus_tree = {
 					level = 2
 					province = 6509
 					instant_build = yes
+
+
+
 				}
 			}
 		}
@@ -11872,7 +12407,6 @@ focus_tree = {
 	#Kehlsteinhaus
 	focus = {
 		id = GER_Kehlsteinhaus
-		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
 		prerequisite = {
 		focus = GER_Berghof
@@ -11918,11 +12452,55 @@ focus_tree = {
 					level = 2
 					province = 707
 					instant_build = yes
+
+
 				}
 			}
 		}
 	}	
 
+
+focus = {
+		id = GER_nibelungen_works
+		icon = GFX_goal_nibelungen
+		prerequisite = {
+		focus = GER_industrial_effort_40
+		}
+		x = -21
+		y = 6
+		cost = 25.8
 		
+		available = {
+			date > 1942.1.1
+		
+			152 = { 
+				controller = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+					}
+				}
+			} 
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = Nibelungen
+
+			152 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = tank_factory
+					level = 1
+					instant_build = yes
+
+				}
+			}
+		}
+	}
+	#### EOF
 }
-#### EOF
+
+#the bismarck and Tirpitz !

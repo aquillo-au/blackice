@@ -14749,4 +14749,425 @@ country_event = {
     }
 	
 }
+#Ost truppen
+country_event = {
+    id = germany.445
+    title = germany.445.t
+    desc = germany.445.d
+ picture = GFX_report_event_chinese_army_training
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	 option = {
+        name = germany.445.a #
+        ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		load_oob = "GER_Ostruppen"
+		set_technology = {hiddentech_conscripts = 1 }
+			
+        }
+    }
+    option = {
+        name = germany.445.b #
+        ai_chance = { factor = 0 }
+        
+       
+    }
+	
+}
+country_event = {
+    id = germany.446
+    title = germany.446.t
+    desc = germany.446.d
+ picture = GFX_report_event_panzer_and_infantry_advance
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	 option = {
+        name = germany.446.a #DOW Yugoslavia
+        ai_chance = { factor = 100 }
+		
+       declare_war_on = {
+							target = YUG
+							type = annex_everything
+					}
+    }
+    option = {
+        name = germany.446.b #Back Down
+        ai_chance = { factor = 0 }
+        
+       
+    }
+	
+}
+country_event = {
+    id = germany.447
+    title = germany.447.t
+    desc = germany.447.d
+ picture = GFX_report_event_panzer_and_infantry_advance
+    
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_puppet = no
+			is_ai = yes
+			has_completed_focus = GER_demand_slovenia
+			NOT = { has_completed_focus = GER_fate_of_yugoslavia }
+			NOT = { has_war_with = YUG }
+			NOT = { is_in_faction_with = YUG }
+			strength_ratio = { tag = YUG ratio > 1.1 }
+			hidden_trigger = {
+				if = { limit = { is_ai = yes }
+					if = { limit = { has_war_with = FRA }
+						FRA = { has_capitulated = yes }
+						}
+					if = { limit = { has_war_with = POL }
+						POL = { has_capitulated = yes }
+						}
+					if = { limit = { has_war_with = SOV }
+						SOV = { has_capitulated = yes }
+					}
+					if = { limit = { has_war_with = HUN }
+						HUN = { has_capitulated = yes }
+					}
+				}
+			}
+			if = {
+				limit = { has_country_flag = recent_major_land_acquisition }
+				has_war_with = ENG
+			}
+	}
+	
+	 option = {
+        name = germany.447.a 
+        ai_chance = { factor = 100 }
+		country_event = { id = germany.98 }
+		unlock_national_focus = GER_fate_of_yugoslavia
+    }
+   
+	
+}
+country_event = {
+    id = germany.448
+    title = germany.448.t
+    desc = germany.448.d
+ picture = GFX_report_event_panzer_and_infantry_advance
+    
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 14
+	}
+	trigger = {
+		tag = GER
+		is_puppet = no
+		is_ai = yes
+		has_completed_focus = GER_fate_of_yugoslavia
+		NOT = { has_completed_focus = GER_second_ljubljana_award }
+			GRE = { 
+				has_war = no 
+				owns_state = 731
+				owns_state = 186
+				owns_state = 185
+				owns_state = 47 
+			}
+	}
+	
+	 option = {
+        name = germany.448.a 
+        ai_chance = { factor = 100 }
+		
+			add_named_threat = { threat = 2 name = GER_second_ljubljana_award }
+			if = {
+				limit = {
+					GRE = {
+						OR = {
+							owns_state = 185
+							owns_state = 186
+							owns_state = 47
+						} 
+					}
+					ITA = {
+						NOT = { has_war_with = GRE }
+						country_exists = ITA
+						has_completed_focus = ITA_greece_war_goal
+						OR = {
+							is_in_faction_with = GER
+							is_in_faction = no							
+						}
+					}
+				}
+				set_global_flag = GER_second_ljubljana_award_ITA_event
+				country_event = { id = germany.99 }
+			}
+			if = {
+				limit = {
+					GRE = { owns_state = 184 }
+					BUL = {
+						NOT = { has_war_with = GRE }
+						country_exists = BUL
+						OR = {
+							is_in_faction_with = GER
+							is_in_faction = no							
+						}
+					}
+				}
+				set_global_flag = GER_second_ljubljana_award_BUL_event
+				country_event = { id = germany.100 }
+			}
+			if = {
+				limit = {
+					any_neighbor_country = {
+						tag = GRE
+					}
+					OR = {
+						NOT = { country_exists = ITA }
+						AND = {
+							ITA = {
+								NOT = { is_in_faction_with = GER }
+								is_in_faction = yes
+							}
+						}
+					}
+					OR = {
+						NOT = { country_exists = BUL }
+						AND = {
+							BUL = {
+								NOT = { is_in_faction_with = GER }
+								is_in_faction = yes
+							}
+						}
+					}
+				}
+				set_global_flag = GER_second_ljubljana_award_GER_event
+				country_event = { id = germany.101 }
+			}
+			custom_effect_tooltip = GER_second_ljubljana_award_tt
+			unlock_national_focus = GER_second_ljubljana_award
+    }
+   
+	
+}
+country_event = {
+    id = germany.449
+    title = germany.449.t
+    desc = germany.449.d
+ picture = GFX_report_event_panzer_and_infantry_advance
+    
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 14
+	}
+	trigger = {
+		tag = GER
+		is_puppet = no
+			is_ai = yes
+			has_completed_focus = GER_second_ljubljana_award
+			NOT = { has_completed_focus = GER_first_ljubljana_award }
+			NOT = { is_in_faction_with = YUG }
+			OR = {
+				AND = {
+					country_exists = YUG
+					NOT = { has_war_with = YUG }
+					#owns_state = 102
+				}
+				AND = {
+					NOT = { country_exists = YUG }
+					owns_state = 102
+					owns_state = 45
+					owns_state = 106
+					owns_state = 103
+					owns_state = 105
+				}
+				AND = {
+					NOT = { country_exists = YUG }
+					ITA = {owns_state = 102}
+					ITA = {owns_state = 45}
+					ITA = {owns_state = 106}
+					ITA = {owns_state = 103}
+					ITA = {owns_state = 105}
+				}
+				AND = {
+					NOT = { country_exists = YUG }
+					or = {
+					SER = {owns_state = 102}
+					SER = {owns_state = 45}
+					SER = {owns_state = 106}
+					SER = {owns_state = 103}
+					SER = {owns_state = 105}
+					CRO = {owns_state = 102}
+					CRO = {owns_state = 45}
+					CRO = {owns_state = 106}
+					CRO = {owns_state = 103}
+					CRO = {owns_state = 105}}
+				}
+			}
+			OR = {
+				YUG = {
+					is_puppet = no
+				}
+				YUG = {
+					is_puppet_of = GER
+				}
+				
+			}
+	}
+	
+	 option = {
+        name = germany.449.a 
+        ai_chance = { factor = 100 }
+		if = {
+				limit = {
+					NOT = { 
+						has_war_with = ENG
+						has_war_with = FRA
+					}
+				}
+				increase_allied_anger = yes
+				custom_effect_tooltip = allied.anger.plus.1
+			}
+			
+			if = {
+				limit = {
+					HUN = {
+						is_friend_or_potential_friend_of_GER = yes
+						NOT = { is_in_faction_with = YUG }
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = { 
+							OR = {
+								45 = { is_owned_by = YUG }
+								45 = { is_owned_by = GER }
+							}
+						}
+						HUN = {
+							country_event = { id = hungary.6 days = 1 }
+							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+							set_country_flag = GER_first_ljubljana_award
+						}
+					}
+				}
+				effect_tooltip = {
+					if = {
+						limit = {
+								OR = {
+									45 = { is_owned_by = YUG }
+									45 = { is_owned_by = GER }
+								}
+						}
+						HUN = {
+							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+							transfer_state = 45
+						}					
+					}
+				}
+				every_other_country = {
+					limit = { 
+						is_faction_leader = yes
+						NOT = { tag = GER }
+					}
+					reverse_add_opinion_modifier = { target = HUN modifier = GER_second_vienna_award_other }
+				}				
+			}
+			if = {
+				limit = {
+					BUL = {
+						is_friend_or_potential_friend_of_GER = yes
+						NOT = { is_in_faction_with = YUG }
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							OR = {
+								106 = { is_owned_by = YUG }
+								106 = { is_owned_by = GER }
+							}
+						}
+						BUL = { 
+							country_event = { id = bulgaria.3 days = 1 } 
+							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+							set_country_flag = GER_first_ljubljana_award
+						}
+					}
+				}
+				effect_tooltip = {
+					if = {
+						limit = {
+							OR = {
+								106 = { is_owned_by = YUG }
+								106 = { is_owned_by = GER }
+							}
+						}
+						BUL = {
+							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+							transfer_state = 106
+						}						
+					}
+				}
+				every_other_country = {
+					limit = { 
+						is_faction_leader = yes
+						NOT = { tag = GER }
+					}
+					reverse_add_opinion_modifier = { target = BUL modifier = GER_second_vienna_award_other }
+				}				
+			}
+			if = {
+				limit = {
+					ITA = {
+						OR = {
+							has_completed_focus = ITA_slovenia_dalmatia_claims
+							owns_state = 44
+						}
+						is_friend_or_potential_friend_of_GER = yes
+						NOT = { is_in_faction_with = YUG }
+					}
+				}
+				hidden_effect = {
+					ITA = { country_event = { id = italy.13 days = 1 } 
+						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+					}
+					set_country_flag = GER_first_ljubljana_award
+				}
+				effect_tooltip = {
+					ITA = {
+						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+						if = {
+							limit = { has_completed_focus = ITA_slovenia_dalmatia_claims }
+							transfer_state = 900
+							transfer_state = 913
+							transfer_state = 916
+						}
+						if = {
+							limit = { owns_state = 44 }
+							transfer_state = 105
+							transfer_state = 903
+							transfer_state = 904
+						}	
+					}
+				}
+				every_other_country = {
+					limit = { 
+						is_faction_leader = yes
+						NOT = { tag = GER }
+					}
+					reverse_add_opinion_modifier = { target = ITA modifier = GER_second_vienna_award_other }
+				}				
+			}
+			unlock_national_focus = GER_first_ljubljana_award
+			#hidden_effect = {
+			#	news_event = { hours = 6 id = news.208 }
+			#}
+    }
+   
+	
+}
 ### EOF ###
