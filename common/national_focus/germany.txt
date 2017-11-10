@@ -7323,7 +7323,50 @@ focus = {
 		
 				
 		completion_reward = {
-			country_event = { id = germany.413 }
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.25
+				uses = 1
+				category = cat_mobile_warfare
+			}
+			add_tech_bonus = {
+				name = op_dest_bonus
+				bonus = 0.25
+				uses = 1
+				category = battlefield_support_tree
+			}
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 0.30
+				uses = 1
+				ahead_reduction = 0.50
+				technology = HVantiair2	
+			}
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.50
+				uses = 1
+				technology = tech_ju_87_equipment_1				
+			}
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.30
+				uses = 1
+				technology = tech_ju_87_equipment_2			
+			}
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.50
+				uses = 1
+				technology = tech_me_109_fighter_equipment_1		
+			}
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.30
+				uses = 1
+				technology = tech_me_109_early_fighter_equipment_1		
+			}
+			#country_event = { id = germany.413 }
 		}
 	}
 	focus = {
@@ -9221,10 +9264,8 @@ focus = {
 		id = GER_Schutzstaffel_divisions_IV
 		#text = Schutzstaffel_divisions
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = {
-			focus = GER_Schutzstaffel_divisions_III
-			focus = GER_Schutzstaffel_foreign_ss_units
-		}
+		prerequisite = { focus = GER_Schutzstaffel_divisions_III } 
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 30
 		y = 6
 		cost = 4.2
@@ -9430,8 +9471,8 @@ focus = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_Das_Reich_division
-			focus = GER_Schutzstaffel_foreign_ss_units
 		}
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 36
 		y = 3
 		cost = 4.2
@@ -9630,6 +9671,8 @@ focus = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_Schutzstaffel_Expansion
+		}
+		prerequisite = {
 			focus = GER_Schutzstaffel_foreign_ss_units
 		}
 		x = 30
@@ -9709,7 +9752,10 @@ focus = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_Schutzstaffel_Expansion
+		}
+		prerequisite = {
 			focus =	GER_SS_Brigade_Schuldt
+			
 		}
 		x = 34
 		y = 7
@@ -9745,7 +9791,10 @@ focus = {
 		icon = GFX_goal_generic_SS_focus
 		prerequisite = {
 			focus = GER_Schutzstaffel_Expansion
+		}
+		prerequisite = {
 			focus =	GER_SS_Brigade_Schuldt
+			
 		}
 		x = 36
 		y = 7
@@ -9955,10 +10004,8 @@ focus = {
 		id = GER_ss_13_handschar
 
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = {
-			focus = GER_ss_7_prinz_eugen
-			focus = GER_Schutzstaffel_foreign_ss_units
-		}
+		prerequisite = { focus = GER_ss_7_prinz_eugen }
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 30
 		y = 10
 		cost = 8
@@ -10203,10 +10250,8 @@ focus = {
 		id = GER_ss_21_skanderbeg
 
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = {
-			focus = GER_ss_7_prinz_eugen
-			focus = GER_Schutzstaffel_foreign_ss_units
-		}
+		prerequisite = {focus = GER_ss_7_prinz_eugen }
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 30
 		y = 12
 		cost = 5
@@ -10240,10 +10285,8 @@ focus = {
 		id = GER_ss_22_maria_theresia
 
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = {
-			focus = GER_ss_8_florian_geyer
-			focus = GER_Schutzstaffel_foreign_ss_units
-		}
+		prerequisite = { focus = GER_ss_8_florian_geyer }
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units } 
 		x = 32
 		y = 12
 		cost = 5
@@ -10277,10 +10320,8 @@ focus = {
 		id = GER_ss_23_kama
 
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = {
-			focus = GER_ss_7_prinz_eugen
-			focus = GER_Schutzstaffel_foreign_ss_units
-		}
+		prerequisite = { focus = GER_ss_7_prinz_eugen }
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 34
 		y = 12
 		cost = 5
@@ -10331,10 +10372,8 @@ focus = {
 		id = GER_ss_ney
 
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = {
-			focus =	GER_SS_Brigade_Schuldt
-			focus = GER_Schutzstaffel_foreign_ss_units
-		}
+		prerequisite = { focus =	GER_SS_Brigade_Schuldt }
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 36
 		y = 12
 		cost = 3
@@ -10358,10 +10397,8 @@ focus = {
 		id = GER_ss_24_karstjager
 
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = {
-			focus = GER_ss_7_prinz_eugen
-			focus = GER_Schutzstaffel_foreign_ss_units
-		}
+		prerequisite = { focus = GER_ss_7_prinz_eugen }
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 30
 		y = 13
 		cost = 5
@@ -11129,10 +11166,8 @@ focus = {
 		id = GER_ss_38_nibelungen
 
 		icon = GFX_goal_generic_SS_focus
-		prerequisite = {
-			focus = GER_Schutzstaffel_Expansion
-			focus = GER_Schutzstaffel_foreign_ss_units
-		}
+		prerequisite = { focus = GER_Schutzstaffel_Expansion }
+		prerequisite = { focus = GER_Schutzstaffel_foreign_ss_units }
 		x = 36
 		y = 18
 		cost = 1
@@ -11184,9 +11219,7 @@ focus = {
 	focus = {
 		id = GER_Nazi_party_secret_projects
 		icon = GFX_goal_generic_secret_weapon
-		prerequisite = {
-		
-		}
+	
 		x = 65
 		y = 0
 		cost = 1
@@ -11889,9 +11922,7 @@ focus = {
 		id = GER_Berghof
 		#text = Totenkopf_Division
 		icon = GFX_goal_generic_fortify_city
-		prerequisite = {
 		
-		}
 		x = 42
 		y = 0
 		cost = 1

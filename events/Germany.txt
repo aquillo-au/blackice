@@ -11866,7 +11866,7 @@ country_event = {
 			}
 			random_list = {
 				75 = { }
-				25 = { BEL = { country_event = germany.318 } }
+				25 = { GER = { country_event = germany.318 } }
 			}
 		}
 	}
@@ -11962,7 +11962,7 @@ country_event = {
 	option = { 
 		name = germany.318.a
 		
-		BEL = { transfer_state = 887 } #E-M
+		GER = { transfer_state = 887 } #E-M
 		
 		add_political_power = 20
 		add_national_unity = 0.01
@@ -12059,7 +12059,7 @@ country_event = {
 
 	option = { 
 		name = germany.342.a
-		BEL = { transfer_state = 887 } #E-M
+		GER = { transfer_state = 887 } #E-M
 		add_political_power = 15
 		add_national_unity = 0.01
 		ruling_pop_plus_3 = yes
@@ -12645,27 +12645,13 @@ country_event = {
 		name = germany.402.b
 		trigger = {
 			is_ai = yes
-			has_country_flag = GERgrossdeutschland_stug
+			
 		}
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			if = {
-				limit = {
-					NOT = { has_tech = tech_panzer_v_equipment_1 }
-					NOT = { has_tech = subtech_panzer_v_spaa_equipment_1 }
-					NOT = { has_tech = subtech_heavy_panzer_art_equipment_1 }
-					NOT = { has_tech = subtech_panzer_iii_td_equipment_3 }
-					NOT = { has_tech = tech_heavy_panzer_equipment_2 }
-				}
-				set_technology = { tech_panzer_v_equipment_1 = 1 }
-				set_technology = { subtech_heavy_panzer_art_equipment_1 = 1 }
-				set_technology = { subtech_panzer_v_spaa_equipment_1 = 1 }
-				set_technology = { subtech_panzer_iii_td_equipment_3 = 1 }
-				set_technology = { tech_heavy_panzer_equipment_2 = 1 }
-			}
-			load_oob = "GER_grossdeutschland_43"
-			set_country_flag = gd_pzgren_div_43_ai
+			
+			set_country_flag = gd_pzgren_div_42_ai
 		}
 	}
 }
@@ -12680,7 +12666,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		date > 1942.5.1
+		date > 1943.5.1
 		has_country_flag = gd_div_mot_42
 	}
 	
@@ -12710,12 +12696,21 @@ country_event = {
 		trigger = { is_ai = yes }
 		hidden_effect = {
 			if = {
-				limit = { 
-					is_ai = yes
-					has_army_experience > 51
-				} 
-				army_experience = 50
+				limit = {
+					NOT = { has_tech = tech_panzer_v_equipment_1 }
+					NOT = { has_tech = subtech_panzer_v_spaa_equipment_1 }
+					NOT = { has_tech = subtech_heavy_panzer_art_equipment_1 }
+					NOT = { has_tech = subtech_panzer_iii_td_equipment_3 }
+					NOT = { has_tech = tech_heavy_panzer_equipment_2 }
+				}
+				set_technology = { tech_panzer_v_equipment_1 = 1 }
+				set_technology = { subtech_heavy_panzer_art_equipment_1 = 1 }
+				set_technology = { subtech_panzer_v_spaa_equipment_1 = 1 }
+				set_technology = { subtech_panzer_iii_td_equipment_3 = 1 }
+				set_technology = { tech_heavy_panzer_equipment_2 = 1 }
 			}
+			load_oob = "GER_grossdeutschland_43"
+			set_country_flag = gd_pzgren_div_43_ai
 		}
 	}
 }
