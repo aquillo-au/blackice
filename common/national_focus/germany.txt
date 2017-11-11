@@ -7076,6 +7076,14 @@ focus = {
 		id = GER_demand_sudetenland
 		icon = GFX_goal_demand_sudetenland
 		prerequisite = { focus = GER_rhineland }
+		prerequisite = { focus = GER_anschluss }
+		x = 14
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}	
+		
 		available = {
 			is_puppet = no
 			or = {
@@ -7090,6 +7098,7 @@ focus = {
 			}
 			NOT = { has_country_flag = recent_major_land_acquisition }
 		}
+		
 		bypass = {
 			OR = {
 				CZE = { is_puppet_of = GER }
@@ -7101,16 +7110,12 @@ focus = {
 				}
 			}
 		}
+		
 		cancel = {
 			NOT = { CZE = { controls_state = 69 } HUN = { controls_state = 69 } }
 		}
 		cancel_if_invalid = yes
-		x = 14
-		y = 1
-		cost = 10
-		ai_will_do = {
-			factor = 10
-		}	
+		
 		completion_reward = {
 			increase_allied_anger3 = yes
 			custom_effect_tooltip = allied.anger.plus.3
