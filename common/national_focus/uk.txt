@@ -5113,6 +5113,7 @@ focus = {
 		completion_reward = {
 			add_ideas = POA
 			add_political_power = -50
+			country_event = { id = BICE_britain.6 }
 		}
 	}
 	#The Emergency Powers Act
@@ -5175,7 +5176,47 @@ focus = {
 		}	
 		completion_reward = {
 			add_ideas = bevin_industry
+			add_manpower = -50000
 			#steel vs conscription
+		random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = truck_factory
+					level = 1
+					instant_build = yes
+				}
+				
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_in_home_area = yes
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+					
+			}
 		}
 	}
 	focus = {
@@ -5195,6 +5236,7 @@ focus = {
 		}	
 		completion_reward = {
 			add_ideas = bevin_army
+			add_manpower = 100000
 			#steel vs conscription
 		}
 	}

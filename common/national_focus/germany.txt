@@ -575,7 +575,7 @@ focus_tree = {
 	
 	focus = {
 		id = GER_ration_petrol
-		icon = GFX_goal_generic_oil_refinery
+		icon = GFX_goal_petrol_ration
 		#prerequisite = { focus = GER_autobahn_III }
 		x = -30
 		y = 5
@@ -2212,7 +2212,7 @@ focus_tree = {
 	focus = {
 		id = GER_industrial_effort_36
 		#text = industrial_effort_36
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_goal_generic_construction2
 		prerequisite = { focus = GER_Goering_Plan }
 		x = -22
 		y = 1
@@ -2335,7 +2335,7 @@ focus_tree = {
 	focus = {
 		id = GER_industrial_effort_38
 		#text = industrial_effort_38
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_goal_generic_construction2
 		prerequisite = { focus = GER_industrial_effort_37 }
 		x = -22
 		y = 3
@@ -2409,7 +2409,38 @@ focus_tree = {
 				}
 				set_state_flag = GER_industrial_effort_3_2IC
 			}
-			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = synthetic_refinery
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2_2IC
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = synthetic_refinery
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = GER_industrial_effort_2_2IC
+			}
 			add_tech_bonus = {
 				name = construction_tech_bonus
 				bonus = 0.1
@@ -2421,7 +2452,7 @@ focus_tree = {
 	focus = {
 		id = GER_industrial_effort_39
 		#text = industrial_effort_39
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = GER_industrial_effort_38 }
 		x = -22
 		y = 4
@@ -2490,8 +2521,9 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-				set_state_flag = GER_industrial_effort_2_2IC
+					set_state_flag = GER_industrial_effort_2_2IC
 			}
+				
 			
 			add_tech_bonus = {
 				name = construction_tech_bonus
@@ -2504,7 +2536,7 @@ focus_tree = {
 	focus = {
 		id = GER_industrial_effort_40
 		#text = industrial_effort_40
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = GER_industrial_effort_39 }
 		x = -22
 		y = 5
@@ -2572,9 +2604,9 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
-				set_state_flag = GER_industrial_effort_2_2IC
+					set_state_flag = GER_industrial_effort_2_2IC
 			}
-			
+							
 			add_tech_bonus = {
 				name = construction_tech_bonus
 				bonus = 0.1
@@ -2584,8 +2616,158 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = GER_advanced_science_funding
+		icon = GFX_goal_oil_research
+		prerequisite = { focus = GER_industrial_effort_40 }
+		
+		x = -21
+		y = 6
+		cost = 25.8
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+		add_ideas = GER_advanced_science_funding
+		}
+	}
+	focus = {
+		id = GER_synthetic_effort_42
+		#text = industrial_effort_40
+		icon = GFX_goal_generic_oil_factory
+		prerequisite = { focus = GER_industrial_effort_40 }
+		x = -21
+		y = 7
+		cost = 25.8
+		available = {
+			has_war = yes
+			date > 1942.1.1
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+				}
+				random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+					}
+				}
+			
+			random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = synthetic_rubber_refinery
+					level = 1
+					instant_build = yes
+				}
+				
+			}
+		}
+	}
+	focus = {
+		id = GER_advanced_synthetic_funding
+		icon = GFX_goal_oil_research
+		prerequisite = { focus = GER_industrial_effort_40 }
+		
+		x = -23
+		y = 7
+		cost = 25.8
+		ai_will_do = {
+			factor = 1
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+		add_ideas = GER_advanced_synthetic_funding
+		}
+	}
+	focus = {
+		id = GER_synthetic_effort_43
+		#text = industrial_effort_40
+		icon = GFX_goal_generic_oil_factory
+		prerequisite = { focus = GER_synthetic_effort_42 }
+		x = -23
+		y = 8
+		cost = 25.8
+		available = {
+			has_war = yes
+			date > 1943.1.1
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		available_if_capitulated = yes
+
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+				}
+				random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+					}
+				}
+		
+			random_owned_controlled_state = {
+				
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_rubber_refinery
+					level = 2
+					instant_build = yes
+				}
+				
+			}
+		}
+}
+	focus = {
 		id = GER_Flak_defences_I
-		icon = GFX_focus_generic_air_defense
+		icon = GFX_goal_fortify_city_AA
 		prerequisite = { focus = GER_industrial_effort_36 }
 	
 		x = -20
@@ -2631,7 +2813,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_Flak_defences_II
-		icon = GFX_focus_generic_air_defense
+		icon = GFX_goal_fortify_city_AA
 		prerequisite = { focus = GER_industrial_effort_37 }
 	
 		x = -20
@@ -2677,7 +2859,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_Flak_defences_III
-		icon = GFX_focus_generic_air_defense
+		icon = GFX_goal_fortify_city_AA
 		prerequisite = { focus = GER_industrial_effort_38 }
 	
 		x = -20
@@ -2717,7 +2899,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_Flak_defences_IV
-		icon = GFX_focus_generic_air_defense
+		icon = GFX_goal_fortify_city_AA
 		prerequisite = { focus = GER_industrial_effort_39 }
 	
 		x = -20
@@ -2763,7 +2945,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_Flak_defences_V
-		icon = GFX_focus_generic_air_defense
+		icon = GFX_goal_fortify_city_AA
 		prerequisite = { focus = GER_industrial_effort_40 }
 	
 		x = -20
@@ -2817,7 +2999,7 @@ focus_tree = {
 		prerequisite = {focus = GER_tactical_air_effort }
 		prerequisite = {focus = GER_soviet_treaty }
 		x = -21
-		y = 7
+		y = 9
 		cost = 10
 		ai_will_do = {
 			factor = 2
@@ -3096,7 +3278,7 @@ focus_tree = {
 		#prerequisite = { focus = GER_industrial_effort_40 }
 		
 		x = -23
-		y = 7
+		y = 9
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3114,22 +3296,7 @@ focus_tree = {
 				}
 		}
 	}
-	focus = {
-		id = GER_advanced_science_funding
-		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = GER_industrial_effort_40 }
-		
-		x = -23
-		y = 8
-		cost = 25.8
-		ai_will_do = {
-			factor = 1
-		}
-		available_if_capitulated = yes	
-		completion_reward = {
-		add_ideas = GER_advanced_science_funding
-		}
-	}
+	
 	focus = {
 		id = GER_wunderwaffe
 		icon = GFX_focus_wonderweapons
@@ -3686,9 +3853,9 @@ focus_tree = {
 	focus = {
 		id = GER_fighterbomber_effort_a
 		icon = GFX_goal_generic_CAS
-		#prerequisite = { focus = GER_fighter_air_effort }
-		#prerequisite = { focus = GER_divebomber_focus focus = GER_tactical_air_effort }
 	
+		prerequisite = { focus = GER_fighter_air_effort_c focus = GER_fighter_air_effort_d }
+		prerequisite = { focus = GER_divebomber_focus_c focus = GER_divebomber_focus_d }
 		x = -17
 		y = 5
 		cost = 1.4
@@ -3711,8 +3878,8 @@ focus_tree = {
 	focus = {
 		id = GER_fighterbomber_effort_b
 		icon = GFX_goal_generic_CAS
-		#prerequisite = { focus = GER_fighter_air_effort }
-		#prerequisite = { focus = GER_divebomber_focus focus = GER_tactical_air_effort }
+		prerequisite = { focus = GER_fighter_air_effort_e focus = GER_fighter_air_effort_f }
+		prerequisite = { focus = GER_divebomber_focus_e focus = GER_divebomber_focus_f }
 	
 		x = -13
 		y = 5
@@ -5221,6 +5388,46 @@ focus = {
 				uses = 1
 				technology = tech_heavy_panzer_equipment_3
 				#category = cat_heavy_armor
+			}
+		}
+	}
+	focus = {
+		id = GER_nibelungen_works
+		icon = GFX_goal_nibelungen
+		prerequisite = {
+		focus = GER_industrial_effort_40
+		}
+		x = 1
+		y = 6
+		cost = 25.8
+		
+		available = {
+			date > 1942.1.1
+		
+			152 = { 
+				controller = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+					}
+				}
+			} 
+		}
+		ai_will_do = {
+			factor = 10
+		}	
+		
+		completion_reward = {
+			add_ideas = Nibelungen
+
+			152 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = tank_factory
+					level = 1
+					instant_build = yes
+
+				}
 			}
 		}
 	}
@@ -12491,46 +12698,7 @@ focus = {
 	}	
 
 
-focus = {
-		id = GER_nibelungen_works
-		icon = GFX_goal_nibelungen
-		prerequisite = {
-		focus = GER_industrial_effort_40
-		}
-		x = -21
-		y = 6
-		cost = 25.8
-		
-		available = {
-			date > 1942.1.1
-		
-			152 = { 
-				controller = {
-					OR = {
-						tag = GER
-						is_in_faction_with = GER
-					}
-				}
-			} 
-		}
-		ai_will_do = {
-			factor = 10
-		}	
-		
-		completion_reward = {
-			add_ideas = Nibelungen
 
-			152 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = tank_factory
-					level = 1
-					instant_build = yes
-
-				}
-			}
-		}
-	}
 	#### EOF
 }
 
