@@ -1068,7 +1068,7 @@ focus_tree = {
 		id = aircraft_production_focus
 		prerequisite = { focus = fighter_command_focus } 
 		prerequisite = { focus = bomber_command_focus } 
-		prerequisite = { focus = coastal_command_focus }
+		#prerequisite = { focus = coastal_command_focus }
 		icon = GFX_goal_generic_air_production
 		x = -3
 		y = 2
@@ -1296,12 +1296,26 @@ focus_tree = {
 			custom_effect_tooltip = ENG_mot_focus_tooltip
 			add_tech_bonus = {
 					name = motorized_bonus
-					bonus = 0.3
+					bonus = 0.35
 					uses = 1
 					technology = grand_mechanized_offensive
+					
+				}
+			add_tech_bonus = {
+					name = motorized_bonus
+					bonus = 0.25
+					uses = 1
+					technology = branch_interoperation
+					
+				}
+			add_tech_bonus = {
+					name = motorized_bonus
+					bonus = 0.15
+					uses = 1
+					technology = c3i_theory
 				}
 			hidden_effect = {
-				load_oob = "ENG_Motorized"
+			load_oob = "ENG_British_Trucks"
 			}
 		}
 	}
@@ -1319,10 +1333,15 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 					name = armor_bonus
-					bonus = 0.5
-					uses = 2
-					technology = branch_interoperation
+					bonus = 0.35
+					uses = 1
 					technology = armored_operations
+				}
+			add_tech_bonus = {
+					name = armor_bonus
+					bonus = 0.05
+					uses = 1
+					technology = branch_interoperation
 				}
 		}
 	}
@@ -1623,7 +1642,7 @@ focus = {
 		icon = GFX_goal_generic_construct_military
 		x = 11
 		y = 3
-		cost = 10
+		cost = 4.2
 		available = {
 			OR = {
 				threat > 0.2
@@ -1829,7 +1848,7 @@ focus = {
 		icon = GFX_goal_generic_fortify_city
 		x = 11
 		y = 6
-		cost = 10
+		cost = 4.2
 		available = {
 			
 				has_war = yes
@@ -4660,7 +4679,7 @@ available = {
 		icon = GFX_goal_generic_position_armies
 		x = 42
 		y = 1
-		cost = 10
+		cost = 4.2
 		ai_will_do = {
 			factor = 1
 		}	
@@ -5237,6 +5256,7 @@ focus = {
 						producer = GER
 					}
 				random_owned_controlled_state = {
+				limit = { is_in_home_area = yes }
 					add_resource = {
 						type = rubber
 						amount = 4
@@ -5302,6 +5322,7 @@ focus = {
 						producer = GER
 					}
 					random_owned_controlled_state = {
+					limit = { is_in_home_area = yes }
 					add_resource = {
 						type = rubber
 						amount = 2
@@ -5394,6 +5415,7 @@ focus = {
 			
 			
 			random_owned_controlled_state = {
+			limit = { is_in_home_area = yes }
 					add_resource = {
 						type = oil
 						amount = 5
@@ -5401,6 +5423,7 @@ focus = {
 				}
 			
 			random_owned_controlled_state = {
+			limit = { is_in_home_area = yes }
 					add_resource = {
 						type = oil
 						amount = 3
@@ -5442,18 +5465,21 @@ focus = {
 			add_ideas = ENG_metal_collection
 			
 			random_owned_controlled_state = {
+			limit = { is_in_home_area = yes }
 					add_resource = {
 						type = steel
 						amount = 20
 					}
 				}
 			random_owned_controlled_state = {
+			limit = { is_in_home_area = yes }
 					add_resource = {
 						type = steel
 						amount = 30
 					}
 				}
 			random_owned_controlled_state = {
+			limit = { is_in_home_area = yes }
 					add_resource = {
 						type = steel
 						amount = 20
@@ -5466,12 +5492,14 @@ focus = {
 					}
 				}
 			random_owned_controlled_state = {
+			limit = { is_in_home_area = yes }
 					add_resource = {
 						type = tungsten
 						amount = 3
 					}
 				}
 			random_owned_controlled_state = {
+			limit = { is_in_home_area = yes }
 					add_resource = {
 						type = tungsten
 						amount = 2
@@ -5502,6 +5530,7 @@ focus = {
 					}
 				}
 			random_owned_controlled_state = {
+			limit = { is_in_home_area = yes }
 					add_resource = {
 						type = chromium
 						amount = 2
@@ -5538,11 +5567,7 @@ focus = {
 #ENG_western_desert_force
 #ENG_XXX_corps
 #commonwealth troops
-#
 
-#
-#scrap meta drives
-#petrol rationing
 #community farming
 
 
@@ -5555,9 +5580,7 @@ focus = {
 #convoys
 #build more air/ sea bases 
 #fortify some islands/ VPs
-#fortitfy singapore
-#fortify gibralter
-#fortify malta
+
 
 
 #fighter sweeps over france

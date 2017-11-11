@@ -15,6 +15,7 @@ country_event = {
 		tag = ENG
 		date > 1936.1.30
 		not = { has_country_flag = K6 }
+		has_country_flag = impossible
 	}
 
 	option = {
@@ -178,6 +179,7 @@ country_event = {
 		tag = ENG
 		date > 1936.10.20
 		not = { has_country_flag = BBC_TV   }
+		has_country_flag = impossible
 	}
 
 	option = {
@@ -479,16 +481,8 @@ country_event = {
 	picture = GFX_report_event_churchill
 
 	fire_only_once = yes
-
-	trigger = {
-		tag = ENG
-		date > 1940.4.13
-		has_war_with = GER 
-		not = { has_country_flag = Blood_toil_tears_sweat }
-	}
-	immediate = {
-		add_country_leader_trait = cornered_fox
-	}
+	is_triggered_only = yes
+	
 	option = {
 		name = BICE_britain.18.a	#"Blood,Toil,Tears,Sweat
 		set_country_flag = Blood_toil_tears_sweat
@@ -505,14 +499,7 @@ country_event = {
 
 	fire_only_once = yes
 
-	trigger = {
-		tag = ENG
-		date > 1940.4.22
-		has_war = yes
-		not = { has_country_flag = no_EPA }
-		not = { has_country_flag = EPA }
-	}
-
+	is_triggered_only = yes
 	option = {
 		name = BICE_britain.19.a	#Pass the Act"
 		set_country_flag =  EPA
@@ -536,14 +523,7 @@ country_event = {
 	picture = GFX_report_event_churchill_address_by_radio
 
 	fire_only_once = yes
-
-	trigger = {
-		tag = ENG
-		date > 1940.5.4
-		has_war_with = GER 
-		not = { has_country_flag = Fight_on }
-	}
-
+	is_triggered_only = yes
 	option = {
 		name = BICE_britain.20.a	#Never give up
 		set_country_flag = Fight_on
@@ -560,12 +540,7 @@ country_event = {
 
 	fire_only_once = yes
 
-	trigger = {
-		tag = ENG
-		date > 1940.5.18
-		has_war_with = GER 
-		not = { has_country_flag = OurFinesthour }
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = BICE_britain.21.a	#Our Finest Hour
@@ -581,13 +556,7 @@ country_event = {
 	picture = GFX_report_event_RAF_pilot
 
 	fire_only_once = yes
-
-	trigger = {
-		tag = ENG
-		date > 1940.7.20
-		has_war_with = GER 
-		not = { has_country_flag = So_much_owed  }
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = BICE_britain.22.a	#Thank the RAF
@@ -652,6 +621,7 @@ country_event = {
 		date > 1941.11.18
 		has_war = yes
 		not = { has_country_flag = NSA }
+		has_country_flag = yes
 	}
 
 	option = {
@@ -674,6 +644,7 @@ country_event = {
 		tag = ENG
 		date > 1941.7.14
 		not = { has_country_flag =Atlantic_charter  }
+		has_country_flag = impossible
 	}
 
 	option = {
@@ -838,7 +809,6 @@ country_event = {
 		hidden_effect = {
 			set_technology = { marines = 1 }
 			set_technology = { amphibious_equipment = 1 }
-			set_technology = { commando_team = 1 }
 			set_technology = { paratroopers  = 1 }
 			set_technology = { tech_mountaineers = 1 }
 			set_technology = { commando_team = 1 }
@@ -1236,7 +1206,7 @@ country_event = {
 } 
 # destroyers x 30
 
-# JARROW CRUSADE
+
 
 country_event = {
 	id = BICE_britain.43
@@ -1974,6 +1944,29 @@ country_event = {
 			
 		}
 	}
+}
+# JARROW CRUSADE
+
+country_event = {
+	id = BICE_britain.69
+	title = BICE_britain.69.t
+	desc = BICE_britain.69.d
+	picture = GFX_report_event_002
+
+	fire_only_once = yes 
+	trigger = {
+		tag = ENG
+		date > 1936.10.1
+		
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = BICE_britain.69.a
+		set_country_flag = jarrow_crusade			
+	}
+	
 }
 # SAF 1st and 2nd inf div july 1941
 # 50 infantry division april 1942
