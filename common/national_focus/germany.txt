@@ -381,7 +381,366 @@ focus_tree = {
 			}		
 		}
 	}
-	
+	##############################
+	focus = {
+		id = GER_Moscow_autobahn
+		icon = GFX_goal_generic_soviet_infrastructure
+		prerequisite = { focus = GER_autobahn_IV }
+		x = -28
+		y = 6
+		cost = 25.8
+		
+		available = {
+			has_war_with = SOV
+			97 = { 
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			95 = { 
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			206 = { 
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			241 = { 
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			242 = { 
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			#219 = { 
+			#	controller = {
+			#
+			#		OR = {
+			#			tag = GER
+			#			is_in_faction_with = GER
+			#
+			#
+			#
+			#		}
+			#	}
+			#}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			
+				97 = {	#Bialystok
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 10
+						}
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				95 = {	
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 10
+						}
+
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				206 = {		#Minsk
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				241 = {		#Gomel
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				242 = {		#Smolensk
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				219 = {		#Moscow Area
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+						
+		}
+	}
+	focus = {
+		id = GER_Kiev_autobahn
+		icon = GFX_goal_generic_soviet_infrastructure
+		prerequisite = { focus = GER_Moscow_autobahn }
+		x = -28
+		y = 7
+		cost = 5
+		
+		available = {
+			has_war_with = SOV
+			193 = { 
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			202 = { 
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			
+				193 = {	
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				202 = {		# Kiev
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				
+						
+		}
+	}
+	focus = {
+		id = GER_Leningrad_autobahn
+		icon = GFX_goal_generic_soviet_infrastructure
+		prerequisite = { focus = GER_Moscow_autobahn }
+		x = -28
+		y = 8
+		cost = 10
+		
+		available = {
+			has_war_with = SOV
+			207 = { 		#Vitebsk
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			201 = { 
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			263 = { 		#Novgorod
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+			244 = { 		
+				controller = {
+
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
+
+
+
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			
+				207 = {	
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				210 = {		# Kiev
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				263 = {	
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+				244 = {		# Kiev
+					if = {
+					limit = { is_controlled_by = GER 
+							infrastructure < 9
+						}
+
+						add_building_construction = {
+							type = infrastructure
+							level = 2
+							instant_build = yes
+						}
+					}
+				}
+						
+		}
+	}
 	# requistion trucks
 	focus = {
 		id = GER_requistion_trucks
