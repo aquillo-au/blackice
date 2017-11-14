@@ -9496,10 +9496,21 @@ country_event = {
 	
 	option = {
 		name = germany.239.a
-		ai_chance = { factor = 100 }
+		trigger = { is_ai = no }
+		ai_chance = { factor = 0 }
 		
 		hidden_effect = {
 			load_oob = "GER_4_Panzer_Division"
+			set_country_flag = panzer_4
+		}
+	}
+	option = {
+		name = germany.239.a
+		trigger = { is_ai = yes }
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_4_Panzer_Division_ai"
 			set_country_flag = panzer_4
 		}
 	}
