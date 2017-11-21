@@ -9298,9 +9298,6 @@ country_event = {
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-
-
-		
 			load_oob = "GER_afrikakorps_ai"
 			set_country_flag = GERafrikakorp
 		}
@@ -9496,10 +9493,21 @@ country_event = {
 	
 	option = {
 		name = germany.239.a
-		ai_chance = { factor = 100 }
+		trigger = { is_ai = no }
+		ai_chance = { factor = 0 }
 		
 		hidden_effect = {
 			load_oob = "GER_4_Panzer_Division"
+			set_country_flag = panzer_4
+		}
+	}
+	option = {
+		name = germany.239.a
+		trigger = { is_ai = yes }
+		ai_chance = { factor = 100 }
+		
+		hidden_effect = {
+			load_oob = "GER_4_Panzer_Division_ai"
 			set_country_flag = panzer_4
 		}
 	}
@@ -9547,16 +9555,21 @@ country_event = {
 			if = {
 				limit = {
 					is_ai = yes
-					NOT = { has_tech = tech_panzer_ii_equipment_1 }
+					NOT = { has_tech = tech_panzer_iii_equipment_1 }
 					NOT = { has_tech = tech_panzer_iv_equipment_1 }
 				}
-				set_technology = { tech_panzer_ii_equipment_1 = 1 }
+				set_technology = { tech_panzer_iii_equipment_1 = 1 }
 				set_technology = { tech_panzer_iv_equipment_1 = 1 }
 			}
 			load_oob = "GER_5_Panzer_Division_ai"
 			set_country_flag = panzer_5
 			
 		}
+	}
+	option = {
+		name = germany.240.c
+		ai_chance = { factor = 0 }
+		
 	}
 }
 country_event = {

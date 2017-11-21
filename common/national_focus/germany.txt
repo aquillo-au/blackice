@@ -3853,13 +3853,13 @@ focus_tree = {
 
 		available_if_capitulated = yes
 		complete_tooltip = {
-			air_experience = 25
-			add_tech_bonus = {
-				name = air_sup_bonus
-				bonus = 0.5
-				uses = 2
-				category = battlefield_support_tree
-			}
+			air_experience = 40
+			#add_tech_bonus = {
+			#	name = air_sup_bonus
+			#	bonus = 0.1
+			#	uses = 2
+			#	category = battlefield_support_tree
+			#}
 			
 			every_state = {
 				limit = { has_state_flag = GER_air_innovation_2air }
@@ -3883,14 +3883,14 @@ focus_tree = {
 		
 		completion_reward = {
 			
-			air_experience = 25
+			air_experience = 40
 
-			add_tech_bonus = {
-				name = air_sup_bonus
-				bonus = 0.1
-				uses = 2
-				category = battlefield_support_tree
-			}
+			#add_tech_bonus = {
+			#	name = air_sup_bonus
+			#	bonus = 0.1
+			#	uses = 2
+			#	category = battlefield_support_tree
+			#}
 
 			if = {
 				limit = {
@@ -4918,12 +4918,7 @@ focus_tree = {
 				technology = tech_kr_ca3
 				technology = tech_kr_cl2
 				}
-			add_tech_bonus = {
-				name = dd_bonus
-				bonus = 0.5
-				uses = 1
-				technology = tech_kr_dd5
-				}
+			
 			add_tech_bonus = {
 				name = cv_bonus
 				bonus = 0.5
@@ -9503,9 +9498,9 @@ focus = {
 	
 		completion_reward = {
 			remove_unit_leader = 4
-			create_field_marshal = { 
+			create_field_marshal = {
 				name = "Rommel, Erwin"
-				gfx = "Portrait_Germany_Erwin_Rommel_FM.dds"
+				gfx = "GFX_GER_Rommel_Erwin_FM"
 				traits = { GER_tag Pour_le_Merite Iron_Cross Military_Merit_Order Awesome_General desert_fox_FM panzer_leader }
 				skill = 5
 			}
