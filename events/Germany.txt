@@ -9031,10 +9031,10 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		or = {
-			has_tech = tech_panzer_iii_equipment_1
-			has_tech = tech_panzer_iv_equipment_1 
-		}
+		#or = {
+		#	has_tech = tech_panzer_iii_equipment_1
+		#	has_tech = tech_panzer_iv_equipment_1 
+		#}
 		not = { has_country_flag = panzer_35t }
 		not = { has_country_flag = panzer_38t }
 		owns_state = 9
@@ -9075,6 +9075,7 @@ country_event = {
 			}
 			custom_effect_tooltip = GER_6_8_PZDIV
 			add_equipment_to_stockpile = { type = czech_ger_panzer_equipment_1 amount = 100 producer = GER }
+			add_equipment_to_stockpile = { type = panzer_ii_equipment_1 amount = 60 producer = GER }
 			set_country_flag = panzer_35t
 		}
 	}
