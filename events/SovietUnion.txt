@@ -2701,6 +2701,7 @@ country_event = {
 				owns_state = 98
 				owns_state = 10
 				owns_state = 928
+				owns_state = 929
 			}
 			AND = {
 				POL = { has_capitulated = yes }
@@ -2714,6 +2715,7 @@ country_event = {
 					controls_state = 98
 					controls_state = 10
 					controls_state = 928
+					owns_state = 929
 				}
 			}
 			OR = {
@@ -2732,6 +2734,7 @@ country_event = {
 						owns_state = 98
 						owns_state = 10
 						owns_state = 928
+						owns_state = 929
 						AND = {
 							POL = { has_capitulated = yes }
 							OR = {
@@ -2744,6 +2747,7 @@ country_event = {
 								controls_state = 98
 								controls_state = 10
 								controls_state = 928
+								owns_state = 929
 							}
 						}		
 					}
@@ -2893,6 +2897,21 @@ country_event = {
 		}
 		if = {
 			limit = {
+				929 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 929
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 929 }
+		}
+		if = {
+			limit = {
 				928 = {
 					OR = {
 						is_controlled_by = SOV
@@ -3006,7 +3025,7 @@ country_event = {
 			add_state_claim = 98
 			add_state_claim = 10
 			add_state_claim = 928
-			
+			add_state_claim = 929
 			effect_tooltip = {
 				create_wargoal = {
 					type = annex_everything
