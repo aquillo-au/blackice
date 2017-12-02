@@ -4,7 +4,6 @@
 
 add_namespace = france
 
-	
 # Japan demands Indochina
 country_event = {
 	id = france.1
@@ -357,8 +356,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_global_flag = fall_of_france
-
-		}
+	}
 	
 	mean_time_to_happen = {
 		days = 1
@@ -374,14 +372,14 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					844 = { 	owner = { tag = FRA } }
+					844 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 844
 				GER = { transfer_state = 844 }
 			}
 			if = {
 				limit = {
-					886 = { 	owner = { tag = FRA } }
+					886 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 886
 				GER = { transfer_state = 886 }
@@ -394,57 +392,79 @@ country_event = {
 				GER = { transfer_state = 28 }
 			}
 			if = {
-				limit = { 17 = { owner = { tag = FRA } } }
+				limit = {
+					17 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 17
 				GER = { transfer_state = 17 }
 			}
 			if = {
-				limit = { 27 = { owner = { tag = FRA } } }
+				limit = {
+					27 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 27
 				GER = { transfer_state = 27 }
 			}
 			if = {
-				limit = { 18 = { owner = { tag = FRA } } }
+				limit = {
+					18 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 18
 				GER = { transfer_state = 18 }
 			}
 			if = {
-				limit = { 29 = { owner = { tag = FRA } } }
+				limit = {
+					29 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 29
 				GER = { transfer_state = 29 }
 			}
 			if = {
-				limit = { 15 = { owner = { tag = FRA } } }
+				limit = {
+					15 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 15
 				GER = { transfer_state = 15 }
 			}
 			if = {
-				limit = { 16 = { owner = { tag = FRA } } }
+				limit = {
+					16 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 16
 				GER = { transfer_state = 16 }
 			}
 			if = {
-				limit = { 24 = { owner = { tag = FRA } } }
+				limit = {
+					24 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 24
 				GER = { transfer_state = 24 }
 			}
 			if = {
-				limit = { 30 = { owner = { tag = FRA } } }
+				limit = {
+					30 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 30
 				GER = { transfer_state = 30 }
 			}
 			if = {
-				limit = { 14 = { owner = { tag = FRA } } }
+				limit = {
+					14 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 14
 				GER = { transfer_state = 14 }
 			}
 			if = {
-				limit = { 23 = { owner = { tag = FRA } } }
+				limit = {
+					23 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 23
 				GER = { transfer_state = 23 }
 			}
 			if = {
-				limit = { 19 = { owner = { tag = FRA } } }
+				limit = {
+					19 = { owner = { tag = FRA } }
+				}
 				set_state_controller = 19
 				GER = { transfer_state = 19 }
 			}
@@ -488,10 +508,9 @@ country_event = {
 				}
 				ITA = { transfer_state = 735 }
 				else = {
-					transfer_state = 735
+					VIC = { transfer_state = 735 }
 				}
 			}
-				
 			if = {
 				limit = {
 					AND = {
@@ -536,12 +555,12 @@ country_event = {
 		}
 		
 		news_event = { hours = 6 id = news.34 }
-			#start_civil_war = {
-			#	ideology = fascism
-			#	size = 0.5
-			#	capital = 26
-			#	states = { 26 21 22 31 25 20 32 33 1 735 677 680 554 458 459 460 461 462 514 665 557 272 556 671 670 741 286 513 553 543 708 706 268 713 310 694 730 }
-			#}
+		#start_civil_war = {
+		#	ideology = fascism
+		#	size = 0.5
+		#	capital = 26
+		#	states = { 26 21 22 31 25 20 32 33 1 735 677 680 554 458 459 460 461 462 514 665 557 272 556 671 670 741 286 513 553 543 708 706 268 713 310 694 730 }
+		#}
 		#random_other_country = {
 		#	limit = { original_tag = FRA has_government = fascism }
 		#	ROOT = { puppet = PREV }
@@ -610,7 +629,6 @@ country_event = {
 		#	}
 		#	
 		#}
-		
 	}
 	
 	option = { # Conquer everything!
@@ -2248,7 +2266,7 @@ country_event = {
 					limit = { FRA = { has_country_flag = become_vichy } }
 					change_tag_from = FRA
 				}
-				#load_oob = "VIC_1940"
+				#load_oob = VIC_1940
 				retire_country_leader = yes
 				create_country_leader = {
 					name = "Philippe Pétain"
@@ -2260,11 +2278,9 @@ country_event = {
 					}
 				}		
 				set_country_flag = philipe_petain
-		
 				add_ideas = neutrality_idea_vichy
 			}
 		}
-	
 		#Set same cosmetic tag they would get on capitulation
 		FRA = {
 			set_cosmetic_tag = FRA_FREE
