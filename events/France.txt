@@ -1520,7 +1520,7 @@ country_event = {
 			desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
 			picture = "Portrait_France_Philippe_Petain.dds"
 			expire = "1965.1.1"
-			ideology = fascism_ideology
+			ideology = vichy
 			traits = {
 			}
 		}		
@@ -2174,158 +2174,95 @@ country_event = {
 	
 	option = {
 		name = france.65.a
-
 		ai_chance = {
 			factor = 100
 		}
-		
 		hidden_effect = {
-		VIC = {
-					transfer_state = 1
-												
-					1 = { add_core_of = VIC}
-					
-					transfer_state = 21
-												
-					21 = { add_core_of = VIC}
-					
-					transfer_state = 26
-												
-					26 = { add_core_of = VIC}
-			
-					transfer_state = 22
-					
-					22 = { add_core_of = VIC}
+			VIC = {
+				transfer_state = 1
+				1 = { add_core_of = VIC}
+				transfer_state = 21
+				21 = { add_core_of = VIC}
+				transfer_state = 26
+				26 = { add_core_of = VIC}
+				transfer_state = 22
+				22 = { add_core_of = VIC}
+				transfer_state = 25
+				25 = { add_core_of = VIC}
+				transfer_state = 20
+				20 = { add_core_of = VIC}
+				transfer_state = 31
+				31 = { add_core_of = VIC}
+				transfer_state = 32
+				32 = { add_core_of = VIC}
+				transfer_state = 33
+				33 = { add_core_of = VIC}
+				transfer_state = 268
+				268 = { add_core_of = VIC}
+				transfer_state = 272
+				272 = { add_core_of = VIC}
+				transfer_state = 310
+				310 = { add_core_of = VIC}
+				transfer_state = 556
+				556 = { add_core_of = VIC}
+				transfer_state = 515
+				515 = { add_core_of = VIC}
+				transfer_state = 513
+				513 = { add_core_of = VIC}
+				transfer_state = 543
+				543 = { add_core_of = VIC}
+				transfer_state = 459
+				459 = { add_core_of = VIC}
+				transfer_state = 460
+				460 = { add_core_of = VIC}
+				transfer_state = 694
+				694 = { add_core_of = VIC}
+				transfer_state = 706
+				706 = { add_core_of = VIC}
+				transfer_state = 708
+				708 = { add_core_of = VIC}
+				transfer_state = 713
+				713 = { add_core_of = VIC}
+				transfer_state = 513
+				513 = { add_core_of = VIC}
+				transfer_state = 460
+				460 = { add_core_of = VIC}
+				transfer_state = 459
+				459 = { add_core_of = VIC}
+				transfer_state = 543
+				543 = { add_core_of = VIC}
+				TUN = { 
+					country_event = { id = france.67 }
+				}
+				MOR = { 
+					country_event = { id = france.68 }
+				}
+				ITA = { 
+					country_event = { id = france.69 }
+				}
+				FRA = { 
+					country_event = { id = france.66 }
+				}
+				# FRA Player Switches to Vichy
+				if = {
+					limit = { FRA = { has_country_flag = become_vichy } }
+					change_tag_from = FRA
+				}
+				#load_oob = "VIC_1940"
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Philippe Pétain"
+					desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
+					picture = "Portrait_France_Philippe_Petain.dds"
+					expire = "1965.1.1"
+					ideology = vichy
+					traits = {
+					}
+				}		
+				set_country_flag = philipe_petain
 		
-					transfer_state = 25
-						
-					25 = { add_core_of = VIC}
-			
-					transfer_state = 20
-						
-					20 = { add_core_of = VIC}
-				
-					transfer_state = 31
-						
-					31 = { add_core_of = VIC}
-				
-			
-					transfer_state = 32
-						
-					32 = { add_core_of = VIC}
-				
-					transfer_state = 33
-						
-					33 = { add_core_of = VIC}
-							
-					transfer_state = 268
-						
-					268 = { add_core_of = VIC}
-			
-					transfer_state = 272
-					
-					272 = { add_core_of = VIC}
-			
-			
-					transfer_state = 310
-					
-					310 = { add_core_of = VIC}
-								
-					transfer_state = 556
-						
-					556 = { add_core_of = VIC}
-			
-					transfer_state = 515
-				
-					515 = { add_core_of = VIC}
-			
-					transfer_state = 513
-					
-					513 = { add_core_of = VIC}
-			
-					transfer_state = 543
-					
-					543 = { add_core_of = VIC}
-			
-					transfer_state = 459
-					
-					459 = { add_core_of = VIC}
-			
-					transfer_state = 460
-				
-					460 = { add_core_of = VIC}
-			
-					transfer_state = 694
-						
-					694 = { add_core_of = VIC}
-			
-					transfer_state = 706
-					
-					706 = { add_core_of = VIC}
-			
-					transfer_state = 708
-					
-					708 = { add_core_of = VIC}
-			
-					transfer_state = 713
-			
-					713 = { add_core_of = VIC}
-			
-					transfer_state = 513
-			
-					513 = { add_core_of = VIC}
-			
-					transfer_state = 460
-			
-					460 = { add_core_of = VIC}
-				
-					transfer_state = 459
-			
-					459 = { add_core_of = VIC}
-			
-					transfer_state = 543
-			
-					543 = { add_core_of = VIC}
-			
-			TUN = { 
-				country_event = { id = france.67 }
-			
+				add_ideas = neutrality_idea_vichy
 			}
-			
-			MOR = { 
-				country_event = { id = france.68 }
-			
-			}
-			ITA = { 
-				country_event = { id = france.69 }
-			
-			}
-			FRA = { 
-				country_event = { id = france.66 }
-			
-			}
-			# FRA Player Switches to Vichy
-			if = {
-				limit = { FRA = { has_country_flag = become_vichy } }
-				change_tag_from = FRA
-			}
-			
-			#load_oob = "VIC_1940"
-			retire_country_leader = yes
-			
-			create_country_leader = {
-			name = "Philippe Pétain"
-			desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
-			picture = "Portrait_France_Philippe_Petain.dds"
-			expire = "1965.1.1"
-			ideology = fascism_ideology
-			traits = {
-			}
-		}		
-			set_country_flag = philipe_petain
-		
-			add_ideas = neutrality_idea_vichy
-		}
 		}
 	
 		#Set same cosmetic tag they would get on capitulation
@@ -2353,25 +2290,24 @@ country_event = {
 		}
 		
 		hidden_effect = {
-				
-				transfer_state = 706
-				transfer_state = 708
-				transfer_state = 268
-				transfer_state = 310
-				transfer_state = 635
-				transfer_state = 641
-				transfer_state = 728
-				transfer_state = 320
-				transfer_state = 272
-				transfer_state = 556
-				transfer_state = 515
+			transfer_state = 706
+			transfer_state = 708
+			transfer_state = 268
+			transfer_state = 310
+			transfer_state = 635
+			transfer_state = 641
+			transfer_state = 728
+			transfer_state = 320
+			transfer_state = 272
+			transfer_state = 556
+			transfer_state = 515
 			BEL = {
 				transfer_state = 539
 				transfer_state = 660
 				transfer_state = 718
 				transfer_state = 538
 				transfer_state = 295
-				}			
+			}			
 		}
 	}
 }
@@ -2393,44 +2329,41 @@ country_event = {
 		}
 		
 		hidden_effect = {
-		VIC = {
-			if = {
-				limit = { 
-					TUN = { 
-						controls_state = 458
-						not = { is_in_faction_with = GER }
-				}
-				}
+			VIC = {
+				if = {
+					limit = { 
+						TUN = { 
+							controls_state = 458
+							not = { is_in_faction_with = GER }
+						}
+					}
 					transfer_state = 458
-												
 					458 = { add_core_of = VIC}
 					annex_country = {
-								target = TUN
-								transfer_troops = yes
+						target = TUN
+						transfer_troops = yes
+					}
 				}
 				if = {
-				limit = { 
-					TUN = { 
-						controls_state = 665
-						not = { is_in_faction_with = GER }
-				}
-				}
+					limit = { 
+						TUN = { 
+							controls_state = 665
+							not = { is_in_faction_with = GER }
+						}
+					}
 					transfer_state = 665
-												
-					665 = { add_core_of = VIC}
-			
+					665 = { add_core_of = VIC }
 				}
 			}
 		}
 	}
-}
-option = {
+	option = {
 		name = france.67.b
 		
 		ai_chance = {
 			factor = 0
 		}
-}
+	}
 }
 country_event = {
 	id = france.68
@@ -2450,33 +2383,30 @@ country_event = {
 		}
 		
 		hidden_effect = {
-		VIC = {
-			if = {
-				limit = { 
-					MOR = { 
-						controls_state = 461
-						not = { is_in_faction_with = GER }
-				}
-				}
+			VIC = {
+				if = {
+					limit = { 
+						MOR = { 
+							controls_state = 461
+							not = { is_in_faction_with = GER }
+						}
+					}
 					transfer_state = 461
-												
 					461 = { add_core_of = VIC}
 					annex_country = {
-								target = MOR
-								transfer_troops = yes
-				}
+						target = MOR
+						transfer_troops = yes
+					}
 				}
 				if = {
-				limit = { 
-					MOR = { 
-						controls_state = 462
-						not = { is_in_faction_with = GER }
-				}
-				}
+					limit = { 
+						MOR = { 
+							controls_state = 462
+							not = { is_in_faction_with = GER }
+						}
+					}
 					transfer_state = 462
-												
 					462 = { add_core_of = VIC}
-			
 				}
 			}
 		}
@@ -2488,7 +2418,7 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
-}
+	}
 }
 country_event = {
 	id = france.69
@@ -2508,440 +2438,344 @@ country_event = {
 		}
 		
 		hidden_effect = {
-		VIC = {
-			
+			VIC = {
 				if = {
-				limit = { 
-					ITA = { 
-						controls_state = 1
-						is_in_faction_with = GER
-				}
-				}
+					limit = { 
+						ITA = { 
+							controls_state = 1
+							is_in_faction_with = GER
+						}
+					}
 					transfer_state = 1
-												
 					1 = { add_core_of = VIC}
-			
 				}
-			if = {
-				limit = { 
-					ITA = { 
-						controls_state = 26
-						is_in_faction_with = GER
-				}
-				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 26
+							is_in_faction_with = GER
+						}
+					}
 					transfer_state = 26
-												
 					26 = { add_core_of = VIC}
-			
 				}
 				if = {
-				limit = { 
-					ITA = { 
-						controls_state = 22
-						is_in_faction_with = GER
-				}
-				}
-					
-						transfer_state = 22
-					
-						22 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 25
-						is_in_faction_with = GER
-				}
-				}
-					
-						transfer_state = 25
-						
-						25 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 20
-						is_in_faction_with = GER
-				}
-				}
-					
-						transfer_state = 20
-						
-						20 = { add_core_of = VIC}
-				
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 31
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 31
-						
-						31 = { add_core_of = VIC}
-				
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 32
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 32
-						
-						32 = { add_core_of = VIC}
-				
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 33
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 33
-						
-						33 = { add_core_of = VIC}
-				
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 268
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 268
-						
-						268 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 272
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 272
-					
-						272 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 310
-						is_in_faction_with = GER
-				}
-				}
-					
-						transfer_state = 310
-					
-						310 = { add_core_of = VIC}
-				
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 556
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 556
-						
-						556 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 515
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 515
-					
-						515 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 513
-						is_in_faction_with = GER
-				}
-				}
-					
-						transfer_state = 513
-					
-						513 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 543
-						is_in_faction_with = GER
-				}
-				}
-					
-						transfer_state = 543
-					
-						543 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 459
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 459
-					
-						459 = { add_core_of = VIC}
-				
+					limit = { 
+						ITA = { 
+							controls_state = 22
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 22
+					22 = { add_core_of = VIC}
 				}
 				if = {
-				limit = { 
-					ITA = { 
-						controls_state = 458
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 458
-					
-						458 = { add_core_of = VIC}
-				
+					limit = { 
+						ITA = { 
+							controls_state = 25
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 25
+					25 = { add_core_of = VIC}
 				}
 				if = {
-				limit = { 
-					ITA = { 
-						controls_state = 665
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 665
-					
-						665 = { add_core_of = VIC}
-				
+					limit = { 
+						ITA = { 
+							controls_state = 20
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 20
+					20 = { add_core_of = VIC}
 				}
 				if = {
-				limit = { 
-					GER = { 
-						controls_state = 458
-						
-				}
-				}
-				
-						transfer_state = 458
-					
-						458 = { add_core_of = VIC}
-				
+					limit = { 
+						ITA = { 
+							controls_state = 31
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 31
+					31 = { add_core_of = VIC }
 				}
 				if = {
-				limit = { 
-					GER = { 
-						controls_state = 461
-						
-				}
-				}
-				
-						transfer_state = 461
-					
-						461 = { add_core_of = VIC}
-				
-				}
-					if = {
-				limit = { 
-					GER = { 
-						controls_state = 462
-						
-				}
-				}
-				
-						transfer_state = 462
-					
-						462 = { add_core_of = VIC}
-				
+					limit = { 
+						ITA = { 
+							controls_state = 32
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 32
+					32 = { add_core_of = VIC }
 				}
 				if = {
-				limit = { 
-					GER = { 
-						controls_state = 665
-						
-				}
-				}
-				
-						transfer_state = 665
-					
-						665 = { add_core_of = VIC}
-				
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 460
-						is_in_faction_with = GER
-				}
-				}
-					
-						transfer_state = 460
-				
-						460 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 694
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 694
-						
-						694 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 706
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 706
-					
-						706 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 708
-						is_in_faction_with = GER
-				}
-				}
-					
-						transfer_state = 708
-					
-						708 = { add_core_of = VIC}
-			
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 713
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 713
-			
-						713 = { add_core_of = VIC}
-				}
-					
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 513
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 513
-			
-						513 = { add_core_of = VIC}
-				}
-				
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 460
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 460
-			
-						460 = { add_core_of = VIC}
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 459
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 459
-			
-						459 = { add_core_of = VIC}
-				}
-					if = {
-				limit = { 
-					ITA = { 
-						not = { controls_state = 735 }
-						is_in_faction_with = GER
-				}
-				}
-				
-						transfer_state = 735
-			
-						735 = { add_core_of = VIC}
+					limit = { 
+						ITA = { 
+							controls_state = 33
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 33
+					33 = { add_core_of = VIC }
 				}
 				if = {
-				limit = { 
-					ITA = { 
-						not = { controls_state = 514 }
-						is_in_faction_with = GER
+					limit = { 
+						ITA = { 
+							controls_state = 268
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 268
+					268 = { add_core_of = VIC }
 				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 272
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 272
+					272 = { add_core_of = VIC }
 				}
-				
-						transfer_state = 514
-			
-						514 = { add_core_of = VIC}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 310
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 310
+					310 = { add_core_of = VIC }
 				}
-					if = {
-				limit = { 
-					ITA = { 
-						controls_state = 543
-						is_in_faction_with = GER
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 556
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 556
+					556 = { add_core_of = VIC }
 				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 515
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 515
+					515 = { add_core_of = VIC }
 				}
-				
-						transfer_state = 543
-			
-						543 = { add_core_of = VIC}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 513
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 513
+					513 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 543
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 543
+					543 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 459
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 459
+					459 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 458
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 458
+					458 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 665
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 665
+					665 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						GER = { 
+							controls_state = 458
+						}
+					}
+					transfer_state = 458
+					458 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						GER = { 
+							controls_state = 461
+						}
+					}
+					transfer_state = 461
+					461 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						GER = { 
+							controls_state = 462
+						}
+					}
+					transfer_state = 462
+					462 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						GER = { 
+							controls_state = 665
+						}
+					}
+					transfer_state = 665
+					665 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 460
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 460
+					460 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 694
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 694
+					694 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 706
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 706
+					706 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 708
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 708
+					708 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 713
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 713
+					713 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 513
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 513
+					513 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 460
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 460
+					460 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 459
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 459
+					459 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							not = { controls_state = 735 }
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 735
+					735 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							not = { controls_state = 514 }
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 514
+					514 = { add_core_of = VIC}
+				}
+				if = {
+					limit = { 
+						ITA = { 
+							controls_state = 543
+							is_in_faction_with = GER
+						}
+					}
+					transfer_state = 543
+					543 = { add_core_of = VIC}
 				}
 			}
 		}
-}
-option = {
+	}
+	
+	option = {
 		name = france.69.b
 		
 		ai_chance = {
 			factor = 0
 		}
-}
+	}
 }
 country_event = {
 	id = france.70
