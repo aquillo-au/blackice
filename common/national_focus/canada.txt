@@ -1319,7 +1319,7 @@ focus_tree = {
 				tooltip = synth_oil_effort_tt
 				all_owned_state = {
 					free_building_slots = {
-						building = synthetic_refinery
+						building = synthetic_rubber_refinery
 						size < 0
 						include_locked = yes
 					}
@@ -1350,10 +1350,10 @@ focus_tree = {
 				limit = {
 					has_state_flag = CAN_polymer_corporation_1
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = synthetic_refinery
-					level = 1
+					type = synthetic_rubber_refinery
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1361,10 +1361,10 @@ focus_tree = {
 				limit = {
 					has_state_flag = CAN_polymer_corporation_2
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = synthetic_refinery
-					level = 1
+					type = synthetic_rubber_refinery
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1375,17 +1375,17 @@ focus_tree = {
 				limit = {
 					NOT = { has_tech = synth_oil_experiments }
 				}
-				set_technology = { synth_oil_experiments = 1 }
+				set_technology = { improved_oil_plant = 1 }
 				set_country_flag = CAN_polymer_corporation_unlock
 				effect_tooltip = {
 					random_owned_controlled_state = {
 						prioritize = { 682 }
 						limit = {
 						}
-						add_extra_state_shared_building_slots = 1
+						add_extra_state_shared_building_slots = 2
 						add_building_construction = {
-							type = synthetic_refinery
-							level = 1
+							type = synthetic_rubber_refinery
+							level = 2
 							instant_build = yes
 						}
 						set_state_flag = CAN_polymer_corporation_1
@@ -1394,10 +1394,10 @@ focus_tree = {
 						prioritize = { 276 }
 						limit = {
 						}
-						add_extra_state_shared_building_slots = 1
+						add_extra_state_shared_building_slots = 2
 						add_building_construction = {
-							type = synthetic_refinery
-							level = 1
+							type = synthetic_rubber_refinery
+							level = 2
 							instant_build = yes
 						}
 						set_state_flag = CAN_polymer_corporation_2
@@ -1417,14 +1417,14 @@ focus_tree = {
 				prioritize = { 682 }
 				limit = {
 					free_building_slots = {
-						building = synthetic_refinery
+						building = synthetic_rubber_refinery
 						size > 0
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = synthetic_refinery
-					level = 1
+					type = synthetic_rubber_refinery
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = CAN_polymer_corporation_1
@@ -1433,14 +1433,14 @@ focus_tree = {
 				prioritize = { 276 }
 				limit = {
 					free_building_slots = {
-						building = synthetic_refinery
+						building = synthetic_rubber_refinery
 						size > 0
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = synthetic_refinery
-					level = 1
+					type = synthetic_rubber_refinery
+					level = 2
 					instant_build = yes
 				}
 				set_state_flag = CAN_polymer_corporation_2

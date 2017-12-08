@@ -381,16 +381,32 @@ technologies = {
 		}
 	
 	}
+	com_militia = {
+
+		
+		enable_subunits = {
+			communist_militia
+		}
+	
+	}
+	sov_artillery_division_battalion = {
+
+		
+		enable_subunits = {
+			artillery_division
+		}
+	
+	}
 	guards_sov_t_34_tank = {
 		
 		enable_subunits = {
-			guards_sov_t_34_tank
+			guards_sov_medium_tank
 		}
 	}
 	guards_sov_kv_tank = {
 		
 		enable_subunits = {
-			guards_sov_kv_tank
+			guards_sov_heavy_tank
 		}
 	}
 	guards_sov_is_tank = {
@@ -448,6 +464,44 @@ technologies = {
 		}
 		enable_subunits = {
 			guards_motorized_rocket_brigade
+		}
+	}
+	sov_better_guards = {
+		guards_infantry  = {
+			defense = 0.05
+			
+		}
+		guards_cavalry  = {
+			defense = 0.05
+			
+		}
+		guards_paratrooper  = {
+			defense = 0.05
+			
+		}
+		guards_motorized  = {
+			defense = 0.05
+			
+		}
+		guards_motorized_rocket_brigade = {
+			soft_attack = 0.05
+			
+		}
+		guards_artillery_brigade = {
+			soft_attack = 0.05
+			
+		}
+		guards_artillery_brigade_mot= {
+			soft_attack = 0.05
+			
+		}
+		guards_sov_heavy_tank = {
+			breakthrough = 0.05
+			
+		}
+		guards_sov_medium_tank = {
+			breakthrough = 0.05
+			
 		}
 	}
 	tech_czech_panzer_1 = {
@@ -1716,6 +1770,18 @@ JAP_defence_I = {
 		dig_in_speed_factor = 10
 		category_army = {
 			entrenchment  = 1
+		}
+	}
+ETH_defence_I = {
+
+		research_cost = 1
+		# only from event
+		allow = {
+			always = no
+		}
+		dig_in_speed_factor = 10
+		category_army = {
+			entrenchment  = 0.2
 		}
 	}
 ENG_defence_I = {

@@ -695,6 +695,7 @@ country_event = {
 	
 	option = {
 		name = soviet.24.a
+		#add_ideas
 	}
 }
 # Great Purge - Trial of the Anti-Soviet Trotskyist Center
@@ -708,11 +709,8 @@ country_event = {
 	
 	trigger = {
 		tag = SOV
-		NOT = { has_completed_focus = SOV_great_purge }
-		focus_progress = {
-			focus = SOV_great_purge
-			progress > 0.25
-		}
+		has_completed_focus = SOV_first_Moscow_trial 
+		
 	}
 
 	mean_time_to_happen = {
@@ -783,10 +781,10 @@ country_event = {
 	
 	trigger = {
 		tag = SOV
-		NOT = { has_completed_focus = SOV_great_purge }
+		has_completed_focus = SOV_great_purge 
 		focus_progress = {
-			focus = SOV_great_purge
-			progress > 0.5
+			focus = SOV_great_officer_purge
+			progress > 0.1
 		}
 	}
 
@@ -847,7 +845,8 @@ country_event = {
 			remove_ideas = ivan_yumashev
 			remove_ideas = konstantin_rokossovsky
 			remove_ideas = vladimir_kasatonov
-		}	
+		}
+		
 	}
 	# REVISIT Balance, since the latter removes more unit leaders
 	option = {
@@ -958,12 +957,13 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		not = { has_idea = exile_trotsky }
 		has_country_flag = SOV_soviet.48_trotsky
 		tag = SOV
 	}
 
 	mean_time_to_happen = {
-		days = 90
+		days = 12
 		#modifier = {
 		#	factor = 1.25
 		#	OR = {
@@ -996,20 +996,7 @@ country_event = {
 				permanent_revolutionary
 			}
 		}
-		remove_ideas = mikhail_kalinin
-		remove_ideas = ivan_konev
-		remove_unit_leader = 608
-		remove_ideas = pavel_zhigarev
-		remove_ideas = stepan_krasovsky
-		remove_ideas = arseniy_golovko
-		remove_unit_leader = 609
-		remove_ideas = georgy_zhukov
-		remove_unit_leader = 610
-		remove_ideas = sergey_gorshkov
-		remove_unit_leader = 611
-		remove_ideas = sergei_rudenko
-		remove_ideas = nikita_khrushchev
-		remove_ideas = konstantin_rodzaevsky
+		
 		add_timed_idea = {
 			idea = officers_purged_7
 			days = 584
@@ -1017,11 +1004,12 @@ country_event = {
 		hidden_effect = {
 			country_event = { id = soviet.43 days = 146 }				
 		}
-		#start_civil_war = {
-		#	ideology = neutrality
-		#	size = 0.18
-		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 404 }
-		#}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.3
+			keep_unit_leaders = { 401 402 407 410 406 405 403 407 404 }
+		}
+
 		hidden_effect = {
 			random_other_country = {
 				limit = {
@@ -1724,13 +1712,20 @@ country_event = {
 
 	trigger = {
 		has_government = communism
+		not = { has_idea = exile_trotsky }
 		tag = SOV
 		has_global_flag = SOV_fourth_international_fired
-		NOT = { has_completed_focus = SOV_great_purge }
+		NOT = { has_completed_focus = SOV_assassinate_trotsky }
+		or = {
+		AND = {
+			has_country_flag = trotskyarrives
+			not = {has_idea = trotsky_marches}
+			}
 		AND = { 
 			has_country_flag = no_political_purge
 			has_country_flag = purge_1_no_purge
 			has_country_flag = purge_2_no_purge
+			}
 		}
 	}
 
@@ -1743,6 +1738,7 @@ country_event = {
 	#Don't invite trotsky
 	option = {
 		name = soviet.48.a
+		ai_chance = { factor = 0 }
 		custom_effect_tooltip = soviet.48.a_tt
 		set_country_flag = SOV_soviet.48_notrotsky
 	}
@@ -1750,6 +1746,7 @@ country_event = {
 	#Invite back Trotsky
 	option = {
 		name = soviet.48.b
+		ai_chance = { factor = 100 }
 		custom_effect_tooltip = soviet.48.b_tt
 		set_country_flag = SOV_soviet.48_trotsky
 	}
@@ -2557,7 +2554,7 @@ country_event = {
 		}
 	
 	mean_time_to_happen = {
-		months = 2
+		months = 6
 	}
 	
 	option = {
@@ -3981,6 +3978,16 @@ country_event = {
 			and = {
 			NOT = { has_idea = Rodina_III }
 			has_country_flag = forthemotherland
+			}
+		}
+		OR = {
+		and = { 
+			is_ai = yes
+			
+			}
+		and = { 
+			is_ai = no
+			has_completed_focus = SOV_guards_armyunits
 			}
 		}
 		has_war_with = GER
@@ -5436,4 +5443,1418 @@ country_event = {
 }
 #329
 #330
+#create soviet guards - army/ airforce
+country_event = {
+	id = soviet.331
+	title = soviet.331.t
+	desc = soviet.331.d
+	picture = GFX_report_event_soviet_infantry_and_t34_assault
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.331.a
+		
+	}
+}
+# bonus to air formations ?
+country_event = {
+	id = soviet.332
+	title = soviet.332.t
+	desc = soviet.332.d
+	picture = GFX_report_event_yak7
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.332.a
+		
+	}
+}
+#create Communist Militia
+country_event = {
+	id = soviet.333
+	title = soviet.333.t
+	desc = soviet.333.d
+	picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.333.a
+		set_technology = { com_militia = 1 }
+	}
+}
+#form OMSDON NKVD - INDEPENDANT SPECIAL PURPOSE MOTORIZED BRIGADE 
+country_event = {
+	id = soviet.334
+	title = soviet.334.t
+	desc = soviet.334.d
+	picture = GFX_report_event_soviet_bikes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.334.a
+		load_oob = SOV_OMSDON_NKVD
+	}
+}
+#form OTRYAD OSOBOGO NAZNACHENIYA – OSNAZ
+country_event = {
+	id = soviet.335
+	title = soviet.335.t
+	desc = soviet.335.d
+	picture = GFX_report_event_soviet_bikes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.335.a
+		load_oob = SOV_OSNAZ_NKVD
+	}
+}
+#create Polish peoples army
+country_event = {
+	id = soviet.336
+	title = soviet.336.t
+	desc = soviet.336.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+		SOV = { controls_state = 845 }}
+		name = soviet.336.a
+		load_oob = SOV_polish_army
+	}
+	option = {
+		trigger = {
+		not = {SOV = { controls_state = 845 }}}
+		name = soviet.336.b
+		
+	}
+}
+#develop Artillery Divisions
+country_event = {
+	id = soviet.337
+	title = soviet.337.t
+	desc = soviet.337.d
+	picture = GFX_report_event_soviet_arty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.337.a
+		set_technology = { sov_artillery_division_battalion = 1 }
+		load_oob = SOV_artillery_divisions
+	}
+}
+#recruit proletariat_divisions
+country_event = {
+	id = soviet.338
+	title = soviet.338.t
+	desc = soviet.338.d
+	picture = GFX_report_event_soldiers_marching
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.338.a
+		add_ideas = proletariats_fight
+		load_oob = SOV_proletariat_divisions
+	}
+}
+######################
+## Red army purge effects 38
+country_event = {
+	id = soviet.339
+	title = soviet.339.t
+	desc = soviet.339.d
+	picture = GFX_report_event_soviet_purge_officers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = {has_defensive_war_with = GER }
+		has_completed_focus = SOV_great_officer_purge 
+		not = { has_idea = red_army_purge_I }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.339.a
+		set_country_flag = red_purge_38
+		add_timed_idea = {
+				idea = red_army_purge_II
+				days = 365
+		}
+	}
+}
+#1939
+country_event = {
+	id = soviet.340
+	title = soviet.340.t
+	desc = soviet.340.d
+	picture = GFX_report_event_soviet_purge_officers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = {has_defensive_war_with = GER }
+		has_completed_focus = SOV_great_officer_purge 
+		not = { has_idea = red_army_purge_II }
+		has_country_flag = red_purge_38
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.340.a
+		set_country_flag = red_purge_39
+		add_timed_idea = {
+				idea = red_army_purge_III
+				days = 365
+		}
+	}
+}
+#1940
+country_event = {
+	id = soviet.341
+	title = soviet.341.t
+	desc = soviet.341.d
+	picture = GFX_report_event_soviet_purge_officers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = {has_defensive_war_with = GER }
+		GER = {is_ai = yes}
+		has_completed_focus = SOV_great_officer_purge 
+		not = { has_idea = red_army_purge_III }
+		has_country_flag = red_purge_39
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.341.a
+		set_country_flag = red_purge_40
+		add_timed_idea = {
+				idea = red_army_purge_IV
+				days = 365
+		}
+	}
+}
+#1941
+country_event = {
+	id = soviet.342
+	title = soviet.342.t
+	desc = soviet.342.d
+	picture = GFX_report_event_soviet_purge_officers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = {has_defensive_war_with = GER }
+		GER = {is_ai = yes}
+		has_completed_focus = SOV_great_officer_purge 
+		not = { has_idea = red_army_purge_IV }
+		has_country_flag = red_purge_40
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.342.a
+		set_country_flag = red_purge_41
+		add_timed_idea = {
+				idea = red_army_purge_V
+				days = 365
+		}
+	}
+}
+#1942
+country_event = {
+	id = soviet.343
+	title = soviet.343.t
+	desc = soviet.343.d
+	picture = GFX_report_event_soviet_purge_officers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = {has_defensive_war_with = GER }
+		GER = {is_ai = yes}
+		has_completed_focus = SOV_great_officer_purge 
+		not = { has_idea = red_army_purge_V }
+		has_country_flag = red_purge_41
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.343.a
+		set_country_flag = red_purge_42
+		add_timed_idea = {
+				idea = red_army_purge_VI
+				days = 365
+		}
+	}
+}
+#1943
+country_event = {
+	id = soviet.344
+	title = soviet.344.t
+	desc = soviet.344.d
+	picture = GFX_report_event_soviet_purge_officers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		not = {has_defensive_war_with = GER }
+		GER = {is_ai = yes}
+		has_completed_focus = SOV_great_officer_purge 
+		not = { has_idea = red_army_purge_VI }
+		has_country_flag = red_purge_42
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.344.a
+		set_country_flag = red_purge_43
+		add_timed_idea = {
+				idea = red_army_purge_VII
+				days = 365
+		}
+	}
+}
+## Trotsky Threat
+country_event = {
+	id = soviet.345
+	title = soviet.345.t
+	desc = soviet.345.d
+	picture = GFX_report_event_soviet_purge_politicians
+	
+	trigger = {
+		tag = SOV
+		not = {has_defensive_war_with = GER }
+		#is_ai = yes
+		date > 1936.6.1
+		not = {has_country_flag = trotskysighted}
+		not = { has_idea = exile_trotsky }
+		not = { has_idea = trotsky_rallies }
+		not = { has_idea = trotsky_marches }
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	immediate = {
+	set_country_flag = trotskysighted
+	 clr_country_flag = trotskyrallies
+	 clr_country_flag = trotskymarches
+	}
+	option = {
+		name = soviet.345.a
+	
+		add_timed_idea = {
+				idea = trotsky_sighted
+				days = 180
+		}
+	}
+}
+country_event = {
+	id = soviet.346
+	title = soviet.346.t
+	desc = soviet.346.d
+	picture = GFX_report_event_soviet_purge_politicians
+	
+	trigger = {
+		tag = SOV
+		#is_ai = yes
+		not = {has_defensive_war_with = GER }
+		has_country_flag = trotskysighted
+		date > 1936.6.1
+		not = {has_country_flag = trotskyrallies}
+		not = { has_idea = exile_trotsky }
+		not = { has_idea = trotsky_sighted }
+		not = { has_idea = trotsky_marches }
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	immediate = {
+	set_country_flag = trotskyrallies
+	
+	}
+	option = {
+		name = soviet.346.a
+		
+		add_timed_idea = {
+				idea = trotsky_rallies
+				days = 90
+		}
+	}
+}
+country_event = {
+	id = soviet.347
+	title = soviet.347.t
+	desc = soviet.347.d
+	picture = GFX_report_event_soviet_purge_politicians
+	
+	trigger = {
+		tag = SOV
+		#is_ai = yes
+		date > 1936.6.1
+		not = {has_defensive_war_with = GER }
+		has_country_flag = trotskyrallies
+		not = {has_country_flag = trotskymarches }
+		not = { has_idea = exile_trotsky }
+		not = { has_idea = trotsky_sighted }
+		not = { has_idea = trotsky_rallies }
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+	immediate = {
+	set_country_flag = trotskymarches
+	clr_country_flag = trotskysighted
+	clr_country_flag = trotskyrallies
+	}
+	option = {
+		name = soviet.347.a
+		set_country_flag = trotskyarrives
+		#set_country_flag = SOV_soviet.48_trotsky
+		add_timed_idea = {
+				idea = trotsky_marches
+				days = 60
+		}
+	}
+}
+########## Incite Revolutions
+country_event = {
+	id = soviet.348
+	title = soviet.348.t
+	desc = soviet.348.d
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.348.a	#all out, will lead to german dow
+		ai_chance = { factor = 100 }
+			GER = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			GER = { country_event = { id = soviet.349  } }
+	}
+	option = {
+		name = soviet.348.b	#subtle 
+		ai_chance = { factor = 0 }
+		#add_ideas = #communism_drift = 0.05 
+			GER = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+}
+}
+#Germany response
+country_event = {
+	id = soviet.349
+	title = soviet.349.t
+	desc = soviet.349.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.349.a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+	}
+	option = {
+		name = soviet.349.b	#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = soviet.350
+	title = soviet.350.t
+	desc = soviet.350.d
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.350.a	#all out, will lead to french dow
+		ai_chance = { factor = 100 }
+			FRA = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			FRA = { country_event = { id = soviet.351  } }
+	}
+	option = {
+		name = soviet.350.b	#subtle 
+		ai_chance = { factor = 0 }
+			FRA = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+}
+}
+#French response
+country_event = {
+	id = soviet.351
+	title = soviet.351.t
+	desc = soviet.351.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.351.a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+	}
+	option = {
+		name = soviet.351.b	#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = soviet.352
+	title = soviet.352.t
+	desc = soviet.352.d
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.352.a	#all out, will lead to italian dow
+		ai_chance = { factor = 100 }
+			ITA = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			ITA = { country_event = { id = soviet.353  } }
+	}
+	option = {
+		name = soviet.352.b	#subtle 
+		ai_chance = { factor = 0 }
+			ITA = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+}
+}
+#italian response
+country_event = {
+	id = soviet.353
+	title = soviet.353.t
+	desc = soviet.353.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.353.a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+	}
+	option = {
+		name = soviet.353.b	#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+#NOR
+#SWE
+#HOL
+#BEL
+#FIN
+#LUX
+#DEN
+country_event = {
+	id = soviet.354
+	title = soviet.354.t
+	desc = soviet.354.d
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.354.a	#all out, will lead to dow
+		ai_chance = { factor = 100 }
+			NOR = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			NOR = { country_event = { id = soviet.355  } }
+			DEN = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			DEN = { country_event = { id = soviet.355  } }
+			SWE = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			SWE = { country_event = { id = soviet.355  } }
+			FIN = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			FIN = { country_event = { id = soviet.355  } }
+			HOL = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			HOL = { country_event = { id = soviet.355  } }
+			BEL = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			BEL = { country_event = { id = soviet.355  } }
+			LUX = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			LUX = { country_event = { id = soviet.355  } }
+	}
+	option = {
+		name = soviet.354.b	#subtle 
+		ai_chance = { factor = 0 }
+			NOR = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			DEN = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			SWE = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			FIN = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			HOL = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			BEL = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			LUX = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+}
+}
+#response
+country_event = {
+	id = soviet.355
+	title = soviet.355.t
+	desc = soviet.355.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.355.a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+	}
+	option = {
+		name = soviet.355.b	#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = soviet.356
+	title = soviet.356.t
+	desc = soviet.356.d
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.356.a	#all out, will lead to uk dow
+		ai_chance = { factor = 100 }
+			ENG = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			ENG = { country_event = { id = soviet.357  } }
+	}
+	option = {
+		name = soviet.356.b	#subtle 
+		ai_chance = { factor = 0 }
+			ENG = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+	}
+}
+#UK response
+country_event = {
+	id = soviet.357
+	title = soviet.357.t
+	desc = soviet.357.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.357.a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+	}
+	option = {
+		name = soviet.357.b	#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = soviet.358
+	title = soviet.358.t
+	desc = soviet.358.d
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.358.a	#all out, will lead to us dow
+		ai_chance = { factor = 100 }
+			USA = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			USA = { country_event = { id = soviet.359  } }
+	}
+	option = {
+		name = soviet.358.b	#subtle 
+		ai_chance = { factor = 0 }
+			USA = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+	}
+}
+#US response
+country_event = {
+	id = soviet.359
+	title = soviet.359.t
+	desc = soviet.359.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.359.a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+	}
+	option = {
+		name = soviet.359.b	#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = soviet.370
+	title = soviet.370.t
+	desc = soviet.370.d
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.370.a	#all out, will lead to dow
+		ai_chance = { factor = 100 }
+			AST = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			AST = { country_event = { id = soviet.371  } }
+			NZL = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			NZL = { country_event = { id = soviet.371  } }
+			SAF = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			SAF = { country_event = { id = soviet.371  } }
+			CAN = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			CAN = { country_event = { id = soviet.371  } }
+			RAJ = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			RAJ = { country_event = { id = soviet.371  } }
+			MOR = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			MOR = { country_event = { id = soviet.371  } }
+			BUR = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			BUR = { country_event = { id = soviet.371  } }
+	}
+	option = {
+		name = soviet.370.b	#subtle 
+		ai_chance = { factor = 0 }
+			AST = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			NZL = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			SAF = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			CAN = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			RAJ = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			MOR = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			BUR = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+	}
+}
+#response
+country_event = {
+	id = soviet.371
+	title = soviet.371.t
+	desc = soviet.371.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.371.a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+	}
+	option = {
+		name = soviet.371.b	#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+#372
+country_event = {
+	id = soviet.374
+	title = soviet.374.t
+	desc = soviet.374.d
+	picture = GFX_report_event_soviet_t34_scouting_group
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	option = {
+		name = soviet.374.a	#dow
+		ai_chance = { factor = 100 }
+			create_wargoal = {
+				type = annex_everything
+				target = POL
+			}
+		}
+	option = {
+		name = soviet.374.b	#all out, will lead to pol dow
+		ai_chance = { factor = 0 }
+			POL = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			POL = { country_event = { id = soviet.375  } }
+	}
+	option = {
+		name = soviet.374.c	#subtle 
+		ai_chance = { factor = 0 }
+			POL = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+	
+	}
+}
+#POL response
+country_event = {
+	id = soviet.375
+	title = soviet.375.t
+	desc = soviet.375.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.375.a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+	}
+	option = {
+		name = soviet.375.b	#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = soviet.376
+	title = soviet.376.t
+	desc = soviet.376.d
+	picture = GFX_report_event_soviet_t34_scouting_group
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	option = {
+		name = soviet.376.a	#dow
+		ai_chance = { factor = 100 }
+			create_wargoal = {
+				type = annex_everything
+				target = ROM
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = HUN
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = YUG
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = BUL
+			}
+		}
+	option = {
+		name = soviet.376.b	#all out, will lead to  dow
+		ai_chance = { factor = 0 }
+			ROM = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			ROM = { country_event = { id = soviet.377  } }
+			HUN = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			HUN = { country_event = { id = soviet.377  } }
+			YUG = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			YUG = { country_event = { id = soviet.377  } }
+			BUL = {add_national_unity = -0.35
+					add_popularity = {
+						ideology = communism
+						popularity = 0.45
+				}}
+			BUL = { country_event = { id = soviet.377  } }
+	}
+	option = {
+		name = soviet.376.c	#subtle 
+		ai_chance = { factor = 0 }
+			ROM = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			HUN = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			YUG = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			BUL = {add_national_unity = -0.12
+					add_popularity = {
+					ideology = communism
+					popularity = 0.22
+				}}
+			
+	}
+}
+#response
+country_event = {
+	id = soviet.377
+	title = soviet.377.t
+	desc = soviet.377.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.377.a
+		ai_chance = { factor = 100 }
+		create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+	}
+	option = {
+		name = soviet.377.b	#do nothing
+		ai_chance = { factor = 0 }
+	}
+}
+#368
+country_event = {
+	id = soviet.378
+	title = soviet.378.t
+	desc = soviet.378.d
+	picture = GFX_report_event_soviet_purge_trial
+	
+	fire_only_once = yes
+	
+	trigger = {
+		not = {tag = SOV}
+		SOV = { has_completed_focus = SOV_4th_international }
+		not = {has_war_with = SOV}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.378.a
+		set_global_flag = SOV_fourth_international_fired
+		add_ideas = fourth_international_paris
+	}
+	
+}
+country_event = {
+	id = soviet.379
+	title = soviet.379.t
+	desc = soviet.379.d
+	picture = GFX_report_event_soviet_purge_trial
+	
+	fire_only_once = yes
+	
+	trigger = {
+		not = {tag = SOV}
+		SOV = { has_completed_focus = SOV_4th_international_New_york }
+		not = {has_war_with = SOV}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.379.a
+		remove_ideas = fourth_international_paris
+		add_ideas = fourth_international_newyork
+	}
+	
+}
+country_event = {
+	id = soviet.380
+	title = soviet.380.t
+	desc = soviet.380.d
+	picture = GFX_report_event_journalists_speech
+	
+	fire_only_once = yes
+	
+	trigger = {
+		not = {tag = SOV}
+		SOV = { has_completed_focus = SOV_The_Transitional_Program }
+		not = {has_war_with = SOV}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.380.a
+		add_ideas = Transitional_Program
+	}
+	
+}
+country_event = {
+	id = soviet.381
+	title = soviet.381.t
+	desc = soviet.381.d
+	picture = GFX_report_event_journalists_speech
+	
+	fire_only_once = yes
+	
+	trigger = {
+		not = {tag = SOV}
+		SOV = { has_completed_focus = SOV_assassinate_trotsky }
+		SOV = { has_completed_focus = SOV_The_Transitional_Program }
+		SOV = { has_completed_focus = SOV_4th_international_New_york }
+		not = {has_war_with = SOV}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.381.a
+		remove_ideas = Transitional_Program
+		remove_ideas = fourth_international_newyork
+	}
+	
+}
+country_event = {
+	id = soviet.382
+	title = soviet.382.t
+	desc = soviet.382.d
+	picture = GFX_report_event_radio_broadcast
+	
+	fire_only_once = yes
+	
+	trigger = {
+		not = {tag = SOV}
+		SOV = { has_completed_focus = SOV_Trotskyites_unite }
+		SOV = { has_completed_focus = SOV_The_Transitional_Program }
+		SOV = { has_completed_focus = SOV_4th_international_New_york }
+		not = {has_war_with = SOV}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.382.a
+		remove_ideas = Transitional_Program
+		remove_ideas = fourth_international_newyork
+		add_ideas = Trotskyites
+	}
+	
+}
+country_event = {
+	id = soviet.383
+	title = soviet.383.t
+	desc = soviet.383.d
+	picture = GFX_report_event_soviet_tank_with_crew
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.383.a
+		set_technology = { sov_better_guards = 1 }
+	}
+	
+}
+country_event = {
+	id = soviet.384
+	title = soviet.384.t
+	desc = soviet.384.d
+	picture = GFX_report_event_polish_resistance4
+		
+	trigger = {
+		tag = SOV
+		not = {has_idea = hunt_trotsky }
+		or = {
+		has_idea = exile_trotsky 
+		has_war_with = GER
+		}
+		or = {
+		has_idea = trotsky_sighted 
+		has_idea = trotsky_rallies 
+		has_idea = trotsky_marches }
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+		immediate = {
+	add_timed_idea = {
+				idea = hunt_trotsky
+				days = 2
+		}
+	}
+	option = {
+		name = soviet.384.a
+		trigger = { 
+		has_idea = trotsky_sighted 
+		}
+		remove_ideas = trotsky_sighted
+		clr_country_flag = trotskysighted
+		
+	}
+	option = {
+		name = soviet.384.b
+		trigger = { 
+			has_idea = trotsky_rallies 
+		}
+		remove_ideas = trotsky_rallies 
+		clr_country_flag = trotskyrallies
+		
+	}
+	option = {
+		name = soviet.384.c
+		trigger = { 
+			has_idea = trotsky_marches
+		}
+		remove_ideas = trotsky_marches
+		clr_country_flag = trotskymarches
+		clr_country_flag = trotskyarrives
+	}
+	
+}
+country_event = {
+	id = soviet.385
+	title = soviet.385.t
+	desc = soviet.385.d
+	picture = GFX_report_event_vote
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_country_flag = sovietcensus
+		date > 1937.1.1
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.385.a
+		add_timed_idea = {
+				idea = soviet_census
+				days = 730
+		}
+	}
+	
+}
+country_event = {
+	id = soviet.386
+	title = soviet.386.t
+	desc = soviet.386.d
+	picture = GFX_report_event_vote
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_country_flag = sovietcensus
+		date > 1939.1.1
+		not = { has_idea = soviet_census}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.386.a
+		add_timed_idea = {
+				idea = soviet_census
+				days = 730
+		}
+	}
+	
+}
+country_event = {
+	id = soviet.387
+	title = soviet.387.t
+	desc = soviet.387.d
+	picture = GFX_report_event_radio_broadcast
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_country_flag = NY_worldfair
+		has_war_with = FIN
+		
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.387.a
+		every_country = {
+				limit = {
+					AND = {
+						democratic_govt = yes
+						NOT = { same_ideology = yes }
+					}
+				}
+				add_opinion_modifier = {
+					target = SOV
+					modifier = protest_action
+				}
+			}
+	}
+	
+}
+country_event = {
+	id = soviet.388
+	title = soviet.388.t
+	desc = soviet.388.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = {
+		SOV = { controls_state = 845 }}
+		name = soviet.388.a
+		add_manpower = -250000
+		load_oob = SOV_berlings_army
+	}
+	option = {
+		trigger = {
+		not = {SOV = { controls_state = 845 }}}
+		name = soviet.388.b
+		
+	}
+}
 ### EOF ###

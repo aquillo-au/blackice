@@ -64,7 +64,107 @@ ideas = {
 				enemy_partisan_effect = -0.2
 			}
 		}
+		polish_agreement = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
 
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				political_power_factor = -0.02
+				#unity_factor = 0.02
+			}
+		}
+		soviet_census = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				political_power_factor = -0.05
+				unity_factor = 0.02
+			}
+		}
+		 paranoia = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				#ai_focus_aggressive_factor = 0.5
+				justify_war_goal_time = -0.25
+				
+				political_advisor_cost_factor = 0.3
+				trade_laws_cost_factor = -0.25
+				conscription_cost_factor = -0.25
+				economy_cost_factor = 0.25
+				high_command_cost_factor = 0.25
+				air_chief_cost_factor = 0.25
+				army_chief_cost_factor = 0.25
+				navy_chief_cost_factor = 0.25
+			}
+		}
+		intellectual_Politburo = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				political_power_factor = 0.05
+				unity_factor = 0.02
+				research_time_factor = -0.05
+				drift_defence_factor = -0.05
+				political_advisor_cost_factor = 0.25
+				trade_laws_cost_factor = -0.25
+				conscription_cost_factor = 0.25
+				economy_cost_factor = -0.25
+				high_command_cost_factor = 0.25
+				air_chief_cost_factor = 0.25
+				army_chief_cost_factor = 0.25
+				navy_chief_cost_factor = 0.25
+			}
+		}
+		NKVDtroika = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				training_time_army_factor = -0.1
+				army_org_factor = -0.05
+				army_morale_factor = -0.01
+				resistance_tick = 0.2
+			}
+		}
 		nkvd = {
 			removal_cost = -1
 			
@@ -116,7 +216,24 @@ ideas = {
 				communism_drift = 0.05
 			}
 		}
+		comintern = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
 
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_communism_drift_bonus
+			
+			modifier = {
+				political_power_factor = -0.02
+			}
+		}
 		progress_cult_focus = {
 			removal_cost = -1
 			
@@ -202,7 +319,7 @@ ideas = {
 			}
 			
 			modifier = {
-				drift_defence_factor = 0.5
+				drift_defence_factor = 0.25
 				production_speed_buildings_factor = -0.1
 			}
 			rule = {
@@ -226,12 +343,155 @@ ideas = {
 				subversive_activites_upkeep = -0.30
 				political_power_factor = 0.05
 				unity_factor = -0.05
-				drift_defence_factor = -0.10
+				drift_defence_factor = -0.20
 			}
 			rule = {
 				can_create_factions = yes
 			}
 		}
+		fourth_international_paris = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				subversive_activites_upkeep = -0.01
+				communism_drift = 0.01
+				unity_factor = -0.01
+				drift_defence_factor = -0.02
+			}
+			
+		}
+		fourth_international_newyork = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				subversive_activites_upkeep = -0.02
+				communism_drift = 0.01
+				unity_factor = -0.02
+				drift_defence_factor = -0.03
+			}
+			
+		}
+		Transitional_Program = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				subversive_activites_upkeep = -0.02
+				communism_drift = 0.01
+				unity_factor = -0.01
+				drift_defence_factor = -0.01
+			}
+			
+		}
+		Trotskyites = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				subversive_activites_upkeep = -0.01
+				communism_drift = 0.01
+				unity_factor = -0.01
+				drift_defence_factor = -0.01
+			}
+			
+		}
+		Frida = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				political_power_factor = 0.02
+			}
+			
+		}
+		socialist_art = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				political_power_factor = 0.02
+				unity_factor = 0.02
+			}
+			
+		}
+		socialist_art2 = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			modifier = {
+				political_power_factor = 0.01
+				unity_factor = -0.01
+			}
+			
+		}
+		exile_trotsky = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				political_power_factor = 0.25
+				unity_factor = 0.25
+			}
+		}
+	
 		trotskyite_plot = {
 			removal_cost = -1
 			
@@ -244,7 +504,9 @@ ideas = {
 			}
 			
 			modifier = {
-				unity_factor = -0.2
+				unity_factor = -0.5
+				resistance_tick = 0.2
+				foreign_subversive_activites = 0.15
 			}
 		}
 		
@@ -260,10 +522,41 @@ ideas = {
 			}
 			
 			modifier = {
-				unity_factor = -0.05
+				unity_factor = 0.1
 			}
 		}
+		intelligentsia_purge = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
 
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				political_power_factor = 0.15
+				research_time_factor = 0.03
+			}
+		}
+		art_purge = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				political_power_factor = 0.1
+				research_time_factor = 0.02
+			}
+		}
 		officers_purged = {
 			removal_cost = -1
 			
@@ -276,7 +569,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				land_doctrine = -0.10
+				land_doctrine = -0.30
 				naval_doctrine = -0.10
 				air_doctrine = -0.10
 			}
@@ -300,7 +593,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				land_doctrine = -0.09
+				land_doctrine = -0.25
 				naval_doctrine = -0.09
 				air_doctrine = -0.09
 			}
@@ -323,7 +616,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				land_doctrine = -0.08
+				land_doctrine = -0.2
 				naval_doctrine = -0.08
 				air_doctrine = -0.08
 			}
@@ -346,7 +639,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				land_doctrine = -0.07
+				land_doctrine = -0.15
 				naval_doctrine = -0.07
 				air_doctrine = -0.07
 			}
@@ -369,7 +662,7 @@ ideas = {
 			}
 			
 			research_bonus = {
-				land_doctrine = -0.06
+				land_doctrine = -0.1
 				naval_doctrine = -0.06
 				air_doctrine = -0.06
 			}
@@ -613,8 +906,403 @@ ideas = {
 				army_org_factor = 0.05
 			}
 		}
+		red_army_purge_I = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
 
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
 
+			modifier = {
+				experience_gain_army_factor = -0.02
+					
+				land_reinforce_rate = -0.07
+				army_morale_factor = -0.07
+				army_speed_factor = -0.35
+
+				army_infantry_attack_factor = -0.35
+				army_infantry_defence_factor = -0.35
+				army_armor_attack_factor = -0.35
+	   	 		army_armor_defence_factor = -0.35
+				cavalry_attack_factor = -0.35
+				cavalry_defence_factor = -0.35
+				army_core_attack_factor = -0.35
+				army_core_defence_factor = -0.35
+			}
+		}
+		red_army_purge_II = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
+
+			modifier = {
+				land_reinforce_rate = -0.06
+				army_morale_factor = -0.06
+				army_speed_factor = -0.3
+
+				army_infantry_attack_factor = -0.3
+				army_infantry_defence_factor = -0.3
+				army_armor_attack_factor = -0.3
+	   	 		army_armor_defence_factor = -0.3
+				cavalry_attack_factor = -0.3
+				cavalry_defence_factor = -0.3
+				army_core_attack_factor = -0.3
+				army_core_defence_factor = -0.3
+			}
+		}
+		red_army_purge_III = {
+		
+			removal_cost = -1
+		
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
+
+			modifier = {
+				land_reinforce_rate = -0.05
+				army_morale_factor = -0.05
+				army_speed_factor = -0.25
+
+				army_infantry_attack_factor = -0.25
+				army_infantry_defence_factor = -0.25
+				army_armor_attack_factor = -0.25
+	   	 		army_armor_defence_factor = -0.25
+				cavalry_attack_factor = -0.25
+				cavalry_defence_factor = -0.25
+				army_core_attack_factor = -0.25
+				army_core_defence_factor = -0.25
+			}
+		}
+		red_army_purge_IV = {
+		
+			removal_cost = -1
+		
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
+
+			modifier = {
+				land_reinforce_rate = -0.04
+				army_morale_factor = -0.04
+				army_speed_factor = -0.2
+
+				army_infantry_attack_factor = -0.2
+				army_infantry_defence_factor = -0.2
+				army_armor_attack_factor = -0.2
+	   	 		army_armor_defence_factor = -0.2
+				cavalry_attack_factor = -0.2
+				cavalry_defence_factor = -0.2
+				army_core_attack_factor = -0.2
+				army_core_defence_factor = -0.2
+			}
+		}
+		red_army_purge_V = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
+
+			modifier = {
+				land_reinforce_rate = -0.03
+				army_morale_factor = -0.03
+				army_speed_factor = -0.15
+
+				army_infantry_attack_factor = -0.15
+				army_infantry_defence_factor = -0.15
+				army_armor_attack_factor = -0.15
+	   	 		army_armor_defence_factor = -0.15
+				cavalry_attack_factor = -0.15
+				cavalry_defence_factor = -0.15
+				army_core_attack_factor = -0.15
+				army_core_defence_factor = -0.15
+			}
+		}
+		red_army_purge_VI = {
+		
+			removal_cost = -1
+		
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
+
+			modifier = {
+				land_reinforce_rate = -0.02
+				army_morale_factor = -0.02
+				army_speed_factor = -0.1
+
+				army_infantry_attack_factor = -0.1
+				army_infantry_defence_factor = -0.1
+				army_armor_attack_factor = -0.1
+	   	 		army_armor_defence_factor = -0.1
+				cavalry_attack_factor = -0.1
+				cavalry_defence_factor = -0.1
+				army_core_attack_factor = -0.1
+				army_core_defence_factor = -0.1
+			}
+		}
+		red_army_purge_VII = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
+
+			modifier = {
+				land_reinforce_rate = -0.01
+				army_morale_factor = -0.01
+				army_speed_factor = -0.05
+
+				army_infantry_attack_factor = -0.05
+				army_infantry_defence_factor = -0.05
+				army_armor_attack_factor = -0.05
+	   	 		army_armor_defence_factor = -0.05
+				cavalry_attack_factor = -0.05
+				cavalry_defence_factor = -0.05
+				army_core_attack_factor = -0.05
+				army_core_defence_factor = -0.05
+			}
+		}
+		red_airforce = {
+		
+			removal_cost = -1
+		
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
+
+			modifier = {
+				experience_gain_air_factor = -0.05
+				
+				enemy_army_bonus_air_superiority_factor = 0.05
+				air_superiority_efficiency = -0.02
+				air_cas_efficiency = -0.02
+				air_strategic_bomber_bombing_factor = -0.02
+				air_escort_efficiency = -0.02
+				air_intercept_efficiency = -0.02
+				air_nav_efficiency = -0.02
+				air_ace_generation_chance_factor = -0.02
+			}
+		}
+		red_fleet = {
+		
+			removal_cost = -1
+		
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
+
+			modifier = {
+				experience_gain_navy_factor = -0.1
+				
+				convoy_raiding_efficiency_factor = -0.05
+				navy_capital_ship_attack_factor = -0.05
+				navy_submarine_attack_factor = -0.05
+				navy_submarine_defence_factor = -0.05
+				navy_submarine_detection_factor = -0.05
+				sortie_efficiency = -0.05
+				navy_carrier_air_attack_factor = -0.05
+				navy_carrier_air_targetting_factor -0.05
+				navy_carrier_air_agility_factor = -0.05
+				navy_org_factor = -0.05
+				naval_hit_chance = -0.05
+				naval_strike = -0.05
+				naval_strike_attack_factor = -0.05
+				naval_strike_targetting_factor = -0.05
+				naval_strike_agility_factor = -0.05
+				naval_retreat_chance = -0.05
+				naval_retreat_speed = -0.05
+				navy_capital_ship_attack_factor = -0.05
+				navy_capital_ship_defence_factor = -0.05
+				navy_screen_attack_factor = -0.05
+				navy_screen_defence_factor = -0.05
+			}
+		}
+		red_army_reorganising = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			
+
+			modifier = {
+				experience_gain_army_factor = -0.02
+					
+				land_reinforce_rate = -0.07
+				army_morale_factor = -0.07
+				army_speed_factor = -0.35
+
+				army_infantry_attack_factor = -0.35
+				army_infantry_defence_factor = -0.35
+				army_armor_attack_factor = -0.35
+	   	 		army_armor_defence_factor = -0.35
+				cavalry_attack_factor = -0.35
+				cavalry_defence_factor = -0.35
+				army_core_attack_factor = -0.35
+				army_core_defence_factor = -0.35
+			}
+		}
+		trotsky_sighted = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			traits = { permanent_revolutionary }
+
+			modifier = {
+				#opinion_gain_monthly_same_ideology_factor = -0.1
+				political_power_factor = -0.15
+				unity_factor = -0.15
+				drift_defence_factor = -0.4
+				socialism_drift = 0.04
+				conservatism_drift = 0.01
+				neutrality_drift = 0.02
+				liberalism_drift = 0.01
+			}
+		}
+		trotsky_rallies = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			traits = { permanent_revolutionary }
+
+			modifier = {
+				#opinion_gain_monthly_same_ideology_factor = -0.25
+				political_power_factor = -0.25
+				unity_factor = -0.25
+				drift_defence_factor = -0.5
+				socialism_drift = 0.06
+				conservatism_drift = 0.02
+				neutrality_drift = 0.04
+				liberalism_drift = 0.02
+			}
+		}
+		trotsky_marches = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			traits = { permanent_revolutionary }
+
+			modifier = {
+				#opinion_gain_monthly_same_ideology_factor = -0.5
+				political_power_factor = -0.5
+				unity_factor = -0.5
+				drift_defence_factor = -0.6
+				socialism_drift = 0.08
+				conservatism_drift = 0.04
+				neutrality_drift = 0.06
+				liberalism_drift = 0.04
+			}
+		}
+		Moiseyev_Dance = {
+		
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				
+				political_power_factor = 0.02
+				unity_factor = 0.05
+			
+			}
+		}
 		SOV_molotov_ribbentrop_pact = { 
 			removal_cost = -1
 			
@@ -648,7 +1336,29 @@ ideas = {
 			}
 
 		}
+		SOV_collectivist_propaganda2 = { 
+			removal_cost = -1
+			
+			picture = generic_communism_drift_bonus
 
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				unity_factor = -0.05
+				industrial_capacity_factory = 0.15
+				supply_consumption_factor = -0.5
+				conscription = -0.02
+				subversive_activites_upkeep = 0.1
+				economy_cost_factor = 0.1
+			}
+
+		}
 		SOV_scientist_defect = {
 
 			picture = generic_research_bonus
@@ -662,6 +1372,23 @@ ideas = {
 			}
 
 		}
+		womenworkers = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				industrial_capacity_factory = 0.05
+				#production_speed_arms_factory_factor = 0.05
+			}
+		}
 		soviet_workers = {
 			
 			removal_cost = -1
@@ -673,8 +1400,6 @@ ideas = {
 			allowed_civil_war = {
 				has_government = communism
 			}
-
-			picture = generic_production_bonus
 			
 			modifier = {
 				industrial_capacity_factory = 0.25
@@ -692,12 +1417,30 @@ ideas = {
 			allowed_civil_war = {
 				has_government = communism
 			}
-
-			picture = generic_production_bonus
 			
 			modifier = {
 				industrial_capacity_factory = 0.50
 				production_speed_arms_factory_factor = 0.50
+			}
+		}
+		Stalins_speech_I = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				army_org_factor = 0.1
+				land_reinforce_rate = 0.02
+				army_morale_factor = 0.02
+				industrial_capacity_factory = 0.10
+				production_speed_arms_factory_factor = 0.10
 			}
 		}
 		proletariats_fight = {
@@ -711,12 +1454,80 @@ ideas = {
 			allowed_civil_war = {
 				has_government = communism
 			}
-
-			picture = generic_production_bonus
 			
 			modifier = {
 				industrial_capacity_factory = -0.35
 				production_speed_arms_factory_factor = -0.35
+			}
+		}
+		order_227 = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			modifier = {
+				army_org_factor = 0.15
+				land_reinforce_rate = 0.03
+				army_morale_factor = -0.05
+			}
+		}
+		Dual_command = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				army_org_factor = 0.1
+				land_reinforce_rate = -0.03
+				army_morale_factor = 0.03
+			}
+		}
+		Leningrad_road = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+					
+			modifier = {
+				army_org_factor = 0.15
+			}
+		}
+		 sov_red_demons = {
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+		
+			equipment_bonus = {
+				sniper_equipment_0 = {
+					defense = 0.05
+				}
 			}
 		}
 		SOV_partisan_attacks = {
@@ -867,6 +1678,13 @@ ideas = {
 		
 			picture = idea_partisans
 		
+			allowed = {
+				always = no # Triggered via event
+			}
+			
+		}
+		hunt_trotsky = {
+				
 			allowed = {
 				always = no # Triggered via event
 			}

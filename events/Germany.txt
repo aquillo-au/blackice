@@ -15175,4 +15175,32 @@ country_event = {
    
 	
 }
+#Herman Goering panzer
+country_event = {
+    id = germany.450
+    title = germany.450.t
+    desc = germany.450.d
+  picture = GFX_report_event_panzer_and_infantry_advance
+    
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	 option = {
+        		name = germany.450.a #
+        		ai_chance = { factor = 100 }
+        
+        hidden_effect = {
+		load_oob = "GER_HG_Division"
+					
+        }
+    }
+    option = {
+        name = germany.450.b #
+        ai_chance = { factor = 0 }
+        
+       
+    }
+	
+}
 ### EOF ###
