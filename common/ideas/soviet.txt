@@ -491,7 +491,22 @@ ideas = {
 				unity_factor = 0.25
 			}
 		}
-	
+		SOV_witchhunt = {
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				political_power_factor = -0.02
+				unity_factor = -0.05
+			}
+		}
 		trotskyite_plot = {
 			removal_cost = -1
 			
@@ -1336,11 +1351,28 @@ ideas = {
 			}
 
 		}
+		SOV_spies = { 
+			removal_cost = -1
+						
+			allowed = {
+				always = no # Added via focus
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+			
+			modifier = {
+				unity_factor = -0.01
+				industrial_capacity_factory = -0.02
+				subversive_activites_upkeep = 0.05
+				army_morale_factor = -0.01
+			}
+
+		}
 		SOV_collectivist_propaganda2 = { 
 			removal_cost = -1
-			
-			picture = generic_communism_drift_bonus
-
+						
 			allowed = {
 				always = no # Added via focus
 			}

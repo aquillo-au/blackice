@@ -5759,7 +5759,7 @@ country_event = {
 	trigger = {
 		tag = SOV
 		not = {has_defensive_war_with = GER }
-		#is_ai = yes
+		not = {has_completed_focus = SOV_assassinate_trotsky}
 		date > 1936.6.1
 		not = {has_country_flag = trotskysighted}
 		not = { has_idea = exile_trotsky }
@@ -5792,7 +5792,7 @@ country_event = {
 	
 	trigger = {
 		tag = SOV
-		#is_ai = yes
+		not = {has_completed_focus = SOV_assassinate_trotsky}
 		not = {has_defensive_war_with = GER }
 		has_country_flag = trotskysighted
 		date > 1936.6.1
@@ -5826,7 +5826,7 @@ country_event = {
 	
 	trigger = {
 		tag = SOV
-		#is_ai = yes
+		not = {has_completed_focus = SOV_assassinate_trotsky}
 		date > 1936.6.1
 		not = {has_defensive_war_with = GER }
 		has_country_flag = trotskyrallies
@@ -6699,6 +6699,7 @@ country_event = {
 		tag = SOV
 		not = {has_idea = hunt_trotsky }
 		or = {
+		has_completed_focus = SOV_assassinate_trotsky
 		has_idea = exile_trotsky 
 		has_war_with = GER
 		}
@@ -6855,6 +6856,45 @@ country_event = {
 		not = {SOV = { controls_state = 845 }}}
 		name = soviet.388.b
 		
+	}
+}
+country_event = {
+	id = soviet.389
+	title = soviet.389.t
+	desc = soviet.389.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.389.a
+		add_manpower = -50000
+		add_timed_idea = {
+				idea = SOV_witchhunt
+				days = 180
+			}
+		add_timed_idea = {
+				idea = exile_trotsky
+				days = 70
+			}
+	}
+	option = {
+		name = soviet.389.b
+		add_manpower = -25000
+		add_timed_idea = {
+				idea = SOV_witchhunt
+				days = 90
+			}
+		add_timed_idea = {
+				idea = exile_trotsky
+				days = 70
+			}
+	}
+	option = {
+		name = soviet.389.c
+	
 	}
 }
 ### EOF ###
