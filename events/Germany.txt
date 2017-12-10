@@ -45,41 +45,45 @@ country_event = {
 				add_core_of = GER
 			}
 		}
-		if = { limit = { 
-			153 = { is_owned_by = AUS }
-				}
+		if = {
+			limit = {
+				153 = { is_owned_by = AUS }
+			}
 			annex_country = {
 				target = AUS
 				transfer_troops = yes
 			}
 		}
-		if = { limit = { #Tyrol
-			153 = { is_owned_by = ITA }
-				}
+		if = {
+			limit = { #Tyrol
+				153 = { is_owned_by = ITA }
+			}
 			annex_country = {
 				target = AUS
 				transfer_troops = yes
-				}
+			}
 			ITA = { transfer_state = 153 }	
 			add_state_claim = 153
 		}
-		if = { limit = { #Carinthia-Styria
-			897 = { is_owned_by = ITA }
-				}
+		if = {
+			limit = { #Carinthia-Styria
+				897 = { is_owned_by = ITA }
+			}
 			annex_country = {
 				target = AUS
 				transfer_troops = yes
-				}
+			}
 			ITA = { transfer_state = 897 }	
 			add_state_claim = 897
 		}
-		if = { limit = { #Salzburg
-			910 = { is_owned_by = ITA }
-				}
+		if = {
+			limit = { #Salzburg
+				910 = { is_owned_by = ITA }
+			}
 			annex_country = {
 				target = AUS
 				transfer_troops = yes
-				}
+			}
 			ITA = { transfer_state = 910 }	
 			add_state_claim = 910
 		}
@@ -102,7 +106,7 @@ country_event = {
 		news_event = { hours = 6 id = news.36 }
 	}
 }
-#anti_comintern_pact
+# anti_comintern_pact
 # nations are asked to join pact, agreeing = relations with GER and hit with SOV 
 country_event = {
 	id = germany.5
@@ -168,7 +172,7 @@ country_event = {
 		add_opinion_modifier = { target = GER modifier = refused_tripartite_pact_opinion }
 	}
 }
-#molotov_ribbentrop_pact
+# molotov_ribbentrop_pact
 # fire event to SOV to accept or not. adds claims
 # SOV events sends reply to GER, adds claims if they said yes, hurts relations if they say no
 
@@ -4858,7 +4862,6 @@ country_event = {
 		}
 	}
 }
-
 # The Fate of Czechoslovakia
 country_event = {
 	id = germany.55
@@ -4879,17 +4882,18 @@ country_event = {
 		ENG = { remove_opinion_modifier = { target = GER modifier = early_ENG_GER_relations } }
 		set_country_flag = recent_major_land_acquisition
 	}
+	
 	option = {
 		name = germany.55.a
 		ai_chance = { factor = 80 }
 		set_technology = { czech_protectorate_tech = 1 } 
-			add_tech_bonus = {
-				ahead_reduction = 2
-				bonus = 1
-				uses = 2
-				technology = tech_czech_ger_panzer_1
-				technology = tech_czech_ger_panzer_2
-			}
+		add_tech_bonus = {
+			ahead_reduction = 2
+			bonus = 1
+			uses = 2
+			technology = tech_czech_ger_panzer_1
+			technology = tech_czech_ger_panzer_2
+		}
 		if = {
 			limit = {
 				70 = {
@@ -4928,8 +4932,6 @@ country_event = {
 			}
 			HUN = { transfer_state = 73 }
 		}
-
-		
 		if = {
 			limit = {
 				OR = {
@@ -4945,7 +4947,6 @@ country_event = {
 			}
 			SLO = { transfer_state = 73 }
 		}
-		
 		if = {
 			limit = {
 				664 = {
@@ -4974,7 +4975,6 @@ country_event = {
 			}
 			POL = { transfer_state = 72 } # Give Poland Zaolzie
 		}
-
 		if = {
 			limit = {
 				72 = {
@@ -4987,8 +4987,8 @@ country_event = {
 			}
 			SLO = { transfer_state = 72 } # Give Slovakia Zaolzie
 		}
-	if = { 
-		limit = { has_global_flag = GER_HUN_CZE_split }
+		if = { 
+			limit = { has_global_flag = GER_HUN_CZE_split }
 			HUN = { country_event = DOD_hungary.106 }
 		}
 		hidden_effect = {
@@ -5148,7 +5148,6 @@ country_event = {
 		}
 	}
 }
-
 # Hungary refuses partition!
 country_event = {
 	id = germany.57
@@ -5260,7 +5259,6 @@ country_event = {
 		}
 	}
 }
-
 # Polish Question Completed
 country_event = {
 	id = germany.58
@@ -5274,11 +5272,8 @@ country_event = {
 		name = germany.58.a
 		add_political_power = 150
 	}
-
 }
-
 ### Remilitarization of the Rhineland
-
 # French Response
 country_event = {
 	id = germany.60
@@ -5338,7 +5333,6 @@ country_event = {
 		add_opinion_modifier = { target = GER modifier = protest_action }
 	}
 }
-
 # British Response (French Press for War)
 country_event = {
 	id = germany.61
@@ -5405,7 +5399,6 @@ country_event = {
 		}
 	}
 }
-
 # British Response (French Want Peace)
 country_event = {
 	id = germany.62
@@ -5423,7 +5416,6 @@ country_event = {
 		add_opinion_modifier = { target = GER modifier = protest_action }
 	}
 }
-
 # France (Britain Refuses Support)
 country_event = {
 	id = germany.63
@@ -5468,7 +5460,6 @@ country_event = {
 		add_opinion_modifier = { target = GER modifier = protest_action }
 	}
 }
-
 # France (Britain Gives Support)
 country_event = {
 	id = germany.64
@@ -5493,7 +5484,6 @@ country_event = {
 		}
 	}
 }
-
 # Germany (France and Britain go to war)
 country_event = {
 	id = germany.65
@@ -5567,7 +5557,6 @@ country_event = {
 		}
 	}
 }
-
 # Germany (France goes to war)
 country_event = {
 	id = germany.66
@@ -5618,7 +5607,6 @@ country_event = {
 		}
 	}
 }
-
 # Britain (France Backs Down)
 country_event = {
 	id = germany.67
@@ -5636,7 +5624,6 @@ country_event = {
 		add_opinion_modifier = { target = GER modifier = protest_action }
 	}
 }
-
 # Britain (France Goes Ahead Anyway)
 country_event = {
 	id = germany.68
@@ -5650,9 +5637,7 @@ country_event = {
 		name = germany.68.a
 	}
 }
-
 ### Oster Conspiracy
-
 # Conspiracy Begins!
 country_event = {
 	id = germany.70
@@ -5701,7 +5686,6 @@ country_event = {
 		}
 	}
 }
-
 # Conspiracy defeated, but Hitler is dead
 country_event = {
 	id = germany.71
@@ -5746,7 +5730,6 @@ country_event = {
 		}
 	}
 }
-
 # Conspiracy defeated, Hitler survives
 country_event = {
 	id = germany.72
@@ -5763,7 +5746,6 @@ country_event = {
 		}
 	}
 }
-
 # Conspiracy successful, Civil War begins
 country_event = {
 	id = germany.73
@@ -5900,7 +5882,6 @@ country_event = {
 		}
 	}
 }
-
 # Anschluss Preparations
 country_event = {
 	id = germany.74
@@ -5915,7 +5896,6 @@ country_event = {
 		#add_ideas = elyesa_bazna
 	}
 }
-
 # German-Soviet Treaty (Soviets)
 country_event = {
 	id = germany.75
@@ -5963,7 +5943,6 @@ country_event = {
 		}
 	}
 }
-
 # Soviets Accept German-Soviet Treaty
 country_event = {
 	id = germany.76
@@ -5992,7 +5971,6 @@ country_event = {
 		}
 	}
 }
-
 # Soviets Reject German-Soviet Treaty
 country_event = {
 	id = germany.77
@@ -6007,7 +5985,6 @@ country_event = {
 		#add_opinion_modifier = { target = SOV modifier = refused_MR_pact }# no pact
 	}
 }
-
 # German Joint Air Research
 country_event = {
 	id = germany.78
@@ -6027,7 +6004,6 @@ country_event = {
 			}
 	}
 }
-
 # Ultimatum from Germany (Turkey)
 country_event = {
 	id = germany.79
@@ -9021,20 +8997,18 @@ country_event = {
 		set_country_flag = GERinfdiv_50
 	}
 }
+### Event chain 1, 2, 3, 4 Leichte Division to Pz-Division 6-7-8-9
+### 1. and 3. Leichte Division
 country_event = {
 	id = germany.228
 	title = germany.228.t
 	desc = germany.228.d
-	picture = GFX_report_event_panzer35
+	picture = GFX_report_event_ger_1_3_leichte_div
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = GER
-		#or = {
-		#	has_tech = tech_panzer_iii_equipment_1
-		#	has_tech = tech_panzer_iv_equipment_1 
-		#}
 		not = { has_country_flag = panzer_35t }
 		not = { has_country_flag = panzer_38t }
 		owns_state = 9
@@ -9052,32 +9026,12 @@ country_event = {
 		}
 		
 		hidden_effect = {
-			if = { 
-				limit = { 
-					has_tech = tech_panzer_iii_equipment_1
-					not = { has_tech = tech_panzer_iv_equipment_1 }
-				}
-				load_oob = "GER_6_8_Panzer_Division_pz3"
-			}
-			if = { 
-				limit = { 
-					has_tech = tech_panzer_iv_equipment_1
-					not = { has_tech = tech_panzer_iii_equipment_1 }
-				}
-				load_oob = "GER_6_8_Panzer_Division_pz4"
-			}
-			if = { 
-				limit = { 
-					has_tech = tech_panzer_iv_equipment_1
-					has_tech = tech_panzer_iii_equipment_1
-				}
-				load_oob = "GER_6_8_Panzer_Division"
-			}
-			custom_effect_tooltip = GER_6_8_PZDIV
+			load_oob = "GER_1_3_Leichte_Division"
 			add_equipment_to_stockpile = { type = czech_ger_panzer_equipment_1 amount = 100 producer = GER }
 			add_equipment_to_stockpile = { type = panzer_ii_equipment_1 amount = 60 producer = GER }
-			set_country_flag = panzer_35t
 		}
+		custom_effect_tooltip = GER_1_3_LDIV
+		set_country_flag = panzer_35t
 	}
 	option = {
 		name = germany.228.b		#refuse
@@ -9085,21 +9039,18 @@ country_event = {
 		set_country_flag = panzer_35t
 	}
 }
+### 2. Leichte Division
 country_event = {
 	id = germany.229
 	title = germany.229.t
 	desc = germany.229.d
-	picture = GFX_report_event_panzer38
+	picture = GFX_report_event_7_leichte_div
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = GER
 		has_country_flag = panzer_35t
-		or = {
-			has_tech = tech_panzer_iii_equipment_1
-			has_tech = tech_panzer_iv_equipment_1 
-		}
 		not = { has_country_flag = panzer_38t }
 		owns_state = 9
 	}
@@ -9116,30 +9067,10 @@ country_event = {
 		}
 		
 		hidden_effect = {
-			if = { 
-				limit = { 
-					has_tech = tech_panzer_iii_equipment_1
-					not = { has_tech = tech_panzer_iv_equipment_1 }
-				}
-				load_oob = "GER_7_Panzer_Division_pz3"
-			}
-			if = { 
-				limit = { 
-					has_tech = tech_panzer_iv_equipment_1
-					not = { has_tech = tech_panzer_iii_equipment_1 }
-				}
-				load_oob = "GER_7_Panzer_Division_pz4"
-			}
-			if = { 
-				limit = { 
-					has_tech = tech_panzer_iv_equipment_1
-					has_tech = tech_panzer_iii_equipment_1
-				}
-				load_oob = "GER_7_Panzer_Division"
-			}
+			load_oob = "GER_2_Leichte_Division"
+			add_equipment_to_stockpile = { type = czech_ger_panzer_equipment_2 amount = 100 producer = GER }
 		}
-		add_equipment_to_stockpile = { type = czech_ger_panzer_equipment_2 amount = 100 producer = GER }
-		custom_effect_tooltip = GER_7_PZDIV
+		custom_effect_tooltip = GER_2_LDIV
 		set_country_flag = panzer_38t
 	}
 	option = {
@@ -9148,6 +9079,237 @@ country_event = {
 		set_country_flag = panzer_38t
 	}
 }
+### 4. Leichte Division from Schnellen Division after Anschluss
+country_event = {
+	id = germany.281
+	title = germany.281.t
+	desc = germany.281.d
+	picture = GFX_report_event_panzer38
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		date > 1938.4.1
+		has_country_flag = AUS_annexed
+		not = { has_country_flag = GER_4_LDIV }
+		owns_state = 4
+	}
+	
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = {
+		name = germany.281.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		set_country_flag = GER_4_LDIV
+	}
+	option = {
+		name = germany.281.b
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_4_Leichte_Division"
+		}
+		
+		set_country_flag = GER_4_LDIV
+	}
+	option = {
+		name = germany.281.c		#no need
+		ai_chance = { factor = 0 }
+		set_country_flag = GER_4_LDIV
+	}
+}
+### Early war
+### 6. Panzer-Division from 1. Leichte-Division germany.228
+country_event = {
+	id = germany.290
+	title = germany.290.t
+	desc = germany.290.d
+	picture = GFX_report_event_ger_6_panzer_div
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_country_flag = panzer_35t
+		NOT = { has_country_flag = GER_6_PDiv }
+		has_tech = tech_panzer_iv_equipment_1
+		date > 1939.10.18
+		GER = { controls_state = 10 }
+		POL = { has_capitulated = yes }
+	}
+	
+	mean_time_to_happen = {
+		days = 25
+	}
+	
+	option = {
+		name = germany.290.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+
+		set_country_flag = GER_6_PDiv
+	}
+	option = {
+		name = germany.290.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_6_Panzer_Division_ai"
+		}
+		set_country_flag = GER_6_PDiv
+	}
+	option = {
+		name = germany.290.c		#no need
+		ai_chance = { factor = 0 }
+		set_country_flag = GER_6_PDiv
+	}
+}
+### 7. Panzer-Division from 2. Leichte-Division germany.229
+country_event = {
+	id = germany.291
+	title = germany.291.t
+	desc = germany.291.d
+	picture = GFX_report_event_ger_7_panzer_div
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_country_flag = panzer_38t
+		NOT = { has_country_flag = GER_7_PDiv }
+		date > 1939.10.18
+		GER = { controls_state = 60 }
+		POL = { has_capitulated = yes }
+		has_tech = tech_panzer_iv_equipment_1
+	}
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	option = {
+		name = germany.291.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		
+		set_country_flag = GER_7_PDiv
+	}
+	option = {
+		name = germany.291.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		
+		hidden_effect = {
+			load_oob = "GER_7_Panzer_Division"
+		}
+		set_country_flag = GER_7_PDiv
+	}
+	option = {
+		name = germany.291.c		#no need
+		
+		ai_chance = { factor = 0 }
+		set_country_flag = GER_7_PDiv
+	}
+}
+### 8. Panzer-Division from 3. Leichte-Division germany.228
+country_event = {
+	id = germany.292
+	title = germany.292.t
+	desc = germany.292.d
+	picture = GFX_report_event_ger_7_panzer_div
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_country_flag = panzer_35t
+		NOT = { has_country_flag = GER_8_PDiv }
+		date > 1939.10.16
+		GER = { controls_state = 60 }
+		POL = { has_capitulated = yes }
+		has_tech = tech_panzer_iv_equipment_1
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+		name = germany.292.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		#hidden_effect = {
+		#	load_oob = "GER_8_Panzer_Division"
+		#	customtooltip = GER_8_PDiv
+		#}
+		set_country_flag = GER_8_PDiv
+	}
+	option = {
+		name = germany.292.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		
+		hidden_effect = {
+			load_oob = "GER_8_Panzer_Division_ai"
+		}
+		set_country_flag = GER_8_PDiv
+	}
+	option = {
+		name = germany.292.c		#no need
+		
+		ai_chance = { factor = 0 }
+		set_country_flag = GER_8_PDiv
+	}
+}
+### 9. Panzer-Division from 4. Leichte-Division germany.2
+country_event = {
+	id = germany.241
+	title = germany.241.t
+	desc = germany.241.d
+	picture = GFX_event_report_...
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		not = { has_country_flag = GER_9_PDiv }
+		has_tech = tech_panzer_iv_equipment_1
+		POL = { has_capitulated = yes }
+		date > 1940.1.3
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = germany.241.a
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		
+		set_country_flag = GER_9_PDiv
+	}
+	option = {
+		name = germany.241.b
+		ai_chance = { factor = 100 }
+		trigger = { is_ai = yes }
+		hidden_effect = {
+			load_oob = "GER_9_Panzer_Division"
+		}
+		set_country_flag = GER_9_PDiv
+	}
+	option = {
+		name = germany.241.b
+		ai_chance = { factor = 0 }
+		set_country_flag = GER_9_PDiv
+	}
+}
+### MID/Late war
+#### END event-chain Leichte-Divisions
 # 72. Infantry-Division Wehrmacht
 country_event = {
 	id = germany.230
@@ -9342,18 +9504,14 @@ country_event = {
 			if = {
 				limit = {
 					NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
-					
 				}
 				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
-			
 			}
 			
 			load_oob = "GER_grossdeutschland_39"
-			
 		}
 		set_country_flag = GERgrossdeutschland_stug
 	}
-	
 }
 country_event = {
 	id = germany.235
@@ -9468,10 +9626,6 @@ country_event = {
 #Pz_division_Goering date > 1943.6.15
 #Panzer-Lehr  date > 1943.5.1
 #116_Panzer  date > 1944.3.1
-
-### 1. Leichte Division  date >  1938.11.10
-### 2. Leichte Division date >  1938.11.10
-### 3. Leichte Division date >  1938.11.10
 #################################
 country_event = {
 	id = germany.239
@@ -9503,7 +9657,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = germany.239.a
+		name = germany.239.b
 		trigger = { is_ai = yes }
 		ai_chance = { factor = 100 }
 		
@@ -9513,7 +9667,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = germany.239.b
+		name = germany.239.c
 		ai_chance = { factor = 0 }
 		
 	}
@@ -9575,43 +9729,7 @@ country_event = {
 		
 	}
 }
-country_event = {
-	id = germany.241
-	title = germany.241.t
-	desc = germany.241.d
-	picture = GFX_event_ger_ss_panzer_iii
-
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		not = { has_country_flag = panzer_9 }
-		#is_ai = yes
-		has_tech = tech_panzer_iv_equipment_1 
-		date > 1940.1.3
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = germany.241.a
-		ai_chance = { factor = 100 }
-		
-		hidden_effect = {
-			load_oob = "GER_9_Panzer_Division"
-			set_country_flag = panzer_9
-			
-		}
-	}
-	option = {
-		name = germany.241.b
-		ai_chance = { factor = 0 }
-		
-	}
-	
-}
+### germany.241 see event-chain leichte-divisions
 country_event = {
 	id = germany.242
 	title = germany.242.t
@@ -10920,7 +11038,6 @@ country_event = {
 
 	trigger = {
 		tag = GER
-		
 		has_tech = tech_patrol_submarine4
 		is_ai = yes
 		not = { has_country_flag = GER_VIIC_ship }
@@ -11056,7 +11173,7 @@ country_event = {
 		remove_ideas = werner_von_fritsch
 		add_ideas = adolf_hitler
 		add_ideas = wilhelm_keitel
-		set_country_flag = fritsch_fired	
+		set_country_flag = fritsch_fired
 	}
 	option = { #Keep Fritsch
 		name = germany.279.b
@@ -11086,12 +11203,15 @@ country_event = {
 #AI minister switch
 country_event = {
 	id = germany.280
-	title = "Germany Setup"
-	desc = "Setup event for AI"
+	title = germany.280.t
+	desc = germany.280.d
 
 	hidden = yes
+	
 	is_triggered_only = yes
+	
 	fire_only_once = yes
+	
 	option = { #Get em out
 		name = germany.280.a
 		trigger = {
@@ -12568,7 +12688,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		hidden_effect = {
-		country_event = { id = germany.234}
+			country_event = { id = germany.234 }
 		}
 	}
 }

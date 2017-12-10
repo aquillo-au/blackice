@@ -1,21 +1,17 @@
 ﻿division_template = {
-	name = "Panzer-Division 'vz.38'"
+	name = "L-Div 2 'vz.38'"
 
 	regiments = {
-
-		czech_panzer = { x = 0 y = 0 } 	# Czech Pz38(t) tanks
-		czech_panzer  = { x = 0 y = 1 } # Czech Pz38(t) tanks
-		panzer_iii = { x = 0 y = 2 }
-		panzer_iii = { x = 0 y = 3 }
-
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		
 		motorized = { x = 1 y = 0 }
 		motorized = { x = 1 y = 1 }
 		motorized = { x = 1 y = 2 }
 		
-		motorized = { x = 2 y = 0 }
-		motorized = { x = 2 y = 1 }
-		motorized = { x = 2 y = 2 }
-
+		czech_panzer = { x = 2 y = 0 } 	#Czech Pz38(t) tanks #Panzerabteilung 66
+		
 		artillery_brigade_mot = { x = 3 y = 0 }
 		artillery_brigade_mot = { x = 3 y = 1 }
 		anti_tank_brigade =  { x = 3 y = 2 }
@@ -23,22 +19,24 @@
 	support = {
        	DIV_HQ = { x = 0 y = 0 }
 		engineer = { x = 0 y = 1 }
- 		recon_mot = { x = 0 y = 2 }
+ 		artillery_medium_mot = { x = 0 y = 2 }
+		recon_mot = { x = 0 y = 3 }
 
 		anti_tank = { x = 1 y = 0 }
 		maintenance_company = { x = 1 y = 1 }
 		logistics_company = { x = 1 y = 2 }
+		field_hospital = { x = 1 y = 3 }
 	}
 	priority = 2
-	template_counter = 54
+	template_counter = 209
 }
 
 units = {
 
 	division = {	
-		name = "7. Panzer-Division"
-		location = 9497
-		division_template = "Panzer-Division 'vz.38'"
+		name = "2. Leichte-Division"
+		location = 6501 #Gera
+		division_template = "L-Div 2 'vz.38'"
 		force_equipment_variants = { 
 			czech_ger_panzer_equipment_2 = { owner = "GER" }
 		}

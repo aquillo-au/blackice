@@ -2,7 +2,6 @@
 	name = "Panzer-Division 'vz.35'"
 
 	regiments = {
-
 		czech_panzer = { x = 0 y = 0 } 	# Czech Pz35(t) tanks
 		czech_panzer  = { x = 0 y = 1 } 	# Czech Pz35(t) tanks
 		panzer_ii = { x = 0 y = 2 }
@@ -46,23 +45,12 @@ units = {
 		start_equipment_factor = 0.6
 		start_experience_factor = 0.3
 	}
-	# 8. Pz.-Div.
-	division= {	
-		name = "8. Panzer-Division"
-		location = 9496
-		division_template = "Panzer-Division 'vz.35'"
-		force_equipment_variants = { 
-			czech_ger_panzer_equipment_1 = { owner = "GER" }
-		}
-		start_equipment_factor = 0.6
-		start_experience_factor = 0.3
-	}
 }
-}
+
 instant_effect = {
 	add_equipment_to_stockpile = {
 		type = czech_ger_panzer_equipment_1
-		amount = 200
+		amount = 100
 		producer = GER
 	}
 }
