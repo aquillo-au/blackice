@@ -4549,6 +4549,9 @@ country_event = {
 	trigger = {
 		tag = SOV
 		has_war_with = GER
+		or = {
+		has_completed_focus = SOV_soviet_amazons 
+		has_completed_focus = SOV_soviet_women_workers }
 	}
 	
 	mean_time_to_happen = {
@@ -5780,7 +5783,7 @@ country_event = {
 	
 		add_timed_idea = {
 				idea = trotsky_sighted
-				days = 180
+				days = 90
 		}
 	}
 }
@@ -6870,6 +6873,7 @@ country_event = {
 	
 	option = {
 		name = soviet.389.a
+		ai_chance = { factor = 100 }
 		add_manpower = -50000
 		add_timed_idea = {
 				idea = SOV_witchhunt
@@ -6877,11 +6881,12 @@ country_event = {
 			}
 		add_timed_idea = {
 				idea = exile_trotsky
-				days = 70
+				days = 180
 			}
 	}
 	option = {
 		name = soviet.389.b
+		ai_chance = { factor = 0 }
 		add_manpower = -25000
 		add_timed_idea = {
 				idea = SOV_witchhunt
@@ -6889,12 +6894,12 @@ country_event = {
 			}
 		add_timed_idea = {
 				idea = exile_trotsky
-				days = 70
+				days = 90
 			}
 	}
 	option = {
 		name = soviet.389.c
-	
+	ai_chance = { factor = 0 }
 	}
 }
 ### EOF ###
