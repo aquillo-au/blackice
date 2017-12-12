@@ -5442,7 +5442,111 @@ focus = {
 			
 			}
 		}
+	focus = {
+		id = GER_panzer_training_grounds
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = GER_soviet_treaty }
 	
+		x = 3
+		y = 7
+		cost = 2.1
+		available = {
+			has_tech = tech_panzer_iv_equipment_4
+				}
+		ai_will_do = {
+			factor = 10
+		}	
+		completion_reward = {
+			add_ideas = panzer_training
+			set_technology = { panzer_training_tech = 1 }
+			}
+		}
+		focus = {
+		id = GER_panzer_lehr
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = GER_panzer_training_grounds }
+	
+		x = 1
+		y = 7
+		cost = 2.1
+		available = {
+			has_tech = tech_panzer_v_equipment_1
+			has_tech = tech_heavy_panzer_equipment_2
+				}
+		ai_will_do = {
+			factor = 10
+		}	
+		completion_reward = {
+			remove_ideas = panzer_training
+			set_technology = { remove_panzer_training_tech = 1 }
+			load_oob = GER_130_Panzer_Lehr_Division
+			}
+		}
+		focus = {
+		id = GER_Heavy_panzer
+		text = GER_Heavy_panzer
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = GER_soviet_treaty }
+				
+		x = 5
+		y = 7
+		cost = 4.2
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes	
+		completion_reward = {
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.3
+				uses = 1
+				technology = tech_heavy_panzer_equipment_2
+				#category = cat_heavy_armor
+			}
+			add_tech_bonus = {
+				name = heavy_armor_bonus
+				bonus = 0.15
+				uses = 1
+				technology = tech_heavy_panzer_equipment_3
+				#category = cat_heavy_armor
+			}
+		}
+	}
+	focus = {
+		id = GER_panther
+		text = GER_panther
+		icon = GFX_goal_generic_army_tanks
+						
+		x = 7
+		y = 7
+		cost = 4.2
+		ai_will_do = {
+			factor = 10
+		}
+		available_if_capitulated = yes	
+		available = {
+		has_war_with = SOV
+		}
+		completion_reward = {
+			hidden_effect = {
+				load_oob = "GER_Panzer_Division_1943"		# template
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.3
+				uses = 1
+				technology = tech_panzer_v_equipment_1
+				#category = cat_medium_armor
+			}
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.15
+				uses = 1
+				technology = tech_panzer_v_equipment_2
+				#category = cat_medium_armor
+			}
+		}
+	}
 	focus = {
 		id = GER_Lt_TD
 		#text = GER_stug
@@ -5666,36 +5770,7 @@ focus = {
 		}
 	}
 	
-	focus = {
-		id = GER_Heavy_panzer
-		text = GER_Heavy_panzer
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = GER_soviet_treaty }
-				
-		x = 3
-		y = 7
-		cost = 4.2
-		ai_will_do = {
-			factor = 10
-		}
-		available_if_capitulated = yes	
-		completion_reward = {
-			add_tech_bonus = {
-				name = heavy_armor_bonus
-				bonus = 0.3
-				uses = 1
-				technology = tech_heavy_panzer_equipment_2
-				#category = cat_heavy_armor
-			}
-			add_tech_bonus = {
-				name = heavy_armor_bonus
-				bonus = 0.15
-				uses = 1
-				technology = tech_heavy_panzer_equipment_3
-				#category = cat_heavy_armor
-			}
-		}
-	}
+	
 	focus = {
 		id = GER_nibelungen_works
 		icon = GFX_goal_nibelungen
@@ -5736,41 +5811,7 @@ focus = {
 			}
 		}
 	}
-	focus = {
-		id = GER_panther
-		text = GER_panther
-		icon = GFX_goal_generic_army_tanks
-						
-		x = 1
-		y = 7
-		cost = 4.2
-		ai_will_do = {
-			factor = 10
-		}
-		available_if_capitulated = yes	
-		available = {
-		has_war_with = SOV
-		}
-		completion_reward = {
-			hidden_effect = {
-				load_oob = "GER_Panzer_Division_1943"		# template
-			}
-			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 0.3
-				uses = 1
-				technology = tech_panzer_v_equipment_1
-				#category = cat_medium_armor
-			}
-			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 0.15
-				uses = 1
-				technology = tech_panzer_v_equipment_2
-				#category = cat_medium_armor
-			}
-		}
-	}
+	
 	focus = {
 		id = GER_Heer_expansion
 		text = GER_Heer_expansion
