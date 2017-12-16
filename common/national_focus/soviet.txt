@@ -1535,7 +1535,7 @@ focus = {
 		cost = 3
 		
 		available = {
-			
+			not = { has_war = yes }
 		}
 		ai_will_do = {
 			factor = 3
@@ -1706,7 +1706,7 @@ focus = {
 		prerequisite = { focus = SOV_soviet_amazons }
 		x = -5
 		y = 4
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 1
 		}	
@@ -1835,7 +1835,7 @@ focus = {
 		y = 2
 		cost = 5
 		available = {
-		
+						
 		}
 		ai_will_do = {
 			factor = 5
@@ -1849,7 +1849,7 @@ focus = {
 		}
 	}
 	#conduct 1937/1939 Census
-	focus = {
+focus = {
 		id = SOV_conduct_Census
 		icon = GFX_goal_generic_forceful_treaty
 		prerequisite = { focus = SOV_stalin_constitution  }
@@ -1871,7 +1871,7 @@ focus = {
 		
 		}
 	}
-	
+		
 	focus = {
 		id = SOV_new_soviet_man
 		icon = GFX_goal_support_communism
@@ -2561,16 +2561,19 @@ focus = {
 	focus = {
 		id = SOV_baltic_security
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = SOV_claims_on_baltic }
+		prerequisite = { focus = SOV_claims_on_baltic focus = SOV_anti_capitalist_diplomacy }
 		x = 7
 		y = 5
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 10
 			modifier = {
 				factor = 0
 				date < 1939.1.1
 			}	
+		}
+		available = {
+			date > 1939.12.1
 		}
 		bypass = {
 						OR = { 
@@ -4617,7 +4620,7 @@ focus = {
 		
 			custom_effect_tooltip = SOV_great_purge_tt
 			custom_effect_tooltip = SOV_great_purge_tt2
-			
+			clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 70
@@ -4644,7 +4647,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			
+			clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 70
@@ -4775,7 +4778,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			
+			clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 70
@@ -4801,7 +4804,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			
+			clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 70
@@ -4827,6 +4830,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 70
@@ -4854,6 +4858,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+		clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 35
@@ -4881,6 +4886,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+		clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 35
@@ -4908,6 +4914,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+		clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 180
@@ -4936,11 +4943,16 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+		clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 180
 			}
-			add_ideas = art_purge
+			add_timed_idea = {
+				idea = art_purge
+				days = 365
+			}
+			
 		}
 	}
 
@@ -4989,6 +5001,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+		clr_country_flag = trotskyarrives
 			remove_ideas = exile_trotsky
 			remove_ideas = trotskyite_plot
 			remove_ideas = Transitional_Program
@@ -5083,6 +5096,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+		clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 180
@@ -5177,7 +5191,7 @@ focus = {
 		}
 		x = 35
 		y = 5
-		cost = 10
+		cost = 3
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -5304,6 +5318,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+		clr_country_flag = trotskyarrives
 			add_timed_idea = {
 				idea = exile_trotsky
 				days = 90
@@ -5960,7 +5975,7 @@ focus = {
 		#prerequisite = { focus =   }
 		x = 48
 		y = 0
-		cost = 3
+		cost = 2
 		available = {
 			date > 1939.1.1
 		}
@@ -5986,7 +6001,7 @@ focus = {
 		#prerequisite = { focus =   }
 		x = 50
 		y = 0
-		cost = 3
+		cost = 2
 		available = {
 			date > 1939.1.1
 		}

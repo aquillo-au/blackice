@@ -976,6 +976,7 @@ country_event = {
 
 	option = {
 		name = soviet.28.a
+		ai_chance = { factor = 100 }
 		set_country_flag = counter_purge
 		if = {
 			limit = { has_idea = trotskyite_plot_purged }
@@ -985,7 +986,7 @@ country_event = {
 			limit = { has_idea = trotskyite_plot }
 			remove_ideas = trotskyite_plot
 		}
-		kill_country_leader = yes
+		#kill_country_leader = yes
 		create_country_leader = {
 			name = "Leon Trotsky"
 			desc = "POLITICS_LEON_TROTSKY_DESC"
@@ -1005,7 +1006,7 @@ country_event = {
 			country_event = { id = soviet.43 days = 146 }				
 		}
 		start_civil_war = {
-			ideology = neutrality
+			ideology = communism
 			size = 0.3
 			keep_unit_leaders = { 401 402 407 410 406 405 403 407 404 }
 		}
@@ -1014,18 +1015,69 @@ country_event = {
 			random_other_country = {
 				limit = {
 					original_tag = SOV
-					has_government = neutrality
+					has_government = communism
 				}
-				kill_country_leader = yes
+				#kill_country_leader = yes
 				create_country_leader = {
-					name = "Ivan Konev"
-					desc = "POLITICS_IVAN_KONEV_DESC"
-					picture = "Portrait_Soviet_Ivan_Konev.dds"
-					expire = "1965.1.1"
-					ideology = oligarchism
+					name = "Joseph Stalin"
+					desc = "POLITICS_JOSEPH_STALIN_DESC"
+					picture = "Portrait_Soviet_Joseph_Stalin.dds"
+					expire = "1953.3.1"
+					ideology = stalinism
 					traits = {
-					}
+						paranoid
+						dictator
+						stalin
+	}
+}
+			}
+			news_event = { hours = 6 id = news.221 }
+		}
+	}
+	option = {
+		name = soviet.28.b
+		ai_chance = { factor = 0 }
+		set_country_flag = counter_purge
+		if = {
+			limit = { has_idea = trotskyite_plot_purged }
+			remove_ideas = trotskyite_plot_purged
+		}
+		if = {
+			limit = { has_idea = trotskyite_plot }
+			remove_ideas = trotskyite_plot
+		}
+		#kill_country_leader = yes
+				
+		add_timed_idea = {
+			idea = officers_purged_7
+			days = 584
+		}
+		hidden_effect = {
+			country_event = { id = soviet.43 days = 146 }				
+		}
+		start_civil_war = {
+			ideology = communism
+			size = 0.3
+			keep_unit_leaders = { 401 402 407 410 406 405 403 407 404 }
+		}
+
+		hidden_effect = {
+			random_other_country = {
+				limit = {
+					original_tag = SOV
+					has_government = communism
 				}
+				#kill_country_leader = yes
+				create_country_leader = {
+			name = "Leon Trotsky"
+			desc = "POLITICS_LEON_TROTSKY_DESC"
+			picture = "Portrait_Leon_Trotsky.dds"
+			expire = "1965.1.1"
+			ideology = leninism
+			traits = {
+				permanent_revolutionary
+			}
+		}
 			}
 			news_event = { hours = 6 id = news.221 }
 		}
@@ -1714,7 +1766,7 @@ country_event = {
 		has_government = communism
 		not = { has_idea = exile_trotsky }
 		tag = SOV
-		has_global_flag = SOV_fourth_international_fired
+		has_global_flag = SOV_fourth_international_fired_I
 		NOT = { has_completed_focus = SOV_assassinate_trotsky }
 		or = {
 		AND = {
@@ -1761,7 +1813,7 @@ country_event = {
 
 	trigger = {
 		tag = SOV
-		has_country_flag = SOV_soviet.48_notrotsky
+		has_country_flag = SOV_soviet.48_trotsky
 	}
 	
 	fire_only_once = yes
@@ -5853,7 +5905,7 @@ country_event = {
 		#set_country_flag = SOV_soviet.48_trotsky
 		add_timed_idea = {
 				idea = trotsky_marches
-				days = 60
+				days = 90
 		}
 	}
 }
@@ -6567,7 +6619,7 @@ country_event = {
 	
 	option = {
 		name = soviet.378.a
-		set_global_flag = SOV_fourth_international_fired
+		set_global_flag = SOV_fourth_international_fired_I
 		add_ideas = fourth_international_paris
 	}
 	
@@ -6875,6 +6927,7 @@ country_event = {
 		name = soviet.389.a
 		ai_chance = { factor = 100 }
 		add_manpower = -50000
+		clr_country_flag = trotskyarrives
 		add_timed_idea = {
 				idea = SOV_witchhunt
 				days = 180
@@ -6888,6 +6941,7 @@ country_event = {
 		name = soviet.389.b
 		ai_chance = { factor = 0 }
 		add_manpower = -25000
+		clr_country_flag = trotskyarrives
 		add_timed_idea = {
 				idea = SOV_witchhunt
 				days = 90
