@@ -564,7 +564,33 @@ country_event = {
 		name = finland.34.a
 	}
 }
+country_event = {
+	id = finland.35
+	title = finland.35.t
+	desc = finland.35.d
+	picture = GFX_report_event_stalin_01
 
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FIN
+		has_war_with = SOV
+		is_ai = yes
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = finland.35.a
+		hidden_effect = {
+			set_technology = { FIN_defence_I = 1 }
+			
+	}
+	}
+}
 # ------------------------------------
 
 # Finland wants to join allies
