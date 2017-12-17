@@ -174,6 +174,10 @@ country_event = {
 		tag = SOV
 		not = { has_country_flag = forthemotherland}
 		GER = { is_ai = yes }
+		or = {
+		not = { focus_progress = { focus = SOV_military_reorganization2 progress > 0.1 } }
+		not = { has_completed_focus = SOV_military_reorganization2 }
+		}
 		has_defensive_war_with = GER
 		not = { has_idea = red_army_purge_VI }
 		not = { has_idea = red_army_purge_V }
@@ -744,7 +748,7 @@ country_event = {
 		
 		}
 		set_country_flag = deseperatestand
-		set_technology = {molotov_cocktails_tech = 1 }
+		#set_technology = {molotov_cocktails_tech = 1 }
 			add_timed_idea = {
 				idea = Desperate_Defence
 				days = 90
@@ -838,4 +842,79 @@ country_event = {
 	
 	}
 }
+country_event = {
+	id = operation.99
+	title = operation.99.t
+	desc = operation.99.d
+	picture = GFX_report_event_degaulle
+	
+	fire_only_once = yes
 
+	trigger = {
+		tag = GER
+		not = {has_war_with = SOV}
+		is_ai = yes
+		or = {
+		focus_progress = { focus = GER_ussr_war_goal progress > 0.8 }
+		
+		has_wargoal_against = SOV
+		}
+	}
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = operation.98.a
+		hidden_effect = {
+			declare_war_on = {
+							target = SOV
+							type = annex_everything
+					}
+		
+		}
+	
+	}
+}
+country_event = {
+	id = operation.100
+	title = operation.100.t
+	desc = operation.100.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	
+	fire_only_once = yes
+
+	trigger = {
+		not = { has_tech = molotov_cocktails_tech }
+		has_war = yes
+				
+	}
+	
+	
+	option = {
+		name = operation.100.a
+		ai_chance = { factor = 100 }
+		set_technology = {molotov_cocktails_tech = 1 }
+			
+	}
+	option = {
+		name = operation.100.b
+		ai_chance = { factor = 0 }
+		army_experience = 25
+		add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 0.5
+				uses = 2
+				technology = antitank1
+				technology = antitank2
+			}
+		add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 0.25
+				uses = 1
+				technology = HVantitank2
+				
+			}			
+					
+	}
+}

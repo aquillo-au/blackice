@@ -4988,6 +4988,9 @@ focus = {
 		prerequisite = { focus = SOV_artists_writers_purged }
 		prerequisite = { focus = SOV_intelligentsia_purge }
 		prerequisite = { focus = SOV_kulaks_collectivisation }
+		prerequisite = { focus = SOV_great_airforce_purge }
+		prerequisite = { focus = SOV_great_navy_purge }
+		prerequisite = { focus = SOV_spies_everywhere }
 		available = {
 			
 		}
@@ -5323,8 +5326,11 @@ focus = {
 				idea = exile_trotsky
 				days = 90
 			}
-			add_ideas = SOV_spies
-			
+			add_timed_idea = {
+				idea = SOV_spies
+				days = 365
+			}
+					
 		}
 	}
 	focus = {
