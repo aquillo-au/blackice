@@ -9484,6 +9484,13 @@ country_event = {
 	option = {
 		name = germany.233.c		#refuse
 		ai_chance = { factor = 0 }
+			trigger = {
+			tag = GER
+			date > 1941.2.9
+			is_ai = no
+			NOT = {GER = { has_tech = desert_equipment }}
+			NOT = {GER = { has_tech = HVantiair2 }}
+		}
 		set_country_flag = GERafrikakorp
 	}
 }
@@ -12743,9 +12750,13 @@ country_event = {
 		tag = GER
 		date > 1942.5.1
 		OR = {
+		and = {
 			has_country_flag = gd_div_mot_39
+			is_ai = no
+			}
 			has_country_flag = GERgrossdeutschland_stug
 		}
+		has_army_experience > 51
 	}
 	
 	mean_time_to_happen = {
@@ -12760,17 +12771,12 @@ country_event = {
 			has_country_flag = gd_div_mot_39
 		}
 		hidden_effect = {
-			if = {
-				limit = { 
-					is_ai = no
-					has_army_experience > 51
-				}
-				#use army_experience to enhance division_template 
+			
 				army_experience = 50
 			}
 			set_country_flag = gd_div_mot_42
 		}
-	}
+
 	option = {
 		name = germany.402.b
 		trigger = {
@@ -12798,6 +12804,7 @@ country_event = {
 		tag = GER
 		date > 1943.5.1
 		has_country_flag = gd_div_mot_42
+		has_army_experience > 51
 	}
 	
 	mean_time_to_happen = {
@@ -12809,17 +12816,13 @@ country_event = {
 		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		hidden_effect = {
-			if = {
-				limit = { 
-					is_ai = no
-					has_army_experience > 51
-				}
+			
 				#use army_experience to enhance division_template 
 				army_experience = 50
 			}
 			set_country_flag = gd_div_pzgren_43
 		}
-	}
+
 	option = {				# placeholder to prevent AI crash
 		name = germany.403.b
 		ai_chance = { factor = 100 }
@@ -12981,7 +12984,7 @@ country_event = {
         
         hidden_effect = {
             add_manpower = -384078
-            454 = { add_core_of=GER }
+            454 = { add_core_of= GER }
             454 = { remove_core_of=ISR }
         }
     }
@@ -14944,6 +14947,7 @@ country_event = {
 			is_ai = yes
 			has_completed_focus = GER_demand_slovenia
 			NOT = { has_completed_focus = GER_fate_of_yugoslavia }
+			has_country_flag = impossible
 			NOT = { has_war_with = YUG }
 			NOT = { is_in_faction_with = YUG }
 			strength_ratio = { tag = YUG ratio > 1.1 }
@@ -14992,6 +14996,7 @@ country_event = {
 		tag = GER
 		is_puppet = no
 		is_ai = yes
+		has_country_flag = impossible
 		has_completed_focus = GER_fate_of_yugoslavia
 		NOT = { has_completed_focus = GER_second_ljubljana_award }
 			GRE = { 

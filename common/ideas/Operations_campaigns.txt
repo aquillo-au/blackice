@@ -691,15 +691,15 @@ ideas = {
 			#traits = { army_chief_offensive_2 }
 			modifier = {
 				
-				attrition = -0.03
-				army_speed_factor = 0.05
+				attrition = -0.15
+				army_speed_factor = 0.03
 				army_core_defence_factor = 0.25
 				army_armor_attack_factor = 0.2
 				cavalry_attack_factor = 0.2
 				cavalry_defence_factor = 0.2
-				industrial_capacity_factory = 0.2
-				training_time_army_factor = -0.2
-				supply_consumption_factor = -0.1
+				industrial_capacity_factory = 0.25
+				training_time_army_factor = -0.25
+				supply_consumption_factor = -0.05
 			}
 			
 			removal_cost = -1
@@ -1018,7 +1018,7 @@ ideas = {
 			}
 			#traits = { army_chief_offensive_2 }
 			modifier = {
-				army_org_factor = 0.3
+				army_org_factor = 0.5
 				army_morale_factor = 0.3
 				
 				army_speed_factor = 0.25
@@ -1273,4 +1273,19 @@ ideas = {
 			removal_cost = -1
 		}
 	}
-}
+	country = {
+	
+		lend_lease_shipment = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			
+			removal_cost = -1
+		modifier = {
+				army_org_factor = -0.05
+					}
+			}
+		}
+####### EOF
+	}

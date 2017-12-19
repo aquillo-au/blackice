@@ -5183,6 +5183,30 @@ focus = {
 		}
 	}
 	focus = {
+		id = SOV_lend_lease
+		icon = GFX_goal_lend_lease
+		prerequisite = { focus = SOV_military_reorganization2 }
+	
+		x = 33
+		y = 5
+		cost = 1
+		available = {
+			has_war_with = GER
+			ENG = { exists = yes }
+		}
+		ai_will_do = {
+			factor = 10
+			
+		}	
+		available_if_capitulated = yes
+		completion_reward = {
+			 add_timed_idea = {
+							idea = lend_lease_shipment
+							days = 30
+						}
+		}
+	}
+	focus = {
 		id = SOV_lessons_of_war
 		icon = GFX_goal_generic_military_sphere
 		prerequisite = { focus = SOV_nkvd_divisions focus = SOV_military_reorganization }

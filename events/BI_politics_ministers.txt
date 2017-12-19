@@ -367,6 +367,9 @@ country_event = {
 		name = politics.203.a
 		remove_ideas = franz_halder
 		set_country_flag = halder_fired
+		ai_chance = {
+			factor = 0
+		}
 	}
 	
 	option = { 
@@ -380,13 +383,16 @@ country_event = {
 		add_ideas = kurt_zeitzler
 		set_country_flag = halder_fired
 		ai_chance = {
-			factor = 1000
+			factor = 100
 		}
 	}
 	
 	option = { 
 		name = politics.203.c
 		add_political_power = -30
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 #Zeitzler Fired
@@ -1419,6 +1425,7 @@ country_event = {
 	trigger = {
 		tag = JAP
 		date > 1942.5.1
+		has_country_flag = impossible
 		has_idea = isoroku_yamamoto
 		has_war_with = USA
 		NOT = { has_tech = advanced_encryption }
