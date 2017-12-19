@@ -10,39 +10,58 @@ set_national_unity = 0.70
 set_politics = {
 	parties = {
 		conservatism = { 
-			popularity = 1
+			popularity = 0
 		}
 		liberalism = {
-			popularity = 1
+			popularity = 0
 		}
 		socialism = {
-			popularity = 21
+			popularity = 20
+		}
+		neutrality = {
+			popularity = 70
 		}
 		fascism = {
-			popularity = 76
+			popularity = 10
 		}
 		communism = {
-			popularity = 1
+			popularity = 0
 		}
 	}
 	
-	ruling_party = fascism
+	ruling_party = neutrality
 	last_election = "1932.5.1"
 	election_frequency = 48
 	elections_allowed = no
 }
-	
+add_ideas={
+	vichy_case_anton 
+	vichy_payments_germany
+	vichy_military_germany
+}
+GER={
+	add_ideas={
+	german_payments_vichy 
+}
+}
 ### 1940
 1940.1.1 = {
 
 	#adding ministers
 	add_ideas = {
-		#laws
+		vichy_case_anton 
+		vichy_payments_germany
+		vichy_military_germany
 		partial_economic_mobilisation
 		
 		FRA_reforms_failed
 		FRA_inflation3
 	}
+	GER={
+	add_ideas={
+	german_payments_vichy 
+}
+}
 	
 	# MOD
 	remove_ideas = FRA_disjointed_government
@@ -66,7 +85,7 @@ set_politics = {
 		tech_faf = 1
 		
 		BICE_sub_balance = 1
-		#BICE_airrange_balance = 1
+		BICE_airrange_balance = 1
 		########## infantry ###########
 		infantry_weapons = 1
 		infantry_weapons1 = 1
@@ -272,29 +291,32 @@ set_politics = {
 	set_national_unity = 0.70
 	
 	set_politics = {
-		parties = {
-			conservatism = { 
-				popularity = 1
-			}
-			liberalism = {
-				popularity = 1
-			}
-			socialism = {
-				popularity = 21
-			}
-			fascism = {
-				popularity = 76
-			}
-			communism = {
-				popularity = 1
-			}
+	parties = {
+		conservatism = { 
+			popularity = 0
 		}
-		
-		ruling_party = fascism
-		last_election = "1932.5.1"
-		election_frequency = 48
-		elections_allowed = no
+		liberalism = {
+			popularity = 0
+		}
+		socialism = {
+			popularity = 20
+		}
+		neutrality = {
+			popularity = 70
+		}
+		fascism = {
+			popularity = 10
+		}
+		communism = {
+			popularity = 0
+		}
 	}
+	
+	ruling_party = neutrality
+	last_election = "1932.5.1"
+	election_frequency = 48
+	elections_allowed = no
+}
 }
 
 set_country_flag = mob_reserve
@@ -313,14 +335,11 @@ set_country_flag = civilian_economy
 set_country_flag = labor_allowed
 
 create_country_leader = {
-	name = "Philippe Pétain"
-	desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
-	picture = "Portrait_France_Phillipe_Petain.dds"
-	expire = "1965.1.1"
+	name = "Pierre Laval"
+	desc = "POLITICS_PIERRE_LAVAL_DESC"
+	picture = "Portrait_France_Pierre_Laval.dds"
+	expire = "1960.1.24"
 	ideology = vichy
-	traits = {
-		fascist
-	}
 }
 create_country_leader = {
 	name = "Léon Blum"
@@ -339,7 +358,7 @@ create_country_leader = {
     expire = "1965.1.1"
     ideology = fascism_ideology
     traits = {
-
+dismal_enigma2
     }
 }
 create_country_leader = {
@@ -347,7 +366,7 @@ create_country_leader = {
 	desc = "POLITICS_CHARLES_MAURRAS_DESC"
 	picture = "Portrait_France_Charles_Maurras.tga"
 	expire = "1965.1.1"
-	ideology = despotism
+	ideology = absolutism
 	traits = {
 		
 	}
@@ -357,11 +376,21 @@ create_country_leader = {
 	desc = "POLITICS_JACQUES_DORIOT_DESC"
 	picture = "Portrait_France_Jacques_Doriot.dds"
 	expire = "1945.3.1"
-	ideology = fascism_ideology
+	ideology = nazism
 	traits = {
 		
 	}
 }
+1942.1.1 = {
+create_country_leader = {
+	name = "Pierre Laval"
+	desc = "POLITICS_PIERRE_LAVAL_DESC"
+	picture = "Portrait_France_Pierre_Laval.dds"
+	expire = "1960.1.24"
+	ideology = vichy
+}
+}
+
 #leaders Vichy
 create_corps_commander = {
 	name = "Nogues, Charles"
