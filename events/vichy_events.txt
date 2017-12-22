@@ -533,18 +533,15 @@ country_event = {
 			is_ai = no
 		}
 		GER = {
-			transfer_state = 1
-			transfer_state = 21
-			transfer_state = 26
-			transfer_state = 22
-			transfer_state = 25
-			transfer_state = 20
-			transfer_state = 31		
-			transfer_state = 32
-			transfer_state = 33
-			transfer_state = 268
-			transfer_state = 735
+			annex_country = { target = VIC transfer_troops = yes }
 		}	
+		GER={
+       		remove_ideas = german_payments_vichy
+       		}
+       		VIC={
+       			remove_ideas = vichy_payments_germany
+       			remove_ideas = vichy_military_germany
+       		}	
 	}
 	
 	option = { 
@@ -553,19 +550,15 @@ country_event = {
 			is_ai = yes
 		}
 		GER = {
-			transfer_state = 1
-			transfer_state = 21
-			transfer_state = 26
-			transfer_state = 22
-			transfer_state = 25
-			transfer_state = 20
-			transfer_state = 31
-			transfer_state = 32
-			transfer_state = 33
-			transfer_state = 268
-			transfer_state = 735
-		}	
-		
+			annex_country = { target = VIC transfer_troops = yes }
+		}
+		    GER={
+       		remove_ideas = german_payments_vichy
+       		}
+       		VIC={
+       			remove_ideas = vichy_payments_germany
+       			remove_ideas = vichy_military_germany
+       		}	
 		ai_chance = { factor = 100 }
 	}
 }
@@ -712,7 +705,7 @@ country_event = {
 	id = vichy.15  # demand elections
 	title = vichy.15.t
 	desc = vichy.15.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_election_vote
 	fire_only_once = yes
 	is_triggered_only = yes
  option = {
@@ -740,7 +733,7 @@ country_event = {
 	id = vichy.16  # War With germany with german army accepted  after msr tryouts of civilwar
 	title = vichy.16.t
 	desc = vichy.16.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_german_troops
 	fire_only_once = yes
 	is_triggered_only = yes
  	option = {
@@ -777,7 +770,7 @@ country_event = {
 	id = vichy.17  # germany says do whatever you want we can use police for civilwar
 	title = vichy.17.t
 	desc = vichy.17.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_fascist_militia
 	fire_only_once = yes
 	is_triggered_only = yes
  	option = {
@@ -841,7 +834,7 @@ country_event = {
 	id = vichy.18  # HAY GERMANY CAN I JOIN
 	title = vichy.18.t
 	desc = vichy.18.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_germany_politician_handshake
 	fire_only_once = yes
 	is_triggered_only = yes
  	option = {
@@ -877,7 +870,7 @@ country_event = {
 	id = vichy.19  # Soviet vichy join event
 	title = vichy.19.t
 	desc = vichy.19.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_communist_leader
 	fire_only_once = yes
 	is_triggered_only = yes
  	option = {
@@ -913,7 +906,7 @@ country_event = {
 	id = vichy.20  # arment ger
 	title = vichy.20.t
 	desc = vichy.20.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_german_elite_troops_inspected
 	fire_only_once = yes
 	is_triggered_only = yes
  	option = {
@@ -951,7 +944,7 @@ country_event = {
     id = vichy.21
     title = vichy.21.t
     desc = vichy.21.d
-    picture = GFX_news_event_french_parade
+    picture = GFX_report_event_generic_sign_treaty2
 	
 	is_triggered_only = yes
 	
@@ -977,7 +970,7 @@ country_event = {
     id = vichy.22 #Uprising in Vichy
     title = vichy.22.t 
     desc = vichy.22.d
-    picture = GFX_news_event_french_parade
+    picture = GFX_report_event_france_liberated
 	
 	is_triggered_only = yes
 	
@@ -1005,7 +998,7 @@ country_event = {
 	id = vichy.23  # economic negotiate germany
 	title = vichy.23.t
 	desc = vichy.23.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_generic_sign_treaty1
 	fire_only_once = yes
 	is_triggered_only = yes
  	option = {
@@ -1046,7 +1039,7 @@ country_event = {
 	id = vichy.24  # vichy wants to become free
 	title = vichy.24.t
 	desc = vichy.24.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_german_politician_speech
 	fire_only_once = yes
 	is_triggered_only = yes
  	option = {
@@ -1083,7 +1076,7 @@ country_event = {
 	id = vichy.25  # vichy wants france
 	title = vichy.25.t
 	desc = vichy.25.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_soviet_finnish_pact
 	fire_only_once = yes
 	is_triggered_only = yes
  	option = {
@@ -1196,7 +1189,7 @@ country_event = {
 	id = vichy.26  # vichy asks allience with freefrance
 	title = vichy.26.t
 	desc = vichy.26.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_generic_sign_treaty1
 	
 	fire_only_once = yes
 	
@@ -1289,7 +1282,7 @@ country_event = {
 	id = vichy.27  # Allies vichy ask to join event
 	title = vichy.27.t
 	desc = vichy.27.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_french_british_officers
 	
 	fire_only_once = yes
 	
@@ -1331,7 +1324,7 @@ country_event = {
 	id = vichy.28  # Allies help vichy
 	title = vichy.28.t
 	desc = vichy.28.d
-	picture = GFX_report_event_swedish_soldier
+	picture = GFX_report_event_abandoned_surrendered_weapons
 	
 	fire_only_once = yes
 	
@@ -1357,6 +1350,137 @@ country_event = {
 				has_war = yes
 			}
      	}
+    }
+}
+country_event = {
+	id = vichy.29  # germany capitulate idea loss
+	title = vichy.29.t
+	desc = vichy.29.d
+	picture = GFX_report_event_german_surrendering_1945_in_germany
+	
+	fire_only_once = yes
+ 	
+	trigger = {
+		tag = VIC
+		OR = {
+			GER = { has_capitulated = yes }
+			ENG = { controls_state = 896 }
+			USA = { controls_state = 896 }
+			GER = { exists = no }
+		}
+	}
+	option = {
+        name = vichy.29.a    
+        ai_chance = { 
+			factor = 100
+     	}
+      		GER={
+       		remove_ideas = german_payments_vichy
+       		}
+       		VIC={
+       			remove_ideas = vichy_payments_germany
+       			remove_ideas = vichy_military_germany
+       		}	
+    }
+}
+country_event = {
+	id = vichy.30  # germany capitulate vichy 
+	title = vichy.30.t
+	desc = vichy.30.d
+	picture = GFX_report_event_german_surrendering_1945_in_germany
+	
+	fire_only_once = yes
+ 	
+	trigger = {
+		tag = ENG
+		OR = {
+			GER = { has_capitulated = yes }
+			ENG = { controls_state = 896 }
+			USA = { controls_state = 896 }
+			GER = { exists = no }
+		}
+	}
+	option = {
+        name = vichy.30.a   #free france gov 
+        ai_chance = { 
+			factor = 100
+					modifier={
+				factor = -100
+				FRA = {exists = no}
+			}
+     	}
+
+        hidden_effect = {
+        		FRA={annex_country = { target = VIC }}
+				FRA = { transfer_state = 19 }
+				FRA = { transfer_state = 23 }
+				FRA = { transfer_state = 30 }
+				FRA = { transfer_state = 14 }
+				FRA = { transfer_state = 15 }
+				FRA = { transfer_state = 16 }
+				FRA = { transfer_state = 844 }
+				FRA = { transfer_state = 24 }
+				FRA = { transfer_state = 18 }
+				FRA = { transfer_state = 886 }
+				FRA = { transfer_state = 29 }
+				FRA = { transfer_state = 27 }
+				FRA = { transfer_state = 17}
+				FRA = { set_capital = 844 }
+			}
+    		}
+    	option = {
+        name = vichy.30.b   #vichy gov
+        ai_chance = { 
+			factor = 0
+			modifier={
+				factor = 100
+				FRA = {exists = no}
+			}
+     	}
+     			VIC={annex_country = { target = FRA }}
+				VIC = { transfer_state = 19 }
+				VIC = { transfer_state = 23 }
+				VIC = { transfer_state = 30 }
+				VIC = { transfer_state = 14 }
+				VIC = { transfer_state = 15 }
+				VIC = { transfer_state = 16 }
+				VIC = { transfer_state = 844 }
+				VIC = { transfer_state = 24 }
+				VIC = { transfer_state = 18 }
+				VIC = { transfer_state = 886 }
+				VIC = { transfer_state = 29 }
+				VIC = { transfer_state = 27 }
+				VIC = { transfer_state = 17}
+				VIC = { set_capital = 844 }
+    }
+}
+country_event = {
+	id = vichy.31  # vichy capitulate idea loss
+	title = vichy.31.t
+	desc = vichy.31.d
+	picture = GFX_report_event_german_surrendering_1945_in_germany
+	
+	fire_only_once = yes
+ 	
+	trigger = {
+		tag = GER
+		OR = {
+			VIC = { has_capitulated = yes }
+			VIC = { exists = no }
+		}
+	}
+	option = {
+        name = vichy.31.a    
+        ai_chance = { 
+			factor = 100
+     	}
+      		GER={
+       		remove_ideas = german_payments_vichy
+       		}
+       		VIC={
+       			remove_ideas = vichy_payments_germany
+       			remove_ideas = vichy_military_germany
+       		}	
     }
 }
 ### EOF ###
