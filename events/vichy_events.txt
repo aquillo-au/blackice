@@ -1468,19 +1468,20 @@ country_event = {
 			VIC = { has_capitulated = yes }
 			VIC = { exists = no }
 		}
+		GER = { has_idea = german_payments_vichy }
 	}
 	option = {
         name = vichy.31.a    
         ai_chance = { 
 			factor = 100
      	}
-      		GER={
-       		remove_ideas = german_payments_vichy
-       		}
-       		VIC={
-       			remove_ideas = vichy_payments_germany
-       			remove_ideas = vichy_military_germany
-       		}	
+		GER = {
+			remove_ideas = german_payments_vichy
+		}
+		VIC = {
+			remove_ideas = vichy_payments_germany
+			remove_ideas = vichy_military_germany
+		}	
     }
 }
 ### EOF ###
