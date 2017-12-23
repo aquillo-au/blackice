@@ -952,7 +952,7 @@ country_event = {
 	id = soviet.28
 	title = soviet.28.t
 	desc = soviet.28.d
-	picture = GFX_report_event_soviet_purge_politicians
+	picture = GFX_report_event_soviet_purge_officers
 
 	fire_only_once = yes
 	
@@ -960,6 +960,7 @@ country_event = {
 		not = { has_idea = exile_trotsky }
 		has_country_flag = SOV_soviet.48_trotsky
 		tag = SOV
+		has_civil_war = no
 	}
 
 	mean_time_to_happen = {
@@ -974,8 +975,8 @@ country_event = {
 		#}	
 	}
 
-	option = {
-		name = soviet.28.a
+	option = {		# support stalin
+		name = soviet.28.b
 		ai_chance = { factor = 100 }
 		set_country_flag = counter_purge
 		if = {
@@ -986,17 +987,17 @@ country_event = {
 			limit = { has_idea = trotskyite_plot }
 			remove_ideas = trotskyite_plot
 		}
-		#kill_country_leader = yes
-		create_country_leader = {
-			name = "Leon Trotsky"
-			desc = "POLITICS_LEON_TROTSKY_DESC"
-			picture = "Portrait_Leon_Trotsky.dds"
-			expire = "1965.1.1"
-			ideology = leninism
-			traits = {
-				permanent_revolutionary
-			}
+			hidden_effect = {
+		kill_country_leader = yes
 		}
+		create_faction = Comintern
+		
+		country_event = soviet.402
+		
+		add_popularity = {
+					ideology = communism
+					popularity = 0.95
+				}
 		
 		add_timed_idea = {
 			idea = officers_purged_7
@@ -1006,8 +1007,11 @@ country_event = {
 			country_event = { id = soviet.43 days = 146 }				
 		}
 		start_civil_war = {
+			ruling_party = communism
 			ideology = communism
 			size = 0.3
+			capital = 195
+			states = { 195 208 244 263 209 264 199 201 226 198 192 197 202 203 196 221 259 225 193 228 227 200 }
 			keep_unit_leaders = { 401 402 407 410 406 405 403 407 404 }
 		}
 
@@ -1017,25 +1021,28 @@ country_event = {
 					original_tag = SOV
 					has_government = communism
 				}
-				#kill_country_leader = yes
+				add_popularity = {
+					ideology = communism
+					popularity = 0.95
+				}
+				create_faction = International
+				kill_country_leader = yes
 				create_country_leader = {
-					name = "Joseph Stalin"
-					desc = "POLITICS_JOSEPH_STALIN_DESC"
-					picture = "Portrait_Soviet_Joseph_Stalin.dds"
-					expire = "1953.3.1"
-					ideology = stalinism
-					traits = {
-						paranoid
-						dictator
-						stalin
-	}
+			name = "Leon Trotsky"
+			desc = "POLITICS_LEON_TROTSKY_DESC"
+			picture = "Portrait_Leon_Trotsky.dds"
+			expire = "1965.1.1"
+			ideology = leninism
+			traits = {
+				permanent_revolutionary
+			}
+		}
 }
 			}
 			news_event = { hours = 6 id = news.221 }
 		}
-	}
-	option = {
-		name = soviet.28.b
+	option = {			#support trotsky
+		name = soviet.28.c
 		ai_chance = { factor = 0 }
 		set_country_flag = counter_purge
 		if = {
@@ -1046,8 +1053,18 @@ country_event = {
 			limit = { has_idea = trotskyite_plot }
 			remove_ideas = trotskyite_plot
 		}
-		#kill_country_leader = yes
-				
+		set_country_flag = Trotsky_government
+		hidden_effect = {			
+			country_event = soviet.403
+		}	
+			hidden_effect = {
+		kill_country_leader = yes
+		}
+			add_popularity = {
+					ideology = communism
+					popularity = 0.95
+				}
+			
 		add_timed_idea = {
 			idea = officers_purged_7
 			days = 584
@@ -1055,20 +1072,94 @@ country_event = {
 		hidden_effect = {
 			country_event = { id = soviet.43 days = 146 }				
 		}
-		start_civil_war = {
+			start_civil_war = {
+			ruling_party = communism
 			ideology = communism
-			size = 0.3
+			size = 0.7
+			#capital = 845
+			#states = { 195 208 244 263 209 264 199 201 226 198 192 197 202 203 196 221 259 225 193 228 227 200 }
 			keep_unit_leaders = { 401 402 407 410 406 405 403 407 404 }
-		}
-
+		}	
 		hidden_effect = {
 			random_other_country = {
 				limit = {
 					original_tag = SOV
 					has_government = communism
 				}
+				
 				#kill_country_leader = yes
-				create_country_leader = {
+				create_faction = Comintern
+		create_country_leader = {
+					name = "Joseph Vissarionovich Stalin"
+					desc = "POLITICS_JOSEPH_STALIN_DESC"
+					picture = "Portrait_Soviet_Joseph_Stalin.dds"
+					expire = "1953.3.1"
+					ideology = stalinism
+					traits = {
+						paranoid
+						dictator
+						stalin
+					}
+				
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.95
+				}
+			
+			
+			}
+			#change_tag_from = SOV
+			news_event = { hours = 6 id = news.221 }
+		}
+	}
+}
+country_event = {
+	id = soviet.402
+	title = soviet.402.t
+	desc = soviet.402.d
+	picture = GFX_report_event_stalin_approves
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.402.a
+		ai_chance = { factor = 100 }
+		create_faction = Comintern
+		create_country_leader = {
+					name = "Joseph Vissarionovich Stalin"
+					desc = "POLITICS_JOSEPH_STALIN_DESC"
+					picture = "Portrait_Soviet_Joseph_Stalin.dds"
+					expire = "1953.3.1"
+					ideology = stalinism
+					traits = {
+						paranoid
+						dictator
+						stalin
+					}
+				
+				}
+	}
+	
+}
+country_event = {
+	id = soviet.403
+	title = soviet.403.t
+	desc = soviet.403.d
+	picture = GFX_report_event_soviet_purge_trial
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = soviet.403.a
+		ai_chance = { factor = 100 }
+				create_faction = International
+				
+			create_country_leader = {
 			name = "Leon Trotsky"
 			desc = "POLITICS_LEON_TROTSKY_DESC"
 			picture = "Portrait_Leon_Trotsky.dds"
@@ -1078,10 +1169,8 @@ country_event = {
 				permanent_revolutionary
 			}
 		}
-			}
-			news_event = { hours = 6 id = news.221 }
-		}
 	}
+	
 }
 # France national focus -  requests to join commitern
 country_event = {
@@ -1766,6 +1855,7 @@ country_event = {
 		has_government = communism
 		not = { has_idea = exile_trotsky }
 		tag = SOV
+		has_civil_war = no
 		has_global_flag = SOV_fourth_international_fired_I
 		NOT = { has_completed_focus = SOV_assassinate_trotsky }
 		or = {
@@ -1782,22 +1872,22 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 90
+		days = 14
 	}
 
 	fire_only_once = yes
 
 	#Don't invite trotsky
-	option = {
-		name = soviet.48.a
-		ai_chance = { factor = 0 }
-		custom_effect_tooltip = soviet.48.a_tt
-		set_country_flag = SOV_soviet.48_notrotsky
-	}
+	#option = {
+	#	name = soviet.48.a
+	#	ai_chance = { factor = 0 }
+	#	custom_effect_tooltip = soviet.48.a_tt
+	#	set_country_flag = SOV_soviet.48_notrotsky
+	#}
 
-	#Invite back Trotsky
+	#Trotsky will return
 	option = {
-		name = soviet.48.b
+		name = soviet.48.c
 		ai_chance = { factor = 100 }
 		custom_effect_tooltip = soviet.48.b_tt
 		set_country_flag = SOV_soviet.48_trotsky
@@ -1813,6 +1903,7 @@ country_event = {
 
 	trigger = {
 		tag = SOV
+		has_country_flag = impossible
 		has_country_flag = SOV_soviet.48_trotsky
 	}
 	
@@ -1822,11 +1913,11 @@ country_event = {
 
 	option = {
 		name = soviet.49.a
-		#start_civil_war = {
-		#	ideology = neutrality
-		#	size = 0.5
-		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
-		#}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.5
+			keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
+		}
 		hidden_effect = {
 			remove_unit_leader = 612 #Remove Andrey Vlasov
 			random_country = {
@@ -1860,6 +1951,7 @@ country_event = {
 
 	trigger = {
 		tag = SOV
+		has_country_flag = impossible
 		has_country_flag = SOV_purged_1
 	}
 
@@ -1868,11 +1960,11 @@ country_event = {
 	option = {
 		name = soviet.50.a
 		remove_unit_leader = 612 #Remove Andrey Vlasov
-		#start_civil_war = {
-		#	ideology = neutrality
-		#	size = 0.3
-		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
-		#}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.3
+			keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
+		}
 		hidden_effect = {
 			random_country = {
 				limit = {
@@ -1905,6 +1997,7 @@ country_event = {
 	
 	trigger = {
 		tag = SOV
+		has_country_flag = impossible
 		has_country_flag = SOV_purged_2
 	}
 
@@ -1913,11 +2006,11 @@ country_event = {
 	option = {
 		name = soviet.51.a
 		remove_unit_leader = 612 #Remove Andrey Vlasov
-		#start_civil_war = {
-		#	ideology = neutrality
-		#	size = 0.25
-		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
-		#}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.25
+			keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
+		}
 		hidden_effect = {
 			random_country = {
 				limit = {
@@ -1950,6 +2043,7 @@ country_event = {
 
 	trigger = {
 		tag = SOV
+		has_country_flag = impossible
 		has_country_flag = SOV_purged_3
 	}
 
@@ -1958,11 +2052,11 @@ country_event = {
 	option = {
 		name = soviet.52.a
 		remove_unit_leader = 612 #Remove Andrey Vlasov
-		#start_civil_war = {
-		#	ideology = neutrality
-		#	size = 0.2
-		#	keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
-		#}
+		start_civil_war = {
+			ideology = neutrality
+			size = 0.2
+			keep_unit_leaders = { 401 402 407 410 406 405 403 407 408 410 411 404 }
+		}
 		hidden_effect = {
 			random_country = {
 				limit = {
@@ -1995,6 +2089,7 @@ country_event = {
 
 	trigger = {
 		tag = SOV
+		has_country_flag = impossible
 		has_country_flag = SOV_purged_4
 	}
 
@@ -2003,25 +2098,25 @@ country_event = {
 	option = {
 		name = soviet.53.a
 		remove_ideas = trotskyite_plot_purged
-		#remove_unit_leader = 612 #Remove Andrey Vlasov
-		#hidden_effect = {
-		#	random_country = {
-		#		limit = {
-		#			original_tag = SOV
-		#			has_government = neutrality
-		#		}
-		#		kill_country_leader = yes
-		#		create_country_leader = {
-		#			name = "Andrey Vlasov"
-		#			desc = "POLITICS_ANDREY_VLASOV_DESC"
-		#			picture = "Portrait_Soviet_Andrey_Vlasov.dds"
-		#			expire = "1965.1.1"
-		#			ideology = moderatism
-		#			traits = {
-		#			}
-		#		}
-		#	}
-		#}
+		remove_unit_leader = 612 #Remove Andrey Vlasov
+		hidden_effect = {
+			random_country = {
+				limit = {
+					original_tag = SOV
+					has_government = neutrality
+				}
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "Andrey Vlasov"
+					desc = "POLITICS_ANDREY_VLASOV_DESC"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
+					expire = "1965.1.1"
+					ideology = moderatism
+					traits = {
+					}
+				}
+			}
+		}
 	}
 }
 #New Leadership in Russia
@@ -5879,6 +5974,7 @@ country_event = {
 		#not = {has_defensive_war_with = GER }
 		not = {has_completed_focus = SOV_assassinate_trotsky}
 		date > 1936.6.1
+		has_civil_war = no
 		not = {has_country_flag = trotskysighted}
 		not = { has_idea = exile_trotsky }
 		not = { has_idea = trotsky_rallies }
@@ -5914,6 +6010,7 @@ country_event = {
 		#not = {has_defensive_war_with = GER }
 		has_country_flag = trotskysighted
 		date > 1936.6.1
+		has_civil_war = no
 		not = {has_country_flag = trotskyrallies}
 		not = { has_idea = exile_trotsky }
 		not = { has_idea = trotsky_sighted }
@@ -5946,6 +6043,7 @@ country_event = {
 		tag = SOV
 		not = {has_completed_focus = SOV_assassinate_trotsky}
 		date > 1936.6.1
+		has_civil_war = no
 		#not = {has_defensive_war_with = GER }
 		has_country_flag = trotskyrallies
 		not = {has_country_flag = trotskymarches }
@@ -7790,4 +7888,5 @@ country_event = {
 				set_country_flag = alliedlendlease10
 			}
 }
+
 ### EOF ###
