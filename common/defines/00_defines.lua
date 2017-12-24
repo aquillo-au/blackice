@@ -981,8 +981,8 @@ NAI = {
 	
 	SUPPLY_CRISIS_LIMIT = 0.9,							-- If a unit is standing in an area with 
 	
-	MAX_ALLOWED_NAVAL_DANGER = 60,						-- AI will ignore naval paths that has danger value of above this threshold while assigning units
-	TRANSFER_DANGER_HOSTILE_SHIPS = 50, 				-- max danger from complete enemy naval supriority over ai in an area
+	MAX_ALLOWED_NAVAL_DANGER = 50,				-- AI will ignore naval paths that has danger value of above this threshold while assigning units
+	TRANSFER_DANGER_HOSTILE_SHIPS = 60, 		-- max danger from complete enemy naval supriority over ai in an area
 	
 	FASCISTS_BEFRIEND_FASCISTS = 10,
 	FASCISTS_BEFRIEND_DEMOCRACIES = -25,
