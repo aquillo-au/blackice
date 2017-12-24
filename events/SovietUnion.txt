@@ -1032,7 +1032,7 @@ country_event = {
 			desc = "POLITICS_LEON_TROTSKY_DESC"
 			picture = "Portrait_Leon_Trotsky.dds"
 			expire = "1965.1.1"
-			ideology = leninism
+			ideology = trotskyism
 			traits = {
 				permanent_revolutionary
 			}
@@ -1164,7 +1164,7 @@ country_event = {
 			desc = "POLITICS_LEON_TROTSKY_DESC"
 			picture = "Portrait_Leon_Trotsky.dds"
 			expire = "1965.1.1"
-			ideology = leninism
+			ideology = trotskyism
 			traits = {
 				permanent_revolutionary
 			}
@@ -2189,7 +2189,9 @@ country_event = {
 		NOT = { SOV = { controls_state = 260 }}
 		NOT = { SOV = { controls_state = 223 }}
 		NOT = { SOV = { controls_state = 246 }}
-		
+		NOT = { SOV = { controls_state = 983 }}
+		NOT = { SOV = { controls_state = 982 }}
+		NOT = { SOV = { controls_state = 219 }}
 		NOT = { SOV = { controls_state = 222 }}
 		NOT = { SOV = { controls_state = 207 }}
 		NOT = { SOV = { controls_state = 243 }}
@@ -2243,7 +2245,9 @@ country_event = {
 		NOT = { SOV = { controls_state = 260 }}
 		NOT = { SOV = { controls_state = 223 }}
 		NOT = { SOV = { controls_state = 246 }}
-		
+		NOT = { SOV = { controls_state = 983 }}
+		NOT = { SOV = { controls_state = 982 }}
+		NOT = { SOV = { controls_state = 219 }}
 		NOT = { SOV = { controls_state = 222 }}
 		NOT = { SOV = { controls_state = 207 }}
 		NOT = { SOV = { controls_state = 243 }}
@@ -2483,11 +2487,32 @@ country_event = {
 			remove_building = { type = artillery_factory level = 1 }
 		}
 		219 = { 
-			remove_building = { type = arms_factory level = 7 } 
-			remove_building = { type = tank_factory level = 1 }
-			remove_building = { type = Ltaircraft_factory level = 2 }
+			remove_building = { type = arms_factory level = 2 } 
+			#remove_building = { type = tank_factory level = 1 }
+			#remove_building = { type = Ltaircraft_factory level = 2 }
+			#remove_building = { type = artillery_factory level = 1 }
+			#remove_building = { type = Hvaircraft_factory level = 1 }
+		}
+		983 = { 
+			remove_building = { type = arms_factory level = 2 } 
+			#remove_building = { type = tank_factory level = 1 }
+			#remove_building = { type = Ltaircraft_factory level = 2 }
+			#remove_building = { type = artillery_factory level = 1 }
+			#remove_building = { type = Hvaircraft_factory level = 1 }
+		}
+		984 = { 
+			remove_building = { type = arms_factory level = 2 } 
+			#remove_building = { type = tank_factory level = 1 }
+			remove_building = { type = Ltaircraft_factory level = 1 }
 			remove_building = { type = artillery_factory level = 1 }
 			remove_building = { type = Hvaircraft_factory level = 1 }
+		}
+		982 = { 
+			remove_building = { type = arms_factory level = 1 } 
+			#remove_building = { type = tank_factory level = 1 }
+			#remove_building = { type = Ltaircraft_factory level = 2 }
+			#remove_building = { type = artillery_factory level = 1 }
+			#remove_building = { type = Hvaircraft_factory level = 1 }
 		}
 		240 = { 
 			remove_building = { type = Ltaircraft_factory level = 2 }
@@ -2618,7 +2643,7 @@ country_event = {
 		tag = SOV
 		has_war_with = GER
 		is_ai = yes
-		GER = { is_ai = no }
+		#GER = { is_ai = no }
 		}
 	
 	mean_time_to_happen = {
@@ -2627,7 +2652,12 @@ country_event = {
 	
 	option = {
 		name = soviet.329.a
-		add_ideas = soviet_workers
+		set_country_flag = sovietworkers
+		add_timed_idea = {
+				idea = soviet_workers
+				days = 365
+			}
+		
 		398  = {
 			if = {
 					limit = { is_controlled_by = SOV }
@@ -2753,16 +2783,22 @@ country_event = {
 		tag = SOV
 		has_war_with = GER
 		is_ai = yes
-		GER = { is_ai = no }
+		#GER = { is_ai = no }
+		has_country_flag = sovietworkers
+		not = {has_idea = soviet_workers }
 		}
 	
 	mean_time_to_happen = {
-		months = 6
+		months = 1
 	}
 	
 	option = {
 		name = soviet.330.a
-		add_ideas = soviet_workers_II
+		add_timed_idea = {
+				idea = soviet_workers_II
+				days = 1460
+			}
+		
 		398  = {
 			if = {
 					limit = { is_controlled_by = SOV }
@@ -7118,6 +7154,40 @@ country_event = {
 	}
 }
 #390
+
+country_event = {
+	id = soviet.404
+	title = soviet.404.t
+	desc = soviet.404.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		not = { has_war_with = SOV}
+		ENG = { exists = yes }
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.404.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease
+	}
+	option = {
+		name = soviet.404.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
 country_event = {
 	id = soviet.391
 	title = soviet.391.t
@@ -7135,7 +7205,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 9
+		months = 3
 	}
 	
 	option = {
@@ -7192,7 +7262,11 @@ country_event = {
 						 add_timed_idea = {
 							idea = lend_lease_shipment
 							days = 180
-			}
+							}
+							ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				80 = { 
 				load_oob = SOV_Lend_lease_armor
@@ -7201,6 +7275,10 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 						}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 					}
 				}
 			}
@@ -7260,6 +7338,10 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				80 = { 
 				load_oob = SOV_Lend_lease_armor
@@ -7268,11 +7350,49 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 				}
 			}
 		set_country_flag = alliedlendlease
 	}
+}
+country_event = {
+	id = soviet.405
+	title = soviet.405.t
+	desc = soviet.405.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		ENG = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease_II }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.405.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease_II
+	}
+	option = {
+		name = soviet.405.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
 }
 country_event = {
 	id = soviet.392
@@ -7286,7 +7406,7 @@ country_event = {
 		tag = SOV
 		has_defensive_war_with = GER
 		ENG = { exists = yes }
-		
+		has_global_flag = UK_soviet_lend_lease_II
 		not = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease
 	}
@@ -7306,6 +7426,10 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				20 = { 
 				load_oob = SOV_british_lend_lease_I_ai
@@ -7313,6 +7437,10 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365 }
+								}
 						}
 					}
 				}
@@ -7329,6 +7457,10 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				50 = { 
 				load_oob = SOV_british_lend_lease_I
@@ -7336,11 +7468,83 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
 				set_country_flag = alliedlendlease2
 			}
+}
+country_event = {
+	id = soviet.406
+	title = soviet.406.t
+	desc = soviet.406.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		ENG = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease_III }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.406.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease_III
+	}
+	option = {
+		name = soviet.406.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
+country_event = {
+	id = soviet.407
+	title = soviet.407.t
+	desc = soviet.407.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		USA = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = US_soviet_lend_lease }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.407.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = US_soviet_lend_lease
+	}
+	option = {
+		name = soviet.407.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
 }
 country_event = {
 	id = soviet.393
@@ -7356,6 +7560,9 @@ country_event = {
 		ENG = { exists = yes }
 		USA = { exists = yes }
 		not = { has_idea = lend_lease_shipment}
+		or = {
+		has_global_flag = UK_soviet_lend_lease_III
+		has_global_flag = US_soviet_lend_lease }
 		has_country_flag = alliedlendlease2
 	}
 
@@ -7375,6 +7582,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				20 = { 
 				load_oob = SOV_Allied_lend_lease_I_ai
@@ -7382,6 +7597,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
@@ -7398,6 +7621,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				50 = { 
 				load_oob = SOV_Allied_lend_lease_I
@@ -7405,11 +7636,87 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
 				set_country_flag = alliedlendlease3
 			}
+}
+country_event = {
+	id = soviet.408
+	title = soviet.408.t
+	desc = soviet.408.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		ENG = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease_IV }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.408.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease_IV
+	}
+	option = {
+		name = soviet.408.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
+country_event = {
+	id = soviet.409
+	title = soviet.409.t
+	desc = soviet.409.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		USA = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = US_soviet_lend_lease_I }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.409.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = US_soviet_lend_lease_I
+	}
+	option = {
+		name = soviet.409.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
 }
 country_event = {
 	id = soviet.394
@@ -7424,6 +7731,9 @@ country_event = {
 		has_defensive_war_with = GER
 		ENG = { exists = yes }
 		USA = { exists = yes }
+		or = {
+		has_global_flag = UK_soviet_lend_lease_IV
+		has_global_flag = US_soviet_lend_lease_I }
 		not = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease3
 	}
@@ -7443,6 +7753,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				20 = { 
 				load_oob = SOV_Allied_lend_lease_I_ai
@@ -7450,6 +7768,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
@@ -7466,6 +7792,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				50 = { 
 				load_oob = SOV_Allied_lend_lease_I
@@ -7473,11 +7807,87 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
 				set_country_flag = alliedlendlease4
 			}
+}
+country_event = {
+	id = soviet.410
+	title = soviet.410.t
+	desc = soviet.410.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		ENG = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease_V }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.410.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease_V
+	}
+	option = {
+		name = soviet.410.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
+country_event = {
+	id = soviet.411
+	title = soviet.411.t
+	desc = soviet.411.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		USA = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = US_soviet_lend_lease_II }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.411.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = US_soviet_lend_lease_II
+	}
+	option = {
+		name = soviet.411.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
 }
 country_event = {
 	id = soviet.395
@@ -7492,6 +7902,9 @@ country_event = {
 		has_defensive_war_with = GER
 		ENG = { exists = yes }
 		USA = { exists = yes }
+		or = {
+		has_global_flag = UK_soviet_lend_lease_V
+		has_global_flag = US_soviet_lend_lease_II }
 		not = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease4
 	}
@@ -7511,6 +7924,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				20 = { 
 				load_oob = SOV_Allied_lend_lease_I_ai
@@ -7518,6 +7939,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
@@ -7534,6 +7963,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				50 = { 
 				load_oob = SOV_Allied_lend_lease_I
@@ -7541,11 +7978,87 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
 				set_country_flag = alliedlendlease5
 			}
+}
+country_event = {
+	id = soviet.412
+	title = soviet.412.t
+	desc = soviet.412.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		ENG = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease_VI }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.412.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease_VI
+	}
+	option = {
+		name = soviet.412.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
+country_event = {
+	id = soviet.413
+	title = soviet.413.t
+	desc = soviet.413.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		USA = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = US_soviet_lend_lease_III }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.413.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = US_soviet_lend_lease_III
+	}
+	option = {
+		name = soviet.413.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
 }
 country_event = {
 	id = soviet.396
@@ -7560,6 +8073,9 @@ country_event = {
 		has_defensive_war_with = GER
 		ENG = { exists = yes }
 		USA = { exists = yes }
+		or = {
+		has_global_flag = UK_soviet_lend_lease_VI
+		has_global_flag = US_soviet_lend_lease_III }
 		not = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease5
 	}
@@ -7579,6 +8095,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				20 = { 
 				load_oob = SOV_Allied_lend_lease_I_ai
@@ -7586,6 +8110,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
@@ -7602,6 +8134,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				50 = { 
 				load_oob = SOV_Allied_lend_lease_I
@@ -7609,11 +8149,87 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
 				set_country_flag = alliedlendlease6
 			}
+}
+country_event = {
+	id = soviet.414
+	title = soviet.414.t
+	desc = soviet.414.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		ENG = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease_VII }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.414.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease_VII
+	}
+	option = {
+		name = soviet.414.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
+country_event = {
+	id = soviet.415
+	title = soviet.415.t
+	desc = soviet.415.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		USA = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = US_soviet_lend_lease_IV }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.415.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = US_soviet_lend_lease_IV
+	}
+	option = {
+		name = soviet.415.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
 }
 country_event = {
 	id = soviet.397
@@ -7628,6 +8244,9 @@ country_event = {
 		has_defensive_war_with = GER
 		ENG = { exists = yes }
 		USA = { exists = yes }
+		or = {
+		has_global_flag = UK_soviet_lend_lease_VII
+		has_global_flag = US_soviet_lend_lease_IV }
 		not = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease6
 	}
@@ -7647,6 +8266,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				20 = { 
 				load_oob = SOV_Allied_lend_lease_I_ai
@@ -7654,6 +8281,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
@@ -7670,6 +8305,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				50 = { 
 				load_oob = SOV_Allied_lend_lease_I
@@ -7677,11 +8320,87 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
 				set_country_flag = alliedlendlease7
 			}
+}
+country_event = {
+	id = soviet.416
+	title = soviet.416.t
+	desc = soviet.416.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		ENG = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease_VIII }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.416.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease_VIII
+	}
+	option = {
+		name = soviet.416.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
+country_event = {
+	id = soviet.417
+	title = soviet.417.t
+	desc = soviet.417.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		USA = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = US_soviet_lend_lease_V }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.417.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = US_soviet_lend_lease_V
+	}
+	option = {
+		name = soviet.417.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
 }
 country_event = {
 	id = soviet.398
@@ -7696,6 +8415,9 @@ country_event = {
 		has_defensive_war_with = GER
 		ENG = { exists = yes }
 		USA = { exists = yes }
+		or = {
+		has_global_flag = UK_soviet_lend_lease_VIII
+		has_global_flag = US_soviet_lend_lease_V }
 		not = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease7
 	}
@@ -7715,6 +8437,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				20 = { 
 				load_oob = SOV_Allied_lend_lease_I_ai
@@ -7722,6 +8452,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
@@ -7738,6 +8476,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				50 = { 
 				load_oob = SOV_Allied_lend_lease_I
@@ -7745,11 +8491,87 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
 				set_country_flag = alliedlendlease8
 			}
+}
+country_event = {
+	id = soviet.418
+	title = soviet.418.t
+	desc = soviet.418.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		ENG = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease_IX }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.418.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease_IX
+	}
+	option = {
+		name = soviet.418.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
+country_event = {
+	id = soviet.419
+	title = soviet.419.t
+	desc = soviet.419.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		USA = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = US_soviet_lend_lease_VI }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.419.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = US_soviet_lend_lease_VI
+	}
+	option = {
+		name = soviet.419.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
 }
 country_event = {
 	id = soviet.399
@@ -7764,6 +8586,9 @@ country_event = {
 		has_defensive_war_with = GER
 		ENG = { exists = yes }
 		USA = { exists = yes }
+		or = {
+		has_global_flag = UK_soviet_lend_lease_IX
+		has_global_flag = US_soviet_lend_lease_VI }
 		not = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease8
 	}
@@ -7783,6 +8608,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				20 = { 
 				load_oob = SOV_Allied_lend_lease_I_ai
@@ -7790,6 +8623,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
@@ -7806,6 +8647,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				50 = { 
 				load_oob = SOV_Allied_lend_lease_I
@@ -7813,6 +8662,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
@@ -7820,6 +8677,74 @@ country_event = {
 			}
 }
 #soviet.400
+country_event = {
+	id = soviet.420
+	title = soviet.420.t
+	desc = soviet.420.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		ENG = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = UK_soviet_lend_lease_X }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.420.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = UK_soviet_lend_lease_X
+	}
+	option = {
+		name = soviet.420.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
+country_event = {
+	id = soviet.421
+	title = soviet.421.t
+	desc = soviet.421.d
+	picture = GFX_report_event_soviet_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = USA
+		SOV = { has_defensive_war_with = GER }
+		SOV = {has_completed_focus = SOV_lend_lease}
+		USA = { exists = yes }
+		not = { has_war_with = SOV}
+		not = { has_idea = lend_lease_production}
+		not = { has_global_flag = US_soviet_lend_lease_VII }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.421.a		#do lend lease
+		ai_chance = { factor = 100 }
+		set_global_flag = US_soviet_lend_lease_VII
+	}
+	option = {
+		name = soviet.421.b		#refuse
+		ai_chance = { factor = 0 }
+		add_political_power = -50
+	}
+
+}
 country_event = {
 	id = soviet.401
 	title = soviet.401.t
@@ -7833,6 +8758,9 @@ country_event = {
 		has_defensive_war_with = GER
 		ENG = { exists = yes }
 		USA = { exists = yes }
+		or = {
+		has_global_flag = UK_soviet_lend_lease_X
+		has_global_flag = US_soviet_lend_lease_VII }
 		not = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease9
 	}
@@ -7852,6 +8780,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				20 = { 
 				load_oob = SOV_Allied_lend_lease_I_ai
@@ -7859,6 +8795,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
@@ -7875,6 +8819,14 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 180
 			}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 180}
+								}
 				}
 				50 = { 
 				load_oob = SOV_Allied_lend_lease_I
@@ -7882,11 +8834,19 @@ country_event = {
 							idea = lend_lease_shipment
 							days = 365
 							}
+						ENG = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
+						USA = { add_timed_idea = {
+									idea = lend_lease_production
+									days = 365}
+								}
 						}
 					}
 				}
 				set_country_flag = alliedlendlease10
 			}
 }
-
+#402 > 421
 ### EOF ###

@@ -763,14 +763,10 @@ country_event = {
 		hidden_effect =  {
 			retire_country_leader = yes
 		}
-		create_country_leader = {
-			name = "Charles de Gaulle"
-			desc = "POLITICS_CHARLES_DE_GAULLE_DESC"
-			picture = "Portrait_France_Charles_De_Gaulle.dds"
-			expire = "1965.1.1"
-			ideology = populism
-			traits = {	
-			}
+		country_event = { id = france.77 }
+		add_popularity = {
+			ideology = liberalism
+			popularity = 0.3
 		}
 	}
 }
@@ -1228,13 +1224,8 @@ country_event = {
 	option = {
 		name = france.33.a
 		retire_country_leader = yes
-		create_country_leader = {
-			name = "Albert Sarraut"
-			desc = "POLITICS_ALBERT_SARRAUT_DESC"
-			picture = "Portrait_France_Albert_Sarraut.dds"
-			expire = "1965.1.1"
-			ideology = social_democracy
-		}
+		country_event = {id = france.76}
+		
 		set_country_flag = laval_resigned
 	}
 }
@@ -1251,16 +1242,8 @@ country_event = {
 	option = {
 		name = france.34.a
 		retire_country_leader = yes
-		create_country_leader = {
-			name = "Édouard Daladier"
-			desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
-			picture = "Portrait_France_Edouard_Daladier.dds"
-			expire = "1965.1.1"
-			ideology = social_liberalism
-			traits = {
-				stout_defender
-			}
-		}
+		country_event = {id = france.75}
+		
 		set_politics = {
 			ruling_party = liberalism
 			elections_allowed = yes
@@ -1419,13 +1402,15 @@ country_event = {
 			remove_idea = FRA_disjointed_government
 		}
 		retire_country_leader = yes
-		create_country_leader = {
-			name = "Camille Chautemps"
-			desc = "POLITICS_CAMILLE_CHAUTEMPS_DESC"
-			picture = "Portrait_France_Camille_Chautemps.dds"
-			expire = "1950.1.24"
-			ideology = moderate
-		}	
+		country_event = {id = france.74}
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = conservatism
+			popularity = 0.2
+		}
 		hidden_effect = {	
 			news_event = { hours = 6 id = news.179 }
 			set_country_flag = front_explosed
@@ -1532,18 +1517,7 @@ country_event = {
 		}
 		set_party_name = { ideology = fascism long_name = FRA_fascism_party3_long name = FRA_fascism_party3 }
 		retire_country_leader = yes
-		create_country_leader = {
-	name = "Philippe Pétain"
-	desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
-	picture = "Portrait_France_Philippe_Petain.dds"
-	expire = "1965.1.1"
-	ideology = vichy
-	traits = {
-	dictator
-	fascist_sympathies
-	war_hero
-	}
-}	
+		country_event = {id = france.73}	
 		add_timed_idea = { idea = reign_of_terror days = 730 }
 		add_popularity = {
 			ideology = fascism
@@ -1564,13 +1538,8 @@ country_event = {
 		}
 		set_party_name = { ideology = fascism long_name = FRA_fascism_party3_long name = FRA_fascism_party3 }
 		retire_country_leader = yes
-		create_country_leader = {
-			name = "Louis Franchet d'Espèrey"
-			desc = "POLITICS_FRANCHET_ESPEREY_DESC"
-			picture = "Portrait_France_Louis_Franchet_Esperey.tga"
-			expire = "1965.1.1"
-			ideology = fascism_ideology
-		}		
+		country_event = {id = france.71}
+		
 		add_timed_idea = { idea = reign_of_terror days = 730 }
 		add_popularity = {
 			ideology = fascism
@@ -1601,6 +1570,48 @@ country_event = {
 		}
 		set_party_name = { ideology = fascism long_name = FRA_fascism_party2_long name = FRA_fascism_party2 }
 		retire_country_leader = yes
+		country_event = {id = france.72}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+	}
+}
+country_event = {
+	id = france.71
+	title = france.71.t
+	desc = france.71.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#hidden = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = france.71.a
+		create_country_leader = {
+			name = "Louis Franchet d'Espèrey"
+			desc = "POLITICS_FRANCHET_ESPEREY_DESC"
+			picture = "Portrait_France_Louis_Franchet_Esperey.tga"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+		}		
+		
+	}
+
+}
+country_event = {
+	id = france.72
+	title = france.72.t
+	desc = france.72.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#hidden = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = france.72.a
 		create_country_leader = {
 			name = "Jacques Doriot"
 			desc = "POLITICS_JACQUES_DORIOT_DESC"
@@ -1611,7 +1622,131 @@ country_event = {
 		
 			}
 		}
+		
 	}
+
+}
+country_event = {
+	id = france.73
+	title = france.73.t
+	desc = france.73.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#hidden = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = france.73.a
+		create_country_leader = {
+	name = "Philippe Pétain"
+	desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
+	picture = "Portrait_France_Philippe_Petain.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+	dictator
+	fascist_sympathies
+	war_hero
+	}
+}	
+		
+	}
+
+}
+country_event = {
+	id = france.74
+	title = france.74.t
+	desc = france.74.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#hidden = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = france.74.a
+		create_country_leader = {
+			name = "Camille Chautemps"
+			desc = "POLITICS_CAMILLE_CHAUTEMPS_DESC"
+			picture = "Portrait_France_Camille_Chautemps.dds"
+			expire = "1950.1.24"
+			ideology = moderate
+		}	
+	
+	}
+
+}
+country_event = {
+	id = france.75
+	title = france.75.t
+	desc = france.75.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#hidden = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = france.75.a
+		create_country_leader = {
+			name = "Édouard Daladier"
+			desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
+			picture = "Portrait_France_Edouard_Daladier.dds"
+			expire = "1965.1.1"
+			ideology = social_liberalism
+			traits = {
+				stout_defender
+			}
+		}
+	}
+
+}
+country_event = {
+	id = france.76
+	title = france.76.t
+	desc = france.76.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#hidden = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = france.76.a
+		create_country_leader = {
+			name = "Albert Sarraut"
+			desc = "POLITICS_ALBERT_SARRAUT_DESC"
+			picture = "Portrait_France_Albert_Sarraut.dds"
+			expire = "1965.1.1"
+			ideology = social_democracy
+		}
+	}
+
+}
+country_event = {
+	id = france.77
+	title = france.77.t
+	desc = france.77.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#hidden = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = france.77.a
+		create_country_leader = {
+			name = "Charles de Gaulle"
+			desc = "POLITICS_CHARLES_DE_GAULLE_DESC"
+			picture = "Portrait_France_Charles_De_Gaulle.dds"
+			expire = "1965.1.1"
+			ideology = populism
+			traits = {	
+			}
+		}
+	}
+
 }
 
 # Demand Wallonia
@@ -3278,4 +3413,5 @@ country_event = {
 		}
 	}
 }
+# 71 > 77 
 ### EOF ###
