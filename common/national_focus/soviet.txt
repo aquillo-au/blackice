@@ -2772,7 +2772,40 @@ focus = {
 			}
 		}
 	}
-	
+	focus = {
+		id = SOV_fortify_brest_fortress
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = SOV_improve_stalin_line }
+		available = { 
+			has_offensive_war = no 
+			#NOT = { has_war_with = GER }
+			SOV = {
+			
+					AND = { owns_state = 94 controls_state = 94 }
+				
+				}
+			}
+
+		x = 7
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}	
+
+		completion_reward = {
+			94 = {
+				add_building_construction = {
+					type = bunker
+					level = 8
+					province = 3392
+					instant_build = yes
+				}
+				
+			}
+		
+		}
+	}
 	focus = {
 		id = SOV_fortify_molotov_line
 		icon = GFX_goal_generic_fortify_city
@@ -5495,14 +5528,14 @@ focus = {
 		#prerequisite = { focus =   }
 		x = 38
 		y = 6
-		cost = 1
+		cost = 5
 		available = {
 		or = {
 		and = {
 			has_war_with = GER
 			not = {has_idea = Rodina_I}
 			}
-			has_idea = soviet_workers_II
+			not = {has_idea = soviet_workers}
 			
 	}
 		}
@@ -5514,7 +5547,42 @@ focus = {
 		completion_reward = {
 		#country_event = {id = soviet.338 }
 		add_manpower = 4000000
-		add_ideas = proletariats_fight
+		add_timed_idea = {
+				idea = proletariats_fight
+				days = 365
+			}
+		
+		}
+	}
+	focus = {
+		id = SOV_onethousanders
+		icon = GFX_goal_generic_soviet_construction
+		#prerequisite = { focus =   }
+		x = 40
+		y = 6
+		cost = 5
+		available = {
+		or = {
+		and = {
+			has_war_with = GER
+			not = {has_idea = Rodina_I}
+			}
+			not = {has_idea = proletariats_fight}
+			
+	}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		
+		completion_reward = {
+		#country_event = {id = soviet.338 }
+		add_manpower = -4000000
+		add_timed_idea = {
+				idea = soviet_workers
+				days = 365
+			}
 		}
 	}
 	focus = {
@@ -5612,7 +5680,7 @@ focus = {
 	focus = {
 		id = SOV_ORDER_NO_227
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = SOV_Great_Patriotic_War  }
+		prerequisite = { focus = SOV_GreatPatriotic_War_speech  }
 		x = 40
 		y = 3
 		cost = 5
@@ -5677,7 +5745,7 @@ focus = {
 	#The Great Patriotic War  - Stalin speeches
 # short term bonus to economy or combat 
 focus = {
-		id = SOV_Great_Patriotic_War
+		id = SOV_GreatPatriotic_War_speech
 		icon = GFX_goal_stalin_portrait
 		prerequisite = { focus = SOV_stalins_paranoia  }
 		x = 40
@@ -5702,7 +5770,7 @@ focus = {
 focus = {
 		id = SOV_Operation_Kutuzov
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		prerequisite = { focus = SOV_Great_Patriotic_War }
+		prerequisite = { focus = SOV_GreatPatriotic_War_speech }
 		prerequisite = { focus = SOV_military_reorganization2 }
 		x = 42
 		y = 1
@@ -5727,7 +5795,7 @@ focus = {
 focus = {
 		id = SOV_Operation_Bagration
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		prerequisite = { focus = SOV_Great_Patriotic_War  }
+		prerequisite = { focus = SOV_GreatPatriotic_War_speech  }
 		prerequisite = { focus = SOV_military_reorganization2 }
 		x = 42
 		y = 2
@@ -5752,7 +5820,7 @@ focus = {
 focus = {
 		id = SOV_Operation_Suvorov
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		prerequisite = { focus = SOV_Great_Patriotic_War  }
+		prerequisite = { focus = SOV_GreatPatriotic_War_speech  }
 		prerequisite = { focus = SOV_military_reorganization2 }
 		x = 42
 		y = 3
@@ -5777,7 +5845,7 @@ focus = {
 focus = {
 		id = SOV_Icebreaker
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		#prerequisite = { focus = SOV_Great_Patriotic_War  }
+		#prerequisite = { focus = SOV_GreatPatriotic_War_speech  }
 		x = 42
 		y = 4
 		cost = 5
@@ -5817,6 +5885,33 @@ focus = {
 		}
 	}	
 #######################################################
+	focus = {
+		id = SOV_tankograd
+		icon = GFX_goal_tankograd
+		prerequisite = { focus = SOV_military_reorganization2 }
+		x = 46
+		y = 1
+		cost = 10
+		available = {
+			has_war_with = GER
+			SOV = { controls_state = 572 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+
+		
+		completion_reward = {
+			572  = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = tank_factory
+				level = 4
+				instant_build = yes
+			}
+		}
+		}
+	}	
 	#create soviet elite naval infantry
 
 	focus = {
@@ -5824,7 +5919,7 @@ focus = {
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = SOV_military_reorganization2 }
 		x = 46
-		y = 1
+		y = 3
 		cost = 7
 		available = {
 			has_war_with = GER
@@ -5976,7 +6071,7 @@ focus = {
 		icon = GFX_goal_generic_army_artillery2
 		#prerequisite = { focus =   }
 		x = 46
-		y = 2
+		y = 4
 		cost = 5
 		available = {
 			has_war = yes			
@@ -6011,7 +6106,7 @@ focus = {
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = SOV_military_reorganization2 }
 		x = 46
-		y = 3
+		y = 5
 		cost = 5
 		available = {
 			has_war = yes

@@ -2183,7 +2183,14 @@ country_event = {
 		tag = SOV
 		not = { has_country_flag = SOVwintercounteroffense }
 		has_war_with = GER
-		
+		not = {has_idea = Stalingrad_offensive}
+		not = {has_idea = winter_offensive}
+		or = {
+		NOT = { SOV = { controls_state = 242 }}
+		NOT = { SOV = { controls_state = 205 }}
+		NOT = { SOV = { controls_state = 222 }}
+		date >1941.12.1
+		}
 		# german advance check
 		or = {
 		NOT = { SOV = { controls_state = 260 }}
@@ -2239,8 +2246,15 @@ country_event = {
 		tag = SOV
 		not = { has_country_flag = SOVwintercounteroffense }
 		has_war_with = GER
-		
+		not = {has_idea = Stalingrad_offensive}
+		not = {has_idea = winter_offensive}
 		# german advance check
+		or = {
+		NOT = { SOV = { controls_state = 242 }}
+		NOT = { SOV = { controls_state = 205 }}
+		NOT = { SOV = { controls_state = 222 }}
+		date >1941.12.1
+		}
 		or = {
 		NOT = { SOV = { controls_state = 260 }}
 		NOT = { SOV = { controls_state = 223 }}
@@ -2343,12 +2357,15 @@ country_event = {
 		tag = SOV
 		not = { has_country_flag = SOVstalingraddefence }
 		has_war_with = GER
+		not = {has_idea = winter_offensive}
 		
 		# german advance check
 		or = {
 		NOT = { SOV = { controls_state = 245 }}
+		NOT = { SOV = { controls_state = 238 }}
+		}
+		or = {
 		NOT = { SOV = { controls_state = 217 }}
-
 		NOT = { SOV = { controls_state = 228 }}
 		NOT = { SOV = { controls_state = 260 }}
 		NOT = { SOV = { controls_state = 218 }}
@@ -2647,7 +2664,7 @@ country_event = {
 		}
 	
 	mean_time_to_happen = {
-		days = 30
+		months = 4
 	}
 	
 	option = {
@@ -5178,12 +5195,7 @@ country_event = {
 		#GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_II }
-		NOT = { has_idea = BalticAttack_III }
-		NOT = { has_idea = CounterAttack_I }
-		NOT = { has_idea = CounterAttack_III }
-		NOT = { has_idea = CounterAttack_IV }
+		
 		or = {
 		NOT = { controls_state = 206 }
 		NOT = { controls_state = 202 }
@@ -5195,9 +5207,16 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
-	
+	immediate = { 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }
+		NOT = { has_idea = CounterAttack_I }
+		NOT = { has_idea = CounterAttack_III }
+		NOT = { has_idea = CounterAttack_IV }
+	}
 	option = { 
 		name = soviet.313.a
 		hidden_effect = {
@@ -5226,12 +5245,7 @@ country_event = {
 		#GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_II }
-		NOT = { has_idea = BalticAttack_III }
-		NOT = { has_idea = CounterAttack_I }
-		NOT = { has_idea = CounterAttack_II }
-		NOT = { has_idea = CounterAttack_IV }
+	
 		or = {
 		NOT = { controls_state = 209 }
 		NOT = { controls_state = 224 }
@@ -5243,9 +5257,16 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
-	
+	immediate = { 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }
+		NOT = { has_idea = CounterAttack_I }
+		NOT = { has_idea = CounterAttack_II }
+		NOT = { has_idea = CounterAttack_IV }
+	}
 	option = { 
 		name = soviet.314.a
 		hidden_effect = {
@@ -5274,12 +5295,7 @@ country_event = {
 		#GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_II }
-		NOT = { has_idea = BalticAttack_III }
-		NOT = { has_idea = CounterAttack_I }
-		NOT = { has_idea = CounterAttack_II }
-		NOT = { has_idea = CounterAttack_III }
+		
 		or = {
 		NOT = { controls_state = 242 }
 		NOT = { controls_state = 227 }
@@ -5290,9 +5306,16 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
-	
+	immediate = { 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }
+		NOT = { has_idea = CounterAttack_I }
+		NOT = { has_idea = CounterAttack_II }
+		NOT = { has_idea = CounterAttack_III }
+	}
 	option = { 
 		name = soviet.315.a
 		hidden_effect = {
@@ -5321,10 +5344,7 @@ country_event = {
 		GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-		
-		NOT = { has_idea = BalticAttack_II }
-		NOT = { has_idea = BalticAttack_III }
-		
+				
 		or = {
 		11 = { is_owned_by = GER }
 		GER = { controls_state = 11 } # LIT
@@ -5335,9 +5355,12 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
-	
+	immediate = { 
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }
+	}
 	option = { 
 		name = soviet.316.a
 		hidden_effect = {
@@ -5369,9 +5392,7 @@ country_event = {
 		GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_III }
-		
+				
 		or = {
 		12 = { is_owned_by = GER }
 		GER = { controls_state = 12 } # LAT
@@ -5382,9 +5403,12 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
-	
+	immediate = { 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_III }
+	}
 	option = { 
 		name = soviet.317.a
 		hidden_effect = {
@@ -5416,9 +5440,7 @@ country_event = {
 		GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_II }
-		
+				
 		or = {
 		13 = { is_owned_by = GER }
 		GER = { controls_state = 13 } # EST
@@ -5430,9 +5452,12 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
-	
+	immediate = { 
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }
+	}
 	option = { 
 		name = soviet.318.a
 		hidden_effect = {
@@ -7375,6 +7400,7 @@ country_event = {
 		ENG = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = UK_soviet_lend_lease
 		not = { has_global_flag = UK_soviet_lend_lease_II }
 	}
 
@@ -7493,6 +7519,7 @@ country_event = {
 		ENG = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = UK_soviet_lend_lease_II
 		not = { has_global_flag = UK_soviet_lend_lease_III }
 	}
 
@@ -7527,6 +7554,10 @@ country_event = {
 		USA = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		or = {
+		has_global_flag = UK_soviet_lend_lease
+		has_global_flag = UK_soviet_lend_lease_II
+		has_global_flag = UK_soviet_lend_lease_III}
 		not = { has_global_flag = US_soviet_lend_lease }
 	}
 
@@ -7665,6 +7696,7 @@ country_event = {
 		ENG = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = UK_soviet_lend_lease_III
 		not = { has_global_flag = UK_soviet_lend_lease_IV }
 	}
 
@@ -7699,6 +7731,7 @@ country_event = {
 		USA = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = US_soviet_lend_lease
 		not = { has_global_flag = US_soviet_lend_lease_I }
 	}
 
@@ -7836,6 +7869,7 @@ country_event = {
 		ENG = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = UK_soviet_lend_lease_IV
 		not = { has_global_flag = UK_soviet_lend_lease_V }
 	}
 
@@ -7870,6 +7904,7 @@ country_event = {
 		USA = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = US_soviet_lend_lease_I
 		not = { has_global_flag = US_soviet_lend_lease_II }
 	}
 
@@ -8007,6 +8042,7 @@ country_event = {
 		ENG = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = UK_soviet_lend_lease_V
 		not = { has_global_flag = UK_soviet_lend_lease_VI }
 	}
 
@@ -8041,6 +8077,7 @@ country_event = {
 		USA = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = US_soviet_lend_lease_II
 		not = { has_global_flag = US_soviet_lend_lease_III }
 	}
 
@@ -8178,6 +8215,7 @@ country_event = {
 		ENG = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = UK_soviet_lend_lease_VI
 		not = { has_global_flag = UK_soviet_lend_lease_VII }
 	}
 
@@ -8212,6 +8250,7 @@ country_event = {
 		USA = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = US_soviet_lend_lease_III
 		not = { has_global_flag = US_soviet_lend_lease_IV }
 	}
 
@@ -8349,6 +8388,7 @@ country_event = {
 		ENG = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = UK_soviet_lend_lease_VII
 		not = { has_global_flag = UK_soviet_lend_lease_VIII }
 	}
 
@@ -8383,6 +8423,7 @@ country_event = {
 		USA = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = US_soviet_lend_lease_IV
 		not = { has_global_flag = US_soviet_lend_lease_V }
 	}
 
@@ -8520,6 +8561,7 @@ country_event = {
 		ENG = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = UK_soviet_lend_lease_VIII
 		not = { has_global_flag = UK_soviet_lend_lease_IX }
 	}
 
@@ -8554,6 +8596,7 @@ country_event = {
 		USA = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = US_soviet_lend_lease_V
 		not = { has_global_flag = US_soviet_lend_lease_VI }
 	}
 
@@ -8692,6 +8735,7 @@ country_event = {
 		ENG = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		has_global_flag = UK_soviet_lend_lease_IX
 		not = { has_global_flag = UK_soviet_lend_lease_X }
 	}
 
@@ -8726,6 +8770,7 @@ country_event = {
 		USA = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
+		 has_global_flag = US_soviet_lend_lease_VI
 		not = { has_global_flag = US_soviet_lend_lease_VII }
 	}
 
