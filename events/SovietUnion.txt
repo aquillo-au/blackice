@@ -5156,6 +5156,8 @@ country_event = {
 		or = {
 		NOT = { controls_state = 97 }
 		NOT = { controls_state = 91 }
+		}
+		or = {
 		NOT = { controls_state = 94 }
 		NOT = { controls_state = 93 }
 		
@@ -5164,9 +5166,11 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
-	
+	immediate = { 
+		set_country_flag = CounterAttackone
+	}
 	option = { 
 		name = soviet.312.a
 		hidden_effect = {
@@ -5176,7 +5180,7 @@ country_event = {
 				days = 7
 			}
 	}
-	set_country_flag = CounterAttackone
+	#set_country_flag = CounterAttackone
 	GER = { country_event = soviet.318 }
 }
 }
@@ -5195,12 +5199,20 @@ country_event = {
 		#GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-		
+		has_country_flag = CounterAttackone
+		not = { has_idea = BalticAttack_I }
+		not = { has_idea = BalticAttack_II }
+		not = { has_idea = BalticAttack_III }
+		not = { has_idea = CounterAttack_I }
+		not = { has_idea = CounterAttack_III }
+		not = { has_idea = CounterAttack_IV }
 		or = {
-		NOT = { controls_state = 206 }
-		NOT = { controls_state = 202 }
-		NOT = { controls_state = 192 }
-		NOT = { controls_state = 840 }
+		not = { controls_state = 206 }
+		not = { controls_state = 202 }
+		}
+		or = {
+		not = { controls_state = 192 }
+		not = { controls_state = 840 }
 		
 		}
 		#has_country_flag = forthemotherland
@@ -5210,12 +5222,7 @@ country_event = {
 		days = 2
 	}
 	immediate = { 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_II }
-		NOT = { has_idea = BalticAttack_III }
-		NOT = { has_idea = CounterAttack_I }
-		NOT = { has_idea = CounterAttack_III }
-		NOT = { has_idea = CounterAttack_IV }
+		set_country_flag = CounterAttacktwo
 	}
 	option = { 
 		name = soviet.313.a
@@ -5226,7 +5233,7 @@ country_event = {
 				days = 7
 			}
 	}
-	set_country_flag = CounterAttacktwo
+	#set_country_flag = CounterAttacktwo
 	GER = { country_event = soviet.319 }
 }
 }
@@ -5245,12 +5252,20 @@ country_event = {
 		#GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-	
+		has_country_flag = CounterAttacktwo
+		not = { has_idea = BalticAttack_I }
+		not = { has_idea = BalticAttack_II }
+		not = { has_idea = BalticAttack_III }
+		not = { has_idea = CounterAttack_I }
+		not = { has_idea = CounterAttack_II }
+		not = { has_idea = CounterAttack_IV }
 		or = {
-		NOT = { controls_state = 209 }
-		NOT = { controls_state = 224 }
-		NOT = { controls_state = 207 }
-		NOT = { controls_state = 221 }
+		not = { controls_state = 209 }
+		not = { controls_state = 224 }
+		}
+		or = {
+		not = { controls_state = 207 }
+		not = { controls_state = 221 }
 		
 		}
 		#has_country_flag = forthemotherland
@@ -5260,12 +5275,7 @@ country_event = {
 		days = 2
 	}
 	immediate = { 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_II }
-		NOT = { has_idea = BalticAttack_III }
-		NOT = { has_idea = CounterAttack_I }
-		NOT = { has_idea = CounterAttack_II }
-		NOT = { has_idea = CounterAttack_IV }
+		set_country_flag = CounterAttackthree
 	}
 	option = { 
 		name = soviet.314.a
@@ -5276,7 +5286,7 @@ country_event = {
 				days = 7
 			}
 	}
-	set_country_flag = CounterAttackthree
+	#set_country_flag = CounterAttackthree
 	GER = { country_event = soviet.320 }
 }
 }
@@ -5295,12 +5305,20 @@ country_event = {
 		#GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-		
+		has_country_flag = CounterAttackthree
+		not = { has_idea = BalticAttack_I }
+		not = { has_idea = BalticAttack_II }
+		not = { has_idea = BalticAttack_III }
+		not = { has_idea = CounterAttack_I }
+		not = { has_idea = CounterAttack_II }
+		not = { has_idea = CounterAttack_III }
 		or = {
-		NOT = { controls_state = 242 }
-		NOT = { controls_state = 227 }
-		NOT = { controls_state = 220 }
-		NOT = { controls_state = 208 }
+		not = { controls_state = 242 }
+		not = { controls_state = 227 }
+		}
+		or = {
+		not = { controls_state = 220 }
+		not = { controls_state = 208 }
 		}
 		#has_country_flag = forthemotherland
 	}
@@ -5309,12 +5327,7 @@ country_event = {
 		days = 2
 	}
 	immediate = { 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_II }
-		NOT = { has_idea = BalticAttack_III }
-		NOT = { has_idea = CounterAttack_I }
-		NOT = { has_idea = CounterAttack_II }
-		NOT = { has_idea = CounterAttack_III }
+		set_country_flag = CounterAttackfour
 	}
 	option = { 
 		name = soviet.315.a
@@ -5325,7 +5338,7 @@ country_event = {
 				days = 7
 			}
 	}
-	set_country_flag = CounterAttackfour
+	#set_country_flag = CounterAttackfour
 	GER = { country_event = soviet.321 }
 }
 }
@@ -5344,7 +5357,8 @@ country_event = {
 		GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-				
+		NOT = { has_idea = BalticAttack_II }
+		NOT = { has_idea = BalticAttack_III }		
 		or = {
 		11 = { is_owned_by = GER }
 		GER = { controls_state = 11 } # LIT
@@ -5358,8 +5372,7 @@ country_event = {
 		days = 2
 	}
 	immediate = { 
-		NOT = { has_idea = BalticAttack_II }
-		NOT = { has_idea = BalticAttack_III }
+		
 	}
 	option = { 
 		name = soviet.316.a
@@ -5392,7 +5405,8 @@ country_event = {
 		GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-				
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_III }	
 		or = {
 		12 = { is_owned_by = GER }
 		GER = { controls_state = 12 } # LAT
@@ -5406,8 +5420,7 @@ country_event = {
 		days = 2
 	}
 	immediate = { 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_III }
+		
 	}
 	option = { 
 		name = soviet.317.a
@@ -5440,7 +5453,8 @@ country_event = {
 		GER = {is_ai = no}
 		is_puppet = no
 		exists = yes 
-				
+		NOT = { has_idea = BalticAttack_I }
+		NOT = { has_idea = BalticAttack_II }		
 		or = {
 		13 = { is_owned_by = GER }
 		GER = { controls_state = 13 } # EST
@@ -5455,8 +5469,7 @@ country_event = {
 		days = 2
 	}
 	immediate = { 
-		NOT = { has_idea = BalticAttack_I }
-		NOT = { has_idea = BalticAttack_II }
+		
 	}
 	option = { 
 		name = soviet.318.a
