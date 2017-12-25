@@ -593,6 +593,7 @@ focus_tree = {
 				is_puppet = no
 			}
 			NOT = { has_war_with = POL }
+			NOT = { POL= { is_in_faction_with = ENG }}
 			is_subject = no
 		}
 
@@ -602,7 +603,7 @@ focus_tree = {
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
-		available_if_capitulated = yes
+		available_if_capitulated = no
 
 		complete_tooltip = {
 
