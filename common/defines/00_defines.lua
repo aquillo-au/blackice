@@ -1133,8 +1133,8 @@ NAI = {
 	COMBINED_ARMS_LEVEL = 1,								-- 0 = Never, 1 = Infantry/Artillery, 2 = Go wild
 	MAX_DISTANCE_NALAV_INVASION = 75.0,					-- DNM, changed from 500 (AI Mod) -- AI is extremely unwilling to plan naval invasions above this naval distance limit.
 	ENEMY_NAVY_STRENGTH_DONT_BOTHER = 2.0,					-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
-	MIN_SUPPLY_USE_SANITY_CAP = 100,						-- Ignore supply cap if below this value when deciding on how many divisions to produce.
-	MAX_SUPPLY_DIVISOR = 5,								-- DNM, original 2 (AI mod) To make sure the AI does not overdeploy divisions. Higher number means more supply per unit.
+	MIN_SUPPLY_USE_SANITY_CAP = 1000,						-- Ignore supply cap if below this value when deciding on how many divisions to produce.
+	MAX_SUPPLY_DIVISOR = 100,								-- DNM, original 2 (AI mod) To make sure the AI does not overdeploy divisions. Higher number means more supply per unit.
 	MISSING_CONVOYS_BOOST_FACTOR = 8.5,					-- The more convoys a country is missing, the more resources it diverts to cover this.
 	TRANSPORTS_PER_PARATROOPER = 60,						-- Air transports only duty is to drop paratroopers.
 	MAX_MICRO_ATTACKS_PER_ORDER = 5,						-- AI goes through its orders and checks if there are situations to take advantage of
