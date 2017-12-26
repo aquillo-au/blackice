@@ -5486,6 +5486,151 @@ focus = {
 		}
 	}
 	
+	focus = {
+		id = uk_egypt_focus
+		prerequisite = { focus = uk_south_africa_focus }
+		available = {
+			is_in_faction_with = EGY
+		} 
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 31
+		y = 7
+		cost = 10
+		bypass = {
+			EGY = {
+				custom_trigger_tooltip = {
+					tooltip = construction_effort_tt
+					all_owned_state = {
+						free_building_slots = {
+							building = industrial_complex
+							size < 1
+							include_locked = yes
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = naval_effort_tt
+					all_owned_state = {
+						free_building_slots = {
+							building = dockyard
+							size < 1
+							include_locked = yes
+						}
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			EGY = {
+				add_opinion_modifier = { target = ENG modifier = aided_industry }
+				every_state = { limit = { has_state_flag = ENG_uk_south_africa_focus_2IC }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				every_state = { limit = { has_state_flag = ENG_uk_south_africa_focus_1IC }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				every_state = { limit = { has_state_flag = ENG_uk_south_africa_focus_1dockyard }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+					add_autonomy_ratio = {
+					value = -0.05
+					localization = uk_south_africa_focus
+				}
+			}
+		}
+
+		completion_reward = {
+			EGY = {
+				add_opinion_modifier = { target = ENG modifier = aided_industry }
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+					set_state_flag = ENG_uk_south_africa_focus_2IC
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = ENG_uk_south_africa_focus_1IC
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = ENG_uk_south_africa_focus_1dockyard
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = ENG_uk_south_africa_focus_1dockyard
+				}
+				add_autonomy_ratio = {
+					value = -0.05
+					localization = uk_egypt_focus
+				}
+			}
+		}
+	}
 	
 	focus = {
 		id = ENG_collect_metals
@@ -5496,7 +5641,7 @@ focus = {
 		cost = 10
 		
 		available = {
-		has_war= yes
+			has_war= yes
 		}
 		ai_will_do = {
 			factor = 3
@@ -5507,124 +5652,124 @@ focus = {
 			add_ideas = ENG_metal_collection
 			
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = steel
-						amount = 20
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = steel
+					amount = 20
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = steel
-						amount = 30
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = steel
+					amount = 30
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = steel
-						amount = 20
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = steel
+					amount = 20
 				}
+			}
 			random_owned_controlled_state = {
-					add_resource = {
-						type = steel
-						amount = 10
-					}
+				add_resource = {
+					type = steel
+					amount = 10
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = tungsten
-						amount = 3
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = tungsten
+					amount = 3
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = tungsten
-						amount = 2
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = tungsten
+					amount = 2
 				}
+			}
 			random_owned_controlled_state = {
-					add_resource = {
-						type = tungsten
-						amount = 1
-					}
+				add_resource = {
+					type = tungsten
+					amount = 1
 				}
+			}
 			random_owned_controlled_state = {
-					add_resource = {
-						type = tungsten
-						amount = 1
-					}
+				add_resource = {
+					type = tungsten
+					amount = 1
 				}
+			}
 			random_owned_controlled_state = {
-					add_resource = {
-						type = chromium
-						amount = 1
-					}
+				add_resource = {
+					type = chromium
+					amount = 1
 				}
+			}
 			random_owned_controlled_state = {
-					add_resource = {
-						type = chromium
-						amount = 1
-					}
+				add_resource = {
+					type = chromium
+					amount = 1
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = chromium
-						amount = 2
-					}
-				}	
-			random_owned_controlled_state = {
-					add_resource = {
-						type = chromium
-						amount = 1
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = chromium
+					amount = 2
 				}
-			
+			}	
+			random_owned_controlled_state = {
+				add_resource = {
+					type = chromium
+					amount = 1
+				}
+			}
 		}
 	}
 	
-#Advanced Air Striking Force (AASF)
-#Ordering of the battleship HMS King George V
-#Ordering of the battleship HMS Prince Of Wales
-#Ordering of the battleship HMS Duke Of York
-#Ordering of the battleship HMS Anson
-#Ordering of the battleship HMS Howe
-#Indomitable Class
-#Implacable Class
-#Audacious Class
-#
-#Recommission of HMS Argus
-#
+	#Advanced Air Striking Force (AASF)
+	#Ordering of the battleship HMS King George V
+	#Ordering of the battleship HMS Prince Of Wales
+	#Ordering of the battleship HMS Duke Of York
+	#Ordering of the battleship HMS Anson
+	#Ordering of the battleship HMS Howe
+	#Indomitable Class
+	#Implacable Class
+	#Audacious Class
+	#
+	#Recommission of HMS Argus
+	#
 
-#
-#Honey tanks
-#M3 Grants
-#sherman tanks - fireflies
+	#
+	#Honey tanks
+	#M3 Grants
+	#sherman tanks - fireflies
 
-#ENG_western_desert_force
-#ENG_XXX_corps
-#commonwealth troops
+	#ENG_western_desert_force
+	#ENG_XXX_corps
+	#commonwealth troops
 
-#community farming
-
-
-
-#mechanized infantry 
-#motorised artillery
-#remove horses/cavalry
-
-
-#convoys
-#build more air/ sea bases 
-#fortify some islands/ VPs
+	#community farming
 
 
 
-#fighter sweeps over france
-############################### EOF
+	#mechanized infantry 
+	#motorised artillery
+	#remove horses/cavalry
+
+
+	#convoys
+	#build more air/ sea bases 
+	#fortify some islands/ VPs
+
+
+
+	#fighter sweeps over france
+
 }
+### EOF ###

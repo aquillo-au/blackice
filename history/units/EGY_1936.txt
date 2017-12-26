@@ -1,0 +1,222 @@
+﻿	
+division_template = {
+	name = "Egypt Infantry"	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		artillery_brigade_mot = { x = 3 y = 0 }
+		artillery_brigade_mot = { x = 3 y = 1 }
+		artillery_brigade_mot = { x = 3 y = 2 }
+	}
+	support = {
+       		DIV_HQ = { x = 0 y = 0 }
+		recon_mot = { x = 0 y = 1 }
+	 	engineer = { x = 0 y = 2 }
+		maintenance_company = { x = 1 y = 0 }
+		logistics_company = { x = 1 y = 1 }
+		field_hospital = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Garrison"	
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+
+		garrison = { x = 1 y = 0 }
+		garrison = { x = 1 y = 1 }
+		garrison = { x = 1 y = 2 }
+
+		garrison = { x = 2 y = 0 }
+		garrison = { x = 2 y = 1 }
+		garrison = { x = 2 y = 2 }
+
+		artillery_brigade_mot = { x = 3 y = 0 }
+		
+	}
+	support = {
+        		DIV_HQ = { x = 0 y = 0 }
+		
+	}
+}
+division_template = {
+	name = "Egypt Cavalry"  
+	# Note: all forces at reserve levels in 1936
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+		semi_motorized = { x = 1 y = 0 }
+		semi_motorized = { x = 1 y = 1 }
+		semi_motorized = { x = 1 y = 2 }
+		semi_motorized = { x = 1 y = 3 }
+	}
+	 support = {
+		DIV_HQ = { x = 0 y = 0 }
+		recon_cav = { x = 0 y = 1 }
+	}
+}
+units = {
+	division= {	
+		name = "Cairo Division"
+		location = 7011
+		division_template = "Garrison"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "Alexandria Division"
+		location = 4076
+		division_template = "Garrison"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "1. Infantry"
+		location = 7011
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "Sinai Division"
+		location = 10099
+		division_template = "Egypt Cavalry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+
+	}
+}
+units = {
+	division= {	
+		name = "2. Infantry"
+		location = 5078
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "3. Infantry"
+		location = 7011
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "4. Infantry"
+		location = 1071
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}	
+units = {
+	division= {	
+		name = "5. Infantry"
+		location = 13502
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "6. Infantry"
+		location = 10002
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "7. Infantry"
+		location = 4161
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "8. Infantry"
+		location = 4161
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "9. Infantry"
+		location = 4161
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "10. Infantry"
+		location = 4161
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+units = {
+	division= {	
+		name = "11. Infantry"
+		location = 4161
+		division_template = "Egypt Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+
+	}
+}
+
+	#########################
+	## STARTING PRODUCTION ##
+	#########################
+
+instant_effect = {
+		add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+		}
+		requested_factories = 1
+		progress = 0.1
+		efficiency = 50
+	}
+}
