@@ -4073,10 +4073,17 @@ focus_tree = {
 		x = -16
 		y = 3
 		cost = 1.4
+		
 		ai_will_do = {
 			factor = 5
 		}	
+		
+		available = {
+			date > 1940.07.1
+		}
+		
 		available_if_capitulated = yes
+		
 		completion_reward = {
 			add_tech_bonus = {
 				name = fighter_focus
@@ -4094,10 +4101,17 @@ focus_tree = {
 		x = -14
 		y = 3
 		cost = 1.4
+		
 		ai_will_do = {
 			factor = 5
 		}	
+		
+		available = {
+			date > 1938.07.1
+		}
+		
 		available_if_capitulated = yes
+		
 		completion_reward = {
 			add_tech_bonus = {
 				name = fighter_focus
@@ -4115,12 +4129,18 @@ focus_tree = {
 		x = -16
 		y = 4
 		cost = 1.4
+		
 		ai_will_do = {
 			factor = 5
 		}	
+		
+		available = {
+			date > 1942.07.1
+		}
 		available_if_capitulated = yes
+		
 		completion_reward = {
-		add_tech_bonus = {
+			add_tech_bonus = {
 				name = fighter_focus
 				bonus = 0.5
 				uses = 1
@@ -4136,10 +4156,16 @@ focus_tree = {
 		x = -14
 		y = 4
 		cost = 1.4
+		
 		ai_will_do = {
 			factor = 5
 		}	
+		available = {
+			date > 1941.07.1
+		}
+		
 		available_if_capitulated = yes
+		
 		completion_reward = {
 			add_tech_bonus = {
 				name = fighter_focus
@@ -4261,12 +4287,13 @@ focus_tree = {
 		x = -19
 		y = 7
 		cost = 1.4
+		
 		ai_will_do = {
 			factor = 5
 		}
 		available_if_capitulated = yes	
+		
 		completion_reward = {
-			
 			add_tech_bonus = {
 				name = bomber_bonus
 				bonus = 0.25
@@ -4274,7 +4301,13 @@ focus_tree = {
 				technology = tech_ju_87_equipment_1
 				technology = tech_ju_87_equipment_2			
 			}
+		}
 		
+		bypass = { 
+			GER = { 
+				has_tech = tech_ju_87_equipment_1
+				has_tech = tech_ju_87_equipment_2
+			}
 		}
 	}
 	focus = {
