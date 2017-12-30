@@ -8908,3 +8908,58 @@ country_event = {
 }
 #402 > 421
 ### EOF ###
+country_event = {
+	id = soviet.422
+	title = soviet.422.t
+	desc = soviet.422.d
+	picture = GFX_report_event_spain_civil_war_volunteers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_global_flag = spanish_civil_war
+		has_war = no
+		NOT = { has_global_flag = scw_over }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.422.a
+		
+		add_ideas = communist_spirit
+	}
+	
+}
+country_event = {
+	id = soviet.423
+	title = soviet.423.t
+	desc = soviet.423.d
+	picture = GFX_report_event_fallen_soviet
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		has_global_flag = spanish_civil_war
+		has_war = no
+		or = {
+		has_global_flag = scw_over 
+		has_war = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = soviet.423.a
+		
+		remove_ideas = communist_spirit
+	}
+	
+}
