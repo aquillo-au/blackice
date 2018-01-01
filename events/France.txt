@@ -3391,27 +3391,44 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-        tag = ENG
+        		tag = ENG
+				#has_country_flag = ENG_commando_units
+				is_ai = yes
 		or = {
 		VIC = { is_in_faction_with = GER }
 		VIC = { is_in_faction_with = JAP }
-		has_start_date > 1942.11.08
+		date > 1942.5.5
 		has_war_with = VIC
 		}
 	}
 	
 	option = {
 		name = france.70.a
-		if = {
-			limit = { 
-				VIC = { 
-					controls_state = 543
-				}
-			}
-			transfer_state = 543
-			543 = { add_core_of = ENG}
+		trigger = {
+		VIC = {has_war_with = ENG}
+		VIC = { controls_state = 543}
 		}
+		
+			load_oob = ENG_madagascar_invasion
 	}
+	option = {
+		name = france.70.b
+		trigger = {
+		VIC = {not = { has_war_with = ENG}}
+		VIC = { controls_state = 543}
+		}
+			
+					transfer_state = 543
+					#543 = { add_core_of = ENG}
+		}
+	option = {
+		name = france.70.c
+		trigger = {
+		GER = { controls_state = 543}
+		}
+	
+			load_oob = ENG_madagascar_invasion
+	}			
 }
 # 71 > 77 
 ### EOF ###
