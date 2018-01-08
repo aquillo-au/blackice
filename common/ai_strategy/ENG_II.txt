@@ -1,105 +1,110 @@
 ## area priorities for ENGLAND
+#
+#ENG_protect_island_war = {
+#	enable = {
+#		tag = ENG
+#		has_war = yes
+#	}
+#	abort = {
+#		tag = ENG
+#		has_war = no
+#	}
+#
+#	ai_strategy = { 
+#		type = area_priority        
+#		id = britain 			      
+#		value = 500 
+#	} 
+#}
+#
 
-ENG_protect_island_war = {
+ENG_protect_island_during_sealion_phase = {
 	enable = {
 		tag = ENG
-		has_war = no
+		#has_war_with = GER
+		GER = { has_completed_focus = GER_danzig_or_war }
+		
 	}
 	abort = {
 		tag = ENG
-		has_war = yes
+		GER = { has_war_with = SOV }
+		OR = {
+		has_capitulated = yes }
 	}
 
 	ai_strategy = { 
 		type = area_priority        
 		id = britain 			      
-		value = 500 
+		value = 500
 	} 
 }
 
-ENG_protect_island_peace = {
-	enable = {
-		tag = ENG
-		has_war = yes
-	}
-	abort = {
-		tag = ENG
-		has_war = no
-	}
-
-	ai_strategy = { 
-		type = area_priority        
-		id = britain 			      
-		value = 1000
-	} 
-}
-
-ENG_dont_protect_raj = {
-	enable = {
-		AND = {
-			tag = ENG
-			has_war = yes
-		}
-		AND = { 
-			RAJ = {
-				is_subject_of = ENG
-				surrender_progress > 0.5
-			}
-			ENG = {
-				surrender_progress < 0.75
-			}			
-		}
-	}
-	
-	abort = {
-		NOT = { 
-			RAJ = {
-				surrender_progress > 0.5
-			}
-			ENG = {
-				surrender_progress < 0.75
-			}			
-		}
-	}
-
-	ai_strategy = { 
-		type = area_priority        
-		id = india 			      
-		value = -1000 
-	} 
-}
-
-ENG_dont_protect_saf = {
-	enable = {
-		AND = {
-			tag = ENG
-			has_war = yes
-		}
-		AND = { 
-			SAF = {
-				is_subject_of = ENG
-				surrender_progress > 0.5
-			}
-			ENG = {
-				surrender_progress < 0.75
-			}			
-		}
-	}
-	
-	abort = {
-		NOT = { 
-			SAF = {
-				surrender_progress > 0.5
-			}
-			ENG = {
-				surrender_progress < 0.75
-			}			
-		}
-	}
-
-	ai_strategy = { 
-		type = area_priority        
-		id = south_africa 			      
-		value = -1000 
-	} 
-}
+#ENG_dont_protect_raj = {
+#	enable = {
+#		AND = {
+#			tag = ENG
+#			has_war = yes
+#		}
+#		AND = { 
+#			RAJ = {
+#				is_subject_of = ENG
+#				surrender_progress > 0.5
+#			}
+#			ENG = {
+#				surrender_progress < 0.75
+#			}			
+#		}
+#	}
+#	
+#	abort = {
+#		NOT = { 
+#			RAJ = {
+#				surrender_progress > 0.5
+#			}
+#			ENG = {
+#				surrender_progress < 0.75
+#			}			
+#		}
+#	}
+#
+#	ai_strategy = { 
+#		type = area_priority        
+#		id = india 			      
+#		value = -1000 
+#	} 
+#}
+#
+#ENG_dont_protect_saf = {
+#	enable = {
+#		AND = {
+#			tag = ENG
+#			has_war = yes
+#		}
+#		AND = { 
+#			SAF = {
+#				is_subject_of = ENG
+#				surrender_progress > 0.5
+#			}
+#		ENG = {
+#				surrender_progress < 0.75
+#		}			
+#		}
+#	}
+#	
+#	abort = {
+#		NOT = { 
+#			SAF = {
+#				surrender_progress > 0.5
+#			}
+#			ENG = {
+#				surrender_progress < 0.75
+#			}			
+#		}
+#	}
+#
+#	ai_strategy = { 
+#		type = area_priority        
+#		id = south_africa 			      
+#		value = -1000 
+#	} 
+#}

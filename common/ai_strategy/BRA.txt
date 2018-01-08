@@ -1,0 +1,15 @@
+brazil_ignore_chi = {
+	enable = {
+		tag = BRA  tag = URG tag = ARG tag = MEX
+		date > 1937.3.31
+		country_exists = CHI
+	}
+	abort = {
+		always = no
+	}
+	
+	ai_strategy = {  type = befriend  id = "CHI" value = -200}
+	ai_strategy = {  type = befriend  id = "JAP" value = -200}
+	ai_strategy = { type = ignore id = "CHI" value = 100 }	
+	ai_strategy = { type = ignore id = "JAP" value = 100 }	
+}

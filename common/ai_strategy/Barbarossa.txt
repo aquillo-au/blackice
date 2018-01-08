@@ -1,0 +1,26 @@
+help_germany = {
+	enable = {
+		tag = HUN
+		tag = ROM
+		GER = { has_war_with = SOV }
+		HUN = { has_war_with = SOV }
+		ROM = { has_war_with = SOV }
+	}
+	abort = {
+		ROM = { has_capitulated = yes }
+		HUN = { has_capitulated = yes }
+	OR = {
+		SOV = { has_capitulated = yes }
+		}
+	}
+	ai_strategy = {
+		type = conquer
+		id = "SOV"			
+		value = 500
+	}
+	ai_strategy = {
+		type = antagonize
+		id = "SOV"
+		value = 500
+	}
+}
