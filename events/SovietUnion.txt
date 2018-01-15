@@ -2968,6 +2968,7 @@ country_event = {
 					controls_state = 98
 					controls_state = 10
 					controls_state = 928
+					controls_state = 988
 					owns_state = 929
 				}
 			}
@@ -2988,6 +2989,7 @@ country_event = {
 						owns_state = 10
 						owns_state = 928
 						owns_state = 929
+						owns_state = 988
 						AND = {
 							POL = { has_capitulated = yes }
 							OR = {
@@ -3000,6 +3002,7 @@ country_event = {
 								controls_state = 98
 								controls_state = 10
 								controls_state = 928
+								controls_state = 988
 								owns_state = 929
 							}
 						}		
@@ -3180,6 +3183,21 @@ country_event = {
 		}
 		if = {
 			limit = {
+				988 = {
+					OR = {
+						is_controlled_by = SOV
+						any_other_country = {
+							controls_state = 988
+							is_in_faction_with = SOV
+							SOV = { is_faction_leader = yes }
+						}
+					}
+				}
+			}
+			GER = { transfer_state = 988 }
+		}
+		if = {
+			limit = {
 				has_global_flag = poland_swap_danzig
 				70 = {
 					OR = {
@@ -3279,6 +3297,7 @@ country_event = {
 			add_state_claim = 10
 			add_state_claim = 928
 			add_state_claim = 929
+			add_state_claim = 988
 			effect_tooltip = {
 				create_wargoal = {
 					type = annex_everything
