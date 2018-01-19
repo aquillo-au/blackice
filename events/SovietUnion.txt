@@ -8646,7 +8646,6 @@ country_event = {
 		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
-
 }
 country_event = {
 	id = soviet.399
@@ -8676,80 +8675,96 @@ country_event = {
 		name = soviet.399.a
 		trigger = { is_ai = yes }
 		hidden_effect = {
-		random_list = {
+			random_list = {
 				80 = { 
-				load_oob = SOV_Allied_lend_lease_II_ai 
-						 add_timed_idea = {
-							idea = lend_lease_shipment
+					load_oob = SOV_Allied_lend_lease_II_ai 
+					add_timed_idea = {
+						idea = lend_lease_shipment
+						days = 180
+					}
+					ENG = {
+						add_timed_idea = {
+							idea = lend_lease_production
 							days = 180
-			}
-						ENG = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 180}
-								}
-						USA = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 180}
-								}
-				}
-				20 = { 
-				load_oob = SOV_Allied_lend_lease_I_ai
-						 add_timed_idea = {
-							idea = lend_lease_shipment
-							days = 365
-							}
-						ENG = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 365}
-								}
-						USA = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 365}
-								}
+						}
+					}
+					USA = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 180
 						}
 					}
 				}
-				set_country_flag = alliedlendlease9
+				20 = { 
+					load_oob = SOV_Allied_lend_lease_I_ai
+					add_timed_idea = {
+						idea = lend_lease_shipment
+						days = 365
+					}
+					ENG = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 365
+						}
+					}
+					USA = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 365
+						}
+					}
+				}
+			}
+		}
+		set_country_flag = alliedlendlease9
 	}
 	option = {
 		name = soviet.399.b
 		trigger = { is_ai = no }
 		hidden_effect = {
-		random_list = {
+			random_list = {
 				50 = { 
-				load_oob = SOV_Allied_lend_lease_II  
-						 add_timed_idea = {
-							idea = lend_lease_shipment
+					load_oob = SOV_Allied_lend_lease_II  
+					add_timed_idea = {
+						idea = lend_lease_shipment
+						days = 180
+					}
+					ENG = {
+						add_timed_idea = {
+							idea = lend_lease_production
 							days = 180
-			}
-						ENG = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 180}
-								}
-						USA = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 180}
-								}
-				}
-				50 = { 
-				load_oob = SOV_Allied_lend_lease_I
-						 add_timed_idea = {
-							idea = lend_lease_shipment
-							days = 365
-							}
-						ENG = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 365}
-								}
-						USA = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 365}
-								}
+						}
+					}
+					USA = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 180
 						}
 					}
 				}
-				set_country_flag = alliedlendlease9
+				50 = { 
+					load_oob = SOV_Allied_lend_lease_I
+					add_timed_idea = {
+						idea = lend_lease_shipment
+						days = 365
+					}
+					ENG = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 365
+						}
+					}
+					USA = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 365
+						}
+					}
+				}
 			}
+		}
+		set_country_flag = alliedlendlease9
+	}
 }
 #soviet.400
 country_event = {
@@ -8785,7 +8800,6 @@ country_event = {
 		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
-
 }
 country_event = {
 	id = soviet.421
@@ -8802,7 +8816,7 @@ country_event = {
 		USA = { exists = yes }
 		not = { has_war_with = SOV}
 		not = { has_idea = lend_lease_production}
-		 has_global_flag = US_soviet_lend_lease_VI
+		has_global_flag = US_soviet_lend_lease_VI
 		not = { has_global_flag = US_soviet_lend_lease_VII }
 	}
 
@@ -8820,7 +8834,6 @@ country_event = {
 		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
-
 }
 country_event = {
 	id = soviet.401
@@ -8850,80 +8863,96 @@ country_event = {
 		name = soviet.401.a
 		trigger = { is_ai = yes }
 		hidden_effect = {
-		random_list = {
+			random_list = {
 				80 = { 
-				load_oob = SOV_Allied_lend_lease_II_ai 
-						 add_timed_idea = {
-							idea = lend_lease_shipment
+					load_oob = SOV_Allied_lend_lease_II_ai 
+					add_timed_idea = {
+						idea = lend_lease_shipment
+						days = 180
+					}
+					ENG = {
+						add_timed_idea = {
+							idea = lend_lease_production
 							days = 180
-			}
-						ENG = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 180}
-								}
-						USA = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 180}
-								}
-				}
-				20 = { 
-				load_oob = SOV_Allied_lend_lease_I_ai
-						 add_timed_idea = {
-							idea = lend_lease_shipment
-							days = 365
-							}
-						ENG = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 365}
-								}
-						USA = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 365}
-								}
+						}
+					}
+					USA = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 180
 						}
 					}
 				}
-				set_country_flag = alliedlendlease10
+				20 = { 
+					load_oob = SOV_Allied_lend_lease_I_ai
+					add_timed_idea = {
+						idea = lend_lease_shipment
+						days = 365
+					}
+					ENG = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 365
+						}
+					}
+					USA = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 365
+						}
+					}
+				}
+			}
+		}
+		set_country_flag = alliedlendlease10
 	}
 	option = {
 		name = soviet.401.b
 		trigger = { is_ai = no }
 		hidden_effect = {
-		random_list = {
+			random_list = {
 				50 = { 
-				load_oob = SOV_Allied_lend_lease_II  
-						 add_timed_idea = {
-							idea = lend_lease_shipment
+					load_oob = SOV_Allied_lend_lease_II  
+					add_timed_idea = {
+						idea = lend_lease_shipment
+						days = 180
+					}
+					ENG = {
+						add_timed_idea = {
+							idea = lend_lease_production
 							days = 180
-			}
-						ENG = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 180}
-								}
-						USA = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 180}
-								}
-				}
-				50 = { 
-				load_oob = SOV_Allied_lend_lease_I
-						 add_timed_idea = {
-							idea = lend_lease_shipment
-							days = 365
-							}
-						ENG = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 365}
-								}
-						USA = { add_timed_idea = {
-									idea = lend_lease_production
-									days = 365}
-								}
+						}
+					}
+					USA = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 180
 						}
 					}
 				}
-				set_country_flag = alliedlendlease10
+				50 = { 
+					load_oob = SOV_Allied_lend_lease_I
+					add_timed_idea = {
+						idea = lend_lease_shipment
+						days = 365
+					}
+					ENG = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 365
+						}
+					}
+					USA = {
+						add_timed_idea = {
+							idea = lend_lease_production
+							days = 365
+						}
+					}
+				}
 			}
+		}
+		set_country_flag = alliedlendlease10
+	}
 }
 #402 > 421
 ### EOF ###
@@ -8948,7 +8977,6 @@ country_event = {
 	
 	option = {
 		name = soviet.422.a
-		
 		add_ideas = communist_spirit
 	}
 	
@@ -8966,8 +8994,8 @@ country_event = {
 		has_global_flag = spanish_civil_war
 		has_war = no
 		or = {
-		has_global_flag = scw_over 
-		has_war = yes
+			has_global_flag = scw_over 
+			has_war = yes
 		}
 	}
 
@@ -8977,8 +9005,37 @@ country_event = {
 	
 	option = {
 		name = soviet.423.a
-		
 		remove_ideas = communist_spirit
 	}
-	
 }
+### OP Auguststorm
+country_event = {
+	id = soviet.424
+	title = soviet.424.t
+	desc = soviet.424.d
+	picture = GFX_report_event_fallen_soviet
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SOV
+		OR = {
+			has_global_flag = had_yalta_conference
+			GER = { has_capitulated = yes }
+		}
+		NOT = { has_war_with = GER }
+	}
+
+	mean_time_to_happen = {
+		days = 100
+	}
+	
+	option = {
+		name = soviet.424.a
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = JAP
+		} 
+	}
+}
+### EOF ###
