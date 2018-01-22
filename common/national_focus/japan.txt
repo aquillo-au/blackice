@@ -323,7 +323,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-		army_experience = 20
+			army_experience = 20
 			add_tech_bonus = {
 			name = JAP_Vech
 				bonus = 0.7
@@ -362,9 +362,9 @@ focus_tree = {
 			factor = 6
 		}
 		available = {
-		or = {
-			has_country_flag = Five_Ministers_South
-			has_country_flag = Turn_South
+			or = {
+				has_country_flag = Five_Ministers_South
+				has_country_flag = Turn_South
 			}					
 		}
 		completion_reward = {
@@ -403,16 +403,16 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = infrastructure_effort_tt
 				OR = {
-				525  = {
-					free_building_slots = {
-						building = infrastructure
-						size < 3
+					525  = {
+						free_building_slots = {
+							building = infrastructure
+							size < 3
+						}
 					}
-				}
-				527  = {
-					free_building_slots = {
-						building = infrastructure
-						size < 3
+					527  = {
+						free_building_slots = {
+							building = infrastructure
+							size < 3
 						}
 					}
 				}
@@ -452,9 +452,11 @@ focus_tree = {
 		prerequisite = { focus = JAP_North_Infra }
 		cost = 10
 		icon = GFX_goal_generic_construct_infrastructure
+		
 		ai_will_do = {
 			factor = 5
 		}
+		
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = infrastructure_effort_tt
@@ -480,6 +482,7 @@ focus_tree = {
 				}
 			}
 		}
+		
 		completion_reward = {
 			715 = {
 				add_building_construction = {
@@ -505,6 +508,7 @@ focus_tree = {
 		prerequisite = { focus = JAP_North_Infra_2 }
 		cost = 10
 		icon = GFX_goal_generic_construct_naval_dockyard
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -538,13 +542,14 @@ focus_tree = {
 		prerequisite = { focus = JAP_Doc }
 		cost = 14.4
 		icon = GFX_goal_generic_demand_territory
+		
 		ai_will_do = {
 			factor = 5
 		}
 		
 		completion_reward = {
-		743 = { set_demilitarized_zone = no }
-		753 = { set_demilitarized_zone = no }
+			743 = { set_demilitarized_zone = no }
+			753 = { set_demilitarized_zone = no }
 
 			753 = {
 				add_building_construction = {
