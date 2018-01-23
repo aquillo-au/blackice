@@ -4367,9 +4367,10 @@ focus = {
 		completion_reward = {
 			#send equipment
 			#country_event = { id = soviet.378  } 
-			PRC = {load_oob = "PRC_SOV_reinforcements_2"
-				   add_manpower = 5000
-				   add_political_power = 150
+			PRC = {
+				load_oob = "PRC_SOV_reinforcements_2"
+				add_manpower = 5000
+				add_political_power = 150
 			}
 		}
 	}
@@ -5833,12 +5834,11 @@ focus = {
 			factor = 5
 		}
 
-		
 		completion_reward = {
-		add_timed_idea = {
+			add_timed_idea = {
 				idea = suvorov_offensive
 				days = 60
-		}
+			}
 		}
 	}
 	#DOW Germany
@@ -5851,38 +5851,40 @@ focus = {
 		y = 4
 		cost = 5
 		available = {
-		not = {has_war_with = GER}
-		NOT = {is_in_faction_with = GER }
-		or = {
-		and = {
-			GER = { divisions_in_state = { state =  120 size > 0 } }
-			GER = { divisions_in_state = { state =  136 size > 0 } }
-			GER = { divisions_in_state = { state =  133 size > 0 } }
-		    GER = { divisions_in_state = { state =  121 size > 0 } }}
-		and = {
-			GER = { divisions_in_state = { state =  131 size > 0 } }
-			GER = { divisions_in_state = { state =  130 size > 0 } }
-			GER = { divisions_in_state = { state =  132 size > 0 } }}
-		and = {
-			GER = { divisions_in_state = { state =  127 size > 0 } }
-			GER = { divisions_in_state = { state =  123 size > 0 } }
-			GER = { divisions_in_state = { state =  122 size > 0 } }
-			GER = { divisions_in_state = { state =  128 size > 0 } }
-			GER = { divisions_in_state = { state =  129 size > 0 } }
-			GER = { divisions_in_state = { state =  125 size > 0 } }
-			GER = { divisions_in_state = { state =  338 size > 0 } }}
+			not = {has_war_with = GER}
+			NOT = {is_in_faction_with = GER }
+			OR = {
+				AND = {
+					GER = { divisions_in_state = { state =  120 size > 0 } }
+					GER = { divisions_in_state = { state =  136 size > 0 } }
+					GER = { divisions_in_state = { state =  133 size > 0 } }
+					GER = { divisions_in_state = { state =  121 size > 0 } }
+				}
+				AND = {
+					GER = { divisions_in_state = { state =  131 size > 0 } }
+					GER = { divisions_in_state = { state =  130 size > 0 } }
+					GER = { divisions_in_state = { state =  132 size > 0 } }
+				}
+				AND = {
+					GER = { divisions_in_state = { state =  127 size > 0 } }
+					GER = { divisions_in_state = { state =  123 size > 0 } }
+					GER = { divisions_in_state = { state =  122 size > 0 } }
+					GER = { divisions_in_state = { state =  128 size > 0 } }
+					GER = { divisions_in_state = { state =  129 size > 0 } }
+					GER = { divisions_in_state = { state =  125 size > 0 } }
+					GER = { divisions_in_state = { state =  338 size > 0 } }
+				}
 			}
 		}
 		ai_will_do = {
 			factor = 5
 		}
 
-		
 		completion_reward = {
-			  declare_war_on = {
-							target = GER
-							type = annex_everything
-					}
+			declare_war_on = {
+				target = GER
+				type = annex_everything
+			}
 		}
 	}	
 #######################################################
@@ -5904,17 +5906,16 @@ focus = {
 		
 		completion_reward = {
 			572  = {
-			add_extra_state_shared_building_slots = 4
-			add_building_construction = {
-				type = tank_factory
-				level = 4
-				instant_build = yes
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = tank_factory
+					level = 4
+					instant_build = yes
+				}
 			}
-		}
 		}
 	}	
 	#create soviet elite naval infantry
-
 	focus = {
 		id = SOV_naval_infantry
 		icon = GFX_goal_generic_build_navy
@@ -5925,19 +5926,19 @@ focus = {
 		available = {
 			has_war_with = GER
 			has_tech = marines
-			
 		}
 		ai_will_do = {
 			factor = 5
 		}
 
-		
 		completion_reward = {
-			load_oob = 	SOV_Brigada_Morskoi
+			
+			SOV = {
+				country_event = SOV_tank_event.11
+			}
 		}
 	}	
 	#create soviet guards - army/ airforce
-
 	focus = {
 		id = SOV_guards_armyunits
 		icon = GFX_goal_soviet_guards
@@ -5946,11 +5947,10 @@ focus = {
 		y = 1
 		cost = 5
 		available = {
-	
-		has_war_with = GER	
-		is_puppet = no
-		exists = yes 
-		SOV = { controls_state = 653 } 
+			has_war_with = GER	
+			is_puppet = no
+			exists = yes 
+			SOV = { controls_state = 653 } 
 		}
 		
 		ai_will_do = {
@@ -6339,7 +6339,7 @@ focus = {
 		completion_reward = {
 				
 			SOV = {
-			country_event = SOV_tank_event.6
+				country_event = SOV_tank_event.6
 			}
 		}
 	}

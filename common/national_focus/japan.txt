@@ -317,20 +317,21 @@ focus_tree = {
 			factor = 6
 		}
 		available = {
-		or = {
-			has_country_flag = Five_Ministers_North
-			has_country_flag = Turn_North
+			or = {
+				has_country_flag = Five_Ministers_North
+				has_country_flag = Turn_North
 			}
 		}
+		
 		completion_reward = {
-		army_experience = 20
+			army_experience = 20
 			add_tech_bonus = {
-			name = JAP_Vech
+				name = JAP_Vech
 				bonus = 0.7
 				uses = 1
 				technology = vehicle_industry
 				technology = dispersed_vehicle_industry
-					}
+			}
 			535 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -361,12 +362,14 @@ focus_tree = {
 		ai_will_do = {
 			factor = 6
 		}
+		
 		available = {
-		or = {
-			has_country_flag = Five_Ministers_South
-			has_country_flag = Turn_South
+			or = {
+				has_country_flag = Five_Ministers_South
+				has_country_flag = Turn_South
 			}					
 		}
+		
 		completion_reward = {
 			add_tech_bonus = {
 				name = JAP_Ship_Ind
@@ -403,16 +406,16 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = infrastructure_effort_tt
 				OR = {
-				525  = {
-					free_building_slots = {
-						building = infrastructure
-						size < 3
+					525  = {
+						free_building_slots = {
+							building = infrastructure
+							size < 3
+						}
 					}
-				}
-				527  = {
-					free_building_slots = {
-						building = infrastructure
-						size < 3
+					527  = {
+						free_building_slots = {
+							building = infrastructure
+							size < 3
 						}
 					}
 				}
@@ -452,9 +455,11 @@ focus_tree = {
 		prerequisite = { focus = JAP_North_Infra }
 		cost = 10
 		icon = GFX_goal_generic_construct_infrastructure
+		
 		ai_will_do = {
 			factor = 5
 		}
+		
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = infrastructure_effort_tt
@@ -480,6 +485,7 @@ focus_tree = {
 				}
 			}
 		}
+		
 		completion_reward = {
 			715 = {
 				add_building_construction = {
@@ -505,6 +511,7 @@ focus_tree = {
 		prerequisite = { focus = JAP_North_Infra_2 }
 		cost = 10
 		icon = GFX_goal_generic_construct_naval_dockyard
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -538,13 +545,14 @@ focus_tree = {
 		prerequisite = { focus = JAP_Doc }
 		cost = 14.4
 		icon = GFX_goal_generic_demand_territory
+		
 		ai_will_do = {
 			factor = 5
 		}
 		
 		completion_reward = {
-		743 = { set_demilitarized_zone = no }
-		753 = { set_demilitarized_zone = no }
+			743 = { set_demilitarized_zone = no }
+			753 = { set_demilitarized_zone = no }
 
 			753 = {
 				add_building_construction = {
@@ -2191,53 +2199,52 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-					add_timed_idea = {
+			add_timed_idea = {
 				idea = generic_civilian_trucks
 				days = 365
 			}				
-				#add_equipment_to_stockpile = {
-				#		type = motorized_equipment_1
-				#		amount = 1000
-				#		producer = GER
-				#	}
-				add_equipment_to_stockpile = {
-						type = motorized_equipment_1
-						amount = 500
-						producer = JAP
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_equipment_1
-						amount = 500
-						producer = USA
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_equipment_1
-						amount = 150
-						producer = ENG
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_equipment_1
-						amount = 150
-						producer = FRA
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_equipment_1
-						amount = 100
-						producer = CZE
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_equipment_1
-						amount = 100
-						producer = GER
-					}
-				random_owned_controlled_state = {
+			#add_equipment_to_stockpile = {
+			#	type = motorized_equipment_1
+			#	amount = 1000
+			#	producer = GER
+			#}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 500
+				producer = JAP
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 150
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 150
+				producer = FRA
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 100
+				producer = CZE
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 100
+				producer = GER
+			}
+			random_owned_controlled_state = {
 				limit = { is_in_home_area = yes }
-					add_resource = {
-						type = rubber
-						amount = 4
-					}
+				add_resource = {
+					type = rubber
+					amount = 4
 				}
-				
+			}
 		}
 	}
 	# requistion cars
@@ -2256,54 +2263,53 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-				add_timed_idea = {
+			add_timed_idea = {
 				idea = generic_civilian_cars
 				days = 365
 			}					
-				#add_equipment_to_stockpile = {
-				#		type = motorized_lia_equipment_01
-				#		amount = 2000
-				#		producer = GER
-				#	}
-				add_equipment_to_stockpile = {
-						type = motorized_lia_equipment_01
-						amount = 1000
-						producer = USA
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_lia_equipment_01
-						amount = 400
-						producer = FRA
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_lia_equipment_01
-						amount = 300
-						producer = ENG
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_lia_equipment_01
-						amount = 300
-						producer = AUS
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_lia_equipment_01
-						amount = 800
-						producer = CZE
-					}
-				add_equipment_to_stockpile = {
-						type = motorized_lia_equipment_01
-						amount = 200
-						producer = ITA
-					}
-					random_owned_controlled_state = {
-					limit = { is_in_home_area = yes }
-					add_resource = {
-						type = rubber
-						amount = 2
-					}
+			#add_equipment_to_stockpile = {
+			#	type = motorized_lia_equipment_01
+			#	amount = 2000
+			#	producer = GER
+			#}
+			add_equipment_to_stockpile = {
+				type = motorized_lia_equipment_01
+				amount = 1000
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_lia_equipment_01
+				amount = 400
+				producer = FRA
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_lia_equipment_01
+				amount = 300
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_lia_equipment_01
+				amount = 300
+				producer = AUS
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_lia_equipment_01
+				amount = 800
+				producer = CZE
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_lia_equipment_01
+				amount = 200
+				producer = ITA
+			}
+			random_owned_controlled_state = {
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = rubber
+					amount = 2
 				}
-			}		
-		
+			}
+		}
 	}
 	# requistion motorcyles
 	focus = {
@@ -2322,52 +2328,50 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			
-				add_equipment_to_stockpile = {
-						type = recon_mot_equipment_0
-						amount = 100
-						producer = JAP
-					}
-				add_equipment_to_stockpile = {
-						type = recon_mot_equipment_0
-						amount = 50
-						producer = USA
-					}
-				add_equipment_to_stockpile = {
-						type = recon_mot_equipment_0
-						amount = 25
-						producer = ITA
-					}
-				add_equipment_to_stockpile = {
-						type = recon_mot_equipment_0
-						amount = 25
-						producer = ENG
-					}
-				add_equipment_to_stockpile = {
-						type = recon_mot_equipment_0
-						amount = 15
-						producer = FRA
-					}
-				add_equipment_to_stockpile = {
-						type = recon_mot_equipment_0
-						amount = 40
-						producer = GER
-					}
-				add_equipment_to_stockpile = {
-						type = recon_mot_equipment_0
-						amount = 10
-						producer = CZE
-					}
-					random_owned_controlled_state = {
-					add_resource = {
-						type = rubber
-						amount = 1
-					}
+			add_equipment_to_stockpile = {
+				type = recon_mot_equipment_0
+				amount = 100
+				producer = JAP
+			}
+			add_equipment_to_stockpile = {
+				type = recon_mot_equipment_0
+				amount = 50
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = recon_mot_equipment_0
+				amount = 25
+				producer = ITA
+			}
+			add_equipment_to_stockpile = {
+				type = recon_mot_equipment_0
+				amount = 25
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = recon_mot_equipment_0
+				amount = 15
+				producer = FRA
+			}
+			add_equipment_to_stockpile = {
+				type = recon_mot_equipment_0
+				amount = 40
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = recon_mot_equipment_0
+				amount = 10
+				producer = CZE
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = rubber
+					amount = 1
 				}
-			}		
+			}
 		}
+	}
 # ration petrol
-	
 	focus = {
 		id = JAP_ration_petrol
 		icon = GFX_goal_generic_oil_refinery
@@ -2385,37 +2389,35 @@ focus_tree = {
 		
 		completion_reward = {
 		
-				add_ideas = generic_petrol_ration
-			
-			
-			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = oil
-						amount = 5
-					}
-				}
+			add_ideas = generic_petrol_ration
 			
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = oil
-						amount = 3
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = oil
+					amount = 5
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = oil
-						amount = 2
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = oil
+					amount = 3
 				}
+			}
 			random_owned_controlled_state = {
-					add_resource = {
-						type = oil
-						amount = 2
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = oil
+					amount = 2
 				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
 		}
 	}
 	
@@ -2440,86 +2442,85 @@ focus_tree = {
 			add_ideas = generic_metal_collection
 			
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = steel
-						amount = 20
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = steel
+					amount = 20
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = steel
-						amount = 30
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = steel
+					amount = 30
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = steel
-						amount = 20
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = steel
+					amount = 20
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = steel
-						amount = 10
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = steel
+					amount = 10
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = tungsten
-						amount = 3
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = tungsten
+					amount = 3
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = tungsten
-						amount = 2
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = tungsten
+					amount = 2
 				}
+			}
 			random_owned_controlled_state = {
-					add_resource = {
-						type = tungsten
-						amount = 1
-					}
+				add_resource = {
+					type = tungsten
+					amount = 1
 				}
+			}
 			random_owned_controlled_state = {
-					add_resource = {
-						type = tungsten
-						amount = 1
-					}
+				add_resource = {
+					type = tungsten
+					amount = 1
 				}
+			}
 			random_owned_controlled_state = {
-					add_resource = {
-						type = chromium
-						amount = 1
-					}
+				add_resource = {
+					type = chromium
+					amount = 1
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = chromium
-						amount = 1
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = chromium
+					amount = 1
 				}
+			}
 			random_owned_controlled_state = {
-			limit = { is_in_home_area = yes }
-					add_resource = {
-						type = chromium
-						amount = 2
-					}
-				}	
-			random_owned_controlled_state = {
-					add_resource = {
-						type = chromium
-						amount = 1
-					}
+				limit = { is_in_home_area = yes }
+				add_resource = {
+					type = chromium
+					amount = 2
 				}
-			
+			}	
+			random_owned_controlled_state = {
+				add_resource = {
+					type = chromium
+					amount = 1
+				}
+			}
 		}
 	}
 	
@@ -2539,59 +2540,56 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-				add_timed_idea = {
+			add_timed_idea = {
 				idea = generic_peace_horses
 				days = 365
 			}
-				
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 1000
-						producer = JAP
-					}
-			
-				add_equipment_to_stockpile = {
-						type = artyhorse_equipment_1
-						amount = 100
-						producer = JAP
-					}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 250
-						producer = USA
-					}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 250
-						producer = ENG
-					}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 250
-						producer = FRA
-					}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 150
-						producer = GER
-					}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 100
-						producer = ITA
-					}
-				add_equipment_to_stockpile = {
-						type = artyhorse_equipment_1
-						amount = 250
-						producer = ENG
-					}
-				add_equipment_to_stockpile = {
-						type = artyhorse_equipment_1
-						amount = 150
-						producer = USA
-					}
-			}		
-
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 1000
+				producer = JAP
+			}
+			add_equipment_to_stockpile = {
+				type = artyhorse_equipment_1
+				amount = 100
+				producer = JAP
+			}
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 250
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 250
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 250
+				producer = FRA
+			}
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 150
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 100
+				producer = ITA
+			}
+			add_equipment_to_stockpile = {
+				type = artyhorse_equipment_1
+				amount = 250
+				producer = ENG
+			}
+			add_equipment_to_stockpile = {
+				type = artyhorse_equipment_1
+				amount = 150
+				producer = USA
+			}
+		}
 	}
 	focus = {
 	id = JAP_round_up_horses_II
@@ -2609,41 +2607,40 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-				add_timed_idea = {
+			add_timed_idea = {
 				idea = generic_war_horses
 				days = 365
 			}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 5000
-						producer = JAP
-					}
-				add_equipment_to_stockpile = {
-						type = artyhorse_equipment_1
-						amount = 1000
-						producer = JAP
-					}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 2000
-						producer = CHI
-					}
-				add_equipment_to_stockpile = {
-						type = artyhorse_equipment_1
-						amount = 500
-						producer = CHI
-					}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 500
-						producer = ENG
-					}	
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 500
-						producer = FRA
-					}	
-			}		
-
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 5000
+				producer = JAP
+			}
+			add_equipment_to_stockpile = {
+				type = artyhorse_equipment_1
+				amount = 1000
+				producer = JAP
+			}
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 2000
+				producer = CHI
+			}
+			add_equipment_to_stockpile = {
+				type = artyhorse_equipment_1
+				amount = 500
+				producer = CHI
+			}
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 500
+				producer = ENG
+			}	
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 500
+				producer = FRA
+			}	
+		}		
 	}
 }	

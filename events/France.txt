@@ -2394,7 +2394,8 @@ country_event = {
 				transfer_state = 459
 				#459 = { add_core_of = VIC}
 				transfer_state = 543
-				543 = { add_core_of = VIC}
+				transfer_state = 751
+				}
 				#TUN = { 
 				#	country_event = { days = 1 id = france.67 }
 				#}
@@ -2408,24 +2409,23 @@ country_event = {
 				#	country_event = { days = 1 id = france.66 }
 				#}
 					VIC={
-					transfer_state = 706
-					transfer_state = 708
-					transfer_state = 268
-					transfer_state = 310
-					transfer_state = 635
-					transfer_state = 641
-					transfer_state = 728
-					transfer_state = 320
-					transfer_state = 272
-					transfer_state = 556
-					transfer_state = 751
-					transfer_state = 975
+						transfer_state = 706
+						transfer_state = 708
+						transfer_state = 268
+						transfer_state = 310
+						transfer_state = 635
+						transfer_state = 641
+						transfer_state = 728
+						transfer_state = 320
+						transfer_state = 272
+						transfer_state = 556
+						transfer_state = 975
 					}
 					FRA={
-					transfer_state = 515
-					transfer_state = 751
-					transfer_state = 539
-					transfer_state = 660
+						transfer_state = 515
+						transfer_state = 539
+						transfer_state = 660
+						transfer_state = 986 
 					}
 				BEL = {
 					transfer_state = 718
@@ -2840,43 +2840,42 @@ country_event = {
 					543 = { add_core_of = VIC}
 				}
 			}
-				# FRA Player Switches to Vichy
-				if = {
-					limit = { FRA = { has_country_flag = become_vichy } }
-					change_tag_from = FRA
-				}
-				retire_country_leader = yes
-				create_country_leader = {
-	name = "Philippe Pétain"
-	desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
-	picture = "Portrait_France_Philippe_Petain.dds"
-	expire = "1965.1.1"
-	ideology = vichy
-	traits = {
-	dictator
-	fascist_sympathies
-	war_hero
-	}
-}		
-				set_country_flag = philipe_petain
-				add_ideas = neutrality_idea_vichy
+			# FRA Player Switches to Vichy
+			if = {
+				limit = { FRA = { has_country_flag = become_vichy } }
+				change_tag_from = FRA
 			}
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Philippe Pétain"
+				desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
+				picture = "Portrait_France_Philippe_Petain.dds"
+				expire = "1965.1.1"
+				ideology = vichy
+				traits = {
+					dictator
+					fascist_sympathies
+					war_hero
+				}
+			}		
+			set_country_flag = philipe_petain
+			add_ideas = neutrality_idea_vichy
 		}
 		#Set same cosmetic tag they would get on capitulation
 		FRA = {
 			set_cosmetic_tag = FRA_FREE
 		}
-		GER={
+		GER = {
 			add_ideas={
-					   german_payments_vichy 
-					}
-}
-		VIC ={
-						add_opinion_modifier = { target = GER modifier = very_large_increase }
-       					}
+				german_payments_vichy 
+			}
+		}
+		VIC = {
+			add_opinion_modifier = { target = GER modifier = very_large_increase }
+       	}
 		GER ={
-						add_opinion_modifier = { target = VIC modifier = very_large_increase }
-       					}
+			add_opinion_modifier = { target = VIC modifier = very_large_increase }
+       	}
 	}
 }
 # Given control over some colonies to FRA-Free

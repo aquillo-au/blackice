@@ -1,4 +1,8 @@
-﻿add_namespace = vichy
+﻿############################
+##### Vichy-events #########
+############################
+
+add_namespace = vichy
 
 country_event = {
 	id = vichy.1
@@ -533,15 +537,122 @@ country_event = {
 			is_ai = no
 		}
 		GER = {
-			annex_country = { target = VIC transfer_troops = yes }
-		}	
-		GER={
+			transfer_state = 1	
+			transfer_state = 21
+			transfer_state = 26
+			transfer_state = 22
+			transfer_state = 25
+			transfer_state = 20
+			transfer_state = 31
+			transfer_state = 32
+			transfer_state = 33
+			transfer_state = 268
+			transfer_state = 735		
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 461
+				}
+			}
+			FRA ={transfer_state = 461}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 459
+				}
+			}
+			FRA ={transfer_state = 459}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 513
+				}
+			}
+			FRA ={transfer_state = 513}
+		}
+
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 460
+				}
+			}
+			FRA ={transfer_state = 460}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 458
+				}
+			}
+			FRA ={transfer_state = 458}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 665
+				}
+			}
+			FRA ={transfer_state = 665}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 751
+				}
+			}
+			FRA ={transfer_state = 751}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 462
+				}
+			}
+			FRA ={transfer_state = 462}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 514
+				}
+			}
+			FRA ={transfer_state = 514}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 557
+				}
+			}
+			FRA ={transfer_state = 557}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 272
+				}
+			}
+			FRA ={transfer_state = 272}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 556
+				}
+			}
+			FRA ={transfer_state = 556}
+		}
+		GER = {
        		remove_ideas = german_payments_vichy
-       		}
-       		VIC={
-       			remove_ideas = vichy_payments_germany
-       			remove_ideas = vichy_military_germany
-       		}	
+       	}
+		VIC = {
+			remove_ideas = vichy_payments_germany
+			remove_ideas = vichy_military_germany
+		}	
 	}
 	
 	option = { 
@@ -550,15 +661,122 @@ country_event = {
 			is_ai = yes
 		}
 		GER = {
-			annex_country = { target = VIC transfer_troops = yes }
+			transfer_state = 1
+			transfer_state = 21
+			transfer_state = 26
+			transfer_state = 22
+			transfer_state = 25
+			transfer_state = 20
+			transfer_state = 31
+			transfer_state = 32
+			transfer_state = 33
+			transfer_state = 268
+			transfer_state = 735		
 		}
-		    GER={
-       		remove_ideas = german_payments_vichy
-       		}
-       		VIC={
-       			remove_ideas = vichy_payments_germany
-       			remove_ideas = vichy_military_germany
-       		}	
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 461
+				}
+			}
+			FRA ={ transfer_state = 461 }
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 459
+				}
+			}
+			FRA ={transfer_state = 459}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 513
+				}
+			}
+			FRA ={transfer_state = 513}
+		}
+
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 460
+				}
+			}
+			FRA ={transfer_state = 460}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 458
+				}
+			}
+			FRA ={transfer_state = 458}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 665
+				}
+			}
+			FRA ={transfer_state = 665}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 751
+				}
+			}
+			FRA ={transfer_state = 751}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 462
+				}
+			}
+			FRA ={transfer_state = 462}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 514
+				}
+			}
+			FRA ={transfer_state = 514}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 557
+				}
+			}
+			FRA ={transfer_state = 557}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 272
+				}
+			}
+			FRA ={transfer_state = 272}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 556
+				}
+			}
+			FRA ={transfer_state = 556}
+		}	
+		GER = {
+			remove_ideas = german_payments_vichy
+		}
+		VIC = {
+			remove_ideas = vichy_payments_germany
+			remove_ideas = vichy_military_germany
+		}
 		ai_chance = { factor = 100 }
 	}
 }
@@ -706,241 +924,290 @@ country_event = {
 	title = vichy.15.t
 	desc = vichy.15.d
 	picture = GFX_report_event_election_vote
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
- option = {
+	
+	option = {
         name = vichy.15.a       
         ai_chance = { 
-        		factor = 0
+        	factor = 0
         }
 
         hidden_effect = {
-       	hold_election = VIC
-       	VIC={set_country_flag = VIC_elections}
+			hold_election = VIC
+			VIC={ set_country_flag = VIC_elections }
         }
     }
-     option = {
+    
+	option = {
         name = vichy.15.b       
         ai_chance = { 
-        		factor = 100
+        	factor = 100
         }
         hidden_effect = {
         add_national_unity = -0.1
         }
     }
-	}
+}
 country_event = {
 	id = vichy.16  # War With germany with german army accepted  after msr tryouts of civilwar
 	title = vichy.16.t
 	desc = vichy.16.d
 	picture = GFX_report_event_german_troops
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
- 	option = {
+ 	
+	option = {
         name = vichy.16.a       
         ai_chance = { 
-       	factor = 100
-     			   }
-
+			factor = 100
+     	}
         hidden_effect = {
-       					VIC={
-       						declare_war_on = {target = GER type = annex_everything}	
-       						create_country_leader = { name = "Eugène Deloncle"
-								desc = "POLITICS_EUGENE_DELONCLE_DESC"
-								picture = "gfx/leaders/VIC/Portrait_France_Eugene_Deloncle.dds"
-								expire = "1965.1.1"
-								ideology = fascism_ideology
-								traits = {
-			
-										 } 
-												}
-						set_party_name = { ideology = fascism long_name = VIC_msr_party name = VIC_msr_party 
-       					}
-       					load_oob = VIC_MILITIAS
-       					remove_ideas = vichy_payments_germany
-       					remove_ideas = vichy_military_germany
-       					}
-       					GER={
-       					remove_ideas = german_payments_vichy
-       					}
-            			}
-    		}
-	}
+			VIC={
+				declare_war_on = {target = GER type = annex_everything}	
+				create_country_leader = {
+					name = "Eugène Deloncle"
+					desc = "POLITICS_EUGENE_DELONCLE_DESC"
+					picture = "gfx/leaders/VIC/Portrait_France_Eugene_Deloncle.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+
+					} 
+				}
+				set_party_name = { 
+					ideology = fascism
+					long_name = VIC_msr_party
+					name = VIC_msr_party 
+				}
+				load_oob = VIC_MILITIAS
+				remove_ideas = vichy_payments_germany
+				remove_ideas = vichy_military_germany
+			}
+			GER={
+				remove_ideas = german_payments_vichy
+			}
+		}
+    }
+}
 country_event = {
 	id = vichy.17  # germany says do whatever you want we can use police for civilwar
 	title = vichy.17.t
 	desc = vichy.17.d
 	picture = GFX_report_event_fascist_militia
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
- 	option = {
+ 	
+	option = {
         name = vichy.17.a       
         ai_chance = { 
-       	factor = 50
-     			   }
+			factor = 50
+		}
 
         hidden_effect = {
-        VIC={
-        			load_oob = VIC_MILITIAS
-        			set_politics = { ruling_party = fascism elections_allowed = no }
-        		  	create_country_leader = { name = "Eugène Deloncle"
-							desc = "POLITICS_EUGENE_DELONCLE_DESC"
-							picture = "gfx/leaders/VIC/Portrait_France_Eugene_Deloncle.dds"
-							expire = "1965.1.1"
-							ideology = fascism_ideology
-							traits = {
-			
-									 } 
-											}
-					set_party_name = { ideology = fascism long_name = VIC_msr_party name = VIC_msr_party }
-       				add_popularity = { ideology = fascism popularity = 0.5 }
-         	        start_civil_war = { 
-       					 ideology = neutrality size = 0.5 
-        				 capital = 21
-       					 states = { 21 22 31}
-        							}
-       					remove_ideas = vichy_payments_germany
-       					remove_ideas = vichy_military_germany
-       					}
-       					GER={
-       					remove_ideas = german_payments_vichy
-       					create_wargoal = { type = annex_everything target = VIC } 
-       					}	
-    		}
-    		}
-    	option  = {
+			VIC = {
+				load_oob = VIC_MILITIAS
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+				create_country_leader = {
+					name = "Eugène Deloncle"
+					desc = "POLITICS_EUGENE_DELONCLE_DESC"
+					picture = "gfx/leaders/VIC/Portrait_France_Eugene_Deloncle.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+	
+					} 
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = VIC_msr_party
+					name = VIC_msr_party
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.5
+				}
+				start_civil_war = { 
+					ideology = neutrality
+					size = 0.5 
+					capital = 21
+					states = { 21 22 31 }
+				}
+				remove_ideas = vichy_payments_germany
+				remove_ideas = vichy_military_germany
+			}
+			GER={
+				remove_ideas = german_payments_vichy
+				create_wargoal = {
+					type = annex_everything
+					target = VIC
+				} 
+			}	
+    	}
+    }
+    option  = {
         name = vichy.17.b      
         ai_chance = { 
-       	factor = 50
-     			   }
+			factor = 50
+     	}
 
         hidden_effect = {
-       					VIC={
-       					create_country_leader = { name = "Eugène Deloncle"
-							desc = "POLITICS_EUGENE_DELONCLE_DESC"
-							picture = "gfx/leaders/VIC/Portrait_France_Eugene_Deloncle.dds"
-							expire = "1965.1.1"
-							ideology = fascism_ideology
-							traits = {
-			
-									 } 
-												}
-						set_party_name = { ideology = fascism long_name = VIC_msr_party name = VIC_msr_party }
-       					}
-       				 }
-    		}
-	}
-	country_event = {
+       		VIC = {
+       			create_country_leader = {
+					name = "Eugène Deloncle"
+					desc = "POLITICS_EUGENE_DELONCLE_DESC"
+					picture = "gfx/leaders/VIC/Portrait_France_Eugene_Deloncle.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+	
+					} 
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = VIC_msr_party
+					name = VIC_msr_party
+				}
+       		}
+       	}
+    }
+}
+country_event = {
 	id = vichy.18  # HAY GERMANY CAN I JOIN
 	title = vichy.18.t
 	desc = vichy.18.d
 	picture = GFX_report_event_germany_politician_handshake
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
- 	option = {
+ 	
+	option = {
         name = vichy.18.a    #Ja, Mein Freund.   
         ai_chance = { 
-       	factor = 0
-       modifier={
-       factor = -50
-       VIC={has_war = yes}
-       	}
-     			   }
+			factor = 0
+			modifier = {
+				factor = -50
+				VIC = { has_war = yes }
+			}
+     	}
 
         hidden_effect = {
-       					GER={
-       						add_to_faction = VIC
-       					}	
-    		}
-    		}
-    	option  = {
+       		GER={
+       			add_to_faction = VIC
+       		}	
+    	}
+    }
+    option  = {
         name = vichy.18.b     #ich kann nicht accept white flag 
         ai_chance = { 
-       	factor = 50
-     			   }
+			factor = 50
+     	}
 
         hidden_effect = {
-       					VIC={
-						add_opinion_modifier = { target = GER modifier = refused_help}
-       					}
-       				 }
-    		}
-	}
-	country_event = {
+       		VIC={
+				add_opinion_modifier = {
+					target = GER
+					modifier = refused_help
+				}
+       		}
+       	}
+    }
+}
+country_event = {
 	id = vichy.19  # Soviet vichy join event
 	title = vichy.19.t
 	desc = vichy.19.d
 	picture = GFX_report_event_communist_leader
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
- 	option = {
+ 	
+	option = {
         name = vichy.19.a    #yes my comrade  
         ai_chance = { 
-       	factor = 0
-       	modifier={
-       	factor = -50
-       VIC={has_war = yes}
-       	}
-     			   }
+			factor = 0
+			modifier = {
+				factor = -50
+				VIC = { has_war = yes }
+			}
+     	}
 
         hidden_effect = {
-       					SOV={
-       						add_to_faction = VIC
-       					}	
-    		}
-    		}
-    	option  = {
+       		SOV={
+       			add_to_faction = VIC
+       		}	
+    	}
+    }
+    option  = {
         name = vichy.19.b     #we dont accept  
         ai_chance = { 
-       	factor = 50
-     			   }
+			factor = 50
+     	}
 
         hidden_effect = {
-       					VIC={
-						add_opinion_modifier = { target = SOV modifier = refused_help}
-       					}
-       				 }
-    		}
-	}
+       		VIC={
+				add_opinion_modifier = {
+					target = SOV
+					modifier = refused_help
+				}
+       		}
+       	}
+    }
+}
 country_event = {
 	id = vichy.20  # arment ger
 	title = vichy.20.t
 	desc = vichy.20.d
 	picture = GFX_report_event_german_elite_troops_inspected
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
- 	option = {
+ 	
+	option = {
         name = vichy.20.a    #yes 
         ai_chance = { 
-       	factor = 0
-       	modifier={
-       	factor = 50
-    	 GER= {
-     		any_war_score<0.1
-    	 } 
-       	}
-     			   }
+			factor = 0
+			modifier = {
+				factor = 50
+				GER= { any_war_score < 0.1 } 
+			}
+     	}
 
         hidden_effect = {
-       			VIC={
+       		VIC={
        			remove_ideas = vichy_military_germany
-       			}
-    		}
-    		}
-    	option  = {
+       		}
+    	}
+    }
+    option  = {
         name = vichy.20.b     #we dont accept  
         ai_chance = { 
-       	factor = 50
-     			   }
+			factor = 50
+     	}
 
         hidden_effect = {
-       					VIC={
-						add_opinion_modifier = { target = GER modifier = refused_help}
-       					}
-       				 }
-    		}
-	}
-	country_event = {
+       		VIC={
+				add_opinion_modifier = {
+					target = GER
+					modifier = refused_help
+				}
+			}
+       	}
+    }
+}
+country_event = {
     id = vichy.21
     title = vichy.21.t
     desc = vichy.21.d
@@ -950,23 +1217,30 @@ country_event = {
 	
     option = {
         name = vichy.21.a # We Will Puppet
-        ai_chance = { factor = 50
-         }
+        ai_chance = {
+			factor = 50
+        }
         hidden_effect = {
-          puppet = VIC
+			puppet = VIC
         }
     }
     option = {
         name = vichy.21.b        # NEIN
         ai_chance = { 
-        		factor = 50
+        	factor = 50
         }
+		
         hidden_effect = {
-        VIC = {add_opinion_modifier = { target = GER modifier = refused_help}}
+			VIC = {
+				add_opinion_modifier = {
+					target = GER
+					modifier = refused_help
+				}
+			}
         }
     }	
-    }
-    country_event = {
+}
+country_event = {
     id = vichy.22 #Uprising in Vichy
     title = vichy.22.t 
     desc = vichy.22.d
@@ -976,114 +1250,132 @@ country_event = {
 	
     option = {
         name = vichy.22.a # We Will Send Army
-        ai_chance = { factor = 100
-         }
+        ai_chance = {
+			factor = 100
+		}
+		
         hidden_effect = {
-        VIC={country_event = { days = 1 id = vichy.16  }}
+			VIC={
+				country_event = { days = 1 id = vichy.16 }
+			}
         }
     }
     option = {
         name = vichy.22.b        # NEIN do whatever you want to gov
         ai_chance = { 
-        		factor = 0
+        	factor = 0
         }
+		
         hidden_effect = {
-        VIC = {
-        country_event = { days = 1 id = vichy.17 }
-        }
+			VIC = {
+				country_event = { days = 1 id = vichy.17 }
+			}
         }
     }	
-    }
-    country_event = {
+}
+country_event = {
 	id = vichy.23  # economic negotiate germany
 	title = vichy.23.t
 	desc = vichy.23.d
 	picture = GFX_report_event_generic_sign_treaty1
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
- 	option = {
+ 	
+	option = {
         name = vichy.23.a    #yes 
         ai_chance = { 
-       	factor = 0
-       	modifier={
-       	factor = 50
-    	 GER= {
-     		any_war_score<0.1
-    	 } 
-       	}
-     			   }
+			factor = 0
+			modifier={
+				factor = 50
+				GER = { any_war_score<0.1 } 
+			}
+     	}
 
         hidden_effect = {
-       			VIC={
+       		VIC={
        			remove_ideas = vichy_payments_germany
-       			}
-       			GER={
+       		}
+       		GER={
        			remove_ideas = german_payments_vichy
-       			}
-    		}
-    		}
-    	option  = {
+       		}
+    	}
+    }
+    option  = {
         name = vichy.23.b     #we dont accept  
         ai_chance = { 
-       	factor = 50
-     			   }
+			factor = 50
+     	}
 
         hidden_effect = {
-       					VIC={
-						add_opinion_modifier = { target = GER modifier = refused_help}
-       					}
-       				 }
-    		}
-	}
-	country_event = {
+       		VIC={
+				add_opinion_modifier = {
+					target = GER
+					modifier = refused_help
+				}
+       		}
+       	}
+    }
+}
+country_event = {
 	id = vichy.24  # vichy wants to become free
 	title = vichy.24.t
 	desc = vichy.24.d
 	picture = GFX_report_event_german_politician_speech
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
- 	option = {
+ 	
+	option = {
         name = vichy.24.a    #yes 
         ai_chance = { 
-       	factor = 0
-     			   }
+			factor = 0
+     	}
 
         hidden_effect = {
        		GER={
-       		end_puppet = VIC
-       		remove_ideas = german_payments_vichy
+				end_puppet = VIC
+				remove_ideas = german_payments_vichy
        		}
        		VIC={
        			remove_ideas = vichy_payments_germany
        			remove_ideas = vichy_military_germany
        		}	
-    		}
-    		}
-    	option  = {
+    	}
+    }
+    option  = {
         name = vichy.24.b     #we dont accept  
         ai_chance = { 
-       	factor = 50
-     			   }
+			factor = 50
+		}
 
         hidden_effect = {
-       					VIC={
-					add_opinion_modifier = { target = GER modifier = refused_help}
-       					}
-       				 }
-    		}
+       		VIC={
+				add_opinion_modifier = {
+					target = GER
+					modifier = refused_help
+				}
+       		}
+       	}
 	}
-	country_event = {
+}
+country_event = {
 	id = vichy.25  # vichy wants france
 	title = vichy.25.t
 	desc = vichy.25.d
 	picture = GFX_report_event_soviet_finnish_pact
+	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
- 	option = {
+ 	
+	option = {
         name = vichy.25.a    #yes 
         ai_chance = { 
-       	factor = 0
-     			   }
+			factor = 0
+     	}
 
         hidden_effect = {
        		if = {
@@ -1170,22 +1462,25 @@ country_event = {
 				}
 				VIC = { set_capital = 844 }
 			}
-    		}
-    		}
-    	option  = {
+    	}
+    }
+    option  = {
         name = vichy.25.b     #we dont accept  
         ai_chance = { 
-       	factor = 100
-     			   }
+			factor = 100
+     	}
 
         hidden_effect = {
-       					VIC={
-						add_opinion_modifier = { target = GER modifier = refused_help}
-       					}
-       				 }
-    		}
-	}
-	country_event = {
+       		VIC={
+				add_opinion_modifier = {
+					target = GER
+					modifier = refused_help
+				}
+       		}
+       	}
+    }
+}
+country_event = {
 	id = vichy.26  # vichy asks allience with freefrance
 	title = vichy.26.t
 	desc = vichy.26.d
@@ -1218,7 +1513,7 @@ country_event = {
      	}
 
         hidden_effect = {
-			VIC={
+			VIC = {
 				annex_country = { target = FRA transfer_troops = yes }
 				if = {
 					limit = {
@@ -1254,9 +1549,7 @@ country_event = {
 			factor = 0
 			modifier={
 				factor = 75
-				FRA= {
-					any_war_score<0.1
-				} 
+				FRA= { any_war_score < 0.1 } 
 			}
      	}
 
@@ -1269,11 +1562,11 @@ country_event = {
 						844 = { owner = { tag = VIC } }
 					}	
 					set_capital = 844
-					else={
+					else = {
 						set_capital = 26
 					}
 				}
-				set_country_flag=withfreefra	
+				set_country_flag = withfreefra	
        		}
     	}
 	}
@@ -1299,7 +1592,7 @@ country_event = {
      	}
 
         hidden_effect = {
-			ENG={
+			ENG = {
 				add_to_faction = VIC
 			}	
 		}
@@ -1339,7 +1632,11 @@ country_event = {
 				has_equipment = { infantry_equipment > 500 }
 			}
      	}
-       	send_equipment = { target = VIC type = infantry_equipment amount = 500 }	
+       	send_equipment = {
+			target = VIC
+			type = infantry_equipment
+			amount = 500
+		}	
     }
     option  = {
         name = vichy.28.b     #Nope
@@ -1374,13 +1671,13 @@ country_event = {
         ai_chance = { 
 			factor = 100
      	}
-      		GER={
+      	GER={
        		remove_ideas = german_payments_vichy
-       		}
-       		VIC={
-       			remove_ideas = vichy_payments_germany
-       			remove_ideas = vichy_military_germany
-       		}	
+       	}
+       	VIC={
+       		remove_ideas = vichy_payments_germany
+       		remove_ideas = vichy_military_germany
+       	}	
     }
 }
 country_event = {
@@ -1411,24 +1708,24 @@ country_event = {
      	}
 
         hidden_effect = {
-        		FRA={annex_country = { target = VIC }}
-				FRA = { transfer_state = 19 }
-				FRA = { transfer_state = 23 }
-				FRA = { transfer_state = 30 }
-				FRA = { transfer_state = 14 }
-				FRA = { transfer_state = 15 }
-				FRA = { transfer_state = 16 }
-				FRA = { transfer_state = 844 }
-				FRA = { transfer_state = 24 }
-				FRA = { transfer_state = 18 }
-				FRA = { transfer_state = 886 }
-				FRA = { transfer_state = 29 }
-				FRA = { transfer_state = 27 }
-				FRA = { transfer_state = 17}
-				FRA = { set_capital = 844 }
-			}
-    		}
-    	option = {
+			FRA={annex_country = { target = VIC }}
+			FRA = { transfer_state = 19 }
+			FRA = { transfer_state = 23 }
+			FRA = { transfer_state = 30 }
+			FRA = { transfer_state = 14 }
+			FRA = { transfer_state = 15 }
+			FRA = { transfer_state = 16 }
+			FRA = { transfer_state = 844 }
+			FRA = { transfer_state = 24 }
+			FRA = { transfer_state = 18 }
+			FRA = { transfer_state = 886 }
+			FRA = { transfer_state = 29 }
+			FRA = { transfer_state = 27 }
+			FRA = { transfer_state = 17}
+			FRA = { set_capital = 844 }
+		}
+    }
+    option = {
         name = vichy.30.b   #vichy gov
         ai_chance = { 
 			factor = 0
@@ -1437,21 +1734,21 @@ country_event = {
 				FRA = {exists = no}
 			}
      	}
-     			VIC={annex_country = { target = FRA }}
-				VIC = { transfer_state = 19 }
-				VIC = { transfer_state = 23 }
-				VIC = { transfer_state = 30 }
-				VIC = { transfer_state = 14 }
-				VIC = { transfer_state = 15 }
-				VIC = { transfer_state = 16 }
-				VIC = { transfer_state = 844 }
-				VIC = { transfer_state = 24 }
-				VIC = { transfer_state = 18 }
-				VIC = { transfer_state = 886 }
-				VIC = { transfer_state = 29 }
-				VIC = { transfer_state = 27 }
-				VIC = { transfer_state = 17}
-				VIC = { set_capital = 844 }
+		VIC={annex_country = { target = FRA }}
+			VIC = { transfer_state = 19 }
+			VIC = { transfer_state = 23 }
+			VIC = { transfer_state = 30 }
+			VIC = { transfer_state = 14 }
+			VIC = { transfer_state = 15 }
+			VIC = { transfer_state = 16 }
+			VIC = { transfer_state = 844 }
+			VIC = { transfer_state = 24 }
+			VIC = { transfer_state = 18 }
+			VIC = { transfer_state = 886 }
+			VIC = { transfer_state = 29 }
+			VIC = { transfer_state = 27 }
+			VIC = { transfer_state = 17}
+			VIC = { set_capital = 844 }
     }
 }
 country_event = {
