@@ -1,4 +1,4 @@
-#dont invade until 1942
+#dont invade until 1943
 careful_with_early_invasions = {
 	enable = {
 		OR = {
@@ -6,15 +6,13 @@ careful_with_early_invasions = {
 			tag = FRA
 		}
 
-		date < 1942.6.6
+		date < 1943.1.1
 		
 	}
 	abort = {
-		OR = {
-			date > 1942.6.6
-			is_in_faction_with = USA
+			is_historical_focus_on = yes
+			date > 1943.1.1
 			GER = { has_war_with = SOV }
-		}
 	}
 
 	ai_strategy = {
@@ -39,6 +37,112 @@ careful_with_early_invasions = {
 		value = -500
 	}
 }
+#After North Africa is under Allied Controll
+Allies_hunt_Italy = {
+	enable = {
+		tag = USA
+		tag = CAN
+		tag = ENG 
+		is_historical_focus_on = yes
+		has_war_with = ITA
+		has_capitulated = no
+		NOT = { ITA = { controls_state = 663 controls_state = 450 controls_state = 451 controls_state = 449 controls_state = 662 controls_state = 448 controls_state = 662 }}
+		}
+		abort = {
+			OR = {
+				NOT = { has_war_with = ITA }
+				has_capitulated = yes
+				ITA = { has_capitulated = yes }
+			}
+			}
+			ai_strategy = {
+				type = invade
+				id = "ITA"
+				value = 500000
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "ITA"
+				value = 500000
+			}
+			ai_strategy = {
+				type = conquer
+				id = "ITA"
+				value = 500000
+			}
+		}
+	
+Allies_D_DAY = {
+	enable = {
+		tag = ENG
+		tag = CAN
+		tag = USA
+		has_capitulated = no
+		is_historical_focus_on = yes
+		has_war_with = GER
+		GER = { has_war_with = SOV }
+		date > 1944.1.1
+		}
+		abort = {
+			OR = {
+				has_capitulated = yes	
+				GER = { has_capitulated = yes }
+				NOT = { has_war_with = GER }
+				}
+			}
+			ai_strategy = {
+				type = invade
+				id = "GER"
+				value = 500000
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "GER"
+				value = 500000
+			}
+			ai_strategy = {
+				type = conquer
+				id = "GER"
+				value = 500000
+			}
+		}
+#All allies target jap after ger surrender
+Allies_Japan = {
+	enable = {
+		is_in_faction_with = ENG
+		has_capitulated = no
+		is_historical_focus_on = yes
+		has_war_with = JAP
+		NOT = { has_war_with = SOV }
+		NOT = { has_war_with = GER }
+		NOT = { SOV = { has_war_with = GER }}
+		}
+		abort = {
+			OR = {
+				has_capitulated = yes	
+				JAP = { has_capitulated = yes }
+				NOT = { has_war_with = JAP }
+				has_war_with = GER
+				has_war_with = SOV #Unthinkable
+				}
+			}
+			ai_strategy = {
+				type = invade
+				id = "JAP"
+				value = 500000
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "JAP"
+				value = 500000
+			}
+			ai_strategy = {
+				type = conquer
+				id = "JAP"
+				value = 500000
+			}
+		}
+		
 stay_in_commonwealth = {
     enable = {
 		OR = {

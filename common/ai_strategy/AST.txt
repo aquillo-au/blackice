@@ -15,7 +15,7 @@
 
 AST_area_priorities = {
 	enable = {
-		original_tag = AST
+		tag = AST
 	}
 	abort = {
 		always = no
@@ -52,12 +52,11 @@ AST_area_priorities = {
 	ai_strategy = { type = area_priority id = oceania 			value = 100 }
 	
 }
-
+#FFS DO SOMETHING
 AST_protect_INS = {
 	enable = {
 		tag = AST
 		has_war_with = JAP
-		JAP = {	has_war_with = AST }
 		JAP = {	has_war_with = INS }
 	}
 	abort = {
@@ -73,12 +72,21 @@ AST_protect_INS = {
 	ai_strategy = {
 		type = contain
 		id = "JAP"			
-		value = 200
+		value = 5000
 	}
-	
+	ai_strategy = {
+		type = antagonize
+		id = "JAP"			
+		value = 5000
+	}
 	ai_strategy = {
 		type = protect
 		id = "INS"			
-		value = 200
+		value = 5000
+	}
+	ai_strategy = {
+		type = support
+		id = "INS"			
+		value = 5000
 	}
 }

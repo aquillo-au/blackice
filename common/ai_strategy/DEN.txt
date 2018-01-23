@@ -4,7 +4,6 @@ DEN_defense_from_germany = {
 	enable = {
 		tag = DEN
 		OR = { 
-			has_war = yes
 			has_war_with = GER
 		}
 		NOT = {
@@ -15,6 +14,7 @@ DEN_defense_from_germany = {
 	abort = {
 		OR = {
 			NOT = { has_war_with = GER }
+			has_capitulated = yes
 		}
 		
 	}

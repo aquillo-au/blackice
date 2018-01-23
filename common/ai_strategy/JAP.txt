@@ -328,10 +328,11 @@ JAP_war_with_china = {
 		has_war_with = CHI
 	}
 	abort = {
-		NOT = {
-		has_war_with = CHI }
 		OR = {
-		has_war_with = ENG }
+		NOT = { has_war_with = CHI }
+		has_war_with = ENG 
+		has_war_with = USA
+		}
 	}
 	ai_strategy = { type = area_priority id = britain	 		value = 1 }
 	ai_strategy = { type = area_priority id = atlantic	 		value = 1 }
@@ -360,7 +361,7 @@ JAP_war_with_china = {
 	ai_strategy = { type = area_priority id = singapore	 		value = 1 } 
 	ai_strategy = { type = area_priority id = philippines	 	value = 1 }
 	ai_strategy = { type = area_priority id = india	 			value = 1 }
-	ai_strategy = { type = area_priority id = japan	 			value = 100 }
+	ai_strategy = { type = area_priority id = japan	 			value = 1 }
 	ai_strategy = { type = area_priority id = pacific 			value = 1 }
 	ai_strategy = { type = area_priority id = oceania 			value = 1 }
 }
