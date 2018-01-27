@@ -19,23 +19,27 @@ technologies = {
 	
 	#Horizontal position
 	@LC = -10
-	@DD = -5
-	@DD2 = 1
-	@CL = 7
-	@CA = 13
-	@CAV = 13
-	@CAV2 = 13
-	@BC = 19
-	@BB = 25
-	@HBB = 25
-	@BBCV = 31
-	@CV = 43
-	@CVB = 37
-	@CVL = 49
-	@IJNCVE = 55
-	@IJACVE = 61
-	@TENDER = 67
-	#@AAA = 
+	@AAA = -8
+	@RDR = -6
+	@RDR2 = -5
+	@ASW = -3
+	@TORP = -1
+	@DD = 3
+	@DD2 = 9
+	@CL = 15
+	@CA = 21
+	@CAV = 21
+	@CAV2 = 21
+	@BC = 27
+	@BB = 33
+	@HBB = 33
+	@BBCV = 39
+	@CV = 51
+	@CVB = 45
+	@CVL = 58
+	@IJNCVE = 64
+	@IJACVE = 70
+	@TENDER = 76
 	
 	tech_ijn = {
 		allow = {
@@ -2374,7 +2378,7 @@ technologies = {
 			leads_to_tech = tech_ijn_seaplane_tender_7
 			research_cost_coeff = 1
 		}
-				
+		
 		research_cost = 1.5
 		start_year = 1940
 		folder = {
@@ -2450,8 +2454,8 @@ technologies = {
 		start_year = 1924
 		research_cost = 1.5
 		folder = {
-			name = naval_folder
-			position = { x = 2 y = 1 }
+			name = japannaval_folder
+			position = { x = @AAA y = @1922 }
 		}
 		
 		categories = {
@@ -2505,8 +2509,8 @@ technologies = {
 		start_year = 1936
 		research_cost = 1.5
 		folder = {
-			name = naval_folder
-			position = { x = 2 y = 7 }
+			name = japannaval_folder
+			position = { x = @AAA y = @1936 }
 		}
 		
 		categories = {
@@ -2553,15 +2557,15 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = Late_War_AA_tech
+			leads_to_tech = ijn_late_War_AA_tech
 			research_cost_coeff = 1
 		}
 		
 		start_year = 1940
 		research_cost = 1.5
 		folder = {
-			name = naval_folder
-			position = { x = 2 y = 13 }
+			name = japannaval_folder
+			position = { x = @AAA y = @1940 }
 		}
 		
 		categories = {
@@ -2610,8 +2614,8 @@ technologies = {
 		start_year = 1944
 		research_cost = 2
 		folder = {
-			name = naval_folder
-			position = { x = 2 y = 19 }
+			name = japannaval_folder
+			position = { x = @AAA y = @1944 }
 		}
 		
 		categories = {
@@ -2654,24 +2658,20 @@ technologies = {
 		carrier = {
 			surface_detection = 0.15
 		}
-
-		path = {
-			leads_to_tech = air_warning_radar
-			research_cost_coeff = 1
-		}
-		
 		dependencies = {
 			decimetric_radar = 1
+			
 		}
-		
-		
-		
+		path = {
+			leads_to_tech = ijn_surface_fc_radar
+			research_cost_coeff = 1
+		}
 
 		start_year = 1936
 		research_cost = 1.5
 		folder = {
-			name = naval_folder
-			position = { x = 2 y = 1 }
+			name = japannaval_folder
+			position = { x = @RDR y = @1936 }
 		}
 		
 		categories = {
@@ -2685,59 +2685,6 @@ technologies = {
 			modifier = {
 				factor = 10
 				date > 1939.1.1
-			}
-		}
-		
-		#ai_research_weights = {
-		#	naval_doctrine = -1.0
-		#	battleship = 1.5
-		#	cruiser = 1.0
-		#}
-	}
-	air_warning_radar = {
-		# EFFECT #############
-		light_cruiser = {
-			anti_air_attack = 0.5
-		}
-		heavy_cruiser = {
-			anti_air_attack = 0.5
-		}
-		battle_cruiser = {
-			anti_air_attack = 0.5
-		}
-		battleship = {
-			anti_air_attack = 0.5
-		}
-		light_carrier = {
-			anti_air_attack = 0.5
-		}
-		carrier = {
-			anti_air_attack = 0.5
-		}
-
-		path = {
-			leads_to_tech = surface_fc_radar
-			research_cost_coeff = 1
-		}
-	
-		start_year = 1936
-		research_cost = 1.5
-		folder = {
-			name = naval_folder
-			position = { x = 2 y = 4 }
-		}
-		
-		categories = {
-			naval_equipment
-			radar_tech
-		}
-		
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 10
-				date > 1940.1.1
 			}
 		}
 		
@@ -2769,7 +2716,7 @@ technologies = {
 		}
 
 		path = {
-			leads_to_tech = advanced_surface_search_radar
+			leads_to_tech = ijn_advanced_surface_search_radar
 			research_cost_coeff = 1
 		}
 		
@@ -2780,8 +2727,8 @@ technologies = {
 		start_year = 1940
 		research_cost = 2
 		folder = {
-			name = naval_folder
-			position = { x = 2 y = 7 }
+			name = japannaval_folder
+			position = { x = @RDR y = @1940 }
 		}
 		
 		categories = {
@@ -2809,7 +2756,7 @@ technologies = {
 		#	cruiser = 1.0
 		#}
 	}
-	advanced_surface_search_radar = {
+	ijn_advanced_surface_search_radar = {
 		# EFFECT #############
 		light_cruiser = {
 			surface_detection = 0.3
@@ -2836,17 +2783,12 @@ technologies = {
 		dependencies = {
 			centimetric_radar = 1
 		}
-
-		path = {
-			leads_to_tech = advanced_fc_radar
-			research_cost_coeff = 1
-		}
 		
-		start_year = 1940
+		start_year = 1942
 		research_cost = 1
 		folder = {
-			name = naval_folder
-			position = { x = 2 y = 10 }
+			name = japannaval_folder
+			position = { x = @RDR y = @1942 }
 		}
 		
 		categories = {
@@ -2873,7 +2815,63 @@ technologies = {
 		#	cruiser = 1.0
 		#}
 	}
-	advanced_fc_radar = {
+	### Air RADAR
+	ijn_air_warning_radar = {
+		# EFFECT #############
+		light_cruiser = {
+			anti_air_attack = 0.5
+		}
+		heavy_cruiser = {
+			anti_air_attack = 0.5
+		}
+		battle_cruiser = {
+			anti_air_attack = 0.5
+		}
+		battleship = {
+			anti_air_attack = 0.5
+		}
+		light_carrier = {
+			anti_air_attack = 0.5
+		}
+		carrier = {
+			anti_air_attack = 0.5
+		}
+		dependencies = {
+			ijn_surface_search_radar = 1
+		}
+		path = {
+			leads_to_tech = ijn_advanced_fc_radar
+			research_cost_coeff = 1
+		}
+	
+		start_year = 1937
+		research_cost = 1.5
+		folder = {
+			name = japannaval_folder
+			position = { x = @RDR2 y = @1937 }
+		}
+		
+		categories = {
+			naval_equipment
+			radar_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1940.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	ijn_advanced_fc_radar = {
 		# EFFECT #############
 		light_cruiser = {
 			attack = 0.15
@@ -2903,62 +2901,441 @@ technologies = {
 			attack = 0.30
 			anti_air_attack = 0.20
 		}
-
+		dependencies = {
+			advanced_centimetric_radar = 1
+		}
+		
+		start_year = 1944
 		research_cost = 2
+		folder = {
+			name = japannaval_folder
+			position = { x = @RDR2 y = @1944 }
+		}
 		
 		categories = {
 			naval_equipment
 			radar_tech
-		}
-
-		dependencies = {
-			advanced_centimetric_radar = 1
-		}
-
-
-		start_year = 1944
-
-		folder = {
-			name = naval_folder
-			position = { x = 2 y = 13 }
 		}
 		
 		ai_will_do = {
 			factor = 1
 
 			modifier = {
-			factor = 25
-			date > 1944.1.1
-				OR = {
-				tag = USA
-				tag = ENG
-				}
+				factor = 25
+				date > 1944.1.1
 			}
 
 			modifier = {
-			factor = 10
-			date > 1947.1.1
-				OR = {
-				tag = SOV
-				tag = FRA
-				tag = JAP
-				tag = ITA
-				tag = GER
-				tag = AST
-				tag = CAN
-				tag = NZL
-				tag = SAF
-				tag = RAJ
-				}
+				factor = 10
+				date > 1947.1.1
 			}
 		}
 		
-#		ai_research_weights = {
-#			naval_doctrine = -1.0
-#			battleship = 1.5
-#			cruiser = 1.0
-#		}
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
 	}
-	
+	### ASW technologies
+	ijn_early_sonar = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_detection = 0.1
+		}
+		heavy_cruiser = {
+			sub_detection = 0.1
+		}
+		destroyer = {
+			sub_detection = 0.15
+		}
+
+		path = {
+			leads_to_tech = ijn_depth_charge_throwers
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1924
+		research_cost = 1
+		folder = {
+			name = japannaval_folder
+			position = { x = @ASW y = @1922 }
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	ijn_depth_charge_throwers = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_attack = 0.2
+		}
+		destroyer = {
+			sub_attack = 0.2
+		}
+
+		path = {
+			leads_to_tech = ijn_basic_sonar
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1933
+		research_cost = 1
+		folder = {
+			name = japannaval_folder
+			position = { x = @ASW y = @1933 }
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	ijn_basic_sonar = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_detection = 0.1
+		}
+		heavy_cruiser = {
+			sub_detection = 0.1
+		}
+		destroyer = {
+			sub_detection = 0.15
+		}
+		dependencies = {
+			mechanical_computing = 1
+		}
+		path = {
+			leads_to_tech = ijn_asw_mortars
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1936
+		research_cost = 1
+		folder = {
+			name = japannaval_folder
+			position = { x = @ASW y = @1936 }
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1938.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	asw_mortars = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_attack = 0.2
+		}
+		destroyer = {
+			sub_attack = 0.2
+		}
+
+		path = {
+			leads_to_tech = ijn_advanced_sonar
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1940
+		research_cost = 1
+		folder = {
+			name = naval_folder
+			position = { x = @ASW y = @1940 }
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 10
+				date > 1942.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	ijn_advanced_sonar = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_detection = 0.1
+		}
+		heavy_cruiser = {
+			sub_detection = 0.1
+		}
+		destroyer = {
+			sub_detection = 0.15
+		}
+		dependencies = {
+			improved_computing_machine = 1
+		}
+
+		start_year = 1944
+		research_cost = 1
+		folder = {
+			name = japannaval_folder
+			position = { x = @ASW y = @1944 }
+		}
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 10
+				date > 1945.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	### Torpedo technologies
+	ijn_interwar_torpedoes = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			torpedo_attack = 0.2
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.2
+		}
+		destroyer = {
+			torpedo_attack = 0.2
+		}
+		
+		path = {
+			leads_to_tech = ijn_magnetic_detonators
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1924
+		research_cost = 1
+		folder = {
+			name = japannaval_folder
+			position = { x = @TORP y = @1922 }
+		}
+		
+		categories = {
+			naval_equipment
+			torpedo_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	ijn_magnetic_detonators = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			torpedo_attack = 0.2
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.2
+		}
+		destroyer = {
+			torpedo_attack = 0.2
+		}
+		   
+		path = {
+			leads_to_tech = ijn_electric_torpedoes
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1936
+		research_cost = 1.5
+		folder = {
+			name = japannaval_folder
+			position = { x = @TORP y = @1936 }
+		}
+		
+		categories = {
+			naval_equipment
+			torpedo_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 20
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	ijn_electric_torpedoes = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			torpedo_attack = 0.1
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.1
+		}
+		destroyer = {
+			torpedo_attack = 0.1
+		}
+		
+		path = {
+			leads_to_tech = ijn_advanced_torpedoes
+			research_cost_coeff = 1
+		}
+		
+		start_year = 1940
+		research_cost = 1.5
+		folder = {
+			name = japannaval_folder
+			position = { x = @TORP y = @1940 }
+		}
+		
+		categories = {
+			naval_equipment
+			torpedo_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 100
+				date > 1938.1.1
+			}
+
+			modifier = {
+				factor = 10
+				date > 1941.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	ijn_advanced_torpedoes = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			torpedo_attack = 0.2
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.2
+		}
+		destroyer = {
+			torpedo_attack = 0.2
+		}
+		
+		start_year = 1944
+		research_cost = 1.5
+		folder = {
+			name = japannaval_folder
+			position = { x = @TORP y = @1944 }
+		}
+		
+		categories = {
+			naval_equipment
+			torpedo_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1945.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
 }
 ### EOF ###
