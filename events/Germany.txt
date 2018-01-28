@@ -8004,8 +8004,6 @@ country_event = {
 		name = germany.117.a
 	}
 }
-
-
 #The Yalta Conference
 country_event = {
 	id = germany.118
@@ -8016,59 +8014,30 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		#A conservatism faction leader whose faction holds at least one German core state while SOV holds another can get this.
+		tag = ENG
+		SOV ={ has_war_with = GER }
 		has_war_with = GER
-		GER = {
-			surrender_progress > 0.5
-		}
+		is_historical_focus_on = yes
 		is_faction_leader = yes
+		NOT = { has_global_flag = had_yalta_conference }
+		OR = {
+		AND = {
 		any_state = {
 			is_core_of = GER
 			controller = {
-				is_in_faction_with = ROOT
+				is_in_faction_with = ENG }
 			}
-		}
-		OR = {
-					#has_government = conservatism
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					}
-		NOT = {
-			tag = SOV
-		}
-		NOT = {
-			has_war_with = SOV
-		}
-		SOV = {
-			is_faction_leader = yes
-		}
+		
 		any_state = {
 			is_core_of = GER
-			is_controlled_by = SOV
-		}
-		NOT = {
-			has_global_flag = had_yalta_conference
-		}
-		NOT = {
-			any_state = {
-				is_core_of = GER
-				controller = {
-					NOT = {
-						tag = GER
-					}
-					is_in_faction = yes
-					NOT = {
-						OR = {
-							is_in_faction_with = ROOT
-							is_in_faction_with = SOV
-						}
-					}
-				}
+			controller = {
+				is_in_faction_with = SOV }
 			}
 		}
+		
+		GER = { surrender_progress > 65 }
+		}
 	}
-
 	mean_time_to_happen = {
 		days = 15
 	}
@@ -8120,15 +8089,52 @@ country_event = {
 			add_state_core = 894			
 		}
 		POL = {
+			add_state_core = 894
+			add_state_core = 893
+			add_state_core = 63
 			add_state_core = 66
 			add_state_core = 67
-			add_state_core = 63
-			add_state_core = 839
-			add_state_core = 893
-			add_state_core = 894				
+			add_state_core = 839	
+			remove_state_core = 840
+			remove_state_core = 96
+			remove_state_core = 95
+			remove_state_core = 94
+			remove_state_core = 93
+			remove_state_core = 91
+			remove_state_core = 89
+		}
+		GER = {
+			remove_state_core = 60
+			remove_state_core = 61
+			remove_state_core = 62
+			remove_state_core = 64
+			remove_state_core = 65
+			remove_state_core = 68
+			remove_state_core = 896
+			remove_state_core = 894
+			remove_state_core = 42
+			remove_state_core = 50
+			remove_state_core = 51
+			remove_state_core = 52
+			remove_state_core = 53
+			remove_state_core = 54
+			remove_state_core = 55
+			remove_state_core = 56
+			remove_state_core = 57
+			remove_state_core = 58
+			remove_state_core = 59
+			remove_state_core = 841
+			remove_state_core = 899
 		}
 		SOV = {
 			add_state_core = 5
+			add_state_core = 840
+			add_state_core = 96
+			add_state_core = 95
+			add_state_core = 94
+			add_state_core = 93
+			add_state_core = 91
+			add_state_core = 89
 		}						
 		}
 		event_target:yalta_partner = {
@@ -8180,26 +8186,60 @@ country_event = {
 			add_state_core = 60
 			add_state_core = 61
 			add_state_core = 62
-			add_state_core = 63
 			add_state_core = 64
 			add_state_core = 65
-			add_state_core = 66
-			add_state_core = 67
 			add_state_core = 68
 			add_state_core = 896
 			add_state_core = 894			
 		}
 		POL = {
+			add_state_core = 894
+			add_state_core = 893
+			add_state_core = 63
 			add_state_core = 66
 			add_state_core = 67
-			add_state_core = 63
-			add_state_core = 839
-			add_state_core = 893
-			add_state_core = 894				
+			add_state_core = 839	
+			remove_state_core = 840
+			remove_state_core = 96
+			remove_state_core = 95
+			remove_state_core = 94
+			remove_state_core = 93
+			remove_state_core = 91
+			remove_state_core = 89
+		}
+		GER = {
+			remove_state_core = 60
+			remove_state_core = 61
+			remove_state_core = 62
+			remove_state_core = 64
+			remove_state_core = 65
+			remove_state_core = 68
+			remove_state_core = 896
+			remove_state_core = 894
+			remove_state_core = 42
+			remove_state_core = 50
+			remove_state_core = 51
+			remove_state_core = 52
+			remove_state_core = 53
+			remove_state_core = 54
+			remove_state_core = 55
+			remove_state_core = 56
+			remove_state_core = 57
+			remove_state_core = 58
+			remove_state_core = 59
+			remove_state_core = 841
+			remove_state_core = 899
 		}
 		SOV = {
 			add_state_core = 5
-		}
+			add_state_core = 840
+			add_state_core = 96
+			add_state_core = 95
+			add_state_core = 94
+			add_state_core = 93
+			add_state_core = 91
+			add_state_core = 89
+		}			
 		hidden_effect = {
 			news_event = { days = 1 id = news.236 }
 		}
@@ -8251,364 +8291,7 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = germany.121
-	title = germany.121.t
-	desc = germany.121.d
-	picture = GFX_report_event_generic_sign_treaty2
 
-	fire_only_once = yes
-
-	trigger = {
-		#Fires for one of the new German states to transfer old German territory.
-		country_exists = GER
-		OR = {
-			country_exists = WGR
-			country_exists = DDR
-			country_exists = SAP	
-		}
-		OR = {
-			tag = WGR
-			tag = DDR
-			tag = SAP			
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 0
-	}
-
-	option ={
-		if = {
-			limit = {
-				country_exists = SOV
-			}
-			#Return Soviet territory + new cores if they exist
-			every_state = {
-				limit = {
-					is_core_of = SOV
-					is_owned_and_controlled_by = GER
-				}
-				SOV = {
-					transfer_state = PREV
-				}
-			}
-		}	
-       	if = {
-			limit = {
-				country_exists = POL
-			}
-			#Return Polish territory + new cores if they exist
-			every_state = {
-				limit = {
-					is_core_of = POL
-					is_owned_and_controlled_by = GER
-				}
-				POL = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					country_exists = POL
-				}
-			}
-			#Otherwise give SOV Polish cores
-			every_state = {
-				limit = {
-					is_core_of = POL
-					is_owned_and_controlled_by = GER
-				}
-				SOV = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				country_exists = WGR
-			}
-			#Give WGR their cores
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = GER
-					is_core_of = WGR
-				}
-				WGR = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				country_exists = DDR
-			}
-			#Give East Germany their cores
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = GER
-					is_core_of = DDR
-				}
-				DDR = {
-					transfer_state = PREV
-				}
-			}
-			if = {
-				limit = {
-					GER = {
-						is_puppet_of = SOV
-					}
-				}
-				#If SOV decided to puppet GER in peace, they now get DDR instead.
-				SOV = {
-					puppet = DDR
-				}
-			}
-		}
-		if = {
-			limit = {
-				country_exists = SAP
-			}
-			#Give SAP their cores
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = GER
-					is_core_of = SAP
-				}
-				SAP = {
-					transfer_state = PREV
-				}
-			}
-		}				
-		if = {
-			limit = {
-				any_state = {
-					is_core_of = CZE
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-			}
-			#Give CZE any territory that might have been taken in a war or focus ending before the one that ended with the Yalta conference.
-			every_state = {
-				limit = {
-					is_core_of = CZE
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-				CZE = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				any_state = {
-					is_core_of = YUG
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-			}
-			#Give YUG any territory that might have been taken in a war or focus ending before the one that ended with the Yalta conference.
-			every_state = {
-				limit = {
-					is_core_of = YUG
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-				YUG = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				country_exists = LIT
-				any_state = {
-					is_core_of = LIT
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-			}
-			#Give LIT any territory that might have been taken in a war or focus ending before the one that ended with the Yalta conference.
-			every_state = {
-				limit = {
-					is_core_of = LIT
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-				LIT = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					country_exists = LIT
-				}
-				any_state = {
-					is_core_of = LIT
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-			}
-			#Give any LIT cores to SOV if they have been taken in a previous war/focus
-			every_state = {
-				limit = {
-					is_core_of = LIT
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-				SOV = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				DDR = {
-					GER = {
-						has_government = PREV
-					}
-				}
-			}
-			#If GER has changed government, remaining territory is passed to the corresponding new state (WGR or DDR)
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-				DDR = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				WGR = {
-					GER = {
-						has_government = PREV
-					}
-				}
-			}
-			#See above
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = DDR
-							is_core_of = WGR
-							is_core_of = POL
-						}
-					}
-				}
-				WGR = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				any_state = {
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = WGR
-							is_core_of = DDR
-						}
-					}
-				}
-			}
-			#Any remaining cores go to WGR, because democracy is fun
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = GER
-					NOT = {
-						OR = {
-							is_core_of = WGR
-							is_core_of = DDR
-						}
-					}
-				}
-				WGR = {
-					transfer_state = PREV
-				}
-			}
-		}
-		if = {
-			limit = {
-				country_exists = WGR
-				country_exists = DDR
-			}
-			#Remove GER cores
-			hidden_effect = {
-				every_state = {
-					limit = {
-						is_core_of = GER
-					}
-					remove_core_of = GER
-				}
-			}
-		}
-	}
-}
 
 #Events in case of weirdness with German Czechoslovakia focus
 country_event = {

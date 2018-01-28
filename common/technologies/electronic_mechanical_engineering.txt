@@ -791,6 +791,10 @@ technologies = {
 			leads_to_tech = computing_machine 
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = electronic_computing_machine 
+			research_cost_coeff = 0.5
+		}
 		
 		research_cost = 2.5
 		
@@ -819,6 +823,39 @@ technologies = {
 		}
 	}
 	
+	electronic_computing_machine = {
+		# small boost to research speed
+		research_time_factor = -0.03
+		
+		research_cost = 1.5
+		start_year = 1937
+		folder = {
+			name = electronics_folder
+			position = { x = 7 y = 4 }
+		}
+		
+		ai_will_do = {
+			factor = 6
+			
+			modifier = {
+				factor = 3
+				date > "1938.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "1939.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+	}
+	
 	computing_machine = {
 
 		# small boost to research speed
@@ -836,10 +873,12 @@ technologies = {
 			leads_to_tech = basic_decryption 
 			research_cost_coeff = 1
 		}
+		dependencies = {
+			electronic_computing_machine = 1
+		}
 		
 		research_cost = 2.5
 		start_year = 1938
-		
 		folder = {
 			name = electronics_folder
 			position = { x = 6 y = 6 }

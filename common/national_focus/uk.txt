@@ -15,19 +15,19 @@ focus_tree = {
 	focus = {
 		id = crypto_bomb_focus
 		available = {
-				has_war_with = GER
-				POL = {
-					NOT = { is_in_faction_with = GER } #We assume POL will help vs Germany unless they are allied to them
-				}
+			has_war_with = GER
+			POL = {
+				NOT = { is_in_faction_with = GER } #We assume POL will help vs Germany unless they are allied to them
 			}
+		}
 		
 		bypass = {
 			OR = {
 				AND = {
 					has_war_with = GER
 					POL = {
-							is_in_faction_with = GER # If POL is in GER's faction, no help for us
-						}
+						is_in_faction_with = GER # If POL is in GER's faction, no help for us
+					}
 				}
 				AND = {
 					has_war = yes
@@ -86,7 +86,6 @@ focus_tree = {
 					}
 				}
 			}
-			
 		} 
 		prerequisite = { focus = crypto_bomb_focus }
 		prerequisite = { focus = radar_focus }
@@ -140,10 +139,13 @@ focus_tree = {
 		x = -9
 		y = 1
 		cost = 10
+		
 		ai_will_do = {
 			factor = 1
 		}
+		
 		available_if_capitulated = yes	
+		
 		completion_reward = {
 			add_ideas = british_austerity_idea
 		}
@@ -151,6 +153,7 @@ focus_tree = {
 	focus = {
 		id = air_defense_focus
 		prerequisite = { focus = ENG_general_rearmament_focus }
+		
 		available = { 
 			OR = {
 				threat > 0.1
@@ -167,7 +170,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		
 		#available_if_capitulated = yes
+		
 		bypass = {
 			custom_trigger_tooltip =  {
 				tooltip = air_defense_focus_bypass_tt
@@ -5771,5 +5776,49 @@ focus = {
 
 	#fighter sweeps over france
 
+
+	focus = {
+		id = uk_anglo_soviet_occupation
+		available = {
+			PER = { 
+				exists = yes
+				GER = {
+					has_war_with = SOV
+					has_war_with = ENG 
+				}
+				NOT = { has_war_with = SOV }
+				date > 1941.8.25
+			} 
+		}
+		
+		bypass = {
+			PER = { exists = no }
+		}
+
+		prerequisite = { focus = uk_service_focus }
+		icon = GFX_goal_generic_forceful_treaty
+		x = 30
+		y = 2
+		cost = 4
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			if = {
+				limit = {
+					PER = { is_ai = yes }
+				}
+				ENG = {
+					country_event = puppets.118
+				}
+				else = {
+					create_wargoal = {
+						type = puppet_wargoal_focus
+						target = PER 
+					}	
+				}
+			}
+		}
+	}
 }
 ### EOF ###
