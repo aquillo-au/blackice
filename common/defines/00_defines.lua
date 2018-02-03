@@ -913,14 +913,14 @@ NAI = {
 	POTENTIAL_FUTURE_ENEMY_FACTOR = 100, 				-- How much increase in threat does AI feel against neighbours who at war with our allies
 	NEUTRAL_THREAT_PARANOIA = 10,						-- How scared neutrals are of everyone
 	DIFFERENT_FACTION_THREAT = 50,						-- Threat caused by not being in the same faction
-	PLAN_MOVE_MIN_ORG_TO_ENEMY_PROVINCE = 20.0,	-- Minimum organization a unit must have to consider moving into an enemy province (not attack move)
-	PLAN_ATTACK_MIN_ORG_FACTOR_LOW = 0.85,		-- Minimum org % for a unit to actively attack an enemy unit when executing a plan
-	PLAN_ATTACK_MIN_STRENGTH_FACTOR_LOW = 0.45,	-- Minimum strength for a unit to actively attack an enemy unit when executing a plan
-	PLAN_ATTACK_MIN_ORG_FACTOR_MED = 0.7,		-- (LOW,MED,HIGH) corresponds to the plan execution agressiveness level.
-	PLAN_ATTACK_MIN_STRENGTH_FACTOR_MED = 0.35,	
-	PLAN_ATTACK_MIN_ORG_FACTOR_HIGH = 0.25,		
-	PLAN_ATTACK_MIN_STRENGTH_FACTOR_HIGH = 0.2,		
-	PLAN_FRONTUNIT_DISTANCE_FACTOR = 10,					-- Factor for candidate units distance to front positions.
+	PLAN_MOVE_MIN_ORG_TO_ENEMY_PROVINCE = 20.0,			-- Minimum organization a unit must have to consider moving into an enemy province (not attack move)
+	PLAN_ATTACK_MIN_ORG_FACTOR_LOW = 0.85,				-- Minimum org % for a unit to actively attack an enemy unit when executing a plan
+	PLAN_ATTACK_MIN_STRENGTH_FACTOR_LOW = 0.45,			-- Minimum strength for a unit to actively attack an enemy unit when executing a plan
+	PLAN_ATTACK_MIN_ORG_FACTOR_MED = 0.7,				-- (LOW,MED,HIGH) corresponds to the plan execution agressiveness level.
+	PLAN_ATTACK_MIN_STRENGTH_FACTOR_MED = 0.35,
+	PLAN_ATTACK_MIN_ORG_FACTOR_HIGH = 0.40,
+	PLAN_ATTACK_MIN_STRENGTH_FACTOR_HIGH = 0.30,
+	PLAN_FRONTUNIT_DISTANCE_FACTOR = 10,				-- Factor for candidate units distance to front positions.
 	PLAN_ATTACK_DEPTH_FACTOR = 0.5,						-- Factor applied to size or enemy being attacked.
 	PLAN_STEP_COST_LIMIT = 11,							-- When stepping to draw a plan this cost makes it break if it hits hard terrain (multiplied by number of desired steps)
 	PLAN_STEP_COST_LIMIT_REDUCTION = 3,					-- Cost limit is reduced per iteration, making hard terrain less likely to be crossed the further into enemy territory it is
@@ -964,14 +964,14 @@ NAI = {
 	BASE_DISTANCE_TO_CARE = 800.0,						-- Countries that are too far away are less interesting in diplomacy
 	MIN_FORCE_RATIO_TO_PROTECT = 0.5,					-- Tiny countries should not feel protective or really large ones
 	
-	ORG_UNIT_STRONG = 0.9,						-- Organization % for unit to be considered strong
-	ORG_UNIT_WEAK = 0.25,						-- Organization % for unit to be considered weak
-	STR_UNIT_STRONG = 0.85,						-- Strength (equipment) % for unit to be considered strong
-	STR_UNIT_WEAK = 0.35,						-- Strength (equipment) % for unit to be considered weak
-	PLAN_FACTION_STRONG_TO_EXECUTE = 0.60,		-- % or more of units in an order to consider ececuting the plan
-	PLAN_FACTION_WEAK_TO_ABORT = 0.65,			-- % or more of units in an order to consider ececuting the plan
-	PLAN_AVG_PREPARATION_TO_EXECUTE = 0.6,		-- % or more average plan preparation before executing
-	STATE_GARRISON_MAX_UNITS = 1,				-- Max units to guard a garrison under normal circumstances (isolated core areas like England has is excempt)
+	ORG_UNIT_STRONG = 0.9,								-- Organization % for unit to be considered strong
+	ORG_UNIT_WEAK = 0.30,								-- Organization % for unit to be considered weak
+	STR_UNIT_STRONG = 0.80,								-- Strength (equipment) % for unit to be considered strong
+	STR_UNIT_WEAK = 0.40,								-- Strength (equipment) % for unit to be considered weak
+	PLAN_FACTION_STRONG_TO_EXECUTE = 0.60,				-- % or more of units in an order to consider ececuting the plan
+	PLAN_FACTION_WEAK_TO_ABORT = 0.65,					-- % or more of units in an order to consider ececuting the plan
+	PLAN_AVG_PREPARATION_TO_EXECUTE = 0.6,				-- % or more average plan preparation before executing
+	STATE_GARRISON_MAX_UNITS = 1,						-- Max units to guard a garrison under normal circumstances (isolated core areas like England has is excempt)
 	
 	
 	REDEPLOY_DISTANCE_VS_ORDER_SIZE = 1.0,				-- Factor applied to the path length of a unit compared to length of an order to determine if it should use strategic redeployment
@@ -981,8 +981,8 @@ NAI = {
 	
 	SUPPLY_CRISIS_LIMIT = 0.9,							-- If a unit is standing in an area with 
 	
-	MAX_ALLOWED_NAVAL_DANGER = 50,				-- AI will ignore naval paths that has danger value of above this threshold while assigning units
-	TRANSFER_DANGER_HOSTILE_SHIPS = 60, 		-- max danger from complete enemy naval supriority over ai in an area
+	MAX_ALLOWED_NAVAL_DANGER = 60,						-- AI will ignore naval paths that has danger value of above this threshold while assigning units
+	TRANSFER_DANGER_HOSTILE_SHIPS = 60, 				-- max danger from complete enemy naval supriority over ai in an area
 	
 	FASCISTS_BEFRIEND_FASCISTS = 10,
 	FASCISTS_BEFRIEND_DEMOCRACIES = -25,
