@@ -2,12 +2,12 @@ guiTypes = {
 
 	containerWindowType = {
 		name = "countrydiplomacyview"
-		position = { x=-606 y=78}	
+		position = { x=-1000 y=78 }	
 		show_position = { x=-6 y =78 }
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300	
-		size = { width=550 height=100%% }
+		size = { width = 950 height=100%% }
 		verticalScrollbar = "right_vertical_slider"
 		horizontalScrollbar = "bottom_horizontal_slider"
 		
@@ -41,59 +41,59 @@ guiTypes = {
 				name = "diplo_country_flag"
 				quadTextureSprite ="GFX_shield_medium"
 				position = { x= 39 y = 0 }
-				Orientation = "UPPER_LEFT"
+				orientation = "UPPER_LEFT"
 			}			
 			
 			iconType = {
 				name = "diplo_leader_frame"
 				position = { x = 14 y = -10 }
 				spriteType = "GFX_diplo_leader_frame"
-				allwaystransparent = yes
+				alwaystransparent = yes
 			}			
 			
 			iconType ={
 				name = "ideology_icon"
 				spriteType = "GFX_ideology_unknown"
 				position = { x = 158 y = 0 }
-				Orientation = "UPPER_LEFT"
+				orientation = "UPPER_LEFT"
 				frame = 1
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "country_name"
-				position = { x = 245 y = 3 }
+				position = { x = 160 y = 88 }
 				font = "hoi_18mbs"
 				text = "Germanian"
-				maxWidth = 173
-				fixedsize = yes
+				maxWidth = 250
+				#fixedsize = yes
 				maxHeight = 20
 				format = left
 			}
 
 			containerWindowType = {
 				name = "faction"
-				position = { x = 245 y = 23}	
-				size = { width = 175 height = 20 }
+				position = { x = 160 y = 105 }	
+				size = { width = 250 height = 20 }
 				clipping = no
 			
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "faction_name"
 					position = { x = 0 y = 0 }
 					font = "hoi_18mbs"
 					text = "faction"
-					maxWidth = 173
+					maxWidth = 250
 					maxHeight = 20
 					fixedsize = yes		
 					format = left
 				}
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "leader_name"
-				position = { x = 245 y = 43 }
+				position = { x = 160 y = 125 }
 				font = "hoi_16mbs"
 				text = "Rudolf Kittler"
-				maxWidth = 173
+				maxWidth = 250
 				maxHeight = 20
 				format = left
 				fixedsize = yes						
@@ -102,18 +102,18 @@ guiTypes = {
 			iconType = {
 				name ="unity_bg"
 				spriteType = "GFX_diplo_unity_bg"
-				position = { x= 413 y = 1 }
+				position = { x= 413 y = 85 }
 			}	
 			
 			iconType = {
 				name ="unity_icon"
 				spriteType = "GFX_unity_icon"
-				position = { x= 420 y = 9 }
+				position = { x= 420 y = 89 }
 			}			
 
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "nat_unity_value"
-				position = { x = 413 y = 43 }
+				position = { x = 413 y = 123 }
 				font = "hoi_16mbs"
 				text = "100%"
 				maxWidth = 44
@@ -123,13 +123,13 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "opinion_info"
-				position = { x = 425 y = 5 }
+				position = { x = 425 y = 89 }
 				size = { width = 100 height = 60 }
 				clipping = no
 			
 				background = {
 					name = "Background"		
-					spriteType ="GFX_diplo_opinion_bg"
+					spriteType = "GFX_diplo_opinion_bg"
 					position = { x = 33 y = -4 }					
 				}
 				
@@ -137,10 +137,10 @@ guiTypes = {
 					name = "our_opinion_left_flag"
 					quadTextureSprite ="GFX_flag_small"
 					position = { x = 38 y = 9 }
-					allwaystransparent = yes
+					alwaystransparent = yes
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "our_opinion_value"
 					position = { x = 67 y = -4 }
 					font = "hoi_16mbs"
@@ -152,12 +152,12 @@ guiTypes = {
 				
 				iconType = {
 					name = "their_opinion_left_flag"
-					quadTextureSprite ="GFX_flag_small"
+					quadTextureSprite = "GFX_flag_small"
 					position = { x = 74 y = 21 }
-					allwaystransparent = yes
+					alwaystransparent = yes
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "their_opinion_value"
 					position = { x = 37 y = 41 }
 					font = "hoi_16mbs"
@@ -170,8 +170,8 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "political_pie_chart"
-				position = { x = 141 y = 61 }
-				size = { width=330 height=30 }
+				position = { x = 528 y = -18 }
+				size = { width = 275 height = 20 }
 				clipping = no
 
 				iconType = {
@@ -189,11 +189,11 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "ruling_party_info"
-				position = { x = 260 y = 90 }
+				position = { x = 560 y = 90 }
 				size = { width = 255 height = 60 }
 				clipping = no
-						
-				instantTextboxType = {
+				
+				instantTextBoxType = {
 					name = "party_name"
 					position = { x = 5 y = -5 }
 					font = "hoi_16mbs"
@@ -203,18 +203,18 @@ guiTypes = {
 					fixedsize = yes
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "ideology_name"
-					position = { x = 5 y = 10 }
+					position = { x = 5 y = 15 }
 					font = "hoi_16mbs"
 					text = "ideology"
 					maxWidth = 245
 					maxHeight = 20
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "elections"
-					position = { x = 5 y = 25 }
+					position = { x = 5 y = 35 }
 					font = "hoi_16mbs"
 					text = "elections"
 					maxWidth = 245
@@ -224,7 +224,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "active_national_focus_info"
-				position = { x = 146 y =  154 }
+				position = { x = 336 y =  154 }
 				size = { width = 330 height = 50 }
 				clipping = no
 				
@@ -243,7 +243,7 @@ guiTypes = {
 					scale = 0.9
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "national_focus_label"
 					position = { x = 146 y = 23 }
 					font = "hoi_18mbs"
@@ -258,7 +258,7 @@ guiTypes = {
 				iconType = {
 					name = "progress"
 					spriteType = "GFX_activegoal_progress"
-					position = { x=129 y = 57 }	
+					position = { x = 129 y = 57 }	
 					alwaystransparent = yes				
 				}
 				
@@ -269,7 +269,6 @@ guiTypes = {
 					alwaystransparent = yes
 				}			
 			}
-			
 			#------------------------- TAB BUTTONS ----------------------------
 			iconType = {
 				name = "diplo_nat_spirits_bg"
@@ -280,7 +279,7 @@ guiTypes = {
 			buttonType = {
 				name = "relations_tab_button"
 				quadTextureSprite = "GFX_tab_large"
-				position = { x=19 y=231 }
+				position = { x = 19 y = 231 }
 				buttonText = "DIPLOMACY_RELATIONS_TAB"
 				font = "hoi_18mbs"
 			}
@@ -288,19 +287,17 @@ guiTypes = {
 			buttonType = {
 				name = "info_tab_button"
 				quadTextureSprite = "GFX_tab_large"
-				position = { x=270 y= 231 }
+				position = { x = 470 y = 231 }
 				buttonText = "DIPLOMACY_INFO_TAB"
 				font = "hoi_18mbs"
 			}
 			#------------------------- END TAB BUTTONS ----------------------------
-			
 			#------------------------- RELATIONS TAB ----------------------------
 			containerWindowType = {
 				name = "relations_info"
 				position = { x = 11 y = 270 }
-				size = { width = 268 height = -50 }
-				margin = { top = 8 bottom = 8}	
-				
+				size = { width = 575 height = -50 }
+				margin = { top = 5 bottom = 8}
 				verticalScrollbar = "right_vertical_slider"
 
 				background = {
@@ -312,8 +309,8 @@ guiTypes = {
 					name = "relations_grid"
 					position = { x = 10 y = 10 }
 					#padding = { bottom = 8 }
-					size = { width = 255 height = 100%% }
-					slotsize = { width = 200 height = 50 }
+					size = { width = 555 height = 100%% }
+					slotsize = { width = 500 height = 50 }
 					max_slots_horizontal = 1
 					format = "UPPER_LEFT"
 				}
@@ -321,8 +318,8 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "diplomatic_actions"
-				position = { x = 272 y = 270 }
-				size = { width = 265 height = -50 }
+				position = { x = 575 y = 270 }
+				size = { width = 365 height = -50 }
 				verticalScrollbar = "right_vertical_slider"
 				
 				background = {
@@ -336,11 +333,22 @@ guiTypes = {
 					spriteType = "GFX_win_header_short"
 				}
 				
+				instantTextBoxType = {
+					name = "diplo_action_txt"
+					position = { x = 3 y = 9 }
+					font = "hoi_18mbs"
+					borderSize = { x = 0 y = 0 }
+					text = "Diplomatic actions"
+					maxWidth = 180
+					maxHeight = 20
+					format = center
+				}
+				
 				gridboxtype = {
 					name = "actions_grid"
-					position = { x = 10 y = 32 }
-					size = { width = 255 height = 100%% }
-					slotsize = { width = 255 height = 29 }
+					position = { x = 35 y = 35 }
+					size = { width = 355 height = 100%% }
+					slotsize = { width = 355 height = 35 }
 					max_slots_horizontal = 1
 					format = "UPPER_LEFT"
 				}
@@ -366,8 +374,8 @@ guiTypes = {
 					name = "national_spirit_ideas_grid"
 					position = { x = -7 y = 15 }
 					size = { width = 255 height = 140 }
-					slotsize = { width = 51 height = 60 }
-					max_slots = { x = 10 y = 2 }
+					slotsize = { width = 61 height = 60 }
+					max_slots = { x = 20 y = 2 }
 					format = "UPPER_LEFT"
 				}
 				
@@ -375,8 +383,8 @@ guiTypes = {
 					name = "nat_spirit_ideas_grid_over_defined"
 					position = { x = -20 y = 10 }
 					size = { width = 100%% height = 100%% }
-					slotsize = { width = 34 height = 35 }
-					max_slots = { x = 15 y = 3 }
+					slotsize = { width = 40 height = 35 }
+					max_slots = { x = 30 y = 3 }
 					format = "UPPER_LEFT"
 				}
 			}
@@ -384,7 +392,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "ideas_info"
 				position = { x = 10 y = 414 }
-				size = { width = 265 height = -50 }
+				size = { width = 565 height = 96%% }
 				verticalScrollbar = "right_vertical_slider"
 				margin = { top = 7 bottom = 7 }
 				
@@ -396,7 +404,7 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "trade_info"
-				position = { x = 272 y = 447 }
+				position = { x = 622 y = 415 }
 				size = { width = 263 height = 84 }
 				verticalScrollbar = "right_vertical_slider"
 				
@@ -423,8 +431,8 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "estimated_enemy_force_info"
-				position = { x = 272 y = 578 }
-				size = { width = 265 height = -50 }
+				position = { x = 622 y = 500 }
+				size = { width = 265 height = 100% }
 				verticalScrollbar = "right_vertical_slider"
 				
 				background = {
@@ -438,7 +446,7 @@ guiTypes = {
 					position = { x = 13 y = 5 }
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "window_header_text"
 					position = { x = 32 y = 17 }
 					font = "hoi_18mbs"
@@ -461,7 +469,7 @@ guiTypes = {
 					pdx_tooltip = ESTIMATED_MILITARY_FORCES
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "estimated_military_forces"
 					position = { x = 16 y = 108 }
 					font = "hoi_18mbs"
@@ -484,7 +492,7 @@ guiTypes = {
 					pdx_tooltip = ESTIMATED_NAVY_FORCES
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "estimated_navy_forces"
 					position = { x = 16 y = 198 }
 					font = "hoi_18mbs"
@@ -507,7 +515,7 @@ guiTypes = {
 					pdx_tooltip = ESTIMATED_AIR_FORCES
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "estimated_airforce"
 					position = { x = 16 y = 289 }
 					font = "hoi_18mbs"
@@ -530,7 +538,7 @@ guiTypes = {
 					pdx_tooltip = ESTIMATED_CIVIL_INDUSTRY
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "estimated_civil_industry_size"
 					position = { x = 130 y = 289 }
 					font = "hoi_18mbs"
@@ -553,7 +561,7 @@ guiTypes = {
 					pdx_tooltip = ESTIMATED_MIL_INDUSTRY
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "estimated_military_industry_size"
 					position = { x = 130 y = 108 }
 					font = "hoi_18mbs"
@@ -576,7 +584,7 @@ guiTypes = {
 					pdx_tooltip = ESTIMATED_NAVAL_INDUSTRY
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "estimated_naval_industry_size"
 					position = { x = 130 y = 198 }
 					font = "hoi_18mbs"
@@ -599,7 +607,7 @@ guiTypes = {
 					pdx_tooltip = ESTIMATED_CONVOYS_ICON
 				}				
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "estimated_convoy_size"
 					position = { x = 16 y = 379 }
 					font = "hoi_18mbs"
@@ -622,7 +630,7 @@ guiTypes = {
 					pdx_tooltip = ESTIMATED_MANPOWER
 				}				
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "estimated_manpower_size"
 					position = { x = 130 y = 379 }
 					font = "hoi_18mbs"
@@ -638,27 +646,27 @@ guiTypes = {
 			iconType ={
 				name ="diplomacy_bottom"
 				spriteType = "GFX_main_screens_bottom"
-				position = { x = 3 y = -55 }
-				Orientation = "LOWER_LEFT"
+				position = { x = 3 y = -45 }
+				orientation = "LOWER_LEFT"
 			}
 			
 			buttonType = {
 				name = "back_button"
-				position = { x = 165 y = -48 }
+				position = { x = 365 y = -40 }
 				clicksound = click_close
 				quadTextureSprite ="GFX_button_221x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "OPEN_COUNTRY_LIST"
 				clicksound = click_close
 			}
 		}
 
 		iconType ={
-			name ="production_header_bg"
-			spriteType = "GFX_header_bg"
+			name ="diplomacy_header_bg"
+			spriteType = "GFX_header_diplo_bg"
 			position = { x= 5 y = 07 }
-			Orientation = "UPPER_LEFT"
+			orientation = "UPPER_LEFT"
 		}
 		
 		containerWindowType = {
@@ -670,17 +678,17 @@ guiTypes = {
 				name ="player_name_bg"
 				spriteType = "GFX_generic_text_bg_203"
 				position = { x= 10 y = 0 }
-				Orientation = "UPPER_LEFT"
+				orientation = "UPPER_LEFT"
 			}
 
 			iconType ={
 				name ="player_icon"
 				spriteType = "GFX_players_icon"
 				position = { x= 15 y = 4 }
-				Orientation = "UPPER_LEFT"
+				orientation = "UPPER_LEFT"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "player_name"
 				position = { x = 35 y = 4 }
 				textureFile = ""
@@ -694,7 +702,7 @@ guiTypes = {
 			}
 		}
 
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "diplomacy_title"
 			position = { x = 45 y = 8 }
 			textureFile = ""
@@ -708,41 +716,41 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "country_list"
-			position = { x = 0 y = 50}	
-			size = { width = 530 height = 100%% }
+			position = { x = 10 y = 50}	
+			size = { width = 380 height = 100%% }
 			
 			containerWindowType = {
 				name = "top_filter_window"
-				position = { x = 3 y = -10 }	
-				size = { width = 545 height = 135 }
+				position = { x = 540 y = 0 }	
+				size = { width = 400 height = 97%% }
 				verticalScrollbar = "right_vertical_slider"
-				margin = { top = 14 bottom = 14 }
+				margin = { top = 14 bottom = 0 }
 			
 				background = {
 					name = "Background"
-					spriteType ="GFX_tiled_bg"
+					spriteType ="GFX_tiled_window_transparent"
 				}
 
-				iconType ={
-					name ="diplo_filter_area_bg"
-					spriteType = "GFX_diplo_filter_area_bg"
-					position = { x= 15 y = 0 }
-				}
+				#iconType ={
+				#	name ="diplo_filter_area_bg"
+				#	spriteType = "GFX_diplo_filter_area_bg"
+				#	position = { x= -13 y = 0 }
+				#}
 				
 				gridboxtype = {
 					name = "filters_grid"
-					position = { x = 105 y = 1 }
+					position = { x = 25 y = 1 }
 					size = { width = 100%% height = 100%% }
-					slotsize = { width = 105 height = 35 }
-					max_slots_horizontal = 4
+					slotsize = { width = 115 height = 35 }
+					max_slots_horizontal = 3
 					format = "UPPER_LEFT"
 				}
 			}
 			
 			containerWindowType = {
 				name = "filters"
-				position = { x = 3 y = 125 }	
-				size = { width = 542 height = 35 }
+				position = { x = 3 y = -35 }	
+				size = { width = 692 height = 35 }
 				clipping = no
 			
 				background = {
@@ -785,7 +793,7 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "countries"
-				position = { x = 0 y = 155 }	
+				position = { x = 0 y = -15 }	
 				size = { width = 545 height = -5 }
 				margin = { top = 8 bottom = 8 }
 				verticalScrollbar = "right_vertical_slider"
@@ -808,11 +816,11 @@ guiTypes = {
 
 		buttonType = {
 			name = "close_button"
-			position = { x = -42 y = 9 }
+			position = { x = -45 y = 9 }
 			quadTextureSprite ="GFX_closebutton"
 			buttonFont = "hoi_16mbs"
 			shortcut = "ESCAPE"
-			Orientation = "UPPER_RIGHT"
+			orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
 		}
@@ -826,11 +834,11 @@ guiTypes = {
 		
 		background = {
 			name = "Background"		
-			spriteType ="GFX_diplo_actions_bg"
+			spriteType = "GFX_diplo_actions_bg"
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 24 y = 5 }
 			textureFile = ""
@@ -855,7 +863,7 @@ guiTypes = {
 			clicksound = click_action
 		}		
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 8 y = 4 }
 			textureFile = ""
@@ -866,12 +874,12 @@ guiTypes = {
 			maxHeight = 20
 			fixedsize = yes
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "cost"
-			position = { x = 170 y = 5 }
+			position = { x = 220 y = 5 }
 			textureFile = ""
 			font = "hoi_16mbs"
 			borderSize = { x = 0 y = 0 }
@@ -883,14 +891,14 @@ guiTypes = {
 		
 		iconType = {
 			name = "accept_icon"
-			position = { x = 204 y = 4 }
+			position = { x = 250 y = 4 }
 			spriteType ="GFX_accept_decline_icon"
 		}
 	}
 	
 	containerWindowType = {
 		name = "relation_strip_view"
-		size = { width = 200 height = 50 }
+		size = { width = 400 height = 50 }
 		clipping = no
 
 		iconType = {
@@ -908,7 +916,7 @@ guiTypes = {
 		OverlappingElementsBoxType = {
 			name = "relation_flags"
 			position = { x = 40 y = 5 }
-			size = { x = 160 y = 32 }
+			size = { x = 495 y = 32 }
 			format = left
 			spacing = 1.0
 		}	
@@ -971,25 +979,25 @@ guiTypes = {
 	### distance between category header is hardcoded
 	containerWindowType = {
 		name = "diplomacy_idea_category_entry"
-		size = { width = 255 height = 100 }
+		size = { width = 500 height = 500 }
 		clipping = no
 
 		background = {
 			name = "Background"		
 			spriteType = "GFX_diplo_details_header"
-			position = { x = 4 y = 6 }			
+			position = { x = 10 y = 8 }			
 		}
 
 		iconType = {
 			name = "idea_categories"
 			spriteType = "GFX_idea_categories"
-			position = { x = 23 y = 12 }	
+			position = { x = 28 y = 12 }	
 			frame = 1
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "title"
-			position = { x = 70 y = 15 }
+			position = { x = 75 y = 15 }
 			font = "hoi_18mbs"
 			text = "category"
 			maxWidth = 160
@@ -1000,16 +1008,16 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "ideas"
-			position = { x = 14 y = 41 }
-			size = { width = 100%% height = 100%% }
+			position = { x = 25 y = 50 }
+			size = { width = 520 height = 500 }
 			verticalScrollbar = "right_vertical_slider"
 		
-			gridBoxType = {
+			gridboxtype = {
 				name = "ideas_grid"
-				position = { x = 0 y = 0 }
-				size = { width = 255 height = 106 }
-				slotsize = { width = 70 height = 64 }
-				max_slots_horizontal = 3
+				position = { x = 0 y = 5 }
+				size = { width = 520 height = 175 }
+				slotsize = { width = 70 height = 70 }
+				max_slots = { x = 5 y = 3 }
 				format = "UPPER_LEFT"
 			}
 		}
@@ -1034,7 +1042,7 @@ guiTypes = {
 				spriteType ="GFX_generic_diplo_action_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -1044,7 +1052,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 100 }
 				font = "hoi_18mbs"
@@ -1068,8 +1076,7 @@ guiTypes = {
 				borderSize = {x = 0 y = 0}
 				text = "REPLYTEXT"	
 				maxWidth = 315
-				maxHeight = 40	
-
+				maxHeight = 40
 				format = centre
 			}				
 			
@@ -1078,7 +1085,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -1091,7 +1098,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -1124,7 +1131,7 @@ guiTypes = {
 #				position = { x = 3 y = 8 }
 #			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -1134,7 +1141,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 125 y = 91 }
 				font = "hoi_20b"
@@ -1215,7 +1222,7 @@ guiTypes = {
 				}
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "active_threats_title"
 				position = { x = 32 y = 322 }
 				font = "hoi_18mbs"
@@ -1225,7 +1232,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "wargoal_name"
 				position = { x = 265 y = 135 }
 				font = "hoi_16mbs"
@@ -1241,7 +1248,7 @@ guiTypes = {
 #				name = "diplo_action_bottom"
 #				quadTextureSprite ="GFX_diplo_action_bottom"
 #				position = { x = 2 y = -70 }
-#				Orientation = "LOWER_LEFT"					
+#				orientation = "LOWER_LEFT"					
 #			}
 			
 			checkBoxType = {
@@ -1250,10 +1257,10 @@ guiTypes = {
 				quadTextureSprite ="GFX_generic_checkbox"
 				clicksound = click_checkbox
 				frame = 0
-				Orientation = "LEFT"				
+				orientation = "LEFT"				
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "call_allies_textbox"
 				position = { x = 380 y = 432 }
 				font = "hoi_18mbs"
@@ -1261,7 +1268,7 @@ guiTypes = {
 				maxWidth = 100
 				maxHeight = 20
 				format = left
-				Orientation = "LEFT"
+				orientation = "LEFT"
 			}
 			
 			buttonType = {
@@ -1269,7 +1276,7 @@ guiTypes = {
 				position = { x = 350 y = -57 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -1282,7 +1289,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -1302,7 +1309,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_offer_peace_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -1312,7 +1319,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 100 }
 				font = "hoi_18mbs"
@@ -1353,7 +1360,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -1366,7 +1373,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -1390,14 +1397,14 @@ guiTypes = {
 				name = "Background"
 				spriteType ="GFX_diplo_action_justify_wargoals_top_bg"
 				position = { x = 13 y = 11 }
-				allwaystransparent = yes
+				alwaystransparent = yes
 			}	
 
 			iconType = {
 				name = "wargoal_text_bg"
 				quadTextureSprite ="GFX_category_header"
 				position = { x = 8 y = 113 }
-				allwaystransparent = yes
+				alwaystransparent = yes
 			}
 
 			iconType = {
@@ -1406,7 +1413,7 @@ guiTypes = {
 				position = { x = 1 y = 15 }
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 23 }
 				font = "hoi_24header"
@@ -1416,7 +1423,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 30 y = 390 }
 				font = "hoi_16mbs"
@@ -1473,7 +1480,7 @@ guiTypes = {
 				}
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "wargoal_name"
 				position = { x = 30 y = 125 }
 				font = "hoi_18mbs"
@@ -1490,7 +1497,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -1503,7 +1510,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 			}
@@ -1522,7 +1529,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_stage_coup_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 30 }
 				font = "hoi_24header"
@@ -1547,7 +1554,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "cancel_diplo_action_text"
 				position = { x = 132 y = 108 }
 				font = "hoi_18mbs"
@@ -1558,7 +1565,7 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 40 y = 90 }
 				font = "hoi_18mbs"
@@ -1568,7 +1575,7 @@ guiTypes = {
 				format = center					
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "select_state_note"
 				position = { x = 295 y = 164 }
 				font = "hoi_18mbs"
@@ -1626,7 +1633,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				clicksound = click_send
 				shortcut = "RETURN"
@@ -1638,7 +1645,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 			}
@@ -1663,14 +1670,14 @@ guiTypes = {
 #				name = "Background"
 #				spriteType ="GFX_diplo_action_justify_wargoals_top_bg"
 #				position = { x = 13 y = 11 }
-#				allwaystransparent = yes
+#				alwaystransparent = yes
 #			}					
 
 #			iconType = {
 #				name = "wargoal_text_bg"
 #				quadTextureSprite ="GFX_category_header"
 #				position = { x = 8 y = 113 }
-#				allwaystransparent = yes
+#				alwaystransparent = yes
 #			}
 			
 #			iconType = {
@@ -1679,7 +1686,7 @@ guiTypes = {
 #				position = { x = 1 y = 15 }
 #			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -1750,7 +1757,7 @@ guiTypes = {
 				}
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 22 y = 14 }
 				font = "hoi_18mbs"
@@ -1759,7 +1766,7 @@ guiTypes = {
 				maxHeight = 300
 				format = center					
 				vertical_alignment = center
-				Orientation = "UPPER_LEFT"
+				orientation = "UPPER_LEFT"
 				alwaystransparent = yes				
 			}
 			
@@ -1787,7 +1794,7 @@ guiTypes = {
 				}
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "wargoal_name"
 				position = { x = 30 y = 98 }
 				font = "hoi_18mbs"
@@ -1799,7 +1806,7 @@ guiTypes = {
 				vertical_alignment = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "wargoal_warning"
 				position = { x = 30 y = 81 }
 				font = "hoi_18mbs"
@@ -1816,7 +1823,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -1829,7 +1836,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 			}
@@ -1848,7 +1855,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_guarantee_independence_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -1858,7 +1865,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 90 }
 				font = "hoi_16mbs"
@@ -1900,7 +1907,7 @@ guiTypes = {
 				}
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "active_threats_title"
 				position = { x = 40 y = 179 }
 				font = "hoi_18mbs"
@@ -1915,7 +1922,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -1927,7 +1934,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -1947,7 +1954,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_mil_acess_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -1957,7 +1964,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 100 }
 				font = "hoi_18mbs"
@@ -1998,7 +2005,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -2011,7 +2018,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -2033,7 +2040,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_mil_acess_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -2043,7 +2050,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 100 }
 				font = "hoi_18mbs"
@@ -2084,7 +2091,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -2097,7 +2104,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -2117,7 +2124,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_nonagression_pact_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -2127,7 +2134,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 100 }
 				font = "hoi_18mbs"
@@ -2168,7 +2175,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -2181,7 +2188,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -2201,7 +2208,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_imp_relations_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -2211,7 +2218,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 100 }
 				font = "hoi_18mbs"
@@ -2240,7 +2247,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -2253,7 +2260,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -2273,7 +2280,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_dissolve_faction_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -2283,7 +2290,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 100 }
 				font = "hoi_18mbs"
@@ -2312,7 +2319,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -2325,7 +2332,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -2345,7 +2352,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_invite_to_faction_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -2355,7 +2362,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 90 }
 				font = "hoi_18mbs"
@@ -2397,7 +2404,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -2410,7 +2417,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -2430,7 +2437,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_invite_to_faction_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -2440,7 +2447,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 31 y = 90 }
 				font = "hoi_16mbs"
@@ -2481,7 +2488,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -2494,7 +2501,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -2554,7 +2561,7 @@ guiTypes = {
 				}
 			}
 
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = {x=0 y=30}
 				font = "hoi_24header"
@@ -2594,7 +2601,7 @@ guiTypes = {
 				position = { x=410 y=137}
 				quadTextureSprite ="GFX_button_94x31"
 				buttonFont = "hoi_16mbs"
-				Orientation = "UPPER_LEFT"
+				orientation = "UPPER_LEFT"
 				buttonText = "Clear all"
 			}
 			
@@ -2626,7 +2633,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -2639,13 +2646,13 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "current_lease_info_header"
 				position = {x=15 y=82}
 				font = "hoi_18mbs"
@@ -2655,7 +2662,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "current_lease_info"
 				position = {x=220 y=82}
 				font = "hoi_18mbs"
@@ -2670,14 +2677,14 @@ guiTypes = {
 				position = { x=42 y=100 }
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "num_convoys"
 				position = {x=70 y=100}
 				font = "hoi_18mbs"
 				maxWidth = 100
 				maxHeight = 20
 				format = left
-#				Orientation = "LOWER_LEFT"
+#				orientation = "LOWER_LEFT"
 			}
 			
 			iconType = {
@@ -2687,7 +2694,7 @@ guiTypes = {
 				pdx_tooltip = "MONTHLY_LL_FREEDOM_VALUE_DESC"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "autonomy_score_gain"
 				position = {x=70 y=510}
 				font = "hoi_18mbs"
@@ -2752,7 +2759,7 @@ guiTypes = {
 				}
 			}
 
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = {x=0 y=30}
 				font = "hoi_24header"
@@ -2792,7 +2799,7 @@ guiTypes = {
 				position = { x=410 y=137}
 				quadTextureSprite ="GFX_button_94x31"
 				buttonFont = "hoi_16mbs"
-				Orientation = "UPPER_LEFT"
+				orientation = "UPPER_LEFT"
 				buttonText = "Clear all"
 			}
 			
@@ -2824,7 +2831,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -2837,13 +2844,13 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "current_lease_info_header"
 				position = {x=15 y=82}
 				font = "hoi_18mbs"
@@ -2853,7 +2860,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "current_lease_info"
 				position = {x=220 y=82}
 				font = "hoi_18mbs"
@@ -2868,14 +2875,14 @@ guiTypes = {
 				position = { x=42 y=100 }
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "num_convoys"
 				position = {x=70 y=100}
 				font = "hoi_18mbs"
 				maxWidth = 100
 				maxHeight = 20
 				format = left
-#				Orientation = "LOWER_LEFT"
+#				orientation = "LOWER_LEFT"
 			}
 			
 			iconType = {
@@ -2884,7 +2891,7 @@ guiTypes = {
 				position = { x=42 y=510 }
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "autonomy_score_gain"
 				position = {x=40 y=508}
 				font = "hoi_18mbs"
@@ -2908,7 +2915,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_boost_party_bg"
 			}
 				
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 30 }
 				font = "hoi_24header"
@@ -2918,7 +2925,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 20 y = 97 }
 				font = "hoi_18mbs"
@@ -2955,7 +2962,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				clicksound = click_send
 				shortcut = "RETURN"
@@ -2967,7 +2974,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "BACK"
 				clicksound = click_close
 			}
@@ -2992,7 +2999,7 @@ guiTypes = {
 #				position = { x = 1 y = 15 }
 #			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 23 }
 				font = "hoi_24header"
@@ -3002,7 +3009,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 40 y = 100 }
 				font = "hoi_16mbs"
@@ -3068,7 +3075,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -3081,7 +3088,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 			}
@@ -3100,7 +3107,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_call_allies_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 30 }
 				font = "hoi_24header"
@@ -3110,7 +3117,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 20 y = 88 }
 				font = "hoi_18mbs"
@@ -3172,7 +3179,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -3185,7 +3192,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -3205,7 +3212,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_join_allies_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 30 }
 				font = "hoi_24header"
@@ -3215,7 +3222,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 20 y = 88 }
 				font = "hoi_18mbs"
@@ -3225,7 +3232,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "truce_break_warning"
 				position = { x = 20 y = 110 }
 				font = "hoi_18mbs"
@@ -3286,7 +3293,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				pdx_tooltip = "DIPLOMACY_SEND"
 				clicksound = click_send
@@ -3299,7 +3306,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -3319,7 +3326,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_volunteers_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -3336,7 +3343,7 @@ guiTypes = {
 				frame = 1
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "time_text"
 				position = { x = 110 y = 93 }
 				font = "hoi_18mbs"
@@ -3357,7 +3364,7 @@ guiTypes = {
 					spriteType ="GFX_tiled_window_1b_border"
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "empty"
 					position = { x = 20 y = 30 }
 					font = "hoi_18mbs"
@@ -3376,7 +3383,7 @@ guiTypes = {
 				}
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 28 y = -270 }
 				font = "hoi_18mbs"
@@ -3384,7 +3391,7 @@ guiTypes = {
 				maxWidth = 470
 				maxHeight = 300
 				format = center	
-				Orientation = "LOWER_LEFT"					
+				orientation = "LOWER_LEFT"					
 			}
 
 			buttonType = {
@@ -3392,7 +3399,7 @@ guiTypes = {
 				position = { x = 350 y = -60  }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				clicksound = click_send
 				shortcut = "RETURN"
@@ -3404,7 +3411,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "BACK"
 				clicksound = click_close
 			}
@@ -3423,7 +3430,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_expeditionary_force_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -3445,7 +3452,7 @@ guiTypes = {
 					spriteType ="GFX_tiled_window_1b_border"
 				}
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "empty"
 					position = { x = 20 y = 30 }
 					font = "hoi_18mbs"
@@ -3464,7 +3471,7 @@ guiTypes = {
 				}
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 28 y = -270 }
 				font = "hoi_18mbs"
@@ -3472,7 +3479,7 @@ guiTypes = {
 				maxWidth = 470
 				maxHeight = 300
 				format = center	
-				Orientation = "LOWER_LEFT"					
+				orientation = "LOWER_LEFT"					
 			}
 
 			buttonType = {
@@ -3480,7 +3487,7 @@ guiTypes = {
 				position = { x = 350 y = -60  }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				clicksound = click_send
 				shortcut = "RETURN"
@@ -3492,7 +3499,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "BACK"
 				clicksound = click_close
 			}
@@ -3511,7 +3518,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_request_forces_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 29 }
 				font = "hoi_24header"
@@ -3521,7 +3528,7 @@ guiTypes = {
 				format = center
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 32 y = 120 }
 				font = "hoi_18mbs"
@@ -3529,7 +3536,7 @@ guiTypes = {
 				maxWidth = 470
 				maxHeight = 300
 				format = center	
-				Orientation = "UPPER_LEFT"					
+				orientation = "UPPER_LEFT"					
 			}
 
 			containerWindowType = {
@@ -3546,7 +3553,7 @@ guiTypes = {
 					position = { x= 64 y = 177 }
 				}	
 				
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "label"
 					position = { x = 74 y = 190 }
 					font = "hoi_16mbs"
@@ -3556,7 +3563,7 @@ guiTypes = {
 					format = center
 				}
 
-				instantTextboxType = {
+				instantTextBoxType = {
 					name = "max_amount"
 					position = { x = 424 y = 190 }
 					font = "hoi_16mbs"
@@ -3611,7 +3618,7 @@ guiTypes = {
 				position = { x = 350 y = -57 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				clicksound = click_send
 				shortcut = "RETURN"
@@ -3623,7 +3630,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "BACK"
 				clicksound = click_close
 			}
@@ -3642,7 +3649,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_stage_coup_bg"
 			}
 					
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 30 }
 				font = "hoi_24header"
@@ -3658,7 +3665,7 @@ guiTypes = {
 				quadTextureSprite ="GFX_diplo_action_cancel_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 40 y = 90 }
 				font = "hoi_18mbs"
@@ -3695,7 +3702,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				clicksound = click_send
 				shortcut = "RETURN"
@@ -3707,7 +3714,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 			}
@@ -3726,7 +3733,7 @@ guiTypes = {
 				spriteType ="GFX_diplo_action_stage_coup_bg"
 			}
 					
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 0 y = 30 }
 				font = "hoi_24header"
@@ -3742,7 +3749,7 @@ guiTypes = {
 				quadTextureSprite ="GFX_diplo_action_cancel_bg"
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 40 y = 90 }
 				font = "hoi_18mbs"
@@ -3779,7 +3786,7 @@ guiTypes = {
 				position = { x = 350 y = -60 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				clicksound = click_send
 				shortcut = "RETURN"
@@ -3791,7 +3798,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 			}
@@ -3837,7 +3844,7 @@ guiTypes = {
 				name = "checkbox_active_licenses"
 				position = { x = -475 y = 84 }
 				quadTextureSprite ="GFX_generic_checkbox"
-				Orientation = "UPPER_RIGHT"
+				orientation = "UPPER_RIGHT"
 				clicksound = click_checkbox
 			}
 
@@ -3845,10 +3852,10 @@ guiTypes = {
 				name = "generic_text_bg_active_licenses"
 				position = { x=-439 y = 84 }
 				spriteType = "GFX_generic_text_bg_203"
-				Orientation = "UPPER_RIGHT"			
+				orientation = "UPPER_RIGHT"			
 			}	
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "active_licenses_title"
 				position = { x = -430 y = 88 }
 				textureFile = ""
@@ -3859,14 +3866,14 @@ guiTypes = {
 				maxHeight = 20
 				format = left
 				fixedsize = yes
-				Orientation = "UPPER_RIGHT"
+				orientation = "UPPER_RIGHT"
 			}		
 			
 			buttonType = {
 				name = "checkbox_available_licenses"
 				position = { x = -475 y = 112 }
 				quadTextureSprite ="GFX_generic_checkbox"
-				Orientation = "UPPER_RIGHT"
+				orientation = "UPPER_RIGHT"
 				clicksound = click_checkbox
 			}
 
@@ -3874,10 +3881,10 @@ guiTypes = {
 				name = "generic_text_bg_available_licenses"
 				position = { x=-439 y = 113 }
 				spriteType = "GFX_generic_text_bg_203"
-				Orientation = "UPPER_RIGHT"			
+				orientation = "UPPER_RIGHT"			
 			}	
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "available_licenses_title"
 				position = { x = -430 y = 115 }
 				textureFile = ""
@@ -3888,7 +3895,7 @@ guiTypes = {
 				maxHeight = 20
 				format = left
 				fixedsize = yes
-				Orientation = "UPPER_RIGHT"
+				orientation = "UPPER_RIGHT"
 			}	
 			
 			buttonType = {
@@ -3923,7 +3930,7 @@ guiTypes = {
 				pdx_tooltip = EQUIPMENT_NAVAL
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "title"
 				position = { x = 122 y = 16 }
 				font = "hoi_24header"
@@ -3937,10 +3944,10 @@ guiTypes = {
 				name = "description_expected_cost"
 				position = { x=-229 y = 97 }
 				spriteType = "GFX_generic_text_bg_154"
-				Orientation = "UPPER_RIGHT"			
+				orientation = "UPPER_RIGHT"			
 			}
 			
-			instantTextboxType = {
+			instantTextBoxType = {
 				name = "description"
 				position = { x = 293 y = 101 }
 				font = "hoi_18mbs"
@@ -3985,7 +3992,7 @@ guiTypes = {
 				
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_SEND"
 				clicksound = click_send
 				shortcut = "RETURN"
@@ -3997,7 +4004,7 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
-				Orientation = "LOWER_LEFT"
+				orientation = "LOWER_LEFT"
 				buttonText = "DIPLOMACY_CANCEL"
 				pdx_tooltip = "DIPLOMACY_CANCEL"
 				clicksound = click_close
@@ -4031,7 +4038,7 @@ guiTypes = {
 			name = "trait"
 			position = { x = 52 y = 55 }
 			spriteType = "GFX_idea_traits_strip"
-			centerposition = yes
+			#centerposition = yes
 			alwaystransparent = yes
 			frame = 1
 		}
@@ -4052,18 +4059,18 @@ guiTypes = {
 			name = "diplolist_country_flag"
 			quadTextureSprite ="GFX_flag_small2"
 			position = { x= 9 y = 10 }
-			Orientation = "UPPER_LEFT"
-			allwaystransparent = yes
+			orientation = "UPPER_LEFT"
+			alwaystransparent = yes
 		}			
 		
 		iconType = {
 			name = "diplo_countrylist_flag_frame"
 			spriteType = "GFX_diplo_countrylist_flag_frame"
 			position = { x = 5 y = 6 }			
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 56 y = 6 }
 			font = "hoi_16mbs"
@@ -4085,7 +4092,7 @@ guiTypes = {
 			position = { x = 300 y = 9 }			
 		}		
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "our_opinion"
 			position = { x = 232 y = 15 }
 			font = "hoi_16mbs"
@@ -4095,7 +4102,7 @@ guiTypes = {
 			format = center
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "their_opinion"
 			position = { x = 292 y = 15 }
 			font = "hoi_16mbs"
@@ -4125,7 +4132,7 @@ guiTypes = {
 			clicksound = click_scroll
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 0 y = 6 }
 			font = "hoi_16mbs"
@@ -4148,7 +4155,7 @@ guiTypes = {
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = -5 y = 4 }
 			font = "hoi_18mbs"
@@ -4200,7 +4207,7 @@ guiTypes = {
 			position = { x= 3 y = 42 }
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "equipment_header"
 			position = {x=10 y=47}
 			font = "hoi_18mbs"
@@ -4210,7 +4217,7 @@ guiTypes = {
 			format = center
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "storage_header"
 			position = {x=130 y=47}
 			font = "hoi_18mbs"
@@ -4220,7 +4227,7 @@ guiTypes = {
 			format = center
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "producing_header"
 			position = {x=222 y=47}
 			font = "hoi_18mbs"
@@ -4230,7 +4237,7 @@ guiTypes = {
 			format = center
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "no_equipment"
 			position = {x=80 y=70}
 			font = "hoi_18mbs"
@@ -4246,7 +4253,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_closebutton"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
-			Orientation = "UPPER_RIGHT"
+			orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
 		}
@@ -4293,7 +4300,7 @@ guiTypes = {
 			position = { x= 3 y = 42 }
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "equipment_header"
 			position = {x=10 y=47}
 			font = "hoi_18mbs"
@@ -4303,7 +4310,7 @@ guiTypes = {
 			format = center
 		}	
 
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "our_production_header"
 			position = {x=185 y=47}
 			font = "hoi_18mbs"
@@ -4313,7 +4320,7 @@ guiTypes = {
 			format = center
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "no_equipment"
 			position = {x=80 y=70}
 			font = "hoi_18mbs"
@@ -4329,7 +4336,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_closebutton"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"
-			Orientation = "UPPER_RIGHT"
+			orientation = "UPPER_RIGHT"
 			clicksound = click_close
 			pdx_tooltip = "CLOSE"
 		}
@@ -4363,7 +4370,7 @@ guiTypes = {
 			scale = 0.6
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "equipment_name"
 			position = {x=8 y=4}
 			font = "hoi_18mbs"
@@ -4380,7 +4387,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_small_button_71x26"
 			buttonFont = "hoi_16mbs"
 			buttonText = "DIPLOMACY_LEND_LEASE_NUMBER"
-			Orientation = "UPPER_LEFT"
+			orientation = "UPPER_LEFT"
 			pdx_tooltip = "DIPLOMACY_LEND_LEASE_NUMBER_TOOLTIP"
 		}
 		
@@ -4390,7 +4397,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_small_button_71x26"
 			buttonFont = "hoi_16mbs"
 			buttonText = "DIPLOMACY_LEND_LEASE_PERCENT"
-			Orientation = "UPPER_LEFT"
+			orientation = "UPPER_LEFT"
 			pdx_tooltip = "DIPLOMACY_LEND_LEASE_PERCENT_TOOLTIP"
 		}
 
@@ -4400,7 +4407,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_small_button_71x26"
 			buttonFont = "hoi_16mbs"
 			buttonText = "DIPLOMACY_LEND_LEASE_ONCE"
-			Orientation = "UPPER_LEFT"
+			orientation = "UPPER_LEFT"
 			pdx_tooltip = "DIPLOMACY_LEND_LEASE_ONCE_TOOLTIP"
 		}
 
@@ -4435,7 +4442,7 @@ guiTypes = {
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "deal_description"
 			position = {x=307 y=39}
 			font = "hoi_18mbs"
@@ -4446,7 +4453,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "deal_state"
 			position = {x=250 y=10}
 			font = "hoi_18mbs"
@@ -4469,7 +4476,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "diplomacy_lend_lease_equipment_entry"
-		size = {width=338 height=72}
+		size = { width = 338 height = 72 }
 		clipping = no
 		
 		buttonType = {
@@ -4481,7 +4488,7 @@ guiTypes = {
 		iconType = {
 			name ="equipment_icon_default"
 			spriteType = "GFX_technology_medium"
-			position = { x=90 y=48 }
+			position = { x = 90 y = 48 }
 			centerposition = yes
 			alwaystransparent = yes
 			scale = 0.8
@@ -4503,7 +4510,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = {x=8 y=4}
 			font = "hoi_18mbs"
@@ -4520,7 +4527,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}		
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "in_pool"
 			position = {x=177 y=33}
 			font = "hoi_18mbs"
@@ -4538,7 +4545,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}		
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "producing"
 			position = {x=243 y=36}
 			font = "hoi_16mbs"
@@ -4548,7 +4555,7 @@ guiTypes = {
 			format = center
 			alwaystransparent = yes
 		}
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "lendleasing"
 			position = {x=310 y=10}
 			font = "hoi_16mbs"
@@ -4563,14 +4570,12 @@ guiTypes = {
 			name = "in_stock_icon"
 			position = { x=194 y=7 }
 			spriteType = "GFX_in_stock_icon"
-
 		}
 		
 		iconType = {
 			name = "balance_icon"
 			position = { x=269 y=7 }
 			spriteType = "GFX_balance_icon"
-
 		}			
 		
 	}
@@ -4603,7 +4608,7 @@ guiTypes = {
 			scale = 0.6
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "equipment_name"
 			position = {x=8 y=4}
 			font = "hoi_18mbs"
@@ -4621,7 +4626,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "value_box"
 			position = {x=220 y=40}
 			font = "hoi_18mbs"
@@ -4631,7 +4636,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "deal_description"
 			position = {x=282 y=39}
 			font = "hoi_18mbs"
@@ -4639,10 +4644,10 @@ guiTypes = {
 			maxHeight = 32
 			format = center
 			text = "desc"
-#			alwaystransparent = yes
+			#alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "deal_state"
 			position = {x=250 y=10}
 			font = "hoi_18mbs"
@@ -4689,7 +4694,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "equipment_name"
 			position = {x=8 y=4}
 			font = "hoi_18mbs"
@@ -4700,7 +4705,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "deal_state"
 			position = {x=250 y=10}
 			font = "hoi_18mbs"
@@ -4756,7 +4761,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = {x=5 y=4}
 			font = "hoi_18mbs"
@@ -4773,7 +4778,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}		
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "in_pool"
 			position = {x=177 y=33}
 			font = "hoi_18mbs"
@@ -4791,7 +4796,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}		
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "producing"
 			position = {x=243 y=36}
 			font = "hoi_16mbs"
@@ -4801,7 +4806,7 @@ guiTypes = {
 			format = center
 			alwaystransparent = yes
 		}
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "lendleasing"
 			position = {x=310 y=10}
 			font = "hoi_16mbs"
@@ -4823,9 +4828,7 @@ guiTypes = {
 			name = "balance_icon"
 			position = { x=269 y=7 }
 			spriteType = "GFX_balance_icon"
-
-		}		
-		
+		}
 	}
 
 	windowType = {
@@ -4864,7 +4867,7 @@ guiTypes = {
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 0 y = 5 }
 			font = "hoi_18mbs"
@@ -4886,7 +4889,7 @@ guiTypes = {
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 0 y = 5 }
 			font = "hoi_18mbs"
@@ -4909,7 +4912,7 @@ guiTypes = {
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 0 y = 5 }
 			font = "hoi_18mbs"
@@ -4932,7 +4935,7 @@ guiTypes = {
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 0 y = 5 }
 			font = "hoi_18mbs"
@@ -4954,7 +4957,7 @@ guiTypes = {
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 0 y = 0 }
 			font = "hoi_16mbs"
@@ -4976,7 +4979,7 @@ guiTypes = {
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 0 y = 5 }
 			font = "hoi_16mbs"
@@ -4998,7 +5001,7 @@ guiTypes = {
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 0 y = 4 }
 			font = "hoi_18mbs"
@@ -5014,14 +5017,14 @@ guiTypes = {
 		name = "diplomacy_join_ally_war_entry"
 		size = { width = 450 height = 30 }
 		clipping = no
-			
+		
 		background = {
 			name = "Background"
 			spriteType = "GFX_sort_button_428x29_button"
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 15 y = 3 }
 			font = "hoi_18mbs"
@@ -5037,32 +5040,32 @@ guiTypes = {
 		name = "diplomacy_expeditionary_group_entry"
 		size = { width = 200 height = 36 }
 		clipping = no
-			
-			
+		
 		background = {
 			name = "Background"
 			spriteType = "GFX_volunteers_entry_bg"
 			clicksound = click_default
 		}
+		
 		iconType ={
 			name ="color"
 			spriteType = "GFX_armyoverview_group_marker"
 			position = { x=384 y=10 }
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 		iconType ={
 			name ="exp_selection"
 			spriteType = "GFX_expeditionary_force_icon"
 			position = { x=442 y=-3 }
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}	
 		iconType ={
 			name ="selection"
 			spriteType = "GFX_volunteer_force_icon"
 			position = { x=442 y=-3 }
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "count"
 			position = { x = 12 y = 9 }
 			font = "hoi_16mbs"
@@ -5072,7 +5075,7 @@ guiTypes = {
 			fixedsize = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "commander"
 			position = { x = 165 y = 7 }
 			font = "hoi_18mbs"
@@ -5083,7 +5086,6 @@ guiTypes = {
 		}
 	}
 
-	
 	containerWindowType = {
 		name = "request_license_land_entry"
 		position = { x=6 y=0 }
@@ -5143,7 +5145,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 20 y = 6 }
 			font = "hoi_18mbs"
@@ -5155,7 +5157,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "general_name"
 			position = { x = 20 y = 22 }
 			font = "hoi_16mbs"
@@ -5166,7 +5168,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		gridBoxType = {
+		gridboxtype = {
 			name = "resources_grid"
 			position = { x = 370 y = 8 }
 			size = { width = 48 height = 150 }
@@ -5176,7 +5178,7 @@ guiTypes = {
 			format = "UPPER_LEFT"
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "production_cost"
 			position = { x = 15 y = 61 }
 			font = "hoi_18mbs"
@@ -5234,7 +5236,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 28 y = 6 }
 			textureFile = ""
@@ -5248,7 +5250,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "general_name"
 			position = { x = 30 y = 22 }
 			textureFile = ""
@@ -5261,7 +5263,7 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 		
-		gridBoxType = {
+		gridboxtype = {
 			name = "resources_grid"
 			position = { x = 376 y = 8 }
 			size = { width = 48 height = 150 }
@@ -5271,7 +5273,7 @@ guiTypes = {
 			format = "UPPER_LEFT"
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "naval_production_cost"
 			position = { x = 21 y = 61 }
 			font = "hoi_18mbs"
@@ -5287,14 +5289,14 @@ guiTypes = {
 		name = "diplomacy_party_entry"
 		size = { width = 200 height = 30 }
 		clipping = no
-			
+		
 		background = {
 			name = "Background"
 			spriteType = "GFX_sort_button_202x29_button"
 			clicksound = click_default
 		}
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "name"
 			position = { x = 0 y = 5 }
 			font = "hoi_18mbs"
