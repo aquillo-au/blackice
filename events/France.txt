@@ -374,98 +374,98 @@ country_event = {
 					844 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 844
-				GER = { transfer_state = 844 }
+				GER = { set_state_controller = 844 }
 			}
 			if = {
 				limit = {
 					886 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 886
-				GER = { transfer_state = 886 }
+				GER = { set_state_controller = 886 }
 			}
 			if = {
 				limit = {
 					28 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 28
-				GER = { transfer_state = 28 }
+				GER = { set_state_controller = 28 }
 			}
 			if = {
 				limit = {
 					17 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 17
-				GER = { transfer_state = 17 }
+				GER = { set_state_controller = 17 }
 			}
 			if = {
 				limit = {
 					27 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 27
-				GER = { transfer_state = 27 }
+				GER = { set_state_controller = 27 }
 			}
 			if = {
 				limit = {
 					18 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 18
-				GER = { transfer_state = 18 }
+				GER = { set_state_controller = 18 }
 			}
 			if = {
 				limit = {
 					29 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 29
-				GER = { transfer_state = 29 }
+				GER = { set_state_controller = 29 }
 			}
 			if = {
 				limit = {
 					15 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 15
-				GER = { transfer_state = 15 }
+				GER = { set_state_controller = 15 }
 			}
 			if = {
 				limit = {
 					16 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 16
-				GER = { transfer_state = 16 }
+				GER = { set_state_controller = 16 }
 			}
 			if = {
 				limit = {
 					24 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 24
-				GER = { transfer_state = 24 }
+				GER = { set_state_controller = 24 }
 			}
 			if = {
 				limit = {
 					30 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 30
-				GER = { transfer_state = 30 }
+				GER = { set_state_controller = 30 }
 			}
 			if = {
 				limit = {
 					14 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 14
-				GER = { transfer_state = 14 }
+				GER = { set_state_controller = 14 }
 			}
 			if = {
 				limit = {
 					23 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 23
-				GER = { transfer_state = 23 }
+				GER = { set_state_controller = 23 }
 			}
 			if = {
 				limit = {
 					19 = { owner = { tag = FRA } }
 				}
 				set_state_controller = 19
-				GER = { transfer_state = 19 }
+				GER = { set_state_controller = 19 }
 			}
 			# Italian Occupation Zone (if they did well)
 			if = {
@@ -477,9 +477,9 @@ country_event = {
 						}
 					}
 				}
-				ITA = { transfer_state = 21 }
+				ITA = { set_state_controller = 21 }
 				else = {
-					transfer_state = 21
+					set_state_controller = 21
 				}
 			}
 			if = {
@@ -491,9 +491,9 @@ country_event = {
 						}
 					}
 				}
-				ITA = { transfer_state = 1 }
+				ITA = { set_state_controller = 1 }
 				else = {
-					transfer_state = 1
+					set_state_controller = 1
 				}
 			}
 			if = {
@@ -505,9 +505,9 @@ country_event = {
 						}
 					}
 				}
-				ITA = { transfer_state = 735 }
+				ITA = { set_state_controller = 735 }
 				else = {
-					VIC = { transfer_state = 735 }
+					VIC = { set_state_controller = 735 }
 				}
 			}
 			if = {
@@ -528,9 +528,9 @@ country_event = {
 						}
 					}
 				}
-				ITA = { transfer_state = 32 }
+				ITA = { set_state_controller = 32 }
 				else = {
-					transfer_state = 32
+					set_state_controller = 32
 				}
 			}
 			#Spanish occupation zone
@@ -542,10 +542,10 @@ country_event = {
 					}
 				}
 				SPA = {
-					transfer_state = 31
+					set_state_controller = 31
 				}
 				else = {
-					transfer_state = 31
+					set_state_controller = 31
 				}
 			}
 			FRA = { country_event = { id = france.65 } }
@@ -1063,22 +1063,22 @@ country_event = {
 		effect_tooltip = {
 			if = {
 				limit = { has_global_flag = ITA_claims_on_france_735 }
-				ITA = { transfer_state = 735 }
+				ITA = { set_state_controller = 735 }
 			}
 			if = {
 				limit = { has_global_flag = ITA_claims_on_france_1 }
-				ITA = { transfer_state = 1 }
+				ITA = { set_state_controller = 1 }
 			}
 		}
 		
 		#Italy always get Tunisia
 		if = {
 			limit = { ROOT = { owns_state = 458 } }
-			ITA = { transfer_state = 458 }
+			ITA = { set_state_controller = 458 }
 		}
 		if = {
 			limit = { ROOT = { owns_state = 665 } }
-			ITA = { transfer_state = 665 }
+			ITA = { set_state_controller = 665 }
 		}
 		
 		
@@ -1105,19 +1105,19 @@ country_event = {
 				}
 				if = {
 					limit = { ROOT = { owns_state = 554 } }
-					transfer_state = 554
+					set_state_controller = 554
 				}
 				if = {
 					limit = { ROOT = { owns_state = 677 } }
-					transfer_state = 677
+					set_state_controller = 677
 				}
 				if = {
 					limit = { ROOT = { owns_state = 680 } }
-					transfer_state = 680
+					set_state_controller = 680
 				}
 				if = {
 					limit = { ROOT = { owns_state = 821 } }
-					transfer_state = 821
+					set_state_controller = 821
 				}
 				country_event = france.28
 			}
