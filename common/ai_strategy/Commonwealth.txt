@@ -10,55 +10,82 @@ careful_with_early_invasions = {
 		
 	}
 	abort = {
-			is_historical_focus_on = yes
-			date > 1943.1.1
-			GER = { has_war_with = SOV }
+			date > 1943.1.1 #after torch
 	}
 
 	ai_strategy = {
 		type = invade
 		id = "ITA"			
-		value = -500
+		value = -500000
 	}
 
 	ai_strategy = {
 		type = invade
 		id = "GER"			
-		value = -500
+		value = -500000
 	}
 	ai_strategy = {
 		type = invade
 		id = "JAP"			
-		value = -500
+		value = -500000
 	}
 	ai_strategy = {
 		type = invade
 		id = "FIN"
-		value = -500
+		value = -500000
 	}
 }
+ENG_focus_Italy = {
+	enable = {
+		tag = ENG 
+		is_historical_focus_on = yes
+		has_war_with = ITA
+		has_capitulated = no
+		OR = {
+		date > 1942.1.1
+		GER = { has_war_with = SOV }
+		}
+		}
+		abort = {
+			NOT = { ITA = { controls_state = 663 controls_state = 450 controls_state = 451 controls_state = 449 controls_state = 662 controls_state = 448 controls_state = 662 }}
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "ITA"
+				value = 500000
+			}
+			ai_strategy = {
+				type = conquer
+				id = "ITA"
+				value = 50000000000
+			}
+		}
 #After North Africa is under Allied Controll
 Allies_hunt_Italy = {
 	enable = {
 		tag = USA
 		tag = CAN
 		tag = ENG 
+		tag = FRA
 		is_historical_focus_on = yes
 		has_war_with = ITA
 		has_capitulated = no
+		OR = {
 		NOT = { ITA = { controls_state = 663 controls_state = 450 controls_state = 451 controls_state = 449 controls_state = 662 controls_state = 448 controls_state = 662 }}
+		}
 		}
 		abort = {
 			OR = {
 				NOT = { has_war_with = ITA }
 				has_capitulated = yes
-				ITA = { has_capitulated = yes }
+				ITA = { has_capitulated = yes }#
+				is_in_faction_with = ITA
 			}
 			}
 			ai_strategy = {
 				type = invade
 				id = "ITA"
-				value = 500000
+				value = 50000
 			}
 			ai_strategy = {
 				type = antagonize
@@ -77,6 +104,7 @@ Allies_D_DAY = {
 		tag = ENG
 		tag = CAN
 		tag = USA
+		tag = FRA
 		has_capitulated = no
 		is_historical_focus_on = yes
 		has_war_with = GER
@@ -88,12 +116,13 @@ Allies_D_DAY = {
 				has_capitulated = yes	
 				GER = { has_capitulated = yes }
 				NOT = { has_war_with = GER }
+				is_in_faction_with = GER
 				}
 			}
 			ai_strategy = {
 				type = invade
 				id = "GER"
-				value = 500000
+				value = 50000
 			}
 			ai_strategy = {
 				type = antagonize
@@ -109,17 +138,27 @@ Allies_D_DAY = {
 #All allies target jap after ger surrender
 Allies_Japan = {
 	enable = {
+		NOT = {
+		tag = BEL
+		tag = NOR
+		tag = DEN
+		tag = LIB 
+		tag = MEX
+		tag = GER
+		tag = BRA
+		}
 		is_in_faction_with = ENG
 		has_capitulated = no
 		is_historical_focus_on = yes
 		has_war_with = JAP
 		NOT = { has_war_with = SOV }
 		NOT = { has_war_with = GER }
+		NOT = { has_war_with = ITA }
 		NOT = { SOV = { has_war_with = GER }}
 		}
 		abort = {
 			OR = {
-				has_capitulated = yes	
+				has_capitulated = yes
 				JAP = { has_capitulated = yes }
 				NOT = { has_war_with = JAP }
 				has_war_with = GER
@@ -129,7 +168,7 @@ Allies_Japan = {
 			ai_strategy = {
 				type = invade
 				id = "JAP"
-				value = 500000
+				value = 50000
 			}
 			ai_strategy = {
 				type = antagonize

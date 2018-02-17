@@ -52,10 +52,12 @@ AST_area_priorities = {
 	ai_strategy = { type = area_priority id = oceania 			value = 100 }
 	
 }
-#FFS DO SOMETHING
-AST_protect_INS = {
+
+Pacific_protect_INS = {
 	enable = {
 		tag = AST
+		tag = NZL
+		tag = MAL
 		has_war_with = JAP
 		JAP = {	has_war_with = INS }
 	}
@@ -64,7 +66,7 @@ AST_protect_INS = {
 			has_war_with = INS
 			is_in_faction_with = JAP
 			JAP = {	
-				NOT = { has_war_with = AST } 
+				NOT = { has_war_with = ENG } 
 			}
 		}
 	}
@@ -72,21 +74,21 @@ AST_protect_INS = {
 	ai_strategy = {
 		type = contain
 		id = "JAP"			
-		value = 5000
+		value = 5000000
 	}
 	ai_strategy = {
 		type = antagonize
 		id = "JAP"			
-		value = 5000
+		value = 5000000
 	}
 	ai_strategy = {
 		type = protect
 		id = "INS"			
-		value = 5000
+		value = 5000000
 	}
 	ai_strategy = {
 		type = support
 		id = "INS"			
-		value = 5000
+		value = 5000000
 	}
 }

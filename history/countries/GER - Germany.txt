@@ -313,6 +313,11 @@ add_ideas = {
 	
 	# Factories
 	#GER_tankfactory2
+	#placeholders
+	placeholder_feature_unused
+	placeholder_feature_unused_2
+	placeholder_feature_unused_3
+	placeholder_feature_unused_4
 }
 
 set_country_flag = mob_standing
@@ -1083,39 +1088,14 @@ create_equipment_variant = {
 	obsolete = yes
 }
 ##################Aircraft Variants#####################
-	create_equipment_variant = {
-		name = "He 51 D"
-		type = he_51_equipment_1
-		upgrades = {
-			he_51_b2_s3_upgrade = 1 
-		}
-		obsolete = yes 
+create_equipment_variant = {
+	name = "Ar 65 F"
+	type = ar_65_equipment_1
+	upgrades = {
+		ar_65_f_upgrade = 1
+		ai_likey_upgrade = 2
 	}
-	create_equipment_variant = {
-		name = "Ar 65 F"
-		type = ar_65_equipment_1
-		upgrades = {
-			ar_65_f_upgrade = 1 
-			ai_likey_upgrade = 2
-		}
-	}
-	create_equipment_variant = {
-		name = "Do 13 C"
-		type = do_11_bomber_equipment_1
-		upgrades = {
-			do_11_engines_upgrade = 1 			
-		}
-		obsolete = yes
-	}	
-	create_equipment_variant = {
-		name = "Do 23 G"
-		type = do_11_bomber_equipment_1
-		upgrades = {
-			do_11_engines_upgrade = 1 
-			do_23_upgrade = 1 
-			ai_likey_upgrade = 4 
-		}
-	}
+}
 ################
 ## 1939 Start ##
 1939.1.1 = {
@@ -1269,6 +1249,5 @@ create_equipment_variant = {
 			sub_torpedo_upgrade = 1
 		}
 	}
-	# Destroyer #
 }
 #EOF#

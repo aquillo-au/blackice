@@ -68,12 +68,12 @@ burma_first = {
 	ai_strategy = {
 		type = antagonize
 		id = "BUR"			
-		value = 500
+		value = 50000
 	}
 	ai_strategy = {
 		type = conquer
 		id = "BUR"			
-		value = 500
+		value = 50000
 	}	
 	
 }
@@ -93,12 +93,12 @@ MAL_second = {
 	ai_strategy = {
 		type = antagonize
 		id = "MAL"			
-		value = 500
+		value = 50000
 	}
 	ai_strategy = {
 		type = conquer
 		id = "MAL"			
-		value = 500
+		value = 50000
 	}	
 	
 }
@@ -120,17 +120,17 @@ southern_expansion = {
 	ai_strategy = {
 		type = antagonize
 		id = "INS"			
-		value = 500
+		value = 500000
 	}
 	ai_strategy = {
 		type = conquer
 		id = "INS"			
-		value = 500
+		value = 500000
 	}	
 	ai_strategy = {
 		type = invade
 		id = "INS"			
-		value = 500  
+		value = 50000  
 	}
 	
 }
@@ -151,12 +151,12 @@ northern_expansion = {
 	ai_strategy = {
 		type = antagonize
 		id = "SOV"			
-		value = 200
+		value = 20000
 	}		
 	ai_strategy = {
 		type = conquer
 		id = "SOV"			
-		value = 200
+		value = 20000
 	}		
 }
 
@@ -175,12 +175,12 @@ chinese_war = {
 	ai_strategy = {
 		type = antagonize
 		id = "CHI"			
-		value = 200
+		value = 20000
 	}
 	ai_strategy = {
 		type = conquer
 		id = "CHI"			
-		value = 200
+		value = 20000
 	}
 	
 	ai_strategy = {
@@ -231,7 +231,7 @@ strike_usa = {
 	ai_strategy = {
 		type = antagonize
 		id = "PHI"			
-		value = 400
+		value = 40000
 	}
 	
 	ai_strategy = {
@@ -290,35 +290,7 @@ germany_ally = {
 		value = 200
 	}	
 }
-attack_japan_aus = {
-	enable = { 
-		tag = JAP
-		has_war_with = AST
-		any_owned_state = { OR = { region = 142 region = 189 region = 188 region = 159 } controller = { has_war_with = AST }}
-		country_exists = AST 
-		date > 1944.1.1
-	}
-	
-	abort = {
-		NOT = { country_exists = AUS }
-	}
-	
-	ai_strategy = {
-		type = antagonize
-		id = "AST"
-		value = 200
-	}
-	ai_strategy = {
-		type = conquer
-		id = "AST" 
-		value = 200 
-	}
-	ai_strategy = {
-		type = invade
-		id = "AST" 
-		value = 200 
-	}
-}
+
 
 
 #At war with china
@@ -338,7 +310,7 @@ JAP_war_with_china = {
 	ai_strategy = { type = area_priority id = atlantic	 		value = 1 }
 	ai_strategy = { type = area_priority id = north_africa	 	value = 1 }
 	ai_strategy = { type = area_priority id = south_africa	 	value = 1 }
-	ai_strategy = { type = area_priority id = asia	 			value = 100 }
+	ai_strategy = { type = area_priority id = asia	 			value = 1000 }
 	ai_strategy = { type = area_priority id = north_america	 	value = 1 }
 	ai_strategy = { type = area_priority id = south_america	 	value = 1 }
 	ai_strategy = { type = area_priority id = middle_east 		value = 1 }

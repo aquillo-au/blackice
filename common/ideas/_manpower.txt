@@ -202,7 +202,6 @@ ideas = {
 			level = 7
 			
 			available = {
-				OR = {
 					AND = {
 						NOT = { 
 						OR = {
@@ -214,11 +213,8 @@ ideas = {
 						}
 						threat > 0.50
 					}
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.9
-					}
-				}
+					has_war = yes
+				
 			}
 			
 			ai_will_do = {
@@ -351,7 +347,7 @@ ideas = {
 					has_war = yes
 					enemies_strength_ratio > 0.85
 				}
-				#has_national_unity > 50
+				
 			}
 			
 			ai_will_do = {
@@ -420,6 +416,9 @@ ideas = {
 					enemies_strength_ratio > 0.9
 				}
 				#has_national_unity > 50
+				any_enemy_country = {
+					is_neighbor_of = FROM 
+					}
 			}
 			
 			ai_will_do = {
@@ -488,6 +487,9 @@ ideas = {
 					enemies_strength_ratio > 0.95
 				}
 				#has_national_unity > 50
+				any_enemy_country = {
+					is_neighbor_of = FROM 
+					}
 			}
 			
 			ai_will_do = {
@@ -556,6 +558,9 @@ ideas = {
 					enemies_strength_ratio > 1
 				}
 				#has_national_unity > 50
+				any_enemy_country = {
+					is_neighbor_of = FROM 
+					}
 			}
 			
 			ai_will_do = {
@@ -624,6 +629,10 @@ ideas = {
 					enemies_strength_ratio > 1
 				}
 				#has_national_unity > 50
+				any_enemy_country = {
+					is_neighbor_of = FROM 
+					}
+				
 			}
 			
 			ai_will_do = {
