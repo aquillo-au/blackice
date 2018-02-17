@@ -4336,7 +4336,7 @@ focus_tree = {
 	focus = {
 		id = GER_divebomber_focus_c
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = GER_tactical_air_effort }
+		prerequisite = { focus = GER_divebomber_focus_a }
 		mutually_exclusive = { focus = GER_divebomber_focus_d }
 		x = -19
 		y = 8
@@ -4364,7 +4364,7 @@ focus_tree = {
 	focus = {
 		id = GER_divebomber_focus_d
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = GER_tactical_air_effort }
+		prerequisite = { focus = GER_divebomber_focus_b }
 		mutually_exclusive = { focus = GER_divebomber_focus_c }
 		x = -17
 		y = 8
@@ -4392,7 +4392,7 @@ focus_tree = {
 	focus = {
 		id = GER_divebomber_focus_e
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = GER_tactical_air_effort }
+		prerequisite = { focus = GER_divebomber_focus_c }
 		mutually_exclusive = { focus = GER_divebomber_focus_f }
 		x = -19
 		y = 9
@@ -4415,7 +4415,7 @@ focus_tree = {
 	focus = {
 		id = GER_divebomber_focus_f
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = GER_tactical_air_effort }
+		prerequisite = { focus = GER_divebomber_focus_d }
 		mutually_exclusive = { focus = GER_divebomber_focus_e }
 		x = -17
 		y = 9
@@ -8542,7 +8542,7 @@ focus = {
 			controls_state = 4
 			controls_state = 152
 			or = {
-			controls_state = 10 
+			controls_state = 988 
 			date > 1940.1.1 }
 			has_army_manpower = { size > 849999 } 
 			OR = {
@@ -8638,7 +8638,6 @@ focus = {
 				limit = {
 					YUG = {
 						owns_state = 102
-						owns_state = 913
 					}
 				}
 				YUG = {
@@ -8646,43 +8645,21 @@ focus = {
 						target = GER
 						modifier = GER_demand_slovenia_YUG
 					}
+					country_event = germany.455
 				}
-				if = {
-					limit = {
-						NOT = { has_war_with = ENG }
-						YUG = { 
-							is_puppet = no
-							NOT = { has_war_with = ENG }
-						}
-					}
-					ENG = {
-						country_event = { id = britain.14 }
-					}
-				}
-				if = {
-					limit = {
-						OR = {
-							YUG = { is_puppet = no }
-							YUG = { has_war_with = ENG }
-							has_war_with = ENG
-						}
-					}
-					country_event = germany.446
-					
-				}
+#				if = {
+#					limit = {
+#						OR = {
+#							YUG = { is_puppet = no }
+#							YUG = { has_war_with = ENG }
+#							has_war_with = ENG
+#						}
+#					}
+#					country_event = germany.446
+#					
+#				}
 			}
-			if = {
-				limit = { 
-					102 = { is_owned_by = HUN }
-				}
-				HUN = { 
-					add_opinion_modifier = {
-						target = GER
-						modifier = GER_demand_slovenia_YUG
-					}
-					country_event = germany.373
-				}
-			}
+		
 		}
 	}
 
@@ -8691,7 +8668,7 @@ focus = {
 		prerequisite = { focus = GER_demand_slovenia }
 		icon = GFX_goal_generic_military_deal
 		available = {
-			is_ai = no
+			date > 1941.4.1
 			is_puppet = no
 			NOT = { is_in_faction_with = YUG }
 			OR = {
@@ -8742,19 +8719,10 @@ focus = {
 		}
 
 		bypass = {
-			OR = {	
+			OR = {
+				has_war_with = YUG
 				is_in_faction_with = YUG
 				NOT = { country_exists = YUG }
-				NOT = {
-					OR = {
-						YUG = {
-							owns_state = 45
-						}
-						YUG = {
-							owns_state = 106
-						}
-					}
-				}
 				AND = {
 					HUN = { is_friend_or_potential_friend_of_GER = no }
 					BUL = { is_friend_or_potential_friend_of_GER = no }
@@ -8838,6 +8806,9 @@ focus = {
 							OR = {
 								106 = { is_owned_by = YUG }
 								106 = { is_owned_by = GER }
+								106 = { is_owned_by = HUN }
+								106 = { is_owned_by = ITA }
+								106 = { is_owned_by = ROM }
 							}
 						}
 						BUL = { 
@@ -8858,6 +8829,7 @@ focus = {
 						BUL = {
 							add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
 							transfer_state = 106
+							transfer_state = 905
 						}						
 					}
 				}
@@ -8874,10 +8846,10 @@ focus = {
 					ITA = {
 						OR = {
 							has_completed_focus = ITA_slovenia_dalmatia_claims
-							owns_state = 44
+							is_in_faction_with = GER
 						}
-						is_friend_or_potential_friend_of_GER = yes
 						NOT = { is_in_faction_with = YUG }
+						NOT = { has_war_with = GER }
 					}
 				}
 				hidden_effect = {
@@ -8886,23 +8858,19 @@ focus = {
 					}
 					set_country_flag = GER_first_ljubljana_award
 				}
-				effect_tooltip = {
-					ITA = {
-						add_opinion_modifier = { target = GER modifier = GER_first_ljubljana_award_GER }
+				ITA = {
 						if = {
 							limit = { has_completed_focus = ITA_slovenia_dalmatia_claims }
-							transfer_state = 900
 							transfer_state = 913
 							transfer_state = 916
 						}
 						if = {
-							limit = { owns_state = 44 }
+							limit = { controls_state = 44 }
 							transfer_state = 105
 							transfer_state = 903
 							transfer_state = 904
 						}	
 					}
-				}
 				every_other_country = {
 					limit = { 
 						is_faction_leader = yes
@@ -8911,9 +8879,6 @@ focus = {
 					reverse_add_opinion_modifier = { target = ITA modifier = GER_second_vienna_award_other }
 				}				
 			}
-			#hidden_effect = {
-			#	news_event = { hours = 6 id = news.208 }
-			#}
 		}
 	}
 
@@ -8923,26 +8888,9 @@ focus = {
 		icon = GFX_goal_generic_territory_or_war
 		available = {
 			is_puppet = no
-			is_ai = no
 			NOT = { has_war_with = YUG }
 			NOT = { is_in_faction_with = YUG }
-			strength_ratio = { tag = YUG ratio > 1.1 }
-			hidden_trigger = {
-				if = { limit = { is_ai = yes }
-					if = { limit = { has_war_with = FRA }
-						FRA = { has_capitulated = yes }
-						}
-					if = { limit = { has_war_with = POL }
-						POL = { has_capitulated = yes }
-						}
-					if = { limit = { has_war_with = SOV }
-						SOV = { has_capitulated = yes }
-					}
-					if = { limit = { has_war_with = HUN }
-						HUN = { has_capitulated = yes }
-					}
-				}
-			}
+			strength_ratio = { tag = YUG ratio > 1.5 }
 			if = {
 				limit = { has_country_flag = recent_major_land_acquisition }
 				has_war_with = ENG
@@ -8950,13 +8898,7 @@ focus = {
 		}
 		bypass = {
 			OR = {
-				#NOT = { country_exists = YUG }
-				any_other_country = {
-					is_in_faction_with = ROOT
-					YUG = {
-						is_puppet_of = PREV
-					}
-				}
+				NOT = { country_exists = YUG }
 			}
 		}
 		x = 16
