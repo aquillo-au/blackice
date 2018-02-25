@@ -154,7 +154,7 @@ NCountry = {
 	REINFORCEMENT_THEATER_GROUP_PRIORITY_DEFAULT = 1,	-- Each theater group by default is 1)Normal
 	REINFORCEMENT_THEATRE_PRIORITY_COUNT = 3,			-- Same as with divisions...
 	REINFORCEMENT_THEATRE_PRIORITY_DEFAULT = 1,
-	REINFORCEMENT_AIRBASE_PRIORITY_COUNT = 5,
+	REINFORCEMENT_AIRBASE_PRIORITY_COUNT = 3,
 	REINFORCEMENT_AIRBASE_PRIORITY_DEFAULT = 1,
 	REINFORCEMENT_DELIVERY_SPEED_MIN = 0.6,				-- The distance from the supply region to capital should affect the speed only a little bit. Main factor for penalty is overcrowded areas, and not the route length.
 	REINFORCEMENT_EQUIPMENT_DELIVERY_SPEED = 0.3,		-- Modifier for army equipment reinforcement speed
@@ -865,7 +865,7 @@ NAI = {
 	NAVAL_THEATRE_PRIO_NAVAL_BASE_SCORE = 1,			-- Weight of naval bases when calculating naval theatre assignment
 	NAVAL_THEATRE_PRIO_MIN_DISTANCE = 2000,				-- Minimum distance (in km) between priority theatres for naval assignment, to spread navy out
 	PRODUCTION_UNAVAILABLE_RESORCE_FACTORY_FACTOR = 0.65, -- was 0.75 Assign/queue this proportion of desired factories when resources are short 
-	PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 0.2,			-- Base value for how much of currently used equipment the AI will at least strive to have in stock
+	PRODUCTION_EQUIPMENT_SURPLUS_FACTOR = 1.0,			-- Base value for how much of currently used equipment the AI will at least strive to have in stock
 	AIR_CONTROLLED_TERRITORY_INTERCEPT_SCORE = 3,		-- Interception score per controlled state in mission region ALEN 6
 	AIR_ALLY_TERRITORY_INTERCEPT_SCORE = -400,				-- Interception score per ally controlled state in mission region
 	INTERCEPT_NAVAL_BOMBING_FACTOR = 20.0,				-- Factors the weight of intercepting naval bombers in sea regions where friendly ships are ALEN 15.0
@@ -878,7 +878,7 @@ NAI = {
 	AIR_MISSION_MIN_COVEREAGE = 0.25,					-- Between 0 and 1, limit for % coverage for air mission to be considered ALEN 0.2
 	AIR_BASE_PRIORITY_DISTANCE_FACTOR = 50.0,			-- Weight of distance between region and airbase for airbase priority score ALEN 25
 	MAX_VOLUNTEER_ARMY_FRACTION = 0.25,					-- Countries will not send more than their forces time this number to aid another country
-	WANTED_UNITS_INDUSTRY_FACTORY = 1.0, 				-- How many units a country wants is partially based on how much military industry that is available
+	WANTED_UNITS_INDUSTRY_FACTORY = 0, 				-- How many units a country wants is partially based on how much military industry that is available
 	DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.9,			-- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
 	DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.40,				-- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
 	DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 0.8,			-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
@@ -947,9 +947,9 @@ NAI = {
 	RESERVE_TO_COMMITTED_BALANCE = 0.1,					-- DNM, originla 0.1 (ai overhaul mod) -- How many reserves compared to number of committed divisions in a combat (1.0 = as many as reserves as committed)
 	DIPLOMACY_COMMUNIST_NOT_NEIGHBOUR = -10,			-- Communists want to stay consolidated with their influence
 	MAIN_ENEMY_FRONT_IMPORTANCE = 20.0,					-- How much extra focus the AI should put on who it considers to be its current main enemy.
-	EASY_TARGET_FRONT_IMPORTANCE = 7.5,					-- How much extra focus the AI should put on who it considers to be the easiest target.
+	EASY_TARGET_FRONT_IMPORTANCE = 10.0,					-- How much extra focus the AI should put on who it considers to be the easiest target.
 	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.2,			-- If less than this fraction of units on a front is moving, AI sees it as ready for action	
-	MICRO_POCKET_SIZE = 5,								-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
+	MICRO_POCKET_SIZE = 4,								-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
 	POCKET_DISTANCE_MAX = 40000,						-- shortest square distance we bother about chasing pockets
 	VP_LEVEL_IMPORTANCE_HIGH = 30,						-- Victory points with values higher than or equal to this are considered to be of high importance.
 	VP_LEVEL_IMPORTANCE_MEDIUM = 10,						-- Victory points with values higher than or equal to this are considered to be of medium importance.
@@ -1100,7 +1100,7 @@ NAI = {
 	},
 	DIVISION_DESIGN_MANPOWER_WEIGHT = 0,
 	DIVISION_DESIGN_STOCKPILE_WEIGHT = 0,
-	DIVISION_DESIGN_COMBAT_WIDTH_WEIGHT = 1,				-- This score is reduced the higher width is when comparing pure changes with no target
+	DIVISION_DESIGN_COMBAT_WIDTH_WEIGHT = 2000,				-- This score is reduced the higher width is when comparing pure changes with no target
 
 	DIVISION_DESIGN_COMBAT_WIDTH_TARGET_WEIGHT = -200.0,	-- This score is reduced the farther the width is from the target width (if set)
 	DIVISION_DESIGN_MAX_FAILED_DAYS = 0,					-- max days we keep track of since failure of a design update
@@ -1157,9 +1157,9 @@ NAI = {
 	HOUR_BAD_COMBAT_REEVALUATE = 48,                  		-- DNM, original 60.0 (ai overhaul mod) -- if we are in combat for this amount and it goes shitty then try skipping it 
 	MIN_PLAN_VALUE_TO_MICRO_INACTIVE = 0.2,					-- The AI will not consider members of groups which plan is not activated AND evaluates lower than this.
 	
-	MAX_UNITS_FACTOR_AREA_ORDER = 1.0,					-- Factor for max number of units to assign to area defense orders
-	DESIRED_UNITS_FACTOR_AREA_ORDER = 1.0,				-- Factor for desired number of units to assign to area defense orders
-	MIN_UNITS_FACTOR_AREA_ORDER = 1.0,					-- Factor for min number of units to assign to area defense orders
+	MAX_UNITS_FACTOR_AREA_ORDER = 0.7,					-- Factor for max number of units to assign to area defense orders
+	DESIRED_UNITS_FACTOR_AREA_ORDER = 0.7,				-- Factor for desired number of units to assign to area defense orders
+	MIN_UNITS_FACTOR_AREA_ORDER = 0.7,					-- Factor for min number of units to assign to area defense orders
 
 	MAX_UNITS_FACTOR_FRONT_ORDER = 3.0,					-- Factor for max number of units to assign to area front orders
 	DESIRED_UNITS_FACTOR_FRONT_ORDER = 3.0,				-- Factor for desired number of units to assign to area front orders
@@ -1170,7 +1170,7 @@ NAI = {
 	MIN_UNITS_FACTOR_INVASION_ORDER = 1.0,				-- Factor for min number of units to assign to naval invasion orders
 	
 	FRONT_UNITS_CAP_FACTOR = 9.0,							-- A factor applied to total front size and supply use. Primarily effects small fronts
-	MAX_DIST_PORT_RUSH = 20.0,								-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
+	MAX_DIST_PORT_RUSH = 25.0,								-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
 
 	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.75,				-- Cancel unit production if below this to get resources out to units in the field
 	MIN_MANPOWER_TO_BUILD_UNITS = 0.80,						-- Cancel unit production if below this to get resources out to units in the field
@@ -1179,9 +1179,9 @@ NAI = {
 
 	REQUEST_LEND_LEASE_PROTECT_VALUE = 75,					-- Limit for protect enemy desire for reducing lend lease desire
 	REQUEST_LEND_LEASE_CONTAINS_VALUE = 100,				-- Limit of contain enemy desire for boosting friendly help
-	REQUEST_LEND_LEASE_STOCKPILE_RATIO_LAND = 0.14,			-- Ratio to send stockpile from equipment
+	REQUEST_LEND_LEASE_STOCKPILE_RATIO_LAND = 0.3,			-- Ratio to send stockpile from equipment
 	REQUEST_LEND_LEASE_PRODUCTION_DAYS_LAND = 28,			-- Count of daily production amount of equipment to send
-	REQUEST_LEND_LEASE_STOCKPILE_RATIO_AIR = 0.03,			-- Ratio to send stockpile from equipment
+	REQUEST_LEND_LEASE_STOCKPILE_RATIO_AIR = 0.1,			-- Ratio to send stockpile from equipment
 	REQUEST_LEND_LEASE_PRODUCTION_DAYS_AIR = 10,			-- Count of daily production amount of equipment to send
 	REQUEST_LEND_LEASE_STOCKPILE_RATIO_NAVAL = 0.12,			-- Ratio to send stockpile from equipment
 	REQUEST_LEND_LEASE_PRODUCTION_DAYS_NAVAL = 28,			-- Count of daily production amount of equipment to send

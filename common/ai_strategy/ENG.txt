@@ -13,38 +13,76 @@
 # contain
 # area_priority
 
-ENG_protect_island_war = {
+ENG_war_against_ITA = {
 	enable = {
 		tag = ENG
-		has_war = no
+		has_government = democratic
+		is_historical_focus_on = yes
+		has_war_with = ITA
+		NOT = { 
+			ITA = { has_capitulated = yes }
+			ITA = { exists = no }
+			ITA = { is_puppet = yes }
+			is_in_faction_with = ITA
+		}
+		ITA = { has_government = fascism }
 	}
 	abort = {
-		tag = ENG
-		has_war = yes
+		OR = { 
+			ITA = { has_capitulated = yes }
+			ITA = { exists = no }
+			ITA = { is_puppet = yes }
+			is_in_faction_with = ITA
+			NOT = { ITA = { has_government = fascism } }
+			
+			NOT = { has_war_with = ITA }
+			NOT = { has_government = democratic }
+		}
 	}
-
-	ai_strategy = { 
-		type = area_priority        
-		id = britain 			      
-		value = 500 
-	} 
+	
+	ai_strategy = {
+		type = conquer
+		id = "ITA"
+		value = 1000
+	}
 }
 
-ENG_protect_island_peace = {
+i_fin_eng = {
 	enable = {
 		tag = ENG
-		has_war = yes
+		country_exists = FIN
+		is_historical_focus_on = yes
 	}
 	abort = {
-		tag = ENG
-		has_war = no
+		OR = {
+			FIN = { is_in_faction_with = GER }
+			FIN = { is_in_faction_with = SOV }
+		}
 	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "FIN"
+		value = 400
+	}
+}
 
-	ai_strategy = { 
-		type = area_priority        
-		id = britain 			      
-		value = 1000
-	} 
+i_fin_eng2 = {
+	enable = {
+		tag = FIN
+		country_exists = ENG
+		is_historical_focus_on = yes
+	}
+	abort = {
+		FIN = { is_in_faction_with = GER }
+		FIN = { is_in_faction_with = SOV }
+	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "FIN"
+		value = 400
+	}
 }
 
 defend_poland_against_germany = {

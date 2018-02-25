@@ -9,6 +9,107 @@
 # garrison
 # protect
 # influence
+NAP_SOV-JAP = {
+	enable = {
+		is_historical_focus_on = yes
+		OR = { tag = JAP tag = SOV }
+		SOV = { has_war_with = GER }
+		NOT = { JAP = { is_in_faction_with = GER } }
+		NOT = { has_war_with = JAP has_war_with = SOV }
+		NOT = { has_non_aggression_pact_with = JAP has_non_aggression_pact_with = SOV }
+		NOT = { is_justifying_wargoal_against = JAP is_justifying_wargoal_against = SOV }
+		NOT = { has_wargoal_against = JAP has_wargoal_against = SOV }
+	}
+	
+	abort = {
+		OR = {
+			NOT = { SOV = { has_war_with = GER } }
+			JAP = { is_in_faction_with = GER }
+			has_war_with = JAP has_war_with = SOV
+			has_non_aggression_pact_with = JAP has_non_aggression_pact_with = SOV
+			is_justifying_wargoal_against = JAP is_justifying_wargoal_against = SOV
+			has_wargoal_against = JAP has_wargoal_against = SOV
+		}
+	}
+	ai_strategy = { type = befriend id = "JAP" value = 1000 }
+	ai_strategy = { type = befriend id = "SOV" value = 1000 }
+}
+NAP_SOV-JAP_2 = {
+	enable = {
+		is_historical_focus_on = yes
+		OR = { tag = JAP tag = SOV }
+		SOV = { has_war_with = GER }
+		NOT = { JAP = { is_in_faction_with = GER } }
+		NOT = { has_war_with = JAP has_war_with = SOV }
+		OR = { has_non_aggression_pact_with = JAP has_non_aggression_pact_with = SOV }
+		NOT = { is_justifying_wargoal_against = JAP is_justifying_wargoal_against = SOV }
+		NOT = { has_wargoal_against = JAP has_wargoal_against = SOV }
+	}
+	
+	abort = {
+		OR = {
+			NOT = { SOV = { has_war_with = GER } }
+			JAP = { is_in_faction_with = GER }
+			has_war_with = JAP has_war_with = SOV
+			NOT = { has_non_aggression_pact_with = JAP has_non_aggression_pact_with = SOV }
+			is_justifying_wargoal_against = JAP is_justifying_wargoal_against = SOV
+			has_wargoal_against = JAP has_wargoal_against = SOV
+		}
+	}
+	ai_strategy = { type = befriend id = "JAP" value = 100 }
+	ai_strategy = { type = befriend id = "SOV" value = 100 }
+}
+
+NAP_MON-JAP = {
+	enable = {
+		is_historical_focus_on = yes
+		OR = { tag = JAP tag = MON }
+		MON = { has_war_with = GER }
+		NOT = { JAP = { is_in_faction_with = GER } }
+		NOT = { has_war_with = JAP has_war_with = MON }
+		NOT = { has_non_aggression_pact_with = JAP has_non_aggression_pact_with = MON }
+		NOT = { is_justifying_wargoal_against = JAP is_justifying_wargoal_against = MON }
+		NOT = { has_wargoal_against = JAP has_wargoal_against = MON }
+	}
+	
+	abort = {
+		OR = {
+			NOT = { MON = { has_war_with = GER } }
+			JAP = { is_in_faction_with = GER }
+			has_war_with = JAP has_war_with = MON
+			has_non_aggression_pact_with = JAP has_non_aggression_pact_with = MON
+			is_justifying_wargoal_against = JAP is_justifying_wargoal_against = MON
+			has_wargoal_against = JAP has_wargoal_against = MON
+		}
+	}
+	ai_strategy = { type = befriend id = "JAP" value = 1000 }
+	ai_strategy = { type = befriend id = "MON" value = 1000 }
+}
+NAP_MON-JAP_2 = {
+	enable = {
+		is_historical_focus_on = yes
+		OR = { tag = JAP tag = MON }
+		MON = { has_war_with = GER }
+		NOT = { JAP = { is_in_faction_with = GER } }
+		NOT = { has_war_with = JAP has_war_with = MON }
+		OR = { has_non_aggression_pact_with = JAP has_non_aggression_pact_with = MON }
+		NOT = { is_justifying_wargoal_against = JAP is_justifying_wargoal_against = MON }
+		NOT = { has_wargoal_against = JAP has_wargoal_against = MON }
+	}
+	
+	abort = {
+		OR = {
+			NOT = { MON = { has_war_with = GER } }
+			JAP = { is_in_faction_with = GER }
+			has_war_with = JAP has_war_with = MON
+			NOT = { has_non_aggression_pact_with = JAP has_non_aggression_pact_with = MON }
+			is_justifying_wargoal_against = JAP is_justifying_wargoal_against = MON
+			has_wargoal_against = JAP has_wargoal_against = MON
+		}
+	}
+	ai_strategy = { type = befriend id = "JAP" value = 100 }
+	ai_strategy = { type = befriend id = "MON" value = 100 }
+}
 
 #If china is still alive and japan at war with the allies
 focus_china = {
@@ -293,95 +394,7 @@ germany_ally = {
 
 
 
-#At war with china
-JAP_war_with_china = {
-	enable = {
-		original_tag = JAP
-		has_war_with = CHI
-	}
-	abort = {
-		OR = {
-		NOT = { has_war_with = CHI }
-		has_war_with = ENG 
-		has_war_with = USA
-		}
-	}
-	ai_strategy = { type = area_priority id = britain	 		value = 1 }
-	ai_strategy = { type = area_priority id = atlantic	 		value = 1 }
-	ai_strategy = { type = area_priority id = north_africa	 	value = 1 }
-	ai_strategy = { type = area_priority id = south_africa	 	value = 1 }
-	ai_strategy = { type = area_priority id = asia	 			value = 1000 }
-	ai_strategy = { type = area_priority id = north_america	 	value = 1 }
-	ai_strategy = { type = area_priority id = south_america	 	value = 1 }
-	ai_strategy = { type = area_priority id = middle_east 		value = 1 }
-	ai_strategy = { type = area_priority id = italy	 			value = 1 }
-	ai_strategy = { type = area_priority id = mediterranean	 	value = 1 }
-	ai_strategy = { type = area_priority id = france	 		value = 1 }
-	ai_strategy = { type = area_priority id = benelux	 		value = 1 }
-	ai_strategy = { type = area_priority id = balkans	 		value = 1 }
-	ai_strategy = { type = area_priority id = turkey	 		value = 1 }
-	ai_strategy = { type = area_priority id = north_europe	 	value = 1 }
-	ai_strategy = { type = area_priority id = east_europe	 	value = 1 }
-	ai_strategy = { type = area_priority id = west_russia	 	value = 1 }
-	ai_strategy = { type = area_priority id = spain	 			value = 1 }
-	ai_strategy = { type = area_priority id = germany	 		value = 1 }
-	ai_strategy = { type = area_priority id = australia_only 	value = 1 } 
-	ai_strategy = { type = area_priority id = newzealand		value = 1 } 
-	ai_strategy = { type = area_priority id = newguinea	 		value = 1 } 
-	ai_strategy = { type = area_priority id = borneo	 		value = 1 }
-	ai_strategy = { type = area_priority id = sunda	 			value = 1 }
-	ai_strategy = { type = area_priority id = singapore	 		value = 1 } 
-	ai_strategy = { type = area_priority id = philippines	 	value = 1 }
-	ai_strategy = { type = area_priority id = india	 			value = 1 }
-	ai_strategy = { type = area_priority id = japan	 			value = 1 }
-	ai_strategy = { type = area_priority id = pacific 			value = 1 }
-	ai_strategy = { type = area_priority id = pacific_coast 			value = 100 }
-	
-	
-}
 
-JAP_area_priorities = {
-	enable = {
-		original_tag = JAP
-		NOT = {
-		has_war_with = CHI
-		}
-	}
-	abort = {
-		always = no
-	}
-	ai_strategy = { type = area_priority id = britain	 		value = 1 }
-	ai_strategy = { type = area_priority id = atlantic	 		value = 1 }
-	ai_strategy = { type = area_priority id = north_africa	 	value = 1 }
-	ai_strategy = { type = area_priority id = south_africa	 	value = 1 }
-	ai_strategy = { type = area_priority id = asia	 			value = 100 }
-	ai_strategy = { type = area_priority id = north_america	 	value = 40 }
-	ai_strategy = { type = area_priority id = south_america	 	value = 40 }
-	ai_strategy = { type = area_priority id = middle_east 		value = 1 }
-	ai_strategy = { type = area_priority id = italy	 			value = 1 }
-	ai_strategy = { type = area_priority id = mediterranean	 	value = 1 }
-	ai_strategy = { type = area_priority id = france	 		value = 1 }
-	ai_strategy = { type = area_priority id = benelux	 		value = 1 }
-	ai_strategy = { type = area_priority id = balkans	 		value = 1 }
-	ai_strategy = { type = area_priority id = turkey	 		value = 1 }
-	ai_strategy = { type = area_priority id = north_europe	 	value = 1 }
-	ai_strategy = { type = area_priority id = east_europe	 	value = 1 }
-	ai_strategy = { type = area_priority id = west_russia	 	value = 1 }
-	ai_strategy = { type = area_priority id = spain	 			value = 1 }
-	ai_strategy = { type = area_priority id = germany	 		value = 1 }
-	ai_strategy = { type = area_priority id = australia_only 	value = 50 } 
-	ai_strategy = { type = area_priority id = newzealand		value = 50 } 
-	ai_strategy = { type = area_priority id = newguinea	 		value = 60 } 
-	ai_strategy = { type = area_priority id = borneo	 		value = 10 }
-	ai_strategy = { type = area_priority id = sunda	 			value = 60 }
-	ai_strategy = { type = area_priority id = singapore	 		value = 100 } 
-	ai_strategy = { type = area_priority id = philippines	 	value = 60 }
-	ai_strategy = { type = area_priority id = india	 			value = 100 }
-	ai_strategy = { type = area_priority id = japan	 			value = 100 }
-	ai_strategy = { type = area_priority id = pacific 			value = 100 }
-	ai_strategy = { type = area_priority id = oceania 			value = 1 }
-	ai_strategy = { type = area_priority id = pacific_coast 	value = 100 }
-}
 
 JAP_protect_core = {
 	enable = {
