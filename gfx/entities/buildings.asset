@@ -141,6 +141,20 @@ entity = {
 	}
 }
 entity = {
+	name = "building_pillbox"
+	pdxmesh = "building_pillbox"
+	scale = 0.14
+}
+entity = {
+	name = "building_pillbox_destroyed"
+	pdxmesh = "building_pillbox_destroyed"
+	
+	default_state = "idle"
+	state = { name = "idle"		state_time = 5
+		event = { time = 0 particle = "bunker_smoke_effect" keep_particle = yes trigger_once = yes }
+	}
+}
+entity = {
 	name = "building_coastal_bunker"
 	pdxmesh = "building_coastal_bunker"
 }
