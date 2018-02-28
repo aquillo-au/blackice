@@ -5252,6 +5252,53 @@ focus = {
 		}
 	}
 	focus = {
+		id = SOV_scorched_earth
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = SOV_military_reorganization2 }
+		x = 33
+		y = 6
+		cost = 12
+		
+		available = {
+			has_defensive_war_with = GER
+		}
+		
+		ai_will_do = {
+			factor = 0
+			
+		}	
+		
+		available_if_capitulated = no
+		
+		completion_reward = {
+			custom_effect_tooltip = SOV_scorched_earth_mil_fact
+			set_country_flag = scorched_earth_mil
+			#GER = { country_event = }
+		}
+	}
+	focus = {
+		id = SOV_scorched_earth2
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = SOV_scorched_earth }
+		x = 33
+		y = 7
+		cost = 12
+		available = {
+			has_defensive_war_with = GER
+		}
+		ai_will_do = {
+			factor = 0
+			
+		}	
+		available_if_capitulated = no
+		completion_reward = {
+			custom_effect_tooltip = SOV_scorched_earth_civ_tooltip
+			set_country_flag = scorched_earth_siv
+			#GER = { country_event = }
+		}
+	}
+	
+	focus = {
 		id = SOV_lend_lease
 		icon = GFX_goal_lend_lease
 		prerequisite = { focus = SOV_military_reorganization2 }
@@ -5262,7 +5309,7 @@ focus = {
 		available = {
 			has_defensive_war_with = GER
 			ENG = { exists = yes }
-			has_global_flag = UK_soviet_lend_lease
+			PER = { is_puppet_of = ENG }
 		}
 		ai_will_do = {
 			factor = 10
