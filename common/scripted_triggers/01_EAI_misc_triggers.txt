@@ -34,8 +34,24 @@ nonaligned_nation = {
 	}
 }
 available_AIR = { # air bases
-	CONTROLLER = { OR = { tag = ROOT AND = { is_puppet_of = ROOT OR = { has_autonomy_state = autonomy_integrated_puppet has_autonomy_state = autonomy_puppet has_autonomy_state = autonomy_colony } } } }
-	free_building_slots = { building = air_base size > 0 include_locked = no }
+	CONTROLLER = {
+		OR = {
+			tag = ROOT
+			AND = {
+				is_puppet_of = ROOT
+				OR = {
+					has_autonomy_state = autonomy_integrated_puppet
+					has_autonomy_state = autonomy_puppet
+					has_autonomy_state = autonomy_colony
+				}
+			}
+		}
+	}
+	free_building_slots = {
+		building = air_base
+		size > 0
+		include_locked = no
+	}
 	NOT = { free_building_slots = { building = air_base size < 7 include_locked = no } }
 	NOT = {
 		any_neighbor_state = {
@@ -53,7 +69,11 @@ available_RADAR = {
 
 available_INF = {
 	is_controlled_by = ROOT
-	free_building_slots = { building = infrastructure size > 0 include_locked = no }
+	free_building_slots = {
+		building = infrastructure
+		size > 0
+		include_locked = no
+	}
 }
 
 no_border = {
@@ -319,17 +339,32 @@ central_russia = {
 	}
 }
 
-western_china = {
-	OR = { region = 164 region = 165 region = 144 region = 145 }
-	NOT = { is_coastal = yes }
+ural_industrial_region = {
+	OR = {
+		state = 398
+		state = 651
+		state = 582
+		state = 573
+		state = 581
+		state = 653
+		state = 572
+		state = 403
+	}
 }
 
+western_china = {
+	OR = {
+		region = 322
+		region = 601
+		region = 805
+		region = 287
+	}
+	NOT = { is_coastal = yes }
+}
 ######################################################
 #	laws
 ######################################################
-
 ############ eco laws
-
 can_take_civilian_economy = {
 	########## AI LOGIC
 

@@ -683,13 +683,14 @@ on_actions = {
 	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
 	on_state_control_changed = {
 		effect = {
+			#German Soviet Railway Systems
 			if = {
 				limit = {
 					FROM = { tag = SOV }
 					ROOT = { OR = { tag = GER is_in_faction_with = GER }}
-					FROM.FROM = { is_core_of = SOV }
+					FROM.FROM = { is_core_of = SOV infrastructure > 1 }
 				}
-				FROM.FROM = { remove_building = { type = infrastructure level = 1 } set_state_flag = GER_conquered }
+				FROM.FROM = { remove_building = { type = infrastructure level = 1 } set_country_flag = GER_conquered }
 			}
 			if = {
 				limit = {
@@ -699,7 +700,256 @@ on_actions = {
 				}
 				FROM.FROM = { add_building_construction = { type = infrastructure level = 1 } clr_state_flag = GER_conquered }
 			}
-
+			
+			#Soviet Scorched Earth
+			if = {
+				limit = {
+					FROM = { tag = SOV }
+					ROOT = { OR = { tag = GER is_in_faction_with = GER }}
+					FROM.FROM = { OR = { is_core_of = SOV is_claimed_by = SOV } is_on_continent = europe }
+					SOV = { has_country_flag = scorched_earth_mil }
+				}
+				FROM.FROM = { 
+					if = {
+						limit = {
+							arms_factory < 2
+							arms_factory > 0
+						}
+						remove_building = { type = arms_factory level = 1 }
+						SOV = { country_event = { days = 10 id = on_action.101 }}	
+					}
+					if = {
+						limit = {
+							arms_factory < 3
+							arms_factory > 1
+						}
+						remove_building = { type = arms_factory level = 2 }
+						SOV = { country_event = { days = 20 id = on_action.102 }}	
+						
+					}
+					if = {
+						limit = {
+							arms_factory < 4
+							arms_factory > 2
+						}
+						remove_building = { type = arms_factory level = 3 }
+						SOV = { country_event = { days = 30 id = on_action.103 }}	
+						
+					}
+					if = {
+						limit = {
+							arms_factory < 5
+							arms_factory > 3
+						}
+						remove_building = { type = arms_factory level = 4 }
+						SOV = { country_event = { days = 40 id = on_action.104 }}	
+						
+					}
+					if = {
+						limit = {
+							arms_factory < 6
+							arms_factory > 4
+						}
+						remove_building = { type = arms_factory level = 5 }
+						SOV = { country_event = { days = 50 id = on_action.105 }}	
+						
+					}
+					if = {
+						limit = {
+							arms_factory < 7
+							arms_factory > 5
+						}
+						remove_building = { type = arms_factory level = 6 }
+						SOV = { country_event = { days = 60 id = on_action.106 }}	
+						
+					}
+					if = {
+						limit = {
+							arms_factory < 8
+							arms_factory > 6
+						}
+						remove_building = { type = arms_factory level = 7 }
+						SOV = { country_event = { days = 70 id = on_action.107 }}	
+						
+					}
+					if = {
+						limit = {
+							arms_factory < 9
+							arms_factory > 7
+						}
+						remove_building = { type = arms_factory level = 8 }
+						SOV = { country_event = { days = 80 id = on_action.108 }}	
+						
+					}
+					if = {
+						limit = {
+							arms_factory < 10
+							arms_factory > 8
+						}
+						remove_building = { type = arms_factory level = 9 }
+						SOV = { country_event = { days = 90 id = on_action.109 }}	
+						
+					}
+					if = {
+						limit = {
+							arms_factory < 11
+							arms_factory > 9
+						}
+						remove_building = { type = arms_factory level = 10 }
+						SOV = { country_event = { days = 100 id = on_action.110 }}	
+					}
+				}
+			}	
+			#Soviet Scorched Earth 2
+			if = {
+				limit = {
+					FROM = { tag = SOV }
+					ROOT = { OR = { tag = GER is_in_faction_with = GER }}
+					FROM.FROM = { OR = { is_core_of = SOV is_claimed_by = SOV } is_on_continent = europe }
+					SOV = { has_country_flag = scorched_earth_civ1 }
+				}
+				FROM.FROM = { 
+					if = {
+						limit = {
+							industrial_complex < 2
+						}
+						remove_building = { type = industrial_complex level = 1 }
+						set_country_flag = a1civ
+					}
+					if = {
+						limit = {
+							industrial_complex < 3
+							industrial_complex > 1
+						}
+						remove_building = { type = industrial_complex level = 2 }
+						set_country_flag = a2civ
+					}
+					if = {
+						limit = {
+							industrial_complex < 4
+							industrial_complex > 2
+						}
+						remove_building = { type = industrial_complex level = 3 }
+						set_country_flag = a3civ
+					}
+					if = {
+						limit = {
+							industrial_complex < 5
+							industrial_complex > 3
+						}
+						remove_building = { type = industrial_complex level = 4 }
+						set_country_flag = a4civ
+					}
+					if = {
+						limit = {
+							industrial_complex < 6
+							industrial_complex > 4
+						}
+						remove_building = { type = industrial_complex level = 5 }
+						set_country_flag = a5civ
+					}
+					if = {
+						limit = {
+							industrial_complex < 7
+							industrial_complex > 5
+						}
+						remove_building = { type = industrial_complex level = 6 }
+						set_country_flag = a6civ
+					}
+					if = {
+						limit = {
+							industrial_complex < 8
+							industrial_complex > 6
+						}
+						remove_building = { type = industrial_complex level = 7 }
+						set_country_flag = a7civ
+					}
+					if = {
+						limit = {
+							industrial_complex < 9
+							industrial_complex > 7
+						}
+						remove_building = { type = industrial_complex level = 8 }
+						set_country_flag = a8civ
+					}
+					if = {
+						limit = {
+							industrial_complex < 10
+							industrial_complex > 8
+						}
+						remove_building = { type = industrial_complex level = 9 }
+						set_country_flag = a9civ
+					}
+					if = {
+						limit = {
+							industrial_complex < 11
+							industrial_complex > 9
+						}
+						remove_building = { type = industrial_complex level = 10 }
+						set_country_flag = a10civ
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = a1civ
+					}
+					SOV = { country_event = { days = 10 id = on_action.201 }}
+				}
+				if = {
+					limit = {
+						has_country_flag = a2civ
+					}
+					SOV = { country_event = { days = 20 id = on_action.202 }}
+				}
+				if = {
+					limit = {
+						has_country_flag = a3civ
+					}
+					SOV = { country_event = { days = 30 id = on_action.203 }}
+				}
+				if = {
+					limit = {
+						has_country_flag = a4civ
+					}
+					SOV = { country_event = { days = 40 id = on_action.204 }}
+				}
+				if = {
+					limit = {
+						has_country_flag = a5civ
+					}
+					SOV = { country_event = { days = 50 id = on_action.205 }}
+				}
+				if = {
+					limit = {
+						has_country_flag = a6civ
+					}
+					SOV = { country_event = { days = 60 id = on_action.206 }}
+				}
+				if = {
+					limit = {
+						has_country_flag = a7civ
+					}
+					SOV = { country_event = { days = 70 id = on_action.207 }}
+				}
+				if = {
+					limit = {
+						has_country_flag = a8civ
+					}
+					SOV = { country_event = { days = 80 id = on_action.208 }}
+				}
+				if = {
+					limit = {
+						has_country_flag = a9civ
+					}
+					SOV = { country_event = { days = 90 id = on_action.209 }}
+				}
+				if = {
+					limit = {
+						has_country_flag = a10civ
+					}
+					SOV = { country_event = { days = 100 id = on_action.210 }}
+				}	
+			}
 		}
 	}
 }

@@ -100,9 +100,10 @@ country_event = {
 		is_puppet = no
 		NOT = { has_war_with = ROM }
 		ROM = { NOT = { is_in_faction = yes } }
-		or = {
-		GER = { has_war_with = SOV }
-		date > 1941.1.1
+		NOT = { ROM = { has_government = liberalism }}
+		OR = {
+			GER = { has_war_with = SOV }
+			date > 1941.1.1
 		}
 	}
 	 # add news event for historical mod
