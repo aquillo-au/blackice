@@ -1,8 +1,8 @@
 guiTypes = {
 	containerWindowType = {
 		name = "mission_icon_item"
-		position = {x=0 y=0}
-		Orientation = upper_left
+		position = {x=1 y=0}
+		orientation = upper_left
 		size = { width=25 height=25 }
 		clipping = no
 		
@@ -17,7 +17,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "airbase_selection_item"
 		position = {x=0 y=0}
-		Orientation = upper_left
+		orientation = upper_left
 		size = {width=260 height=33}
 		clipping = no
 
@@ -44,9 +44,9 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "base_name"
-			position = { x = 10 y = 7 }
+			position = { x=40 y=7 }
 			font = "hoi_18"
-			maxWidth = 180
+			maxWidth = 170
 			maxHeight = 23
 			text = "Super Maga Wing"
 			format = left
@@ -67,7 +67,7 @@ guiTypes = {
 			name ="permission_wings_bg"
 			spriteType = "GFX_generic_box_smallest"
 			position = { x=297 y=9 }
-			Orientation = "UPPER_LEFT"
+			orientation = "UPPER_LEFT"
 			scale = 0.8
 			pdx_tooltip = "AIR_VOLUNTEERS_LIMIT"
 		}
@@ -112,7 +112,7 @@ guiTypes = {
 			quadTextureSprite ="GFX_generic_checkbox3"
 			clicksound = click_checkbox
 			frame = 1
-			Orientation = "LEFT"
+			orientation = "LEFT"
 		}
 		
 		buttonType = {
@@ -127,7 +127,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "airwing_selection_item"
 		position = {x=0 y=0}
-		Orientation = upper_left
+		orientation = upper_left
 		size = {width=260 height=33}
 		clipping = no
 
@@ -297,7 +297,7 @@ guiTypes = {
 		name = "unassigned_airwings_view"
 		position = { x=0 y=-7 }
 		size = { width=536 height=430 } # height set in code, but initial value here is used for max allowed height
-		Orientation = upper_left
+		orientation = upper_left
 		clipping = no
 
 		background = {
@@ -413,7 +413,7 @@ guiTypes = {
 			name = "air_wings_window"
 			position = {x=0 y=38}
 			size = {width=537 height=363 } # Y Set in code to match the window size, but initial value is used as extra space in height
-			Orientation = upper_left
+			orientation = upper_left
 
 			verticalScrollbar = "right_vertical_slider"
 
@@ -483,14 +483,14 @@ guiTypes = {
 		name = "air_selection_view"
 		position = {x=0 y=77}
 		size = { width=502 height=430 } # height set in code, but initial value here is used for max allowed height
-		Orientation = upper_left
+		orientation = upper_left
 		clipping = no
 		
 		containerWindowType = {
 			name = "header_window"
 			position = {x=2 y=5}
 			size = { width=536 height=52 }
-			Orientation = upper_left
+			orientation = upper_left
 			clipping = no
 			background = {
 				name = "Background"
@@ -563,42 +563,42 @@ guiTypes = {
 			
 			buttonType = {
 				name = "mission_btn_5"
-				position = {x=193 y=8}	
+				position = {x=233 y=8}	
 				spriteType = "GFX_strategicair_mission_btn_bg"
 				clicksound = "click_send"
 				shortcut = "b"
 			}
 			iconType = {
 				name = "mission_icon_5"
-				position = {x=196 y=11}	
+				position = {x=236 y=11}	
 				spriteType = "GFX_strategicair_mission_types"
 				frame = 5
 				alwaystransparent = yes
 			}
 			buttonType = {
 				name = "mission_btn_8"
-				position = {x=240 y=8}	
+				position = {x=280 y=8}	
 				spriteType = "GFX_strategicair_mission_btn_bg"
 				clicksound = "click_send"
 				shortcut = "k"
 			}
 			iconType = {
 				name = "mission_icon_8"
-				position = {x=243 y=11}	
+				position = {x=287 y=11}	
 				spriteType = "GFX_strategicair_mission_types"
 				frame = 8
 				alwaystransparent = yes
 			}
 			buttonType = {
 				name = "mission_btn_9"
-				position = {x=287 y=8}	
+				position = {x=327 y=8}	
 				spriteType = "GFX_strategicair_mission_btn_bg"
 				clicksound = "click_send"
 				shortcut = "j"
 			}
 			iconType = {
 				name = "mission_icon_9"
-				position = {x=290 y=11}	
+				position = {x=334 y=11}	
 				spriteType = "GFX_strategicair_mission_types"
 				frame = 9
 				alwaystransparent = yes
@@ -621,7 +621,7 @@ guiTypes = {
 			
 			buttonType = {
 				name = "aggressivness_btn"
-				position = {x=375 y=10}	
+				position = {x=428 y=10}	
 				spriteType = "GFX_aggressivness_btn"
 				clicksound = click_default
 				frame = 1
@@ -629,7 +629,7 @@ guiTypes = {
 			
 			buttonType = {
 				name = "day_night_btn"
-				position = {x=405 y=10}	
+				position = {x=458 y=10}	
 				spriteType = "GFX_strategicair_day_night"
 				clicksound = click_default
 				frame = 1
@@ -637,7 +637,7 @@ guiTypes = {
 			
 			buttonType = {
 				name = "btn_close"
-				position = {x=479 y=9}
+				position = {x=495 y=9}
 				spriteType = "GFX_NV_btn_close"
 				shortcut = "ESCAPE"
 				pdx_tooltip = "CLOSE"
@@ -649,7 +649,7 @@ guiTypes = {
 				position = {x=4 y=-75}
 				size = { width=600 height=280 }
 				#animation_time = 300
-				#Orientation = center_down
+				#orientation = center_down
 				#clipping = yes
 				fade_time = 300
 				fade_type = linear
