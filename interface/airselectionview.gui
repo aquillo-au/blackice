@@ -27,6 +27,21 @@ guiTypes = {
 			spriteType = "GFX_AV_base_entry_bg"
 			clicksound = click_default
 		}
+		
+		iconType = {
+			name = "owner_flag"
+			quadTextureSprite ="GFX_flag_small"
+			position = { x = 10 y = 5 }
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "airbase_friendship_status"
+			quadTextureSprite ="GFX_airbase_friendship_status"
+			position = { x = 25 y = 7 }
+			alwaystransparent = yes
+		}
+		
 		instantTextboxType = {
 			name = "base_name"
 			position = { x = 10 y = 7 }
@@ -46,6 +61,26 @@ guiTypes = {
 			maxHeight = 23
 			format = centre
 			text = "4444"
+		}
+		
+		iconType ={
+			name ="permission_wings_bg"
+			spriteType = "GFX_generic_box_smallest"
+			position = { x=297 y=9 }
+			Orientation = "UPPER_LEFT"
+			scale = 0.8
+			pdx_tooltip = "AIR_VOLUNTEERS_LIMIT"
+		}
+		
+		instantTextboxType = {
+			name = "permission_wings_count"
+			position = { x=300 y=10 }
+			font = "hoi_16mbs"
+			text = "100/200"
+			maxWidth = 49
+			maxHeight = 20
+			alwaystransparent = yes
+			format = centre
 		}
 		
 		buttonType = {
@@ -125,6 +160,13 @@ guiTypes = {
 			scale = 0.9
 		}
 		
+		iconType ={
+			name ="air_volunteer_icon"
+			spriteType = "GFX_volunteer_airwings_icon"
+			position = { x=65 y=1 }
+			scale = 0.5
+		}	
+		
 		buttonType = {
 			name = "reinf_btn"
 			position = {x=85 y=1}
@@ -164,12 +206,28 @@ guiTypes = {
 			format = left
 			fixedsize = yes
 		}
-		#iconType = {
-		#	name = "bar_org"
-		#	spriteType = "GFX_navieslist_bar_org"
-		#	position = { x=11 y=24 }
-		#	rotation = 1.5708
-		#}
+		
+		iconType = {
+			name ="army_attachment_button"
+			pdx_tooltip = "ATTACHED_AIR_WING_DESC"
+			pdx_tooltip_delayed = "ATTACHED_AIR_WING_DELAYED_DESC"
+			spriteType = "GFX_theatre_army_shield"
+			position = { x = 297 y = 4 }
+			scale = 0.8
+		}
+		
+		instantTextBoxType = {
+			name = "armies_count_box"
+			position = { x = 296 y = 7 }
+			font = "hoi_16mbs"
+			maxWidth = 28
+			maxHeight = 23
+			fixedsize = yes
+			format = center
+			text = "28"
+			alwaystransparent = yes
+		}
+
 		iconType = { 
 			name = "bar_str"
 			spriteType = "GFX_navieslist_bar_str"
@@ -293,22 +351,6 @@ guiTypes = {
 			frame = 1
 			clicksound = click_default
 		}
-		#buttonType = {
-		#	name = "priority_4"
-		#	position = { x=321 y=13 }
-		#	buttonFont = "hoi_16mbs"
-		#	quadTextureSprite = "GFX_deploy_priority_air"
-		#	frame = 1
-		#	clicksound = click_default
-		#}
-		#buttonType = {
-		#	name = "priority_5"
-		#	position = { x=339 y=13 }
-		#	buttonFont = "hoi_16mbs"
-		#	quadTextureSprite = "GFX_deploy_priority_air"
-		#	frame = 1
-		#	clicksound = click_default
-		#}
 		
 		buttonType = {
 			name = "split_wing_btn"
@@ -414,6 +456,30 @@ guiTypes = {
 	}
 
 	containerWindowType = {
+		name = "bombing_priority_item"
+		position = { x=2 y=0 }
+		size = { width = 35 height = 35 }
+		clipping = no
+		
+		buttonType = {
+			name = "building_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_buildings_strip"
+			clicksound = click_default
+			scale = 0.8
+		}
+		
+		iconType = {
+			name ="selected_air_priority_icon"
+			spriteType = "GFX_selected_air_priority"	
+			position = { x =0 y = 0 }
+			alwaystransparent = yes
+			frame = 1
+			scale = 0.8
+		}
+	}
+	
+	containerWindowType = {
 		name = "air_selection_view"
 		position = {x=0 y=77}
 		size = { width=502 height=430 } # height set in code, but initial value here is used for max allowed height
@@ -425,6 +491,7 @@ guiTypes = {
 			position = {x=2 y=5}
 			size = { width=536 height=52 }
 			Orientation = upper_left
+			clipping = no
 			background = {
 				name = "Background"
 				quadTextureSprite ="GFX_tiled_plain_bg_small"
@@ -433,7 +500,7 @@ guiTypes = {
 				name = "mission_btn_1"
 				position = {x=5 y=8}	
 				spriteType = "GFX_strategicair_mission_btn_bg"
-				clicksound = "click_send"
+				clicksound = "air_mission_select"
 				shortcut = "z"
 			}		
 			iconType = {
@@ -447,7 +514,7 @@ guiTypes = {
 				name = "mission_btn_2"
 				position = {x=52 y=8}	
 				spriteType = "GFX_strategicair_mission_btn_bg"
-				clicksound = "click_send"
+				clicksound = "air_mission_select"
 				shortcut = "x"
 			}
 			iconType = {
@@ -461,7 +528,7 @@ guiTypes = {
 				name = "mission_btn_3"
 				position = {x=99 y=8}	
 				spriteType = "GFX_strategicair_mission_btn_bg"
-				clicksound = "click_send"
+				clicksound = "air_mission_select"
 				shortcut = "c"
 			}
 			iconType = {
@@ -485,6 +552,15 @@ guiTypes = {
 				frame = 4
 				alwaystransparent = yes
 			}
+			
+			buttonType = {
+				name = "air_target_btn"
+				position = {x=198 y=10}	
+				spriteType = "GFX_air_target_icon"
+				clicksound = click_default
+				frame = 1
+			}
+			
 			buttonType = {
 				name = "mission_btn_5"
 				position = {x=193 y=8}	
@@ -529,6 +605,21 @@ guiTypes = {
 			}
 			
 			buttonType = {
+				name = "mission_btn_10"
+				position = {x=374 y=8}	
+				spriteType = "GFX_strategicair_mission_btn_bg"
+				clicksound = "air_mission_select"
+				# shortcut = "j"
+			}
+			iconType = {
+				name = "mission_icon_10"
+				position = {x=377 y=11}	
+				spriteType = "GFX_strategicair_mission_types"
+				frame = 10
+				alwaystransparent = yes
+			}
+			
+			buttonType = {
 				name = "aggressivness_btn"
 				position = {x=375 y=10}	
 				spriteType = "GFX_aggressivness_btn"
@@ -551,6 +642,50 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				pdx_tooltip = "CLOSE"
 				clicksound = click_close
+			}
+			
+			containerWindowType = {
+				name = "strategic_air_priorities_window"
+				position = {x=4 y=-75}
+				size = { width=600 height=280 }
+				#animation_time = 300
+				#Orientation = center_down
+				#clipping = yes
+				fade_time = 300
+				fade_type = linear
+				clipping = no
+			
+				background = {
+					name = "Background"
+					spriteType = "GFX_air_priorities_bg"
+				}
+				
+				instantTextboxType = {
+					name = "strategic_priorities_label"
+					position = { x = 15 y = 7 }
+					font = "hoi_18mbs"
+					maxWidth = 380
+					maxHeight = 23
+					text = "AIR_STRATEGIC_PRIORITIES"
+					format = left
+					fixedsize = yes
+				}
+				
+				iconType = {
+					name = "selected_mission_overlay"
+					position = { x = 135 y = 65 }
+					spriteType = "GFX_selected_air_priorities_overlay"
+					alwaystransparent = yes
+				}
+				
+				gridBoxType = {
+					name = "bombing_priorities_grid"
+					position = { x = 20 y = 32 }
+					size = { width = 600 height = 280 }
+					slotsize = { width = 39 height = 35 }
+					max_slots_vertical = 1
+					format = "UPPER_LEFT"
+				}
 			}
 		}
 		

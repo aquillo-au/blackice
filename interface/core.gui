@@ -48,7 +48,7 @@ guiTypes = {
 		instantTextBoxType={
 			position = { x=10 y=70 }
 			name = "console_text"
-			#textureFile = "gfx\\interface\\tiles_dialog.tga"
+			#textureFile = "gfx\\interface\\tiles\\tiles_dialog.tga"
 			font = "Arial12"
 			borderSize = { x=8 y=1 }
 			maxWidth = 500
@@ -61,7 +61,7 @@ guiTypes = {
 	textBoxType={
 		position = { x=1 y=1 }
 		name = "ChatMemberText"
-		textureFile = "gfx\\interface\\tiles_dialog.tga"
+		textureFile = "gfx\\interface\\tiles\\tiles_dialog.tga"
 		borderSize = {x = 1 y = 1}
 		font = "Main_14_eu"
 		text = "menutextbox1"
@@ -72,12 +72,12 @@ guiTypes = {
 	textBoxType={
 		name = "ToolTip"
 		#textureFile = "gfx\\interface\\transparency.tga"
-		textureFile = "gfx\\interface\\tiles_dialog.tga"
+		textureFile = "gfx\\interface\\tiles\\tiles_dialog.tga"
 		font = "cg_16b"
 		borderSize = { x=18 y=18 }
 		position = { x= 560 y=10 }
 		maxWidth = 400 #320
-		maxHeight = 304
+		maxHeight = 256
 	}
 
 	containerWindowType = {
@@ -104,7 +104,7 @@ guiTypes = {
 	textBoxType={
 		name = "FPS_Counter"
 		#textureFile = "gfx\\interface\\transparency.tga"
-		textureFile = "gfx\\interface\\tiles_dialog.tga"
+		textureFile = "gfx\\interface\\tiles\\tiles_dialog.tga"
 		#textureFile = ""
 		font = "Main_14_eu"
 		borderSize = { x=32 y=32 }
@@ -245,6 +245,7 @@ guiTypes = {
 		startValue = 0
 		orientation = upper_right
 		origo = upper_right
+		smooth_scrolling = 0.25
 
 		background = {
 			name = "Background"	
