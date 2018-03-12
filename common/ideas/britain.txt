@@ -13,7 +13,11 @@ ideas = {
 				NOT = {
 					any_other_country = {
 						original_tag = ENG
-						has_government = democratic 
+						OR = {
+							has_government = conservatism
+							has_government = liberalism
+							has_government = socialism
+						}
 						NOT = {
 							tag = ROOT
 						}
@@ -617,7 +621,7 @@ ideas = {
 			}
 			traits = { communist }
 		}
-		george_v = {
+		george_v_hos = {
 			allowed = {
 				original_tag = ENG
 				NOT = { has_country_flag = ENG_king_died }
@@ -974,7 +978,9 @@ ideas = {
 			available = {
 				OR = {
 					has_government = monarchism
-					has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
 				}
 			}
 			
@@ -1103,7 +1109,8 @@ ideas = {
 			available = {
 				OR = {
 					has_government = monarchism
-					has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
 				}
 			}
 			
@@ -1119,7 +1126,8 @@ ideas = {
 			available = {
 				OR = {
 					has_government = monarchism
-					has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
 				}
 			}
 			
@@ -1176,7 +1184,8 @@ ideas = {
 		
 			available = {
 				OR = {
-					has_government = democratic
+					has_government = conservatism
+					has_government = liberalism
 					has_government = monarchism
 				}
 			}

@@ -495,7 +495,11 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_government = democratic
+				OR = {
+					has_government = conservatism
+					has_government = liberalism
+					has_government = socialism
+				}
 			}
 			
 			removal_cost = -1

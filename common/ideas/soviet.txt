@@ -1,4 +1,5 @@
 ideas = {
+
 	country = {
 		militarized_schools = {
 			removal_cost = -1
@@ -9,9 +10,11 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					has_government = conservatism
-					has_government = socialism
-					has_government = liberalism
+					OR = {
+						has_government = conservatism
+						has_government = socialism
+						has_government = liberalism
+					}
 				}
 			}
 
@@ -48,9 +51,11 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					has_government = conservatism
-					has_government = socialism
-					has_government = liberalism
+					OR = {
+						has_government = conservatism
+						has_government = socialism
+						has_government = liberalism
+					}
 				}
 			}
 
@@ -1946,6 +1951,7 @@ ideas = {
 			
 			available = {
 				OR = {
+					has_government = socialism
 					has_government = conservatism
 					has_government = liberalism
 					has_government = monarchism
@@ -1962,7 +1968,7 @@ ideas = {
 			}
 			
 			available = {
-				has_government = democratic
+				has_government = solcialism
 			}
 			
 			traits = { socialist hearts_and_minds }
@@ -2313,10 +2319,47 @@ ideas = {
 			cancel_if_invalid = no
 		}
 	}
-	## Army Chiefs
+	# Military
+	# Supreme Commanders
+	supreme_commander = {
+		zhukov_sc = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { supreme_com_organizer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		stalin_sc = {
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { supreme_com_political }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		timoshenko_sc = {
+			allowed = {
+				original_tag = SOV
+			}
+
+			traits = { supreme_com_reformer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	# Army Chiefs
 	army_chief = {
 		semyon_timoshenko = {
-			#Also unit leader: 404
+			#Also unit leader: 604
 			allowed = {
 				original_tag = SOV
 			}
@@ -2328,7 +2371,7 @@ ideas = {
 						any_other_country = {
 							has_war_with = SOV
 							original_tag = SOV
-							has_unit_leader = 404
+							has_unit_leader = 604
 						} 
 					}
 				}
@@ -2341,7 +2384,7 @@ ideas = {
 			}
 		}
 		kliment_voroshilov = {
-			#Also unit leader: 405
+			#Also unit leader: 605
 			allowed = {
 				original_tag = SOV
 			}
@@ -2353,7 +2396,7 @@ ideas = {
 						any_other_country = {
 							has_war_with = SOV
 							original_tag = SOV
-							has_unit_leader = 405
+							has_unit_leader = 605
 						} 
 					}
 				}
@@ -2441,42 +2484,6 @@ ideas = {
 				factor = 1
 			}
 		}	
-	}
-	## Supreme Commanders
-	supreme_commander = {
-		zhukov_sc = {
-			allowed = {
-				original_tag = SOV
-			}
-			
-			traits = { supreme_com_organizer }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		stalin_sc = {
-			allowed = {
-				original_tag = SOV
-			}
-
-			traits = { supreme_com_political }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		timoshenko_sc = {
-			allowed = {
-				original_tag = SOV
-			}
-
-			traits = { supreme_com_reformer }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
 	}
 	# Naval Chiefs
 	navy_chief = {
@@ -2578,7 +2585,10 @@ ideas = {
 			}
 			
 			available = {
-				NOT = { has_country_flag = purge_2_group_a has_country_flag = smushkevich_arrested }
+				NOT = {
+					has_country_flag = purge_2_group_a
+					has_country_flag = smushkevich_arrested
+				}
 			}
 			# PURGED
 			traits = { air_chief_safety_2 } # Could also have reform
@@ -2593,7 +2603,10 @@ ideas = {
 			}
 			
 			available = {
-				NOT = { has_country_flag = purge_2_group_a has_country_flag = loktionov_fired }
+				NOT = {
+					has_country_flag = purge_2_group_a
+					has_country_flag = loktionov_fired
+				}
 			}
 			# PURGED
 			traits = { air_chief_ground_support_1 }
@@ -2621,7 +2634,7 @@ ideas = {
 	#High Commanders
 	high_command = {
 		ivan_konev = {
-			#Also unit leader: 408
+			#Also unit leader: 608
 			allowed = {
 				original_tag = SOV
 			}
@@ -2647,7 +2660,7 @@ ideas = {
 			}
 		}
 		aleksandr_vasilevsky = {
-			#Also unit leader: 407
+			#Also unit leader: 607
 			allowed = {
 				original_tag = SOV
 			}
@@ -2672,7 +2685,7 @@ ideas = {
 			}
 		}
 		konstantin_rokossovsky = {
-			#Also unit leader: 402
+			#Also unit leader: 602
 			allowed = {
 				original_tag = SOV # Unlocked via focus
 				hidden_trigger = {
@@ -2743,7 +2756,7 @@ ideas = {
 			}
 		}
 		vladimir_kasatonov = {
-			#Also unit leader: 403
+			#Also unit leader: 603
 			allowed = {
 				original_tag = SOV
 			}
@@ -2768,7 +2781,7 @@ ideas = {
 			}
 		}
 		gordey_levchenko = {
-			#Also unit leader: 406
+			#Also unit leader: 606
 			allowed = {
 				original_tag = SOV
 			}
@@ -2793,7 +2806,7 @@ ideas = {
 			}
 		}
 		arseniy_golovko = {
-			#Also unit leader: 409
+			#Also unit leader: 609
 			allowed = {
 				original_tag = SOV
 			}
@@ -2829,18 +2842,14 @@ ideas = {
 			}
 		}
 	}
+	
 	tank_manufacturer = {
-		
 		designer = yes
 		
 		morozov_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				armor = 0.10
@@ -2851,15 +2860,10 @@ ideas = {
 			modifier = {
 			}
 		}
-		
 		astrov_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				armor = 0.10
@@ -2870,15 +2874,10 @@ ideas = {
 			modifier = {
 			}
 		}
-		
 		okmo = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				armor = 0.10
@@ -2892,273 +2891,236 @@ ideas = {
 	}
 	
 	aircraft_manufacturer = {
-		
 		designer = yes
 		
 		mig_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
-			equipment_bonus = {
 			
-			mig_1_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			} 
-			mig_3_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			} 
-		}
+			equipment_bonus = {
+				mig_1_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				} 
+				mig_3_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				} 
+			}
+			
 			#traits = { mig_manufacturer }
 			
 			modifier = {
 			}
 		}
-		
 		ilyushin_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
+			
 			equipment_bonus = {
-		
-			il_2_equipment = {
-				air_ground_attack = 0.1 reliability = 0.1  instant = yes
-			}
-			il_10_equipment = {
-				air_ground_attack = 0.1 reliability = 0.1  instant = yes
-			}
-			db_3_bomber_equipment = {
-				reliability = 0.2  instant = yes
-			}
-			il_4_bomber_equipment = {
-				reliability = 0.2  instant = yes
-			}
-			db_3t_bomber_equipment = {
-				reliability = 0.2  instant = yes
+				il_2_equipment = {
+					air_ground_attack = 0.1 reliability = 0.1  instant = yes
+				}
+				il_10_equipment = {
+					air_ground_attack = 0.1 reliability = 0.1  instant = yes
+				}
+				db_3_bomber_equipment = {
+					reliability = 0.2  instant = yes
+				}
+				il_4_bomber_equipment = {
+					reliability = 0.2  instant = yes
+				}
+				db_3t_bomber_equipment = {
+					reliability = 0.2  instant = yes
+				}
 			}
 			
-		}
 			#traits = { ilyushin_manufacturer }
 			
 			modifier = {
 			}
 		}
-		
 		tupolev_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
+			
 			equipment_bonus = {
+				i_14_fighter_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				tu_2_fighter_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				sb_2m_bomber_equipment  = {
+					reliability = 0.2  instant = yes
+				}
+				ar_2_bomber_equipment = {
+					reliability = 0.2  instant = yes
+				}
+				tu_2_bomber_equipment = {
+					reliability = 0.2  instant = yes
+				}
+				tb_3_bomber_equipment = {
+					air_bombing = 0.1  instant = yes
+				}
+			}
 			
-			i_14_fighter_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			tu_2_fighter_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			sb_2m_bomber_equipment  = {
-				reliability = 0.2  instant = yes
-			}
-			ar_2_bomber_equipment = {
-				reliability = 0.2  instant = yes
-			}
-			tu_2_bomber_equipment = {
-				reliability = 0.2  instant = yes
-			}
-			tb_3_bomber_equipment = {
-				air_bombing = 0.1  instant = yes
-			}
-			
-		}
 			#traits = { tupolev_manufacturer }
 			
 			modifier = {
 			}
 		}
-		
 		yakovlev_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
+			
 			equipment_bonus = {
-
-			yak_1_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				yak_1_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				yak_7_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				yak_3_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				yak_9_equipment  = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
 			}
-			yak_7_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			yak_3_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			yak_9_equipment  = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-		
-		}
+			
 			#traits = { yakovlev_manufacturer }
 			
 			modifier = {
 			}
 		}
 		LaGG_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
+			
 			equipment_bonus = {
-		
-			lagg_1_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			lagg_3_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			lagg_5_equipment = { 
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			lagg_7_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				lagg_1_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				lagg_3_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				lagg_5_equipment = { 
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				lagg_7_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
 			}
 			
-		}
 			#traits = { LaGG_manufacturer }
 			
 			modifier = {
 			}
 		}
 		Petlyakov_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
+			
 			equipment_bonus = {
-		
-			pe_2_fighter_equipment  = {
-				reliability = 0.2  instant = yes
-			}
-			pe_3_fighter_equipment = {
-				reliability = 0.2  instant = yes
-			}
-			pe_2_bomber_equipment  = {
-				reliability = 0.2  instant = yes
-			}
-			pe_2i_bomber_equipment = {
-				reliability = 0.2  instant = yes
-			}
-			pe_8_bomber_equipment = {
-				reliability = 0.2  instant = yes
+				pe_2_fighter_equipment  = {
+					reliability = 0.2  instant = yes
+				}
+				pe_3_fighter_equipment = {
+					reliability = 0.2  instant = yes
+				}
+				pe_2_bomber_equipment  = {
+					reliability = 0.2  instant = yes
+				}
+				pe_2i_bomber_equipment = {
+					reliability = 0.2  instant = yes
+				}
+				pe_8_bomber_equipment = {
+					reliability = 0.2  instant = yes
+				}
 			}
 			
-		}
 			#traits = { Petlyakov_manufacturer }
 			
 			modifier = {
 			}
 		}
 		Myasishchev_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
+			
 			equipment_bonus = {
-			# TODO: how about we boost all carrier plane versions here a bit?
-			nav_bomber_equipment = {
-				air_range = 0.1 naval_strike_attack = 0.1
+				# TODO: how about we boost all carrier plane versions here a bit?
+				nav_bomber_equipment = {
+					air_range = 0.1 naval_strike_attack = 0.1
+				}
+				cv_nav_bomber_equipment = {
+					air_range = 0.1 naval_strike_attack = 0.1
+				}
 			}
-			cv_nav_bomber_equipment = {
-				air_range = 0.1 naval_strike_attack = 0.1
-			}
-		}
+			
 			#traits = { Myasishchev_manufacturer }
 			
 			modifier = {
 			}
 		}
 		Kochyerigin_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
+			
 			equipment_bonus = {
-		
-			di_6_equipment_1 = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				di_6_equipment_1 = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
 			}
 			
-		}
 			#traits = { Kochyerigin_manufacturer }
 			
 			modifier = {
 			}
 		}
 		Tumansky_Palubniy_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				air_equipment = 0.10
@@ -3170,81 +3132,73 @@ ideas = {
 			}
 		}
 		Polikarpov_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
+			
 			equipment_bonus = {
-		
-			i_5_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			i_15_equipment  = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			i_152_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			i_153_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			} 
-			i_16_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			r_5_bomber_equipment = {
-				air_ground_attack = 0.1 reliability = 0.1  instant = yes
-			}
-			r_5_nav_bomber_equipment = {
-				air_ground_attack = 0.1 reliability = 0.1  instant = yes
-			}
-			r_10_bomber_equipment = {
-				air_ground_attack = 0.1 reliability = 0.1  instant = yes
-			}
-			po_2_equipment = {
-				air_ground_attack = 0.1 reliability = 0.1  instant = yes
-			}
-			po_witch_equipment = {
-				air_ground_attack = 0.1 reliability = 0.1  instant = yes
+				i_5_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				i_15_equipment  = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				i_152_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				i_153_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				} 
+				i_16_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				r_5_bomber_equipment = {
+					air_ground_attack = 0.1 reliability = 0.1  instant = yes
+				}
+				r_5_nav_bomber_equipment = {
+					air_ground_attack = 0.1 reliability = 0.1  instant = yes
+				}
+				r_10_bomber_equipment = {
+					air_ground_attack = 0.1 reliability = 0.1  instant = yes
+				}
+				po_2_equipment = {
+					air_ground_attack = 0.1 reliability = 0.1  instant = yes
+				}
+				po_witch_equipment = {
+					air_ground_attack = 0.1 reliability = 0.1  instant = yes
+				}
 			}
 			
-		}
 			#traits = { Tumansky_manufacturer }
 			
 			modifier = {
 			}
 		}
 		Grigorovich_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
 			
-
-			
 			research_bonus = {
 				air_equipment = 0.10
 			}
+			
 			equipment_bonus = {
-		
-			i_z_equipment_1 = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			i_7_equipment_1 = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
-			}
-			ip_1_fighter_equipment = {
-				air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				i_z_equipment_1 = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				i_7_equipment_1 = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
+				ip_1_fighter_equipment = {
+					air_agility = 0.1 maximum_speed = 0.1  instant = yes
+				}
 			}
 			
-		}
 			#traits = { Grigorovich_manufacturer }
 			
 			modifier = {
@@ -3252,17 +3206,11 @@ ideas = {
 		}
 	}	
 	
-	
 	industrial_concern = {
-				
 		stalingrad_tractor_factory = {
-		
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				industry = 0.10
@@ -3273,15 +3221,10 @@ ideas = {
 			modifier = {
 			}
 		}
-		
 		leningrad_polytechnical_institute = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				electronics = 0.10
@@ -3295,17 +3238,12 @@ ideas = {
 	}
 	
 	materiel_manufacturer = {
-			
 		designer = yes
 		
 		grabin_design_bureau = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				artillery = 0.10
@@ -3315,18 +3253,11 @@ ideas = {
 			
 			modifier = {
 			}
-		}	
-		
-	
-		
+		}
 		tula_arms_plant = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				infantry_weapons = 0.10
@@ -3337,15 +3268,10 @@ ideas = {
 			modifier = {
 			}
 		}
-		
 		gaz = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				motorized_equipment = 0.10
@@ -3360,12 +3286,9 @@ ideas = {
 	}
 	
 	naval_manufacturer = {
-	
 		designer = yes
 		
 		marti_shipyard = {
-
-
 			allowed = {
 				original_tag = SOV
 			}
@@ -3387,8 +3310,6 @@ ideas = {
 			}
 		}
 		kommunar_shipyard = {
-
-
 			allowed = {
 				original_tag = SOV
 			}
@@ -3411,18 +3332,14 @@ ideas = {
 		}
 	}
 	
-	theorist = {	
-	
-			
+	theorist = {
 		mikhail_tukhachevsky = {
-			
-			
 			allowed = {
 				original_tag = SOV
 
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = purge_1_group_a }
 			}
 			
@@ -3431,19 +3348,13 @@ ideas = {
 			research_bonus = {
 				cat_mass_assault = 0.10
 			}
-			
 			# PURGED
 			traits = { mass_assault_expert }
 		}
-		
 		boris_shaposhnikov = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				land_doctrine = 0.07
@@ -3451,20 +3362,15 @@ ideas = {
 			
 			traits = { military_theorist }
 		}
-		
 		georgy_zhukov = {
-			
-			
 			allowed = {
 				original_tag = SOV # Unlocked via focus
 
 			}
-			available = 
-			{
-				NOT = { has_country_flag = counter_purge }
-			}
+			
 			available = {
 				has_completed_focus = SOV_positive_heroism
+				NOT = { has_country_flag = counter_purge }
 			}
 			
 			cost = 250
@@ -3475,16 +3381,13 @@ ideas = {
 			
 			traits = { mass_assault_expert }
 		}
-		
 		sergey_gorshkov = {
-			
-			
 			allowed = {
 				original_tag = SOV
 
 			}
-			available = 
-			{
+			
+			available = {
 				NOT = { has_country_flag = counter_purge }
 			}
 			
@@ -3496,10 +3399,7 @@ ideas = {
 			
 			traits = { naval_theorist }
 		}
-		
 		vladimir_tributs = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
@@ -3512,16 +3412,12 @@ ideas = {
 			
 			traits = { grand_fleet_proponent}
 		}
-		
 		sergei_rudenko = {
-			
-			
 			allowed = {
 				original_tag = SOV
 
 			}
-			available = 
-			{
+			available = {
 				NOT = { has_country_flag = counter_purge }
 			}
 			
@@ -3533,15 +3429,10 @@ ideas = {
 			
 			traits = { close_air_support_proponent }
 		}
-		
 		alexander_golovanov = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				air_doctrine = 0.07
@@ -3549,15 +3440,10 @@ ideas = {
 			
 			traits = { air_warfare_theorist }
 		}
-		
 		igor_kurchatov = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
-			
-
 			
 			research_bonus = {
 				nuclear = 0.10
@@ -3565,10 +3451,7 @@ ideas = {
 			
 			traits = { nuclear_scientist }
 		}
-		
 		sergei_korolev = {
-			
-			
 			allowed = {
 				original_tag = SOV
 			}
@@ -3581,5 +3464,5 @@ ideas = {
 			traits = { rocket_scientist }
 		}
 	}
-	
 }
+### EOF ###
