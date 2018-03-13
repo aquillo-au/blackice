@@ -1255,7 +1255,6 @@ ideas = {
 				always = yes
 			}
 			
-
 			picture = generic_research_bonus
 	
 		}
@@ -1266,18 +1265,18 @@ ideas = {
 			
 			equipment_bonus = {
 				coastal_submarine = {
-					 build_cost_ic = 1.5 instant = yes 
+					build_cost_ic = 1.5 instant = yes 
 				}
-				
 			}
 			
-		
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-#######Politicians
+	##################
+	####Politicians
+	##################
 	#HoS
 	head_of_state = {
 		hitler_hos = {
@@ -1297,11 +1296,7 @@ ideas = {
 				OR = {
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						}
+						democratic_govt = yes
 						has_country_flag = const_kaiser
 					}
 				}
@@ -1316,11 +1311,7 @@ ideas = {
 				OR = {
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						}
+						democratic_govt = yes
 						has_country_flag = const_kaiser
 					}
 				}
@@ -1335,11 +1326,7 @@ ideas = {
 				OR = {
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						}
+						democratic_govt = yes
 						has_country_flag = const_kaiser
 					}
 				}
@@ -1354,11 +1341,7 @@ ideas = {
 				OR = {
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						}
+						democratic_govt = yes
 						has_country_flag = const_kaiser
 					}
 				}
@@ -1373,11 +1356,7 @@ ideas = {
 				OR = {
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						}
+						democratic_govt = yes
 						has_country_flag = const_kaiser
 					}
 				}
@@ -1390,12 +1369,8 @@ ideas = {
 				
 			}
 			available = {
-					has_country_flag = hitler_dead
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-				}
+				has_country_flag = hitler_dead
+				democratic_govt = yes
 			}
 			traits = { conservative war_hero }
 			
@@ -1427,11 +1402,7 @@ ideas = {
 				original_tag = GER
 			}
 			available = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-				}
+				democratic_govt = yes
 			}
 			traits = { conservative elder_statesman }
 		}
@@ -1440,11 +1411,7 @@ ideas = {
 				original_tag = GER
 			}
 			available = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-				}
+				democratic_govt = yes
 			}
 			traits = { conservative coalition_builder }
 		}
@@ -1592,7 +1559,6 @@ ideas = {
 			traits = { communist ideological_crusader }
 		}
 	}
-	
 	#Security Ministers
 	interior_minister = {
 		heinrich_himmler = {
@@ -1793,7 +1759,7 @@ ideas = {
 		}
 	
 	}
-#Intel Ministers	
+	#Intel Ministers
 	intel_minister = {
 		wilhelm_canaris = {
 			
@@ -1877,7 +1843,7 @@ ideas = {
 			traits = { communist codebreaker }
 		}
 	}
-	#Econ Ministers	
+	#Economic Ministers	
 	economic_minister = {
 		goering_e = {
 			allowed = {
@@ -2117,7 +2083,7 @@ ideas = {
 			traits = { communist armaments_organizer }
 		}
 	}
-	#Advisors
+	#Political Advisors
 	political_advisor = {
 		joseph_goebbels = {
 			allowed = {
@@ -3271,16 +3237,17 @@ ideas = {
 	}
 	###### MILITARY 
 	supreme_commander = {
-		
 		werner_von_fritsch = {
 			allowed = {
 				original_tag = GER
 				NOT = { is_ai = yes }
 				NOT = { has_country_flag = fritsch_fired }
 			}
+			
 			available = {
 				NOT = { is_ai = yes }
 			}
+			
 			traits = { supreme_com_fritz fascist reluctant_minister }
 			
 			ai_will_do = {
@@ -3293,9 +3260,11 @@ ideas = {
 				is_ai = yes
 				NOT = { has_country_flag = fritsch_fired }
 			}
+			
 			available = {
 				is_ai = yes
 			}
+			
 			traits = { supreme_com_fritz fascist }
 
 			ai_will_do = {

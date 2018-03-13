@@ -4,7 +4,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "armyleaderwindow"
 		position = { x=-400 y=-500 }
-		size = { width=550 height=700 }
+		size = { width=550 height=725 }
 		orientation = center
 		moveable = yes
 		fade_time = 500
@@ -69,7 +69,6 @@ guiTypes = {
 			clicksound = click_scroll
 			frame = 1
 		}
-		
 		ButtonType = {
 			name = "sort_attack_skill"
 			position = {x=323 y=39}
@@ -78,7 +77,6 @@ guiTypes = {
 			clicksound = click_scroll
 			frame = 1
 		}
-		
 		ButtonType = {
 			name = "sort_defense_skill"
 			position = {x=349 y=39}
@@ -87,7 +85,6 @@ guiTypes = {
 			clicksound = click_scroll
 			frame = 1
 		}
-		
 		ButtonType = {
 			name = "sort_planning_skill"
 			position = {x=375 y=39}
@@ -96,7 +93,6 @@ guiTypes = {
 			clicksound = click_scroll
 			frame = 1
 		}
-		
 		ButtonType = {
 			name = "sort_supply_skill"
 			position = {x=401 y=39}
@@ -105,13 +101,29 @@ guiTypes = {
 			clicksound = click_scroll
 			frame = 1
 		}
-
+		buttonType = {
+			name = "no_leader_button"
+			position = { x = -250 y = -45 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_18mbs"
+			Orientation = "LOWER_RIGHT"
+			buttonText = "UNASSIGN"
+			pdx_tooltip = "UNASSIGN"
+		}
+		buttonType = {
+			name = "new_leader_button"
+			position = { x = -535 y = -45 }
+			quadTextureSprite = "GFX_button_261x34"
+			buttonFont = "hoi_18mbs"
+			Orientation = "LOWER_RIGHT"
+			buttonText = "UNIT_LEADER_NEW_LEADER"
+		}
 		containerWindowType = {
 			name = "leaders"
 			position = { x = 0 y = 60 }
-			size = { width = 100%% height = 587 }
+			size = { width = 100%% height = 610 }
 			verticalScrollbar = "right_vertical_slider"
-			margin = { top = 14 bottom = 2}
+			margin = { top = 5 bottom = 15 }
 			scroll_wheel_factor = 98
 			
 			background = {
@@ -121,31 +133,12 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "leaders_grid"
-				position = { x = 13 y = 15 }
+				position = { x = 13 y = 5 }
 				size = { width = 100%% height = 100%% }
 				slotsize = { width = 510 height = 98 }
 				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 			}
-		}
-		
-		buttonType = {
-			name = "no_leader_button"
-			position = { x = -250 y = -32 }
-			quadTextureSprite ="GFX_button_221x34"
-			buttonFont = "hoi_18mbs"
-			Orientation = "LOWER_RIGHT"
-			buttonText = "UNASSIGN"
-			pdx_tooltip = "UNASSIGN"
-		}
-		
-		buttonType = {
-			name = "new_leader_button"
-			position = { x = -535 y = -32 }
-			quadTextureSprite = "GFX_button_261x34"
-			buttonFont = "hoi_18mbs"
-			Orientation = "LOWER_RIGHT"
-			buttonText = "UNIT_LEADER_NEW_LEADER"
 		}
 		
 		buttonType = {
@@ -349,10 +342,13 @@ guiTypes = {
 	# NAVAL LEADERS WINDOW
 	containerWindowType = {
 		name = "navyleaderwindow"
-		position = { x=-225 y=-225 }
-		size = { width=550 height=590 }
+		position = { x=-400 y=-500 }
+		size = { width=550 height=725 }
 		orientation = center
 		moveable = yes
+		fade_time = 500
+		fade_type = linear
+		click_to_front = yes
 		
 		background = {
 			name = "Background"		
@@ -394,7 +390,6 @@ guiTypes = {
 			#maxHeight = 20
 			#format = left
 		}
-			
 		ButtonType = {
 			name = "sort_skills"
 			position = {x=13 y=37}
@@ -403,13 +398,32 @@ guiTypes = {
 			buttonFont = "hoi_16mbs"
 			clicksound = click_scroll
 		}
-
+		buttonType = {
+			name = "no_leader_button"
+			position = { x = -250 y = -45 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_18mbs"
+			Orientation = "LOWER_RIGHT"
+			buttonText = "UNASSIGN"
+			pdx_tooltip = "UNASSIGN"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "new_leader_button"
+			position = { x = -535 y = -45 }
+			quadTextureSprite = "GFX_button_261x34"
+			buttonFont = "hoi_18mbs"
+			Orientation = "LOWER_RIGHT"
+			buttonText = "UNIT_LEADER_NEW_LEADER"
+			clicksound = click_default
+		}
+		
 		containerWindowType = {
 			name = "leaders"
 			position = { x = 0 y = 60 }
-			size = { width = 100%% height = 507 }
+			size = { width = 100%% height = 610 }
 			verticalScrollbar = "right_vertical_slider"
-			margin = { top = 14 bottom = 22}			
+			margin = { top = 5 bottom = 14 }		
 			scroll_wheel_factor = 98
 			
 			background = {
@@ -419,33 +433,12 @@ guiTypes = {
 			
 			gridBoxType = {
 				name = "leaders_grid"
-				position = { x = 13 y = 1 }
+				position = { x = 13 y = 5 }
 				size = { width = 100%% height = 100%% }
 				slotsize = { width = 510 height = 98 }
 				max_slots_horizontal = 1
 				format = "UPPER_LEFT"
 			}
-		}
-		
-		buttonType = {
-			name = "no_leader_button"
-			position = { x = -250 y = -32 }
-			quadTextureSprite ="GFX_button_221x34"
-			buttonFont = "hoi_18mbs"
-			Orientation = "LOWER_RIGHT"
-			buttonText = "UNASSIGN"
-			pdx_tooltip = "UNASSIGN"
-			clicksound = click_default
-		}	
-		
-		buttonType = {
-			name = "new_leader_button"
-			position = { x = -535 y = -32 }
-			quadTextureSprite = "GFX_button_261x34"
-			buttonFont = "hoi_18mbs"
-			Orientation = "LOWER_RIGHT"
-			buttonText = "UNIT_LEADER_NEW_LEADER"
-			clicksound = click_default
 		}
 		
 		buttonType = {
