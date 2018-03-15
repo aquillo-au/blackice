@@ -4,35 +4,39 @@ ideas = {
 	##################
 	#HoS
 	head_of_state = {
-		GXC_lei_zhong = {
-			picture = generic_political_advisor_asia_3
-			
-			allowed = {
-				original_tag = GXC
-			}
-			
-			traits = { popular_figurehead }
-		}
 	}
-	#Foreign
+	#Foreign Ministers
 	foreign_minister = {
-		GXC_li_jishen = {
+		XSM_fang_jing = {
 			picture = generic_political_advisor_asia_1
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
 			traits = { smooth_talking_charmer }
 		}
+		XSM_zi_shen = {
+			picture = generic_political_advisor_asia_2
+			
+			allowed = {
+				original_tag = XSM
+			}
+			
+			traits = { backroom_backstabber }
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
 	}
 	#Propaganda/Security
 	interior_minister = {
-		GXC_li_zongren = {
-			picture = generic_political_advisor_asia_2
-				
+		XSM_li_shiqun = {
+			picture = generic_political_advisor_asia_3
+			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
 			traits = { prince_of_terror }
@@ -41,19 +45,19 @@ ideas = {
 	#Intelligence
 	intel_minister = {
 	}
-	#Economic
+	#Economic Ministers
 	economic_minister = {
 	}
 	#Political Advisors
-	political_advisor = {
+	political_advisor = {	
 	}
 	#Theorist
 	theorist = {
-		GXC_yu_hanmou = {
+		XSM_keng_shoushan = {
 			picture = generic_army_asia_4
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
 			research_bonus = {
@@ -62,12 +66,11 @@ ideas = {
 			
 			traits = { military_theorist }
 		}
-
-		GXC_bai_yeung = { 
+		XSM_ma_hongkui = { 
 			picture = generic_air_asia_2
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
 			research_bonus = {
@@ -76,43 +79,18 @@ ideas = {
 			
 			traits = { air_warfare_theorist }
 		}
-		GXC_heng_lo = {
-			picture = generic_navy_asia_1
-			
-			allowed = {
-				original_tag = GXC
-			}
-			
-			research_bonus = {
-				naval_doctrine = 0.07
-			}
-			
-			traits = { naval_theorist }
-		}
 	}
+	#MILITARY
 	#Supreme Commanders
 	supreme_commander = {
-		GXC_Li Zongren = {
-			picture = Portrait_Guanxi_Clique_Li_Zongren.dds
-			
-			allowed = {
-				original_tag = GXC
-			}
-			
-			traits = { army_chief_defensive_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
 	}
 	#Army
 	army_chief = {
-		GXC_chen_jitang = {
-			picture = generic_army_asia_2
+		XSM_ma_hongbin = {
+			picture = generic_army_asia_3
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
 			traits = { army_chief_defensive_2 }
@@ -121,14 +99,14 @@ ideas = {
 				factor = 1
 			}
 		}
-		GXC_huang_shaohong = {
+		XSM_ma_buqing = {
 			picture = generic_army_asia_1
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
-			traits = { army_chief_offensive_2 }
+			traits = { army_chief_reform_2 }
 			
 			ai_will_do = {
 				factor = 1
@@ -137,27 +115,27 @@ ideas = {
 	}
 	#Air
 	air_chief = {
-		GXC_wang_shuming = {
+		XSM_may_chongan = {
 			picture = generic_air_asia_1
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
-			traits = { air_chief_ground_support_2 }
+			traits = { air_chief_reform_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		GXC_niu_keung = {
+		XSM_chun_minsheng = {
 			picture = generic_air_asia_2
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
-			traits = { air_chief_safety_2 }
+			traits = { air_chief_night_operations_2 }
 			
 			ai_will_do = {
 				factor = 1
@@ -166,27 +144,27 @@ ideas = {
 	}
 	#Navy
 	navy_chief = {
-		GXC_huo_duyi = {
+		XSM_lian_zenguang = {
 			picture = generic_navy_asia_1
 
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
-			traits = { navy_chief_naval_aviation_2 }
+			traits = { navy_chief_maneuver_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		GXC_bai_chongxi = {
+		XSM_keng_gui = {
 			picture = generic_navy_asia_3
 
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
-			traits = { navy_chief_reform_2 }
+			traits = { navy_chief_decisive_battle_2 }
 			
 			ai_will_do = {
 				factor = 1
@@ -195,53 +173,54 @@ ideas = {
 	}
 	#High Command
 	high_command = {
-		GXC_yang_hulin = {
+		XSM_ma_donghai = {
 			picture = generic_air_asia_2
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
-			traits = { air_air_superiority_2 }
+			traits = { air_close_air_support_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		GXC_do_liang = {
+		XSM_wu_qi = {
 			picture = generic_army_asia_1
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
-			traits = { army_armored_2 }
+			traits = { army_cavalry_3 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		GXC_teng_qingshan = {
-			picture = generic_army_asia_5
+		XSM_au_yongrui = {
+			picture = generic_army_asia_2
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
-			traits = { army_regrouping_2 }
+			traits = { army_commando_2 }
 			
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		GXC_zha_zemin = {
+		XSM_ho_tengfei = {
+
 			picture = generic_navy_asia_2
 			
 			allowed = {
-				original_tag = GXC
+				original_tag = XSM
 			}
 			
-			traits = { navy_screen_2 }
+			traits = { navy_fleet_logistics_2 }
 			
 			ai_will_do = {
 				factor = 1

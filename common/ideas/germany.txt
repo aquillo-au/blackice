@@ -1649,9 +1649,7 @@ ideas = {
 			
 			available = {
 				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
+					democratic_govt = yes
 					has_government = monarchism
 				}
 			}
@@ -1681,11 +1679,7 @@ ideas = {
 				OR = {
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						}
+						democratic_govt = yes
 						has_country_flag = const_kaiser
 					}
 				}
@@ -1700,11 +1694,7 @@ ideas = {
 				OR = {
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						}
+						democratic_govt = yes
 						has_country_flag = const_kaiser
 					}
 				}
@@ -1719,11 +1709,7 @@ ideas = {
 				OR = {
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						}
+						democratic_govt = yes
 						has_country_flag = const_kaiser
 					}
 				}
@@ -1762,14 +1748,13 @@ ideas = {
 	#Intel Ministers
 	intel_minister = {
 		wilhelm_canaris = {
-			
 			allowed = {
 				original_tag = GER
 			}
 			available = {
 				OR = {
-				has_government = fascism
-				has_government = monarchism
+					has_government = fascism
+					has_government = monarchism
 				}
 			}
 			
@@ -1780,7 +1765,6 @@ ideas = {
 			}
 		}
 		ernst_kaltenbrunner_intel = {
-			
 			allowed = {
 				original_tag = GER
 			}
@@ -1798,12 +1782,9 @@ ideas = {
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-				}
+				#Intel Ministers
 			}
 			traits = { conservative dismal_enigma }
 		}
@@ -2011,6 +1992,7 @@ ideas = {
 			allowed = {
 				original_tag = GER
 			}
+			
 			available = {
 				OR = {
 					has_government = monarchism

@@ -10,11 +10,7 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					OR = {
-						has_government = conservatism
-						has_government = socialism
-						has_government = liberalism
-					}
+					democratic_govt = yes
 				}
 			}
 
@@ -51,11 +47,7 @@ ideas = {
 
 			allowed_civil_war = {
 				NOT = {
-					OR = {
-						has_government = conservatism
-						has_government = socialism
-						has_government = liberalism
-					}
+					democratic_govt = yes
 				}
 			}
 
@@ -96,7 +88,7 @@ ideas = {
 				stability_factor = 0.02
 			}
 		}
-		 paranoia = {
+		paranoia = {
 			removal_cost = -1
 			
 			allowed = {
@@ -314,6 +306,7 @@ ideas = {
 				production_speed_buildings_factor = -0.1
 				conscription = 0.015
 			}
+			
 			rule = {
 				can_create_factions = yes
 			}
@@ -336,6 +329,7 @@ ideas = {
 				stability_factor = -0.05
 				drift_defence_factor = -0.20
 			}
+			
 			rule = {
 				can_create_factions = yes
 			}
@@ -1249,10 +1243,8 @@ ideas = {
 			}
 			
 			modifier = {
-				
 				political_power_factor = 0.02
 				stability_factor = 0.05
-			
 			}
 		}
 		SOV_molotov_ribbentrop_pact = { 
@@ -1324,7 +1316,6 @@ ideas = {
 			}
 		}
 		SOV_scientist_defect = {
-
 			picture = generic_research_bonus
 
 			allowed = {
@@ -1481,7 +1472,7 @@ ideas = {
 			allowed_civil_war = {
 				has_government = communism
 			}
-					
+			
 			modifier = {
 				army_org_factor = 0.15
 			}
@@ -1672,11 +1663,7 @@ ideas = {
 				OR = { 
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-						}
+						democratic_govt = yes
 						has_country_flag = const_tsar
 					}
 				}
@@ -1695,11 +1682,7 @@ ideas = {
 				OR = { 
 					has_government = monarchism
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-						}
+						democratic_govt = yes
 						has_country_flag = const_tsar
 					}
 				}
@@ -1717,11 +1700,7 @@ ideas = {
 		kerensky_hos = {
 			allowed = {
 				original_tag = SOV
-				OR= {
-					has_government = liberalism
-					has_government = conservatism
-					has_government = socialism
-				}
+				democratic_govt = yes
 			}
 			
 			traits = { socialist effective_leader }
@@ -1740,11 +1719,7 @@ ideas = {
 			}
 			
 			available = {
-				OR = {
-					has_government = conservatism
-					has_government = monarchism
-					has_government = liberalism
-				}
+				democratic_govt = yes
 			}
 			
 			traits = { conservative intellectual }
@@ -1848,11 +1823,7 @@ ideas = {
 			}
 			
 			available = {
-				OR = {
-					has_government = conservatism
-					has_government = socialism
-					has_government = liberalism
-				}
+				democratic_govt = yes
 			}
 			
 			traits = { liberal ideological_crusader }
@@ -1951,9 +1922,7 @@ ideas = {
 			
 			available = {
 				OR = {
-					has_government = socialism
-					has_government = conservatism
-					has_government = liberalism
+					democratic_govt = yes
 					has_government = monarchism
 				}
 			}
@@ -2109,11 +2078,7 @@ ideas = {
 			}
 			
 			available = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = monarchism
-				}
+				democratic_govt = yes
 			}
 			
 			traits = { conservative military_entrepreneur }
@@ -2126,11 +2091,7 @@ ideas = {
 			}
 			
 			available = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = monarchism
-				}
+				democratic_govt = yes
 			}
 			
 			traits = { conservative public_works_focus }
@@ -2274,9 +2235,7 @@ ideas = {
 	
 			do_effect = {
 				NOT = {
-					has_government = conservatism
-					has_government = socialism
-					has_government = liberalism
+					democratic_govt = yes
 				}
 			}
 			
@@ -2319,8 +2278,138 @@ ideas = {
 			cancel_if_invalid = no
 		}
 	}
-	# Military
-	# Supreme Commanders
+	#Theorist
+	theorist = {
+		mikhail_tukhachevsky = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			available = {
+				NOT = { has_country_flag = purge_1_group_a }
+			}
+			
+			cost = 250
+			
+			research_bonus = {
+				cat_mass_assault = 0.10
+			}
+			# PURGED
+			traits = { mass_assault_expert }
+		}
+		boris_shaposhnikov = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.07
+			}
+			
+			traits = { military_theorist }
+		}
+		georgy_zhukov = {
+			allowed = {
+				original_tag = SOV # Unlocked via focus
+			}
+			
+			available = {
+				has_completed_focus = SOV_positive_heroism
+				NOT = { has_country_flag = counter_purge }
+			}
+			
+			cost = 250
+			
+			research_bonus = {
+				cat_mass_assault = 0.10
+			}
+			
+			traits = { mass_assault_expert }
+		}
+		sergey_gorshkov = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			available = {
+				NOT = { has_country_flag = counter_purge }
+			}
+			
+			cost = 150
+			
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			
+			traits = { naval_theorist }
+		}
+		vladimir_tributs = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			cost = 250
+			
+			research_bonus = {
+				cat_fleet_in_being = 0.10
+			}
+			
+			traits = { grand_fleet_proponent}
+		}
+		sergei_rudenko = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			available = {
+				NOT = { has_country_flag = counter_purge }
+			}
+			
+			cost = 250
+			
+			research_bonus = {
+				cat_battlefield_support = 0.10
+			}
+			
+			traits = { close_air_support_proponent }
+		}
+		alexander_golovanov = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			research_bonus = {
+				air_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+		igor_kurchatov = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			research_bonus = {
+				nuclear = 0.10
+			}
+			
+			traits = { nuclear_scientist }
+		}
+		sergei_korolev = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			research_bonus = {
+				rocketry = 0.10
+			}
+
+			
+			traits = { rocket_scientist }
+		}
+	}
+	#Military
+	#Supreme Commanders
 	supreme_commander = {
 		zhukov_sc = {
 			allowed = {
@@ -2356,7 +2445,7 @@ ideas = {
 			}
 		}
 	}
-	# Army Chiefs
+	#Army
 	army_chief = {
 		semyon_timoshenko = {
 			#Also unit leader: 604
@@ -2485,7 +2574,7 @@ ideas = {
 			}
 		}	
 	}
-	# Naval Chiefs
+	#Navy
 	navy_chief = {
 		pyotr_smirnov = {
 			allowed = {
@@ -2548,7 +2637,7 @@ ideas = {
 			}
 		}	
 	}
-	## Air Chiefs
+	#Air
 	air_chief = {
 		alexander_novikov = { #41-46
 			allowed = {
@@ -2842,7 +2931,8 @@ ideas = {
 			}
 		}
 	}
-	
+	#Designers
+	#Armor
 	tank_manufacturer = {
 		designer = yes
 		
@@ -2889,7 +2979,7 @@ ideas = {
 			}
 		}
 	}
-	
+	#Aircraft
 	aircraft_manufacturer = {
 		designer = yes
 		
@@ -3204,8 +3294,88 @@ ideas = {
 			modifier = {
 			}
 		}
-	}	
-	
+	}
+	#Naval
+	naval_manufacturer = {
+		designer = yes
+		
+		marti_shipyard = {
+			allowed = {
+				original_tag = SOV
+			}
+
+			research_bonus = {
+				ca_tech = 0.10
+				bc_tech = 0.10
+				bb_tech = 0.10
+				bbv_tech = 0.10
+			}
+
+			traits = { grand_battlefleet_naval_manufacturer }
+
+			available = {
+				195 = { dockyard > 6 }
+			}
+		}
+		kommunar_shipyard = {
+			allowed = {
+				original_tag = SOV
+			}
+
+			research_bonus = {
+				ca_tech = 0.10
+				bc_tech = 0.10
+				bb_tech = 0.10
+				bbv_tech = 0.10
+			}
+
+			traits = { coastal_defence_naval_manufacturer }
+
+			available = {
+				197 = { dockyard > 6 }
+			}
+		}
+	}
+	#Materials
+	materiel_manufacturer = {
+		designer = yes
+		
+		grabin_design_bureau = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			research_bonus = {
+				artillery = 0.10
+			}
+			
+			traits = { artillery_manufacturer }
+		}
+		tula_arms_plant = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.10
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+		gaz = {
+			allowed = {
+				original_tag = SOV
+			}
+			
+			research_bonus = {
+				motorized_equipment = 0.10
+				mot_rockets = 0.50
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+	}
+	#Industrial
 	industrial_concern = {
 		stalingrad_tractor_factory = {
 			allowed = {
@@ -3234,234 +3404,6 @@ ideas = {
 			
 			modifier = {
 			}
-		}
-	}
-	
-	materiel_manufacturer = {
-		designer = yes
-		
-		grabin_design_bureau = {
-			allowed = {
-				original_tag = SOV
-			}
-			
-			research_bonus = {
-				artillery = 0.10
-			}
-			
-			traits = { artillery_manufacturer }
-			
-			modifier = {
-			}
-		}
-		tula_arms_plant = {
-			allowed = {
-				original_tag = SOV
-			}
-			
-			research_bonus = {
-				infantry_weapons = 0.10
-			}
-			
-			traits = { infantry_equipment_manufacturer }
-			
-			modifier = {
-			}
-		}
-		gaz = {
-			allowed = {
-				original_tag = SOV
-			}
-			
-			research_bonus = {
-				motorized_equipment = 0.10
-				mot_rockets = 0.50
-			}
-			
-			traits = { motorized_equipment_manufacturer }
-			
-			modifier = {
-			}
-		}
-	}
-	
-	naval_manufacturer = {
-		designer = yes
-		
-		marti_shipyard = {
-			allowed = {
-				original_tag = SOV
-			}
-
-			research_bonus = {
-				ca_tech = 0.10
-				bc_tech = 0.10
-				bb_tech = 0.10
-				bbv_tech = 0.10
-			}
-
-			traits = { grand_battlefleet_naval_manufacturer }
-
-			available = {
-				195 = { dockyard > 6 }
-			}
-			
-			modifier = {
-			}
-		}
-		kommunar_shipyard = {
-			allowed = {
-				original_tag = SOV
-			}
-
-			research_bonus = {
-				ca_tech = 0.10
-				bc_tech = 0.10
-				bb_tech = 0.10
-				bbv_tech = 0.10
-			}
-
-			traits = { coastal_defence_naval_manufacturer }
-
-			available = {
-				197 = { dockyard > 6 }
-			}
-			
-			modifier = {
-			}
-		}
-	}
-	
-	theorist = {
-		mikhail_tukhachevsky = {
-			allowed = {
-				original_tag = SOV
-
-			}
-			
-			available = {
-				NOT = { has_country_flag = purge_1_group_a }
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_mass_assault = 0.10
-			}
-			# PURGED
-			traits = { mass_assault_expert }
-		}
-		boris_shaposhnikov = {
-			allowed = {
-				original_tag = SOV
-			}
-			
-			research_bonus = {
-				land_doctrine = 0.07
-			}
-			
-			traits = { military_theorist }
-		}
-		georgy_zhukov = {
-			allowed = {
-				original_tag = SOV # Unlocked via focus
-
-			}
-			
-			available = {
-				has_completed_focus = SOV_positive_heroism
-				NOT = { has_country_flag = counter_purge }
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_mass_assault = 0.10
-			}
-			
-			traits = { mass_assault_expert }
-		}
-		sergey_gorshkov = {
-			allowed = {
-				original_tag = SOV
-
-			}
-			
-			available = {
-				NOT = { has_country_flag = counter_purge }
-			}
-			
-			cost = 150
-			
-			research_bonus = {
-				naval_doctrine = 0.07
-			}
-			
-			traits = { naval_theorist }
-		}
-		vladimir_tributs = {
-			allowed = {
-				original_tag = SOV
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_fleet_in_being = 0.10
-			}
-			
-			traits = { grand_fleet_proponent}
-		}
-		sergei_rudenko = {
-			allowed = {
-				original_tag = SOV
-
-			}
-			available = {
-				NOT = { has_country_flag = counter_purge }
-			}
-			
-			cost = 250
-			
-			research_bonus = {
-				cat_battlefield_support = 0.10
-			}
-			
-			traits = { close_air_support_proponent }
-		}
-		alexander_golovanov = {
-			allowed = {
-				original_tag = SOV
-			}
-			
-			research_bonus = {
-				air_doctrine = 0.07
-			}
-			
-			traits = { air_warfare_theorist }
-		}
-		igor_kurchatov = {
-			allowed = {
-				original_tag = SOV
-			}
-			
-			research_bonus = {
-				nuclear = 0.10
-			}
-			
-			traits = { nuclear_scientist }
-		}
-		sergei_korolev = {
-			allowed = {
-				original_tag = SOV
-			}
-			
-			research_bonus = {
-				rocketry = 0.10
-			}
-
-			
-			traits = { rocket_scientist }
 		}
 	}
 }

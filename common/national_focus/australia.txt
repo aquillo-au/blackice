@@ -2898,11 +2898,7 @@ focus_tree = {
 			add_ideas = AST_classify_aliens
 			if = {
 				limit = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					}
+					democratic_govt = yes
 				}
 				add_popularity = {
 					ideology = fascism
@@ -3010,12 +3006,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				NOT = { ENG = {
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					} } } #less likely to do if ENG not democratic
+				NOT = {
+					ENG = {
+						democratic_govt = yes
+					}
+				} #less likely to do if ENG not democratic
 				factor = 0.5
 			}
 			modifier = {
@@ -3073,11 +3068,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				ENG = { NOT = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					 } }
+				ENG = {
+					NOT = {
+						democratic_govt = yes
+					}
+				}
 				factor = 0
 			}
 		}
@@ -3486,12 +3481,11 @@ focus_tree = {
 				factor = 30
 			}
 			modifier = {
-				NOT = { ENG = { 
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					} } } 
+				NOT = {
+					ENG = { 
+						democratic_govt = yes
+					}
+				} 
 				factor = 5
 			}
 		}
@@ -3947,7 +3941,9 @@ focus_tree = {
 		}
 
 		available = {
-
+			NOT = {
+				JAP = { has_government = ROOT }
+			}
 		}
 		
 		bypass = {
@@ -4063,11 +4059,11 @@ focus_tree = {
 			compare_autonomy_progress_ratio > 0.55
 			if = {
 				limit = { not = { has_government = fascism } }
-				has_autonomy_state = autonomy_dominion
+				compare_autonomy_state > autonomy_colony
 			}
 			if = {
 				limit = { has_government = fascism } 
-				has_autonomy_state = autonomy_satellite
+				compare_autonomy_state > autonomy_reichsprotectorate
 			}
 		}
 		
@@ -4394,7 +4390,7 @@ focus_tree = {
 			}
 		}
 
-			available = {
+		available = {
 			OR = {
 				is_subject = no
 				AND = {
@@ -4536,11 +4532,11 @@ focus_tree = {
 			compare_autonomy_progress_ratio > 0.55
 			if = {
 				limit = { not = { has_government = fascism } }
-				has_autonomy_state = autonomy_dominion
+				compare_autonomy_state > autonomy_colony
 			}
 			if = {
 				limit = { has_government = fascism } 
-				has_autonomy_state = autonomy_satellite
+				compare_autonomy_state > autonomy_reichsprotectorate
 			}
 		}
 		
@@ -4892,11 +4888,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				NZL = { OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					} } 
+				NZL = {
+					democratic_govt = yes
+				} 
 				factor = 10
 			}
 		}
@@ -5396,44 +5390,41 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-				add_timed_idea = {
+			add_timed_idea = {
 				idea = generic_war_horses
 				days = 365
 			}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 1000
-						producer = AST
-					}
-				add_equipment_to_stockpile = {
-						type = artyhorse_equipment_1
-						amount = 500
-						producer = AST
-					}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 500
-						producer = ITA
-					}
-				add_equipment_to_stockpile = {
-						type = artyhorse_equipment_1
-						amount = 250
-						producer = FRA
-					}
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 250
-						producer = GER
-					}	
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 250
-						producer = FRA
-					}		
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 1000
+				producer = AST
+			}
+			add_equipment_to_stockpile = {
+				type = artyhorse_equipment_1
+				amount = 500
+				producer = AST
+			}
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 500
+				producer = ITA
+			}
+			add_equipment_to_stockpile = {
+				type = artyhorse_equipment_1
+				amount = 250
+				producer = FRA
+			}
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 250
+				producer = GER
+			}	
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 250
+				producer = FRA
 			}		
-
+		}
 	}
-
-
-
 }		
+### EOF ###
