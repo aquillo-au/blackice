@@ -237,7 +237,7 @@ set_technology = {
 
 set_research_slots = 7
 set_convoys = 400
-set_national_unity = 0.9
+set_stability = 0.9
 
 #Trade
 create_import = {
@@ -453,14 +453,14 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Rommel, Erwin"
 	picture = "Portrait_Germany_Erwin_Rommel.dds"
-	traits = { GER_tag Pour_le_Merite Iron_Cross Military_Merit_Order trickster_CC panzer_leader Awesome_General  desert_fox_CC }
+	traits = { GER_tag Pour_le_Merite Iron_Cross Military_Merit_Order trickster_CC panzer_leader Awesome_General  desert_fox }
 	skill = 4
 	id = 4
 }
 create_corps_commander = {
 	name = "Manstein, Erich von"
 	picture = "Portrait_Germany_Erich_von_Manstein.dds"
-	traits = { GER_tag Iron_Cross trickster_CC panzer_leader fortress_buster_CC Genius_General }
+	traits = { GER_tag Iron_Cross trickster_CC panzer_leader fortress_buster Genius_General }
 	skill = 4
 	id = 5
 }
@@ -531,14 +531,14 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Krüger, Walter"
 	picture = "Portrait_Germany_Walter_Kruger.dds"
-	traits = {  panzer_leader Waffen_SS Competent_General }
+	traits = {  panzer_leader waffen_ss_officer Competent_General }
 	skill = 3
 	id = 15
 }
 create_corps_commander = {
 	name = "Student, Kurt"
 	picture = "Portrait_Germany_Kurt_Student.dds"
-	traits = { GER_tag commando_CC Awesome_General}
+	traits = { GER_tag commando Awesome_General}
 	skill = 4
 	id = 16
 }
@@ -595,14 +595,14 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Heinrici, Gotthard "
 	picture = "Portrait_Germany_Gotthard_Heinrici.dds"
-	traits = { GER_tag fortress_buster_CC Awesome_General }
+	traits = { GER_tag fortress_buster Awesome_General }
 	skill = 3
 	id = 33
 }
 create_corps_commander = {
 	name = "Hell, Ernst-Eberhard"
 	picture = "Portrait_Germany_Ernst-Eberhard_Hell.dds"
-	traits = { GER_tag winter_specialist_CC fortress_buster_CC Competent_General}
+	traits = { GER_tag winter_specialist fortress_buster Competent_General}
 	skill = 3
 	id = 34
 }
@@ -624,14 +624,14 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Thoma, Wilhelm Ritter von"
 	picture = "Portrait_Germany_Wilhelm_Ritter_von_Thoma.dds"
-	traits = { GER_tag panzer_leader desert_fox_CC Competent_General}
+	traits = { GER_tag panzer_leader desert_fox Competent_General}
 	skill = 4
 	id = 37
 }
 create_corps_commander = {
 	name = "Obstfelder, Hans von"
 	picture = "Portrait_Germany_Hans_von_Obstfelder.dds"
-	traits = { GER_tag ranger_CC Decent_General}
+	traits = { GER_tag ranger Decent_General}
 	skill = 3
 	id = 39
 }
@@ -666,7 +666,7 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Falkenhorst, Nikolaus von"
 	picture = "Portrait_Germany_Nikolaus_von_Falkenhorst.dds"
-	traits = { GER_tag winter_specialist_CC Decent_General}
+	traits = { GER_tag winter_specialist Decent_General}
 	skill = 3
 	id = 48
 }
@@ -687,21 +687,21 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Strauß, Adolf"
 	picture = "Portrait_Germany_Adolf_Straus.dds"
-	traits = { GER_tag ranger_CC Decent_General }
+	traits = { GER_tag ranger Decent_General }
 	skill = 3
 	id = 51
 }
 create_corps_commander = {
 	name = "Dietl, Eduard"
 	picture = "Portrait_Germany_Eduard_Dietl.dds"
-	traits = { GER_tag commando_CC ranger_CC mountaineer_CC Competent_General}
+	traits = { GER_tag commando ranger trait_mountaineer Competent_General}
 	skill = 3
 	id = 52
 }
 create_corps_commander = {
 	name = "Phleps, Artur Martin"
 	picture = "Portrait_Germany_Artur_Martin_Phleps.dds"
-	traits = { GER_tag mountaineer_CC Decent_General }
+	traits = { GER_tag trait_mountaineer Decent_General }
 	skill = 2
 	id = 53
 }
@@ -729,7 +729,7 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Weidling, Helmuth"
 	picture = "Portrait_Germany_Helmuth_Weidling.dds"
-	traits = { GER_tag urban_assault_specialist_CC bearer_of_artillery Decent_General }
+	traits = { GER_tag urban_assault_specialist bearer_of_artillery Decent_General }
 	skill = 3
 	id = 58
 }
@@ -757,7 +757,7 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Ramcke, Hermann-Bernhard"
 	picture = "Portrait_Germany_Hermann-Bernhard_Ramcke.dds"
-	traits = { GER_tag commando_CC ranger_CC hill_fighter_CC Awesome_General }
+	traits = { GER_tag commando ranger hill_fighter Awesome_General }
 	skill = 4
 	id = 62
 }
@@ -765,7 +765,7 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Richthofen, Wolfram Freiherr von"
 	picture = "Portrait_Germany_Wolfram_Freiherr_von_Richthofen.dds"
-	traits = { GER_tag commando_CC Competent_General}
+	traits = { GER_tag commando Competent_General}
 	skill = 2
 	id = 63
 }
@@ -783,14 +783,14 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Schörner, Ferdinand"
 	picture = "Portrait_Germany_Ferdinand_Scherner.dds"
-	traits = { GER_tag winter_specialist_CC commando_CC ranger_CC mountaineer_CC Awesome_General}
+	traits = { GER_tag winter_specialist commando ranger trait_mountaineer Awesome_General}
 	skill = 5
 	id = 65
 }
 create_corps_commander = {
 	name = "Böhme, Franz"
 	picture = "Portrait_Germany_Franz_Behme.dds"
-	traits = { GER_tag winter_specialist_CC commando_CC mountaineer_CC Decent_General}
+	traits = { GER_tag winter_specialist commando trait_mountaineer Decent_General}
 	skill = 3
 	id = 66
 }
@@ -811,28 +811,28 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Frießner, Johannes"
 	picture = "Portrait_Germany_Johannes_Friessner.dds"
-	traits = { GER_tag ranger_CC Decent_General}
+	traits = { GER_tag ranger Decent_General}
 	skill = 2
 	id = 69
 }
 create_corps_commander = {
 	name = "Busch, Ernst Wilhelm"
 	picture = "Portrait_Germany_Ernst_Wilhelm_Bernhard_Busch.dds"
-	traits = { GER_tag winter_specialist_CC ranger_CC Competent_General}
+	traits = { GER_tag winter_specialist ranger Competent_General}
 	skill = 3
 	id = 70
 }
 create_corps_commander = {
 	name = "Lindemann, Georg"
 	picture = "Portrait_Germany_Georg_Lindemann.dds"
-	traits = { GER_tag winter_specialist_CC fortress_buster_CC urban_assault_specialist_CC Competent_General}
+	traits = { GER_tag winter_specialist fortress_buster urban_assault_specialist Competent_General}
 	skill = 3
 	id = 71
 }
 create_corps_commander = {
 	name = "Straube, Erich"
 	picture = "Portrait_Germany_Erich_Straube.dds"
-	traits = { GER_tag ranger_CC Decent_General}
+	traits = { GER_tag ranger Decent_General}
 	skill = 3
 	id = 72
 }
@@ -867,35 +867,35 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Tippelskirch, Kurt von"
 	picture = "Portrait_Germany_Kurt_Oskar_Wilhelm_von_Tippelskirch.dds"
-	traits = { GER_tag trickster_CC winter_specialist_CC ranger_CC Decent_General }
+	traits = { GER_tag trickster_CC winter_specialist ranger Decent_General }
 	skill = 3
 	id = 81
 }
 create_corps_commander = {
 	name = "Buschenhagen, Erich"
 	picture = "Portrait_Germany_Erich_Buschenhagen.dds"
-	traits = { GER_tag ranger_CC Decent_General}
+	traits = { GER_tag ranger Decent_General}
 	skill = 2
 	id = 82
 }
 create_corps_commander = {
 	name = "Recknagel, Hermann"
 	picture = "Portrait_Germany_Hermann_Recknagel.dds"
-	traits = { GER_tag ranger_CC Decent_General}
+	traits = { GER_tag ranger Decent_General}
 	skill = 3
 	id = 83
 }
 create_corps_commander = {
 	name = "Salmuth, Hans Eberhard von"
 	picture = "Portrait_Germany_Hans_Eberhard_Kurt_von_Salmuth.dds"
-	traits = { GER_tag fortress_buster_CC Decent_General}
+	traits = { GER_tag fortress_buster Decent_General}
 	skill = 3
 	id = 84
 }
 create_corps_commander = {
 	name = "Stauffenberg, Claus von"
 	picture = "Portrait_Germany_Claus_Graf_von_Stauffenberg.dds"
-	traits = { GER_tag commando_CC ranger_CC engineer_CC Decent_General}
+	traits = { GER_tag commando ranger trait_engineer Decent_General}
 	skill = 2
 	id = 85
 }
@@ -979,63 +979,63 @@ create_navy_leader = {
 create_corps_commander = {
 	name = "Daluege, "	#1936
 	picture = "Portrait_Germany_Daluege.dds"
-	traits = { Waffen_SS Bad_General}
+	traits = { waffen_ss_officer Bad_General}
 	skill = 1
 	id = 200
 }
 create_corps_commander = {
 	name = "Waldeck und Pyrmon, Prinz zu"	#1936
 	picture = "Portrait_Germany_Prinz.dds"
-	traits = { Waffen_SS Incompetent_General }
+	traits = { waffen_ss_officer Incompetent_General }
 	skill = 1
 	id = 201
 }
 create_corps_commander = {
 	name = "Fegelein, W."	#1937
 	picture = "Portrait_Germany_generic_ss_3.dds"
-	traits = { Waffen_SS offensive_doctrine_CC Competent_General}
+	traits = { waffen_ss_officer offensive_doctrine_CC Competent_General}
 	skill = 1
 	id = 202
 }
 create_corps_commander = {
 	name = "Demelhuber, Karl Maria"	#1936
 	picture = "Portrait_Germany_Demelhuber.dds"
-	traits = { Waffen_SS offensive_doctrine_CC Competent_General}
+	traits = { waffen_ss_officer offensive_doctrine_CC Competent_General}
 	skill = 3
 	id = 203
 }
 create_corps_commander = {
 	name = "Heissmeyer, August"	#1936
 	picture = "Portrait_Germany_Heissmeyer.dds"
-	traits = { Waffen_SS  Incompetent_General }
+	traits = { waffen_ss_officer  Incompetent_General }
 	skill = 1
 	id = 204
 }
 create_corps_commander = {
 	name = "Steiner, Felix Martin Julius"	#1936
 	picture = "Portrait_Germany_Steiner.dds"
-	traits = { Waffen_SS panzer_leader offensive_doctrine_CC defensive_doctrine_CC Competent_General}
+	traits = { waffen_ss_officer panzer_leader offensive_doctrine_CC defensive_doctrine_CC Competent_General}
 	skill = 4
 	id = 205
 }
 create_corps_commander = {
 	name = "Hausser, Paul"
 	picture = "Portrait_Germany_Paul_Hausser.dds"
-	traits = { Waffen_SS panzer_leader Awesome_General }
+	traits = { waffen_ss_officer panzer_leader Awesome_General }
 	skill = 4
 	id = 206
 }
 create_corps_commander = {
 	name = "Schulz, Friedrich"
 	picture = "Portrait_Germany_Friedrich_Schulz.dds"
-	traits = { Waffen_SS panzer_leader Competent_General}
+	traits = { waffen_ss_officer panzer_leader Competent_General}
 	skill = 3
 	id = 207
 }
 create_corps_commander = {
 	name = "Dietrich, Sepp"
 	picture = "Portrait_Germany_Josef_Dietrich.dds"
-	traits = { Waffen_SS panzer_leader reckless_general }
+	traits = { waffen_ss_officer panzer_leader trait_reckless }
 	skill = 4
 	id = 208
 }

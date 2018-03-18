@@ -17,7 +17,7 @@ bookmarks = {
 			}
 			focuses = {
 				FRA_social_reforms
-				FRA_support_status_quo
+				#FRA_support_status_quo
 				FRA_revise_versailles
 				FRA_little_entente
 			}
@@ -53,16 +53,32 @@ bookmarks = {
 		"GER"={
 			history = "GER_GATHERING_STORM_DESC"
 			ideology = fascism
+			available = { has_dlc = "Waking the Tiger" }
 			ideas = {
 				sour_loser
 				general_staff
-				GER_mefo_bills
+				GER_mefo_bills_1
 			}
 			focuses = {
 				GER_anschluss
 				GER_danzig_or_war
 				GER_ussr_war_goal
-				GER_revive_the_kaiserreich
+				#GER_revive_the_kaiserreich
+			}
+		}
+		"GER"={
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = fascism
+			available = { NOT = { has_dlc = "Waking the Tiger" } }
+			ideas = {
+				sour_loser
+				general_staff
+				GER_mefo_bills_1
+			}
+			focuses = {
+				GER_anschluss
+				GER_danzig_or_war
+				GER_ussr_war_goal
 			}
 		}
 		"ITA"={
@@ -87,7 +103,7 @@ bookmarks = {
 				JAP_militarism
 			}	
 			focuses = {
-				JAP_strike_on_the_southern_resource_area
+				#JAP_strike_on_the_southern_resource_area
 				divine_wind_focus
 				found_own_faction_focus
 			}			
@@ -191,21 +207,6 @@ bookmarks = {
 				RAJ_all_india_forward_bloc
 				RAJ_indian_gurkhas
 				RAJ_the_smiling_buddha
-			}
-		}
-		"BEL"={
-			minor = yes
-			history = "BEL_GATHERING_STORM_DESC"
-			ideology = conservatism
-			ideas = {
-				tblra_pillarized_society
-				tblra_peacetime_national_union
-				tblra_linguistic_question_in_military
-			}
-			focuses = {
-				tblra_independent_revolution
-				tblra_benelux_faction
-				tblra_colonial_claims
 			}
 		}
 		"CZE"={
@@ -378,6 +379,21 @@ bookmarks = {
 				CHI_join_the_republican_government
 				CHI_provoke_border_clashes
 				CHI_join_the_chinese_soviet
+			}
+		}
+		"BEL"={
+			minor = yes
+			history = "BEL_GATHERING_STORM_DESC"
+			ideology = conservatism
+			ideas = {
+				tblra_pillarized_society
+				tblra_peacetime_national_union
+				tblra_linguistic_question_in_military
+			}
+			focuses = {
+				tblra_independent_revolution
+				tblra_benelux_faction
+				tblra_colonial_claims
 			}
 		}
 		

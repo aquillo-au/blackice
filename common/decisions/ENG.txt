@@ -1,7 +1,6 @@
 political_actions = {
 
 	hold_blood_toil_tears_sweat_speech = {
-
 		icon = generic_political_discourse
 
 		allowed = {
@@ -36,9 +35,7 @@ political_actions = {
 			factor = 100 #Gotta allow the Americans to help
 		}
 	}
-
 	hold_fight_on_the_beaches_speech = {
-
 		icon = generic_political_discourse
 
 		allowed = {
@@ -77,9 +74,7 @@ political_actions = {
 			factor = 100 #Gotta allow the Americans to help
 		}
 	}
-
 	hold_this_was_their_finest_hour_speech = {
-
 		icon = generic_political_discourse
 
 		allowed = {
@@ -101,6 +96,7 @@ political_actions = {
 		visible = {
 			tag = ENG
 			democratic_govt = yes
+			
 			has_war_with = GER
 			has_country_flag = fight_on_the_beaches_speech
 			has_country_leader = { ruling_only = yes name = "Winston Churchill" }
@@ -116,21 +112,23 @@ political_actions = {
 			factor = 100 #Gotta allow the Americans to help
 		}
 	}
-
 	macdonald_proposal = {
-	
 		allowed = {
 			tag = ENG
 		}
 		
 		available = {
 			tag = ENG
+			
 			democratic_govt = yes
 			has_war_with = GER
+			
 			IRE = { exists = yes }
 			NOT = { is_in_faction_with = IRE }
+			
 			NOR = { has_capitulated = yes }
 			is_in_faction_with = NOR
+			
 			FRA = { has_capitulated = yes }
 			is_in_faction_with = FRA
 		}
@@ -139,14 +137,32 @@ political_actions = {
 		
 		visible = {
 			tag = ENG
+			
 			democratic_govt = yes
+			
 			has_war_with = GER
+			
 			IRE = { exists = yes }
 		}
 		
 		complete_effect = {
-			IRE = { country_event = { id = wtt_britain.24 } }
-			add_popularity = { ideology = conservatism popularity = 0.03 }
+			IRE = {
+				country_event = { id = wtt_britain.24 }
+			}
+			
+			add_popularity = { 
+				ideology = conservatism
+				popularity = 0.03
+			}
+			add_popularity = { 
+				ideology = liberalism
+				popularity = 0.03
+			}
+			add_popularity = { 
+				ideology = socialism
+				popularity = 0.03
+			}
+			
 			add_stability = -0.05
 		}
 
@@ -154,9 +170,7 @@ political_actions = {
 			factor = 1
 		}
 	}
-
 	ENG_invoke_the_alliance_of_1373 = {
-
 		icon = generic_prepare_civil_war
 	
 		allowed = {
@@ -198,9 +212,7 @@ political_actions = {
 			}
 		}
 	}
-
 	ENG_request_azores_lease = {
-	
 		allowed = {
 			tag = ENG
 		}
@@ -235,7 +247,6 @@ political_actions = {
 			POR = { country_event = wtt_britain_lease_azores.1 }
 		}
 	}
-
 }
 
 operations = {
@@ -272,12 +283,22 @@ operations = {
 		
 		complete_effect = {
 			declare_war_on = { target = ICE type = puppet_wargoal_focus }
-			add_popularity = { ideology = conservatism popularity = -0.05 }
+			add_popularity = { 
+				ideology =  conservatism
+				popularity = -0.05
+			}
+			add_popularity = { 
+				ideology =  liberalism
+				popularity = -0.05
+			}
+			add_popularity = { 
+				ideology =  socialism
+				popularity = -0.05
+			}
 		}
 	}
 	
 	invade_ireland = {
-
 		icon = generic_operation
 	
 		allowed = {
@@ -324,7 +345,18 @@ operations = {
 		
 		complete_effect = {
 			declare_war_on = { target = IRE type = annex_everything }
-			add_popularity = { ideology = conservatism popularity = -0.03 }
+			add_popularity = {
+				ideology = conservatism
+				popularity = -0.03
+			}
+			add_popularity = {
+				ideology = liberalism
+				popularity = -0.03
+			}
+			add_popularity = {
+				ideology = socialism
+				popularity = -0.03
+			}
 		}
 	}
 

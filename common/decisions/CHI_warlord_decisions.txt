@@ -37,7 +37,6 @@ CHI_seek_japanese_support = {
 
 		}
 	}
-
 	CHI_aggresive_prosecution_of_opposition_fascism = {
 
 		icon = generic_civil_support
@@ -152,11 +151,7 @@ CHI_seek_japanese_support = {
 
 		visible = {
 			has_completed_focus = CHI_seek_japanese_support
-			JAP = { OR = { 
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						} }
+			JAP = { has_government = neutrality }
 		}
 
 		fire_only_once = no
@@ -223,7 +218,7 @@ CHI_seek_japanese_support = {
 
 		visible = {
 			has_completed_focus = CHI_seek_japanese_support
-			JAP = { democratic_govt = yes }
+			JAP = { has_government = democratic }
 		}
 
 		fire_only_once = no
@@ -233,7 +228,9 @@ CHI_seek_japanese_support = {
 		cost = 35
 
 		modifier = {
-			democratic_drift = 0.05
+			conservatism_drift = 0.05
+			liberalism_drift = 0.05
+			socialism_drift = 0.05
 			stability_weekly = -0.005
 			political_power_gain = -0.5
 		}
