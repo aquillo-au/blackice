@@ -32,7 +32,13 @@ stay_in_commonwealth = {
         ENG = { is_faction_leader = yes }
     }
     abort = {
-       ENG = { is_faction_leader = no NOT = { has_government = communism has_government = fascism } }
+		ENG = {
+			is_faction_leader = no
+			NOT = {
+				has_government = communism
+				has_government = fascism
+			}
+		}
     }
 
     ai_strategy = {

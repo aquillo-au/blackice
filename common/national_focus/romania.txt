@@ -2703,7 +2703,7 @@ focus_tree = {
 			is_subject = no
 			ENG = {
 				is_faction_leader = yes
-				has_government = democratic
+				democratic_govt = yes
 				NOT = { has_war_with = ROM }
 			}
 		}
@@ -2831,7 +2831,7 @@ focus_tree = {
 					tooltip = ROM_carol_current_leader_trigger
 					has_country_leader = { id = 550 }
 				}
-				has_government = democratic
+				democratic_govt = yes
 			}
 		}
 		bypass = {
@@ -2855,7 +2855,7 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					NOT = { has_government = democratic }
+					NOT = { democratic_govt = yes }
 				}
 				set_politics = {
 					ruling_party = conservatism

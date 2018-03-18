@@ -16,7 +16,7 @@
 ENG_war_against_ITA = {
 	enable = {
 		tag = ENG
-		has_government = democratic
+		democratic_govt = yes
 		is_historical_focus_on = yes
 		has_war_with = ITA
 		NOT = { 
@@ -36,7 +36,7 @@ ENG_war_against_ITA = {
 			NOT = { ITA = { has_government = fascism } }
 			
 			NOT = { has_war_with = ITA }
-			NOT = { has_government = democratic }
+			NOT = { democratic_govt = yes }
 		}
 	}
 	
@@ -91,7 +91,7 @@ defend_poland_against_germany = {
 		country_exists = POL
 		OR = { 
 			GER = { has_war_with = POL }
-			GER = { has_completed_focus = Solution_for_danzig }
+			#GER = { has_completed_focus = Solution_for_danzig }
 		}
 	}
 	abort = {
