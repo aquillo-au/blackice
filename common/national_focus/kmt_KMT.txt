@@ -1861,10 +1861,7 @@ focus_tree = {
 		mutually_exclusive = { focus = KMT_sea_fleet }
 		available = {
 			NOT = { 
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 
+				democratic_govt = yes
 			}
 		}
 		x = 8
@@ -1901,10 +1898,7 @@ focus_tree = {
 		mutually_exclusive = { focus = KMT_pacific_fleet }
 		available = {
 			NOT = { 
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 
+				democratic_govt = yes
 			}
 		}
 		x = 6
@@ -1940,10 +1934,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_pacific_fleet }
 		available = {
 			NOT = { 
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 
+				democratic_govt = yes
 			}
 		}
 		x = 8
@@ -1990,10 +1981,7 @@ focus_tree = {
 		cost = 10
 		available = {
 			NOT = { 
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 
+				democratic_govt = yes
 			}
 		}
 		
@@ -2849,12 +2837,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_political_effort }
 		mutually_exclusive = { focus = KMT_government_reform }
 		bypass = {
-		OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+			democratic_govt = yes
 		}
 		x = 27
 		y = 1
@@ -2874,12 +2857,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_strengthen_the_republic }
 		mutually_exclusive = { focus = KMT_unitary_semi_presidential_republic }
 		bypass = {
-			OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+			democratic_govt = yes
 		}
 		x = 29
 		y = 2
@@ -3076,10 +3054,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_into_despotism }
 		available = {
 			NOT = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
+				democratic_govt = yes
 			}
 		}
 		x = 25
@@ -3159,19 +3134,9 @@ focus_tree = {
 		prerequisite = { focus = KMT_universal_sufferage }
 		mutually_exclusive = { focus = KMT_alone_in_the_east }
 		available = {
-			OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+			democratic_govt = yes
 			ENG = {
-				OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+				democratic_govt = yes
 				NOT = {
 					is_puppet = yes
 				}
@@ -3191,19 +3156,9 @@ focus_tree = {
 		bypass = {
 			OR = {
 				AND = {
-					OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+					democratic_govt = yes
 					ENG = {
-						OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+						democratic_govt = yes
 					}
 					is_in_faction_with = ENG
 				}
@@ -3212,10 +3167,7 @@ focus_tree = {
 				}
 				ENG = {
 					NOT = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
+						democratic_govt = yes	
 					}
 				}
 			}
@@ -3234,12 +3186,7 @@ focus_tree = {
 		prerequisite = { focus = KMT_universal_sufferage }
 		mutually_exclusive = { focus = KMT_european_friend }
 		available = {
-			OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+			democratic_govt = yes
 		}
 		x = 30
 		y = 6
@@ -3256,12 +3203,7 @@ focus_tree = {
 		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = KMT_alone_in_the_east }
 		available = {
-			OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+			democratic_govt = yes
 		}
 		x = 31
 		y = 7
@@ -3277,12 +3219,7 @@ focus_tree = {
 		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = KMT_knowledge_of_the_citizens }
 		available = {
-			OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+			democratic_govt = yes
 			has_war = no
 		}
 		x = 31
@@ -3299,12 +3236,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		prerequisite = { focus = KMT_european_friend }
 		available = {
-			OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+			democratic_govt = yes
 		}
 		x = 27
 		y = 7
@@ -4532,12 +4464,7 @@ focus_tree = {
 		}
 		bypass = {
 			SIK = {
-				OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+				democratic_govt = yes
 			}
 		}
 		
@@ -4706,12 +4633,7 @@ focus_tree = {
 		icon = GFX_goal_generic_intelligence_exchange
 		prerequisite = { focus = KMT_european_friend focus = KMT_alone_in_the_east }
 		available = {
-			OR = {
-			has_government = liberalism
-			has_government = conservatism
-			has_government = socialism
-			#democratic_govt = yes 	
-			}
+			democratic_govt = yes
 			OR = {
 				custom_trigger_tooltip = {
 					tooltip = kmt_demo_tp_gzw

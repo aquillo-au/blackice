@@ -560,13 +560,8 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = { 
-					OR = {
-						#democratic_govt = yes
-						has_government = conservatism
-						has_government = socialism
-						has_government = liberalism
-						} 
-					}
+					democratic_govt = yes
+				}
 				add_ideas = CAN_defence_of_canada_regulations_democratic
 			}
 			if = {

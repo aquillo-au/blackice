@@ -1680,10 +1680,7 @@ focus_tree = {
 		mutually_exclusive = { focus = generic_monarchist_1 }
 		available = {
 			OR = {
-					#democratic_govt = yes
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
+				democratic_govt = yes
 				has_government = neutrality
 			}
 		}
@@ -1706,12 +1703,7 @@ focus_tree = {
 				NOT = {
 					any_neighbor_country = {
 						is_major = yes
-						OR = {
-					#democratic_govt = yes
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					}
+						democratic_govt = yes
 					}
 				}
 			}

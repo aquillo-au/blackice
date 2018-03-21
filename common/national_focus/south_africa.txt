@@ -79,10 +79,8 @@ focus_tree = {
 			OR = {
 				threat > 0.2
 				NOT = { 
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					 }
+					democratic_govt = yes
+				}
 			}
 		}
 		
@@ -669,19 +667,17 @@ focus_tree = {
 		ai_will_do = {
 			factor = 0.5
 			modifier = {
-				NOT = { ENG = { OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					} } }
-				factor = 10
+				NOT = {
+					ENG = {
+						democratic_govt = yes
+					}
+				}
 			}
+			factor = 10
 			modifier = {
 				NOT = { 
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					 }
+					democratic_govt = yes
+				}
 				factor = 100
 			}
 			modifier = {	#makes it significantly more likely if player boosts non-democratic

@@ -58,7 +58,7 @@ equipments = {
 	he_51_equipment = { #FYI, there never was an He 51 A or B beyond prototypes. What most people think of as the A and B series were all called He 51 C or 51 L (land) by Germany.
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_76_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -95,14 +95,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 1
-			#rubber = 1
+			rubber = 1
 		}
 
 		manpower = 20
 	}
 	he_51_equipment_1 = { #C
 		year = 1934
-		archetype = he_51_equipment
+		archetype = ar_76_equipment
 		parent = ar_76_equipment_1
 		priority = 20
 
@@ -115,10 +115,72 @@ equipments = {
 		supply_consumption = 0.1
 	}
 	
+	he_51_equipment_sea = { #FYI, there never was an He 51 A or B beyond prototypes. What most people think of as the A and B series were all called He 51 C or 51 L (land) by Germany.
+		year = 1933
+
+		archetype = ar_76_equipment
+		is_convertable = yes
+		picture = archetype_fighter_equipment
+		is_buildable = no
+		type = { fighter }
+		group_by = archetype
+		sprite = light_plane
+		air_map_icon_frame = 6
+
+		interface_category = interface_category_air
+
+		# Fighter
+		interface_overview_category_index = 1
+
+		upgrades = {
+			he_51_b_upgrade #Fuel tank
+			he_51_b2_s3_upgrade #floatfighter
+			he_51_bomb_upgrade #6x10 kg bomb magazine (he 51 never had wing racks)
+			ai_likey_upgrade
+		}
+
+		air_superiority = 1
+		reliability = 0.8
+		air_ground_attack = 1.0
+
+
+		# Air vs Navy - low damage / low hit chance / easy to hurt
+		naval_strike_attack = 1 
+		naval_strike_targetting = 10
+
+		#Space taken in convoy
+		lend_lease_cost = 8
+
+		build_cost_ic = 25 #3.13 #10
+		resources = {
+			oil = 1
+			aluminium = 1
+			rubber = 1
+		}
+
+		manpower = 20
+	}
+	he_51_equipment_2 = { #D
+		year = 1934
+		archetype = ar_76_equipment
+		parent = ar_76_equipment_1
+		priority = 20
+
+		build_cost_ic = 28
+		reliability = 0.9
+		air_range = 220 
+		maximum_speed = 315
+		air_agility = 44 
+		air_attack = 6
+		air_defence = 14
+		air_ground_attack = 2 
+		supply_consumption = 0.1
+	}
+	
 	me_109_fighter_equipment = { #A archetype
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_76_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -155,14 +217,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	me_109_fighter_equipment_1 = { #Bf 109 A / B
 		year = 1936
-		archetype = me_109_fighter_equipment
+		archetype = ar_76_equipment
 		parent = he_51_equipment_1
 		priority = 2
 		
@@ -177,7 +239,7 @@ equipments = {
 	me_109_early_fighter_equipment = { #C-D
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_76_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -211,14 +273,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	me_109_early_fighter_equipment_1 = { #Bf 109 C
 		year = 1938
-		archetype = me_109_early_fighter_equipment
+		archetype = ar_76_equipment
 		parent = me_109_fighter_equipment_1
 		priority = 20
 		
@@ -235,7 +297,7 @@ equipments = {
 	me_109_mid_fighter_equipment = { #E archetype
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_76_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -273,14 +335,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	me_109_mid_fighter_equipment_1 = { #E-1
 		year = 1939
-		archetype = me_109_mid_fighter_equipment
+		archetype = ar_76_equipment
 		parent = me_109_early_fighter_equipment_1
 		priority = 20
 		
@@ -295,7 +357,7 @@ equipments = {
 	me_109_late_fighter_equipment = { #F
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_76_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -333,14 +395,14 @@ equipments = {
 		resources = {
 			oil = 2
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	me_109_late_fighter_equipment_1 = { #F-2
 		year = 1941 
-		archetype = me_109_late_fighter_equipment
+		archetype = ar_76_equipment
 		parent = me_109_mid_fighter_equipment_1
 		priority = 20
 		
@@ -355,7 +417,7 @@ equipments = {
 	me_109_g_fighter_equipment = { #G archetype
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_76_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -395,14 +457,14 @@ equipments = {
 		resources = {
 			oil = 2
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	me_109_late_fighter_equipment_2 = { #G-2
 		year = 1942
-		archetype = me_109_g_fighter_equipment
+		archetype = ar_76_equipment
 		parent = me_109_late_fighter_equipment_1
 		priority = 20
 		
@@ -418,7 +480,7 @@ equipments = {
 	me_109_k_fighter_equipment = { #k archetype
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_76_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -453,14 +515,14 @@ equipments = {
 		resources = {
 			oil = 2
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	me_109_late_fighter_equipment_3 = { #K values need tweaking
 		year = 1944
-		archetype = me_109_k_fighter_equipment
+		archetype = ar_76_equipment
 		parent = me_109_late_fighter_equipment_2
 		can_convert_from = { 
 			me_109_late_fighter_equipment_2
@@ -479,7 +541,7 @@ equipments = {
 		resources = {
 			oil = 2
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 	}
 	
@@ -520,7 +582,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
@@ -542,14 +604,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 	}
 	he_112_equipment = {
 		year = 19334
 
-		is_archetype = yes
+		archetype = ar_65_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -584,7 +646,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
@@ -592,7 +654,7 @@ equipments = {
 	
 	he_112_equipment_1 = { #A-0
 		year = 1937
-		archetype = he_112_equipment
+		archetype = ar_65_equipment
 		parent = ar_65_equipment_1
 		priority = 50
 		
@@ -607,14 +669,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 	}
 	fw_190_fighter_equipment = { 
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_65_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -653,14 +715,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	fw_190_fighter_equipment_1 = { #A1
 		year = 1941
-		archetype = fw_190_fighter_equipment
+		archetype = ar_65_equipment
 		parent = he_112_equipment_1
 		priority = 40
 		
@@ -677,13 +739,13 @@ equipments = {
 		resources = {
 			oil = 2
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 	}
 	ta_152_fighter_equipment = { 
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_65_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -712,14 +774,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	ta_152_fighter_equipment_1 = { #C
 		year = 1945
-		archetype = ta_152_fighter_equipment
+		archetype = ar_65_equipment
 		parent = fw_190_fighter_equipment_1
 		priority = 40
 		
@@ -734,7 +796,7 @@ equipments = {
 		resources = {
 			oil = 2
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 	}
 	###################INT##############################
@@ -772,7 +834,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		manpower = 20
 	}
@@ -793,7 +855,7 @@ equipments = {
 	he_100_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_68_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -824,7 +886,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
@@ -832,7 +894,7 @@ equipments = {
 
 	he_100_equipment_1 = { #D-1
 		year = 1940
-		archetype = he_100_equipment
+		archetype = ar_68_equipment
 		parent = ar_68_equipment_1
 		priority = 50
 
@@ -845,13 +907,13 @@ equipments = {
 		resources = { #possibly make more expensive
 			oil = 2
 			aluminium = 5
-			#rubber = 1
+			rubber = 1
 		} 
 	}
 	bf_109_h_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_68_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -881,14 +943,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	bf_109_h_equipment_1 = { 
 		year = 1943
-		archetype = bf_109_h_equipment
+		archetype = ar_68_equipment
 		parent = he_100_equipment_1
 		can_convert_from = { 
 			me_109_late_fighter_equipment_1
@@ -905,14 +967,14 @@ equipments = {
 		resources = { #possibly make more expensive
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		} 
 	}
 	############FW 190#############################
 	fw_190_d_fighter_equipment = { 
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_68_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -942,14 +1004,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	fw_190_fighter_equipment_2 = { #D9
 		year = 1943
-		archetype = fw_190_d_fighter_equipment
+		archetype = ar_68_equipment
 		parent = bf_109_h_equipment_1
 		priority = 50
 		
@@ -964,14 +1026,14 @@ equipments = {
 		resources = {
 			oil = 2
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 	}
 	#Bv 155
 	bv_155_fighter_equipment = { 
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_68_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -1000,14 +1062,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	bv_155_fighter_equipment_1 = { 
 		year = 1945
-		archetype = bv_155_fighter_equipment
+		archetype = ar_68_equipment
 		parent = fw_190_fighter_equipment_2
 		priority = 50
 		
@@ -1022,14 +1084,14 @@ equipments = {
 		resources = {
 			oil = 2
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 	}
 	#ta 152 H
 	ta_152h_fighter_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_68_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -1058,14 +1120,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	ta_152_fighter_equipment_2 = { #
 		year = 1944
-		archetype = ta_152h_fighter_equipment
+		archetype = ar_68_equipment
 		parent = bv_155_fighter_equipment_1
 		priority = 50
 		
@@ -1080,7 +1142,7 @@ equipments = {
 		resources = {
 			oil = 2
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 	}
 	######################Bf 110 #############################
@@ -1114,7 +1176,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
@@ -1151,7 +1213,7 @@ equipments = {
 	bf_110_c_fighter_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = bf_110_fighter_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -1183,14 +1245,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	bf_110_c_fighter_equipment_1 = { #C
 		year = 1938
-		archetype = bf_110_c_fighter_equipment
+		archetype = bf_110_fighter_equipment
 		parent = bf_110_fighter_equipment_2
 		priority = 40
 		
@@ -1205,7 +1267,7 @@ equipments = {
 	fw_187_fighter_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = bf_110_fighter_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -1232,14 +1294,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	fw_187_fighter_equipment_1 = { #C
 		year = 1939
-		archetype = fw_187_fighter_equipment
+		archetype = bf_110_fighter_equipment
 		parent = bf_110_c_fighter_equipment_1
 		priority = 40
 		
@@ -1254,7 +1316,7 @@ equipments = {
 	bf_110_e_fighter_equipment = { #e and F
 		year = 1933
 
-		is_archetype = yes
+		archetype = bf_110_fighter_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -1291,14 +1353,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	bf_110_e_fighter_equipment_1 = { #E-0
 		year = 1941
-		archetype = bf_110_e_fighter_equipment
+		archetype = bf_110_fighter_equipment
 		parent = fw_187_fighter_equipment_1
 		priority = 40
 		
@@ -1314,7 +1376,7 @@ equipments = {
 	me_210_fighter_equipment = { #A
 		year = 1933
 
-		is_archetype = yes
+		archetype = bf_110_fighter_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -1343,14 +1405,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	me_210_fighter_equipment_1 = { #
 		year = 1941
-		archetype = me_210_fighter_equipment
+		archetype = bf_110_fighter_equipment
 		parent = bf_110_e_fighter_equipment_1
 		priority = 40
 		
@@ -1366,7 +1428,7 @@ equipments = {
 	bf_110_g_fighter_equipment = { #G
 		year = 1933
 
-		is_archetype = yes
+		archetype = bf_110_fighter_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -1398,14 +1460,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	bf_110_g_fighter_equipment_1 = { #G-2
 		year = 1942
-		archetype = bf_110_g_fighter_equipment
+		archetype = bf_110_fighter_equipment
 		parent = me_210_fighter_equipment_1
 		priority = 40
 		
@@ -1422,7 +1484,7 @@ equipments = {
 	me_410_fighter_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = bf_110_fighter_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -1456,14 +1518,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	me_410_fighter_equipment_1 = { 
 		year = 1943
-		archetype = me_410_fighter_equipment
+		archetype = bf_110_fighter_equipment
 		parent = bf_110_g_fighter_equipment_1
 		priority = 40
 		
@@ -1479,7 +1541,7 @@ equipments = {
 	ar_440_fighter_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = bf_110_fighter_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -1506,14 +1568,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 4
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	ar_440_fighter_equipment_1 = { 
 		year = 1943
-		archetype = ar_440_fighter_equipment
+		archetype = bf_110_fighter_equipment
 		parent = me_410_fighter_equipment_1
 		priority = 40
 		
@@ -1529,7 +1591,7 @@ equipments = {
 	bf_109_z_fighter_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = bf_110_fighter_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -1556,14 +1618,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	bf_109_z_fighter_equipment_1 = {  #bomber
 		year = 1944
-		archetype = bf_109_z_fighter_equipment
+		archetype = bf_110_fighter_equipment
 		parent = ar_440_fighter_equipment_1
 		priority = 40
 		
@@ -1579,7 +1641,7 @@ equipments = {
 	do_335_fighter_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = bf_110_fighter_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -1609,14 +1671,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	do_335_fighter_equipment_1 = { 
 		year = 1944
-		archetype = do_335_fighter_equipment
+		archetype = bf_110_fighter_equipment
 		parent = bf_109_z_fighter_equipment_1
 		priority = 40
 		
@@ -1660,7 +1722,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
@@ -1715,7 +1777,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}
 		manpower = 20
 		air_superiority = 1
@@ -1742,13 +1804,13 @@ equipments = {
 		resources = {
 			aluminium = 3
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}		
 	}
 	ju_88_c6b_night_fighter_equipment = {
 		year = 1936
 
-		is_archetype = yes
+		archetype = do_17_night_fighter_equipment
 		is_convertable = yes
 		can_license = no
 		picture = archetype_fighter_equipment
@@ -1771,7 +1833,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}
 
 		air_superiority = 1
@@ -1782,7 +1844,7 @@ equipments = {
 	ju_88_c6b_night_fighter_equipment_1 = {
 		year = 1941
 		
-		archetype = ju_88_c6b_night_fighter_equipment
+		archetype = do_17_night_fighter_equipment
 		parent = do_17_night_fighter_equipment_1
 		can_convert_from = { 
 			ju_88_a5_bomber_equipment_1 
@@ -1799,13 +1861,13 @@ equipments = {
 		resources = {
 			aluminium = 3
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}		
 	}
 	do_217_night_fighter_equipment = {
 		year = 1936
 
-		is_archetype = yes
+		archetype = do_17_night_fighter_equipment
 		is_convertable = yes
 		can_license = no
 		picture = archetype_fighter_equipment
@@ -1827,7 +1889,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}
 
 		air_superiority = 1
@@ -1838,7 +1900,7 @@ equipments = {
 	do_217_night_fighter_equipment_1 = {
 		year = 1942
 		
-		archetype = do_217_night_fighter_equipment
+		archetype = do_17_night_fighter_equipment
 		parent = ju_88_c6b_night_fighter_equipment_1
 		can_convert_from = { 
 			do_217_bomber_equipment_1 
@@ -1856,13 +1918,13 @@ equipments = {
 		resources = {
 			aluminium = 3
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}		
 	}
 	he_219_night_fighter_equipment = {
 		year = 1936
 
-		is_archetype = yes
+		archetype = do_17_night_fighter_equipment
 		is_convertable = yes
 		can_license = no
 		picture = archetype_fighter_equipment
@@ -1889,7 +1951,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}
 
 		air_superiority = 1
@@ -1900,7 +1962,7 @@ equipments = {
 	he_219_night_fighter_equipment_1 = {
 		year = 1943
 		
-		archetype = he_219_night_fighter_equipment
+		archetype = do_17_night_fighter_equipment
 		parent = do_217_night_fighter_equipment_1
 		priority = 80
 
@@ -1914,13 +1976,13 @@ equipments = {
 		resources = {
 			aluminium = 3
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}	
 	}
 	ta_154_night_fighter_equipment = {
 		year = 1936
 
-		is_archetype = yes
+		archetype = do_17_night_fighter_equipment
 		is_convertable = yes
 		can_license = no
 		picture = archetype_fighter_equipment
@@ -1940,7 +2002,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}
 
 		air_superiority = 1
@@ -1951,7 +2013,7 @@ equipments = {
 	ta_154_night_fighter_equipment_1 = {
 		year = 1944
 		
-		archetype = ta_154_night_fighter_equipment
+		archetype = do_17_night_fighter_equipment
 		parent = he_219_night_fighter_equipment_1
 		priority = 80
 
@@ -1965,7 +2027,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			oil = 1
-			#rubber = 1
+			rubber = 1
 		}	
 	}
 	##################PDF#####################
@@ -1993,7 +2055,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			tungsten = 2
-			#rubber = 1
+			rubber = 1
 		}
 		manpower = 20
 		air_superiority = 1
@@ -2020,13 +2082,13 @@ equipments = {
 		resources = {
 			aluminium = 3
 			tungsten = 2
-			#rubber = 1
+			rubber = 1
 		}		
 	}
 	ba_349_interceptor_equipment = {
 		year = 1936
 
-		is_archetype = yes
+		archetype = me_163_interceptor_equipment
 		is_convertable = yes
 		can_license = no
 		picture = archetype_fighter_equipment
@@ -2046,7 +2108,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			tungsten = 2
-			#rubber = 1
+			rubber = 1
 		}
 
 		air_superiority = 1
@@ -2059,7 +2121,7 @@ equipments = {
 	ba_349_interceptor_equipment_1 = {
 		year = 1944
 		
-		archetype = ba_349_interceptor_equipment
+		archetype = me_163_interceptor_equipment
 		priority = 80
 
 		air_range = 58
@@ -2073,13 +2135,13 @@ equipments = {
 		resources = {
 			aluminium = 3
 			tungsten = 2
-			#rubber = 1
+			rubber = 1
 		}		
 	}
 	me_163_c_interceptor_equipment = {
 		year = 1936
 
-		is_archetype = yes
+		archetype = me_163_interceptor_equipment
 		is_convertable = yes
 		can_license = no
 		picture = archetype_fighter_equipment
@@ -2099,7 +2161,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			tungsten = 2
-			#rubber = 1
+			rubber = 1
 		}
 
 		air_superiority = 1
@@ -2112,7 +2174,7 @@ equipments = {
 	me_163_c_interceptor_equipment_1 = {
 		year = 1945
 		
-		archetype = me_163_c_interceptor_equipment
+		archetype = me_163_interceptor_equipment
 		parent = me_163_interceptor_equipment_1
 		priority = 80
 
@@ -2127,7 +2189,7 @@ equipments = {
 		resources = {
 			aluminium = 3
 			tungsten = 2
-			#rubber = 1
+			rubber = 1
 		}		
 	}
 	
@@ -2135,7 +2197,7 @@ equipments = {
 	he_162_fighter_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = me_163_interceptor_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -2162,14 +2224,14 @@ equipments = {
 		resources = {
 			aluminium = 1
 			tungsten = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 30
 	}
 	he_162_fighter_equipment_1 = {
 		year = 1945
-		archetype = he_162_fighter_equipment
+		archetype = me_163_interceptor_equipment
 		priority = 80
 		
 		
@@ -2216,7 +2278,7 @@ equipments = {
 		resources = {
 			aluminium = 2
 			tungsten = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
@@ -2240,7 +2302,7 @@ equipments = {
 	go_229_fighter_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = me_262_fighter_equipment
 		is_convertable = yes
 		picture = archetype_fighter_equipment
 		is_buildable = no
@@ -2267,14 +2329,14 @@ equipments = {
 		resources = {
 			aluminium = 2
 			tungsten = 3
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 40
 	}
 	go_229_fighter_equipment_1 = {
 		year = 1945
-		archetype = go_229_fighter_equipment
+		archetype = me_262_fighter_equipment
 		priority = 20
 		
 		
@@ -2320,7 +2382,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 1
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
@@ -2358,7 +2420,7 @@ equipments = {
 	hs_126_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_66_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2387,14 +2449,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 1
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	hs_126_equipment_1 = { 
 		year = 1934
-		archetype = hs_126_equipment
+		archetype = ar_66_equipment
 		parent = bu_181_equipment_1
 		priority = 40
 		
@@ -2410,7 +2472,7 @@ equipments = {
 	he_46_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_66_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2440,14 +2502,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 1
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	he_46_equipment_1 = { #C
 		year = 1934
-		archetype = he_46_equipment
+		archetype = ar_66_equipment
 		parent = hs_126_equipment_1
 		priority = 40
 		
@@ -2463,7 +2525,7 @@ equipments = {
 	he_45_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_66_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2492,14 +2554,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 1
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	he_45_equipment_1 = { 
 		year = 1934
-		archetype = he_45_equipment
+		archetype = ar_66_equipment
 		parent = he_46_equipment_1
 		priority = 40
 		
@@ -2514,7 +2576,7 @@ equipments = {
 	he_50_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_66_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2541,14 +2603,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 1
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	he_50_equipment_1 = { #A
 		year = 1935
-		archetype = he_50_equipment
+		archetype = ar_66_equipment
 		parent = he_45_equipment_1
 		priority = 40
 
@@ -2564,7 +2626,7 @@ equipments = {
 	hs_123_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_66_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2596,14 +2658,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 1
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 10
 	}
 	hs_123_equipment_1 = { 
 		year = 1936
-		archetype = hs_123_equipment
+		archetype = ar_66_equipment
 		parent = he_50_equipment_1
 		priority = 40
 		
@@ -2649,7 +2711,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
@@ -2672,7 +2734,7 @@ equipments = {
 	ar_81_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_87_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2699,14 +2761,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 1
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 10
 	}
 	ar_81_equipment_1 = { 
 		year = 1936
-		archetype = ar_81_equipment
+		archetype = ju_87_equipment
 		parent = ju_87_equipment_1
 		priority = 40
 		
@@ -2722,7 +2784,7 @@ equipments = {
 	he_118_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_87_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2750,14 +2812,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	he_118_equipment_1 = { 
 		year = 1936
-		archetype = he_118_equipment
+		archetype = ju_87_equipment
 		parent = ar_81_equipment_1
 		priority = 40
 		
@@ -2774,7 +2836,7 @@ equipments = {
 	ju_87_b_equipment = { #B
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_87_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2805,7 +2867,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
@@ -2813,7 +2875,7 @@ equipments = {
 	
 	ju_87_equipment_2 = { #B
 		year = 1938
-		archetype = ju_87_b_equipment
+		archetype = ju_87_equipment
 		parent = he_118_equipment_1
 		priority = 40
 
@@ -2830,7 +2892,7 @@ equipments = {
 	ju_87_d_equipment = { 
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_87_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2864,7 +2926,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
@@ -2872,7 +2934,7 @@ equipments = {
 	
 	ju_87_equipment_3 = { 
 		year = 1942
-		archetype = ju_87_d_equipment
+		archetype = ju_87_equipment
 		parent = ju_87_equipment_2
 		priority = 40
 
@@ -2889,7 +2951,7 @@ equipments = {
 	ju_87_d5_equipment = { #G-2
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_87_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2918,7 +2980,7 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			#rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
@@ -2926,7 +2988,7 @@ equipments = {
 	
 	ju_87_equipment_4 = {
 		year = 1943
-		archetype = ju_87_d5_equipment
+		archetype = ju_87_equipment
 		parent = ju_87_equipment_3
 		priority = 40
 
@@ -2943,7 +3005,7 @@ equipments = {
 	hs_129_equipment = { 
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_87_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -2973,14 +3035,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			##rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	hs_129_equipment_1 = {
 		year = 1941
-		archetype = hs_129_equipment
+		archetype = ju_87_equipment
 		parent = ju_87_equipment_4
 		priority = 40
 		
@@ -2997,7 +3059,7 @@ equipments = {
 	fw_190_f_equipment = { 
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_87_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -3033,14 +3095,14 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 2
-			##rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	fw_190_f_equipment_1 = {
 		year = 1942
-		archetype = fw_190_f_equipment
+		archetype = ju_87_equipment
 		parent = hs_129_equipment_1
 		can_convert_from = { 
 			fw_190_fighter_equipment_1 
@@ -3059,7 +3121,7 @@ equipments = {
 	ju_88_p_equipment = { 
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_87_equipment
 		is_convertable = yes
 		picture = archetype_CAS_equipment
 		is_buildable = no
@@ -3088,14 +3150,16 @@ equipments = {
 		resources = {
 			oil = 1
 			aluminium = 4
-			##rubber = 1
+			rubber = 1
 		}
 		
 		manpower = 20
 	}
 	ju_88_p_equipment_1 = { 
 		year = 1944
-		archetype = ju_88_p_equipment
+		archetype = ju_87_equipment
+		
+		#
 		parent = fw_190_f_equipment_1
 		can_convert_from = { 
 			ju_88_a5_bomber_equipment_1 
@@ -3231,7 +3295,7 @@ equipments = {
 	do_17_z_bomber_equipment = { #Z/215
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_86_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -3271,7 +3335,7 @@ equipments = {
 	}
 	do_17_z_bomber_equipment_1 = { 
 		year = 1939
-		archetype = do_17_z_bomber_equipment
+		archetype = ju_86_bomber_equipment
 		parent = ju_86_bomber_equipment_1
 		priority = 50
 		
@@ -3295,7 +3359,7 @@ equipments = {
 	ju_86_r_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_86_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -3330,7 +3394,7 @@ equipments = {
 	}
 	ju_86_r_bomber_equipment_1 = { 
 		year = 1941
-		archetype = ju_86_r_bomber_equipment
+		archetype = ju_86_bomber_equipment
 		parent = do_17_z_bomber_equipment_1
 		priority = 50
 		
@@ -3354,7 +3418,7 @@ equipments = {
 	ju_88_a5_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_86_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -3393,7 +3457,7 @@ equipments = {
 	}
 	ju_88_a5_bomber_equipment_1 = {
 		year = 1940
-		archetype = ju_88_a5_bomber_equipment
+		archetype = ju_86_bomber_equipment
 		parent = ju_86_r_bomber_equipment_1
 		can_convert_from = { 
 			ju_88_bomber_equipment_1 
@@ -3420,7 +3484,7 @@ equipments = {
 	ju_188_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_86_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -3455,7 +3519,7 @@ equipments = {
 	}
 	ju_188_bomber_equipment_1 = {
 		year = 1942
-		archetype = ju_188_bomber_equipment
+		archetype = ju_86_bomber_equipment
 		parent = ju_88_a5_bomber_equipment_1
 		priority = 50
 		
@@ -3479,7 +3543,7 @@ equipments = {
 	ju_388_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_86_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -3515,7 +3579,7 @@ equipments = {
 	}
 	ju_388_bomber_equipment_1 = { 
 		year = 1944
-		archetype = ju_388_bomber_equipment
+		archetype = ju_86_bomber_equipment
 		parent = ju_188_bomber_equipment_1
 		can_convert_from = { 
 			ju_188_bomber_equipment_1
@@ -3625,7 +3689,7 @@ equipments = {
 	do_17_bomber_equipment = { #
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_70_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -3665,7 +3729,7 @@ equipments = {
 	}
 	do_17_bomber_equipment_1 = { 
 		year = 1936
-		archetype = do_17_bomber_equipment
+		archetype = he_70_bomber_equipment
 		parent = he_70_bomber_equipment_2
 		priority = 55
 		
@@ -3689,7 +3753,7 @@ equipments = {
 	ju_88_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_70_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -3725,7 +3789,7 @@ equipments = {
 	}
 	ju_88_bomber_equipment_1 = { #Ju 88 A1
 		year = 1939
-		archetype = ju_88_bomber_equipment
+		archetype = he_70_bomber_equipment
 		parent = do_17_bomber_equipment_1
 		priority = 55
 		
@@ -3749,7 +3813,7 @@ equipments = {
 	ju_88_s_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_70_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -3787,7 +3851,7 @@ equipments = {
 	}
 	ju_88_s_bomber_equipment_1 = { 
 		year = 1943
-		archetype = ju_88_s_bomber_equipment
+		archetype = he_70_bomber_equipment
 		parent = ju_88_bomber_equipment_1
 		priority = 55
 		
@@ -3811,7 +3875,7 @@ equipments = {
 	ju_288_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_70_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -3850,7 +3914,7 @@ equipments = {
 	}
 	ju_288_bomber_equipment_1 = { 
 		year = 1944
-		archetype = ju_288_bomber_equipment
+		archetype = he_70_bomber_equipment
 		parent = ju_88_s_bomber_equipment_1
 		priority = 55
 		
@@ -3930,7 +3994,7 @@ equipments = {
 	ar_234_c_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ar_234_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -3965,7 +4029,7 @@ equipments = {
 	}
 	ar_234_bomber_equipment_2 = {
 		year = 1945
-		archetype = ar_234_c_bomber_equipment
+		archetype = ar_234_bomber_equipment
 		parent = ar_234_bomber_equipment_1
 		priority = 55
 		
@@ -4038,7 +4102,7 @@ equipments = {
 	do_11_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_52_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -4075,7 +4139,7 @@ equipments = {
 	}
 	do_11_bomber_equipment_1 = { 
 		year = 1934
-		archetype = do_11_bomber_equipment
+		archetype = ju_52_bomber_equipment
 		parent = ju_52_bomber_equipment_1
 		priority = 60
 		
@@ -4096,10 +4160,71 @@ equipments = {
 			rubber = 1
 		}
 	}
+	do_23_bomber_equipment = {
+		year = 1933
+
+		archetype = ju_52_bomber_equipment
+		is_convertable = yes
+		picture = archetype_strat_bomber_equipment		
+		is_buildable = no
+		type = { tactical_bomber }
+		group_by = archetype
+		sprite = medium_plane
+		air_map_icon_frame = 11
+		
+		manpower = 40
+		interface_category = interface_category_air
+		# Tactical bomber
+		interface_overview_category_index = 4
+		
+		upgrades = {
+			do_11_engines_upgrade
+			ai_likey_upgrade
+		}
+
+		air_superiority = 1
+		reliability = 0.7
+		# Air vs Navy - high damage / low hit chance / hard to hurt
+		naval_strike_attack = 13
+		naval_strike_targetting = 3
+		#Space taken in convoy
+		lend_lease_cost = 10
+		
+		build_cost_ic = 51
+		resources = {
+			oil = 1
+			aluminium = 2
+			rubber = 1
+		}
+	}
+	do_23_bomber_equipment_1 = { 
+		year = 1934
+		archetype = ju_52_bomber_equipment
+		parent = ju_52_bomber_equipment_1
+		priority = 60
+		
+		air_range = 540
+		maximum_speed = 277 
+		air_agility = 21
+		air_attack = 3 
+		air_defence = 33 
+		air_bombing = 9 
+		air_ground_attack = 7 
+		naval_strike_attack = 6 
+		supply_consumption = 0.22
+		
+		build_cost_ic = 51
+		resources = {
+			oil = 1
+			aluminium = 3
+			rubber = 1
+		}
+	}
+	
 	he_111_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_52_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -4139,7 +4264,7 @@ equipments = {
 	}
 	he_111_bomber_equipment_1 = { 
 		year = 1936
-		archetype = he_111_bomber_equipment
+		archetype = ju_52_bomber_equipment
 		parent = do_11_bomber_equipment_1
 		priority = 60
 		
@@ -4163,7 +4288,7 @@ equipments = {
 	he_111_f_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_52_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -4198,7 +4323,7 @@ equipments = {
 	}
 	he_111_bomber_equipment_2 = { 
 		year = 1938
-		archetype = he_111_f_bomber_equipment
+		archetype = ju_52_bomber_equipment
 		parent = he_111_bomber_equipment_1
 		priority = 60
 		
@@ -4221,7 +4346,7 @@ equipments = {
 	he_111_p_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_52_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -4264,7 +4389,7 @@ equipments = {
 	}
 	he_111_bomber_equipment_3 = { 
 		year = 1939
-		archetype = he_111_p_bomber_equipment
+		archetype = ju_52_bomber_equipment
 		parent = he_111_bomber_equipment_2
 		priority = 60
 		
@@ -4287,7 +4412,7 @@ equipments = {
 	do_217_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_52_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -4328,7 +4453,7 @@ equipments = {
 	}
 	do_217_bomber_equipment_1 = { #E
 		year = 1941
-		archetype = do_217_bomber_equipment
+		archetype = ju_52_bomber_equipment
 		parent = he_111_bomber_equipment_2
 		priority = 60
 		
@@ -4352,7 +4477,7 @@ equipments = {
 	do_217_k_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_52_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -4390,7 +4515,7 @@ equipments = {
 	}
 	do_217_bomber_equipment_2 = { #K
 		year = 1942
-		archetype = do_217_k_bomber_equipment
+		archetype = ju_52_bomber_equipment
 		parent = do_217_bomber_equipment_1
 		priority = 60
 		
@@ -4414,7 +4539,7 @@ equipments = {
 	do_317_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_52_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment		
 		is_buildable = no
@@ -4449,7 +4574,7 @@ equipments = {
 	}
 	do_317_bomber_equipment_1 = { 
 		year = 1944
-		archetype = do_317_bomber_equipment
+		archetype = ju_52_bomber_equipment
 		parent = do_217_bomber_equipment_2
 		priority = 60
 		
@@ -4529,7 +4654,7 @@ equipments = {
 	he_177_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_89_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -4569,7 +4694,7 @@ equipments = {
 	}
 	he_177_bomber_equipment_1 = { #A
 		year = 1941
-		archetype = he_177_bomber_equipment
+		archetype = ju_89_bomber_equipment
 		parent = ju_89_bomber_equipment_1
 		priority = 80
 		
@@ -4587,7 +4712,7 @@ equipments = {
 	wever_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_89_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -4627,7 +4752,7 @@ equipments = {
 	}
 	he_177_bomber_equipment_2 = { #a3
 		year = 1942
-		archetype = wever_bomber_equipment
+		archetype = ju_89_bomber_equipment
 		parent = he_177_bomber_equipment_1
 		priority = 80
 		
@@ -4646,7 +4771,7 @@ equipments = {
 	he_111_z_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_89_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -4682,7 +4807,7 @@ equipments = {
 	}
 	he_111_z_bomber_equipment_1 = {
 		year = 1943
-		archetype = he_111_z_bomber_equipment
+		archetype = ju_89_bomber_equipment
 		parent = he_177_bomber_equipment_2
 		priority = 80
 		
@@ -4701,7 +4826,7 @@ equipments = {
 	he_177_a5_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_89_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -4738,7 +4863,7 @@ equipments = {
 	}
 	he_177_bomber_equipment_3 = { #a5
 		year = 1943
-		archetype = he_177_a5_bomber_equipment
+		archetype = ju_89_bomber_equipment
 		parent = he_111_z_bomber_equipment_1
 		priority = 80
 		
@@ -4757,7 +4882,7 @@ equipments = {
 	me_264_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = ju_89_bomber_equipment
 		is_convertable = yes
 		picture = archetype_strat_bomber_equipment			
 		is_buildable = no
@@ -4793,7 +4918,7 @@ equipments = {
 	}
 	me_264_bomber_equipment_1 = {
 		year = 1944
-		archetype = me_264_bomber_equipment
+		archetype = ju_89_bomber_equipment
 		priority = 80
 		
 		air_range = 6750
@@ -4810,7 +4935,7 @@ equipments = {
 	}
 	ju_488_bomber_equipment_1 = { 
 		year = 1945
-		archetype = me_264_bomber_equipment
+		archetype = ju_89_bomber_equipment
 		priority = 80
 		
 		air_range = 2025 
@@ -4962,7 +5087,7 @@ equipments = {
 	ar_95_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_59_bomber_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -4997,7 +5122,7 @@ equipments = {
 	}
 	ar_95_bomber_equipment_1 = {
 		year = 1936
-		archetype = ar_95_bomber_equipment
+		archetype = he_59_bomber_equipment
 		parent = he_59_bomber_equipment_1
 		priority = 70
 		
@@ -5015,7 +5140,7 @@ equipments = {
 	do_22_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_59_bomber_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment
 		is_buildable = no
@@ -5050,7 +5175,7 @@ equipments = {
 	}
 	do_22_bomber_equipment_1 = {
 		year = 1938
-		archetype = do_22_bomber_equipment
+		archetype = he_59_bomber_equipment
 		parent = ar_95_bomber_equipment_1
 		priority = 70
 		
@@ -5068,7 +5193,7 @@ equipments = {
 	he_115_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_59_bomber_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -5108,7 +5233,7 @@ equipments = {
 	}
 	he_115_bomber_equipment_1 = {
 		year = 1939
-		archetype = he_115_bomber_equipment
+		archetype = he_59_bomber_equipment
 		parent = do_22_bomber_equipment_1
 		priority = 70
 		
@@ -5126,7 +5251,7 @@ equipments = {
 	fw_200_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_59_bomber_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -5166,7 +5291,7 @@ equipments = {
 	}
 	fw_200_bomber_equipment_1 = {
 		year = 1940
-		archetype = fw_200_bomber_equipment
+		archetype = he_59_bomber_equipment
 		parent = he_115_bomber_equipment_1
 		priority = 70
 		
@@ -5183,7 +5308,7 @@ equipments = {
 	he_111_j_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_59_bomber_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -5216,7 +5341,7 @@ equipments = {
 	}
 	he_111_j_bomber_equipment_1 = {
 		year = 1941
-		archetype = he_111_j_bomber_equipment
+		archetype = he_59_bomber_equipment
 		parent = fw_200_bomber_equipment_1
 		can_convert_from = { 
 			he_111_bomber_equipment_2 
@@ -5235,7 +5360,7 @@ equipments = {
 	}
 	ju_88_a17_bomber_equipment_1 = { 
 		year = 1942
-		archetype = he_111_j_bomber_equipment
+		archetype = he_59_bomber_equipment
 		parent = he_111_j_bomber_equipment_1
 		can_convert_from = { 
 			ju_88_a5_bomber_equipment_1
@@ -5262,7 +5387,7 @@ equipments = {
 	ju_290_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_59_bomber_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -5296,7 +5421,7 @@ equipments = {
 	}
 	ju_290_bomber_equipment_1 = {
 		year = 1944
-		archetype = ju_290_bomber_equipment
+		archetype = he_59_bomber_equipment
 		parent = fw_200_bomber_equipment_1
 		priority = 70
 		
@@ -5315,7 +5440,7 @@ equipments = {
 	fw_200_c8_bomber_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = he_59_bomber_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -5352,7 +5477,7 @@ equipments = {
 	}
 	fw_200_c8_bomber_equipment_1 = {
 		year = 1943
-		archetype = fw_200_c8_bomber_equipment
+		archetype = he_59_bomber_equipment
 		parent = fw_200_bomber_equipment_1
 		priority = 70
 		
@@ -5426,7 +5551,7 @@ equipments = {
 	do_18_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = do_wal_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -5465,7 +5590,7 @@ equipments = {
 	# Basic flying boat
 	do_18_equipment_1 = {
 		year = 1937
-		archetype = do_18_equipment
+		archetype = do_wal_equipment
 		parent = do_wal_equipment_1
 		priority = 90
 
@@ -5483,7 +5608,7 @@ equipments = {
 	do_24_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = do_wal_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -5525,7 +5650,7 @@ equipments = {
 	# Improved flying boat
 	do_24_equipment_1 = {
 		year = 1938
-		archetype = do_24_equipment
+		archetype = do_wal_equipment
 		parent = do_18_equipment_1
 		priority = 90
 
@@ -5550,7 +5675,7 @@ equipments = {
 	bv_138_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = do_wal_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -5589,7 +5714,7 @@ equipments = {
 	# Improved flying boat
 	bv_138_equipment_1 = {
 		year = 1939
-		archetype = bv_138_equipment
+		archetype = do_wal_equipment
 		parent = do_24_equipment_1
 		priority = 90
 
@@ -5614,7 +5739,7 @@ equipments = {
 	bv_238_equipment = {
 		year = 1933
 
-		is_archetype = yes
+		archetype = do_wal_equipment
 		is_convertable = yes
 		picture = archetype_heavy_fighter_equipment		
 		is_buildable = no
@@ -5651,7 +5776,7 @@ equipments = {
 	# Advanced flying boat
 	bv_238_equipment_1 = {
 		year = 1944
-		archetype = bv_238_equipment
+		archetype = do_wal_equipment
 		parent = bv_138_equipment_1
 		priority = 90
 

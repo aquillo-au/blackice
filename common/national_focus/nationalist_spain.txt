@@ -426,13 +426,10 @@ focus_tree = {
 			controls_state = 171
 			controls_state = 168
 			OR = {
-				NOT = { 
-			#has_government = conservatism
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
+				NOT = {
+					democratic_govt = yes
+					threat > 0.1
 				}
-				threat > 0.1
 			}
 		}
 		continue_if_invalid = yes
@@ -1532,14 +1529,9 @@ focus_tree = {
 			POR = {
 				has_opinion = { target = ROOT value > 99 }
 			}
-			NOT = {
-			AND = {
-			#has_government = conservatism
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-                    has_government = communism
-                }
+			NOT = {					
+				democratic_govt = yes
+                has_government = communism
 			}
 		}
 		ai_will_do = {
@@ -1614,12 +1606,7 @@ focus_tree = {
 		available = {
 			OR = {
 				AND = {
-					OR = {
-			#has_government = conservatism
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-			}
+					democratic_govt = yes
 					has_war = yes
 					threat > 0.95
 				}
@@ -1705,18 +1692,15 @@ focus_tree = {
 		y = 4
 		cost = 10
 		available = {
-		POR = {
-			NOT = {
-			OR = {
-                has_government = fascism
-			#has_government = conservatism
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-				has_government = neutrality
+			POR = {
+				NOT = {
+					OR = {
+						has_government = fascism
+						democratic_govt = yes
+						has_government = neutrality
+					}
 				}
-				}
-           }
+			}
 		}
 		
 		completion_reward = {
@@ -1895,12 +1879,9 @@ focus_tree = {
 		bypass = {
 			POR = {
 				OR = {
-			#has_government = conservatism
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-			exists = no
-			}
+					democratic_govt = yes
+					exists = no
+				}
 			}
 		}
 		x = 34
@@ -1930,21 +1911,15 @@ focus_tree = {
 		available = {
 			POR = {
 				NOT = {
-			#has_government = conservatism
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
+					democratic_govt = yes
 				}
 			}
 		}
 		bypass = {
 			POR = {
 				OR = {
-			#has_government = conservatism
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-			}
+					democratic_govt = yes
+				}
 			}
 		}
 		x = 32
@@ -2151,12 +2126,7 @@ focus_tree = {
 			}
 			OR = {
 				AND = {
-					OR = {
-			#has_government = conservatism
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-			}
+					democratic_govt = yes
 					threat > 0.95
 					}
 				has_government = fascism

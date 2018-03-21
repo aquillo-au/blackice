@@ -3943,7 +3943,12 @@ country_event = {
 			modifier = {
 				factor = 10
 				if = {
-					limit = { NOT = { has_government = fascism } fascism < 0.20 }
+					limit = {
+						NOT = {
+							has_government = fascism
+						}
+						fascism < 0.20
+					}
 				}
 				if = {
 					limit = { NOT = { has_government = communism } communism < 0.20 }

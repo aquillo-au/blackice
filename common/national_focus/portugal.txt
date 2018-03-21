@@ -1875,20 +1875,10 @@ focus = {
 		prerequisite = { focus = POR_volunteer_corps }
 		available = {
 			is_puppet = no
-			OR = {
-			#democratic_govt = yes
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-			}
+			democratic_govt = yes
 			ENG = {
 				exists = yes
-				OR = {
-			#democratic_govt = yes
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-			}
+				democratic_govt = yes
 			}
 			NOT = { has_war_with = ENG }
 		}
@@ -1918,12 +1908,7 @@ focus = {
 			is_puppet = no
 			ENG = {
 				exists = yes
-				OR = {
-			#democratic_govt = yes
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-			}
+				democratic_govt = yes
 			}
 			NOT = { has_war_with = ENG }
 		}

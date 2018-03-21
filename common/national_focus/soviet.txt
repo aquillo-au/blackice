@@ -1548,18 +1548,17 @@ focus = {
 				days = 365
 			}
 				
-				add_equipment_to_stockpile = {
-						type = horse_equipment_0
-						amount = 5000
-						producer = SOV
-					}
-				add_equipment_to_stockpile = {
-						type = artyhorse_equipment_1
-						amount = 1000
-						producer = SOV
-					}
-			}		
-
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 5000
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = artyhorse_equipment_1
+				amount = 1000
+				producer = SOV
+			}
+		}
 	}
 	focus = {
 	id = SOV_round_up_horses_II
@@ -3633,12 +3632,7 @@ focus = {
 		ai_will_do = {
 			factor = 0.5
 			modifier = {
-				OR = {
-			#democratic_govt = yes
-			has_government = conservatism
-			has_government = socialism
-			has_government = liberalism
-			}
+				democratic_govt = yes
 				factor = 0
 			}
 

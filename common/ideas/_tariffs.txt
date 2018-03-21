@@ -156,11 +156,7 @@ ideas = {
 				NOT = { has_country_flag = free_trade }
 				OR = {
 					AND = {
-						OR = {
-							has_government = conservatism
-							has_government = liberalism
-							has_government = socialism
-						}
+						democratic_govt = yes
 						has_war = yes
 						any_enemy_country = {
 							ic_ratio = { 
@@ -171,11 +167,7 @@ ideas = {
 					}
 					AND = {
 						NOT = { 
-							OR = {
-								has_government = conservatism
-								has_government = liberalism
-								has_government = socialism
-							} 
+							democratic_govt = yes
 						}
 						OR = {
 							has_country_flag = partial_economic_mobilisation

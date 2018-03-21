@@ -59,26 +59,16 @@ focus_tree = {
 	focus = {
 		id = tizard_mission_focus
 		available = {				
-			OR = {
-				has_government = conservatism
-				has_government = socialism
-				has_government = liberalism
-			}
+			democratic_govt = yes
 			any_other_country = {
 				has_war_with = ROOT
 				NOT = { 
-				has_government = conservatism
-				has_government = socialism
-				has_government = liberalism
-			 }
+					democratic_govt = yes
+				}
 				num_of_factories > 30
 			}
 			USA = { 
-				OR = {
-				has_government = conservatism
-				has_government = socialism
-				has_government = liberalism
-			}
+				democratic_govt = yes
 				NOT = {
 					OR = {
 						has_idea = undisturbed_isolation
@@ -2744,10 +2734,8 @@ focus = {
 				every_other_country = {
 					limit = { 
 						NOT = { 
-				has_government = conservatism
-				has_government = socialism
-				has_government = liberalism
-			 }
+							democratic_govt = yes
+						}
 						num_of_factories > 30
 					}
 					add_opinion_modifier = { target = PREV modifier = democratic_leanings_bad }
@@ -2969,10 +2957,8 @@ focus = {
 			every_other_country = {
 						limit = { 
 							NOT = { 
-				has_government = conservatism
-				has_government = socialism
-				has_government = liberalism
-			}
+								democratic_govt = yes
+							}
 							num_of_factories > 30
 						}
 						add_opinion_modifier = { target = TUR modifier = democratic_leanings_bad }
@@ -3006,10 +2992,8 @@ focus = {
 			every_other_country = {
 						limit = { 
 							NOT = { 
-				has_government = conservatism
-				has_government = socialism
-				has_government = liberalism
-			 }
+								democratic_govt = yes
+							}
 							num_of_factories > 30
 						}
 						add_opinion_modifier = { target = GRE modifier = democratic_leanings_bad }
@@ -3812,10 +3796,8 @@ available = {
 			every_other_country = {
 						limit = { 
 							NOT = { 
-				has_government = conservatism
-				has_government = socialism
-				has_government = liberalism
-			 }
+								democratic_govt = yes
+							}
 							num_of_factories > 30
 						}
 						add_opinion_modifier = { target = CHI modifier = democratic_leanings_bad }

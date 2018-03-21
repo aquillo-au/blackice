@@ -132,11 +132,7 @@ focus_tree = {
 		icon = GFX_goal_generic_oil_refinery
 		prerequisite = { focus = USA_wartime_industry }
 		available = {
-			OR = {
-				has_government = conservatism
-				has_government = liberalism
-				has_government = socialism
-			}
+			democratic_govt = yes
 			controls_state = 369
 		}
 		x = 2
@@ -170,12 +166,8 @@ focus_tree = {
 		prerequisite = { focus = USA_office_of_strategic_services }
 		prerequisite = { focus = USA_rubber_reserve_company }
 		available = { 
-			OR = {
-				has_government = conservatism
-				has_government = liberalism
-				has_government = socialism
-				} 
-			}
+			democratic_govt = yes
+		}
 		x = 1
 		y = 3
 		cost = 10
@@ -1023,11 +1015,7 @@ focus_tree = {
 			ENG = {
 				NOT = { is_in_faction_with = GER }
 			}
-			OR = {
-				has_government = conservatism
-				has_government = liberalism
-				has_government = socialism
-				} 
+			democratic_govt = yes 
 		}
 		bypass = {
 			NOT = { 696 = { is_controlled_by = ENG } }
@@ -1132,14 +1120,10 @@ focus_tree = {
 			#	#democratic_govt = yes
 			#}
 			country_exists = ENG
-			NOT = { 
-				OR = {
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
-					} 
-				}
+			NOT = {
+				democratic_govt = yes
 			}
+		}
 		x = 12
 		y = 2
 		cost = 10
@@ -2352,55 +2336,49 @@ available_if_capitulated = yes
 				}
 				CUB = {
 					if = {
-						limit = { OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							} }
+						limit = {
+							democratic_govt = yes
+						}
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { 
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							} }
+						limit = {
+							NOT = { 
+								democratic_govt = yes
+							}
+						}
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				HAI = {
 					if = {
-						limit = { OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							} }
+						limit = {
+							democratic_govt = yes
+						}
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { 
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							 } }
+						limit = {
+							NOT = { 
+								democratic_govt = yes
+							}
+						}
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				DOM = {
 					if = {
-						limit = { OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							} }
+						limit = {
+							democratic_govt = yes
+						}
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { 
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							} }
+						limit = {
+							NOT = { 
+								democratic_govt = yes
+							}
+						}
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
@@ -2557,10 +2535,9 @@ available_if_capitulated = yes
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { 
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
+						limit = {
+							NOT = { 
+								democratic_govt = yes
 							}
 						}
 						add_ideas = american_influence_drift_democratic
@@ -2588,11 +2565,8 @@ available_if_capitulated = yes
 				}
 				NIC = {
 					if = {
-						limit = { OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							}
+						limit = {
+							democratic_govt = yes
 						}
 						add_ideas = american_influence_defence_democratic
 					}
@@ -2617,10 +2591,9 @@ available_if_capitulated = yes
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { 
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
+						limit = {
+							NOT = { 
+								democratic_govt = yes
 							}
 						}
 						add_ideas = american_influence_drift_democratic
@@ -2628,19 +2601,15 @@ available_if_capitulated = yes
 				}
 				"PAN" = {
 					if = {
-						limit = { OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							}
+						limit = {
+							democratic_govt = yes
 						}
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
+						limit = {
+							NOT = {
+								democratic_govt = yes
 							}
 						}
 						add_ideas = american_influence_drift_democratic
@@ -2840,10 +2809,9 @@ available_if_capitulated = yes
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { 
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
+						limit = {
+							NOT = { 
+								democratic_govt = yes
 							}
 						}
 						add_ideas = american_influence_drift_democratic
@@ -2851,19 +2819,17 @@ available_if_capitulated = yes
 				}
 				MEX =  {
 					if = {
-						limit = { OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							} }
+						limit = {
+							democratic_govt = yes
+						}
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { 
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							 } }
+						limit = {
+							NOT = { 
+								democratic_govt = yes
+							}
+						}
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
@@ -3015,21 +2981,15 @@ available_if_capitulated = yes
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { 
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							 } }
+						limit = {
+							NOT = { democratic_govt = yes }
+						}
 						add_ideas = american_influence_drift_democratic
 					}				
 				}
 				PRU = {
 					if = {
-						limit = { OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							} }
+						limit = { democratic_govt = yes }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
@@ -3061,19 +3021,13 @@ available_if_capitulated = yes
 				}
 				BOL = {
 					if = {
-						limit = { OR = {
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							} }
+						limit = { democratic_govt = yes }
 						add_ideas = american_influence_defence_democratic
 					}
 					if = {
-						limit = { NOT = { 
-							has_government = conservatism
-							has_government = socialism
-							has_government = liberalism
-							 } }
+						limit = {
+							NOT = { democratic_govt = yes }
+						}
 						add_ideas = american_influence_drift_democratic
 					}				
 				}

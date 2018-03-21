@@ -1749,18 +1749,10 @@ focus_tree = {
 		icon = GFX_ENG_alliance
 		available = {
 			is_puppet = no
-			OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-			}
+			democratic_govt = yes
 			ENG = {
 				exists = yes
-				OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-			}
+				democratic_govt = yes
 			}
 			NOT = { has_war_with = ENG }
 		}
@@ -2403,11 +2395,7 @@ focus_tree = {
 			}
 			every_other_country = {
 				limit = { 
-					OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-			}
+					democratic_govt = yes
 					num_of_factories > 30
 				}
 				add_opinion_modifier = { 

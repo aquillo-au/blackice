@@ -462,8 +462,9 @@ country_event = {
 		#tag = GER
 		has_country_flag = impossible  ## temp removing as this fouls ai_focus list - AI needs those wargoals, needs the free DoW
 		or = {
-		date > 1940.4.30
-		has_completed_focus = GER_war_with_france }
+			date > 1940.4.30
+			#has_completed_focus = GER_war_with_france
+		}
 		is_ai = yes
 		NOT = { has_completed_focus = GER_around_maginot }
 		has_war_with = FRA

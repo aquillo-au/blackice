@@ -866,10 +866,7 @@ focus_tree = {
 		prerequisite = { focus = IRE_nat focus = IRE_com }
 		available = {
 			NOT = {
-				#democratic_govt = yes
-				has_government = conservatism
-				has_government = liberalism
-				has_government = socialism
+				democratic_govt = yes
 			}
 		}
 		x = 16
@@ -1153,13 +1150,10 @@ focus_tree = {
 		prerequisite = { focus = IRE_emergency }
 		available = {
 			NOT {
-					#democratic_govt = yes
-				has_government = conservatism
-				has_government = liberalism
-				has_government = socialism
-				}
+				democratic_govt = yes
+			}
+		}
 		
-					}	
 		mutually_exclusive = { focus = IRE_neut }
 		ai_will_do = {
 			factor = 1
@@ -1284,10 +1278,7 @@ focus_tree = {
 		mutually_exclusive = { focus = IRE_nat }
 		available = {
 			OR = {
-				#democratic_govt = yes
-				has_government = conservatism
-				has_government = liberalism
-				has_government = socialism
+				democratic_govt = yes
 				has_government = neutrality
 			}
 		}
@@ -1309,10 +1300,7 @@ focus_tree = {
 				NOT = {
 					any_neighbor_country = {
 						is_major = yes
-				#democratic_govt = yes
-				has_government = conservatism
-				has_government = liberalism
-				has_government = socialism
+						democratic_govt = yes
 					}
 				}
 			}

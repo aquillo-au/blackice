@@ -1093,11 +1093,9 @@ focus_tree = {
 				add_opinion_modifier = { target = SWE modifier = SWE_revoke_aland }
 			}
 			}if = {
-			limit = { OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-			} }
+			limit = {
+				democratic_govt = yes
+			}
 			hidden_effect = {
 				SWE = { 
 						remove_opinion_modifier = { target = FIN modifier = SWE_aland_convention }
@@ -1129,11 +1127,7 @@ focus_tree = {
 		y = 5
 		cost = 10
 		available = {
-			OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-			}
+			democratic_govt = yes
 			#NOT = { is_in_faction_with = GER }
 			has_war = no
 #			OR = {
@@ -1142,9 +1136,6 @@ focus_tree = {
 #			}
 		}
 		completion_reward = {
-
-
-			
 			custom_effect_tooltip = SWE_polistrupper
 			hidden_effect = {
 				SWE = { country_event = { id = exileunits.2 days = 1 } 
@@ -1442,22 +1433,15 @@ focus = {
 
 		available = {
 			is_puppet = no
-			OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-			}
+			democratic_govt = yes
 			NOT = { has_war_with = FIN }
 			FIN = {
 				exists = yes
 				is_in_faction = no
-				OR={
-					has_government = conservatism
-					has_government = liberalism
-					has_government = socialism
+				OR= {
+					democratic_govt = yes
 					has_government = neutrality
-					}
-				
+				}
 			}
 		}
 		bypass = {
@@ -1586,20 +1570,12 @@ focus = {
 			DEN = {
 				exists = yes
 				is_in_faction = no
-				OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-			}		
+				democratic_govt = yes	
 			}
 			NOR = {
 				exists = yes
 				is_in_faction = no
-				OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-			}
+				democratic_govt = yes
 			}
 		}
 		bypass = {
