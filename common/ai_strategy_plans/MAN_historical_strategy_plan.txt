@@ -5,13 +5,11 @@ MAN_historical_plan = {
 	enable = {
 		original_tag = MAN
 		is_historical_focus_on = yes
+		has_dlc = "Waking the Tiger"
 	}
 	abort = {
 		JAP = {
-			OR = {
-				#has_completed_focus = JAP_strengthen_civilian_government
-				#has_completed_focus = JAP_the_unthinkable_option
-			}
+			NOT = { has_government = fascism }
 		}
 	}
 
@@ -50,6 +48,10 @@ MAN_historical_plan = {
 
 	ideas = {
 
+	}
+	
+	traits = {
+		sympathetic_judge = 15 #Always go for that
 	}
 
 	# Keep small, as it is used as a factor for some things (such as research needs)
