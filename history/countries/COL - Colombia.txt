@@ -2,6 +2,8 @@
 
 oob = "COL_1936"
 
+set_convoys = 5
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
@@ -32,51 +34,72 @@ set_technology = {
 	generic_naval = 1
 	early_destroyer = 1
 	############### economy ############
-	
+	############### WW1 doctrines ############
 	ww1_infantry = 1
 	infantry_charge = 1
-	
 	complex_trench_systems = 1
-	
 	ww1_artillery = 1
-	
 	foot_runners = 1
-	
 	mobile_doctrines = 1
 	cavalry_charges = 1
 	cavalry_dismounting = 1
-	
-
 	ww1_battlefield_support = 1
-	
 }
-set_country_flag = monroe_doctrine
-add_ideas = { 	
-		export_focus
-		tax_low
-		tariffs_average
-		
-		civilian_economy
-		press_regulated
-		key_industries
-		labor_none
-		fdi_allowed
-		
-		cons_volunteer
-		foreign_volunteers
-		mob_reserve
-		train_none
-		age_19
-		officer_train_none
-		security_minor_restrictions
-		edu_minimal
-		
-		unity_united_nation		
-		foreign_isolationism
-		neutrality_idea
-}
-set_convoys = 10
 
+add_ideas = { 	
+	export_focus
+	tax_low
+	tariffs_average
+	
+	civilian_economy
+	press_regulated
+	key_industries
+	labor_none
+	fdi_allowed
+	
+	cons_volunteer
+	foreign_volunteers
+	mob_reserve
+	train_none
+	age_19
+	officer_train_none
+	security_minor_restrictions
+	edu_minimal
+	
+	unity_united_nation		
+	foreign_isolationism
+	neutrality_idea
+}
+
+set_politics = {
+
+	parties = {
+		conservatism = { 
+			popularity = 10
+		}
+		liberalism = { 
+			popularity = 45
+		}
+		socialism = { 
+			popularity = 41
+		}
+		fascism = {
+			popularity = 1
+		}
+		communism = {
+			popularity = 3
+		}
+	}
+	
+	ruling_party = liberalism
+	last_election = "1934.2.11"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_country_flag = monroe_doctrine
+
+##### 1939 #####
 1939.1.1 = {
 
 	add_political_power = 1198
@@ -93,6 +116,7 @@ set_convoys = 10
 	complete_national_focus = production_effort
 	
 	oob = "COL_1939"
+	
 	set_technology = {
 		interwar_artillery = 1
 		infantry_weapons1 = 1
@@ -125,87 +149,25 @@ set_convoys = 10
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
-}
-
-set_convoys = 5
-set_politics = {
-
-	parties = {
-		conservatism = { 
-			popularity = 10
-			
-		}
-		liberalism = { 
-			popularity = 45
-			
-		}
-		socialism = { 
-			popularity = 41
-			
-		}
-		fascism = {
-			popularity = 1
-		}
-		
-		communism = {
-			popularity = 3
-			#banned = no #default is no
-		}
-	}
 	
-	ruling_party = liberalism
-	last_election = "1934.2.11"
-	election_frequency = 48
-	elections_allowed = yes
-}
-
-create_country_leader = {
-	name = "Alfonso López Pumarejo"
-	desc = "POLITICS_ALFONSO_LOPEZ_PUMAREJO_DESC"
-		picture = "GFX_Portrait_columbia_alfonso_lopez"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Mariano Ospina Pérez"
-	desc = "POLITICS_MARIANO_OSPINA_PEREZ_DESC"
-	picture = "gfx/leaders/COL/Portrait_Colombia_Mariano.dds"
-	expire = "1965.1.1"
-	ideology = social_democracy
-	traits = {
-		#
-	}
-}
-
-
-1939.1.1 = {
 	set_politics = {
 
 		parties = {
 			conservatism = { 
-			popularity = 10
-			
-		}
-		liberalism = { 
-			popularity = 45
-			
-		}
-		socialism = { 
-			popularity = 41
-			
-		}
-		fascism = {
-			popularity = 1
-		}
-		
-		communism = {
-			popularity = 3
-			#banned = no #default is no
-		}
+				popularity = 10
+			}
+			liberalism = { 
+				popularity = 45
+			}
+			socialism = { 
+				popularity = 41
+			}
+			fascism = {
+				popularity = 1
+			}
+			communism = {
+				popularity = 3
+			}
 		}
 		
 		ruling_party = liberalism
@@ -213,7 +175,7 @@ create_country_leader = {
 		election_frequency = 48  
 		elections_allowed = yes
 	}
-
+	##### Country Leaders #####
 	create_country_leader = {
 		name = "Eduardo Santos"
 		desc = "POLITICS_EDUARDO_SANTOS_DESC"
@@ -221,14 +183,39 @@ create_country_leader = {
 		expire = "1965.1.1"
 		ideology = centrism
 		traits = {
-			#
 		}
 	}
 }
-
+##### Country Leaders #####
+create_country_leader = {
+	name = "Alfonso López Pumarejo"
+	desc = "POLITICS_ALFONSO_LOPEZ_PUMAREJO_DESC"
+		picture = "GFX_Portrait_columbia_alfonso_lopez"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+	}
+}
+create_country_leader = {
+	name = "Mariano Ospina Pérez"
+	desc = "POLITICS_MARIANO_OSPINA_PEREZ_DESC"
+	picture = "gfx/leaders/COL/Portrait_Colombia_Mariano.dds"
+	expire = "1965.1.1"
+	ideology = social_democracy
+	traits = {
+	}
+}
+##### Field Marshals #####
+##### Corps Commanders #####
 create_corps_commander = {
 	name = "Gustavo Rojas Pinilla"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = {  trickster_CC urban_assault_specialist }
 	skill = 3
+	#Paradox values#
+	attack_skill = 3
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 3
 }
+### EOF ###

@@ -2,6 +2,8 @@
 
 oob = "CHL_1936"
 
+set_convoys = 20
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
@@ -9,7 +11,6 @@ set_technology = {
 	################# infantry ###############
 	tech_infantry_uniforms = 1
 	infantry_weapons = 1
-	
 	tech_Garrison = 1
 	tech_Headquarters = 1
 	################## support ##################
@@ -36,51 +37,65 @@ set_technology = {
 	early_battleship = 1
 	#transport = 1
 	############### economy ############
-	
+	############### WW1 doctrines ############
 	ww1_infantry = 1
 	infantry_charge = 1
-	
 	complex_trench_systems = 1
-	
 	ww1_artillery = 1
-	
 	foot_runners = 1
-	
 	mobile_doctrines = 1
 	cavalry_charges = 1
 	cavalry_dismounting = 1
-	
-
 	ww1_battlefield_support = 1
+}
+
+add_ideas = { 	
+	export_focus
+	tax_low
+	tariffs_average
 	
+	civilian_economy
+	press_regulated
+	key_industries
+	labor_none
+	fdi_allowed
+	
+	cons_volunteer
+	foreign_volunteers
+	mob_reserve
+	train_none
+	age_19
+	officer_train_none
+	security_minor_restrictions
+	edu_minimal
+	
+	unity_united_nation		
+	foreign_isolationism
+	neutrality_idea
+}
+
+set_politics = {
+
+	parties = {
+		liberalism = { 
+			popularity = 98
+		}
+		fascism = {
+			popularity = 0
+		}
+		communism = {
+			popularity = 2
+		}
+	}
+	
+	ruling_party = liberalism
+	last_election = "1932.10.30"
+	election_frequency = 72  #but 4 years after this one in 1938.
+	elections_allowed = yes
 }
 set_country_flag = monroe_doctrine
-add_ideas = { 	
-		export_focus
-		tax_low
-		tariffs_average
-		
-		civilian_economy
-		press_regulated
-		key_industries
-		labor_none
-		fdi_allowed
-		
-		cons_volunteer
-		foreign_volunteers
-		mob_reserve
-		train_none
-		age_19
-		officer_train_none
-		security_minor_restrictions
-		edu_minimal
-		
-		unity_united_nation		
-		foreign_isolationism
-		neutrality_idea
-}
-set_convoys = 20
 
+##### 1939 #####
 1939.1.1 = {
 
 	add_political_power = 1198
@@ -97,6 +112,7 @@ set_convoys = 20
 	complete_national_focus = production_effort
 	
 	oob = "CHL_1939"
+	
 	set_technology = {
 		tactical_bomber1 = 1
 		CAS1 = 1
@@ -133,58 +149,18 @@ set_convoys = 20
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
-}
-
-set_convoys = 5
-set_politics = {
-
-	parties = {
-		liberalism = { 
-			popularity = 98
-		}
-
-		fascism = {
-			popularity = 0
-		}
-		
-		communism = {
-			popularity = 2
-			#banned = no #default is no
-		}
-	}
 	
-	ruling_party = liberalism
-	last_election = "1932.10.30"
-	election_frequency = 72  #but 4 years after this one in 1938.
-	elections_allowed = yes
-}
-
-create_country_leader = {
-	name = "Arturo Alessandri"
-	desc = "POLITICS_ARTURO_ALESSANDRI_DESC"
-	picture = "GFX_Portrait_chile_arturo_alessandri"
-	expire = "1965.1.1"
-	ideology = social_liberalism
-	traits = {
-		#
-	}
-}
-
-1939.1.1 = {
 	set_politics = {
 
 		parties = {
 			socialism = { 
 				popularity = 100
 			}
-
 			fascism = {
 				popularity = 0
 			}
-			
 			communism = {
 				popularity = 0
-				#banned = no #default is no
 			}
 		}
 		
@@ -193,7 +169,7 @@ create_country_leader = {
 		election_frequency = 48
 		elections_allowed = yes
 	}
-
+	##### Country Leaders #####
 	create_country_leader = {
 		name = "Pedro Aguirre Cerda"
 		desc = "POLITICS_PEDRO_AGUIRRE_CERDA_DESC"
@@ -201,11 +177,19 @@ create_country_leader = {
 		expire = "1965.1.1"
 		ideology = social_democracy
 		traits = {
-			#
 		}
 	}
 }
-
+##### Country Leaders #####
+create_country_leader = {
+	name = "Arturo Alessandri"
+	desc = "POLITICS_ARTURO_ALESSANDRI_DESC"
+	picture = "GFX_Portrait_chile_arturo_alessandri"
+	expire = "1965.1.1"
+	ideology = social_liberalism
+	traits = {
+	}
+}
 create_country_leader = {
 	name = "Jorge González von Marées"
 	desc = "POLITICS_JORGE_GONZÁLEZ_VON_MARÉES_DESC"
@@ -213,10 +197,8 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = nazism
 	traits = {
-		#
 	}
 }
-
 create_country_leader = {
 	name = "Carlos Contreras Labarca"
 	desc = "POLITICS_CARLOS_CONTRERAS_LABARCA_DESC"
@@ -224,24 +206,25 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {
-		#
 	}
 }
-
+##### Field Marshals #####
+##### Corps Commanders #####
 create_corps_commander = {
-	name = "Escudero Oscar Otárola"
+	name = "Otárola, Escudero Oscar"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_9.dds"
 	traits = { trait_mountaineer }
 	skill = 4
+	#Paradox values#
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 3
 }
-
-
-### Ship Variants ###
-
+##### Ship Variants #####
 #######################################################################
 ## BICE Variants
 #######################################################################
-
 create_equipment_variant = {
 	name = "Capitán O`Brien Class"
 	type = submarine_1
@@ -252,7 +235,6 @@ create_equipment_variant = {
 		sub_torpedo_upgrade = 1
 	}
 }
-
 create_equipment_variant = {
 	name = "Serrano Class"
 	type = destroyer_1
@@ -263,7 +245,6 @@ create_equipment_variant = {
 		ship_anti_air_upgrade = 1
 	}
 }
-
 create_equipment_variant = {
 	name = "Chacabuco Class"
 	type = heavy_cruiser_1
@@ -276,3 +257,4 @@ create_equipment_variant = {
 	}
 	obsolete=yes
 }
+### EOF ###

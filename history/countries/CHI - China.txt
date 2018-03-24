@@ -2,13 +2,20 @@
 
 oob = "CHI_1936"
 
+set_research_slots = 3
+
+set_convoys = 200
+
+set_stability = 0.8
+
+set_war_support = 0.5
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
 	#BICE_airrange_balance = 1
 	##################### infantry ###############
 	infantry_weapons = 1
-	
 	tech_infantry_uniforms = 1
 	tech_Garrison = 1
 	tech_Headquarters = 1
@@ -38,26 +45,21 @@ set_technology = {
 	generic_naval = 1
 	early_destroyer = 1
 	early_light_cruiser = 1
-	
+	##################### economy #################
+	##################### WW1 doctrines #################
 	ww1_infantry = 1
 	infantry_charge = 1
-	
 	complex_trench_systems = 1
 	offensive_trenches = 1
 	defensive_trenches = 1
 	basic_MG_defences = 1
-	
 	ww1_artillery = 1
 	artillery_observers = 1
 	balloon_observers = 1
-	
 	foot_runners = 1
-	
 	mobile_doctrines = 1
 	cavalry_charges = 1
 	cavalry_dismounting = 1
-	
-
 	ww1_battlefield_support = 1
 }
 
@@ -93,6 +95,28 @@ add_ideas = {
 	neutrality_idea
 }
 
+set_politics = {
+
+	parties = {
+		conservatism = { 
+			popularity = 0
+		}
+		fascism = {
+			popularity = 0
+		}
+		communism = {
+			popularity = 0
+		}
+		neutrality = { 
+			popularity = 100
+		}
+	}
+	
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
 set_country_flag = mob_standing
 set_country_flag = Foreign_neutral
 set_country_flag = Tax_average
@@ -108,12 +132,9 @@ set_country_flag = Low_economic_mobilisation
 set_country_flag = fdi_regulated
 set_country_flag = labor_allowed
 
-set_research_slots = 3
-set_convoys = 200
-set_stability = 0.8
-
 add_opinion_modifier = { target = PRC modifier = hostile_status }
 
+##### 1939 #####
 1939.1.1 = {
 
 	add_political_power = 1198
@@ -148,11 +169,11 @@ add_opinion_modifier = { target = PRC modifier = hostile_status }
 	create_faction = chinese_united_front
 	add_to_faction = PRC
 	remove_opinion_modifier = { target = PRC modifier = hostile_status }
-
 	set_global_flag = CHI_unite
+	
 	oob = "CHI_1939"
+	
 	set_technology = {
-
 		#PLACEHOLDER techs for vehicles
 		motorised_infantry = 1
 		tech_support = 1		
@@ -190,34 +211,7 @@ add_opinion_modifier = { target = PRC modifier = hostile_status }
 		concentrated_industry3 = 1
 	}
 }
-
-set_politics = {
-
-	parties = {
-		conservatism = { 
-			popularity = 0
-		}
-
-		fascism = {
-			popularity = 0
-		}
-		
-		communism = {
-			popularity = 0
-			#banned = no #default is no
-		}
-		
-		neutrality = { 
-			popularity = 100
-		}
-	}
-	
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-
+##### Country Leaders #####
 create_country_leader = {
 	name = "Chiang Kai-shek"
 	desc = "POLITICS_CHIANG_KAI-SHEK_DESC"
@@ -225,21 +219,16 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = the_peoples_tutelage
 	traits = {
-		#
 	}
 }
-
 create_country_leader = {
 	name = "Mao Zedong"
 	desc = "POLITICS_MAO_ZEDONG_DESC"
 	picture = "Portrait_China_Mao_Zedong.dds"
 	expire = "1965.1.1"
 	ideology = leninism
-	traits = {
-		cornered_fox
-	}
+	traits = { cornered_fox }
 }
-
 create_country_leader = {
 	name = "Wang Jingwei"
 	desc = "POLITICS_WANG_JINGWEI_DESC"
@@ -247,10 +236,8 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		#
 	}
 }
-
 create_country_leader = {
 	name = "Zhang Lan"
 	desc = "POLITICS_ZHANG_LAN_DESC"
@@ -258,45 +245,125 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = social_democracy
 	traits = {
-		#
 	}
 }
-### Field Marshals ###
+##### Field Marshals #####
 create_field_marshal = {
 	name = "Chiang Kai-shek"
 	picture = "Portrait_China_Chiang_Kai_Shek.dds"
-	traits = { defensive_doctrine_FM  logistics_wizard_FM  }
+	traits = { Decent_General defensive_doctrine_FM  logistics_wizard_FM  }
 	id = 1001
 	skill = 3
+	attack_skill = 3
+    defense_skill = 2
+    planning_skill = 3
+    logistics_skill = 2
 }
 create_field_marshal = {
 	name = "Tu Yu-ming"
 	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
-	traits = { defensive_doctrine_FM }
+	traits = { trait_cautious armor_officer harsh_leader defensive_doctrine_FM }
 	skill = 4
+	#Paradox values#
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 3
 }
-
 create_field_marshal = {
 	name = "Hsueh Yueh"
 	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
-	traits = { offensive_doctrine_FM }
+	traits = { trait_reckless brilliant_strategist war_hero offensive_doctrine_FM }
 	skill = 3
+	#Paradox values#
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 3
 }
-
 create_field_marshal = {
 	name = "Tai An-lan"
 	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
-	traits = {  offensive_doctrine_FM }
+	traits = { trait_reckless career_officer offensive_doctrine_FM }
 	skill = 3
+	#Paradox values#
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 1
+	logistics_skill = 3
 }
-
 create_field_marshal = {
 	name = "Wang Yao-wu"
 	portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
-	traits = { defensive_doctrine_FM }
+	traits = { trait_cautious infantry_officer defensive_doctrine_FM }
 	skill = 2
+	#Paradox values#
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
-
+create_field_marshal = {
+	name = "Zhang Xueliang"
+	gfx = "GFX_portrait_chi_zhang_xueliang"
+	traits = { }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+##### Corps Commanders #####
+create_corps_commander = {
+	name = "Sun Li Jen"
+	gfx = "GFX_portrait_chi_sun_li_jen"
+	traits = { brilliant_strategist }
+	skill = 4
+	attack_skill = 5
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Hu Zongnan"
+	gfx = "GFX_portrait_chi_hu_zongnan"
+	traits = { politically_connected }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "Gu Zhutong"
+	gfx = "GFX_portrait_chi_gu_zhutong"
+	traits = { career_officer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Wei Lihuang"
+	gfx = "GFX_portrait_chi_wei_lihuang"
+	traits = { infantry_officer }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Fu Zuoyi"
+	gfx = "GFX_portrait_chi_fu_zuoyi"
+	traits = { }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+}
 ########################################################################
 ## BICE variants
 ########################################################################

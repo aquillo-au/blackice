@@ -2,6 +2,8 @@
 
 oob = "COG_1936"
 
+set_convoys = 5
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
@@ -32,49 +34,67 @@ set_technology = {
 	generic_submarine = 1
 	generic_naval = 1
 	############### economy ############
-	
+	############### WW1 doctrines ############
 	ww1_infantry = 1
 	infantry_charge = 1
-	
 	complex_trench_systems = 1
-	
 	ww1_artillery = 1
-	
 	foot_runners = 1
-	
 	mobile_doctrines = 1
 	cavalry_charges = 1
 	cavalry_dismounting = 1
-	
-
 	ww1_battlefield_support = 1
 }
 
-set_convoys = 5
 add_ideas = { 	
-		export_focus
-		tax_low
-		tariffs_average
-		
-		civilian_economy
-		press_regulated
-		key_industries
-		labor_none
-		fdi_allowed
-		
-		cons_volunteer
-		foreign_volunteers
-		mob_reserve
-		train_none
-		age_19
-		officer_train_none
-		security_minor_restrictions
-		edu_minimal
-		
-		unity_united_nation		
-		foreign_isolationism
-		neutrality_idea
+	export_focus
+	tax_low
+	tariffs_average
+	
+	civilian_economy
+	press_regulated
+	key_industries
+	labor_none
+	fdi_allowed
+	
+	cons_volunteer
+	foreign_volunteers
+	mob_reserve
+	train_none
+	age_19
+	officer_train_none
+	security_minor_restrictions
+	edu_minimal
+	
+	unity_united_nation		
+	foreign_isolationism
+	neutrality_idea
 }
+
+set_politics = {
+
+	parties = {
+		conservatism = { 
+			popularity = 10
+		}
+		fascism = {
+			popularity = 5
+		}
+		communism = {
+			popularity = 2
+		}
+		neutrality = { 
+			popularity = 83
+		}
+	}
+	
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+##### 1939 #####
 1939.1.1 = {
 	#generic focuses
 	complete_national_focus = COG_army_effort
@@ -113,43 +133,37 @@ add_ideas = {
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
-}
-set_politics = {
+	#Now a colony of Italy  However, if independent it would have
+	set_politics = {
 
-	parties = {
-		conservatism = { 
-			popularity = 10
+		parties = {
+			conservatism = { 
+				popularity = 0
+			}
+			fascism = {
+				popularity = 0
+			}
+			communism = {
+				popularity = 0
+			}
+			neutrality = { 
+				popularity = 100
+			}
 		}
-
-		fascism = {
-			popularity = 5
-		}
-		
-		communism = {
-			popularity = 2
-			#banned = no #default is no
-		}
-		
-		neutrality = { 
-			popularity = 83
-		}
+	
+		ruling_party = neutrality
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
 	}
-	
-	ruling_party = neutrality
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
 }
-
+##### Country Leaders #####
 create_country_leader = {
-	
 	name = "François Tolenga"
 	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
 	expire = "1965.1.1"
 	ideology = despotism
-	traits = {
-		compassionate_gentleman
-	}
+	traits = { compassionate_gentleman }
 }
 create_country_leader = {
 	name = "Pierre Ryckmans"
@@ -161,75 +175,48 @@ create_country_leader = {
 	}
 }
 create_country_leader = {
-	
 	name = "Lumumba Lomendja"
 	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_1.dds"
 	expire = "1965.1.1"
 	ideology = marxism
-	traits = {
-		silent_workhorse
-	}
+	traits = { silent_workhorse }
 }
 create_country_leader = {
-	
 	name = "David Manera"
 	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_Land_3.dds"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		
 	}
 }
 create_country_leader = {
-	
 	name = "N. Cools"
 	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		
 	}
 }
-
+##### Field Marshals #####
+##### Corps Commanders #####
 create_corps_commander = {
-	name = "Auguste-Édouard Gilliaert"
+	name = "Gilliaert, Auguste-Édouard"
 	picture = "gfx/leaders/BEL/gilliaert.dds"
 	traits = { commando }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
-#Now a colony of Italy  However, if independent it would have
-1939.1.1 = {
-	set_politics = {
-
-		parties = {
-		conservatism = { 
-			popularity = 0
-		}
-
-		fascism = {
-			popularity = 0
-		}
-		
-		communism = {
-			popularity = 0
-			#banned = no #default is no
-		}
-		
-		neutrality = { 
-			popularity = 100
-		}
-	}
-		
-		ruling_party = neutrality
-		last_election = "1936.1.1"
-		election_frequency = 48
-		elections_allowed = no
-	}
-}
-
 create_corps_commander = {
-	name = "Lumumba Lomendja"
+	name = "Lomendja, Lumumba"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
-	traits = {  jungle_rat }
+	traits = { jungle_rat }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
+### EOF ###
