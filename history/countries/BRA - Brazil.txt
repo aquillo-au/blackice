@@ -1,7 +1,8 @@
 ﻿capital = 500
 
-
 oob = "BRA_1936"
+
+set_convoys = 300
 
 set_research_slots = 2
 # Starting tech
@@ -11,7 +12,6 @@ set_technology = {
 	################# infantry ###############
 	tech_infantry_uniforms = 1
 	infantry_weapons = 1
-	
 	tech_Garrison = 1
 	tech_Headquarters = 1
 	semi_motorised_infantry = 1
@@ -49,39 +49,91 @@ set_technology = {
 	early_battleship = 1
 	#transport = 1
 	############### economy ############
-	
+	############### WW1 doctrines ############
 	ww1_infantry = 1
 	infantry_charge = 1
 	infantry_charge = 1
 	small_unit_raids = 1
 	night_patrols = 1
-	
 	complex_trench_systems = 1
 	offensive_trenches = 1
 	defensive_trenches = 1
 	basic_MG_defences = 1
-	
 	ww1_artillery = 1
 	artillery_concentration = 1
 	offensive_prep_fire = 1
 	artillery_observers = 1
 	balloon_observers = 1
-	
 	foot_runners = 1
 	carrier_pidgeons = 1
-	
 	mobile_doctrines = 1
 	cavalry_charges = 1
 	cavalry_dismounting = 1
 	cavalry_exploitation = 1
 	armor_support = 1
 	armored_car_recon = 1
-
 	ww1_battlefield_support = 1
 	camouflage_positions = 1
 }
-set_country_flag = monroe_doctrine
 
+add_ideas = { 	
+	provisorio
+	bra_exercito 
+	bra_exports 
+	bra_infraestructure 
+
+	export_focus
+	tax_average
+	tariffs_average
+	
+	civilian_economy
+	press_free
+	private_control
+	labor_allowed
+	fdi_regulated
+	
+	cons_volunteer
+	foreign_volunteers
+	mob_reserve
+	train_medium
+	officer_train_low
+	security_minor_restrictions
+	age_19
+
+	edu_high
+	
+	unity_divided_nation	
+	foreign_neutral
+}
+
+set_politics = {
+
+	parties = {
+		conservatism = { 
+			popularity = 20
+		}
+		fascism = {
+			popularity = 20
+		}
+		communism = {
+			popularity = 20
+		}
+		neutrality = { 
+			popularity = 35
+		}
+		monarchism = {
+		    popularity = 5
+		}
+	}
+	
+	ruling_party = neutrality
+	last_election = "1934.7.17"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_country_flag = monroe_doctrine
+##### 1939 #####
 1939.1.1 = {
 
 	add_political_power = 1198
@@ -98,6 +150,7 @@ set_country_flag = monroe_doctrine
 	complete_national_focus = production_effort
 	
 	oob = "BRA_1939"
+	
 	set_technology = {
 		interwar_artillery = 1
 		interwar_antiair = 1
@@ -135,67 +188,31 @@ set_country_flag = monroe_doctrine
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
-}
-
-set_politics = {
-
-	parties = {
-		conservatism = { 
-			popularity = 20
-		}
-
-		fascism = {
-			popularity = 20
-		}
-		
-		communism = {
-			popularity = 20
-		}
-		
-		neutrality = { 
-			popularity = 35
-		}
-		
-		monarchism = {
-		    popularity = 5
-			}
-	}
 	
-	ruling_party = neutrality
-	last_election = "1934.7.17"
-	election_frequency = 48
-	elections_allowed = no
+	set_politics = {
+
+		parties = {
+			conservatism = { 
+				popularity = 0
+			}
+			fascism = {
+				popularity = 0
+			}
+			communism = {
+				popularity = 0
+			}
+			neutrality = { 
+				popularity = 100
+			}
+		}
+	
+		ruling_party = neutrality
+		last_election = "1934.7.17"
+		election_frequency = 48
+		elections_allowed = no
+	}
 }
-add_ideas = { 	
-		provisorio
-		bra_exercito 
-		bra_exports 
-		bra_infraestructure 
-
-		export_focus
-		tax_average
-		tariffs_average
-		
-		civilian_economy
-		press_free
-		private_control
-		labor_allowed
-		fdi_regulated
-		
-		cons_volunteer
-		foreign_volunteers
-		mob_reserve
-		train_medium
-		officer_train_low
-		security_minor_restrictions
-		age_19
-
-		edu_high
-		
-		unity_divided_nation	
-		foreign_neutral
-}
-
+##### Country Leaders #####
 create_country_leader = {
 	name = "Juscelino Kubitschek"
 	desc = "POLITICS_GETULIO_VARGAS_DESC"
@@ -203,7 +220,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
-		#
 	}
 }
 create_country_leader = {
@@ -213,10 +229,8 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
-		#
 	}
-}	  
-
+}
 create_country_leader = {
 	name = "Getulio C. Vargas"
 	desc = "POLITICS_GETULIO_VARGAS_DESC"
@@ -224,10 +238,8 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
-		#
 	}
 }
-
 create_country_leader = {
 	name = "Eurico Gaspar Dutra"
 	desc = "POLITICS_GETULIO_VARGAS_DESC"
@@ -235,10 +247,8 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
-		#
 	}
 }
-
 create_country_leader = {
 	name = "Getúlio Vargas"
 	desc = "POLITICS_GETULIO_VARGAS_DESC"
@@ -246,10 +256,8 @@ create_country_leader = {
 	expire = "1936.2.2"
 	ideology = despotism
 	traits = {
-		#
 	}
 }
-
 create_country_leader = {
 	name = "Plínio Salgado"
 	desc = "POLITICS_PLINIO_SALGADO_DESC"
@@ -257,10 +265,8 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		#
 	}
 }
-
 create_country_leader = {
 	name = "Luís Carlos Prestes"
 	desc = "POLITICS_LUIS_CARLOS_PRESTES_DESC"
@@ -268,22 +274,17 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {
-		#
 	}
 }
-
 create_country_leader = {
-
 	name = "Armando Sales"
 	desc = "POLITICS_ARMANDO_SALES_DESC"
 	picture = "gfx/leaders/South America/Portrait_South_America_Generic_2.dds"
 	expire = "1965.1.1"
 	ideology = social_conservatism
 	traits = {
-		#
 	}
 }
-
 create_country_leader = {
 	name = "Dom Pedro III"
 	desc = "POLITICS_PEDRO_III_DESC"
@@ -291,7 +292,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = absolutism
 	traits = {
-		#
 	}
 }	
 create_country_leader = {
@@ -301,627 +301,899 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = centrism
 	traits = {
-		#
 	}	
 }
-
-set_convoys = 300
-
-1939.1.1 = {
-	set_politics = {
-
-		parties = {
-		conservatism = { 
-			popularity = 0
-		}
-
-		fascism = {
-			popularity = 0
-		}
-		
-		communism = {
-			popularity = 0
-		}
-		
-		neutrality = { 
-			popularity = 100
-		}
-	}
-	
-	ruling_party = neutrality
-		last_election = "1934.7.17"
-		election_frequency = 48
-		elections_allowed = no
-	}
-}
-
+##### Field Marshals #####
 create_field_marshal = {
-	name = "Eurico Gaspar Dutra"
+	name = " Dutra, Eurico Gaspar"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_dutra.dds"
 	traits = { Awesome_General jungle_rat_FM }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_field_marshal = {
-	name = "Isidoro Dias Lopes"
+	name = "Dias Lopes, Isidoro"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_isidoro.dds"
 	traits = { Competent_General ranger_FM jungle_rat_FM }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
+##### Corps Commanders #####
 create_corps_commander = {
-	name = "Mascarenhas de Morais"
+	name = "Mascarenhas de Morais, João Batista"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_mascarenha.dds"
 	traits = { Awesome_General jungle_rat commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Adalberto Pereira dos Santos"
+	name = "Pereira dos Santos, Adalberto"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_adalberto.dds"
 	traits = { Competent_General commando jungle_rat }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Canrobert Pereira da Costa"
+	name = "Pereira da Costa, Canrobert"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_canrobert.dds"
 	traits = { Competent_General ranger jungle_rat }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }		
 create_corps_commander = {
-	name = "Ciro do Espírito Santo Cardoso"
+	name = "Espírito Santo Cardoso, Ciro do"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_ciro.dds"
 	traits = { Competent_General jungle_rat }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Francisco José da Silva Júnior"
+	name = "Silva Júnior, Francisco José da"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_francisco.dds"
 	traits = { Competent_General commando jungle_rat }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Euclides Zenóbio da Costa"
+	name = "Costa, Euclides Zenóbio da"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_zenobio.dds"
 	traits = { Competent_General offensive_doctrine_CC jungle_rat }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Pedro Aurélio de Góis Monteiro"
+	name = "Góis Monteiro, Pedro Aurélio de"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_gois.dds"
 	traits = { Awesome_General offensive_doctrine_CC jungle_rat }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Miguel Costa"
+	name = "Costa, Miguel"
 	picture = "gfx/leaders/BRA/Portrait_Brazil_miguel.dds"
 	traits = { Competent_General commando jungle_rat }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Alberto Venâncio"
+	name = "Venâncio, Alberto"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Bad_General logistics_wizard_CC jungle_rat }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Alvés Marinho"
+	name = "Marinho, Alvés"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Aurélio de Monteiro"
+	name = "Monteiro, Aurélio de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
-	traits = { Competent_General defensive_doctrine_CC old_guard }
+	traits = { old_guard Competent_General defensive_doctrine_CC }
 	skill = 3
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Barata de Azevedo"
+	name = "Barata de Azevedo, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Decent_General jungle_rat logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Barbosa"
+	name = "Barbosa, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Decent_General jungle_rat commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Borges da Fonseca Neto"
+	name = "Fonseca Neto,Borges da "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Decent_General jungle_rat logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Cardoso"
+	name = "Cardoso, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Bad_General jungle_rat logistics_wizard_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Cassiano"
+	name = "Cassiano, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Castelo Branco"
+	name = "Branco, Castelo"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Decent_General jungle_rat offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Chadavec de Lavalade"
+	name = "Lavalade, Chadavec de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Coelho Neto"
+	name = "Neto, Coelho"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Decent_General panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Cordeiro de Farias"
+	name = "Farias, Cordeiro de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Decent_General jungle_rat logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Costa é Silva"
+	name = "Silva, Costa é"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Decent_General jungle_rat offensive_doctrine_CC }
 	skill = 3
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "d'Alincourt Fonseca"
+	name = "d'Alincourt Fonseca, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Decent_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "da Gama Leirós"
+	name = "Gama Leirós, da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Bad_General panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "da Silva"
+	name = "Silva, da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
-	traits = { Decent_General trait_engineer old_guard }
+	traits = { old_guard Decent_General trait_engineer }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "de Assis"
+	name = " Assis, de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Decent_General defensive_doctrine_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "de Souza Dantas de Melo"
+	name = "Souza Dantas de Melo, de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Dilermando de Assis"
+	name = "Assis, Dilermando de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "do Nascimento"
+	name = "Nascimento, do"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Competent_General jungle_rat trickster_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "do Nascimento Lins"
+	name = "Nascimento Lins, do"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Falconeiro da Cunha"
+	name = "Cunha, Falconeiro da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Bad_General jungle_rat logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Fernandes da Silva"
+	name = " Silva, Fernandes da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Bad_General jungle_rat commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Figueiredo"
+	name = "Figueiredo, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Fiuza de Castro"
+	name = "Castro, Fiuza de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Decent_General jungle_rat offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Floriano de Lima Brayner"
+	name = " Lima Brayner, Floriano de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Decent_General jungle_rat offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Gleuber Viera"
+	name = "Viera, Gleuber"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Decent_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Góes Depóe"
+	name = "Depóe, Góes"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Bad_General jungle_rat commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Góes Monteiro"
+	name = " Monteiro, Góes"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Guimarés"
+	name = "Guimarés, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Competent_General jungle_rat trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Kroner"
+	name = "Kroner, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
-	traits = { Competent_General trickster_CC old_guard }
+	traits = { old_guard Competent_General trickster_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Kopp"
+	name = "Kopp, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Bad_General panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Leitão de Carvalho"
+	name = "Carvalho, Leitão de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Bad_General jungle_rat logistics_wizard_CC }
 	skill = 1
 }
 create_corps_commander = {
-	name = "Lopes Veira"
+	name = "Veira, Lopes"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Napoleão Poeta"
+	name = "Poeta, Napoleão"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
-	traits = { Competent_General fortress_buster old_guard }
+	traits = { old_guard Competent_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Neves da Fontoura"
+	name = " Fontoura, Neves da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Newton Cavalcanti"
+	name = "Cavalcanti, Newton"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Perdra Pires"
+	name = "Pires, Perdra"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
-	traits = { Competent_General defensive_doctrine_CC old_guard }
+	traits = { old_guard Competent_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Pereira da Costa"
+	name = "Costa, Pereira da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Competent_General jungle_rat commando }
 	skill = 3
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Plinio Pitaluga"
+	name = "Pitaluga, Plinio"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Awesome_General jungle_rat logistics_wizard_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 3
 }
 create_corps_commander = {
-	name = "Ramos de Andrade"
+	name = " Andrade, Ramos de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Bad_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Ruschel Vasconcelos"
+	name = "Vasconcelos, Ruschel"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Competent_General jungle_rat commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Se Sá Serrão"
+	name = "Serrão, Se Sá"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Bad_General jungle_rat trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Jair Dantas Ribeiro"
+	name = "Ribeiro, Jair Dantas"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Decent_General jungle_rat commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Tavares da Silva"
+	name = "Silva, Tavares da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Teixeira Lott"
+	name = " Lott, Teixeira"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Competent_General jungle_rat offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Valgas Neves"
+	name = "Neves, Valgas"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Bad_General jungle_rat trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Zenóbio da Costa"
+	name = " Costa, Zenóbio da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Competent_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Agostinho dos Santos"
+	name = "Santos, Agostinho dos"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Bad_General jungle_rat offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "da Veiga Cabral"
+	name = "Veiga Cabral, da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "de Segadas Viana"
+	name = "Segadas Viana, de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Dennys"
+	name = "Dennys, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Bad_General jungle_rat logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Espirito Santo Cardoso"
+	name = "Espirito Santo Cardoso, Cyro do"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Bad_General jungle_rat trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Estillac Leal"
+	name = "Estillac Leal, Newton"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Bad_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Kruel"
+	name = "Kruel, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Bad_General panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Leite de Castro"
+	name = " Castro, Leite de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
-	traits = { Terrible_General old_guard }
+	traits = { old_guard Terrible_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Sezefredo Passos"
+	name = "Passos, Sezefredo"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
-	traits = { Decent_General trait_engineer old_guard }
+	traits = { old_guard Decent_General trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Setembrino de Carvalho"
+	name = "Carvalho, Setembrino de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
-	traits = { Competent_General old_guard }
+	traits = { old_guard Competent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Joao Gomes Ribeiro Filho"
+	name = "Gomes Ribeiro Filho, João"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Odilio Denys"
+	name = "Denys, Odilio"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Nelson de Melo"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Competent_General jungle_rat }
 	skill = 3
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Ademar de Queiros"
+	name = "Queiros,Ademar de "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Araken de Oliveira"
+	name = "Oliveira, Araken de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Competent_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Carlos de Meira Mattos"
+	name = "Meira Mattos, Carlos de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Competent_General jungle_rat trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Hugo de Abreu"
+	name = "Abreu, Hugo de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Competent_General jungle_rat }
 	skill = 3
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Jose Pessoa"
+	name = "Pessoa, Jose"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Competent_General panzer_leader }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Waldomiro Castilho de Lima"
+	name = "Lima, Waldomiro Castilho de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 
-### Navy ###
+##### Navy Leaders #####
 create_navy_leader = {
-	name = "Augusto Rademaker"
+	name = "Rademaker, Augusto"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
-	traits = {  }
+	traits = { }
 	skill = 3
 }
 create_navy_leader = {
-	name = "Álvaro Alberto"
-	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
-	traits = {  }
-	skill = 1
-}
-create_navy_leader = {
-	name = "Álvaro do Cabo"
-	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_3.dds"
-	traits = {  }
-	skill = 1
-}
-create_navy_leader = {
-	name = "Cantanero da Silva"
-	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
-	traits = { seawolf old_guard_navy }
-	skill = 1
-}
-create_navy_leader = {
-	name = "Chagnaud de Andrade"
+	name = " Alberto, Álvaro"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
 	traits = { }
 	skill = 1
 }
 create_navy_leader = {
-	name = "do Gusmao Camara"
+	name = "o Cabo, Álvaro d"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_3.dds"
 	traits = { }
 	skill = 1
 }
 create_navy_leader = {
-	name = "do Henrique Vieja"
+	name = "Silva, Cantanero da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
-	traits = { blockade_runner old_guard_navy }
+	traits = { old_guard_navy seawolf }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Fernandes Pereira"
+	name = "Andrade, Chagnaud de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
 	traits = { }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Guilhem do Marais"
+	name = "Gusmao Camara, do"
+	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_3.dds"
+	traits = { }
+	skill = 1
+}
+create_navy_leader = {
+	name = " Henrique Vieja, do"
+	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
+	traits = { old_guard_navy blockade_runner }
+	skill = 1
+}
+create_navy_leader = {
+	name = "Pereira, Fernandes"
+	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
+	traits = { }
+	skill = 1
+}
+create_navy_leader = {
+	name = " Marais, Guilhem do"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_3.dds"
 	traits = { superior_tactician }
 	skill = 2
 }
 create_navy_leader = {
-	name = "Loesch Soares"
+	name = "Soares, Loesch"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
 	traits = { spotter }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Macedo Corrêa Pinto"
+	name = "Pinto, Macedo Corrêa"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
 	traits = { spotter }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Moraes Rego"
+	name = "Rego, Moraes"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_3.dds"
 	traits = { }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Padilha"
+	name = "Padilha, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
 	traits = { }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Peixoto"
+	name = "Peixoto, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
-	traits = { spotter old_guard_navy }
+	traits = { old_guard_navy spotter }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Pinhas"
+	name = "Pinhas, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_3.dds"
 	traits = { seawolf }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Simoes da Silva"
+	name = "Silva, Simoes da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
-	traits = { superior_tactician old_guard_navy }
+	traits = { old_guard_navy superior_tactician }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Tavares da Cunhã"
+	name = "Cunhã, Tavares da"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
 	traits = { seawolf }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Vidigál"
+	name = "Vidigál, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_3.dds"
 	traits = { }
 	skill = 1
 }
 create_navy_leader = {
-	name = "de Noronha"
+	name = "Noronha, de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
 	traits = { }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Faria de Alencar"
+	name = " Alencar, Faria de"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
-	traits = { spotter old_guard_navy }
+	traits = { old_guard_navy spotter }
 	skill = 1
 }
-
-
-
+##### Ship variants #####
 ### Equipment ###
 create_equipment_variant = {
 	name = "Almirante Barrozo Class"
@@ -971,4 +1243,4 @@ create_equipment_variant = {
 	}
 	obsolete = yes
 }
-#EOF#
+### EOF ###

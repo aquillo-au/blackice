@@ -2,9 +2,7 @@
 
 oob = "BUL_1936"
 
-add_ideas = {
-	cons_one
-}
+set_convoys = 25
 
 set_technology = {
 	BICE_sub_balance = 1
@@ -12,7 +10,6 @@ set_technology = {
 ################# infantry ###############
 	tech_infantry_uniforms = 1
 	infantry_weapons = 1
-	
 	tech_Garrison = 1
 	tech_Headquarters = 1
 	################## support ##################
@@ -21,7 +18,6 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	################## artillery ###############
-	
 	################## armor ##############
 	generic_armor_axis = 1
 	#axis_captured_armor_tech = 1
@@ -34,24 +30,69 @@ set_technology = {
 	generic_submarine = 1
 	generic_naval = 1
 	############### economy ############
-	
+	############### WW1 doctrines ############
 	ww1_infantry = 1
 	infantry_charge = 1
-	
 	complex_trench_systems = 1
-	
 	ww1_artillery = 1
-	
 	foot_runners = 1
-	
 	mobile_doctrines = 1
 	cavalry_charges = 1
 	cavalry_dismounting = 1
-	
-
 	ww1_battlefield_support = 1
 }
 
+add_ideas = { 	
+	export_focus
+	tax_low
+	tariffs_average
+	
+	civilian_economy
+	press_regulated
+	key_industries
+	labor_none
+	fdi_allowed
+	
+	cons_one
+	foreign_volunteers
+	mob_reserve
+	train_none
+	age_19
+	officer_train_none
+	security_minor_restrictions
+	edu_minimal
+	
+	unity_united_nation		
+	foreign_isolationism
+	neutrality_idea
+}
+set_politics = {
+
+	parties = {
+		conservatism = { 
+			popularity = 5
+		}
+		fascism = {
+			popularity = 30
+		}
+		communism = {
+			popularity = 2
+			banned = yes
+		}
+		monarchism = { 
+			popularity = 60
+		}
+		neutrality = { 
+			popularity = 3
+		}
+	}
+	
+	ruling_party = monarchism
+	last_election = "1931.6.21"
+	election_frequency = 48
+	elections_allowed = no
+}
+##### 1939 #####
 1939.1.1 = {
 
 	add_political_power = 1198
@@ -67,6 +108,7 @@ set_technology = {
 	complete_national_focus = production_effort
 	
 	oob = "BUL_1939"
+	
 	set_technology = {
 		fighter1 = 1
 		early_bomber = 1
@@ -109,76 +151,16 @@ set_technology = {
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
-}
-
-set_convoys = 25
-add_ideas = { 	
-		export_focus
-		tax_low
-		tariffs_average
-		
-		civilian_economy
-		press_regulated
-		key_industries
-		labor_none
-		fdi_allowed
-		
-		cons_volunteer
-		foreign_volunteers
-		mob_reserve
-		train_none
-		age_19
-		officer_train_none
-		security_minor_restrictions
-		edu_minimal
-		
-		unity_united_nation		
-		foreign_isolationism
-		neutrality_idea
-}
-set_politics = {
-
-	parties = {
-		conservatism = { 
-			popularity = 5
-		}
-
-		fascism = {
-			popularity = 30
-		}
-		
-		communism = {
-			popularity = 2
-			banned = yes
-		}
-		monarchism = { 
-			popularity = 60
-		}
-		
-		neutrality = { 
-			popularity = 3
-		}		
-		
-	}
 	
-	ruling_party = monarchism
-	last_election = "1931.6.21"
-	election_frequency = 48
-	elections_allowed = no
-}
-
-1939.1.1 = {
 	set_politics = {
 
 		parties = {
 			conservatism = { 
 				popularity = 5
 			}
-
 			fascism = {
 				popularity = 35
 			}
-			
 			communism = {
 				popularity = 0
 				banned = yes
@@ -198,7 +180,7 @@ set_politics = {
 		elections_allowed = no
 	}
 }
-
+##### Country Leaders #####
 create_country_leader = {
 	name = "Boris III"
 	desc = "POLITICS_BORIS_III_DESC"
@@ -206,7 +188,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology =  absolutism
 	traits = {
-		#
 	}
 }
 create_country_leader = {
@@ -216,7 +197,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = leninism
 	traits = {
-		#
 	}
 }
 create_country_leader = {
@@ -226,7 +206,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = social_democracy
 	traits = {
-		#
 	}
 }
 create_country_leader = {
@@ -236,285 +215,404 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		#
 	}
 }
-
+##### Field Marshals #####
 create_field_marshal = {
-	name = "Georgi Nikolov Popov"
-	
+	name = "Popov, Georgi Nikolov"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Decent_General defensive_doctrine_FM }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
 }
-
+##### Corps Commanders #####
 create_corps_commander = {
 	name = "Atanasov"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
+##### Corps Commanders #####
 create_corps_commander = {
-	name = "Bakyrdjiev"
+	name = "Bakyrdjiev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
-	traits = { Awesome_General logistics_wizard_CC old_guard }
+	traits = { old_guard Awesome_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Boratchev"
+	name = "Boratchev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Boris III"
+	name = "Boris III, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	
-	name = "Vasil Tenev Boydev"
-	
+	name = "Boydev, Vasil Tenev"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
-	
-	traits = { panzer_leader }
+	traits = { armor_officer }
 	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
 }
-
 create_corps_commander = {
-	name = "Bylgaranov"
+	name = "Bylgaranov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Decent_General commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
 	name = "Daskalov"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Dilchovski"
+	name = "Dilchovski, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
 	name = "Dotcev"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Ganev  S."
+	name = "Ganev, S."
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Ganev  T."
+	name = "Ganev, T."
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Gentchev"
+	name = "Gentchev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Georgiev  T."
+	name = "Georgiev, T."
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Georgiev  Z."
+	name = "Georgiev, Z."
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Grekov"
+	name = "Grekov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Hadjiivanov"
+	name = "Hadjiivanov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
 	name = "Hadjipetkov"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Iliev"
+	name = "Iliev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Iovov"
+	name = "Iovov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
-	traits = { Bad_General logistics_wizard_CC old_guard }
+	traits = { old_guard Bad_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Ivanov"
+	name = "Ivanov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 
 create_corps_commander = {
-	name = "Kinov"
+	name = "Kinov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Kiril Preslavski"
+	name = "Preslavski, Kiril"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Kisiov"
+	name = "Kisiov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
-	traits = { Decent_General fortress_buster old_guard }
+	traits = { old_guard Decent_General fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
-
 create_corps_commander = {
-	name = "Koptchev"
+	name = "Koptchev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
-	traits = { Decent_General fortress_buster old_guard }
+	traits = { old_guard Decent_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Kozovski"
+	name = "Kozovski, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Decent_General commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Krystev"
+	name = "Krystev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Lukash"
+	name = "Lukash, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Lukov"
+	name = "Lukov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Competent_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 
 create_corps_commander = {
-	name = "Marinkov"
+	name = "Marinkov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	traits = { Bad_General logistics_wizard_CC old_guard }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Marinov  Il."
+	name = "Marinov, Il."
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Marinov  I.V."
+	name = "Marinov, I.V."
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Markov"
+	name = "Markov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Martchev"
+	name = "Martchev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Midilev"
+	name = "Midilev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	traits = { Competent_General fortress_buster old_guard }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 
 create_corps_commander = {
-	name = "Mihov"
+	name = "Mihov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Mintchev"
+	name = "Mintchev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Murnov"
+	name = "Murnov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 
 create_corps_commander = {
-	name = "Nikolov  A."
+	name = "Nikolov, A."
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 
 create_corps_commander = {
@@ -522,278 +620,360 @@ create_corps_commander = {
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Novakov"
+	name = "Novakov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Peev"
+	name = "Peev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Pironkov"
+	name = "Pironkov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Popov  D."
+	name = "Popov, D."
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Bad_General trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
-
 create_corps_commander = {
-	name = "Radev"
+	name = "Radev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
-	traits = { Decent_General logistics_wizard_CC old_guard }
+	traits = { old_guard Decent_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Radojnov"
+	name = "Radojnov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Bad_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Rogosarski"
+	name = "Rogosarski, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Russev"
+	name = "Russev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Sapov"
+	name = "Sapov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Simov"
+	name = "Simov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Sirakov"
+	name = "Sirakov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Slavkov"
+	name = "Slavkov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Spasov"
+	name = "Spasov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
 	name = "Stanchev"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Stoichev"
+	name = "Stoichev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Awesome_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
-
 create_corps_commander = {
-	name = "Taralejkov"
+	name = "Taralejkov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Terziev"
+	name = "Terziev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Toshev"
+	name = "Toshev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Trendafilov"
+	name = "Trendafilov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
-	traits = { Decent_General panzer_leader }
+	traits = { Decent_General armor_officer }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
 }
-
 create_corps_commander = {
-	name = "Trifonov"
+	name = "Trifonov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Trynski"
+	name = "Trynski, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Competent_General trickster_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Tsanev"
+	name = "Tsanev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Urumov"
+	name = "Urumov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
 	name = "Vatev"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
-	traits = { Bad_General defensive_doctrine_CC old_guard }
+	traits = { old_guard Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Vulkov"
+	name = "Vulkov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_5.dds"
 	traits = { Competent_General defensive_doctrine_CC old_guard }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
-
 create_corps_commander = {
-	name = "Yanchulev"
+	name = "Yanchulev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Zaimov"
+	name = "Zaimov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Competent_General fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Zakhariev"
+	name = "Zakhariev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
-	name = "Zlatev"
+	name = "Zlatev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_4.dds"
-	traits = { Competent_General offensive_doctrine_CC old_guard }
+	traits = { old_guard Competent_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
-
+##### Navy Leaders #####
 create_navy_leader = {
-	name = "Atanassov"
+	name = "Atanassov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_1.dds"
 	traits = { }
 	skill = 1
 }
-
 create_navy_leader = {
-	name = "Gregoriev"
+	name = "Gregoriev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_2.dds"
 	traits = { }
 	skill = 1
 }
-
 create_navy_leader = {
 	name = "Ivanov"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_3.dds"
-	traits = { old_guard }
+	traits = { old_guard_navy }
 	skill = 1
 }
-
 create_navy_leader = {
-	name = "Khalatchev"
+	name = "Khalatchev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_1.dds"
 	traits = { }
 	skill = 1
 }
-
 create_navy_leader = {
-	name = "Petsov"
+	name = "Petsov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_2.dds"
 	traits = { }
 	skill = 1
 }
-
 create_navy_leader = {
-	name = "Shalapatov"
+	name = "Shalapatov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_3.dds"
 	traits = { seawolf }
 	skill = 1
 }
-
 create_navy_leader = {
-	name = "Toshev"
+	name = "Toshev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_1.dds"
 	traits = { }
 	skill = 1
 }
-
 create_navy_leader = {
-	name = "Tzanev"
+	name = "Tzanev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_2.dds"
 	traits = { superior_tactician }
 	skill = 1
 }
-
 create_navy_leader = {
-	name = "Variclechkov"
+	name = "Variclechkov, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_3.dds"
 	traits = { old_guard blockade_runner }
 	skill = 1
 }
-
 create_navy_leader = {
-	name = "Zigrafiev"
+	name = "Zigrafiev, "
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_1.dds"
 	traits = { }
 	skill = 1
 }
+### EOF ###

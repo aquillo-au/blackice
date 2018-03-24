@@ -9,7 +9,6 @@ set_technology = {
 	################# infantry ###############
 	tech_infantry_uniforms = 1
 	infantry_weapons = 1
-	
 	tech_Garrison = 1
 	tech_Headquarters = 1
 	################## support ##################
@@ -31,49 +30,69 @@ set_technology = {
 	generic_submarine = 1
 	generic_naval = 1
 	############### economy ############
-	
+	############### WW1 doctrines ############
 	ww1_infantry = 1
 	infantry_charge = 1
-	
 	complex_trench_systems = 1
-	
 	ww1_artillery = 1
-	
 	foot_runners = 1
-	
 	mobile_doctrines = 1
 	cavalry_charges = 1
 	cavalry_dismounting = 1
-	
-
 	ww1_battlefield_support = 1
-	
 }
-set_country_flag = monroe_doctrine
+
 add_ideas = { 	
-		export_focus
-		tax_low
-		tariffs_average
-		
-		civilian_economy
-		press_regulated
-		key_industries
-		labor_none
-		fdi_allowed
-		
-		cons_volunteer
-		foreign_volunteers
-		mob_reserve
-		train_none
-		age_19
-		officer_train_none
-		security_minor_restrictions
-		edu_minimal
-		
-		unity_united_nation		
-		foreign_isolationism
-		neutrality_idea
+	export_focus
+	tax_low
+	tariffs_average
+	
+	civilian_economy
+	press_regulated
+	key_industries
+	labor_none
+	fdi_allowed
+	
+	cons_volunteer
+	foreign_volunteers
+	mob_reserve
+	train_none
+	age_19
+	officer_train_none
+	security_minor_restrictions
+	edu_minimal
+	
+	unity_united_nation		
+	foreign_isolationism
+	neutrality_idea
 }
+
+set_politics = {
+
+	parties = {
+		conservatism = { 
+			popularity = 0
+		}
+		fascism = {
+			popularity = 0
+		}
+		communism = {
+			popularity = 0
+		}
+		neutrality = { 
+			popularity = 100
+		}
+	}
+	
+	ruling_party = neutrality
+	last_election = "1934.11.11"
+	election_frequency = 72
+	elections_allowed = yes
+}
+
+set_country_flag = monroe_doctrine
+
+##### 1939 #####
 1939.1.1 = {
 
 	add_political_power = 1198
@@ -91,6 +110,7 @@ add_ideas = {
 	complete_national_focus = production_effort
 	
 	oob = "BOL_1939"
+	
 	set_technology = {
 		interwar_artillery = 1
 		infantry_weapons1 = 1
@@ -125,83 +145,30 @@ add_ideas = {
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
-}
-
-set_politics = {
-
-	parties = {
-		conservatism = { 
-			popularity = 0
-		}
-
-		fascism = {
-			popularity = 0
-		}
-		
-		communism = {
-			popularity = 0
-		}
-		
-		neutrality = { 
-			popularity = 100
-		}
-	}
 	
-	ruling_party = neutrality
-	last_election = "1934.11.11"
-	election_frequency = 72
-	elections_allowed = yes
-}
-
-create_country_leader = {
-	name = "José Luis Tejada Sorzano"
-	desc = "POLITICS_JOSE_LUIS_TEJADA_SORZANO_DESC"
-	picture = "Portrait_Bolivia_Jose_Luis_Tejada_Sorzano.dds"
-	expire = "1965.1.1"
-	ideology = despotism # liberalism, personally, but puppet for military
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Óscar Únzaga de la Vega"
-	desc = "POLITICS_OSCAR_UNZAGA_DESC"
-	picture = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
-	expire = "1965.1.1"
-	ideology = falangism
-	traits = {
-		#
-	}
-}
-
-1939.1.1 = {
 	set_politics = {
 
 		parties = {
-		conservatism = { 
-			popularity = 0
+			conservatism = { 
+				popularity = 0
+			}
+			fascism = {
+				popularity = 0
+			}
+			communism = {
+				popularity = 0
+			}
+			neutrality = { 
+				popularity = 100
+			}
 		}
-
-		fascism = {
-			popularity = 0
-		}
-		
-		communism = {
-			popularity = 0
-		}
-		
-		neutrality = { 
-			popularity = 100
-		}
-	}
 	
-	ruling_party = neutrality
+		ruling_party = neutrality
 		last_election = "1934.11.11"
 		election_frequency = 72
 		elections_allowed = yes
 	}
-
+	##### Country Leaders #####
 	create_country_leader = {
 		name = "Carlos Quintanilla"
 		desc = "POLITICS_CARLOS_QUINTANILLA_DESC"
@@ -209,178 +176,293 @@ create_country_leader = {
 		expire = "1965.1.1"
 		ideology = oligarchism
 		traits = {
-			#
 		}
 	}
 }
-
+##### Country Leaders #####
+create_country_leader = {
+	name = "José Luis Tejada Sorzano"
+	desc = "POLITICS_JOSE_LUIS_TEJADA_SORZANO_DESC"
+	picture = "Portrait_Bolivia_Jose_Luis_Tejada_Sorzano.dds"
+	expire = "1965.1.1"
+	ideology = despotism # liberalism, personally, but puppet for military
+	traits = {
+	}
+}
+create_country_leader = {
+	name = "Óscar Únzaga de la Vega"
+	desc = "POLITICS_OSCAR_UNZAGA_DESC"
+	picture = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
+	expire = "1965.1.1"
+	ideology = falangism
+	traits = {
+	}
+}
+##### Field Marshals #####
+##### Corps Commanders #####
 create_corps_commander = {
-	name = "Arandos Villa"
+	name = "Villa, Arandos"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Incompetent_General commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Ballivián Rojas"
+	name = "Rojas, Ballivián"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Bad_General fortress_buster }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Bilbao Roja"
+	name = "Roja, Bilbao"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Bad_General commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Blanco Galindo"
+	name = " Galindo, Blanco"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Terrible_General panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Busch Beccera"
+	name = "Beccera, Busch"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Decent_General trickster_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Chacón Morales"
+	name = " Morales, Chacón"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Terrible_General commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Eduardo Sanchéz"
+	name = "Sanchéz, Eduardo"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Terrible_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Franco Rafél"
+	name = "Rafél, Franco"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Terrible_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Kundt"
+	name = "Kundt, "
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Terrible_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Limár Lanza"
+	name = "Lanza, Limár"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Terrible_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Lopez y Lopez"
+	name = "Lopez, Lopez y"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Terrible_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Marzana Reyés"
+	name = "Reyés, Marzana"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Decent_General trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Monje Guiterrez"
+	name = " Guiterrez, Monje"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Bad_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Montalvo Ruiz"
+	name = " Ruiz, Montalvo"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Terrible_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Morales Jauregi"
+	name = "s Jauregi, Morale"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Terrible_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Ovando Candia"
+	name = " Candia, Ovando"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Terrible_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Pastor Baldiviseo"
+	name = "Baldiviseo, Pastor"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Terrible_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Peñaranda del Castillo"
+	name = "Castillo, Peñaranda del"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Terrible_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Pinto Sanchez"
+	name = "Sanchez, Pinto"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Quintanilla Quiroga"
+	name = " Quiroga, Quintanilla"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_5.dds"
 	traits = { Terrible_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 2
 }
 create_corps_commander = {
-	name = "Salinas Arromayo"
+	name = "Arromayo, Salinas"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
 	traits = { Terrible_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Toro Ruilova"
+	name = "Ruilova, Toro"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 	traits = { Terrible_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Villa Gutierrez"
+	name = "Gutierrez, Villa"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 	traits = { Terrible_General commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
-	name = "Villarroel Lopez"
+	name = "Lopez, Villarroel"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
 	traits = { Bad_General trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
-
+##### Navy Leaders #####
 create_navy_leader = {
-	name = "Arancha Basutto"
+	name = "Basutto, Arancha"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
 	traits = { seawolf }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Arandos Villa"
+	name = "Villa, Arandos"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
 	traits = { }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Ibarra Juarez"
+	name = "Juarez, Ibarra"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_3.dds"
 	traits = { }
 	skill = 1
 }
 create_navy_leader = {
-	name = "Marzana Reyés"
+	name = "Reyés, Marzana"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
 	traits = { old_guard_navy }
 	skill = 1
 }
+### EOF ###
