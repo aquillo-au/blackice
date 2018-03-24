@@ -1,5 +1,11 @@
 ﻿capital = 64
 
+set_research_slots = 4
+
+set_convoys = 50
+
+set_stability = 0.7
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
@@ -53,46 +59,61 @@ set_technology = {
 	generic_submarine = 1
 }
 
-
-
-
-
-set_research_slots = 4
-set_convoys = 50
-set_stability = 0.7
 add_ideas = { 	
-		export_focus
-		tax_low
-		tariffs_average
-		
-		civilian_economy
-		press_censored
-		security_police_state 
-		key_industries
-		labor_none
-		fdi_encouraged
-		
-		cons_two
-		foreign_volunteers
-		mob_standing
-		train_none
-		officer_train_low
-		age_17
+	export_focus
+	tax_low
+	tariffs_average
+	
+	civilian_economy
+	press_censored
+	security_police_state 
+	key_industries
+	labor_none
+	fdi_encouraged
+	
+	cons_two
+	foreign_volunteers
+	mob_standing
+	train_none
+	officer_train_low
+	age_17
 
-		edu_minimal
-		
-		unity_divided_nation		
-		foreign_cooperative
-		neutrality_idea
+	edu_minimal
+	
+	unity_divided_nation		
+	foreign_cooperative
+	neutrality_idea
 }
+
+set_politics = {
+
+	parties = {
+		conservatism = { 
+			popularity = 30
+		}
+		fascism = {
+			popularity = 10
+		}
+		communism = {
+			popularity = 60
+			banned = no #default is no
+		}
+	}
+	
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+
+}
+
+##### 1939 #####
 1939.1.1 = {
 
 	add_political_power = 1197
 	
-
 	#BUILDINGS
 	
-
 	set_technology = {
 		improved_light_tank = 1 
 		basic_medium_tank = 1 
@@ -152,46 +173,15 @@ add_ideas = {
 
 	}
 }
-
-set_politics = {
-
-	parties = {
-		conservatism = { 
-			popularity = 30
-		}
-
-		fascism = {
-			popularity = 10
-		}
-		
-		communism = {
-			popularity = 60
-			banned = no #default is no
-		}
-	}
-	
-	ruling_party = communism
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = yes
-
-}
-
-
-add_ideas = {
-}
-
+##### Country Leaders #####
 create_country_leader = {
 	name = "Jake Richter"
 	desc = ""
 	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
-	traits = {
-		political_dancer		
-	}
+	traits = { political_dancer	}
 }
-
 #create_country_leader = {
 #	name = "Dennis Fredauer"
 #	desc = ""
@@ -201,47 +191,31 @@ create_country_leader = {
 #	traits = {
 #	}
 #}
-#
 create_country_leader = {
 	name = "Wilhelm Pieck"
 	desc = "POLITICS_WILHELM_PIECK_DESC"	 
 	picture = gfx/leaders/GER/Portrait_Germany_Wilhelm_Pieck.dds
 	expire = "1965.1.1"
 	ideology = stalinism
-	traits = {
-		stalins_puppet
-		exiled
-	}
+	traits = { stalins_puppet exiled }
 }
-
 #create_country_leader = {
 #	name = "Otto Wels"
 #	desc = "POLITICS_OTTO_WELS_DESC"
 #	picture = "Portrait_Germany_Adolf_Hitler.dds"
 #	expire = "1939.1.16"
 #	ideology = socialism
-#	traits = {
-#		exiled
-#		union_man
-#	}
+#	traits = { exiled union_man }
 #}
-#
 #create_country_leader = {
 #	name = "Ernst Thälmann"
 #	desc = "POLITICS_ERNST_THALMANN_DESC"
 #	picture = "Portrait_Germany_Adolf_Hitler.dds"
 #	expire = "1956.1.1"
 #	ideology = stalinism
-#	traits = {
-#		assassination_survivor
-#		stalins_puppet
-#		political_prisoner
-#	}
+#	traits = { assassination_survivor stalins_puppet political_prisoner }
 #}
-
-
-### Ship Variants ###
-
+##### Ship Variants #####
 ### Ship Variants ###
 ## 1936 Start ##
 ### BICE Variants ####
@@ -270,8 +244,7 @@ create_equipment_variant = {
 		ship_barrels_upgrade = 4
 	}
 }
-
-## 1939 Start ##
+##### 1939 Start #####
 1939.1.1 = {
 	# Submarines #
 	create_equipment_variant = {
@@ -311,3 +284,4 @@ create_equipment_variant = {
 	#	obsolete = yes
 	#}
 }
+### EOF ###
