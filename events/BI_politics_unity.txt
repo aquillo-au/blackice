@@ -466,7 +466,7 @@ country_event = {
 	picture = GFX_report_event_protest
 	
 	trigger = {
-		has_stability < 65
+		has_stability < 0.65
 		has_idea = unity_united_nation
 		has_country_flag = nation_united
 	}
@@ -479,7 +479,7 @@ country_event = {
 		name = politics.22.a
 		
 		trigger = { 
-			has_stability > 40
+			has_stability > 0.40
 		}
 		
 		add_political_power = -10
@@ -544,8 +544,8 @@ country_event = {
 		name = politics.22.b
 		
 		trigger = {
-			has_stability < 41
-			has_stability > 20
+			has_stability < 0.41
+			has_stability > 0.20
 		}
 		
 		add_political_power = -30
@@ -610,7 +610,7 @@ country_event = {
 		name = politics.22.c
 		
 		trigger = {
-			has_stability < 21
+			has_stability < 0.21
 		}
 		
 		add_political_power = -50
@@ -680,8 +680,8 @@ country_event = {
 	
 	trigger = {
 		OR = {
-			has_stability > 65
-			has_stability < 40
+			has_stability > 0.65
+			has_stability < 0.40
 		}
 		has_idea = unity_divided_nation
 		has_country_flag = nation_divided
@@ -695,7 +695,7 @@ country_event = {
 		name = politics.23.a
 		
 		trigger = { 
-			has_stability > 65
+			has_stability > 0.65
 		}
 		
 		add_political_power = 20
@@ -760,8 +760,8 @@ country_event = {
 		name = politics.23.b
 		
 		trigger = {
-			has_stability < 40
-			has_stability > 20
+			has_stability < 0.40
+			has_stability > 0.20
 		}
 		
 		add_political_power = -10
@@ -826,7 +826,7 @@ country_event = {
 		name = politics.23.c
 		
 		trigger = {
-			has_stability < 21
+			has_stability < 0.21
 		}
 		
 		add_political_power = -30
@@ -896,8 +896,8 @@ country_event = {
 	
 	trigger = {
 		OR = {
-			has_stability > 40
-			has_stability < 20
+			has_stability > 0.40
+			has_stability < 0.20
 		}
 		#has_idea = unity_broken_nation
 		has_country_flag = nation_chaos
@@ -911,7 +911,7 @@ country_event = {
 		name = politics.24.a
 		
 		trigger = { 
-			has_stability > 65
+			has_stability > 0.65
 		}
 		
 		add_political_power = 30
@@ -975,8 +975,8 @@ country_event = {
 		name = politics.24.b
 		
 		trigger = {
-			has_stability < 66
-			has_stability > 40
+			has_stability < 0.66
+			has_stability > 0.40
 		}
 		
 		add_political_power = 10
@@ -1041,7 +1041,7 @@ country_event = {
 		name = politics.24.c
 		
 		trigger = {
-			has_stability < 20
+			has_stability < 0.20
 		}
 		
 		add_political_power = -20
@@ -1110,7 +1110,7 @@ country_event = {
 	picture = GFX_report_event_polish_resistance4
 	
 	trigger = {
-		has_stability > 20
+		has_stability > 0.20
 		has_idea = unity_civil_war
 		has_country_flag = nation_civil_war
 	}
@@ -1123,7 +1123,7 @@ country_event = {
 		name = politics.25.a
 		
 		trigger = { 
-			has_stability > 65
+			has_stability > 0.65
 		}
 		
 		add_political_power = 50
@@ -1187,8 +1187,8 @@ country_event = {
 		name = politics.25.b
 		
 		trigger = {
-			has_stability < 65
-			has_stability > 40
+			has_stability < 0.65
+			has_stability > 0.40
 		}
 		
 		add_political_power = 20
@@ -1253,8 +1253,8 @@ country_event = {
 		name = politics.25.c
 		
 		trigger = {
-			has_stability < 40
-			has_stability > 20
+			has_stability < 0.40
+			has_stability > 0.20
 		}
 		
 		add_political_power = 10
@@ -2344,15 +2344,15 @@ country_event = {
 	
 	option = {
 		name = politics.941.a
-		trigger = { has_stability > 65 }
+		trigger = { has_stability > 0.65 }
 		add_ideas = unity_united_nation
 		set_country_flag = nation_united
 	}
 	option = {
 		name = politics.941.b
 		trigger = { 
-			has_stability < 65
-			has_stability > 40
+			has_stability < 0.65
+			has_stability > 0.40
 			}
 		add_ideas = unity_divided_nation
 		set_country_flag = nation_divided
@@ -2360,8 +2360,8 @@ country_event = {
 	option = {
 		name = politics.941.c
 		trigger = { 
-			has_stability < 40
-			has_stability > 20
+			has_stability < 0.40
+			has_stability > 0.20
 			}
 		add_ideas = unity_broken_nation
 		set_country_flag = nation_chaos
@@ -2369,7 +2369,7 @@ country_event = {
 	option = {
 		name = politics.941.d
 		trigger = { 
-			has_stability < 20
+			has_stability < 0.20
 
 			}
 		add_ideas = unity_civil_war
