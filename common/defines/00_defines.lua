@@ -695,6 +695,16 @@ NMilitary = {
 	ATTACHED_WINGS_ORDER_UPDATE_DAYS = 5,					-- Days untill the attached wing will update the order
 	
 	BORDER_WAR_WIN_DAYS_AGAINST_EMPTY_OPPONENTS = 14,		-- border wars will be automatically won if no opponent shows up for this duration
+
+	
+	MAX_RELATIVE_COMBAT_DAMAGE_TO_MODIFY_XP = 4.0,			-- you gain more XP if you are doing more damage relative to enemy, this is the max relative amount to gain following RATe
+	XP_GAIN_FACTOR_FOR_MAX_RELATIVE_COMBAT_DAMAGE = 4.0,	-- XP factor scaling for max relative combat damage
+	
+	XP_DECAY_RATE_PER_HOUR_IN_COMBAT = 0.03,				-- you get reduced XP as combat drags
+	MIN_XP_RATE_TO_DECAY = 0.1,								-- minimum XP factor for dragged combats
+	
+	XP_GAIN_PER_OVERRUN_UNIT = 30.0,						-- fixed XP gain per overrun unit
+	XP_GAIN_FOR_SHATTERING = 10.0,                          -- extra multiplier on XP gain on shattering an encircled enemy
 },
 
 
@@ -789,6 +799,14 @@ NAir = {
 	AIR_MORE_GROUND_CREWS_COST = 20.0,					-- CP cost to maintain more ground crews
 	AIR_MORE_GROUND_CREWS_BOOST = 0.1,					-- Efficienct boost for more ground crews
 	
+	EFFICIENCY_REGION_CHANGE_PENALTY_FACTOR = 0.9,				-- Penalty applied for changing region
+	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_DEFAULT = 1,	-- Default how much efficiency to regain per day. Gain applied hourly.
+	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_CAS = 0.9,				-- How much efficiency to regain per day. Gain applied hourly.
+	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_NAVAL_BOMBER = 0.2,		-- How much efficiency to regain per day. Gain applied hourly.
+	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_TACTICAL_BOMBER = 0.2,	-- How much efficiency to regain per day. Gain applied hourly.
+	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_FIGHTER = 0.9,			-- How much efficiency to regain per day. Gain applied hourly.
+	EFFICIENCY_REGION_CHANGE_DAILY_GAIN_STRATEGIC_BOMBER = 0.072,	-- How much efficiency to regain per day. Gain applied hourly.
+
 	DISRUPTION_FACTOR = 2.0,							-- multiplier on disruption damage to scale its effects on planes
 	DISRUPTION_SPEED_FACTOR = 1.0,
 	DISRUPTION_AGILITY_FACTOR = 0.0,
