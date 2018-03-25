@@ -2,6 +2,18 @@
 
 oob = "GER_1936"
 
+set_research_slots = 7
+
+set_convoys = 400
+
+set_stability = 0.9
+
+set_war_support = 0.3
+
+set_variable = { var = wehrmacht_anger value = 0 }
+
+set_variable = { var = ss_anger value = 0 }
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
@@ -225,47 +237,6 @@ set_technology = {
 	formation_flying = 1
 }
 
-set_research_slots = 7
-set_convoys = 400
-set_stability = 0.9
-
-#Trade
-create_import = {
-	resource = tungsten
-	amount = 8
-	exporter = SWE
-}
-
-set_politics = {
-
-	parties = {
-		conservatism = { 
-			popularity = 5
-		}
-		liberalism = { 
-			popularity = 2
-		}
-		socialism = { 
-			popularity = 7
-		}
-		fascism = {
-			popularity = 83
-		}
-		communism = {
-			popularity = 3
-			banned = yes #default is no
-		}
-	}
-	
-	ruling_party = fascism
-	last_election = "1933.3.5"
-	election_frequency = 48
-	elections_allowed = no
-}
-
-create_faction = Axis
-add_to_faction = GER
-
 add_ideas = {
 	sour_loser
 	general_staff
@@ -312,6 +283,43 @@ add_ideas = {
 	placeholder_feature_unused_4
 }
 
+#Trade
+create_import = {
+	resource = tungsten
+	amount = 8
+	exporter = SWE
+}
+
+create_faction = Axis
+add_to_faction = GER
+
+set_politics = {
+
+	parties = {
+		conservatism = { 
+			popularity = 5
+		}
+		liberalism = { 
+			popularity = 2
+		}
+		socialism = { 
+			popularity = 7
+		}
+		fascism = {
+			popularity = 83
+		}
+		communism = {
+			popularity = 3
+			banned = yes #default is no
+		}
+	}
+	
+	ruling_party = fascism
+	last_election = "1933.3.5"
+	election_frequency = 48
+	elections_allowed = no
+}
+
 set_country_flag = mob_standing
 set_country_flag = foreign_warmonger
 set_country_flag = Tax_high
@@ -331,16 +339,14 @@ set_country_flag = security_police_state
 set_country_flag = goering_powerful
 set_country_flag = himmler_powerful
 
+##### Country Leaders #####
 create_country_leader = {
 	name = "Adolf Hitler"
 	desc = "POLITICS_ADOLF_HITLER_DESC"
 	picture = "Portrait_Germany_Adolf_Hitler.dds"
 	expire = "1965.1.1"
 	ideology = nazism
-	traits = {
-		a_hitler
-		charismatic
-	}
+	traits = { a_hitler charismatic }
 }
 create_country_leader = {
 	name = "Konrad Adenauer"
@@ -348,10 +354,7 @@ create_country_leader = {
 	picture = "Portrait_Germany_Konrad_Adenauer.dds"
 	expire = "1965.1.1"
 	ideology = moderate
-	traits = {
-		conservative
-		coalition_builder
-	}
+	traits = { conservative coalition_builder }
 }
 #create_country_leader = {
 #	name = "Wilhelm Pieck"
@@ -359,10 +362,7 @@ create_country_leader = {
 #	picture = "Portrait_Germany_Wilhelm_Pieck.dds"
 #	expire = "1965.1.1"
 #	ideology = stalinism
-#	traits = {
-#		stalins_puppet
-#		exiled
-#	}
+#	traits = { stalins_puppet exiled }
 #}
 create_country_leader = {
 	name = "Otto Wels"
@@ -370,10 +370,7 @@ create_country_leader = {
 	picture = "portrait_germany_otto_wels.dds"
 	expire = "1939.1.16"
 	ideology = social_democracy
-	traits = {
-		socialist
-		union_man
-	}
+	traits = { socialist union_man }
 }
 create_country_leader = {
 	name = "Wilhelm III"
@@ -381,10 +378,7 @@ create_country_leader = {
 	picture = "gfx/leaders/GER/Portrait_Germany_Wilhelm_III.dds"
 	expire = "1951.7.20"
 	ideology = imperial
-	traits = {
-		monarchist
-		inexperienced_amateur
-	}
+	traits = { monarchist inexperienced_amateur }
 }
 create_country_leader = {
 	name = "Ernst Thälmann"
@@ -392,109 +386,168 @@ create_country_leader = {
 	picture = "Portrait_Germany_Adolf_Hitler.dds"
 	expire = "1956.1.1"
 	ideology = stalinism
-	traits = {
-		communist
-		dictator
-		stalins_puppet
-	}
+	traits = { communist dictator stalins_puppet }
 }
-
+##### Namespace #####
 add_namespace = {
 	name = "ger_unit_leader"
 	type = unit_leader
 }
-
+##### Field Marshals #####
 create_field_marshal = {
+	name = "Blomberg, Werner E.F. von"
+	picture = "Portrait_Germany_Gerd_von_Rundstedt.dds"
+	traits = { GER_tag Competent_General career_officer Pour_le_Merite }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
+	id = 21
+}
+##### Corps Commanders #####
+create_corps_commander = {
 	name = "Rundstedt, Gerd von"
 	picture = "Portrait_Germany_Gerd_von_Rundstedt.dds"
-	traits = { GER_tag Iron_Cross defensive_doctrine_FM offensive_doctrine_FM Masterful_General }
+	traits = { GER_tag Iron_Cross Masterful_General defensive_doctrine_CC offensive_doctrine_CC }
 	skill = 4
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
 	id = 1
 }
-create_field_marshal = {
+create_corps_commander = {
 	name = "Kluge, Günther von"
 	picture = "Portrait_Germany_Gunther_von_Kluge.dds"
-	traits = { GER_tag Iron_Cross offensive_doctrine_FM Awesome_General }
+	traits = { GER_tag Iron_Cross Awesome_General offensive_doctrine_CC }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
 	id = 2
 }
-create_field_marshal = {
+create_corps_commander = {
 	name = "Halder, Franz"
 	picture = "Portrait_Germany_Franz_Halder.dds"
-	traits = { GER_tag defensive_doctrine_FM Competent_General }
+	traits = { GER_tag Competent_General defensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 	id = 38
 }
-create_field_marshal = {
+create_corps_commander = {
 	name = "Brauchitsch, Walther von"
 	picture = "Portrait_Germany_Walther_Heinrich_von_Brauchitsch.dds"
-	traits = { GER_tag Iron_Cross Hindenburg_Cross Competent_General }
+	traits = { GER_tag Competent_General Iron_Cross Hindenburg_Cross }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 	id = 44
 }
-### Corps Commander
 create_corps_commander = {
 	name = "Paulus, Friedrich"
 	picture = "Portrait_Germany_Friedrich_Paulus.dds"
-	traits = { GER_tag Iron_Cross Military_Merit_Order Decent_General defensive_doctrine_CC }
+	traits = { GER_tag Decent_General Iron_Cross Military_Merit_Order defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 	id = 3
 }
 create_corps_commander = {
 	name = "Rommel, Erwin"
 	picture = "Portrait_Germany_Erwin_Rommel.dds"
-	traits = { GER_tag Pour_le_Merite Iron_Cross Military_Merit_Order trickster_CC panzer_leader Awesome_General  desert_fox }
+	traits = { GER_tag Awesome_General armor_officer brilliant_strategist Pour_le_Merite Iron_Cross Military_Merit_Order trickster_CC panzer_leader }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 4
 	id = 4
 }
 create_corps_commander = {
 	name = "Manstein, Erich von"
 	picture = "Portrait_Germany_Erich_von_Manstein.dds"
-	traits = { GER_tag Iron_Cross trickster_CC panzer_leader fortress_buster Genius_General }
+	traits = { GER_tag Genius_General armor_officer Iron_Cross trickster_CC panzer_leader fortress_buster }
 	skill = 4
+	attack_skill = 5
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 3
 	id = 5
 }
 create_corps_commander = {
 	name = "Guderian, Heinz"
 	picture = "Portrait_Germany_Heinz_Guderian.dds"
-	traits = { GER_tag Iron_Cross Hindenburg_Cross blitzkrieg_master  panzer_leader  Genius_General }
+	traits = { GER_tag Genius_General armor_offcier Iron_Cross Hindenburg_Cross blitzkrieg_master panzer_leader }
 	skill = 4
+	attack_skill = 5
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 3
 	id = 6
 }
 create_corps_commander = {
 	name = "List, Wilhelm"
 	picture = "Portrait_Germany_Wilhelm_List.dds"
-	traits = { GER_tag Iron_Cross Military_Merit_Order Decent_General}
+	traits = { GER_tag Decent_General career_officer Iron_Cross Military_Merit_Order }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 	id = 7
 }
 create_corps_commander = {
 	name = "Kleist, Paul Ludwig Ewald von"
 	desc = ""
 	picture = "Portrait_Germany_Ewald_von_Kleist.dds"
-	traits = { GER_tag Iron_Cross panzer_leader Competent_General}
+	traits = { GER_tag Competent_General armor_officer Iron_Cross panzer_leader }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
 	id = 8
 }
 create_corps_commander = {
 	name = "Bock, Fedor von"
 	picture = "Portrait_Germany_Fedor_von_Bock.dds"
-	traits = { GER_tag Pour_le_Merite Competent_General}
+	traits = { GER_tag Competent_General harsh_leader Pour_le_Merite }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
 	id = 9
 }
 create_corps_commander = {
 	name = "Model, Walter"
 	picture = "Portrait_Germany_Walter_Model.dds"
-	traits = { GER_tag Iron_Cross Military_Merit_Order Awesome_General }
+	traits = { GER_tag Awesome_General brilliant_strategist politically_connected Iron_Cross Military_Merit_Order defensive_doctrine_CC }
 	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
 	id = 10
 }
 create_corps_commander = {
 	name = "Weichs, Maximilian von"
 	picture = "Portrait_Germany_Maximilian_von_Weichs.dds"
-	traits = { GER_tag bearer_of_artillery  Competent_General}
+	traits = { GER_tag Competent_General bearer_of_artillery }
 	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
 	id = 11
 }
 create_corps_commander = {
@@ -502,98 +555,153 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Wilhelm_Keitel.dds"
 	traits = { GER_tag Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 	id = 12
 }
 create_corps_commander = {
 	name = "Leeb, Wilhelm Ritter von"
 	picture = "Portrait_Germany_Wilhelm_Ritter_von_Leeb.dds"
-	traits = { GER_tag Competent_General }
+	traits = { GER_tag old_guard Competent_General infantry_officer }
 	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 3
 	id = 13
 }
 create_corps_commander = {
 	name = "Reinhardt, Georg-Hans"
 	picture = "Portrait_Germany_Georg_von_Reinhardt.dds"
-	traits = { GER_tag panzer_leader Competent_General }
+	traits = { GER_tag Competent_General armor_officer panzer_leader }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 3
 	id = 14
 }
 create_corps_commander = {
 	name = "Krüger, Walter"
 	picture = "Portrait_Germany_Walter_Kruger.dds"
-	traits = {  panzer_leader waffen_ss_officer Competent_General }
+	traits = { waffen_ss_officer Competent_General armor_officer panzer_leader }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 3
 	id = 15
 }
 create_corps_commander = {
 	name = "Student, Kurt"
 	picture = "Portrait_Germany_Kurt_Student.dds"
-	traits = { GER_tag commando Awesome_General}
+	traits = { GER_tag Awesome_General trait_reckless commando }
 	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 3
 	id = 16
 }
 create_corps_commander = {
 	name = "Witzleben, Erwin von"
 	picture = "Portrait_Germany_Erwin_von_Witzleben.dds"
-	traits = { GER_tag Competent_General}
+	traits = { GER_tag Competent_General infantry_officer career_officer }
 	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 2
 	id = 17
 }
 create_corps_commander = {
 	name = "Hoth, Hermann"
 	picture = "Portrait_Germany_Herman_Hoth.dds"
-	traits = { GER_tag panzer_leader Awesome_General }
+	traits = { GER_tag Awesome_General armor_officer panzer_leader }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 4
 	id = 18
 }
 create_corps_commander = {
 	name = "Blaskowitz, Johannes"
 	picture = "Portrait_Germany_Johannes_Blaskowitz.dds"
-	traits = { GER_tag defensive_doctrine_CC offensive_doctrine_CC Competent_General}
+	traits = { GER_tag Competent_General infantry_officer defensive_doctrine_CC offensive_doctrine_CC }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 2
 	id = 19
 }
-
 create_corps_commander = {
 	name = "Küchler, Georg von"
 	picture = "Portrait_Germany_Georg_von_Kuchler.dds"
-	traits = { GER_tag Pour_le_Merite offensive_doctrine_CC defensive_doctrine_CC Competent_General}
+	traits = { GER_tag Competent_General Pour_le_Merite offensive_doctrine_CC defensive_doctrine_CC }
 	skill = 4
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
 	id = 22
 }
 create_corps_commander = {
 	name = "Jodl, Alfred"
 	picture = "Portrait_Germany_Alfred_Jodl.dds"
-	traits = { GER_tag Terrible_General }
+	traits = { GER_tag Terrible_General politically_connected }
 	skill = 3
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 	id = 23
 }
 create_corps_commander = {
 	name = "Manteuffel, Hasso von"
 	picture = "Portrait_Germany_Hasso_von_Manteuffel.dds"
-	traits = { GER_tag panzer_leader Awesome_General }
+	traits = { GER_tag Awesome_General armor_officer panzer_leader }
 	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 4
 	id = 25
 }
 create_corps_commander = {
 	name = "Kesselring, Albert"
 	picture = "Portrait_Germany_Albert_Kesselring.dds"
-	traits = { GER_tag inspirational_leader defensive_doctrine_CC Awesome_General  }
+	traits = { GER_tag Awesome_General brilliant_strategist defensive_doctrine_CC }
 	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 3
+	logistics_skill = 3
 	id = 32
 }
 create_corps_commander = {
 	name = "Heinrici, Gotthard "
 	picture = "Portrait_Germany_Gotthard_Heinrici.dds"
-	traits = { GER_tag fortress_buster Awesome_General }
+	traits = { GER_tag Awesome_General infantry_officer fortress_buster  }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 3
 	id = 33
 }
 create_corps_commander = {
 	name = "Hell, Ernst-Eberhard"
 	picture = "Portrait_Germany_Ernst-Eberhard_Hell.dds"
-	traits = { GER_tag winter_specialist fortress_buster Competent_General}
+	traits = { GER_tag Competent_General winter_specialist trait_engineer }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
 	id = 34
 }
 ########## EDIT ID 35 Esebeck, aready exist one ##################################################################### 
