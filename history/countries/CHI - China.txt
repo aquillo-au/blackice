@@ -13,7 +13,6 @@ set_war_support = 0.5
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
-	#BICE_airrange_balance = 1
 	##################### infantry ###############
 	infantry_weapons = 1
 	tech_infantry_uniforms = 1
@@ -31,15 +30,12 @@ set_technology = {
 	################### armor #############
 	gwtank = 1
 	tech_ac_recon = 1
-	#generic_armor = 1
 	############## aircraft ##############
 	early_fighter = 1
 	early_bomber = 1
 	generic_fighter = 1
 	generic_bomber = 1
 	generic_strategic_bomber = 1
-	mass_assault = 1
-	fleet_in_being = 1
 	##################### ships #################
 	generic_submarine = 1
 	generic_naval = 1
@@ -61,6 +57,9 @@ set_technology = {
 	cavalry_charges = 1
 	cavalry_dismounting = 1
 	ww1_battlefield_support = 1
+	##################### doctrines #################
+	mass_assault = 1
+	fleet_in_being = 1
 }
 
 add_ideas = {
@@ -134,83 +133,6 @@ set_country_flag = labor_allowed
 
 add_opinion_modifier = { target = PRC modifier = hostile_status }
 
-##### 1939 #####
-1939.1.1 = {
-
-	add_political_power = 1198
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-	add_ideas = {
-		#laws
-		tot_economic_mobilisation
-		cons_three
-		closed_economy
-
-		#ministers
-		CHI_xie_juezai
-		CHI_deng_xiaoping
-		CHI_bo_yibo
-		CHI_xiao_yisu
-		CHI_chen_shaokuan
-		jiangnan_shipyard_group
-	}
-	
-	set_global_flag = fall_of_nanjing
-	create_faction = chinese_united_front
-	add_to_faction = PRC
-	remove_opinion_modifier = { target = PRC modifier = hostile_status }
-	set_global_flag = CHI_unite
-	
-	oob = "CHI_1939"
-	
-	set_technology = {
-		#PLACEHOLDER techs for vehicles
-		motorised_infantry = 1
-		tech_support = 1		
-		tech_recon = 1
-		tech_engineers = 1
-
-		#doctrines
-		air_superiority = 1
-		pocket_defence = 1
-		defence_in_depth = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-		basic_encryption = 1
-		basic_decryption = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		oil_plant = 1
-		improved_oil_plant = 1
-		construction1 = 1
-		construction2 = 1
-		construction3 = 1
-		concentrated_industry = 1
-		concentrated_industry2 = 1
-		concentrated_industry3 = 1
-	}
-}
 ##### Country Leaders #####
 create_country_leader = {
 	name = "Chiang Kai-shek"

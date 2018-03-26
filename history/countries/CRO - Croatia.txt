@@ -9,8 +9,7 @@ set_convoys = 5
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
-	#BICE_airrange_balance = 1
-################# infantry ###############
+	################# infantry ###############
 	tech_infantry_uniforms = 1
 	infantry_weapons = 1
 	tech_mountaineers = 1
@@ -26,7 +25,6 @@ set_technology = {
 	gwtank_axis = 1
 	basic_light_tank_axis = 1
 	generic_armor_axis = 1
-	#axis_captured_armor_tech = 1
 	################## aircraft ##############
 	generic_fighter = 1
 	generic_bomber = 1
@@ -39,7 +37,6 @@ set_technology = {
 	early_light_cruiser = 1
 	early_heavy_cruiser = 1
 	early_battleship = 1
-	#transport = 1
 	############### economy ############
 	############### WW1 doctrines ############
 	ww1_infantry = 1
@@ -51,6 +48,7 @@ set_technology = {
 	cavalry_charges = 1
 	cavalry_dismounting = 1
 	ww1_battlefield_support = 1
+	############### doctrines ############
 }
 
 add_ideas = { 	
@@ -97,95 +95,7 @@ set_politics = {
 	election_frequency = 12
 	elections_allowed = no # none after offset 1
 }
-##### 1939 #####
-1939.1.1 = {
 
-	add_political_power = 1198
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-	
-	set_technology = {
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		oil_plant = 1
-		improved_oil_plant = 1
-		construction1 = 1
-		construction2 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-	}
-	
-	add_ideas = { 	
-		export_focus
-		tax_low
-		tariffs_average
-		
-		civilian_economy
-		press_censored
-		key_industries
-		labor_none
-		fdi_encouraged
-		
-		cons_two
-		foreign_volunteers
-		mob_standing
-		train_none
-		age_17
-		officer_train_none
-		security_minor_restrictions
-		edu_minimal
-		
-		unity_divided_nation		
-		foreign_cooperative
-		neutrality_idea
-	}
-	
-	set_politics = {
-
-		parties = {
-			conservatism = { 
-				popularity = 15
-			}
-			fascism = {
-				popularity = 75
-			}
-			communism = {
-				popularity = 10
-			}
-		}
-		
-		ruling_party = fascism
-		last_election = "1935.6.9"
-		election_frequency = 12
-		elections_allowed = no # none after offset 1
-	}
-}
 ##### Country Leaders #####
 create_country_leader = {
 	name = "Ante Pavelic"
