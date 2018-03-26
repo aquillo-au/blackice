@@ -23,14 +23,12 @@ set_variable = {
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
-	##BICE_airrange_balance = 1
 	######### setup ##########
 	german_tech = 1
 	tech_german_aircraft1 = 1
 	tech_kr = 1
 	tech_kriegsmarine_sub = 1
 	flaktower_enable_tech = 1
-	#tech_testing_1 = 1
 	######### infantry ##########
 	tech_mountaineers = 1
 	semi_motorised_infantry = 1
@@ -93,7 +91,6 @@ set_technology = {
 	############# aircraft #######
 	tech_ar_68_equipment_1 = 1
 	############ Naval ##########
-	#ww1_submarine = 1
 	tech_coastal_submarine = 1
 	tech_coastal_submarine2 = 1
 	tech_sub_hulldesign = 1
@@ -102,43 +99,43 @@ set_technology = {
 	tech_patrol_submarine2 = 1
 	tech_sub_battery = 1
 	advanced_dreadnought_battleship = 1 #BICE
-	# Kriegsamrine Transport
-	# Kriegsmarine Destroyer/Patrol Boat
+	### Kriegsamrine Transport ###
+	### Kriegsmarine Destroyer/Patrol Boat ###
 	tech_kr_pb_obs = 1
 	tech_kr_pb_obs2 = 1
 	tech_kr_dd_obs = 1
 	tech_kr_dd = 1
-	# Kriegsmarine ASW/Torpedo/Radar techs DD
+	### Kriegsmarine ASW/Torpedo/Radar techs DD ###
 	tech_kr_early_sonar_dd = 1
 	tech_kr_dd_interwar_torpedoes = 1
 	tech_kr_Interwar_AA_dd = 1
 	# Kriegsmarine Seaplane Tender
 	tech_kr_seaplane_tender_1 = 1
 	tech_kr_seaplane_tender_2 = 1
-	# Kriegsmarine Light Cruisers
+	### Kriegsmarine Light Cruisers ###
 	tech_kr_cl_obs = 1
 	tech_kr_cl_obs2 = 1
 	tech_kr_cl = 1
 	tech_kr_pbb = 1
 	tech_kr_ca = 1
-	# Kriegsmarine ASW/Torpedo/Radar techs CL
+	### Kriegsmarine ASW/Torpedo/Radar techs CL ###
 	tech_kr_early_sonar_cl = 1
 	tech_kr_cl_interwar_torpedoes = 1
 	tech_kr_Interwar_AA_cl = 1
-	# Kriegsmarine Pocket Battleship
+	### Kriegsmarine Pocket Battleship ###
 	tech_kr_pbb = 1
-	# Kriegsmarine Heavy Cruisers
+	### Kriegsmarine Heavy Cruisers ###
 	tech_kr_ca = 1
-	# Kriegsmarine ASW/Torpedo/Radar techs CA
+	### Kriegsmarine ASW/Torpedo/Radar techs CA ###
 	tech_kr_early_sonar_ca = 1
 	tech_kr_ca_interwar_torpedoes = 1
 	tech_kr_Interwar_AA_ca = 1
-	# Kriegsmarine Battlecruiser
+	### Kriegsmarine Battlecruiser ###
 	tech_kr_bc = 1
-	# Kriegsmarine Battleship
+	### Kriegsmarine Battleship ###
 	tech_kr_bb_obs = 1
 	tech_kr_bb = 1
-	# Kriegsmarine ASW/Torpedo/Radar techs BB/SHBB
+	### Kriegsmarine ASW/Torpedo/Radar techs BB/SHBB ###
 	tech_kr_Interwar_AA_bb = 1
 	############## economic ###########
 	basic_machine_tools = 1
@@ -402,7 +399,7 @@ add_namespace = {
 ##### Field Marshals #####
 create_field_marshal = {
 	name = "Blomberg, Werner E.F. von"
-	picture = "Portrait_Germany_Gerd_von_Rundstedt.dds"
+	picture = "Portrait_Germany_Werner_von_Blomberg.dds"
 	traits = { GER_tag Competent_General career_officer Pour_le_Merite }
 	skill = 4
 	attack_skill = 3
@@ -1243,6 +1240,10 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Daluege.dds"
 	traits = { waffen_ss_officer Bad_General}
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 	id = 200
 }
 create_corps_commander = {
@@ -1250,20 +1251,32 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Prinz.dds"
 	traits = { waffen_ss_officer Incompetent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 	id = 201
 }
 create_corps_commander = {
 	name = "Fegelein, W."	#1937
 	picture = "Portrait_Germany_generic_ss_3.dds"
-	traits = { waffen_ss_officer offensive_doctrine_CC Competent_General}
+	traits = { waffen_ss_officer Competent_General infantry_officer offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 1
 	id = 202
 }
 create_corps_commander = {
 	name = "Demelhuber, Karl Maria"	#1936
 	picture = "Portrait_Germany_Demelhuber.dds"
-	traits = { waffen_ss_officer offensive_doctrine_CC Competent_General}
+	traits = { waffen_ss_officer Competent_General infantry_officer offensive_doctrine_CC }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 2
 	id = 203
 }
 create_corps_commander = {
@@ -1271,34 +1284,54 @@ create_corps_commander = {
 	picture = "Portrait_Germany_Heissmeyer.dds"
 	traits = { waffen_ss_officer  Incompetent_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 	id = 204
 }
 create_corps_commander = {
 	name = "Steiner, Felix Martin Julius"	#1936
 	picture = "Portrait_Germany_Steiner.dds"
-	traits = { waffen_ss_officer panzer_leader offensive_doctrine_CC defensive_doctrine_CC Competent_General}
+	traits = { waffen_ss_officer Competent_General armor_officer panzer_leader offensive_doctrine_CC defensive_doctrine_CC }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 2
 	id = 205
 }
 create_corps_commander = {
 	name = "Hausser, Paul"
 	picture = "Portrait_Germany_Paul_Hausser.dds"
-	traits = { waffen_ss_officer panzer_leader Awesome_General }
+	traits = { waffen_ss_officer Awesome_General armor_officer career_officer panzer_leader }
 	skill = 4
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 3
 	id = 206
 }
 create_corps_commander = {
 	name = "Schulz, Friedrich"
 	picture = "Portrait_Germany_Friedrich_Schulz.dds"
-	traits = { waffen_ss_officer panzer_leader Competent_General}
+	traits = { waffen_ss_officer Competent_General armor_officer panzer_leader }
 	skill = 3
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 2
 	id = 207
 }
 create_corps_commander = {
 	name = "Dietrich, Sepp"
 	picture = "Portrait_Germany_Josef_Dietrich.dds"
-	traits = { waffen_ss_officer panzer_leader trait_reckless }
+	traits = { waffen_ss_officer armor_officer trait_reckless panzer_leader }
 	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 2
 	id = 208
 }
 ### Ship Variants ###
@@ -1358,160 +1391,6 @@ create_equipment_variant = {
 	upgrades = {
 		ar_65_f_upgrade = 1
 		ai_likey_upgrade = 2
-	}
-}
-################
-## 1939 Start ##
-1939.1.1 = {
-	add_named_threat = { threat = 40 name = 1939_bookmark_threat }
-
-	add_political_power = 1197
-	
-	#adding ministers
-	add_ideas = {
-		henschel
-		ig_faben
-		heinrich_himmler
-		rudolf_hess
-		ludwig_beck
-		gerd_von_rundstedt
-
-		#laws
-		war_economy
-		cons_expanded_draft
-	}
-	
-	oob = "GER_1939"
-	
-	set_autonomy = {
-		target = SLO
-		autonomous_state = autonomy_puppet
-	}
-	
-	give_military_access = SLO
-	create_wargoal = {
-		type = take_state_focus
-		target = POL
-		generator = { 72 88 90 87 86 } # Zaolzie Krakow Kielce Lodz Poznan
-	}
-
-	#Trade
-	create_import = {
-		resource = oil
-		amount = 10
-		exporter = SOV
-	}
-
-	#MR pact effect, Also has a part scripted in soviet history file
-	unlock_national_focus = GER_mol_rib_pact
-	every_country = {
-		limit = {
-			NOT = { tag = GER }
-			has_government = fascism 
-		}
-		add_opinion_modifier = { target = GER modifier = MR_pact_fascists }
-	}
-	diplomatic_relation = { country = SOV relation = non_aggression_pact }
-	add_opinion_modifier = { target = SOV modifier = MR_pact }
-	#MR pact end
-
-	#Soviet treaty
-	unlock_national_focus = GER_soviet_treaty
-	add_tech_bonus = {
-		bonus = 0.5
-		uses = 2
-		category = armor
-	}
-	SOV = {
-		add_opinion_modifier = { target = GER modifier = sov_ger_treaty }
-		add_opinion_modifier = { target = GER modifier = sov_ger_treaty_trade }
-	}
-	#Soviet treaty end
-	
-	unlock_national_focus = GER_rhineland
-	unlock_national_focus = GER_anschluss
-	unlock_national_focus = GER_demand_sudetenland
-	unlock_national_focus = GER_first_vienna_award
-	unlock_national_focus = GER_end_of_czechoslovakia
-	unlock_national_focus = GER_demand_memel
-
-	set_global_flag = end_of_czechoslovakia
-	set_global_flag = olympics_1936
-	complete_national_focus = GER_autobahn
-	complete_national_focus = GER_west_wall
-	complete_national_focus = GER_army_innovation
-	complete_national_focus = GER_industrial_effort
-
-	#BUILDINGS
-	set_technology = {
-		improved_light_tank = 1 
-		basic_medium_tank = 1 
-		CAS2 = 1
-		heavy_fighter1 = 1
-		interwar_artillery = 1
-		interwar_antitank = 1
-		infantry_weapons2 = 1
-		improved_infantry_weapons = 1
-		hmg = 1
-		hmg_2 = 1
-		mortars = 1
-		paratroopers = 1
-		basic_heavy_cruiser = 1
-		improved_heavy_cruiser = 1
-		basic_battleship = 1
-		improved_battleship = 1
-
-		#doctrines
-		delay = 1
-		elastic_defence = 1
-		armored_spearhead = 1
-		schwerpunk = 1
-		blitzkrieg = 1
-		convoy_interdiction_ti = 1
-		unrestricted_submarine_warfare = 1
-		raider_patrols = 1
-		#air
-		formation_flying = 1		
-		dive_bombing = 1
-		direct_ground_support = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		decimetric_radar = 1
-		mechanical_computing = 1
-		computing_machine = 1
-		basic_encryption = 1
-		basic_decryption = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		oil_plant = 1
-		improved_oil_plant = 1
-		construction1 = 1
-		construction2 = 1
-		construction3 = 1
-		construction4 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		dispersed_industry3 = 1
-		dispersed_industry4 = 1
-	}
-	# Submarines #
-	create_equipment_variant = {
-		name = "Type VIIA"
-		type = patrol_submarine_1
-		parent_version = 0
-		upgrades = {
-			ship_quality_upgrade = 1
-			sub_engine_upgrade = 1
-			sub_stealth_upgrade = 1
-			sub_torpedo_upgrade = 1
-		}
 	}
 }
 #EOF#

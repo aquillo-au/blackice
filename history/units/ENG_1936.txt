@@ -195,14 +195,10 @@ division_template = {
 		motorized = { x = 0 y = 1 }
 		motorized = { x = 0 y = 2 }
  
-		motorized = { x = 1 y = 0 }
+		mechanized = { x = 1 y = 0 }
 		motorized = { x = 1 y = 1 }
 		motorized = { x = 1 y = 2 }
-		
-		mechanized = { x = 2 y = 0 }
-		motorized = { x = 2 y = 1 }
-		motorized = { x = 2 y = 2 }
-		
+				
 		artillery_brigade_mot = { x = 3 y =0 } 
 		artillery_brigade_mot = { x = 3 y = 1 }
 		artillery_brigade_mot = { x = 3 y = 2 }
@@ -1537,6 +1533,7 @@ units = {
 		# Submarine Division 51
 		ship = { name = "HMS Oberon" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_4b = { amount = 1 owner = ENG } } }			
 		# Submarine Division 52
+		ship = { name = "HMS Thames" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_8 = { amount = 1 owner = ENG } } }	
 		ship = { name = "HMS L23" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_1 = { amount = 1 owner = ENG } } }
 		ship = { name = "HMS H28" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_3 = { amount = 1 owner = ENG } } }
 		ship = { name = "HMS H31" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_3 = { amount = 1 owner = ENG } } }	
@@ -1545,8 +1542,8 @@ units = {
 		ship = { name = "HMS H43" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_3 = { amount = 1 owner = ENG } } }	
 		ship = { name = "HMS H44" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_3 = { amount = 1 owner = ENG } } }	
 		ship = { name = "HMS H49" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_3 = { amount = 1 owner = ENG } } }	
-		ship = { name = "HMS H50" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_3 = { amount = 1 owner = ENG } } }	
-	}				
+		ship = { name = "HMS H50" definition = rn_patrol_submarine  equipment = { rn_patrol_submarine_3 = { amount = 1 owner = ENG } } }
+		}				
 
 	### MEDITERRANIAN FLEET ###			
 	navy = {				
@@ -1650,6 +1647,14 @@ units = {
 		ship = { name = "HMS Wivern" definition = destroyer equipment = { ENG_destroyer_1e = { amount = 1 owner = ENG } } }	
 	}
 	navy = {				
+		name = "7th Submarine Flotilla"
+		base = 2038
+		location = 2038 # Sierra Leone
+		ship = { name = "HMS Clyde" definition = rn_patrol_submarine equipment = { rn_patrol_submarine_8 = { amount = 1 owner = ENG } } }	
+		ship = { name = "HMS Severn" definition = rn_patrol_submarine equipment = { rn_patrol_submarine_8 = { amount = 1 owner = ENG } } }
+	}
+
+	navy = {				
 		name = "South America Squadron"
 		base = 12960
 		location = 12960 # Falkland Is.
@@ -1698,8 +1703,8 @@ units = {
 		name = "New Zealand Division"
 		base = 13056
 		location = 13056 # Fongfale	
-		ship = { name = "HMS Achilles" definition = light_cruiser equipment = { ENG_light_cruiser_1e = { amount = 1 owner = ENG } } }		
-		ship = { name = "HMS Leander" definition = light_cruiser equipment = { ENG_light_cruiser_1e = { amount = 1 owner = ENG } } }		
+		ship = { name = "HMS Achilles" definition = light_cruiser equipment = { ENG_light_cruiser_1f = { amount = 1 owner = ENG } } }		
+		ship = { name = "HMS Leander" definition = light_cruiser equipment = { ENG_light_cruiser_1f = { amount = 1 owner = ENG } } }		
 	}				
 	navy = {				
 		name = "4th Submarine Flotilla"			
