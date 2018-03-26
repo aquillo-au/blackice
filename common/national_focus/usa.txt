@@ -3475,11 +3475,7 @@ available_if_capitulated = yes
 			factor = 1
 			modifier = {
 				factor = 0
-				OR = {
-				has_government = conservatism
-				has_government = liberalism
-				has_government = socialism
-				}
+				democratic_govt = yes
 			}
 		}
 		complete_tooltip = {
@@ -3491,14 +3487,14 @@ available_if_capitulated = yes
 			#every_other_country = {
 			#	limit = { has_country_flag = USA_black_chamber_democratic_CivWar }
 			#	start_civil_war = {
-			#		ideology = democratic
+			#		ideology = liberalism
 			#		size = 0.5
 			#	}
 			#}
 			#every_other_country = {
 			#	limit = { has_country_flag = USA_black_chamber_democratic_SetGov }
 			#	set_politics = {
-			#		ruling_party = democratic
+			#		ruling_party = liberalism
 			#		elections_allowed = yes
 			#	}			
 			#}
@@ -3531,7 +3527,7 @@ available_if_capitulated = yes
 							conservatism > 0.35
 							liberalism < 0.35
 							socialism < 0.35
-							}
+						}
 						if = {
 							limit = { has_government = fascism }
 							add_timed_idea = { idea = fascism_defeated days = 540 }
