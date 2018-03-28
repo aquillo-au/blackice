@@ -4,6 +4,11 @@ oob = "SOV_1936"
 
 set_research_slots = 6
 
+set_convoys = 600
+
+set_stability = 0.65
+
+set_war_support = 0.8
 # Starting tech
 set_technology = {
 	######### setup techs ##########
@@ -13,9 +18,7 @@ set_technology = {
 	soviet_tech_d = 1
 	soviet_air_tech = 1
 	nkvd_tech = 1
-	#po_2_tech = 1 #Po 2 wasn't used as a bomber until the Siege of Odessa. 
 	BICE_sub_balance = 1
-	##BICE_airrange_balance = 1
 	################## infantry #############
 	infantry_weapons = 1
 	infantry_weapons1 = 1
@@ -118,7 +121,7 @@ set_technology = {
 	pre_fab2 = 1
 	on_site2 = 1
 	housing_work = 1
-	############# WW1doctrine #########
+	############# WW1 doctrines #########
 	ww1_infantry = 1
 	infantry_charge = 1
 	small_unit_raids = 1
@@ -175,43 +178,46 @@ set_technology = {
 	AA_positions = 1
 	camouflage_positions = 1
 	first_aid_stations = 1
-	############# doctrine #########
+	############# doctrines #########
 	mass_assault = 1
 	fleet_in_being = 1
 }
 
 add_ideas = {
-		#politicians
-		
-		mikhail_kalinin
-		SOV_vyacheslav_molotov
-		valery_mezhlauk
-		SOV_nikolai_yezhov
-		viktor_abakumov
-		alexander_yegorov
-		nikolay_kuznetsov
-		aleksandr_loktionov
-		
-		#laws
-		low_economic_mobilisation
-		foreign_warmonger
-		foreign_legion
-		press_state
-		security_police_state 
-		tax_high
-		edu_low
-		cons_three
-		mob_standing
-		limited_exports
-		tariffs_high
-		fdi_banned
-		train_low
-		officer_train_low
-		planned_economy
-		labor_encouraged
-		age_19
-		unity_united_nation
-	}
+	#politicians
+	
+	mikhail_kalinin
+	SOV_vyacheslav_molotov
+	valery_mezhlauk
+	SOV_nikolai_yezhov
+	viktor_abakumov
+	alexander_yegorov
+	nikolay_kuznetsov
+	aleksandr_loktionov
+	
+	#laws
+	low_economic_mobilisation
+	foreign_warmonger
+	foreign_legion
+	press_state
+	security_police_state 
+	tax_high
+	edu_low
+	cons_three
+	mob_standing
+	limited_exports
+	tariffs_high
+	fdi_banned
+	train_low
+	officer_train_low
+	planned_economy
+	labor_encouraged
+	age_19
+	unity_united_nation
+
+	trotskyite_plot
+	home_of_revolution
+}
 	
 set_country_flag = mob_standing
 set_country_flag = foreign_warmonger
@@ -230,173 +236,6 @@ set_country_flag = labor_allowed
 set_country_flag = security_police_state
 set_country_flag = officer_train_low
 set_country_flag = nation_united
-
-1939.1.1 = {
-
-	add_political_power = 1198
-	
-	#adding ministers, already have 2 set
-	add_ideas = {
-		SOV_vyacheslav_molotov
-		stalingrad_tractor_factory
-		tula_arms_plant
-		vladimir_kasatonov
-
-		#laws
-		war_economy
-		cons_expanded_draft
-	}
-
-	#purge stuff
-	unlock_national_focus = SOV_great_purge
-	remove_ideas = trotskyite_plot
-	add_ideas = trotskyite_plot_purged
-	add_timed_idea = {
-		idea = officers_purged_6
-		days = 730
-	}
-	country_event = { id = soviet.42 days = 146 }
-	set_country_flag = purged_party_members
-	set_country_flag = purge_1_group_a
-	remove_ideas = mikhail_tukhachevsky
-	remove_unit_leader = 401
-	remove_ideas = alexander_yegorov
-	remove_ideas = vasily_blucher
-	remove_ideas = pyotr_smirnov
-	remove_ideas = mikhail_frinovsky
-	set_country_flag = purge_2_group_a
-	remove_ideas = SOV_nikolai_yezhov
-	remove_ideas = yakov_smushkevich
-	remove_ideas = pavel_rychagov
-	remove_ideas = gordey_levchenko
-	remove_unit_leader = 406
-	remove_ideas = alexander_novikov
-	#purge stuff end
-
-	#MR pact stuff
-	add_opinion_modifier = { target = GER modifier = MR_pact }# pact 
-	set_global_flag = sov_yes_pact
-	add_state_claim = 96
-	add_state_claim = 11
-	add_state_claim = 12
-	add_state_claim = 13
-	add_state_claim = 190
-	add_state_claim = 191
-	add_state_claim = 146
-	add_state_claim = 147
-	add_state_claim = 722
-	add_state_claim = 189
-	add_state_claim = 78
-	add_state_claim = 89
-	add_state_claim = 91
-	add_state_claim = 93
-	add_state_claim = 94
-	add_state_claim = 95
-	add_state_claim = 96
-	add_state_claim = 97
-	#MR pact stuff end
-
-	#Germany soviet treaty
-	GER = {
-		add_opinion_modifier = {
-			target = SOV
-			modifier = sov_ger_treaty
-		}
-		add_opinion_modifier = {
-			target = SOV
-			modifier = sov_ger_treaty_trade
-		}
-	}
-	add_tech_bonus = {
-		name = med_armor_bonus
-		ahead_reduction = 1
-		technology = basic_medium_tank
-	}
-	add_tech_bonus = {
-		name = armor_bonus
-		bonus = 0.5
-		uses = 2
-		category = armor
-	}
-	#Germany soviet treaty end
-
-	complete_national_focus = SOV_finish_five_year_plan
-	complete_national_focus = SOV_move_industry_to_urals
-	complete_national_focus = SOV_defense_of_moscow
-	complete_national_focus = SOV_production_effort
-	unlock_national_focus = SOV_stalin_constitution
-	unlock_national_focus = SOV_socialist_realism
-	complete_national_focus = SOV_nkvd_primacy
-	complete_national_focus = SOV_nkvd_divisions
-	complete_national_focus = SOV_improve_railway
-	complete_national_focus = SOV_transpolar_flights
-	complete_national_focus = SOV_ocean_going_navy
-	complete_national_focus = SOV_peoples_commissariat
-	complete_national_focus = SOV_anti_fascist_diplomacy
-	complete_national_focus = SOV_improve_stalin_line
-	complete_national_focus = SOV_claims_on_baltic
-	
-	#Soviet starts with 1 less focus, too many branches
-	
-	oob = "SOV_1939"
-	set_technology = {
-		CAS1 = 1
-		improved_light_tank = 1 
-		basic_heavy_tank = 1    # Should be available in 1936 (T-35)
-		basic_medium_tank = 1 # Should be available in 1936 (T-28)
-		tactical_bomber1 = 1
-		interwar_artillery = 1
-		interwar_antitank = 1
-		interwar_antiair = 1
-		infantry_weapons2 = 1
-		hmg = 1
-		hmg_2 = 1
-		mortars = 1
-		mortars_2 = 1
-		paratroopers = 1
-		basic_submarine = 1
-		basic_destroyer = 1
-		basic_heavy_cruiser = 1
-
-		#doctrines
-		pocket_defence = 1
-		defence_in_depth = 1
-		battlefleet_concentration = 1
-		submarine_operations = 1
-
-		#Air
-		formation_flying = 1		
-		dive_bombing = 1
-		direct_ground_support = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-		basic_encryption = 1
-		basic_decryption = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		oil_plant = 1
-		improved_oil_plant = 1
-		construction1 = 1
-		construction2 = 1
-		construction3 = 1
-		concentrated_industry = 1
-		concentrated_industry2 = 1
-		concentrated_industry3 = 1
-	}
-}
-
-
-set_convoys = 600
-set_stability = 0.65
 
 set_politics = {
 
@@ -434,6 +273,7 @@ create_faction = Comintern
 add_to_faction = SOV
 add_to_faction = MON
 add_to_faction = TAN
+
 if = {
 	limit = {
 		has_dlc = "Together for Victory"
@@ -461,23 +301,14 @@ if = {
 
 give_military_access = TAN
 give_military_access = MON
-
-add_ideas = {
-	trotskyite_plot
-	home_of_revolution
-}
-
+##### Country Leaders #####
 create_country_leader = {
 	name = "Joseph Stalin"
 	desc = "POLITICS_JOSEPH_STALIN_DESC"
 	picture = "Portrait_Soviet_Joseph_Stalin.dds"
 	expire = "1953.3.1"
 	ideology = stalinism
-	traits = {
-		paranoid
-		dictator
-		stalin
-	}
+	traits = {  }
 }
 create_country_leader = {
 	name = "Joseph Vissarionovich Stalin"
@@ -485,11 +316,7 @@ create_country_leader = {
 	picture = "Portrait_Soviet_Joseph_Stalin.dds"
 	expire = "1953.3.1"
 	ideology = stalinism
-	traits = {
-		paranoid
-		dictator
-		stalin
-	}
+	traits = { paranoid dictator stalin }
 }	
 create_country_leader = {
 	name = "Konstantin Rodzaevsky"
@@ -498,10 +325,8 @@ create_country_leader = {
 	expire = "1953.3.1"
 	ideology = fascism_ideology
 	traits = {
-		
 	}
 }
-
 create_country_leader = {
 	name = "Alexander Fyodorovich Kerensky"
 	desc = "POLITICS_ALEXANDER_FYODOROVICH_KERENSKY_DESC"
@@ -509,10 +334,8 @@ create_country_leader = {
 	expire = "1953.3.1"
 	ideology = social_democracy
 	traits = {
-		
 	}
 }
-
 create_country_leader = {
 	name = "Kirill I"
 	desc = "Emperor and Autocrat of all the Russias"
@@ -524,35 +347,73 @@ create_country_leader = {
 		ineffective_politician
 	}
 }
+##### Namespace #####
 add_namespace = {
 	name = "unit_leader_sov"
 	type = unit_leader
 }
-
+##### Field Marshals #####
 create_field_marshal = {
 	name = "Zhukov, Georgy"
-	id = 610
 	picture = "Portrait_Soviet_Gregory_Zhukov.dds"
-	traits = { Golden_Star offensive_doctrine_FM logistics_wizard_FM defensive_doctrine_FM panzer_leader  Genius_General  winter_specialist_FM}
+	traits = { Genius_General armor_officer media_personality war_hero Golden_Star offensive_doctrine_FM logistics_wizard_FM defensive_doctrine_FM panzer_leader winter_specialist_FM}
 	skill = 5
+	attack_skill = 5
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 5
+	id = 760
+}
+create_field_marshal = {
+	name = "Voroshilov, Kliment"
+	picture = "Portrait_Soviet_Kliment_Voroshilov.dds"
+	traits = { old_guard Bad_General }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 755
+}
+create_field_marshal = {
+	name = "Tukhachevsky, Mikhail"
+	picture = "Portrait_Soviet_Mikhail_Tukhachevsky.dds"
+	traits = { Masterful_General Order_of_the_Patriotic_War offensive_doctrine_FM  blitzkrieg_master }
+	skill = 4
+	attack_skill = 3
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 2
+	id = 751
+}
+create_field_marshal = {
+	name = "Budyonny, Semyon"
+	picture = "Portrait_Soviet_Semyon_Budyonny.dds"
+	traits = { old_guard Incompetent_General }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 763
 }
 create_corps_commander = {
 	name = "Rokossovsky, Konstantin"
-	id = 602
+	id = 752
 	picture = "Portrait_Soviet_Konstantin_Rokossovsky.dds"
 	traits = {Golden_Star panzer_leader Masterful_General}
 	skill = 4
 }
 create_corps_commander = {
 	name = "Vasilevsky, Aleksandr"
-	id = 607
+	id = 757
 	picture = "Portrait_Soviet_Aleksandr_Vasilevsky.dds"
 	traits = { Awesome_General panzer_leader offensive_doctrine_CC }
 	skill = 4
 }
 create_corps_commander = {
 	name = "Shaposhnikov, Boris"
-	id = 600
+	id = 750
 	picture = "Portrait_Soviet_Boris_Shaposhnikov.dds"
 	traits = { Masterful_General For_Valor offensive_doctrine_CC }
 	skill = 3
@@ -567,43 +428,22 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Konev, Ivan"
-	id = 608
+	id = 758
 	picture = "Portrait_Soviet_Ivan_Konev.dds"
 	traits = { Golden_Star panzer_leader Awesome_General offensive_doctrine_CC }
 	skill = 5
 }
 create_corps_commander = {
 	name = "Timoshenko, Semyon"
-	id = 604
+	id = 754
 	picture = "Portrait_Soviet_Semyon_Timoshenko.dds"
 	traits = { Bad_General Order_of_Red_Banner }
 	skill = 1
+	
 }
-create_field_marshal = {
-	name = "Voroshilov, Kliment"
-	id = 605
-	picture = "Portrait_Soviet_Kliment_Voroshilov.dds"
-	traits = { Bad_General old_guard }
-	skill = 1
-}
-create_field_marshal = {
-	name = "Tukhachevsky, Mikhail"
-	id = 601
-	picture = "Portrait_Soviet_Mikhail_Tukhachevsky.dds"
-	traits = { Masterful_General Order_of_the_Patriotic_War offensive_doctrine_FM  blitzkrieg_master }
-	skill = 4
-}
-create_field_marshal = {
-	name = "Semyon Budyonny"
-	id = 613
-	picture = "Portrait_Soviet_Semyon_Budyonny.dds"
-	traits = { Incompetent_General old_guard  }
-	skill = 1
-}
-
 create_corps_commander = {
 	name = "Ivan Chernyakhovsky"
-	id = 614
+	id = 764
 	picture = "Portrait_Soviet_Ivan_Chernyakhovsky.dds"
 	traits = { Bad_General }
 	skill = 1 
@@ -625,7 +465,7 @@ create_corps_commander = {
 
 create_field_marshal = {
 	name = "Grigory Kulik"
-	id = 615
+	id = 765
 	picture = "Portrait_Soviet_Grigory_Kulik.dds"
 	traits = { Mindless_General Order_of_the_Patriotic_War old_guard  }
 	skill = 1	
@@ -676,7 +516,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Max Reyter"
-	id = 619
+	id = 769
 	picture = "Portrait_Soviet_Max_Andreyevich.dds"
 	traits = { Bad_General }
 	skill = 1
@@ -703,7 +543,7 @@ create_corps_commander = {
 	name = "Vlasov, Andrey"
 	picture = "Portrait_Soviet_Andrey_Vlasov.dds"
 	traits = { Awesome_General Order_of_the_Patriotic_War winter_specialist  }
-	id = 612
+	id = 762
 	skill = 3
 }
 
@@ -717,7 +557,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Maksim Purkayev"
-	id = 616
+	id = 766
 	picture = "Portrait_Soviet_Maksim_Purkayev.dds"
 	traits = { Bad_General }
 	skill = 1	
@@ -734,7 +574,7 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "Markian Popov"
-	id = 617
+	id = 767
 	picture = "Portrait_Soviet_Matkian_Popov.dds"
 	traits = { Bad_General Golden_Star winter_specialist }
 	skill = 2
@@ -786,7 +626,7 @@ create_corps_commander = {
 
 create_corps_commander = {
 	name = "Rodion Malinovsky"
-	id = 618
+	id = 768
 	picture = "Portrait_Soviet_Rodion_Malinovsky.dds"
 	traits = { Terrible_General }
 	skill = 1 
@@ -810,7 +650,7 @@ create_navy_leader = {
 }
 create_navy_leader = {
 	name = "Gorshkov, Sergey"
-	id = 611
+	id = 761
 	picture = "Portrait_Soviet_Sergey_Gorshkov.dds"
 	traits = {  }
 	skill = 3
@@ -818,21 +658,21 @@ create_navy_leader = {
 # Arrested in '41
 create_navy_leader = {
 	name = "Levchenko, Gordey"
-	id = 606
+	id = 756
 	picture = "Portrait_Soviet_Gordey_Levchenko.dds"
 	traits = {  }
 	skill = 2
 }
 create_navy_leader = {
 	name = "Golovko, Arseniy"
-	id = 609
+	id = 759
 	picture = "Portrait_Soviet_Arseniy_Golovko.dds"
 	traits = { spotter }
 	skill = 4
 }
 create_navy_leader = {
 	name = "Kasatonov, Vladimir"
-	id = 603
+	id = 753
 	picture = "Portrait_Soviet_Vladimir_Kasatonov.dds"
 	traits = { seawolf }
 	skill = 2
