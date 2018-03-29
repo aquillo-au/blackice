@@ -52,12 +52,9 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			AND = {
-				has_trait = ENG_tag
-				OR = {
-					is_winning = yes
-					has_trait = Conspicuous_Galantry_Cross
-				}
+			OR = {
+				is_winning = yes
+				has_trait = Conspicuous_Galantry_Cross
 			}
 		}
 		
@@ -82,12 +79,9 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			AND = {
-				has_trait = ENG_tag
-				OR = {
-					is_winning = yes
-					has_trait = Victory_Medal
-				}
+			OR = {
+				is_winning = yes
+				has_trait = Victory_Medal
 			}
 		}
 		
@@ -113,7 +107,10 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ENG_tag
+			OR = {
+				is_attacker = yes
+				is_defender = yes
+			}
 		}
 		
 		allowed = {
@@ -137,7 +134,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ENG_tag
 			is_winning = yes
 		}
 		
@@ -163,7 +159,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ENG_tag
 			is_winning = yes
 			is_attacker = yes
 		}
@@ -190,7 +185,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ENG_tag
 			is_attacker = no
 		}
 		
@@ -215,7 +209,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ENG_tag
 			is_winning = yes
 		}
 		
@@ -240,7 +233,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ENG_tag
 			has_trait = General_Service_Medal
 		}
 		
