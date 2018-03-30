@@ -354,7 +354,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = JAP_Southern
+		id = JAP_southern_focus
 		x = 10
 		y = 0
 		cost = 10
@@ -891,7 +891,7 @@ focus_tree = {
 		x = 12
 		y = 1
 		icon = GFX_goal_generic_build_navy
-		prerequisite = { focus = JAP_Southern }
+		prerequisite = { focus = JAP_southern_focus }
 		ai_will_do = {
 			factor = 4
 		}
@@ -920,7 +920,7 @@ focus_tree = {
 		x = 8
 		y = 1
 		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = JAP_Southern }
+		prerequisite = { focus = JAP_southern_focus }
 		ai_will_do = { 
 			factor = 6
 		}
@@ -950,7 +950,7 @@ focus_tree = {
 		x = 10
 		y = 1
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = JAP_Southern }
+		prerequisite = { focus = JAP_southern_focus }
 		ai_will_do = {
 			factor = 5
 		}
@@ -1364,7 +1364,7 @@ focus_tree = {
 	focus = {
 		id = southern_expansion_focus
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = JAP_Southern }	
+		prerequisite = { focus = JAP_southern_focus }	
 		bypass = {
 			NOT = {
 				country_exists = ENG
@@ -1503,7 +1503,7 @@ focus_tree = {
 	
 	focus = {
 		id = demand_indochina_focus
-		prerequisite = { focus = JAP_Southern }
+		prerequisite = { focus = JAP_southern_focus }
 		available = {
 			844 = { NOT = { is_controlled_by = FRA } }
 			is_puppet = no
