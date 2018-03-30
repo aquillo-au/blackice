@@ -8,6 +8,8 @@ set_convoys = 800
 
 set_stability = 0.6
 
+set_war_support = 0.7
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
@@ -253,7 +255,7 @@ set_politics = {
 	election_frequency = 60
 	elections_allowed = no
 }
-
+##### Country Leaders #####
 create_country_leader = {
 	name = "Benito Mussolini"
 	desc = "POLITICS_BENITO_MUSSOLINI_DESC"
@@ -261,7 +263,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
-		
 	}
 }
 create_country_leader = {
@@ -271,721 +272,1260 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = social_democracy
 	traits = {
-		
 	}
 }
-## Generals ##
+##### Field Marshals #####
 create_field_marshal = {
 	name = "Badoglio, Pietro"
 	picture = "Portrait_Italy_Pietro_Badoglio.dds"
-	traits = { defensive_doctrine_FM old_guard }
+	traits = { old_guard defensive_doctrine_FM politically_connected inflexible_strategist }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1500
 }
 create_field_marshal = {
-	name = "Emilio De Bono"
+	name = "Bono, Emilio De"
 	picture = "portrait_italy_emilio_de_bono.dds"
-	traits = {  defensive_doctrine_FM old_guard }
+	traits = { old_guard defensive_doctrine_FM politically_connected trait_cautious }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1501
 }
 create_field_marshal = {
-	name = "Rodolfo Graziani"
+	name = "Graziani, Rodolfo"
 	picture = "portrait_italy_radolfo_graziani.dds"
 	traits = { Competent_General Order_of_the_Holy_Annuntiation logistics_wizard_FM offensive_doctrine_FM }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
+	id = 1502
 }
+##### Corps Commanders #####
 create_corps_commander = {
 	name = "Duca di Bergamo, Adalberto"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1503
 }
 create_corps_commander = {
-
-	name = "Albert"
+	name = "Albert, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
-
 	traits = { Decent_General Order_of_Saint_Lazarus fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1504
 }
 create_corps_commander = {
-	name = "Ago"
+	name = "Ago, "
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1505
 }
 create_corps_commander = {
-	name = "Ambrosio"
+	name = "Ambrosio, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1506
 }
 create_corps_commander = {
 	name = "Duca degli Abruzzi, Amedeo"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC offensive_doctrine_CC defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1507
 }
 create_corps_commander = {
-	name = "Amico"
+	name = "Amico, "
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1508
 }
 create_corps_commander = {
-	name = "Antonelli"
+	name = "Antonelli, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Incompetent_General For_Valor_Silver_Medal }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1509
 }
 create_corps_commander = {
-	name = "Ardito"
+	name = "Ardito, "
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1510
 }
 create_corps_commander = {
-	name = "Arena"
+	name = "Arena, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1511
 }
 create_corps_commander = {
 	name = "Armellini, Q."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1512
 }
 create_corps_commander = {
-	name = "di Bernezzo, Asinari"
+	name = "Bernezzo, Asinari di"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross defensive_doctrine_CC old_guard }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1513
 }
 create_corps_commander = {
-	name = "Babini"
+	name = "Babini, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1514
 }
 create_corps_commander = {
-	name = "Burzagli"
+	name = "Burzagli, "
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1515
 }
 create_corps_commander = {
-	name = "Baistrocchi"
+	name = "Baistrocchi, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Decent_General Order_of_Saint_Lazarus logistics_wizard_CC offensive_doctrine_CC panzer_leader }
+	traits = { Decent_General armor_officer Order_of_Saint_Lazarus logistics_wizard_CC offensive_doctrine_CC panzer_leader }
 	skill = 1
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+	id = 1516
 }
 create_corps_commander = {
-	name = "Italo Balbo"
+	name = "Balbo, Italo"
 	picture = "portrait_italy_italo_balbo.dds"
-	traits = { Awesome_General East_Africa_Campaign_Medal logistics_wizard_CC offensive_doctrine_CC offensive_doctrine_CC_II panzer_leader }
+	traits = { Awesome_General armor_officer East_Africa_Campaign_Medal logistics_wizard_CC offensive_doctrine_CC offensive_doctrine_CC_II panzer_leader }
 	skill = 3
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 5
+	logistics_skill = 3
+	id = 1517
 }
 create_corps_commander = {
-	name = "Balisti"
+	name = "Balisti, "
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1518
 }
 create_corps_commander = {
-	name = "Balocco"
+	name = "Balocco, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1519
 }
 create_corps_commander = {
-	name = "di Prun, Barbasetti"
+	name = "Prun, Barbasetti di"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1520
 }
 create_corps_commander = {
-	name = "Barbieri"
+	name = "Barbieri, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1521
 }
 create_corps_commander = {
-	name = "Basso"
+	name = "Basso, "
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1522
 }
 create_corps_commander = {
-	name = "Bastico"
+	name = "Bastico, "
 	picture = "Portrait_Italy_Generic_land_1.dds"
-	traits = { Decent_General Order_of_Saint_Lazarus offensive_doctrine_CC panzer_leader }
+	traits = { Decent_General armor_officer Order_of_Saint_Lazarus offensive_doctrine_CC panzer_leader }
 	skill = 1
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 1
+	id = 1523
 }
 create_corps_commander = {
-	name = "Battisti"
+	name = "Battisti, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus winter_specialist commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1524
 }
 create_corps_commander = {
-	name = "di Pralormo, Beraudo"
+	name = "Pralormo, Beraudo di"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1525
 }
 create_corps_commander = {
-	name = "Bergonzoli"
+	name = "Bergonzoli, A."
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Decent_General Order_of_Saint_Lazarus panzer_leader }
+	traits = { Decent_General armor_officer Order_of_Saint_Lazarus panzer_leader }
 	skill = 1
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 1
+	id = 1526
 }
 create_corps_commander = {
-	name = "Bergonzoli"
+	name = "Bergonzoli, B."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General Italian_War_Cross trait_engineer logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1527
 }
 create_corps_commander = {
-	name = "Bettoni"
+	name = "Bettoni, "
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross winter_specialist }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1528
 }
 create_corps_commander = {
-	name = "Bianchi"
+	name = "Bianchi, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1529
 }
 create_corps_commander = {
-	name = "Bignani"
+	name = "Bignani, "
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General Italian_War_Cross commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1530
 }
 create_corps_commander = {
-	name = "Brunetti"
+	name = "Brunetti, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1531
 }
 create_corps_commander = {
-	name = "Bruno"
+	name = "Bruno, "
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Incompetent_General For_Valor_Silver_Medal defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1532
 }
 create_corps_commander = {
-	name = "Cadorna"
+	name = "Cadorna, "
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1533
 }
 create_corps_commander = {
-	name = "di Bergolo, Calvi"
+	name = "Bergolo, Calvi di"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC panzer_leader }
+	traits = { Bad_General armor_officer Order_of_the_Crown_of_Italy offensive_doctrine_CC panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1534
 }
 create_corps_commander = {
-	name = "Canale"
+	name = "Canale, "
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Decent_General Order_of_Saint_Lazarus commando old_guard }
+	traits = { old_guard Decent_General Order_of_Saint_Lazarus commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 3
+	id = 1535
 }
 create_corps_commander = {
-	name = "di Feroleto, Caracciolo"
+	name = "Feroleto, Caracciolo di"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1536
 }
 create_corps_commander = {
-	name = "Carboni"
+	name = "Carboni, "
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC panzer_leader commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1537
 }
 create_corps_commander = {
-	name = "Carta"
+	name = "Carta, "
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1538
 }
 create_corps_commander = {
-	name = "Caruso"
+	name = "Caruso, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1539
 }
 create_corps_commander = {
-	name = "Cassino"
+	name = "Cassino, "
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1540
 }
 create_corps_commander = {
-	name = "Castellano"
+	name = "Castellano, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1541
 }
 create_corps_commander = {
-	name = "Caviglia"
+	name = "Caviglia, "
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Incompetent_General For_Valor_Silver_Medal old_guard }
+	traits = { old_guard Incompetent_General For_Valor_Silver_Medal }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1542
 }
 create_corps_commander = {
-	name = "Cerio"
+	name = "Cerio, "
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1543
 }
 create_corps_commander = {
-	name = "Coppi"
+	name = "Coppi, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Terrible_General Italian_War_Cross panzer_leader }
+	traits = { Terrible_General armor_officer Italian_War_Cross panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1544
 }
 create_corps_commander = {
 	name = "Cei"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC old_guard }
+	traits = {old_guard  Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1545
 }
 create_corps_commander = {
-	name = "Cigala-Fulgosi"
+	name = "Cigala-Fulgosi, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy panzer_leader }
+	traits = { Bad_General armor_officer Order_of_the_Crown_of_Italy panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1546
 }
 create_corps_commander = {
-	name = "Clerici"
+	name = "Clerici, "
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Terrible_General Italian_War_Cross defensive_doctrine_CC old_guard }
+	traits = { old_guard Terrible_General Italian_War_Cross defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1547
 }
 create_corps_commander = {
-	name = "Cona"
+	name = "Cona, "
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1548
 }
 create_corps_commander = {
-	name = "Cotronei"
+	name = "Cotronei, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1549
 }
 create_corps_commander = {
-	name = "Crea"
+	name = "Crea, "
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy winter_specialist commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1550
 }
 create_corps_commander = {
-	name = "Dall'Ora"
+	name = "Dall'Ora, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC panzer_leader }
+	traits = { Bad_General armor_officer Order_of_the_Crown_of_Italy logistics_wizard_CC panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1551
 }
 create_corps_commander = {
-	name = "Dalmazzo"
+	name = "Dalmazzo, "
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1552
 }
 create_corps_commander = {
-	name = "Dapino"
+	name = "Dapino, "
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1553
 }
-
 create_corps_commander = {
-	name = "de Carolis"
+	name = "Carolis, de"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1554
 }
 create_corps_commander = {
-	name = "de Castiglione"
+	name = "Castiglione, de"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1555
 }
 create_corps_commander = {
-	name = "de Cia"
+	name = "Cia, de"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy winter_specialist commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1556
 }
 create_corps_commander = {
-	name = "de Simone"
+	name = "Simone, de"
 	picture = "Portrait_Italy_Generic_land_1.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy panzer_leader }
+	traits = { Bad_General armor_officer Order_of_the_Crown_of_Italy panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1557
 }
 create_corps_commander = {
-	name = "de Stefanis"
+	name = "dStefanis, de"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC fortress_buster panzer_leader }
+	traits = { Bad_General armor_officer Order_of_the_Crown_of_Italy offensive_doctrine_CC fortress_buster panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1558
 }
 create_corps_commander = {
-	name = "de Vecchi di Val Cismon"
+	name = "Vecchi di Val Cismon, de"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Terrible_General Italian_War_Cross defensive_doctrine_CC old_guard }
+	traits = { old_guard Terrible_General Italian_War_Cross defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1559
 }
 create_corps_commander = {
-	name = "d'Havet"
+	name = "d'Havet, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross defensive_doctrine_CC commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1560
 }
 create_corps_commander = {
 	name = "di Nisio, Ismaele"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Competent_General panzer_leader commando desert_fox Order_of_Military_Medal }
+	traits = { Competent_General armor_officer Order_of_Military_Medal panzer_leader commando desert_fox }
 	skill = 3
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 2
+	id = 1561
 }
 create_corps_commander = {
-	name = "Du Pont"
+	name = "Pont, Du"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1562
 }
 create_corps_commander = {
-	name = "Emilio"
+	name = "Emilio, "
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1563
 }
 create_corps_commander = {
 	name = "Esposito"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1564
 }
 create_corps_commander = {
-	name = "Fermé"
+	name = "Fermé, "
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1565
 }
 create_corps_commander = {
 	name = "Ferrari Orsi"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1566
 }
 create_corps_commander = {
 	name = "Duca di Pistoia, Filiberto"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Incompetent_General For_Valor_Silver_Medal }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1567
 }
 create_corps_commander = {
 	name = "Franco"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross winter_specialist }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1568
 }
 create_corps_commander = {
 	name = "Franzosi"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1569
 }
 create_corps_commander = {
 	name = "Frattini"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General Order_of_the_Holy_Annuntiation commando trait_engineer }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
+	id = 1570
 }
 create_corps_commander = {
 	name = "Fricchione"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Frusci"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gambara"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General Order_of_the_Holy_Annuntiation winter_specialist }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gambelli"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC old_guard }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gandin"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross winter_specialist }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gariboldi"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Decent_General Order_of_Saint_Lazarus logistics_wizard_CC old_guard }
+	traits = { old_guard Decent_General Order_of_Saint_Lazarus logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 3
 }
 create_corps_commander = {
 	name = "Geloso"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gherzi"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gioda"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Giovanelli"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "del Vodice, Gonzaga"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC fortress_buster old_guard }
+	traits = { old_guard Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Grattarola"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
 	name = "Grazioli"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC old_guard }
+	traits = { old_guard Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Grossi"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus logistics_wizard_CC old_guard }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Guy"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Guzzoni"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General Order_of_the_Holy_Annuntiation commando }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Leone"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Incompetent_General For_Valor_Silver_Medal logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lisi, F."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lisi, Fr."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lorenzelli"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lorenzini"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Magli"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Maletti"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mancinelli"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Marghinotti"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Marinetti"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross old_guard }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Marras"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Martinat"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus winter_specialist commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Masina"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Moizo"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Molimero"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Molinari"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Montemurro"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General Italian_War_Cross trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Navarra-Veggiani"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Nasi"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus logistics_wizard_CC offensive_doctrine_CC defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Negro"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Nicolosi"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Orlando"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Pariani"
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Incompetent_General Italy_Now_and_Forever panzer_leader old_guard }
+	traits = { old_guard Incompetent_General armor_officer Italy_Now_and_Forever panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pelligra"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Perugi"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pescatori"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pialorsi"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pintor"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Pirzio Biroli"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy trickster_CC old_guard }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pittagula"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Porcinari"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rastrelli"
@@ -998,1050 +1538,1750 @@ create_corps_commander = {
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ricagno"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus winter_specialist commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ricci"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ricci, U."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Roatta"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Incompetent_General For_Valor_Silver_Medal old_guard }
+	traits = { old_guard Incompetent_General For_Valor_Silver_Medal }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Romero"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rossi, A."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rossi, R."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Sala"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General Order_of_the_Holy_Annuntiation commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Scattini"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus commando }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Scotti"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Stripoli"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General Italian_War_Cross commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Tartaglia"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Terziani"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Togni"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Decent_General Order_of_Saint_Lazarus fortress_buster old_guard }
+	traits = { old_guard Decent_General Order_of_Saint_Lazarus fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 3
 }
 create_corps_commander = {
 	name = "Trezzani"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Tricoli"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General Italian_War_Cross fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Principe di Piemonte, Umberto"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Utili"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vacca-Maggiolini"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Decent_General Order_of_Saint_Lazarus defensive_doctrine_CC old_guard }
+	traits = { old_guard Decent_General Order_of_Saint_Lazarus defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 3
 }
 create_corps_commander = {
 	name = "Vecchiarelli, Carlo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Bad_General Distinguished_Service_Order Order_of_the_Rising_Sun Order_of_Military_Medal Order_of_the_Crown_of_Italy Legion_of_Honor Italian_War_Cross Order_of_Saint_Lazarus  trait_mountaineer trickster_CC logistics_wizard_CC panzer_leader }
+	traits = { Bad_General armor_officer Distinguished_Service_Order Order_of_the_Rising_Sun Order_of_Military_Medal Order_of_the_Crown_of_Italy Legion_of_Honor Italian_War_Cross Order_of_Saint_Lazarus trait_mountaineer trickster_CC logistics_wizard_CC panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vercellino"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Verne"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vivaldi"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Volpini"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Zincone"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Zingales"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Decent_General Order_of_Saint_Lazarus logistics_wizard_CC offensive_doctrine_CC panzer_leader }
+	traits = { Decent_General armor_officer Order_of_Saint_Lazarus logistics_wizard_CC offensive_doctrine_CC panzer_leader }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "La Ferla"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus logistics_wizard_CC offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Giorgis"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Priore"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Bitossi"
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Competent_General Order_of_the_Holy_Annuntiation logistics_wizard_CC offensive_doctrine_CC panzer_leader }
+	traits = { Competent_General armor_officer Order_of_the_Holy_Annuntiation logistics_wizard_CC offensive_doctrine_CC panzer_leader }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Allerino-Testero"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC old_guard }
+	traits = { old_guard Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Aymonnino"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Bennati"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy fortress_buster old_guard }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Calcagno"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Campagna"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Cicconetti"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Crimi"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "D'Oro"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "de Pignier"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Decent_General Order_of_Saint_Lazarus fortress_buster old_guard }
+	traits = { old_guard Decent_General Order_of_Saint_Lazarus fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 3
 }
 create_corps_commander = {
 	name = "del Giudice"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "di Benedetto"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC old_guard }
+	traits = { old_guard Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Farinacci"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Fautilli"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus fortress_buster }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Galbiati"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gallo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gandini"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Guillet"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Awesome_General East_Africa_Campaign_Medal logistics_wizard_CC trickster_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 3
 }
 create_corps_commander = {
 	name = "Infante"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy panzer_leader }
+	traits = { Bad_General armor_officer Order_of_the_Crown_of_Italy panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Leonardi"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Incompetent_General For_Valor_Silver_Medal }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mannerini"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Monacci"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Montagna"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Morigi"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus defensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Navarini"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Nicolosi"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Oxilia"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus fortress_buster }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Parini"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Piatti del Pozzo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pignetti"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy trait_engineer old_guard }
+	traits = { old_guard Bad_General Order_of_the_Crown_of_Italy trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Re"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus fortress_buster }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Romegialli"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Sforza"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Silvestri"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC old_guard }
+	traits = { old_guard Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Tellera"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Tringali"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Voldemyra-Gabini"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy winter_specialist }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Angione"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "di Baldessero"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Appiotti"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Endrizzi, Sandro"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pugliesi, Callimaco"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mazzanti, Marco"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General offensive_doctrine_CC trickster_CC commando }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Russo, Biagio"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Russo, Biagio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General Order_of_the_Holy_Annuntiation }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Romano, Matteo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lo Duca, Abbondio"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General Order_of_Saint_Lazarus }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Folliero, Silvestro"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lorenzo, Abele"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milanesi, Gregorio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Siciliano, Frediano"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lombardo, Fabiano"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Iadanza, Emiliano"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Trevisano, Sebastiano"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General winter_specialist logistics_wizard_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Udinesi, Nino"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General For_Valor_Silver_Medal commando fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Schiavone, Salvatore"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Siciliano, Valerio"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Cattaneo, Beato"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Genovese, Aurelio"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General fortress_buster }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Ricci, Fabrizio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General logistics_wizard_CC trickster_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Fiorentino, Marco"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General defensive_doctrine_CC winter_specialist }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Calabresi, Casimiro"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Romano, Deodato"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Bergamaschi, Raffaele"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Romani, Eligio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General old_guard }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pugliesi, Gaetano"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lori, Napoleone"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General winter_specialist }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Iadanza, Dimitri"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General For_Valor_Silver_Medal defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Manfrin, Facondo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Iadanza, Silvano"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Competent_General panzer_leader commando }
+	traits = { Competent_General armor_officer panzer_leader commando }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Colombo, Massimo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General trickster_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mancini, Adelchi"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General defensive_doctrine_CC trait_engineer }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Udinese, Vitale"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General Italian_War_Cross }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Onio, Ciriaco"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Trevisani, Crispino"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Angelo, Ignazio"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Trentino, Igino"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General offensive_doctrine_CC defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ferrari, Liviano"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Li Fonti, Alvise"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Ferrari, Valente"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Siciliani, Settimio"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General Order_of_the_Crown_of_Italy fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Trentini, Abele"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Fiorentino, Amaranto"
 	picture = "Portrait_Italy_Generic_land_1.dds"
-	traits = { Decent_General winter_specialist panzer_leader }
+	traits = { Decent_General armor_officer winter_specialist panzer_leader }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Arcuri, Cherubino"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General fortress_buster commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1	
 }
 create_corps_commander = {
 	name = "Baresi, Pio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Calabrese, Isacco"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General Italy_Now_and_Forever fortress_buster }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Pinto, Terenzio"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milano, Regolo"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Toscano, Crescente"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General trait_engineer }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lettiere, Quintilio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General fortress_buster trait_engineer }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Toscano, Geronimo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Capon, Eugenio"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General trait_engineer trickster_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Palermo, Igino"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pinto, Cristoforo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Siciliano, Bruto"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ferrari, Abbondio"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Cattaneo, Ariosto"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Marchesi, Timoteo"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ricci, Aimone"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ferrari, Achille"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Costa, Bruno"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pinto, Giona"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milanesi, Carisio"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Siciliani, Fedro"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Calabresi, Gandolfo"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Barese, Vinicio"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Angelo, Ercole"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Endrizzi, Gerardino"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Siciliani, Mariano"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Beneventi, Viviano"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Udinese, Fausto"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ferrari, Patrizio"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General For_Valor_Silver_Medal logistics_wizard_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Siciliano, Salomone"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "De Luca, Procopio"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lucciano, Astolfo"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mazzanti, Raimondo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General defensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Lucchesi, Algiso"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General Order_of_Military_Medal }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Lucchese, Prisco"
 	picture = "Portrait_Italy_Generic_land_1.dds"
-	traits = { Competent_General panzer_leader }
+	traits = { Competent_General armor_officer panzer_leader }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Castiglione, Gofreddo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General trickster_CC offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pirozzi, Leonardo"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General Order_of_Military_Medal defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ferrari, Fausto"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "De Luca, Berardo"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General commando }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Piazza, Baldo"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Longo, Mattia"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Competent_General panzer_leader commando }
+	traits = { Competent_General armor_officer panzer_leader commando }
 	skill = 1
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Manfrin, Luciano"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Pinto, Delfio"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Davide, Benedetto"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General defensive_doctrine_CC winter_specialist }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Greco, Simone"
 	picture = "Portrait_Italy_Generic_land_1.dds"
-	traits = { Competent_General commando panzer_leader }
+	traits = { Competent_General armor_officer commando panzer_leader }
 	skill = 1
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Napolitano, Renzo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General winter_specialist }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Sabbatini, Alfredino"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General fortress_buster trickster_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Zito, Fantino"
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Decent_General panzer_leader }
+	traits = { Decent_General armor_officer panzer_leader }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Bellucci, Albino"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lucchesi, Sesto"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Costa, Gino"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Udinesi, Concordio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General commando }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Costa, Quintilio"
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Competent_General panzer_leader }
+	traits = { Competent_General armor_officer panzer_leader }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Capon, Berto"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General trait_engineer }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milano, Ildebrando"
 	picture = "Portrait_Italy_Generic_land_1.dds"
-	traits = { Competent_General panzer_leader }
+	traits = { Competent_General armor_officer panzer_leader }
 	skill = 1
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Udinesi, Merico"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Bad_General panzer_leader }
+	traits = { Bad_General armor_officer panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Udinesi, Merico"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Romani, Leo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Greco, Salvatore"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General trickster_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Moretti, Simone"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Marchesi, Vincenzo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General Order_of_the_Crown_of_Italy }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Siciliani, Orazio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mazzi, Fabrizio"
@@ -2054,594 +3294,990 @@ create_corps_commander = {
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_the_Crown_of_Italy }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Esposito, Benedetto"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General offensive_doctrine_CC winter_specialist }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Loggia, Gavino"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Competent_General panzer_leader }
+	traits = { Competent_General armor_officer panzer_leader }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Russo, Filiberto"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General East_Africa_Campaign_Medal logistics_wizard_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Pirozzi, Candido"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Marino, Narciso"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Bad_General panzer_leader }
+	traits = { Bad_General armor_officer panzer_leader }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Boni, Gianni"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General Italian_War_Cross }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Angelo, Agenore"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ricci, Gianleone"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General offensive_doctrine_CC defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Panicucci, Vincenzo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Trentino, Alvisio"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General trickster_CC logistics_wizard_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Boni, Delmo"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General commando logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lombardi, Matteo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Barese, Ferruccio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gallo, Christian"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General winter_specialist trait_engineer }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Pinto, Sante"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Competent_General winter_specialist panzer_leader }
+	traits = { Competent_General armor_officer winter_specialist panzer_leader }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Piazza, Galileo"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General trickster_CC trait_engineer }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Trentino, Agamennone"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pugliesi, Astolfo"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General Order_of_the_Crown_of_Italy offensive_doctrine_CC fortress_buster }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Monaldo, Albertino"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Italian_War_Cross winter_specialist }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Ferrari, Bonaventura"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Padovano, Lucio"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General logistics_wizard_CC trait_engineer }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Trevisan, Arduino"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Competent_General old_guard }
+	traits = { old_guard Competent_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 3
 }
 create_corps_commander = {
 	name = "Arturo, Quarto"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Capon, Mauro"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lo Duca, Dino"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General winter_specialist }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Romani, Abbondanzio"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Angelo, Alarico"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General For_Valor_Silver_Medal }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Davide, Angelo"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General trait_engineer }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Loggia, Arrigo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General trait_engineer defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Loggia, Ippolito"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Competent_General panzer_leader commando }
+	traits = { Competent_General armor_officer panzer_leader commando }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Li Fonti, Edmondo"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Siciliano, Athos"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rizzo, Nestore"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General fortress_buster defensive_doctrine_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Costa, Adelmio"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General winter_specialist }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Napolitani, Salvo"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Schiavone, Adelfo"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General trait_engineer }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Fiorentino, Narciso"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Sal, Eros"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Fiorentino, Delfino"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Cocci, Edoardo"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Giordano, Lelio"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Russo, Ludovico"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Pinto, Rodrigo"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General commando }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Loggia, Nereo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General East_Africa_Campaign_Medal }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Dellucci, Gianetto"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Moretti, Gianfranco"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Pirozzi, Bellino"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General winter_specialist }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Bruno, Fiorenzo"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Cattaneo, Gianni"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General panzer_leader offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Romano, Leonide"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General commando }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milanesi, Landro"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General defensive_doctrine_CC trickster_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ricci, Francesco"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General commando }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milanesi, Dante"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Sal, Quintiliano"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Competent_General offensive_doctrine_CC trait_engineer }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mancini, Nazzareno"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General trickster_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Trentini, Giulio"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Castiglione, Leonardo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General trait_engineer defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Sagese, Quadrato"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Castiglione, Leopoldo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Palermo, Durante"
 	picture = "Portrait_Italy_Generic_land_5.dds"
-	traits = { Bad_General panzer_leader }
+	traits = { Bad_General armor_officer panzer_leader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Colombo, Lelio"
 	picture = "Portrait_Italy_Generic_land_1.dds"
-	traits = { Decent_General old_guard logistics_wizard_CC }
+	traits = { old_guard Decent_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 3
 }
 create_corps_commander = {
 	name = "Angelo, Carmelo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General defensive_doctrine_CC offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milanesi, Lionello"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General logistics_wizard_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Fiorentino, Norberto"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Bianchi, Fedele"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lucchesi, Eros"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General logistics_wizard_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Iadanza, Costanzo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Napolitani, Beniamino"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General trait_engineer }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Schiavone, Astolfo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General trickster_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Fanucci, Carlo"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General logistics_wizard_CC trickster_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milanesi, Fedele"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Buccho, Catone"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General logistics_wizard_CC commando }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Genovese, Mario"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Competent_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Castiglione, Ernesto"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Esposito, Filiberto"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milanesi, Nestore"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General East_Africa_Campaign_Medal defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Fiorentino, Gherardo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General trickster_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Arcuri, Ladislao"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Marino, Omero"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Baresi, Espedito"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Giordano, Donato"
 	picture = "Portrait_Italy_Generic_land_1.dds"
-	traits = { Bad_General logistics_wizard_CC panzer_leader }
+	traits = { Bad_General armor_officer logistics_wizard_CC panzer_leader }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Padovano, Liviano"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Bad_General winter_specialist panzer_leader }
+	traits = { Bad_General armor_officer winter_specialist panzer_leader }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mussolini, Benito"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Lusana, Alessandro"
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Competent_General commando Order_of_Saint_Lazarus Order_of_Military_Medal panzer_leader offensive_doctrine_CC }
+	traits = { Competent_General armor_officer commando Order_of_Saint_Lazarus Order_of_Military_Medal panzer_leader offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Melotti, Carlo"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General trickster_CC Order_of_the_Crown_of_Italy For_Valor_Silver_Medal Italian_War_Cross }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Zaccone, Ernesto"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Zaglio, Pietro"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General trait_mountaineer }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Zambon, Dino Bortolo"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General For_Valor_Silver_Medal desert_fox }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Zanghieri, Giovanni"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General fortress_buster Distinguished_Service_Medal }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Krall, Luigi"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General winter_specialist }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Vox, Donato"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General For_Valor_Silver_Medal desert_fox }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Viale, Carlo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Villa Santa, Nino Salvatore"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Viscontini, Vittorio"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General Order_of_Military_Medal }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vecchi, Giovanni"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General offensive_doctrine_CC defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vegni, Ezio"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Verse, Edoardo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Bad_General panzer_leader logistics_wizard_CC }
+	traits = { Bad_General armor_officer panzer_leader logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vacani, Augusto"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vandel Heudel, Mario"
@@ -2654,354 +4290,590 @@ create_corps_commander = {
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General Order_of_Military_Medal Order_of_the_Crown_of_Italy Order_of_Saint_Lazarus Italian_Colonial_Order Italian_War_Cross logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vaccari, Umberto"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vaccarisi, Achille"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General logistics_wizard_CC desert_fox fortress_buster }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Vasarri, Alberto"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General trait_mountaineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Quarra Sito, Edoardo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
-	traits = { Competent_General defensive_doctrine_CC For_Valor_Silver_Medal Italian_War_Cross desert_fox panzer_leader }
+	traits = { Competent_General armor_officer defensive_doctrine_CC For_Valor_Silver_Medal Italian_War_Cross desert_fox panzer_leader }
 	skill = 2
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Ruggiero, Giunio"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Competent_General Order_of_Military_Medal offensive_doctrine_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Ruggero, Vittorio"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General commando logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Azzi, Arnaldo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General trickster_CC trait_mountaineer Order_of_the_Crown_of_Italy French_Inter-allied_Victory_Medal defensive_doctrine_CC Italian_War_Cross }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Adami Rossi, Enrico"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General German_Cross Order_of_Saint_Lazarus For_Valor_Silver_Medal  Order_of_the_Crown_of_Italy Italian_War_Cross defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Agostoni, Umberto"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General commando logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Alagia, Gastone"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Aliberti, Alberto"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General logistics_wizard_CC commando defensive_doctrine_CC fortress_buster }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Amato, Luigi"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Andreini, Enrico"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Andreoli, Giuseppe"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Angelini, Ignazio"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Angioy, Paolo"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Competent_General trickster_CC For_Valor_Silver_Medal Order_of_Military_Medal }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Guassardo, Mario"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Competent_General defensive_doctrine_CC Order_of_Military_Medal }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Guccione, Giovanni Battista"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General defensive_doctrine_CC fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Guidi, Francesco"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General Italian_War_Cross French_Inter-allied_Victory_Medal defensive_doctrine_CC fortress_buster logistics_wizard_CC Order_of_Saint_Lazarus Order_of_the_Crown_of_Italy Order_of_Military_Medal  }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Nuvoloni, Luigi"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General trait_mountaineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Nobili, Giorgio"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General Order_of_Saint_Lazarus Order_of_Military_Medal old_guard For_Valor_Silver_Medal Italian_War_Cross Order_of_the_Crown_of_Italy Italian_Colonial_Order }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Nicolosi, Mario"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Nobili, Giorgio"
 	picture = "Portrait_Italy_Generic_land_3.dds"
-	traits = { Competent_General urban_assault_specialist winter_specialist winter_specialist_CC_II Italian_War_Cross Order_of_Saint_Lazarus Order_of_the_Crown_of_Italy Italian_Colonial_Order French_Inter-allied_Victory_Medal Iron_Cross For_Valor_Silver_Medal }
+	traits = { Competent_General infantry_officer urban_assault_specialist winter_specialist winter_specialist_CC_II Italian_War_Cross Order_of_Saint_Lazarus Order_of_the_Crown_of_Italy Italian_Colonial_Order French_Inter-allied_Victory_Medal Iron_Cross For_Valor_Silver_Medal }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Braca, C."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Stovini, A."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Incompetent_General urban_assault_specialist }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Garavaglia, Q."
 	picture = "Portrait_Italy_Generic_land_1.dds"
-	traits = { Decent_General urban_assault_specialist old_guard }
+	traits = { old_guard Decent_General urban_assault_specialist }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 3
 }
 create_corps_commander = {
 	name = "Leone, D."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Incompetent_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Bellini, E."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General winter_specialist hill_fighter }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Barone, A."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Incompetent_General fortress_buster }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Barraco, E."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Incompetent_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Quasimodo, S."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General desert_fox }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Margagliano, S."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General trickster_CC commando }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Marino, V."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vezzosi, D."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General urban_assault_specialist winter_specialist }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Vitale, P."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General swamp_fox jungle_rat }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rizzuto, S."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Incompetent_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Piras, R."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ferraro, F."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General jungle_rat }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Punti, U."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General naval_invader }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Benedetti, P."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Incompetent_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Sorgente, L."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Incompetent_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Stellato, D."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General commando hill_fighter }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Bertagnoli, N."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General winter_specialist naval_invader }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rinaldi, V."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General trait_mountaineer defensive_doctrine_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rizzi, B."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General trait_mountaineer trait_engineer }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Greco, G."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Terrible_General defensive_doctrine_CC jungle_rat }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Bracciale, A."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Fazzolari, D."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Milani, G."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General trickster_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Amodio, P."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General offensive_doctrine_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vitale, L."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Depalma, V."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vezzosi, E."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Incompetent_General logistics_wizard_CC trait_mountaineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Saputo, U."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General trickster_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Amato, L."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Barone, M."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General defensive_doctrine_CC winter_specialist }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Menapace, D."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Filippi, B."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Decent_General trait_engineer }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mariani, V."
@@ -3014,299 +4886,462 @@ create_corps_commander = {
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General desert_fox }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rinaldi, T."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Incompetent_General trickster_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Basile, T."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "De Angelis, T."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General panzer_leader naval_invader }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "De Angelis, T."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General hill_fighter trickster_CC }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Lazzari, N."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Decent_General jungle_rat }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Muzzi, P."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Incompetent_General hill_fighter }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ruggiero, B."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Taverna, S."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Incompetent_General commando }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Ferrara, S."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Decent_General trickster_CC }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Costantini, R."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General trait_mountaineer }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gentile, L."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Incompetent_General hill_fighter }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Scognamiglio, O."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Terrible_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Greco, V."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General urban_assault_specialist }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rabbia, L."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Incompetent_General trickster_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Mancini, M."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General jungle_rat }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Martini, P."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Incompetent_General offensive_doctrine_CC trait_mountaineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Conte, D."
 	picture = "Portrait_Italy_Generic_land_2.dds"
-	traits = { Bad_General panzer_leader ranger }
+	traits = { Bad_General armor_officer panzer_leader ranger }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Gentile, C."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General commando }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Vitale, F."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Terrible_General desert_fox }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Piumini, A."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General jungle_rat }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Valentini, P."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Decent_General urban_assault_specialist }
 	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Costantini, T."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Pellegrini, G."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Terrible_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rauzi, E."
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General trickster_CC }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Donati, I."
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Terrible_General }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Esposito, U."
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General jungle_rat }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Battaglia, P."
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General hill_fighter trait_mountaineer }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Rossi, F."
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Incompetent_General swamp_fox trait_engineer }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Pascolini, Etelvoldo"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Diamanti, Filippo"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Zanghier, Giovanni"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Pellegrin, Carlo"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Nebbia, Edoardo"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Gazzale, Enrico"
 	picture = "Portrait_Italy_Generic_land_4.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Francisci, Enrico"
 	picture = "Portrait_Italy_Generic_land_5.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Nasci, Gabriele"
 	picture = "Portrait_Italy_Generic_land_1.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Lerici, Roberto"
 	picture = "Portrait_Italy_Generic_land_2.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
     name = "Marazzani, Mario"
 	picture = "Portrait_Italy_Generic_land_3.dds"
 	traits = { Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
 create_corps_commander = {
 	name = "Cavallero, Ugo"
 	picture = "Portrait_Italy_Ugo_Cavallero.dds"
-	traits = {  old_guard }
+	traits = { old_guard }
 	skill = 1
-	rank = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Messe, Giovanni"
 	picture = "Portrait_Italy_Giovanni_Messe.dds"
-	traits = {  panzer_leader  Competent_General }
+	traits = { Competent_General armor_officer panzer_leader  }
 	skill = 4
-	rank = 1
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 2
 }
 create_corps_commander = {
 	name = "Visconti Prasca, Sebastiano"
 	picture = "Portrait_Italy_Sebastiano_Visconti_Prasca.dds"
 	traits = {  }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
 create_corps_commander = {
 	name = "Soddu, Ubaldo"
 	picture = "Portrait_Italy_Ubaldo_Soddu.dds"
 	traits = {  }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
 }
-
-############# navy leaders ##################
+############# Navy Leaders ##################
 create_navy_leader = {
 	name = "Inigo Campioni"
-		picture = "Portrait_Italy_Inigo_Campioni.dds"
+	picture = "Portrait_Italy_Inigo_Campioni.dds"
 	traits = { superior_tactician spotter }
 	skill = 2
 }
-
 create_navy_leader = {
 	name = "Alberto Da Zara"
 	picture = "Portrait_Italy_Alberto_Da_Zara.dds"
 	traits = { superior_tactician }
 	skill = 3
 }
-
 create_navy_leader = {
 	name = "Giuseppe Fioravanzo"
 	picture = "Portrait_Italy_Giuseppe_Fioravanzo.dds"
 	traits = { superior_tactician }
 	skill = 3
 }
-
 create_navy_leader = {
 	name = "Carlo Bergamini"
 	picture = "Portrait_Italy_Carlo_Bergamini.dds"
 	traits = { superior_tactician }
 	skill = 2
 }
-
 create_navy_leader = {
 	name = "Angelo Iachino"
 	picture = "Portrait_Italy_Angelo_Iachino.dds"
 	traits = { superior_tactician spotter }
 	skill = 2
 }
-
 create_navy_leader = {
 	name = "Brivonesi"
 	picture = "Portrait_Italy_Brivonesi_navy.dds"
