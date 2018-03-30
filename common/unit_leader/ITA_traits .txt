@@ -2,36 +2,14 @@ leader_traits = {
 ##################################
 # ITA Traits
 ##################################
-	ITA_tag = { 
-		type = all
-		trait_type = personality_trait
-		gain_xp = {
-			always = no # not gainable
-		}
-		
-		allowed = {
-			FROM = {
-				tag = ITA
-			}
-		}
-		
-		modifier = {
-			experience_gain_factor = -0.01
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		new_commander_weight = {
-			factor = 0
-		}
-	}
 	Order_of_Military_Medal = { 
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ITA_tag
+			OR = {
+				is_attacker = yes
+				is_defender = yes
+			}
 		}
 		
 		allowed = {
@@ -54,7 +32,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ITA_tag
 			is_attacker = yes
 			is_winning = yes
 		}
@@ -80,7 +57,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ITA_tag
 			is_attacker = no
 			is_winning = yes
 		}
@@ -126,7 +102,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ITA_tag
 			has_trait = Italian_War_Cross
 			is_winning = yes
 		}
@@ -151,7 +126,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ITA_tag
 			is_attacker = no
 		}
 		
@@ -175,7 +149,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = ITA_tag
 			is_winning = yes
 		}
 		

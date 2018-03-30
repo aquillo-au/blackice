@@ -2,31 +2,6 @@ leader_traits = {
 ##################################
 # GER Traits
 ##################################
-	GER_tag = {
-		type = all
-		trait_type = personality_trait
-		gain_xp = {
-			always = no # not gainable
-		}
-		allowed = {
-			FROM = {
-				tag = GER
-			}
-		}
-		
-		modifier = {
-			offence = 0.02
-			army_speed_factor = 0.02
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		new_commander_weight = {
-			factor = 0
-		}
-	}
 	waffen_ss_officer = {
 		type = corps_commander
 		trait_type = personality_trait
@@ -55,22 +30,11 @@ leader_traits = {
 		
 		gain_xp = {
 			is_winning = yes
-			or = {
-				has_trait = GER_tag
-				has_trait = waffen_ss_officer
-			}
 		}
 		
 		allowed = {
 			FROM = {
 				tag = GER
-			}
-		}
-		
-		prerequisites = {
-			OR = {
-				has_trait = GER_tag
-				has_trait = waffen_ss_officer
 			}
 		}
 		
@@ -104,10 +68,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			OR = {
-				has_trait = GER_tag
-				has_trait = waffen_ss_officer
-			}
 			OR = {
 				has_trait = Iron_Cross
 				has_trait = War_Merit_Cross
@@ -143,7 +103,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			has_trait = GER_tag
 			OR = {
 				has_trait = Iron_Cross
 				has_trait = War_Merit_Cross
@@ -179,11 +138,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			has_trait = GER_tag
-			OR = {
-				has_trait = GER_tag
-				has_trait = waffen_ss_officer
-			}
 			has_trait = Iron_Cross
 			has_trait = Grand_Cross
 		}
@@ -210,8 +164,8 @@ leader_traits = {
 		
 		gain_xp = {
 			OR = {
-				has_trait = GER_tag
-				has_trait = waffen_ss_officer
+				is_attacker = yes
+				is_defender = yes
 			}
 		}
 		
@@ -239,10 +193,6 @@ leader_traits = {
 		
 		gain_xp = {
 			has_trait = Military_Merit_Order
-			OR = {
-				has_trait = GER_tag
-				has_trait = waffen_ss_officer
-			}
 		}
 		
 		allowed = {
@@ -267,7 +217,6 @@ leader_traits = {
 		trait_type = personality_trait
 		
 		gain_xp = {
-			has_trait = GER_tag
 			OR = {
 				has_trait = Military_Merit_Order
 				has_trait = War_Merit_Cross
@@ -332,11 +281,7 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			OR = {
-				has_trait = GER_tag
-				has_trait = waffen_ss_officer
-			}
-			is_attacker = no
+			is_defender = yes
 		}
 		
 		allowed = {
@@ -364,16 +309,10 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			OR = {
-				has_trait = GER_tag
-				has_trait = waffen_ss_officer
-			}
-			AND = {
 				OR = {
 					is_attacker = no
 					has_combat_modifier = lack_of_supply
 				}
-			}
 		}
 		
 		allowed = {
