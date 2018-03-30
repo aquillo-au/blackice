@@ -4,6 +4,12 @@ oob = "FRA_1936"
 
 set_research_slots = 6
 
+set_convoys = 600
+
+set_stability = 0.62
+
+set_war_support = 0.15
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
@@ -106,9 +112,6 @@ set_technology = {
 	tech_mn_fbb = 1
 	tech_mn_bb = 1
 	tech_mn_cv = 1
-	
-	trench_warfare = 1
-	fleet_in_being = 1
 	############## economy ################
 	smallarms_industry = 1
 	uniform_industry = 1
@@ -124,12 +127,12 @@ set_technology = {
 	road_infra = 1
 	air_infra = 1
 	port_infra = 1
-	#port_infra2 = 1
 	heavy_industry = 1
 	civ_works = 1
 	housing_work = 1
 	hospital_work = 1
 	schools_work = 1
+	############## WW1 doctrines ################
 	ww1_infantry = 1
 	infantry_charge = 1
 	small_unit_raids = 1
@@ -186,49 +189,49 @@ set_technology = {
 	AA_positions = 1
 	camouflage_positions = 1
 	first_aid_stations = 1
-	
+	############## doctrines ################
+	trench_warfare = 1
+	fleet_in_being = 1
 }
 
-
 add_ideas = {
+	FRA_victors_of_wwi
+	FRA_disjointed_government
+	FRA_protected_by_the_maginot_line
 
-		FRA_victors_of_wwi
-		FRA_disjointed_government
-		FRA_protected_by_the_maginot_line
+	#politicians
+	albert_lebrun
+	yvon_delbos
+	marx_dormoy
+	maurice_henri_gauche
+	vincent_auriol
+	francois_darlan
+	maurice_gamelin
+	philippe_fequant
 	
-		#politicians
-		albert_lebrun
-		yvon_delbos
-		marx_dormoy
-		maurice_henri_gauche
-		vincent_auriol
-		francois_darlan
-		maurice_gamelin
-		philippe_fequant
-		
-		#laws
-		export_focus
-		tax_average
-		tariffs_average
-		
-		civilian_economy
-		press_free
-		key_industries
-		labor_allowed
-		fdi_allowed
-		
-		cons_two
-		foreign_volunteers
-		mob_reserve
-		train_medium
-		age_19
-		officer_train_low
-		security_liberty_first
-		edu_high
-		
-		unity_divided_nation
-		foreign_interventionism
-	}	
+	#laws
+	export_focus
+	tax_average
+	tariffs_average
+	
+	civilian_economy
+	press_free
+	key_industries
+	labor_allowed
+	fdi_allowed
+	
+	cons_two
+	foreign_volunteers
+	mob_reserve
+	train_medium
+	age_19
+	officer_train_low
+	security_liberty_first
+	edu_high
+	
+	unity_divided_nation
+	foreign_interventionism
+}	
 	
 set_country_flag = mob_reserve
 set_country_flag = foreign_interventionism
@@ -247,114 +250,7 @@ set_country_flag = labor_allowed
 set_country_flag = officer_train_low
 set_country_flag = security_liberty_first
 set_country_flag = unity_divided_nation
-	
-### 1939
-1939.1.1 = {
-	add_political_power = 899
 
-	#adding ministers
-	add_ideas = {
-		charles_tillon
-		francois_darlan
-		philippe_fequant
-		famh
-		jean_marie_bergeret
-		renault_fra
-
-		#laws
-		partial_economic_mobilisation
-	}
-	
-	
-	# MOD
-	remove_ideas = FRA_disjointed_government
-	add_ideas ={
-		FRA_reforms_failed
-		FRA_inflation3
-	}
-	
-	complete_national_focus = FRA_tools_modernisation
-	complete_national_focus = FRA_matignon_agreements_amendement
-	complete_national_focus = FRA_status_quo
-	complete_national_focus =  FRA_support_daladier
-	complete_national_focus = FRA_go_with_britain
-	complete_national_focus = FRA_rearmament
-	complete_national_focus = FRA_defense_national_funds
-	complete_national_focus = FRA_partial_mobilization
-	complete_national_focus = FRA_economic_reforms
-	complete_national_focus = FRA_devaluation
-	complete_national_focus = FRA_budget_deficit_law
-	complete_national_focus = FRA_giraud_plan
-
-	give_guarantee = POL
-	ENG = { add_to_faction = FRA }
-
-	oob = "FRA_1939"
-	set_technology = {
-		fighter1 = 1
-		fighter2 = 1
-		heavy_fighter1 = 1
-		tactical_bomber2 = 1
-		strategic_bomber1 = 1
-		cv_fighter1 = 1
-		cv_CAS1 = 1
-		improved_light_tank = 1
-		basic_medium_tank = 1
-		basic_heavy_tank = 1
-		interwar_artillery = 1
-		interwar_antitank = 1
-		infantry_weapons2 = 1
-		hmg = 1
-		hmg_2 = 1
-		mortars = 1
-		basic_destroyer = 1
-		basic_battleship = 1
-		basic_battlecruiser = 1
-
-		#doctrines
-		#Air
-		force_rotation = 1
-		fighter_baiting = 1
-		low_echelon_support = 1
-		dispersed_fighting = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		prepared_defense = 1
-		battlefleet_concentration = 1
-		subsidiary_carrier_role = 1
-		convoy_sailing = 1
-		submarine_operations = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-		basic_encryption = 1
-		basic_decryption = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		oil_plant = 1
-		improved_oil_plant = 1
-		construction1 = 1
-		construction2 = 1
-		construction3 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		dispersed_industry3 = 1
-	}
-}
-
-set_convoys = 600
-
-set_stability = 0.62
-	
-	
 set_politics = {
 
 	parties = {
@@ -386,10 +282,7 @@ set_politics = {
 }
 
 add_ideas = {
-	FRA_victors_of_wwi
-	FRA_disjointed_government
-	FRA_protected_by_the_maginot_line
-	cons_two
+	
 }
 
 if = {
@@ -398,7 +291,7 @@ if = {
 	}
 	add_to_tech_sharing_group = french_research
 }
-# DIPLOMACY
+##### DIPLOMACY #####
 if = {
 	limit = {
 		has_dlc = "Together for Victory"
@@ -433,24 +326,9 @@ if = {
 		puppet = LEB
 	}
 }
-set_country_flag = mob_reserve
-set_country_flag = foreign_interventionism
-set_country_flag = Tax_average
-set_country_flag = Edu_high
-set_country_flag = Press_regulated
-set_country_flag = Cons_two
-set_country_flag = tariffs_average
-set_country_flag = fdi_regulated
-set_country_flag = train_medium
-set_country_flag = key_industries
-set_country_flag = age_19
-set_country_flag = export_focus
-set_country_flag = civilian_economy
-set_country_flag = labor_allowed	
-
 
 #give_guarantee = CZE
-
+##### Country Leaders #####
 #Order matters here Daladier will start as leaders because added last
 create_country_leader = {
 	name = "Charles de Gaulle"
@@ -459,7 +337,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = nationalism
 	traits = {
-		
 	}
 }
 create_country_leader = {
@@ -468,9 +345,7 @@ create_country_leader = {
 	picture = "Portrait_France_louis_marin.dds"
 	expire = "1960.1.1"
 	ideology = moderate
-	traits = {
-		silent_workhorse
-	}
+	traits = { silent_workhorse }
 }
 create_country_leader = {
 	name = "Albert Sarraut"
@@ -479,7 +354,6 @@ create_country_leader = {
 	expire = "1965.1.1"
     ideology = social_liberalism
 	traits = {
-		
 	}
 }
 create_country_leader = {
@@ -488,9 +362,7 @@ create_country_leader = {
 	picture = "Portrait_France_Edouard_Daladier.dds"
 	expire = "1965.1.1"
 	ideology = social_liberalism
-	traits = {
-		stout_defender
-	}
+	traits = { stout_defender }
 }
 create_country_leader = {
 	name = "Léon Blum"
@@ -498,9 +370,7 @@ create_country_leader = {
 	picture = "Portrait_france_leon_blum.dds"
 	expire = "1965.1.1"
 	ideology = social_democracy
-	traits = {
-		stout_defender
-	}
+	traits = { stout_defender }
 }
 create_country_leader = {
 	name = "Camille Chautemps"
@@ -508,14 +378,17 @@ create_country_leader = {
 	picture = "Portrait_France_Camille_Chautemps.dds"
 	expire = "1950.1.24"
 	ideology = moderate
+	traits = {
+	}
 }
-
 create_country_leader = {
 	name = "Pierre Laval"
 	desc = "POLITICS_PIERRE_LAVAL_DESC"
 	picture = "Portrait_France_Pierre_Laval.dds"
 	expire = "1936.1.24"
 	ideology = moderate
+	traits = {
+	}
 }
 create_country_leader = {
 	name = "Maurice Thorez"
@@ -524,7 +397,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = 	stalinism
 	traits = {
-		
 	}
 }
 create_country_leader = {
@@ -534,7 +406,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = vichy
 	traits = {
-		
 	}
 }
 create_country_leader = {
@@ -544,7 +415,6 @@ create_country_leader = {
 	expire = "1945.3.1"
 	ideology = fascism_ideology
 	traits = {
-		
 	}
 }
 create_country_leader = {
@@ -554,7 +424,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = despotism
 	traits = {
-		
 	}
 }
 create_country_leader = {
@@ -563,95 +432,174 @@ create_country_leader = {
 	picture = ""
 	expire = "1965.1.1"
 	ideology = imperial
-	traits = {
-		monarchist
-	}
+	traits = { monarchist }
 }
-#leaders
+##### Field Marshals #####
+create_field_marshal = {
+	name = "Weygand, Maxime"
+	picture = "Portrait_France_Maxime_Weygand.dds"
+	traits = { FRA_tag old_guard Competent_General defensive_doctrine_FM }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 2
+	id = 1000
+}
+create_field_marshal = {
+	name = "Gamelin, Maurice"
+	picture = "Portrait_France_Maurice_Gamelin.dds"
+	traits = { FRA_tag old_guard Terrible_General career_officer defensive_doctrine_FM }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1001
+}
+create_field_marshal = {
+	name = "Georges, Alphonse"
+	picture = "Portrait_France_Alphonse_Joseph_Georges.dds"
+	traits = { FRA_tag old_guard Bad_General trait_cautious defensive_doctrine_FM }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
+	id = 1002
+}
 create_corps_commander = {
 	name = "Ardant du Picq, Charles"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_1.dds"
 	traits = { FRA_tag Bad_General logistics_wizard_CC  }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1003
 }
-
 create_corps_commander = {
 	name = "Arlabosse, Paul"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_2.dds"
 	traits = { FRA_tag Bad_General  }
 	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1004
 }
-
 create_corps_commander = {
 	name =  "Barbeyrac de Saint-Maurice, Armand"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
-	traits = { FRA_tag Bad_General logistics_wizard_CC old_guard }
+	traits = { FRA_tag old_guard Bad_General logistics_wizard_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1005
 }
-
 create_corps_commander = {
 	name = "Armingeat, Gustave"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_4.dds"
 	traits = { FRA_tag Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1006
 }
-
 create_corps_commander = {
 	name = "Arnaud, Paul"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"
 	traits = { FRA_tag Terrible_General defensive_doctrine_CC }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1007
 }
-
 create_corps_commander = {
 	name = "Audet, Sylvestre"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_1.dds"
 	traits = { FRA_tag Competent_General defensive_doctrine_CC }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 4
+	logistics_skill = 2
+	id = 1008
 }
-
 create_corps_commander = {
 	name = "Aymé, Georges"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_2.dds"
 	traits = { FRA_tag Decent_General }
 	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+	id = 1009
 }
-
 create_corps_commander = {
 	name = "Barre, Georges"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
 	traits = { FRA_tag Decent_General }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1
+	id = 1010
 }
-
 create_corps_commander = {
 	name = "Barbeyrac de Saint-Maurice, Marie"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_4.dds"
-	traits = { FRA_tag Bad_General old_guard }
+	traits = { FRA_tag old_guard Bad_General }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1011
 }
-
 create_corps_commander = {
 	name = "Beaumont, Georges"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"
-	traits = { FRA_tag Terrible_General trait_engineer old_guard }
+	traits = { FRA_tag old_guard Terrible_General trait_engineer }
 	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 1012
 }
-
 create_corps_commander = {
 	name = "Bertin-Boussu, Paul"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_1.dds"
-	traits = { FRA_tag Competent_General logistics_wizard_CC panzer_leader }
+	traits = { FRA_tag Competent_General armor_officer logistics_wizard_CC panzer_leader }
 	skill = 3
+	attack_skill = 4
+	defense_skill = 3
+	planning_skill = 5
+	logistics_skill = 2
+	id = 1013
 }
-
 create_corps_commander = {
 	name = "Béthouart, Antoine"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_2.dds"
 	traits = { FRA_tag Awesome_General offensive_doctrine_CC commando } 
 	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 4
+	logistics_skill = 3
+	id = 1014
 }
-
 create_corps_commander = {
 	name = "Billotte, Gaston"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
@@ -1114,12 +1062,7 @@ create_corps_commander = {
 	skill = 3
 }
 
-create_field_marshal = {
-	name = "Gamelin, Maurice"
-	picture = "Portrait_France_Maurice_Gamelin.dds"
-	traits = { FRA_tag Terrible_General defensive_doctrine_FM old_guard }
-	skill = 2
-}
+
 
 create_corps_commander = {
 	name = "Garchery, Jeanny"
@@ -1142,12 +1085,7 @@ create_corps_commander = {
 	skill = 1
 }
 
-create_field_marshal = {
-	name = "Georges, Alphonse"
-	picture = "Portrait_France_Alphonse_Joseph_Georges.dds"
-	traits = { FRA_tag Bad_General defensive_doctrine_FM old_guard }
-	skill = 2
-}
+
 
 create_corps_commander = {
 	name = "Gillier, Louis"
@@ -1577,14 +1515,6 @@ create_corps_commander = {
 	traits = { FRA_tag Incompetent_General old_guard }  
 	skill = 1
 }
-
-create_field_marshal = {
-	name = "Weygand, Maxime"
-	picture = "Portrait_France_Maxime_Weygand.dds"
-	traits = { FRA_tag Competent_General defensive_doctrine_FM old_guard }
-	skill = 2
-}
-
 create_corps_commander = {
 	name = "Colmay, Constant"
 	portrait_path = "gfx/leaders/FRA/Portrait_France_Generic_land_2.dds"
