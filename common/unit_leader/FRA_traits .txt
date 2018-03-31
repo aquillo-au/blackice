@@ -2,37 +2,10 @@ leader_traits = {
 ##################################
 # FRA Traits
 ##################################
-	FRA_tag = { 
-		type = all
-		trait_type = personality_trait
-		gain_xp = {
-			always = no # not gainable
-		}
-		
-		allowed = {
-			FROM = {
-				tag = FRA
-			}
-		}
-		
-		modifier = {
-			defence = 0.01
-			experience_gain_factor = -0.01
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-		
-		new_commander_weight = {
-			factor = 0
-		}
-	}
-	
 	French_Inter-allied_Victory_Medal = {
 		type = all
 		trait_type = personality_trait
-		allowed = {
+		gain_xp = {
 			always = no # not gainable
 		}
 		
@@ -55,7 +28,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = FRA_tag
 			is_winning = yes
 		}
 		
@@ -80,7 +52,7 @@ leader_traits = {
 	Upper_Silesia_Medal = {
 		type = all
 		trait_type = personality_trait
-		allowed = {
+		gain_xp = {
 			always = no # not gainable
 		}
 		
@@ -103,7 +75,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = FRA_tag
 			is_winning = yes
 			has_trait = French_Military_Medal
 		}
@@ -129,7 +100,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = FRA_tag
 			has_trait = Combatants_Cross
 		}
 		
@@ -154,6 +124,10 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		
+                gain_xp = {
+			always = no # not gainable
+		}
+
 		allowed = {
 			FROM = {
 				tag = FRA
@@ -172,7 +146,7 @@ leader_traits = {
 	TOE_War_Cross = { 
 		type = all
 		trait_type = personality_trait
-		allowed = {
+		gain_xp = {
 			always = no # not gainable
 		}
 		
@@ -195,7 +169,10 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		gain_xp = {
-			has_trait = FRA_tag
+			OR = {
+				is_attacker = yes
+				is_defender = yes
+			}
 		}
 		
 		allowed = {
@@ -218,7 +195,7 @@ leader_traits = {
 	Colonial_Medal = { 
 		type = all
 		trait_type = personality_trait
-		allowed = {
+		gain_xp = {
 			always = no # not gainable
 		}
 		

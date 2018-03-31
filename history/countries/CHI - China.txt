@@ -10,6 +10,8 @@ set_stability = 0.8
 
 set_war_support = 0.5
 
+save_global_event_target_as = WTT_current_china_leader
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
@@ -94,6 +96,32 @@ add_ideas = {
 	neutrality_idea
 }
 
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Waking the Tiger"
+		}
+	}
+	add_ideas = {
+		CHI_communist_uprisings
+	}
+}
+
+
+if = {
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}		
+	add_ideas = {
+		CHI_nine_power_treaty
+		CHI_army_corruption_1
+		CHI_ineffective_bureaucracy
+		CHI_incompetent_officers
+		free_trade
+		CHI_hyper_inflation_1
+	}
+}
+
 set_politics = {
 
 	parties = {
@@ -174,12 +202,12 @@ create_field_marshal = {
 	name = "Chiang Kai-shek"
 	picture = "Portrait_China_Chiang_Kai_Shek.dds"
 	traits = { Decent_General defensive_doctrine_FM  logistics_wizard_FM  }
-	id = 1001
 	skill = 3
 	attack_skill = 3
     defense_skill = 2
     planning_skill = 3
     logistics_skill = 2
+	id = 2400
 }
 create_field_marshal = {
 	name = "Tu Yu-ming"
@@ -191,6 +219,7 @@ create_field_marshal = {
 	defense_skill = 4
 	planning_skill = 2
 	logistics_skill = 3
+	id = 2401
 }
 create_field_marshal = {
 	name = "Hsueh Yueh"
@@ -202,6 +231,7 @@ create_field_marshal = {
 	defense_skill = 3
 	planning_skill = 1
 	logistics_skill = 3
+	id = 2402
 }
 create_field_marshal = {
 	name = "Tai An-lan"
@@ -213,6 +243,7 @@ create_field_marshal = {
 	defense_skill = 3
 	planning_skill = 1
 	logistics_skill = 3
+	id = 2403
 }
 create_field_marshal = {
 	name = "Wang Yao-wu"
@@ -224,6 +255,7 @@ create_field_marshal = {
 	defense_skill = 1
 	planning_skill = 2
 	logistics_skill = 2
+	id = 2404
 }
 create_field_marshal = {
 	name = "Zhang Xueliang"
@@ -234,6 +266,7 @@ create_field_marshal = {
 	defense_skill = 3
 	planning_skill = 2
 	logistics_skill = 2
+	id = 2405
 }
 ##### Corps Commanders #####
 create_corps_commander = {
@@ -245,6 +278,7 @@ create_corps_commander = {
 	defense_skill = 4
 	planning_skill = 2
 	logistics_skill = 2
+	id = 2406
 }
 create_corps_commander = {
 	name = "Hu Zongnan"
@@ -255,6 +289,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 3
 	logistics_skill = 3
+	id = 2407
 }
 create_corps_commander = {
 	name = "Gu Zhutong"
@@ -265,6 +300,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 2
 	logistics_skill = 2
+	id = 2408
 }
 create_corps_commander = {
 	name = "Wei Lihuang"
@@ -275,6 +311,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 2
 	logistics_skill = 2
+	id = 2409
 }
 create_corps_commander = {
 	name = "Fu Zuoyi"
@@ -285,6 +322,7 @@ create_corps_commander = {
 	defense_skill = 3
 	planning_skill = 2
 	logistics_skill = 2
+	id = 2410
 }
 ########################################################################
 ## BICE variants

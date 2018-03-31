@@ -2,32 +2,10 @@ leader_traits = {
 ##################################
 # Personal Traits
 ##################################
-	SOV_tag = { 
-		type = all
-		trait_type = personality_trait
-		gain_xp = {
-			always = no # not gainable
-		}
-		
-		allowed = {
-			FROM = {
-				tag = SOV
-			}
-		}
-		
-		modifier = {
-			defence = 0.01
-			experience_gain_factor = -0.01
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	NKVD = { 
 		type = all
 		trait_type = personality_trait
-		allowed = {
+		gain_xp = {
 			always = no # not gainable
 		}
 		
@@ -48,7 +26,7 @@ leader_traits = {
 	For_Combat_Merits = {
 		type = all
 		trait_type = personality_trait
-		allowed = {
+		gain_xp = {
 			always = no # not gainable
 		}
 		
@@ -85,10 +63,6 @@ leader_traits = {
 			}
 		}
 		
-		prerequisites = {
-			has_trait = SOV_tag
-		}
-		
 		cost = 3000
 		
 		modifier = {
@@ -110,10 +84,6 @@ leader_traits = {
 			FROM = {
 				tag = SOV
 			}
-		}
-		
-		prerequisites = {
-			has_trait = SOV_tag
 		}
 		
 		cost = 4500
@@ -141,7 +111,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			has_trait = SOV_tag
 			has_trait = Order_of_Red_Banner	
 		}
 		
@@ -168,10 +137,6 @@ leader_traits = {
 			}
 		}
 		
-		prerequisites = {
-			has_trait = SOV_tag	
-		}
-		
 		cost = 8000
 		
 		modifier = {
@@ -195,7 +160,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			has_trait = SOV_tag
 			has_trait = Golden_Star
 		}
 		
@@ -224,10 +188,6 @@ leader_traits = {
 			}
 		}
 		
-		prerequisites = {
-			has_trait = SOV_tag
-		}
-		
 		cost = 8000
 		
 		modifier = {
@@ -252,10 +212,6 @@ leader_traits = {
 			}
 		}
 		
-		prerequisites = {
-			has_trait = SOV_tag
-		}
-		
 		cost = 4500
 		
 		modifier = {
@@ -271,7 +227,6 @@ leader_traits = {
 		type = all
 		gain_xp = {
 			is_winning = yes
-			is_attacker = yes
 		}
 		
 		allowed = {
@@ -279,9 +234,9 @@ leader_traits = {
 				tag = SOV
 			}
 		}
-		
-		prerequisites = {
-			has_trait = SOV_tag
+
+        prerequisites = {
+			has_trait = Order_of_the_Patriotic_War	
 		}
 		
 		cost = 5500
