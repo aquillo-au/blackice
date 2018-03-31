@@ -648,7 +648,7 @@ NGraphics = {
 	TOOLTIP_DELAYED_DELAY = 1, 						--How long before showing delayed tooltip.
 	TOOLTIP_SHOW_DELAY = 0.05, 						--How long before showing delayed tooltip.
 	TOOLTIP_HIDE_DELAY = 0.05, 						--How long before showing delayed tooltip.
-	MAP_ORDERS_MIN_LINE_POINTS = 8, -- Minimum number of points that an arrow/line must have to be valid (it's a fix to avoid being able to draw empty invisible orders) - use debug_lines console command to debug it and tweak.
+	MAP_ORDERS_MIN_LINE_POINTS = 8, 				--Minimum number of points that an arrow/line must have to be valid (it's a fix to avoid being able to draw empty invisible orders) - use debug_lines console command to debug it and tweak.
 
 	DIVISION_NAMES_GROUP_MAX_TOOLTIP_ENTRIES = 15,	-- Max entries to display the names in the tooltip, when mouse over the division-names-group in the division template designer.
 	
