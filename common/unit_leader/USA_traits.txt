@@ -2,27 +2,6 @@ leader_traits = {
 ##################################
 # Common Traits
 ##################################
-	USA_tag = { 
-		type = all
-		trait_type = personality_trait
-		gain_xp = {
-			always = no # not gainable
-		}
-		
-		allowed = {
-			FROM = {
-				tag = USA
-			}
-		}
-		
-		modifier = {
-			experience_gain_factor = 0.01
-		}
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	USMC = {
 		type = all
 		trait_type = personality_trait
@@ -55,6 +34,7 @@ leader_traits = {
 ##################################
 	Navy_Cross = { 
 		type = all
+		trait_type = personality_trait
 		gain_xp = {
 			is_winning = yes
 		}
@@ -66,7 +46,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			has_trait = USA_tag
 			has_trait = USMC
 		}
 		
@@ -82,6 +61,7 @@ leader_traits = {
 	}
 	Distinguished_Service_Medal = {
 		type = all
+		trait_type = personality_trait
 		gain_xp = {
 			is_winning = yes	
 		}
@@ -107,8 +87,8 @@ leader_traits = {
 	}
 	Distinguished_Service_Cross = { 
 		type = all
+		trait_type = personality_trait
 		gain_xp = {
-			has_trait = USA_tag
 			has_trait = Distinguished_Service_Medal
 			is_winning = yes
 			is_attacker = yes
@@ -121,7 +101,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			has_trait = USA_tag
 			has_trait = Distinguished_Service_Medal
 		}
 		
@@ -137,6 +116,7 @@ leader_traits = {
 	}
 	Legion_of_Merit = {
 		type = all
+		trait_type = personality_trait
 		gain_xp = {
 			is_winning = yes
 		}
@@ -164,6 +144,7 @@ leader_traits = {
 	}
 	Medal_of_Honor = { 
 		type = all
+		trait_type = personality_trait
 		gain_xp = {
 			is_winning = yes
 		}
@@ -175,7 +156,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			has_trait = USA_tag
 			has_trait = Legion_of_Merit
 		}
 		
@@ -192,6 +172,7 @@ leader_traits = {
 	}
 	Silver_Star = { 
 		type = all
+		trait_type = personality_trait
 		gain_xp = {
 			is_winning = yes
 		}
@@ -203,7 +184,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			has_trait = USA_tag
 			has_trait = Medal_of_Honor
 		}
 		
@@ -220,6 +200,7 @@ leader_traits = {
 	}
 	Soldiers_Medal = { 
 		type = all
+		trait_type = personality_trait
 		gain_xp = {
 		}
 		
@@ -227,10 +208,6 @@ leader_traits = {
 			FROM = {
 				tag = USA
 			}
-		}
-		
-		prerequisites = {
-			has_trait = USA_tag
 		}
 		
 		cost = 2500
@@ -245,6 +222,7 @@ leader_traits = {
 	}
 	Purple_Heart = {
 		type = all
+		trait_type = personality_trait
 		gain_xp = {
 			
 		}
@@ -256,7 +234,6 @@ leader_traits = {
 		}
 		
 		prerequisites = {
-			has_trait = USA_tag
 			has_trait = Soldiers_Medal
 		}
 		
