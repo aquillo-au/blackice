@@ -5018,6 +5018,11 @@ country_event = {
 			limit = { has_global_flag = GER_HUN_CZE_split }
 			HUN = { country_event = DOD_hungary.106 }
 		}
+		
+		custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		add_to_variable = { var = GER_mefo_bill_counter value = -5 }
+		GER_mefo_bills_level_down = yes
+		
 		hidden_effect = {
 			country_event = { hours = 6 id = news.60 }
 			every_state = {
@@ -5062,6 +5067,11 @@ country_event = {
 			}
 			POL = { transfer_state = 72 } # Give Poland Zaolzie
 		}
+		
+		custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		add_to_variable = { var = GER_mefo_bill_counter value = -5 }
+		GER_mefo_bills_level_down = yes
+		
 		ai_chance = { 
 			factor = 10
 			modifier = {
@@ -5099,6 +5109,11 @@ country_event = {
 		hidden_effect = {
 			country_event = { hours = 6 id = news.62 }
 		}
+		
+		custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		add_to_variable = { var = GER_mefo_bill_counter value = -5 }
+		GER_mefo_bills_level_down = yes
+		
 	}
 	option = {
 		name = germany.55.do
@@ -5113,14 +5128,18 @@ country_event = {
 			}
 		}
 		set_technology = { czech_protectorate_tech = 1 } 
-			add_tech_bonus = {
-				ahead_reduction = 2
-				bonus = 1
-				uses = 2
-				technology = tech_czech_ger_panzer_1
-				technology = tech_czech_ger_panzer_2
-			}
+		add_tech_bonus = {
+			ahead_reduction = 2
+			bonus = 1
+			uses = 2
+			technology = tech_czech_ger_panzer_1
+			technology = tech_czech_ger_panzer_2
+		}
 		HUN = { country_event = DOD_hungary.101 }
+		add_war_support = 0.1
+		custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
+		add_to_variable = { var = GER_mefo_bill_counter value = -5 }
+		GER_mefo_bills_level_down = yes
 	}
 }
 
@@ -7119,9 +7138,11 @@ country_event = {
 				news_event = { hours = 6 id = news.169 }
 				GER = {
 				annex_country = { target = YUG transfer_troops = no }
-				}
+			}
 		}
-
+		custom_effect_tooltip = yugoslavia_mefo_bills_tt
+		add_to_variable = { var = GER_mefo_bill_counter value = -5 }
+		GER_mefo_bills_level_down = yes
 	}
 
 	option = {

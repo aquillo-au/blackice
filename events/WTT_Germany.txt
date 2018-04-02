@@ -76,6 +76,7 @@ country_event = {
 				has_government = fascism
 			}
 			set_cosmetic_tag = GER_civil_war
+			hidden_effect = { activate_mission = GER_mefo_bills_mission }													
 		}
 		create_country_leader = {
 			name = "August von Mackensen"
@@ -553,8 +554,12 @@ country_event = {
 		name = wtt_germany.15.a
 		transfer_state = 85
 		transfer_state = 86
+		transfer_state = 762			  
 		add_state_core = 85
 		add_state_core = 86
+		add_state_core = 762
+		86 = { set_state_name = "Posen" }
+		set_province_name = { id = 6558 name = "Posen" }										  
 		add_ideas = anti_soviet_pact
 		POL = { 
 			add_ideas = anti_soviet_pact
@@ -603,6 +608,7 @@ country_event = {
 		name = wtt_germany.16.a
 		add_state_claim = 85
 		add_state_claim = 86
+		add_state_claim = 762			   
 	}
 
 	# Give it up
@@ -1044,7 +1050,7 @@ country_event = {
 		ai_chance = { 
 			factor = 1 
 			modifier = {
-				factor = 20
+				factor = 10
 				strength_ratio = {
 					tag = GER
 					ratio > 0.7
@@ -1052,8 +1058,12 @@ country_event = {
 				NOT = { has_idea = FRA_disjointed_government }
 			}
 			modifier = {
-				factor = 20
-				GER = { has_country_flag = germany_war_return_kaiser }
+				factor = 2
+				strength_ratio = {
+					tag = GER
+					ratio > 1
+				}
+				NOT = { has_idea = FRA_disjointed_government }
 			}
 		}
 		add_political_power = -150
@@ -1119,10 +1129,17 @@ country_event = {
 		ai_chance = { 
 			factor = 1 
 			modifier = {
-				factor = 20
+				factor = 10
 				strength_ratio = {
 					tag = GER
 					ratio > 0.7
+				}
+				NOT = { has_idea = FRA_disjointed_government }
+			}
+			modifier = {
+				strength_ratio = {
+					tag = GER
+					ratio > 1
 				}
 				NOT = { has_idea = FRA_disjointed_government }
 			}
@@ -2391,7 +2408,7 @@ country_event = {
 	# Help them
 	option = {
 		name = wtt_germany.52.a
-		GER = { add_to_war = { targeted_alliance = FROM enemy = FROM.FROM } }
+		GER = { add_to_war = { targeted_alliance = FROM enemy = FROM.FROM hostility_reason = asked_to_join } }
 	}
 
 	#They're on their own
@@ -2638,19 +2655,7 @@ country_event = {
 	}
 }
 
-#Remove MEFO bills
-country_event = {
-	id = wtt_germany.61
-	
-	is_triggered_only = yes
-
-	hidden = yes
-
-	immediate = {
-		GER_remove_mefo_bills = yes
-		set_country_flag = mefo_bills_removed_through_war
-	}
-}
+#Removed event ID 61
 
 #Anti-smartass event to give penalty of mefo_bills_ended effect if MEFO bills have been removed through a (potentially insignificant) war.
 country_event = {
@@ -2661,6 +2666,7 @@ country_event = {
 
 	trigger = {
 		original_tag = GER
+		has_government = fascism
 		has_country_flag = mefo_bills_removed_through_war
 		has_war = no
 	}
@@ -2921,7 +2927,7 @@ country_event = {
 				remove_from_faction = POL
 			}
 			GER = { add_to_faction = POL }
-			add_to_war = { targeted_alliance = GER enemy = SOV }
+			add_to_war = { targeted_alliance = GER enemy = SOV hostility_reason = ally }
 		}
 		if = {
 			limit = {
@@ -2931,14 +2937,14 @@ country_event = {
 			}
 			dismantle_faction = yes
 			GER = { add_to_faction = POL }
-			add_to_war = { targeted_alliance = GER enemy = SOV }
+			add_to_war = { targeted_alliance = GER enemy = SOV hostility_reason = ally }
 		}
 		if = {
 			limit = {
 				is_in_faction = no
 			}
 			GER = { add_to_faction = POL }
-			add_to_war = { targeted_alliance = GER enemy = SOV }
+			add_to_war = { targeted_alliance = GER enemy = SOV hostility_reason = ally }
 		}
 		GER = { country_event = { id = wtt_germany.66 } }
 	}
@@ -2984,7 +2990,7 @@ country_event = {
 		name = excellent
 		effect_tooltip = {
 			add_to_faction = POL
-			POL = { add_to_war = { targeted_alliance = GER enemy = SOV } }
+			POL = { add_to_war = { targeted_alliance = GER enemy = SOV hostility_reason = ally } }
 		}
 	}
 }
