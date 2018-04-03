@@ -1000,10 +1000,13 @@ shared_focus = {
 	}
 
 	completion_reward = {
-		diplomatic_relation = {
-			country = SOV
-			relation = non_aggression_pact
-			active = yes
+		if = {
+			limit = { country_exists = SOV }
+			diplomatic_relation = {
+				country = SOV
+				relation = non_aggression_pact
+				active = yes
+			}
 		}
 	}
 }

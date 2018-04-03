@@ -39,11 +39,11 @@ country_event = {
 		}
 
 		if = {
-			limit = { ROOT = { tag = FRA } }
+			limit = { ROOT = { tag = FRI } }
 			if = {
 				limit = {
 					670 = {
-						is_fully_controlled_by = FRA
+						is_fully_controlled_by = FRI
 					}
 				}
 				FROM = { transfer_state = 670 }
@@ -51,7 +51,7 @@ country_event = {
 			if = {
 				limit = {
 					671 = {
-						is_fully_controlled_by = FRA
+						is_fully_controlled_by = FRI
 					}
 				}
 				FROM = { transfer_state = 671 }
@@ -59,7 +59,7 @@ country_event = {
 			if = {
 				limit = {
 					286 = {
-						is_fully_controlled_by = FRA
+						is_fully_controlled_by = FRI
 					}
 				}
 				FROM = { transfer_state = 286 }
@@ -67,7 +67,7 @@ country_event = {
 			if = {
 				limit = {
 					741 = {
-						is_fully_controlled_by = FRA
+						is_fully_controlled_by = FRI
 					}
 				}
 				FROM = { transfer_state = 741 }
@@ -116,7 +116,7 @@ country_event = {
 			}
 
 			if = {
-				limit = { FROM = { tag = FRA } }
+				limit = { FROM = { tag = FRI } }
 				if = {
 					limit = { 670 = { is_fully_controlled_by = ROOT } }
 					transfer_state = 670
@@ -1299,75 +1299,75 @@ country_event = {
 				}
 			}
 			if = {
-			limit = {
-				event_target:WTT_current_china_leader = { #Chinese United Front
-					is_faction_leader = yes
-				}
-			}
-			every_country = {
 				limit = {
-					is_literally_china = yes
-					has_war_with = ROOT
-					is_in_faction_with = event_target:WTT_current_china_leader
+					event_target:WTT_current_china_leader = { #Chinese United Front
+						is_faction_leader = yes
+					}
 				}
-				every_state = {
+				every_country = {
 					limit = {
-						is_controlled_by = PREV
-						OR = {
-							is_owned_by = JAP
-							AND = {
-								is_owned_by = MEN
-								MEN = { is_subject_of = JAP }
-							}
-							AND = {
-								is_owned_by = MAN
-								MAN = { is_subject_of = JAP }
-							}
-						}
+						is_literally_china = yes
+						has_war_with = ROOT
+						is_in_faction_with = event_target:WTT_current_china_leader
 					}
-					every_country = {
+					every_state = {
 						limit = {
-							is_literally_china = yes
-							controls_state = PREV
+							is_controlled_by = PREV
+							OR = {
+								is_owned_by = JAP
+								AND = {
+									is_owned_by = MEN
+									MEN = { is_subject_of = JAP }
+								}
+								AND = {
+									is_owned_by = MAN
+									MAN = { is_subject_of = JAP }
+								}
+							}
 						}
-						transfer_state = PREV
+						every_country = {
+							limit = {
+								is_literally_china = yes
+								controls_state = PREV
+							}
+							transfer_state = PREV
+						}
 					}
+					white_peace = ROOT
 				}
-				white_peace = ROOT
 			}
-		}
-		else = {
-			every_country = {
-				limit = {
-					is_literally_china = yes
-					has_war_with = ROOT
-				}
-				every_state = {
+			else = {
+				every_country = {
 					limit = {
-						is_controlled_by = PREV
-						OR = {
-							is_owned_by = JAP
-							AND = {
-								is_owned_by = MEN
-								MEN = { is_subject_of = JAP }
-							}
-							AND = {
-								is_owned_by = MAN
-								MAN = { is_subject_of = JAP }
-							}
-						}
+						is_literally_china = yes
+						has_war_with = ROOT
 					}
-					every_country = {
+					every_state = {
 						limit = {
-							is_literally_china = yes
-							controls_state = PREV
+							is_controlled_by = PREV
+							OR = {
+								is_owned_by = JAP
+								AND = {
+									is_owned_by = MEN
+									MEN = { is_subject_of = JAP }
+								}
+								AND = {
+									is_owned_by = MAN
+									MAN = { is_subject_of = JAP }
+								}
+							}
 						}
-						transfer_state = PREV
+						every_country = {
+							limit = {
+								is_literally_china = yes
+								controls_state = PREV
+							}
+							transfer_state = PREV
+						}
 					}
+					white_peace = ROOT
 				}
-				white_peace = ROOT
 			}
-		}
 		}
 		FROM = {
 			country_event = { id = wtt_japan.127 }

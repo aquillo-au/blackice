@@ -84,37 +84,37 @@ spriteTypes = {
 	
 	textSpriteType = {
 		name = "GFX_sort_button_171x35"
-		texturefile = "gfx//interface//sort_button_171x35.tga"
+		texturefile = "gfx//interface//sort_button_171x35.dds"
 		noOfFrames = 2
 	}	
 
 	spriteType = {
 		name = "GFX_sort_button_428x29_button"
-		texturefile = "gfx//interface//sort_button_428x29.tga"
+		texturefile = "gfx//interface//sort_button_428x29.dds"
 		noOfFrames = 2
 	}	
 	
 	textSpriteType = {
 		name = "GFX_sort_button_428x29"
-		texturefile = "gfx//interface//sort_button_428x29.tga"
+		texturefile = "gfx//interface//sort_button_428x29.dds"
 		noOfFrames = 2
 	}
 
 	spriteType = {
 		name = "GFX_sort_button_202x29_3_frames"
-		texturefile = "gfx//interface//sort_button_202x29_3_frames.tga"
+		texturefile = "gfx//interface//sort_button_202x29_3_frames.dds"
 		noOfFrames = 3
 	}
 	
 	textSpriteType = {
 		name = "GFX_sort_button_202x29"
-		texturefile = "gfx//interface//sort_button_202x29.tga"
+		texturefile = "gfx//interface//sort_button_202x29.dds"
 		noOfFrames = 2
 	}
 
 	spriteType = {
 		name = "GFX_sort_button_202x29_button"
-		texturefile = "gfx//interface//sort_button_202x29.tga"
+		texturefile = "gfx//interface//sort_button_202x29.dds"
 		noOfFrames = 2
 	}	
 	
@@ -290,20 +290,20 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_checkbox"
-		texturefile = "gfx//interface//checkbox.tga"
+		texturefile = "gfx//interface//checkbox.dds"
 		noOfFrames = 4
 	}
 	
 	spriteType = {
 		name = "GFX_checkbox_button"
-		texturefile = "gfx//interface//checkbox.tga"
+		texturefile = "gfx//interface//checkbox.dds"
 		noOfFrames = 4
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 
 	textSpriteType = {
 		name = "ToolTip"
-		texturefile = "gfx//interface//tiles//tiles_dialog.tga"
+		texturefile = "gfx//interface//tiles//tiles_dialog.dds"
 		noOfFrames = 1
 	}
 
@@ -352,25 +352,25 @@ spriteTypes = {
 	
 	spriteType = {
 		name = "GFX_checkbox"
-		texturefile = "gfx//interface//checkbox.tga"
+		texturefile = "gfx//interface//checkbox.dds"
 		noOfFrames = 4
 	}
 
 	spriteType = {
 		name = "GFX_checkbox_small"
-		texturefile = "gfx//interface//checkbox_small.tga"
+		texturefile = "gfx//interface//checkbox_small.dds"
 		noOfFrames = 2
 	}
 	
 	spriteType = {
 		name = "GFX_checkbox_small_green"
-		texturefile = "gfx//interface//checkbox_small_green.tga"
+		texturefile = "gfx//interface//checkbox_small_green.dds"
 		noOfFrames = 2
 	}
 	
 	spriteType = {
 		name = "GFX_checkbox_small_red"
-		texturefile = "gfx//interface//checkbox_small_red.tga"
+		texturefile = "gfx//interface//checkbox_small_red.dds"
 		noOfFrames = 2
 	}
 	
@@ -633,6 +633,19 @@ objectTypes = {
 			format = centre
 		}
 	}
+	
+	animatedmaptext = {
+		name = "debugtext"
+		speed = 0.05
+		textblock = {
+			text = "txt"
+			color = { 0.9 0.9 0.0 }
+			font = "DebugFont"
+			position = { x=0 y=40 }
+			size = { x=1256 y = 164  }
+			format = centre
+		}
+	}
 }
 
 
@@ -700,6 +713,11 @@ bitmapfonts = {
 	}
 	
 	
+	bitmapfont = {
+		name = "DebugFont"
+		path = "gfx/fonts/garamond_14"
+		color = 0xff7799ff
+	}
 	
 
 
