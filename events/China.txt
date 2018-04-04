@@ -1908,10 +1908,9 @@ country_event = {
 	title = china.209.t
 	desc = china.209.d
 	picture = GFX_report_event_chinese_soldiers_fighting
-		
+	
 	trigger = {
 		tag = PRC
-		
 		JAP =  { is_in_faction_with = CHI }
 		CHI = {is_puppet_of = JAP }
 		has_country_flag =  PRC_state 
@@ -1919,13 +1918,13 @@ country_event = {
 		is_ai = yes
 		has_global_flag = yes_partisans
 	}
+	
 	immediate = {
 		add_timed_idea = {
-				idea = PRC_partisan_attacks
-				days = 180
-			}
+			idea = PRC_partisan_attacks
+			days = 180
 		}
-		
+	}
 	mean_time_to_happen = {
 		days = 2
 	}
@@ -1936,10 +1935,10 @@ country_event = {
 		add_ideas = neutrality_idea 
 		set_technology = {partisans = 1}
 		
-				declare_war_on = { target = JAP type = annex_everything }
-				
-				declare_war_on = { target = CHI type = annex_everything }
-				
+		declare_war_on = { target = JAP type = annex_everything }
+		
+		declare_war_on = { target = CHI type = annex_everything }
+		
 		hidden_effect = {
 			set_province_controller = 12448
 			set_province_controller = 900
@@ -1982,18 +1981,15 @@ country_event = {
 			set_province_controller = 9978
 			set_province_controller = 9963
 			set_province_controller = 11963
-			load_oob = "PRC_Partisans_I"
 			
-					}
-
+			load_oob = "PRC_Partisans_I"
 		}
-		option = {
+	}
+	option = {
 		name = china.209.b
 		ai_chance = { factor = 80 }
-		
-		}
+	}
 }
-
 ####### PRC Rump 
 country_event = {
 	id = china.210
@@ -2023,14 +2019,12 @@ country_event = {
 	
 	option = {
 		name = china.210
-		ai_chance = { factor = 100 }
 		hidden_effect = {
 			SOV = {
 				country_event = { id = china.211 hours = 1 }
 			}
+		}
 	}
-
-}
 }
 country_event = {
 	id = china.211
@@ -2048,12 +2042,11 @@ country_event = {
 			PRC = {
 				country_event = { id = china.212 hours = 1 }
 			}
-	}
+		}
 	}
 	option = {
 		name = china.211.b			#refuse
 		ai_chance = { factor = 0 }
-		
 	}
 }
 country_event = {
@@ -2114,8 +2107,8 @@ country_event = {
 		hidden_effect = {
 			set_technology = { CHI_defence_I = 1 }
 			load_oob = "CHI_militia_I"
-	}
-}	
+		}
+	}	
 }
 country_event = {
 	id = china.214
@@ -2128,22 +2121,18 @@ country_event = {
 	trigger = {
 		tag = CHI
 		or = {
-
-		JAP = { divisions_in_state = { state =  767 size > 0 } }
-		JAP = { divisions_in_state = { state =  602 size > 0 } }
-	
-		JAP = { divisions_in_state = { state =  769 size > 0 } }
-		JAP = { divisions_in_state = { state =  770 size > 0 } }
+			JAP = { divisions_in_state = { state =  767 size > 0 } }
+			JAP = { divisions_in_state = { state =  602 size > 0 } }
 		
-		JAP = { divisions_in_state = { state =  803 size > 0 } }
-		JAP = { divisions_in_state = { state =  804 size > 0 } }
-		
-		JAP = { divisions_in_state = { state =  793 size > 0 } }
-		JAP = { divisions_in_state = { state =  766 size > 0 } }
-	
+			JAP = { divisions_in_state = { state =  769 size > 0 } }
+			JAP = { divisions_in_state = { state =  770 size > 0 } }
+			
+			JAP = { divisions_in_state = { state =  803 size > 0 } }
+			JAP = { divisions_in_state = { state =  804 size > 0 } }
+			
+			JAP = { divisions_in_state = { state =  793 size > 0 } }
+			JAP = { divisions_in_state = { state =  766 size > 0 } }
 		}
-		#is_ai = yes
-		#has_country_flag = CHImilitiaI
 		CHI = { has_war_with = JAP}
 	}
 	
@@ -2161,7 +2150,7 @@ country_event = {
 		hidden_effect = {
 			set_technology = { CHI_defence_II = 1 }
 			load_oob = "CHI_militia_II"
-	}
+		}
 	}
 	option = {
 		name = china.214.b
@@ -2169,9 +2158,8 @@ country_event = {
 		set_country_flag = CHImilitiaII
 		hidden_effect = {
 			set_technology = { CHI_defence_II = 1 }
-			
-	}
-}	
+		}
+	}	
 }
 country_event = {
 	id = china.215
@@ -2289,10 +2277,10 @@ country_event = {
 		name = china.216.a
 		ai_chance = { factor = 100 }
 		add_opinion_modifier = {
-				target = CHI
-				modifier = chinese_relations
-			}
-}	
+			target = CHI
+			modifier = chinese_relations
+		}
+	}	
 }
 country_event = {
 	id = china.217
@@ -2304,12 +2292,11 @@ country_event = {
 	
 	option = {
 		name = china.217.a
-		ai_chance = { factor = 100 }
-			add_opinion_modifier = {
-				target = CHI
-				modifier = chinese_relations
-			}
-}	
+		add_opinion_modifier = {
+			target = CHI
+			modifier = chinese_relations
+		}
+	}	
 }
 country_event = {
 	id = china.218
@@ -2321,12 +2308,11 @@ country_event = {
 	
 	option = {
 		name = china.218.a
-		ai_chance = { factor = 100 }
-			add_opinion_modifier = {
-				target = CHI
-				modifier = chinese_relations
-			}
-}	
+		add_opinion_modifier = {
+			target = CHI
+			modifier = chinese_relations
+		}
+	}	
 }
 country_event = {
 	id = china.219
@@ -2338,12 +2324,12 @@ country_event = {
 	
 	option = {
 		name = china.216.a
-		ai_chance = { factor = 100 }
-			add_opinion_modifier = {
-				target = CHI
-				modifier = chinese_relations
-			}
-}	
+		
+		add_opinion_modifier = {
+			target = CHI
+			modifier = chinese_relations
+		}
+	}	
 }
 country_event = {
 	id = china.220
@@ -2355,12 +2341,12 @@ country_event = {
 	
 	option = {
 		name = china.220.a
-		ai_chance = { factor = 100 }
-			add_opinion_modifier = {
-				target = CHI
-				modifier = chinese_relations
-			}
-}	
+		
+		add_opinion_modifier = {
+			target = CHI
+			modifier = chinese_relations
+		}
+	}	
 }
 country_event = {
 	id = china.221
@@ -2374,11 +2360,11 @@ country_event = {
 		not = {has_idea = chinese_trade}
 		CHI = { has_war_with = JAP}
 		or = {
-		has_country_flag = chi_ger
-		has_country_flag = chi_ita
-		has_country_flag = chi_sov
-		has_country_flag = chi_eng
-		has_country_flag = chi_fra
+			has_country_flag = chi_ger
+			has_country_flag = chi_ita
+			has_country_flag = chi_sov
+			has_country_flag = chi_eng
+			has_country_flag = chi_fra
 		}
 	}
 	
@@ -2392,52 +2378,52 @@ country_event = {
 		set_country_flag = chi_ger_II
 		
 		GER = {country_event = { id = china.216 }}
-			add_opinion_modifier = {
-				target = GER
-				modifier = chinese_relations
-			}
-			hidden_effect = {
+		add_opinion_modifier = {
+			target = GER
+			modifier = chinese_relations
+		}
+		hidden_effect = {
 			load_oob = "gerweapons"
 			add_timed_idea = {
 				idea = chinese_trade
 				days = 365
 			}
+		}	
 	}	
-}	
 	option = {
 		name = china.221.b
 		ai_chance = { factor = 10 }
 		set_country_flag = chi_ita_II
 		ITA = { country_event = { id = china.217 }}
-			add_opinion_modifier = {
-				target = ITA
-				modifier = chinese_relations
-			}
+		add_opinion_modifier = {
+			target = ITA
+			modifier = chinese_relations
+		}
 		hidden_effect = {
 			load_oob = "itaweapons"
 			add_timed_idea = {
 				idea = chinese_trade
 				days = 365
 			}
+		}	
 	}	
-}	
 	option = {
 		name = china.221.c
 		ai_chance = { factor = 10 }
 		set_country_flag = chi_sov_II
 		SOV = { country_event = { id = china.218 }}
-			add_opinion_modifier = {
-				target = SOV
-				modifier = chinese_relations
-			}
-			hidden_effect = {
+		add_opinion_modifier = {
+			target = SOV
+			modifier = chinese_relations
+		}
+		hidden_effect = {
 			load_oob = "sovweapons"
 			add_timed_idea = {
 				idea = chinese_trade
 				days = 365
 			}
+		}	
 	}	
-}	
 	option = {
 		name = china.221.d
 		ai_chance = { factor = 20 }

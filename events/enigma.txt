@@ -46,12 +46,12 @@ country_event = {
 	
 	option = {
 		name = "enigma.2.a"
+		
 		set_country_flag = enigma_to_allies		
-#		add_country_modifier = {				# doesn't exist anymore, and neither does espionage
-#				name = "Spy_Information"
-#				duration = 60
-#		}
-		ai_chance = { factor = 100 }
+		#add_country_modifier = {				# doesn't exist anymore, and neither does espionage
+		#		name = "Spy_Information"
+		#		duration = 60
+		#}
 	}
 }	
 ## AUG 39 - OPERATION ULTRA (ENG)					# just for information purposes right now
@@ -82,11 +82,11 @@ country_event = {
 	option = {
 		name = enigma.3.a
 		set_country_flag = operation_ultra
-#		decryption_machine = 180
-#		add_country_modifier = {
-#				name = "build_heavy_forts"
-#				duration = 180
-#		}
+		#decryption_machine = 180
+		#add_country_modifier = {
+		#		name = "build_heavy_forts"
+		#		duration = 180
+		#}
 		country_event = enigma.4
 		
 		ai_chance = { factor = 100 }
@@ -95,14 +95,13 @@ country_event = {
 	option = {
 		name = "enigma.3.b"
 		set_country_flag = operation_ultra
-#		decryption_machine = 180
-#		
+		#decryption_machine = 180
+
 		ai_chance = { factor = 0 }
 	}
 }	
 ## BLETCHLEY PARK				# event just for information purposes right now
 country_event = {
-
 	id = enigma.4
 	title = enigma.4.t
 	desc = enigma.4.d
@@ -112,13 +111,11 @@ country_event = {
 	
 	option = {
 		name = "enigma.4.a"
-#		126 = { radar_station = 4 }					# comes later
+		#126 = { radar_station = 4 }					# comes later
 		set_country_flag = bletchley_park
-		ai_chance = { factor = 100 }
 	}
 }
 country_event = {
-
 	id = enigma.5
 	title = enigma.5.t
 	desc = enigma.5.d
@@ -131,11 +128,12 @@ country_event = {
 		not = { date > 1941.01.1 }
 		has_country_flag = bletchley_park
 		not = { has_country_flag = bletchley_park_one }
-		}
-		
+	}
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	fire_only_once = yes
 
 	immediate = {
@@ -163,11 +161,10 @@ country_event = {
 		effect_tooltip = {
 			add_ideas = Bletchley_Park	
 		}
-		ai_chance = { factor = 100 }
 	}
-}	
-country_event = {
+}
 
+country_event = {
 	id = enigma.6
 	title = enigma.6.t
 	desc = enigma.6.d
@@ -179,11 +176,12 @@ country_event = {
 		controls_state = 126		# East Midlands
 		has_country_flag = bletchley_park_one
 		not = { has_country_flag = bletchley_park_end }
-		}
-		
+	}
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	fire_only_once = yes
 
 	option = {
@@ -196,13 +194,11 @@ country_event = {
 				instant_build = yes
 			}
 		}
-#		9268 = { radar_station = 3 }
-		ai_chance = { factor = 100 }
+		#9268 = { radar_station = 3 }
 	}
 }
 ## OCTOBER 39 - OPERATION Z (FRA)
 country_event = {
-
 	id = enigma.7
 	title = enigma.7.t
 	desc = enigma.7.d
@@ -214,15 +210,16 @@ country_event = {
 		not = { date > 1941.01.1 }
 		has_tech = computing_machine
 		has_tech = basic_decryption
-#		mechanical_computing = 1
-#		basic_decryption = 1
+		#mechanical_computing = 1
+		#basic_decryption = 1
 		has_country_flag = enigma_to_allies
 		not = { has_country_flag = operation_z }
 	}
-		
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	fire_only_once = yes
 
 	option = {
@@ -234,14 +231,12 @@ country_event = {
 			bonus = 0.2
 			category = decryption_tech
 		}
-#		decryption_machine = 180
-		
-		ai_chance = { factor = 100 }
+		#decryption_machine = 180
+
 	}
 }
 ## MAY 40 - CHANGING CODES (GER)
 country_event = {
-
 	id = enigma.8
 	title = enigma.8.t
 	desc = enigma.8.d
@@ -253,14 +248,15 @@ country_event = {
 		not = { date > 1941.01.1 }
 		has_tech = computing_machine
 		has_tech = basic_encryption
-#		mechanical_computing = 1
-#		basic_decryption = 1
+		#mechanical_computing = 1
+		#basic_decryption = 1
 		not = { has_country_flag = enigma_changed }
 	}
-		
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	fire_only_once = yes
 
 	option = {
@@ -272,10 +268,9 @@ country_event = {
 			bonus = 0.2
 			category = encryption_tech
 		}
-#		encryption_machine = 180
+		#encryption_machine = 180
 		ENG = { country_event = enigma.9 }
 		FRA = { country_event = enigma.9 }
-		ai_chance = { factor = 100 }
 	}
 }
 country_event = {
@@ -289,12 +284,11 @@ country_event = {
 	
 	option = {
 		name = enigma.9.a
-#		add_country_modifier = {				# no idea what could replace this, maybe another negative idea, right now the event only works as information
-#				name = "Code_change"
-#				duration = 220
-#		}
 		
-		ai_chance = { factor = 100 }
+		#add_country_modifier = {				# no idea what could replace this, maybe another negative idea, right now the event only works as information
+		#		name = "Code_change"
+		#		duration = 220
+		#}
 	}
 }
 ## FEBRUARY 42 - ENIGMA M4 (GER)
@@ -321,17 +315,16 @@ country_event = {
 
 	option = {
 		name = enigma.10.a
+		
 		add_tech_bonus = {
 			name = enigma_focus_2
 			uses = 1
 			bonus = 0.5
 			category = trade_interdiction_tree
 		}
-#		trade_interdiction_submarine_doctrine = 180			# replaced by above
+		#trade_interdiction_submarine_doctrine = 180			# replaced by above
 		set_country_flag = enigma_M4
 		USA = { set_country_flag = enigma_M4 }
-		
-		ai_chance = { factor = 100 }
 	}
 }
 ## SOMEWHERE IN '42 - ENIGMA CRACKING ATTEMPT (USA)
@@ -347,9 +340,9 @@ country_event = {
 		date > 1942.07.1
 		has_tech = improved_computing_machine		# 1940 tech, could also be set to advanced_computing_machine (1942-tech)
 		has_tech = improved_decryption
-#		improved_computing_machine = 1
-#		improved_decryption = 1
-#		electronic_computing_machine = 1	
+		#improved_computing_machine = 1
+		#improved_decryption = 1
+		#electronic_computing_machine = 1	
 		has_country_flag = enigma_M4
 		not = { has_country_flag = enigma_M4_crack }
 		not = { has_country_flag = enigma_M4_crack_ok }
@@ -363,11 +356,11 @@ country_event = {
 	option = {
 		name = enigma.11.a
 		add_ideas = Cracking_Enigma
-#		add_country_modifier = {					# replaced by idea
-#			name = "research"
-#			duration = 180
-#		}
-#		money = -500
+		#add_country_modifier = {					# replaced by idea
+		#	name = "research"
+		#	duration = 180
+		#}
+		#money = -500
 		set_country_flag = enigma_M4_crack_ok
 		ai_chance = { factor = 100 }
 	}
@@ -418,17 +411,16 @@ country_event = {
 			bonus = 0.5
 			category = convoy_defense_tree
 		}
-#		commerce_defence = 180
+		#commerce_defence = 180
 		effect_tooltip = {
 			remove_ideas = Cracking_Enigma	
 		}
 		ENG = { country_event = enigma.13 }
 		set_country_flag = enigma_code_found
-#		add_country_modifier = {
-#			name = "Spy_Breakthough"
-#			duration = 180
-#		}
-		ai_chance = { factor = 100 }
+		#add_country_modifier = {
+		#	name = "Spy_Breakthough"
+		#	duration = 180
+		#}
 	}
 }
 country_event = {

@@ -410,7 +410,9 @@ NMilitary = {
 	COMBAT_MINIMUM_TIME = 8,								-- Shortest time possible for a combat in hours
 	SPOTTING_QUALITY_DROP_HOURS = 4, 						-- Each X hours the intel quality drops after unit was spotted.
 	LEADER_GROUP_MAX_SIZE = 1000, 							-- 5 Max slots for leader groups.
-
+	
+	MIN_SUPPLY_CONSUMPTION = 0.05,					-- minimum value of supply consumption that a unit can get
+	
 	LAND_COMBAT_ORG_DICE_SIZE = 4,                 			-- nr of damage dice
 	LAND_COMBAT_STR_DICE_SIZE = 2,                 			-- nr of damage dice
 	LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.06,        			-- global damage modifier... but some equipment is returned at end of battles see : EQUIPMENT_COMBAT_LOSS_FACTOR
@@ -970,6 +972,8 @@ NNavy = {
 	ENEMY_AIR_SUPERIORITY_IMPACT = -0.75,           					-- effect on ship efficiency due to enemy air superiorty
 	DECRYPTION_SPOTTING_BONUS = 0.2,
 	DISBAND_MANPOWER_LOSS = 0.2,
+
+	XP_GAIN_FACTOR = 1.0,	   			   							-- xp gain factor for navy
 },
 
 NTrade = {

@@ -186,11 +186,8 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-
-	
 	option = {
 		name = blackiceairevents.13.a
-		ai_chance = { factor = 5 }
 		set_technology = {
 			tech_seversky_a8v1_equipment_1 = 1
 		}
@@ -205,11 +202,8 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-
-	
 	option = {
 		name = blackiceairevents.14.a
-		ai_chance = { factor = 5 }
 		set_technology = {
 			tech_seversky_a8v1_equipment_1 = 1
 		}
@@ -223,11 +217,8 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-
-	
 	option = {
 		name = blackiceairevents.15.a
-		ai_chance = { factor = 5 }
 		load_oob = "JAP_Seversky_Purchase"
 	}
 }
@@ -251,14 +242,13 @@ country_event = {
 		days = 100
 	}
 	
-	
 	option = {
 		name = blackiceairevents.20.a
 		ai_chance = { factor = 5 }
 		add_ideas = japanese_liscense_cost_int_one
 		hidden_effect = {	
-				set_country_flag = heinkel_liscense_start
-				GER = { country_event = { days = 6 id = blackiceairevents.24 } } 
+			set_country_flag = heinkel_liscense_start
+			GER = { country_event = { days = 6 id = blackiceairevents.24 } } 
 		}
 	}
 	option = {
@@ -279,7 +269,6 @@ country_event = {
 		set_technology = {
 			tech_he_112_equipment_1 = 1
 		}
-		ai_chance = { factor = 5 }
 		load_oob = "JAP_He112_Purchase_a"
 	}
 }
@@ -296,7 +285,6 @@ country_event = {
 		set_technology = {
 			tech_he_112_equipment_1 = 1
 		}
-		ai_chance = { factor = 5 }
 		load_oob = "JAP_He112_Purchase_b"
 	}
 }
@@ -310,7 +298,6 @@ country_event = {
 	
 	option = {
 		name = blackiceairevents.23.a
-		ai_chance = { factor = 5 }
 		set_technology = {
 			tech_he_112_equipment_1 = 1
 		}
@@ -362,15 +349,14 @@ country_event = {
 		days = 100
 	}
 	
-	
 	option = {
 		name = blackiceairevents.25.a
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 5 }
 		add_ideas = japanese_liscense_cost_int_two
 		remove_ideas = japanese_liscense_cost_int_one
 		hidden_effect = {	
-				set_country_flag = heinkel_liscense_done
-				GER = { country_event = { days = 6 id = blackiceairevents.26 } } 
+			set_country_flag = heinkel_liscense_done
+			GER = { country_event = { days = 6 id = blackiceairevents.26 } } 
 		}
 		
 	}
@@ -413,7 +399,6 @@ country_event = { #Germany says yes
 		set_technology = {
 			tech_he_100_equipment_1 = 1
 		}
-		ai_chance = { factor = 3 }
 	}
 }
 country_event = { #Germany says no
@@ -428,7 +413,6 @@ country_event = { #Germany says no
 		name = blackiceairevents.28.a
 		remove_ideas = japanese_liscense_cost_int_two
 		clr_country_flag = heinkel_liscense_done
-		ai_chance = { factor = 3 }
 	}
 	
 }
@@ -447,10 +431,10 @@ country_event = {
 	immediate = {
 		JAP = { country_event = { id = blackiceairevents.30 } }
 	}
+	
 	option = {
 		name = blackiceairevents.29.a
 	}
-	
 }
 country_event = {
 	id = blackiceairevents.30
@@ -459,16 +443,13 @@ country_event = {
 	picture = GFX_event_aircraft_producer
 
 	is_triggered_only = yes
-
 	
 	option = {
 		name = blackiceairevents.30.a
+		ai_chance = { factor = 5 }
 		country_event = blackiceairevents.31
 	}
-	#option = {
-	#	name = blackiceairevents.30.b
-	#	country_event = blackiceairevents.32
-	#}
+
 	option = {
 		name = blackiceairevents.30.c
 		ai_chance = { factor = 1 }
@@ -484,9 +465,7 @@ country_event = {
 
 	option = {
 		name = blackiceairevents.31.a
-	#	country_event = blackiceairevents.30
 		country_event = blackiceairevents.32
-		ai_chance = { factor = 1 }
 	}
 }
 country_event = {
@@ -497,20 +476,10 @@ country_event = {
 
 	is_triggered_only = yes 
 
-	
 	option = {
 		name = blackiceairevents.32.a
 		country_event = blackiceairevents.33
 	}
-	#option = {
-	#	name = blackiceairevents.32.b
-	#	country_event = blackiceairevents.34
-	#}
-	#option = {
-	#	name = blackiceairevents.32.c
-	#	country_event = blackiceairevents.30
-	#	ai_chance = { factor = 1 }
-	#}
 }
 country_event = {
 	id = blackiceairevents.33
@@ -519,13 +488,10 @@ country_event = {
 	picture = GFX_event_aircraft_producer
 
 	is_triggered_only = yes 
-
 	
 	option = {
 		name = blackiceairevents.33.a
-		#country_event = blackiceairevents.30
 		country_event = blackiceairevents.34
-		ai_chance = { factor = 1 }
 	}
 }
 country_event = {
@@ -534,13 +500,10 @@ country_event = {
 	desc = blackiceairevents.34.d
 	picture = GFX_event_aircraft_producer
 
-	is_triggered_only = yes 
-
+	is_triggered_only = yes
 	
 	option = {
 		name = blackiceairevents.34.a
-		#country_event = blackiceairevents.30
-		ai_chance = { factor = 1 }
 	}
 }
 country_event = {
@@ -551,7 +514,6 @@ country_event = {
 	picture = GFX_event_aircraft_producer
 	
 	is_triggered_only = yes
-
 
 	option = {
 		name = blackiceairevents.35.a
@@ -566,7 +528,6 @@ country_event = {
 	picture = GFX_event_aircraft_producer
 	
 	is_triggered_only = yes
-
 	
 	option = {
 		name = blackiceairevents.36.a
@@ -587,6 +548,7 @@ country_event = {
 		date > 1936.5.10
 		278 = { is_owned_by = ARG }
 	}
+	
 	mean_time_to_happen = {
 		days = 60
 	}
@@ -596,7 +558,6 @@ country_event = {
 		load_oob = "ARG_hawkiii_purchase"
 		USA = { country_event = { id = blackiceairevents.38 } } 
 	}
-	
 }
 country_event = {
 	id = blackiceairevents.38
@@ -606,13 +567,11 @@ country_event = {
 	picture = GFX_event_aircraft_producer
 	
 	is_triggered_only = yes
-
 	
 	option = {
 		name = blackiceairevents.38.a
 		add_political_power = 3
 	}
-	
 }
 country_event = {
 	id = blackiceairevents.39
@@ -628,6 +587,7 @@ country_event = {
 		date > 1936.6.1
 		613 = { is_owned_by = CHI }
 	}
+	
 	mean_time_to_happen = {
 		days = 30
 	}
@@ -637,7 +597,6 @@ country_event = {
 		load_oob = "CHI_hawkiii_purchase_a"
 		USA = { country_event = { id = blackiceairevents.41 } } 
 	}
-	
 }
 country_event = {
 	id = blackiceairevents.40
@@ -653,6 +612,7 @@ country_event = {
 		date > 1936.6.1
 		599 = { is_owned_by = GXC }
 	}
+	
 	mean_time_to_happen = {
 		days = 30
 	}
@@ -662,7 +622,6 @@ country_event = {
 		load_oob = "GXC_hawkiii_purchase"
 		USA = { country_event = { id = blackiceairevents.44 } } 
 	}
-	
 }
 country_event = {
 	id = blackiceairevents.41
