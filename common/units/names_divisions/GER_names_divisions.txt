@@ -47,8 +47,7 @@ GER_Inf_01 = {
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		1 = { "%d. Infanterie-Division" }
 		2 = { "%d. Infanterie-Division" }
 		3 = { "%d. Infanterie-Division" }
@@ -457,7 +456,6 @@ GER_ALTINF_01 = {
 	}
 }
 
-
 GER_LTINF_01 = {
 	name = "Light Infantry Divisions"
 
@@ -499,13 +497,12 @@ GER_SEMI_MOT_01 = {
 
 	division_types = { "semi_motorized"  }
 
-	fallback_name = "%d. Infanterie-Division (mot)"
+	fallback_name = "%d. Infanterie-Division(smot)"
 
 	link_numbering_with = { GER_Inf_01 }
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
+	ordered = {
 		1 = { "%d. Infanterie-Division (smot.)" }
 		2 = { "%d. Infanterie-Division (smot.)" }
 		3 = { "%d. Infanterie-Division (smot.)" }
@@ -521,10 +518,6 @@ GER_SEMI_MOT_01 = {
 		13 = { "%d. Infanterie-Division (smot.)" }
 		14 = { "%d. Infanterie-Division (smot.)" }
 		15 = { "%d. Infanterie-Division (smot.)" }
-		
-		# GD existed before 16.5.42 as a strong regiment, but this list is divisional sized units only so it was put in the raising order after it was upgraded to a full division.
-		# removed 'leichte Afrika' from the names of 90., 164. Divisions as their existence depends on historical events that may not occur in game
-		# surviving units of this type renamed to Panzergrenadier-Divisions in 1943
 	}
 }
 
@@ -537,28 +530,25 @@ GER_MOT_01 = {
 
 	division_types = { "motorized"  }
 
-	fallback_name = "%d. Infanterie-Division (mot)"
+	fallback_name = "%d. Infanterie-Division(mot)"
 
 	link_numbering_with = { GER_Inf_01 }
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
-		2 = { "%d. Infanterie-Division (mot.)" }
-		13 = { "%d. Infanterie-Division (mot.)" }
-		20 = { "%d. Infanterie-Division (mot.)" }
-		29 = { "%d. Infanterie-Division (mot.)" }
-		16 = { "%d. Infanterie-Division (mot.)" }
-		60 = { "%d. Infanterie-Division (mot.)" }
-		14 = { "%d. Infanterie-Division (mot.)" }
-		3 = { "%d. Infanterie-Division (mot.)" }
-		18 = { "%d. Infanterie-Division (mot.)" }
-		36 = { "%d. Infanterie-Division (mot.)" }
-		10 = { "%d. Infanterie-Division (mot.)" }
-		25 = { "%d. Infanterie-Division (mot.)" }
-		90 = { "%d. Infanterie-Division (mot.)" }
-		932 = { "Infanterie-Division (mot.) Großdeutschland" }
-		164 = { "%d. Infanterie-Division (mot.)" }
+	ordered = {
+		29 = { "%d. Infanterie-Division(mot.)" }
+		2 = { "%d. Infanterie-Division(mot.)" }
+		13 = { "%d. Infanterie-Division(mot.)" }
+		3 = { "%d. Infanterie-Division(mot.)" }
+		20 = { "%d. Infanterie-Division(mot.)" }
+		14 = { "%d. Infanterie-Division(mot.)" }
+		16 = { "%d. Infanterie-Division(mot.)" }
+		10 = { "%d. Infanterie-Division(mot.)" }
+		25 = { "%d. Infanterie-Division(mot.)" }
+		60 = { "%d. Infanterie-Division(mot.)" }
+		18 = { "%d. Infanterie-Division(mot.)" }
+		36 = { "%d. Infanterie-Division(mot.)" }
+		932 = { "Inf.-Rgt.(mot.) Großdeutschland" }
 		
 		# GD existed before 16.5.42 as a strong regiment, but this list is divisional sized units only so it was put in the raising order after it was upgraded to a full division.
 		# removed 'leichte Afrika' from the names of 90., 164. Divisions as their existence depends on historical events that may not occur in game
@@ -566,8 +556,7 @@ GER_MOT_01 = {
 	}
 }
 
-GER_MEC_01 = 
-{
+GER_MEC_01 = {
 	name = "Panzergrenadier Divisions"
 
 	for_countries = { GER }
@@ -605,8 +594,7 @@ GER_MEC_01 =
 	}
 }
 
-GER_Mnt_01 = 
-{
+GER_Mnt_01 = {
 	name = "Mountain Divisions"
 
 	for_countries = { GER }
@@ -618,8 +606,8 @@ GER_Mnt_01 =
 	fallback_name = "%d. Gebirgs-Division"
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
+	ordered = {
+		9 = { "Gebirgs-Brigade" }
 		2 = { "%d. Gebirgs-Division" }
 		3 = { "%d. Gebirgs-Division" }
 		1 = { "%d. Gebirgs-Division" }
@@ -637,8 +625,7 @@ GER_Mnt_01 =
 	}
 }
 
-GER_MAR_01 = 
-{
+GER_MAR_01 = {
 	name = "Marine Divisions"
 
 	for_countries = { GER }
@@ -650,8 +637,7 @@ GER_MAR_01 =
 	fallback_name = "%d. Seelandungs-Division"
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
+	ordered = {
 		1 = { "%d. Seelandungs-Division" }
 		2 = { "%d. Seelandungs-Division" }
 		3 = { "%d. Seelandungs-Division" }
@@ -805,8 +791,7 @@ GER_GAR_01 = {
 
 
 
-GER_Arm_01 = 
-{
+GER_Arm_01 = {
 	name = "Panzer Divisions"
 
 	for_countries = { GER }
@@ -818,8 +803,7 @@ GER_Arm_01 =
 	fallback_name = "%d. Panzer-Division"
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
+	ordered = {
 		1 = { "%d. Panzer-Division" }
 		2 = { "%d. Panzer-Division" }
 		3 = { "%d. Panzer-Division" }
@@ -869,8 +853,7 @@ GER_Arm_01 =
 	}
 }
 
-GER_LTARM_01 = 
-{
+GER_LTARM_01 = {
 	name = "Light Divisions"
 
 	for_countries = { GER }
@@ -884,8 +867,7 @@ GER_LTARM_01 =
 	link_numbering_with = { GER_Arm_01 }
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
+	ordered = {
 	9 = { "4. leichte-Division" }
 	6 = { "1. leichte-Division" }
 	7 = { "2. leichte-Division" }
@@ -897,8 +879,7 @@ GER_LTARM_01 =
 	}
 }
 
-GER_Cav_01 = 
-{
+GER_Cav_01 = {
 	name = "Cavalry Divisions"
 
 	for_countries = { GER }
@@ -910,8 +891,8 @@ GER_Cav_01 =
 	fallback_name = "%d. Kavallerie-Division"
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
+	ordered = {
+		10 = { "Kavallerie-Kommando Insterburg" }
 		1 = { "%d. Kavallerie-Division" }
 		900 = { "Kavallerie-Division 'Nord'" }
 		3 = { "%d. Kavallerie-Division" }
@@ -923,8 +904,7 @@ GER_Cav_01 =
 	
 }
 
-GER_SS_01 = 
-{
+GER_SS_01 = {
 	name = "SS Divisions"
 
 	for_countries = { GER }
@@ -938,8 +918,7 @@ GER_SS_01 =
 	fallback_name = "%d. SS-Division"
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
+	ordered = {
 		1 = { "%d. SS-Division 'Leibstandarte Adolf Hitler'" }
 		2 = { "%d. SS-Division 'Das Reich'" }
 		3 = { "%d. SS-Division 'Totenkopf'" }
@@ -979,8 +958,7 @@ GER_SS_01 =
 	}
 }
 
-GER_MONINF_01 = 
-{
+GER_MONINF_01 = {
 	name = "Monarchist Infantry Divisions"
 
 	for_countries = { GER }
@@ -998,8 +976,7 @@ GER_MONINF_01 =
 	fallback_name = "%d. Division"
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
+	ordered = {
 		901 = { "1. Garde-Division" }
 		902 = { "2. Garde-Division" }
 		903 = { "3. Garde-Division" }
@@ -1216,8 +1193,7 @@ GER_MONINF_01 =
 	}
 }
 
-GER_MONMOB_01 = 
-{
+GER_MONMOB_01 = {
 	name = "Monarchist Mobile Divisions"
 
 	for_countries = { GER }
@@ -1235,8 +1211,7 @@ GER_MONMOB_01 =
 	fallback_name = "%d. Schnell-Division"
 
 	# Names with numbers (only one number per entry)
-	ordered =
-	{
+	ordered = {
 		901 = { "Gardes du Corps-Division" }
 		902 = { "Garde-Kürassier-Division" }
 		903 = { "Garde-Dragoner-Division 'Königin Viktoria von Großbritannien u. Irland'" }
@@ -1349,7 +1324,6 @@ GER_MONMOB_01 =
 		90 = { "%d. Jäger-Division zu Pferde" }
 	
 		#took namelist for mobile divisions for imperial cavalry regiments, but did not preserve numbering to avoid a confusing mess of Curassier, Dragoon, Hussar, etc, Divisions all with the same number. Except for Bavaria, because they're weird.
-
 
 	}
 }

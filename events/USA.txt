@@ -9,7 +9,7 @@ country_event = {
 	id = usa.1
 	title = usa.1.t
 	desc = usa.1.d
-	picture = GFX_repORt_event_usa_amelia_earhart_airplane
+	picture = GFX_report_event_usa_amelia_earhart_airplane
 
 	fire_only_once = yes
 	
@@ -45,7 +45,7 @@ country_event = {
 	id = usa.2
 	title = usa.2.t
 	desc = usa.2.d
-	picture = GFX_repORt_event_usa_heavy_cruiser
+	picture = GFX_report_event_usa_heavy_cruiser
 
 	is_triggered_only = yes
 
@@ -76,7 +76,7 @@ country_event = {
 	id = usa.3
 	title = usa.3.t
 	desc = usa.3.d
-	picture = GFX_repORt_event_usa_pearl_harbOR_airphoto
+	picture = GFX_report_event_usa_pearl_harbor_airphoto
 
 	fire_only_once = yes
 
@@ -86,7 +86,7 @@ country_event = {
 		NOT = { has_completed_focus = strike_usa_focus }
 		USA = {
 			focus_progress = {
-				focus = USA_pearl_harbOR_gambit
+				focus = USA_pearl_harbor_gambit
 				progress > 0.1
 			}
 		}
@@ -98,7 +98,7 @@ country_event = {
 			factOR = 0.5
 			USA = {
 				focus_progress = {
-					focus = USA_pearl_harbOR_gambit
+					focus = USA_pearl_harbor_gambit
 					progress > 0.6
 				}
 			}
@@ -120,7 +120,7 @@ country_event = {
 	id = usa.4
 	title = usa.4.t
 	desc = usa.4.d
-	picture = GFX_repORt_event_usa_british_sailORs_destroyers
+	picture = GFX_report_event_usa_british_sailors_destroyers
 
 	is_triggered_only = yes
 	
@@ -128,28 +128,28 @@ country_event = {
 		name = usa.4.a
 		custom_effect_tooltip = usa.4.a.tt
 		hidden_effect = {
-			ENG = {	load_oob = "ENG_destroyers_fOR_bases" }
+			ENG = {	load_oob = "ENG_destroyers_for_bases" }
 			ENG = {
 				if = { limit = { 696 = { is_controlled_by = ENG } }
-					remove_state_cORe = 696
+					remove_state_core = 696
 				}
 				if = { limit = { 331 = { is_controlled_by = ENG } }
-					remove_state_cORe = 331
+					remove_state_core = 331
 				}
 				if = { limit = { 308 = { is_controlled_by = ENG } } 
-					remove_state_cORe = 308
+					remove_state_core = 308
 				}
 				if = { limit = { 693 = { is_controlled_by = ENG } } 
-					remove_state_cORe = 693
+					remove_state_core = 693
 				}
 				if = { limit = { 689 = { is_controlled_by = ENG } } 
-					remove_state_cORe = 689
+					remove_state_core = 689
 				}
 				if = { limit = { 691 = { is_controlled_by = ENG } } 
-					remove_state_cORe = 691
+					remove_state_core = 691
 				}
 			}
-			CAN = { load_oob = "CAN_destroyers_fOR_bases" }
+			CAN = { load_oob = "CAN_destroyers_for_bases" }
 		}
 		USA = {
 			if = { limit = { 696 = { is_controlled_by = ENG } }
@@ -172,7 +172,7 @@ country_event = {
 			}
 			add_opinion_modifier = {
 				target = ROOT
-				modifier = destroyers_fOR_bases_opinion
+				modifier = destroyers_for_bases_opinion
 			}
 		}
 	}
@@ -180,7 +180,7 @@ country_event = {
 	option = {
 		name = usa.4.b
 		USA = { country_event = { id = usa.5 days = 1 } }
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 
@@ -189,7 +189,7 @@ country_event = {
 	id = usa.5
 	title = usa.5.t
 	desc = usa.5.d
-	picture = GFX_repORt_event_usa_destroyers
+	picture = GFX_report_event_usa_destroyers
 
 	is_triggered_only = yes
 	
@@ -203,7 +203,7 @@ country_event = {
 	id = usa.6
 	title = usa.6.t
 	desc = usa.6.d
-	picture = GFX_repORt_event_usa_election_generic
+	picture = GFX_report_event_usa_election_generic
 
 	is_triggered_only = yes
 
@@ -221,7 +221,7 @@ country_event = {
 	option = { 	
 		name = usa.6.a
 		ai_chance = {
-			factOR = 75
+			factor = 75
 		}		
 		add_ideas = new_deal
 	}
@@ -229,10 +229,10 @@ country_event = {
 	option = { 
 		name = usa.6.b
 		ai_chance = {
-			factOR = 25
+			factor = 25
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
@@ -256,13 +256,13 @@ country_event = {
 		}
 		
 		add_ideas = frank_knox
-		add_ideas = lANDon_hos
+		add_ideas = landon_hos
 		remove_ideas = john_nance_garner
 		remove_ideas = fdr_hos
 		create_country_leader = {
-			name = "Alf LANDon"
+			name = "Alf Landon"
 			desc = "POLITICS_ALF_LANDON_DESC"
-			picture = "PORtrait_USA_Generic_2.dds"
+			picture = "Portrait_USA_Generic_2.dds"
 			expire = "1965.1.1"
 			ideology = classical_liberalism
 			traits = {
@@ -278,7 +278,7 @@ country_event = {
 	id = usa.7
 	title = usa.7.t
 	desc = usa.7.d
-	picture = GFX_repORt_event_usa_election_roosevelt_wilkie
+	picture = GFX_report_event_usa_election_roosevelt_wilkie
 
 	is_triggered_only = yes
 
@@ -310,10 +310,10 @@ country_event = {
 	option = {
 		name = usa.7.b
 		ai_chance = {
-			factOR = 25
+			factor = 25
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
@@ -327,7 +327,7 @@ country_event = {
 		create_country_leader = {
 			name = "Wendell Wilkie"
 			desc = "POLITICS_WENDELL_WILKIE_DESC"
-			picture = "PORtrait_USA_Wendell_Willkie.dds"
+			picture = "Portrait_USA_Wendell_Willkie.dds"
 			expire = "1944.1.1"
 			ideology = moderate
 			traits = {
@@ -349,7 +349,7 @@ country_event = {
 	id = usa.8
 	title = usa.8.t
 	desc = usa.8.d
-	picture = GFX_repORt_event_usa_election_lANDon_roosevelt
+	picture = GFX_report_event_usa_election_landon_roosevelt
 
 	is_triggered_only = yes
 
@@ -383,7 +383,7 @@ country_event = {
 		add_ideas = new_deal
 		retire_country_leader = yes
 		remove_ideas = great_depression
-		remove_ideas = lANDon_hos
+		remove_ideas = landon_hos
 		add_ideas = fdr_hos
 		add_ideas = henry_wallace
 		remove_ideas = frank_knox
@@ -396,17 +396,13 @@ country_event = {
 	id = usa.9
 	title = usa.9.t
 	desc = usa.9.d
-	picture = GFX_repORt_event_usa_election_roosevelt_dewey
+	picture = GFX_report_event_usa_election_roosevelt_dewey
 
 	is_triggered_only = yes
 
 	trigger = {
 		tag = USA
-		OR = {
-			has_government = conservatism
-			has_government = liberalism
-			has_government = socialism
-		}
+		democratic_govt = yes
 		date > 1944.1.1
 		date < 1945.1.1
 		has_idea = new_deal
@@ -416,7 +412,7 @@ country_event = {
 	option = {
 		name = usa.9.a
 		ai_chance = {
-			factOR = 75
+			factor = 75
 		}
 		add_political_power = 10
 	}
@@ -424,10 +420,10 @@ country_event = {
 	option = { 
 		name = usa.9.b
 		ai_chance = {
-			factOR = 25
+			factor = 25
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
@@ -445,7 +441,7 @@ country_event = {
 		create_country_leader = {
 			name = "Thomas E. Dewey"
 			desc = "POLITICS_THOMAS_DEWEY_DESC"
-			picture = "PORtrait_USA_Generic_2.dds"
+			picture = "Portrait_USA_Generic_2.dds"
 			expire = "1965.1.1"
 			ideology = moderate
 			traits = {
@@ -461,7 +457,7 @@ country_event = {
 	id = usa.10
 	title = usa.10.t
 	desc = usa.10.d
-	picture = GFX_repORt_event_usa_election_generic
+	picture = GFX_report_event_usa_election_generic
 
 	is_triggered_only = yes
 
@@ -509,7 +505,7 @@ country_event = {
 	id = usa.11
 	title = usa.11.t
 	desc = usa.11.d
-	picture = GFX_repORt_event_usa_election_roosevelt_macarthur
+	picture = GFX_report_event_usa_election_roosevelt_macarthur
 
 	is_triggered_only = yes
 
@@ -525,14 +521,14 @@ country_event = {
 		has_idea = new_deal
 		OR = {
 			has_war = no
-			has_country_flag = macarthur_cANDidate
+			has_country_flag = macarthur_candidate
 		}
 	}
 	
 	option = {
 		name = usa.11.a
 		ai_chance = {
-			factOR = 25
+			factor = 25
 		}	
 		add_political_power = 10
 	}
@@ -540,9 +536,9 @@ country_event = {
 	option = { 
 		name = usa.11.b
 		ai_chance = {
-			factOR = 25
+			factor = 25
 			modifier = {
-				factOR = 0
+				factor = 0
 				is_historical_focus_on = yes
 			}
 		}
@@ -558,7 +554,7 @@ country_event = {
 		create_country_leader = {
 			name = "Douglas MacArthur"
 			desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
-			picture = "PORtrait_USA_Douglas_MacArthur.dds"
+			picture = "Portrait_USA_Douglas_MacArthur.dds"
 			expire = "1965.1.1"
 			ideology = nationalism
 			traits = {
@@ -575,7 +571,7 @@ country_event = {
 	id = usa.12
 	title = usa.12.t
 	desc = usa.12.d
-	picture = GFX_repORt_event_usa_macarthur_speech
+	picture = GFX_report_event_usa_macarthur_speech
 
 	is_triggered_only = yes
 
@@ -594,8 +590,8 @@ country_event = {
 		ai_chance = {
 			base = 30
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 	}
@@ -611,7 +607,7 @@ country_event = {
 	id = usa.13
 	title = usa.13.t
 	desc = usa.13.d
-	picture = GFX_repORt_event_usa_funeral
+	picture = GFX_report_event_usa_funeral
 
 	trigger = {
 		tag = USA
@@ -635,7 +631,7 @@ country_event = {
 		create_country_leader = {
 			name = "Harry S. Truman"
 			desc = "POLITICS_HARRY_TRUMAN_DESC"
-			picture = "PORtrait_USA_Harry_Truman.dds"
+			picture = "Portrait_USA_Harry_Truman.dds"
 			expire = "1965.1.1"
 			ideology = progressivism
 			traits = {
@@ -651,7 +647,7 @@ country_event = {
 	id = usa.14
 	title = usa.14.t
 	desc = usa.14.d
-	picture = GFX_repORt_event_fascist_speech
+	picture = GFX_report_event_fascist_speech
 
 	is_triggered_only = yes
 
@@ -695,7 +691,7 @@ country_event = {
 
 	option = {
 		name = usa.14.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 
@@ -724,7 +720,7 @@ country_event = {
 	id = usa.17
 	title = usa.17.t
 	desc = usa.17.d
-	picture = GFX_repORt_event_usa_fdr_speech_map
+	picture = GFX_report_event_usa_fdr_speech_map
 
 	is_triggered_only = yes
 	
@@ -734,9 +730,9 @@ country_event = {
 	
 		#Need to use FROM FROM scope since the one sending the event is the nation under attack
 		ai_chance = {
-			factOR = 20			
+			factor = 20			
 			modifier = {
-				factOR = 0.2
+				factor = 0.2
 				FROM = {
 					FROM = {
 						strength_ratio = {
@@ -760,9 +756,9 @@ country_event = {
 		name = usa.17.b
 
 		ai_chance = {
-			factOR = 5
+			factor = 5
 			modifier = {
-				factOR = 0
+				factor = 0
 				FROM = {
 					FROM = {
 						strength_ratio = {
@@ -780,7 +776,7 @@ country_event = {
 	id = usa.18
 	title = usa.18.t
 	desc = usa.18.d
-	picture = GFX_repORt_event_japanese_soldiers_hong_kong
+	picture = GFX_report_event_japanese_soldiers_hong_kong
 
 	is_triggered_only = yes
 	
@@ -789,9 +785,9 @@ country_event = {
 		name = usa.18.a
 
 		ai_chance = {
-			factOR = 10
+			factor = 10
 			modifier = {
-				factOR = 0.5
+				factor = 0.5
 				strength_ratio = {
 					tag = USA
 					ratio < 0.7
@@ -799,7 +795,7 @@ country_event = {
 				is_in_faction = yes
 			}
 			modifier = {
-				factOR = 5
+				factor = 5
 				strength_ratio = {
 					tag = USA
 					ratio > 0.7
@@ -830,9 +826,9 @@ country_event = {
 		name = usa.18.b
 
 		ai_chance = { 
-			factOR = 10
+			factor = 10
 			modifier = {
-				factOR = 10
+				factor = 10
 				strength_ratio = {
 					tag = USA
 					ratio < 0.7
@@ -871,7 +867,7 @@ country_event = {
 	id = usa.20
 	title = usa.20.t
 	desc = usa.20.d
-	picture = GFX_repORt_event_usa_election_generic
+	picture = GFX_report_event_usa_election_generic
 
 	is_triggered_only = yes
 
@@ -890,7 +886,7 @@ country_event = {
 	id = usa.21
 	title = usa.20.t
 	desc = usa.21.d
-	picture = GFX_repORt_event_british_communists
+	picture = GFX_report_event_british_communists
 	
 	is_triggered_only = yes
 
@@ -909,7 +905,7 @@ country_event = {
 	id = usa.22
 	title = usa.20.t
 	desc = usa.22.d
-	picture = GFX_repORt_event_british_fascists
+	picture = GFX_report_event_british_fascists
 
 	is_triggered_only = yes
 
@@ -929,7 +925,7 @@ country_event = {
 	id = usa.23
 	title = usa.23.t
 	desc = usa.23.d
-	picture = GFX_repORt_event_usa_fdr_speech_map
+	picture = GFX_report_event_usa_fdr_speech_map
 
 	is_triggered_only = yes
 
@@ -946,7 +942,7 @@ country_event = {
 	id = usa.24
 	title = usa.24.t
 	desc = usa.24.d
-	picture = GFX_repORt_event_generic_read_write
+	picture = GFX_report_event_generic_read_write
 
 	is_triggered_only = yes
 
@@ -991,7 +987,7 @@ country_event = {
 
 	option = {
 		name = usa.24.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 ############# HistORical ArmOR Divisions
@@ -1000,14 +996,14 @@ country_event = {
 	id = usa.25
 	title = usa.25.t
 	desc = usa.25.d
-	picture = GFX_repORt_event_sherman_fORmation
+	picture = GFX_report_event_sherman_fORmation
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
 		
-		not = { has_country_flag = USarmOR_1 }
+		not = { has_country_flag = USarmor_1 }
 		is_ai = yes
 		date > 1940.7.15
 	}
@@ -1018,12 +1014,12 @@ country_event = {
 	
 	option = {
 		name = usa.25.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
 			set_technology = {tech_american_medium_tank_equipment_1 = 1}
-			load_oob = "USA_1_armOR_Division"
-			set_country_flag = USarmOR_1
+			load_oob = "USA_1_armor_Division"
+			set_country_flag = USarmor_1
 			
 		}
 	}
@@ -1034,13 +1030,13 @@ country_event = {
 	id = usa.26
 	title = usa.26.t
 	desc = usa.26.d
-	picture = GFX_repORt_event_sherman_fORmation
+	picture = GFX_report_event_sherman_formation
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_2 }
+		not = { has_country_flag = USarmor_2 }
 		is_ai = yes
 		date > 1940.7.16
 	}
@@ -1051,11 +1047,11 @@ country_event = {
 	
 	option = {
 		name = usa.26.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_2_armOR_Division"
-			set_country_flag = USarmOR_2
+			load_oob = "USA_2_armor_Division"
+			set_country_flag = USarmor_2
 			
 		}
 	}
@@ -1066,13 +1062,13 @@ country_event = {
 	id = usa.27
 	title = usa.27.t
 	desc = usa.27.d
-	picture = GFX_repORt_event_sherman_jumbo_with_crew_jan_1945
+	picture = GFX_report_event_sherman_jumbo_with_crew_jan_1945
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_3 }
+		not = { has_country_flag = USarmor_3 }
 		is_ai = yes
 		date > 1941.4.15
 	}
@@ -1086,8 +1082,8 @@ country_event = {
 		ai_chance = { factOR = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_3_armOR_Division"
-			set_country_flag = USarmOR_3
+			load_oob = "USA_3_armor_Division"
+			set_country_flag = USarmor_3
 			
 		}
 	}
@@ -1098,13 +1094,13 @@ country_event = {
 	id = usa.28
 	title = usa.28.t
 	desc = usa.28.d
-	picture = GFX_repORt_event_sherman_repair_crew
+	picture = GFX_report_event_sherman_repair_crew
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_4 }
+		not = { has_country_flag = USarmor_4 }
 		is_ai = yes
 		date > 1941.4.15
 	}
@@ -1115,11 +1111,11 @@ country_event = {
 	
 	option = {
 		name = usa.28.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_4_armOR_Division"
-			set_country_flag = USarmOR_4
+			load_oob = "USA_4_armor_Division"
+			set_country_flag = USarmor_4
 			
 		}
 	}
@@ -1130,13 +1126,13 @@ country_event = {
 	id = usa.29
 	title = usa.29.t
 	desc = usa.29.d
-	picture = GFX_repORt_event_americans_fighting_in_pacific
+	picture = GFX_report_event_americans_fighting_in_pacific
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_5 }
+		not = { has_country_flag = USarmor_5 }
 		is_ai = yes
 		date > 1941.10.10
 	}
@@ -1150,8 +1146,8 @@ country_event = {
 		ai_chance = { factOR = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_5_armOR_Division"
-			set_country_flag = USarmOR_5
+			load_oob = "USA_5_armor_Division"
+			set_country_flag = USarmor_5
 			
 		}
 	}
@@ -1162,13 +1158,13 @@ country_event = {
 	id = usa.30
 	title = usa.30.t
 	desc = usa.30.d
-	picture = GFX_repORt_event_americans_fighting_in_pacific_jungle
+	picture = GFX_report_event_americans_fighting_in_pacific_jungle
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_6 }
+		not = { has_country_flag = USarmor_6 }
 		is_ai = yes
 		date > 1942.2.15
 	}
@@ -1182,8 +1178,8 @@ country_event = {
 		ai_chance = { factOR = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_6_armOR_Division"
-			set_country_flag = USarmOR_6
+			load_oob = "USA_6_armor_Division"
+			set_country_flag = USarmor_6
 			
 		}
 	}
@@ -1194,13 +1190,13 @@ country_event = {
 	id = usa.31
 	title = usa.31.t
 	desc = usa.31.d
-	picture = GFX_repORt_event_allies_advance_in_nORmANDy
+	picture = GFX_report_event_allies_advance_in_normandy
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_7 }
+		not = { has_country_flag = USarmor_7 }
 		is_ai = yes
 		date > 1942.3.1
 	}
@@ -1211,11 +1207,11 @@ country_event = {
 	
 	option = {
 		name = usa.31.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_7_armOR_Division"
-			set_country_flag = USarmOR_7
+			load_oob = "USA_7_armor_Division"
+			set_country_flag = USarmor_7
 			
 		}
 	}
@@ -1226,13 +1222,13 @@ country_event = {
 	id = usa.32
 	title = usa.32.t
 	desc = usa.32.d
-	picture = GFX_repORt_event_allies_cross_bridge_in_netherlANDs
+	picture = GFX_report_event_allies_cross_bridge_in_netherlands
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_8 }
+		not = { has_country_flag = USarmor_8 }
 		is_ai = yes
 		date > 1942.4.1
 	}
@@ -1243,11 +1239,11 @@ country_event = {
 	
 	option = {
 		name = usa.32.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_8_armOR_Division"
-			set_country_flag = USarmOR_8
+			load_oob = "USA_8_armor_Division"
+			set_country_flag = USarmor_8
 			
 		}
 	}
@@ -1258,13 +1254,13 @@ country_event = {
 	id = usa.33
 	title = usa.33.t
 	desc = usa.33.d
-	picture = GFX_repORt_event_americans_in_snow
+	picture = GFX_report_event_americans_in_snow
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_9 }
+		not = { has_country_flag = USarmor_9 }
 		is_ai = yes
 		date > 1942.7.15
 	}
@@ -1278,8 +1274,8 @@ country_event = {
 		ai_chance = { factOR = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_9_armOR_Division"
-			set_country_flag = USarmOR_9
+			load_oob = "USA_9_armor_Division"
+			set_country_flag = USarmor_9
 			
 		}
 	}
@@ -1290,13 +1286,13 @@ country_event = {
 	id = usa.34
 	title = usa.34.t
 	desc = usa.34.d
-	picture = GFX_repORt_event_usa_armOR1
+	picture = GFX_report_event_usa_armor1
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_10 }
+		not = { has_country_flag = USarmor_10 }
 		is_ai = yes
 		date > 1942.7.15
 	}
@@ -1307,11 +1303,11 @@ country_event = {
 	
 	option = {
 		name = usa.34.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_10_armOR_Division"
-			set_country_flag = USarmOR_10
+			load_oob = "USA_10_armor_Division"
+			set_country_flag = USarmor_10
 			
 		}
 	}
@@ -1322,13 +1318,13 @@ country_event = {
 	id = usa.35
 	title = usa.35.t
 	desc = usa.35.d
-	picture = GFX_repORt_event_usa_armOR2
+	picture = GFX_report_event_usa_armor2
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_11 }
+		not = { has_country_flag = USarmor_11 }
 		is_ai = yes
 		date > 1942.8.15
 	}
@@ -1339,11 +1335,11 @@ country_event = {
 	
 	option = {
 		name = usa.35.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_11_armOR_Division"
-			set_country_flag = USarmOR_11
+			load_oob = "USA_11_armor_Division"
+			set_country_flag = USarmor_11
 			
 		}
 	}
@@ -1354,13 +1350,13 @@ country_event = {
 	id = usa.36
 	title = usa.36.t
 	desc = usa.36.d
-	picture = GFX_repORt_event_usa_armOR3
+	picture = GFX_report_event_usa_armor3
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_12 }
+		not = { has_country_flag = USarmor_12 }
 		is_ai = yes
 		date > 1942.9.15
 	}
@@ -1371,11 +1367,11 @@ country_event = {
 	
 	option = {
 		name = usa.36.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_12_armOR_Division"
-			set_country_flag = USarmOR_12
+			load_oob = "USA_12_armor_Division"
+			set_country_flag = USarmor_12
 			
 		}
 	}
@@ -1386,13 +1382,13 @@ country_event = {
 	id = usa.37
 	title = usa.37.t
 	desc = usa.37.d
-	picture = GFX_repORt_event_usa_armOR4
+	picture = GFX_report_event_usa_armor4
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_13 }
+		not = { has_country_flag = USarmor_13 }
 		is_ai = yes
 		date > 1942.10.15
 	}
@@ -1403,11 +1399,11 @@ country_event = {
 	
 	option = {
 		name = usa.37.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_13_armOR_Division"
-			set_country_flag = USarmOR_13
+			load_oob = "USA_13_armor_Division"
+			set_country_flag = USarmor_13
 			
 		}
 	}
@@ -1418,13 +1414,13 @@ country_event = {
 	id = usa.38
 	title = usa.38.t
 	desc = usa.38.d
-	picture = GFX_repORt_event_usa_armOR5
+	picture = GFX_report_event_usa_armor5
 
 	fire_only_once = yes
 	
 	trigger = {
 		tag = USA
-		not = { has_country_flag = USarmOR_14 }
+		not = { has_country_flag = USarmor_14 }
 		is_ai = yes
 		date > 1942.11.15
 	}
@@ -1435,11 +1431,11 @@ country_event = {
 	
 	option = {
 		name = usa.38.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "USA_14_armOR_Division"
-			set_country_flag = USarmOR_14
+			load_oob = "USA_14_armor_Division"
+			set_country_flag = USarmor_14
 			
 		}
 	}

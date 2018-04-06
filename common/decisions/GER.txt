@@ -950,7 +950,135 @@ foreign_politics = {
 
 #Category only allowed for GER
 GER_military_buildup = {
+	
+	GER_motorise_29_infdiv = {
+		
+		icon = ger_29_inf_div
+		
+		available = {
+			has_army_size = {
+				size > 49
+			}
+			date > 1937.10.11
+		}
+		
+		cost = 50
+		
+		fire_only_once = yes
+		
+		activation = {
+			has_completed_focus = GER_Wehrmacht
+		}
+		
+		visible = {
+			has_completed_focus = GER_Wehrmacht
+			date > 1937.2.1
+		}
 
+		complete_effect = {
+			add_war_support = 0.05
+			custom_effect_tooltip =  GER_29_infdiv_tt
+			division_template = {
+				name = "Infanterie-Division(mot.)"		
+				division_names_group = GER_MOT_01
+				
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					
+					motorized = { x = 2 y = 0 }
+					motorized = { x = 2 y = 1 }
+					motorized = { x = 2 y = 2 }
+
+					artillery_brigade_mot = { x = 3 y = 0 }
+					artillery_brigade_mot = { x = 3 y = 1 }
+					artillery_brigade_mot = { x = 3 y = 2 }
+					anti_tank_brigade =  { x = 3 y = 3 }
+				}
+				support = {
+					DIV_HQ = { x = 0 y = 0 }
+					recon_mot = { x = 0 y = 1 }
+					recon_ac = { x = 0 y = 2 }
+					engineer = { x = 0 y = 3 }
+					
+					maintenance_company = { x = 1 y = 0 }
+					logistics_company = { x = 1 y = 1 }
+					field_hospital = { x = 1 y = 2 }
+				}
+				priority = 2
+				template_counter = 24
+			}
+			country_event = { id = germany.253 hours = 6 }
+		}
+	}
+	
+	GER_4_ldiv = {
+		
+		icon = ger_4_Ldiv
+		
+		available = {
+			OR = {
+				date > 1938.4.1
+				has_country_flag = AUS_annexed
+			}
+			not = { has_country_flag = GER_4_LDIV }
+			owns_state = 4
+		}
+		
+		cost = 50
+		
+		fire_only_once = yes
+		
+		activation = {
+			has_completed_focus = GER_anschluss
+		}
+		
+		visible = {
+			has_completed_focus = GER_anschluss
+		}
+	
+		complete_effect = {
+			custom_effect_tooltip = GER_4_ldiv_tt
+			division_template = {
+				name = "L-Div 4"
+				priority = 2
+				template_counter = 219
+				is_locked = yes
+				division_names_group = GER_LTARM_01
+	
+				regiments = {
+					semi_motorized = { x = 0 y = 0 }
+					semi_motorized = { x = 0 y = 1 }
+					
+					semi_motorized = { x = 1 y = 0 }
+					semi_motorized = { x = 1 y = 1 }
+					
+					panzer_ii = { x = 2 y = 0 } # Pz-Btl 33
+					
+					artillery_brigade_mot = { x = 3 y = 0 }
+					artillery_brigade_mot = { x = 3 y = 1 }
+					artillery_brigade_mot = { x = 3 y = 2 }
+				}
+				support = {
+					DIV_HQ = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					recon_cav = { x = 0 y = 2 }
+					
+					anti_tank = { x = 1 y = 0 }
+					maintenance_company = { x = 1 y = 1 }
+					logistics_company = { x = 1 y = 2 }
+					field_hospital = { x = 1 y = 3 }
+				}
+			}
+			country_event = { id = germany.281 hours = 6 }
+		}
+	}
+	
 	GER_plan_z = {
 
 		icon = generic_naval
@@ -988,7 +1116,6 @@ GER_military_buildup = {
 		activation = {
 			has_completed_focus = GER_plan_z
 		}
-
 		
 		visible = {
 			has_completed_focus = GER_plan_z
@@ -998,8 +1125,6 @@ GER_military_buildup = {
 			add_war_support = 0.05
 			navy_experience = 150
 		}
-
-		
 	}
 
 	GER_jaegernotprogramm = {
