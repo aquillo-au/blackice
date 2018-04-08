@@ -224,21 +224,21 @@ propaganda_efforts = {
 
 		available = {
 			NOT = { has_country_flag = war_propaganda_campaign_running }
-			threat > 0.5
-			has_war_support < 0.5
+			threat > 0.3
 			has_offensive_war = no
 		}
 
 		visible = {
-			
+			threat > 0.3
+
 		}
 
 		fire_only_once = no
 
-		days_remove = 90
-		days_re_enable = 180
+		days_remove = 180
+		days_re_enable = 270
 
-		cost = 150
+		cost = 100
 
 		modifier = {
 			war_support_weekly = 0.01
@@ -255,12 +255,150 @@ propaganda_efforts = {
 			base = 0
 			modifier = {
 				add = 1
-				has_war_support < 0.4
+				has_war_support < 0.5
 				has_war = yes
 			}
 		}
 	}
+	
+	#+WS if in war and have high ST
+	we_fight_united = {
+		icon = generic_prepare_civil_war
 
+		available = {
+			NOT = { has_country_flag = we_fight_united }
+			has_stability > 0.6
+			has_war = yes
+		}
+
+		visible = {
+			has_war = yes
+			has_war_support < 0.5
+		}
+
+		fire_only_once = no
+
+		days_remove = 45
+		days_re_enable = 90
+
+		cost = 100
+
+		modifier = {
+			war_support_weekly = 0.03
+			political_power_factor = 0.20
+		}
+
+		complete_effect = {
+			set_country_flag = we_fight_united
+		}
+		remove_effect = {
+			clr_country_flag = we_fight_united
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_war = yes
+				has_stability > 0.6
+			}
+		}
+	}
+	
+	#Preliminary war propaganda, while threat is small, no war
+	preliminary_war_propaganda = {
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = preliminary_war_propaganda }
+			threat > 0.05
+			threat < 0.3
+			has_war = no
+			has_war_support < 0.3
+		}
+
+		visible = {
+			threat > 0.02
+			threat < 0.3
+			has_war = no
+		}
+
+		fire_only_once = no
+
+		days_remove = 135
+		days_re_enable = 225
+
+		cost = 50
+
+		modifier = {
+			war_support_weekly = 0.005
+			political_power_factor = -0.05
+		}
+
+		complete_effect = {
+			set_country_flag = preliminary_war_propaganda
+		}
+		remove_effect = {
+			clr_country_flag = preliminary_war_propaganda
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_war_support < 0.3
+				has_war = no
+			}
+		}	
+
+	}
+
+	#Justify our war, if offensive war and low WS
+	justify_our_war = {
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = justify_our_war }
+			has_war = yes
+			has_offensive_war = yes
+			has_war_support < 0.5
+
+		}
+
+		visible = {
+			has_offensive_war = yes
+			has_war_support < 0.5
+		}
+
+		fire_only_once = no
+
+		days_remove = 70
+		days_re_enable = 140
+
+		cost = 150
+
+		modifier = {
+			war_support_weekly = 0.01
+			political_power_factor = -0.40
+			stability_weekly = -0.01
+		}
+
+		complete_effect = {
+			set_country_flag = justify_our_war
+		}
+		remove_effect = {
+			clr_country_flag = justify_our_war
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				add = 1
+				has_offensive_war = yes
+			}
+		}
+	}
+	
 	#Propaganda campaign against a country in offensive that has caused a lot of tension and started a war
 	war_propaganda_against_warmonger = {
 
@@ -284,7 +422,7 @@ propaganda_efforts = {
 					AND = {
 						NOT = { has_government = ROOT }
 						has_offensive_war = yes
-						has_added_tension_amount > 30
+						has_added_tension_amount > 15
 					}
 					is_justifying_wargoal_against = ROOT
 					has_offensive_war_with = ROOT
@@ -299,7 +437,7 @@ propaganda_efforts = {
 					AND = {
 						NOT = { has_government = ROOT }
 						has_offensive_war = yes
-						has_added_tension_amount > 30
+						has_added_tension_amount > 15
 					}
 					is_justifying_wargoal_against = ROOT
 					has_offensive_war_with = ROOT
@@ -328,7 +466,7 @@ propaganda_efforts = {
 			factor = 0
 		}
 	}
-
+	
 	#Propaganda campaign against a neighbor
 	war_propaganda_against_warmonger_neighbor = {
 
@@ -396,6 +534,69 @@ propaganda_efforts = {
 			modifier = {
 				factor = 0
 				has_war_support > 0.9
+			}
+		}
+	}
+	
+	#Clash of gods
+	manifest_our_destiny  = {
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = manifest_our_destiny  }
+			has_stability > 0.7
+			has_war_support > 0.7
+			has_war = yes
+			is_major = yes
+			any_enemy_country = { is_major = yes }
+
+		}
+
+		visible = {
+			has_war_support > 0.7
+			has_stability > 0.7
+			has_war = yes
+			is_major = yes
+			any_enemy_country = { is_major = yes }
+		}
+
+		fire_only_once = no
+
+		days_remove = 180
+		days_re_enable = 180
+
+		cost = 200
+
+		modifier = {
+			army_core_attack_factor = 0.15
+			army_core_defence_factor = 0.15
+			war_support_weekly = 0.005
+			mobilization_speed = 0.2
+			political_power_factor = 0.2
+			training_time_factor = -0.10
+			decryption_factor = 0.2
+			encryption_factor = 0.2
+			experience_gain_army_factor = 0.05
+
+			#add some bonuses lately 
+		}
+
+		complete_effect = {
+			set_country_flag = manifest_our_destiny 
+		}
+		remove_effect = {
+			clr_country_flag = manifest_our_destiny 
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				has_stability > 0.7
+				has_war_support > 0.7
+				has_war = yes
+				is_major = yes
+				any_enemy_country = { is_major = yes }
 			}
 		}
 	}
