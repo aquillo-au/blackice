@@ -8945,9 +8945,11 @@ country_event = {
 			is_ai = yes
 		}
 		ai_chance = { factor = 100 }
-		
+	
 		hidden_effect = {
-			load_oob = "GER_afrikakorps_ai"
+                        set_technology = { desert_equipment = 1 }
+                        set_technology = { HVantiair2 = 1 }
+			load_oob = "GER_afrikakorps"
 			set_country_flag = GERafrikakorp
 		}
 	}
@@ -8961,7 +8963,10 @@ country_event = {
 			GER = { has_tech = HVantiair2 }
 		}
 		ai_chance = { factor = 0 }
-		
+		add_timed_idea = {
+				idea = GER_desert_warfare
+				days = 90
+			}
 		hidden_effect = {
 			load_oob = "GER_afrikakorps"
 			set_country_flag = GERafrikakorp

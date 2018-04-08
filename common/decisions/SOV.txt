@@ -1164,6 +1164,160 @@ SOV_great_patriotic_war = {
 			country_event = wtt_soviet_hold_city.6
 		}
 	}
+	
+	
+	kutuzov_offensive = {
+
+		icon = generic_army_support
+
+
+		available = {
+			has_war_with = GER
+			
+			command_power > 14
+			
+			date > 1943.7.1
+		}
+
+		visible = {
+			#has_war_with = GER
+			#date > 1943.5.1
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 30
+
+		cost = 40
+		
+		modifier = {
+            army_org_factor = 0.3
+			army_morale_factor = 0.3
+			army_speed_factor = 0.25
+			army_core_attack_factor = 0.5
+			army_infantry_attack_factor = 0.3
+			army_armor_attack_factor = 0.35
+			cavalry_attack_factor = 0.35
+			enemy_army_bonus_air_superiority_factor = -0.1
+			supply_consumption_factor = -0.1
+			ai_focus_aggressive_factor = 0.5
+        }
+
+		complete_effect = {
+			add_command_power = -15
+		}
+		
+		remove_effect = {
+			add_war_support = 0.1
+        }
+		
+		ai_will_do = {
+			factor = 50
+			
+		}
+	}
+	 
+	
+	suvorov_offensive = {
+
+		icon = generic_army_support
+
+
+		available = {
+			has_war_with = GER
+			
+			command_power > 14
+			
+			date > 1943.8.1
+		}
+
+		visible = {
+			#has_war_with = GER
+			#date > 1943.6.1
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 60
+
+		cost = 30
+		
+		modifier = {
+            army_org_factor = 0.2
+			army_morale_factor = 0.05
+			army_speed_factor = 0.15
+			army_core_attack_factor = 0.5
+			army_infantry_attack_factor = 0.3
+			army_armor_attack_factor = 0.25
+			cavalry_attack_factor = 0.10
+			enemy_army_bonus_air_superiority_factor = -0.1
+			ai_focus_aggressive_factor = 0.5
+        }
+
+		complete_effect = {
+			add_command_power = -15
+		}
+		
+		remove_effect = {
+			add_war_support = 0.1
+        }
+		
+		ai_will_do = {
+			factor = 50
+			
+		}
+	}
+	
+	operation_bagragation = {
+
+		icon = generic_army_support
+
+
+		available = {
+			has_war_with = GER
+			
+			command_power > 14
+			
+			date > 1944.6.1
+		}
+
+		visible = {
+			#has_war_with = GER
+			#date > 1944.4.1
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 90
+
+		cost = 50
+		
+		modifier = {
+			army_org_factor = 0.5
+			army_morale_factor = 0.15
+			army_speed_factor = 0.3
+			army_core_attack_factor = 0.6
+			army_infantry_attack_factor = 0.3
+			army_armor_attack_factor = 0.35
+			cavalry_attack_factor = 0.3
+			enemy_army_bonus_air_superiority_factor = -0.25
+			supply_consumption_factor = -0.1
+			ai_focus_aggressive_factor = 0.5
+        }
+
+		complete_effect = {
+			add_command_power = -15
+		}
+		
+		remove_effect = {
+			add_war_support = 0.1
+        }
+		
+		ai_will_do = {
+			factor = 50
+			
+		}
+	}
 }
 
 operations = {

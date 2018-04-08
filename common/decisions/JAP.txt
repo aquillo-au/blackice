@@ -882,7 +882,11 @@ JAP_pacific_guardian = {
 		icon = generic_independence
 
 		available = {
-			country_exists = KOR
+			democratic_govt = yes
+		}
+		
+		visible = {
+			democratic_govt = yes
 		}
 
 		days_mission_timeout = 180
@@ -890,8 +894,14 @@ JAP_pacific_guardian = {
 		fire_only_once = yes
 		is_good = no 
 		activation = {
-			#has_completed_focus = JAP_the_korean_question
+			democratic_govt = yes
 			has_full_control_of_state = 525
+			has_full_control_of_state = 818
+			has_full_control_of_state = 820
+			has_full_control_of_state = 819
+			has_full_control_of_state = 817
+			has_full_control_of_state = 816
+			has_full_control_of_state = 815
 			has_full_control_of_state = 527
 			KOR = { exists = no }
 		}
@@ -910,11 +920,51 @@ JAP_pacific_guardian = {
 
 		available = {
 			HOL = {
-				#has_capitulated = yes
+				has_capitulated = yes
 			}
-			INS = {
-				is_puppet_of = HOL
-			}
+			count_triggers = {
+					amount = 6
+					AND = {
+						927 = { is_controlled_by = JAP }
+						927 = { is_owned_by = INS }
+					}
+					
+					AND = {
+						672 = { is_controlled_by = JAP }
+						672 = { is_owned_by = INS }
+					}
+					
+					AND = {
+						335 = { is_controlled_by = JAP }
+						335 = { is_owned_by = INS }
+					}
+					
+					AND = {
+						334 = { is_controlled_by = JAP }
+						334 = { is_owned_by = INS }
+					}
+					
+					AND = {
+						673 = { is_controlled_by = JAP }
+						673 = { is_owned_by = INS }
+					}
+					
+					AND = {
+						667 = { is_controlled_by = JAP }
+						667 = { is_owned_by = INS }
+					}
+					
+					AND = {
+						668 = { is_controlled_by = JAP }
+						668 = { is_owned_by = INS }
+					}
+					
+					AND = {
+						669 = { is_controlled_by = JAP }
+						669 = { is_owned_by = INS }
+					}
+			
+				}
 		}
 
 		fire_only_once = yes
@@ -943,12 +993,29 @@ JAP_pacific_guardian = {
 		icon = jap_pacific_guardian
 
 		available = {
-			ENG = {
-				#has_capitulated = yes
-			}
-			MAL = {
-				is_puppet_of = ENG
-			}
+			count_triggers = {
+					amount = 3
+					AND = {
+						336 = { is_controlled_by = JAP }
+						336 = { is_owned_by = MAL }
+					}
+					
+					AND = {
+						333 = { is_controlled_by = JAP }
+						333 = { is_owned_by = MAL }
+					}
+					
+					AND = {
+						926 = { is_controlled_by = JAP }
+						926 = { is_owned_by = MAL }
+					}
+					
+					AND = {
+						925 = { is_controlled_by = JAP }
+						925 = { is_owned_by = MAL }
+					}
+			
+				}
 		}
 
 		fire_only_once = yes
@@ -978,13 +1045,7 @@ JAP_pacific_guardian = {
 
 		available = {
 			FRA = {
-				#has_capitulated = yes
-				OR = {
-					has_full_control_of_state = 670
-					has_full_control_of_state = 671
-					has_full_control_of_state = 286
-					has_full_control_of_state = 741
-				}
+				has_capitulated = yes
 			}
 		}
 
@@ -1135,7 +1196,7 @@ JAP_colonial_independence = {
 				}
 				owns_state = 761
 			}
-			#has_completed_focus = JAP_liberate_manchuria
+			democratic_govt = yes
 		}
 
 		fire_only_once = yes

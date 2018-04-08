@@ -653,7 +653,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "military_deployment_conveyor_summary_view"
-		position = { x=-15 y=0 }
+		position = { x=-0 y=0 }
 		size = { width=510 height=40 }
 		
 		background = {
@@ -663,7 +663,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "conveyor_collapse_btn"
-			position = { x=481 y=4 }
+			position = { x=454 y=4 }
 			quadTextureSprite = "GFX_conveyor_collapse_btn"
 			buttonFont = "hoi_18mbs"
 			clicksound = click_default
@@ -672,26 +672,26 @@ guiTypes = {
 		
 		instantTextboxType = {
 			name = "lines_count"
-			position = { x = 330 y = 8 }
+			position = { x = 255 y = 8 }
 			font = "hoi_16mbs"
 			borderSize = {x = 0 y = 0}
 			text = "1"
-			maxWidth = 120
+			maxWidth = 160
 			maxHeight = 20
-			format = center
+			format = right
 			fixedsize = yes
 		}
 		
 		iconType = {
 			name = "army_equipment"
 			spriteType = "GFX_equipment_state_icon"
-			position = { x=215 y=7 }		
+			position = { x=198 y=7 }		
 		}
 		
 		iconType = {
 			name = "equipment_progressbar"
 			spriteType = "GFX_deployment_entry_progressbar"
-			position = { x=237 y=9 }
+			position = { x=219 y=9 }
 		}
 		
 		buttonType = {
@@ -726,8 +726,8 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "military_deployment_line_view"
-		position = { x=-13 y=0 }
-		size = { width=520 height=40 }
+		position = { x=-14 y=-2 }
+		size = { width=514 height=40 }
 		
 		background = {
 			name = "background"
@@ -736,7 +736,7 @@ guiTypes = {
 
 		dropDownBoxType = {
 			name = "division_name_dropdown"
-			position = { x = 5 y = 5 }
+			position = { x = 7 y = 5 }
 			size = { width = 150 height = 30 }
 			
 			editBoxType = {
@@ -747,8 +747,8 @@ guiTypes = {
 			}
 			
 			expandButton = {
-				name = "expand_button"	
-				position = { x = 30 y = 7 }
+				name = "expand_button"
+				position = { x = 24 y = 6 }
 				quadTextureSprite ="GFX_collapse_or_close" # Frame 1 = down, 2 = up, 3 = cancel
 				buttonFont = "Main_14_black"
 				Orientation = "UPPER_RIGHT"
@@ -798,30 +798,30 @@ guiTypes = {
 		iconType = {
 			name = "army_equipment"
 			spriteType = "GFX_equipment_state_icon"
-			position = { x=214 y=12 }		
+			position = { x=210 y=12 }		
 		}
 		
 		iconType = {
 			name = "equipment_progressbar"
-			spriteType = "GFX_deployment_entry_progressbar"
-			position = { x=235 y=13 }
+			spriteType = "GFX_deployment_entry_progressbar_equipment"
+			position = { x=233 y=13 }
 		}
 		
 		iconType = {
 			name = "army_training"
 			spriteType = "GFX_army_experience"
-			position = { x=312 y=13 }		
+			position = { x=311 y=13 }		
 		}
 		
 		iconType = {
 			name = "training_progressbar"
-			spriteType = "GFX_deployment_entry_progressbar"
-			position = { x=329 y=13 }
+			spriteType = "GFX_deployment_entry_progressbar_training"
+			position = { x=330 y=13 }
 		}
 		
 		instantTextboxType = {
 			name = "series_number"
-			position = { x = 398 y = 11 }
+			position = { x = 400 y = 11 }
 			font = "hoi_16mbs"
 			borderSize = {x = 0 y = 0}
 			text = "1"
@@ -834,14 +834,14 @@ guiTypes = {
 		
 		buttonType = {
 			name = "deploy_line_button"
-			position = { x=458 y=7 }
+			position = { x = 455 y = 7 }
 			quadTextureSprite = "GFX_deploy_line_button"
 			clicksound = click_default
 		}
 		
 		buttonType = {
 			name = "cancel_line_button"
-			position = { x=484 y=7 }
+			position = { x = 480 y=7 }
 			quadTextureSprite = "GFX_closebutton_small"
 			pdx_tooltip = "CONVEYOR_LINE_CANCEL_DESC"
 			clicksound = click_close

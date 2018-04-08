@@ -750,6 +750,336 @@ special_projects = {
 }
 
 war_measures = {
+
+	requisition_trucks = {
+
+		icon = generic_industry
+
+		available = {
+			has_war = yes
+		}
+
+		visible = {
+			OR = {
+				has_idea = war_economy
+				has_war = yes
+			}
+		}
+
+		fire_only_once = no
+
+		days_re_enable = 180
+		
+		days_remove = 90
+
+		cost = 50
+		
+		modifier = {
+            production_factory_max_efficiency_factor = -0.04
+			production_factory_efficiency_gain_factor = -0.04
+			industrial_capacity_factory = -0.06
+			political_power_factor = -0.05
+        }
+
+		complete_effect = {
+			add_war_support = -0.05
+		}
+		
+		remove_effect = {
+            add_equipment_to_stockpile = {
+					type = motorized_equipment_1
+					amount = 2500
+					producer = CIV
+			}
+        } 
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	requisition_cars = {
+
+		icon = generic_industry
+
+		available = {
+			has_war = yes
+		}
+
+		visible = {
+			OR = {
+				has_idea = war_economy
+				has_war = yes
+			}
+		}
+
+		fire_only_once = no
+
+		days_re_enable = 180
+		
+		days_remove = 90
+
+		cost = 50
+		
+		modifier = {
+            production_factory_max_efficiency_factor = -0.04
+			production_factory_efficiency_gain_factor = -0.04
+			industrial_capacity_factory = -0.06
+			political_power_factor = -0.05
+        }
+
+		complete_effect = {
+			add_war_support = -0.05
+		}
+		
+		remove_effect = {
+           add_equipment_to_stockpile = {
+					type = motorized_lia_equipment_01
+					amount = 2500
+					producer = CIV
+			}
+         }
+		
+		ai_will_do = {
+			factor = 0
+			
+		}
+	}
+	
+	requisition_motorcycles = {
+
+		icon = generic_industry
+
+		available = {
+			has_war = yes
+		}
+
+		visible = {
+			OR = {
+				has_idea = war_economy
+				has_war = yes
+			}
+		}
+
+		fire_only_once = no
+
+		days_re_enable = 180
+		
+		days_remove = 90
+
+		cost = 50
+		
+		modifier = {
+            production_factory_max_efficiency_factor = -0.04
+			production_factory_efficiency_gain_factor = -0.04
+			industrial_capacity_factory = -0.06
+			political_power_factor = -0.05
+        }
+
+		complete_effect = {
+			add_war_support = -0.05
+		}
+		
+		 remove_effect = {
+          add_equipment_to_stockpile = {
+				type = mechanized_equipment_1
+				amount = 2000
+				producer = CIV
+			}
+          }
+		
+		ai_will_do = {
+			factor = 0
+			
+		}
+	}
+	
+	ration_civilian_petrol = {
+
+		icon = generic_industry
+
+		available = {
+			has_war = yes
+		}
+
+		visible = {
+			OR = {
+				has_idea = war_economy
+				has_war = yes
+			}
+		}
+
+		fire_only_once = no
+
+		days_re_enable = 420 #blaze it
+		
+		days_remove = 365
+
+		cost = 75
+		
+		modifier = {
+            local_resources_factor = 0.02
+			stability_factor = -0.07
+			war_support_factor = -0.07
+			political_power_factor = -0.1
+        }
+
+		complete_effect = {
+			add_war_support = -0.05
+			
+			random_owned_controlled_state = {
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+			}
+		}
+		
+		 remove_effect = {
+			
+			random_owned_controlled_state = {
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = oil
+					amount = 2
+				}
+			}
+          }
+		
+		ai_will_do = {
+			factor = 0
+			
+		}
+	}
+	
+	collect_metalls = {
+
+		icon = generic_industry
+
+		available = {
+			has_war = yes
+		}
+
+		visible = {
+			OR = {
+				has_idea = war_economy
+				has_war = yes
+			}
+		}
+
+		fire_only_once = no
+
+		days_re_enable = 420 #blaze it
+		
+		days_remove = 120
+
+		cost = 50
+		
+		modifier = {
+            local_resources_factor = 0.02
+			production_factory_max_efficiency_factor = -0.05
+			production_factory_efficiency_gain_factor = -0.05
+			industrial_capacity_factory = -0.05
+			#stability_factor = -0.07
+			#war_support_factor = -0.07
+			#political_power_factor = -0.1
+        }
+
+		complete_effect = {
+			#add_war_support = -0.05
+		}
+		
+		 remove_effect = {
+			random_owned_controlled_state = {
+				add_resource = {
+					type = steel
+					amount = 26
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = tungsten
+					amount = 2
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = tungsten
+					amount = 3
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = chromium
+					amount = 4
+				}
+			}
+			random_owned_controlled_state = {
+				add_resource = {
+					type = chromium
+					amount = 3
+				}
+			}
+          }
+		
+		ai_will_do = {
+			factor = 0
+			
+		}
+	}
+	
+	round_up_horses = {
+
+		icon = generic_industry
+
+		available = {
+			has_war = yes
+		}
+
+		visible = {
+			OR = {
+				has_idea = war_economy
+				has_war = yes
+			}
+		}
+
+		fire_only_once = no
+
+		days_re_enable = 180 #blaze it
+		
+		days_remove = 90
+
+		cost = 50
+		
+		modifier = {
+			production_factory_max_efficiency_factor = -0.06
+			production_factory_efficiency_gain_factor = -0.06
+			industrial_capacity_factory = -0.06
+        }
+
+		complete_effect = {
+			#add_war_support = -0.05
+		}
+		
+		 remove_effect = {
+			add_equipment_to_stockpile = {
+				type = horse_equipment_0
+				amount = 5000
+				producer = CIV
+			}
+          }
+		
+		ai_will_do = {
+			factor = 0
+			
+		}
+	}
+	
 	
 	emergency_factory_conversion_defensive = {
 
