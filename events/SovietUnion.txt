@@ -4,27 +4,27 @@
 
 add_namespace = soviet
 
-# BORder Skirmish with the Japanese
+# Border Skirmish with the Japanese
 country_event = {
 	id = soviet.1
 	title = soviet.1.t
 	desc = soviet.1.d
-	picture = GFX_repORt_event_russian_defensive
+	picture = GFX_report_event_russian_defensive
 	
 	is_triggered_only = yes
 	
 	option = { # Push back
 		name = soviet.1.a
-		ai_chance = { factOR = 100 } # histORical mod
+		ai_chance = { factor = 100 } # historical mod
 		add_political_power = -25
 		hidden_effect = {
 			random_list = {
-				0 = { # histORical mod
+				0 = { # historical mod
 					JAP = {
 						country_event = { days = 1 id = japan.3 }
 					}
 				}
-				100 = { # histORical mod
+				100 = { # historical mod
 					JAP = {
 						country_event = { days = 1 id = japan.4 }
 					}
@@ -33,10 +33,10 @@ country_event = {
 		}
 		effect_tooltip = {
 			random_list = {
-				0 = { # histORical mod
+				0 = { # historical mod
 					country_event = soviet.2
 				}
-				100 = { # histORical mod
+				100 = { # historical mod
 					country_event = soviet.3
 				}
 			}
@@ -44,7 +44,7 @@ country_event = {
 	}
 	option = { # Yield
 		name = soviet.1.b
-		ai_chance = { factOR = 0 } # histORical Mod
+		ai_chance = { factor = 0 } # historical Mod
 		JAP = {
 			effect_tooltip = {
 				add_stability = 0.05
@@ -59,7 +59,7 @@ country_event = {
 	id = soviet.2
 	title = soviet.2.t
 	desc = soviet.2.d
-	picture = GFX_repORt_event_russians_charging
+	picture = GFX_report_event_russians_charging
 	
 	is_triggered_only = yes
 	
@@ -69,7 +69,7 @@ country_event = {
 			limit = {
 				561 = { 
 					is_owned_by = SOV 
-					any_neighbOR_state = { 
+					any_neighbor_state = { 
 						OR = {
 							is_owned_by = JAP							
 							is_owned_by = MAN								
@@ -84,7 +84,7 @@ country_event = {
 				NOT = { 
 					561 = { 
 						is_owned_by = SOV 
-						any_neighbOR_state = { 
+						any_neighbor_state = { 
 							OR = {
 								is_owned_by = JAP
 								is_owned_by = MAN
@@ -95,7 +95,7 @@ country_event = {
 			}
 			random_owned_state = {
 				limit = { 
-					any_neighbOR_state = { 
+					any_neighbor_state = { 
 						OR = {
 							is_owned_by = JAP
 							is_owned_by = MAN
@@ -114,7 +114,7 @@ country_event = {
 	id = soviet.3
 	title = soviet.3.t
 	desc = soviet.3.d
-	picture = GFX_repORt_event_fallen_soviet
+	picture = GFX_report_event_fallen_soviet
 	
 	is_triggered_only = yes
 	
@@ -123,7 +123,7 @@ country_event = {
 			limit = {
 				561 = { 
 					is_owned_by = SOV 
-					any_neighbOR_state = { 
+					any_neighbor_state = { 
 						OR = {
 							is_owned_by = JAP
 							is_owned_by = MAN							
@@ -138,7 +138,7 @@ country_event = {
 				NOT = { 
 					561 = { 
 						is_owned_by = SOV 
-						any_neighbOR_state = { 
+						any_neighbor_state = { 
 							OR = {
 								is_owned_by = JAP
 								is_owned_by = MAN
@@ -149,7 +149,7 @@ country_event = {
 			}
 			random_owned_state = {
 				limit = { 
-					any_neighbOR_state = { 
+					any_neighbor_state = { 
 						OR = {
 							is_owned_by = JAP
 							is_owned_by = MAN
@@ -170,7 +170,7 @@ country_event = {
 	id = soviet.4
 	title = soviet.4.t
 	desc = soviet.4.d
-	picture = GFX_repORt_event_soviet_tank_parade
+	picture = GFX_report_event_soviet_tank_parade
 	
 	is_triggered_only = yes
 	
@@ -194,7 +194,7 @@ country_event = {
 	id = soviet.5
 	title = soviet.5.t
 	desc = soviet.5.d
-	picture = GFX_repORt_event_soviet_tanks
+	picture = GFX_report_event_soviet_tanks
 	
 	is_triggered_only = yes
 	
@@ -203,7 +203,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state
 			target = ROM
-			generatOR = { 78 }
+			generator = { 78 }
 		}
 		hidden_effect = {
 			SOV = {
@@ -217,7 +217,7 @@ country_event = {
 	id = soviet.6
 	title = soviet.6.t
 	desc = soviet.6.d
-	picture = GFX_repORt_event_soviets_reach_vienna
+	picture = GFX_report_event_soviets_reach_vienna
 	
 	is_triggered_only = yes
 	
@@ -231,7 +231,7 @@ country_event = {
 	id = soviet.7
 	title = soviet.7.t
 	desc = soviet.7.d
-	picture = GFX_repORt_event_soviet_bikes
+	picture = GFX_report_event_soviet_bikes
 	
 	is_triggered_only = yes
 	
@@ -248,7 +248,7 @@ country_event = {
 	id = soviet.8
 	title = soviet.8.t
 	desc = soviet.8.d
-	picture = GFX_repORt_event_soviets_reach_vienna
+	picture = GFX_report_event_soviets_reach_vienna
 	
 	is_triggered_only = yes
 	
@@ -262,7 +262,7 @@ country_event = {
 	id = soviet.9
 	title = soviet.9.t
 	desc = soviet.9.d
-	picture = repORt_event_soviet_infantry_and_t34_assault
+	picture = report_event_soviet_infantry_and_t34_assault
 	
 	is_triggered_only = yes
 	
@@ -279,7 +279,7 @@ country_event = {
 	id = soviet.10
 	title = soviet.10.t
 	desc = soviet.10.d
-	picture = GFX_repORt_event_soviets_reach_vienna
+	picture = GFX_report_event_soviets_reach_vienna
 	
 	is_triggered_only = yes
 	
@@ -293,7 +293,7 @@ country_event = {
 	id = soviet.11
 	title = soviet.11.t
 	desc = soviet.11.d
-	picture = repORt_event_soviet_infantry_and_t34_assault
+	picture = report_event_soviet_infantry_and_t34_assault
 	
 	is_triggered_only = yes
 	
@@ -310,7 +310,7 @@ country_event = {
 	id = soviet.12
 	title = soviet.12.t
 	desc = soviet.12.d
-	picture = GFX_repORt_event_generic_read_write
+	picture = GFX_report_event_generic_read_write
 	
 	is_triggered_only = yes
 	
@@ -331,7 +331,7 @@ country_event = {
 	id = soviet.13
 	title = soviet.13.t
 	desc = soviet.13.d
-	picture = GFX_repORt_event_soviet_tanks_snow
+	picture = GFX_report_event_soviet_tanks_snow
 	
 	is_triggered_only = yes
 	
@@ -342,7 +342,7 @@ country_event = {
 		create_wargoal = {
 			type = take_state
 			target = FIN
-			generatOR = { 146 }
+			generator = { 146 }
 		}				
 		hidden_effect = {
 			SOV = {
@@ -357,13 +357,13 @@ country_event = {
 	id = soviet.14
 	title = soviet.14.t
 	desc = soviet.14.d
-	picture = GFX_repORt_event_stalin_01
+	picture = GFX_report_event_stalin_01
 	
 	is_triggered_only = yes
 	
 	option = { # Accept
 		name = soviet.14.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		SOV = {
 			country_event = { id = soviet.16 }
@@ -384,7 +384,7 @@ country_event = {
 	id = soviet.15
 	title = soviet.15.t
 	desc = soviet.15.d
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	
 	is_triggered_only = yes
 	
@@ -397,7 +397,7 @@ country_event = {
 	id = soviet.16
 	title = soviet.16.t
 	desc = soviet.16.d
-	picture = GFX_repORt_event_generic_read_write
+	picture = GFX_report_event_generic_read_write
 	
 	is_triggered_only = yes
 	
@@ -417,7 +417,7 @@ country_event = {
 	id = soviet.17
 	title = soviet.17.t
 	desc = soviet.17.d
-	picture = GFX_repORt_event_bunker_01
+	picture = GFX_report_event_bunker_01
 	
 	is_triggered_only = yes
 	
@@ -535,7 +535,7 @@ country_event = {
 	id = soviet.18
 	title = soviet.18.t
 	desc = soviet.18.d
-	picture = GFX_repORt_event_japanese_envoy
+	picture = GFX_report_event_japanese_envoy
 	
 	trigger = {
 		date > 1936.11.1
@@ -554,7 +554,7 @@ country_event = {
 	option = {
 	ai_chance = {
 			modifier = {
-				factOR = 0
+				factor = 0
 				has_war_with = PRC
 			}
 		}
@@ -566,7 +566,7 @@ country_event = {
 	option = {
 		name = soviet.18.b
 		#SOV = { country_event = { id = soviet.20 days = 1 } }
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		
 		set_global_flag = CHI_no_national_front_flag
 		
@@ -578,7 +578,7 @@ country_event = {
 	id = soviet.19
 	title = soviet.19.t
 	desc = soviet.19.d
-	picture = GFX_repORt_event_japanese_chinese_surrender
+	picture = GFX_report_event_japanese_chinese_surrender
 	
 	is_triggered_only = yes
 	
@@ -595,26 +595,26 @@ country_event = {
 		hidden_effect = {
 			605 = {
 				if = {
-					limit = { is_bORder_conflict = yes }
-					set_bORder_war = no
+					limit = { is_border_conflict = yes }
+					set_border_war = no
 				}
 			}
 			620 = {
 				if = {
-					limit = { is_bORder_conflict = yes }
-					set_bORder_war = no
+					limit = { is_border_conflict = yes }
+					set_border_war = no
 				}
 			}
 			607 = {
 				if = {
-					limit = { is_bORder_conflict = yes }
-					set_bORder_war = no
+					limit = { is_border_conflict = yes }
+					set_border_war = no
 				}
 			}
 			622 = {
 				if = {
-					limit = { is_bORder_conflict = yes }
-					set_bORder_war = no
+					limit = { is_border_conflict = yes }
+					set_border_war = no
 				}
 			}
 		}
@@ -629,7 +629,7 @@ country_event = {
 	# Refuse to negotiate
 	option = {
 		name = soviet.19.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		
 		country_event = { id = soviet.22 days = 1 }
 		
@@ -643,7 +643,7 @@ country_event = {
 	id = soviet.20
 	title = soviet.20.t
 	desc = soviet.20.d
-	picture = GFX_repORt_event_natl_china
+	picture = GFX_report_event_natl_china
 	
 	is_triggered_only = yes
 	
@@ -656,7 +656,7 @@ country_event = {
 	id = soviet.21
 	title = soviet.21.t
 	desc = soviet.21.d
-	picture = GFX_repORt_event_generic_read_write
+	picture = GFX_report_event_generic_read_write
 	
 	is_triggered_only = yes
 	
@@ -675,7 +675,7 @@ country_event = {
 	id = soviet.22
 	title = soviet.22.t
 	desc = soviet.22.d
-	picture = GFX_repORt_event_chinese_soldiers_fighting
+	picture = GFX_report_event_chinese_soldiers_fighting
 	
 	is_triggered_only = yes
 	
@@ -688,7 +688,7 @@ country_event = {
 	id = soviet.23
 	title = soviet.23.t
 	desc = soviet.23.d
-	picture = GFX_repORt_event_soviet_bikes
+	picture = GFX_report_event_soviet_bikes
 	
 	is_triggered_only = yes
 	
@@ -702,7 +702,7 @@ country_event = {
 	id = soviet.24
 	title = soviet.24.t
 	desc = soviet.24.d
-	picture = GFX_repORt_event_soviet_purge_speech
+	picture = GFX_report_event_soviet_purge_speech
 	
 	is_triggered_only = yes
 	
@@ -716,7 +716,7 @@ country_event = {
 	id = soviet.25
 	title = soviet.25.t
 	desc = soviet.25.d
-	picture = GFX_repORt_event_soviet_purge_trial
+	picture = GFX_report_event_soviet_purge_trial
 
 	fire_only_once = yes
 	
@@ -740,14 +740,14 @@ country_event = {
 	option = {
 		name = soviet.25.a
 		ai_chance = {
-			factOR = 30
+			factor = 30
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
-		custom_effect_tooltip = remove_political_advisOR
+		custom_effect_tooltip = remove_political_advisor
 		
 		show_ideas_tooltip = mikhail_kalinin
 		
@@ -760,14 +760,14 @@ country_event = {
 	option = {
 		name = soviet.25.b
 		ai_chance = {
-			factOR = 30
+			factor = 30
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
-		custom_effect_tooltip = remove_political_advisOR
+		custom_effect_tooltip = remove_political_advisor
 		show_ideas_tooltip = nikita_khrushchev
 		set_country_flag = purged_khrushchev
 		hidden_effect = {
@@ -777,7 +777,7 @@ country_event = {
 	option = {
 		name = soviet.25.c
 		ai_chance = {
-			factOR = 30
+			factor = 30
 		}
 		
 		add_political_power = -75
@@ -786,10 +786,10 @@ country_event = {
 	option = {
 		name = soviet.25.e
 		ai_chance = {
-			factOR = 10
+			factor = 10
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
@@ -802,7 +802,7 @@ country_event = {
 	id = soviet.26
 	title = soviet.26.t
 	desc = soviet.26.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	fire_only_once = yes
 	
@@ -822,18 +822,18 @@ country_event = {
 	option = {
 		name = soviet.26.a
 		ai_chance = {
-			factOR = 20
+			factor = 20
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
 		set_country_flag = purge_1_group_a
-		custom_effect_tooltip = remove_theORist
+		custom_effect_tooltip = remove_theorist
 		show_ideas_tooltip = mikhail_tukhachevsky
 		custom_effect_tooltip = remove_chief_of_army
-		show_ideas_tooltip = alexander_yegORov
+		show_ideas_tooltip = alexander_yegorov
 		show_ideas_tooltip = vasily_blucher
 		custom_effect_tooltip = remove_chief_of_navy
 		show_ideas_tooltip = pyotr_smirnov
@@ -843,7 +843,7 @@ country_event = {
 		
 		hidden_effect = {
 			remove_ideas = mikhail_tukhachevsky
-			remove_ideas = alexander_yegORov
+			remove_ideas = alexander_yegorov
 			remove_ideas = vasily_blucher
 			remove_ideas = pyotr_smirnov
 			remove_ideas = mikhail_frinovsky
@@ -852,19 +852,19 @@ country_event = {
 	option = {
 		name = soviet.26.b
 		ai_chance = {
-			factOR = 75
+			factor = 75
 		}
 		
 		set_country_flag = purge_1_group_b
 		custom_effect_tooltip = remove_chief_of_army
 		show_ideas_tooltip = semyon_timoshenko
-		show_ideas_tooltip = kliment_vORoshilov
+		show_ideas_tooltip = kliment_voroshilov
 		custom_effect_tooltip = remove_chief_of_navy
 		show_ideas_tooltip = ivan_yumashev
 		custom_effect_tooltip = remove_military_high_command
 		show_ideas_tooltip = konstantin_rokossovsky
 		show_ideas_tooltip = vladimir_kasatonov
-		remove_unit_leader = 855 #kliment_vORoshilov, field marshal
+		remove_unit_leader = 855 #kliment_voroshilov, field marshal
 		remove_unit_leader = 852 #konstantin_rokossovsky, general
 		remove_unit_leader = 854 #semyon_timoshenko, general
 		remove_unit_leader = 853 #vladimir_kasatonov, naval commander
@@ -872,21 +872,21 @@ country_event = {
 		
 		hidden_effect = {
 			remove_ideas = semyon_timoshenko
-			remove_ideas = kliment_vORoshilov
+			remove_ideas = kliment_voroshilov
 			remove_ideas = ivan_yumashev
 			remove_ideas = konstantin_rokossovsky
 			remove_ideas = vladimir_kasatonov
 		}
 		
 	}
-	# REVISIT Balance, since the latter removes mORe unit leaders
+	# REVISIT Balance, since the latter removes more unit leaders
 	option = {
 		name = soviet.26.c
 		ai_chance = {
-			factOR = 5
+			factor = 5
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
@@ -899,7 +899,7 @@ country_event = {
 	id = soviet.27
 	title = soviet.27.t
 	desc = soviet.27.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	fire_only_once = yes
 	
@@ -919,23 +919,23 @@ country_event = {
 	option = {
 		name = soviet.27.a
 		ai_chance = {
-			factOR = 50
+			factor = 50
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
 		set_country_flag = purge_2_group_a
-		custom_effect_tooltip = remove_political_advisOR
+		custom_effect_tooltip = remove_political_advisor
 		show_ideas_tooltip = SOV_nikolai_yezhov
-		custom_effect_tooltip = remove_chief_of_airfORce
+		custom_effect_tooltip = remove_chief_of_airforce
 		show_ideas_tooltip = yakov_smushkevich
 		show_ideas_tooltip = pavel_rychagov
 		show_ideas_tooltip = alexander_novikov
 		custom_effect_tooltip = remove_military_high_command
-		show_ideas_tooltip = gORdey_levchenko
-		remove_unit_leader = 856 #gORdey_levchenko, naval commander
+		show_ideas_tooltip = gordey_levchenko
+		remove_unit_leader = 856 #gordey_levchenko, naval commander
 		custom_effect_tooltip = soviet.27_tt
 		
 		hidden_effect = {
@@ -943,19 +943,19 @@ country_event = {
 			remove_ideas = yakov_smushkevich
 			remove_ideas = pavel_rychagov
 			remove_ideas = alexander_novikov
-			remove_ideas = gORdey_levchenko
+			remove_ideas = gordey_levchenko
 		}
 	}
 	option = {
 		name = soviet.27.b
 		ai_chance = {
-			factOR = 45
+			factor = 45
 		}
 		
 		set_country_flag = purge_2_group_b
 		custom_effect_tooltip = remove_chief_of_navy
 		show_ideas_tooltip = nikolay_kuznetsov
-		custom_effect_tooltip = remove_chief_of_airfORce
+		custom_effect_tooltip = remove_chief_of_airforce
 		show_ideas_tooltip = konstantin_vershinin
 		custom_effect_tooltip = remove_military_high_command
 		show_ideas_tooltip = sergei_khudyakov
@@ -973,10 +973,10 @@ country_event = {
 	option = {
 		name = soviet.27.c
 		ai_chance = {
-			factOR = 5
+			factor = 5
 			modifier = {
-				factOR = 0
-				is_histORical_focus_on = yes
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 		
@@ -989,7 +989,7 @@ country_event = {
 	id = soviet.28
 	title = soviet.28.t
 	desc = soviet.28.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	fire_only_once = yes
 	
@@ -1004,9 +1004,9 @@ country_event = {
 		days = 12	
 	}
 
-	option = {		# suppORt stalin
+	option = {		# support stalin
 		name = soviet.28.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		set_country_flag = counter_purge
 		if = {
@@ -1050,7 +1050,7 @@ country_event = {
 		hidden_effect = {
 			random_other_country = {
 				limit = {
-					ORiginal_tag = SOV
+					original_tag = SOV
 					has_government = communism
 				}
 				add_popularity = {
@@ -1062,7 +1062,7 @@ country_event = {
 				create_country_leader = {
 					name = "Leon Trotsky"
 					desc = "POLITICS_LEON_TROTSKY_DESC"
-					picture = "PORtrait_Leon_Trotsky.dds"
+					picture = "Portrait_Leon_Trotsky.dds"
 					expire = "1965.1.1"
 					ideology = trotskyism
 					traits = {
@@ -1073,9 +1073,9 @@ country_event = {
 		}
 		news_event = { hours = 6 id = news.221 }
 	}
-	option = {			#suppORt trotsky
+	option = {			#support trotsky
 		name = soviet.28.c
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		
 		set_country_flag = counter_purge
 		if = {
@@ -1116,7 +1116,7 @@ country_event = {
 		hidden_effect = {
 			random_other_country = {
 				limit = {
-					ORiginal_tag = SOV
+					original_tag = SOV
 					has_government = communism
 				}
 				
@@ -1125,12 +1125,12 @@ country_event = {
 				create_country_leader = {
 					name = "Joseph Vissarionovich Stalin"
 					desc = "POLITICS_JOSEPH_STALIN_DESC"
-					picture = "PORtrait_Soviet_Joseph_Stalin.dds"
+					picture = "Portrait_Soviet_Joseph_Stalin.dds"
 					expire = "1953.3.1"
 					ideology = stalinism
 					traits = {
 						paranoid
-						dictatOR
+						dictator
 						stalin
 					}
 				}
@@ -1148,7 +1148,7 @@ country_event = {
 	id = soviet.402
 	title = soviet.402.t
 	desc = soviet.402.d
-	picture = GFX_repORt_event_stalin_approves
+	picture = GFX_report_event_stalin_approves
 	
 	fire_only_once = yes
 	
@@ -1156,19 +1156,19 @@ country_event = {
 	
 	option = {
 		name = soviet.402.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		create_faction = Comintern
 		
 		create_country_leader = {
 			name = "Joseph Vissarionovich Stalin"
 			desc = "POLITICS_JOSEPH_STALIN_DESC"
-			picture = "PORtrait_Soviet_Joseph_Stalin.dds"
+			picture = "Portrait_Soviet_Joseph_Stalin.dds"
 			expire = "1953.3.1"
 			ideology = stalinism
 			traits = {
 				paranoid
-				dictatOR
+				dictator
 				stalin
 			}
 		}
@@ -1178,7 +1178,7 @@ country_event = {
 	id = soviet.403
 	title = soviet.403.t
 	desc = soviet.403.d
-	picture = GFX_repORt_event_soviet_purge_trial
+	picture = GFX_report_event_soviet_purge_trial
 	
 	fire_only_once = yes
 	
@@ -1186,14 +1186,14 @@ country_event = {
 	
 	option = {
 		name = soviet.403.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		create_faction = International
 		
 		create_country_leader = {
 			name = "Leon Trotsky"
 			desc = "POLITICS_LEON_TROTSKY_DESC"
-			picture = "PORtrait_Leon_Trotsky.dds"
+			picture = "Portrait_Leon_Trotsky.dds"
 			expire = "1965.1.1"
 			ideology = trotskyism
 			traits = {
@@ -1207,7 +1207,7 @@ country_event = {
 	id = soviet.29
 	title = soviet.29.t
 	desc = soviet.29.d
-	picture = GFX_repORt_event_stalin_approves
+	picture = GFX_report_event_stalin_approves
 
 	is_triggered_only = yes
 	
@@ -1227,7 +1227,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.29.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		FRA = {
 			add_opinion_modifier = {
 				target = SOV
@@ -1241,7 +1241,7 @@ country_event = {
 	id = soviet.100
 	title = soviet.100.t
 	desc = soviet.100.d
-	picture = GFX_repORt_event_new_zealand_communist
+	picture = GFX_report_event_new_zealand_communist
 	
 	trigger = {
 		has_idea = comintern_influence
@@ -1267,7 +1267,7 @@ country_event = {
 	id = soviet.30
 	title = soviet.30.t
 	desc = soviet.30.d
-	picture = GFX_repORt_event_soviet_bikes
+	picture = GFX_report_event_soviet_bikes
 
 	is_triggered_only = yes
 	
@@ -1284,7 +1284,7 @@ country_event = {
 		
 	option = {
 		name = soviet.30.a
-		ai_chance = { factOR = 100 } # histORical mod
+		ai_chance = { factor = 100 } # historical mod
 		hidden_effect = { 
 			set_country_flag = bessarabia_demand
 			ROM = { 
@@ -1294,7 +1294,7 @@ country_event = {
 	}	
 	option = {
 		name = soviet.30.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		
 	}
 }
@@ -1303,7 +1303,7 @@ country_event = {
 	id = soviet.31
 	title = soviet.31.t
 	desc = soviet.31.d
-	picture = GFX_repORt_event_soviet_bikes
+	picture = GFX_report_event_soviet_bikes
 
 	is_triggered_only = yes
 	
@@ -1328,7 +1328,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.31.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 # Oppress Estonia
@@ -1336,7 +1336,7 @@ country_event = {
 	id = soviet.32
 	title = soviet.32.t
 	desc = soviet.32.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	is_triggered_only = yes
 	
@@ -1357,7 +1357,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.32.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 # Oppress Latvia
@@ -1365,7 +1365,7 @@ country_event = {
 	id = soviet.33
 	title = soviet.33.t
 	desc = soviet.33.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	is_triggered_only = yes
 	
@@ -1386,7 +1386,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.33.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 # Oppress Lithuania 
@@ -1394,7 +1394,7 @@ country_event = {
 	id = soviet.34
 	title = soviet.34.t
 	desc = soviet.34.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	is_triggered_only = yes
 	
@@ -1415,7 +1415,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.34.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 # Communist government in FROM baltic country and they wish to be annexed
@@ -1423,13 +1423,13 @@ country_event = {
 	id = soviet.35
 	title = soviet.35.t
 	desc = soviet.35.d
-	picture = GFX_repORt_event_stalin_approves
+	picture = GFX_report_event_stalin_approves
 
 	is_triggered_only = yes
 
 	option = {
 		name = soviet.35.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 
 		effect_tooltip = {
 			if = {
@@ -1479,7 +1479,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.35.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 # Communist government in FROM baltic country and they wish to be part puppet
@@ -1487,7 +1487,7 @@ country_event = {
 	id = soviet.36
 	title = soviet.36.t
 	desc = soviet.36.d
-	picture = GFX_repORt_event_stalin_approves
+	picture = GFX_report_event_stalin_approves
 
 	is_triggered_only = yes
 
@@ -1501,7 +1501,7 @@ country_event = {
 
 	option = {
 		name = soviet.36.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		if = {
 			limit = {
@@ -1532,15 +1532,15 @@ country_event = {
 	}
 	option = {
 		name = soviet.36.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
-# Purge - New officers less dumb. Regaining ORg
+# Purge - New officers less dumb. Regaining org
 country_event = {
 	id = soviet.37
 	title = soviet.37.t
 	desc = soviet.37.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	is_triggered_only = yes
 
@@ -1561,12 +1561,12 @@ country_event = {
 		custom_effect_tooltip = soviet.37.a_tt
 	}
 }
-# Purge - New officers less dumb. Regaining ORg
+# Purge - New officers less dumb. Regaining org
 country_event = {
 	id = soviet.38
 	title = soviet.37.t
 	desc = soviet.37.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	is_triggered_only = yes
 
@@ -1592,12 +1592,12 @@ country_event = {
 		custom_effect_tooltip = soviet.37.a_tt
 	}
 }
-# Purge - New officers less dumb. Regaining ORg
+# Purge - New officers less dumb. Regaining org
 country_event = {
 	id = soviet.39
 	title = soviet.37.t
 	desc = soviet.37.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	is_triggered_only = yes
 
@@ -1618,12 +1618,12 @@ country_event = {
 		custom_effect_tooltip = soviet.37.a_tt
 	}
 }
-# Purge - New officers less dumb. Regaining ORg
+# Purge - New officers less dumb. Regaining org
 country_event = {
 	id = soviet.40
 	title = soviet.37.t
 	desc = soviet.37.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	is_triggered_only = yes
 
@@ -1649,12 +1649,12 @@ country_event = {
 		custom_effect_tooltip = soviet.37.a_tt
 	}
 }
-# Purge - New officers less dumb. Regaining ORg
+# Purge - New officers less dumb. Regaining org
 country_event = {
 	id = soviet.41
 	title = soviet.37.t
 	desc = soviet.37.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	is_triggered_only = yes
 
@@ -1675,12 +1675,12 @@ country_event = {
 		custom_effect_tooltip = soviet.37.a_tt
 	}
 }
-# Purge - New officers less dumb. Regaining ORg
+# Purge - New officers less dumb. Regaining org
 country_event = {
 	id = soviet.42
 	title = soviet.37.t
 	desc = soviet.37.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	is_triggered_only = yes
 
@@ -1706,12 +1706,12 @@ country_event = {
 		custom_effect_tooltip = soviet.37.a_tt
 	}
 }
-# Purge - New officers less dumb. Regaining ORg
+# Purge - New officers less dumb. Regaining org
 country_event = {
 	id = soviet.43
 	title = soviet.37.t
 	desc = soviet.37.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	is_triggered_only = yes
 
@@ -1732,12 +1732,12 @@ country_event = {
 		custom_effect_tooltip = soviet.37.a_tt
 	}
 }
-# Purge - New officers less dumb. Regaining ORg
+# Purge - New officers less dumb. Regaining org
 country_event = {
 	id = soviet.44
 	title = soviet.37.t
 	desc = soviet.37.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	is_triggered_only = yes
 
@@ -1763,12 +1763,12 @@ country_event = {
 		custom_effect_tooltip = soviet.37.a_tt
 	}
 }
-# Purge - New officers less dumb. Regaining ORg
+# Purge - New officers less dumb. Regaining org
 country_event = {
 	id = soviet.45
 	title = soviet.37.t
 	desc = soviet.37.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	is_triggered_only = yes
 
@@ -1789,12 +1789,12 @@ country_event = {
 		custom_effect_tooltip = soviet.37.a_tt
 	}
 }
-# Purge - Fighting defensive war against majOR
+# Purge - Fighting defensive war against major
 country_event = {
 	id = soviet.46
 	title = soviet.46.t
 	desc = soviet.46.d
-	picture = GFX_repORt_event_russian_defense_with_injured_soldier
+	picture = GFX_report_event_russian_defense_with_injured_soldier
 
 	is_triggered_only = yes
 
@@ -1873,7 +1873,7 @@ country_event = {
 	id = soviet.48
 	title = soviet.48.t
 	desc = soviet.48.d
-	picture = GFX_repORt_event_soviet_purge_trial
+	picture = GFX_report_event_soviet_purge_trial
 
 	trigger = {
 		has_government = communism
@@ -1904,7 +1904,7 @@ country_event = {
 	#Don't invite trotsky
 	#option = {
 	#	name = soviet.48.a
-	#	ai_chance = { factOR = 0 }
+	#	ai_chance = { factor = 0 }
 	#	custom_effect_tooltip = soviet.48.a_tt
 	#	set_country_flag = SOV_soviet.48_NOTrotsky
 	#}
@@ -1912,7 +1912,7 @@ country_event = {
 	#Trotsky will return
 	option = {
 		name = soviet.48.c
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		custom_effect_tooltip = soviet.48.b_tt
 		set_country_flag = SOV_soviet.48_trotsky
 	}
@@ -1922,7 +1922,7 @@ country_event = {
 	id = soviet.49
 	title = soviet.49.t
 	desc = soviet.49.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -1946,14 +1946,14 @@ country_event = {
 			remove_unit_leader = 762 #Remove Andrey Vlasov
 			random_other_country = {
 				limit = {
-					ORiginal_tag = SOV
+					original_tag = SOV
 					has_government = neutrality
 				}
 				kill_country_leader = yes
 				create_country_leader = {
 					name = "Andrey Vlasov"
 					desc = "POLITICS_ANDREY_VLASOV_DESC"
-					picture = "PORtrait_Soviet_Andrey_Vlasov.dds"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
 					expire = "1965.1.1"
 					ideology = moderatism
 					traits = {
@@ -1969,7 +1969,7 @@ country_event = {
 	id = soviet.50
 	title = soviet.50.t
 	desc = soviet.50.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	fire_only_once = yes
 
@@ -1993,14 +1993,14 @@ country_event = {
 		hidden_effect = {
 			random_other_country = {
 				limit = {
-					ORiginal_tag = SOV
+					original_tag = SOV
 					has_government = neutrality
 				}
 				kill_country_leader = yes
 				create_country_leader = {
 					name = "Andrey Vlasov"
 					desc = "POLITICS_ANDREY_VLASOV_DESC"
-					picture = "PORtrait_Soviet_Andrey_Vlasov.dds"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
 					expire = "1965.1.1"
 					ideology = moderatism
 					traits = {
@@ -2016,7 +2016,7 @@ country_event = {
 	id = soviet.51
 	title = soviet.51.t
 	desc = soviet.51.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 
 	fire_only_once = yes
 	
@@ -2040,14 +2040,14 @@ country_event = {
 		hidden_effect = {
 			random_other_country = {
 				limit = {
-					ORiginal_tag = SOV
+					original_tag = SOV
 					has_government = neutrality
 				}
 				kill_country_leader = yes
 				create_country_leader = {
 					name = "Andrey Vlasov"
 					desc = "POLITICS_ANDREY_VLASOV_DESC"
-					picture = "PORtrait_Soviet_Andrey_Vlasov.dds"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
 					expire = "1965.1.1"
 					ideology = moderatism
 					traits = {
@@ -2063,7 +2063,7 @@ country_event = {
 	id = soviet.52
 	title = soviet.52.t
 	desc = soviet.52.d
-	picture = GFX_repORt_event_stalin_purge_politicians
+	picture = GFX_report_event_stalin_purge_politicians
 
 	fire_only_once = yes
 
@@ -2087,14 +2087,14 @@ country_event = {
 		hidden_effect = {
 			random_other_country = {
 				limit = {
-					ORiginal_tag = SOV
+					original_tag = SOV
 					has_government = neutrality
 				}
 				kill_country_leader = yes
 				create_country_leader = {
 					name = "Andrey Vlasov"
 					desc = "POLITICS_ANDREY_VLASOV_DESC"
-					picture = "PORtrait_Soviet_Andrey_Vlasov.dds"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
 					expire = "1965.1.1"
 					ideology = moderatism
 					traits = {
@@ -2110,7 +2110,7 @@ country_event = {
 	id = soviet.53
 	title = soviet.53.t
 	desc = soviet.53.d
-	picture = GFX_repORt_event_soviet_purge_trial
+	picture = GFX_report_event_soviet_purge_trial
 
 	fire_only_once = yes
 
@@ -2130,14 +2130,14 @@ country_event = {
 		hidden_effect = {
 			random_country = {
 				limit = {
-					ORiginal_tag = SOV
+					original_tag = SOV
 					has_government = neutrality
 				}
 				kill_country_leader = yes
 				create_country_leader = {
 					name = "Andrey Vlasov"
 					desc = "POLITICS_ANDREY_VLASOV_DESC"
-					picture = "PORtrait_Soviet_Andrey_Vlasov.dds"
+					picture = "Portrait_Soviet_Andrey_Vlasov.dds"
 					expire = "1965.1.1"
 					ideology = moderatism
 					traits = {
@@ -2165,7 +2165,7 @@ country_event = {
 			has_completed_focus = SOV_great_purge
 		}
 	}
-	picture = GFX_repORt_event_soviet_purge_speech
+	picture = GFX_report_event_soviet_purge_speech
 
 	fire_only_once = yes
 
@@ -2203,7 +2203,7 @@ country_event = {
 	id = soviet.55
 	title = soviet.55.t
 	desc = soviet.55.d
-	picture = GFX_repORt_event_soviet_winter_offensive
+	picture = GFX_report_event_soviet_winter_offensive
 
 	fire_only_once = yes
 	
@@ -2265,7 +2265,7 @@ country_event = {
 	id = soviet.390
 	title = soviet.390.t
 	desc = soviet.390.d
-	picture = GFX_repORt_event_soviet_winter_offensive
+	picture = GFX_report_event_soviet_winter_offensive
 
 	fire_only_once = yes
 	
@@ -2308,7 +2308,7 @@ country_event = {
 	
 	option = {
 		name = soviet.390.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
 		
@@ -2328,7 +2328,7 @@ country_event = {
 	id = soviet.56
 	title = soviet.56.t
 	desc = soviet.56.d
-	picture = GFX_repORt_event_soviet_soldiers_city
+	picture = GFX_report_event_soviet_soldiers_city
 
 	fire_only_once = yes
 	
@@ -2360,7 +2360,7 @@ country_event = {
 	
 	option = {
 		name = soviet.56.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
 			set_technology = { hiddentech_conscripts = 1 }
@@ -2374,7 +2374,7 @@ country_event = {
 	id = soviet.57
 	title = soviet.57.t
 	desc = soviet.57.d
-	picture = GFX_repORt_event_soviet_tank_parade
+	picture = GFX_report_event_soviet_tank_parade
 
 	fire_only_once = yes
 	
@@ -2410,7 +2410,7 @@ country_event = {
 	
 	option = {
 		name = soviet.57.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
 			set_technology = { hiddentech_conscripts = 1 }
@@ -2692,7 +2692,7 @@ country_event = {
 	
 	option = {
 		name = soviet.329.a
-		set_country_flag = sovietwORkers
+		set_country_flag = sovietworkers
 		add_timed_idea = {
 			idea = soviet_workers
 			days = 365
@@ -2824,7 +2824,7 @@ country_event = {
 		has_war_with = GER
 		is_ai = yes
 		#GER = { is_ai = no }
-		has_country_flag = sovietwORkers
+		has_country_flag = sovietworkers
 		NOT = {has_idea = soviet_workers }
 	}
 	
@@ -2951,12 +2951,12 @@ country_event = {
 		}
 	}
 }
-# Poland conquered... honOR MR Pact?
+# Poland conquered... honor MR Pact?
 country_event = {
 	id = soviet.60
 	title = soviet.60.t
 	desc = soviet.60.d
-	picture = GFX_repORt_event_soviet_tanks
+	picture = GFX_report_event_soviet_tanks
 	
 	fire_only_once = yes
 
@@ -3042,7 +3042,7 @@ country_event = {
 		ai_chance = {
 			base = 1
 			modifier = {
-				factOR = 0
+				factor = 0
 				AND = {
 					POL = {
 						is_ai = no
@@ -3289,7 +3289,7 @@ country_event = {
 			base = 1
 			modifier = {
 				add = -1
-				is_histORical_focus_on = yes
+				is_historical_focus_on = yes
 				NOT = {
 					AND = {
 						POL = {
@@ -3329,12 +3329,12 @@ country_event = {
 		}
 	}
 }
-# Soviet honORs MR Pact (Germany)
+# Soviet honors MR Pact (Germany)
 country_event = {
 	id = soviet.61
 	title = soviet.61.t
 	desc = soviet.61.d
-	picture = GFX_repORt_event_soviet_german_soldier_handshake
+	picture = GFX_report_event_soviet_german_soldier_handshake
 
 	is_triggered_only = yes
 	
@@ -3359,7 +3359,7 @@ country_event = {
 	id = soviet.62
 	title = soviet.62.t
 	desc = soviet.62.d
-	picture = GFX_repORt_event_soviet_tanks
+	picture = GFX_report_event_soviet_tanks
 
 	is_triggered_only = yes
 	
@@ -3371,12 +3371,12 @@ country_event = {
 		}
 	}
 }
-###### Veren's SOV Events fOR Sov-Jap War ######
+###### Veren's SOV Events for Sov-Jap War ######
 country_event = {
 	id = soviet.360
 	title = soviet.360.t
 	desc = soviet.360.d
-	picture = GFX_repORt_event_japanese_soldiers_hong_kong
+	picture = GFX_report_event_japanese_soldiers_hong_kong
 	
 	is_triggered_only = yes
 	
@@ -3385,7 +3385,7 @@ country_event = {
 		name = soviet.60.a
 		
 		ai_chance = {
-			factOR = 80
+			factor = 80
 		}
 		
 		JAP = { transfer_state = 408 }
@@ -3415,7 +3415,7 @@ country_event = {
 		name = soviet.360.b
 		
 		ai_chance = {
-			factOR = 20
+			factor = 20
 		}
 		JAP = { country_event = { id = japan.25 }}
 	}
@@ -3425,7 +3425,7 @@ country_event = {
 	id = soviet.361
 	title = soviet.361.t
 	desc = soviet.361.d
-	picture = GFX_repORt_event_t34
+	picture = GFX_report_event_t34
 
 	fire_only_once = yes
 	
@@ -3442,7 +3442,7 @@ country_event = {
 	
 	option = {
 		name = soviet.361.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_country_flag = T34_tank 
 		
 		hidden_effect = {
@@ -3456,7 +3456,7 @@ country_event = {
 	id = soviet.362
 	title = soviet.362.t
 	desc = soviet.362.d
-	picture = GFX_repORt_event_kv1
+	picture = GFX_report_event_kv1
 
 	fire_only_once = yes
 	
@@ -3473,7 +3473,7 @@ country_event = {
 	
 	option = {
 		name = soviet.362.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_country_flag = KV1_tank
 		
 		hidden_effect = {
@@ -3486,7 +3486,7 @@ country_event = {
 	id = soviet.363
 	title = soviet.363.t
 	desc = soviet.363.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3506,7 +3506,7 @@ country_event = {
 	
 	option = {
 		name = soviet.363.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_country_flag = SOV_partisan_uprisings 
 		hidden_effect = {
 			set_technology = {partisans = 1}
@@ -3519,7 +3519,7 @@ country_event = {
 	id = soviet.64
 	title = soviet.64.t
 	desc = soviet.64.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3545,7 +3545,7 @@ country_event = {
 	
 	option = {
 		name = soviet.64.a
-		ai_chance = { factOR = 10 }
+		ai_chance = { factor = 10 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_I"  
@@ -3554,7 +3554,7 @@ country_event = {
 	
 	option = {
 		name = soviet.64.b
-		ai_chance = { factOR = 90 }
+		ai_chance = { factor = 90 }
 	}
 }
 
@@ -3562,7 +3562,7 @@ country_event = {
 	id = soviet.65
 	title = soviet.65.t
 	desc = soviet.65.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3591,7 +3591,7 @@ country_event = {
 	
 	option = {
 		name = soviet.65.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_94"  
@@ -3600,14 +3600,14 @@ country_event = {
 	
 	option = {
 		name = soviet.65.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.66
 	title = soviet.66.t
 	desc = soviet.66.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3635,7 +3635,7 @@ country_event = {
 	
 	option = {
 		name = soviet.66.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_95"  
@@ -3644,14 +3644,14 @@ country_event = {
 	
 	option = {
 		name = soviet.66.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.67
 	title = soviet.67.t
 	desc = soviet.67.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3679,7 +3679,7 @@ country_event = {
 	
 	option = {
 		name = soviet.67.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_96"  
@@ -3688,14 +3688,14 @@ country_event = {
 	
 	option = {
 		name = soviet.67.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.68
 	title = soviet.68.t
 	desc = soviet.68.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3722,7 +3722,7 @@ country_event = {
 	
 	option = {
 		name = soviet.68.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_12"  
@@ -3731,14 +3731,14 @@ country_event = {
 	
 	option = {
 		name = soviet.68.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.69
 	title = soviet.69.t
 	desc = soviet.69.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3765,7 +3765,7 @@ country_event = {
 	
 	option = {
 		name = soviet.69.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_13"  
@@ -3774,14 +3774,14 @@ country_event = {
 	
 	option = {
 		name = soviet.69.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.70
 	title = soviet.70.t
 	desc = soviet.70.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3809,7 +3809,7 @@ country_event = {
 	
 	option = {
 		name = soviet.70.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_840"  
@@ -3818,14 +3818,14 @@ country_event = {
 	
 	option = {
 		name = soviet.70.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.71
 	title = soviet.71.t
 	desc = soviet.71.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3853,7 +3853,7 @@ country_event = {
 	
 	option = {
 		name = soviet.71.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_209"  
@@ -3862,14 +3862,14 @@ country_event = {
 	
 	option = {
 		name = soviet.71.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.72
 	title = soviet.72.t
 	desc = soviet.65.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3897,7 +3897,7 @@ country_event = {
 	
 	option = {
 		name = soviet.72.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_195"  
@@ -3906,14 +3906,14 @@ country_event = {
 	
 	option = {
 		name = soviet.72.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.73
 	title = soviet.73.t
 	desc = soviet.65.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3941,7 +3941,7 @@ country_event = {
 	
 	option = {
 		name = soviet.73.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_202"  
@@ -3950,14 +3950,14 @@ country_event = {
 	
 	option = {
 		name = soviet.73.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.74
 	title = soviet.74.t
 	desc = soviet.74.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -3985,7 +3985,7 @@ country_event = {
 	
 	option = {
 		name = soviet.74.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_240"  
@@ -3994,14 +3994,14 @@ country_event = {
 	
 	option = {
 		name = soviet.74.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.75
 	title = soviet.75.t
 	desc = soviet.75.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -4029,7 +4029,7 @@ country_event = {
 	
 	option = {
 		name = soviet.75.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_246"  
@@ -4038,14 +4038,14 @@ country_event = {
 	
 	option = {
 		name = soviet.75.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.76
 	title = soviet.76.t
 	desc = soviet.76.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -4073,7 +4073,7 @@ country_event = {
 	
 	option = {
 		name = soviet.76.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_260"  
@@ -4082,7 +4082,7 @@ country_event = {
 	
 	option = {
 		name = soviet.76.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	
 	}
 }
@@ -4090,7 +4090,7 @@ country_event = {
 	id = soviet.77
 	title = soviet.77.t
 	desc = soviet.77.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -4118,7 +4118,7 @@ country_event = {
 	
 	option = {
 		name = soviet.77.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_223"  
@@ -4127,14 +4127,14 @@ country_event = {
 	
 	option = {
 		name = soviet.77.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.78
 	title = soviet.78.t
 	desc = soviet.78.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -4162,7 +4162,7 @@ country_event = {
 	
 	option = {
 		name = soviet.78.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_263"  
@@ -4171,14 +4171,14 @@ country_event = {
 	
 	option = {
 		name = soviet.78.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.79
 	title = soviet.79.t
 	desc = soviet.79.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -4206,7 +4206,7 @@ country_event = {
 	
 	option = {
 		name = soviet.79.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_222"  
@@ -4215,14 +4215,14 @@ country_event = {
 	
 	option = {
 		name = soviet.79.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.80
 	title = soviet.80.t
 	desc = soviet.80.d
-	picture = GFX_repORt_event_soviet_KV
+	picture = GFX_report_event_soviet_KV
 
 	trigger = {
 		tag = SOV
@@ -4250,7 +4250,7 @@ country_event = {
 	
 	option = {
 		name = soviet.80.a
-		ai_chance = { factOR = 30 }
+		ai_chance = { factor = 30 }
 	
 		hidden_effect = {
 			load_oob = "SOV_Partisans_226"  
@@ -4258,14 +4258,14 @@ country_event = {
 	}
 	option = {
 		name = soviet.80.b
-		ai_chance = { factOR = 70 }
+		ai_chance = { factor = 70 }
 	}
 }
 country_event = {
 	id = soviet.81
 	title = soviet.81.t
 	desc = soviet.81.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -4274,7 +4274,7 @@ country_event = {
 			date > 1941.9.1
 			and = {
 			NOT = { has_idea = Rodina_III }
-			has_country_flag = fORthemotherland
+			has_country_flag = forthemotherland
 			}
 		}
 		has_completed_focus = SOV_guards_armyunits
@@ -4293,11 +4293,11 @@ country_event = {
 	
 	option = {
 		name = soviet.81.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		set_country_flag = SOVguardssept
 		hidden_effect = {
-			set_technology = { guards_motORized_tech =1 }
+			set_technology = { guards_motorized_tech =1 }
 			set_technology = { guards_infantry_tech =1 }
 			set_technology = { guards_artillery_tech =1 }
 			set_technology = { guards_artillery_mot_tech =1 }
@@ -4308,11 +4308,11 @@ country_event = {
 	
 	option = {
 		name = soviet.81.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		set_country_flag = SOVguardssept
 		hidden_effect = {
-			set_technology = { guards_motORized_tech =1 }
+			set_technology = { guards_motorized_tech =1 }
 			set_technology = { guards_infantry_tech =1 }
 			set_technology = { guards_artillery_tech =1 }
 			set_technology = { guards_artillery_mot_tech =1 }
@@ -4324,7 +4324,7 @@ country_event = {
 	id = soviet.82
 	title = soviet.82.t
 	desc = soviet.82.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -4332,7 +4332,7 @@ country_event = {
 		OR = {
 			date > 1941.11.1
 			and = {
-			has_country_flag = fORthemotherland
+			has_country_flag = forthemotherland
 			NOT = { has_idea = Rodina_II }
 			}
 		}
@@ -4353,7 +4353,7 @@ country_event = {
 	
 	option = {
 		name = soviet.82.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		set_country_flag = SOVguardsnov
 		hidden_effect = {
@@ -4364,7 +4364,7 @@ country_event = {
 	
 	option = {
 		name = soviet.82.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		set_country_flag = SOVguardsnov
 		hidden_effect = {
@@ -4377,7 +4377,7 @@ country_event = {
 	id = soviet.83
 	title = soviet.83.t
 	desc = soviet.83.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -4385,7 +4385,7 @@ country_event = {
 		OR = {
 			date > 1941.12.1
 			and = {
-			has_country_flag = fORthemotherland
+			has_country_flag = forthemotherland
 			NOT = { has_idea = Rodina_II }
 			}
 		}
@@ -4406,7 +4406,7 @@ country_event = {
 	
 	option = {
 		name = soviet.83.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		set_country_flag = SOVguardsdec
 		hidden_effect = {
@@ -4416,7 +4416,7 @@ country_event = {
 	
 	option = {
 		name = soviet.83.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		set_country_flag = SOVguardsdec
 		hidden_effect = {
@@ -4428,7 +4428,7 @@ country_event = {
 	id = soviet.84
 	title = soviet.84.t
 	desc = soviet.84.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -4436,7 +4436,7 @@ country_event = {
 		OR = {
 			date > 1942.1.1
 			and = {
-			has_country_flag = fORthemotherland
+			has_country_flag = forthemotherland
 			NOT = { has_idea = Rodina_II }
 			}
 		}
@@ -4458,7 +4458,7 @@ country_event = {
 	
 	option = {
 		name = soviet.84.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		set_country_flag = SOVguardsjan
 		hidden_effect = {
@@ -4468,7 +4468,7 @@ country_event = {
 	
 	option = {
 		name = soviet.84.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		set_country_flag = SOVguardsjan
 		hidden_effect = {
@@ -4480,7 +4480,7 @@ country_event = {
 	id = soviet.85
 	title = soviet.85.t
 	desc = soviet.85.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -4488,7 +4488,7 @@ country_event = {
 		OR = {
 			date > 1942.2.1
 			and = {
-			has_country_flag = fORthemotherland
+			has_country_flag = forthemotherland
 			NOT = { has_idea = Rodina_II }
 			}
 		}
@@ -4509,7 +4509,7 @@ country_event = {
 	
 	option = {
 		name = soviet.85.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		set_country_flag = SOVguardsfeb
 		hidden_effect = {
@@ -4519,7 +4519,7 @@ country_event = {
 	
 	option = {
 		name = soviet.85.a
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		set_country_flag = SOVguardsfeb
 		hidden_effect = {
@@ -4531,7 +4531,7 @@ country_event = {
 	id = soviet.86
 	title = soviet.86.t
 	desc = soviet.86.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -4539,7 +4539,7 @@ country_event = {
 		OR = {
 			date > 1942.3.1
 			and = {
-			has_country_flag = fORthemotherland
+			has_country_flag = forthemotherland
 			NOT = { has_idea = Rodina_II }
 			}
 		}
@@ -4561,7 +4561,7 @@ country_event = {
 	
 	option = {
 		name = soviet.86.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		set_country_flag = SOVguardsmar
 		hidden_effect = {
@@ -4571,7 +4571,7 @@ country_event = {
 	
 	option = {
 		name = soviet.86.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		set_country_flag = SOVguardsmar
 		hidden_effect = {
@@ -4583,7 +4583,7 @@ country_event = {
 	id = soviet.87
 	title = soviet.87.t
 	desc = soviet.87.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -4591,7 +4591,7 @@ country_event = {
 		OR = {
 			date > 1942.6.1
 			and = {
-			has_country_flag = fORthemotherland
+			has_country_flag = forthemotherland
 			NOT = { has_idea = Rodina_I }
 			}
 		}
@@ -4613,26 +4613,26 @@ country_event = {
 	
 	option = {
 		name = soviet.87.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		set_country_flag = SOVguardsjun
 		hidden_effect = {
 			set_technology = { guards_sov_t_34_tank = 1 }
 			set_technology = { guards_sov_kv_tank = 1 }
-			set_technology = { guards_motORized_rocket_brigade_tech = 1 }
+			set_technology = { guards_motorized_rocket_brigade_tech = 1 }
 			load_oob = "SOV_guards_jun_ai"  
 		}
 	}
 	
 	option = {
 		name = soviet.87.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		set_country_flag = SOVguardsjun
 		hidden_effect = {
 			set_technology = { guards_sov_t_34_tank = 1 }
 			set_technology = { guards_sov_kv_tank = 1 }
-			set_technology = { guards_motORized_rocket_brigade_tech = 1 }
+			set_technology = { guards_motorized_rocket_brigade_tech = 1 }
 			load_oob = "SOV_guards_jun"  
 		}
 	}
@@ -4641,7 +4641,7 @@ country_event = {
 	id = soviet.88
 	title = soviet.88.t
 	desc = soviet.88.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -4649,7 +4649,7 @@ country_event = {
 		OR = {
 			date > 1942.10.1
 			and = {
-			has_country_flag = fORthemotherland
+			has_country_flag = forthemotherland
 			NOT = { has_idea = Rodina_I }
 			}
 		}
@@ -4670,7 +4670,7 @@ country_event = {
 	
 	option = {
 		name = soviet.88.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		set_country_flag = SOVguardsoct
 		hidden_effect = {
@@ -4680,7 +4680,7 @@ country_event = {
 	
 	option = {
 		name = soviet.88.b
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = no }
 		set_country_flag = SOVguardsoct
 		hidden_effect = {
@@ -4692,7 +4692,7 @@ country_event = {
 	id = soviet.89
 	title = soviet.89.t
 	desc = soviet.89.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 
 	trigger = {
 		tag = SOV
@@ -4700,7 +4700,7 @@ country_event = {
 		OR = {
 			date > 1942.12.1
 			and = {
-			has_country_flag = fORthemotherland
+			has_country_flag = forthemotherland
 			NOT = { has_idea = Rodina_I }
 			}
 		}
@@ -4721,7 +4721,7 @@ country_event = {
 	
 	option = {
 		name = soviet.89.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		trigger = { is_ai = yes }
 		set_country_flag = SOVguardsdec42
 		hidden_effect = {
@@ -4732,7 +4732,7 @@ country_event = {
 	
 	option = {
 		name = soviet.89.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		set_country_flag = SOVguardsdec42
 		hidden_effect = {
@@ -4765,7 +4765,7 @@ country_event = {
 			is_ai = no
 		}
 	}
-	picture = GFX_repORt_event_project_1058
+	picture = GFX_report_event_project_1058
 
 	fire_only_once = yes
 	
@@ -4786,7 +4786,7 @@ country_event = {
 	
 	option = {
 		name = soviet.90.a
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		hidden_effect = {
 			set_technology = { tech_rf_bbv = 1 }
 			}
@@ -4797,7 +4797,7 @@ country_event = {
 	
 	option = {
 		name = soviet.90.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		hidden_effect = {
 			set_technology = { tech_rf_bbv2 = 1 }
 			}
@@ -4808,7 +4808,7 @@ country_event = {
 	
 	option = {
 		name = soviet.90.c
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		hidden_effect = {
 			set_technology = { tech_rf_bbv3 = 1 }
 			}
@@ -4823,7 +4823,7 @@ country_event = {
 	id = soviet.91
 	title = soviet.91.t
 	desc = soviet.91.d
-	picture = GFX_repORt_event_chamberlain
+	picture = GFX_report_event_chamberlain
 
 	fire_only_once = yes
 	
@@ -4846,7 +4846,7 @@ country_event = {
 	id = soviet.400
 	title = soviet.400.t
 	desc = soviet.400.desc
-	picture = GFX_repORt_event_soviet_women
+	picture = GFX_report_event_soviet_women
 
 	fire_only_once = yes
 	
@@ -4854,8 +4854,9 @@ country_event = {
 		tag = SOV
 		has_war_with = GER
 		OR = {
-		has_completed_focus = SOV_soviet_amazons 
-		has_completed_focus = SOV_soviet_women_workers }
+			has_completed_focus = SOV_soviet_amazons 
+			has_completed_focus = SOV_soviet_women_workers
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -4873,7 +4874,7 @@ country_event = {
 	id = soviet.300
 	title = soviet.300.t
 	desc = soviet.300.d
-	picture = GFX_repORt_event_generic_funeral
+	picture = GFX_report_event_generic_funeral
 
 	fire_only_once = yes
 
@@ -4891,7 +4892,7 @@ country_event = {
 	mean_time_to_happen = {
 		days = 120
 		modifier = {
-			factOR = 0.3
+			factor = 0.3
 			date > 1938.10.1
 		}
 	}
@@ -4903,13 +4904,13 @@ country_event = {
 		add_ideas = vladimir_k_romanov
 		create_country_leader = {
 		name = "Vladimir I"
-		desc = "EmperOR and Autocrat of all the Russias"
+		desc = "Emperor and Autocrat of all the Russias"
 		picture = "gfx/leaders/SOV/vladimir_k_romanov.dds"
 		expire = "1992.6.4"
 		ideology = imperial
 		traits = {
 			monarchist
-			silent_wORkhORse
+			silent_workhorse
 			}
 		}
 	}
@@ -4919,7 +4920,7 @@ country_event = {
 	id = soviet.301
 	title = soviet.301.t
 	desc = soviet.301.d
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	
 	fire_only_once = yes
 
@@ -4942,7 +4943,7 @@ country_event = {
 	id = soviet.302
 	title = soviet.302.t
 	desc = soviet.302.d
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	
 	fire_only_once = yes
 
@@ -4960,12 +4961,12 @@ country_event = {
 		name = soviet.302.a
 	}
 }
-#ROM Attacked, Asks fOR Help
+#ROM Attacked, Asks for Help
 country_event = {
 	id = soviet.304
 	title = soviet.304.t
 	desc = soviet.304.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	
 	fire_only_once = yes
 	
@@ -5006,12 +5007,12 @@ country_event = {
 	#	
 	#}
 }
-#ROM asks fOR help
+#ROM asks for help
 country_event = {
 	id = soviet.305
 	title = soviet.305.t
 	desc = soviet.305.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	
 	is_triggered_only = yes
 	
@@ -5034,7 +5035,7 @@ country_event = {
 		ai_chance = {
 			base = 75
 			modifier = {
-				factOR = 2
+				factor = 2
 				tag = GER
 			}
 		}
@@ -5066,7 +5067,7 @@ country_event = {
 	id = soviet.306
 	title = soviet.306.t
 	desc = soviet.306.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	
 	option = { #I hope they can save us
@@ -5079,7 +5080,7 @@ country_event = {
 	id = soviet.307
 	title = soviet.307.t
 	desc = soviet.307.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	
 	option = { #I hope they can save us
@@ -5092,7 +5093,7 @@ country_event = {
 	id = soviet.308
 	title = soviet.308.t
 	desc = soviet.308.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	
 	option = { #Ask Allies
@@ -5119,7 +5120,7 @@ country_event = {
 	id = soviet.309
 	title = soviet.309.t
 	desc = soviet.309.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	
 	option = { #Ask Allies
@@ -5148,7 +5149,7 @@ country_event = {
 	id = soviet.310
 	title = soviet.310.t
 	desc = soviet.310.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	
 	option = { #No deal!
@@ -5163,7 +5164,7 @@ country_event = {
 	id = soviet.311
 	title = soviet.311.t
 	desc = soviet.311.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	
 	option = { #No deal!
@@ -5177,7 +5178,7 @@ country_event = {
 	id = soviet.312
 	title = soviet.312.t
 	desc = soviet.312.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5195,15 +5196,14 @@ country_event = {
 		NOT = { has_idea = CounterAttack_III }
 		NOT = { has_idea = CounterAttack_IV }
 		OR = {
-		NOT = { controls_state = 97 }
-		NOT = { controls_state = 91 }
+			NOT = { controls_state = 97 }
+			NOT = { controls_state = 91 }
 		}
 		OR = {
-		NOT = { controls_state = 94 }
-		NOT = { controls_state = 93 }
-		
+			NOT = { controls_state = 94 }
+			NOT = { controls_state = 93 }
 		}
-		#has_country_flag = fORthemotherland
+		#has_country_flag = forthemotherland
 	}
 	
 	mean_time_to_happen = {
@@ -5229,7 +5229,7 @@ country_event = {
 	id = soviet.313
 	title = soviet.313.t
 	desc = soviet.313.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5248,15 +5248,14 @@ country_event = {
 		NOT = { has_idea = CounterAttack_III }
 		NOT = { has_idea = CounterAttack_IV }
 		OR = {
-		NOT = { controls_state = 206 }
-		NOT = { controls_state = 202 }
+			NOT = { controls_state = 206 }
+			NOT = { controls_state = 202 }
 		}
 		OR = {
-		NOT = { controls_state = 192 }
-		NOT = { controls_state = 840 }
-		
+			NOT = { controls_state = 192 }
+			NOT = { controls_state = 840 }
 		}
-		#has_country_flag = fORthemotherland
+		#has_country_flag = forthemotherland
 	}
 	
 	mean_time_to_happen = {
@@ -5282,7 +5281,7 @@ country_event = {
 	id = soviet.314
 	title = soviet.314.t
 	desc = soviet.314.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5301,15 +5300,14 @@ country_event = {
 		NOT = { has_idea = CounterAttack_II }
 		NOT = { has_idea = CounterAttack_IV }
 		OR = {
-		NOT = { controls_state = 209 }
-		NOT = { controls_state = 224 }
+			NOT = { controls_state = 209 }
+			NOT = { controls_state = 224 }
 		}
 		OR = {
-		NOT = { controls_state = 207 }
-		NOT = { controls_state = 221 }
-		
+			NOT = { controls_state = 207 }
+			NOT = { controls_state = 221 }
 		}
-		#has_country_flag = fORthemotherland
+		#has_country_flag = forthemotherland
 	}
 	
 	mean_time_to_happen = {
@@ -5335,7 +5333,7 @@ country_event = {
 	id = soviet.315
 	title = soviet.315.t
 	desc = soviet.315.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5354,14 +5352,14 @@ country_event = {
 		NOT = { has_idea = CounterAttack_II }
 		NOT = { has_idea = CounterAttack_III }
 		OR = {
-		NOT = { controls_state = 242 }
-		NOT = { controls_state = 227 }
+			NOT = { controls_state = 242 }
+			NOT = { controls_state = 227 }
 		}
 		OR = {
-		NOT = { controls_state = 220 }
-		NOT = { controls_state = 208 }
+			NOT = { controls_state = 220 }
+			NOT = { controls_state = 208 }
 		}
-		#has_country_flag = fORthemotherland
+		#has_country_flag = forthemotherland
 	}
 	
 	mean_time_to_happen = {
@@ -5387,7 +5385,7 @@ country_event = {
 	id = soviet.316
 	title = soviet.316.t
 	desc = soviet.316.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5401,12 +5399,11 @@ country_event = {
 		NOT = { has_idea = BalticAttack_II }
 		NOT = { has_idea = BalticAttack_III }		
 		OR = {
-		11 = { is_owned_by = GER }
-		GER = { controls_state = 11 } # LIT
-		
-		LIT = { is_in_faction_with = GER }
+			11 = { is_owned_by = GER }
+			GER = { controls_state = 11 } # LIT
+			LIT = { is_in_faction_with = GER }
 		}
-		NOT = { has_country_flag = fORthemotherland}
+		NOT = { has_country_flag = forthemotherland}
 	}
 	
 	mean_time_to_happen = {
@@ -5421,7 +5418,7 @@ country_event = {
 			declare_war_on = {
 				target = GER
 				type = take_state_focus
-				generatOR = { 11 } 
+				generator = { 11 } 
 			}
 			add_timed_idea = {
 				idea = BalticAttack_I
@@ -5435,7 +5432,7 @@ country_event = {
 	id = soviet.317
 	title = soviet.317.t
 	desc = soviet.317.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5449,12 +5446,11 @@ country_event = {
 		NOT = { has_idea = BalticAttack_I }
 		NOT = { has_idea = BalticAttack_III }	
 		OR = {
-		12 = { is_owned_by = GER }
-		GER = { controls_state = 12 } # LAT
-		
-		LAT = { is_in_faction_with = GER }
+			12 = { is_owned_by = GER }
+			GER = { controls_state = 12 } # LAT
+			LAT = { is_in_faction_with = GER }
 		}
-		NOT = { has_country_flag = fORthemotherland}
+		NOT = { has_country_flag = forthemotherland}
 	}
 	
 	mean_time_to_happen = {
@@ -5469,7 +5465,7 @@ country_event = {
 			declare_war_on = {
 				target = GER
 				type = take_state_focus
-				generatOR = { 12 } 
+				generator = { 12 } 
 			}
 			add_timed_idea = {
 				idea = BalticAttack_II
@@ -5483,7 +5479,7 @@ country_event = {
 	id = soviet.318
 	title = soviet.318.t
 	desc = soviet.318.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5497,12 +5493,11 @@ country_event = {
 		NOT = { has_idea = BalticAttack_I }
 		NOT = { has_idea = BalticAttack_II }		
 		OR = {
-		13 = { is_owned_by = GER }
-		GER = { controls_state = 13 } # EST
-	
-		EST = { is_in_faction_with = GER }
+			13 = { is_owned_by = GER }
+			GER = { controls_state = 13 } # EST
+			EST = { is_in_faction_with = GER }
 		}
-		NOT = { has_country_flag = fORthemotherland}
+		NOT = { has_country_flag = forthemotherland}
 		
 	}
 	
@@ -5518,7 +5513,7 @@ country_event = {
 			declare_war_on = {
 				target = GER
 				type = take_state_focus
-				generatOR = { 13 } 
+				generator = { 13 } 
 			}
 			add_timed_idea = {
 				idea = BalticAttack_III
@@ -5533,7 +5528,7 @@ country_event = {
 	id = soviet.319
 	title = soviet.319.t
 	desc = soviet.318.d
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = { 
@@ -5548,7 +5543,7 @@ country_event = {
 	id = soviet.320
 	title = soviet.320.t
 	desc = soviet.320.d
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = { 
@@ -5563,7 +5558,7 @@ country_event = {
 	id = soviet.321
 	title = soviet.321.t
 	desc = soviet.321.d
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = { 
@@ -5578,7 +5573,7 @@ country_event = {
 	id = soviet.322
 	title = soviet.322.t
 	desc = soviet.322.d
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 	is_triggered_only = yes
 	fire_only_once = yes
 	option = { 
@@ -5593,7 +5588,7 @@ country_event = {
 	id = soviet.323
 	title = soviet.323.t
 	desc = soviet.323.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5623,7 +5618,7 @@ country_event = {
 	id = soviet.324
 	title = soviet.324.t
 	desc = soviet.324.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5653,7 +5648,7 @@ country_event = {
 	id = soviet.325
 	title = soviet.325.t
 	desc = soviet.325.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5683,7 +5678,7 @@ country_event = {
 	id = soviet.326
 	title = soviet.326.t
 	desc = soviet.326.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5713,7 +5708,7 @@ country_event = {
 	id = soviet.327
 	title = soviet.327.t
 	desc = soviet.327.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5743,7 +5738,7 @@ country_event = {
 	id = soviet.328
 	title = soviet.328.t
 	desc = soviet.328.desc
-	picture = GFX_repORt_event_soviet_soldiers2
+	picture = GFX_report_event_soviet_soldiers2
 
 	fire_only_once = yes
 	
@@ -5771,12 +5766,12 @@ country_event = {
 }
 #329
 #330
-#create soviet guards - army/ airfORce
+#create soviet guards - army/ airforce
 country_event = {
 	id = soviet.331
 	title = soviet.331.t
 	desc = soviet.331.d
-	picture = GFX_repORt_event_soviet_infantry_and_t34_assault
+	picture = GFX_report_event_soviet_infantry_and_t34_assault
 	
 	is_triggered_only = yes
 	
@@ -5785,12 +5780,12 @@ country_event = {
 		
 	}
 }
-# bonus to air fORmations ?
+# bonus to air formations ?
 country_event = {
 	id = soviet.332
 	title = soviet.332.t
 	desc = soviet.332.d
-	picture = GFX_repORt_event_yak7
+	picture = GFX_report_event_yak7
 	
 	is_triggered_only = yes
 	
@@ -5804,7 +5799,7 @@ country_event = {
 	id = soviet.333
 	title = soviet.333.t
 	desc = soviet.333.d
-	picture = GFX_repORt_event_soldiers_marching
+	picture = GFX_report_event_soldiers_marching
 	
 	is_triggered_only = yes
 	
@@ -5813,12 +5808,12 @@ country_event = {
 		set_technology = { com_militia = 1 }
 	}
 }
-#fORm OMSDON NKVD - INDEPENDANT SPECIAL PURPOSE MOTORIZED BRIGADE 
+#form OMSDON NKVD - INDEPENDANT SPECIAL PURPOSE MOTorIZED BRIGADE 
 country_event = {
 	id = soviet.334
 	title = soviet.334.t
 	desc = soviet.334.d
-	picture = GFX_repORt_event_soviet_bikes
+	picture = GFX_report_event_soviet_bikes
 	
 	is_triggered_only = yes
 	
@@ -5827,12 +5822,12 @@ country_event = {
 		load_oob = SOV_OMSDON_NKVD
 	}
 }
-#fORm OTRYAD OSOBOGO NAZNACHENIYA – OSNAZ
+#form OTRYAD OSOBOGO NAZNACHENIYA – OSNAZ
 country_event = {
 	id = soviet.335
 	title = soviet.335.t
 	desc = soviet.335.d
-	picture = GFX_repORt_event_soviet_bikes
+	picture = GFX_report_event_soviet_bikes
 	
 	is_triggered_only = yes
 	
@@ -5846,7 +5841,7 @@ country_event = {
 	id = soviet.336
 	title = soviet.336.t
 	desc = soviet.336.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	is_triggered_only = yes
 	
@@ -5868,7 +5863,7 @@ country_event = {
 	id = soviet.337
 	title = soviet.337.t
 	desc = soviet.337.d
-	picture = GFX_repORt_event_soviet_arty
+	picture = GFX_report_event_soviet_arty
 	
 	is_triggered_only = yes
 	
@@ -5883,7 +5878,7 @@ country_event = {
 	id = soviet.338
 	title = soviet.338.t
 	desc = soviet.338.d
-	picture = GFX_repORt_event_soldiers_marching
+	picture = GFX_report_event_soldiers_marching
 	
 	is_triggered_only = yes
 	
@@ -5899,7 +5894,7 @@ country_event = {
 	id = soviet.339
 	title = soviet.339.t
 	desc = soviet.339.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 	
 	fire_only_once = yes
 	
@@ -5928,7 +5923,7 @@ country_event = {
 	id = soviet.340
 	title = soviet.340.t
 	desc = soviet.340.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 	
 	fire_only_once = yes
 	
@@ -5958,7 +5953,7 @@ country_event = {
 	id = soviet.341
 	title = soviet.341.t
 	desc = soviet.341.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 	
 	fire_only_once = yes
 	
@@ -5989,7 +5984,7 @@ country_event = {
 	id = soviet.342
 	title = soviet.342.t
 	desc = soviet.342.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 	
 	fire_only_once = yes
 	
@@ -6020,7 +6015,7 @@ country_event = {
 	id = soviet.343
 	title = soviet.343.t
 	desc = soviet.343.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 	
 	fire_only_once = yes
 	
@@ -6051,7 +6046,7 @@ country_event = {
 	id = soviet.344
 	title = soviet.344.t
 	desc = soviet.344.d
-	picture = GFX_repORt_event_soviet_purge_officers
+	picture = GFX_report_event_soviet_purge_officers
 	
 	fire_only_once = yes
 	
@@ -6082,7 +6077,7 @@ country_event = {
 	id = soviet.345
 	title = soviet.345.t
 	desc = soviet.345.d
-	picture = GFX_repORt_event_soviet_purge_politicians
+	picture = GFX_report_event_soviet_purge_politicians
 	
 	trigger = {
 		tag = SOV
@@ -6117,7 +6112,7 @@ country_event = {
 	id = soviet.346
 	title = soviet.346.t
 	desc = soviet.346.d
-	picture = GFX_repORt_event_soviet_purge_politicians
+	picture = GFX_report_event_soviet_purge_politicians
 	
 	trigger = {
 		tag = SOV
@@ -6152,7 +6147,7 @@ country_event = {
 	id = soviet.347
 	title = soviet.347.t
 	desc = soviet.347.d
-	picture = GFX_repORt_event_soviet_purge_politicians
+	picture = GFX_report_event_soviet_purge_politicians
 	
 	trigger = {
 		tag = SOV
@@ -6190,7 +6185,7 @@ country_event = {
 	id = soviet.348
 	title = soviet.348.t
 	desc = soviet.348.d
-	picture = GFX_repORt_event_spain_civil_war_republican_thank_you
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
 	
 	fire_only_once = yes
 	
@@ -6198,7 +6193,7 @@ country_event = {
 	
 	option = {
 		name = soviet.348.a	#all out, will lead to german dow
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 			GER = {add_stability = -0.35
 					add_popularity = {
 						ideology = communism
@@ -6208,7 +6203,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.348.b	#subtle 
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		#add_ideas = #communism_drift = 0.05 
 			GER = {add_stability = -0.12
 					add_popularity = {
@@ -6222,7 +6217,7 @@ country_event = {
 	id = soviet.349
 	title = soviet.349.t
 	desc = soviet.349.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_spain_civil_war_volunteers_02
 	
 	fire_only_once = yes
 	
@@ -6230,7 +6225,7 @@ country_event = {
 	
 	option = {
 		name = soviet.349.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -6238,14 +6233,14 @@ country_event = {
 	}
 	option = {
 		name = soviet.349.b	#do NOThing
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 country_event = {
 	id = soviet.350
 	title = soviet.350.t
 	desc = soviet.350.d
-	picture = GFX_repORt_event_spain_civil_war_republican_thank_you
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
 	
 	fire_only_once = yes
 	
@@ -6253,7 +6248,7 @@ country_event = {
 	
 	option = {
 		name = soviet.350.a	#all out, will lead to french dow
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 			FRA = {add_stability = -0.35
 					add_popularity = {
 						ideology = communism
@@ -6263,7 +6258,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.350.b	#subtle 
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			FRA = {add_stability = -0.12
 					add_popularity = {
 					ideology = communism
@@ -6276,7 +6271,7 @@ country_event = {
 	id = soviet.351
 	title = soviet.351.t
 	desc = soviet.351.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_spain_civil_war_volunteers_02
 	
 	fire_only_once = yes
 	
@@ -6284,7 +6279,7 @@ country_event = {
 	
 	option = {
 		name = soviet.351.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -6292,14 +6287,14 @@ country_event = {
 	}
 	option = {
 		name = soviet.351.b	#do NOThing
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 country_event = {
 	id = soviet.352
 	title = soviet.352.t
 	desc = soviet.352.d
-	picture = GFX_repORt_event_spain_civil_war_republican_thank_you
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
 	
 	fire_only_once = yes
 	
@@ -6307,7 +6302,7 @@ country_event = {
 	
 	option = {
 		name = soviet.352.a	#all out, will lead to italian dow
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 			ITA = {add_stability = -0.35
 					add_popularity = {
 						ideology = communism
@@ -6317,7 +6312,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.352.b	#subtle 
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			ITA = {add_stability = -0.12
 					add_popularity = {
 					ideology = communism
@@ -6330,7 +6325,7 @@ country_event = {
 	id = soviet.353
 	title = soviet.353.t
 	desc = soviet.353.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_spain_civil_war_volunteers_02
 	
 	fire_only_once = yes
 	
@@ -6338,7 +6333,7 @@ country_event = {
 	
 	option = {
 		name = soviet.353.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -6346,7 +6341,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.353.b	#do NOThing
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 #NOR
@@ -6360,7 +6355,7 @@ country_event = {
 	id = soviet.354
 	title = soviet.354.t
 	desc = soviet.354.d
-	picture = GFX_repORt_event_spain_civil_war_republican_thank_you
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
 	
 	fire_only_once = yes
 	
@@ -6368,7 +6363,7 @@ country_event = {
 	
 	option = {
 		name = soviet.354.a	#all out, will lead to dow
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 			NOR = {add_stability = -0.35
 					add_popularity = {
 						ideology = communism
@@ -6414,7 +6409,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.354.b	#subtle 
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			NOR = {add_stability = -0.12
 					add_popularity = {
 					ideology = communism
@@ -6457,7 +6452,7 @@ country_event = {
 	id = soviet.355
 	title = soviet.355.t
 	desc = soviet.355.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_spain_civil_war_volunteers_02
 	
 	fire_only_once = yes
 	
@@ -6465,7 +6460,7 @@ country_event = {
 	
 	option = {
 		name = soviet.355.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -6473,14 +6468,14 @@ country_event = {
 	}
 	option = {
 		name = soviet.355.b	#do NOThing
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 country_event = {
 	id = soviet.356
 	title = soviet.356.t
 	desc = soviet.356.d
-	picture = GFX_repORt_event_spain_civil_war_republican_thank_you
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
 	
 	fire_only_once = yes
 	
@@ -6488,7 +6483,7 @@ country_event = {
 	
 	option = {
 		name = soviet.356.a	#all out, will lead to uk dow
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 			ENG = {add_stability = -0.35
 					add_popularity = {
 						ideology = communism
@@ -6498,7 +6493,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.356.b	#subtle 
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			ENG = {add_stability = -0.12
 					add_popularity = {
 					ideology = communism
@@ -6511,7 +6506,7 @@ country_event = {
 	id = soviet.357
 	title = soviet.357.t
 	desc = soviet.357.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_spain_civil_war_volunteers_02
 	
 	fire_only_once = yes
 	
@@ -6519,7 +6514,7 @@ country_event = {
 	
 	option = {
 		name = soviet.357.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -6527,14 +6522,14 @@ country_event = {
 	}
 	option = {
 		name = soviet.357.b	#do NOThing
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 country_event = {
 	id = soviet.358
 	title = soviet.358.t
 	desc = soviet.358.d
-	picture = GFX_repORt_event_spain_civil_war_republican_thank_you
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
 	
 	fire_only_once = yes
 	
@@ -6542,7 +6537,7 @@ country_event = {
 	
 	option = {
 		name = soviet.358.a	#all out, will lead to us dow
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 			USA = {add_stability = -0.35
 					add_popularity = {
 						ideology = communism
@@ -6552,7 +6547,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.358.b	#subtle 
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			USA = {add_stability = -0.12
 					add_popularity = {
 					ideology = communism
@@ -6565,7 +6560,7 @@ country_event = {
 	id = soviet.359
 	title = soviet.359.t
 	desc = soviet.359.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_spain_civil_war_volunteers_02
 	
 	fire_only_once = yes
 	
@@ -6573,7 +6568,7 @@ country_event = {
 	
 	option = {
 		name = soviet.359.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -6581,14 +6576,14 @@ country_event = {
 	}
 	option = {
 		name = soviet.359.b	#do NOThing
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 country_event = {
 	id = soviet.370
 	title = soviet.370.t
 	desc = soviet.370.d
-	picture = GFX_repORt_event_spain_civil_war_republican_thank_you
+	picture = GFX_report_event_spain_civil_war_republican_thank_you
 	
 	fire_only_once = yes
 	
@@ -6596,7 +6591,7 @@ country_event = {
 	
 	option = {
 		name = soviet.370.a	#all out, will lead to dow
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 			AST = {add_stability = -0.35
 					add_popularity = {
 						ideology = communism
@@ -6642,7 +6637,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.370.b	#subtle 
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			AST = {add_stability = -0.12
 					add_popularity = {
 					ideology = communism
@@ -6685,7 +6680,7 @@ country_event = {
 	id = soviet.371
 	title = soviet.371.t
 	desc = soviet.371.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_spain_civil_war_volunteers_02
 	
 	fire_only_once = yes
 	
@@ -6693,7 +6688,7 @@ country_event = {
 	
 	option = {
 		name = soviet.371.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -6701,7 +6696,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.371.b	#do NOThing
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 #372
@@ -6709,14 +6704,14 @@ country_event = {
 	id = soviet.374
 	title = soviet.374.t
 	desc = soviet.374.d
-	picture = GFX_repORt_event_soviet_t34_scouting_group
+	picture = GFX_report_event_soviet_t34_scouting_group
 	
 	fire_only_once = yes
 	
 	is_triggered_only = yes
 	option = {
 		name = soviet.374.a	#dow
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 			create_wargoal = {
 				type = annex_everything
 				target = POL
@@ -6724,7 +6719,7 @@ country_event = {
 		}
 	option = {
 		name = soviet.374.b	#all out, will lead to pol dow
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			POL = {add_stability = -0.35
 					add_popularity = {
 						ideology = communism
@@ -6734,7 +6729,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.374.c	#subtle 
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			POL = {add_stability = -0.12
 					add_popularity = {
 					ideology = communism
@@ -6748,7 +6743,7 @@ country_event = {
 	id = soviet.375
 	title = soviet.375.t
 	desc = soviet.375.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_spain_civil_war_volunteers_02
 	
 	fire_only_once = yes
 	
@@ -6756,7 +6751,7 @@ country_event = {
 	
 	option = {
 		name = soviet.375.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -6764,21 +6759,21 @@ country_event = {
 	}
 	option = {
 		name = soviet.375.b	#do NOThing
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 country_event = {
 	id = soviet.376
 	title = soviet.376.t
 	desc = soviet.376.d
-	picture = GFX_repORt_event_soviet_t34_scouting_group
+	picture = GFX_report_event_soviet_t34_scouting_group
 	
 	fire_only_once = yes
 	
 	is_triggered_only = yes
 	option = {
 		name = soviet.376.a	#dow
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 			create_wargoal = {
 				type = annex_everything
 				target = ROM
@@ -6798,7 +6793,7 @@ country_event = {
 		}
 	option = {
 		name = soviet.376.b	#all out, will lead to  dow
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			ROM = {add_stability = -0.35
 					add_popularity = {
 						ideology = communism
@@ -6826,7 +6821,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.376.c	#subtle 
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 			ROM = {add_stability = -0.12
 					add_popularity = {
 					ideology = communism
@@ -6855,7 +6850,7 @@ country_event = {
 	id = soviet.377
 	title = soviet.377.t
 	desc = soviet.377.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers_02
+	picture = GFX_report_event_spain_civil_war_volunteers_02
 	
 	fire_only_once = yes
 	
@@ -6863,7 +6858,7 @@ country_event = {
 	
 	option = {
 		name = soviet.377.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -6871,7 +6866,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.377.b	#do NOThing
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 	}
 }
 #368
@@ -6879,7 +6874,7 @@ country_event = {
 	id = soviet.378
 	title = soviet.378.t
 	desc = soviet.378.d
-	picture = GFX_repORt_event_soviet_purge_trial
+	picture = GFX_report_event_soviet_purge_trial
 	
 	fire_only_once = yes
 	
@@ -6904,7 +6899,7 @@ country_event = {
 	id = soviet.379
 	title = soviet.379.t
 	desc = soviet.379.d
-	picture = GFX_repORt_event_soviet_purge_trial
+	picture = GFX_report_event_soviet_purge_trial
 	
 	fire_only_once = yes
 	
@@ -6921,7 +6916,7 @@ country_event = {
 	option = {
 		name = soviet.379.a
 		remove_ideas = fourth_international_paris
-		add_ideas = fourth_international_newyORk
+		add_ideas = fourth_international_newyork
 	}
 	
 }
@@ -6929,7 +6924,7 @@ country_event = {
 	id = soviet.380
 	title = soviet.380.t
 	desc = soviet.380.d
-	picture = GFX_repORt_event_journalists_speech
+	picture = GFX_report_event_journalists_speech
 	
 	fire_only_once = yes
 	
@@ -6953,7 +6948,7 @@ country_event = {
 	id = soviet.381
 	title = soviet.381.t
 	desc = soviet.381.d
-	picture = GFX_repORt_event_journalists_speech
+	picture = GFX_report_event_journalists_speech
 	
 	fire_only_once = yes
 	
@@ -6972,7 +6967,7 @@ country_event = {
 	option = {
 		name = soviet.381.a
 		remove_ideas = Transitional_Program
-		remove_ideas = fourth_international_newyORk
+		remove_ideas = fourth_international_newyork
 	}
 	
 }
@@ -6980,7 +6975,7 @@ country_event = {
 	id = soviet.382
 	title = soviet.382.t
 	desc = soviet.382.d
-	picture = GFX_repORt_event_radio_broadcast
+	picture = GFX_report_event_radio_broadcast
 	
 	fire_only_once = yes
 	
@@ -6999,7 +6994,7 @@ country_event = {
 	option = {
 		name = soviet.382.a
 		remove_ideas = Transitional_Program
-		remove_ideas = fourth_international_newyORk
+		remove_ideas = fourth_international_newyork
 		add_ideas = Trotskyites
 	}
 	
@@ -7008,7 +7003,7 @@ country_event = {
 	id = soviet.383
 	title = soviet.383.t
 	desc = soviet.383.d
-	picture = GFX_repORt_event_soviet_tank_with_crew
+	picture = GFX_report_event_soviet_tank_with_crew
 	
 	fire_only_once = yes
 	
@@ -7024,7 +7019,7 @@ country_event = {
 	id = soviet.384
 	title = soviet.384.t
 	desc = soviet.384.d
-	picture = GFX_repORt_event_polish_resistance4
+	picture = GFX_report_event_polish_resistance4
 		
 	trigger = {
 		tag = SOV
@@ -7081,7 +7076,7 @@ country_event = {
 	id = soviet.385
 	title = soviet.385.t
 	desc = soviet.385.d
-	picture = GFX_repORt_event_vote
+	picture = GFX_report_event_vote
 	
 	fire_only_once = yes
 	
@@ -7107,7 +7102,7 @@ country_event = {
 	id = soviet.386
 	title = soviet.386.t
 	desc = soviet.386.d
-	picture = GFX_repORt_event_vote
+	picture = GFX_report_event_vote
 	
 	fire_only_once = yes
 	
@@ -7134,13 +7129,13 @@ country_event = {
 	id = soviet.387
 	title = soviet.387.t
 	desc = soviet.387.d
-	picture = GFX_repORt_event_radio_broadcast
+	picture = GFX_report_event_radio_broadcast
 	
 	fire_only_once = yes
 	
 	trigger = {
 		tag = SOV
-		has_country_flag = NY_wORldfair
+		has_country_flag = NY_worldfair
 		has_war_with = FIN
 		
 	}
@@ -7169,7 +7164,7 @@ country_event = {
 	id = soviet.388
 	title = soviet.388.t
 	desc = soviet.388.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7193,7 +7188,7 @@ country_event = {
 	id = soviet.389
 	title = soviet.389.t
 	desc = soviet.389.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7201,7 +7196,7 @@ country_event = {
 	
 	option = {
 		name = soviet.389.a
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		add_manpower = -50000
 		clr_country_flag = trotskyarrives
 		add_timed_idea = {
@@ -7215,7 +7210,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.389.b
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_manpower = -25000
 		clr_country_flag = trotskyarrives
 		add_timed_idea = {
@@ -7229,7 +7224,7 @@ country_event = {
 	}
 	option = {
 		name = soviet.389.c
-	ai_chance = { factOR = 0 }
+	ai_chance = { factor = 0 }
 	}
 }
 #390
@@ -7238,7 +7233,7 @@ country_event = {
 	id = soviet.404
 	title = soviet.404.t
 	desc = soviet.404.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7257,12 +7252,12 @@ country_event = {
 	
 	option = {
 		name = soviet.404.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease
 	}
 	option = {
 		name = soviet.404.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -7271,7 +7266,7 @@ country_event = {
 	id = soviet.391
 	title = soviet.391.t
 	desc = soviet.391.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -7336,7 +7331,7 @@ country_event = {
 			}
 		random_list = {
 				20 = { 
-				load_oob = SOV_Lend_lease_armOR
+				load_oob = SOV_Lend_lease_armor
 				load_oob = SOV_british_lend_lease_II_ai 
 						 add_timed_idea = {
 							idea = lend_lease_shipment
@@ -7348,7 +7343,7 @@ country_event = {
 								}
 				}
 				80 = { 
-				load_oob = SOV_Lend_lease_armOR
+				load_oob = SOV_Lend_lease_armor
 				load_oob = SOV_british_lend_lease_I_ai
 						 add_timed_idea = {
 							idea = lend_lease_shipment
@@ -7411,7 +7406,7 @@ country_event = {
 			}
 		random_list = {
 				20 = { 
-				load_oob = SOV_Lend_lease_armOR
+				load_oob = SOV_Lend_lease_armor
 				load_oob = SOV_british_lend_lease_II  
 						 add_timed_idea = {
 							idea = lend_lease_shipment
@@ -7423,7 +7418,7 @@ country_event = {
 								}
 				}
 				80 = { 
-				load_oob = SOV_Lend_lease_armOR
+				load_oob = SOV_Lend_lease_armor
 				load_oob = SOV_british_lend_lease_I
 						 add_timed_idea = {
 							idea = lend_lease_shipment
@@ -7443,7 +7438,7 @@ country_event = {
 	id = soviet.405
 	title = soviet.405.t
 	desc = soviet.405.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7464,12 +7459,12 @@ country_event = {
 	
 	option = {
 		name = soviet.405.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease_II
 	}
 	option = {
 		name = soviet.405.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -7478,7 +7473,7 @@ country_event = {
 	id = soviet.392
 	title = soviet.392.t
 	desc = soviet.392.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -7562,7 +7557,7 @@ country_event = {
 	id = soviet.406
 	title = soviet.406.t
 	desc = soviet.406.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7583,12 +7578,12 @@ country_event = {
 	
 	option = {
 		name = soviet.406.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease_III
 	}
 	option = {
 		name = soviet.406.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -7597,7 +7592,7 @@ country_event = {
 	id = soviet.407
 	title = soviet.407.t
 	desc = soviet.407.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7621,12 +7616,12 @@ country_event = {
 	
 	option = {
 		name = soviet.407.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = US_soviet_lend_lease
 	}
 	option = {
 		name = soviet.407.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -7635,7 +7630,7 @@ country_event = {
 	id = soviet.393
 	title = soviet.393.t
 	desc = soviet.393.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -7646,8 +7641,9 @@ country_event = {
 		USA = { exists = yes }
 		NOT = { has_idea = lend_lease_shipment}
 		OR = {
-		has_global_flag = UK_soviet_lend_lease_III
-		has_global_flag = US_soviet_lend_lease }
+			has_global_flag = UK_soviet_lend_lease_III
+			has_global_flag = US_soviet_lend_lease
+		}
 		has_country_flag = alliedlendlease2
 	}
 
@@ -7739,7 +7735,7 @@ country_event = {
 	id = soviet.408
 	title = soviet.408.t
 	desc = soviet.408.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7760,12 +7756,12 @@ country_event = {
 	
 	option = {
 		name = soviet.408.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease_IV
 	}
 	option = {
 		name = soviet.408.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -7774,7 +7770,7 @@ country_event = {
 	id = soviet.409
 	title = soviet.409.t
 	desc = soviet.409.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7795,12 +7791,12 @@ country_event = {
 	
 	option = {
 		name = soviet.409.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = US_soviet_lend_lease_I
 	}
 	option = {
 		name = soviet.409.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -7809,7 +7805,7 @@ country_event = {
 	id = soviet.394
 	title = soviet.394.t
 	desc = soviet.394.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -7819,8 +7815,9 @@ country_event = {
 		ENG = { exists = yes }
 		USA = { exists = yes }
 		OR = {
-		has_global_flag = UK_soviet_lend_lease_IV
-		has_global_flag = US_soviet_lend_lease_I }
+			has_global_flag = UK_soviet_lend_lease_IV
+			has_global_flag = US_soviet_lend_lease_I
+		}
 		NOT = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease3
 	}
@@ -7912,7 +7909,7 @@ country_event = {
 	id = soviet.410
 	title = soviet.410.t
 	desc = soviet.410.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7933,12 +7930,12 @@ country_event = {
 	
 	option = {
 		name = soviet.410.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease_V
 	}
 	option = {
 		name = soviet.410.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -7947,7 +7944,7 @@ country_event = {
 	id = soviet.411
 	title = soviet.411.t
 	desc = soviet.411.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -7968,12 +7965,12 @@ country_event = {
 	
 	option = {
 		name = soviet.411.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = US_soviet_lend_lease_II
 	}
 	option = {
 		name = soviet.411.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -7982,7 +7979,7 @@ country_event = {
 	id = soviet.395
 	title = soviet.395.t
 	desc = soviet.395.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -7992,8 +7989,9 @@ country_event = {
 		ENG = { exists = yes }
 		USA = { exists = yes }
 		OR = {
-		has_global_flag = UK_soviet_lend_lease_V
-		has_global_flag = US_soviet_lend_lease_II }
+			has_global_flag = UK_soviet_lend_lease_V
+			has_global_flag = US_soviet_lend_lease_II
+		}
 		NOT = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease4
 	}
@@ -8089,7 +8087,7 @@ country_event = {
 	id = soviet.412
 	title = soviet.412.t
 	desc = soviet.412.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8115,12 +8113,12 @@ country_event = {
 	
 	option = {
 		name = soviet.412.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease_VI
 	}
 	option = {
 		name = soviet.412.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -8129,7 +8127,7 @@ country_event = {
 	id = soviet.413
 	title = soviet.413.t
 	desc = soviet.413.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8153,12 +8151,12 @@ country_event = {
 	} 
 	option = {
 		name = soviet.413.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = US_soviet_lend_lease_III
 	}
 	option = {
 		name = soviet.413.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -8167,7 +8165,7 @@ country_event = {
 	id = soviet.396
 	title = soviet.396.t
 	desc = soviet.396.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -8177,8 +8175,9 @@ country_event = {
 		ENG = { exists = yes }
 		USA = { exists = yes }
 		OR = {
-		has_global_flag = UK_soviet_lend_lease_VI
-		has_global_flag = US_soviet_lend_lease_III }
+			has_global_flag = UK_soviet_lend_lease_VI
+			has_global_flag = US_soviet_lend_lease_III
+		}
 		NOT = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease5
 	}
@@ -8270,7 +8269,7 @@ country_event = {
 	id = soviet.414
 	title = soviet.414.t
 	desc = soviet.414.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8291,12 +8290,12 @@ country_event = {
 	
 	option = {
 		name = soviet.414.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease_VII
 	}
 	option = {
 		name = soviet.414.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -8305,7 +8304,7 @@ country_event = {
 	id = soviet.415
 	title = soviet.415.t
 	desc = soviet.415.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8326,12 +8325,12 @@ country_event = {
 	
 	option = {
 		name = soviet.415.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = US_soviet_lend_lease_IV
 	}
 	option = {
 		name = soviet.415.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -8340,7 +8339,7 @@ country_event = {
 	id = soviet.397
 	title = soviet.397.t
 	desc = soviet.397.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -8350,8 +8349,9 @@ country_event = {
 		ENG = { exists = yes }
 		USA = { exists = yes }
 		OR = {
-		has_global_flag = UK_soviet_lend_lease_VII
-		has_global_flag = US_soviet_lend_lease_IV }
+			has_global_flag = UK_soviet_lend_lease_VII
+			has_global_flag = US_soviet_lend_lease_IV
+		}
 		NOT = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease6
 	}
@@ -8443,7 +8443,7 @@ country_event = {
 	id = soviet.416
 	title = soviet.416.t
 	desc = soviet.416.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8464,12 +8464,12 @@ country_event = {
 	
 	option = {
 		name = soviet.416.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease_VIII
 	}
 	option = {
 		name = soviet.416.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -8478,7 +8478,7 @@ country_event = {
 	id = soviet.417
 	title = soviet.417.t
 	desc = soviet.417.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8499,12 +8499,12 @@ country_event = {
 	
 	option = {
 		name = soviet.417.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = US_soviet_lend_lease_V
 	}
 	option = {
 		name = soviet.417.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -8513,7 +8513,7 @@ country_event = {
 	id = soviet.398
 	title = soviet.398.t
 	desc = soviet.398.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -8523,8 +8523,9 @@ country_event = {
 		ENG = { exists = yes }
 		USA = { exists = yes }
 		OR = {
-		has_global_flag = UK_soviet_lend_lease_VIII
-		has_global_flag = US_soviet_lend_lease_V }
+			has_global_flag = UK_soviet_lend_lease_VIII
+			has_global_flag = US_soviet_lend_lease_V
+		}
 		NOT = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease7
 	}
@@ -8616,7 +8617,7 @@ country_event = {
 	id = soviet.418
 	title = soviet.418.t
 	desc = soviet.418.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8637,12 +8638,12 @@ country_event = {
 	
 	option = {
 		name = soviet.418.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease_IX
 	}
 	option = {
 		name = soviet.418.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 
@@ -8651,7 +8652,7 @@ country_event = {
 	id = soviet.419
 	title = soviet.419.t
 	desc = soviet.419.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8672,12 +8673,12 @@ country_event = {
 	
 	option = {
 		name = soviet.419.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = US_soviet_lend_lease_VI
 	}
 	option = {
 		name = soviet.419.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 }
@@ -8685,7 +8686,7 @@ country_event = {
 	id = soviet.399
 	title = soviet.399.t
 	desc = soviet.399.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -8695,8 +8696,9 @@ country_event = {
 		ENG = { exists = yes }
 		USA = { exists = yes }
 		OR = {
-		has_global_flag = UK_soviet_lend_lease_IX
-		has_global_flag = US_soviet_lend_lease_VI }
+			has_global_flag = UK_soviet_lend_lease_IX
+			has_global_flag = US_soviet_lend_lease_VI
+		}
 		NOT = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease8
 	}
@@ -8805,7 +8807,7 @@ country_event = {
 	id = soviet.420
 	title = soviet.420.t
 	desc = soviet.420.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8826,12 +8828,12 @@ country_event = {
 	
 	option = {
 		name = soviet.420.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = UK_soviet_lend_lease_X
 	}
 	option = {
 		name = soviet.420.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 }
@@ -8839,7 +8841,7 @@ country_event = {
 	id = soviet.421
 	title = soviet.421.t
 	desc = soviet.421.d
-	picture = GFX_repORt_event_soviet_soldiers
+	picture = GFX_report_event_soviet_soldiers
 	
 	fire_only_once = yes
 	
@@ -8860,12 +8862,12 @@ country_event = {
 	
 	option = {
 		name = soviet.421.a		#do lend lease
-		ai_chance = { factOR = 100 }
+		ai_chance = { factor = 100 }
 		set_global_flag = US_soviet_lend_lease_VII
 	}
 	option = {
 		name = soviet.421.b		#refuse
-		ai_chance = { factOR = 0 }
+		ai_chance = { factor = 0 }
 		add_political_power = -50
 	}
 }
@@ -8873,7 +8875,7 @@ country_event = {
 	id = soviet.401
 	title = soviet.401.t
 	desc = soviet.401.d
-	picture = GFX_repORt_event_convoy
+	picture = GFX_report_event_convoy
 	
 	fire_only_once = yes
 	
@@ -8883,8 +8885,9 @@ country_event = {
 		ENG = { exists = yes }
 		USA = { exists = yes }
 		OR = {
-		has_global_flag = UK_soviet_lend_lease_X
-		has_global_flag = US_soviet_lend_lease_VII }
+			has_global_flag = UK_soviet_lend_lease_X
+			has_global_flag = US_soviet_lend_lease_VII
+		}
 		NOT = { has_idea = lend_lease_shipment}
 		has_country_flag = alliedlendlease9
 	}
@@ -8994,7 +8997,7 @@ country_event = {
 	id = soviet.422
 	title = soviet.422.t
 	desc = soviet.422.d
-	picture = GFX_repORt_event_spain_civil_war_volunteers
+	picture = GFX_report_event_spain_civil_war_volunteers
 	
 	fire_only_once = yes
 	
@@ -9019,7 +9022,7 @@ country_event = {
 	id = soviet.423
 	title = soviet.423.t
 	desc = soviet.423.d
-	picture = GFX_repORt_event_fallen_soviet
+	picture = GFX_report_event_fallen_soviet
 	
 	fire_only_once = yes
 	
@@ -9042,12 +9045,12 @@ country_event = {
 		remove_ideas = communist_spirit
 	}
 }
-### OP AuguststORm
+### OP Auguststorm
 country_event = {
 	id = soviet.424
 	title = soviet.424.t
 	desc = soviet.424.d
-	picture = GFX_repORt_event_fallen_soviet
+	picture = GFX_report_event_fallen_soviet
 	
 	fire_only_once = yes
 	
