@@ -964,21 +964,12 @@ focus = {
 				target = CHI
 				modifier = hostile_status
 			}
-			add_opinion_modifier = {
-					target = PRC
-					modifier = recognition
-			}
 			CHI = {
 				remove_opinion_modifier = {
 					target = PRC
 					modifier = hostile_status
 				}
-                
-				add_opinion_modifier = {
-					target = PRC
-					modifier = recognition
-				}
-                
+                           
 			}
 		}
 	}
@@ -1691,80 +1682,7 @@ completion_reward = {
 		}
 	}
     
-    	focus = {
-		id = PRC_tibet_friend
-		icon = GFX_goal_generic_major_alliance
-        mutually_exclusive = { focus = PRC_tibet_take }
-		prerequisite = { focus = PRC_propaganda_machine }
-		available = {
-			NOT = { has_war_with = TIB }
-		}
-		bypass = {
-			OR = {
-				is_in_faction_with = NOR
-				NOT = { country_exists = NOR }
-			}
-		}
-		x = 14
-		y = 6
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			TIB = {
-				add_opinion_modifier = { target = PRC modifier = prc_tibet }
-				if = {
-					limit = {
-						PRC = {
-							has_government = fascism
-						}
-					}
-					add_ideas = fascist_influence
-				}
-				if = {
-					limit = {
-						PRC = {
-							has_government = communism
-						}
-					}
-					add_ideas = communist_influence
-				}
-				if = {
-					limit = {
-						PRC = {
-							democratic_govt = yes
-						}
-					}
-					add_ideas = democratic_influence
-				}
-				country_event = { id = generic.1 }
-			}
-					
-		}
-	}
-    
-    	focus = {
-		id = PRC_tibet_take
-		icon = GFX_goal_generic_political_pressure
-        mutually_exclusive = { focus = PRC_tibet_friend }
-		prerequisite = { focus = PRC_propaganda_machine }
-		available = {
-		}
-		x = 16
-		y = 6
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-        
-		completion_reward = {
-			TIB = { 
-            country_event = { id = comchina.3 }
-            custom_effect_tooltip = needs_approval
-            }
-		}
-	}
+    	
    
 	focus = {
 		id = PRC_repel_imperialists
