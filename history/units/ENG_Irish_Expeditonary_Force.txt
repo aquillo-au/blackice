@@ -1,6 +1,7 @@
 ﻿division_template = {
 	name = "IEF Division"
-
+	division_names_group = ENG_INF_01
+	
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -16,25 +17,28 @@
 		
 		artillery_brigade = { x = 3 y = 0 }
 		artillery_brigade = { x = 3 y = 1 }
-		
 	}
 	
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
 		engineer = { x = 0 y = 1 }
-       		recon = { x = 0 y = 2 }
-		
+       	recon = { x = 0 y = 2 }
 	}
+	
 	template_counter = 4
 }
 units = {
 	
 	division = {
-		name = "Irish Expeditonary Force"
+		#Irish Expeditonary Force
+		division_name = {
+			is_name_ordered = yes
+			name_order = 221
+		}
 		location = 6103
 		division_template = "IEF Division"		
 		start_experience_factor = 0.4
 		force_equipment_variants = { infantry_equipment_1 = { owner = "IRE" } }
 	}
-	
 }
+### EOF ###

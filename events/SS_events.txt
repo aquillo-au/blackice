@@ -91,18 +91,13 @@ country_event = {
 	
 	option = {
 		name = ss_event.668.a
+		custom_effect_tooltip = SS_VT
 		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 44
-				}
-				army_experience = 43
-			}
-			
-			#load_oob = "GER_SS_VT_brig"
+			add_command_power = -10
+			delete_unit_template_and_units = { division_template = "SS-Standarte (s-mot Rgt.)" }
+			load_oob = "GER_SS_VT_brig"
 			set_country_flag = SS_VT_brig
 		}
-		ai_chance = { factor = 100 }
 	}
 }
 #### START LSSAH event chain ####

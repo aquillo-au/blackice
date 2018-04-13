@@ -267,19 +267,15 @@ remove_ideas = HUN_treaty_of_triannon
 set_politics = {
 
 	parties = {
-	
 		monarchism = {
 			popularity = 54
 		}	
-	
 		conservatism = { 
 			popularity = 2
 		}
-
 		fascism = {
 			popularity = 41
 		}
-		
 		communism = {
 			popularity = 3
 		}
@@ -290,8 +286,7 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = yes
 }
-
-
+##### Country Leaders #####
 if = {
 	limit = {
 		has_dlc = "Death or Dishonor"
@@ -301,13 +296,13 @@ if = {
 		desc = "POLITICS_MIKLOS_HORTHY_DESC"
 		picture = "Portrait_Hungary_Miklos_Horthy.dds"
 		expire = "1965.1.1"
-		ideology = fascism_ideology
+		ideology = absolutism
 		traits = {
 			monarchist
 			anti_communist
 			political_dancer
 		}
-		#id = 500 #Horthy Neutral
+		id = 3200 #Horthy Neutral
 	}
 	else = {
 		create_country_leader = { #BICE version
@@ -315,12 +310,13 @@ if = {
 			desc = "POLITICS_MIKLOS_HORTHY_DESC"
 			picture = "Portrait_Hungary_Miklos_Horthy.dds"
 			expire = "1965.1.1"
-			ideology = fascism_ideology
+			ideology = absolutism
 			traits = {
 				anti_communist
 				monarchist
 				political_dancer
 			}
+			id = 3200
 		}
 	}
 }
@@ -355,49 +351,8 @@ create_country_leader = {
 		#
 	}
 }
-
-1939.1.1 = {
-	if = {
-		limit = {
-			has_dlc = "Death or Dishonor"
-		}
-		#Remove neutral Horty add fascist
-		retire_country_leader = yes
-		create_country_leader = {
-			name = "Miklós Horthy"
-			desc = "POLITICS_MIKLOS_HORTHY_DESC"
-			picture = "Portrait_Hungary_Miklos_Horthy.dds"
-			expire = "1965.1.1"
-			ideology = fascism_ideology
-			traits = {
-				anti_communist
-			}
-			id = 503 #Horty fascist
-		}
-	}
-	set_politics = {
-
-		parties = {
-			conservatism = { 
-				popularity = 27
-			}
-
-			fascism = {
-				popularity = 70
-			}
-			
-			communism = {
-				popularity = 3
-			}
-		}
-		
-		ruling_party = fascism
-		last_election = "1939.5.29"
-		election_frequency = 48
-		elections_allowed = yes
-	}
-}
-
+##### Field Marshals #####
+##### Army Commanders #####
 create_corps_commander = {
 	name = "Abt"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
@@ -406,7 +361,6 @@ create_corps_commander = {
 }
 
 create_corps_commander = {
-
 	name = "Aggteleky"
 	portrait_path = "gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 	traits = { Bad_General }

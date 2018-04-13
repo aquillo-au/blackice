@@ -30,8 +30,7 @@
 #                                      where you choose the historical division name.
 #           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
 #                                      the current game version.
-ENG_INF_01 = 
-{
+ENG_INF_01 = {
 	name = "Infantry Division"
 
 	for_countries = { ENG }
@@ -47,8 +46,7 @@ ENG_INF_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		1 = { "%dst Infantry Division" }
 		2 = { "%dnd Infantry Division" }
 		3 = { "%drd Infantry Division" }
@@ -69,9 +67,9 @@ ENG_INF_01 =
 		8 = { "%dth Infantry Division" }
 		9 = { "%dth 'Highland' Division" }
 		15 = { "%dth 'Scottish' Division" }
-		18 = { "%dth Infantry Division" }
+		18 = { "%dth 'East Anglia' Division" }
 		38 = { "%dth 'Welsh' Division" }
-		45 = { "%dth Infantry Division" }
+		45 = { "%dth '2nd Wessex' Division" }
 		59 = { "%dth 'Staffordshire' Division" }
 		61 = { "%dst Infantry Division" }
 		66 = { "%dth Infantry Division" }
@@ -165,11 +163,35 @@ ENG_INF_01 =
 		148 = { "%dth Infantry Division" }
 		149 = { "%dth Infantry Division" }
 		150 = { "%dth Infantry Division" }
+		500 = { "Irish Expeditonary Force" }
 	}
 }
 
-ENG_CAV_01 = 
-{
+ENG_GUR_01 = {
+	name = "Gurkha Division"
+
+	for_countries = { ENG }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ENG_INF_01 }
+
+	fallback_name = "%d Infantry Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "%dst Gurkha Brigade" }
+		2 = { "%dnd Gurkha Brigade" }
+		3 = { "%drd Gurkha Brigade" }
+		4 = { "%dth Gurkha Brigade" }
+		5 = { "%dth Gurkha Brigade" }
+	}
+}
+ENG_CAV_01 = {
 	name = "Cavalry Division"
 
 	for_countries = { ENG }
@@ -185,8 +207,7 @@ ENG_CAV_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		18 = { "%dth Hussars Division" }
 		1 = { "%dst Cavalry Division 'Kings Own'" }
 		2 = { "%dnd Cavalry Division" }
@@ -207,11 +228,13 @@ ENG_CAV_01 =
 		17 = { "%dth Cavalry Division" }
 		19 = { "%dth Cavalry Division" }
 		20 = { "%dth Cavalry Division" }
+		30 = { "5th Cavalry Brigade" }
+		31 = { "6th Cavalry Brigade" }
+		32 = { "Cavalry Brigade (Egypt)" }
 	}
 }
 
-ENG_MOT_01 = 
-{
+ENG_MOT_01 = {
 	name = "Motor Division"
 
 	for_countries = { ENG }
@@ -227,8 +250,7 @@ ENG_MOT_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		50 = { "%dth 'Northumbrian' Division" }			# actual motorized divisions
 		55 = { "%dth 'West Lancashire' Division" }
 		59 = { "%dth 'Staffordshire' Division" }
@@ -267,6 +289,7 @@ ENG_MOT_01 =
 		58 = { "%dth '2/1st London' Division" }
 		28 = { "%dth Infantry Division" }
 		33 = { "%drd Infantry Division" }
+		11 = { "%dth Indian Brigade Group" }
 		100 = { "%dth Infantry Division" }
 		101 = { "%dst Infantry Division" }
 		102 = { "%dnd Infantry Division" }
@@ -318,11 +341,14 @@ ENG_MOT_01 =
 		148 = { "%dth Infantry Division" }
 		149 = { "%dth Infantry Division" }
 		150 = { "%dth Infantry Division" }
+		200 = { "The London Division" }
+		201 = { "Guards Infantry Brigade" }
+		202 = { "29th Indpendent Infantry Brigade Group" }
+		203 = { "5th Infantry Group	" }
 	}
 }
 
-ENG_MEC_01 = 
-{
+ENG_MEC_01 = {
 	name = "Mechanized Division"
 
 	for_countries = { ENG }
@@ -338,8 +364,7 @@ ENG_MEC_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		50 = { "%dth 'Northumbrian' Division" }			# actual motorized divisions
 		55 = { "%dth 'West Lancashire' Division" }
 		59 = { "%dth 'Staffordshire' Division" }
@@ -432,8 +457,7 @@ ENG_MEC_01 =
 	}
 }
 
-ENG_ARM_01 = 
-{
+ENG_ARM_01 = {
 	name = "Armoured Division"
 
 	for_countries = { ENG }
@@ -449,8 +473,7 @@ ENG_ARM_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		1 = { "%dst 'Royal Hussars' Armoured Div." }
 		7 = { "%dth 'Desert Rats' Armoured Div." }
 		2 = { "%dnd Armoured Division" }
@@ -475,7 +498,7 @@ ENG_ARM_01 =
 		19 = { "%dth Armoured Division" }
 		20 = { "%dth Armoured Division" }
 		21 = { "%dst Armoured Division" }
-		22 = { "%dnd Armoured Division" }
+		22 = { "%dnd Armoured Brigade" }
 		23 = { "%drd Armoured Division" }
 		24 = { "%dth Armoured Division" }
 		25 = { "%dth Armoured Division" }
@@ -484,11 +507,11 @@ ENG_ARM_01 =
 		28 = { "%dth Armoured Division" }
 		29 = { "%dth Armoured Division" }
 		30 = { "%dth Armoured Division" }
+		50 = { "1st Army Tank Regiment" }
 	}
 }
 
-ENG_PAR_01 = 
-{
+ENG_PAR_01 = {
 	name = "Airborne Division"
 
 	for_countries = { ENG }
@@ -504,8 +527,7 @@ ENG_PAR_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		1 = { "%dst Airborne Division" }
 		6 = { "%dth Airborne Division" }
 		2 = { "%dnd Airborne Division" }		# phantom divisions
@@ -529,8 +551,7 @@ ENG_PAR_01 =
 	}
 }
 
-ENG_MAR_01 = 
-{
+ENG_MAR_01 = {
 	name = "Marine Division"
 
 	for_countries = { ENG }
@@ -546,8 +567,7 @@ ENG_MAR_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		1 = { "%dst Royal Marines Division" }
 		2 = { "%dnd Royal Marines Division" }
 		3 = { "%drd Royal Marines Division" }
@@ -568,11 +588,11 @@ ENG_MAR_01 =
 		18 = { "%dth Royal Marines Division" }
 		19 = { "%dth Royal Marines Division" }
 		20 = { "%dth Royal Marines Division" }
+		100 = { "Royal Marines Group" }
 	}
 }
 
-ENG_MNT_01 = 
-{
+ENG_MNT_01 = {
 	name = "Mountain Division"
 
 	for_countries = { ENG }
@@ -588,8 +608,7 @@ ENG_MNT_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		52 = { "%dnd 'Lowland' Division" }
 		9 = { "%dth 'Highland' Division" }
 		15 = { "%dth 'Scottish' Division" }
@@ -636,8 +655,7 @@ ENG_MNT_01 =
 	}
 }
 
-ENG_GAR_01 = 
-{
+ENG_GAR_01 = {
 	name = "Garrison Division"
 
 	for_countries = { ENG }
@@ -653,8 +671,7 @@ ENG_GAR_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		201 = { "Devon & Cornwall County Div." }			# Home Counties Divisions (1940-41)
 		202 = { "Dorset County Division" }
 		203 = { "Durham & North Riding County Div." }
@@ -665,6 +682,36 @@ ENG_GAR_01 =
 		208 = { "Northumberland County Division" }
 		209 = { "Yorkshire County Division" }
 		210 = { "Essex County Division" }
+		211 = { "Belfast Garrison" }
+		212 = { "British Garrison Gibraltar" }
+		213 = { "Defence Force Gibraltar" }
+		214 = { "Malta Fortress" }
+		215 = { "Malta Brigade" }
+		216 = { "Cairo Brigade" }
+		217 = { "Canal Brigade" }
+		218 = { "Faroe Garrison" }
+		219 = { "Jerusalem & Lydda Areas" }
+		220 = { "Iceland Garrison" }
+		221 = { "Iceland Garrison" }
+		222 = { "British Troops Sudan" }
+		226 = { "Seychelles Garrison" }
+		227 = { "Mauritius Territorial Force" }
+		228 = { "Christmas Island Garrison" }
+		229 = { "Bermuda Garrison" }
+		230 = { "Jamaica Garrison" }
+		231 = { "Honduras Garrison" }
+		232 = { "Guiana Garrison" }
+		233 = { "Newfoundland Garrison" }
+		234 = { "St Helena Garrison" }
+		235 = { "Falklands Islands Defence Force" }
+		236 = { "Hong Kong Volunteer Defence Corps (HKVDC)" }
+		237 = { "Hong Kong Brigade" }
+		238 = { "Singapore Garrison" }
+		239 = { "Borneo Garrison" }
+		240 = { "Fiji Defence Force" }
+		241 = { "Ocean Island Defence Force" }
+		242 = { "Ceylon Defence Force" }
+		243 = { "Trincomalee Fortress" }
 		100 = { "%dth Infantry Division" }					# fictional divisions
 		101 = { "%dst Infantry Division" }
 		102 = { "%dnd Infantry Division" }
@@ -719,8 +766,48 @@ ENG_GAR_01 =
 	}
 }
 
-ENG_COL_01 = 
-{
+ENG_LDF_01 = {
+	name = "Garrison Division"
+
+	for_countries = { ENG }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { ENG_INF_01 }
+
+	fallback_name = "%d Garrison Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "Cyprus Brigade" }
+		2 = { "Transjordan Area" }
+		3 = { "%drd Royal 'West African' Frontier Force" }
+		4 = { "British Troops Aden" }
+		5 = { "Sudan Defence Force" }
+		6 = { "Somaliland Camel Corps" }
+		7 = { "Rhodesia Groups" }
+		8 = { "Plymouth Home Guard" }
+		9 = { "Portsmouth Home Guard" }
+		10 = { "Bristol Home Guard" }
+		11 = { "Liverpool Home Guard" }
+		12 = { "Hull Home Guard" }
+		13 = { "Newcastle-upon-Tyne Home Guard" }
+		14 = { "Glasgow Home Guard" }
+		15 = { "Aberdeen Home Guard" }
+		16 = { "Scapa Flow Home Guard" }
+		17 = { "Belfast Home Guard II" }
+		18 = { "Dover Home Guard" }
+		19 = { "London Home Guard" }
+		20 = { "Birmingham Home Guard" }
+		21 = { "Norwich Home Guard" }
+		22 = { "Edinburgh Home Guard" }
+	}
+}
+ENG_COL_01 = {
 	name = "Colonial Division"
 
 	for_countries = { ENG }
@@ -736,8 +823,11 @@ ENG_COL_01 =
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = 	{
+		1 = { "%dst Royal 'West African' Frontier Force" }
+		2 = { "%dth Royal 'West African' Frontier Force" }
+		4 = { "%drd Royal 'West African' Frontier Force" }
+		8 = { "%dth Infantry Division" }
 		11 = { "%dth 'East Africa' Division" }				# Actual African divisions
 		812 = { "12th 'West Africa' Division" }
 		81 = { "%dst 'West Africa' Division" }
@@ -751,8 +841,8 @@ ENG_COL_01 =
 		542 = { "2nd Kenyan Colonials" }
 		561 = { "1st Tanzanian Colonials" }
 		562 = { "2nd Tanzanian Colonials" }
-		581 = { "1st King's Arms Rifles" }
-		582 = { "2nd King's Arms Rifles" }
+		581 = { "Northern King's African Rifles" }
+		582 = { "Southern King's African Rifles" }
 		583 = { "3rd King's Arms Rifles" }
 		584 = { "4th King's Arms Rifles" }
 		585 = { "5th King's Arms Rifles" }
