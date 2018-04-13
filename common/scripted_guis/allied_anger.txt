@@ -1,0 +1,23 @@
+scripted_gui = {
+
+	allied_anger = {
+		context_type = player_context
+		
+		window_name = "allied_anger"
+		parent_window_token = politics_tab
+        
+		visible = {
+            tag = GER
+		}
+		
+		effects = {
+			allied_anger_test_click={
+				add_to_variable = { var = allied_anger value = 1  }
+			}
+		}
+
+		triggers = {
+		}
+	}
+}
+### EOF ###
