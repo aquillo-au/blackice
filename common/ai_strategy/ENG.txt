@@ -80,7 +80,7 @@ i_fin_eng2 = {
 	
 	ai_strategy = {
 		type = ignore
-		id = "FIN"
+		id = "ENG"
 		value = 400
 	}
 }
@@ -187,27 +187,6 @@ defend_LUX_against_germany = {
 	}	
 		
 }
-turkey_ignore_eng = {
-	enable = {
-		tag = TUR
-		date > 1938.12.31
-	}
-	abort = {
-		NOT = { country_exists = ENG }
-	}
-	
-	ai_strategy = {
-		type = befriend
-		id = "ENG"			
-		value = -200
-	}
-	ai_strategy = {
-		type = ignore
-		id = "ENG"			
-		value = 200
-	}	
-}
-
 
 royal_air_force = {
 	enable = {
@@ -223,11 +202,171 @@ royal_air_force = {
 	
 	ai_strategy = {
 		type = air_factory_balance
-		value = 80
+		value = 120
+	}
+	
+	#Does not work in BICE since fighter archetypes are all wrong and noone wants to fix it
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 20
 	}
 
 }
 
+#Strategies for UK to abandon Europe during Blitzkrieg
+ENG_dont_defend_poland = {
+	enable = {
+		tag = ENG
+		is_in_faction_with = POL
+		has_war_with = GER
+		POL = { has_war_with = GER }
+		POL = { has_capitulated = no }
+	}
+	abort = {
+		POL = { has_capitulated = yes }
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "POL"
+		value = 200
+	}
+}
+
+ENG_dont_defend_benelux = {
+	enable = {
+		tag = ENG
+		has_war_with = GER
+		OR = { 
+			is_in_faction_with = BEL
+			is_in_faction_with = LUX
+			is_in_faction_with = HOL
+		}
+		
+	}
+	
+	abort = {
+		OR = {
+			date > 1940.1.1
+			AND = {
+				HOL = { has_capitulated = yes }
+				BEL = { has_capitulated = yes }
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "HOL"
+		value = 200
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "BEL"
+		value = 200
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "LUX"
+		value = 200
+	}
+}
+
+ENG_dont_defend_france = {
+	enable = {
+		tag = ENG
+		has_war_with = GER
+		is_in_faction_with = FRA
+		OR = {
+			FRA = { strength_ratio = { tag = GER ratio > 0.5 }}
+			ENG = { strength_ratio = { tag = GER ratio > 0.5 }}
+		}
+	}
+	
+	abort = {
+		OR = {
+			date > 1940.1.1
+			FRA = { has_capitulated = yes }
+		}
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "FRA"
+		value = 200
+	}
+}
+
+ENG_dont_defend_Norway = {
+	enable = {
+		tag = ENG
+		has_war_with = GER
+		is_in_faction_with = NOR
+	}
+	
+	abort = {
+		NOR = { has_capitulated = yes }
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "NOR"
+		value = 200
+	}
+}
+
+ENG_dont_defend_Denmark = {
+	enable = {
+		tag = ENG
+		has_war_with = GER
+		is_in_faction_with = DEN
+	}
+	
+	abort = {
+		DEN = { has_capitulated = yes }
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "DEN"
+		value = 200
+	}
+}
+
+ENG_protect_island_war = {
+	enable = {
+		tag = ENG
+		has_war = no
+	}
+	abort = {
+		tag = ENG
+		has_war = yes
+	}
+
+	ai_strategy = { 
+		type = area_priority        
+		id = britain 			      
+		value = 500 
+	} 
+}
+
+ENG_protect_island_peace = {
+	enable = {
+		tag = ENG
+		has_war = yes
+	}
+	abort = {
+		tag = ENG
+		has_war = no
+	}
+
+	ai_strategy = { 
+		type = area_priority        
+		id = britain 			      
+		value = 1000
+	} 
+}
 
 		
 

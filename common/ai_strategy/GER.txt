@@ -13,31 +13,161 @@
 # contain
 # area_priority
 
-#Spanish volunteers
-spanish_civil_war = {
+template_design = {
+	enable = { is_major = yes }
+	abort = { always = no }
+	
+	ai_strategy = {
+		type = template_xp_reserve 
+		value = -400
+	}
+
+}
+GER_stop_panzer_i&ii_production = {
+	enable = {
+		original_tag = GER
+		OR = {
+			has_equipment = { panzer_ii_equipment > 600 }
+			has_equipment = { panzer_iii_equipment > 1 }
+			date > 1939.1.1
+		}		
+	}
+	abort = {
+		# once we start we never go back to light armor
+	}
+	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = panzer_i_equipment
+		value = -100
+	}
+	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = panzer_ii_equipment
+		value = -100
+	}
+	
+}
+
+GER_switch_to_PIVF1 = {
+	enable = {
+		original_tag = GER
+		has_tech = tech_panzer_iv_equipment_3
+		OR = {
+			has_equipment = { panzer_iii_equipment > 1500 }
+			date > 1941.1.1
+		}		
+	}
+	abort = {
+		# Not going back from Pz4 / later panther
+	}
+	
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = panzer_iii_equipment
+		value = -100
+	}
+
+}
+
+hungary_is_friend = {
+	enable = {
+		tag = GER
+		date > 1936.1.1
+		has_government = fascism
+		HUN = { has_government = fascism }
+	}
+	
+	abort = {
+		has_war_with = HUN 
+	}
+	
+	ai_strategy = {
+		type = declare_war
+		id = "HUN"			
+		value = -2000 
+	}
+}
+
+axis_dont_mess_with_volunteers = {
+	enable = {
+		date < 1941.6.1
+		OR = {
+			tag = GER
+			tag = ITA
+		}
+	}
+	abort = {
+		date > 1941.6.1
+	}
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = JAP
+		value = -500
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = MAN
+		value = -500
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = MEN
+		value = -500
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = CHI
+		value = -500
+	}
+}
+
+#Barbarossa Buildup
+
+GER_buildup_barbarossa = { 
+	enable = {
+		original_tag = GER
+		is_historical_focus_on = yes
+		has_war_with = ENG
+		FRA = { has_capitulated = yes }
+		SOV = { NOT = { has_war_with = GER }}
+		date > 1940.6.1
+	}
+	abort = {
+		has_war_with = SOV
+	}
+
+	ai_strategy = {
+		type = save_equipment
+		id = infantry_equipment
+		value = 20000
+	}
+	
+	ai_strategy = {
+		type = save_equipment
+		id = support_equipment
+		value = 2000
+	}
+	
+}
+#SPRnish volunteers
+Spanish_civil_war = {
 	enable = { 
 		tag = GER 
-		SPA = { has_war_with = SPR} 
+		SPR = { has_war_with = SPR} 
 	}
 	
 	abort = { 
-		country_exists = SPA 
-		NOT = { SPA = { has_war_with = SPR }}
+		country_exists = SPR 
+		NOT = { SPR = { has_war_with = SPR }}
 	}
 	
-	ai_strategy = { type = send_volunteers_desire 	id = "SPA" 		                value = 5000 }
-}
-spanish_civil_war = {
-	enable = { 
-		tag = SOV 
-		SPR = { has_war_with = SPA} 
-	}
-	
-	abort = { 
-		SPR = { has_war = no }
-	}
-	
-	ai_strategy = { type = send_volunteers_desire 	id = "SPR" 		                value = 5000 }
+	ai_strategy = { type = send_volunteers_desire 	id = "SPR" 		                value = 500 }
 }
 
 i_vic = { 
@@ -53,14 +183,15 @@ i_vic = {
 	ai_strategy = {
 		type = ignore
 		id = "VIC"
-		value = 5000
+		value = 500
 	}
 	ai_strategy = {
 		type = ignore
-		id = "SPA"
-		value = 5000
+		id = "SPR"
+		value = 500
 	}
 }
+
 i_swe = {
 	enable = {
 		tag = GER
@@ -78,9 +209,10 @@ i_swe = {
 	ai_strategy = {
 		type = ignore
 		id = "SWE"
-		value = 3000
+		value = 500
 	}
 }
+
 war_with_france = {
 	enable = {
 		tag = GER
@@ -92,7 +224,6 @@ war_with_france = {
 	}
 	
 	ai_strategy = { type = antagonize id = "FRA"				value = 200 		}
-	ai_strategy = { type = conquer id = "FRA"					value = 200 		}
 }
 
 war_with_poland = {
@@ -150,6 +281,12 @@ dont_die_in_mountains = {
 	}
 	
 	ai_strategy = { type = ignore id = "SWI" 					value = 100 		}
+	
+	ai_strategy = {
+		type = declare_war
+		id = "SWI"			
+		value = -2000 
+	}
 }
 
 war_with_soviets = {
@@ -166,19 +303,19 @@ war_with_soviets = {
 	ai_strategy = { type = conquer id = "SOV"					value = 300 		}
 }
 
-#soviet_ally = {
-#	enable = {
-#		tag = GER
-#		has_completed_focus = GER_soviet_ally
-#		country_exists = SOV
-#	}
-#	abort = {
-#		NOT = { country_exists = SOV }
-#	}
-#	
-#	ai_strategy = { type = befriend id = "SOV"					value = 200 		}
-#	ai_strategy = { type = alliance id = "SOV"					value = 200 		}	
-#}
+soviet_ally = {
+	enable = {
+		tag = GER
+		has_completed_focus = GER_soviet_ally
+		country_exists = SOV
+	}
+	abort = {
+		NOT = { country_exists = SOV }
+	}
+	
+	ai_strategy = { type = befriend id = "SOV"					value = 200 		}
+	ai_strategy = { type = alliance id = "SOV"					value = 200 		}	
+}
 
 italy_ally = {
 	enable = {
@@ -192,21 +329,6 @@ italy_ally = {
 	
 	ai_strategy = { type = befriend id = "ITA"					value = 100 		}
 	ai_strategy = { type = alliance id = "ITA"					value = 100 		}	
-}
-
-iron_pact_italy = {
-	enable = {
-		tag = SWE
-		ITA = {
-			has_completed_focus = ITA_pact_of_steel
-			exists = yes
-		}
-	}
-	abort = {
-		NOT = { country_exists = ITA }
-	}
-	
-	ai_strategy = { type = befriend id = "GER"					value = 70 		}	
 }
 
 iron_pact_italy = {
@@ -285,21 +407,21 @@ turkey_ally = {
 	ai_strategy = { type = befriend id = "TUR"					value = 100 		}
 	ai_strategy = { type = alliance id = "TUR"					value = 100 		}	
 }
-# removed historical mod
-#spain_ally = {
-#	enable = {
-#		tag = GER
-#		has_completed_focus = GER_nationalist_spain_ally
-#		country_exists = SPR
-#		SPR = { has_government = fascism } # TODO Find way to detect dynamic revolter tag
-#	}
-#	abort = {
-#		NOT = { country_exists = SPR }
-#	}
-#	
-#	ai_strategy = { type = befriend id = "SPR"					value = 100 		}
-#	ai_strategy = { type = alliance id = "SPR"					value = 100 		}	
-#}
+
+Spain_ally = {
+	enable = {
+		tag = GER
+		#has_completed_focus = GER_nationalist_Spain_ally
+		country_exists = SPR
+		SPR = { has_government = fascism } # TODO Find way to detect dynamic revolter tag
+	}
+	abort = {
+		NOT = { country_exists = SPR }
+	}
+	
+	ai_strategy = { type = befriend id = "SPR"					value = 100 		}
+	ai_strategy = { type = alliance id = "SPR"					value = 100 		}	
+}
 
 denmark_ally = {
 	enable = {
@@ -644,7 +766,7 @@ i_spr = { #why is GER using 50 divisions to guard against Spain?
 	enable = {
 		tag = GER
 		is_historical_focus_on = yes
-		has_government = fascism
+		#has_government = fascism
 		has_war_with = SOV
 	}
 	abort = {
@@ -657,7 +779,7 @@ i_spr = { #why is GER using 50 divisions to guard against Spain?
 	}
 	ai_strategy = {
 		type = ignore
-		id = "SPA"
+		id = "SPR"
 		value = 500
 	}
 }
@@ -681,6 +803,38 @@ i_swe = {
 		value = 500
 	}
 }
+
+make_sure_poland_is_ganked_before_we_move = {
+	enable = {
+		tag = GER
+		has_war_with = POL
+		POL = { has_capitulated = no }
+		date < 1940.1.1
+	}
+	abort = {
+		OR = {
+			POL = { has_capitulated = yes }
+			date > 1940.1.1
+		}
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = "HOL"			
+		value = -2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "BEL"
+		value = -2000 
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "LUX"
+		value = -2000 
+	}
+}
+
 axis_stay_away_from_the_royal_navy = { 
 	enable = {
 		has_war_with = ENG
@@ -784,6 +938,38 @@ axis_stay_away_from_the_royal_navy = {
 	}
 }
 
+GER_want_to_invade_FRA_without_ITA = {
+	enable = {
+		tag = GER
+		is_historical_focus_on = yes
+		date < 1940.1.1
+		FRA = {
+			is_ai = yes
+		}
+		HOL = {	has_capitulated = no }
+		BEL = {	has_capitulated = no }
+	}
+
+	abort = {
+		OR = { 
+			date > 1940.1.1
+			FRA = {
+				is_ai = no
+			}
+			AND = {
+				HOL = {	has_capitulated = yes }
+				BEL = {	has_capitulated = yes }
+			}
+		}
+	}
+	
+	ai_strategy = {
+		type = dont_join_wars_with
+		id = ITA
+		target_country = FRA
+		value = 500
+	}
+}
 
 GER_protect_core = {
 	enable = {
