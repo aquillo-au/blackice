@@ -35,6 +35,31 @@ british_help_against_germany = {
 	}	
 }
 
+i_SOV_case_white = {
+	enable = {
+		tag = POL
+		OR = {
+			GER = { has_wargoal_against = GER }
+			GER = { is_justifying_wargoal_against = GER }
+		}
+		country_exists = ENG
+	}
+	abort = {
+		NOT = { country_exists = ENG }
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "ENG"			
+		value = 200
+	}
+	ai_strategy = {
+		type = alliance
+		id = "ENG"			
+		value = 200
+	}	
+}
+
 POL_template_design = {
 	enable = {
 	

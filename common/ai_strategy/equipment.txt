@@ -1,4 +1,23 @@
+######################################################################
+#Quickstarting production of new equipment thats required in divisions
+######################################################################
+equipment_production_inf_air = {
+	enable = {
+		OR = {  tag = USA tag = ENG tag = FRA tag = GER tag = ITA tag = JAP tag = SOV }
+		has_tech = infantry_at
+		NOT = { has_equipment = { handheld_at_equipment_0 > 10 } }
+	}
+	
+	abort = {
+		has_equipment = { handheld_at_equipment_0 > 10 }
+	}
+	
+	ai_strategy = { type = equipment_production_min_factories id = anti_tank value = 4 }
+}
+
+############################
 #transfer excess equipment factories to fighters
+############################
 equipment_production_inf_air = {
 	enable = {
 		NOT = {

@@ -111,155 +111,42 @@ NAP_MON-JAP_2 = {
 	ai_strategy = { type = befriend id = "MON" value = 100 }
 }
 
-#If china is still alive and japan at war with the allies
-focus_china = {
-	enable = {
-		tag = JAP
-		has_war_with = CHI
-		has_war_with = ENG
-		CHI = { has_war_with = JAP }
-		
-	}
-	abort = {
-		CHI = { has_capitulated = yes }
-		NOT = {
-		CHI = { has_war_with = JAP }
-		}
-	}
-	
-	ai_strategy = {
-		type = antagonize
-		id = "CHI"			
-		value = 500
-	}
-	ai_strategy = {
-		type = conquer
-		id = "CHI"			
-		value = 500
-	}	
-	ai_strategy = {
-		type = antagonize
-		id = "PRC"			
-		value = 500
-	}
-	ai_strategy = {
-		type = conquer
-		id = "PRC"			
-		value = 500
-	}	
-	
-}
+JAP_dont_mess_with_volunteers = { # Reverse strategy
+	reversed = yes
 
-#Focus Burma first
-burma_first = {
 	enable = {
-		tag = JAP
-		BUR = { has_capitulated = no }
-		has_war_with = BUR
-		has_war_with = ENG
-		NOT = {
-			has_war_with = CHI 
+		NOT = { tag = JAP }
+		date < 1941.6.1	
+		JAP = {
+			OR = {
+				has_government = fascism
+				has_government = neutrality
 			}
+		}
 		
-	}
-	abort = {
-		BUR = { has_capitulated = yes }
-	}
-	
-	ai_strategy = {
-		type = antagonize
-		id = "BUR"			
-		value = 50000
-	}
-	ai_strategy = {
-		type = conquer
-		id = "BUR"			
-		value = 50000
-	}	
-	
-}
-MAL_second = {
-	enable = {
-		tag = JAP
-		BUR = { has_capitulated = yes }
-		MAL = { has_capitulated = no }
-		has_war_with = MAL
-		has_war_with = ENG
-		
-	}
-	abort = {
-		MAL = { has_capitulated = yes }
-	}
-	
-	ai_strategy = {
-		type = antagonize
-		id = "MAL"			
-		value = 50000
-	}
-	ai_strategy = {
-		type = conquer
-		id = "MAL"			
-		value = 50000
-	}	
-	
-}
-southern_expansion = {
-	enable = {
-		tag = JAP
-		BUR = { has_capitulated = yes }
-		has_war_with = INS
-		MAL = { has_capitulated = yes }
-		has_completed_focus = southern_expansion_focus
-		OR = {
-			country_exists = INS
+		capital_scope = {
+			is_on_continent = europe # lets not mess with europe
 		}
 	}
+
 	abort = {
-		INS = { has_capitulated = yes }
+		date > 1941.6.1 #lets go global later yo
+		JAP = {
+			OR = {
+				NOT = {	has_government = fascism }
+				NOT = {	has_government = neutrality }
+			}
+		}
 	}
-	
+
 	ai_strategy = {
-		type = antagonize
-		id = "INS"			
-		value = 500000
+		type = send_volunteers_desire
+		id = "JAP"
+		value = -500
 	}
-	ai_strategy = {
-		type = conquer
-		id = "INS"			
-		value = 500000
-	}	
-	ai_strategy = {
-		type = invade
-		id = "INS"			
-		value = 50000  
-	}
-	
 }
 
-northern_expansion = {
-	enable = {
-		tag = JAP
-		#has_completed_focus = northern_expansion_focus
-		NOT = { has_war_with = ENG }
-		country_exists = SOV
-	}
-	abort = {
-		NOT = {
-			country_exists = SOV
-		}
-	}
-	
-	ai_strategy = {
-		type = antagonize
-		id = "SOV"			
-		value = 20000
-	}		
-	ai_strategy = {
-		type = conquer
-		id = "SOV"			
-		value = 20000
-	}		
-}
+
 
 chinese_war = {
 	enable = {
@@ -276,12 +163,17 @@ chinese_war = {
 	ai_strategy = {
 		type = antagonize
 		id = "CHI"			
-		value = 20000
+		value = 2000
 	}
 	ai_strategy = {
 		type = conquer
 		id = "CHI"			
-		value = 20000
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "MAN"
+		value = 2000
 	}
 	
 	ai_strategy = {
@@ -332,7 +224,7 @@ strike_usa = {
 	ai_strategy = {
 		type = antagonize
 		id = "PHI"			
-		value = 40000
+		value = 4000
 	}
 	
 	ai_strategy = {
@@ -443,14 +335,5 @@ JAP_protect_core = {
 	ai_strategy = { type = area_priority id = japan	 			value = 1000 }
 	ai_strategy = { type = area_priority id = pacific 			value = -100 }
 	ai_strategy = { type = area_priority id = oceania 			value = -100 }
-	ai_strategy = { type = area_priority id = pacific_coast 			value = -100 }
-	
-	#ai_strategy = { type = area_priority id = europe 			value = -100 }
-	#ai_strategy = { type = area_priority id = north_america 	value = -100 }
-	#ai_strategy = { type = area_priority id = south_america 	value = -100 }
-	#ai_strategy = { type = area_priority id = middle_east 		value = -100 }
-	#ai_strategy = { type = area_priority id = africa 			value = -100 }
-	#ai_strategy = { type = area_priority id = asia 				value = 100 }
-	#ai_strategy = { type = area_priority id = pacific 			value = 100 }
-	#ai_strategy = { type = area_priority id = oceania 			value = 100 }
+	ai_strategy = { type = area_priority id = pacific_coast 	value = -100 }
 }
