@@ -19,6 +19,102 @@ ideas = {
 				can_create_factions = yes
 			}
 		}
+		GER_Wolfsschlucht_I = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_acquire_tanks
+			
+			targeted_modifier = {
+				tag = BEL
+				attack_bonus_against = 0.1
+				
+			}
+			
+			targeted_modifier = {
+				tag = HOL
+				attack_bonus_against = 0.1
+				
+			}
+			
+			targeted_modifier = {
+				tag = LUX
+				attack_bonus_against = 0.1
+				
+			}
+
+		}
+		GER_Wolfsschlucht_II = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_acquire_tanks
+			
+			targeted_modifier = {
+				tag = FRA
+				attack_bonus_against = 0.1
+				
+			}
+			
+
+		}
+		GER_Wolfsschanze = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_acquire_tanks
+			
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.15
+			}
+			
+
+		}
+		
+		GER_Berghof = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+				controls_state = 52
+				
+			}
+
+			removal_cost = -1
+
+			picture = generic_acquire_tanks
+			
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.15
+			}
+			
+
+		}
 		general_staff = {
 			allowed = {
 				original_tag = GER
@@ -31,7 +127,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				army_org_Factor = 0.15
+				army_org_Factor = 0.10
 				planning_speed = 0.25
 			}
 		}
@@ -1868,7 +1964,7 @@ ideas = {
 				industrial_capacity_factory = -0.015
 			}
 		}
-		Himmler_occult = {
+		Himmler_occult_1 = {
 			allowed = {
 				always = no
 			}
@@ -1884,6 +1980,42 @@ ideas = {
 				local_resources_factor = 0.02
 				conscription = 0.002
 				stability_factor = 0.02
+			}
+		}
+		Himmler_occult_2 = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+		
+
+			modifier = {
+				local_resources_factor = 0.04
+				conscription = 0.004
+				stability_factor = 0.04
+			}
+		}
+		Himmler_occult_3 = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+		
+
+			modifier = {
+				local_resources_factor = 0.06
+				conscription = 0.006
+				stability_factor = 0.06
 			}
 		}
 		die_glocke = {
@@ -4655,11 +4787,7 @@ ideas = {
 			allowed = {
 				original_tag = GER
 			}
-
-			available = {
-				has_government = fascism
-			}
-
+			
 			traits = { supreme_com_hitler fascist}
 			
 			ai_will_do = {

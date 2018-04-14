@@ -79,7 +79,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "countrydivisiondesignerview"
 		position = { x=5 y=85 }	
-		size = { width = 868 height = 932 }
+		size = { width = 968 height = 932 }
 		moveable = yes
 		fade_time = 500
 		fade_type = linear
@@ -94,7 +94,7 @@ guiTypes = {
 		
 		iconType = {
 			name = "select_model"
-			position = { x=704 y=757 }	
+			position = { x=824 y=757 }	
 			quadTextureSprite = "GFX_3d_view_placeholder_3"
 		}		
 		
@@ -106,7 +106,7 @@ guiTypes = {
 			background = {
 				name ="bg_tech_button"
 				spriteType = "GFX_division_3d_bg"	
-				position = { x=670 y=650 }
+				position = { x=790 y=650 }
 				size = { x=100%% y=100%%}
 			}
 		}
@@ -114,13 +114,13 @@ guiTypes = {
 		iconType = {
 			name = "can_paradrop_icon"
 			spriteType = "GFX_can_paradrop_icon_small"
-			position = { x = 240 y = 133 }
+			position = { x = 700 y = 140 }
 		}
 		
 		iconType = {
 			name = "special_forces_icon"
 			spriteType = "GFX_special_forces_icon"
-			position = { x = 200 y = 133 }
+			position = { x = 700 y = 180 }
 		}
 		
 		iconType = {
@@ -159,10 +159,10 @@ guiTypes = {
 		### Support Header
 		instantTextboxType = {
 			name = "support_header_label"
-			position = { x = 64 y = 130 } #x = 100 y = 196
+			position = { x = 20 y = 130 } #x = 100 y = 196
 			font = "hoi_18mbs"
 			text = "SUPPORT_HEADER"
-			maxWidth = 60
+			maxWidth = 70
 			maxHeight = 20
 			format = center
 			pdx_tooltip = "DESIGNER_SUPPORT_COLUMN_TITLE"
@@ -178,9 +178,10 @@ guiTypes = {
 			format = left
 			pdx_tooltip = "DESIGNER_MAIN_COLUMN_TITLE"
 		}
+		### Regiments headers
 		instantTextboxType = {
 			name = "rgt_1_label"
-			position = { x = 230 y = 152 }
+			position = { x = 200 y = 152 }
 			font = "hoi_16mbs"
 			text = "1. Rgt"
 			maxWidth = 40
@@ -189,7 +190,7 @@ guiTypes = {
 		}
 		instantTextboxType = {
 			name = "rgt_2_label"
-			position = { x = 315 y = 152 }
+			position = { x = 300 y = 152 }
 			font = "hoi_16mbs"
 			text = "2. Rgt"
 			maxWidth = 40
@@ -198,7 +199,7 @@ guiTypes = {
 		}
 		instantTextboxType = {
 			name = "rgt_3_label"
-			position = { x = 397 y = 152 }
+			position = { x = 402 y = 152 }
 			font = "hoi_16mbs"
 			text = "3. Rgt"
 			maxWidth = 40
@@ -207,7 +208,7 @@ guiTypes = {
 		}
 		instantTextboxType = {
 			name = "rgt_4_label"
-			position = { x = 480 y = 152 }
+			position = { x = 500 y = 152 }
 			font = "hoi_16mbs"
 			text = "4. Rgt"
 			maxWidth = 40
@@ -216,7 +217,7 @@ guiTypes = {
 		}
 		instantTextboxType = {
 			name = "rgt_5_label"
-			position = { x = 563 y = 152 }
+			position = { x = 600 y = 152 }
 			font = "hoi_16mbs"
 			text = "5. Rgt"
 			maxWidth = 40
@@ -226,34 +227,34 @@ guiTypes = {
 		containerWindowType = {
 			name = "subunits"
 			position = { x=0 y=117 }	 #x=0 y=170
-			size = { width=100% height=50%% }
+			size = { width=100% height=100%% }
 			verticalScrollbar = "right_vertical_slider"
 			
 			gridboxtype = {
 				name = "support_grid"
-				position = { x = 20 y = 57 }
-				size = { width = 85 height = 100%% }
-				slotsize = { width = 82 height = 51 }
+				position = { x = 15 y = 57 }
+				size = { width = 50 height = 600 }
+				slotsize = { width = 20 height = 51 }
 				format = "UPPER_LEFT"
 			}
 			
 			gridboxtype = {
 				name = "regiments_grid"
-				position = { x = 215 y = 57 }
+				position = { x = 175 y = 57 }
 				size = { width = 445 height = 100%% }
-				slotsize = { width = 82 height = 51 }
+				slotsize = { width = 100 height = 51 }
 				format = "UPPER_LEFT"
 			}
 		}
 		
 		containerWindowType = {
 			name = "info"
-			position = { x=20 y=479 }	#x=636 y=13
+			position = { x=125 y=479 }	#x=636 y=13
 			size = { width=100% height=100%% }
 			
 			containerWindowType = {
 				name = "base_stats"
-				position = { x = 5 y = 60 }	 #x = 10 y = 55
+				position = { x = -5 y = 60 }	 #x = 10 y = 55
 				size = { width = 176 height = 260 }
 				clipping = yes
 				
@@ -276,7 +277,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "base_stats_label"
-				position = { x = 14 y = 34 }
+				position = { x = 0 y = 34 }
 				font = "hoi4_typewriter22"
 				text = "DESIGNER_BASE_STATS_LABEL"
 				maxWidth = 165
@@ -320,9 +321,9 @@ guiTypes = {
 			### Equipment Stats
 			containerWindowType = {
 				name = "equipment_stats"
-				position = { x = 414 y = 60 }	
-				size = { width = 200 height = 260 }
-				margin = { top = 3}
+				position = { x = 417 y = 60 }	
+				size = { width = 205 height = 260 }
+				margin = { top = 3 }
 				Orientation = UPPER_LEFT				
 				clipping = yes
 				
@@ -431,7 +432,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "cost"
-			size = { width = 110 height = 29 }
+			size = { width = 210 height = 29 }
 			position = { x=335 y=881 }
 			
 			background = {
@@ -444,7 +445,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "experience"
-			position = { x = 358 y = 461 } #x = 373 y = 461
+			position = { x = 458 y = 461 } #x = 373 y = 461
 			font = "hoi_18mbs"
 			maxWidth = 126
 			maxHeight = 20
@@ -454,7 +455,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "duplicate_button"
-			position = { x=200 y=454 }
+			position = { x=300 y=454 }
 			quadTextureSprite ="GFX_button_123x34"
 			buttonText = "DESIGNER_DUPLICATE"
 			pdx_tooltip = "DESIGNER_DUPLICATE_DESC"
@@ -463,7 +464,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "reset_button"
-			position = { x=20 y=454 }
+			position = { x=120 y=454 }
 			quadTextureSprite ="GFX_button_reset_123x34"
 			buttonText = "DESIGNER_RESET"
 			pdx_tooltip = "DESIGNER_RESET_DESC"
@@ -472,7 +473,7 @@ guiTypes = {
 		}
 		ButtonType = {
 			name = "save_button"
-			position = { x=500 y=454 }
+			position = { x=600 y=454 }
 			quadTextureSprite ="GFX_button_123x34"
 			buttonText = "DESIGNER_ARMY_SAVE"
 			buttonFont = "hoi_18mbs"
@@ -494,29 +495,29 @@ guiTypes = {
 		iconType = {
 			name ="division_priority_icon"
 			spriteType = "GFX_division_priority_icon_strip"	
-			position = {  x=205 y=75 }
+			position = {  x=305 y=75 }
 			frame = 2
 		}
 		iconType = {
 			name ="division_priority_bg"
 			spriteType = "GFX_division_priority_bg"	
-			position = { x=495 y=72 }
+			position = { x=595 y=72 }
 		}		
 		ButtonType = {
 			name = "priority_button_1"
-			position = { x=504 y=75 }
+			position = { x=604 y=75 }
 			quadTextureSprite ="GFX_div_priority_strip"
 			clicksound = click_default
 		}
 		ButtonType = {
 			name = "priority_button_2"
-			position = { x=540 y=75 }
+			position = { x=640 y=75 }
 			quadTextureSprite ="GFX_div_priority_strip"
 			clicksound = click_default
 		}
 		ButtonType = {
 			name = "priority_button_3"
-			position = { x=576 y=75 }
+			position = { x=676 y=75 }
 			quadTextureSprite ="GFX_div_priority_strip"
 			clicksound = click_default
 		}
@@ -567,7 +568,7 @@ guiTypes = {
 			expandedWindow = {
 				name = "expanded_window"
 				position = { x=0 y= -300 }	
-				show_position = { x = -30 y = 25 }
+				show_position = { x = -10 y = 30 }
 				show_animation_type = decelerated
 				hide_animation_type = accelerated
 				animation_time = 300
@@ -584,7 +585,7 @@ guiTypes = {
 				
 				gridBoxType = {
 					name = "names_grid"
-					position = { x = 8 y = 0 }
+					position = { x = 8 y = 2 }
 					size = { width = 350 height = 90%% }
 					slotsize = { width = 215 height = 30 }
 					max_slots_horizontal = 2
@@ -616,7 +617,6 @@ guiTypes = {
 				position = { x = -25 y = 0 }
 			}
 
-
 			editBoxType = {
 				name = "name"
 				position = { x = 0 y = 5 }
@@ -634,7 +634,7 @@ guiTypes = {
 			expandedWindow = {
 				name = "expanded_window"
 				position = { x=0 y= -300 }	
-				show_position = { x = -30 y = 25 }
+				show_position = { x = -30 y = 30 }
 				show_animation_type = decelerated
 				hide_animation_type = accelerated
 				animation_time = 300
@@ -850,9 +850,8 @@ guiTypes = {
 		#Select 3d model
 		containerWindowType = {
 			name = "div_template_select_model"
-			position = { x=117 y=450 }
-			size = { width=540 height=460 }
-			
+			position = { x=100 y=450 }
+			size = { width=669 height=420 }
 			
 			background = {
 				name = "Background"		
@@ -866,7 +865,7 @@ guiTypes = {
 				
 				background = {
 					name ="bg_tech_button"
-					spriteType = "GFX_division_3d_bg"	
+					spriteType = "GFX_division_3d_bg"
 					position = { x=0 y=0 }
 					size = { x=100%% y=100%%}
 				}
@@ -880,7 +879,7 @@ guiTypes = {
 
 			buttonType = {
 				name = "back_button"
-				position = { x=400 y=420 }
+				position = { x=540 y=380 }
 				size = { x=504 y=23 }
 				font = "hoi_16mbs"				
 				buttontext = "BACK"
@@ -890,7 +889,7 @@ guiTypes = {
 
 			containerWindowType = {
 				name = "grid_container"
-				position = { x=10 y=234}	
+				position = { x=5 y=230}	
 				size = { width=538 height=185 }
 				verticalScrollbar = "right_vertical_slider"
 				

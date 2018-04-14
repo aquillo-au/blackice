@@ -12171,14 +12171,7 @@ country_event = {
 		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		hidden_effect = {
-			if = {
-				limit = { 
-					is_ai = no
-					has_army_experience < 66
-				}
-				army_experience = 65
-				#use army_experience to enhance division_template Wacht Regiment Berlin
-			}
+			load_oob = "GER_grossdeutschland_regt_39"
 			set_country_flag = gd_regt_39
 		}
 	}
@@ -13782,26 +13775,6 @@ country_event = {
         name = germany.418.b # No
         ai_chance = { factor = 0 }
         
-    }
-}
-
-country_event = {
-    id = germany.419
-    title = germany.419.t
-    desc = germany.419.d
-   picture = GFX_report_event_himmler_occult
-    
-	fire_only_once = yes
-	
-	is_triggered_only = yes
-	
-    option = {
-        name = germany.419.a #
-        ai_chance = { factor = 100 }
-        
-        hidden_effect = {
-			add_ideas = Himmler_occult
-        }
     }
 }
 country_event = {
