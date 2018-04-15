@@ -8947,9 +8947,11 @@ country_event = {
 		ai_chance = { factor = 100 }
 	
 		hidden_effect = {
-                        set_technology = { desert_equipment = 1 }
-                        set_technology = { HVantiair2 = 1 }
+            set_technology = { desert_equipment = 1 }
+			set_technology = { HVantiair2 = 1 }
+			
 			load_oob = "GER_afrikakorps"
+			
 			set_country_flag = GERafrikakorp
 		}
 	}
@@ -8964,9 +8966,9 @@ country_event = {
 		}
 		ai_chance = { factor = 0 }
 		add_timed_idea = {
-				idea = GER_desert_warfare
-				days = 90
-			}
+			idea = GER_desert_warfare
+			days = 90
+		}
 		hidden_effect = {
 			load_oob = "GER_afrikakorps"
 			set_country_flag = GERafrikakorp
@@ -8979,8 +8981,8 @@ country_event = {
 			tag = GER
 			date > 1941.2.9
 			is_ai = no
-			NOT = {GER = { has_tech = desert_equipment }}
-			NOT = {GER = { has_tech = HVantiair2 }}
+			NOT = { GER = { has_tech = desert_equipment }}
+			NOT = { GER = { has_tech = HVantiair2 }}
 		}
 		set_country_flag = GERafrikakorp
 	}
