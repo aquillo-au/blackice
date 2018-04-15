@@ -414,7 +414,7 @@ guiTypes = {
 			containerWindowType = {
 				name = "ideas_info"
 				position = { x = 10 y = 414 }
-				size = { width = 565 height = 605 }
+				size = { width = 565 height = 97%% }
 				verticalScrollbar = "right_vertical_slider"
 				margin = { top = 7 bottom = 7 }
 				
@@ -426,8 +426,8 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "trade_info"
-				position = { x = 622 y = 415 }
-				size = { width = 263 height = 84 }
+				position = { x = 582 y = 415 }
+				size = { width = 350 height = 84 }
 				verticalScrollbar = "right_vertical_slider"
 				
 				background = {
@@ -443,9 +443,9 @@ guiTypes = {
 				
 				gridboxtype = {
 					name = "trade_grid"
-					position = { x = 27 y = 5 }
-					size = { width = 255 height = 100%% }
-					slotsize = { width = 36 height = 76 }
+					position = { x = 63 y = 5 }
+					size = { width = 280 height = 100%% }
+					slotsize = { width = 50 height = 76 }
 					max_slots = { x = 6 y = 1 }
 					format = "UPPER_LEFT"
 				}
@@ -453,8 +453,8 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "estimated_enemy_force_info"
-				position = { x = 622 y = 500 }
-				size = { width = 265 height = 517 }
+				position = { x = 582 y = 500 }
+				size = { width = 350 height = 100%% }
 				verticalScrollbar = "right_vertical_slider"
 				
 				background = {
@@ -465,173 +465,159 @@ guiTypes = {
 				iconType = {
 					name = "diplo_details_header"
 					quadTextureSprite ="GFX_diplo_details_header"
-					position = { x = 13 y = 5 }
+					position = { x = 60 y = 5 }
 				}
 				
 				instantTextBoxType = {
 					name = "window_header_text"
-					position = { x = 32 y = 17 }
+					position = { x = 82 y = 17 }
 					font = "hoi_18mbs"
 					text = "DIPLOMACY_INTELLIGENCE"
 					maxWidth = 200
 					maxHeight = 20
 					format = center
 				}
-
+				# Land forces
 				iconType = {
 					name = "estimated_military_forces_bg"
 					quadTextureSprite ="GFX_generic_text_bg_108"
-					position = { x = 10 y = 105 }
+					position = { x = 5 y = 115 }
 				}
-				
 				iconType = {
 					name = "estimated_military_forces_icon"
 					quadTextureSprite ="GFX_endgame_army_button"
-					position = { x = 40 y = 55 }
+					position = { x = 35 y = 65 }
 					pdx_tooltip = ESTIMATED_MILITARY_FORCES
 				}
-				
 				instantTextBoxType = {
 					name = "estimated_military_forces"
-					position = { x = 16 y = 108 }
+					position = { x = 11 y = 118 }
 					font = "hoi_18mbs"
 					text = "?"
 					maxWidth = 100
 					maxHeight = 20
 					format = center
 				}
-
+				# Naval forces
 				iconType = {
 					name = "estimated_navy_forces_bg"
 					quadTextureSprite ="GFX_generic_text_bg_108"
-					position = { x = 10 y = 195 }
+					position = { x = 120 y = 115 }
 				}
-				
 				iconType = {
 					name = "estimated_navy_forces_icon"
 					quadTextureSprite ="GFX_endgame_navy_button"
-					position = { x = 40 y = 145 }
+					position = { x = 145 y = 65 }
 					pdx_tooltip = ESTIMATED_NAVY_FORCES
 				}
-				
 				instantTextBoxType = {
 					name = "estimated_navy_forces"
-					position = { x = 16 y = 198 }
+					position = { x = 120 y = 118 }
 					font = "hoi_18mbs"
 					text = "?"
 					maxWidth = 100
 					maxHeight = 20
 					format = center
 				}
-
+				# Air forces
 				iconType = {
 					name = "estimated_air_forces_bg"
 					quadTextureSprite ="GFX_generic_text_bg_108"
-					position = { x = 10 y = 285 }
+					position = { x = 235 y = 115 }
 				}
-				
 				iconType = {
 					name = "estimated_air_forces_icon"
 					quadTextureSprite ="GFX_endgame_air_button"
-					position = { x = 40 y = 235 }
+					position = { x = 265 y = 65 }
 					pdx_tooltip = ESTIMATED_AIR_FORCES
 				}
-				
 				instantTextBoxType = {
 					name = "estimated_airforce"
-					position = { x = 16 y = 289 }
+					position = { x = 240 y = 119 }
 					font = "hoi_18mbs"
 					text = "?"
 					maxWidth = 100
 					maxHeight = 20
 					format = center
 				}
-
-				iconType = {
-					name = "estimated_civil_industry_bg"
-					quadTextureSprite ="GFX_generic_text_bg_108"
-					position = { x = 130 y = 285 }
-				}
-				
-				iconType = {
-					name = "estimated_civil_industry_icon"
-					quadTextureSprite ="GFX_endgame_civ_industry_button"
-					position = { x = 155 y = 235 }
-					pdx_tooltip = ESTIMATED_CIVIL_INDUSTRY
-				}
-				
-				instantTextBoxType = {
-					name = "estimated_civil_industry_size"
-					position = { x = 130 y = 289 }
-					font = "hoi_18mbs"
-					text = "?"
-					maxWidth = 100
-					maxHeight = 20
-					format = center
-				}
-
-				iconType = {
-					name = "estimated_mil_industry_bg"
-					quadTextureSprite ="GFX_generic_text_bg_108"
-					position = { x = 130 y = 105 }
-				}
-				
-				iconType = {
-					name = "estimated_mil_industry_icon"
-					quadTextureSprite ="GFX_endgame_industry_button"
-					position = { x = 155 y = 55 }
-					pdx_tooltip = ESTIMATED_MIL_INDUSTRY
-				}
-				
-				instantTextBoxType = {
-					name = "estimated_military_industry_size"
-					position = { x = 130 y = 108 }
-					font = "hoi_18mbs"
-					text = "?"
-					maxWidth = 100
-					maxHeight = 20
-					format = center
-				}
-
-				iconType = {
-					name = "estimated_naval_industry_bg"
-					quadTextureSprite ="GFX_generic_text_bg_108"
-					position = { x = 130 y = 195 }
-				}
-				
-				iconType = {
-					name = "estimated_naval_industry_icon"
-					quadTextureSprite ="GFX_endgame_naval_industry_button"
-					position = { x = 155 y = 145 }
-					pdx_tooltip = ESTIMATED_NAVAL_INDUSTRY
-				}
-				
-				instantTextBoxType = {
-					name = "estimated_naval_industry_size"
-					position = { x = 130 y = 198 }
-					font = "hoi_18mbs"
-					text = "?"
-					maxWidth = 100
-					maxHeight = 20
-					format = center
-				}
-
+				# Convoys
 				iconType = {
 					name = "estimated_convoys_bg"
 					quadTextureSprite ="GFX_generic_text_bg_108"
-					position = { x = 10 y = 375 }
+					position = { x = 60 y = 205 }
 				}
-				
 				iconType = {
 					name = "estimated_convoys_icon"
 					quadTextureSprite ="GFX_endgame_convoys_button"
-					position = { x = 40 y = 325 }
+					position = { x = 90 y = 155 }
 					pdx_tooltip = ESTIMATED_CONVOYS_ICON
 				}				
-				
 				instantTextBoxType = {
 					name = "estimated_convoy_size"
-					position = { x = 16 y = 379 }
+					position = { x = 65 y = 209 }
+					font = "hoi_18mbs"
+					text = "?"
+					maxWidth = 100
+					maxHeight = 20
+					format = center
+				}
+				# Manpower
+				iconType = {
+					name = "estimated_manpower_bg"
+					quadTextureSprite ="GFX_generic_text_bg_108"
+					position = { x = 180 y = 205 }
+				}
+				iconType = {
+					name = "estimated_manpower_icon"
+					quadTextureSprite ="GFX_endgame_manpower_button"
+					position = { x = 205 y = 155 }
+					pdx_tooltip = ESTIMATED_MANPOWER
+				}				
+				instantTextBoxType = {
+					name = "estimated_manpower_size"
+					position = { x = 180 y = 209 }
+					font = "hoi_18mbs"
+					text = "?"
+					maxWidth = 100
+					maxHeight = 20
+					format = center
+				}
+				# Civil industry
+				iconType = {
+					name = "estimated_civil_industry_bg"
+					quadTextureSprite ="GFX_generic_text_bg_108"
+					position = { x = 5 y = 295 }
+				}
+				iconType = {
+					name = "estimated_civil_industry_icon"
+					quadTextureSprite ="GFX_endgame_civ_industry_button"
+					position = { x = 35 y = 245 }
+					pdx_tooltip = ESTIMATED_CIVIL_INDUSTRY
+				}
+				instantTextBoxType = {
+					name = "estimated_civil_industry_size"
+					position = { x = 11 y = 299 }
+					font = "hoi_18mbs"
+					text = "?"
+					maxWidth = 100
+					maxHeight = 20
+					format = center
+				}
+				# Military Industry
+				iconType = {
+					name = "estimated_mil_industry_bg"
+					quadTextureSprite ="GFX_generic_text_bg_108"
+					position = { x = 120 y = 295 }
+				}
+				iconType = {
+					name = "estimated_mil_industry_icon"
+					quadTextureSprite ="GFX_endgame_industry_button"
+					position = { x = 145 y = 245 }
+					pdx_tooltip = ESTIMATED_MIL_INDUSTRY
+				}
+				instantTextBoxType = {
+					name = "estimated_military_industry_size"
+					position = { x = 120 y = 299 }
 					font = "hoi_18mbs"
 					text = "?"
 					maxWidth = 100
@@ -639,22 +625,22 @@ guiTypes = {
 					format = center
 				}
 				
+				
+				# Naval Industry
 				iconType = {
-					name = "estimated_manpower_bg"
+					name = "estimated_naval_industry_bg"
 					quadTextureSprite ="GFX_generic_text_bg_108"
-					position = { x = 130 y = 375 }
+					position = { x = 235 y = 295 }
 				}
-				
 				iconType = {
-					name = "estimated_manpower_icon"
-					quadTextureSprite ="GFX_endgame_manpower_button"
-					position = { x = 155 y = 325 }
-					pdx_tooltip = ESTIMATED_MANPOWER
-				}				
-				
+					name = "estimated_naval_industry_icon"
+					quadTextureSprite ="GFX_endgame_naval_industry_button"
+					position = { x = 265 y = 245 }
+					pdx_tooltip = ESTIMATED_NAVAL_INDUSTRY
+				}
 				instantTextBoxType = {
-					name = "estimated_manpower_size"
-					position = { x = 130 y = 379 }
+					name = "estimated_naval_industry_size"
+					position = { x = 240 y = 299 }
 					font = "hoi_18mbs"
 					text = "?"
 					maxWidth = 100
@@ -662,7 +648,6 @@ guiTypes = {
 					format = center
 				}
 			}
-			
 			#------------------------- END INFO TAB ----------------------------
 
 			iconType ={
