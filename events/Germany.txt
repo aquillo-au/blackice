@@ -8842,10 +8842,8 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		#is_ai = no
 		not = { has_country_flag = wachrgt_berlin }
 		date > 1937.6.1
-		
 	}
 	
 	mean_time_to_happen = {
@@ -8857,22 +8855,11 @@ country_event = {
 		ai_chance = { factor = 0 }
 		
 		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 9
-				}
-				army_experience = 8
-			}
-
+			delete_unit_template_and_units = { division_template = "Wachtruppen" }
+			load_oob = "GER_wach_regt_berlin"
 			set_country_flag = wachrgt_berlin
 		}
 	}
-	option = {
-		name = germany.231.b
-		ai_chance = { factor = 0 }
-		set_country_flag = wachrgt_berlin
-	}
-	
 }
 ####### AI Autarky
 country_event = {
@@ -8964,7 +8951,6 @@ country_event = {
 			GER = { has_tech = desert_equipment }
 			GER = { has_tech = HVantiair2 }
 		}
-		ai_chance = { factor = 0 }
 		add_timed_idea = {
 			idea = GER_desert_warfare
 			days = 90
@@ -8976,8 +8962,7 @@ country_event = {
 	}
 	option = {
 		name = germany.233.c		#refuse
-		ai_chance = { factor = 0 }
-			trigger = {
+		trigger = {
 			tag = GER
 			date > 1941.2.9
 			is_ai = no
@@ -8987,32 +8972,7 @@ country_event = {
 		set_country_flag = GERafrikakorp
 	}
 }
-country_event = {
-	id = germany.234
-	title = germany.234.t
-	desc = germany.234.d
-
-	fire_only_once = yes
-	
-	is_triggered_only = yes
-
-	option = {
-		name = germany.234.a
-		ai_chance = { factor = 100 }
-		
-		hidden_effect = {
-			if = {
-				limit = {
-					NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
-				}
-				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
-			}
-			
-			load_oob = "GER_grossdeutschland_39"
-		}
-		set_country_flag = GERgrossdeutschland_stug
-	}
-}
+#germany.234 removed
 country_event = {
 	id = germany.235
 	title = germany.235.t
@@ -12170,19 +12130,11 @@ country_event = {
 	
 	option = {
 		name = germany.400.a
-		ai_chance = { factor = 0 }
-		trigger = { is_ai = no }
+		
 		hidden_effect = {
-			load_oob = "GER_grossdeutschland_regt_39"
+			delete_unit_template_and_units = { division_template = "Wach-Regt. Berlin" }
+			load_oob = "GER_grossdeutschland_39"
 			set_country_flag = gd_regt_39
-		}
-	}
-	option = {					# placeholder to prevent AI crash
-		name = germany.400.a
-		ai_chance = { factor = 100 }
-		trigger = { is_ai = yes }
-		hidden_effect = {
-			country_event = { id = germany.234 }
 		}
 	}
 }
@@ -12197,7 +12149,6 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = no
 		date > 1939.10.1
 		has_country_flag = gd_regt_39
 	}
@@ -12208,21 +12159,13 @@ country_event = {
 	
 	option = {
 		name = germany.401.a
-		ai_chance = { factor = 0 }
-		trigger = { is_ai = no }
+		ai_chance = { factor = 100 }
 		hidden_effect = {
-			if = {
-				limit = { 
-					is_ai = no
-					has_army_experience < 44
-				}
-				#use army_experience to enhance division_template Inf.Rgt. Grossdeutschland
-				army_experience = 43
-			}
-			set_country_flag = gd_div_mot_39
+			delete_unit_template_and_units = { division_template = "Inf.-Regt.(GD)" }
+			load_oob = "GER_grossdeutschland_regt_39"
+			set_country_flag = gd_regt_mot_39
 		}
 	}
-	
 }
 #### Upgrade to Divisionlevel Infantry Division (mot) Grossdeutschland ####
 country_event = {
@@ -12236,14 +12179,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1942.5.1
-		OR = {
-		and = {
-			has_country_flag = gd_div_mot_39
-			is_ai = no
-			}
-			has_country_flag = GERgrossdeutschland_stug
-		}
-		has_army_experience > 51
+		has_country_flag = gd_regt_mot_39
 	}
 	
 	mean_time_to_happen = {
@@ -12252,29 +12188,11 @@ country_event = {
 	
 	option = {
 		name = germany.402.a
-		ai_chance = { factor = 0 }
-		trigger = {
-			is_ai = no
-			has_country_flag = gd_div_mot_39
-		}
-		hidden_effect = {
-			
-				army_experience = 50
-			}
-			set_country_flag = gd_div_mot_42
-		}
-
-	option = {
-		name = germany.402.b
-		trigger = {
-			is_ai = yes
-			
-		}
 		ai_chance = { factor = 100 }
-		
 		hidden_effect = {
-			
-			set_country_flag = gd_pzgren_div_42_ai
+			delete_unit_template_and_units = { division_template = "Inf.-Regt.-mot (GD)" }
+			load_oob = "GER_grossdeutschland_42"
+			set_country_flag = gd_div_mot_42
 		}
 	}
 }
@@ -12291,7 +12209,6 @@ country_event = {
 		tag = GER
 		date > 1943.5.1
 		has_country_flag = gd_div_mot_42
-		has_army_experience > 51
 	}
 	
 	mean_time_to_happen = {
@@ -12300,23 +12217,11 @@ country_event = {
 	
 	option = {
 		name = germany.403.a
-		ai_chance = { factor = 0 }
-		trigger = { is_ai = no }
-		hidden_effect = {
-			
-				#use army_experience to enhance division_template 
-				army_experience = 50
-			}
-			set_country_flag = gd_div_pzgren_43
-		}
-
-	option = {				# placeholder to prevent AI crash
-		name = germany.403.b
 		ai_chance = { factor = 100 }
-		trigger = { is_ai = yes }
 		hidden_effect = {
 			if = {
 				limit = {
+					is_ai = yes
 					NOT = { has_tech = tech_panzer_v_equipment_1 }
 					NOT = { has_tech = subtech_panzer_v_spaa_equipment_1 }
 					NOT = { has_tech = subtech_heavy_panzer_art_equipment_1 }
@@ -12329,8 +12234,9 @@ country_event = {
 				set_technology = { subtech_panzer_iii_td_equipment_3 = 1 }
 				set_technology = { tech_heavy_panzer_equipment_2 = 1 }
 			}
+			delete_unit_template_and_units = { division_template = "Inf.-Div.(GD)" }
 			load_oob = "GER_grossdeutschland_43"
-			set_country_flag = gd_pzgren_div_43_ai
+			set_country_flag = gd_div_pzgren_43
 		}
 	}
 }

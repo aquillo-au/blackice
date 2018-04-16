@@ -4422,30 +4422,6 @@ focus = {
 			show_ideas_tooltip = walther_von_brauchitsch			
 		}
 	}
-	
-	focus = {
-		id = GER_Grossdeutschland
-		text = GER_Grossdeutschland 
-		icon = GFX_goal_grossdeutschland
-		prerequisite = { focus = GER_Wehrmacht }
-		available = {
-			
-			date > 1939.5.1
-		}
-		x = 1
-		y = 1
-		cost = 1
-		ai_will_do = {
-			factor = 12
-		}
-		available_if_capitulated = yes	
-		completion_reward = {
-			GER = {
-				country_event = germany.400
-			}
-			
-		}
-	}
 	# Achtung Panzer
 	focus = {
 		id = GER_achtung_panzer
@@ -7266,13 +7242,7 @@ focus = {
 		prerequisite = { focus = GER_condor_legion }
 		available = {
 			SPR = { 
-				has_war = no
-				#has_civil_war = no
-			}
-			any_other_country = {
-				original_tag = SPA
-				has_government = fascism
-				NOT = { has_war_with = GER }
+				has_civil_war = no
 			}
 			FRA = {
 				OR = {

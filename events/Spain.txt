@@ -1100,91 +1100,104 @@ country_event = {
 }
 
 country_event = {
-	id = spain.101
-	hidden = yes
+    id = spain.101
+    hidden = yes
 
-	fire_only_once = no
+    #fire_only_once = no
 
-	trigger = {
-		tag = SPR
-		has_war = yes
-		has_government = fascism
-		surrender_progress > 0.60
+    trigger = {
+        tag = D01
+        has_war = yes
+        has_government = fascism
+        surrender_progress > 0.55
+        num_divisions < 31
+        is_ai = yes
+        NOT = { has_country_flag = reload }
+    }
+    
+    mean_time_to_happen = { days = 1 }
+    
+    immediate = {
+		set_country_flag = { flag = reload days = 60 } #after 60 days it can spawn again
+		random_owned_controlled_state = {
+			limit = {
+				NOT = {
+					state = 178
+					state = 177
+					state = 297
+					state = 290
+					state = 699
+				}
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+			create_unit = {
+				division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 0.5" 
+				owner = FROM
+			}
+		}
 	}
-	
-	mean_time_to_happen = { days = 50 }
-	
-	immediate = {
-	random_owned_controlled_state = {
-		limit = { NOT = { state = 178 state = 177 state = 297 state = 290 } }
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-		create_unit = {
-			division = "name = \"Brigada Legionario\" division_template = \"Brigada Legionario\" start_experience_factor = 1.0 start_equipment_factor = 1.0" 
-			owner = D01
-		}
-	}}
-	
-	option = {}
-	
+    
+    option = {
+	}
 }
 country_event = {
 	id = spain.102

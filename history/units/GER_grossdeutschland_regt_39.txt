@@ -1,49 +1,41 @@
 ﻿division_template = {
-	name = "Infanterie-Div.(GD)" 			
-	
+	name = "Inf.-Regt.-mot (GD)"	
+	priority = 2
+	template_counter = 150
+	is_locked = yes
+	division_names_group = GER_GD_01
+
 	regiments = {
 		motorized = { x = 0 y = 0 }
-	   	motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 1 }
 		motorized = { x = 0 y = 2 }
 		
-		motorized = { x = 1 y = 0 }
-		motorized = { x = 1 y = 1 }
-		motorized = { x = 1 y = 2 }
+		anti_tank_brigade =  { x = 1 y = 0 }
 		
-		motorized = { x = 2 y = 0 }
-	   	motorized = { x = 2 y = 1 }
-		motorized = { x = 2 y = 2 }
-		
-		panzer_iv = { x = 3 y = 0 }
-		
-		artillery_brigade_mot = { x = 4 y = 0 }
-		artillery_brigade_mot = { x = 4 y = 1 }
-		artillery_brigade_mot = { x = 4 y = 2 }			
-		panzer_iii_td = { x = 4 y = 3 }
+		artillery_brigade_mot = { x = 2 y = 0 }
 	}
 	support = {
 		DIV_HQ = { x = 0 y = 0 }
-		recon_mot = { x = 0 y = 1 }
-	 	engineer = { x = 0 y = 2 }
-		anti_air = { x = 0 y = 3 }
- 		
-		maintenance_company = { x = 1 y = 0 }
-		logistics_company = { x = 1 y = 1 }
-		field_hospital = { x = 1 y = 2 }
+		engineer = { x = 0 y = 1 }
+		logistics_company = { x = 0 y = 2 }
+		field_hospital = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+		anti_air = { x = 0 y = 5 }
+		recon_mot = { x = 0 y = 6 }
 	}
-	
-	priority = 2
-	template_counter = 150
 }
 
 units = {
 
 	division= {	
-		name = "Infanterie Division 'Großdeutschland'" 
+		#Inf. Regt.(mot.) 'Großdeutschland'
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
 		location = 6521
-		division_template = "Infanterie-Div.(GD)"
+		division_template = "Inf.-Regt.-mot (GD)"
 		start_experience_factor = 0.9
-		start_equipment_factor = 0.5
 	}
 }
 #####################

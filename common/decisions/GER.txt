@@ -1084,10 +1084,8 @@ GER_military_buildup = {
 		icon = ger_4_Ldiv
 		
 		available = {
-			OR = {
-				date > 1939.5.1
-				
-			}
+			date > 1939.5.1
+			has_country_flag = wachrgt_berlin
 			not = { has_country_flag = gd_regt_39 }
 			owns_state = 841
 		}
@@ -1106,14 +1104,12 @@ GER_military_buildup = {
 	
 		complete_effect = {
 			division_template = {
-				name = "GD Regt. '39"
+				name = "Inf.-Regt.(GD)"	
 				priority = 2
-				template_counter = 150
+				template_counter = 152
 				is_locked = yes
-				division_names_group = GER_LTARM_01
-	
-				name = "Infanterie-Div.(GD)" 			
-	
+				division_names_group = GER_GD_01
+				
 				regiments = {
 					infantry = { x = 0 y = 0 }
 					infantry = { x = 0 y = 1 }
@@ -1123,7 +1119,8 @@ GER_military_buildup = {
 				}
 				support = {
 					DIV_HQ = { x = 0 y = 0 }
-					maintenance_company = { x = 0 y = 1 }
+					logistics_company = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 2 }
 				}
 			}
 			country_event = { id = germany.400 hours = 6 }

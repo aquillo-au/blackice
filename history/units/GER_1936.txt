@@ -106,7 +106,8 @@ division_template = {
 }
 division_template = {
 	name = "Wachtruppen"					# becomes Gross Deutchsland regiment
-
+	division_names_group = GER_GD_01
+	
 	regiments = {			
 		garrison = { x = 0 y = 0 }
 		garrison = { x = 0 y = 1 }
@@ -117,6 +118,21 @@ division_template = {
 	
 	priority = 2
 	template_counter = 152
+}
+division_template = {
+	name = "LSSAH Wach-Btl"					# SS regiments (elite equipment & training)
+
+	regiments = {
+		ss_garrison = { x = 0 y = 0 }	
+	}
+	support = {
+		SS_DIV_HQ = { x = 0 y = 0 }
+  		military_police = { x = 0 y = 1 }
+		ss_maintenance_company = { x = 0 y = 2 }
+		ss_logistics_company = { x = 0 y = 3 }
+	}
+	priority = 2
+	template_counter = 156
 }
 division_template = {
 	name = "Kavallerie-Brigade"
@@ -209,7 +225,14 @@ units = {
 	#	start_experience_factor = 0.1
 	#	start_equipment_factor = 0.8
 	#}
-	
+	units = {
+		division= {	
+			name = "LSSAH Wach-Btl" 
+			location = 13283  #Berlin
+			division_template = "LSSAH Wach-Btl"
+			start_experience_factor = 0.9
+		}
+	}
 	division= {	
 		#2. Infanterie-Division
 		division_name = {
@@ -257,7 +280,11 @@ units = {
 	}
 	# Wachtruppen
 	division= {
-		name = "Wachtruppe Berlin"	
+		#Wachtruppe Berlin
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
 		location = 6521
 		division_template = "Wachtruppen"
 		start_experience_factor = 0.9
