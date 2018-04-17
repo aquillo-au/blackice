@@ -1,4 +1,54 @@
 SS_recruitment = {
+	
+	GER_wach_btl_LSSAH = {
+		
+		icon = ger_military_buildup
+		
+		available = {
+			OR = {
+				has_idea = heinrich_himmler
+				has_country_leader = { name = "Heinrich Himmler" }
+			}
+		}
+		visible = {
+			OR = {
+				has_idea = heinrich_himmler
+				has_country_leader = { name = "Heinrich Himmler" }
+			}
+		}
+		
+		cost = 1
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = GER_wachbtl_LSSAH_tt
+			division_template = {
+				name = "LSSAH Wach-Btl"					# SS regiments (elite equipment & training)
+				priority = 2
+				template_counter = 156
+				is_locked = yes
+				division_names_group = GER_LSSAH_01
+				
+				regiments = {
+					ss_garrison = { x = 0 y = 0 }	
+				}
+				support = {
+					SS_DIV_HQ = { x = 0 y = 0 }
+					military_police = { x = 0 y = 1 }
+					ss_maintenance_company = { x = 0 y = 2 }
+					ss_logistics_company = { x = 0 y = 3 }
+				}
+				priority = 2
+				template_counter = 156
+			}
+			country_event = { id = ss_event.665 hours = 6 }
+		}
+	}
 	GER_TV_Schutzstaffel = {
 
 		icon = ger_military_buildup
@@ -88,7 +138,6 @@ SS_recruitment = {
 	}
 	
 	GER_SS_LSSAH = {
-
 		icon = ger_military_buildup
 
 		available = {
@@ -114,15 +163,32 @@ SS_recruitment = {
 			factor = 1
 		}
 		complete_effect = {
-			if = {
-				limit = {
-					is_ai = no
+			division_template = {
+				name = "LSSAH Infanterie Regt" 			
+				is_locked = yes
+				priority = 2
+				template_counter = 157
+				division_names_group = GER_LSSAH_01
+				
+				regiments = {
+					ss_infantry = { x = 0 y = 0 }
+					ss_infantry = { x = 0 y = 1 }
+					ss_infantry = { x = 0 y = 2 }
+					
+					ss_artillery_brigade = { x = 1 y = 0 }
 				}
-				GER = {
-					country_event = ss_event.664	# LSSAH infantry regiment
+				support = {
+					SS_DIV_HQ = { x = 0 y = 0 }
+					military_police = { x = 0 y = 1 }
+					ss_engineer = { x = 0 y = 2 }
+					ss_maintenance_company = { x = 0 y = 3 }
+					ss_logistics_company = { x = 0 y = 4 }
+					ss_field_hospital = { x = 0 y = 5 }
 				}
+				
+				priority = 2
+				template_counter = 157
 			}
-			
 			if = {
 				limit = {
 					is_ai = yes
@@ -150,9 +216,10 @@ SS_recruitment = {
 					}
 				}
 			}
+			GER = { country_event = ss_event.664 }	# LSSAH infantry regiment
 			
-			add_to_variable = { var = wehrmacht_anger value = 3}
-			subtract_from_variable = { var = SS_anger value = 3}
+			add_to_variable = { var = wehrmacht_anger value = 3 }
+			subtract_from_variable = { var = SS_anger value = 3 }
 			hidden_effect = {
 				SS_resolve_effects_wehrmacht = yes
 			}

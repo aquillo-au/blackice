@@ -115,14 +115,14 @@ country_event = {
 	
 	option = {
 		name = ss_event.664.a
-		trigger = { is_ai = no }
+		ai_chance = { factor = 100 }
 		hidden_effect = {
-			load_oob = "GER_LSSAH_regiment_39"
+			load_oob = "GER_LSSAH_regiment_38"
 			set_country_flag = LSSAH_regiment_38
 		}
 	}
 }
-### Adding 1 SS Arty-Btl, 1 SS Enigeer Comp, 1 SS Motorcycle Recon Comp
+### Motorize regiment to mot Inf.-Btl and mot Art.-Btl
 country_event = {
 	id = ss_event.663
 	title = ss_event.663.t
@@ -133,10 +133,11 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = no
 		date > 1939.2.1
 		has_tech = ss_combat_engineer_tech
+		has_tech = vehicle_radio
 		has_country_flag = LSSAH_regiment_38
+		NOT = { has_country_flag = LSSAH_regiment_39 }
 	}
 	
 	mean_time_to_happen = {
@@ -145,46 +146,15 @@ country_event = {
 	
 	option = {
 		name = ss_event.663.a
-		trigger = { is_ai = no }
+		
 		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 45
-				}
-				army_experience = 44
-			}
-			set_country_flag = LSSAH_regiment_39_exp
+			delete_unit_template_and_units = { division_template = "LSSAH Infanterie Regt" }
+			load_oob = "GER_LSSAH_regiment_39"
+			set_country_flag = LSSAH_regiment_39
 		}
 	}
 }
-country_event = {
-	id = ss_event.596
-	title = ss_event.596.t
-	desc = ss_event.596.d
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		date > 1939.2.1
-		has_tech = ss_combat_engineer_tech
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.596.a
-		ai_chance = { factor = 100 }
-		hidden_effect = {
-			load_oob = "GER_LSSAH_inf_division_39"
-			set_country_flag = LSSAH_inf_division_39_ai
-		}
-	}
-}
-### Motorize regiment to mot Inf.-Btl and mot Art.-Btl
+### early 1940 Expand LSSAH Regt 1 Flak Batterie, 1 more Arty btl, 1 Assaultgun btl
 country_event = {
 	id = ss_event.662
 	title = ss_event.662.t
@@ -194,10 +164,10 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		is_ai = no
-		date > 1939.10.1
-		has_country_flag = LSSAH_regiment_39_exp
-		has_tech = vehicle_radio
+		date > 1940.2.1
+		has_country_flag = LSSAH_regiment_39
+		NOT = { has_country_flag = LSSAH_regiment_40 }
+		has_tech = subtech_panzer_iii_td_equipment_1
 	}
 	
 	mean_time_to_happen = {
@@ -206,19 +176,15 @@ country_event = {
 	
 	option = {
 		name = ss_event.662.a
-		trigger = { is_ai = no }
+		
 		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 36
-				}
-				army_experience = 35
-			}
-			set_country_flag = LSSAH_regiment_39_mot
+			delete_unit_template_and_units = { division_template = "LSSAH Inf.-Regt.(mot.)" }
+			load_oob = "GER_LSSAH_regiment_40"
+			set_country_flag = LSSAH_regiment_40
 		}
 	}
 }
-### ss_event.661 early 1940 Expand LSSAH Regt 1 Flak Batterie, 1 more Arty btl, 1 Assaultgun btl
+### ss_event.661 June 1940 Expand LSSAH Rgt to LSSAH Brigade (2 mot-Inf.-Rgt)
 country_event = {
 	id = ss_event.661
 	title = ss_event.661.t
@@ -228,9 +194,9 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		is_ai = no
-		date > 1940.2.1
-		has_country_flag = LSSAH_regiment_39_mot
+		date > 1940.8.1
+		has_country_flag = LSSAH_regiment_40
+		NOT = { has_country_flag = LSSAH_brigade_40 }
 		has_tech = subtech_panzer_iii_td_equipment_1
 	}
 	
@@ -240,32 +206,30 @@ country_event = {
 	
 	option = {
 		name = ss_event.661.a
-		trigger = { is_ai = no }
+		
 		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 19
-				}
-				army_experience = 18
-			}
-			set_country_flag = LSSAH_regiment_40_mot
+			delete_unit_template_and_units = { division_template = "LSSAH Inf.-Regt.(mot.)40" }
+			load_oob = "GER_LSSAH_brigade_40"
+			set_country_flag = LSSAH_brigade_40
 		}
 	}
 }
-### ss_event.660 June 1940 Expand LSSAH Rgt to LSSAH Brigade (2 mot-Inf.-Rgt)
+### ss_event.660 Febr 1942 Expand LSSAH Brigade to Division 
+### adding 1 Pz-Rgt (2xPZ III and 1 PzIV Btl),1 Recon AC Comp.
 country_event = {
 	id = ss_event.660
 	title = ss_event.660.t
 	desc = ss_event.660.d
-	picture = GFX_report_event_ss_lssah_brigade_40
+	picture = GFX_report_event_ss_lssah_div_mot_42
 	
 	fire_only_once = yes
 	
 	trigger = {
-		tag = GER
-		is_ai = no
-		date > 1940.6.1
-		has_country_flag = LSSAH_regiment_40_mot
+		date > 1942.2.1
+		has_country_flag = LSSAH_brigade_40
+		NOT = { has_country_flag = LSSAH_mot_div_42 }
+		has_tech = subtech_panzer_iii_td_equipment_1
+		has_tech = tech_panzer_iv_equipment_3
 	}
 	
 	mean_time_to_happen = {
@@ -278,59 +242,32 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_army_experience < 21
+					is_ai = yes
+					NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
 				}
-				army_experience = 20
+				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
+				add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 50 producer = GER }
 			}
-
-			set_country_flag = LSSAH_regiment_40_brig
+			delete_unit_template_and_units = { division_template = "LSSAH Infanterie Brig" }
+			load_oob = "GER_LSSAH_mot_division_42"
+			set_country_flag = LSSAH_mot_div_42
 		}
 	}
 }
-## AI ##
-country_event = {
-	id = ss_event.595
-	title = ss_event.595.t
-	desc = ss_event.595.d
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		date > 1940.6.1
-		has_country_flag = LSSAH_inf_division_39_ai
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.595.a
-		ai_chance = { factor = 100 }
-		hidden_effect = {
-			load_oob = "GER_LSSAH_mot_division_40"
-			set_country_flag = LSSAH_mot_division_40_ai
-		}
-	}
-}
-### ss_event.659 Febr 1942 Expand LSSAH Brigade to Division 
-### adding 1 Pz-Rgt (2xPZ III and 1 PzIV Btl),1 Recon AC Comp.
-### AI gets SS Pzgren-Div LSSAH #make option B
+### ss_event.659 Nov 1942 Expand LSSAH Division to Pzgren-Div
 country_event = {
 	id = ss_event.659
 	title = ss_event.659.t
 	desc = ss_event.659.d
-	picture = GFX_report_event_ss_lssah_div_mot_42
+	picture = GFX_report_event_ss_lssah_pzgrendiv_42
 	
 	fire_only_once = yes
 	
 	trigger = {
 		tag = GER
-		is_ai = no
-		date > 1942.2.12
-		has_country_flag = LSSAH_regiment_40_brig
+		date > 1942.11.24
+		has_country_flag = LSSAH_mot_div_42
+		NOT = { has_country_flag = LSSAH_pzgren_div_42 }
 	}
 	
 	mean_time_to_happen = {
@@ -343,61 +280,21 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_army_experience < 44
-				}
-				# Use army XP to upgrade
-				army_experience = 43
-			}
-			set_country_flag = LSSAH_brig_42_div
-		}
-	}
-}
-## AI ##
-country_event = {
-	id = ss_event.594
-	title = ss_event.594.t
-	desc = ss_event.594.d
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		date > 1942.2.12
-		has_tech = tech_heavy_panzer_equipment_2
-		has_country_flag = LSSAH_mot_division_40_ai
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.594.a
-		
-		hidden_effect = {
-			if = {
-				limit = { 
+					is_ai = yes
 					NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
 				}
 				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
+				add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 50 producer = GER }
 			}
-			if = {
-				limit = { 
-					NOT = { has_tech = mechanised_infantry2 }
-				}
-				set_technology = { mechanised_infantry2 = 1 }
-			}
-			add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 50 producer = GER }
-			add_equipment_to_stockpile = { type = panzer_vi_equipment_2 amount = 12 producer = GER }
-			add_equipment_to_stockpile = { type = mechanized_equipment_2 amount = 100 producer = GER }
+			delete_unit_template_and_units = { division_template = "LSSAH Inf.-Div(mot.)" }
 			load_oob = "GER_LSSAH_pzgrendiv_42"
-			set_country_flag = LSSAH_pzgren_div_42_ai
+			set_country_flag = LSSAH_pzgren_div_42
 		}
 	}
 }
-### ss_event.658 Nov 1942 Mechanize to SS Pzgren-Div LSSAH
-### Mechanise the Inf.Rgt.(mot), Change 1 Pz.III to Pz.VI
+### ss_event.658 Nov 1942 Refit SS Pzgren-Div LSSAH to SS Pz.-Div LSSAH
+### Change Art-Rgt.(mot to Pz-Art-Rgt. Add 1 SS Rocket-Art-Btl. Move StuG to 5th Rgt
+### AI gets also SS Pz.-Div. LSSAH full. #make option B
 country_event = {
 	id = ss_event.658
 	title = ss_event.658.t
@@ -407,11 +304,13 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		is_ai = no
-		date > 1942.11.12
+		date > 1943.10.22
 		has_tech = mechanised_infantry2
 		has_tech = tech_heavy_panzer_equipment_2
-		has_country_flag = LSSAH_brig_42_div
+		has_tech = subtech_motorized_rocket_unit
+		has_tech = subtech_heavy_panzer_art_equipment_1
+		has_country_flag = LSSAH_pzgren_div_42
+		NOT = { has_country_flag = LSSAH_pz_div_43 }
 	}
 	
 	mean_time_to_happen = {
@@ -420,86 +319,19 @@ country_event = {
 	
 	option = {
 		name = ss_event.658.a
-		trigger = { is_ai = no }
+		
 		hidden_effect = {
 			if = {
 				limit = {
-					has_army_experience < 36
+					is_ai = yes
 				}
-				# Use army XP to upgrade
-				army_experience = 35
+				add_equipment_to_stockpile = { type = heavy_panzer_art_equipment_1 amount = 54 producer = GER }
+				add_equipment_to_stockpile = { type = motorized_rocket_equipment_1 amount = 20 producer = GER }
+				add_equipment_to_stockpile = { type = panzer_vi_equipment_2 amount = 25 producer = GER }
 			}
-			set_country_flag = LSSAH_pzgren_div_42
-		}
-	}
-}
-### ss_event.657 Nov 1942 Refit SS Pzgren-Div LSSAH to SS Pz.-Div LSSAH
-### Change Art-Rgt.(mot to Pz-Art-Rgt. Add 1 SS Rocket-Art-Btl. Move StuG to 5th Rgt
-### AI gets also SS Pz.-Div. LSSAH full. #make option B
-country_event = {
-	id = ss_event.657
-	title = ss_event.657.t
-	desc = ss_event.657.d
-	picture = GFX_report_event_ss_lssah_pzdiv_43
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = no
-		date > 1943.11.12
-		has_tech = subtech_motorized_rocket_unit
-		has_country_flag = LSSAH_pzgren_div_42
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.657.a
-		trigger = { is_ai = no }
-		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 16
-				}
-				# Use army XP to upgrade
-				army_experience = 15
-			}
-
+			delete_unit_template_and_units = { division_template = "SS Pzgren-Div LSSAH" }
+			load_oob = "GER_LSSAH_pzdiv_42"
 			set_country_flag = LSSAH_pz_div_43
-		}
-	}
-}
-## AI-event
-country_event = {
-	id = ss_event.593
-	title = ss_event.593.t
-	desc = ss_event.593.d
-	picture = GFX_report_event_ss_lssah_pzdiv_43
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		date > 1943.11.12
-		has_tech = mechanised_infantry2
-		has_tech = tech_heavy_panzer_equipment_2
-		has_country_flag = LSSAH_pzgren_div_42_ai
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.593.a
-		ai_chance = { factor = 100 }
-		hidden_effect = {
-			load_oob = "GER_LSSAH_pzdiv_43"
-			set_country_flag = LSSAH_pz_div_43_ai
 		}
 	}
 }
