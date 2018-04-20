@@ -274,204 +274,150 @@ attache_sent = {
 
 ### Difficulty modifiers
 diff_very_easy_player = {
-	production_factory_max_efficiency_factor = 0.15
-	production_lack_of_resource_penalty_factor = -0.25
-	industrial_capacity_factory = 0.1
-	research_time_factor = -0.10
-	political_power_factor = 0.15
-	army_morale_factor = 0.15
-	max_planning = 0.05
-	org_loss_when_moving = 0.1
+	political_power_factor = 0.2
+	production_factory_max_efficiency_factor = -0.05
+	production_lack_of_resource_penalty_factor = 0.05
+	max_planning = -0.03
 	
-	air_defence_factor = 0.35
+	convoy_escort_efficiency = -0.05
 }
 
 diff_easy_player = {
-	production_factory_max_efficiency_factor = 0.15
-	production_lack_of_resource_penalty_factor = -0.25
-	industrial_capacity_factory = 0.1
-	#research_time_factor = -0.05
 	political_power_factor = 0.1
-	army_morale_factor = 0.10
-	max_planning = -0.10
-	org_loss_when_moving = 0.1
-	
-	air_defence_factor = 0.35
-}
-diff_normal_player = {
-	production_factory_max_efficiency_factor = -0.15
+	production_factory_max_efficiency_factor = -0.1
 	production_lack_of_resource_penalty_factor = 0.10
-	max_planning = -0.15
+	max_planning = -0.06
 	
-	air_defence_factor = 0.35
+	convoy_escort_efficiency = -0.08
 }
-diff_hard_player = {
+
+diff_normal_player = {
+	political_power_factor = 0.05
 	production_factory_max_efficiency_factor = -0.15
-	production_lack_of_resource_penalty_factor = 0.20
-	industrial_capacity_factory = -0.1
-	research_time_factor = 0.15
-	political_power_factor = -0.1
-	army_morale_factor = -0.15
-	max_planning = -0.20
-	org_loss_when_moving = 0.1
+	production_lack_of_resource_penalty_factor = 0.15
+	max_planning = -0.09
 	
-	air_defence_factor = 0.35
+	convoy_escort_efficiency = -0.12
+}
+
+diff_hard_player = {
+	political_power_factor = -0.1
+	production_factory_max_efficiency_factor = -0.2
+	production_lack_of_resource_penalty_factor = 0.2
+	max_planning = -0.12
+	
+	convoy_escort_efficiency = -0.15
 }
 
 #Panzeroo Mode
 diff_very_hard_player = {
-	production_factory_max_efficiency_factor = -0.20
-	production_lack_of_resource_penalty_factor = 0.25
-	industrial_capacity_factory = -0.20
-	research_time_factor = 0.20
 	political_power_factor = -0.2
-	army_morale_factor = -0.2
-	max_planning = -0.30 #Micro this shit
-	org_loss_when_moving = 0.2
+	production_factory_max_efficiency_factor = -0.25
+	production_lack_of_resource_penalty_factor = 0.25
+	max_planning = -0.15
 	
-	air_defence_factor = 0.35
+	convoy_escort_efficiency = -0.20
 }
 diff_very_easy_ai = {
-	dig_in_speed_factor = 0.05
 	planning_speed = 0.05
 	amphibious_invasion = 0.05
 	invasion_preparation = -0.05
-	army_morale_factor = 0.05
-	special_forces_attack_factor = 0.2
+	
 	research_time_factor = -0.05
-	supply_consumption_factor = -0.1
+	supply_consumption_factor = -0.05
 	out_of_supply_factor = -0.05
-	org_loss_when_moving = -0.5
-	industry_free_repair_factor = 1 #Universal Bonuses, always the same.
-	industry_repair_factor = 1		#   ^^        ^^      ^^   ^^   ^^
-	industry_air_damage_factor = -0.05
-	line_change_production_efficiency_factor = 0.25
-	production_factory_efficiency_gain_factor = 1
-	production_lack_of_resource_penalty_factor = -0.2
 	
-	attrition = -0.5
-	enemy_partisan_effect = -0.5
-
-	air_defence_factor = 0.35
+	industry_free_repair_factor = 0.2
+	industry_repair_factor = 0.2
 	
-	convoy_escort_efficiency = 0.15
-	navy_max_range_factor = 0.15
-	experience_gain_army_factor = 5
+	production_lack_of_resource_penalty_factor = -0.05
+	
+	convoy_escort_efficiency = 0.05
+	
+	experience_gain_army_factor = 1
+	experience_gain_navy_factor = 1
+	experience_gain_air_factor = 1
 }
 diff_easy_ai = {
-	dig_in_speed_factor = 0.05
-	planning_speed = 0.10
-	amphibious_invasion = 0.10
-	invasion_preparation = -0.10
-	army_morale_factor = 0.05
-	special_forces_attack_factor = 0.3
-	research_time_factor = -0.05
-	supply_consumption_factor = -0.2
-	out_of_supply_factor = -0.10
-	org_loss_when_moving = -0.5
-	industry_free_repair_factor = 1
-	industry_repair_factor = 1
-	industry_air_damage_factor = -0.05
-	line_change_production_efficiency_factor = 0.25
-	production_factory_efficiency_gain_factor = 1
-	production_lack_of_resource_penalty_factor = -0.2
+	planning_speed = 0.1
+	amphibious_invasion = 0.1
+	invasion_preparation = -0.1
 	
-	attrition = -0.5
-	enemy_partisan_effect = -0.5
-
-	air_defence_factor = 0.35
+	research_time_factor = -0.5
+	supply_consumption_factor = -0.1
+	out_of_supply_factor = -0.1
 	
-	convoy_escort_efficiency = 0.15
-	navy_max_range_factor = 0.15
-	experience_gain_army_factor = 5
+	industry_free_repair_factor = 0.3
+	industry_repair_factor = 0.3
+	
+	production_lack_of_resource_penalty_factor = -0.1
+	
+	convoy_escort_efficiency = 0.1
+	
+	experience_gain_army_factor = 1
+	experience_gain_navy_factor = 1
+	experience_gain_air_factor = 1
 }
 diff_normal_ai = {
-	army_core_attack_factor = 0.05
-	army_core_defence_factor = 0.05
-	dig_in_speed_factor = 0.05
 	planning_speed = 0.15
 	amphibious_invasion = 0.15
 	invasion_preparation = -0.15
-	army_morale_factor = 0.05
-	special_forces_attack_factor = 0.15
-	research_time_factor = -0.05
-	supply_consumption_factor = -0.2
-	out_of_supply_factor = -0.15
-	org_loss_when_moving = -0.5
-	industry_free_repair_factor = 1
-	industry_repair_factor = 1
-	industry_air_damage_factor = -0.10
-	line_change_production_efficiency_factor = 0.25
-	production_factory_efficiency_gain_factor = 1
-	production_lack_of_resource_penalty_factor = -0.3
 	
+	research_time_factor = -0.1
+	supply_consumption_factor = -0.1
+	out_of_supply_factor = -0.1
 	
-	attrition = -0.5
-	enemy_partisan_effect = -0.5
-
-	air_defence_factor = 0.35
+	industry_free_repair_factor = 0.4
+	industry_repair_factor = 0.4
 	
-	convoy_escort_efficiency = 0.20
-	navy_max_range_factor = 0.20
-	experience_gain_army_factor = 5
+	production_lack_of_resource_penalty_factor = -0.15
+	
+	convoy_escort_efficiency = 0.15
+	
+	experience_gain_army_factor = 1
+	experience_gain_navy_factor = 1
+	experience_gain_air_factor = 1
 }
 diff_hard_ai = {
-	army_core_attack_factor = 0.10
-	army_core_defence_factor = 0.10
-	dig_in_speed_factor = 0.15
-	planning_speed = 0.25
-	amphibious_invasion = 0.20
-	invasion_preparation = -0.20
-	army_morale_factor = 0.15
-	special_forces_attack_factor = 0.3
-	research_time_factor = -0.05
-	supply_consumption_factor = -0.2
-	out_of_supply_factor = -0.2
-	org_loss_when_moving = -0.5
-	industry_free_repair_factor = 1
-	industry_repair_factor = 1
-	industry_air_damage_factor = -0.15
-	consumer_goods_factor = -0.03
-	line_change_production_efficiency_factor = 1
-	production_factory_efficiency_gain_factor = 1
-	production_lack_of_resource_penalty_factor = -0.5
+	planning_speed = 0.2
+	amphibious_invasion = 0.15
+	invasion_preparation = -0.15
 	
-	attrition = -0.5
-	enemy_partisan_effect = -0.5
-
-	air_defence_factor = 0.35
-	convoy_escort_efficiency = 0.25
-	navy_max_range_factor = 0.30
-	experience_gain_army_factor = 5
+	research_time_factor = -0.1
+	supply_consumption_factor = -0.15
+	out_of_supply_factor = -0.15
+	
+	industry_free_repair_factor = 0.5
+	industry_repair_factor = 0.5
+	
+	production_lack_of_resource_penalty_factor = -0.2
+	
+	convoy_escort_efficiency = 0.20
+	
+	experience_gain_army_factor = 1
+	experience_gain_navy_factor = 1
+	experience_gain_air_factor = 1
 }
 #Destroy them
 diff_very_hard_ai = {
-	army_core_attack_factor = 0.15
-	army_core_defence_factor = 0.15
-	dig_in_speed_factor = 0.25
-	planning_speed = 0.35
-	amphibious_invasion = 0.25
-	invasion_preparation = -0.25
-	army_morale_factor = 0.20
-	research_time_factor = -0.05 #Dont go too high ;No nukes in 41
-	supply_consumption_factor = -0.25 #Also not too high, Soviet get -25 as well. If too high supply becomes negative
-	out_of_supply_factor = -0.3
-	org_loss_when_moving = -0.8 #Whats strategic redeployment?
-	industry_free_repair_factor = 1
-	industry_repair_factor = 2 #Whats Bombing?
-	industry_air_damage_factor = -0.20
-	consumer_goods_factor = -0.05
-	line_change_production_efficiency_factor = 1
-	production_factory_efficiency_gain_factor = 1
-	production_lack_of_resource_penalty_factor = -0.5 #Not too high, otherwise Resources arent needed at all
+	planning_speed = 0.25
+	amphibious_invasion = 0.2
+	invasion_preparation = -0.2
 	
-	attrition = -0.75
-	enemy_partisan_effect = -1 #Damn..
-
-	air_defence_factor = 0.35
-	convoy_escort_efficiency = 0.3
-	navy_max_range_factor = 0.5
-	experience_gain_army_factor = 5
+	research_time_factor = -0.15
+	supply_consumption_factor = -0.2
+	out_of_supply_factor = -0.2
+	
+	industry_free_repair_factor = 0.6
+	industry_repair_factor = 0.6
+	
+	production_lack_of_resource_penalty_factor = -0.2
+	
+	convoy_escort_efficiency = 0.25
+	
+	experience_gain_army_factor = 1
+	experience_gain_navy_factor = 1
+	experience_gain_air_factor = 1
 }
 diff_strong_ai_generic = {
 	dig_in_speed_factor = 0.40
