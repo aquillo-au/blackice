@@ -19,6 +19,7 @@ country_event = { #immediate call to arms for AI on war declarations, otherwise 
 			limit = {
 				GER = { is_ai = no }
 				ENG = { is_ai = yes }
+				threat > 0.24
 				POL = { 
 					is_ai = yes
 					has_war_with = GER
@@ -38,6 +39,7 @@ country_event = { #immediate call to arms for AI on war declarations, otherwise 
 			limit = {
 				GER = { is_ai = no }
 				ENG = { is_ai = yes }
+				threat > 0.24
 				DEN = { 
 					is_ai = yes
 					has_war_with = GER
@@ -55,6 +57,7 @@ country_event = { #immediate call to arms for AI on war declarations, otherwise 
 			limit = {
 				GER = { is_ai = no }
 				ENG = { is_ai = yes }
+				threat > 0.24
 				LUX = { 
 					is_ai = yes
 					has_war_with = GER
@@ -64,7 +67,7 @@ country_event = { #immediate call to arms for AI on war declarations, otherwise 
 				is_historical_focus_on = yes
 			}
 			ENG = { add_to_faction = POL } 
-			ENG = { add_to_war = { targeted_alliance = LUX enemy = GER } }
+			ENG = { add_to_war = { targeted_alliance = POL enemy = GER } }
 			LUX = { set_country_flag = allies }
 		}
 	}

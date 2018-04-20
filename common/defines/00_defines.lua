@@ -265,7 +265,7 @@ NCountry = {
 	BASE_COMMAND_POWER_GAIN = 0.006,				-- base value for daily command power gain
 	AIR_VOLUNTEER_PLANES_LIMIT = 0.2,				-- Ratio for volunteer planes available for sending in relation to sender air force
 	AIR_VOLUNTEER_BASES_CAPACITY_LIMIT = 0.1,		-- Ratio for volunteer planes available for sending in relation to receiver air base capacity
-	ATTACHE_XP_SHARE = 0.2,							-- Country received xp from attaches
+	ATTACHE_XP_SHARE = 0.15,							-- Country received xp from attaches
 	SPECIAL_FORCES_CAP_BASE = 0.05,					-- Max ammount of special forces battalions is total number of non-special forces battalions multiplied by this and modified by a country modifier
 	SPECIAL_FORCES_CAP_MIN = 24,					-- You can have a minimum of this many special forces battalions, regardless of the number of non-special forces battalions you have, this can also be modified by a country modifier
 	DAYS_OF_WAR_BEFORE_SURRENDER = 7,				-- Number of days a war has to have existed before anyone can surrender in it
@@ -273,7 +273,7 @@ NCountry = {
 
 NProduction = {
 	MAX_EQUIPMENT_RESOURCES_NEED = 5, 						-- Max number of different strategic resources an equipment can be dependent on.
-	MAX_CIV_FACTORIES_PER_LINE = 15,						-- Max number of factories that can be assigned a single production line.
+	MAX_CIV_FACTORIES_PER_LINE = 16,						-- Max number of factories that can be assigned a single production line.
 	MAX_NAV_FACTORIES_PER_LINE = 10,
 	MAX_MIL_FACTORIES_PER_LINE = 150,
 	EFFICIENCY_LOSS_PER_UNUSED_DAY = 1,						-- Daily loss of efficiency for unused factory slots ( efficiency is tracked per factory slot in the production line )
@@ -539,9 +539,9 @@ NMilitary = {
 	LAND_COMBAT_ATTACKER_WINNING = 0.7,		  			-- Above this means attacker is winning
 	LAND_COMBAT_DEFENDER_WINNING = 0.35,		  			-- Below this means defender is winning
 	PLAN_CONSIDERED_GOOD = 0.6,					-- Plan evaluations above this value are considered more or less safe
-	PLAN_CONSIDERED_BAD = 0.3,					-- Plan evaluations below this value are considered unsafe
-	PLAN_MIN_AUTOMATED_EMPTY_POCKET_SIZE = 3,				-- The battle plan system will only automatically attack provinces in pockets that has no resistance and are no bigger than these many provinces
-	PLAN_SPREAD_ATTACK_WEIGHT = 50.0,						-- DNM, original 13 (AI overhaul mod) -- The higher the value, the less it should crowd provinces with multiple attacks.
+	PLAN_CONSIDERED_BAD = -0.3,					-- Plan evaluations below this value are considered unsafe
+	PLAN_MIN_AUTOMATED_EMPTY_POCKET_SIZE = 2,				-- The battle plan system will only automatically attack provinces in pockets that has no resistance and are no bigger than these many provinces
+	PLAN_SPREAD_ATTACK_WEIGHT = 13.0,						-- DNM, original 13 (AI overhaul mod) -- The higher the value, the less it should crowd provinces with multiple attacks.
 	PLAN_SUPPLY_FACTOR = 0.1,								-- DNM, original 0.1 (AI mod) -- Factor applied to available supply on a front location when determining priority
 	PLAN_NEIGHBORING_ENEMY_PROVINCE_FACTOR = 0.7,			-- When calculating the importance of provinces, it takes number of enemy provinces into account, factored by this
 	PLAN_PROVINCE_BASE_IMPORTANCE = 2.0,					-- Used when calculating the calue of front and defense area provinces for the battle plan system
@@ -584,7 +584,7 @@ NMilitary = {
 	PLAN_EXECUTE_CAREFUL_LIMIT = 10,						-- When looking for an attack target, this score limit is required in the battle plan to consider province for attack
 	PLAN_EXECUTE_BALANCED_LIMIT = -1,						-- When looking for an attack target, this score limit is required in the battle plan to consider province for attack
 	PLAN_EXECUTE_RUSH = -200,								-- When looking for an attack target, this score limit is required in the battle plan to consider province for attack
-	PLAN_EXECUTE_CAREFUL_MAX_FORT = 5,						-- If execution mode is set to careful, units will not attack provinces with fort levels greater than or equal to this
+	PLAN_EXECUTE_CAREFUL_MAX_FORT = 4,						-- If execution mode is set to careful, units will not attack provinces with fort levels greater than or equal to this
 	
 	PLAN_MAX_PROGRESS_TO_JOIN = 0.50,						-- If Lower progress than this, probably needs support
 	
@@ -596,12 +596,12 @@ NMilitary = {
 	EQUIPMENT_REPLACEMENT_RATIO = 0.1,						-- Equipment min ratio after blocking the equipment type
 	NUKE_DELAY_HOURS = 12,									-- How many hours does it take for the nuclear drop to happen
 	PARADROP_PENALTY = -0.3, 								-- Combat penalty when recently paradropped
-	PARADROP_HOURS = 24,									-- time paratroopers suffer penalties in combat
+	PARADROP_HOURS = 36,									-- time paratroopers suffer penalties in combat
 	COMBAT_SUPPLY_LACK_IMPACT = -0.4,						-- combat penalty if out of supply
 	COMBAT_STACKING_START = 10,								-- at what nr of divisions stacking penalty starts
 	COMBAT_STACKING_EXTRA = 4,                      		-- extra stacking from directions
 	COMBAT_STACKING_PENALTY = -0.02,               			-- how much stackign penalty per division
-	COMBAT_OVER_WIDTH_PENALTY = -1,							-- over combat width penalty per %.
+	COMBAT_OVER_WIDTH_PENALTY = -2,							-- over combat width penalty per %.
 	COMBAT_OVER_WIDTH_PENALTY_MAX = -0.33,					-- over combat width max (when you cant join no more).
 	RETREAT_SPEED_FACTOR = 0.25,                    		-- speed bonus when retreating
 	WITHDRAWING_SPEED_FACTOR = 0.15,				-- speed bonus when withdrawing
@@ -630,10 +630,10 @@ NMilitary = {
 	DISBAND_MANPOWER_LOSS = 0.9,
 	MIN_DIVISION_DEPLOYMENT_TRAINING = 0.2,			-- Min level of division training
 	
-	FRONT_MIN_PATH_TO_REDEPLOY = 8,					-- If a units path is at least this long to reach its front location, it will strategically redeploy.
+	FRONT_MIN_PATH_TO_REDEPLOY = 5,					-- If a units path is at least this long to reach its front location, it will strategically redeploy.
 	ARMY_INITIATIVE_REINFORCE_FACTOR = 0.25,		-- scales initiative for reinforce chance
 	
-	BASE_CAPTURE_EQUIPMENT_RATIO = 0.02,				-- after a successful land combat, ratio of the equipments that are being captured/salvaged from enemy's lost equipment
+	BASE_CAPTURE_EQUIPMENT_RATIO = 0.01,				-- after a successful land combat, ratio of the equipments that are being captured/salvaged from enemy's lost equipment
 
 	ACCLIMATIZATION_IN_COMBAT_SPEED_FACTOR = 3,		-- Acclimatization speed multiplier while being in combat.
 	ACCLIMATIZATION_SPEED_GAIN = 0.15,				-- A variable used to balance the overall speed of gaining the acclimatization
@@ -706,7 +706,7 @@ NMilitary = {
 	XP_DECAY_RATE_PER_HOUR_IN_COMBAT = 0.03,				-- you get reduced XP as combat drags
 	MIN_XP_RATE_TO_DECAY = 0.1,								-- minimum XP factor for dragged combats
 	
-	XP_GAIN_PER_OVERRUN_UNIT = 30.0,						-- fixed XP gain per overrun unit
+	XP_GAIN_PER_OVERRUN_UNIT = 20.0,						-- fixed XP gain per overrun unit
 	XP_GAIN_FOR_SHATTERING = 10.0,                          -- extra multiplier on XP gain on shattering an encircled enemy
 },
 
@@ -1132,10 +1132,10 @@ NAI = {
 	GENERATE_WARGOAL_ANTAGONIZE_SCALE = 0.35,    -- works to scale the AIs antagonize value vs the threat baseline for when it should act on existing claims: threat used for baseline is min_threat - antagonize * scale
 	RESERVE_TO_COMMITTED_BALANCE = 0.1,					-- DNM, originla 0.1 (ai overhaul mod) -- How many reserves compared to number of committed divisions in a combat (1.0 = as many as reserves as committed)
 	DIPLOMACY_COMMUNIST_NOT_NEIGHBOUR = -10,			-- Communists want to stay consolidated with their influence
-	MAIN_ENEMY_FRONT_IMPORTANCE = 20.0,					-- How much extra focus the AI should put on who it considers to be its current main enemy.
+	MAIN_ENEMY_FRONT_IMPORTANCE = 15.0,					-- How much extra focus the AI should put on who it considers to be its current main enemy.
 	EASY_TARGET_FRONT_IMPORTANCE = 10.0,					-- How much extra focus the AI should put on who it considers to be the easiest target.
-	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.15,			-- If less than this fraction of units on a front is moving, AI sees it as ready for action	
-	MICRO_POCKET_SIZE = 6,								-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
+	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.18,			-- If less than this fraction of units on a front is moving, AI sees it as ready for action	
+	MICRO_POCKET_SIZE = 5,								-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
 	POCKET_DISTANCE_MAX = 40000,						-- shortest square distance we bother about chasing pockets
 	VP_LEVEL_IMPORTANCE_HIGH = 30,						-- Victory points with values higher than or equal to this are considered to be of high importance.
 	VP_LEVEL_IMPORTANCE_MEDIUM = 10,						-- Victory points with values higher than or equal to this are considered to be of medium importance.
@@ -1147,17 +1147,17 @@ NAI = {
 	FRONT_TERRAIN_DEFENSE_FACTOR = 5.0,					-- Multiplier applied to unit defense modifier for terrain on front province multiplied by terrain importance
 	FRONT_TERRAIN_ATTACK_FACTOR = 5.0,					-- Multiplier applied to unit attack modifier for terrain on enemy front province multiplied by terrain importance
 	
-	BASE_DISTANCE_TO_CARE = 800.0,						-- Countries that are too far away are less interesting in diplomacy
+	BASE_DISTANCE_TO_CARE = 500.0,						-- Countries that are too far away are less interesting in diplomacy
 	MIN_FORCE_RATIO_TO_PROTECT = 0.5,					-- Tiny countries should not feel protective or really large ones
 	
 	ORG_UNIT_STRONG = 0.85,								-- Organization % for unit to be considered strong
 	STR_UNIT_STRONG = 0.9,								-- Strength (equipment) % for unit to be considered strong
 	
-	ORG_UNIT_WEAK = 0.6,								-- Organization % for unit to be considered weak
-	STR_UNIT_WEAK = 0.6,								-- Strength (equipment) % for unit to be considered weak
+	ORG_UNIT_WEAK = 0.4,								-- Organization % for unit to be considered weak
+	STR_UNIT_WEAK = 0.4,								-- Strength (equipment) % for unit to be considered weak
 	
-	ORG_UNIT_NORMAL = 0.75,						-- Organization % for unit to be considered normal
-	STR_UNIT_NORMAL = 0.8,						-- Strength (equipment) % for unit to be considered normal
+	ORG_UNIT_NORMAL = 0.7,						-- Organization % for unit to be considered normal
+	STR_UNIT_NORMAL = 0.7,						-- Strength (equipment) % for unit to be considered normal
 	
 	PLAN_FACTION_STRONG_TO_EXECUTE = 0.65,				-- % or more of units in an order to consider ececuting the plan
 	PLAN_FACTION_NORMAL_TO_EXECUTE = 0.65,		-- % or more of units in an order to consider executing the plan
@@ -1239,68 +1239,68 @@ NAI = {
 	STOP_TRAINING_EQUIPMENT_LEVEL = 0.7,                -- was 0.9 ai will not train if equipment drops below this level
 	BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.01,	-- was 0.001 How much lack of resources are worth when evaluating what to build.
 	DIVISION_DESIGN_WEIGHTS = {							-- Base values used by AI to evaluate value of a stat
-		-- Army Values
-		0.5, -- default_morale
-		1.0, -- defense
-		1.0, -- breakthrough
-		1.0, -- hardness
-		1.2, -- soft_attack
-		0.7, -- hard_attack
-		0.0, -- recon
-		0.0, -- entrenchment
-		0.0, -- initiative
-		0.0, -- casualty_trickleback
-		0.0, -- supply_consumption_factor
-		0.0, -- supply_consumption
-		0.0, -- suppression
-		0.0, -- suppression_factor
-		0.0, -- experience_loss_factor
-		0.0, -- equipment_capture_factor
-		-- Navy Values
-		1.0,   -- surface_detection
-		1.0,   -- sub_detection
-		0.0,   -- surface_visibility
-		0.0,   -- sub_visibility
-		1.0,   -- shore_bombardment
-		1.0,   -- fire_range
-		1.0,   -- evasion
-		1.0,   -- torpedo_attack
-		1.0,   -- sub_attack
-		1.0,   -- attack
-		0.0,   -- port_capacity_usage
-		1.0,   -- anti_air_attack
-		0.0,   -- amphibious_defense
-		1.0,   -- naval_speed
-		1.0,   -- naval_range
-		0.0,   -- convoy_raiding_coordination
-		0.0,   -- patrol_coordination
-		0.0,   -- search_and_destroy_coordination
-		-- Air Values
-		3.0,   -- air_range
-		3.0,   -- air_defence
-		3.0,   -- air_attack
-		1.0,   -- air_agility
-		3.0,   -- air_bombing
-		0.0,   -- air_superiority
-		0.0,   -- naval_strike_attack
-		0.0,   -- naval_strike_targetting
-		3.0,   -- air_ground_attack
-		0.0,   -- air_visibility_factor
-		-- Common Values
-		1.0, -- max_organisation
-		1.0, -- max_strength
-		1.0, -- maximum_speed
-		1.0, -- armor_value
-		0.5, -- ap_attack
-		0.0, -- reliability
-		0.0, -- reliability_factor
-		-0.25, -- weight
-		-- Special Values
-		1.0,   -- strategic_attack
-		1.0,   -- carrier_size
-		0.0, -- acclimatization hot gain
-		0.0, -- acclimatization cold gain
-		-0.5, -- build_cost_ic
+	-- Army Values
+	0.1, -- default_morale
+	0.1, -- defense
+	0.1, -- breakthrough
+	0.1, -- hardness
+	0.1, -- soft_attack
+	0.1, -- hard_attack
+	0.0, -- recon
+	0.0, -- entrenchment
+	0.0, -- initiative
+	0.0, -- casualty_trickleback
+	0.0, -- supply_consumption_factor
+	0.0, -- supply_consumption
+	0.0, -- suppression
+	0.0, -- suppression_factor
+	0.0, -- experience_loss_factor
+	0.0, -- equipment_capture_factor
+	-- Navy Values
+	0.0, -- surface_detection
+	0.0, -- sub_detection
+	0.0, -- surface_visibility
+	0.0, -- sub_visibility
+	0.0, -- shore_bombardment
+	0.0, -- fire_range
+	0.1, -- evasion
+	0.1, -- torpedo_attack
+	0.1, -- sub_attack
+	0.1, -- attack
+	0.0, -- port_capacity_usage
+	0.0, -- anti_air_attack
+	0.0, -- amphibious_defense
+	0.0, -- naval_speed
+	0.0, -- naval_range
+	0.0, -- convoy_raiding_coordination
+	0.0, -- patrol_coordination
+	0.0, -- search_and_destroy_coordination
+	-- Air Values
+	0.0, -- air_range
+	0.1, -- air_defence
+	0.1, -- air_attack
+	0.1, -- air_agility
+	0.1, -- air_bombing
+	0.0, -- air_superiority
+	0.1, -- naval_strike_attack
+	0.0, -- naval_strike_targetting
+	0.1, -- air_ground_attack
+	0.0, -- air_visibility_factor
+	-- Common Values
+	0.1, -- max_organisation
+	0.1, -- max_strength
+	0.1, -- maximum_speed
+	0.1, -- armor_value
+	0.1, -- ap_attack
+	0.1, -- reliability
+	0.1, -- reliability_factor
+	0.1, -- weight
+	-- Special Values
+	0.1, -- strategic_attack
+	0.1, -- carrier_size
+	0.0, -- acclimatization hot gain
+	0.0, -- acclimatization cold gain
+	0.1, -- build_cost_ic
 	},
 	DIVISION_DESIGN_MANPOWER_WEIGHT = 0,
 	DIVISION_DESIGN_STOCKPILE_WEIGHT = 0,
@@ -1342,7 +1342,7 @@ NAI = {
 	MAX_MICRO_ATTACKS_PER_ORDER = 4,						-- AI goes through its orders and checks if there are situations to take advantage of
 	FALLBACK_LOSING_FACTOR = 0.0,					-- The lower this number, the longer the AI will hold the line before sending them to the fallback line
 	PRODUCTION_MAX_PROGRESS_TTO_SWITCH_NAVAL = 0.3,		-- AI will not replace ships being built by newer types if progress is above this
-	STATE_CONTROL_FOR_AREA_DEFENSE = 0.45,					-- To avoid AI sending area defense to area with very little foothold
+	STATE_CONTROL_FOR_AREA_DEFENSE = 0.5,					-- To avoid AI sending area defense to area with very little foothold
 	FORCE_FACTOR_AGAINST_EXTRA_MINOR = 0.15,					-- AI considers generating wargoals against minors below this % of force compared to themselves to get at a bigger enemy.
 	MAX_EXTRA_WARGOAL_GENERATION = 2,						-- AI may want to generate wargoals against weak minors to get at larger enemy, but never more that this at any given time.
 	NAVAL_MISSION_DISTANCE_BASE = 3500,						-- Base value when AI is evaluating distance score to places
@@ -1509,7 +1509,7 @@ NAI = {
 	MAX_AVAILABLE_MANPOWER_RATIO_TO_BUFFER_PEACETIME = 0.2,		-- deployment will try to buffer a ratio of manpower (for reinforcements) during peace time
 	
 	MANPOWER_RATIO_REQUIRED_TO_PRIO_MOBILIZATION_LAW = 0.4,		-- percentage of manpower in field is desired to be buffered for AI when it has upcoming wars or already at war. if it has less manpower, it will prio manpower laws
-	UPGRADES_DEFICIT_LIMIT_DAYS = 150,                           -- Ai will avoid upgrading units in the field to new templates if it takes longer than this to fullfill their equipment need
+	UPGRADES_DEFICIT_LIMIT_DAYS = 180,                           -- Ai will avoid upgrading units in the field to new templates if it takes longer than this to fullfill their equipment need
 
 },
 

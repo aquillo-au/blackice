@@ -232,3 +232,15 @@ defined_text = { #
 		localization_key = SS_rebellious
 	}
 }
+
+defined_text = { #
+	name = GetSpanishBattlesWon
+	text = {
+		trigger = {
+			tag = GER
+			check_variable = { var = condor_legion_battles_won value = 0 compare = greater_than_or_equals }
+			check_variable = { var = condor_legion_battles_won value = 31 compare = less_than }
+		}
+		localization_key = Spanish_Battles
+	}
+}

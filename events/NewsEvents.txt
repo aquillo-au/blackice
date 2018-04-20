@@ -2204,13 +2204,13 @@ news_event = {
 	option = {
 		name = news.63.a
 		trigger = {
-			NOT = { tag = SPA }
+			NOT = { original_tag = SPR }
 		}
 	}
 	option = {
 		name = news.63.b
 		trigger = { 
-			tag = SPA
+			original_tag = SPR
 		}
 	}
 }
@@ -2227,19 +2227,17 @@ news_event = {
 	trigger = {
 		has_global_flag = spanish_civil_war
 		NOT = { has_global_flag = scw_over }
-		tag = SPA
-		SPR = { exists = no }
-		#SPR = { has_civil_war = no }
-		#any_other_country = {
-		#	original_tag = SPR
-		#	has_government = fascism
-		#}
-		#all_country = {
-		#	OR = {
-		#		NOT = { original_tag = SPR }
-		#		has_government = fascism
-		#	}
-		#}
+		SPR = { has_civil_war = no }
+		any_other_country = {
+			original_tag = SPR
+			has_government = fascism
+		}
+		all_country = {
+			OR = {
+				NOT = { original_tag = SPR }
+				has_government = fascism
+			}
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -2254,13 +2252,303 @@ news_event = {
 	option = {
 		name = news.64.a
 		trigger = {
-			NOT = { tag = SPA }
+			NOT = { original_tag = SPR }
 		}
 	}
 	option = {
 		name = news.64.b
-		trigger = { tag = SPA }
-		delete_unit_template_and_units = { division_template = "Brigada Legionario" }
+		trigger = { original_tag = SPR }
+		delete_unit_template_and_units = { division_template = "Brigada Internacionales I" }
+		delete_unit_template_and_units = { division_template = "Brigada Internacionales II" }
+		
+		remove_ideas = SPR_desperate_defences
+		add_offsite_building = { type = arms_factory level = -20 }
+		
+		
+		
+		169 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 7183
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 1178
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 1048
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 879
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 875
+			}
+		}
+		174 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 918
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 4024
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 726
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9699
+			}
+		}
+		171 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11677
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11692
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 758
+			}
+		}
+		173 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9979
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 747
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 1192
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 7196
+			}
+		}
+		168 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 10024
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11807
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11884
+			}
+		}
+		176 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11825
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 885
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 884
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3887
+			}
+		}
+		175 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6800
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9778
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9757
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3945
+			}
+		}
+		172 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 740
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 738
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3735
+			}
+		}
+		167 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6906
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 962
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9896
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3873
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6856
+			}
+		}
+		166 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3816
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9813
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11821
+			}
+		}
+		41 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3938
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6914
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 896
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3794
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9767
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3858
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 858
+			}
+		}
+		165 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9764
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6836
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 872
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 897
+			}
+		}
+		170 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6954
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6948
+			}
+		}
+		
+	
 	}
 }
 
@@ -2276,19 +2564,17 @@ news_event = {
 	trigger = {
 		has_global_flag = spanish_civil_war
 		NOT = { has_global_flag = scw_over }
-		tag = SPR
-		SPA = { exists = no }
-		#SPR = { has_civil_war = no }
-		#any_other_country = {
-		#	tag = SPA
-		##	NOT = { has_government = fascism }
-		#}
-		#all_country = {
-		#	OR = {
-		#		NOT = { tag = SPA }
-		#		NOT = { has_government = fascism }
-		#	}
-		#}
+		SPR = { has_civil_war = no }
+		any_other_country = {
+			original_tag = SPR
+			NOT = { has_government = fascism }
+		}
+		all_country = {
+			OR = {
+				NOT = { original_tag = SPR }
+				NOT = { has_government = fascism }
+			}
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -2309,7 +2595,300 @@ news_event = {
 	option = {
 		name = news.64.b
 		trigger = { tag = SPR }
-		delete_unit_template_and_units = { division_template = "Brigada Internacionales" }
+		delete_unit_template_and_units = { division_template = "División de Infantería" }
+		delete_unit_template_and_units = { division_template = "Militia" }
+		delete_unit_template_and_units = { division_template = "Brigada Legionario" }
+		delete_unit_template_and_units = { division_template = "Brigada Legionario II" }
+		delete_unit_template_and_units = { division_template = "Brigada Legionario III" }
+		
+		remove_ideas = SPR_desperate_defences
+		add_offsite_building = { type = arms_factory level = -20 }
+		
+	
+		
+		169 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 7183
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 1178
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 1048
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 879
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 875
+			}
+		}
+		174 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 918
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 4024
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 726
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9699
+			}
+		}
+		171 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11677
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11692
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 758
+			}
+		}
+		173 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9979
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 747
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 1192
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 7196
+			}
+		}
+		168 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 10024
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11807
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11884
+			}
+		}
+		176 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11825
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 885
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 884
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3887
+			}
+		}
+		175 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6800
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9778
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9757
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3945
+			}
+		}
+		172 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 740
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 738
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3735
+			}
+		}
+		167 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6906
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 962
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9896
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3873
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6856
+			}
+		}
+		166 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3816
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9813
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 11821
+			}
+		}
+		41 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3938
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6914
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 896
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3794
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9767
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 3858
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 858
+			}
+		}
+		165 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 9764
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6836
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 872
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 897
+			}
+		}
+		170 = {
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6954
+			}
+			remove_building = {
+				type = pillbox
+				level = 1
+				province = 6948
+			}
+		}
+		
+	
 	}
 }
 
@@ -4768,17 +5347,13 @@ news_event = {
 	
 	trigger = {
 		any_other_country = {
-			tag = SPA
+			original_tag = SPR
 			controls_state = 118
 			has_war_with = ENG
 		}
 		118 = { is_owned_by = ENG }
 		NOT = {
-			tag = SPR
-			OR = {
-				has_global_flag = spanish_civil_war
-				has_civil_war = yes
-			}
+			SPR = { has_civil_war = yes }
 		}
 		NOT = { has_global_flag = fall_of_gibraltar_spa }
 	}
@@ -4794,14 +5369,14 @@ news_event = {
 	option = {
 		name = news.145.a
 		trigger = {
-			NOT = { tag = SPA }
+			NOT = { original_tag = SPR }
 			NOT = { tag = ENG }
 		}
 	}
 	option = {
 		name = news.132.b
 		trigger = { 
-			tag = SPA
+			original_tag = SPR
 		}
 	}
 	option = {
@@ -5310,17 +5885,15 @@ news_event = {
 	major = yes
 	
 	trigger = {
-		has_country_flag = impossible
-		or = {
-			has_global_flag = spanish_civil_war
-			has_civil_war = yes}
+		has_global_flag = spanish_civil_war
+		SPR = { has_civil_war = no }
 		NOT = { has_global_flag = scw_over }
 		any_other_country = {
-			tag = SPA
+			original_tag = SPR
 			has_government = fascism
 		}
 		any_other_country = {
-			tag = SPR
+			original_tag = SPR
 			NOT = { has_government = fascism }
 		}
 	}
@@ -5336,12 +5909,12 @@ news_event = {
 	option = {
 		name = news.162.a
 		trigger = {
-			NOT = { tag = SPA }
+			NOT = { original_tag = SPR }
 		}
 	}
 	option = {
 		name = news.162.b
-		trigger = { tag = SPA }
+		trigger = { original_tag = SPR }
 	}
 }
 
@@ -6229,7 +6802,7 @@ news_event = {
 				tag = GER
 				tag = ITA
 				AND = {
-					tag = SPA
+					original_tag = SPR
 					has_government = fascism
 				}
 				tag = SOV
@@ -8920,7 +9493,7 @@ news_event = {
 		hidden_effect = {
 			random_other_country = {
 				limit = {
-					tag = SPA
+					original_tag = SPR
 				}
 				save_event_target_as = Spain
 			}
@@ -8930,7 +9503,7 @@ news_event = {
 	option = {
 		name = news.224.a
 		trigger = {
-			tag = SPA
+			original_tag = SPR
 		}
 	}
 
@@ -8938,7 +9511,7 @@ news_event = {
 		name = news.224.b
 		trigger = {
 			NOT = {
-				tag = SPA
+				original_tag = SPR
 			}
 			OR = {
 				has_government = fascism
@@ -8952,7 +9525,7 @@ news_event = {
 		trigger = {
 			NOT = {
 				OR = {
-					tag = SPR
+					original_tag = SPR
 					has_government = fascism
 					has_government = communism
 				}

@@ -20,6 +20,19 @@ set_variable = {
 	value = 0
 }
 
+set_variable = { 
+	var = condor_legion_battles_won 
+	value = 0 
+}
+
+clamp_variable = { 
+	var = condor_legion_battles_won 
+	min = 0 
+	max = 30 
+}
+
+set_country_flag = begin_counting_battles
+
 activate_mission = GER_mefo_bills_mission
 activate_decision = GER_Berghof
 activate_mission = GER_Berghof_mission
