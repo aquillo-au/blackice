@@ -2257,11 +2257,16 @@ news_event = {
 	}
 	option = {
 		name = news.64.b
-		trigger = { original_tag = SPR }
-		delete_unit_template_and_units = { division_template = "Brigada Internacionales I" }
-		delete_unit_template_and_units = { division_template = "Brigada Internacionales II" }
+		trigger = { original_tag = SPR has_government = fascism }
 		
-		remove_ideas = SPR_desperate_defences
+		
+		delete_unit_template_and_units = { division_template = "División de Infantería" }
+		delete_unit_template_and_units = { division_template = "Militia" }
+		delete_unit_template_and_units = { division_template = "Brigada Legionario" }
+		delete_unit_template_and_units = { division_template = "Brigada Legionario II" }
+		delete_unit_template_and_units = { division_template = "Brigada Legionario III" }
+		
+		remove_ideas = SPA_desperate_defences
 		add_offsite_building = { type = arms_factory level = -20 }
 		
 		
@@ -2595,11 +2600,8 @@ news_event = {
 	option = {
 		name = news.64.b
 		trigger = { tag = SPR }
-		delete_unit_template_and_units = { division_template = "División de Infantería" }
-		delete_unit_template_and_units = { division_template = "Militia" }
-		delete_unit_template_and_units = { division_template = "Brigada Legionario" }
-		delete_unit_template_and_units = { division_template = "Brigada Legionario II" }
-		delete_unit_template_and_units = { division_template = "Brigada Legionario III" }
+		delete_unit_template_and_units = { division_template = "Brigada Internacionales I" }
+		delete_unit_template_and_units = { division_template = "Brigada Internacionales II" }
 		
 		remove_ideas = SPR_desperate_defences
 		add_offsite_building = { type = arms_factory level = -20 }
