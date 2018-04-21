@@ -137,19 +137,19 @@ ideas = {
 			level = 8
 			
 			available = {
+				has_country_flag = cons_three
 			}
 			
 			ai_will_do = {
-   				factor = 1
-
+   				factor = 5
    				modifier = {
-					factor = 20
+					factor = 60
 					has_war = yes
 					has_manpower < 2000000
 					is_major = yes
 				}
 				modifier = {
-					factor = 20
+					factor = 60
 					has_war = yes
 					has_manpower < 900000
 					is_major = no
@@ -198,32 +198,23 @@ ideas = {
 			level = 7
 			
 			available = {
-				AND = {
-					NOT = { 
-						OR = {
-							has_government = liberalism
-							has_government = conservatism
-							has_government = socialism
-						}
-					}
-					threat > 0.50
-				}
 				has_war = yes
+				has_country_flag = cons_three
 			}
 			
 			ai_will_do = {
    				factor = 1
 
    				modifier = {
-					factor = 30
+					factor = 60
 					has_war = yes
-					has_manpower < 1700000
+					has_manpower < 800000
 					is_major = yes
 				}
 				modifier = {
-					factor = 30
+					factor = 60
 					has_war = yes
-					has_manpower < 800000
+					has_manpower < 400000
 					is_major = no
 				}
 				modifier = {
@@ -246,7 +237,7 @@ ideas = {
 				army_morale_factor = -0.05
 				army_org_factor = -0.05
 				navy_org_factor = -0.05
-				stability_factor = -0.01
+				stability_weekly = -0.001
 			}
 			
 			on_add = {
@@ -270,25 +261,27 @@ ideas = {
 			level = 6
 			
 			available = {
-				AND = {
-					has_war = yes
-					enemies_strength_ratio > 0.8
+				has_war = yes
+				OR = {
+				has_country_flag = cons_three
+				has_country_flag = cons_expanded_draft
 				}
+
 			}
 			
 			ai_will_do = {
    				factor = 1
 
    				modifier = {
-					factor = 40
+					factor = 60
 					has_war = yes
-					has_manpower < 1400000
+					has_manpower < 700000
 					is_major = yes
 				}
 				modifier = {
-					factor = 40
+					factor = 60
 					has_war = yes
-					has_manpower < 700000
+					has_manpower < 300000
 					is_major = no
 				}
 				modifier = {
@@ -311,7 +304,7 @@ ideas = {
 				political_power_factor = -0.05
 				army_org_factor = -0.1
 				navy_org_factor = -0.1
-				stability_factor = -0.02
+				stability_weekly = -0.0015
 			}
 			
 			on_add = {
@@ -335,25 +328,27 @@ ideas = {
 			level = 5
 			
 			available = {
-				AND = {
-					has_war = yes
-					enemies_strength_ratio > 0.85
-				}
+				OR = {
+					has_country_flag = cons_expanded_draft
+					has_country_flag = cons_extensive_draft
+					}
+				has_war = yes
+				
 			}
 			
 			ai_will_do = {
    				factor = 1
 
    				modifier = {
-					factor = 50
+					factor = 60
 					has_war = yes
-					has_manpower < 1200000
+					has_manpower < 600000
 					is_major = yes
 				}
 				modifier = {
-					factor = 50
+					factor = 60
 					has_war = yes
-					has_manpower < 600000
+					has_manpower < 250000
 					is_major = no
 				}
 				modifier = {
@@ -376,7 +371,7 @@ ideas = {
 				political_power_factor = -0.075
 				army_org_factor = -0.15
 				navy_org_factor = -0.15
-				stability_factor = -0.03
+				stability_weekly = -0.0025
 
 			}
 			
@@ -401,13 +396,11 @@ ideas = {
 			level = 4
 			
 			available = {
-				AND = {
-					has_war = yes
-					enemies_strength_ratio > 0.9
-				}
-				any_enemy_country = {
-					is_neighbor_of = FROM 
-				}
+				has_war = yes
+				OR = {
+					has_country_flag = cons_expanded_draft
+					has_country_flag = cons_extensive_draft
+					}
 			}
 			
 			ai_will_do = {
@@ -416,13 +409,13 @@ ideas = {
    				modifier = {
 					factor = 60
 					has_war = yes
-					has_manpower < 1000000
+					has_manpower < 500000
 					is_major = yes
 				}
 				modifier = {
 					factor = 60
 					has_war = yes
-					has_manpower < 500000
+					has_manpower < 200000
 					is_major = no
 				}
 				modifier = {
@@ -445,7 +438,7 @@ ideas = {
 				political_power_factor = -0.1
 				army_org_factor = -0.2
 				navy_org_factor = -0.2
-				stability_factor = -0.04
+				stability_weekly = -0.003
 
 			}
 			
@@ -470,29 +463,28 @@ ideas = {
 			level = 3
 			
 			available = {
-				AND = {
 					has_war = yes
-					enemies_strength_ratio > 0.95
-				}
-				#has_national_unity > 50
-				any_enemy_country = {
-					is_neighbor_of = FROM 
-				}
+					OR = {
+					has_country_flag = cons_expanded_draft
+					has_country_flag = cons_barrel 
+					has_country_flag = cons_extensive_draft
+					}
+
 			}
 			
 			ai_will_do = {
    				factor = 1
 
    				modifier = {
-					factor = 70
+					factor = 60
 					has_war = yes
-					has_manpower < 800000
+					has_manpower < 450000
 					is_major = yes
 				}
 				modifier = {
-					factor = 70
+					factor = 60
 					has_war = yes
-					has_manpower < 400000
+					has_manpower < 200000
 					is_major = no
 				}
 				modifier = {
@@ -515,7 +507,7 @@ ideas = {
 				political_power_factor = -0.15
 				army_org_factor = -0.3
 				navy_org_factor = -0.3
-				stability_factor = -0.06
+				stability_weekly = -0.004
 
 			}
 			
@@ -540,29 +532,26 @@ ideas = {
 			level = 2
 			
 			available = {
-				AND = {
 					has_war = yes
-					enemies_strength_ratio > 1
-				}
-				#has_national_unity > 50
-				any_enemy_country = {
-					is_neighbor_of = FROM 
-				}
+					OR = {
+					has_country_flag = cons_barrel 
+					has_country_flag = cons_extensive_draft
+					}
 			}
 			
 			ai_will_do = {
    				factor = 1
 
    				modifier = {
-					factor = 80
+					factor = 60
 					has_war = yes
-					has_manpower < 600000
+					has_manpower < 400000
 					is_major = yes
 				}
 				modifier = {
-					factor = 80
+					factor = 60
 					has_war = yes
-					has_manpower < 300000
+					has_manpower < 180000
 					is_major = no
 				}
 				modifier = {
@@ -585,7 +574,7 @@ ideas = {
 				political_power_factor = -0.2
 				army_org_factor = -0.4
 				navy_org_factor = -0.4
-				stability_factor = -0.08
+				stability_weekly = -0.005
 
 			}
 			
@@ -610,27 +599,25 @@ ideas = {
 			level = 1
 			
 			available = {
-				AND = {
 					has_war = yes
-					enemies_strength_ratio > 1
-				}
-				#has_national_unity > 50
-				any_enemy_country = {
-					is_neighbor_of = FROM 
-				}
+					OR = {
+					has_country_flag = cons_barrel 
+					has_country_flag = cons_extensive_draft
+					}
+
 			}
 			
 			ai_will_do = {
    				factor = 1
 
    				modifier = {
-					factor = 90
+					factor = 60
 					has_war = yes
-					has_manpower < 400000
+					has_manpower < 350000
 					is_major = yes
 				}
 				modifier = {
-					factor = 90
+					factor = 60
 					has_war = yes
 					has_manpower < 200000
 					is_major = no
@@ -649,7 +636,7 @@ ideas = {
 				political_power_factor = -0.25
 				army_org_factor = -0.5
 				navy_org_factor = -0.5
-				stability_factor = -0.10
+				stability_weekly = -0.006
 			}
 			
 			on_add = {

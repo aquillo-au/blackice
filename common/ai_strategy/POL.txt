@@ -10,6 +10,32 @@
 # protect
 # influence
 
+stay_in_polish_faction = {
+	enable = {
+		OR = {
+			tag = EST
+			tag = LIT
+			tag = LAT
+			tag = ROM
+			tag = CZE
+			tag = FIN
+			tag = YUG
+		}
+		democratic_govt = yes
+		is_in_faction_with = POL
+		
+	}
+	abort = {
+		NOT = { is_in_faction_with = POL }
+	}
+	
+	ai_strategy = {
+        type = alliance
+        id = "POL"     
+        value = 300000
+    }
+}
+
 british_help_against_germany = {
 	enable = {
 		tag = POL
@@ -51,6 +77,11 @@ i_SOV_case_white = {
 	ai_strategy = {
 		type = befriend
 		id = "ENG"			
+		value = 200
+	}
+	ai_strategy = {
+		type = ignore
+		id = "SOV"			
 		value = 200
 	}
 	ai_strategy = {

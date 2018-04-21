@@ -24,12 +24,10 @@ leader_traits = {
 		
 		non_shared_modifier = {
 			army_speed_factor = -0.08
-			army_armor_attack_factor = -0.08
-			army_infantry_attack_factor = -0.08
 			land_reinforce_rate  = -0.03
-			army_org_factor = -0.04
-			army_morale_factor = -0.08
-			defence = -0.08
+			planning_speed = -0.10
+            offence = -0.10
+			defence = -0.10
 		}
 		
 		ai_will_do = {
@@ -42,13 +40,10 @@ leader_traits = {
 		
 		non_shared_modifier = {
 			army_speed_factor = -0.05
-			#army_armor_speed_factor = -0.05
-			army_armor_attack_factor = -0.05 
-			army_infantry_attack_factor = -0.05
 			land_reinforce_rate  = -0.02
-			army_morale_factor = -0.05
-			offence = -0.05
-			defence = -0.05
+			planning_speed = -0.05
+			offence = -0.08
+			defence = -0.08
 		}
 		
 		ai_will_do = {
@@ -60,15 +55,11 @@ leader_traits = {
 		trait_type = personality_trait
 		
 		non_shared_modifier = {
-			army_speed_factor = -0.02
-			#army_armor_speed_factor = -0.02
-			army_armor_attack_factor = -0.02
-			army_infantry_attack_factor = -0.02
+			army_speed_factor = -0.03
 			land_reinforce_rate  = -0.01
-			army_org_factor = -0.02
-			army_morale_factor = -0.02
-			#offence = -0.02
-			defence = -0.02
+			planning_speed = -0.05
+			offence = -0.04
+			defence = -0.04
 		}
 		
 		ai_will_do = {
@@ -81,14 +72,10 @@ leader_traits = {
 		
 		non_shared_modifier = {
 			army_speed_factor = -0.01
-			#army_armor_speed_factor = -0.01
-			army_armor_attack_factor = -0.01 
-			army_infantry_attack_factor = -0.01
 			land_reinforce_rate  = -0.01
-			army_org_factor = -0.01
-			army_morale_factor = -0.01
-			#offence = -0.01
-			defence = -0.01
+			planning_speed = -0.05
+			offence = -0.02
+			defence = -0.02
 		}
 		
 		ai_will_do = {
@@ -99,9 +86,6 @@ leader_traits = {
 		type = all
 		trait_type = personality_trait
 		
-		attack_skill = 1
-		planning_skill = 1
-		
 		attack_skill_factor = 1
 		planning_skill_factor = 1
 	}
@@ -111,16 +95,11 @@ leader_traits = {
 		
 		modifier = {
 			army_speed_factor = 0.01
-			army_armor_attack_factor = 0.02 
-			army_infantry_attack_factor = 0.02
 			land_reinforce_rate  = 0.01
-			army_org_factor = 0.02
-			army_morale_factor = 0.02
-			defence = 0.02
+			planning_speed = 0.02
+			offence = 0.04
+			defence = 0.04
 		}
-		
-		attack_skill = 1
-		planning_skill = 2
 		
 		attack_skill_factor = 1
 		planning_skill_factor = 1
@@ -130,22 +109,15 @@ leader_traits = {
 		trait_type = personality_trait
 		
 		modifier = {
-			army_speed_factor = 0.025
-			#army_armor_speed_factor = 0.05
-			army_armor_attack_factor = 0.05 
-			army_infantry_attack_factor = 0.05
-			land_reinforce_rate  = 0.025
-			army_org_factor = 0.05
-			army_morale_factor = 0.05
-			#offence = 0.05
-			defence = 0.05
+			army_speed_factor = 0.02
+			land_reinforce_rate  = 0.02
+			planning_speed = 0.05
+			offence = 0.08
+			defence = 0.08
 		}
 		
-		attack_skill = 1
-		planning_skill = 2
-		
 		attack_skill_factor = 1
-		planning_skill_factor = 2
+		planning_skill_factor = 1
 	}
 	Masterful_General = { #old max_lvl = 8 general
 		type = all
@@ -153,16 +125,11 @@ leader_traits = {
 		
 		modifier = {
 			army_speed_factor = 0.04
-			army_armor_attack_factor = 0.08
-			army_infantry_attack_factor = 0.08
 			land_reinforce_rate  = 0.04
-			army_org_factor = 0.08
-			army_morale_factor = 0.08
-			defence = 0.08
+			planning_speed = 0.10
+            offence = 0.10
+			defence = 0.10
 		}
-		
-		attack_skill = 2
-		planning_skill = 2
 		
 		attack_skill_factor = 1
 		planning_skill_factor = 2
@@ -173,16 +140,11 @@ leader_traits = {
 		
 		modifier = {
 			army_speed_factor = 0.05
-			army_armor_attack_factor = 0.10
-			army_infantry_attack_factor = 0.10
 			land_reinforce_rate  = 0.05
-			army_org_factor = 0.10
-			army_morale_factor = 0.10
-			defence = 0.10
+            planning_speed = 0.20
+            offence = 0.15
+			defence = 0.15
 		}
-		
-		attack_skill = 2
-		planning_skill = 3
 		
 		attack_skill_factor = 2
 		planning_skill_factor = 2
@@ -251,6 +213,7 @@ leader_traits = {
 		
 		modifier = {
 			planning_speed = -0.20
+            wounded_chance_factor = -0.5
 		}
 		
 		defense_skill_factor = 1
@@ -262,7 +225,7 @@ leader_traits = {
 		
 		modifier = {
 			planning_speed = 0.20
-			wounded_chance_factor = 1  # +100% chance to get wounded
+			wounded_chance_factor = 0.5  # +50% chance to get wounded
 		}
 		
 		attack_skill_factor = 1

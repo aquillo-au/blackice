@@ -73,7 +73,7 @@ political_actions = {
 			stability_weekly = 0.02
 			consumer_goods_factor = 0.1
 			industrial_capacity_factory = -0.1
-			political_power_gain = -21
+			political_power_gain = -2
 			production_factory_max_efficiency_factor = -0.04
 			production_factory_efficiency_gain_factor = -0.04
 
@@ -91,7 +91,7 @@ political_actions = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 100
+				add = 400
 				has_stability < 0.3
 			}
 		}
@@ -112,7 +112,7 @@ political_actions = {
 		fire_only_once = no
 
 		modifier = {
-			stability_weekly = 0.008
+			stability_weekly = 0.01
 			consumer_goods_factor = 0.02
 			industrial_capacity_factory = -0.05
 		}
@@ -120,7 +120,7 @@ political_actions = {
 		days_remove = 140
 		days_re_enable = 100
 
-		cost = 50
+		cost = 75
 
 		complete_effect = {
 
@@ -129,8 +129,8 @@ political_actions = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 100
-				has_stability < 0.7
+				add = 1
+				has_stability < 0.6
 			}
 		}
 	}
@@ -157,7 +157,7 @@ political_actions = {
 		fire_only_once = no
 
 		modifier = {
-			stability_weekly = 0.01
+			stability_weekly = 0.008
 			war_support_weekly = -0.005
 			political_power_gain = -0.25
 		}
@@ -174,10 +174,9 @@ political_actions = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 100
-				has_stability < 0.6
-				has_war_support > 0.4
-
+				add = 1
+				has_stability < 0.4
+				has_war_support > 0.3
 			}
 		}
 	}
@@ -218,7 +217,7 @@ political_actions = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 100
+				add = 400
 				has_stability < 0.5
 
 			}
@@ -260,7 +259,7 @@ economy_decisions = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 100
+				add = 400
 				has_stability < 0.6
 			}
 		}
@@ -380,9 +379,9 @@ propaganda_efforts = {
 		}
 
 		ai_will_do = {
-			factor = 10
+			factor = 60
 			modifier = {
-				factor = 200
+				factor = 1
 				has_war_support < 0.5
 				has_war = yes
 			}
@@ -406,13 +405,13 @@ propaganda_efforts = {
 
 		fire_only_once = no
 
-		days_remove = 70
+		days_remove = 45
 		days_re_enable = 90
 
-		cost = 75
+		cost = 100
 
 		modifier = {
-			war_support_weekly = 0.01
+			war_support_weekly = 0.03
 			political_power_factor = 0.20
 			stability_weekly = 0.01
 		}
@@ -472,10 +471,10 @@ propaganda_efforts = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 40
 			modifier = {
-				factor = 100
-				has_war_support < 0.5
+				factor = 400
+				has_war_support < 0.3
 				has_war = no
 			}
 		}	
@@ -520,9 +519,9 @@ propaganda_efforts = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 40
 			modifier = {
-				factor = 100
+				factor = 140
 				has_offensive_war = yes
 				has_war_support < 0.4
 			}
@@ -695,19 +694,19 @@ propaganda_efforts = {
 		days_remove = 180
 		days_re_enable = 30
 
-		cost = 100
+		cost = 200
 
 		modifier = {
 			army_core_attack_factor = 0.15
 			army_core_defence_factor = 0.15
 			war_support_weekly = 0.005
 			stability_weekly = 0.005
-			mobilization_speed = 0.3
+			mobilization_speed = 0.2
 			political_power_factor = 0.2
 			training_time_factor = -0.10
 			decryption_factor = 0.2
 			encryption_factor = 0.2
-			experience_gain_army_factor = 0.1
+			experience_gain_army_factor = 0.05
 
 			#add some bonuses lately 
 		}
@@ -720,14 +719,14 @@ propaganda_efforts = {
 		}
 
 		ai_will_do = {
-			factor = 40
+			factor = 160
 			modifier = {
 			factor = 400
 				has_stability > 0.7
 				has_war_support > 0.7
-
 				has_war = yes
 				is_major = yes
+				any_enemy_country = { is_major = yes }
 			}
 		}
 	}
@@ -1100,14 +1099,14 @@ war_measures = {
 
 		fire_only_once = no
 
-		days_remove = 140
+		days_remove = 45
 		days_re_enable = 270
 
-		cost = 100
+		cost = 150
 
 		modifier = {
-			war_support_weekly = 0.004
-			stability_weekly = 0.004
+			war_support_weekly = 0.02
+			stability_weekly = 0.02
 			political_power_factor = 0.2
 
 		}
@@ -1120,9 +1119,9 @@ war_measures = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 60
 			modifier = {
-				factor = 100
+				factor = 1
 				has_war_support < 0.6
 				has_stability < 0.6
 				has_war = yes

@@ -85,6 +85,62 @@ i_fin_eng2 = {
 	}
 }
 
+i_baltics_eng = {
+	enable = {
+		tag = ENG
+		OR = {
+			country_exists = EST
+			country_exists = LIT
+			country_exists = LAT
+		}
+		is_historical_focus_on = yes
+	}
+	abort = {
+		NOT = {
+			country_exists = EST
+			country_exists = LIT
+			country_exists = LAT
+		}
+	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "EST"
+		value = 40000
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "EST"
+		value = -40000
+	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "LIT"
+		value = 40000
+	}
+	
+	ai_strategy = {
+		type = alliance
+		id = "LIT"
+		value = -40000
+	}
+	
+	ai_strategy = {
+		type = ignore
+		id = "LAT"
+		value = 40000
+	}	
+	
+	ai_strategy = {
+		type = alliance
+		id = "LAT"
+		value = -40000
+	}
+}
+
+
 defend_poland_against_germany = {
 	enable = {
 		tag = ENG
@@ -224,7 +280,10 @@ ENG_dont_defend_poland = {
 		POL = { has_capitulated = no }
 	}
 	abort = {
+	OR = {
 		POL = { has_capitulated = yes }
+		date > 1941.1.1
+	}
 	}
 	
 	ai_strategy = {
@@ -248,7 +307,7 @@ ENG_dont_defend_benelux = {
 	
 	abort = {
 		OR = {
-			date > 1940.1.1
+			date > 1941.1.1
 			AND = {
 				HOL = { has_capitulated = yes }
 				BEL = { has_capitulated = yes }
@@ -286,7 +345,7 @@ ENG_dont_defend_france = {
 	
 	abort = {
 		OR = {
-			date > 1940.1.1
+			date > 1941.1.1
 			FRA = { has_capitulated = yes }
 		}
 	}
@@ -324,7 +383,10 @@ ENG_dont_defend_Denmark = {
 	}
 	
 	abort = {
+	OR = {
 		DEN = { has_capitulated = yes }
+		date > 1941.1.1
+	}
 	}
 	
 	ai_strategy = {

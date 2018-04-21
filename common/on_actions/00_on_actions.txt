@@ -256,6 +256,17 @@ on_actions = {
 	on_declare_war = {
 		effect = {
 			if = {
+				limit = { ROOT = { OR = { tag = GER is_in_faction_with = GER } } FROM = { tag = SOV } }
+				SOV = { 
+					every_owned_state = { 
+						limit = { NOT = { state = 192 state = 198 } is_on_continent = europe } 
+						add_claim_by = GER
+					}
+				}
+			}
+
+					
+			if = {
 				limit = {
 					FROM = {
 						OR = {
@@ -516,6 +527,15 @@ on_actions = {
 					original_tag = DEN
 				}
 				country_event = { id = wtt_denmark.1 days = 1 }
+			}
+			if = {
+				limit = { ROOT = { tag = GER } SOV = { any_owned_state = { is_claimed_by = GER } } }
+				SOV = { 
+					every_owned_state = { 
+						limit = { is_claimed_by = GER } 
+						remove_claim_by = GER
+					}
+				}
 			}
 		}
 	}

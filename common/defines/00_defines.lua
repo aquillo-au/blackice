@@ -329,7 +329,7 @@ NPolitics = {
 	ARMY_LEADER_COST = 3,							-- cost for recruiting new leaders, 'this value' * number_of_existing_leaders_of_type
 	NAVY_LEADER_COST = 3,							-- cost for recruiting new leaders, 'this value' * number_of_existing_leaders_of_type
 	GOAL_COST_FACTOR = 1.0,							-- Multiplayer for cost of political goals
-	LEADER_TRAITS_XP_SHOW = 0.08,					-- Amount of XP a trait needs to be shown in tooltips of a leader.
+	LEADER_TRAITS_XP_SHOW = 0.05,					-- Amount of XP a trait needs to be shown in tooltips of a leader.
 	REVOLTER_PARTY_POPULARITY = 0.4,				-- Revolter party loses 80% popularity when the civil war breaks out
 	MIN_OVERTHROWN_GOVERNMENT_SUPPORT_RATIO = 0.4, 	-- Min possible support for new government after puppeting the government
 	NUM_OCCUPATION_POLICIES = 4,					-- Number of potential occupation policies
@@ -386,9 +386,9 @@ NMilitary = {
 	WAR_SCORE_AIR_WORTH_CAP = 1000,							-- the warscore limit we get from strategic bombing
 	WAR_SCORE_AIR_MONTHLY_FALLOFF = 10,						-- how much the warscore we got from the strategic bombing falls off every month.
 	
-	CORPS_COMMANDER_DIVISIONS_CAP = 24,			-- how many divisions a corps commander is limited to. 0 = inf, < 0 = blocked
+	CORPS_COMMANDER_DIVISIONS_CAP = 25,			-- how many divisions a corps commander is limited to. 0 = inf, < 0 = blocked
 	CORPS_COMMANDER_ARMIES_CAP = -1,			-- how many armies a corps commander is limited to. 0 = inf, < 0 = blocked
-	FIELD_MARSHAL_DIVISIONS_CAP = 24,			-- how many divisions a field marshall is limited to. 0 = inf, < 0 = blocked
+	FIELD_MARSHAL_DIVISIONS_CAP = 25,			-- how many divisions a field marshall is limited to. 0 = inf, < 0 = blocked
 	FIELD_MARSHAL_ARMIES_CAP = 5,				-- how many armies a field marshall is limited to. 0 = inf, < 0 = blocked
 	
 	UNIT_LEADER_GENERATION_CAPITAL_CONTINENT_FACTOR = 100, 	--Integer factor to multiply manpower.
@@ -416,7 +416,7 @@ NMilitary = {
 	
 	LAND_COMBAT_ORG_DICE_SIZE = 4,                 			-- nr of damage dice
 	LAND_COMBAT_STR_DICE_SIZE = 2,                 			-- nr of damage dice
-	LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.06,        			-- global damage modifier... but some equipment is returned at end of battles see : EQUIPMENT_COMBAT_LOSS_FACTOR
+	LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.05,        			-- global damage modifier... but some equipment is returned at end of battles see : EQUIPMENT_COMBAT_LOSS_FACTOR
 	LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.05,        			-- global damage modifier
 	LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.03,    			-- air global damage modifier
 	LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.03,    			-- global damage modifier
@@ -454,7 +454,7 @@ NMilitary = {
 	LEADER_SKILL_FACTOR = 0.04,                    			-- bonus per skill level of leader
 	ARMY_LEADER_XP_GAIN_PER_UNIT_IN_COMBAT = 0.12,  -- XP gain per unit in combat
 	CONSTANT_XP_RATIO_FOR_MULTIPLE_LEADERS_IN_SAME_COMBAT = 0.5, -- if there are multiple leaders in same combat, each one gets thisratio + 1-thisratio/num leaders. it scales 1 0.75 0.66 etc
-	BASE_LEADER_TRAIT_GAIN_XP = 1,				  			-- Base xp gain for traits per hour.
+	BASE_LEADER_TRAIT_GAIN_XP = 0.5,				  			-- Base xp gain for traits per hour.
 	MAX_NUM_TRAITS = 8,										-- cant have more
 	ENEMY_AIR_SUPERIORITY_IMPACT = -0.35,           			-- effect on defense due to enemy air superiorty
 	ENEMY_AIR_SUPERIORITY_DEFENSE = 0.70,	       			-- more AA attack will approach this amount of help (diminishing returns)
@@ -533,7 +533,7 @@ NMilitary = {
 
 	PLANNING_DECAY = 0.01,									-- 0.01
 	PLAYER_ORDER_PLANNING_DECAY = 0.08,				-- Amount of planning lost due to player manual order
-	PLANNING_GAIN = 0.03,									-- 0.02
+	PLANNING_GAIN = 0.02,									-- 0.02
 	PLANNING_MAX = 0.32,                           			-- can get more from techs
 	CIVILWAR_ORGANIZATION_FACTOR = 0.3,			  			-- Multiplier of org for both sides when civilwar.
 	LAND_COMBAT_ATTACKER_WINNING = 0.7,		  			-- Above this means attacker is winning
@@ -1064,7 +1064,7 @@ NAI = {
 	AIR_BASE_PRIORITY_DISTANCE_FACTOR = 50.0,			-- Weight of distance between region and airbase for airbase priority score ALEN 25
 	MAX_VOLUNTEER_ARMY_FRACTION = 0.25,					-- Countries will not send more than their forces time this number to aid another country
 	WANTED_UNITS_INDUSTRY_FACTORY = 0, 				-- How many units a country wants is partially based on how much military industry that is available
-	DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.9,			-- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
+	DEPLOY_MIN_TRAINING_PEACE_FACTOR = 0.8,			-- Required percentage of training (1.0 = 100%) for AI to deploy unit in peacetime
 	DEPLOY_MIN_TRAINING_WAR_FACTOR = 0.40,				-- Required percentage of training (1.0 = 100%) for AI to deploy unit in wartime
 	DEPLOY_MIN_EQUIPMENT_PEACE_FACTOR = 0.8,			-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in peacetime
 	DEPLOY_MIN_EQUIPMENT_WAR_FACTOR = 0.6,				-- Required percentage of equipment (1.0 = 100%) for AI to deploy unit in wartime
@@ -1073,7 +1073,7 @@ NAI = {
 	LOCATION_BALANCE_TO_ADVANCE = 0.0,					-- Limit on location strength balance between country and enemy for unit to dare to move forward.
 	DIVISION_UPGRADE_MIN_XP = 25.0,						-- Minimum XP before attempting to upgrade a division template.
 	DIVISION_CREATE_MIN_XP = 1000,						-- Minimum XP before attempting to create a fresh new division template.
-	VARIANT_UPGRADE_MIN_XP = 1000,						-- Minimum XP before attempting to create a new variant.
+	VARIANT_UPGRADE_MIN_XP = 499,						-- Need to have it 499 since air & navy dont go to 800 -- Minimum XP before attempting to create a new variant.
 	UPGRADE_XP_RUSH_UPDATE = 25,						-- If XP is above this on the daily tick the AI will attempt to spend it
 	FOCUS_TREE_CONTINUE_FACTOR = 0.95,					-- Factor for score of how likely the AI is to keep going down a focus tree rather than starting a new path.
 	VP_GARRISON_VALUE_FACTOR = 0.4,						-- Extent to which VP garrisons are prioritized, based on VP value and compared to other priority values.
@@ -1134,7 +1134,7 @@ NAI = {
 	DIPLOMACY_COMMUNIST_NOT_NEIGHBOUR = -10,			-- Communists want to stay consolidated with their influence
 	MAIN_ENEMY_FRONT_IMPORTANCE = 15.0,					-- How much extra focus the AI should put on who it considers to be its current main enemy.
 	EASY_TARGET_FRONT_IMPORTANCE = 10.0,					-- How much extra focus the AI should put on who it considers to be the easiest target.
-	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.18,			-- If less than this fraction of units on a front is moving, AI sees it as ready for action	
+	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.3,			-- If less than this fraction of units on a front is moving, AI sees it as ready for action	
 	MICRO_POCKET_SIZE = 5,								-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
 	POCKET_DISTANCE_MAX = 40000,						-- shortest square distance we bother about chasing pockets
 	VP_LEVEL_IMPORTANCE_HIGH = 30,						-- Victory points with values higher than or equal to this are considered to be of high importance.
@@ -1161,7 +1161,7 @@ NAI = {
 	
 	PLAN_FACTION_STRONG_TO_EXECUTE = 0.65,				-- % or more of units in an order to consider ececuting the plan
 	PLAN_FACTION_NORMAL_TO_EXECUTE = 0.65,		-- % or more of units in an order to consider executing the plan
-	PLAN_FACTION_WEAK_TO_ABORT = 0.65,			-- % or more of units in an order to consider executing the plan
+	PLAN_FACTION_WEAK_TO_ABORT = 0.5,			-- % or more of units in an order to consider executing the plan
 	PLAN_AVG_PREPARATION_TO_EXECUTE = 0.5,		-- % or more average plan preparation before executing
 	STATE_GARRISON_MAX_UNITS = 3,				-- Max units to guard a garrison under normal circumstances (isolated core areas like England has is excempt)
 	
@@ -1327,8 +1327,8 @@ NAI = {
 
 	ESCORT_BOMBERS_IMPORTANCE_MODIFIER = 3.0,				-- DNM, original 1 (AI Mod)
 	PRODUCTION_LINE_SWITCH_SURPLUS_NEEDED_MODIFIER = 0.2,	-- Is modified by efficency modifiers.
-	PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 0.0,				-- AI countries will hold on activating plans if stronger countries have plans in the same location. Majors count extra (value of 1 will negate this)
-	PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 0.0,			-- AI countries will hold on activating plans if player controlled countries have plans in the same location. Majors count extra (value of 1 will negate this)
+	PLAN_ACTIVATION_MAJOR_WEIGHT_FACTOR = 1,				-- AI countries will hold on activating plans if stronger countries have plans in the same location. Majors count extra (value of 1 will negate this)
+	PLAN_ACTIVATION_PLAYER_WEIGHT_FACTOR = 1,			-- AI countries will hold on activating plans if player controlled countries have plans in the same location. Majors count extra (value of 1 will negate this)
 	AREA_DEFENSE_BASE_IMPORTANCE = 3,						-- Area defense order base importance value (used for determining order of troop selections)
 	AREA_DEFENSE_CIVIL_WAR_IMPORTANCE = 10000,				-- Area defense order importance value when a country is in a civil war as target or revolter.
 
@@ -1336,7 +1336,7 @@ NAI = {
 	MAX_DISTANCE_NALAV_INVASION = 300.0,					-- DNM, changed from 500 (AI Mod) -- AI is extremely unwilling to plan naval invasions above this naval distance limit.
 	ENEMY_NAVY_STRENGTH_DONT_BOTHER = 2.0,					-- If the enemy has a navy at least these many times stronger that the own, don't bother invading
 	MIN_SUPPLY_USE_SANITY_CAP = 100,						-- Ignore supply cap if below this value when deciding on how many divisions to produce.
-	MAX_SUPPLY_DIVISOR = 2,								-- DNM, original 2 (AI mod) To make sure the AI does not overdeploy divisions. Higher number means more supply per unit.
+	MAX_SUPPLY_DIVISOR = 0.25,								-- DNM, original 2 (AI mod) To make sure the AI does not overdeploy divisions. Higher number means more supply per unit.
 	MISSING_CONVOYS_BOOST_FACTOR = 8.5,					-- The more convoys a country is missing, the more resources it diverts to cover this.
 	TRANSPORTS_PER_PARATROOPER = 60,						-- Air transports only duty is to drop paratroopers.
 	MAX_MICRO_ATTACKS_PER_ORDER = 4,						-- AI goes through its orders and checks if there are situations to take advantage of
@@ -1479,7 +1479,7 @@ NAI = {
 	RELUCTANCE_TO_CHANGE_FRONT_FACTOR = 0.5,			-- Factor for how reluctant the AI is to change a units order group.
 	REVISITED_PROV_PENALTY_FACTOR = 1.5,				-- When the AI picks units for a front, it tries to spread out a bit which units it grabs.
 	
-	PLAN_ACTIVATION_SUPERIORITY_AGGRO = 0.9,			-- How aggressive a country is in activating a plan based on how superiour their force is.
+	PLAN_ACTIVATION_SUPERIORITY_AGGRO = 0.85,			-- How aggressive a country is in activating a plan based on how superiour their force is.
 	WAIT_YEARS_BEFORE_FREER_BUILDING = 1,				-- After how many years it switches from CIV only to MIC +NIC Only
 	
 	MAX_CARRIER_OVERFILL = 1.85,						-- Carriers will be overfilled to this amount if there are doctrines to justify it
