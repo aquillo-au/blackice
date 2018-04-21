@@ -511,7 +511,7 @@ country_event = {
 	}
 }
 #### End Totenkopf-division event-chain ####
-#### Reich-division event-chain ####
+#### Verfugungstruppen and Reich-division event-chain ####
 ### Forming the SS-VT Division   ### Add 3rd Inf-Rgt.(s-mot). Add 2
 country_event = {
 	id = ss_event.640
@@ -529,25 +529,19 @@ country_event = {
 	
 	option = {
 		name = ss_event.640.a
-		trigger = { is_ai = no }
+		ai_chance = { factor = 100 }
 		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 72
-				}
-				army_experience = 71
+			delete_unit_template_and_units = {
+				division_template = "SS VT"
+				division_template = "SS-Standarte (s-mot Rgt.)"
 			}
-
+			load_oob = "GER_ss_vt_division"
 			set_country_flag = ss_vt_division_39
 		}
 	}
 	option = {
 		name = ss_event.640.b
-		trigger = { is_ai = yes }
-		hidden_effect = {
-			load_oob = "GER_SS_VT_ai"
-			set_country_flag = ss_vt_division_39_ai
-		}
+		ai_chance = { factor = 0 }
 	}
 }
 ## Player ## Motorize the SS VT-Division. Add 2 Add SS Stürmgeschutz and Recon(mot) ##
@@ -562,64 +556,38 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = no
+		has_tech = subtech_light_panzer_td_equipment_1
 		has_country_flag = ss_vt_division_39
 		NOT = { has_country_flag = ss_division_reich }
 		date > 1940.12.20
 	}
 
+	immediate = {
+		if = {
+			limit = {
+				is_ai = yes
+				NOT = {
+					has_tech = subtech_light_panzer_td_equipment_1
+				}
+			}
+			set_technology = { 
+				subtech_light_panzer_td_equipment_1 = 1
+			}
+		}
+		add_equipment_to_stockpile = { type = light_panzer_td_equipment_1 amount = 50 producer = GER }
+	}
+	
 	mean_time_to_happen = {
 		days = 1
 	}
 	
 	option = {
 		name = ss_event.641.a
-		trigger = { is_ai = no }
-		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 72
-				}
-				army_experience = 71
-			}
 
-			set_country_flag = ss_division_reich
-		}
-	}
-}
-## AI ##
-country_event = {
-	id = ss_event.642
-	title = ss_event.642.t
-	desc = ss_event.642.d
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		has_country_flag = ss_vt_division_39_ai
-		NOT = { has_country_flag = ss_division_reich_ai }
-		date > 1940.12.20
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.642.a
-		trigger = { is_ai = yes }
 		hidden_effect = {
-			if = {
-				limit = { 
-					NOT = { has_tech = subtech_light_panzer_td_equipment_1 }
-				}
-				set_technology = { subtech_light_panzer_td_equipment_1 = 1 }
-			}
 			add_equipment_to_stockpile = { type = light_panzer_td_equipment_1 amount = 50 producer = GER }
-			load_oob = "GER_SS_division_reich_ai"
-			set_country_flag = ss_division_reich_ai
+			load_oob = "GER_ss_division_reich"
+			set_country_flag = ss_division_reich
 		}
 	}
 }
@@ -635,12 +603,26 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = no
 		has_country_flag = ss_division_reich
 		
 		has_tech = tech_heavy_panzer_equipment_2
 		NOT = { has_country_flag = ss_pzgren_division_dasreich }
 		date > 1942.11.8
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = yes
+				NOT = {
+					has_tech = tech_heavy_panzer_equipment_2
+				}
+			}
+			set_technology = { 
+				tech_heavy_panzer_equipment_2 = 1
+			}
+		}
+		add_equipment_to_stockpile = { type = panzer_vi_equipment_2 amount = 25 producer = GER }
 	}
 
 	mean_time_to_happen = {
@@ -649,62 +631,9 @@ country_event = {
 	
 	option = {
 		name = ss_event.643.a
-		trigger = { is_ai = no }
-		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 72
-				}
-				army_experience = 71
-			}
-
-			set_country_flag = ss_pzgren_division_dasreich
-		}
-	}
-}
-## AI ##
-country_event = {
-	id = ss_event.644
-	title = ss_event.644.t
-	desc = ss_event.644.d
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		has_country_flag = ss_division_reich_ai
-		has_tech = tech_heavy_panzer_equipment_2
-		NOT = { has_country_flag = ss_pzgren_division_dasreich_ai }
-		date > 1942.11.08
-	}
-	
-	immediate = {
-		if = {
-			limit = { 
-				NOT = {
-					has_tech = tech_heavy_panzer_equipment_2
-					has_tech = subtech_panzer_iii_td_equipment_1
-				}
-			}
-			set_technology = { 
-				tech_heavy_panzer_equipment_2 = 1
-				subtech_panzer_iii_td_equipment_1 = 1
-			}
-		}
-		add_equipment_to_stockpile = { type = panzer_vi_equipment_2 amount = 12 producer = GER }
-		add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 24 producer = GER }
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.644.a
-		trigger = { is_ai = yes }
 		hidden_effect = {
 			add_equipment_production = { equipment = { type = panzer_vi_equipment_2 creator = "GER" } requested_factories = 2 progress = 0.95 }
+			
 			random_owned_state = {
 				limit = { 
 					free_building_slots = {
@@ -725,12 +654,12 @@ country_event = {
 					instant_build = yes
 				}
 			}
-			load_oob = "GER_SS_pzgren_division_dasreich_ai"
-			set_country_flag = ss_pzgren_division_dasreich_ai
+			load_oob = "GER_ss_pzgren_division_dasreich"
+			set_country_flag = ss_pzgren_division_dasreich
 		}
 	}
 }
-## Player ## SS Pz-Division Das Reich
+## SS Pz-Division Das Reich
 ## Armor up the SS Pzgren-Division to SS Pz-Division and rename to SS Pz-Division 'Das Reich' ##
 country_event = {
 	id = ss_event.645
@@ -742,7 +671,6 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = no
 		has_country_flag = ss_pzgren_division_dasreich
 		has_tech = subtech_motorized_rocket_unit
 		has_tech = tech_panzer_v_equipment_1
@@ -750,46 +678,10 @@ country_event = {
 		date > 1943.10.21
 	}
 
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.645.a
-		trigger = { is_ai = no }
-		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 72
-				}
-				army_experience = 71
-			}
-
-			set_country_flag = ss_pz_division_dasreich
-		}
-	}
-}
-## AI ##
-country_event = {
-	id = ss_event.646
-	title = ss_event.646.t
-	desc = ss_event.646.d
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		has_country_flag = ss_pzgren_division_dasreich
-		has_tech = subtech_motorized_rocket_unit
-		has_tech = tech_panzer_v_equipment_1
-		NOT = { has_country_flag = ss_pz_division_dasreich }
-		date > 1943.10.21
-	}
-	
 	immediate = {
 		if = {
-			limit = { 
+			limit = {
+				is_ai = yes
 				NOT = {
 					has_tech = subtech_motorized_rocket_unit
 					has_tech = tech_panzer_v_equipment_1
@@ -809,11 +701,12 @@ country_event = {
 	}
 	
 	option = {
-		name = ss_event.646.a
-		trigger = { is_ai = yes }
+		name = ss_event.645.a
+		
 		hidden_effect = {
 			add_equipment_production = { equipment = { type = panzer_v_equipment_1 creator = "GER" } requested_factories = 2 }
 			add_equipment_production = { equipment = { type = motorized_rocket_equipment_1 creator = "GER" } requested_factories = 1 }
+			
 			random_owned_state = {
 				limit = { 
 					free_building_slots = {
@@ -823,6 +716,7 @@ country_event = {
 					}
 				}
 				add_extra_state_shared_building_slots = 4
+				
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -834,8 +728,9 @@ country_event = {
 					instant_build = yes
 				}
 			}
-			load_oob = "GER_SS_pz_division_dasreich_ai"
-			set_country_flag = ss_pz_division_dasreich_ai
+			
+			load_oob = "GER_ss_pz_division_dasreich"
+			set_country_flag = ss_pz_division_dasreich
 		}
 	}
 }
