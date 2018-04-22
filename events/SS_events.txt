@@ -200,6 +200,17 @@ country_event = {
 		has_tech = subtech_panzer_iii_td_equipment_1
 	}
 	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = yes
+				NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
+			}
+			set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
+			
+			add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 50 producer = GER }
+		}
+	}
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -232,6 +243,17 @@ country_event = {
 		has_tech = tech_panzer_iv_equipment_3
 	}
 	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = yes
+				NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
+			}
+			set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
+			
+			add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 50 producer = GER }
+		}
+	}
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -240,14 +262,7 @@ country_event = {
 		name = ss_event.660.a
 		
 		hidden_effect = {
-			if = {
-				limit = {
-					is_ai = yes
-					NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
-				}
-				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
-				add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 50 producer = GER }
-			}
+			
 			delete_unit_template_and_units = { division_template = "LSSAH Infanterie Brig" }
 			load_oob = "GER_LSSAH_mot_division_42"
 			set_country_flag = LSSAH_mot_div_42
@@ -270,6 +285,18 @@ country_event = {
 		NOT = { has_country_flag = LSSAH_pzgren_div_42 }
 	}
 	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = yes
+				NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
+			}
+			set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
+			
+			add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 50 producer = GER }
+		}
+	}
+	
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -278,14 +305,7 @@ country_event = {
 		name = ss_event.659.a
 		
 		hidden_effect = {
-			if = {
-				limit = {
-					is_ai = yes
-					NOT = { has_tech = subtech_panzer_iii_td_equipment_1 }
-				}
-				set_technology = { subtech_panzer_iii_td_equipment_1 = 1 }
-				add_equipment_to_stockpile = { type = panzer_iii_td_equipment_1 amount = 50 producer = GER }
-			}
+			
 			delete_unit_template_and_units = { division_template = "LSSAH Inf.-Div(mot.)" }
 			load_oob = "GER_LSSAH_pzgrendiv_42"
 			set_country_flag = LSSAH_pzgren_div_42
@@ -313,6 +333,27 @@ country_event = {
 		NOT = { has_country_flag = LSSAH_pz_div_43 }
 	}
 	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = yes 
+				OR = {
+					NOT = { has_tech = mechanised_infantry2 }
+					NOT = { has_tech = tech_heavy_panzer_equipment_2 }
+					NOT = { has_tech = subtech_motorized_rocket_unit }
+					NOT = { has_tech = subtech_heavy_panzer_art_equipment_1 }
+				}
+			}
+			set_technology = { mechanised_infantry2 = 1 }
+			set_technology = { tech_heavy_panzer_equipment_2 = 1 }
+			set_technology = { subtech_motorized_rocket_unit = 1 }
+			set_technology = { subtech_heavy_panzer_art_equipment_1 = 1 }
+			
+			add_equipment_to_stockpile = { type = heavy_panzer_art_equipment_1 amount = 54 producer = GER }
+			add_equipment_to_stockpile = { type = motorized_rocket_equipment_1 amount = 20 producer = GER }
+			add_equipment_to_stockpile = { type = panzer_vi_equipment_2 amount = 25 producer = GER }
+		}
+	}
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -321,14 +362,7 @@ country_event = {
 		name = ss_event.658.a
 		
 		hidden_effect = {
-			if = {
-				limit = {
-					is_ai = yes
-				}
-				add_equipment_to_stockpile = { type = heavy_panzer_art_equipment_1 amount = 54 producer = GER }
-				add_equipment_to_stockpile = { type = motorized_rocket_equipment_1 amount = 20 producer = GER }
-				add_equipment_to_stockpile = { type = panzer_vi_equipment_2 amount = 25 producer = GER }
-			}
+			
 			delete_unit_template_and_units = { division_template = "SS Pzgren-Div LSSAH" }
 			load_oob = "GER_LSSAH_pzdiv_42"
 			set_country_flag = LSSAH_pz_div_43
