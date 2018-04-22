@@ -722,46 +722,6 @@ country_event = {
 		}
 	}
 }
-# Japan attacks - Chinese Popular Front forms
-country_event = {
-	id = china.100
-	title = china.100.t
-	desc = china.100.d
-	picture = GFX_report_event_marco_polo_bridge
-
-	fire_only_once = yes
-
-	trigger = {
-		NOT = {
-			has_dlc = "Waking the Tiger"
-		}
-		tag = CHI
-		has_war_with = JAP
-		JAP = { has_offensive_war = yes }
-		has_defensive_war = yes
-		#NOT = { owns_state = 622 }		
-		NOT = { has_country_flag = CHI_hostile_against_warlords }
-		NOT = { has_global_flag = CHI_unite }
-		NOT = { has_global_flag = CHI_no_national_front_flag }
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		ai_chance = { factor = 100 }
-		name = china.100.a
-		set_country_flag = in_china_united
-		create_faction = chinese_united_front
-		#load_oob = "CHI_united_front"
-		set_global_flag = CHI_unite
-	}
-	#option = {
-	#	name = china.100.b
-	#	#Nothing
-	#}
-}
 
 # Japan attack - Sinkiang can join if they want to
 country_event = {
