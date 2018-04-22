@@ -1131,10 +1131,10 @@ country_event = {
 		}
 		if = {
 			limit = {
-				FROM = { has_government = democratic }
-				NOT = { has_government = democratic }
-				democratic > 0.1
-				NOT = { democratic > 0.2 }
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				conservatism > 0.1
+				NOT = { conservatism > 0.2 }
 				strength_ratio = { tag = FROM ratio < 1.2 }
 			}
 			custom_effect_tooltip = attache_democratic_tt
@@ -1142,10 +1142,32 @@ country_event = {
 		}
 		if = {
 			limit = {
-				FROM = { has_government = democratic }
-				NOT = { has_government = democratic }
-				democratic > 0.2
-				NOT = { democratic > 0.3 }
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				liberalism > 0.1
+				NOT = { liberalism > 0.2 }
+				strength_ratio = { tag = FROM ratio < 1.2 }
+			}
+			custom_effect_tooltip = attache_democratic_tt
+			add_stability = -0.025
+		}
+		if = {
+			limit = {
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				socialism > 0.1
+				NOT = { socialism > 0.2 }
+				strength_ratio = { tag = FROM ratio < 1.2 }
+			}
+			custom_effect_tooltip = attache_democratic_tt
+			add_stability = -0.025
+		}
+		if = {
+			limit = {
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				conservatism > 0.2
+				NOT = { conservatism > 0.3 }
 				strength_ratio = { tag = FROM ratio < 1.2 }
 			}
 			custom_effect_tooltip = attache_democratic_tt
@@ -1153,10 +1175,32 @@ country_event = {
 		}
 		if = {
 			limit = {
-				FROM = { has_government = democratic }
-				NOT = { has_government = democratic }
-				democratic > 0.3
-				NOT = { democratic > 0.4 }
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				liberalism > 0.2
+				NOT = { liberalism > 0.3 }
+				strength_ratio = { tag = FROM ratio < 1.2 }
+			}
+			custom_effect_tooltip = attache_democratic_tt
+			add_stability = -0.05
+		}
+		if = {
+			limit = {
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				socialism > 0.2
+				NOT = { socialism > 0.3 }
+				strength_ratio = { tag = FROM ratio < 1.2 }
+			}
+			custom_effect_tooltip = attache_democratic_tt
+			add_stability = -0.05
+		}
+		if = {
+			limit = {
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				conservatism > 0.3
+				NOT = { conservatism > 0.4 }
 				strength_ratio = { tag = FROM ratio < 1.2 }
 			}
 			custom_effect_tooltip = attache_democratic_tt
@@ -1164,9 +1208,51 @@ country_event = {
 		}
 		if = {
 			limit = {
-				FROM = { has_government = democratic }
-				NOT = { has_government = democratic }
-				democratic > 0.4
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				liberalism > 0.3
+				NOT = { liberalism > 0.4 }
+				strength_ratio = { tag = FROM ratio < 1.2 }
+			}
+			custom_effect_tooltip = attache_democratic_tt
+			add_stability = -0.075
+		}
+		if = {
+			limit = {
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				socialism > 0.3
+				NOT = { socialism > 0.4 }
+				strength_ratio = { tag = FROM ratio < 1.2 }
+			}
+			custom_effect_tooltip = attache_democratic_tt
+			add_stability = -0.075
+		}
+		if = {
+			limit = {
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				conservatism > 0.4
+				strength_ratio = { tag = FROM ratio < 1.2 }
+			}
+			custom_effect_tooltip = attache_democratic_tt
+			add_stability = -0.1
+		}
+		if = {
+			limit = {
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				liberalism > 0.4
+				strength_ratio = { tag = FROM ratio < 1.2 }
+			}
+			custom_effect_tooltip = attache_democratic_tt
+			add_stability = -0.1
+		}
+		if = {
+			limit = {
+				FROM = { democratic_govt = yes }
+				NOT = { democratic_govt = yes }
+				socialism > 0.4
 				strength_ratio = { tag = FROM ratio < 1.2 }
 			}
 			custom_effect_tooltip = attache_democratic_tt
