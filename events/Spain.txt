@@ -384,6 +384,7 @@ country_event = {
 					original_tag = SPR
 					has_government = communism
 				}
+				create_faction = "Republican Spain"
 				add_ideas = SPR_desperate_defences
 				add_ideas = neutrality_idea_spr
 				load_oob = SPR_Civil_War
@@ -410,12 +411,12 @@ country_event = {
 
 			set_stability = 0.99
 			set_war_support = 0.99
-
+			
 			add_ideas = SPA_desperate_defences
 			add_ideas = neutrality_idea_spa
 			
 			load_oob = SPA_Civil_War
-
+			create_faction = "Nationalist Spain"
 			add_popularity = {
 				ideology = fascism
 				popularity = 1
@@ -443,6 +444,7 @@ country_event = {
 					original_tag = SPR
 					has_government = fascism
 				}
+				create_faction = "Nationalist Spain"
 				add_ideas = SPA_desperate_defences
 				add_ideas = neutrality_idea_spa
 
@@ -470,7 +472,7 @@ country_event = {
 				ideology = fascism
 				popularity = -1
 			}
-			
+			create_faction = "Republican Spain"
 			add_ideas = SPR_desperate_defences
 			add_ideas = neutrality_idea_spr
 			
@@ -962,7 +964,7 @@ country_event = {
 		NOT = { has_global_flag = scw_over }
 		has_country_flag = SPR_communist_civil_war
 		has_defensive_war = no
-		date > 1936.7.15 # Trigger at some point after 1936 elections
+		date > 1936.4.15 # Trigger at some point after 1936 elections
 	}
 
 	mean_time_to_happen = {
@@ -1326,6 +1328,7 @@ country_event = {
 					original_tag = SPR
 					has_government = communism
 				}
+				create_faction = "Republican Spain"
 				add_ideas = SPR_desperate_defences
 				add_ideas = neutrality_idea_spr
 				
@@ -1340,7 +1343,7 @@ country_event = {
 				}
 				add_offsite_building = { type = arms_factory level = 20 }
 			}
-			
+			create_faction = "Nationalist Spain"
 			add_ideas = SPA_desperate_defences
 			add_ideas = neutrality_idea_spr
 			
@@ -1384,6 +1387,7 @@ country_event = {
 					original_tag = SPR
 					has_government = fascism
 				}
+				create_faction = "Nationalist Spain"
 				add_ideas = SPA_desperate_defences
 				add_ideas = neutrality_idea_spa
 
@@ -1411,7 +1415,7 @@ country_event = {
 				ideology = fascism
 				popularity = -1
 			}
-			
+			create_faction = "Republican Spain"
 			add_ideas = SPR_desperate_defences
 			add_ideas = neutrality_idea_spr
 		

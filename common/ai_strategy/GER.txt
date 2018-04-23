@@ -23,23 +23,30 @@ template_design = {
 	}
 
 }
-GER_stop_panzer_i&ii_production = {
+GER_stop_panzer_i_production = {
 	enable = {
 		original_tag = GER
-		OR = {
-			has_equipment = { panzer_ii_equipment > 600 }
-			has_equipment = { panzer_iii_equipment > 1 }
-			date > 1939.1.1
-		}		
+		has_equipment = { panzer_i_equipment > 600 }	
 	}
 	abort = {
-		# once we start we never go back to light armor
+		has_equipment = { panzer_i_equipment < 1 }
 	}
 	
 	ai_strategy = {
 		type = equipment_variant_production_factor
 		id = panzer_i_equipment
 		value = -100
+	}
+	
+}
+
+GER_stop_panzer_ii_production = {
+	enable = {
+		original_tag = GER
+		has_equipment = { panzer_ii_equipment > 600 }	
+	}
+	abort = {
+		has_equipment = { panzer_ii_equipment < 1 }
 	}
 	
 	ai_strategy = {
@@ -50,17 +57,14 @@ GER_stop_panzer_i&ii_production = {
 	
 }
 
-GER_switch_to_PIVF1 = {
+GER_stop_panzer_iii_production = {
 	enable = {
 		original_tag = GER
 		has_tech = tech_panzer_iv_equipment_3
-		OR = {
-			has_equipment = { panzer_iii_equipment > 1500 }
-			date > 1941.1.1
-		}		
+		has_equipment = { panzer_iii_equipment > 1000 }		
 	}
 	abort = {
-		# Not going back from Pz4 / later panther
+		has_equipment = { panzer_iii_equipment < 100 }
 	}
 	
 	ai_strategy = {
@@ -203,7 +207,7 @@ i_swe = {
 war_with_france = {
 	enable = {
 		tag = GER
-		#has_completed_focus = GER_war_with_france
+		has_war_with = FRA
 		country_exists = FRA
 	}
 	abort = {
@@ -400,7 +404,8 @@ Spain_ally = {
 		tag = GER
 		NOT = { has_completed_focus = GER_nationalist_spain_ally }
 		country_exists = D01
-		D01 = { controls_state = 41 } #Madrid
+		D01 = { NOT = { has_civil_war = yes } }
+		D01 = { owns_state = 41 } #Madrid
 		D01 = { has_government = fascism } 
 	}
 	abort = {
@@ -411,8 +416,9 @@ Spain_ally = {
 	}
 	}
 	
-	ai_strategy = { type = befriend id = "D01"					value = -300000 		}
-	ai_strategy = { type = alliance id = "D01"					value = -300000 		}	
+	ai_strategy = { type = befriend id = "D01"					value = -300 		}
+	ai_strategy = { type = alliance id = "D01"					value = -300 		}	
+	ai_strategy = { type = declare_war id = "D01"					value = -300 		}	
 }
 
 denmark_ally = {

@@ -1586,7 +1586,7 @@ focus_tree = {
 		prerequisite = { focus = ITA_victoryinETH }
 		available = {
 			any_other_country = {
-				tag = SPR
+				original_tag = SPR
 				has_government = fascism
 				has_volunteers_amount_from = {
 					tag = ITA
@@ -1595,9 +1595,9 @@ focus_tree = {
 			}
 		}
 		cancel = {
-			#SPA = {
-			#	has_civil_war = no
-			#}
+			SPR = {
+				has_civil_war = no
+			}
 		}
 		cancel_if_invalid = no
 		x = 20
@@ -1745,7 +1745,6 @@ focus_tree = {
 				country_exists = GER
 			}
 			NOT = {
-				is_ai = yes
 				is_in_faction = yes
 			}
 		}

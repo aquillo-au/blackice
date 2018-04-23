@@ -32,19 +32,21 @@ sub_units = {
 		}
 		
 		#Size Definitions
-		max_strength = 15
+		max_strength = 25
 		max_organisation = 10
 		default_morale = 0.2
 		manpower = 1000
 		suppression = 0.2
 		#Misc Abilities
 		training_time = 90
+		air_attack = -0.7
+
 		
 		weight = 0.5
 		
 		transport = infantry_equipment
 
-		supply_consumption = 0.15
+		supply_consumption = 0.18
 	}
 	light_infantry = {
 		sprite = infantry
@@ -79,24 +81,24 @@ sub_units = {
 		}
 		
 		#Size Definitions
-		max_strength = 9
+		max_strength = 20
 		max_organisation = 10
 		default_morale = 0.2
 		manpower = 800
 		suppression = 0.2
 		#Misc Abilities
-		training_time = 90
+		training_time = 70
 		
 		weight = 0.25
 		
-		soft_attack = 0.2
+		soft_attack = 0.25
 		defense = -0.25
 
-		supply_consumption = 0.12
+		supply_consumption = 0.14
 
 		plains = {
-			attack = -0.25
-			defence = -0.25
+			attack = -0.2
+			defence = -0.2
 			#movement = -0.1
 		}
 		marsh = {
@@ -122,6 +124,14 @@ sub_units = {
 	
 		urban = {
 			attack = 0.2
+		}
+		densecity = {
+			attack = 0.25
+			#movement = 0.020
+		}
+		capital = {
+			attack = 0.3
+			#movement = 0.015
 		}
 	}
 	garrison = {
@@ -154,7 +164,7 @@ sub_units = {
 		}
 		
 		#Size Definitions
-		max_strength = 11
+		max_strength = 20
 		max_organisation = 10
 		default_morale = 0.2
 		manpower = 1000
@@ -223,6 +233,14 @@ sub_units = {
 			defence = 0.4
 			movement = -0.1
 		}
+		densecity = {
+			defence = 0.5
+			movement = -0.15
+		}
+		capital = {
+			defence = 0.6
+			movement = -0.2
+		}
 		fort = {
 			defence = 0.5
 		}
@@ -251,7 +269,7 @@ sub_units = {
 		combat_width = 2
 		
 		#Size Definitions
-		max_strength = 6
+		max_strength = 15
 		max_organisation = 20
 		default_morale = 0.5
 		manpower = 900
@@ -319,6 +337,14 @@ sub_units = {
 			defence = 0.08
 			movement = -0.05
 		}
+		densecity = {
+			defence = 0.09
+			movement = -0.01
+		}
+		capital = {
+			defence = 0.1
+			movement = -0.015
+		}
 		fort = {
 			defence = 0.08
 		}
@@ -359,7 +385,7 @@ sub_units = {
 		}
 			
 		#Size Definitions
-		max_strength = 8
+		max_strength = 15
 		max_organisation = 10
 		default_morale = 0.15
 		manpower = 1000
@@ -426,6 +452,15 @@ sub_units = {
 			defence = 0.5
 			movement = 0.025
 		}
+		densecity = {
+			defence = 0.6
+			movement = 0.020
+		}
+		capital = {
+			defence = 0.7
+			movement = 0.015
+		}
+		
 	}
 	communist_militia = {
 		sprite = infantry
@@ -457,7 +492,7 @@ sub_units = {
 		}
 			
 		#Size Definitions
-		max_strength = 8
+		max_strength = 15
 		max_organisation = 15
 		default_morale = 0.2
 		manpower = 1000
@@ -524,6 +559,14 @@ sub_units = {
 			defence = 0.5
 			movement = 0.025
 		}
+		densecity = {
+			defence = 0.6
+			movement = 0.020
+		}
+		capital = {
+			defence = 0.7
+			movement = 0.015
+		}
 	}
 	luftwaffe_infantry = {
 		sprite = infantry
@@ -557,7 +600,7 @@ sub_units = {
 		}
 		
 		#Size Definitions
-		max_strength = 11
+		max_strength = 20
 		max_organisation = 10
 		default_morale = 0.18
 		manpower = 900
@@ -624,6 +667,7 @@ sub_units = {
 		}
 		amphibious = {
 			attack = 0.45
+			movement = 0.3
 		}
 	}
 
@@ -772,7 +816,7 @@ sub_units = {
 		combat_width = 2
 		
 		#Size Definitions
-		max_strength = 22
+		max_strength = 20
 		max_organisation = 25
 		default_morale = 0.5
 		manpower = 1000
@@ -918,7 +962,7 @@ sub_units = {
 		combat_width = 2
 		
 		#Size Definitions
-		max_strength = 18
+		max_strength = 20
 		max_organisation = 10
 		default_morale = 0.2
 		manpower = 1200
@@ -928,8 +972,8 @@ sub_units = {
 		training_time = 90
 		suppression = 0.2
 		weight = 0.75
-		supply_consumption = 0.2
-		air_attack = 0.2
+		supply_consumption = 0.23
+		air_attack = -0.8
 		# this is what moves us and sets speed
 		transport = horse_equipment
 	
@@ -973,7 +1017,15 @@ sub_units = {
 		}
 		urban = {
 			attack = -0.01
+			movement = 0.03
+		}
+		densecity = {
+			attack = -0.02
 			movement = 0.02
+		}
+		capital = {
+			attack = -0.03
+			movement = 0.01
 		}
 		river = {
 			attack = -0.01
@@ -1003,7 +1055,7 @@ sub_units = {
 		combat_width = 2
 		
 		#Size Definitions
-		max_strength = 18
+		max_strength = 25
 		max_organisation = 10
 		default_morale = 0.2
 		manpower = 1500
@@ -1013,11 +1065,11 @@ sub_units = {
 		training_time = 90
 		suppression = 0.2
 		weight = 0.75
-		supply_consumption = 0.3
+		supply_consumption = 0.33
 	
 		soft_attack = 0.2 # more heavy weapons/ ammo available
 		hard_attack = 0.15
-		air_attack = 0.3
+		air_attack = -0.8
 		# this is what moves us and sets speed
 		transport = motorized_equipment
 	
@@ -1064,6 +1116,14 @@ sub_units = {
 			attack = -0.01
 			movement = 0.03
 		}
+		densecity = {
+			attack = -0.02
+			movement = 0.02
+		}
+		capital = {
+			attack = -0.03
+			movement = 0.01
+		}
 		river = {
 			attack = -0.01
 			movement = -0.015
@@ -1099,11 +1159,11 @@ sub_units = {
 		armor_value = 0.1
 
 		ap_attack = 0.1
-		air_attack = 0.5
+		air_attack = -0.8
 		
 		#Size Definitions
 		maximum_speed = 0.3
-		max_strength = 22
+		max_strength = 30
 		max_organisation = 10
 		default_morale = 0.2
 		manpower = 1800
@@ -1114,7 +1174,7 @@ sub_units = {
 		suppression = 0.2
 		weight = 1
 		
-		supply_consumption = 0.35
+		supply_consumption = 0.4
 		
 		# needed since we give so much bonus to infantry even with no mech equipment
 		
@@ -1162,6 +1222,14 @@ sub_units = {
 		urban = {
 			attack = -0.01
 			movement = 0.03
+		}
+		densecity = {
+			attack = -0.02
+			movement = 0.02
+		}
+		capital = {
+			attack = -0.03
+			movement = 0.01
 		}
 		river = {
 			attack = -0.01

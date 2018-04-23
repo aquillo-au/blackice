@@ -146,7 +146,23 @@ JAP_dont_mess_with_volunteers = { # Reverse strategy
 	}
 }
 
-
+WTT_all_japanese_faction_join_war = {
+	enable = {
+		OR = {
+			tag = JAP
+			is_in_faction_with = JAP
+		}
+		has_war_with = CHI
+	}
+	abort = {
+		NOT = { has_war_with = CHI }		
+	}
+	
+	ai_strategy = {
+		type = spare_unit_factor
+		value = 500
+	}
+}
 
 chinese_war = {
 	enable = {
@@ -169,6 +185,10 @@ chinese_war = {
 		type = conquer
 		id = "CHI"			
 		value = 2000
+	}
+	ai_strategy = {
+		type = spare_unit_factor
+		value = 500
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
@@ -285,7 +305,20 @@ germany_ally = {
 }
 
 
-
+Japan_dont_protect_japan = {
+	enable = {
+		OR = {
+			tag = JAP
+			is_in_faction_with = JAP
+		}
+		has_war_with = CHI
+	}
+	abort = {
+		NOT = { has_war_with = CHI }		
+	}
+	
+	ai_strategy = { type = area_priority id = japan	 			value = -2000 }
+}
 
 
 JAP_protect_core = {

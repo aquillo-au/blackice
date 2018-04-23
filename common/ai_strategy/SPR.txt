@@ -42,6 +42,28 @@ ITA_and_GER_help_SPA_win_civil_war = {
 	}
 }
 
+mexico_send_equipment = {
+	enable = {
+		tag = MEX
+		SPR = { has_civil_war = yes }
+		has_government = communism
+	}
+	abort = {
+			SPR = { has_civil_war = no }
+	}
+	
+	ai_strategy = {
+		type = support
+		id = SPR
+		value = 5000
+	}
+	ai_strategy = {
+		type = befriend
+		id = SPR
+		value = 5000
+	}
+}
+
 dont_join_the_axis_with_rebuild = {
 	enable = {
 		original_tag = SPR
@@ -61,25 +83,25 @@ dont_join_the_axis_with_rebuild = {
 	ai_strategy = {
 		type = alliance
 		id = GER
-		value = -500000
+		value = -500
 	}
 
 	ai_strategy = {
 		type = alliance
 		id = ITA
-		value = -500000
+		value = -500
 	}
 	
 	ai_strategy = {
 		type = ignore
 		id = GER
-		value = 500000
+		value = 50000
 	}
 	
 	ai_strategy = {
 		type = ignore
 		id = ITA
-		value = 500000
+		value = 50000
 	}
 }
 

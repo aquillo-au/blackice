@@ -459,7 +459,7 @@ country_event = {
 
 	trigger = {
 	    tag = JAP
-		
+		has_war_with = ENG
 	    NOT = { is_in_faction_with = USA }
 		NOT = { GER = { is_in_faction_with = USA } }
 	    is_ai = yes
@@ -468,8 +468,36 @@ country_event = {
 
     immediate = {
         hidden_effect = {
-            	JAP = { declare_war_on = { target = USA type = annex_everything } }
-            	set_country_flag = jap_at_the_usa
+            JAP = { declare_war_on = { target = USA type = annex_everything } }
+            set_country_flag = jap_at_the_usa
+			set_global_flag = usa_allies
+			#if = {
+			#	limit = {
+			#		GER = { is_ai = yes } 
+			#	}
+			#	GER = { country_event = blackiceevents.299 }
+			#}
+        }
+    }
+
+	option = {
+		name = blackiceevents.28.a
+	}
+}
+
+country_event = {
+	id = blackiceevents.299
+	title = blackiceevents.28.t
+	desc = blackiceevents.28.d
+	picture = GFX_report_event_tojo_flag
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            GER = { declare_war_on = { target = USA type = annex_everything } }
         }
     }
 

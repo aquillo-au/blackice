@@ -17,19 +17,19 @@ ideas = {
 			modifier = {
 				political_power_factor = 0.05
 				attrition = -0.35
-				army_org_factor = -0.4
-				army_morale_factor = -0.4
-				navy_org_factor = -0.4
-				air_superiority_efficiency = -0.4
-				air_cas_efficiency = -0.4
-				air_strategic_bomber_bombing_factor = -0.4
-				air_escort_efficiency = -0.4
-				air_intercept_efficiency = -0.4
-				air_nav_efficiency = -0.4
-				air_ace_generation_chance_factor = -0.4
-				training_time_army_factor = 0.1
-				industrial_capacity_dockyard = 0.05
-				industrial_capacity_factory = 0.05
+				army_org_factor = -0.8
+				army_morale_factor = -0.8
+				navy_org_factor = -0.8
+				air_superiority_efficiency = -0.8
+				air_cas_efficiency = -0.8
+				air_strategic_bomber_bombing_factor = -0.8
+				air_escort_efficiency = -0.8
+				air_intercept_efficiency = -0.8
+				air_nav_efficiency = -0.8
+				air_ace_generation_chance_factor = -0.8
+				training_time_army_factor = 0.12
+				industrial_capacity_dockyard = 0.08
+				industrial_capacity_factory = 0.08
 				production_speed_industrial_complex_factor = 0.05
 				production_speed_arms_factory_factor = 0.05
 				production_speed_dockyard_factor = 0.05
@@ -80,6 +80,25 @@ ideas = {
 			level = 2
 			available = {
 				OR = {
+					has_war = yes
+					has_idea = low_economic_mobilisation
+					has_idea = partial_economic_mobilisation
+					has_idea = war_economy
+					has_war_support > 0.6
+					threat > 0.2
+					
+					AND = { 
+						has_government = fascism
+						fascism > 0.79
+						threat > 0.15
+					}
+					AND = { 
+						has_government = communism
+						communism > 0.79
+						threat > 0.15
+					}
+				}
+				OR = {
 					has_country_flag = tax_low
 					has_country_flag = tax_average
 					has_country_flag = tax_high
@@ -96,19 +115,19 @@ ideas = {
 			modifier = {
 				political_power_factor = 0.025
 				attrition = -0.25
-				army_org_factor = -0.25
-				army_morale_factor = -0.25
-				navy_org_factor = -0.25
-				air_superiority_efficiency = -0.25
-				air_cas_efficiency = -0.25
-				air_strategic_bomber_bombing_factor = -0.25
-				air_escort_efficiency = -0.25
-				air_intercept_efficiency = -0.25
-				air_nav_efficiency = -0.25
-				air_ace_generation_chance_factor = -0.25
-				training_time_army_factor = 0.05
-				industrial_capacity_dockyard = 0.025
-				industrial_capacity_factory = 0.025
+				army_org_factor = -0.5
+				army_morale_factor = -0.5
+				navy_org_factor = -0.5
+				air_superiority_efficiency = -0.5
+				air_cas_efficiency = -0.5
+				air_strategic_bomber_bombing_factor = -0.5
+				air_escort_efficiency = -0.5
+				air_intercept_efficiency = -0.5
+				air_nav_efficiency = -0.5
+				air_ace_generation_chance_factor = -0.5
+				training_time_army_factor = 0.1
+				industrial_capacity_dockyard = 0.04
+				industrial_capacity_factory = 0.04
 				production_speed_industrial_complex_factor = 0.025
 				production_speed_arms_factory_factor = 0.025
 				production_speed_dockyard_factor = 0.025
@@ -170,6 +189,24 @@ ideas = {
 			level = 2
 			available = {
 				OR = {
+					has_war = yes
+					has_idea = partial_economic_mobilisation
+					has_idea = war_economy
+					has_war_support > 0.7
+					threat > 0.3
+					
+					AND = { 
+						has_government = fascism
+						fascism > 0.89
+						threat > 0.2
+					}
+					AND = { 
+						has_government = communism
+						communism > 0.89
+						threat > 0.2
+					}
+				}
+				OR = {
 					AND = {
 					has_country_flag = education_minimal
 						OR = {
@@ -196,17 +233,17 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.025
 				attrition = -0.125
-				army_org_factor = -0.125
-				army_morale_factor = -0.125
-				navy_org_factor = -0.125
-				air_superiority_efficiency = -0.125
-				air_cas_efficiency = -0.125
-				air_strategic_bomber_bombing_factor = -0.125
-				air_escort_efficiency = -0.125
-				air_intercept_efficiency = -0.125
-				air_nav_efficiency = -0.125
-				air_ace_generation_chance_factor = -0.125
-				training_time_army_factor = 0.025
+				army_org_factor = -0.25
+				army_morale_factor = -0.25
+				navy_org_factor = -0.25
+				air_superiority_efficiency = -0.25
+				air_cas_efficiency = -0.25
+				air_strategic_bomber_bombing_factor = -0.25
+				air_escort_efficiency = -0.25
+				air_intercept_efficiency = -0.25
+				air_nav_efficiency = -0.25
+				air_ace_generation_chance_factor = -0.25
+				training_time_army_factor = 0.05
 			}
 			
 			on_add = {
@@ -268,6 +305,23 @@ ideas = {
 			level = 1
 			available = {
 				OR = {
+					has_war = yes
+					has_idea = war_economy
+					has_war_support > 0.8
+					threat > 0.5
+					
+					AND = { 
+						has_government = fascism
+						fascism > 0.95
+						threat > 0.25
+					}
+					AND = { 
+						has_government = communism
+						communism > 0.95
+						threat > 0.25
+					}
+				}
+				OR = {
 					has_country_flag = tax_low
 					has_country_flag = tax_average
 					has_country_flag = tax_high
@@ -284,11 +338,11 @@ ideas = {
 			modifier = {
 				political_power_factor = -0.05
 				training_time_army_factor = -0.05
-				industrial_capacity_dockyard = -0.025
-				industrial_capacity_factory = -0.025
-				production_speed_industrial_complex_factor = -0.025
-				production_speed_arms_factory_factor = -0.025
-				production_speed_dockyard_factor = -0.025
+				industrial_capacity_dockyard = -0.05
+				industrial_capacity_factory = -0.05
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.05
+				production_speed_dockyard_factor = -0.05
 			}
 			
 			on_add = {

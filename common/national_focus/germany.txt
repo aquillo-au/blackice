@@ -1831,7 +1831,7 @@ focus_tree = {
 		completion_reward = {
 			add_resource = {
 				type = oil
-				amount = 20
+				amount = 4
 				state = 59
 			}
 		}
@@ -5462,7 +5462,7 @@ focus = {
 			custom_effect_tooltip = GER_rhineland_ultimatum
 			add_political_power = 120
 			army_experience = 5
-			add_named_threat = { threat = 2 name = GER_rhineland }
+			add_named_threat = { threat = 3 name = GER_rhineland }
 			if = {
 				limit = { FRA = { is_puppet = no } }
 				FRA = {
@@ -5627,7 +5627,7 @@ focus = {
 		}	
 		completion_reward = {
 			SOV = { add_opinion_modifier = { target = ROOT modifier = pact_against_us } }
-			add_named_threat = { threat = 1 name = GER_anti_comitern_pact }
+			add_named_threat = { threat = 1.5 name = GER_anti_comitern_pact }
 			every_other_country = {
 				limit = {
 					NOT = { tag = GER }
@@ -6196,7 +6196,7 @@ focus = {
 			188 = { add_claim_by = GER }
 			85 = { add_claim_by = GER }
 			86 = { add_claim_by = GER }
-			add_named_threat = { threat = 3 name = GER_demand_memel_threat }
+			add_named_threat = { threat = 5 name = GER_demand_memel_threat }
 			if = {
 				limit = {
 					LIT = { owns_state = 188 }
@@ -6751,7 +6751,7 @@ focus = {
 				limit = { NOT = { country_exists = CZE } }
 				country_event = { id = germany.55 hours = 6 }
 			}
-			add_named_threat = { threat = 3 name = GER_end_of_czechoslovakia }
+			add_named_threat = { threat = 6 name = GER_end_of_czechoslovakia }
 		}
 	}
 
@@ -7153,11 +7153,12 @@ focus = {
 			}
 		}	
 		completion_reward = {
+			
 			if = {
 				limit = {
 					OR = { 
-						SPR = { NOT = { has_government = fascism } }
-						NOT = { country_exists = SPR }
+						D01 = { NOT = { has_government = fascism } }
+						NOT = { country_exists = D01 }
 					}
 				}
 				custom_effect_tooltip = GER_nationalist_spain_ally_tt
@@ -7648,7 +7649,7 @@ focus = {
 			}
 			
 		
-			add_named_threat = { threat = 2 name = GER_demand_slovenia_threat }
+			add_named_threat = { threat = 4 name = GER_demand_slovenia_threat }
 			if = {
 				limit = {
 					YUG = {
@@ -8081,7 +8082,7 @@ focus = {
 				
 			}
 		
-			add_named_threat = { threat = 2 name = GER_second_ljubljana_award }
+			add_named_threat = { threat = 3 name = GER_second_ljubljana_award }
 			if = {
 				limit = {
 					GRE = {
