@@ -427,9 +427,21 @@ country_event = { # historical mod - Finland join GER during GER vs SOV
 	option = {
 		name = blackiceevents.27.a
 		ai_chance = { factor = 100 }
-		GER = { add_to_faction = FIN }
-		FIN = { set_country_flag = in_axis }
-		hidden_effect = { FIN = { remove_ideas = neutrality_idea } }
+		FIN = { create_faction = "Finland" add_to_faction = FIN }
+		FIN = { 
+			diplomatic_relation = { country = GER relation = non_aggression_pact } 
+			give_military_access = GER
+			declare_war_on = { target = SOV type = annex_everything }
+		}
+		hidden_effect = { 
+			FIN = { 
+				remove_ideas = neutrality_idea 
+				add_opinion_modifier = { target = GER modifier =  improve_relation } 
+			} 
+			GER = { 
+				add_opinion_modifier = { target = FIN modifier =  improve_relation } 
+				} 
+		}
 		set_global_flag = now_finland_now
 	}
 	option = {
@@ -2024,38 +2036,7 @@ country_event = {
 		
 	}
 	}
-	country_event = {
-	id = blackiceevents.96
-	title = blackiceevents.96.t
-	desc = blackiceevents.96.d
 	
-	picture = GFX_report_event_soldiers_marching
-
-	trigger = {
-		tag = ETH
-		is_ai = yes	
-		not = { has_tech = molotov_cocktails_tech }
-		has_war_with = ITA	
-			}
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = blackiceevents.96.a
-		hidden_effect = {
-			set_technology = {molotov_cocktails_tech = 1 }
-			set_technology = {ETH_defence_I = 1 }
-			add_timed_idea = {
-				idea = Tribal_anger
-				days = 180
-			}
-		}
-		
-	}
-	}
 country_event = {
 	id = blackiceevents.97
 	title = blackiceevents.97.t
@@ -2081,63 +2062,8 @@ country_event = {
 		}
 		
 	}
-	}
-country_event = {
-	id = blackiceevents.98
-	title = blackiceevents.98.t
-	desc = blackiceevents.98.d
-	
-	picture = GFX_report_event_soldiers_marching
+}
 
-	trigger = {
-		tag = HUN
-		is_ai = yes	
-		is_in_faction_with = GER
-		has_war_with = SOV
-		GER = {has_war_with = SOV}
-			}
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = blackiceevents.98.a
-		hidden_effect = {
-			add_ideas = eastern_fronthun
-		}
-		
-	}
-	}
-country_event = {
-	id = blackiceevents.99
-	title = blackiceevents.99.t
-	desc = blackiceevents.99.d
-	
-	picture = GFX_report_event_soldiers_marching
-
-	trigger = {
-		tag = ROM
-		is_ai = yes	
-		is_in_faction_with = GER
-		has_war_with = SOV
-		GER = {has_war_with = SOV}
-			}
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = blackiceevents.99.a
-		hidden_effect = {
-			add_ideas = eastern_frontrom
-		}
-		
-	}
-	}
 country_event = {
 	id = blackiceevents.100
 	title = blackiceevents.100.t
@@ -2231,8 +2157,8 @@ country_event = {
 		}
 		 
 	}
-	}
-	country_event = {
+}
+country_event = {
 	id = blackiceevents.103
 	title = blackiceevents.103.t
 	desc = blackiceevents.103.d
