@@ -8506,24 +8506,23 @@ country_event = {
 	
 	trigger = {
 		tag = GER
+		has_country_flag = czechpanzer_tech
 		not = { has_country_flag = panzer_35t }
 		not = { has_country_flag = panzer_38t }
 		owns_state = 9
 	}
 	
 	mean_time_to_happen = {
-		days = 1
+		days = 2
 	}
 	
 	option = {
 		name = germany.228.a
 		ai_chance = { factor = 100 }
-		set_technology = {
-			tech_czech_ger_panzer_1 = 1
-		}
 		
 		hidden_effect = {
 			load_oob = "GER_1_3_Leichte_Division"
+			
 			add_equipment_to_stockpile = { type = czech_ger_panzer_equipment_1 amount = 100 producer = GER }
 			add_equipment_to_stockpile = { type = panzer_ii_equipment_1 amount = 60 producer = GER }
 		}
@@ -8593,7 +8592,7 @@ country_event = {
 	
 	option = {
 		name = germany.281.a
-		ai_chance = { base = 100 }
+		ai_chance = { factor = 100 }
 		hidden_effect = {
 			load_oob = "GER_4_Leichte_Division"
 			delete_unit_template_and_units = { division_template = "Schnelle Division" }
@@ -8602,7 +8601,7 @@ country_event = {
 	}
 	option = {
 		name = germany.281.b		#no need
-		ai_chance = { base = 1 }
+		ai_chance = { factor = 0 }
 		set_country_flag = GER_4_LDIV
 	}
 }
@@ -14560,6 +14559,51 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
+	}
+}
+country_event = {
+	id = germany.459
+	title = germany.459.t
+	desc = germany.459.d
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		is_ai = yes
+		not = { has_country_flag = czechpanzer_tech }
+		owns_state = 9
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		add_equipment_to_stockpile = {
+			type = czech_ger_panzer_equipment_1
+			amount = 200
+			producer = GER
+		}
+		add_equipment_production = {
+			equipment = {
+				type = czech_ger_panzer_equipment_1
+				creator = "GER" 
+			}
+			requested_factories = 2
+			progress = 0.1
+			efficiency = 50
+		}
+	}
+	
+	option = {
+		name = germany.459.a
+		ai_chance = { factor = 100 }
+		set_technology = {
+			tech_czech_ger_panzer_1 = 1
+		}
+		set_country_flag = czechpanzer_tech
 	}
 }
 ### EOF ###

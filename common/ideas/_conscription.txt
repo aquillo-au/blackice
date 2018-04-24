@@ -22,7 +22,6 @@ ideas = {
 				political_power_factor = 0.05
 				army_org_factor = 0.1
 				army_morale_factor = 0.1
-				stability_weekly = 0.001
 			}
 			on_add = {
 				set_country_flag = cons_volunteer
@@ -88,6 +87,7 @@ ideas = {
 			removal_cost = -1
 
 			available = {
+				has_war_support > 0.20 
 				OR = {
 					has_country_flag = tax_low
 					has_country_flag = tax_average
@@ -105,6 +105,7 @@ ideas = {
 				political_power_factor = 0.025
 				army_org_factor = -0.05
 				army_morale_factor = -0.05
+				stability_factor = -0.01
 			}
 			
 			on_add = {
@@ -190,6 +191,7 @@ ideas = {
 				political_power_factor = 0.01
 				army_org_factor = 0.025
 				army_morale_factor = 0.025
+				stability_factor = -0.02
 			}
 			
 			on_add = {
@@ -269,7 +271,7 @@ ideas = {
 				industrial_capacity_factory = -0.03
 				industrial_capacity_dockyard = -0.03
 				political_power_factor = -0.01
-				stability_weekly = -0.001
+				stability_factor = -0.03
 			}
 			
 			on_add = {
@@ -287,13 +289,13 @@ ideas = {
 			ai_will_do = {
    				factor = 1
    				modifier = {
-					factor = 80
+					factor = 30
 					has_war = yes
 					has_manpower < 800000
 					is_major = yes
 				}
 				modifier = {
-					factor = 80
+					factor = 30
 					has_war = yes
 					has_manpower < 600000
 					is_major = no
@@ -328,12 +330,6 @@ ideas = {
 					enemies_strength_ratio > 0.5
 					has_manpower < 1200000
 				}
-				OR = {
-					has_country_flag = age_16
-					has_country_flag = age_15
-					has_country_flag = age_14
-				}
-
 			}
 			
 			level = 1
@@ -345,7 +341,7 @@ ideas = {
 				political_power_factor = -0.025
 				army_org_factor = -0.05
 				army_morale_factor = -0.05
-				stability_weekly = -0.002
+				stability_factor = -0.06
 			}
 			
 			on_add = {
@@ -364,19 +360,19 @@ ideas = {
    				modifier = {
 					factor = 40
 					has_war = yes
-					has_manpower < 400000
+					has_manpower < 1000000
 					is_major = yes
 				}
 				modifier = {
 					factor = 40
 					has_war = yes
-					has_manpower < 250000
+					has_manpower < 850000
 					is_major = no
 				}
 				modifier = {
 					factor = 0
 					has_war = yes
-					has_manpower > 400000
+					has_manpower > 2000000
 					is_major = yes
 				}
 				modifier = {
@@ -405,11 +401,6 @@ ideas = {
 					enemies_strength_ratio > 0.6
 					has_manpower < 600000
 				}
-				OR = {
-					has_country_flag = age_13
-					has_country_flag = age_12
-					has_country_flag = age_11
-				}
 				has_country_flag = cons_expanded_draft
 			}
 
@@ -422,7 +413,7 @@ ideas = {
 				political_power_factor = -0.05
 				army_org_factor = -0.1
 				army_morale_factor = -0.1
-				stability_weekly = -0.003
+				stability_factor = -0.08
 			}
 			
 			on_add = {
@@ -439,27 +430,27 @@ ideas = {
    				factor = 1
 
    				modifier = {
-					factor = 40
+					factor = 50
 					has_war = yes
-					has_manpower < 300000
+					has_manpower < 900000
 					is_major = yes
 				}
 				modifier = {
-					factor = 40
+					factor = 50
 					has_war = yes
-					has_manpower < 200000
+					has_manpower < 800000
 					is_major = no
 				}
 				modifier = {
 					factor = 0
 					has_war = yes
-					has_manpower > 900000
+					has_manpower > 1900000
 					is_major = yes
 				}
 				modifier = {
 					factor = 0
 					has_war = yes
-					has_manpower > 700000
+					has_manpower > 1100000
 					is_major = no
 				}
 			}
@@ -482,14 +473,7 @@ ideas = {
 					enemies_strength_ratio > 0.6
 					has_manpower < 800000
 				}
-
-				OR = {
-					has_country_flag = age_11
-					has_country_flag = age_10
-				}
-
 				has_country_flag = cons_barrel
-
 			}
 			
 
@@ -502,7 +486,7 @@ ideas = {
 				political_power_factor = -0.10
 				army_org_factor = -0.15
 				army_morale_factor = -0.15
-				stability_weekly = -0.005
+				stability_factor = -0.10
 			}
 			
 			on_add = {
@@ -521,13 +505,13 @@ ideas = {
    				modifier = {
 					factor = 60
 					has_war = yes
-					has_manpower < 200000
+					has_manpower < 800000
 					is_major = yes
 				}
 				modifier = {
 					factor = 60
 					has_war = yes
-					has_manpower < 100000
+					has_manpower < 700000
 					is_major = no
 				}
 				modifier = {
