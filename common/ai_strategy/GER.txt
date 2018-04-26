@@ -23,6 +23,30 @@ template_design = {
 	}
 
 }
+
+dont_take_claims_on_POL_we_got_focus = {
+	enable = {
+		tag = GER
+		country_exists = POL
+		has_war = no
+		has_completed_focus = GER_demand_memel
+	}
+
+	abort = {
+		OR = {
+			NOT = { country_exists = POL }
+			date > 1940.1.1
+			has_war = yes
+		}
+	}
+	
+	ai_strategy = {
+		type = ignore_claim
+		id = "POL"			
+		value = 1
+	}		
+}
+
 GER_stop_panzer_i_production = {
 	enable = {
 		original_tag = GER

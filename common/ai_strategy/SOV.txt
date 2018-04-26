@@ -11,27 +11,29 @@
 # influence
 
 
-#soviet_tank_production = {
-#	enable = {
-#		tag = SOV
-#		country_exists = SOV
-#	}
-#	abort = {
-#		OR = {
-#			NOT = { country_exists = SOV }
-#		}	
-#	}
-#	ai_strategy = {
-#		type = unit_ratio
-#		id = infantry
-#		value = -80
-#	}
-#	ai_strategy = {
-#		type = unit_ratio
-#		id = armor
-#		value = 80
-#	}
-#}
+
+dont_take_claims_on_POL_we_got_focus_as_well = {
+	enable = {
+		tag = SOV
+		country_exists = POL
+		has_war = no
+		NOT = { has_completed_focus = SOV_demand_eastern_poland }
+	}
+
+	abort = {
+		OR = {
+			NOT = { country_exists = POL }
+			date > 1940.1.1
+			has_war_with = POL
+		}
+	}
+	
+	ai_strategy = {
+		type = ignore_claim
+		id = "POL"			
+		value = 1
+	}		
+}
 
 NAP_sov-ger = {
 	enable = {

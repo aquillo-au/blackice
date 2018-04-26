@@ -6752,8 +6752,16 @@ CHI_political_power_struggle = {
 			subtract_from_temp_variable = { temp_opinion_range = @WARLORD_SUPPORT_MINIMUM_OPINION }
 
 			subtract_from_variable = { var = opinion_of_us_steps value = @WARLORD_SUPPORT_MINIMUM_OPINION }
-
-			divide_variable = { var = opinion_of_us_steps value = temp_opinion_range }
+			if ={
+				limit={
+				check_variable = { opinion_of_us_steps = 0 }
+				}
+				
+				else={
+				divide_variable = { var = opinion_of_us_steps value = temp_opinion_range }
+				}
+				}
+			
 
 			multiply_variable = { opinion_of_us_steps = @WARLORD_SUPPORT_NUM_STEPS_FROM_OPINION }
 			round_variable = opinion_of_us_steps

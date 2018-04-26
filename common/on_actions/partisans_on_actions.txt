@@ -8,7 +8,14 @@ on_actions = {
 				}
 				subtract_from_variable = { risedup_partizan = 1 }
 				set_variable = { risedup_day = risedup_partizan }
-				divide_variable = { risedup_day = 74 }
+				if ={
+					limit={
+						check_variable = { risedup_day = 0 }
+					}
+					else={
+						divide_variable = { risedup_day = 74 }
+					}
+				}
 				round_variable = risedup_day
 			}
 			
