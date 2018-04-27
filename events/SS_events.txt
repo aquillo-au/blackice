@@ -576,6 +576,7 @@ country_event = {
 	option = {
 		name = ss_event.640.b
 		ai_chance = { factor = 0 }
+		set_country_flag = ss_vt_division_39_no
 	}
 }
 ## Player ## Motorize the SS VT-Division. Add 2 Add SS Stürmgeschutz and Recon(mot) ##
@@ -592,6 +593,7 @@ country_event = {
 		tag = GER
 		has_tech = subtech_light_panzer_td_equipment_1
 		has_country_flag = ss_vt_division_39
+		NOT = { has_country_flag = ss_vt_division_39_no }
 		NOT = { has_country_flag = ss_division_reich }
 		date > 1940.12.20
 	}
