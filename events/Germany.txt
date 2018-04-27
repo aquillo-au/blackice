@@ -1234,6 +1234,7 @@ country_event = {
 	}
 	
 	option = {
+		name = germany.14.a
 		ai_chance = {
 			base = 50
 			modifier = {
@@ -1247,7 +1248,6 @@ country_event = {
 				}
 			}
 		}
-		name = germany.14.a
 		if = {
 			limit = {
 				96 = {
@@ -1403,10 +1403,11 @@ country_event = {
 				}
 			}
 		}
-		if = { limit = { 
-			OR = {
-				has_country_flag = MR_pact_CZE_yes
-				has_country_flag = MR_pact_CZE_concession
+		if = {
+			limit = { 
+				OR = {
+					has_country_flag = MR_pact_CZE_yes
+					has_country_flag = MR_pact_CZE_concession
 				}
 			}
 			country_event = germany.320
