@@ -1020,6 +1020,76 @@ GER_military_buildup = {
 		}
 	}
 	
+	GER_2_ldiv = {
+		
+		icon = ger_2_Ldiv
+		
+		available = {
+			tag = GER
+			has_country_flag = panzer_35t
+			not = { has_country_flag = panzer_38t }
+			owns_state = 9
+			not = { has_country_flag = GER_2_LDIV }
+		}
+		
+		cost = 50
+		
+		fire_only_once = yes
+		
+		activation = {
+			has_completed_focus = GER_end_of_czechoslovakia
+		}
+		
+		visible = {
+			has_completed_focus = GER_end_of_czechoslovakia
+		}
+	
+		complete_effect = {
+			custom_effect_tooltip = GER_2_ldiv_tt
+			division_template = {
+				name = "L-Div 2 'vz.38'"
+				division_names_group = GER_LTARM_01
+				is_locked = yes
+				priority = 2
+				template_counter = 209
+				
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					
+					czech_panzer = { x = 2 y = 0 } 	#Czech Pz38(t) tanks #Panzerabteilung 66
+					
+					artillery_brigade_mot = { x = 3 y = 0 }
+					artillery_brigade_mot = { x = 3 y = 1 }
+					anti_tank_brigade =  { x = 3 y = 2 }
+				}
+				support = {
+					DIV_HQ = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					artillery_medium_mot = { x = 0 y = 2 }
+					recon_mot = { x = 0 y = 3 }
+					anti_tank = { x = 0 y = 4 }
+					maintenance_company = { x = 0 y = 5 }
+					logistics_company = { x = 0 y = 6 }
+					field_hospital = { x = 0 y = 7 }
+				}
+			}
+			set_technology = {
+				tech_czech_ger_panzer_2 = 1
+			}
+			country_event = { id = germany.229 hours = 6 }
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
 	GER_4_ldiv = {
 		
 		icon = ger_4_Ldiv
@@ -1071,11 +1141,10 @@ GER_military_buildup = {
 					DIV_HQ = { x = 0 y = 0 }
 					engineer = { x = 0 y = 1 }
 					recon_cav = { x = 0 y = 2 }
-					
-					anti_tank = { x = 1 y = 0 }
-					maintenance_company = { x = 1 y = 1 }
-					logistics_company = { x = 1 y = 2 }
-					field_hospital = { x = 1 y = 3 }
+					anti_tank = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+					logistics_company = { x = 0 y = 5 }
+					field_hospital = { x = 0 y = 6 }
 				}
 			}
 			country_event = { id = germany.281 hours = 6 }
