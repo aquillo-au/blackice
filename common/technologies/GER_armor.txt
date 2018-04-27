@@ -132,7 +132,19 @@ technologies = {
 		start_year = 1940
 		
 		ai_will_do = {
-			factor = 0
+			factor = 5
+			modifier = {
+				factor = 6
+				date > "1940.3.1"
+			}
+			modifier = {
+				factor = 10
+				date > "1940.5.1"
+			}
+			modifier = {
+				factor = 15
+				date > "1940.8.1"
+			}
 		}
 
 		dependencies = {
