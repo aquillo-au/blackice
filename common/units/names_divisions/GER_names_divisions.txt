@@ -938,7 +938,6 @@ GER_SS_01 = {
 
 	# Names with numbers (only one number per entry)
 	ordered = {
-		1 = { "%d. SS-Division 'Leibstandarte Adolf Hitler'" }
 		2 = { "%d. SS-Division 'Das Reich'" }
 		3 = { "%d. SS-Division 'Totenkopf'" }
 		4 = { "%d. SS-Division 'Polizei'" }
@@ -996,9 +995,30 @@ GER_LSSAH_01 = {
 		2 = { "SS Inf.-Regt. 'LSSAH'" }
 		3 = { "SS Inf.-Regt.(mot.) 'LSSAH'" }
 		4 = { "SS Inf.-Brig.(mot.) 'LSSAH'" }
-		5 = { "SS Inf.-Div.(mot.) 'LSSAH'" }
-		6 = { "SS Pzgren.-Div. 'LSSAH'" }
-		7 = { "SS Pz.-Div. 'LSSAH'" }
+		5 = { "1. SS Inf.-Div.(mot.) 'LSSAH'" }
+		6 = { "1. SS Pzgren.-Div. 'LSSAH'" }
+		7 = { "1. SS Pz.-Div. 'LSSAH'" }
+	}
+}
+
+GER_VT_01 = {
+	name = "Verfugungstruppen"
+
+	for_countries = { GER }
+
+	can_use = { 
+		has_government = fascism
+	}
+
+	division_types = { "infantry" "motorized" "medium_armor" "mechanized" }
+
+	#fallback_name = "%d. SS-Division"
+
+	# Names with numbers (only one number per entry)
+	ordered = {
+		1 = { "SS-Verfügungstruppen-Brig." }
+		2 = { "SS-Verfügungstruppen-Div." }
+		3 = { "2. SS-Division 'Reich'" }
 	}
 }
 GER_MONINF_01 = {
