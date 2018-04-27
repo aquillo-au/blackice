@@ -13,7 +13,14 @@ country_event = {
 		}
 	
 	trigger = {	
-			is_ai = yes			
+			is_ai = yes	
+			OR = {
+				has_war = yes
+				AND = {
+					has_war = no
+					has_war_support > 0.2				
+				}
+			}
 			OR = {
 			has_country_flag = mob_reserve
 			has_country_flag = cons_volunteer
