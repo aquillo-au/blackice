@@ -8546,24 +8546,19 @@ country_event = {
 
 	fire_only_once = yes
 	
-	trigger = {
-		tag = GER
-		has_country_flag = panzer_35t
-		not = { has_country_flag = panzer_38t }
-		owns_state = 9
-	}
+	is_triggered_only = yes
 	
 	mean_time_to_happen = {
-		days = 20
+		days = 1
+	}
+	
+	immediate = {
+		
 	}
 	
 	option = {
 		name = germany.229.a
 		ai_chance = { factor = 100 }
-		set_technology = {
-			tech_czech_ger_panzer_2 = 1
-		}
-		
 		hidden_effect = {
 			load_oob = "GER_2_Leichte_Division"
 			add_equipment_to_stockpile = { type = czech_ger_panzer_equipment_2 amount = 100 producer = GER }
@@ -8904,7 +8899,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = yes
+		#is_ai = yes
 		not = { has_country_flag = czech_equipment }
 		has_global_flag = end_of_czechoslovakia
 	}
@@ -8930,7 +8925,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = yes
+		#is_ai = yes
 		not = { has_country_flag = French_equipment }
 		has_global_flag = fall_of_france
 	}
@@ -8957,7 +8952,7 @@ country_event = {
 		tag = GER
 		has_war = yes
 		not = { has_country_flag = war_equipment }
-		is_ai = yes
+		#is_ai = yes
 	}
 	
 	mean_time_to_happen = {
@@ -8981,8 +8976,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		#is_ai = no
-		not = { has_country_flag = GERgebirgs }
+		not = { has_country_flag = GER_gebirgs }
 	}
 	
 	mean_time_to_happen = {
@@ -8996,13 +8990,13 @@ country_event = {
 		hidden_effect = {
 			
 			load_oob = "GER_1_Gebirgs_Brigade"
-			set_country_flag = GERgebirgs
+			set_country_flag = GER_gebirgs
 		}
 	}
 	option = {
 		name = germany.238.b		#refuse
 		ai_chance = { factor = 0 }
-		set_country_flag = GERgebirgs
+		set_country_flag = GER_gebirgs_no
 	}
 }
 #################### Historical Panzer Division OOBs 
@@ -9021,8 +9015,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_4 }
-		#is_ai = yes
+		not = { has_country_flag = GER_4_PDiv }
 		date > 1938.11.1
 	}
 	
@@ -9032,29 +9025,19 @@ country_event = {
 	
 	option = {
 		name = germany.239.a
-		trigger = { is_ai = no }
-		ai_chance = { factor = 0 }
-		
-		hidden_effect = {
-			load_oob = "GER_4_Panzer_Division"
-			set_country_flag = panzer_4
-		}
-		custom_effect_tooltip = GER_4_Pz_Div
-	}
-	option = {
-		name = germany.239.b
-		trigger = { is_ai = yes }
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			load_oob = "GER_4_Panzer_Division_ai"
-			set_country_flag = panzer_4
+			load_oob = "GER_4_Panzer_Division"
+			
 		}
+		set_country_flag = GER_4_PDiv
+		custom_effect_tooltip = GER_4_Pz_Div
 	}
 	option = {
-		name = germany.239.c
+		name = germany.239.b	#no need
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_4_PDiv_no
 	}
 }
 # 5. Panzer-Division
@@ -9073,15 +9056,7 @@ country_event = {
 	}
 	
 	immediate = {
-		if = {
-			limit = {
-				is_ai = yes
-				NOT = { has_tech = tech_panzer_iii_equipment_1 }
-				NOT = { has_tech = tech_panzer_iv_equipment_1 }
-			}
-			set_technology = { tech_panzer_iii_equipment_1 = 1 }
-			set_technology = { tech_panzer_iv_equipment_1 = 1 }
-		}
+	
 	}
 	
 	mean_time_to_happen = {
