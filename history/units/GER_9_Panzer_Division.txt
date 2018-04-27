@@ -1,8 +1,11 @@
 ﻿division_template = {
 	name = "Panzer-Division II '1940'"
-
+	division_names_group = GER_ARM_01
+	is_locked = yes
+	priority = 2
+	template_counter = 219
+	
 	regiments = {
-
 		mechanized = { x = 0 y = 0 }
 		motorized = { x = 0 y = 1 }
 		motorized = { x = 0 y = 2 }
@@ -32,13 +35,15 @@
 		maintenance_company = { x = 0 y = 4 }
 		logistics_company = { x = 0 y = 5 }
 	}
-	priority = 2
-	template_counter = 219
 }
-units = {
 
+units = {
 	division= {	
-		name = "9. Panzer-Division" 
+		#9. Panzer-Division
+		division_name = {
+			is_name_ordered = yes
+			name_order = 9
+		}
 		location  = 6521
 		division_template = "Panzer-Division II '1940'"
 		start_experience_factor = 0.5

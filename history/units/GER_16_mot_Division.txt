@@ -1,5 +1,9 @@
 ﻿division_template = {
 	name = "Infanterie-Division(mot+at)" 			
+	division_names_group = GER_MOT_01
+	is_locked = yes
+	priority = 2
+	template_counter = 24
 	
 	regiments = {
 		motorized = { x = 0 y = 0 }
@@ -17,6 +21,7 @@
 		artillery_brigade_mot = { x = 3 y = 0 }
 		artillery_brigade_mot = { x = 3 y = 1 }
 		artillery_brigade_mot = { x = 3 y = 2 }
+		anti_tank_brigade =  { x = 3 y = 3 }
 	}
 	support = {
        	DIV_HQ = { x = 0 y = 0 }
@@ -28,13 +33,16 @@
 		logistics_company = { x = 0 y = 6 }
 		field_hospital = { x = 0 y = 7 }
 	}
-	priority = 2
-	template_counter = 24
 }
+
 units = {
 
 	division= {	
-		name = "16. Infanterie-Division (mot.)" 
+		#16. Infanterie-Division (mot.)
+		division_name = {
+			is_name_ordered = yes
+			name_order = 16
+		}
 		location = 11431 # Paderborn
 		division_template = "Infanterie-Division(mot+at)"
 		start_experience_factor = 0.8

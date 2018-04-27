@@ -8534,7 +8534,7 @@ country_event = {
 	option = {
 		name = germany.228.b		#refuse
 		ai_chance = { factor = 0 }
-		set_country_flag = panzer_35t
+		set_country_flag = panzer_35t_no
 	}
 }
 ### 2. Leichte Division
@@ -8574,7 +8574,7 @@ country_event = {
 	option = {
 		name = germany.229.b		#refuse
 		ai_chance = { factor = 0 }
-		set_country_flag = panzer_38t
+		set_country_flag = panzer_38t_no
 	}
 }
 ### 4. Leichte Division from Schnellen Division after Anschluss
@@ -8620,6 +8620,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_country_flag = panzer_35t
+		NOT = { has_country_flag = panzer_35t_no }
 		NOT = { has_country_flag = GER_6_PDiv }
 		has_tech = tech_panzer_iv_equipment_1
 		date > 1939.10.18
@@ -8633,22 +8634,16 @@ country_event = {
 	
 	option = {
 		name = germany.290.a
-		ai_chance = { factor = 0 }
-		trigger = { is_ai = no }
-
-		set_country_flag = GER_6_PDiv
-	}
-	option = {
-		name = germany.290.b
 		ai_chance = { factor = 100 }
-		trigger = { is_ai = yes }
+		
 		hidden_effect = {
-			load_oob = "GER_6_Panzer_Division_ai"
+			load_oob = "GER_6_Panzer_Division"
+			delete_unit_template_and_units = { division_template = "L-Div 1 'vz.35'" }
 		}
 		set_country_flag = GER_6_PDiv
 	}
 	option = {
-		name = germany.290.c		#no need
+		name = germany.290.b		#no need
 		ai_chance = { factor = 0 }
 		set_country_flag = GER_6_PDiv
 	}
@@ -8665,6 +8660,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_country_flag = panzer_38t
+		NOT = { has_country_flag = panzer_38t_no }
 		NOT = { has_country_flag = GER_7_PDiv }
 		date > 1939.10.18
 		GER = { controls_state = 60 }
@@ -8678,26 +8674,18 @@ country_event = {
 	
 	option = {
 		name = germany.291.a
-		ai_chance = { factor = 0 }
-		trigger = { is_ai = no }
-		
-		set_country_flag = GER_7_PDiv
-	}
-	option = {
-		name = germany.291.b
 		ai_chance = { factor = 100 }
-		trigger = { is_ai = yes }
-		
 		hidden_effect = {
 			load_oob = "GER_7_Panzer_Division"
+			delete_unit_template_and_units = { division_template = "L-Div 2 'vz.38'" }
 		}
 		set_country_flag = GER_7_PDiv
 	}
 	option = {
-		name = germany.291.c		#no need
+		name = germany.291.b		#no need
 		
 		ai_chance = { factor = 0 }
-		set_country_flag = GER_7_PDiv
+		set_country_flag = GER_7_PDiv_no
 	}
 }
 ### 8. Panzer-Division from 3. Leichte-Division germany.228
@@ -8712,6 +8700,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_country_flag = panzer_35t
+		NOT = { has_country_flag = panzer_35t_no }
 		NOT = { has_country_flag = GER_8_PDiv }
 		date > 1939.10.16
 		GER = { controls_state = 60 }
@@ -8725,29 +8714,19 @@ country_event = {
 	
 	option = {
 		name = germany.292.a
-		ai_chance = { factor = 0 }
-		trigger = { is_ai = no }
-		#hidden_effect = {
-		#	load_oob = "GER_8_Panzer_Division"
-		#	customtooltip = GER_8_PDiv
-		#}
-		set_country_flag = panzer_8
-	}
-	option = {
-		name = germany.292.b
 		ai_chance = { factor = 100 }
-		trigger = { is_ai = yes }
-		
+
 		hidden_effect = {
-			load_oob = "GER_8_Panzer_Division_ai"
+			load_oob = "GER_8_Panzer_Division"
+			delete_unit_template_and_units = { division_template = "L-Div 3 'vz.35'" }
 		}
-		set_country_flag = panzer_8
+		set_country_flag = GER_8_PDiv
 	}
 	option = {
 		name = germany.292.c		#no need
 		
 		ai_chance = { factor = 0 }
-		set_country_flag = panzer_8
+		set_country_flag = GER_8_PDiv_no
 	}
 }
 ### 9. Panzer-Division from 4. Leichte-Division germany.2
@@ -8761,7 +8740,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_9 }
+		not = { has_country_flag = GER_9_PDiv }
 		has_tech = tech_panzer_iv_equipment_1
 		POL = { has_capitulated = yes }
 		date > 1940.1.3
@@ -8773,26 +8752,17 @@ country_event = {
 	
 	option = {
 		name = germany.241.a
-		ai_chance = { factor = 0 }
-		trigger = { is_ai = no }
-		hidden_effect = {
-			load_oob = "GER_Panzer_Division_II_1940"
-		}
-		set_country_flag = panzer_9
-	}
-	option = {
-		name = germany.241.b
 		ai_chance = { factor = 100 }
-		trigger = { is_ai = yes }
 		hidden_effect = {
 			load_oob = "GER_9_Panzer_Division"
+			delete_unit_template_and_units = { division_template = "L-Div 4" }
 		}
-		set_country_flag = panzer_9
+		set_country_flag = GER_9_PDiv
 	}
 	option = {
-		name = germany.241.b
+		name = germany.241.b	#no need
 		ai_chance = { factor = 0 }
-		set_country_flag = panzer_9
+		set_country_flag = GER_9_PDiv
 	}
 }
 ### MID/Late war
@@ -8824,7 +8794,6 @@ country_event = {
 		hidden_effect = {
 			load_oob = "GER_InfDiv_Welle1_sep39"
 			set_country_flag = GER_InfDiv_72
-			
 		}
 	}
 	option = {
@@ -9099,9 +9068,20 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_5 }
-		#is_ai = yes
+		not = { has_country_flag = GER_5_PDiv }
 		date > 1938.11.24
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				is_ai = yes
+				NOT = { has_tech = tech_panzer_iii_equipment_1 }
+				NOT = { has_tech = tech_panzer_iv_equipment_1 }
+			}
+			set_technology = { tech_panzer_iii_equipment_1 = 1 }
+			set_technology = { tech_panzer_iv_equipment_1 = 1 }
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -9110,42 +9090,16 @@ country_event = {
 		
 	option = {
 		name = germany.240.a
-		ai_chance = { factor = 0 }
-		hidden_effect = {
-			if = {
-				limit = {
-					is_ai = no
-				}
-			
-				load_oob = "GER_5_Panzer_Division"
-				
-				set_country_flag = panzer_5
-			}
-		}
-		custom_effect_tooltip = GER_5_Pz_Div
-	}
-	option = {
-		name = germany.240.b
 		ai_chance = { factor = 100 }
-		trigger = { is_ai = yes }
 		hidden_effect = {
-			if = {
-				limit = {
-					is_ai = yes
-					NOT = { has_tech = tech_panzer_iii_equipment_1 }
-					NOT = { has_tech = tech_panzer_iv_equipment_1 }
-				}
-				set_technology = { tech_panzer_iii_equipment_1 = 1 }
-				set_technology = { tech_panzer_iv_equipment_1 = 1 }
-			}
-			load_oob = "GER_5_Panzer_Division_ai"
-			set_country_flag = panzer_5
+			load_oob = "GER_5_Panzer_Division"
 		}
+		set_country_flag = GER_5_PDiv
 	}
 	option = {
-		name = germany.240.c
+		name = germany.240.b	#no need
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_5_PDiv_no
 	}
 }
 ### germany.241 see event-chain leichte-divisions
@@ -9160,8 +9114,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_10 }
-		#is_ai = yes
+		not = { has_country_flag = GER_10_PDiv }
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1939.4.1
 	}
@@ -9176,14 +9129,13 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_10_Panzer_Division"
-			set_country_flag = panzer_10
-			
+			set_country_flag = GER_10_PDiv
 		}
 	}
 	option = {
-		name = germany.242.b
+		name = germany.242.b	#no need
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_10_PDiv_no
 	}
 }
 # 11. Panzer-Division
@@ -9197,8 +9149,9 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_11 }
-		has_country_flag = panzer_9
+		has_country_flag = GER_9_PDiv
+		not = { has_country_flag = GER_9_PDiv_no }
+		not = { has_country_flag = GER_11_PDiv }
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1940.8.1
 	}
@@ -9213,13 +9166,13 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_11_Panzer_Division"
-			set_country_flag = panzer_11
 		}
+		set_country_flag = GER_11_PDiv
 	}
 	option = {
 		name = germany.243.b
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_11_PDiv_no
 	}
 }
 # 12. Panzer-Division
@@ -9233,8 +9186,9 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_12 }
-		has_country_flag = panzer_9
+		has_country_flag = GER_9_PDiv
+		not = { has_country_flag = GER_9_PDiv_no }
+		not = { has_country_flag = GER_12_PDiv }
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1940.10.5
 	}
@@ -9249,13 +9203,13 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_12_Panzer_Division"
-			set_country_flag = panzer_12
 		}
+		set_country_flag = GER_12_PDiv
 	}
 	option = {
-		name = germany.244.b
+		name = germany.244.b	#no need
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_12_PDiv_no
 	}
 }
 #13. Panzer-Division
@@ -9269,8 +9223,9 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_13 }
-		has_country_flag = panzer_9
+		has_country_flag = GER_9_PDiv
+		not = { has_country_flag = GER_9_PDiv_no }
+		not = { has_country_flag = GER_13_PDiv }
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1940.10.9
 	}
@@ -9285,13 +9240,14 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_13_Panzer_Division"
-			set_country_flag = panzer_13
+			
 		}
+		set_country_flag = GER_13_PDiv
 	}
 	option = {
 		name = germany.245.b
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_13_PDiv_no
 	}
 }
 country_event = {
@@ -9304,8 +9260,8 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_14 }
-		has_country_flag = panzer_9
+		not = { has_country_flag = GER_14_PDiv }
+		has_country_flag = GER_9_PDiv
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1941.1.20
 	}
@@ -9320,13 +9276,13 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_14_Panzer_Division"
-			set_country_flag = panzer_14
+			set_country_flag = GER_14_PDiv
 		}
 	}
 	option = {
-		name = germany.246.b
+		name = germany.246.b	#no need
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_14_PDiv_no
 	}
 }
 country_event = {
@@ -9339,8 +9295,8 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_16 }
-		has_country_flag = panzer_9
+		not = { has_country_flag = GER_16_PDiv }
+		has_country_flag = GER_9_PDiv
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1940.8.6
 	}
@@ -9355,13 +9311,13 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_16_Panzer_Division"
-			set_country_flag = panzer_16
+			set_country_flag = GER_16_PDiv
 		}
 	}
 	option = {
-		name = germany.247.b
+		name = germany.247.b	#no need
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_16_PDiv
 	}
 }
 country_event = {
@@ -9374,8 +9330,8 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_17 }
-		has_country_flag = panzer_9
+		not = { has_country_flag = GER_17_PDiv }
+		has_country_flag = GER_9_PDiv
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1941.3.15
 	}
@@ -9390,13 +9346,14 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_17_Panzer_Division"
-			set_country_flag = panzer_17
+			
 		}
+		set_country_flag = GER_17_PDiv
 	}
 	option = {
 		name = germany.248.b
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_17_PDiv_no
 	}
 }
 country_event = {
@@ -9409,8 +9366,8 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_18 }
-		has_country_flag = panzer_9
+		not = { has_country_flag = GER_18_PDiv }
+		has_country_flag = GER_9_PDiv
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1940.10.26
 	}
@@ -9425,13 +9382,13 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_18_Panzer_Division"
-			set_country_flag = panzer_18
 		}
+		set_country_flag = GER_18_PDiv
 	}
 	option = {
-		name = germany.249.b
+		name = germany.249.b	#no need
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_18_PDiv_no
 	}
 }
 country_event = {
@@ -9444,8 +9401,8 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_19 }
-		has_country_flag = panzer_9
+		not = { has_country_flag = GER_19_PDiv }
+		has_country_flag = GER_9_PDiv
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1940.11.1
 	}
@@ -9460,13 +9417,13 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_19_Panzer_Division"
-			set_country_flag = panzer_19
 		}
+		set_country_flag = GER_19_PDiv
 	}
 	option = {
-		name = germany.250.b
+		name = germany.250.b	#no need
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_19_PDiv_no
 	}
 }
 country_event = {
@@ -9479,8 +9436,8 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_20 }
-		has_country_flag = panzer_9
+		not = { has_country_flag = GER_20_PDiv }
+		has_country_flag = GER_9_PDiv
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1941.5.1
 	}
@@ -9495,13 +9452,13 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_20_Panzer_Division"
-			set_country_flag = panzer_20
 		}
+		set_country_flag = GER_20_PDiv
 	}
 	option = {
-		name = germany.251.b
+		name = germany.251.b	#no need
 		ai_chance = { factor = 0 }
-		
+		set_country_flag = GER_20_PDiv_no
 	}
 }
 country_event = {
@@ -9514,8 +9471,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		not = { has_country_flag = panzer_24 }
-		#is_ai = yes
+		not = { has_country_flag = GER_24_PDiv }
 		has_tech = tech_panzer_iv_equipment_1 
 		date > 1941.11.24
 	}
@@ -9530,12 +9486,13 @@ country_event = {
 		
 		hidden_effect = {
 			load_oob = "GER_24_Panzer_Division"
-			set_country_flag = panzer_24
 		}
+		set_country_flag = GER_24_PDiv
 	}
 	option = {
 		name = germany.252.b
 		ai_chance = { factor = 0 }
+		set_country_flag = GER_24_PDiv_no
 	}
 }
 ### 29. Infanterie Division mot date > 1936.10.12
@@ -9558,7 +9515,6 @@ country_event = {
 		ai_chance = { factor = 0 }
 		trigger = { is_ai = no }
 		
-		#load_oob = "GER_29_mot_Division"
 		set_country_flag = mot_29
 	}
 	option = {
@@ -9590,6 +9546,7 @@ country_event = {
 		not = { has_country_flag = mot_2 }
 		not = { has_country_flag = mot_2_no }
 		has_country_flag = mot_29
+		not = { has_country_flag = mot_29_no }
 		date > 1937.10.12
 	}
 	
@@ -9630,9 +9587,11 @@ country_event = {
 	
 	trigger = {
 		tag = GER
+		64 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_13 }
 		not = { has_country_flag = mot_13_no }
 		has_country_flag = mot_29
+		not = { has_country_flag = mot_29_no }
 		date > 1937.10.11
 	}
 	
@@ -9677,6 +9636,7 @@ country_event = {
 		not = { has_country_flag = mot_20 }
 		not = { has_country_flag = mot_20_no }
 		has_country_flag = mot_29
+		not = { has_country_flag = mot_29_no }
 		date > 1937.10.11
 	}
 	
@@ -9780,10 +9740,9 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_equipment = { anti_tank_equipment > 24 }
-		58 = { is_controlled_by = GER }
+		57 = { is_controlled_by = GER }
 		not = { has_country_flag = mot_16 }
 		not = { has_country_flag = mot_16_no }
-		has_country_flag = mot_29
 		date > 1940.8.6
 	}
 	
@@ -9829,6 +9788,7 @@ country_event = {
 		not = { has_country_flag = mot_25 }
 		not = { has_country_flag = mot_25_no }
 		has_country_flag = mot_29
+		not = { has_country_flag = mot_29_no }
 		date > 1941.3.15
 	}
 	
@@ -9874,6 +9834,7 @@ country_event = {
 		not = { has_country_flag = mot_3 }
 		not = { has_country_flag = mot_3_no }
 		has_country_flag = mot_29
+		not = { has_country_flag = mot_29_no }
 		date > 1940.10.27
 	}
 	
@@ -9919,6 +9880,7 @@ country_event = {
 		not = { has_country_flag = mot_10 }
 		not = { has_country_flag = mot_10_no }
 		has_country_flag = mot_29
+		not = { has_country_flag = mot_29_no }
 		date > 1941.5.1
 	}
 	
@@ -9964,6 +9926,7 @@ country_event = {
 		not = { has_country_flag = mot_14 }
 		not = { has_country_flag = mot_14_no }
 		has_country_flag = mot_29
+		not = { has_country_flag = mot_29_no }
 		date > 1940.10.1
 	}
 	
