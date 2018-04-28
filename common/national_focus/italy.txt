@@ -1584,6 +1584,7 @@ focus_tree = {
 		id = ITA_support_nationalist_spain
 		icon = GFX_goal_generic_military_deal
 		prerequisite = { focus = ITA_victoryinETH }
+		
 		available = {
 			any_other_country = {
 				original_tag = SPR
@@ -1594,18 +1595,24 @@ focus_tree = {
 				}
 			}
 		}
+		
 		cancel = {
 			SPR = {
 				has_civil_war = no
 			}
 		}
+		
 		cancel_if_invalid = no
+		
 		x = 20
 		y = 1
+		
 		cost = 4.4
+		
 		ai_will_do = {
 			factor = 1
 		}	
+		
 		completion_reward = {
 			
 			random_other_country = {
@@ -1613,7 +1620,10 @@ focus_tree = {
 					original_tag = SPR
 					has_government = fascism
 				}
-				add_opinion_modifier = { target = ITA modifier = ita_supported_spain_civil_war }
+				add_opinion_modifier = {
+					target = ITA
+					modifier = ita_supported_spain_civil_war
+				}
 			}
 		}
 	}
