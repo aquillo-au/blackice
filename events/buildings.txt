@@ -1,12 +1,9 @@
-﻿##############################################################
-# Building Events for speciality factories by Silvercloud#####
-##############################################################
+﻿#########################################
+####### BICE Factories counter ##########
+#########################################
 
 add_namespace = BICE_building
 
-##############################################
-####### BICE Factories counter ######
-##############################################
 	#### Universal Event ####
 		country_event = {
 			id = BICE_building.1
@@ -15,10 +12,1443 @@ add_namespace = BICE_building
 
 			picture = GFX_event_industry_producer
 
-			is_triggered_only = yes
+			trigger = {
+				OR = {
+					#UNIFORM
+					AND = {
+						uniform_factory > 0 
+						uniform_factory < 2
+						NOT = { has_idea = uniformfactory1 }
+					}
+					AND = {
+						uniform_factory > 1 
+						uniform_factory < 3
+						NOT = { has_idea = uniformfactory2 }
+					}
+					AND = {
+						uniform_factory > 2 
+						uniform_factory < 4
+						NOT = { has_idea = uniformfactory3 }
+					}
+					AND = {
+						uniform_factory > 3 
+						uniform_factory < 5
+						NOT = { has_idea = uniformfactory4 }
+					}
+					AND = {
+						uniform_factory > 4 
+						uniform_factory < 6
+						NOT = { has_idea = uniformfactory5 }
+					}
+					AND = {
+						uniform_factory > 5
+						uniform_factory < 7
+						NOT = { has_idea = uniformfactory6 }
+					}
+					AND = {
+						uniform_factory > 6 
+						uniform_factory < 8
+						NOT = { has_idea = uniformfactory7 }
+					}
+					AND = {
+						uniform_factory > 7 
+						uniform_factory < 9
+						NOT = { has_idea = uniformfactory8 }
+					}
+					AND = {
+						uniform_factory > 8 
+						uniform_factory < 10
+						NOT = { has_idea = uniformfactory9 }
+					}
+					AND = {
+						uniform_factory > 9 
+						uniform_factory < 11
+						NOT = { has_idea = uniformfactory10 }
+					}
+					AND = {
+						uniform_factory > 10 
+						uniform_factory < 12
+						NOT = { has_idea = uniformfactory11 }
+					}
+					AND = {
+						uniform_factory > 11
+						uniform_factory < 13
+						NOT = { has_idea = uniformfactory12 }
+					}
+					AND = {
+						uniform_factory > 12
+						uniform_factory < 14
+						NOT = { has_idea = uniformfactory13 }
+					}
+					AND = {
+						uniform_factory > 13 
+						uniform_factory < 15
+						NOT = { has_idea = uniformfactory14 }
+					}
+					AND = {
+						uniform_factory > 14 
+						uniform_factory < 16
+						NOT = { has_idea = uniformfactory15 }
+					}
+					AND = {
+						uniform_factory > 15 
+						uniform_factory < 17
+						NOT = { has_idea = uniformfactory16 }
+					}
+					AND = {
+						uniform_factory > 16 
+						uniform_factory < 18
+						NOT = { has_idea = uniformfactory17 }
+					}
+					AND = {
+						uniform_factory > 17 
+						uniform_factory < 19
+						NOT = { has_idea = uniformfactory18 }
+					}
+					AND = {
+						uniform_factory > 18 
+						uniform_factory < 20
+						NOT = { has_idea = uniformfactory19 }
+					}
+					AND = {
+						uniform_factory > 19
+						NOT = { has_idea = uniformfactory20 }
+					}
+					
+					#AMMO
+					AND = {
+						ammo_factory > 0 
+						ammo_factory < 2
+						NOT = { has_idea = ammofactory1 }
+					}
+					AND = {
+						ammo_factory > 1 
+						ammo_factory < 3
+						NOT = { has_idea = ammofactory2 }
+					}
+					AND = {
+						ammo_factory > 2 
+						ammo_factory < 4
+						NOT = { has_idea = ammofactory3 }
+					}
+					AND = {
+						ammo_factory > 3 
+						ammo_factory < 5
+						NOT = { has_idea = ammofactory4 }
+					}
+					AND = {
+						ammo_factory > 4 
+						ammo_factory < 6
+						NOT = { has_idea = ammofactory5 }
+					}
+					AND = {
+						ammo_factory > 5
+						ammo_factory < 7
+						NOT = { has_idea = ammofactory6 }
+					}
+					AND = {
+						ammo_factory > 6 
+						ammo_factory < 8
+						NOT = { has_idea = ammofactory7 }
+					}
+					AND = {
+						ammo_factory > 7 
+						ammo_factory < 9
+						NOT = { has_idea = ammofactory8 }
+					}
+					AND = {
+						ammo_factory > 8 
+						ammo_factory < 10
+						NOT = { has_idea = ammofactory9 }
+					}
+					AND = {
+						ammo_factory > 9 
+						ammo_factory < 11
+						NOT = { has_idea = ammofactory10 }
+					}
+					AND = {
+						ammo_factory > 10 
+						ammo_factory < 12
+						NOT = { has_idea = ammofactory11 }
+					}
+					AND = {
+						ammo_factory > 11
+						ammo_factory < 13
+						NOT = { has_idea = ammofactory12 }
+					}
+					AND = {
+						ammo_factory > 12
+						ammo_factory < 14
+						NOT = { has_idea = ammofactory13 }
+					}
+					AND = {
+						ammo_factory > 13 
+						ammo_factory < 15
+						NOT = { has_idea = ammofactory14 }
+					}
+					AND = {
+						ammo_factory > 14 
+						ammo_factory < 16
+						NOT = { has_idea = ammofactory15 }
+					}
+					AND = {
+						ammo_factory > 15 
+						ammo_factory < 17
+						NOT = { has_idea = ammofactory16 }
+					}
+					AND = {
+						ammo_factory > 16 
+						ammo_factory < 18
+						NOT = { has_idea = ammofactory17 }
+					}
+					AND = {
+						ammo_factory > 17 
+						ammo_factory < 19
+						NOT = { has_idea = ammofactory18 }
+					}
+					AND = {
+						ammo_factory > 18 
+						ammo_factory < 20
+						NOT = { has_idea = ammofactory19 }
+					}
+					AND = {
+						ammo_factory > 19
+						NOT = { has_idea = ammofactory20 }
+					}
+					
+					#SMALLARMS
+					AND = {
+						smallarms_factory > 0 
+						smallarms_factory < 2
+						NOT = { has_idea = smallarmsfactory1 }
+					}
+					AND = {
+						smallarms_factory > 1 
+						smallarms_factory < 3
+						NOT = { has_idea = smallarmsfactory2 }
+					}
+					AND = {
+						smallarms_factory > 2 
+						smallarms_factory < 4
+						NOT = { has_idea = smallarmsfactory3 }
+					}
+					AND = {
+						smallarms_factory > 3 
+						smallarms_factory < 5
+						NOT = { has_idea = smallarmsfactory4 }
+					}
+					AND = {
+						smallarms_factory > 4 
+						smallarms_factory < 6
+						NOT = { has_idea = smallarmsfactory5 }
+					}
+					AND = {
+						smallarms_factory > 5
+						smallarms_factory < 7
+						NOT = { has_idea = smallarmsfactory6 }
+					}
+					AND = {
+						smallarms_factory > 6 
+						smallarms_factory < 8
+						NOT = { has_idea = smallarmsfactory7 }
+					}
+					AND = {
+						smallarms_factory > 7 
+						smallarms_factory < 9
+						NOT = { has_idea = smallarmsfactory8 }
+					}
+					AND = {
+						smallarms_factory > 8 
+						smallarms_factory < 10
+						NOT = { has_idea = smallarmsfactory9 }
+					}
+					AND = {
+						smallarms_factory > 9 
+						smallarms_factory < 11
+						NOT = { has_idea = smallarmsfactory10 }
+					}
+					AND = {
+						smallarms_factory > 10 
+						smallarms_factory < 12
+						NOT = { has_idea = smallarmsfactory11 }
+					}
+					AND = {
+						smallarms_factory > 11
+						smallarms_factory < 13
+						NOT = { has_idea = smallarmsfactory12 }
+					}
+					AND = {
+						smallarms_factory > 12
+						smallarms_factory < 14
+						NOT = { has_idea = smallarmsfactory13 }
+					}
+					AND = {
+						smallarms_factory > 13 
+						smallarms_factory < 15
+						NOT = { has_idea = smallarmsfactory14 }
+					}
+					AND = {
+						smallarms_factory > 14 
+						smallarms_factory < 16
+						NOT = { has_idea = smallarmsfactory15 }
+					}
+					AND = {
+						smallarms_factory > 15 
+						smallarms_factory < 17
+						NOT = { has_idea = smallarmsfactory16 }
+					}
+					AND = {
+						smallarms_factory > 16 
+						smallarms_factory < 18
+						NOT = { has_idea = smallarmsfactory17 }
+					}
+					AND = {
+						smallarms_factory > 17 
+						smallarms_factory < 19
+						NOT = { has_idea = smallarmsfactory18 }
+					}
+					AND = {
+						smallarms_factory > 18 
+						smallarms_factory < 20
+						NOT = { has_idea = smallarmsfactory19 }
+					}
+					AND = {
+						smallarms_factory > 19
+						NOT = { has_idea = smallarmsfactory20 }
+					}
+					
+					#TRUCK
+					AND = {
+						truck_factory > 0 
+						truck_factory < 2
+						NOT = { has_idea = truckfactory1 }
+					}
+					AND = {
+						truck_factory > 1 
+						truck_factory < 3
+						NOT = { has_idea = truckfactory2 }
+					}
+					AND = {
+						truck_factory > 2 
+						truck_factory < 4
+						NOT = { has_idea = truckfactory3 }
+					}
+					AND = {
+						truck_factory > 3 
+						truck_factory < 5
+						NOT = { has_idea = truckfactory4 }
+					}
+					AND = {
+						truck_factory > 4 
+						truck_factory < 6
+						NOT = { has_idea = truckfactory5 }
+					}
+					AND = {
+						truck_factory > 5
+						truck_factory < 7
+						NOT = { has_idea = truckfactory6 }
+					}
+					AND = {
+						truck_factory > 6 
+						truck_factory < 8
+						NOT = { has_idea = truckfactory7 }
+					}
+					AND = {
+						truck_factory > 7 
+						truck_factory < 9
+						NOT = { has_idea = truckfactory8 }
+					}
+					AND = {
+						truck_factory > 8 
+						truck_factory < 10
+						NOT = { has_idea = truckfactory9 }
+					}
+					AND = {
+						truck_factory > 9 
+						truck_factory < 11
+						NOT = { has_idea = truckfactory10 }
+					}
+					AND = {
+						truck_factory > 10 
+						truck_factory < 12
+						NOT = { has_idea = truckfactory11 }
+					}
+					AND = {
+						truck_factory > 11
+						truck_factory < 13
+						NOT = { has_idea = truckfactory12 }
+					}
+					AND = {
+						truck_factory > 12
+						truck_factory < 14
+						NOT = { has_idea = truckfactory13 }
+					}
+					AND = {
+						truck_factory > 13 
+						truck_factory < 15
+						NOT = { has_idea = truckfactory14 }
+					}
+					AND = {
+						truck_factory > 14 
+						truck_factory < 16
+						NOT = { has_idea = truckfactory15 }
+					}
+					AND = {
+						truck_factory > 15 
+						truck_factory < 17
+						NOT = { has_idea = truckfactory16 }
+					}
+					AND = {
+						truck_factory > 16 
+						truck_factory < 18
+						NOT = { has_idea = truckfactory17 }
+					}
+					AND = {
+						truck_factory > 17 
+						truck_factory < 19
+						NOT = { has_idea = truckfactory18 }
+					}
+					AND = {
+						truck_factory > 18 
+						truck_factory < 20
+						NOT = { has_idea = truckfactory19 }
+					}
+					AND = {
+						truck_factory > 19
+						NOT = { has_idea = truckfactory20 }
+					}
+					
+					#ARTILLERY
+					AND = {
+						artillery_factory > 0 
+						artillery_factory < 2
+						NOT = { has_idea = artilleryfactory1 }
+					}
+					AND = {
+						artillery_factory > 1 
+						artillery_factory < 3
+						NOT = { has_idea = artilleryfactory2 }
+					}
+					AND = {
+						artillery_factory > 2 
+						artillery_factory < 4
+						NOT = { has_idea = artilleryfactory3 }
+					}
+					AND = {
+						artillery_factory > 3 
+						artillery_factory < 5
+						NOT = { has_idea = artilleryfactory4 }
+					}
+					AND = {
+						artillery_factory > 4 
+						artillery_factory < 6
+						NOT = { has_idea = artilleryfactory5 }
+					}
+					AND = {
+						artillery_factory > 5
+						artillery_factory < 7
+						NOT = { has_idea = artilleryfactory6 }
+					}
+					AND = {
+						artillery_factory > 6 
+						artillery_factory < 8
+						NOT = { has_idea = artilleryfactory7 }
+					}
+					AND = {
+						artillery_factory > 7 
+						artillery_factory < 9
+						NOT = { has_idea = artilleryfactory8 }
+					}
+					AND = {
+						artillery_factory > 8 
+						artillery_factory < 10
+						NOT = { has_idea = artilleryfactory9 }
+					}
+					AND = {
+						artillery_factory > 9 
+						artillery_factory < 11
+						NOT = { has_idea = artilleryfactory10 }
+					}
+					AND = {
+						artillery_factory > 10 
+						artillery_factory < 12
+						NOT = { has_idea = artilleryfactory11 }
+					}
+					AND = {
+						artillery_factory > 11
+						artillery_factory < 13
+						NOT = { has_idea = artilleryfactory12 }
+					}
+					AND = {
+						artillery_factory > 12
+						artillery_factory < 14
+						NOT = { has_idea = artilleryfactory13 }
+					}
+					AND = {
+						artillery_factory > 13 
+						artillery_factory < 15
+						NOT = { has_idea = artilleryfactory14 }
+					}
+					AND = {
+						artillery_factory > 14 
+						artillery_factory < 16
+						NOT = { has_idea = artilleryfactory15 }
+					}
+					AND = {
+						artillery_factory > 15 
+						artillery_factory < 17
+						NOT = { has_idea = artilleryfactory16 }
+					}
+					AND = {
+						artillery_factory > 16 
+						artillery_factory < 18
+						NOT = { has_idea = artilleryfactory17 }
+					}
+					AND = {
+						artillery_factory > 17 
+						artillery_factory < 19
+						NOT = { has_idea = artilleryfactory18 }
+					}
+					AND = {
+						artillery_factory > 18 
+						artillery_factory < 20
+						NOT = { has_idea = artilleryfactory19 }
+					}
+					AND = {
+						artillery_factory > 19
+						NOT = { has_idea = artilleryfactory20 }
+					}
+					
+					#TANK .. oh god 
+					AND = {
+						tank_factory > 0 
+						tank_factory < 2
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory1 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory1 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory1 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory1 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory1 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory1 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory1 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory1 } }
+					}
+					AND = {
+						tank_factory > 1 
+						tank_factory < 3
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory2 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory2 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory2 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory2 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory2 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory2 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory2 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory2 } }
+					}
+					AND = {
+						tank_factory > 2 
+						tank_factory < 4
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory3 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory3 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory3 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory3 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory3 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory3 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory3 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory3 } }
+					}
+					AND = {
+						tank_factory > 3 
+						tank_factory < 5
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory4 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory4 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory4 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory4 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory4 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory4 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory4 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory4 } }
+					}
+					AND = {
+						tank_factory > 4 
+						tank_factory < 6
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory5 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory5 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory5 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory5 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory5 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory5 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory5 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory5 } }
+					}
+					AND = {
+						tank_factory > 5
+						tank_factory < 7
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory6 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory6 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory6 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory6 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory6 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory6 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory6 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory6 } }
+					}
+					AND = {
+						tank_factory > 6 
+						tank_factory < 8
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory7 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory7 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory7 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory7 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory7 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory7 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory7 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory7 } }
+					}
+					AND = {
+						tank_factory > 7 
+						tank_factory < 9
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory8 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory8 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory8 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory8 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory8 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory8 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory8 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory8 } }
+					}
+					AND = {
+						tank_factory > 8 
+						tank_factory < 10
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory9 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory9 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory9 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory9 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory9 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory9 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory9 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory9 } }
+					}
+					AND = {
+						tank_factory > 9 
+						tank_factory < 11
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory10 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory10 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory10 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory10 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory10 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory10 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory10 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory10 } }
+					}
+					AND = {
+						tank_factory > 10
+						tank_factory < 12
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory11 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory11 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory11 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory11 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory11 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory11 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory11 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory11 } }
+					}
+					AND = {
+						tank_factory > 11
+						tank_factory < 13
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory12 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory12 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory12 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory12 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory12 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory12 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory12 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory12 } }
+					}
+					AND = {
+						tank_factory > 12
+						tank_factory < 14
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory13 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory13 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory13 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory13 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory13 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory13 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory13 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory13 } }
+					}
+					AND = {
+						tank_factory > 13 
+						tank_factory < 15
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory14 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory14 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory14 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory14 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory14 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory14 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory14 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory14 } }
+					}
+					AND = {
+						tank_factory > 14 
+						tank_factory < 16
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory15 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory15 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory15 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory15 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory15 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory15 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory15 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory15 } }
+					}
+					AND = {
+						tank_factory > 15 
+						tank_factory < 17
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory16 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory16 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory16 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory16 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory16 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory16 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory16 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory16 } }
+					}
+					AND = {
+						tank_factory > 16 
+						tank_factory < 18
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory17 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory17 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory17 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory17 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory17 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory17 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory17 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory17 } }
+					}
+					AND = {
+						tank_factory > 17 
+						tank_factory < 19
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory18 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory18 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory18 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory18 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory18 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory18 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory18 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory18 } }
+					}
+					AND = {
+						tank_factory > 18 
+						tank_factory < 20
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory19 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory19 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory19 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory19 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory19 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory19 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory19 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory19 } }
+					}
+					AND = {
+						tank_factory > 19
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = tankfactory20 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_tankfactory20 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_tankfactory20 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_tankfactory20 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_tankfactory20 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_tankfactory20 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_tankfactory20 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_tankfactory20 } }
+					}
+					
+					#LTAIR 
+					AND = {
+						ltaircraft_factory > 0 
+						ltaircraft_factory < 2
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory1 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory1 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory1 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory1 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory1 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory1 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory1 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory1 } }
+					}
+					AND = {
+						ltaircraft_factory > 1 
+						ltaircraft_factory < 3
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory2 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory2 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory2 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory2 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory2 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory2 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory2 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory2 } }
+					}
+					AND = {
+						ltaircraft_factory > 2 
+						ltaircraft_factory < 4
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory3 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory3 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory3 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory3 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory3 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory3 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory3 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory3 } }
+					}
+					AND = {
+						ltaircraft_factory > 3 
+						ltaircraft_factory < 5
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory4 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory4 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory4 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory4 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory4 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory4 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory4 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory4 } }
+					}
+					AND = {
+						ltaircraft_factory > 4 
+						ltaircraft_factory < 6
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory5 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory5 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory5 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory5 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory5 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory5 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory5 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory5 } }
+					}
+					AND = {
+						ltaircraft_factory > 5
+						ltaircraft_factory < 7
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory6 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory6 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory6 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory6 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory6 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory6 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory6 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory6 } }
+					}
+					AND = {
+						ltaircraft_factory > 6 
+						ltaircraft_factory < 8
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory7 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory7 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory7 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory7 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory7 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory7 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory7 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory7 } }
+					}
+					AND = {
+						ltaircraft_factory > 7 
+						ltaircraft_factory < 9
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory8 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory8 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory8 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory8 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory8 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory8 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory8 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory8 } }
+					}
+					AND = {
+						ltaircraft_factory > 8 
+						ltaircraft_factory < 10
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory9 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory9 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory9 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory9 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory9 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory9 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory9 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory9 } }
+					}
+					AND = {
+						ltaircraft_factory > 9 
+						ltaircraft_factory < 11
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory10 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory10 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory10 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory10 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory10 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory10 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory10 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory10 } }
+					}
+					AND = {
+						ltaircraft_factory > 10
+						ltaircraft_factory < 12
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory11 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory11 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory11 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory11 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory11 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory11 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory11 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory11 } }
+					}
+					AND = {
+						ltaircraft_factory > 11
+						ltaircraft_factory < 13
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory12 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory12 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory12 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory12 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory12 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory12 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory12 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory12 } }
+					}
+					AND = {
+						ltaircraft_factory > 12
+						ltaircraft_factory < 14
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory13 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory13 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory13 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory13 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory13 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory13 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory13 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory13 } }
+					}
+					AND = {
+						ltaircraft_factory > 13 
+						ltaircraft_factory < 15
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory14 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory14 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory14 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory14 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory14 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory14 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory14 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory14 } }
+					}
+					AND = {
+						ltaircraft_factory > 14 
+						ltaircraft_factory < 16
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory15 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory15 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory15 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory15 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory15 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory15 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory15 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory15 } }
+					}
+					AND = {
+						ltaircraft_factory > 15 
+						ltaircraft_factory < 17
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory16 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory16 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory16 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory16 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory16 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory16 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory16 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory16 } }
+					}
+					AND = {
+						ltaircraft_factory > 16 
+						ltaircraft_factory < 18
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory17 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory17 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory17 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory17 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory17 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory17 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory17 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory17 } }
+					}
+					AND = {
+						ltaircraft_factory > 17 
+						ltaircraft_factory < 19
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory18 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory18 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory18 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory18 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory18 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory18 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory18 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory18 } }
+					}
+					AND = {
+						ltaircraft_factory > 18 
+						ltaircraft_factory < 20
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory19 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory19 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory19 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory19 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory19 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory19 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory19 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory19 } }
+					}
+					AND = {
+						ltaircraft_factory > 19
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = ltaircraftfactory20 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_ltaircraftfactory20 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_ltaircraftfactory20 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_ltaircraftfactory20 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_ltaircraftfactory20 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_ltaircraftfactory20 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_ltaircraftfactory20 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_ltaircraftfactory20 } }
+					}
+					
+					#HVAIR 
+					AND = {
+						hvaircraft_factory > 0 
+						hvaircraft_factory < 2
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory1 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory1 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory1 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory1 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory1 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory1 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory1 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory1 } }
+					}
+					AND = {
+						hvaircraft_factory > 1 
+						hvaircraft_factory < 3
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory2 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory2 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory2 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory2 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory2 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory2 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory2 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory2 } }
+					}
+					AND = {
+						hvaircraft_factory > 2 
+						hvaircraft_factory < 4
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory3 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory3 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory3 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory3 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory3 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory3 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory3 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory3 } }
+					}
+					AND = {
+						hvaircraft_factory > 3 
+						hvaircraft_factory < 5
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory4 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory4 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory4 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory4 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory4 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory4 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory4 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory4 } }
+					}
+					AND = {
+						hvaircraft_factory > 4 
+						hvaircraft_factory < 6
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory5 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory5 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory5 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory5 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory5 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory5 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory5 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory5 } }
+					}
+					AND = {
+						hvaircraft_factory > 5
+						hvaircraft_factory < 7
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory6 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory6 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory6 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory6 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory6 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory6 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory6 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory6 } }
+					}
+					AND = {
+						hvaircraft_factory > 6 
+						hvaircraft_factory < 8
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory7 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory7 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory7 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory7 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory7 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory7 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory7 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory7 } }
+					}
+					AND = {
+						hvaircraft_factory > 7 
+						hvaircraft_factory < 9
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory8 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory8 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory8 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory8 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory8 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory8 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory8 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory8 } }
+					}
+					AND = {
+						hvaircraft_factory > 8 
+						hvaircraft_factory < 10
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory9 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory9 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory9 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory9 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory9 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory9 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory9 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory9 } }
+					}
+					AND = {
+						hvaircraft_factory > 9 
+						hvaircraft_factory < 11
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory10 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory10 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory10 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory10 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory10 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory10 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory10 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory10 } }
+					}
+					AND = {
+						hvaircraft_factory > 10
+						hvaircraft_factory < 12
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory11 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory11 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory11 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory11 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory11 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory11 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory11 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory11 } }
+					}
+					AND = {
+						hvaircraft_factory > 11
+						hvaircraft_factory < 13
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory12 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory12 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory12 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory12 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory12 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory12 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory12 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory12 } }
+					}
+					AND = {
+						hvaircraft_factory > 12
+						hvaircraft_factory < 14
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory13 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory13 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory13 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory13 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory13 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory13 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory13 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory13 } }
+					}
+					AND = {
+						hvaircraft_factory > 13 
+						hvaircraft_factory < 15
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory14 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory14 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory14 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory14 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory14 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory14 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory14 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory14 } }
+					}
+					AND = {
+						hvaircraft_factory > 14 
+						hvaircraft_factory < 16
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory15 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory15 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory15 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory15 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory15 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory15 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory15 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory15 } }
+					}
+					AND = {
+						hvaircraft_factory > 15 
+						hvaircraft_factory < 17
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory16 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory16 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory16 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory16 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory16 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory16 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory16 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory16 } }
+					}
+					AND = {
+						hvaircraft_factory > 16 
+						hvaircraft_factory < 18
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory17 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory17 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory17 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory17 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory17 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory17 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory17 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory17 } }
+					}
+					AND = {
+						hvaircraft_factory > 17 
+						hvaircraft_factory < 19
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory18 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory18 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory18 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory18 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory18 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory18 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory18 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory18 } }
+					}
+					AND = {
+						hvaircraft_factory > 18 
+						hvaircraft_factory < 20
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory19 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory19 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory19 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory19 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory19 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory19 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory19 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory19 } }
+					}
+					AND = {
+						hvaircraft_factory > 19
+						if = { limit = { NOT = { tag = ENG tag = GER tag = USA tag = FRA tag = JAP tag = ITA tag = SOV } } NOT = { has_idea = hvaircraftfactory20 } }
+						if = { limit = { tag = ENG } NOT = { has_idea = ENG_hvaircraftfactory20 } }
+						if = { limit = { tag = GER } NOT = { has_idea = GER_hvaircraftfactory20 } }
+						if = { limit = { tag = USA } NOT = { has_idea = USA_hvaircraftfactory20 } }
+						if = { limit = { tag = FRA } NOT = { has_idea = FRA_hvaircraftfactory20 } }
+						if = { limit = { tag = JAP } NOT = { has_idea = JAP_hvaircraftfactory20 } }
+						if = { limit = { tag = ITA } NOT = { has_idea = ITA_hvaircraftfactory20 } }
+						if = { limit = { tag = SOV } NOT = { has_idea = SOV_hvaircraftfactory20 } }
+					}
+					
+					#SHIPYARD
+					AND = {
+						shipyard > 0 
+						shipyard < 2
+						NOT = { has_idea = shipyardfactory1 }
+					}
+					AND = {
+						shipyard > 1 
+						shipyard < 3
+						NOT = { has_idea = shipyardfactory2 }
+					}
+					AND = {
+						shipyard > 2 
+						shipyard < 4
+						NOT = { has_idea = shipyardfactory3 }
+					}
+					AND = {
+						shipyard > 3 
+						shipyard < 5
+						NOT = { has_idea = shipyardfactory4 }
+					}
+					AND = {
+						shipyard > 4 
+						shipyard < 6
+						NOT = { has_idea = shipyardfactory5 }
+					}
+					AND = {
+						shipyard > 5
+						shipyard < 7
+						NOT = { has_idea = shipyardfactory6 }
+					}
+					AND = {
+						shipyard > 6 
+						shipyard < 8
+						NOT = { has_idea = shipyardfactory7 }
+					}
+					AND = {
+						shipyard > 7 
+						shipyard < 9
+						NOT = { has_idea = shipyardfactory8 }
+					}
+					AND = {
+						shipyard > 8 
+						shipyard < 10
+						NOT = { has_idea = shipyardfactory9 }
+					}
+					AND = {
+						shipyard > 9 
+						shipyard < 11
+						NOT = { has_idea = shipyardfactory10 }
+					}
+					AND = {
+						shipyard > 10 
+						shipyard < 12
+						NOT = { has_idea = shipyardfactory11 }
+					}
+					AND = {
+						shipyard > 11
+						shipyard < 13
+						NOT = { has_idea = shipyardfactory12 }
+					}
+					AND = {
+						shipyard > 12
+						shipyard < 14
+						NOT = { has_idea = shipyardfactory13 }
+					}
+					AND = {
+						shipyard > 13 
+						shipyard < 15
+						NOT = { has_idea = shipyardfactory14 }
+					}
+					AND = {
+						shipyard > 14 
+						shipyard < 16
+						NOT = { has_idea = shipyardfactory15 }
+					}
+					AND = {
+						shipyard > 15 
+						shipyard < 17
+						NOT = { has_idea = shipyardfactory16 }
+					}
+					AND = {
+						shipyard > 16 
+						shipyard < 18
+						NOT = { has_idea = shipyardfactory17 }
+					}
+					AND = {
+						shipyard > 17 
+						shipyard < 19
+						NOT = { has_idea = shipyardfactory18 }
+					}
+					AND = {
+						shipyard > 18 
+						shipyard < 20
+						NOT = { has_idea = shipyardfactory19 }
+					}
+					AND = {
+						shipyard > 19
+						NOT = { has_idea = shipyardfactory20 }
+					}
+					
+					#SUBYARD
+					AND = {
+						subyard > 0 
+						subyard < 2
+						NOT = { has_idea = subyardfactory1 }
+					}
+					AND = {
+						subyard > 1 
+						subyard < 3
+						NOT = { has_idea = subyardfactory2 }
+					}
+					AND = {
+						subyard > 2 
+						subyard < 4
+						NOT = { has_idea = subyardfactory3 }
+					}
+					AND = {
+						subyard > 3 
+						subyard < 5
+						NOT = { has_idea = subyardfactory4 }
+					}
+					AND = {
+						subyard > 4 
+						subyard < 6
+						NOT = { has_idea = subyardfactory5 }
+					}
+					AND = {
+						subyard > 5
+						subyard < 7
+						NOT = { has_idea = subyardfactory6 }
+					}
+					AND = {
+						subyard > 6 
+						subyard < 8
+						NOT = { has_idea = subyardfactory7 }
+					}
+					AND = {
+						subyard > 7 
+						subyard < 9
+						NOT = { has_idea = subyardfactory8 }
+					}
+					AND = {
+						subyard > 8 
+						subyard < 10
+						NOT = { has_idea = subyardfactory9 }
+					}
+					AND = {
+						subyard > 9 
+						subyard < 11
+						NOT = { has_idea = subyardfactory10 }
+					}
+					AND = {
+						subyard > 10 
+						subyard < 12
+						NOT = { has_idea = subyardfactory11 }
+					}
+					AND = {
+						subyard > 11
+						subyard < 13
+						NOT = { has_idea = subyardfactory12 }
+					}
+					AND = {
+						subyard > 12
+						subyard < 14
+						NOT = { has_idea = subyardfactory13 }
+					}
+					AND = {
+						subyard > 13 
+						subyard < 15
+						NOT = { has_idea = subyardfactory14 }
+					}
+					AND = {
+						subyard > 14 
+						subyard < 16
+						NOT = { has_idea = subyardfactory15 }
+					}
+					AND = {
+						subyard > 15 
+						subyard < 17
+						NOT = { has_idea = subyardfactory16 }
+					}
+					AND = {
+						subyard > 16 
+						subyard < 18
+						NOT = { has_idea = subyardfactory17 }
+					}
+					AND = {
+						subyard > 17 
+						subyard < 19
+						NOT = { has_idea = subyardfactory18 }
+					}
+					AND = {
+						subyard > 18 
+						subyard < 20
+						NOT = { has_idea = subyardfactory19 }
+					}
+					AND = {
+						subyard > 19
+						NOT = { has_idea = subyardfactory20 }
+					}
+				}
+			}
+			
+			mean_time_to_happen = { days = 2 }
 
 			immediate = {
-				hidden_effect = { country_event = { days = 30 id = BICE_building.1 } }
 				#1
 				if = { limit = {
 				uniform_factory > 0 uniform_factory < 2 #NOT = { has_idea = uniformfactory1 }
