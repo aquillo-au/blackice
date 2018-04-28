@@ -7,15 +7,16 @@ on_actions = {
 				research_WW1 = yes
 				set_country_flag = ww1_done
 				country_event = BICE_building.1
+				country_event = military_size.1
 			}
 			every_country = { 
 				country_event = politics.1
 				country_event = politics.900
-				country_event = military_size.1
 			}
 			every_country = { 
 				limit = { is_ai = no }
 				country_event = { id = BICE_building.1 hours = 3 }
+				country_event = { id =  military_size.1 hours = 3 }
 			}
 		}
 	}
