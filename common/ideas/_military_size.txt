@@ -1,168 +1,317 @@
-add_namespace = military_size
-
-########Universal Event############
-
-country_event = {
-	id = military_size.1
-	title = military_size.1.t
-	desc = military_size.1.desc
-	picture = GFX_report_event_HQcommandI
+ideas = {
+	country = {
 	
-	trigger = {
-		if = { limit = { is_ai = no } date > 1936.1.1 }
-		OR = {
-			#Army
-			AND = {				
-				num_divisions < 10 
-				NOT = { has_country_flag = tiny_army }
+		##################### Army Size ##################
+		tiny_army = {
+		
+			allowed = {
+				always = no # Triggered via event
 			}
-			AND = {
-				num_divisions < 50
-				num_divisions > 10
-				NOT = { has_country_flag = small_army }
+			allowed_civil_war = {
+				always = yes
 			}
-			AND = {
-				num_divisions < 100
-				num_divisions > 50
-				NOT = { has_country_flag = average_army }
+			modifier = {
+				#army_org_Factor = -0.1
+				#planning_speed = -0.1
+				#training_time_army_factor = 0.08
+				
 			}
-			AND = {
-				num_divisions > 100
-				num_divisions < 200
-				NOT = { has_country_flag = large_army }
+			research_bonus = {
+				land_doctrine = -0.15
 			}
-			AND = {
-				num_divisions > 200
-				NOT = { has_country_flag = huge_army }
+			#traits = { army_chief_offensive_1 }
+			#traits = { army_chief_defensive_1 }
+			removal_cost = -1
+		}
+		small_army = {
+		
+			allowed = {
+				always = no # Triggered via event
 			}
-			
-			#Airforce
-			AND = {
-				has_deployed_air_force_size = { size < 800 }
-				NOT = { has_country_flag = tiny_air_force }
+			allowed_civil_war = {
+				always = yes
 			}
-			AND = {
-				has_deployed_air_force_size = { size > 800 }
-				has_deployed_air_force_size = { size < 2000 }
-				NOT = { has_country_flag = small_air_force }
+			modifier = {
+				#army_org_Factor = -0.1
+				#planning_speed = -0.1
+				#training_time_army_factor = 0.08
+				
 			}
-			AND = {
-				has_deployed_air_force_size = { size > 2000 }
-				has_deployed_air_force_size = { size < 4000 }
-				NOT = { has_country_flag = average_air_force }
+			research_bonus = {
+				land_doctrine = -0.075
 			}
-			AND = {
-				has_deployed_air_force_size = { size > 4000 }
-				has_deployed_air_force_size = { size < 7000 }
-				NOT = { has_country_flag = large_air_force }
+			#traits = { army_chief_offensive_1 }
+			#traits = { army_chief_defensive_1 }
+			removal_cost = -1
+		}
+		average_army = {
+		
+			allowed = {
+				always = no # Triggered via event
 			}
-			AND = {
-				has_deployed_air_force_size = { size > 7000 }
-				NOT = { has_country_flag = huge_air_force }
+			allowed_civil_war = {
+				always = yes
 			}
-			
-			#Naval
-			AND = {
-				has_navy_size = { size < 20 } 
-				NOT = { has_country_flag = tiny_navy }
+			modifier = {
+				#army_org_Factor = 0.05
+				#planning_speed = 0.05
+				#training_time_army_factor = 0.04
 			}
-			AND = {
-				has_navy_size = { size < 50 }
-				has_navy_size = { size > 20 }
-				NOT = { has_country_flag = small_navy }
+			research_bonus = {
+
 			}
-			AND = {
-				has_navy_size = { size < 110 }
-				has_navy_size = { size > 50 }
-				NOT = { has_country_flag = average_navy }
+			#traits = { army_chief_offensive_2 }
+			#traits = { army_chief_defensive_2 }
+			removal_cost = -1
+		}
+		large_army = {
+		
+			allowed = {
+				always = no # Triggered via event
 			}
-			AND = {
-				has_navy_size = { size < 175 }
-				has_navy_size = { size > 110 }
-				NOT = { has_country_flag = large_navy }
+			allowed_civil_war = {
+				always = yes
 			}
-			AND = {
-				has_navy_size = { size > 175 }
-				NOT = { has_country_flag = huge_navy }
+			modifier = {
+				#army_org_Factor = 0.1
+				#planning_speed = 0.1
+				#training_time_army_factor = -0.04
 			}
+			research_bonus = {
+				land_doctrine = 0.075
+			}
+			#traits = { army_chief_offensive_3 }
+			#traits = { army_chief_defensive_3 }
+			removal_cost = -1
+		}
+		huge_army = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = 0.15
+				#planning_speed = 0.15
+				#training_time_army_factor = -0.08
+			}
+			research_bonus = {
+				land_doctrine = 0.15
+			}
+			#traits = { army_chief_offensive_3 }
+			#traits = { army_chief_defensive_3 }
+			removal_cost = -1
 		}
 		
-	}
-	
-	mean_time_to_happen = {
-		days = 2
-	}
-	
-	immediate = { 
-		#Army
-		if = { limit = { num_divisions < 10 NOT = { has_country_flag = tiny_army } } set_country_flag = tiny_army clr_country_flag = huge_army clr_country_flag = small_army clr_country_flag = average_army clr_country_flag = large_army }
+		##################### Air Force Size ##################
+		tiny_air_force = {
 		
-		if = { limit = { num_divisions < 50 num_divisions > 10 NOT = { has_country_flag = small_army } } set_country_flag = small_army clr_country_flag = huge_army clr_country_flag = tiny_army clr_country_flag = average_army clr_country_flag = large_army }
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = -0.1
+				#planning_speed = -0.1
+				#training_time_army_factor = 0.08
+				
+			}
+			research_bonus = {
+				air_doctrine = -0.20
+			}
+			#traits = { army_chief_offensive_1 }
+			#traits = { army_chief_defensive_1 }
+			removal_cost = -1
+		}
+		small_air_force = {
 		
-		if = { limit = { num_divisions < 100 num_divisions > 50 NOT = { has_country_flag = average_army } } set_country_flag = average_army clr_country_flag = huge_army clr_country_flag = tiny_army clr_country_flag = small_army clr_country_flag = large_army }
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = -0.1
+				#planning_speed = -0.1
+				#training_time_army_factor = 0.08
+				
+			}
+			research_bonus = {
+				air_doctrine = -0.10
+			}
+			#traits = { army_chief_offensive_1 }
+			#traits = { army_chief_defensive_1 }
+			removal_cost = -1
+		}
+		average_air_force = {
 		
-		if = { limit = { num_divisions < 200 num_divisions > 100 NOT = { has_country_flag = large_army } } set_country_flag = large_army clr_country_flag = huge_army clr_country_flag = tiny_army clr_country_flag = small_army clr_country_flag = average_army }
-		
-		if = { limit = { num_divisions > 200 NOT = { has_country_flag = huge_army } } set_country_flag = huge_army clr_country_flag = large_army clr_country_flag = tiny_army clr_country_flag = small_army clr_country_flag = average_army }
-		
-		#Airforce
-		if = { limit = { has_deployed_air_force_size = { size < 800 } NOT = { has_country_flag = tiny_air_force } } set_country_flag = tiny_air_force clr_country_flag = huge_air_force	clr_country_flag = small_air_force clr_country_flag = average_air_force clr_country_flag = large_air_force }
-		
-		if = { limit = { has_deployed_air_force_size = { size > 800 } has_deployed_air_force_size = { size < 2000 } NOT = { has_country_flag = small_air_force } } set_country_flag = small_air_force clr_country_flag = huge_air_force	clr_country_flag = tiny_air_force clr_country_flag = average_air_force clr_country_flag = large_air_force }
-		
-		if = { limit = { has_deployed_air_force_size = { size > 2000 } has_deployed_air_force_size = { size < 4000 } NOT = { has_country_flag = average_air_force } } set_country_flag = average_air_force clr_country_flag = huge_air_force clr_country_flag = small_air_force	clr_country_flag = tiny_air_force clr_country_flag = large_air_force }
-		
-		if = { limit = { has_deployed_air_force_size = { size > 4000 } has_deployed_air_force_size = { size < 7000 } NOT = { has_country_flag = large_air_force } } set_country_flag = large_air_force clr_country_flag = huge_air_force clr_country_flag = small_air_force	clr_country_flag = average_air_force clr_country_flag = tiny_air_force }
-		
-		if = { limit = { has_deployed_air_force_size = { size > 7000 } NOT = { has_country_flag = huge_air_force } } set_country_flag = huge_air_force clr_country_flag = tiny_air_force clr_country_flag = small_air_force	clr_country_flag = average_air_force clr_country_flag = large_air_force }
-		
-		#Naval
-		if = { limit = { has_navy_size = { size < 20 } NOT = { has_country_flag = tiny_navy } } set_country_flag = tiny_navy clr_country_flag = huge_navy clr_country_flag = small_navy clr_country_flag = average_navy clr_country_flag = large_navy }
-		
-		if = { limit = { has_navy_size = { size < 50 } has_navy_size = { size > 20 } NOT = { has_country_flag = small_navy } } set_country_flag = small_navy clr_country_flag = huge_navy clr_country_flag = tiny_navy clr_country_flag = average_navy clr_country_flag = large_navy }
-		
-		if = { limit = { has_navy_size = { size < 110 } has_navy_size = { size > 50 } NOT = { has_country_flag = average_navy } } set_country_flag = average_navy clr_country_flag = huge_navy	clr_country_flag = small_navy clr_country_flag = tiny_navy clr_country_flag = large_navy }
-		
-		if = { limit = { has_navy_size = { size < 175 } has_navy_size = { size > 110 } NOT = { has_country_flag = large_navy } } set_country_flag = large_navy clr_country_flag = huge_navy	clr_country_flag = small_navy clr_country_flag = average_navy clr_country_flag = tiny_navy }
-		
-		if = { limit = { has_navy_size = { size > 175 } NOT = { has_country_flag = huge_navy } } set_country_flag = huge_navy clr_country_flag = tiny_navy	clr_country_flag = small_navy clr_country_flag = average_navy clr_country_flag = large_navy }
-	}
-	
-	option = {
-		name = "Ok"
-		#Army
-		if = { limit = { has_country_flag = tiny_army NOT = { has_idea = tiny_army } } add_ideas = tiny_army hidden_effect = { remove_ideas = huge_army	remove_ideas = small_army remove_ideas = average_army remove_ideas = large_army } }
-		
-		if = { limit = { has_country_flag = small_army NOT = { has_idea = small_army } } add_ideas = small_army hidden_effect = { remove_ideas = huge_army remove_ideas = tiny_army remove_ideas = average_army remove_ideas = large_army } }
-		
-		if = { limit = { has_country_flag = average_army NOT = { has_idea = average_army } } add_ideas = average_army hidden_effect = { remove_ideas = huge_army remove_ideas = tiny_army remove_ideas = small_army remove_ideas = large_army } }
-		
-		if = { limit = { has_country_flag = large_army NOT = { has_idea = large_army } } add_ideas = large_army hidden_effect = { remove_ideas = huge_army remove_ideas = tiny_army remove_ideas = small_army remove_ideas = average_army } }
-		
-		if = { limit = { has_country_flag = huge_army NOT = { has_idea = huge_army } } add_ideas = huge_army hidden_effect = { remove_ideas = large_army remove_ideas = tiny_army remove_ideas = small_army remove_ideas = average_army } }
-		
-		#Airforce
-		if = { limit = { has_country_flag = tiny_air_force NOT = { has_idea = tiny_air_force } } add_ideas = tiny_air_force hidden_effect = { remove_ideas = large_air_force remove_ideas = huge_air_force remove_ideas = small_air_force remove_ideas = average_air_force } }
-		
-		if = { limit = { has_country_flag = small_air_force NOT = { has_idea = small_air_force } } add_ideas = small_air_force hidden_effect = { remove_ideas = large_air_force remove_ideas = huge_air_force remove_ideas = tiny_air_force remove_ideas = average_air_force } }
-		
-		if = { limit = { has_country_flag = average_air_force NOT = { has_idea = average_air_force } } add_ideas = average_air_force hidden_effect = { remove_ideas = large_air_force remove_ideas = huge_air_force remove_ideas = small_air_force remove_ideas = tiny_air_force } }
-		
-		if = { limit = { has_country_flag = large_air_force NOT = { has_idea = large_air_force } } add_ideas = large_air_force hidden_effect = { remove_ideas = tiny_air_force remove_ideas = huge_air_force remove_ideas = small_air_force remove_ideas = average_air_force } }
-		
-		if = { limit = { has_country_flag = huge_air_force NOT = { has_idea = huge_air_force } } add_ideas = huge_air_force hidden_effect = { remove_ideas = large_air_force remove_ideas = tiny_air_force remove_ideas = small_air_force remove_ideas = average_air_force } }
-		
-		#Naval
-		if = { limit = { has_country_flag = tiny_navy NOT = { has_idea = tiny_navy } } add_ideas = tiny_navy hidden_effect = { remove_ideas = large_navy remove_ideas = huge_navy remove_ideas = small_navy remove_ideas = average_navy } }
-		
-		if = { limit = { has_country_flag = small_navy NOT = { has_idea = small_navy } } add_ideas = small_navy hidden_effect = { remove_ideas = large_navy remove_ideas = huge_navy remove_ideas = tiny_navy remove_ideas = average_navy } }
-		
-		if = { limit = { has_country_flag = average_navy NOT = { has_idea = average_navy } } add_ideas = average_navy hidden_effect = { remove_ideas = large_navy remove_ideas = huge_navy remove_ideas = small_navy remove_ideas = tiny_navy } }
-		
-		if = { limit = { has_country_flag = large_navy NOT = { has_idea = large_navy } } add_ideas = large_navy hidden_effect = { remove_ideas = tiny_navy remove_ideas = huge_navy remove_ideas = small_navy remove_ideas = average_navy } }
-		
-		if = { limit = { has_country_flag = huge_navy NOT = { has_idea = huge_navy } } add_ideas = huge_navy hidden_effect = { remove_ideas = large_navy remove_ideas = tiny_navy remove_ideas = small_navy remove_ideas = average_navy } }
-	}
-}
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = 0.05
+				#planning_speed = 0.05
+				#training_time_army_factor = 0.04
+			}
+			research_bonus = {
 
-### EOF ###
+			}
+			#traits = { army_chief_offensive_2 }
+			#traits = { army_chief_defensive_2 }
+			removal_cost = -1
+		}
+		large_air_force = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = 0.1
+				#planning_speed = 0.1
+				#training_time_army_factor = -0.04
+			}
+			research_bonus = {
+				air_doctrine = 0.10
+			}
+			#traits = { army_chief_offensive_3 }
+			#traits = { army_chief_defensive_3 }
+			removal_cost = -1
+		}
+		huge_air_force = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = 0.15
+				#planning_speed = 0.15
+				#training_time_army_factor = -0.08
+			}
+			research_bonus = {
+				air_doctrine = 0.20
+			}
+			#traits = { army_chief_offensive_3 }
+			#traits = { army_chief_defensive_3 }
+			removal_cost = -1
+		}
+		
+		##################### Navy Size ##################
+		tiny_navy = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = -0.1
+				#planning_speed = -0.1
+				#training_time_army_factor = 0.08
+				
+			}
+			research_bonus = {
+				naval_doctrine = -0.20
+			}
+			#traits = { army_chief_offensive_1 }
+			#traits = { army_chief_defensive_1 }
+			removal_cost = -1
+		}
+		small_navy = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = -0.1
+				#planning_speed = -0.1
+				#training_time_army_factor = 0.08
+				
+			}
+			research_bonus = {
+				naval_doctrine = -0.10
+			}
+			#traits = { army_chief_offensive_1 }
+			#traits = { army_chief_defensive_1 }
+			removal_cost = -1
+		}
+		average_navy = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = 0.05
+				#planning_speed = 0.05
+				#training_time_army_factor = 0.04
+			}
+			research_bonus = {
+
+			}
+			#traits = { army_chief_offensive_2 }
+			#traits = { army_chief_defensive_2 }
+			removal_cost = -1
+		}
+		large_navy = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = 0.1
+				#planning_speed = 0.1
+				#training_time_army_factor = -0.04
+			}
+			research_bonus = {
+				naval_doctrine = 0.10
+			}
+			#traits = { army_chief_offensive_3 }
+			#traits = { army_chief_defensive_3 }
+			removal_cost = -1
+		}
+		huge_navy = {
+		
+			allowed = {
+				always = no # Triggered via event
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				#army_org_Factor = 0.15
+				#planning_speed = 0.15
+				#training_time_army_factor = -0.08
+			}
+			research_bonus = {
+				naval_doctrine = 0.20
+			}
+			#traits = { army_chief_offensive_3 }
+			#traits = { army_chief_defensive_3 }
+			removal_cost = -1
+		}
+	}
+	
+}
