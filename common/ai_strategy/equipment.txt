@@ -316,4 +316,17 @@ equipment_production_e7 = {
 	ai_strategy = { type = equipment_production_factor id = infantry 			value = -40	 	}
 	ai_strategy = { type = equipment_production_factor id = motorized 			value = 40 		}
 }
+
+AI_stop_convoy_production = {
+	enable = {
+		has_equipment = { convoy > 800 }
+	}
+	abort = {
+		NOT = {
+			has_equipment = { convoy > 800 }
+		}
+	}
+
+	ai_strategy = { type = equipment_production_factor              id = convoy               value = -200 }
+}
 ### EOF ###

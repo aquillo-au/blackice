@@ -14135,7 +14135,7 @@ country_event = {
     id = germany.452
     title = germany.452.t
     desc = germany.452.d
-  picture = GFX_report_event_panzer_and_infantry_advance
+	picture = GFX_report_event_panzer_and_infantry_advance
     
 	fire_only_once = yes
 	
@@ -14145,29 +14145,27 @@ country_event = {
 		controls_state = 86
 		controls_state = 98
 		controls_state = 87
-		controls_state = 929
+		controls_state = 762
 		controls_state = 72
-		}
+	}
 	
 	 option = {
-        		name = germany.452.a 
-        		ai_chance = { factor = 100 }
-				transfer_state = 85
-				transfer_state = 86
-				transfer_state = 87
-				transfer_state = 98
-				transfer_state = 929
-				transfer_state = 72
-				set_country_flag = first
+        name = germany.452.a 
+        ai_chance = { factor = 100 }
+		transfer_state = 85
+		transfer_state = 86
+		transfer_state = 87
+		transfer_state = 98
+		transfer_state = 762
+		transfer_state = 72
+		set_country_flag = first
+		85 = { add_core_of = GER }
     
     }
     option = {
         name = germany.452.b 
-        ai_chance = { factor = 0 }
-        
-       
-    }
-	
+        ai_chance = { factor = 0 }    
+    }	
 }
 country_event = {
     id = germany.453
@@ -14454,9 +14452,120 @@ country_event = {
 	option = {
 		name = germany.459.a
 		ai_chance = { factor = 100 }
-		
 		GER = { country_event = germany.228 }
 		set_country_flag = czechpanzer_tech
 	}
 }
+
+country_event = {
+	id = germany.500
+	title = "Honor the Pact"
+	desc = germany.500.desc
+	picture = GFX_report_event_japan_europe_pact
+
+	is_triggered_only = yes
+	
+	immediate = { 
+		every_country = { 
+			limit = { is_in_faction_with = ENG } 
+			diplomatic_relation = { country = POL relation = guarantee active = no } 
+			diplomatic_relation = { country = SOV relation = non_aggression_pact } 
+			add_ai_strategy = {
+				type = dont_join_wars_with
+				id = "POL"
+				target_country = SOV
+				value = 2000
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = "SOV"
+				value = 50
+			}
+		} 
+	}
+
+	
+	option = {
+		name = "Join the Attack"		#join the attack
+		ai_chance = { factor = 100 }
+		declare_war_on = {
+			target = POL
+			type = take_state_focus
+			generator = { 840 96 95 97 94 93 91 89 } 
+		}
+	}
+	
+	option = {
+		name = "Dont join the Attack"		#dont join the attack
+		add_war_support = -0.3
+	}
+
+}
+
+
+country_event = {
+	id = germany.501
+	hidden = yes
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = sov_yes_pact
+		POL = { has_war_with = SOV has_war_with = GER }
+		POL = { is_in_faction_with = ENG }
+		count_triggers = {
+			amount = 16
+			96 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			840 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			95 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			94 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			93 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			91 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			89 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			88 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			762 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			90 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			10 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			1001 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			97 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			98 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			86 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+			85 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
+		}
+	}
+	
+	immediate = {
+		every_country = { limit = { is_in_faction_with = ENG has_war_with = SOV NOT = { is_puppet = yes } } 
+			white_peace = SOV
+		}	
+		SOV = {
+			transfer_state = 840
+			transfer_state = 96
+			transfer_state = 95
+			transfer_state = 94
+			transfer_state = 93
+			transfer_state = 97
+			transfer_state = 91
+			transfer_state = 89
+		}
+		GER = {
+			set_state_controller = 85
+			set_state_controller = 86
+			set_state_controller = 98
+			set_state_controller = 87
+			set_state_controller = 10
+			set_state_controller = 1001
+			set_state_controller = 90
+			set_state_controller = 92
+			set_state_controller = 88
+			set_state_controller = 762
+		}
+		
+	}
+	
+	option = { }
+	
+}
+		
+	
 ### EOF ###

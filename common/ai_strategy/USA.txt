@@ -345,6 +345,29 @@ USA_garrison_production = {
 	}
 }
 
+US_air_force = {
+	enable = {
+		tag = USA
+		num_of_military_factories > 125
+	}
+	abort = {
+		
+	}
+	
+	ai_strategy = {
+		type = air_factory_balance
+		value = 120
+	}
+	
+	#Does not work in BICE since fighter archetypes are all wrong and noone wants to fix it
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 20
+	}
+
+}
+
 
 USA_protect_core = {
 	enable = {

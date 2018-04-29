@@ -47,6 +47,54 @@ ENG_war_against_ITA = {
 	}
 }
 
+allied_support_england = {
+	enable = {
+		is_in_faction_with = ENG
+	}
+	abort = {
+		NOT = { is_in_faction_with = ENG }
+	}
+	
+	ai_strategy = {
+		type = spare_unit_factor
+		value = 50
+	}
+	
+	ai_strategy = {
+		type = support
+		id = "ENG"
+		value = 400
+	}
+}
+
+allies_dont_join_soviet_polish_war = {
+	enable = {
+		is_in_faction_with = ENG
+		POL = { is_in_faction_with = ENG }
+		POL = { has_war_with = SOV }
+		POL = { has_war_with = GER }
+		has_war_with = GER
+		GER = { NOT = { is_in_faction_with = SOV } }
+	}
+
+	abort = {
+		SOV = { NOT = { has_war_with = POL } }
+	}
+	
+	ai_strategy = {
+		type = dont_join_wars_with
+		id = POL
+		target_country = SOV
+		value = 800
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "POL"
+		value = 800
+	}
+}
+
 i_fin_eng = {
 	enable = {
 		tag = ENG
@@ -250,22 +298,20 @@ royal_air_force = {
 		date > 1937.12.31
 	}
 	abort = {
-		NOT = { 
-			tag = ENG 
-			date > 1937.12.31 
+		NOT = {  
 		}
 	}
 	
 	ai_strategy = {
 		type = air_factory_balance
-		value = 120
+		value = 100
 	}
 	
 	#Does not work in BICE since fighter archetypes are all wrong and noone wants to fix it
 	ai_strategy = {
 		type = equipment_production_min_factories
 		id = fighter
-		value = 20
+		value = 10
 	}
 
 }

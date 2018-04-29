@@ -9,6 +9,7 @@
 # garrison
 # protect
 # influence
+
 NAP_SOV-JAP = {
 	enable = {
 		is_historical_focus_on = yes
@@ -166,6 +167,12 @@ WTT_all_japanese_faction_join_war = {
 		type = spare_unit_factor
 		value = 500
 	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = "CHI"
+		value = 50
+	}
 }
 
 chinese_war = {
@@ -183,21 +190,21 @@ chinese_war = {
 	ai_strategy = {
 		type = antagonize
 		id = "CHI"			
-		value = 2000
+		value = 200^
 	}
 	ai_strategy = {
 		type = conquer
 		id = "CHI"			
-		value = 2000
+		value = 200
 	}
 	ai_strategy = {
 		type = spare_unit_factor
-		value = 500
+		value = 50
 	}
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = "MAN"
-		value = 2000
+		value = 200
 	}
 	
 	ai_strategy = {

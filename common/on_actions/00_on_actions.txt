@@ -120,6 +120,16 @@ on_actions = {
 			1000 = soviet.33
 			1000 = soviet.34
 		}
+		effect = {
+			if = {
+				limit = { FROM = { is_ai = yes NOT = { has_idea = mob_general } } }
+				FROM = { add_ideas = mob_general }
+			}
+			if = {
+				limit = { ROOT = { is_ai = yes NOT = { has_idea = mob_general } } }
+				ROOT = { add_ideas = mob_general }
+			}
+		}
 	}
 
 	on_wargoal_expire = {
@@ -268,6 +278,12 @@ on_actions = {
 	on_declare_war = {
 		effect = {
 			if = {
+				limit = { ROOT = { tag = GER } FROM = { tag = POL } GER = { NOT = { is_in_faction_with = SOV has_war_with = SOV has_country_flag = case_white } } has_global_flag = sov_yes_pact  }
+				SOV = { country_event = { id = germany.500 days = 16 } } #historical
+				GER = { set_country_flag = case_white }
+				POL = { add_ideas = POL_never_surrender }
+			}
+			if = {
 				limit = { ROOT = { OR = { tag = GER is_in_faction_with = GER } } FROM = { tag = SOV } }
 				SOV = { 
 					every_owned_state = { 
@@ -275,6 +291,14 @@ on_actions = {
 						add_claim_by = GER
 					}
 				}
+			}
+			if = {
+				limit = { ROOT = { is_ai = yes NOT = { has_idea = mob_general } } }
+				ROOT = { add_ideas = mob_general }
+			}
+			if = {
+				limit = { FROM = { is_ai = yes NOT = { has_idea = mob_general } } }
+				FROM = { add_ideas = mob_general }
 			}
 
 					
@@ -811,6 +835,15 @@ on_actions = {
 				}
 				FROM.FROM = { add_building_construction = { type = infrastructure level = 1 } clr_state_flag = GER_conquered }
 			}
+			#Germany gaining the states during Barbarossa, and not Romania
+			if = {
+				limit = {
+					FROM = { OR = { tag = GER is_in_faction_with = GER }}
+					ROOT = { tag = SOV }
+					FROM.FROM = { is_owned_by = SOV is_claimed_by = GER }
+				}
+				GER = { set_state_controller = FROM.FROM }
+			}
 			#Führer HQ
 			if = {
 				limit = {
@@ -856,7 +889,9 @@ on_actions = {
 					check_variable = { random < 0.02 }
 					NOT = { has_trait = sick }
 					set_temp_variable = { temp = sum_unit_terrain_modifier@sickness_chance }
-					divide_temp_variable = { temp = num_units }
+					check_variable = { num_units > 0 }
+					if = { limit = { check_variable = { sum_unit_terrain_modifier@sickness_chance > 0 } }
+					divide_temp_variable = { temp = num_units } }
 					check_variable = { temp > 0.75 }
 					NOT = { has_unit_leader_flag = recently_sick }
 				}
