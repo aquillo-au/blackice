@@ -8426,17 +8426,10 @@ country_event = {
 	picture = GFX_report_event_ger_1_3_leichte_div
 
 	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		has_country_flag = czechpanzer_tech
-		not = { has_country_flag = panzer_35t }
-		not = { has_country_flag = panzer_38t }
-		owns_state = 9
-	}
+	is_triggered_only = yes
 	
 	mean_time_to_happen = {
-		days = 2
+		days = 1
 	}
 	
 	option = {
@@ -14461,6 +14454,8 @@ country_event = {
 	option = {
 		name = germany.459.a
 		ai_chance = { factor = 100 }
+		
+		GER = { country_event = germany.228 }
 		set_country_flag = czechpanzer_tech
 	}
 }
