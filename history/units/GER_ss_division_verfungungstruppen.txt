@@ -1,5 +1,6 @@
 ﻿division_template = {
 	name = "SS Infanterie(s-mot) Brigade"		
+	division_names_group = GER_VT_01
 	is_locked = yes
 	priority = 2
 	template_counter = 19
@@ -26,7 +27,11 @@
 
 units = {
 	division= {	
-		name = "SS-VT Verfügungstruppe Brigade" 
+		#SS-VT Verfügungstruppe Brigade"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
 		location = 6521
 		division_template = "SS Infanterie(s-mot) Brigade"
 		start_experience_factor = 0.3
