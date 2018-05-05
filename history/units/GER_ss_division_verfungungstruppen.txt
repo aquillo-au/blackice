@@ -1,5 +1,5 @@
 ﻿division_template = {
-	name = "SS Infanterie(s-mot) Brigade"		
+	name = "SS VT-Division"		
 	division_names_group = GER_VT_01
 	is_locked = yes
 	priority = 2
@@ -14,26 +14,34 @@
 		ss_semi_motorized = { x = 1 y = 1 }
 		ss_semi_motorized = { x = 1 y = 2 }
 		
-		ss_artillery_brigade_mot = { x = 2 y = 0 }
-		ss_artillery_brigade_mot = { x = 2 y = 1 }
+		ss_semi_motorized = { x = 2 y = 0 }
+		ss_semi_motorized = { x = 2 y = 1 }
+		ss_semi_motorized = { x = 2 y = 2 }
+		
+		ss_artillery_brigade_mot = { x = 3 y = 0 }
+		ss_artillery_brigade_mot = { x = 3 y = 1 }
 	}
 	support = {
 		SS_DIV_HQ = { x = 0 y = 0 }
         ss_recon_mot = { x = 0 y = 1 }
 	 	ss_engineer = { x = 0 y = 2 }
 		military_police = { x = 0 y = 3 }
+		ss_maintenance_company = { x = 0 y = 3 }
+		ss_logistics_company = { x = 0 y = 4 }
+		ss_anti_tank = { x = 0 y = 5 }
+		ss_anti_air = { x = 0 y = 6 }
 	}
 }
 
 units = {
 	division= {	
-		#SS-VT Verfügungstruppe Brigade"
+		#SS-VT Verfügungstruppe Division"
 		division_name = {
 			is_name_ordered = yes
-			name_order = 1
+			name_order = 2
 		}
 		location = 6521
-		division_template = "SS Infanterie(s-mot) Brigade"
+		division_template = "SS VT-Division"
 		start_experience_factor = 0.3
 	}
 }

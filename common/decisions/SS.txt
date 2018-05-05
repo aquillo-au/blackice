@@ -98,11 +98,29 @@ SS_recruitment = {
 		ai_will_do = {
 			factor = 100
 		}
+		
 		complete_effect = {
+			division_template = {
+				name = "SS-Totenkopfverbände"					# Represents SS Garrison/ Guard units
+				division_names_group = GER_TK_01
+				priority = 2
+				template_counter = 67
+				
+				regiments = {
+					ss_garrison = { x = 0 y = 0 }				# Lower-quality equipment and training
+					ss_garrison = { x = 0 y = 1 }
+				}
+				support = {
+					SS_DIV_HQ = { x = 0 y = 0 }
+					military_police = { x = 0 y = 1 }
+				}
+			}
+			
 			country_event = ss_event.667
 			
 			add_to_variable = { var = wehrmacht_anger value = 3 }
 			subtract_from_variable = { var = SS_anger value = 3 }
+			
 			hidden_effect = {
 				SS_resolve_effects_wehrmacht = yes
 			}
@@ -279,8 +297,8 @@ SS_recruitment = {
 		complete_effect = {
 			country_event = ss_event.650
 			
-			add_to_variable = { var = wehrmacht_anger value = 3}
-			subtract_from_variable = { var = SS_anger value = 3}
+			add_to_variable = { var = wehrmacht_anger value = 3 }
+			subtract_from_variable = { var = SS_anger value = 3 }
 			hidden_effect = {
 				SS_resolve_effects_wehrmacht = yes
 			}

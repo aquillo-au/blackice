@@ -63,7 +63,7 @@ country_event = {
 		name = ss_event.667.a
 		hidden_effect = {
 			load_oob = "GER_SS_TV"
-			set_country_flag = SS_TV
+			set_country_flag = SS_TV_1_2_3
 		}
 		create_corps_commander = {
 			name = "Eicke, Theodor"
@@ -74,7 +74,82 @@ country_event = {
 		}
 
 	}
+	option = {
+		name = ss_event.667.a
+		set_country_flag = SS_TV_1_2_3_no
+	}
 }
+# 4. SS-TK Standarte 'Ostmark'
+country_event = {
+	id = ss_event.642
+	title = ss_event.642.t
+	desc = ss_event.642.d
+	picture = GFX_report_event_totenkopf
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_government = fascism
+		has_country_flag = SS_TV_1_2_3
+		NOT = { has_country_flag = SS_TV_1_2_3 }
+		NOT = { has_country_flag = SS_TV_4 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.642.a
+		ai_chance = { factor = 100 }
+		hidden_effect = {
+			load_oob = "GER_SS_TV_4"
+			set_country_flag = SS_TV_4
+		}
+	}
+	option = {
+		name = ss_event.642.b
+		ai_chance = { factor = 0 }
+		set_country_flag = SS_TV_4_no
+	}
+}
+# TK-Reiter-Standarte
+country_event = {
+	id = ss_event.644
+	title = ss_event.644.t
+	desc = ss_event.644.d
+	picture = GFX_report_event_totenkopf
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_government = fascism
+		has_country_flag = SS_TV_4
+		NOT = { has_country_flag = SS_TV_4_no }
+		NOT = { has_country_flag = SS_TV_4_Reiter }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ss_event.644.a
+		ai_chance = { factor = 100 }
+		hidden_effect = {
+			load_oob = "GER_SS_TV_Reiter"
+			set_country_flag = SS_TV_Reiter
+		}
+	}
+	option = {
+		name = ss_event.644.b
+		ai_chance = { factor = 0 }
+		set_country_flag = SS_TV_Reiter_no
+	}
+}
+
 # SS-Verfügungstruppe combat brigade
 ## Adding 3 SS Infantry (s-mot), 1 SS Artillery-Btl (mot) and 1 SS Div-stab
 country_event = {
@@ -387,39 +462,19 @@ country_event = {
 	
 	option = {
 		name = ss_event.650.a
+		ai_chance = { factor = 100 }
 		hidden_effect = {
-			load_oob = "GER_Totenkopf_division"
+			delete_unit_template_and_units = { division_template = "SS-TK 1-2-3" }
+			load_oob = "GER_ss_division_totenkopf"
 			set_country_flag = totenkopf_div_39
 		}
 	}
-}
-## AI
-country_event = {
-	id = ss_event.592
-	title = ss_event.592.t
-	desc = ss_event.592.d
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		date > 1939.10.8
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
 	option = {
-		name = ss_event.592.b
-		hidden_effect = {
-			load_oob = "GER_Totenkopf_division"
-			set_country_flag = totenkopf_div_39_ai
-		}
+		name = ss_event.650.b
+		ai_chance = { factor = 0 }
+		set_country_flag = totenkopf_div_39_no
 	}
 }
-## PLAYER
 country_event = {
 	id = ss_event.651
 	title = ss_event.651.t
@@ -430,10 +485,12 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = no
 		date > 1942.11.8
+		23 = { is_controlled_by = GER }
 		has_tech = mechanised_infantry2
 		has_country_flag = totenkopf_div_39
+		NOT = { has_country_flag = totenkopf_div_39_no }
+		NOT = { has_country_flag = totenkopf_pzgren_div_42 }
 	}
 	
 	mean_time_to_happen = {
@@ -443,46 +500,17 @@ country_event = {
 	option = {
 		name = ss_event.651.b
 		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 36
-				}
-				# Use army XP to upgrade
-				army_experience = 35
-			}
+			delete_unit_template_and_units = { division_template = "SS-Division(mot.) Totenkopf" }
+			load_oob = "GER_ss_pzgren_division_totenkopf"
 			set_country_flag = totenkopf_pzgren_div_42
 		}
 	}
-}
-## AI ##
-country_event = {
-	id = ss_event.591
-	title = ss_event.591.t
-	desc = ss_event.591.d
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		date > 1942.11.8
-		has_tech = mechanised_infantry2
-		has_country_flag = totenkopf_div_39_ai
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
 	option = {
-		name = ss_event.591.a
-		hidden_effect = {
-			load_oob = "GER_Totenkopf_pzgren_div_42"
-			set_country_flag = totenkopf_pzgren_div_42_ai
-		}
+		name = ss_event.651.b
+		ai_chance = { factor = 0 }
+		set_country_flag = totenkopf_pzgren_div_42_no
 	}
 }
-## PLAYER ##
 country_event = {
 	id = ss_event.652
 	title = ss_event.652.t
@@ -493,9 +521,10 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		is_ai = no
 		date > 1943.10.21
 		has_country_flag = totenkopf_pzgren_div_42
+		NOT = { has_country_flag = totenkopf_pzgren_div_42_no }
+		NOT = { has_country_flag = totenkopf_pz_div_44 }
 	}
 	
 	mean_time_to_happen = {
@@ -505,43 +534,15 @@ country_event = {
 	option = {
 		name = ss_event.652.b
 		hidden_effect = {
-			if = {
-				limit = {
-					has_army_experience < 16
-				}
-				# Use army XP to upgrade
-				army_experience = 15
-			}
-
+			delete_unit_template_and_units = { division_template = "SS Pzgren-Div Totenkopf" }
+			load_oob = "GER_ss_pz_division_totenkopf"
 			set_country_flag = totenkopf_pz_div_44
 		}
 	}
-}
-## AI ##
-country_event = {
-	id = ss_event.590
-	title = ss_event.590.t
-	desc = ss_event.590.d
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = GER
-		is_ai = yes
-		date > 1943.10.21
-		has_country_flag = totenkopf_pzgren_div_42_ai
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
 	option = {
-		name = ss_event.590.a
-		hidden_effect = {
-			load_oob = "GER_Totenkopf_pz_div_44"
-			set_country_flag = totenkopf_pz_div_44_ai
-		}
+		name = ss_event.651.b
+		ai_chance = { factor = 0 }
+		set_country_flag = totenkopf_pz_div_44_no
 	}
 }
 #### End Totenkopf-division event-chain ####
@@ -632,7 +633,6 @@ country_event = {
 		set_country_flag = ss_division_reich_no
 	}
 }
-#642
 ## Player ## SS Pzgren-Division Das Reich
 ## Mechanize the SS-Division and rename to SS-Division 'Das Reich' ##
 country_event = {
@@ -708,7 +708,6 @@ country_event = {
 		set_country_flag = ss_pzgren_division_dasreich_no
 	}
 }
-#644
 ## SS Pz-Division Das Reich
 ## Armor up the SS Pzgren-Division to SS Pz-Division and rename to SS Pz-Division 'Das Reich' ##
 country_event = {
@@ -806,22 +805,27 @@ country_event = {
 	
 	option = {
 		name = ss_event.669.a
+		ai_chance = { factor = 100 }
 		hidden_effect = {
 			load_oob = "GER_Totenkopf_division"	#SS-Totenkopf Division expands
-			#set_country_flag = 
+			set_country_flag = totenkopf_1_2_3
 		}
-		ai_chance = { factor = 100 }
 	}
-	
+	option = {
+		name = ss_event.669.b
+		ai_chance = { factor = 100 }
+		set_country_flag = totenkopf_1_2_3_no
+	}
 }
-# Schutzstaffel_divisions 2
+# SS 4 TK-standarte
 country_event = {
 	id = ss_event.670
 	title = ss_event.670.t
 	desc = ss_event.670.d
-	picture = GFX_report_event_german_soldiers_in_line
+	picture = GFX_report_event_totenkopf
 
 	is_triggered_only = yes
+	
 	fire_only_once = yes
 	
 	mean_time_to_happen = {

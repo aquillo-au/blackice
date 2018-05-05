@@ -1,5 +1,9 @@
 ﻿division_template = {
-	name = "SS Pzgren Totenkopf" 			
+	name = "SS Pzgren-Div Totenkopf" 			
+	division_names_group = GER_TK_01
+	is_locked = yes
+	priority = 2
+	template_counter = 164
 	
 	regiments = {
 		ss_mechanized = { x = 0 y = 0 }
@@ -32,16 +36,17 @@
 		ss_signal_company = { x = 0 y = 8 }
 		ss_anti_air = { x = 0 y = 9 }
 	}
-	
-	priority = 2
-	template_counter = 164
 }
 
 units = {
 	division= {	
-		name = "SS-Division 'Totenkopf' (mot)" 
-		location = 3705 # Dachau
-		division_template = "SS Pzgren Totenkopf"
+		#SS PzGren-Division 'Totenkopf'
+		division_name = {
+			is_name_ordered = yes
+			name_order = 14
+		}
+		location = 595 # Angoulême France
+		division_template = "SS Pzgren-Div Totenkopf"
 		start_experience_factor = 0.75
 		start_equipment_factor = 0.8
 	}

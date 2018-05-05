@@ -1,6 +1,10 @@
 ﻿division_template = {
-	name = "SS-Totenkopfverbande"	# Represents SS Garrison/ Guard units
-
+	name = "SS-TK 1-2-3"	# Represents SS Garrison/ Guard units
+	division_names_group = GER_TK_01
+	is_locked = yes
+	priority = 2
+	template_counter = 67
+	
 	regiments = {
 		ss_garrison = { x = 0 y = 0 }				# Lower-quality equipment and training
    		ss_garrison = { x = 0 y = 1 }
@@ -16,23 +20,35 @@
 
 units = {
 	division= {	
-		name = "1 'Oberbayern' SS-Totenkopf-Standarte" 
+		#1 'Oberbayern' SS-Totenkopf-Standarte
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
 		location = 3705
-		division_template = "SS-Totenkopfverbande"
+		division_template = "SS-TK 1-2-3"
 		start_experience_factor = 0.0
 		start_equipment_factor = 0.1
 	}
 	division= {	
-		name = "2 'Brandenburg' SS-Totenkopf-Standarte" 
+		#2 'Brandenburg' SS-Totenkopf-Standarte
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
 		location = 375
-		division_template = "SS-Totenkopfverbande"
+		division_template = "SS-TK 1-2-3"
 		start_experience_factor = 0.0
 		start_equipment_factor = 0.1
 	}
 	division= {	
-		name = "3 'Thuringen' SS-Totenkopf-Standarte" 
+		#3 'Thuringen' SS-Totenkopf-Standarte
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
 		location = 425
-		division_template = "SS-Totenkopfverbande"
+		division_template = "SS-TK 1-2-3"
 		start_experience_factor = 0.0
 		start_equipment_factor = 0.1
 	}

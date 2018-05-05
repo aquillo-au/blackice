@@ -1,0 +1,31 @@
+﻿division_template = {
+	name = "SS-TV-4"	# Represents SS Garrison/ Guard units
+	division_names_group = GER_TK_01
+	is_locked = yes
+	priority = 2
+	template_counter = 67
+	
+	regiments = {
+		ss_garrison = { x = 0 y = 0 }				# Lower-quality equipment and training
+   		ss_garrison = { x = 0 y = 1 }
+	}
+	support = {
+		SS_DIV_HQ = { x = 0 y = 0 }
+		military_police = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division= {	
+		#4 SS-Totenkopf-Standarte 'Ostmark'
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 3705
+		division_template = "SS-TV-4"
+		start_experience_factor = 0.01
+		start_equipment_factor = 0.1
+	}
+}
+#####################
