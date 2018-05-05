@@ -1804,38 +1804,6 @@ country_event = {
 }	
 
 country_event = {
-	id = ai_ideas.1
-	title = ai_ideas.1.t
-	desc = ai_ideas.1.d
-	
-	hidden = yes
-	
-	fire_only_once = yes
-	
-	trigger = {
-		date > 1936.1.1
-		is_ai = no
-	}
-
-	option = {
-		name = ai_ideas.1.a
-		ai_chance = { factor = 0 }
-		if = {
-			limit = { 
-				AND = {
-					tag = GER 	
-					is_ai = no
-				}
-			}
-			custom_effect_tooltip = remove_interior_minister
-			show_ideas_tooltip = himmler_ai
-			remove_ideas = {
-				himmler_ai
-			}
-		}
-	}
-}
-country_event = {
 	id = blackiceevents.90
 	title = blackiceevents.90.t
 	desc = blackiceevents.90.d

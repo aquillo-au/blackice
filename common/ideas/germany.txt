@@ -3027,7 +3027,6 @@ ideas = {
 		heinrich_himmler = {
 			allowed = {
 				original_tag = GER
-				is_ai = no
 				NOT = { has_country_flag = himmler_dead }
 			}
 			
@@ -3042,26 +3041,6 @@ ideas = {
 			traits = { prince_of_terror fascist powerful ambitious pet_projects }
 			
 			#removal_cost = 250
-		}
-		himmler_ai = {
-			allowed = {
-				original_tag = GER
-				has_country_flag = is_ai
-				NOT = { has_country_flag = himmler_dead }
-			}
-			
-			available = {
-				is_ai = yes
-				has_government = fascism
-			}
-			
-			traits = { prince_of_terror fascist }
-			
-			picture = idea_heinrich_himmler
-			
-			ai_will_do = {
-				factor = 2
-			}
 		}
 		reinhard_heydrich = {
 			allowed = {
@@ -4696,6 +4675,8 @@ ideas = {
 		adolf_hitler = {
 			allowed = {
 				original_tag = GER
+				has_government = fascism
+				NOT = { has_country_flag = hitler_dead }
 			}
 			
 			traits = { supreme_com_hitler fascist}

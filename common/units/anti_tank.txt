@@ -1,5 +1,5 @@
 sub_units = {
-
+	#Anti-tank	
 	anti_tank = {
 		sprite = anti_tank
 		map_icon_category = infantry
@@ -53,7 +53,7 @@ sub_units = {
 			defence = 0.02
 		}
 		forest = {
-		    attack = -0.03
+			attack = -0.03
 			movement = -0.01
 		}
 		#densecity_forest = {
@@ -65,7 +65,7 @@ sub_units = {
 		#	movement = -0.01
 		#}
 		hills = {
-		    attack = -0.01
+			attack = -0.01
 			movement = -0.02
 		}
 		#densecity_hills = {
@@ -75,7 +75,7 @@ sub_units = {
 		#	attack = 0.01
 		#}
 		mountain = 	{
-		    attack = -0.02
+			attack = -0.02
 			movement = -0.03
 		}
 		#densecity_mountain = {
@@ -87,11 +87,11 @@ sub_units = {
 		#	movement = -0.01
 		#}
 		jungle = {
-		    attack = -0.07
+			attack = -0.07
 			movement = -0.03
 		}
 		marsh = {
-		    attack = -0.06
+			attack = -0.06
 			movement = -0.03
 		}
 		#capital = {
@@ -125,7 +125,6 @@ sub_units = {
 			movement = -0.03
 		}
 	}
-	#Mot anti-tank
 	anti_tank_mot = {
 		sprite = anti_tank
 		map_icon_category = infantry
@@ -170,7 +169,7 @@ sub_units = {
 			defence = 0.02
 		}
 		forest = {
-		    attack = -0.03
+			attack = -0.03
 			movement = -0.02
 		}
 		#densecity_forest = {
@@ -182,7 +181,7 @@ sub_units = {
 		#	movement = -0.01
 		#}
 		hills = {
-		    attack = -0.01
+			attack = -0.01
 			movement = -0.01
 		}
 		#densecity_hills = {
@@ -192,7 +191,7 @@ sub_units = {
 		#	attack = 0.01
 		#}
 		mountain = 	{
-		    attack = -0.02
+			attack = -0.02
 			movement = -0.02
 		}
 		#densecity_mountain = {
@@ -204,11 +203,11 @@ sub_units = {
 		#	movement = -0.01
 		#}
 		jungle = {
-		    attack = -0.07
+			attack = -0.07
 			movement = -0.03
 		}
 		marsh = {
-		    attack = -0.06
+			attack = -0.06
 			movement = -0.03
 		}
 		#capital = {
@@ -232,6 +231,365 @@ sub_units = {
 		}
 		fort = {
 			attack = 0.02
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.03
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.03
+		}
+	}
+	# SS anit-tank
+	ss_anti_tank = {
+		sprite = anti_tank
+		map_icon_category = infantry
+		priority = 0
+		active = no
+		
+		group = support
+		
+		type = {
+			infantry
+			support
+		}
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0.0
+
+		need = {
+			ss_infantry_uniforms = 7
+			anti_tank_equipment = 24
+			motorized_lia_equipment = 24
+		}
+		manpower = 400
+		max_organisation = 0
+		default_morale = 0.3
+		max_strength =2
+		training_time = 140
+		weight = 0.1
+
+		can_be_parachuted = yes
+		
+		supply_consumption = 0.07
+
+		transport = motorized_lia_equipment
+		# Support nerfs to combat abilities
+		defense = -0.5
+		breakthrough = -0.5
+		soft_attack = -0.5
+		#hard_attack = -0.5
+		#ap_attack = -0.15
+		
+		plains = {
+			defence = 0.02
+		}
+		desert = {
+			defence = 0.02
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.02
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.01
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.02
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.03
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.03
+		}
+		urban = {
+			attack = 0.03
+			
+		}
+		fort = {
+			attack = 0.02
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.03
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.03
+		}
+	}
+	ss_anti_tank_mot = {
+		sprite = anti_tank
+		map_icon_category = infantry
+		priority = 1
+		active = no
+		
+		
+		type = {
+			motorized
+			anti_tank
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_army
+			category_line_artillery
+		}		
+		
+		combat_width = 0.5
+
+		need = {
+			anti_tank_equipment = 24
+			artytruck_equipment = 24 # truck pulled
+		}
+		manpower = 800 	#900
+		max_organisation = 0
+		default_morale = 0.3
+		max_strength = 6
+		training_time = 140
+		weight = 0.5
+
+		supply_consumption = 0.17
+
+		plains = {
+			defence = 0.02
+		}
+		desert = {
+			defence = 0.02
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.02
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.01
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.02
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.03
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.03
+		}
+		urban = {
+			attack = 0.03
+		}
+		fort = {
+			attack = 0.02
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.03
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.03
+		}
+	}
+	# Heavy anti-tank
+	anti_tank_heavy = {
+		sprite = anti_tank
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		
+		group = support
+		
+		type = {
+			infantry
+			support
+		}
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0.0
+
+		need = {
+			HVanti_tank_equipment = 6
+			artytruck_equipment = 6 # truck pulled
+		}
+		
+		manpower = 500 	#800
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 2
+		training_time = 120
+		weight = 0.1
+
+		can_be_parachuted = no
+		
+		supply_consumption = 0.1
+		transport = artytruck_equipment 
+
+		# Support nerfs to combat abilities
+		defense = -0.3
+		breakthrough = -0.7
+		soft_attack = -0.3
+		hard_attack = -0.2
+		ap_attack = -0.05
+
+		plains = {
+			defence = 0.05
+		}
+		desert = {
+			defence = 0.05
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.02
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.01
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.02
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.03
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.03
+		}
+		urban = {
+			attack = 0.08
+			defence = 0.015
+		}
+		densecity = {
+			attack = 0.07
+			defence = 0.02
+		}
+		capital = {
+			attack = 0.06
+			defence = 0.025
+		}
+		fort = {
+			attack = 0.1
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.03
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.03
+		}
+	}
+	# Heavy anti-tank
+	ss_anti_tank_heavy = {
+		sprite = anti_tank
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		
+		group = support
+		
+		type = {
+			infantry
+			support
+		}
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0.0
+
+		need = {
+			HVanti_tank_equipment = 6
+			artytruck_equipment = 6 # truck pulled
+		}
+		
+		manpower = 500 	#800
+		max_organisation = 0
+		default_morale = 0.1
+		max_strength = 2
+		training_time = 140
+		weight = 0.1
+
+		can_be_parachuted = no
+		
+		supply_consumption = 0.1
+		transport = artytruck_equipment 
+
+		# Support nerfs to combat abilities
+		defense = -0.3
+		breakthrough = -0.7
+		soft_attack = -0.3
+		hard_attack = -0.2
+		ap_attack = -0.05
+
+		plains = {
+			defence = 0.05
+		}
+		desert = {
+			defence = 0.05
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.02
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.01
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.02
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.03
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.03
+		}
+		urban = {
+			attack = 0.08
+			defence = 0.015
+		}
+		densecity = {
+			attack = 0.07
+			defence = 0.02
+		}
+		capital = {
+			attack = 0.06
+			defence = 0.025
+		}
+		fort = {
+			attack = 0.1
 		}
 		river = { 
 			attack = -0.05

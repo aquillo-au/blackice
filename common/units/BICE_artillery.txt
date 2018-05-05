@@ -1,0 +1,754 @@
+sub_units = {
+	#Artillery 
+	artillery_rail = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+		
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_army
+			category_artillery
+		}
+
+		combat_width = 3
+
+		need = {
+			railartillery_equipment = 1
+			garrison_equipment = 10
+			infantry_equipment = 2
+			infantry_uniforms = 12
+		}
+		
+		manpower = 1200
+		training_time = 360
+		max_organisation = -70
+		default_morale = 0.1
+		max_strength = 1
+		weight = 60
+		
+		supply_consumption = 1.5
+
+		# Support nerfs to combat abilities
+		defense = -1.25
+		breakthrough = 1.2
+		soft_attack = 1.3
+		hard_attack = 0.2
+
+		can_be_parachuted = no
+		
+		plains = {
+			movement = -0.05
+		}
+		desert = {
+			movement = -0.05
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.10
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.08
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.10
+		}
+		jungle = {
+			attack = -0.07
+			movement = -1.12
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.12
+		}
+		urban = {
+			attack = 0.09
+			movement = -0.05
+		}
+		densecity = {
+			attack = 0.12
+			movement = -0.1
+		}
+		capital = {
+			attack = 0.15
+			movement = -0.15
+		}
+		fort = {
+			attack = 0.2
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.05
+		}
+		amphibious = { 
+			attack = -0.50
+			#defense = -0.50
+			movement = -0.50
+		}
+	}
+	artillery_coastal = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 501
+		ai_priority = 0
+		active = yes
+		
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_army
+			category_artillery
+		}
+
+		combat_width = 3
+
+		need = {
+			superartillery_equipment = 8
+			garrison_equipment = 22
+			#infantry_equipment = 5
+			#infantry_uniforms = 20
+		}
+		
+		manpower = 800 	#1000
+		training_time = 200
+		max_organisation = -70
+		default_morale = 0.1
+		max_strength = 1
+		weight = 30
+		
+		supply_consumption = 0.35
+		
+		# Support nerfs to combat abilities
+		defense = 1.12
+		#breakthrough = 0.18
+		soft_attack = 1.18
+		hard_attack = 0.1
+
+		can_be_parachuted = no
+		
+		plains = {
+			movement = -5.0
+		}
+		desert = {
+			movement = -5.0
+		}
+		forest = {
+			attack = -0.03
+			movement = -5.0
+		}
+		hills = {
+			attack = -0.01
+			movement = -5.0
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -5.0
+		}
+		jungle = {
+			attack = -0.07
+			movement = -5.0
+		}
+		marsh = {
+			attack = -0.06
+			movement = -1.0
+		}
+		urban = {
+			attack = 0.09
+			movement = -5.0
+		}
+		densecity = {
+			attack = 0.12
+			movement = -10.0
+		}
+		capital = {
+			attack = 0.15
+			movement = -15.0
+		}
+		fort = {
+			attack = 0.12
+		}
+		river = { 
+			attack = -0.05
+			movement = -5.0
+		}
+		amphibious = { 
+			attack = -0.50
+			#defense = -0.50
+			movement = -0.50
+		}
+	}
+	artillery_medium = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = yes
+		
+		type = {
+			support
+			artillery
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+		}
+
+		combat_width = 0.0
+
+		need = {
+			medartillery_equipment = 12
+			artyhorse_equipment = 24 # horse pulled
+		}
+	
+		manpower = 550 	#800
+		training_time = 160
+		max_organisation = -50
+		default_morale = 0.1
+		max_strength = 2
+		weight = 1
+		
+		supply_consumption = 0.35
+
+		# Support nerfs to combat abilities				# does it need these if there is no line version?
+		defense = -0.05
+		breakthrough = 1.1
+		soft_attack = 1.1
+		hard_attack = 0.1
+
+		# this is what moves us and sets speed
+		transport = artyhorse_equipment
+
+		can_be_parachuted = no
+		plains = {
+			
+		}
+		desert = {
+			
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.05
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.04
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.06
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.07
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.07
+		}
+		urban = {
+			attack = 0.05
+			movement = -0.02
+		}
+		densecity = {
+			attack = 0.055
+			movement = -0.04
+		}
+		capital = {
+			attack = 0.06
+			movement = -0.06
+		}
+		fort = {
+			attack = 0.06
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.05
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.08
+		}
+	}
+	artillery_medium_mot = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 0
+		active = yes
+		
+		type = {
+			support
+			artillery
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+		}
+
+		combat_width = 0.0
+
+		need = {
+			medartillery_equipment = 12
+			artytruck_equipment = 14 # truck pulled
+			
+		}
+	
+		manpower = 550
+		training_time = 160
+		max_organisation = -50
+		default_morale = 0.1
+		max_strength = 0.2
+		weight = 1.4
+		
+		supply_consumption = 0.55
+
+		# Support nerfs to combat abilities							# does it need these if there is no line version?
+			defense = -0.05
+		breakthrough = 1.1
+		soft_attack = 1.1
+		hard_attack = 0.1
+
+		can_be_parachuted = no
+
+		# this is what moves us and sets speed
+		transport = artytruck_equipment 
+
+		plains = {
+			
+		}
+		desert = {
+			
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.03
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.02
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.04
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.05
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.05
+		}
+		urban = {
+			attack = 0.05
+			movement = -0.01
+		}
+		densecity = {
+			attack = 0.055
+			movement = -0.03
+		}
+		capital = {
+			attack = 0.06
+			movement = -0.05
+		}
+		fort = {
+			attack = 0.06
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.03
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.05
+		}
+	}
+	artillery_heavy = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 1
+		ai_priority = 0
+		active = yes
+		
+		type = {
+			support
+			artillery
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+		}
+
+		combat_width = 0.0
+
+		need = {
+			Hvartillery_equipment = 8
+			artytractor_equipment = 8
+		}
+		
+		manpower = 600 	#1000
+		training_time = 200
+		max_organisation = -60
+		default_morale = 0.1
+		max_strength = 1
+		weight = 1.5
+		
+		supply_consumption = 0.45
+
+		# Support nerfs to combat abilities						# does it need these if there is no line version?
+		defense = -0.05
+		breakthrough = 1.15
+		soft_attack = 1.15
+		hard_attack = 0.15
+
+		can_be_parachuted = no
+
+		# this is what moves us and sets speed
+		transport = artytractor_equipment
+		
+		plains = {
+			movement = -0.02
+		}
+		desert = {
+			movement = -0.02
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.05
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.04
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.06
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.07
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.07
+		}
+		urban = {
+			attack = 0.07
+			movement = -0.03
+		}
+		densecity = {
+			attack = 0.9
+			movement = -0.075
+		}
+		capital = {
+			attack = 0.10
+			movement = -0.1
+		}
+		fort = {
+			attack = 0.08
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.03
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.03
+		}
+	}
+	### SS-Artillery
+	ss_artillery_medium = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 1
+		ai_priority = 1
+		active = no
+		
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+		}
+
+		combat_width = 0.0
+
+		need = {
+			ss_infantry_uniforms = 8
+			medartillery_equipment = 12
+			artyhorse_equipment = 24 # horse pulled
+		}
+	
+		manpower = 550	#1000
+		training_time = 180
+		max_organisation = -50
+		default_morale = 0.3
+		max_strength = 2
+		weight = 1
+		
+		supply_consumption = 0.35
+
+		# Support nerfs to combat abilities				# does it need these if there is no line version?
+			defense = -0.05
+		breakthrough = 0.1
+		soft_attack = 0.1
+		hard_attack = -0.1
+
+		# this is what moves us and sets speed
+		transport = artyhorse_equipment
+
+		can_be_parachuted = no
+		plains = {
+			
+		}
+		desert = {
+			
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.03
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.02
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.04
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.05
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.05
+		}
+		urban = {
+			attack = 0.05
+			movement = -0.01
+		}
+		fort = {
+			attack = 0.06
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.03
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.05
+		}
+	}
+	ss_artillery_medium_mot = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 0
+		active = no
+		
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+		}
+
+		combat_width = 0.0
+
+		need = {
+			medartillery_equipment = 12
+			artytruck_equipment = 14 # truck pulled
+			
+		}
+	
+		manpower = 550	#1200
+		training_time = 180
+		max_organisation = -30
+		default_morale = 0.3
+		max_strength = 2
+		weight = 1.4
+		
+		supply_consumption = 0.55
+
+		# Support nerfs to combat abilities							# does it need these if there is no line version?
+			defense = -0.05
+		breakthrough = 0.1
+		soft_attack = 0.1
+		hard_attack = -0.1
+
+		can_be_parachuted = no
+
+		# this is what moves us and sets speed
+		transport = artytruck_equipment 
+
+		plains = {
+			
+		}
+		desert = {
+			
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.03
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.02
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.04
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.05
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.05
+		}
+		urban = {
+			attack = 0.05
+			movement = -0.01
+		}
+		fort = {
+			attack = 0.06
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.03
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.05
+		}
+	}
+	ss_artillery_heavy = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 1
+		ai_priority = 1
+		active = no
+		
+		type = {
+			artillery
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_artillery
+		}
+
+		combat_width = 0.0
+
+		need = {
+			ss_infantry_uniforms = 8
+			Hvartillery_equipment = 8
+			artytractor_equipment = 8
+		}
+		
+		manpower = 600	#1000
+		training_time = 200
+		max_organisation = -60
+		default_morale = 0.2
+		max_strength = 1
+		weight = 1.5
+		
+		supply_consumption = 0.5
+
+		# Support nerfs to combat abilities						# does it need these if there is no line version?
+		defense = -0.05
+		breakthrough = 1.15
+		soft_attack = 1.15
+		hard_attack = 0.15
+
+		can_be_parachuted = no
+
+		# this is what moves us and sets speed
+		transport = artytractor_equipment
+		
+		plains = {
+			movement = -0.02
+		}
+		desert = {
+			movement = -0.02
+		}
+		forest = {
+			attack = -0.03
+			movement = -0.05
+		}
+		hills = {
+			attack = -0.01
+			movement = -0.04
+		}
+		mountain = 	{
+			attack = -0.02
+			movement = -0.06
+		}
+		jungle = {
+			attack = -0.07
+			movement = -0.07
+		}
+		marsh = {
+			attack = -0.06
+			movement = -0.07
+		}
+		urban = {
+			attack = 0.07
+			movement = -0.03
+		}
+		fort = {
+			attack = 0.08
+		}
+		river = { 
+			attack = -0.05
+			movement = -0.03
+		}
+		amphibious = { 
+			attack = -0.10
+			movement = -0.03
+		}
+	}
+}
