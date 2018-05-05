@@ -1,0 +1,212 @@
+﻿add_namespace = performance
+add_namespace = debug
+
+country_event = {
+	id = performance.1
+	title = performance.1.t
+	desc = performance.1.desc
+	picture = GFX_report_event_vienna_award_negotiations
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { is_ai = yes }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "Option 1"
+		trigger = {
+			NOT = { is_ai = yes }
+		}
+		custom_effect_tooltip = unifiy_sa_TT
+		hidden_effect = {
+			ECU = { annex_country = { target = BRA }}
+			ECU = { annex_country = { target = BOL }}
+			ECU = { annex_country = { target = CHL }}
+			ECU = { annex_country = { target = ARG }}
+			ECU = { annex_country = { target = VEN }}
+			ECU = { annex_country = { target = URG }}
+			ECU = { annex_country = { target = PAR }}
+			ECU = { annex_country = { target = COL }}
+			ECU = { annex_country = { target = PAN }}
+			ECU = { annex_country = { target = COS }}
+			ECU = { annex_country = { target = NIC }}
+			ECU = { annex_country = { target = HON }}
+			ECU = { annex_country = { target = ELS }}
+			ECU = { annex_country = { target = GUA }}
+			ECU = { annex_country = { target = PRU }}
+			ECU = { annex_country = { target = HAI }}
+			ECU = { annex_country = { target = DOM }}
+			ECU = { annex_country = { target = CUB }}
+		}
+	}
+	option = {
+		name = "Option 2"
+		trigger = {
+			NOT = { is_ai = yes }
+		}
+		custom_effect_tooltip = unify_no_bra_TT
+		hidden_effect = {
+			ECU = { annex_country = { target = BOL }}
+			ECU = { annex_country = { target = CHL }}
+			ECU = { annex_country = { target = ARG }}
+			ECU = { annex_country = { target = VEN }}
+			ECU = { annex_country = { target = URG }}
+			ECU = { annex_country = { target = PAR }}
+			ECU = { annex_country = { target = COL }}
+			ECU = { annex_country = { target = PAN }}
+			ECU = { annex_country = { target = COS }}
+			ECU = { annex_country = { target = NIC }}
+			ECU = { annex_country = { target = HON }}
+			ECU = { annex_country = { target = ELS }}
+			ECU = { annex_country = { target = GUA }}
+			ECU = { annex_country = { target = PRU }}
+			ECU = { annex_country = { target = HAI }}
+			ECU = { annex_country = { target = DOM }}
+			ECU = { annex_country = { target = CUB }}
+		}
+	}
+	option = {
+		name = "Do nothing"
+		trigger = {
+			NOT = { is_ai = yes }
+		}
+	}
+}
+
+country_event = {
+	id = debug.1
+	title = "BICE Debug"
+	desc = ""
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Annex South A."
+		annex_country = { target = BRA }
+		annex_country = { target = ECU }
+		annex_country = { target = BOL }
+		annex_country = { target = CHL }
+		annex_country = { target = ARG }
+		annex_country = { target = VEN }
+		annex_country = { target = URG }
+		annex_country = { target = PAR }
+		annex_country = { target = COL }
+		annex_country = { target = PAN }
+		annex_country = { target = COS }
+		annex_country = { target = NIC }
+		annex_country = { target = HON }
+		annex_country = { target = ELS }
+		annex_country = { target = GUA }
+		annex_country = { target = PRU }
+		annex_country = { target = HAI }
+		annex_country = { target = DOM }
+		annex_country = { target = CUB }
+	}
+	
+	option = {
+		name = "Annex North A."
+		annex_country = { target = USA }
+		annex_country = { target = CAN }
+		annex_country = { target = MEX }
+	}
+	
+	option = {
+		name = "Annex Europe"
+		annex_country = { target = GER }
+		annex_country = { target = AUS }
+		annex_country = { target = ENG }
+		annex_country = { target = NOR }
+		annex_country = { target = SWE }
+		#annex_country = { target = FIN }
+		annex_country = { target = LUX }
+		annex_country = { target = FRA }
+		annex_country = { target = BEL }
+		annex_country = { target = DEN }
+		annex_country = { target = SWI }
+		annex_country = { target = CZE }
+		annex_country = { target = IRE }
+		annex_country = { target = ALB }
+		annex_country = { target = HOL }
+		annex_country = { target = SPR }
+		annex_country = { target = POR }
+		annex_country = { target = ITA }
+		annex_country = { target = BUL }
+		annex_country = { target = HUN }
+		annex_country = { target = ROM }
+		annex_country = { target = POL }
+		annex_country = { target = GRE }
+		annex_country = { target = YUG }
+	}
+	
+	option = {
+		name = "Annex East Eu."
+		annex_country = { target = SOV }
+		annex_country = { target = LIT }
+		annex_country = { target = LAT }
+		annex_country = { target = EST }
+		annex_country = { target = FIN }
+		annex_country = { target = TUR }
+	}
+	
+	option = {
+		name = "Annex Middle East"
+		annex_country = { target = PER }
+		annex_country = { target = AFG }
+		annex_country = { target = SYR }
+		annex_country = { target = LEB }
+		annex_country = { target = SAU }
+		annex_country = { target = IRQ }
+		annex_country = { target = YEM }
+		annex_country = { target = OMA }
+		#annex_country = { target =  }
+	}
+	
+	option = {
+		name = "Annex Africa"
+		annex_country = { target = SAF }
+		annex_country = { target = LIB }
+		annex_country = { target = EGY }
+		annex_country = { target = MOR }
+		annex_country = { target = TUN }
+		annex_country = { target = ETH }
+	}
+	
+	option = {
+		name = "Annex Asia"
+		annex_country = { target = JAP }
+		annex_country = { target = MAL }
+		annex_country = { target = CHI }
+		annex_country = { target = TAN }
+		annex_country = { target = MON }
+		annex_country = { target = MAN }
+		annex_country = { target = MEN }
+		annex_country = { target = YUN }
+		annex_country = { target = RAJ }
+		annex_country = { target = INS }
+		annex_country = { target = BUR }
+		annex_country = { target = TIB }
+		annex_country = { target = AST }
+		annex_country = { target = NZL }
+		annex_country = { target = BHU }
+		annex_country = { target = PRC }
+		annex_country = { target = GXC }
+		annex_country = { target = SIK }
+		annex_country = { target = NEP }
+		annex_country = { target = XSM }
+		annex_country = { target = SHX }
+		annex_country = { target = FRI }
+		annex_country = { target = SIA }
+		annex_country = { target = PHI }
+	}
+	
+	option = {
+		name = "Exit"
+	}
+}
+### EOF ###
