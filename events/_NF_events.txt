@@ -13,7 +13,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1936.10.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		NOT = { has_completed_focus = GER_naval_rearmament }
 		is_ai = yes
 	}
@@ -40,7 +40,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1936.1.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		NOT = { has_completed_focus = GER_Wehrmacht }
 		is_ai = yes
 	}
@@ -74,7 +74,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1936.6.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		NOT = { has_completed_focus = GER_air_innovation }
 		is_ai = yes
 	}
@@ -174,7 +174,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1938.1.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		NOT = { has_completed_focus = GER_west_wall_med }
 		is_ai = yes
 	}
@@ -266,7 +266,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1936.7.15
-has_country_flag = impossible
+		has_country_flag = impossible
 		NOT = { has_completed_focus = GER_autobahn_I }
 		is_ai = yes
 	}
@@ -324,7 +324,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1936.2.20
-has_country_flag = impossible
+		has_country_flag = impossible
 		NOT = { has_completed_focus = GER_achtung_panzer }
 		is_ai = yes
 	}
@@ -358,7 +358,7 @@ country_event = {
 		tag = GER
 		date > 1936.2.1
 		is_ai = yes
-has_country_flag = impossible
+		has_country_flag = impossible
 		NOT = { has_completed_focus = GER_Heer_expansion }
 	}
 	
@@ -776,7 +776,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1937.6.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		is_ai = yes
 		NOT = { has_completed_focus = GER_u_boat_effort }
 	}
@@ -787,8 +787,6 @@ has_country_flag = impossible
 	
 	option = {
 		name = NF_events.22.a
-		#set_technology = {  = 1 }
-		#division_template
 		unlock_national_focus = GER_u_boat_effort
 		navy_experience = 25
 		random_owned_state = {
@@ -812,10 +810,21 @@ has_country_flag = impossible
 			name = GER_u_boat_effort
 			bonus = 0.5
 			uses = 2
-			technology = early_submarine
-			technology = basic_submarine
-			technology = improved_submarine
-			technology = advanced_submarine
+			technology = tech_coastal_submarine4
+			technology = tech_coastal_submarine5
+			technology = tech_coastal_submarine6
+			technology = tech_patrol_submarine3
+			technology = tech_patrol_submarine4
+			technology = tech_patrol_submarine5
+			technology = tech_patrol_submarine6
+			technology = tech_patrol_submarine7
+			technology = tech_lr_patrol_submarine
+			technology = tech_lr_patrol_submarine2
+			technology = tech_lr_patrol_submarine3
+			technology = tech_lr_patrol_submarine4
+			technology = tech_lr_patrol_submarine5
+			technology = tech_lr_patrol_submarine6
+			technology = tech_lr_patrol_submarine7
 		}
 	}
 }
@@ -830,7 +839,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1939.1.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		is_ai = yes
 		NOT = { has_completed_focus = GER_industrial_effort_39 }
 	}
@@ -841,48 +850,46 @@ has_country_flag = impossible
 	
 	option = {
 		name = NF_events.23.a
-		#set_technology = {  = 1 }
-		#division_template
 		unlock_national_focus = GER_industrial_effort_39
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
+		random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
 				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-				set_state_flag = GER_industrial_effort_2_2IC
 			}
-			random_owned_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-						include_locked = yes
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-				set_state_flag = GER_industrial_effort_2_2IC
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
 			}
-			
-			add_tech_bonus = {
-				name = construction_tech_bonus
-				bonus = 0.025
-				uses = 1
-				category = construction_tech
+			set_state_flag = GER_industrial_effort_2_2IC
+		}
+		random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
 			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			set_state_flag = GER_industrial_effort_2_2IC
+		}
+		
+		add_tech_bonus = {
+			name = construction_tech_bonus
+			bonus = 0.025
+			uses = 1
+			category = construction_tech
+		}
 	}
 }
 country_event = {
@@ -894,7 +901,6 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
-		#tag = GER
 		has_country_flag = impossible # this event not needed due to NF
 		date > 1940.12.1
 		NOT = { is_in_faction_with = YUG }
@@ -912,8 +918,6 @@ country_event = {
 	
 	option = {
 		name = NF_events.24.a
-		#set_technology = {  = 1 }
-		#division_template
 		unlock_national_focus = GER_demand_slovenia
 		add_named_threat = { threat = 2 name = GER_demand_slovenia_threat }
 		YUG = { add_opinion_modifier = { target = GER modifier = GER_demand_slovenia_YUG } }
@@ -955,7 +959,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1941.1.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		is_puppet = no
 		NOT = { is_in_faction_with = YUG }
 		OR = {
@@ -992,8 +996,6 @@ has_country_flag = impossible
 	
 	option = {
 		name = NF_events.25.a
-		#set_technology = {  = 1 }
-		#division_template
 		unlock_national_focus = GER_first_ljubljana_award
 		if = {
 			limit = {
@@ -1101,7 +1103,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1941.1.20
-has_country_flag = impossible
+		has_country_flag = impossible
 		is_puppet = no
 		NOT = { has_war_with = YUG }
 		NOT = { is_in_faction_with = YUG }
@@ -1116,8 +1118,6 @@ has_country_flag = impossible
 	
 	option = {
 		name = NF_events.26.a
-		#set_technology = {  = 1 }
-		#division_template
 		unlock_national_focus = GER_fate_of_yugoslavia
 		add_named_threat = { threat = 2 name = GER_second_ljubljana_award }
 		if = {
@@ -1197,8 +1197,7 @@ country_event = {
 	
 	trigger = {
 		tag = GER
-		#date > 1941.2.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		YUG = {
 			OR = {
 			and = {
@@ -1210,7 +1209,6 @@ has_country_flag = impossible
 		}
 		GRE = { 
 			exists = yes
-			#has_war = yes
 		}
 		NOT = { is_in_faction_with = GRE }
 		is_ai = yes
@@ -1224,8 +1222,6 @@ has_country_flag = impossible
 	
 	option = {
 		name = NF_events.27.a
-		#set_technology = {  = 1 }
-		#division_template
 		unlock_national_focus = GER_war_with_greece
 		create_wargoal = {
 			target = GRE
@@ -1245,7 +1241,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1938.1.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		is_ai = yes
 		has_completed_focus = GER_Heer_expansion
 		NOT = { has_completed_focus = GER_infanterie_tactics }
@@ -1257,8 +1253,6 @@ has_country_flag = impossible
 	
 	option = {
 		name = NF_events.28.a
-		#set_technology = {  = 1 }
-		#division_template
 		unlock_national_focus = GER_infanterie_tactics
 		army_experience = 20
 		add_tech_bonus = {
@@ -1293,8 +1287,6 @@ country_event = {
 	
 	option = {
 		name = NF_events.30.a
-		#set_technology = {  = 1 }
-		#division_template
 		unlock_national_focus = GER_artillery_expansion
 		army_experience = 10
 		add_tech_bonus = {
@@ -1310,10 +1302,10 @@ country_event = {
 	id = NF_events.37
 	title = NF_events.37.t
 	desc = NF_events.37.d
-	
 	picture = GFX_report_event_goering_event
 	
 	fire_only_once = yes
+	
 	is_triggered_only = yes
 	
 	option = {
@@ -1330,11 +1322,6 @@ country_event = {
 		ai_chance = { factor = 0 }
 		set_country_flag = goering_four_year_plan_no
 	}
-	#option = {
-	#	name = NF_events.37.c	#need to rework this # Hess option
-	#	ai_chance = { factor = 0 }
-	#	add_political_power = 150
-	#}
 }
 country_event = {
 	id = NF_events.38
@@ -1371,7 +1358,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1936.9.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		is_ai = yes
 		has_completed_focus = GER_Goering_Plan
 		NOT = { has_completed_focus = GER_west_wall_lite }
@@ -1383,8 +1370,6 @@ has_country_flag = impossible
 
 	option = {
 		name = NF_events.50.a
-		#set_technology = {  = 1 }
-		#division_template
 		unlock_national_focus = GER_west_wall_lite
 		899 = {
 			if = {
@@ -1480,7 +1465,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1936.1.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		NOT = { has_completed_focus = GER_Wehrmacht }
 		NOT = { has_completed_focus = GER_air_innovation }
 		is_ai = no
@@ -1494,14 +1479,12 @@ has_country_flag = impossible
 		name = NF_events.39.a
 		unlock_national_focus = GER_air_innovation
 		air_experience = 15
-
 		add_tech_bonus = {
 			name = air_sup_bonus
 			bonus = 0.1
 			uses = 1
 			category = battlefield_support_tree
 		}
-
 		if = {
 			limit = {
 				NOT = {
@@ -1591,7 +1574,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		date > 1937.1.1
-has_country_flag = impossible
+		has_country_flag = impossible
 		NOT = { has_completed_focus = GER_achtung_panzer }
 		NOT = { has_completed_focus = GER_Heer_expansion }
 		is_ai = no
@@ -1713,7 +1696,6 @@ country_event = {
 		name = NF_events.43.a
 		unlock_national_focus = ENG_GHQ_Line
 		125 = {
-			
 			add_building_construction = {
 				type = bunker
 				level = 3
@@ -1750,7 +1732,6 @@ country_event = {
 			}
 		}
 		338 = {
-			
 			add_building_construction = {
 				type = bunker
 				level = 3
@@ -1766,6 +1747,4 @@ country_event = {
 		}
 	}
 }
-
-
 ### EOF ###

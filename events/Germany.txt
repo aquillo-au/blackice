@@ -8717,6 +8717,7 @@ country_event = {
 	title = germany.231.t
 	desc = germany.231.d
 	picture = GFX_report_event_wachregiment_berlin
+	
 	fire_only_once = yes
 	
 	trigger = {
@@ -8731,7 +8732,7 @@ country_event = {
 	
 	option = {
 		name = germany.231.a
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
 			delete_unit_template_and_units = { division_template = "Wachtruppen" }
@@ -10399,11 +10400,16 @@ country_event = {
 	option = { #Fire Fritsch
 		name = germany.279.a
 		ai_chance = {
-			factor = 0
+			factor = 100
 		}
 		add_political_power = 50
 		add_stability = 0.01
-		remove_ideas = werner_von_fritsch
+		swap_ideas = { 
+			remove_idea = werner_von_fritsch
+			add_idea = walther_von_brauchitsch
+		}
+		add_political_power = 50
+		add_stability = 0.01
 		set_country_flag = fritsch_fired
 	}
 	option = { #Keep Fritsch
@@ -10414,20 +10420,6 @@ country_event = {
 		add_political_power = -25
 		add_stability = -0.05
 		set_country_flag = fritsch_kept	
-	}
-	option = { #Fire Fritsch AI
-		name = germany.279.c
-		trigger = {
-			is_ai = yes
-		}
-		ai_chance = {
-			factor = 100
-		}
-		add_political_power = 50
-		add_stability = 0.01
-		remove_ideas = werner_von_fritsch
-		add_ideas = walther_von_brauchitsch
-		set_country_flag = fritsch_fired	
 	}
 }
 #AI minister switch
