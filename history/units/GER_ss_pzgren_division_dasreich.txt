@@ -1,5 +1,6 @@
 ﻿division_template = {
-	name = "SS Pzgren-Division Das Reich"			
+	name = "SS Pzgren-Division Das Reich"
+	division_names_group = GER_VT_01
 	is_locked = yes
 	priority = 2
 	template_counter = 169
@@ -34,12 +35,16 @@
 		ss_field_hospital = { x = 0 y = 7 }
 		ss_anti_air = { x = 0 y = 8 }
 		ss_anti_tank = { x = 0 y = 9 }
-	}Fo
+	}
 }
 
 units = {
 	division= {	
-		name = "SS-Division 'Das Reich'" 
+		#SS-Division 'Das Reich'"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
 		location = 6521
 		division_template = "SS Pzgren-Division Das Reich"
 		start_experience_factor = 0.5

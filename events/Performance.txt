@@ -18,10 +18,12 @@ country_event = {
 	}
 	
 	option = {
-		name = performance.1.a
+		name = "Option 1"
 		trigger = {
 			NOT = { is_ai = yes }
 		}
+		custom_effect_tooltip = unifiy_sa_TT
+		hidden_effect = {
 		ECU = { annex_country = { target = BRA }}
 		ECU = { annex_country = { target = BOL }}
 		ECU = { annex_country = { target = CHL }}
@@ -40,12 +42,15 @@ country_event = {
 		ECU = { annex_country = { target = HAI }}
 		ECU = { annex_country = { target = DOM }}
 		ECU = { annex_country = { target = CUB }}
+		}
 	}
 	option = {
-		name = performance.1.b
+		name = "Option 2"
 		trigger = {
 			NOT = { is_ai = yes }
 		}
+		custom_effect_tooltip = unify_no_bra_TT
+		hidden_effect = {
 		ECU = { annex_country = { target = BOL }}
 		ECU = { annex_country = { target = CHL }}
 		ECU = { annex_country = { target = ARG }}
@@ -63,39 +68,13 @@ country_event = {
 		ECU = { annex_country = { target = HAI }}
 		ECU = { annex_country = { target = DOM }}
 		ECU = { annex_country = { target = CUB }}
+		}
 	}
 	option = {
-		name = performance.1.c
+		name = "Do nothing"
 		trigger = {
 			NOT = { is_ai = yes }
 		}
-		ECU = { annex_country = { target = BRA }}
-		ECU = { annex_country = { target = BOL }}
-		ECU = { annex_country = { target = CHL }}
-		ECU = { annex_country = { target = ARG }}
-		ECU = { annex_country = { target = VEN }}
-		ECU = { annex_country = { target = URG }}
-		ECU = { annex_country = { target = PAR }}
-		ECU = { annex_country = { target = COL }}
-		ECU = { annex_country = { target = PAN }}
-		ECU = { annex_country = { target = COS }}
-		ECU = { annex_country = { target = NIC }}
-		ECU = { annex_country = { target = HON }}
-		ECU = { annex_country = { target = ELS }}
-		ECU = { annex_country = { target = GUA }}
-		ECU = { annex_country = { target = PRU }}
-		ECU = { annex_country = { target = HAI }}
-		ECU = { annex_country = { target = DOM }}
-		ECU = { annex_country = { target = CUB }}
-		RAJ = { annex_country = { target = NEP }}
-		RAJ = { annex_country = { target = BHU }}
-	}
-	option = {
-		name = performance.1.d
-		trigger = {
-			NOT = { is_ai = yes }
-		}
-		set_country_flag = no_performance_improvement
 	}
 }
 ### EOF ###
