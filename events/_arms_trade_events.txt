@@ -28,9 +28,9 @@ add_namespace = lend_lease
 add_namespace = human_lend_lease
 add_namespace = convoy_events
 add_namespace = template_events
-######################################################################
+###############################################################
 ################ JAPAN ########################################
-#########################################################################
+###############################################################
 country_event = {
     id =lend_lease.1
     title = lend_lease.1.t
@@ -46,25 +46,26 @@ country_event = {
 			NOT = { has_idea = Arms_Shipment_New_Deal }
             has_government = fascism
             has_equipment = {
-            infantry_equipment > 5000
+				infantry_equipment > 5000
             }
         }
-		JAP = { has_equipment = {
-                    infantry_equipment < 200
-                }
+		JAP = {
+			has_equipment = {
+				infantry_equipment < 200
+			}
 		}
 		
 		JAP = { NOT = { has_idea = Arms_Shipment } }
-     }
-    mean_time_to_happen = {
+	}
+    
+	mean_time_to_happen = {
         days = 2
     }
- 
+	
     immediate = {
         random_country = {
             limit = {
                 has_government = fascism
-               
                 NOT = { has_war_with = JAP } 
             }
 			random_list = {
@@ -85,7 +86,7 @@ country_event = {
             }
 		}
 	}
-        option = {
+	option = {
         name = lend_lease.1.a
 		add_timed_idea = {
 				idea = Arms_Shipment_Sent
@@ -94,15 +95,14 @@ country_event = {
 		JAP = {
 			country_event = { days = 2 id = lend_lease.101 }
 		}
-        }
-		 option = {
+	}
+	option = {
         name = lend_lease.1.b
 		add_timed_idea = {
-				idea = Arms_Shipment_New_Deal
-				days = 45
-			}
-		
-        }
+			idea = Arms_Shipment_New_Deal
+			days = 45
+		}
+    }
 }
 country_event = {
 	id =lend_lease.101

@@ -10378,7 +10378,7 @@ country_event = {
 		set_country_flag = GER_VIIC_43_ship
 	}
 }
-#Fritsch Affair
+#Blomberg-Fritsch Affair
 country_event = {
 	id = germany.279
 	title = germany.279.t
@@ -10397,20 +10397,21 @@ country_event = {
 		days = 3
 	}
 
-	option = { #Fire Fritsch
+	option = { #Fire Fritsch and Blomberg
 		name = germany.279.a
 		ai_chance = {
 			factor = 100
 		}
 		add_political_power = 25
 		add_stability = 0.01
-		swap_ideas = { 
+		remove_unit_leader = 21 #vonBlomberg
+        swap_ideas = { 
 			remove_idea = werner_von_fritsch
 			add_idea = walther_von_brauchitsch
 		}
 		set_country_flag = fritsch_fired
 	}
-	option = { #Keep Fritsch
+	option = { #Keep Fritsch and Blomberg
 		name = germany.279.b
 		ai_chance = {
 			factor = 0

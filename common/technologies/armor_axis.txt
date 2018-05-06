@@ -824,7 +824,7 @@ technologies = {
 	improved_light_tank_axis = { 
 
 		enable_equipments = {
-			light_tank_equipment_axis_2 
+			light_tank_equipment_axis_2
 		}
 		
 		path = {
@@ -1231,21 +1231,25 @@ technologies = {
 		enable_equipments = {
 			medium_tank_equipment_axis_1 
 		}
+		
 		enable_subunits = {
 			medium_armor_axis
 		}
+		
 		dependencies = {
 			generic_armor_axis = 1
 		}
+		
 		path = {
 			leads_to_tech = improved_medium_tank_axis
 			research_cost_coeff = 1
 		}
+		
 		on_research_complete = {
 			limit = {
 				NOT = {	has_template_containing_unit = medium_armor_axis }
-				
 			}
+			
 			hidden_effect = {
 				if = {
 					limit = {
@@ -1262,11 +1266,12 @@ technologies = {
 					load_oob = "unlock_medium_tanks_axis"
 				}
 			}
-
+			
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
+		
 		research_cost = 2
-		start_year = 1939
+		start_year = 1936
 
 		folder = {
 			name = armour_axis_folder
@@ -1281,6 +1286,11 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 10
+				tag = CZE
+				date > "1937.1.1"
+			}
 			
 			modifier = {
 				factor = 2
@@ -1431,7 +1441,7 @@ technologies = {
 		}
 		
 		research_cost = 2
-		start_year = 1941
+		start_year = 1940
 		
 		folder = {
 			name = armour_axis_folder

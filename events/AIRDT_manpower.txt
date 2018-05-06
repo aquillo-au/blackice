@@ -8,24 +8,25 @@ country_event = {
 	picture = Nothing
 	
 	hidden = yes
+	
 	mean_time_to_happen = { 
 		days = 15 
-		}
+	}
 	
 	trigger = {	
-			is_ai = yes	
-			OR = {
-				has_war = yes
-				AND = {
-					has_war = no
-					has_war_support > 0.2				
-				}
+		is_ai = yes	
+		OR = {
+			has_war = yes
+			AND = {
+				has_war = no
+				has_war_support > 0.2				
 			}
-			OR = {
+		}
+		OR = {
 			has_country_flag = mob_reserve
 			has_country_flag = cons_volunteer
-			}	
-			has_manpower < 500000	
+		}	
+		has_manpower < 500000	
 		
 	}
 	
@@ -33,9 +34,10 @@ country_event = {
 		#add_political_power = -150
 		add_ideas = cons_one
 	}
+	
 	option = {
 		name = AIRDT_manpower.1.a
-		}
+	}
 }
 
 country_event = {
@@ -91,12 +93,12 @@ country_event = {
 			has_country_flag = cons_expanded_draft	
 			has_manpower < 500000	
 			OR = {
-					has_government = fascism
-					has_government = communism
-					AND = {
-						has_war = yes
-						enemies_strength_ratio > 0.6
-					}
+				has_government = fascism
+				has_government = communism
+				AND = {
+					has_war = yes
+					enemies_strength_ratio > 0.6
+				}
 			}
 		}
 	}
@@ -105,9 +107,10 @@ country_event = {
 		#add_political_power = -150
 		add_ideas = cons_three
 	}
+	
 	option = {
 		name = AIRDT_manpower.3.a
-		}
+	}
 }
 
 country_event = {
@@ -117,9 +120,10 @@ country_event = {
 	picture = Nothing
 	
 	hidden = yes
+	
 	mean_time_to_happen = { 
 		days = 15 
-		}
+	}
 	
 	trigger = {	
 		AND = {
@@ -135,9 +139,10 @@ country_event = {
 		#add_political_power = -150
 		add_ideas = cons_extensive_draft
 	}
+	
 	option = {
 		name = AIRDT_manpower.4.a
-		}
+	}
 }
 
 country_event = {
@@ -147,9 +152,10 @@ country_event = {
 	picture = Nothing
 	
 	hidden = yes
+	
 	mean_time_to_happen = { 
 		days = 15 
-		}
+	}
 	
 	trigger = {	
 		AND = {
@@ -165,11 +171,8 @@ country_event = {
 		#add_political_power = -150
 		add_ideas = cons_barrel
 	}
+	
 	option = {
 		name = AIRDT_manpower.5.a
-		}
+	}
 }
-
-
-
-
