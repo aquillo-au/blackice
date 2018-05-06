@@ -149,9 +149,7 @@ country_event = {
 		set_country_flag = SS_TV_Reiter_no
 	}
 }
-
 # SS-Verfügungstruppe combat brigade
-## Adding 3 SS Infantry (s-mot), 1 SS Artillery-Btl (mot) and 1 SS Div-stab
 country_event = {
 	id = ss_event.668
 	title = ss_event.668.t
@@ -801,80 +799,10 @@ country_event = {
 	}
 }
 #### End Reich-division event-chain ####
-# Schutzstaffel_divisions 1 
-country_event = {
-	id = ss_event.669
-	title = ss_event.669.t
-	desc = ss_event.669.d
-	picture = GFX_report_event_totenkopf
-
-	is_triggered_only = yes
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.669.a
-		ai_chance = { factor = 100 }
-		hidden_effect = {
-			load_oob = "GER_Totenkopf_division"	#SS-Totenkopf Division expands
-			set_country_flag = totenkopf_1_2_3
-		}
-	}
-	option = {
-		name = ss_event.669.b
-		ai_chance = { factor = 100 }
-		set_country_flag = totenkopf_1_2_3_no
-	}
-}
-# SS 4 TK-standarte
-country_event = {
-	id = ss_event.670
-	title = ss_event.670.t
-	desc = ss_event.670.d
-	picture = GFX_report_event_totenkopf
-
-	is_triggered_only = yes
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.670.a
-		hidden_effect = {
-			load_oob = "GER_LSSAH_division"	#Leibstandarte SS Adolf Hitler Expands to regiment
-			#set_country_flag = 
-		}
-		ai_chance = { factor = 100 }
-	}
-}
-# Schutzstaffel_divisions 3
-country_event = {
-	id = ss_event.671
-	title = ss_event.671.t
-	desc = ss_event.671.d
-	picture = GFX_report_event_german_elite_troops_inspected
-
-	is_triggered_only = yes
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-	
-	option = {
-		name = ss_event.671.a
-		hidden_effect = {
-			load_oob = "GER_Das_Reich_division"	#SS-Division (mot) Reich 
-			#set_country_flag = 
-		}
-		ai_chance = { factor = 100 }
-	}
-}
-# Schutzstaffel_divisions 4
+# ss_event.669
+# ss_event.670
+# ss_event.671
+# ss_event.672
 country_event = {
 	id = ss_event.672
 	title = ss_event.672.t

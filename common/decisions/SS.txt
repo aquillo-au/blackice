@@ -63,7 +63,7 @@ SS_recruitment = {
 		fire_only_once = yes
 		
 		ai_will_do = {
-			factor = 1
+			factor = 200
 		}
 		complete_effect = {
 			GER = {
@@ -96,10 +96,11 @@ SS_recruitment = {
 		fire_only_once = yes
 		
 		ai_will_do = {
-			factor = 100
+			factor = 200
 		}
 		
 		complete_effect = {
+			#Free template
 			division_template = {
 				name = "SS-Totenkopfverbände"					# Represents SS Garrison/ Guard units
 				division_names_group = GER_TK_01
@@ -126,7 +127,44 @@ SS_recruitment = {
 			}
 		}
 	}
-	
+	GER_TV_4_Schutzstaffel = {
+
+		icon = ger_military_buildup
+
+		available = {
+			OR = {
+				has_idea = heinrich_himmler
+				has_country_leader = { name = "Heinrich Himmler" }
+				has_country_flag = totenkopf_1_2_3
+			}
+			date > 1938.1.1
+		}
+		visible = {
+			OR = {
+				has_idea = heinrich_himmler
+				has_country_leader = { name = "Heinrich Himmler" }
+				has_country_flag = totenkopf_1_2_3
+			}
+			date > 1938.5.1
+		}
+
+		cost = 15
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 200
+		}
+		complete_effect = {
+			country_event = ss_event.642
+			
+			add_to_variable = { var = wehrmacht_anger value = 1 }
+			subtract_from_variable = { var = SS_anger value = 1 }
+			hidden_effect = {
+				SS_resolve_effects_wehrmacht = yes
+			}
+		}
+	}
 	GER_VT_Schutzstaffel = {
 
 		icon = ger_military_buildup
@@ -144,7 +182,7 @@ SS_recruitment = {
 				has_idea = heinrich_himmler
 				has_country_leader = { name = "Heinrich Himmler" }
 			}
-			date > 1936.1.29
+			date > 1936.1.10
 		}
 
 		cost = 15
@@ -152,7 +190,7 @@ SS_recruitment = {
 		fire_only_once = yes
 		
 		ai_will_do = {
-			factor = 1
+			factor = 200
 		}
 		
 		complete_effect = {
@@ -165,10 +203,6 @@ SS_recruitment = {
 			hidden_effect = {
 				SS_resolve_effects_wehrmacht = yes
 			}
-		}
-		
-		ai_will_do = {
-			factor = 200
 		}
 	}
 	
@@ -188,7 +222,7 @@ SS_recruitment = {
 				has_idea = heinrich_himmler
 				has_country_leader = { name = "Heinrich Himmler" }
 			}
-			date > 1938.7.1
+			date > 1938.2.1
 		}
 
 		cost = 15
@@ -196,9 +230,25 @@ SS_recruitment = {
 		fire_only_once = yes
 		
 		ai_will_do = {
-			factor = 1
+			factor = 200
 		}
+		
 		complete_effect = {
+			#Free template
+			division_template = {
+				name = "SS Infanterie Btl" 			
+				priority = 2
+				template_counter = 157
+				division_names_group = GER_LSSAH_01
+				
+				regiments = {
+					ss_infantry = { x = 0 y = 0 }
+				}
+				support = {
+					SS_DIV_HQ = { x = 0 y = 0 }
+				}
+			}
+			#LSSAH Inf Rgt
 			division_template = {
 				name = "LSSAH Infanterie Regt" 			
 				is_locked = yes
@@ -221,9 +271,6 @@ SS_recruitment = {
 					ss_logistics_company = { x = 0 y = 4 }
 					ss_field_hospital = { x = 0 y = 5 }
 				}
-				
-				priority = 2
-				template_counter = 157
 			}
 			if = {
 				limit = {
@@ -260,10 +307,6 @@ SS_recruitment = {
 				SS_resolve_effects_wehrmacht = yes
 			}
 		}
-		
-		ai_will_do = {
-			factor = 200
-		}
 	}
 	#Totenkopf-division event-chain
 	GER_SS_TK = {
@@ -284,7 +327,7 @@ SS_recruitment = {
 				has_idea = heinrich_himmler
 				has_country_leader = { name = "Heinrich Himmler" }
 			}
-			date > 1939.10.1
+			date > 1939.4.1
 		}
 
 		cost = 15
@@ -292,7 +335,7 @@ SS_recruitment = {
 		fire_only_once = yes
 		
 		ai_will_do = {
-			factor = 1
+			factor = 200
 		}
 		complete_effect = {
 			country_event = ss_event.650
@@ -329,7 +372,7 @@ SS_recruitment = {
 		fire_only_once = yes
 		
 		ai_will_do = {
-			factor = 1
+			factor = 200
 		}
 		complete_effect = {
 			country_event = ss_event.640
@@ -341,120 +384,7 @@ SS_recruitment = {
 			}
 		}
 	}
-	
-	GER_Schutzstaffel_divisions_II = {
 
-		icon = ger_military_buildup
-
-		available = {
-			OR = {
-				has_idea = heinrich_himmler
-				has_country_leader = { name = "Heinrich Himmler" }
-			}
-			date > 1939.6.1
-			is_ai = yes
-		}
-		visible = {
-			OR = {
-				has_idea = heinrich_himmler
-				has_country_leader = { name = "Heinrich Himmler" }
-			}
-			date > 1939.5.1
-			is_ai = yes #apparently this is ai only
-			always = no
-		}
-
-		cost = 15
-		
-		fire_only_once = yes
-		
-		ai_will_do = {
-			factor = 1
-		}
-		complete_effect = {
-			country_event = ss_event.640
-			
-			add_to_variable = { var = wehrmacht_anger value = 3}
-			subtract_from_variable = { var = SS_anger value = 3}
-			hidden_effect = {
-				SS_resolve_effects_wehrmacht = yes
-			}
-		}
-	}
-	GER_Schutzstaffel_divisions_III = {
-
-		icon = ger_military_buildup
-
-		available = {
-			OR = {
-				has_idea = heinrich_himmler
-				has_country_leader = { name = "Heinrich Himmler" }
-			}
-			date > 1940.1.1
-		}
-		visible = {
-			OR = {
-				has_idea = heinrich_himmler
-				has_country_leader = { name = "Heinrich Himmler" }
-			}
-			date > 1939.12.1
-		}
-
-		cost = 15
-		
-		fire_only_once = yes
-		
-		ai_will_do = {
-			factor = 1
-		}
-		complete_effect = {
-			country_event = ss_event.671
-			
-			add_to_variable = { var = wehrmacht_anger value = 3}
-			subtract_from_variable = { var = SS_anger value = 3}
-			hidden_effect = {
-				SS_resolve_effects_wehrmacht = yes
-			}
-		}
-	}
-	
-	GER_Schutzstaffel_divisions_IV = {
-
-		icon = ger_military_buildup
-
-		available = {
-			OR = {
-				has_idea = heinrich_himmler
-				has_country_leader = { name = "Heinrich Himmler" }
-			}
-			date > 1940.7.1
-		}
-		visible = {
-			OR = {
-				has_idea = heinrich_himmler
-				has_country_leader = { name = "Heinrich Himmler" }
-			}
-			date > 1940.6.1
-		}
-
-		cost = 15
-		
-		fire_only_once = yes
-		
-		ai_will_do = {
-			factor = 1
-		}
-		complete_effect = {
-			country_event = ss_event.673
-			
-			add_to_variable = { var = wehrmacht_anger value = 3}
-			subtract_from_variable = { var = SS_anger value = 3}
-			hidden_effect = {
-				SS_resolve_effects_wehrmacht = yes
-			}
-		}
-	}
-	
 	GER_SS_Kavallerie_brigade = {
 
 		icon = ger_military_buildup
@@ -656,8 +586,8 @@ SS_recruitment = {
 			set_country_flag = focus_foreign_SS_units
 			add_ideas = GER_foreign_SS_unit_recruitment
 			
-			add_to_variable = { var = wehrmacht_anger value = 3}
-			subtract_from_variable = { var = SS_anger value = 3}
+			add_to_variable = { var = wehrmacht_anger value = 3 }
+			subtract_from_variable = { var = SS_anger value = 3 }
 			hidden_effect = {
 				SS_resolve_effects_wehrmacht = yes
 			}
