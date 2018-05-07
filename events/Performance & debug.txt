@@ -207,6 +207,18 @@ country_event = {
 	}
 	
 	option = {
+		name = "Normal difficulty"
+		trigger = { NOT = { has_idea = normal_difficulty_AI } }
+		add_ideas = normal_difficulty_AI
+	}
+	
+	option = {
+		name = "Clear normal difficulty"
+		trigger = { has_idea = normal_difficulty_AI } 
+		remove_ideas = normal_difficulty_AI
+	}
+	
+	option = {
 		name = "Exit"
 	}
 }
