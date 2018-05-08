@@ -799,34 +799,7 @@ country_event = {
     	name = blackiceevents.48.b
     }
 }
-country_event = {   # making sure SOV gets correct rebound
-	id = blackiceevents.49
-	title = blackiceevents.49.t
-	desc = blackiceevents.49.d
-	picture = GFX_report_event_german_troops
 
-	trigger = {
-		tag = GER
-		is_ai = yes
-		GRE = { is_ai = yes }
-		date > 1941.4.1
-	}
-
-	fire_only_once = yes
-
-	option = {
-		name = blackiceevents.49.a
-		ai_chance = { factor = 1 }
-			#news_event = { days = 5 id = news.5 } #news event placeholder
-		GER = {
-			annex_country = {
-			    target = GRE
-			    transfer_troops = no
-			}
-		}
-		set_country_flag = had_to_do_it
-	}
-}
 country_event = {   # Denmark were event
 	id = blackiceevents.50
 	title = blackiceevents.50.t
@@ -946,10 +919,7 @@ country_event = {
 }
 country_event = {
 	id = blackiceevents.53
-	title = blackiceevents.53.t
-	desc = blackiceevents.53.d
-	
-	picture = GFX_report_event_greek_flag
+	hidden = yes
 	
 	trigger = {
 		tag = ENG
@@ -974,15 +944,7 @@ country_event = {
         }
     }
 	
-	option = {
-		name = blackiceevents.53.a
-		ai_chance = { factor = 100 }
-		ENG = { add_to_faction = GRE}
-	}
-	
-	option = {
-    	name = blackiceevents.53.b
-    }
+	option = { }
 }
 country_event = {
 	id = blackiceevents.64
