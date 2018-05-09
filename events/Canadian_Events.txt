@@ -283,13 +283,8 @@ country_event = {
 	trigger = {
 		tag = CAN
 		has_tech = basic_light_tank
-		or = {
-			has_war = yes
-			has_tech = tech_cav_tanks
-			has_tech = basic_medium_tank
-			has_tech = tech_inf_tanks
-		}
-		not = { has_country_flag = canada_arm}
+		has_war = yes
+		not = { has_country_flag = canada_arm }
 		is_ai = yes
 	}
 	
@@ -297,23 +292,26 @@ country_event = {
 		days = 1
 	}
 	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_tech = tech_cav_tanks }
+				NOT = { has_tech = basic_medium_tank }
+				NOT = { has_tech = tech_inf_tanks }
+				NOT = { has_tech = tech_ac_recon }
+			}
+			set_technology = { tech_cav_tanks = 1 }
+			set_technology = { basic_medium_tank = 1 }
+			set_technology = { tech_inf_tanks = 1 }
+			set_technology = { tech_ac_recon = 1 }
+		}
+	}
+	
 	option = {
 		name = canada.10.a
 		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			if = {
-				limit = {
-					NOT = { has_tech = tech_cav_tanks }
-					NOT = { has_tech = basic_medium_tank }
-					NOT = { has_tech = tech_inf_tanks }
-					NOT = { has_tech = tech_ac_recon }
-				}
-				set_technology = { tech_cav_tanks = 1 }
-				set_technology = { basic_medium_tank = 1 }
-				set_technology = { tech_inf_tanks = 1 }
-				set_technology = { tech_ac_recon = 1 }
-			}
 			load_oob = "CAN_1_armor_Division"
 		}
 		set_country_flag = canada_arm
