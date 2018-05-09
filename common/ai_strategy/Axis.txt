@@ -1,0 +1,83 @@
+axis_help_germany = {
+	enable = {
+		is_in_faction_with = GER
+		has_war_with = ENG
+	}
+	abort = {
+		OR = {
+			ENG = { has_capitulated = yes }
+			NOT = { has_war_with = ENG }
+			NOT = { is_in_faction_with = GER }
+		}
+	}
+	
+	ai_strategy = {
+		type = spare_unit_factor
+		value = 500
+	}
+}
+
+Romania_stay_in_axis = {
+    enable = {
+		tag = ROM
+		is_in_faction_with = GER
+    }
+    abort = {
+		NOT = { is_in_faction_with = GER }
+    }
+
+    ai_strategy = {
+        type = alliance
+        id = "GER"     
+        value = 300000
+    }
+}
+
+Hungary_stay_in_axis = {
+    enable = {
+		tag = HUN
+		is_in_faction_with = GER
+    }
+    abort = {
+		NOT = { is_in_faction_with = GER }
+    }
+
+    ai_strategy = {
+        type = alliance
+        id = "GER"     
+        value = 300000
+    }
+}
+
+Bulgaria_stay_in_axis = {
+    enable = {
+		tag = BUL
+		is_in_faction_with = GER
+    }
+    abort = {
+		NOT = { is_in_faction_with = GER }
+    }
+
+    ai_strategy = {
+        type = alliance
+        id = "GER"     
+        value = 300000
+    }
+}
+
+Italy_stay_in_axis = {
+    enable = {
+		tag = ITA
+		is_in_faction_with = GER
+    }
+    abort = {
+		NOT = { is_in_faction_with = GER }
+    }
+
+    ai_strategy = {
+        type = alliance
+        id = "GER"     
+        value = 300000
+    }
+}
+
