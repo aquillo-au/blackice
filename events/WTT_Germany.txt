@@ -554,10 +554,10 @@ country_event = {
 		name = wtt_germany.15.a
 		transfer_state = 85
 		transfer_state = 86
-		transfer_state = 762			  
+		#transfer_state = 762			  
 		add_state_core = 85
 		add_state_core = 86
-		add_state_core = 762
+		#add_state_core = 762
 		86 = { set_state_name = "Posen" }
 		set_province_name = { id = 6558 name = "Posen" }										  
 		add_ideas = anti_soviet_pact
@@ -608,7 +608,7 @@ country_event = {
 		name = wtt_germany.16.a
 		add_state_claim = 85
 		add_state_claim = 86
-		add_state_claim = 762			   
+		#add_state_claim = 762			   
 	}
 
 	# Give it up
@@ -991,9 +991,9 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_government = neutrality
-		NOT = {
-			#has_completed_focus = GER_revive_the_kaiserreich
-		}
+		#NOT = {
+		#	has_completed_focus = GER_revive_the_kaiserreich
+		#}
 		date > 1940.1.1
 		has_country_leader = { ruling_only = yes name = "August von Mackensen" }
 	}
@@ -2365,7 +2365,7 @@ country_event = {
 				has_country_flag = dietrich_survived
 			}
 			create_corps_commander = {
-				name = "Sepp Dietrich"
+				name = "Sepp, Dietrich"
 				picture = "Portrait_Germany_Josef_Dietrich.dds"
 				traits = { waffen_ss_officer armor_officer brilliant_strategist panzer_leader trait_reckless }
 				skill = 4
@@ -3093,6 +3093,22 @@ country_event = {
 	
 	option = {
 		name = wtt_germany.71.a
+		if = {
+			limit = {
+				NOT = { has_government = neutrality }
+			}
+			set_politics = { ruling_party = neutrality elections_allowed = no }
+		}
+		create_country_leader = {
+			name = "Otto von Habsburg"
+			desc = "POLITICS_OTTO_VON_HABSBURG_DESC"
+			picture = GFX_Portrait_hungary_otto_von_hapsburg
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+				
+			}
+		}
 		if = {
 			limit = {
 				tag = AUS
