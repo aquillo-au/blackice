@@ -5101,7 +5101,7 @@ dispersed_industry5 = {
 			construction_tech
 		}
 	}
-	# Civilian works V
+##### Civilian works V
 	civ_works5 = {
 		
 		path = {
@@ -5210,7 +5210,7 @@ dispersed_industry5 = {
 			construction_tech
 		}
 	}
-# Excavation
+##### Excavation
 	excavation1 = {
 		
 		local_resources_factor = 0.13
@@ -5255,7 +5255,7 @@ dispersed_industry5 = {
 			construction_tech
 			excavation_tech
 		}
-		}
+	}
 	excavation2 = {
 		
 		local_resources_factor = 0.13
@@ -5303,7 +5303,7 @@ dispersed_industry5 = {
 			construction_tech
 			excavation_tech
 		}
-		}
+	}
 	excavation3 = {
 		
 		local_resources_factor = 0.13
@@ -5344,7 +5344,7 @@ dispersed_industry5 = {
 			construction_tech
 			excavation_tech
 		}
-		}	
+	}	
 	excavation4 = {
 		
 		local_resources_factor = 0.13
@@ -5393,7 +5393,7 @@ dispersed_industry5 = {
 			construction_tech
 			excavation_tech
 		}
-		}			
+	}			
 	excavation5 = {
 		
 		local_resources_factor = 0.13
@@ -5442,191 +5442,191 @@ dispersed_industry5 = {
 			construction_tech
 			excavation_tech
 		}
-		}	
-# Synthetic Plants
+	}	
+##### Synthetic Plants
 	synth_oil_experiments = {
 
-			enable_building = {
-				building = synthetic_refinery
-				level = 1
+		enable_building = {
+			building = synthetic_refinery
+			level = 1
+		}
+		
+		#production_oil_factor = 0.1 #Can increase oil output - not used though.
+		
+		path = {
+			leads_to_tech = oil_plant 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1936
+		folder = {
+			name = industry_folder
+			position = { x = 43 y = @1936 }
+		}
+		
+		categories = {
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				oil > 10
 			}
-			
-			#production_oil_factor = 0.1 #Can increase oil output - not used though.
-			
-			path = {
-				leads_to_tech = oil_plant 
-				research_cost_coeff = 1
-			}
-			
-			research_cost = 1.5
-			start_year = 1936
-			folder = {
-				name = industry_folder
-				position = { x = 43 y = @1936 }
-			}
-			
-			categories = {
-				synth_resources
-			}
-			
-			ai_will_do = {
-				factor = 1
-				modifier = {
-					factor = 0.5
-					oil > 10
-				}
-				modifier = {
-					factor = 0.5
-					oil > 20
-				}	
-				modifier = {
-					factor = 0.5
-					oil > 30
-				}			
-			}
-			
-			ai_research_weights = {
-				oil = -2.0
-			}
-			}
+			modifier = {
+				factor = 0.5
+				oil > 20
+			}	
+			modifier = {
+				factor = 0.5
+				oil > 30
+			}			
+		}
+		
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
 	oil_plant = {
 
-			enable_building = {
-				building = synthetic_refinery
-				level = 2
-			}
-			
-			path = {
-				leads_to_tech = improved_oil_plant 
-				research_cost_coeff = 1
-			}
-			
-			research_cost = 1.5
-			start_year = 1937
-			folder = {
-				name = industry_folder
-				position = { x = 43 y = @1937 }
-			}
-			
-			categories = {
-				synth_resources
-			}
-			
-			ai_will_do = {
+		enable_building = {
+			building = synthetic_refinery
+			level = 2
+		}
+		
+		path = {
+			leads_to_tech = improved_oil_plant 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1937
+		folder = {
+			name = industry_folder
+			position = { x = 43 y = @1937 }
+		}
+		
+		categories = {
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
 				factor = 3
-				modifier = {
-					factor = 3
-					oil < 10
-				}
-				modifier = {
-					factor = 3
-					oil < 20
-				}	
-				modifier = {
-					factor = 3
-					oil < 40
-				}			
+				oil < 10
 			}
-			
-			ai_research_weights = {
-				oil = -2.0
-			}
-			}
+			modifier = {
+				factor = 3
+				oil < 20
+			}	
+			modifier = {
+				factor = 3
+				oil < 40
+			}			
+		}
+		
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
 	improved_oil_plant = {
 
-			enable_building = {
-				building = synthetic_refinery
-				level = 3
-			}
-			enable_building = {
-				building = synthetic_rubber_refinery
-				level = 1
-			}
-			
-			path = {
-				leads_to_tech = advanced_oil_plant 
-				research_cost_coeff = 1
-			}
-			
-			research_cost = 1.5
-			start_year = 1939
-			folder = {
-				name = industry_folder
-				position = { x = 43 y = @1938 }
-			}
-			
-			categories = {
-				synth_resources
-			}
-			
-			ai_will_do = {
+		enable_building = {
+			building = synthetic_refinery
+			level = 3
+		}
+		enable_building = {
+			building = synthetic_rubber_refinery
+			level = 1
+		}
+		
+		path = {
+			leads_to_tech = advanced_oil_plant 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1939
+		folder = {
+			name = industry_folder
+			position = { x = 43 y = @1938 }
+		}
+		
+		categories = {
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
 				factor = 3
-				modifier = {
-					factor = 3
-					oil < 10
-				}
-				modifier = {
-					factor = 3
-					oil < 20
-				}	
-				modifier = {
-					factor = 3
-					oil < 40
-				}			
+				oil < 10
 			}
-			
-			ai_research_weights = {
-				oil = -2.0
-			}
-			}
+			modifier = {
+				factor = 3
+				oil < 20
+			}	
+			modifier = {
+				factor = 3
+				oil < 40
+			}			
+		}
+		
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
 	advanced_oil_plant = {
 
-			enable_building = {
-				building = synthetic_refinery
-				level = 4
-			}
-			enable_building = {
-				building = synthetic_rubber_refinery
-				level = 4
-			}
-			
-			path = {
-				leads_to_tech = advanced_oil_plant 
-				research_cost_coeff = 1
-			}
-			
-			research_cost = 1.5
-			start_year = 1943
-			folder = {
-				name = industry_folder
-				position = { x = 43 y = @1941 }
-			}
-			
-			categories = {
-				synth_resources
-			}
-			
-			ai_will_do = {
+		enable_building = {
+			building = synthetic_refinery
+			level = 4
+		}
+		enable_building = {
+			building = synthetic_rubber_refinery
+			level = 4
+		}
+		
+		path = {
+			leads_to_tech = advanced_oil_plant 
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		start_year = 1943
+		folder = {
+			name = industry_folder
+			position = { x = 43 y = @1941 }
+		}
+		
+		categories = {
+			synth_resources
+		}
+		
+		ai_will_do = {
+			factor = 3
+			modifier = {
 				factor = 3
-				modifier = {
-					factor = 3
-					oil < 10
-				}
-				modifier = {
-					factor = 3
-					oil < 20
-				}	
-				modifier = {
-					factor = 3
-					oil < 40
-				}			
+				oil < 10
 			}
-			
-			ai_research_weights = {
-				oil = -2.0
-			}
-				}
-#Oil
+			modifier = {
+				factor = 3
+				oil < 20
+			}	
+			modifier = {
+				factor = 3
+				oil < 40
+			}			
+		}
+		
+		ai_research_weights = {
+			oil = -2.0
+		}
+	}
+#####Oil processing techs
 	oil_processing = {
 		
 		on_research_complete = {
@@ -5676,7 +5676,7 @@ dispersed_industry5 = {
 		}
 		
 		show_effect_as_desc = yes
-		}	
+	}	
 	improved_oil_processing = {
 		
 		on_research_complete = {
@@ -5725,7 +5725,7 @@ dispersed_industry5 = {
 		}
 		
 		show_effect_as_desc = yes
-		}
+	}
 	advanced_oil_processing = {
 
 		on_research_complete = {
@@ -5775,7 +5775,7 @@ dispersed_industry5 = {
 		}
 		
 		show_effect_as_desc = yes
-		}
+	}
 	modern_oil_processing = {
 
 		on_research_complete = {
@@ -5820,8 +5820,8 @@ dispersed_industry5 = {
 		}
 		
 		show_effect_as_desc = yes
-		}
-#Rubber
+	}
+##### Rubber processing
 	rubber_processing = {
 
 		on_research_complete = {
@@ -5831,7 +5831,9 @@ dispersed_industry5 = {
 				amount = 1
 			}
 		}
-
+		dependencies = {
+			improved_oil_plant = 1
+		}
 		path = {
 			leads_to_tech = improved_rubber_processing
 			research_cost_coeff = 1
@@ -5842,7 +5844,7 @@ dispersed_industry5 = {
 		
 		folder = {
 			name = industry_folder
-			position = { x = 46 y = @1939 }
+			position = { x = 47 y = @1939 }
 		}
 		
 		categories = {
@@ -5871,7 +5873,7 @@ dispersed_industry5 = {
 		}
 		
 		show_effect_as_desc = yes
-		}
+	}
 	improved_rubber_processing = {
 
 		on_research_complete = {
@@ -5892,7 +5894,7 @@ dispersed_industry5 = {
 		
 		folder = {
 			name = industry_folder
-			position = { x = 46 y = @1940 }
+			position = { x = 47 y = @1940 }
 		}
 		
 		categories = {
@@ -5920,7 +5922,7 @@ dispersed_industry5 = {
 		}
 		
 		show_effect_as_desc = yes
-		}
+	}
 	advanced_rubber_processing = {
 
 		on_research_complete = {
@@ -5941,7 +5943,7 @@ dispersed_industry5 = {
 		
 		folder = {
 			name = industry_folder
-			position = { x = 46 y = @1941 }
+			position = { x = 47 y = @1941 }
 		}
 		
 		categories = {
@@ -5969,7 +5971,7 @@ dispersed_industry5 = {
 		}
 		
 		show_effect_as_desc = yes
-		}
+	}
 	modern_rubber_processing = {
 
 		on_research_complete = {
@@ -5985,7 +5987,7 @@ dispersed_industry5 = {
 		
 		folder = {
 			name = industry_folder
-			position = { x = 46 y = @1943 }
+			position = { x = 47 y = @1943 }
 		}
 		
 		categories = {
@@ -6013,6 +6015,6 @@ dispersed_industry5 = {
 		}
 		
 		show_effect_as_desc = yes
-		}
+	}
 }
 #EOF#
