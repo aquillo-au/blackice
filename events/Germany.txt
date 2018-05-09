@@ -11423,11 +11423,9 @@ add_namespace = germany
 		option = { #This is German territory!
 			name = germany.344.a
 				28 = { add_claim_by = GER }
-				#17 = { add_claim_by = GER }
 				add_named_threat = { threat = 3 name = GER_alsace_lorraine_threat }
 				if = {
 					limit = {
-						#17 = { is_owned_by = FRA }
 						28 = { is_owned_by = FRA }
 					}
 					FRA = { country_event = germany.345 }
@@ -11444,7 +11442,6 @@ add_namespace = germany
 			ruling_pop_minus_3 = yes
 			ai_chance = {
 				factor = 0
-				
 			}
 		}
 	}
@@ -11467,8 +11464,7 @@ add_namespace = germany
 			add_stability = 0.05
 
 			ai_chance = {
-				base = 100
-				
+				base = 90
 			}
 		}
 		option = { #accept
@@ -11478,8 +11474,7 @@ add_namespace = germany
 			add_stability = -0.15
 			add_political_power = -150
 			ai_chance = {
-				base = 0
-				
+				base = 10
 			}
 		}
 	}
@@ -11498,8 +11493,10 @@ add_namespace = germany
 			name = germany.346.a
 			GER = { 
 				transfer_state = 28
-				#transfer_state = 17
-				}
+				28 = { set_state_name = "Elsass-Lothringen" }
+				set_province_name = { id = 9503 name = "Strassburg" }
+				set_province_name = { id = 678 name = "Mulhausen" }
+			}
 			ruling_pop_plus_10 = yes
 			add_political_power = 75
 			add_stability = 0.10
