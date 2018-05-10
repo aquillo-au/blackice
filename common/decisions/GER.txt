@@ -1230,7 +1230,76 @@ GER_military_buildup = {
 			factor = 200
 		}
 	}
-	
+	#1940
+	GER_motorise_16_infdiv = {
+		
+		icon = ger_29_inf_div
+		
+		available = {
+			has_equipment = { anti_tank_equipment > 24 }
+			57 = { is_controlled_by = GER }
+			date > 1940.8.6
+		}
+		
+		cost = 50
+		
+		fire_only_once = yes
+		
+		activation = {
+			has_completed_focus = GER_Wehrmacht
+		}
+		
+		visible = {
+			has_completed_focus = GER_Wehrmacht
+			date > 1940.2.1
+		}
+
+		complete_effect = {
+			add_war_support = 0.025
+			custom_effect_tooltip =  GER_16_infdiv_tt
+			division_template = {
+				name = "Infanterie-Division(mot+at)" 			
+				division_names_group = GER_MOT_01
+				is_locked = yes
+				priority = 2
+				template_counter = 24
+				
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					
+					motorized = { x = 2 y = 0 }
+					motorized = { x = 2 y = 1 }
+					motorized = { x = 2 y = 2 }
+
+					artillery_brigade_mot = { x = 3 y = 0 }
+					artillery_brigade_mot = { x = 3 y = 1 }
+					artillery_brigade_mot = { x = 3 y = 2 }
+					anti_tank_brigade =  { x = 3 y = 3 }
+				}
+				support = {
+					DIV_HQ = { x = 0 y = 0 }
+					recon_mot = { x = 0 y = 1 }
+					recon_ac = { x = 0 y = 2 }
+					engineer = { x = 0 y = 3 }
+					anti_tank_mot =  { x = 0 y = 4 }
+					maintenance_company = { x = 0 y = 5 }
+					logistics_company = { x = 0 y = 6 }
+					field_hospital = { x = 0 y = 7 }
+				}
+			}
+			country_event = { id = germany.259 hours = 6 }
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
 	GER_plan_z = {
 
 		icon = generic_naval

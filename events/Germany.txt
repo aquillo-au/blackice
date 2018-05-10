@@ -5183,13 +5183,10 @@ add_namespace = germany
 					OR = {
 						is_in_faction_with = ENG
 						is_in_faction_with = FRA
-						#is_in_faction_with = POL
 						is_puppet = yes
 						GER = {
-							AND = {
-								has_war_with = ENG
-								has_war_with = FRA
-							}
+							has_war_with = ENG
+							has_war_with = FRA
 						}
 						GER = {
 							AND = {
@@ -5200,9 +5197,6 @@ add_namespace = germany
 								}
 							}
 						}
-						#GER = {
-						#	has_war_with = POL
-						#}
 					}
 				}
 				modifier = {
@@ -5223,16 +5217,38 @@ add_namespace = germany
 							}
 						}
 					}
-					#POL = {
-					#	has_guaranteed = CZE
-					#}
 				}
 			}
 			GER = { country_event = germany.55 }
 			if = {
 				limit = {
+					ENG = {
+						NOT = {
+							is_in_faction_with = GER
+						}
+					}
+				}
+				ENG = {
+					add_war_support = 0.1
+				}
+			}
+			if = {
+				limit = {
+					FRA = {
+						NOT = {
+							is_in_faction_with = GER
+						}
+					}
+				}
+				FRA = {
+					add_war_support = 0.1
+				}
+			}
+			if = {
+				limit = {
 					has_DLC = "Death or Dishonor"
-					YUG = { exists = yes }
+					country_exists = YUG
+					YUG = { has_war = no }
 				}
 				GER = {
 					country_event = {
@@ -5290,6 +5306,30 @@ add_namespace = germany
 			}
 			GER = {
 				country_event = { id = germany.54 days = 1 }
+			}
+			if = {
+				limit = {
+					ENG = {
+						NOT = {
+							is_in_faction_with = GER
+						}
+					}
+				}
+				ENG = {
+					add_war_support = 0.1
+				}
+			}
+			if = {
+				limit = {
+					FRA = {
+						NOT = {
+							is_in_faction_with = GER
+						}
+					}
+				}
+				FRA = {
+					add_war_support = 0.1
+				}
 			}
 		}
 	}
@@ -5423,6 +5463,7 @@ add_namespace = germany
 			if = {
 				limit = { country_exists = CZE }
 				annex_country = { target = CZE }
+				add_war_support = 0.1
 			}
 			puppet = SLO
 			if = {
@@ -5459,7 +5500,7 @@ add_namespace = germany
 			GER_mefo_bills_level_down = yes
 			
 			hidden_effect = {
-				country_event = { hours = 6 id = news.60 }
+				country_event = { id = news.60 hours = 6 }
 				every_state = {
 					limit = {
 						is_owned_by = SLO
@@ -5475,6 +5516,14 @@ add_namespace = germany
 		}
 		option = {
 			name = germany.55.b
+			add_political_power = -20
+			ai_chance = { 
+				factor = 10
+				modifier = {
+					factor = 0
+					is_historical_focus_on = yes
+				}
+			}
 			trigger = {
 				664 = { is_owned_by = HUN }
 				HUN = {
@@ -5483,14 +5532,14 @@ add_namespace = germany
 				NOT = { has_global_flag = GER_HUN_CZE_split }
 			}
 			set_technology = { czech_protectorate_tech = 1 } 
-				add_tech_bonus = {
-					ahead_reduction = 2
-					bonus = 1
-					uses = 2
-					technology = tech_czech_ger_panzer_1
-					technology = tech_czech_ger_panzer_2
-				}
-			add_political_power = -20
+			add_tech_bonus = {
+				ahead_reduction = 2
+				bonus = 1
+				uses = 2
+				technology = tech_czech_ger_panzer_1
+				technology = tech_czech_ger_panzer_2
+			}
+			
 			HUN = { country_event = germany.56 }
 			if = {
 				limit = {
@@ -5503,21 +5552,13 @@ add_namespace = germany
 				}
 				POL = { transfer_state = 72 } # Give Poland Zaolzie
 			}
-			
 			custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
 			add_to_variable = { var = GER_mefo_bill_counter value = -5 }
 			GER_mefo_bills_level_down = yes
-			
-			ai_chance = { 
-				factor = 10
-				modifier = {
-					factor = 0
-					is_historical_focus_on = yes
-				}
-			}
 		}
 		option = {
 			name = germany.55.c
+			add_political_power = -50
 			ai_chance = { 
 				factor = 10
 				modifier = {
@@ -5526,30 +5567,28 @@ add_namespace = germany
 				}
 			}
 			set_technology = { czech_protectorate_tech = 1 } 
-				add_tech_bonus = {
-					ahead_reduction = 2
-					bonus = 1
-					uses = 2
-					technology = tech_czech_ger_panzer_1
-					technology = tech_czech_ger_panzer_2
-				}
-			add_political_power = -50
+			add_tech_bonus = {
+				ahead_reduction = 2
+				bonus = 1
+				uses = 2
+				technology = tech_czech_ger_panzer_1
+				technology = tech_czech_ger_panzer_2
+			}
 			if = {
 				limit = { country_exists = CZE }
 				annex_country = { target = CZE }
+				add_war_support = 0.1
 			}
 			if = {
 				limit = { has_global_flag = GER_HUN_CZE_split }
 				HUN = { country_event = DOD_hungary.106 }
 			}
 			hidden_effect = {
-				country_event = { hours = 6 id = news.62 }
+				country_event = { id = news.62 hours = 6 }
 			}
-			
 			custom_effect_tooltip = end_of_czechoslovakia_mefo_bills_tt
 			add_to_variable = { var = GER_mefo_bill_counter value = -5 }
 			GER_mefo_bills_level_down = yes
-			
 		}
 		option = {
 			name = germany.55.do
@@ -5614,7 +5653,7 @@ add_namespace = germany
 				}
 			}
 			hidden_effect = {
-				country_event = { hours = 6 id = news.61 }
+				country_event = { id = news.61 hours = 6 }
 			}
 		}
 		option = {
@@ -5624,7 +5663,7 @@ add_namespace = germany
 				NOT = { is_puppet_of = GER }
 			}
 			GER = { 
-				country_event = { hours = 6 id = germany.57 }
+				country_event = { id = germany.57 hours = 6 }
 			}
 		}
 	}
@@ -5722,7 +5761,7 @@ add_namespace = germany
 				POL = { transfer_state = 72 } # Give Poland Zaolzie
 			}
 			hidden_effect = {
-				country_event = { hours = 6 id = news.60 }
+				country_event = { id = news.60 hours = 6 }
 			}
 		}
 		option = {
@@ -5734,7 +5773,7 @@ add_namespace = germany
 				annex_country = { target = CZE }
 			}
 			hidden_effect = {
-				country_event = { hours = 6 id = news.62 }
+				country_event = { id = news.62 hours = 6 }
 			}
 		}
 	}
@@ -9725,14 +9764,7 @@ add_namespace = germany
 
 		fire_only_once = yes
 		
-		trigger = {
-			tag = GER
-			has_equipment = { anti_tank_equipment > 24 }
-			57 = { is_controlled_by = GER }
-			not = { has_country_flag = mot_16 }
-			not = { has_country_flag = mot_16_no }
-			date > 1940.8.6
-		}
+		is_triggered_only = yes
 		
 		mean_time_to_happen = {
 			days = 10
@@ -9740,22 +9772,15 @@ add_namespace = germany
 		
 		option = {
 			name = germany.259.a
-			ai_chance = { factor = 0 }
-			trigger = { is_ai = no }
-			
-			set_country_flag = mot_16
-		}
-		option = {
-			name = germany.259.b
 			ai_chance = { factor = 100 }
-			trigger = { is_ai = yes }
 			hidden_effect = {
+				delete_unit_template_and_units = { division_template = "16. Inf.-Div." }
 				load_oob = "GER_16_mot_Division"
 				set_country_flag = mot_16
 			}
 		}
 		option = {
-			name = germany.259.c
+			name = "No need"
 			ai_chance = { factor = 0 }
 			set_country_flag = mot_16_no
 		}
