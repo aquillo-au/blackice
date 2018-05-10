@@ -328,16 +328,18 @@ technologies = {
 			SMG_equipment_0
 		}
 		
-		infantry = {
+		category_all_infantry = {
+			soft_attack = 0.02
 			need = {
-				smg_equipment = 25
-			}
+               	smg_equipment = 10
+         	}
 		}
-		ss_infantry = {
-			need = {
-				smg_equipment = 25
-			}
+		
+		on_research_complete = {
+			
+			custom_effect_tooltip = NEED_SMG_EQP
 		}
+		
 		path = {
 			leads_to_tech = explosives_team
 			research_cost_coeff = 1
@@ -346,13 +348,9 @@ technologies = {
 			leads_to_tech = SMG_team1
 			research_cost_coeff = 1
 		}
-		category_all_infantry = {
-			soft_attack = 0.02
-			
-		}
 
 		research_cost = 1.5
-		start_year = 1918
+		start_year = 1937
 
 		folder = {
 			name = infantry_folder
@@ -370,7 +368,6 @@ technologies = {
 	### pre war SMG (1930 era)
 	SMG_team1 = {
 	
-		
 		enable_equipments = {
 			SMG_equipment_1
 		}
@@ -467,7 +464,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = @1940 y = 11 }
+			position = { x = @1940 y = 12 }
 		}
 
 		categories = {
@@ -751,7 +748,7 @@ technologies = {
                	assault_rifle_equipment = 25
          	}
 		}
-
+		
 		research_cost = 5
 		start_year = 1943
 		folder = {

@@ -1,4 +1,39 @@
 ﻿####### Using existing division_template "Infanterie-Division" #######
+division_template = {
+	name = "29. Inf.-Div."
+	division_names_group = GER_Inf_01
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		
+      	infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+
+		artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+		artillery_brigade = { x = 3 y = 2 }
+		anti_tank_brigade =  { x = 3 y = 3 }
+	}
+	
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+       	artillery_medium = { x = 0 y = 2 }
+		recon_cav = { x = 0 y = 3 }
+		maintenance_company = { x = 0 y = 4 }
+		logistics_company = { x = 0 y = 5 }
+		field_hospital = { x = 0 y = 6 }
+	}
+	
+	template_counter = 4
+}
 units = {
 	##### Oberkommando des Heeres #####
 	### 8. Armee ###
@@ -47,7 +82,7 @@ units = {
 			name_order = 29
 		}
 		location = 6524
-		division_template = "Infanterie-Division"
+		division_template = "29. Inf.-Div."
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.1
 	}
