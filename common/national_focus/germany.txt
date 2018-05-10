@@ -2779,7 +2779,10 @@ focus_tree = {
 	focus = {
 		id = GER_fighter_air_effort_c
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = GER_fighter_air_effort_a }
+		prerequisite = {
+			focus = GER_fighter_air_effort_a
+			focus = GER_fighter_air_effort_b
+		}
 		mutually_exclusive = { focus = GER_fighter_air_effort_d }
 		x = -12
 		y = 3
@@ -2813,7 +2816,10 @@ focus_tree = {
 	focus = {
 		id = GER_fighter_air_effort_e
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = GER_fighter_air_effort_c }
+		prerequisite = {
+			focus = GER_fighter_air_effort_c
+			focus = GER_fighter_air_effort_f
+		}
 		mutually_exclusive = { focus = GER_fighter_air_effort_f }
 		x = -12
 		y = 4
@@ -2875,7 +2881,10 @@ focus_tree = {
 	focus = {
 		id = GER_fighter_air_effort_d
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = GER_fighter_air_effort_b }
+		prerequisite = {
+			focus = GER_fighter_air_effort_b
+			focus = GER_fighter_air_effort_a
+		}
 		mutually_exclusive = { focus = GER_fighter_air_effort_c }
 		x = -10
 		y = 3
@@ -2909,7 +2918,10 @@ focus_tree = {
 	focus = {
 		id = GER_fighter_air_effort_f
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = GER_fighter_air_effort_d }
+		prerequisite = {
+			focus = GER_fighter_air_effort_d
+			focus = GER_fighter_air_effort_c
+		}
 		mutually_exclusive = { focus = GER_fighter_air_effort_e }
 		x = -10
 		y = 4
@@ -2999,7 +3011,10 @@ focus_tree = {
 	focus = {
 		id = GER_divebomber_focus_c
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = GER_divebomber_focus_a }
+		prerequisite = {
+			focus = GER_divebomber_focus_a
+			focus = GER_divebomber_focus_b
+		}
 		mutually_exclusive = { focus = GER_divebomber_focus_d }
 		x = -6
 		y = 3
@@ -3030,7 +3045,10 @@ focus_tree = {
 	focus = {
 		id = GER_divebomber_focus_e
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = GER_divebomber_focus_c }
+		prerequisite = {
+			focus = GER_divebomber_focus_c
+			focus = GER_divebomber_focus_d
+		}
 		mutually_exclusive = { focus = GER_divebomber_focus_f }
 		x = -6
 		y = 4
@@ -3087,7 +3105,10 @@ focus_tree = {
 	focus = {
 		id = GER_divebomber_focus_d
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = GER_divebomber_focus_b }
+		prerequisite = {
+			focus = GER_divebomber_focus_b
+			focus = GER_divebomber_focus_a
+		}
 		mutually_exclusive = { focus = GER_divebomber_focus_c }
 		x = -4
 		y = 3
@@ -3119,7 +3140,10 @@ focus_tree = {
 	focus = {
 		id = GER_divebomber_focus_f
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = GER_divebomber_focus_d }
+		prerequisite = {
+			focus = GER_divebomber_focus_d
+			focus = GER_divebomber_focus_c
+		}
 		mutually_exclusive = { focus = GER_divebomber_focus_e }
 		x = -4
 		y = 4
@@ -7449,14 +7473,22 @@ focus_tree = {
 		completion_reward = {
 		#Allied Anger
 			if={
-			limit={
-			date>1939.1.1
-			}
-			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
-			else={
-			custom_effect_tooltip =allied.anger.early
-			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
-			}
+				limit={
+					date>1939.1.1
+				}
+				add_to_variable = {
+					var = allied_anger
+					value = 1
+					tooltip = allied.anger.plus.1
+				}
+				else={
+					custom_effect_tooltip =allied.anger.early
+					add_to_variable = {
+						var = allied_anger
+						value = 3
+						tooltip = allied.anger.plus.3
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -7500,9 +7532,9 @@ focus_tree = {
 	focus = {
 		id = GER_condor_legion
 		icon = GFX_goal_generic_air_bomber
-		#prerequisite = { focus = GER_rhineland }
-		x = 29
-		y = 6
+		prerequisite = { focus = GER_Wehrmacht }
+		x = 22
+		y = 1
 		cost = 4.2
 		
 		cancel_if_invalid = no
@@ -7523,7 +7555,6 @@ focus_tree = {
 			}
 			GER = { has_air_experience > 30 }
 			GER = {	has_army_experience > 30 }
-			
 			
 			#custom_trigger_tooltip = { tooltip = spanish_won_30 has_country_flag = spanish_won }
 		}
@@ -7581,14 +7612,17 @@ focus_tree = {
 				democratic_govt = yes
 				is_in_faction_with = GER
 			}
+			NOT = {
+				D01 = { has_civil_war = yes }
+			}
 		}
 	}
 	focus = {
 		id = GER_nationalist_spain_ally
 		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus = GER_condor_legion }
-		x = 29
-		y = 7
+		x = 22
+		y = 2
 		cost = 15
 		
 		available = {
