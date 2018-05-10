@@ -1,0 +1,629 @@
+sub_units = {
+#SS support units 
+	ss_logistics_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 10
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = -10	
+		default_morale = 0.3
+		manpower = 500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		can_be_parachuted = no
+
+		# Important Ability
+		supply_consumption_factor = -0.15
+		
+		
+
+		need = {
+			support_equipment = 20
+			ss_infantry_uniforms = 10
+			motorized_lia_equipment = 10
+		}
+	}
+	ss_signal_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		
+		priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+			category_waffenss
+		}
+
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation = -10
+		default_morale = 0.50
+		manpower = 250	#500
+		training_time = 140
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		can_be_parachuted = yes
+		
+		# Important Ability
+		initiative = 0.25
+	
+
+		need = {
+			support_equipment = 50
+			ss_infantry_uniforms = 10
+			motorized_equipment = 10
+		}
+	}
+	ss_field_hospital = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = -10
+		default_morale = 0.5
+		manpower = 400	#1000
+		training_time = 140
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.05
+		
+		can_be_parachuted = yes
+
+		# Important Ability
+		casualty_trickleback = 0.12
+		experience_loss_factor = -0.12
+
+	
+		
+		need = {
+			ss_infantry_uniforms = 10
+			support_equipment = 30
+			motorized_lia_equipment = 20
+		}
+	}
+	ss_maintenance_company = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_support_battalions
+			category_army
+		}
+	
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 1
+		max_organisation =-10	
+		default_morale = 0.3
+		manpower = 250	#500
+		training_time = 120
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.03
+		can_be_parachuted = no
+		
+		# Important Ability
+		reliability_factor = 0.25
+
+		transport = motorized_lia_equipment
+
+		
+		
+		need = {
+			ss_infantry_uniforms = 10
+			support_equipment = 25
+			motorized_lia_equipment = 5
+		}
+	}
+	ss_engineer = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = -10
+		default_morale = 0.5
+		manpower = 300	#900
+		training_time = 130
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		
+		entrenchment = 5
+
+		defense = 0.15
+		breakthrough = 0.45
+
+		# Support nerfs to combat abilities
+		soft_attack = -0.3
+
+		
+
+		need = {
+			ss_infantry_uniforms = 6
+			infantry_equipment = 6
+			support_equipment = 32
+		}
+
+		can_be_parachuted = yes
+
+		forest = {
+			defence = 0.25
+			movement = 0.15
+		}
+		hills = {
+			defence = 0.1
+		}
+		jungle = {
+			defence = 0.25
+			movement = 0.15
+		}
+		marsh = {
+			defence = 0.25
+			movement = 0.2
+		}
+		fort = {
+			attack = 0.2
+			defence = 0.25
+		}
+		river = {
+			defence = 0.25
+			movement = 0.35
+		}
+		amphibious = {
+			attack = 0.25
+		}
+	}
+	ss_combat_engineer = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = -10
+		default_morale = 0.3
+		manpower = 800
+		training_time = 160
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.05
+		
+		defense = 0.1
+		breakthrough = 0.4
+
+		# Support nerfs to combat abilities
+		soft_attack = 0.2
+
+		need = {
+			ss_infantry_uniforms = 6
+			infantry_equipment = 6
+			support_equipment = 32
+		}
+
+		#can_be_parachuted = yes
+
+		forest = {
+			
+			attack = 0.25
+		}
+		hills = {
+			
+			attack = 0.25
+		}
+		jungle = {
+			attack = 0.25
+		}
+		marsh = {
+			attack = 0.25
+		}
+		fort = {
+			attack = 0.25
+		}
+		river = {
+			attack = 0.25
+		}
+		amphibious = {
+			attack = 0.25
+		}
+	}					
+	ss_recon = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 2.2
+		max_organisation = 0
+		default_morale = 0.5
+		manpower = 300
+		training_time = 140
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+		recon = 1
+		
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		suppression = 0.5
+		defense = -0.5
+		breakthrough = -0.5
+		soft_attack = -0.9
+		hard_attack = -0.9
+	
+		need = {
+			ss_infantry_uniforms = 30
+			infantry_equipment = 30
+			recon_equipment = 150
+		}
+		###Terrain stats
+		forest = {
+			movement = 0.1
+		}
+		hills = {
+			movement = 0.1
+		}
+		mountain = {
+			movement = 0.1
+		}
+		jungle = {
+			movement = 0.1
+		}
+		marsh = {
+			movement = 0.1
+		}
+		plains = {
+			movement = 0.1
+		}
+		desert = {
+			movement = 0.1
+		}
+		river = {
+			movement = 0.1
+		}
+	}
+	ss_recon_cav = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 2.2
+		max_organisation = 0
+		default_morale = 0.5
+		manpower = 350
+		training_time = 150
+
+		#Misc Abilities
+		weight = 0.5
+		supply_consumption = 0.04
+		recon = 1
+		
+		can_be_parachuted = no
+
+		# Support nerfs to combat abilities
+		suppression = 0.5
+		defense = -0.5
+		breakthrough = -0.5
+		soft_attack = -0.9
+		hard_attack = -0.9
+
+		transport = horse_equipment
+
+		need = {
+			ss_infantry_uniforms = 35
+			infantry_equipment = 35
+			recon_equipment = 150
+			horse_equipment = 250
+		}
+		###Terrain stats
+		forest = {
+			movement = 0.15
+		}
+		hills = {
+			movement = 0.15
+		}
+		mountain = {
+			movement = 0.15
+		}
+		jungle = {
+			movement = 0.15
+		}
+		marsh = {
+			movement = 0.15
+		}
+		plains = {
+			movement = 0.15
+		}
+		desert = {
+			movement = 0.15
+		}
+		river = {
+			movement = 0.15
+		}
+	}
+	ss_recon_mot = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+
+		type = {
+			motorized
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+		
+		combat_width = 0.0
+	
+		#Size Definitions
+		max_strength = 2
+		max_organisation = 0
+		default_morale = 0.5
+		manpower = 350
+		training_time = 140
+
+		#Misc Abilities
+		weight = 0.3
+		supply_consumption = 0.05
+		recon = 1
+		transport = recon_mot_equipment 
+		
+		can_be_parachuted = yes
+
+		# Support nerfs to combat abilities
+		suppression = 0.5
+		defense = -0.3
+		breakthrough = -0.3
+		soft_attack = -0.6
+		hard_attack = -0.9
+
+		need = {
+			ss_infantry_uniforms = 35
+			infantry_equipment = 35
+			recon_equipment = 150
+			recon_mot_equipment = 150 	# Motorcycles
+		}
+		###Terrain stats
+		forest = {
+			movement = 0.2
+		}
+		hills = {
+			movement = 0.2
+		}
+		mountain = {
+			movement = 0.2
+		}
+		jungle = {
+			movement = 0.2
+		}
+		marsh = {
+			movement = 0.2
+		}
+		plains = {
+			movement = 0.2
+		}
+		desert = {
+			movement = 0.2
+		}
+		river = {
+			movement = 0.2
+		}
+	}
+	ss_recon_ac = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		active = no
+		
+		type = {
+			motorized
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+		combat_width = 1
+
+		need = {
+			ss_infantry_uniforms = 80
+			infantry_equipment = 80
+			recon_equipment = 250
+			motorized_AC_equipment = 80
+		}
+		
+		manpower = 800
+		max_organisation = 20
+		default_morale = 0.5
+		training_time = 200
+		max_strength = 1
+		recon = 1
+		transport = motorized_AC_equipment
+		weight = 1
+		supply_consumption = 0.3
+		
+		# Support nerfs to combat abilities
+		suppression = 0.5
+		defense = -0.2
+		hard_attack = 0.1
+		breakthrough = 0.1
+		soft_attack = 0.15
+		
+		forest = {
+		    attack = 0.03
+			movement = 0.2
+		}
+		hills = 	{
+		    attack = 0.01
+			movement = 0.2
+		}
+		mountain = 	{
+		    attack = 0.02
+			movement = 0.2
+		}
+		jungle = {
+		    attack = 0.04
+			movement = 0.2
+		}
+		marsh = {
+		    attack = 0.01 
+			movement = 0.2
+		}
+		urban = {
+			attack = 0.04
+			
+			movement = 0.2
+		}
+		river = { 
+			attack = 0.02 
+			movement = 0.2
+		}
+		amphibious = { 
+			attack = 0.03
+		}
+	}
+}

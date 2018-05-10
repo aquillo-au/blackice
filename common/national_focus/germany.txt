@@ -5469,8 +5469,17 @@ focus_tree = {
 			factor = 15
 		}	
 		completion_reward = {
-		
-			
+			#Allied Anger 
+			if={
+			limit={
+			date>1936.3.7
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
      		#900 = { is_demilitarized_zone = no }
      		42 = {
 				set_demilitarized_zone = no 
@@ -5746,6 +5755,17 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1941.12.5
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = SOV
@@ -5790,6 +5810,17 @@ focus_tree = {
 			}				
 		}	
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1941.12.5
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = {
 				limit = { is_faction_leader = yes }
 				custom_effect_tooltip = ger_sov_buddies_tooltip_2
@@ -5987,6 +6018,17 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1939.1.1
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			TUR = { country_event = { id = germany.79 days = 1 } }
 		}
 	}
@@ -6096,7 +6138,19 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1939.9.1
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			country_event = germany.340
+
 		}
 	}
 	focus = {
@@ -6176,7 +6230,17 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-			
+			#Allied Anger
+			if={
+			limit={
+			date>1938.3.12
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			army_experience = 10
 			if = {
 				limit = {
@@ -6349,6 +6413,17 @@ focus_tree = {
 		cancel_if_invalid = yes
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1938.9.1
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = { 
 				limit = { 
 					CZE = { owns_state = 69 }
@@ -6398,6 +6473,17 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1938.11.2
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			HUN = {
 				country_event = { id = germany.51 }
 				add_opinion_modifier = { target = GER modifier = GER_first_vienna_award_GER }
@@ -6447,6 +6533,17 @@ focus_tree = {
 		}
 
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1939.3.16
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = {
 				limit = { country_exists = CZE }
 				set_global_flag = end_of_czechoslovakia
@@ -6510,6 +6607,17 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1940.8.30
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = {
 				limit = {
 					HUN = {
@@ -6556,6 +6664,17 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1939.3.20
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			188 = { add_claim_by = GER }
 			85 = { add_claim_by = GER }
 			86 = { add_claim_by = GER }
@@ -6638,6 +6757,17 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1939.1.1
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = {
 				limit = {
 					NOT = { 
@@ -6784,6 +6914,17 @@ focus_tree = {
 		}
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1940.1.1
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 6 tooltip = allied.anger.plus.6 }
+			}
+			}
 			if = {
 				limit = {
 					NOT = { 
@@ -6976,6 +7117,17 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1940.1.1
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = {
 				limit = {
 					NOT = { 
@@ -7066,6 +7218,17 @@ focus_tree = {
 		#}
 
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1940.10.28
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = {
 				limit = {
 					NOT = { 
@@ -7167,6 +7330,17 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1940.10.28
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 6 tooltip = allied.anger.plus.6 }
+			}
+			}
 			if = {
 				limit = {
 					NOT = { 
@@ -7208,6 +7382,17 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1941.6.1
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = {
 				limit = {
 					NOT = { 
@@ -7262,6 +7447,17 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1939.1.1
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = {
 				limit = {
 					ITA = { 
@@ -7623,6 +7819,17 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1939.5.22
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			ITA = {
 				add_opinion_modifier = { target = GER modifier = ger_ita_alliance_focus }
 			}
@@ -7653,7 +7860,17 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-			
+			#Allied Anger
+			if={
+			limit={
+			date>1939.1.1
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 6 tooltip = allied.anger.plus.6 }
+			}
+			}
 			country_event = germany.312
 		}
 	}
@@ -7754,6 +7971,26 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
+		#Allied Anger
+			if={
+			limit={
+			date>1940.5.10
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			if={
+			limit={
+			date>1939.1.1
+			}
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3}
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 6 tooltip = allied.anger.plus.6 }
+			}
+			}
+			}
+			}
 			country_event = germany.344
 		}
 	}
@@ -7828,6 +8065,26 @@ focus_tree = {
 		}	
 		
 		completion_reward = {
+			#Allied Anger
+			if={
+			limit={
+			date>1940.5.13
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			if={
+			limit={
+			date>1939.1.1
+			}
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3}
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 6 tooltip = allied.anger.plus.6 }
+			}
+			}
+			}
+			}
 			if = { 
 				limit = { 
 					NOT = { BEL = { is_in_faction_with = GER } }
@@ -7932,7 +8189,17 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-
+		#Allied Anger
+			if={
+			limit={
+			date>1940.4.9
+			}
+			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+			else={
+			custom_effect_tooltip =allied.anger.early
+			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+			}
+			}
 			if = {
 				limit = {
 					NOT = { DEN = { is_in_faction_with = GER } }

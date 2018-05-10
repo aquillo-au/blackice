@@ -9767,12 +9767,12 @@ add_namespace = germany
 		is_triggered_only = yes
 		
 		mean_time_to_happen = {
-			days = 10
+			days = 1
 		}
 		
 		option = {
 			name = germany.259.a
-			ai_chance = { factor = 100 }
+			ai_chance = { base = 100 }
 			hidden_effect = {
 				delete_unit_template_and_units = { division_template = "16. Inf.-Div." }
 				load_oob = "GER_16_mot_Division"
@@ -9781,7 +9781,7 @@ add_namespace = germany
 		}
 		option = {
 			name = "No need"
-			ai_chance = { factor = 0 }
+			ai_chance = { base = 0 }
 			set_country_flag = mot_16_no
 		}
 	}

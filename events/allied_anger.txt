@@ -1,0 +1,423 @@
+﻿add_namespace = allied_anger
+#
+#           _ _ _          _                                  
+#     /\   | | (_)        | |     /\                          
+#    /  \  | | |_  ___  __| |    /  \   _ __   __ _  ___ _ __ 
+#   / /\ \ | | | |/ _ \/ _` |   / /\ \ | '_ \ / _` |/ _ \ '__|
+#  / ____ \| | | |  __/ (_| |  / ____ \| | | | (_| |  __/ |   
+# /_/    \_\_|_|_|\___|\__,_| /_/    \_\_| |_|\__, |\___|_|   
+#                                              __/ |          
+#                                             |___/           By Doruk
+#3-Warn Uk *allied_anger.1
+#6-Mobilize *allied_anger.2
+#8-Mobilize *allied_anger.3
+#9-Ask Germany To Stop or Mobilize *allied_anger.5 , allied_anger.6
+#11-Mobilize *allied_anger.4
+#12-War it is *allied_anger.7
+
+#Warn Uk
+country_event = {
+	id = allied_anger.1
+	title = allied_anger.1.t
+	desc = allied_anger.1.d
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		NOT = { has_global_flag = warn_uk }
+		GER={check_variable = { allied_anger > 2 }}
+	}
+	option = {
+		name = allied_anger.1.a
+		set_global_flag = warn_uk
+		add_opinion_modifier = { target = GER modifier = protest_action }
+	}
+}
+#Mobilize
+country_event = {
+	id = allied_anger.2
+	title = allied_anger.2.t
+	desc = allied_anger.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		NOT = { has_global_flag = mobilize1 }
+		GER={check_variable = { allied_anger > 5 }}
+	}
+	option = {
+		name = allied_anger.2.a
+		set_global_flag = mobilize1
+		if={
+		limit={
+		has_idea=undisturbed_isolation
+		}
+		add_ideas = isolation
+		else={
+		if={
+		limit={
+		has_idea=isolation
+		}
+		add_ideas =civilian_economy
+		else={
+		if={
+		limit={
+		has_idea=civilian_economy
+		}
+		add_ideas =low_economic_mobilisation
+		else={
+		if={
+		limit={
+		has_idea=low_economic_mobilisation
+		}
+		add_ideas =partial_economic_mobilisation
+		else={
+		if={
+		limit={
+		has_idea=partial_economic_mobilisation
+		}
+		add_ideas =war_economy
+		else={
+		if={
+		limit={
+		has_idea=war_economy
+		}
+		add_war_support = 0.1
+		}		
+		}
+		}		
+		}
+		}		
+		}
+		}
+		}
+		}
+		}
+		}
+	}
+}
+
+country_event = {
+	id = allied_anger.3
+	title = allied_anger.2.t
+	desc = allied_anger.2.d
+	fire_only_once = yes
+	trigger = {
+		#OR={ #OLD VERSION CANT ABLE TO MAKE IT WORK :(
+		#tag = ENG
+		#if={
+		#limit={
+		#FRA={
+		#is_in_faction_with = ENG
+		#NOT={
+		#	OR={
+		#		has_government = fascism
+		#		has_government = communism
+		#	}
+		#}
+		#}
+		#}
+		#tag = FRA
+		#}
+		#if={
+		#limit={
+		#AST={
+		#is_in_faction_with = ENG
+		#NOT={
+		#	OR={
+		#		has_government = fascism
+		#		has_government = communism
+		#	}
+		#}
+		#}
+		#}
+		#tag = AST
+		#}
+		#if={
+		#limit={
+		#RAJ={
+		#is_in_faction_with = ENG
+		#NOT={
+		#	OR={
+		#		has_government = fascism
+		#		has_government = communism
+		#	}
+		#}
+		#}
+		#}
+		#tag = RAJ
+		#}
+		#if={
+		#limit={
+		#SAF={
+		#is_in_faction_with = ENG
+		#NOT={
+		#	OR={
+		#		has_government = fascism
+		#		has_government = communism
+		#	}
+		#}
+		#}
+		#}
+		#tag = SAF
+		#}
+		#if={
+		#limit={
+		#NZL={
+		#is_in_faction_with = ENG
+		#NOT={
+		#	OR={
+		#		has_government = fascism
+		#		has_government = communism
+		#	}
+		#}
+		#}
+		#}
+		#tag = NZL
+		#}
+		#}
+		tag = ENG
+		NOT = { has_global_flag = mobilize2 }
+		GER={check_variable = { allied_anger > 7 }}
+	}
+	option = {
+		name = allied_anger.2.a
+		set_global_flag = mobilize2
+		if={
+		limit={
+		has_idea=undisturbed_isolation
+		}
+		add_ideas = isolation
+		else={
+		if={
+		limit={
+		has_idea=isolation
+		}
+		add_ideas =civilian_economy
+		else={
+		if={
+		limit={
+		has_idea=civilian_economy
+		}
+		add_ideas =low_economic_mobilisation
+		else={
+		if={
+		limit={
+		has_idea=low_economic_mobilisation
+		}
+		add_ideas =partial_economic_mobilisation
+		else={
+		if={
+		limit={
+		has_idea=partial_economic_mobilisation
+		}
+		add_ideas =war_economy
+		else={
+		if={
+		limit={
+		has_idea=war_economy
+		}
+		add_war_support = 0.1
+		}		
+		}
+		}		
+		}
+		}		
+		}
+		}
+		}
+		}
+		}
+		}
+	}
+
+}
+country_event = {
+	id = allied_anger.4
+	title = allied_anger.2.t
+	desc = allied_anger.2.d
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		NOT = { has_global_flag = mobilize3 }
+		GER={check_variable = { allied_anger > 10 }}
+	}
+	option = {
+		name = allied_anger.2.a
+		set_global_flag = mobilize3
+		if={
+		limit={
+		has_idea=undisturbed_isolation
+		}
+		add_ideas = isolation
+		else={
+		if={
+		limit={
+		has_idea=isolation
+		}
+		add_ideas =civilian_economy
+		else={
+		if={
+		limit={
+		has_idea=civilian_economy
+		}
+		add_ideas =low_economic_mobilisation
+		else={
+		if={
+		limit={
+		has_idea=low_economic_mobilisation
+		}
+		add_ideas =partial_economic_mobilisation
+		else={
+		if={
+		limit={
+		has_idea=partial_economic_mobilisation
+		}
+		add_ideas =war_economy
+		else={
+		if={
+		limit={
+		has_idea=war_economy
+		}
+		add_war_support = 0.1
+		}		
+		}
+		}		
+		}
+		}		
+		}
+		}
+		}
+		}
+		}
+		}
+	}
+
+}
+#warn germany
+country_event = {
+	id = allied_anger.5
+	title = allied_anger.5.t
+	desc = allied_anger.5.d
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		NOT = { has_global_flag = warn_ger }
+		GER={check_variable = { allied_anger > 8 }}
+	}
+	option = {
+	ai_chance = { 
+	factor = 90 
+	modifier = {
+				factor = -50
+				has_army_manpower = { size > 1000000 }
+			}
+	}
+		name = allied_anger.5.a
+		set_global_flag = warn_ger
+		if={
+		limit={
+		has_idea=undisturbed_isolation
+		}
+		add_ideas = isolation
+		else={
+		if={
+		limit={
+		has_idea=isolation
+		}
+		add_ideas =civilian_economy
+		else={
+		if={
+		limit={
+		has_idea=civilian_economy
+		}
+		add_ideas =low_economic_mobilisation
+		else={
+		if={
+		limit={
+		has_idea=low_economic_mobilisation
+		}
+		add_ideas =partial_economic_mobilisation
+		else={
+		if={
+		limit={
+		has_idea=partial_economic_mobilisation
+		}
+		add_ideas =war_economy
+		else={
+		if={
+		limit={
+		has_idea=war_economy
+		}
+		add_war_support = 10
+		}		
+		}
+		}		
+		}
+		}		
+		}
+		}
+		}
+		}
+		}
+		}
+	}
+	option={ #warn germany
+	name=allied_anger.5.b
+	ai_chance = { factor = 10 }
+	set_global_flag = warn_ger
+	GER={country_event = { days = 1 id = allied_anger.6 }}
+	}
+
+}
+#germany warned
+country_event = {
+	id = allied_anger.6
+	title = allied_anger.6.t
+	desc = allied_anger.5.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {#Yes
+		name = allied_anger.5.a
+		ai_chance = { factor = 0}
+		add_stability =-0.6
+	}
+	option={ #no
+	name=allied_anger.5.b
+	ai_chance = { factor = 100}
+	ENG={
+	create_wargoal = { type = annex_everything target = GER }
+	}	
+	}
+}
+country_event = {
+	id = allied_anger.7
+	title = allied_anger.7.t
+	desc = allied_anger.7.d
+	fire_only_once = yes
+	trigger = {
+		tag = ENG
+		NOT = { has_global_flag = war_it_is }
+		GER={check_variable = { allied_anger > 11 }}
+	}
+	option = {
+		name = allied_anger.7.a
+		ai_chance = { factor = 90 }
+		set_global_flag = war_it_is
+		ENG={
+			create_wargoal = { type = annex_everything target = GER }
+			}	
+	}
+	option={ #do nothing
+	name=allied_anger.7.b
+	ai_chance = { 
+	factor = 10 
+	modifier = {
+					factor = -10
+					has_army_manpower = { size > 1000000 }
+				}
+	}
+	
+	set_global_flag = war_it_is
+	add_stability =-0.6
+	}
+}
+#END#
