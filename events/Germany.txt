@@ -1786,6 +1786,7 @@ add_namespace = germany
 		
 		option = {
 			name = "Dont join the Attack"		#dont join the attack
+			ai_chance = { factor = 0 }
 			add_war_support = -0.3
 		}
 	}
@@ -4183,7 +4184,7 @@ add_namespace = germany
 			}
 		}
 	}
-	country_event = {#50 Germany (Czechoslovakia Surrenders Sudetenland)
+	country_event = {#50 Germany (Czechoslovakia Surrenders Sudetenland )
 		id = germany.50
 		title = germany.40.t
 		desc = germany.50.d
@@ -4261,61 +4262,61 @@ add_namespace = germany
 		option = { #Demand Sudetenland
 			name = germany.348.a
 			ai_chance = { base = 70 } 
-				if =  {
-					limit = {
-						OR = {
-							has_war_with = ENG
-							has_war_with = FRA
-							HUN = { is_puppet = yes }
-							HUN = { has_war_with = ENG }
-						}
-						HUN = { owns_state = 69 }
+			if =  {
+				limit = {
+					OR = {
+						has_war_with = ENG
+						has_war_with = FRA
+						HUN = { is_puppet = yes }
+						HUN = { has_war_with = ENG }
 					}
-					create_wargoal = {
-						type = take_state_focus
-						target = HUN
-						generator = { 69 74 960 }
-					}
+					HUN = { owns_state = 69 }
 				}
-				if = {
-					limit = {
-						NOT = { has_war_with = ENG }
-						NOT = { has_war_with = FRA }
-						HUN = { is_puppet = no }
-						HUN = { NOT = { has_war_with = ENG } }
-						HUN = { owns_state = 69 }
-					}
-					ENG = {
-						country_event = germany.350
-					}
-					add_named_threat = { threat = 2 name = GER_demand_sudetenland_threat }
+				create_wargoal = {
+					type = take_state_focus
+					target = HUN
+					generator = { 69 74 960 }
 				}
-				69 = {
-					add_claim_by = GER
+			}
+			if = {
+				limit = {
+					NOT = { has_war_with = ENG }
+					NOT = { has_war_with = FRA }
+					HUN = { is_puppet = no }
+					HUN = { NOT = { has_war_with = ENG } }
+					HUN = { owns_state = 69 }
 				}
-				if = {
-					limit = {
-						NOT = { HUN = { controls_state = 69 } }
-						69 = {
-							controller = {
-								NOT = { is_in_faction_with = GER }
-							}
-						}
-					}
-					add_named_threat = { threat = 2 name = GER_demand_sudetenland_threat }
+				ENG = {
+					country_event = germany.350
+				}
+				add_named_threat = { threat = 2 name = GER_demand_sudetenland_threat }
+			}
+			69 = {
+				add_claim_by = GER
+			}
+			if = {
+				limit = {
+					NOT = { HUN = { controls_state = 69 } }
 					69 = {
 						controller = {
-							GER = {
-								create_wargoal = {
-									type = take_state_focus
-									target = PREV
-									generator = { 69 74 960 }
-								}
+							NOT = { is_in_faction_with = GER }
+						}
+					}
+				}
+				add_named_threat = { threat = 2 name = GER_demand_sudetenland_threat }
+				69 = {
+					controller = {
+						GER = {
+							create_wargoal = {
+								type = take_state_focus
+								target = PREV
+								generator = { 69 74 941 }
 							}
 						}
 					}
 				}
 			}
+		}
 		option = { #Trade AH Polish claims for Sudetenland
 			name = germany.349.b	
 			HUN = { country_event = DOD_hungary.185 }
@@ -4382,7 +4383,7 @@ add_namespace = germany
 			create_wargoal = {
 				type = take_state_focus
 				target = HUN
-				generator = { 69 74 960 }
+				generator = { 69 74 941 }
 			}
 			ai_chance = {
 				base = 0 # from 0, from 10
@@ -4433,7 +4434,7 @@ add_namespace = germany
 						has_global_flag = allied_anger_9
 					}
 				}
-			} #from 100, from 99
+			}
 			trigger = { NOT = { has_war_with = GER } }
 			FRA = { country_event = germany.41 }
 			HUN = {
@@ -4512,12 +4513,10 @@ add_namespace = germany
 					create_wargoal = {
 						type = take_state_focus
 						target = HUN
-						generator = { 69 74 960 }
+						generator = { 69 74 941 }
 					}
 				}
 			}
-			
-			
 			if = {
 				limit = { HUN = { is_in_faction = no } }
 				add_to_faction = HUN
@@ -4646,7 +4645,7 @@ add_namespace = germany
 					create_wargoal = {
 						type = take_state_focus
 						target = HUN
-						generator = { 69 74 960 }
+						generator = { 69 74 941 }
 					}
 				}
 			}
@@ -4775,7 +4774,7 @@ add_namespace = germany
 					create_wargoal = {
 						type = take_state_focus
 						target = HUN
-						generator = { 69 74 960 }
+						generator = { 69 74 941 }
 					}
 				}
 			}
@@ -4822,7 +4821,7 @@ add_namespace = germany
 					create_wargoal = {
 						type = take_state_focus
 						target = HUN
-						generator = { 69 74 960 }
+						generator = { 69 74 941 }
 					}
 				}
 			}		
@@ -4858,7 +4857,7 @@ add_namespace = germany
 					create_wargoal = {
 						type = take_state_focus
 						target = HUN
-						generator = { 69 74 960 }
+						generator = { 69 74 941 }
 					}
 				}
 			}
@@ -4879,7 +4878,7 @@ add_namespace = germany
 					create_wargoal = {
 						type = take_state_focus
 						target = HUN
-						generator = { 69 74 960 }
+						generator = { 69 74 941 }
 					}
 				}
 			}
@@ -4978,7 +4977,7 @@ add_namespace = germany
 					create_wargoal = {
 						type = take_state_focus
 						target = HUN
-						generator = { 69 74 960 }
+						generator = { 69 74 941 }
 					}
 				}
 			}
@@ -4997,11 +4996,11 @@ add_namespace = germany
 			create_wargoal = {
 				type = take_state_focus
 				target = HUN
-				generator = { 69 74 960 }
+				generator = { 69 74 941 }
 			}
 			add_state_claim = 69
 			add_state_claim = 74
-			add_state_claim = 960
+			add_state_claim = 941
 			hidden_effect = {
 				news_event = { hours = 6 id = news.57 }
 			}
@@ -5021,11 +5020,11 @@ add_namespace = germany
 			create_wargoal = {
 				type = take_state_focus
 				target = HUN
-				generator = { 69 74 960 }
+				generator = { 69 74 941 }
 			}
 			add_state_claim = 69
 			add_state_claim = 74
-			add_state_claim = 960
+			add_state_claim = 941
 			hidden_effect = {
 				country_event = { hours = 6 id = news.58 }
 			}
@@ -5044,11 +5043,11 @@ add_namespace = germany
 			create_wargoal = {
 				type = take_state_focus
 				target = HUN
-				generator = { 69 74 960 }
+				generator = { 69 74 941 }
 			}
 			add_state_claim = 69
 			add_state_claim = 74
-			add_state_claim = 960
+			add_state_claim = 941
 			if = {
 				limit = {
 					HUN = {
@@ -5080,7 +5079,7 @@ add_namespace = germany
 			name = germany.338.b
 			add_state_claim = 69
 			add_state_claim = 74
-			add_state_claim = 960
+			add_state_claim = 941
 			add_political_power = -35
 			ruling_pop_minus_7 = yes
 			add_stability = -0.03
@@ -5869,9 +5868,9 @@ add_namespace = germany
 				}
 			}
 			hidden_effect = {
-				GER = {
-					country_event = { id = germany.123 days = 1 }
-				}
+				#GER = {
+				#	country_event = { id = germany.123 days = 1 }
+				#}
 			}
 		}
 
@@ -9537,18 +9536,10 @@ add_namespace = germany
 		mean_time_to_happen = {
 			days = 1
 		}
-		
+
 		option = {
 			name = germany.253.a
-			ai_chance = { factor = 0 }
-			trigger = { is_ai = no }
-			
-			set_country_flag = mot_29
-		}
-		option = {
-			name = germany.253.b
 			ai_chance = { factor = 100 }
-			trigger = { is_ai = yes }
 			hidden_effect = {
 				delete_unit_template_and_units = { division_template = "29. Inf.-Div." }
 				load_oob = "GER_29_mot_Division"
@@ -9556,7 +9547,7 @@ add_namespace = germany
 			}
 		}
 		option = {
-			name = germany.253.c
+			name = "No need"
 			ai_chance = { factor = 0 }
 			set_country_flag = mot_29_no
 		}
@@ -9571,28 +9562,20 @@ add_namespace = germany
 		
 		trigger = {
 			tag = GER
-			not = { has_country_flag = mot_2 }
-			not = { has_country_flag = mot_2_no }
+			NOT = { has_country_flag = mot_2 }
+			NOT = { has_country_flag = mot_2_no }
 			has_country_flag = mot_29
-			not = { has_country_flag = mot_29_no }
+			NOT = { has_country_flag = mot_29_no } 
 			date > 1937.10.12
 		}
 		
 		mean_time_to_happen = {
 			days = 10
 		}
-		
+
 		option = {
 			name = germany.254.a
-			ai_chance = { factor = 0 }
-			trigger = { is_ai = no }
-			
-			set_country_flag = mot_2
-		}
-		option = {
-			name = germany.254.b
 			ai_chance = { factor = 100 }
-			trigger = { is_ai = yes }
 			hidden_effect = {
 				delete_unit_template_and_units = { division_template = "2. Inf.-Div." }
 				load_oob = "GER_2_mot_Division"
@@ -9600,7 +9583,7 @@ add_namespace = germany
 			}
 		}
 		option = {
-			name = germany.254.c
+			name = "No need"
 			ai_chance = { factor = 0 }
 			set_country_flag = mot_2_no
 		}
@@ -9616,10 +9599,10 @@ add_namespace = germany
 		trigger = {
 			tag = GER
 			64 = { is_controlled_by = GER }
-			not = { has_country_flag = mot_13 }
-			not = { has_country_flag = mot_13_no }
+			NOT = { has_country_flag = mot_13 }
+			NOT = { has_country_flag = mot_13_no }
 			has_country_flag = mot_29
-			not = { has_country_flag = mot_29_no }
+			NOT = { has_country_flag = mot_29_no }
 			date > 1937.10.11
 		}
 		
@@ -9629,15 +9612,7 @@ add_namespace = germany
 		
 		option = {
 			name = germany.255.a
-			ai_chance = { factor = 0 }
-			trigger = { is_ai = no }
-			
-			set_country_flag = mot_13
-		}
-		option = {
-			name = germany.255.b
 			ai_chance = { factor = 100 }
-			trigger = { is_ai = yes }
 			hidden_effect = {
 				delete_unit_template_and_units = { division_template = "13. Inf.-Div." }
 				load_oob = "GER_13_mot_Division"
@@ -9645,7 +9620,7 @@ add_namespace = germany
 			}
 		}
 		option = {
-			name = germany.255.c
+			name = "No need"
 			ai_chance = { factor = 0 }
 			set_country_flag = mot_13_no
 		}
@@ -9661,10 +9636,10 @@ add_namespace = germany
 		trigger = {
 			tag = GER
 			58 = { is_controlled_by = GER }
-			not = { has_country_flag = mot_20 }
-			not = { has_country_flag = mot_20_no }
+			NOT = { has_country_flag = mot_20 }
+			NOT = { has_country_flag = mot_20_no }
 			has_country_flag = mot_29
-			not = { has_country_flag = mot_29_no }
+			NOT = { has_country_flag = mot_29_no }
 			date > 1937.10.11
 		}
 		
@@ -9674,15 +9649,7 @@ add_namespace = germany
 		
 		option = {
 			name = germany.256.a
-			ai_chance = { factor = 0 }
-			trigger = { is_ai = no }
-			
-			set_country_flag = mot_20
-		}
-		option = {
-			name = germany.256.b
 			ai_chance = { factor = 100 }
-			trigger = { is_ai = yes }
 			hidden_effect = {
 				delete_unit_template_and_units = { division_template = "20. Inf.-Div." }
 				load_oob = "GER_20_mot_Division"
@@ -9690,7 +9657,7 @@ add_namespace = germany
 			}
 		}
 		option = {
-			name = germany.256.c
+			name = "No need"
 			ai_chance = { factor = 0 }
 			set_country_flag = mot_20_no
 		}
@@ -9718,7 +9685,6 @@ add_namespace = germany
 		
 		trigger = {
 			tag = GER
-			is_ai = no
 			OR = {
 				has_tech = tech_kr_bb
 				has_tech = tech_kr_bb_38
@@ -9733,9 +9699,9 @@ add_namespace = germany
 		
 		option = {
 			name = germany.258.a
+			ai_chance = { factor = 100 }
 			trigger = { 
 				has_tech = tech_kr_bb
-				is_ai = no
 			}
 			
 			hidden_effect = {
@@ -9745,9 +9711,9 @@ add_namespace = germany
 		}
 		option = {
 			name = germany.258.b
+			ai_chance = { factor = 0 }
 			trigger = { 
 				has_tech = tech_kr_bb_38
-				is_ai = no
 			}
 			
 			hidden_effect = {
@@ -9810,22 +9776,14 @@ add_namespace = germany
 		
 		option = {
 			name = germany.260.a
-			ai_chance = { factor = 0 }
-			trigger = { is_ai = no }
-			
-			set_country_flag = mot_25
-		}
-		option = {
-			name = germany.260.b
 			ai_chance = { factor = 100 }
-			trigger = { is_ai = yes }
 			hidden_effect = {
 				load_oob = "GER_25_mot_Division"
 				set_country_flag = mot_25
 			}
 		}
 		option = {
-			name = germany.260.c
+			name = "No need"
 			ai_chance = { factor = 0 }
 			set_country_flag = mot_25_no
 		}
@@ -9855,22 +9813,14 @@ add_namespace = germany
 		
 		option = {
 			name = germany.261.a
-			ai_chance = { factor = 0 }
-			trigger = { is_ai = no }
-			
-			set_country_flag = mot_3
-		}
-		option = {
-			name = germany.261.b
 			ai_chance = { factor = 100 }
-			trigger = { is_ai = yes }
 			hidden_effect = {
 				load_oob = "GER_3_mot_Division"
 				set_country_flag = mot_3
 			}
 		}
 		option = {
-			name = germany.261.c
+			name = "No need"
 			ai_chance = { factor = 0 }
 			set_country_flag = mot_3_no
 		}

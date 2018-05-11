@@ -1035,40 +1035,8 @@ country_event = {
 		name = blackiceevents.65.a
 	}
 }
-country_event = {
-	id = blackiceevents.66
-	title = blackiceevents.66.t
-	desc = blackiceevents.66.d
-	
-	picture = GFX_report_event_generic_read_write
+#blackiceevents.66
 
-	fire_only_once = yes
-
-	trigger = {
-		tag = SOV
-		is_ai = yes
-		GER = { has_war_with = POL}
-		ENG = { is_in_faction_with =POL}
-		#NOT = { is_in_faction_with = GER }
-		POL = { has_war_with = SOV }
-	}
-
-	immediate = {
-	    hidden_effect = {
-	       SOV = {white_peace = POL} 		# Makes peace with Poland and Allies
-	    }
-	}
-	option = {
-		name = blackiceevents.66.a
-		every_country = {
-				limit = {
-					is_in_faction_with = ENG
-				}
-				white_peace = SOV
-			}
-		add_opinion_modifier = { target = ENG modifier =  improve_relation }
-	}
-}
 country_event = {
 	id = blackiceevents.67
 	title = blackiceevents.67.t

@@ -6256,14 +6256,14 @@ focus_tree = {
 		completion_reward = {
 			#Allied Anger
 			if={
-			limit={
-			date>1938.3.12
-			}
-			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
-			else={
-			custom_effect_tooltip =allied.anger.early
-			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
-			}
+				limit={
+					date > 1938.1.15
+				}
+				add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+				else={
+					custom_effect_tooltip =allied.anger.early
+					add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+				}
 			}
 			army_experience = 10
 			if = {
@@ -6393,7 +6393,6 @@ focus_tree = {
 	focus = {
 		id = GER_demand_sudetenland
 		icon = GFX_goal_demand_sudetenland
-		#prerequisite = { focus = GER_rhineland }
 		prerequisite = { focus = GER_anschluss }
 		x = 32
 		y = 2
@@ -6439,14 +6438,14 @@ focus_tree = {
 		completion_reward = {
 		#Allied Anger
 			if={
-			limit={
-			date>1938.9.1
-			}
-			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
-			else={
-			custom_effect_tooltip =allied.anger.early
-			add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
-			}
+				limit={
+					date > 1938.9.20
+				}
+				add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
+				else={
+					custom_effect_tooltip =allied.anger.early
+					add_to_variable = { var = allied_anger value = 3 tooltip = allied.anger.plus.3 }
+				}
 			}
 			if = { 
 				limit = { 

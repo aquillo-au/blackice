@@ -969,7 +969,41 @@ GER_military_buildup = {
 		}
 		
 		complete_effect = {
-			
+			division_template = {
+				name = "Inf.-Div. Welle-1+"
+				division_names_group = GER_Inf_03
+				is_locked = yes
+				template_counter = 4
+				
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					anti_tank_brigade =  { x = 3 y = 3 }
+				}
+				
+				support = {
+					DIV_HQ = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					artillery_medium = { x = 0 y = 2 }
+					recon_cav = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+					logistics_company = { x = 0 y = 5 }
+					field_hospital = { x = 0 y = 6 }
+				}
+			}
 			set_country_flag = welle_one
 		}
 	}
@@ -1230,6 +1264,60 @@ GER_military_buildup = {
 			factor = 200
 		}
 	}
+	
+	GER_60_div = {
+		
+		icon = ger_military_buildup
+		
+		available = {
+			date > 1939.7.1
+			owns_state = 841
+		}
+		
+		cost = 50
+		
+		fire_only_once = yes
+		
+		activation = {
+			has_completed_focus = GER_Wehrmacht
+		}
+		
+		visible = {
+			has_completed_focus = GER_Wehrmacht
+			date > 1939.5.1
+		}
+	
+		complete_effect = {
+			division_template = {
+				name = "Gruppe Eberhardt"
+				division_names_group = GER_Inf_03
+				is_locked = yes
+				priority = 0
+				template_counter = 3
+				
+				regiments = {
+					garrison = { x = 0 y = 0 }
+					garrison = { x = 0 y = 1 }
+					garrison = { x = 0 y = 2 }
+					
+					garrison = { x = 1 y = 0 }
+					garrison = { x = 1 y = 1 }
+					garrison = { x = 1 y = 2 }
+
+					artillery_brigade = { x = 2 y = 0 }
+				}
+				support = {
+					DIV_HQ = { x = 0 y = 0 }
+				}
+			}
+			
+			#country_event = { id = germany.400 hours = 6 }
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
 	#1940
 	GER_motorise_16_infdiv = {
 		
@@ -1405,7 +1493,7 @@ GER_fm_promotion = {
 		}
 		
 		visible = {
-			date >1939.7.1
+			date >1939.6.1
 		}
 		
 		fire_only_once = yes
@@ -1415,7 +1503,7 @@ GER_fm_promotion = {
 		ai_will_do = {
 			factor = 100
 		}
-			
+		
 		complete_effect = {
 			remove_unit_leader = 9
 			remove_unit_leader = 1
@@ -1459,10 +1547,13 @@ special_projects = {
 				controls_state = 29
 			}
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 5
 		}
+		
 		remove_effect = {
 			28 = {
 				set_building_level = {
@@ -1503,6 +1594,7 @@ special_projects = {
 				}
 			}
 		}
+		
 		complete_effect = {
 			if = {
 				limit = { FRA = { has_completed_focus = FRA_extend_the_maginot_line } }
@@ -1530,35 +1622,38 @@ GER_Wunderwaffen = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			
 		}
+		
 		highlight_states = {
 			state = 57
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 20
 		}
+		
 		remove_effect = {
-			
 			custom_effect_tooltip = good_cult_TT
 			hidden_effect = {
-			random_list = { 
-				50 = { add_ideas = Himmler_occult_1 }  
-				30 = { add_ideas = Himmler_occult_2 } 
-				20 = { add_ideas = Himmler_occult_3 } 
+				random_list = { 
+					50 = { add_ideas = Himmler_occult_1 }  
+					30 = { add_ideas = Himmler_occult_2 } 
+					20 = { add_ideas = Himmler_occult_3 } 
+				}
 			}
-			}
-			
 
 			set_country_flag = open
 		}
+		
 		complete_effect = {
 			
 		}
-	}	
-
+	}
 
 	GER_Project_Riese = {
 
@@ -1569,22 +1664,28 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = open
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 40
 		}
+		
 		remove_effect = {
 			add_ideas = Project_Riese_complete
 			set_country_flag = riese
 		}
+		
 		complete_effect = {
 			
 		}
@@ -1597,13 +1698,9 @@ GER_Wunderwaffen = {
 		available = {
 			67 = { 
 				controller = {
-
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
-
-
-
 					}
 				}
 			} 
@@ -1615,28 +1712,31 @@ GER_Wunderwaffen = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = riese
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
-			
 			industrial_capacity_factory = -0.01
 		}
+		
 		remove_effect = {
 			67 = {
-				
-					add_building_construction = {
-						type = bunker
-						level = 3
-						province = 6512
-						instant_build = yes
-					}
-				
+				add_building_construction = {
+					type = bunker
+					level = 3
+					province = 6512
+					instant_build = yes
+				}
 			}
+			
 			set_country_flag = ksiaz
 		}
+		
 		complete_effect = {
 			
 		}
@@ -1649,46 +1749,46 @@ GER_Wunderwaffen = {
 		available = {
 			67 = { 
 				controller = {
-
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
-
-
-
 					}
 				}
 			} 
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = ksiaz
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
-			
 			industrial_capacity_factory = -0.01
 		}
+		
 		remove_effect = {
 			67 = {
-				
-					add_building_construction = {
-						type = bunker
-						level = 2
-						province = 9511
-						instant_build = yes
-					}
-				
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 9511
+					instant_build = yes
+				}
 			}
+			
 			set_country_flag = complex1
 		}
+		
 		complete_effect = {
 			
 		}
@@ -1701,46 +1801,46 @@ GER_Wunderwaffen = {
 		available = {
 			67 = { 
 				controller = {
-
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
-
-
-
 					}
 				}
 			} 
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = complex1
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
-			
 			industrial_capacity_factory = -0.01
 		}
+		
 		remove_effect = {
 			67 = {
-				
-					add_building_construction = {
-						type = bunker
-						level = 2
-						province = 9457
-						instant_build = yes
-					}
-				
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 9457
+					instant_build = yes
+				}
 			}
+			
 			set_country_flag = complex2
 		}
+		
 		complete_effect = {
 			
 		}
@@ -1753,46 +1853,46 @@ GER_Wunderwaffen = {
 		available = {
 			67 = { 
 				controller = {
-
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
-
-
-
 					}
 				}
 			} 
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = complex2
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
-			
 			industrial_capacity_factory = -0.01
 		}
+		
 		remove_effect = {
 			67 = {
-				
-					add_building_construction = {
-						type = bunker
-						level = 2
-						province = 11467
-						instant_build = yes
-					}
-				
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = 11467
+					instant_build = yes
+				}
 			}
+			
 			set_country_flag = complex3
 		}
+		
 		complete_effect = {
 			
 		}
@@ -1805,46 +1905,46 @@ GER_Wunderwaffen = {
 		available = {
 			67 = { 
 				controller = {
-
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
-
-
-
 					}
 				}
 			} 
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = complex3
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
-			
 			industrial_capacity_factory = -0.01
 		}
+		
 		remove_effect = {
 			67 = {
-				
-					add_building_construction = {
-						type = bunker
-						level = 1
-						province = 479
-						instant_build = yes
-					}
-				
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 479
+					instant_build = yes
+				}
 			}
+			
 			set_country_flag = complex4
 		}
+		
 		complete_effect = {
 			
 		}
@@ -1857,46 +1957,46 @@ GER_Wunderwaffen = {
 		available = {
 			67 = { 
 				controller = {
-
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
-
-
-
 					}
 				}
 			} 
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = complex4
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
-			
 			industrial_capacity_factory = -0.01
 		}
+		
 		remove_effect = {
 			67 = {
-				
-					add_building_construction = {
-						type = bunker
-						level = 1
-						province = 479
-						instant_build = yes
-					}
-				
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 479
+					instant_build = yes
+				}
 			}
+			
 			set_country_flag = complex5
 		}
+		
 		complete_effect = {
 			
 		}
@@ -1909,45 +2009,44 @@ GER_Wunderwaffen = {
 		available = {
 			67 = { 
 				controller = {
-
 					OR = {
 						tag = GER
 						is_in_faction_with = GER
-
-
-
 					}
 				}
 			} 
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = complex5
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
-			
 			industrial_capacity_factory = -0.01
 		}
+		
 		remove_effect = {
 			67 = {
-				
-					add_building_construction = {
-						type = bunker
-						level = 1
-						province = 11467
-						instant_build = yes
-					}
-				
+				add_building_construction = {
+					type = bunker
+					level = 1
+					province = 11467
+					instant_build = yes
+				}
 			}
 		}
+		
 		complete_effect = {
 			
 		}
@@ -1962,23 +2061,28 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = open
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
-			
 			industrial_capacity_factory = -0.01
 		}
+		
 		remove_effect = {
 			add_ideas = Ahnenerbe_influence
 		}
+		
 		complete_effect = {
 			
 		}
@@ -1993,22 +2097,28 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = open
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 40
 		}
+		
 		remove_effect = {
 			add_ideas = Wewelsburg_ss
 			set_country_flag = glocke
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2023,23 +2133,29 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = glocke
 		}
+		
 		days_remove = 270
+		
 		modifier = {
 			civilian_factory_use = 150
 		}
+		
 		remove_effect = {
-		hidden_effect = {
-			add_ideas = die_glocke
+			hidden_effect = {
+				add_ideas = die_glocke
+			}
 		}
-		}
+		
 		complete_effect = {
 			
 		}
@@ -2054,21 +2170,27 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = open
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 50
 		}
+		
 		remove_effect = {
 			add_ideas = Angora_rabbits
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2083,21 +2205,27 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			date > 1940.12.1
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 50
 		}
+		
 		remove_effect = {
 			add_ideas = Hitlers_dog
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2112,21 +2240,27 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = open
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 50
 		}
+		
 		remove_effect = {
 			set_technology = { The_perfect_horse = 1 }
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2135,9 +2269,11 @@ GER_Wunderwaffen = {
 	GER_Goerings_art = {
 
 		icon = generic_construction
+		
 		allowed = {
 			has_idea = Goering_four_year_plan_40
 		}
+		
 		available = {
 			NOT = { has_idea = Goering_four_year_plan_40 }
 		}
@@ -2145,21 +2281,29 @@ GER_Wunderwaffen = {
 		activation = {
 			has_idea = Goering_four_year_plan_40
 		}
+		
 		fire_only_once = yes
+		
 		days_mission_timeout = 180   
+		
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_idea = Goering_four_year_plan_40
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 25
 		}
+		
 		complete_effect = {                 
-              add_ideas = Goerings_art             
-          }
+            add_ideas = Goerings_art             
+        }
+		
 		timeout_effect = {
 			add_political_power = -50 
 		}
@@ -2179,16 +2323,21 @@ GER_Wunderwaffen = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_idea = joseph_goebbels
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
 		}
+		
 		remove_effect = {
-					add_ideas = Goebbels_propaganda
+			add_ideas = Goebbels_propaganda
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2203,22 +2352,28 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			date > 1939.12.30
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 30
 		}
+		
 		remove_effect = {
-					set_technology = { goliah_tech = 1 }
-					set_country_flag = goliath
+			set_technology = { goliah_tech = 1 }
+			set_country_flag = goliath
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2233,21 +2388,26 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			date > 1942.1.1
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 50
 		}
+		
 		remove_effect = {
-					set_technology = { microwave_death_ray_tech = 1 }
-					set_country_flag = deathray
+			set_technology = { microwave_death_ray_tech = 1 }
+			set_country_flag = deathray
 		}
 		complete_effect = {
 			
@@ -2263,23 +2423,28 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
-				date > 1942.1.1
-				date > 1942.1.1
+			date > 1942.1.1
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 40
 		}
+		
 		remove_effect = {
-		set_technology = { V3_cannon_tech = 1 }
-		set_country_flag = v3
+			set_technology = { V3_cannon_tech = 1 }
+			set_country_flag = v3
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2294,21 +2459,27 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = deathray
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 50
 		}
+		
 		remove_effect = {
-		set_technology = { vortex_cannon_tech = 1 }
+			set_technology = { vortex_cannon_tech = 1 }
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2328,16 +2499,21 @@ GER_Wunderwaffen = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = v3
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 50
 		}
+		
 		remove_effect = {
-		set_technology = { Sonic_Cannon_tech = 1 }
+			set_technology = { Sonic_Cannon_tech = 1 }
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2352,21 +2528,27 @@ GER_Wunderwaffen = {
 		}
 
 		cost = 150
+		
 		fire_only_once = yes
 
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			has_country_flag = goliath
 		}
+		
 		days_remove = 180
+		
 		modifier = {
 			civilian_factory_use = 50
 		}
+		
 		remove_effect = {
-		set_technology = { Landkreuzer_tech = 1 }
+			set_technology = { Landkreuzer_tech = 1 }
 		}
+		
 		complete_effect = {
 			
 		}
@@ -2401,10 +2583,11 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 		}
-		#days_remove = 0
+		
 		complete_effect = {
 			set_country_flag = HQ
 			custom_effect_tooltip = move_in
@@ -2447,8 +2630,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Berghof_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
@@ -2501,6 +2682,7 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 		}
@@ -2548,8 +2730,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Fuhrerbunker_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
@@ -2599,9 +2779,11 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			date > 1940.1.3
 		}
+		
 		days_remove = 90
 		
 		modifier = {
@@ -2639,11 +2821,11 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 			has_country_flag = Wolfsschanze_built
 		}
-		#days_remove = 180
 		
 		complete_effect = {
 			hidden_effect = { add_timed_idea = { idea = GER_Wolfsschanze days = 180 } }
@@ -2687,8 +2869,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Wolfsschanze_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
@@ -2739,9 +2919,11 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			date > 1940.1.8
 		}
+		
 		days_remove = 90
 		
 		modifier = {
@@ -2779,11 +2961,11 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 			has_country_flag = Tannenberg_built
 		}
-		#days_remove = 180
 	
 		complete_effect = {
 			set_country_flag = HQ
@@ -2826,8 +3008,6 @@ GER_fuhrer_HQ = {
 		
 		days_remove = GER_Tannenberg_days?0
 		
-		#is_good = yes
-		
 		visible = {
 			always = no
 		}
@@ -2851,7 +3031,6 @@ GER_fuhrer_HQ = {
 			}
 		}
 	}
-	
 	
 	GER_Wolfsschlucht_I = {
 
@@ -2878,12 +3057,10 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 		}
-			
-		
-		#days_remove = 180
 		
 		complete_effect = {
 			hidden_effect = {
@@ -2929,8 +3106,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Wolfsschlucht_I_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
@@ -2981,10 +3156,10 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 		}
-		#days_remove = 180
 		
 		complete_effect = {
 		hidden_effect = {
@@ -3030,8 +3205,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Wolfsschlucht_II_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
@@ -3082,10 +3255,10 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 		}
-		#days_remove = 180
 		
 		complete_effect = {
 			set_country_flag = HQ
@@ -3127,8 +3300,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Adlerhorst_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
@@ -3179,10 +3350,10 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 		}
-		#days_remove = 180
 		
 		complete_effect = {
 			set_country_flag = HQ
@@ -3224,8 +3395,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Anlage_Sud_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
@@ -3276,10 +3445,10 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 		}
-		#days_remove = 180
 	
 		complete_effect = {
 			set_country_flag = HQ
@@ -3321,8 +3490,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Felsennest_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
@@ -3373,10 +3540,10 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 		}
-		#days_remove = 180
 		
 		complete_effect = {
 			set_country_flag = HQ
@@ -3418,8 +3585,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Werwolf_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
@@ -3470,11 +3635,10 @@ GER_fuhrer_HQ = {
 		ai_will_do = {
 			factor = 0
 		}
+		
 		visible = {
 			NOT = { has_country_flag = HQ }
 		}
-		
-		#days_remove = 180
 	
 		complete_effect = {
 			set_country_flag = HQ
@@ -3516,8 +3680,6 @@ GER_fuhrer_HQ = {
 		days_mission_timeout = 180
 		
 		days_remove = GER_Kehlsteinhaus_days?0
-		
-		#is_good = yes
 		
 		visible = {
 			always = no
