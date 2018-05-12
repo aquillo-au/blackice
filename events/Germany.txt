@@ -8430,29 +8430,24 @@ add_namespace = germany
 
 		fire_only_once = yes
 		
-		trigger = {
-			tag = GER
-			has_country_flag = welle_one
-			not = { has_country_flag = GERinfdiv_I }
-			date > 1936.4.1		#date = 1936.4.1
-		}
+		is_triggered_only = yes
 		
 		mean_time_to_happen = {
-			days = 1
+			days = 60
 		}
 		
 		option = {
 			name = germany.223.a
+			ai_chance = { factor = 100 }
 			hidden_effect = {
 				load_oob = "GER_InfDiv_Welle1_apr36"
 				set_country_flag = GERinfdiv_I
 			}
-			ai_chance = { factor = 100 } 
 		}
 		option = {
 			name = germany.223.b		#refuse
 			ai_chance = { factor = 0 }
-			set_country_flag = GERinfdiv_I
+			set_country_flag = GERinfdiv_I_no
 		}
 	}
 	country_event = {#224 1 Welle Inf.-Div. => 27., 28., 29., 30. Infanterie-Division
@@ -8466,8 +8461,11 @@ add_namespace = germany
 		trigger = {
 			tag = GER
 			has_country_flag = welle_one
+			has_country_flag = GERinfdiv_I
+			not = { has_country_flag = GERinfdiv_I_no }
 			not = { has_country_flag = GERinfdiv_II }
-			date > 1936.10.1 	#date = 1936.10.1
+			not = { has_country_flag = GERinfdiv_II_no }
+			date > 1936.10.1
 		}
 		
 		mean_time_to_happen = {
@@ -8476,16 +8474,16 @@ add_namespace = germany
 		
 		option = {
 			name = germany.224.a
+			ai_chance = { factor = 100 }
 			hidden_effect = {
 				load_oob = "GER_InfDiv_Welle1_oct36"
 				set_country_flag = GERinfdiv_II
-				
 			}
 		}
 		option = {
 			name = germany.224.b		#refuse
 			ai_chance = { factor = 0 }
-			set_country_flag = GERinfdiv_II
+			set_country_flag = GERinfdiv_II_no
 		}
 	}
 	country_event = {#225 1 Welle Inf.-Div. => 31., 32., 35., 36. Infanterie-Division
@@ -8499,8 +8497,11 @@ add_namespace = germany
 		trigger = {
 			tag = GER
 			has_country_flag = welle_one
+			has_country_flag = GERinfdiv_II
+			not = { has_country_flag = GERinfdiv_II_no }
 			42 = { is_demilitarized_zone = no }
 			not = { has_country_flag = GERinfdiv_III }
+			not = { has_country_flag = GERinfdiv_III_no }
 			date > 1936.10.26 	#date = 1936.10.28
 		}
 		
@@ -8510,6 +8511,7 @@ add_namespace = germany
 		
 		option = {
 			name = germany.225.a
+			ai_chance = { factor = 100 }
 			hidden_effect = {
 				load_oob = "GER_InfDiv_Welle1_oct36_2"
 				set_country_flag = GERinfdiv_III
@@ -8518,7 +8520,7 @@ add_namespace = germany
 		option = {
 			name = germany.225.b		#refuse
 			ai_chance = { factor = 0 }
-			set_country_flag = GERinfdiv_III
+			set_country_flag = GERinfdiv_III_no
 		}
 	}
 	country_event = {#226 1 Welle Inf.-Div. => 46. Infanterie-Division
@@ -8532,7 +8534,10 @@ add_namespace = germany
 		trigger = {
 			tag = GER
 			has_country_flag = welle_one
+			has_country_flag = GERinfdiv_III
+			not = { has_country_flag = GERinfdiv_III_no }
 			not = { has_country_flag = GERinfdiv_46 }
+			not = { has_country_flag = GERinfdiv_46_no }
 			date > 1938.11.23 	#date = 1938.11.24
 		}
 		
@@ -8551,7 +8556,7 @@ add_namespace = germany
 		option = {
 			name = germany.226.b		#refuse
 			ai_chance = { factor = 0 }
-			set_country_flag = GERinfdiv_46
+			set_country_flag = GERinfdiv_46_no
 		}
 	}
 	country_event = {#227 1 Welle Inf.-Div. => 50. Infanterie-Division
@@ -8565,9 +8570,11 @@ add_namespace = germany
 		trigger = {
 			tag = GER
 			has_country_flag = welle_one
+			has_country_flag = GERinfdiv_46
+			not = { has_country_flag = GERinfdiv_46_no }
 			not = { has_country_flag = GERinfdiv_50 }
+			not = { has_country_flag = GERinfdiv_50_no }
 			date > 1939.08.24 	#date = 1939.8.26
-
 		}
 		
 		mean_time_to_happen = {
@@ -8584,7 +8591,7 @@ add_namespace = germany
 		option = {
 			name = germany.227.b		#refuse
 			ai_chance = { factor = 0 }
-			set_country_flag = GERinfdiv_50
+			set_country_flag = GERinfdiv_50_no
 		}
 	}
 # Event chain 1, 2, 3, 4 Leichte Division to Pz-Division 6-7-8-9
