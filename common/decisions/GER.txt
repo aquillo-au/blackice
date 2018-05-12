@@ -1004,8 +1004,8 @@ GER_military_buildup = {
 					field_hospital = { x = 0 y = 6 }
 				}
 			}
+			
 			set_country_flag = welle_one
-			country_event = { id = germany.223 hours = 6 }
 		}
 	}
 	
@@ -1039,6 +1039,8 @@ GER_military_buildup = {
 			division_template = {
 				name = "Infanterie-Division(mot.)"		
 				division_names_group = GER_MOT_01
+				priority = 2
+				template_counter = 24
 				
 				regiments = {
 					motorized = { x = 0 y = 0 }
@@ -1268,11 +1270,11 @@ GER_military_buildup = {
 	
 	GER_60_div = {
 		
-		icon = ger_military_buildup
+		icon = ger_60_inf_div
 		
 		available = {
 			date > 1939.7.1
-			owns_state = 841
+			owns_state = 944
 		}
 		
 		cost = 50
@@ -1291,10 +1293,10 @@ GER_military_buildup = {
 		complete_effect = {
 			division_template = {
 				name = "Gruppe Eberhardt"
-				division_names_group = GER_Inf_03
+				division_names_group = GER_Inf_60
 				is_locked = yes
-				priority = 0
-				template_counter = 3
+				priority = 1
+				template_counter = 4
 				
 				regiments = {
 					garrison = { x = 0 y = 0 }
@@ -1311,8 +1313,73 @@ GER_military_buildup = {
 					DIV_HQ = { x = 0 y = 0 }
 				}
 			}
-			
-			#country_event = { id = germany.400 hours = 6 }
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
+	
+	GER_60_inf_div = {
+		
+		icon = ger_60_inf_div
+		
+		available = {
+			date > 1939.10.15
+			owns_state = 944
+			has_country_flag = GERinfdiv_Grp_EH
+		}
+		
+		cost = 50
+		
+		fire_only_once = yes
+		
+		activation = {
+			has_completed_focus = GER_Wehrmacht
+		}
+		
+		visible = {
+			has_completed_focus = GER_Wehrmacht
+			date > 1939.7.1
+		}
+	
+		complete_effect = {
+			division_template = {
+				name = "60. Inf.-Div."
+				division_names_group = GER_Inf_60
+				is_locked = yes
+				priority = 2
+				template_counter = 24
+				
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+				}
+				
+				support = {
+					DIV_HQ = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					artillery_medium = { x = 0 y = 2 }
+					recon_mot = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+					logistics_company = { x = 0 y = 5 }
+					field_hospital = { x = 0 y = 6 }
+					anti_tank = { x = 0 y = 7 }
+				}
+			}
 		}
 		
 		ai_will_do = {
@@ -1320,6 +1387,69 @@ GER_military_buildup = {
 		}
 	}
 	#1940
+	GER_60_inf_div_mot = {
+		
+		icon = ger_60_inf_div
+		
+		available = {
+			date > 1940.8.15
+			owns_state = 839
+			has_country_flag = GERinfdiv_60
+		}
+		
+		cost = 50
+		
+		fire_only_once = yes
+		
+		activation = {
+			has_completed_focus = GER_Wehrmacht
+		}
+		
+		visible = {
+			has_completed_focus = GER_Wehrmacht
+			date > 1940.6.1
+		}
+	
+		complete_effect = {
+			division_template = {
+				name = "60. Inf.-Div.(mot.)"
+				division_names_group = GER_Inf_60
+				is_locked = yes
+				priority = 2
+				template_counter = 3
+				
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					
+					mechanized = { x = 2 y = 0 }
+					
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+				}
+				
+				support = {
+					DIV_HQ = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					artillery_medium = { x = 0 y = 2 }
+					recon_mot = { x = 0 y = 3 }
+					maintenance_company = { x = 0 y = 4 }
+					logistics_company = { x = 0 y = 5 }
+					field_hospital = { x = 0 y = 6 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+	}
 	GER_motorise_16_infdiv = {
 		
 		icon = ger_29_inf_div

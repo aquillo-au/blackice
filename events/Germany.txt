@@ -8430,10 +8430,16 @@ add_namespace = germany
 
 		fire_only_once = yes
 		
-		is_triggered_only = yes
+		trigger = {
+			tag = GER
+			has_country_flag = welle_one
+			date > 1936.4.1
+			NOT = { has_country_flag = GERinfdiv_I }
+			NOT = { has_country_flag = GERinfdiv_I_no }
+		}
 		
 		mean_time_to_happen = {
-			days = 60
+			days = 10
 		}
 		
 		option = {
@@ -8469,7 +8475,7 @@ add_namespace = germany
 		}
 		
 		mean_time_to_happen = {
-			days = 1
+			days = 10
 		}
 		
 		option = {
@@ -8506,7 +8512,7 @@ add_namespace = germany
 		}
 		
 		mean_time_to_happen = {
-			days = 1
+			days = 10
 		}
 		
 		option = {
@@ -8594,6 +8600,90 @@ add_namespace = germany
 			set_country_flag = GERinfdiv_50_no
 		}
 	}
+	country_event = {#460 Gruppe Eberhardt => 60. Infanterie-Division
+		id = germany.460
+		title = germany.460.t
+		desc = germany.460.d
+		picture = GFX_report_event
+
+		fire_only_once = yes
+		
+		is_triggered_only = yes
+		
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		option = {
+			name = germany.460.a
+			hidden_effect = {
+				load_oob = "GER_Gruppe_Eberhardt"
+				set_country_flag = GERinfdiv_Grp_EH
+			}
+		}
+		option = {
+			name = "No need"
+			ai_chance = { factor = 0 }
+			set_country_flag = GERinfdiv_Grp_EH_no
+		}
+	}
+	country_event = {#461 60. Infanterie-Division
+		id = germany.461
+		title = germany.461.t
+		desc = germany.461.d
+		picture = GFX_report_event
+
+		fire_only_once = yes
+		
+		is_triggered_only = yes
+		
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		option = {
+			name = germany.461.a
+			hidden_effect = {
+				load_oob = "GER_60_inf_division"
+				set_country_flag = GERinfdiv_60
+			}
+		}
+		option = {
+			name = "No need"
+			ai_chance = { factor = 0 }
+			set_country_flag = GERinfdiv_60_no
+		}
+	}
+	country_event = {#462 60. Infanterie-Division => 60. Infanterie-Division(mot.)
+		id = germany.462
+		title = germany.462.t
+		desc = germany.462.d
+		picture = GFX_report_event
+
+		fire_only_once = yes
+		
+		is_triggered_only = yes
+		
+		mean_time_to_happen = {
+			days = 1
+		}
+		
+		option = {
+			name = germany.462.a
+			hidden_effect = {
+				load_oob = "GER_60_mot_division"
+				set_country_flag = GERinfdiv_60_mot
+			}
+		}
+		option = {
+			name = "No need"
+			ai_chance = { factor = 0 }
+			set_country_flag = GERinfdiv_60_mot_no
+		}
+	}
+	#461 Refitting to 60 ID
+	#462 Motorize the 60 ID
+	#463 
 # Event chain 1, 2, 3, 4 Leichte Division to Pz-Division 6-7-8-9
 	country_event = {#228 1. and 3. Leichte Division
 		id = germany.228

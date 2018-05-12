@@ -106,7 +106,6 @@ GER_Inf_02 = {
 		36 = { "%d. Infanterie-Division" }
 		46 = { "%d. Infanterie-Division" }
 		50 = { "%d. Infanterie-Division" }
-		60 = { "%d. Infanterie-Division" }
 		72 = { "%d. Infanterie-Division" }
 	}
 }
@@ -439,6 +438,28 @@ GER_GD_01 = {
 		6 = { "Pzgren.-Div. 'Großdeutschland'" }
 	}
 }
+GER_Inf_60 = {
+	name = "60. Inf.-Div."
+
+	for_countries = { GER }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { GER_Gar_01 }
+
+	fallback_name = "%d. Infanterie-Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered = {
+		1 = { "Gruppe Eberhardt" }
+		60 = { "%d. Infanterie-Division" }
+		2 = { "60. Infanterie-Division(mot.)" }
+	}
+}
 GER_ALTINF_01 = {
 	name = "Late/Alternate Infantry Divisions"
 
@@ -611,7 +632,6 @@ GER_MOT_01 = {
 		16 = { "%d. Infanterie-Division(mot.)" }
 		10 = { "%d. Infanterie-Division(mot.)" }
 		25 = { "%d. Infanterie-Division(mot.)" }
-		60 = { "%d. Infanterie-Division(mot.)" }
 		18 = { "%d. Infanterie-Division(mot.)" }
 		36 = { "%d. Infanterie-Division(mot.)" }
 		
