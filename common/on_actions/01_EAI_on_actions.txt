@@ -20,18 +20,10 @@ on_actions = {
 		effect = {
 			#AI allies should immediately join wars to avoid problems with their fronts
 			if = { limit = { ROOT = { is_ai = yes } }
-				ROOT = { country_event = { id = EAI_DM.5 hours = 1 } } #has to be delayed for it to work
+				hidden_effect = { ROOT = { country_event = { id = EAI_DM.5 hours = 1 } } } #has to be delayed for it to work
 			}
 			if = { limit = { FROM = { is_ai = yes } }
-				FROM = { country_event = { id = EAI_DM.5 hours = 1 } }
-			}
-			#BICE EDIT: Change Mobilization instantly
-			#invaded countries should instantly raise conscription law, waiting for the MTTH event takes too long
-			if = { limit = { FROM = { is_ai = yes } }
-				FROM = {
-					country_event = { id = EAI_M.1 hours = 1 }
-					
-				}
+				hidden_effect = { FROM = { country_event = { id = EAI_DM.5 hours = 1 } } }
 			}
 		}
 	}

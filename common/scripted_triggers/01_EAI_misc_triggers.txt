@@ -370,6 +370,23 @@ western_china = {
 ######################################################
 #	laws
 ######################################################
+#Manpower & Conscription checks for on_declare_war AI only
+lower_than_3_year_draft = {
+	is_ai = yes
+	OR = {
+		has_idea = cons_volunteer
+		has_idea = cons_one
+		has_idea = cons_two
+	}
+}
+
+lower_than_17_year_age = {
+	is_ai = yes
+	OR = {
+		has_idea = age_19
+		has_idea = age_18
+	}
+}
 ############ eco laws
 can_take_civilian_economy = {
 	########## AI LOGIC

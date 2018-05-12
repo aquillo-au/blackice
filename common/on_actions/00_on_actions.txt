@@ -9,8 +9,18 @@ on_actions = {
 				country_event = BICE_building.1
 				country_event = military_size.1
 				country_event = politics.900
-				if = { limit = { tag = GER is_ai = yes } GER = { add_ideas = ai_coatsal_subs } }
-				if = { limit = { OR = { tag = DEN tag = POR tag = YUG tag = SAU tag = SWI tag = TUR tag = PER tag = ICE tag = IRE tag = IRQ tag = SWE tag = SPR tag = ARG tag = AFG tag = BUL } }
+				if = {
+					limit = {
+						tag = GER is_ai = yes
+					}
+					GER = { add_ideas = ai_coatsal_subs }
+				}
+				if = {
+					limit = {
+						OR = {
+							tag = DEN tag = POR tag = YUG tag = SAU tag = SWI tag = TUR tag = PER tag = ICE tag = IRE tag = IRQ tag = SWE tag = SPR tag = ARG tag = AFG tag = BUL
+						}
+					}
 					add_ideas = { neutrality_idea }
 					set_country_flag = MinorAIneutrality
 				}
@@ -20,7 +30,17 @@ on_actions = {
 				country_event = politics.1
 				country_event = politics.900
 				country_event = { id = BICE_building.1 hours = 3 }
-				country_event = { id =  military_size.1 hours = 3 }
+				country_event = { id = military_size.1 hours = 3 }
+				if = {
+					limit = {
+						ENG = {
+							is_ai = no
+						}
+					}
+					ENG = {
+						country_event = { id = blackiceevents.104 hours = 1 }
+					}
+				}
 			}
 		}
 	}
@@ -126,11 +146,21 @@ on_actions = {
 		}
 		effect = {
 			if = {
-				limit = { FROM = { is_ai = yes NOT = { has_idea = mob_general } } }
+				limit = {
+					FROM = {
+						is_ai = yes
+						NOT = { has_idea = mob_general }
+					}
+				}
 				FROM = { add_ideas = mob_general }
 			}
 			if = {
-				limit = { ROOT = { is_ai = yes NOT = { has_idea = mob_general } } }
+				limit = {
+					ROOT = {
+						is_ai = yes
+						NOT = { has_idea = mob_general }
+					}
+				}
 				ROOT = { add_ideas = mob_general }
 			}
 		}
@@ -143,15 +173,18 @@ on_actions = {
 	}
 
 	on_nuke_drop = {
-
 		effect = {
 			set_global_flag = first_nuke_dropped
 			if = {
-				limit = { NOT = { has_global_flag = first_nuke_dropped } }
+				limit = {
+					NOT = { has_global_flag = first_nuke_dropped }
+				}
 				country_event = { id = generic.8 }
 			}
 			if = {
-				limit = { has_idea = race_for_the_bomb_outclassed }
+				limit = {
+					has_idea = race_for_the_bomb_outclassed
+				}
 				remove_ideas = race_for_the_bomb_outclassed
 			}
 			if = {
@@ -282,30 +315,103 @@ on_actions = {
 	on_declare_war = {
 		effect = {
 			if = {
-				limit = { ROOT = { tag = GER } FROM = { tag = POL } GER = { NOT = { is_in_faction_with = SOV has_war_with = SOV has_country_flag = case_white } } has_global_flag = sov_yes_pact  }
-				SOV = { country_event = { id = germany.500 days = 16 } } #historical
+				limit = {
+					any_country = {
+						is_in_faction_with = ENG has_guaranteed = FIN
+					}
+					FIN = { is_in_faction = no }
+				}
+				hidden_effect = {
+					every_country = {
+						limit = {
+							has_guaranteed = FIN is_in_faction_with = ENG
+						}
+						diplomatic_relation = { country = FIN relation = guarantee active = no }
+					}
+				} 
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = GER
+					}
+					FROM = {
+						tag = POL
+					}
+					GER = {
+						NOT = {
+							is_in_faction_with = SOV
+							has_war_with = SOV
+							has_country_flag = case_white
+						}
+					}
+					has_global_flag = sov_yes_pact
+				}
+				SOV = {	#historical
+					country_event = { id = germany.500 days = 16 }
+				} 
 				GER = { set_country_flag = case_white }
 				POL = { add_ideas = POL_never_surrender }
 			}
 			if = {
-				limit = { ROOT = { OR = { tag = GER is_in_faction_with = GER } } FROM = { tag = SOV } }
+				limit = {
+					ROOT = {
+						OR = {
+							tag = GER is_in_faction_with = GER
+						}
+					}
+					FROM = { tag = SOV }
+				}
 				SOV = { 
 					every_owned_state = { 
-						limit = { NOT = { state = 192 state = 198 } is_on_continent = europe } 
+						limit = {
+							NOT = {
+								state = 192
+								state = 198
+							}
+							is_on_continent = europe
+						} 
 						add_claim_by = GER
 					}
 				}
 			}
 			if = {
-				limit = { ROOT = { is_ai = yes NOT = { has_idea = mob_general } } }
-				ROOT = { add_ideas = mob_general }
+				limit = {
+					ROOT = {
+						is_ai = yes
+						NOT = { has_idea = mob_general }
+					}
+				}
+				hidden_effect = {
+					ROOT = {
+						add_ideas = mob_general
+					}
+				} 
 			}
 			if = {
-				limit = { FROM = { is_ai = yes NOT = { has_idea = mob_general } } }
-				FROM = { add_ideas = mob_general }
+				limit = {
+					FROM = {
+						is_ai = yes
+						NOT = {
+							has_idea = mob_general
+						}
+					}
+				}
+				hidden_effect = {
+					FROM = {
+						add_ideas = mob_general
+						every_unit_leader = {
+							add_temporary_buff_to_units = {
+								org_damage_multiplier = -0.5
+								days = 3 
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = mobilize_now_TT
 			}
-
-					
+			#if = { limit = { FROM = { lower_than_3_year_draft = yes } } hidden_effect = { add_ideas = cons_three } custom_effect_tooltip = add_3_year_draft }
+			#if = { limit = { FROM = { lower_than_17_year_age = yes } } hidden_effect = { add_ideas = age_17 } custom_effect_tooltip = add_age_17 }	
 			if = {
 				limit = {
 					FROM = {
@@ -426,7 +532,11 @@ on_actions = {
 				limit = {
 					ROOT = { original_tag = GER }
 					ROOT = { GER_has_mefo_bills = yes }
-					NOT = { FROM = { original_tag = GER } } # Don't remove it from Fascist Germany if they start the civil war
+					NOT = {
+						FROM = {
+							original_tag = GER		# Don't remove it from Fascist Germany if they start the civil war
+						}
+					} 
 				}
 				ROOT = {
 					GER_remove_mefo_bills = yes
@@ -569,7 +679,16 @@ on_actions = {
 				country_event = { id = wtt_denmark.1 days = 1 }
 			}
 			if = {
-				limit = { ROOT = { tag = GER } SOV = { any_owned_state = { is_claimed_by = GER } } }
+				limit = {
+					ROOT = {
+						tag = GER
+					}
+					SOV = {
+						any_owned_state = {
+							is_claimed_by = GER
+						}
+					}
+				}
 				SOV = { 
 					every_owned_state = { 
 						limit = { is_claimed_by = GER } 
@@ -579,7 +698,11 @@ on_actions = {
 			}
 			if = {
 				limit = { 
-					ROOT = { tag = ETH is_puppet = yes is_in_faction_with = ITA }
+					ROOT = {
+						tag = ETH
+						is_puppet = yes
+						is_in_faction_with = ITA
+					}
 					FROM = { is_in_faction_with = ENG }
 				}
 				ENG = {
@@ -729,15 +852,16 @@ on_actions = {
 			#End of SCW
 			if = {
 				limit = {
-					FROM = {
-						original_tag = SPR
-					}
+					FROM = { original_tag = SPR }
 					ROOT = {
 						original_tag = SPR
 						has_government = fascism
 					}
 				}
-				add_timed_idea = { idea = SPA_recovering_from_civil_war days = 1825 }
+				add_timed_idea = {
+					idea = SPA_recovering_from_civil_war
+					days = 1825
+				}
 				GER = { clr_country_flag = begin_counting_battles }
 			}
 			
@@ -762,7 +886,10 @@ on_actions = {
 					NOT = { has_global_flag = IEA_established }
 				}
 				release = ETH
-				if = { limit = { has_dlc = "Together for Victory" }
+				if = {
+					limit = {
+						has_dlc = "Together for Victory"
+					}
 					set_autonomy = {
 						target = ETH
 						autonomous_state = autonomy_colony
@@ -797,20 +924,48 @@ on_actions = {
 	#KEEP CODE VERY SHORT HERE
 	on_daily = {
 		effect = {
-			if = { limit = { any_country = { NOT = { has_country_flag = ww1_done } is_ai = yes }}
-			random_country = { 
-				limit = { NOT = { has_country_flag = ww1_done } is_ai = yes }
-				set_country_flag = ww1_done
-				research_WW1 = yes
-			}
+			if = {
+				limit = {
+					any_country = {
+						NOT = {
+							has_country_flag = ww1_done
+						}
+						is_ai = yes
+					}
+				}
+				random_country = { 
+					limit = {
+						NOT = {
+							has_country_flag = ww1_done
+						}
+						is_ai = yes
+					}
+					set_country_flag = ww1_done
+					research_WW1 = yes
+				}
 			}
 			
-			if = { limit = { any_country = { NOT = { has_country_flag = ai_suppression } is_ai = yes has_war = yes }}
-			random_country = { 
-				limit = { NOT = { has_country_flag = ai_suppression } is_ai = yes  has_war = yes }
-				set_country_flag = ai_suppression
-				set_technology = { ai_suppression_tech = 1 }
-			}
+			if = {
+				limit = {
+					any_country = {
+						NOT = {
+							has_country_flag = ai_suppression
+						}
+						is_ai = yes
+						has_war = yes
+					}
+				}
+				random_country = { 
+					limit = {
+						NOT = {
+							has_country_flag = ai_suppression
+						}
+						is_ai = yes
+						has_war = yes
+					}
+					set_country_flag = ai_suppression
+					set_technology = { ai_suppression_tech = 1 }
+				}
 			}
 		}
 	}
@@ -822,23 +977,45 @@ on_actions = {
 			if = {
 				limit = {
 					FROM = { tag = SOV }
-					ROOT = { OR = { tag = GER is_in_faction_with = GER }}
+					ROOT = {
+						OR = {
+							tag = GER is_in_faction_with = GER
+						}
+					}
 					FROM.FROM = { is_core_of = SOV infrastructure > 1 }
 				}
-				FROM.FROM = { remove_building = { type = infrastructure level = 1 } set_state_flag = GER_conquered }
+				FROM.FROM = {
+					remove_building = {
+						type = infrastructure level = 1
+					}
+					set_state_flag = GER_conquered
+				}
 			}
 			if = {
 				limit = {
-					FROM = { OR = { tag = GER is_in_faction_with = GER }}
+					FROM = {
+						OR = {
+							tag = GER is_in_faction_with = GER
+						}
+					}
 					ROOT = { tag = SOV }
 					FROM.FROM = { has_state_flag = GER_conquered }
 				}
-				FROM.FROM = { add_building_construction = { type = infrastructure level = 1 } clr_state_flag = GER_conquered }
+				FROM.FROM = {
+					add_building_construction = {
+						type = infrastructure level = 1
+					}
+					clr_state_flag = GER_conquered
+				}
 			}
 			#Germany gaining the states during Barbarossa, and not Romania
 			if = {
 				limit = {
-					FROM = { OR = { tag = GER is_in_faction_with = GER }}
+					FROM = {
+						OR = {
+							tag = GER is_in_faction_with = GER
+						}
+					}
 					ROOT = { tag = SOV }
 					FROM.FROM = { is_owned_by = SOV is_claimed_by = GER }
 				}
@@ -847,7 +1024,13 @@ on_actions = {
 			#Führer HQ
 			if = {
 				limit = {
-					FROM = { OR = { tag = GER is_in_faction_with = GER is_ai = no } }
+					FROM = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+							is_ai = no
+						}
+					}
 					FROM.FROM = { has_state_flag = HQ_present }
 					ROOT = { has_war_with = GER }
 					
@@ -862,7 +1045,14 @@ on_actions = {
 			
 			if = {
 				limit = {
-					ROOT = { OR = { tag = GER is_in_faction_with = GER } has_war_with = FRA has_war_with = ENG }
+					ROOT = {
+						OR = {
+							tag = GER
+							is_in_faction_with = GER
+						}
+						has_war_with = FRA
+						has_war_with = ENG
+					}
 					FROM = { tag = FRA }
 					FROM.FROM = { state = 15 }
 					976 = { is_controlled_by = ENG }
@@ -890,8 +1080,12 @@ on_actions = {
 					NOT = { has_trait = sick }
 					set_temp_variable = { temp = sum_unit_terrain_modifier@sickness_chance }
 					check_variable = { num_units > 0 }
-					if = { limit = { check_variable = { sum_unit_terrain_modifier@sickness_chance > 0 } }
-					divide_temp_variable = { temp = num_units } }
+					if = {
+						limit = {
+							check_variable = { sum_unit_terrain_modifier@sickness_chance > 0 }
+						}
+						divide_temp_variable = { temp = num_units }
+					}
 					check_variable = { temp > 0.75 }
 					NOT = { has_unit_leader_flag = recently_sick }
 				}
@@ -956,3 +1150,4 @@ on_actions = {
 		}
 	}
 }
+### EOF ###
