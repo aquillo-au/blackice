@@ -201,7 +201,7 @@ CZE_ARM_01 = {
 
 	can_use = { always = yes }
 
-	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+	division_types = { "light_armor_axis" "cze_light_tank" "cze_light_tank38" "medium_armor_axis" "heavy_armor_axis" "modern_armor_axis" }
 
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { CZE_INF_01 }
@@ -314,25 +314,23 @@ CZE_MNT_01 = {
 	}
 }
 
-CZE_GAR_01 = 
-{
+CZE_GAR_01 = {
 	name = "Garrison Division"
 
 	for_countries = { CZE }
 
 	can_use = { always = yes }
 
-	division_types = { "infantry" }
+	division_types = { "militia" "garrison" }
 
 	# Number reservation system will tie to another group.
-	link_numbering_with = { CZE_INF_01 }
+	#link_numbering_with = { CZE_INF_01 }
 
 	fallback_name = "Hranièní oblast %d"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
-	ordered =
-	{
+	ordered = {
 		36 = { "Hranièní oblast %d" }
 		37 = { "Hranièní oblast %d" }
 		38 = { "Hranièní oblast %d" }
@@ -343,4 +341,3 @@ CZE_GAR_01 =
 		42 = { "Hranièní oblast %d" }
 	}
 }
-
