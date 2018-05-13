@@ -184,6 +184,27 @@ GER_buildup_barbarossa = {
 	
 }
 
+GER_dont_push_through_ITA = { 
+	enable = {
+		tag = GER
+		has_war_with = FRA
+		is_in_faction_with = ITA
+		ITA = { has_war_with = FRA }
+		ITA = { surrender_progress < 0.4 } 
+	}
+	abort = {
+		OR = {
+			FRA = { has_capitulated = yes }
+			ITA = { surrender_progress > 0.4 }
+		}
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = ITA
+		value = 2000
+	}
+}
 
 i_vic = { 
 	enable = {

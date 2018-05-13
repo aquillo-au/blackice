@@ -442,38 +442,61 @@ ENG_dont_defend_Denmark = {
 	}
 }
 
-ENG_protect_island_war = {
+ENG_dont_defend_Burma = {
+	enable = {
+		OR = {
+			tag = ENG
+			is_in_faction_with = ENG
+		}
+		NOT = { tag = RAJ }
+		has_war_with = JAP
+		is_in_faction_with = BUR
+	}
+	
+	abort = {
+		OR = {
+			NOT = { has_war_with = GER }
+			BUR = { has_capitulated = yes }
+		}
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "BUR"
+		value = 200
+	}
+}
+
+ENG_protect_island = {
 	enable = {
 		tag = ENG
-		has_war = no
+		any_owned_state = { is_on_continent = europe is_controlled_by = ENG }
 	}
 	abort = {
-		tag = ENG
-		has_war = yes
+		has_capitulated = yes
 	}
 
 	ai_strategy = { 
 		type = area_priority        
 		id = britain 			      
-		value = 500 
+		value = 5000 
 	} 
 }
 
-ENG_protect_island_peace = {
+ENG_default_area_priority = {
 	enable = {
 		tag = ENG
-		has_war = yes
 	}
 	abort = {
-		tag = ENG
-		has_war = no
+		always = no
 	}
+	
+	ai_strategy = { type = area_priority id = south_america	 	value = -5000 }
+	ai_strategy = { type = area_priority id = middle_east 		value = -5000 }
+	ai_strategy = { type = area_priority id = philippines	 	value = -5000 }
+	ai_strategy = { type = area_priority id = pacific 			value = -5000 }
+	ai_strategy = { type = area_priority id = oceania 			value = -5000 }
 
-	ai_strategy = { 
-		type = area_priority        
-		id = britain 			      
-		value = 1000
-	} 
 }
 
 		

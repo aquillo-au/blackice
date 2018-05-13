@@ -292,6 +292,24 @@ dont_take_claims_on_yug = {
 	}		
 }
 
+dont_charge_into_french_lines = {
+	enable = {
+		tag = ITA
+		has_government = fascism
+		GER = { has_war_with = FRA }
+	}
+
+	abort = {
+		FRA = { surrender_progress > 0.8 }
+	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = "FRA"			
+		value = -1000
+	}		
+}
+
 italy_be_careful_transporting_through_the_med = {
 	enable = {
 		tag = ITA

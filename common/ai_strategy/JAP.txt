@@ -179,6 +179,7 @@ chinese_war = {
 	enable = {
 		tag = JAP
 		has_completed_focus = chinese_war_focus
+		has_war_with = CHI
 		country_exists = CHI
 	}
 	abort = {
@@ -190,7 +191,7 @@ chinese_war = {
 	ai_strategy = {
 		type = antagonize
 		id = "CHI"			
-		value = 200^
+		value = 200
 	}
 	ai_strategy = {
 		type = conquer
@@ -316,7 +317,7 @@ germany_ally = {
 }
 
 
-Japan_dont_protect_japan = {
+JAP_dont_protect_japan = {
 	enable = {
 		OR = {
 			tag = JAP
@@ -328,7 +329,8 @@ Japan_dont_protect_japan = {
 		NOT = { has_war_with = CHI }		
 	}
 	
-	ai_strategy = { type = area_priority id = japan	 			value = -2000 }
+	ai_strategy = { type = area_priority id = japan	 			value = -1000 }
+	ai_strategy = { type = area_priority id = asia	 			value = 1000 }
 }
 
 
