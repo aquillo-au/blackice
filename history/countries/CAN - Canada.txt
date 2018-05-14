@@ -131,19 +131,6 @@ set_technology = {
 	first_aid_stations = 1
 }
 
-if = {
-	limit = {
-		has_dlc = "Together for Victory"
-	}
-	
-	add_ideas = CAN_great_depression_1
-	add_ideas = CAN_conscription_crisis
-	
-	set_cosmetic_tag = CAN_UK
-
-	add_to_tech_sharing_group = commonwealth_research
-}
-
 add_ideas = {
 	export_focus
 	tax_average
@@ -167,7 +154,43 @@ add_ideas = {
 	
 	unity_divided_nation	
 	foreign_neutral
+}
+
+set_country_flag = export_focus
+set_country_flag = tax_average
+set_country_flag = tariffs_high
+
+set_country_flag = civilian_economy
+set_country_flag = press_free
+set_country_flag = private_control
+set_country_flag = labor_allowed
+set_country_flag = fdi_allowed
+
+set_country_flag = cons_volunteer
+set_country_flag = foreign_volunteers
+set_country_flag = mob_reserve
+set_country_flag = train_medium
+set_country_flag = officer_train_low
+set_country_flag = age_19
+
+set_country_flag = edu_high
+
+set_country_flag = unity_divided_nation
+set_country_flag = foreign_neutral
+
+set_country_flag = monroe_doctrine
+
+if = {
+	limit = {
+		has_dlc = "Together for Victory"
+	}
 	
+	add_ideas = CAN_great_depression_1
+	add_ideas = CAN_conscription_crisis
+	
+	set_cosmetic_tag = CAN_UK
+
+	add_to_tech_sharing_group = commonwealth_research
 }
 
 set_politics = {
@@ -196,22 +219,6 @@ set_politics = {
 	election_frequency = 60
 	elections_allowed = yes
 }
-
-set_country_flag = mob_reserve
-set_country_flag = Foreign_cooperative
-set_country_flag = Tax_average
-set_country_flag = Edu_high
-set_country_flag = Press_free
-set_country_flag = Cons_volunteer
-set_country_flag = tariffs_high
-set_country_flag = fdi_allowed
-set_country_flag = train_medium
-set_country_flag = private_control
-set_country_flag = age_19
-set_country_flag = export_focus
-set_country_flag = civilian_economy
-set_country_flag = labor_allowed
-set_country_flag = monroe_doctrine
 
 ##### Country Leaders #####
 create_country_leader = {
