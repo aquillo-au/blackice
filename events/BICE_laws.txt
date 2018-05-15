@@ -27,8 +27,8 @@ news_event = {
 			has_government = communism
 		}
 		OR = {	
-			has_country_flag = press_free
-			has_country_flag = press_regulated
+			has_idea = press_free
+			has_idea = press_regulated
 		}
 	}
 
@@ -71,8 +71,8 @@ news_event = {
 		}
 		has_war = no
 		NOT = { 
-			has_country_flag = press_free
-			has_country_flag = press_regulated
+			has_idea = press_free
+			has_idea = press_regulated
 		}
 	}
 
@@ -102,8 +102,8 @@ news_event = {
 			has_country_flag = was_socialist
 		}
 		OR = {	
-			has_country_flag = press_free
-			has_country_flag = press_regulated
+			has_idea = press_free
+			has_idea = press_regulated
 		}
 	}
 
@@ -116,7 +116,7 @@ news_event = {
 	option = {
 		name = law.3.a
 		add_ideas = press_censored
-		set_country_flag = press_censored
+		#set_country_flag = press_censored
 	}
 }
 #Labor Laws
@@ -135,55 +135,55 @@ country_event = {
 	option = {
 		name = law.6.a
 		trigger = {
-			has_country_flag = labor_allowed
-			has_country_flag = labor_encouraged
+			has_idea = labor_allowed
+			has_idea = labor_encouraged
 		}
 		add_ideas = labor_transition
-		clr_country_flag = labor_allowed
+		remove_ideas = labor_allowed
 	}
 	option = {
 		name = law.6.b
 		trigger = {
-			has_country_flag = labor_allowed
-			has_country_flag = labor_pressed
+			has_idea = labor_allowed
+			has_idea = labor_pressed
 		}
 		add_ideas = labor_transition
-		clr_country_flag = labor_allowed
+		#clr_country_flag = labor_allowed
 	}
 	option = {
 		name = law.6.c
 		trigger = {
-			has_country_flag = labor_encouraged
-			has_country_flag = labor_pressed
+			has_idea = labor_encouraged
+			has_idea = labor_pressed
 		}
 		if = { limit = { NOT = { has_country_flag = labor_step_down } }
 			add_ideas = labor_transition
-			clr_country_flag = labor_encouraged
+			remove_ideas = labor_encouraged
 			clr_country_flag = labor_step_down
 		}
 		if = { limit = { has_country_flag = labor_step_down }
 			add_ideas = labor_transition
-			clr_country_flag = labor_pressed
+			remove_ideas = labor_pressed
 			clr_country_flag = labor_step_down
 		}
 	}
 	option = {
 		name = law.6.d
 		trigger = {
-			has_country_flag = labor_none
-			has_country_flag = labor_encouraged
+			has_idea = labor_none
+			has_idea = labor_encouraged
 		}
 		add_ideas = labor_transition
-		clr_country_flag = labor_none
+		remove_idea = labor_none
 	}
 	option = {
 		name = law.6.e
 		trigger = {
-			has_country_flag = labor_none
-			has_country_flag = labor_pressed
+			has_idea = labor_none
+			has_idea = labor_pressed
 		}
 		add_ideas = labor_transition
-		clr_country_flag = labor_none
+		remove_ideas = labor_none
 	}
 }
 
@@ -206,8 +206,8 @@ country_event = {
 	option = {
 		name = law.4.a
 		swap_ideas = {
-			add_idea = labor_transition2
-			remove_idea = labor_transition
+			add_ideas = labor_transition2
+			remove_ideas = labor_transition
 		}
 	}
 }
@@ -240,10 +240,10 @@ country_event = {
 	hidden = yes
 	
 	trigger = {
-		has_country_flag = low_training_standards
+		has_idea = low_training_standards
 		NOT = {
-			has_country_flag = train_none
-			has_country_flag = train_low
+			has_idea = train_none
+			has_idea = train_low
 		}
 	}
 	mean_time_to_happen = { days = 2 }
@@ -271,8 +271,8 @@ country_event = {
 
 	immediate = {
 		swap_ideas = {
-			remove_idea = low_training_standards
-			add_idea = low_training_standards2
+			remove_ideas = low_training_standards
+			add_ideas = low_training_standards2
 		}
 	}
 	
@@ -295,8 +295,8 @@ country_event = {
 	mean_time_to_happen = { days = 150 }
 
 	immediate = {
-		remove_ideas = low_training_standards2
-		clr_country_flag = low_training_standards
+		add_ideas = low_training_standards2
+		remove_ideas = low_training_standards
 	}
 	
 	option = {
@@ -312,8 +312,11 @@ country_event = {
 	hidden = yes
 	
 	trigger = {
-		has_country_flag = low_training_standards2
-		NOT = { has_country_flag = train_none has_country_flag = train_low }
+		has_idea = low_training_standards2
+		NOT = {
+			has_idea = train_none
+			has_idea = train_low
+		}
 	}
 	mean_time_to_happen = { days = 2 }
 
@@ -335,7 +338,7 @@ country_event = {
 	
 	trigger = {
 		has_idea = low_training_standards
-		has_country_flag = train_low
+		has_idea = train_low
 	}
 	mean_time_to_happen = { days = 30 }
 
@@ -357,7 +360,7 @@ country_event = {
 	
 	trigger = {
 		has_idea = low_training_standards2
-		has_country_flag = train_none
+		has_idea = train_none
 	}
 	mean_time_to_happen = { days = 2 }
 
