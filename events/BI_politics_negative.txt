@@ -12,7 +12,7 @@ country_event = {
 	
 	trigger = {
 		NOT = { 
-			has_country_flag = nation_united
+			has_idea = unity_united_nation
 			has_country_flag = march
 		}
 		has_stability < 75
@@ -460,16 +460,16 @@ country_event = {
 			NOT = { has_government = communism }
 			communism > 0.07
 			OR = {
-				has_country_flag = private_control
-				has_country_flag = tax_minimal
-				has_country_flag = tax_low
-				has_country_flag = press_free
-				has_country_flag = press_regulated
-				has_country_flag = fdi_encouraged
-				has_country_flag = fdi_allowed
-				has_country_flag = tariffs_none
-				has_country_flag = free_trade
-				has_country_flag = tariffs_low
+				has_idea = private_control
+				has_idea = tax_minimal
+				has_idea = tax_low
+				has_idea = press_free
+				has_idea = press_regulated
+				has_idea = fdi_encouraged
+				has_idea = fdi_allowed
+				has_idea = tariffs_none
+				has_idea = free_trade
+				has_idea = tariffs_low
 			}
 		}
 		
@@ -531,22 +531,22 @@ country_event = {
 			NOT = { has_government = fascism }
 			fascism > 0.07
 			OR = {
-				has_country_flag = private_control
-				has_country_flag = tax_minimal
-				has_country_flag = tax_low
-				has_country_flag = press_free
-				has_country_flag = press_regulated
-				has_country_flag = fdi_encouraged
-				has_country_flag = fdi_allowed
-				has_country_flag = foreign_cooperative
-				has_country_flag = mob_reserve
-				has_country_flag = cons_volunteer
-				has_country_flag = tariffs_none
-				has_country_flag = free_trade
-				has_country_flag = tariffs_low
-				has_country_flag = civilian_economy
+				has_idea = private_control
+				has_idea = tax_minimal
+				has_idea = tax_low
+				has_idea = press_free
+				has_idea = press_regulated
+				has_idea = fdi_encouraged
+				has_idea = fdi_allowed
+				has_idea = foreign_cooperative
+				has_idea = mob_reserve
+				has_idea = cons_volunteer
+				has_idea = tariffs_none
+				has_idea = free_trade
+				has_idea = tariffs_low
+				has_idea = civilian_economy
 				NOT = {
-					has_country_flag = foreign_warmonger
+					has_idea = foreign_warmonger
 				}
 			}
 		}
@@ -609,11 +609,11 @@ country_event = {
 			NOT = { has_government = monarchism }
 			monarchism > 0.09
 			OR = {
-				has_country_flag = private_control
-				has_country_flag = tax_minimal
-				has_country_flag = tax_low
-				has_country_flag = press_free
-				has_country_flag = fdi_encouraged
+				has_idea = private_control
+				has_idea = tax_minimal
+				has_idea = tax_low
+				has_idea = press_free
+				has_idea = fdi_encouraged
 			}
 		}
 		
@@ -686,16 +686,16 @@ country_event = {
 				neutrality > 0.09
 			}
 			OR = {
-				has_country_flag = planned_economy
-				has_country_flag = major_industries
-				has_country_flag = tax_extreme
-				has_country_flag = press_state
-				has_country_flag = press_censored
-				has_country_flag = fdi_banned
-				has_country_flag = edu_minimal
-				has_country_flag = closed_economy
-				has_country_flag = tariffs_extreme
-				has_country_flag = foreign_warmonger
+				has_idea = planned_economy
+				has_idea = major_industries
+				has_idea = tax_extreme
+				has_idea = press_state
+				has_idea = press_censored
+				has_idea = fdi_banned
+				has_idea = edu_minimal
+				has_idea = closed_economy
+				has_idea = tariffs_extreme
+				has_idea = foreign_warmonger
 			}
 		}
 		
@@ -1216,8 +1216,8 @@ country_event = {
 		name = politics.12.a
 		trigger = {
 			AND = {
-			communism > 0.15
-			NOT = { has_government = communism }
+				communism > 0.15
+				NOT = { has_government = communism }
 			}
 		}
 		
@@ -1428,7 +1428,7 @@ country_event = {
 				}
 			}
 			34 = {
-				set_country_flag = liberal_leader 
+				set_country_flag = liberal_leader
 				add_popularity = {
 					ideology = liberalism
 					popularity = 0.10
@@ -1746,9 +1746,12 @@ country_event = {
 			random_list = {
 				20 = {
 					if = {
-						limit = { has_country_flag = press_free }
-						add_ideas = press_regulated
-						clr_country_flag = press_free
+						limit = { has_idea = press_free }
+						swap_ideas = {
+							add_ideas = press_regulated
+							remove_ideas = press_free
+						} 
+						
 						set_country_flag = press_regulated
 						add_popularity = {
 							ideology = fascism
@@ -1757,12 +1760,14 @@ country_event = {
 						add_popularity = {
 							ideology = socialism
 							popularity = -0.02
-							}
+						}
 					}
 					if = {
-						limit = { has_country_flag = press_regulated }
-						add_ideas = press_censored
-						clr_country_flag = press_regulated
+						limit = { has_idea = press_regulated }
+						swap_ideas = {
+							add_ideas = press_censored
+							remove_ideas = press_regulated
+						}
 						set_country_flag = press_censored
 						add_popularity = {
 							ideology = fascism
@@ -1776,9 +1781,11 @@ country_event = {
 				}
 				20 = {
 					if = {
-						limit = { has_country_flag = free_trade }
-						add_ideas = export_focus
-						clr_country_flag = free_trade
+						limit = { has_idea = free_trade }
+						swap_ideas = {
+							add_ideas = export_focus
+							remove_ideas = free_trade
+						}
 						set_country_flag = export_focus
 						add_popularity = {
 							ideology = fascism
@@ -1789,630 +1796,743 @@ country_event = {
 							popularity = -0.02
 						}
 					}
-					if = { limit = { has_country_flag = export_focus }
-			add_ideas = limited_exports
-			clr_country_flag = export_focus
-			set_country_flag = limited_exports
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 { if = { limit = { has_country_flag = tariffs_none }
-			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
-			set_country_flag = tariffs_low
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_low }
-			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
-			set_country_flag = tariffs_average
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_average }
-			add_ideas = tariffs_high
-			clr_country_flag = tariffs_average
-			set_country_flag = tariffs_high
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = fdi_encouraged }
-			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
-			set_country_flag = fdi_allowed
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = fdi_allowed }
-			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
-			set_country_flag = fdi_regulated
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = private_control }
-			add_ideas = key_industries
-			clr_country_flag = private_control
-			set_country_flag = key_industries
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+					if = { limit = { has_idea = export_focus }
+						swap_ideas = {
+							add_ideas = limited_exports
+							remove_ideas = export_focus
+						}
+						set_country_flag = limited_exports
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
+				20 {
+					if = { limit = { has_idea = tariffs_none }
+						swap_ideas = {
+							add_ideas = tariffs_low
+							remove_ideas = tariffs_none
+						}
+						set_country_flag = tariffs_low
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = tariffs_low }
+						swap_ideas = {
+							add_ideas = tariffs_average
+							remove_ideas = tariffs_low
+						}
+						set_country_flag = tariffs_average
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = tariffs_average }
+						swap_ideas = {
+							add_ideas = tariffs_high
+							remove_ideas = tariffs_average
+						}
+						set_country_flag = tariffs_high
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+				}
+				20 = {
+					if = { limit = { has_idea = fdi_encouraged }
+						swap_ideas = {
+							add_ideas = fdi_allowed
+							remove_ideas = fdi_encouraged
+						}
+						set_country_flag = fdi_allowed
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+							}
+						}
+						if = { limit = { has_idea = fdi_allowed }
+						swap_ideas = {
+							add_ideas = fdi_regulated
+							remove_ideas = fdi_allowed
+						}
+						set_country_flag = fdi_regulated
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+				}
+				20 = {
+					if = { limit = { has_idea = private_control }
+						swap_ideas = {
+							add_ideas = key_industries
+							remove_ideas = private_control
+						}
+						set_country_flag = key_industries
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
 				}
 			}
 		}
 		if = { limit = { liberalism > 0.30 }
-		random_list = {
-			20 = { if = { limit = { has_country_flag = press_censored }
-			add_ideas = press_regulated
-			clr_country_flag = press_censored
-			set_country_flag = press_regulated
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = limited_exports }
-			add_ideas = export_focus
-			clr_country_flag = limited_exports
-			set_country_flag = export_focus
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+			random_list = {
+				20 = {
+					if = { limit = { has_idea = press_censored }
+						swap_ideas = {
+							add_ideas = press_regulated
+							remove_ideas = press_censored
+						}
+						set_country_flag = press_regulated
+						add_popularity = {
+							ideology = liberalism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
-			}
-			20 { if = { limit = { has_country_flag = tariffs_high }
-			add_ideas = tariffs_average
-			clr_country_flag = tariffs_high
-			set_country_flag = tariffs_average
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_average }
-			add_ideas = tariffs_low
-			clr_country_flag = tariffs_average
-			set_country_flag = tariffs_low
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = fdi_banned }
-			add_ideas = fdi_regulated
-			clr_country_flag = fdi_banned
-			set_country_flag = fdi_regulated
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = fdi_regulated }
-			add_ideas = fdi_allowed
-			clr_country_flag = fdi_regulated
-			set_country_flag = fdi_allowed
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = major_industries }
-			add_ideas = key_industries
-			clr_country_flag = major_industries
-			set_country_flag = key_industries
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+				20 = {
+					if = { limit = { has_idea = limited_exports }
+						swap_ideas = {
+							add_ideas = export_focus
+							remove_ideas = limited_exports
+						}
+						set_country_flag = export_focus
+						add_popularity = {
+							ideology = liberalism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
+				20 {
+					if = { limit = { has_idea = tariffs_high }
+						swap_ideas = {
+							add_ideas = tariffs_average
+							remove_ideas = tariffs_high
+						}
+						set_country_flag = tariffs_average
+						add_popularity = {
+							ideology = liberalism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = tariffs_average }
+						swap_ideas = {
+							add_ideas = tariffs_low
+							remove_ideas = tariffs_average
+						}
+						set_country_flag = tariffs_low
+						add_popularity = {
+							ideology = liberalism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+				}
+				20 = {
+					if = { limit = { has_idea = fdi_banned }
+						swap_ideas = {
+							add_ideas = fdi_regulated
+							remove_ideas = fdi_banned
+						}
+						set_country_flag = fdi_regulated
+						add_popularity = {
+							ideology = liberalism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = fdi_regulated }
+						swap_ideas = {
+							add_ideas = fdi_allowed
+							remove_ideas = fdi_regulated
+						}
+						set_country_flag = fdi_allowed
+						add_popularity = {
+							ideology = liberalism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+				}
+				20 = {
+					if = { limit = { has_idea = major_industries }
+						swap_ideas = {
+							add_ideas = key_industries
+							remove_ideas = major_industries
+						}
+						set_country_flag = key_industries
+						add_popularity = {
+							ideology = liberalism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
 				}
 			}
 		}
 		if = { limit = { conservatism > 0.30 }
-		random_list = {
-			20 = { if = { limit = { has_country_flag = press_censored }
-			add_ideas = press_regulated
-			clr_country_flag = press_censored
-			set_country_flag = press_regulated
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = press_regulated }
-			add_ideas = press_free
-			clr_country_flag = press_regulated
-			set_country_flag = press_free
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-				}
-			}
-			20 = { if = { limit = { has_country_flag = limited_exports }
-			add_ideas = export_focus
-			clr_country_flag = limited_exports
-			set_country_flag = export_focus
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+			random_list = {
+				20 = {
+					if = { limit = { has_idea = press_censored }
+						swap_ideas = {
+							add_ideas = press_regulated
+							remove_ideas = press_censored
+						}
+						set_country_flag = press_regulated
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+							}
+						}
+					if = { limit = { has_idea = press_regulated }
+						swap_ideas = {
+							add_ideas = press_free
+							remove_ideas = press_regulated
+						}
+						set_country_flag = press_free
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
-			if = { limit = { has_country_flag = export_focus }
-			add_ideas = free_trade
-			clr_country_flag = export_focus
-			set_country_flag = free_trade
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 { if = { limit = { has_country_flag = tariffs_high }
-			add_ideas = tariffs_average
-			clr_country_flag = tariffs_high
-			set_country_flag = tariffs_average
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_average }
-			add_ideas = tariffs_low
-			clr_country_flag = tariffs_average
-			set_country_flag = tariffs_low
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_low }
-			add_ideas = tariffs_none
-			clr_country_flag = tariffs_low
-			set_country_flag = tariffs_none
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = fdi_regulated }
-			add_ideas = fdi_allowed
-			clr_country_flag = fdi_regulated
-			set_country_flag = fdi_allowed
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = fdi_allowed }
-			add_ideas = fdi_encouraged
-			clr_country_flag = fdi_allowed
-			set_country_flag = fdi_encouraged
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = key_industries }
-			add_ideas = private_control
-			clr_country_flag = private_control
-			set_country_flag = key_industries
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+				20 = {
+					if = { limit = { has_idea = limited_exports }
+						swap_ideas = {
+							add_ideas = export_focus
+							remove_ideas = limited_exports
+						}
+						set_country_flag = export_focus
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+							}
+						}
+					if = { limit = { has_idea = export_focus }
+						swap_ideas = {
+							add_ideas = free_trade
+							remove_ideas = export_focus
+						}
+						set_country_flag = free_trade
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
-				if = { limit = { has_country_flag = major_industries }
-			add_ideas = key_industries
-			clr_country_flag = major_industries
-			set_country_flag = key_industries
-			add_popularity = {
-				ideology = conservatism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+				20 {
+					if = { limit = { has_idea = tariffs_high }
+						swap_ideas = {
+							add_ideas = tariffs_average
+							remove_ideas = tariffs_high
+						}
+						set_country_flag = tariffs_average
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = tariffs_average }
+						swap_ideas = {
+							add_ideas = tariffs_low
+							remove_ideas = tariffs_average
+						}
+						set_country_flag = tariffs_low
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = tariffs_low }
+						swap_ideas = {
+							add_ideas = tariffs_none
+							remove_ideas = tariffs_low
+						}
+						set_country_flag = tariffs_none
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
+				20 = {
+					if = { limit = { has_idea = fdi_regulated }
+						swap_ideas = {
+							add_ideas = fdi_allowed
+							remove_ideas = fdi_regulated
+						}
+						set_country_flag = fdi_allowed
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = fdi_allowed }
+						swap_ideas = {
+							add_ideas = fdi_encouraged
+							remove_ideas = fdi_allowed
+						}
+						set_country_flag = fdi_encouraged
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+				}
+				20 = {
+					if = { limit = { has_idea = key_industries }
+						swap_ideas = {
+							add_ideas = private_control
+							remove_ideas = private_control
+						}
+						set_country_flag = key_industries
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = major_industries }
+						swap_ideas = {
+							add_ideas = key_industries
+							remove_ideas = major_industries
+						}
+						set_country_flag = key_industries
+						add_popularity = {
+							ideology = conservatism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
 				}
 			}
 		}
 		if = { limit = { communism > 0.30 }
-		random_list = {
-			20 = { if = { limit = { has_country_flag = press_free }
-			add_ideas = press_regulated
-			clr_country_flag = press_free
-			set_country_flag = press_regulated
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = press_regulated }
-			add_ideas = press_censored
-			clr_country_flag = press_regulated
-			set_country_flag = press_censored
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-				}
-			}
-			20 = { if = { limit = { has_country_flag = free_trade }
-			add_ideas = export_focus
-			clr_country_flag = free_trade
-			set_country_flag = export_focus
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+			random_list = {
+				20 = {
+					if = { limit = { has_idea = press_free }
+						swap_ideas = {
+							add_ideas = press_regulated
+							remove_ideas = press_free
+						}
+						set_country_flag = press_regulated
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = press_regulated }
+						swap_ideas = {
+							add_ideas = press_censored
+							remove_ideas = press_regulated
+						}
+						set_country_flag = press_censored
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
-			if = { limit = { has_country_flag = export_focus }
-			add_ideas = limited_exports
-			clr_country_flag = export_focus
-			set_country_flag = limited_exports
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 { if = { limit = { has_country_flag = tariffs_none }
-			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
-			set_country_flag = tariffs_low
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_low }
-			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
-			set_country_flag = tariffs_average
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_average }
-			add_ideas = tariffs_high
-			clr_country_flag = tariffs_average
-			set_country_flag = tariffs_high
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = fdi_encouraged }
-			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
-			set_country_flag = fdi_allowed
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = fdi_allowed }
-			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
-			set_country_flag = fdi_regulated
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = private_control }
-			add_ideas = key_industries
-			clr_country_flag = private_control
-			set_country_flag = key_industries
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+				20 = {
+					if = { limit = { has_idea = free_trade }
+						swap_ideas = {
+							add_ideas = export_focus
+							remove_ideas = free_trade
+						}
+						set_country_flag = export_focus
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = export_focus }
+						swap_ideas = {
+							add_ideas = limited_exports
+							remove_ideas = export_focus
+						}
+						set_country_flag = limited_exports
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
-				if = { limit = { has_country_flag = key_industries }
-			add_ideas = major_industries
-			clr_country_flag = key_industries
-			set_country_flag = major_industries
-			add_popularity = {
-				ideology = communism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+				20 {
+					if = { limit = { has_idea = tariffs_none }
+						swap_ideas = {
+							add_ideas = tariffs_low
+							remove_ideas = tariffs_none
+						}
+						set_country_flag = tariffs_low
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = tariffs_low }
+						swap_ideas = {
+							add_ideas = tariffs_average
+							remove_ideas = tariffs_low
+						}
+						set_country_flag = tariffs_average
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = tariffs_average }
+						swap_ideas = {
+							add_ideas = tariffs_high
+							remove_ideas = tariffs_average
+						}
+						set_country_flag = tariffs_high
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
+				20 = {
+					if = { limit = { has_idea = fdi_encouraged }
+						swap_ideas = {
+							add_ideas = fdi_allowed
+							remove_ideas = fdi_encouraged
+						}
+						set_country_flag = fdi_allowed
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = fdi_allowed }
+						swap_ideas = {
+							add_ideas = fdi_regulated
+							remove_ideas = fdi_allowed
+						}
+						set_country_flag = fdi_regulated
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+				}
+				20 = {
+					if = { limit = { has_idea = private_control }
+						swap_ideas = {
+							add_ideas = key_industries
+							remove_ideas = private_control
+						}
+						set_country_flag = key_industries
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = key_industries }
+						swap_ideas = {
+							add_ideas = major_industries
+							remove_ideas = key_industries
+						}
+						set_country_flag = major_industries
+						add_popularity = {
+							ideology = communism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
 				}
 			}
 		}
 		if = { limit = { monarchism > 0.30 }
-		random_list = {
-			20 = { if = { limit = { has_country_flag = press_free }
-			add_ideas = press_regulated
-			clr_country_flag = press_free
-			set_country_flag = press_regulated
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = press_regulated }
-			add_ideas = press_censored
-			clr_country_flag = press_regulated
-			set_country_flag = press_censored
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-				}
-			}
-			20 = { if = { limit = { has_country_flag = free_trade }
-			add_ideas = export_focus
-			clr_country_flag = free_trade
-			set_country_flag = export_focus
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+			random_list = {
+				20 = {
+					if = { limit = { has_idea = press_free }
+						swap_ideas = {
+							add_ideas = press_regulated
+							remove_ideas = press_free
+						}
+						set_country_flag = press_regulated
+						add_popularity = {
+							ideology = monarchism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = press_regulated }
+						swap_ideas = {
+							add_ideas = press_censored
+							remove_ideas = press_regulated
+						}
+						set_country_flag = press_censored
+						add_popularity = {
+							ideology = monarchism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
-			if = { limit = { has_country_flag = export_focus }
-			add_ideas = limited_exports
-			clr_country_flag = export_focus
-			set_country_flag = limited_exports
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 { if = { limit = { has_country_flag = tariffs_none }
-			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
-			set_country_flag = tariffs_low
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_low }
-			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
-			set_country_flag = tariffs_average
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = fdi_encouraged }
-			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
-			set_country_flag = fdi_allowed
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = fdi_allowed }
-			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
-			set_country_flag = fdi_regulated
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = private_control }
-			add_ideas = key_industries
-			clr_country_flag = private_control
-			set_country_flag = key_industries
-			add_popularity = {
-				ideology = monarchism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = socialism
-				popularity = -0.02
+				20 = {
+					if = { limit = { has_idea = free_trade }
+						swap_ideas = {
+							add_ideas = export_focus
+							remove_ideas = free_trade
+						}
+						set_country_flag = export_focus
+						add_popularity = {
+							ideology = monarchism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = export_focus }
+						swap_ideas = {
+							add_ideas = limited_exports
+							remove_ideas = export_focus
+						}
+						set_country_flag = limited_exports
+						add_popularity = {
+							ideology = monarchism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
 					}
 				}
+				20 {
+					if = { limit = { has_idea = tariffs_none }
+						swap_ideas = {
+							add_ideas = tariffs_low
+							remove_ideas = tariffs_none
+						}
+						set_country_flag = tariffs_low
+						add_popularity = {
+							ideology = monarchism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = tariffs_low }
+					swap_ideas = {
+						add_ideas = tariffs_average
+						remove_ideas = tariffs_low
+					}
+					set_country_flag = tariffs_average
+					add_popularity = {
+						ideology = monarchism
+						popularity = 0.02
+					}
+					add_popularity = {
+						ideology = socialism
+						popularity = -0.02
+						}
+					}
+				}
+				20 = {
+					if = { limit = { has_idea = fdi_encouraged }
+						swap_ideas = {
+							add_ideas = fdi_allowed
+							remove_ideas = fdi_encouraged
+						}
+						set_country_flag = fdi_allowed
+						add_popularity = {
+							ideology = monarchism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = fdi_allowed }
+						swap_ideas = {
+							add_ideas = fdi_regulated
+							remove_ideas = fdi_allowed
+						}
+						set_country_flag = fdi_regulated
+						add_popularity = {
+							ideology = monarchism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
+				}
+				20 = {
+					if = { limit = { has_idea = private_control }
+						swap_ideas = {
+							add_ideas = key_industries
+							remove_ideas = private_control
+						}
+						set_country_flag = key_industries
+						add_popularity = {
+							ideology = monarchism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = socialism
+							popularity = -0.02
+						}
+					}
 				}
 			}
 		}
@@ -2423,394 +2543,441 @@ country_event = {
 		has_government = conservatism
 		}		
 		if = { limit = { fascism > 0.30 }
-		random_list = {
-			20 = { if = { limit = { has_country_flag = press_free }
-			add_ideas = press_regulated
-			clr_country_flag = press_free
-			set_country_flag = press_regulated
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = press_regulated }
-			add_ideas = press_censored
-			clr_country_flag = press_regulated
-			set_country_flag = press_censored
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-				}
-			}
-			20 = { if = { limit = { has_country_flag = free_trade }
-			add_ideas = export_focus
-			clr_country_flag = free_trade
-			set_country_flag = export_focus
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
+			random_list = {
+				20 = {
+					if = { limit = { has_idea = press_free }
+						swap_ideas = {
+							add_ideas = press_regulated
+							remove_ideas = press_free
+						set_country_flag = press_regulated
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+							}
+						}
+					if = { limit = { has_country_flag = press_regulated }
+						add_ideas = press_censored
+						remove_ideas = press_regulated
+						set_country_flag = press_censored
+						add_popularity = {
+							ideology = fascism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
 					}
 				}
-			if = { limit = { has_country_flag = export_focus }
-			add_ideas = limited_exports
-			clr_country_flag = export_focus
-			set_country_flag = limited_exports
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
+				20 = { if = { limit = { has_country_flag = free_trade }
+				add_ideas = export_focus
+				remove_ideas = free_trade
+				set_country_flag = export_focus
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.02
 				}
-			}
-			}
-			20 { if = { limit = { has_country_flag = tariffs_none }
-			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
-			set_country_flag = tariffs_low
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
+				add_popularity = {
+					ideology = conservatism
+					popularity = -0.02
+						}
+					}
+				if = { limit = { has_country_flag = export_focus }
+				add_ideas = limited_exports
+				remove_ideas = export_focus
+				set_country_flag = limited_exports
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.02
 				}
-			}
-			if = { limit = { has_country_flag = tariffs_low }
-			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
-			set_country_flag = tariffs_average
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_average }
-			add_ideas = tariffs_high
-			clr_country_flag = tariffs_average
-			set_country_flag = tariffs_high
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = fdi_encouraged }
-			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
-			set_country_flag = fdi_allowed
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = fdi_allowed }
-			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
-			set_country_flag = fdi_regulated
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = private_control }
-			add_ideas = key_industries
-			clr_country_flag = private_control
-			set_country_flag = key_industries
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
+				add_popularity = {
+					ideology = conservatism
+					popularity = -0.02
 					}
 				}
+				}
+				20 { if = { limit = { has_country_flag = tariffs_none }
+				add_ideas = tariffs_low
+				remove_ideas = tariffs_none
+				set_country_flag = tariffs_low
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = -0.02
+					}
+				}
+				if = { limit = { has_country_flag = tariffs_low }
+				add_ideas = tariffs_average
+				remove_ideas = tariffs_low
+				set_country_flag = tariffs_average
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = -0.02
+					}
+				}
+				if = { limit = { has_country_flag = tariffs_average }
+				add_ideas = tariffs_high
+				remove_ideas = tariffs_average
+				set_country_flag = tariffs_high
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = -0.02
+					}
+				}
+				}
+				20 = { if = { limit = { has_country_flag = fdi_encouraged }
+				add_ideas = fdi_allowed
+				remove_ideas = fdi_encouraged
+				set_country_flag = fdi_allowed
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = -0.02
+					}
+				}
+				if = { limit = { has_country_flag = fdi_allowed }
+				add_ideas = fdi_regulated
+				remove_ideas = fdi_allowed
+				set_country_flag = fdi_regulated
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = -0.02
+					}
+				}
+				}
+				20 = { if = { limit = { has_country_flag = private_control }
+				add_ideas = key_industries
+				remove_ideas = private_control
+				set_country_flag = key_industries
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.02
+				}
+				add_popularity = {
+					ideology = conservatism
+					popularity = -0.02
+						}
+					}
 				}
 			}
 		}
 		if = { limit = { liberalism > 0.30 }
 		random_list = {
-			20 = { if = { limit = { has_country_flag = press_free }
-			add_ideas = press_regulated
-			clr_country_flag = press_free
-			set_country_flag = press_regulated
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = press_censored }
-			add_ideas = press_regulated
-			clr_country_flag = press_censored
-			set_country_flag = press_regulated
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
+			20 = {
+				if = { limit = { has_idea = press_free }
+					swap_ideas = {
+						add_ideas = press_regulated
+						remove_ideas = press_free
+					}
+					set_country_flag = press_regulated
+					add_popularity = {
+						ideology = liberalism
+						popularity = 0.02
+					}
+					add_popularity = {
+						ideology = conservatism
+						popularity = -0.02
+						}
+					}
+				if = { limit = { has_idea = press_censored }
+					swap_ideas = {
+						add_ideas = press_regulated
+						remove_ideas = press_censored
+					}
+					set_country_flag = press_regulated
+					add_popularity = {
+						ideology = liberalism
+						popularity = 0.02
+					}
+					add_popularity = {
+						ideology = conservatism
+						popularity = -0.02
+					}
 				}
 			}
 			20 = { 
-			if = { limit = { has_country_flag = free_trade }
-			add_ideas = export_focus
-			clr_country_flag = free_trade
-			set_country_flag = export_focus
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			}
-			20 { if = { limit = { has_country_flag = tariffs_none }
-			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
-			set_country_flag = tariffs_low
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_low }
-			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
-			set_country_flag = tariffs_average
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = fdi_encouraged }
-			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
-			set_country_flag = fdi_allowed
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = private_control }
-			add_ideas = key_industries
-			clr_country_flag = private_control
-			set_country_flag = key_industries
-			add_popularity = {
-				ideology = liberalism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
+				if = { limit = { has_idea = free_trade }
+					swap_ideas = {
+						add_ideas = export_focus
+						remove_ideas = free_trade
+					}
+					set_country_flag = export_focus
+					add_popularity = {
+						ideology = liberalism
+						popularity = 0.02
+					}
+					add_popularity = {
+						ideology = conservatism
+						popularity = -0.02
 					}
 				}
+			}
+			20 {
+				if = { limit = { has_idea = tariffs_none }
+					swap_ideas = {
+						add_ideas = tariffs_low
+						remove_ideas = tariffs_none
+					}
+					set_country_flag = tariffs_low
+					add_popularity = {
+						ideology = liberalism
+						popularity = 0.02
+					}
+					add_popularity = {
+						ideology = conservatism
+						popularity = -0.02
+						}
+					}
+				if = { limit = { has_idea = tariffs_low }
+					swap_ideas = {
+						add_ideas = tariffs_average
+						remove_ideas = tariffs_low
+					}
+					set_country_flag = tariffs_average
+					add_popularity = {
+						ideology = liberalism
+						popularity = 0.02
+					}
+					add_popularity = {
+						ideology = conservatism
+						popularity = -0.02
+					}
+				}
+			}
+			20 = {
+				if = { limit = { has_idea = fdi_encouraged }
+					swap_ideas = {
+						add_ideas = fdi_allowed
+						remove_ideas = fdi_encouraged
+					}
+					set_country_flag = fdi_allowed
+					add_popularity = {
+						ideology = liberalism
+						popularity = 0.02
+					}
+					add_popularity = {
+						ideology = conservatism
+						popularity = -0.02
+					}
+				}
+			}
+			20 = {
+				if = { limit = { has_idea = private_control }
+					swap_ideas = {
+						add_ideas = key_industries
+						remove_ideas = private_control
+					}
+					set_country_flag = key_industries
+					add_popularity = {
+						ideology = liberalism
+						popularity = 0.02
+					}
+					add_popularity = {
+						ideology = conservatism
+						popularity = -0.02
+						}
+					}
 				}
 			}
 		}
 		if = { limit = { socialism > 0.30 }
-		random_list = {
-			20 = { if = { limit = { has_country_flag = press_regulated }
-			add_ideas = press_free
-			clr_country_flag = press_regulated
-			set_country_flag = press_free
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = press_censored }
-			add_ideas = press_regulated
-			clr_country_flag = press_censored
-			set_country_flag = press_regulated
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-				}
-			}
-			20 = { if = { limit = { has_country_flag = export_focus }
-			add_ideas = free_trade
-			clr_country_flag = export_focus
-			set_country_flag = free_trade
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
+			random_list = {
+				20 = {
+					if = { limit = { has_idea = press_regulated }
+						swap_ideas = {
+							add_ideas = press_free
+							remove_ideas = press_regulated
+						}
+						set_country_flag = press_free
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = press_censored }
+						swap_ideas = {
+							add_ideas = press_regulated
+							remove_ideas = press_censored
+						}
+						set_country_flag = press_regulated
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
 					}
 				}
-			if = { limit = { has_country_flag = limited_exports }
-			add_ideas = export_focus
-			clr_country_flag = limited_exports
-			set_country_flag = export_focus
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			}
-			20 { if = { limit = { has_country_flag = tariffs_low }
-			add_ideas = tariffs_none
-			clr_country_flag = tariffs_low
-			set_country_flag = tariffs_none
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_average }
-			add_ideas = tariffs_low
-			clr_country_flag = tariffs_average
-			set_country_flag = tariffs_low
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = tariffs_high }
-			add_ideas = tariffs_average
-			clr_country_flag = tariffs_high
-			set_country_flag = tariffs_average
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = fdi_allowed }
-			add_ideas = fdi_encouraged
-			clr_country_flag = fdi_allowed
-			set_country_flag = fdi_encouraged
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			if = { limit = { has_country_flag = fdi_regulated }
-			add_ideas = fdi_allowed
-			clr_country_flag = fdi_regulated
-			set_country_flag = fdi_allowed
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
-				}
-			}
-			}
-			20 = { if = { limit = { has_country_flag = key_industries }
-			add_ideas = major_industries
-			clr_country_flag = key_industries
-			set_country_flag = major_industries
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
+				20 = {
+					if = { limit = { has_idea = export_focus }
+						swap_ideas = {
+							add_ideas = free_trade
+							remove_ideas = export_focus
+						}
+						set_country_flag = free_trade
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+							}
+						}
+					if = { limit = { has_idea = limited_exports }
+						swap_ideas = {
+							add_ideas = export_focus
+							remove_ideas = limited_exports
+						}
+						set_country_flag = export_focus
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
 					}
 				}
-				if = { limit = { has_country_flag = private_control }
-			add_ideas = key_industries
-			clr_country_flag = private_control
-			set_country_flag = key_industries
-			add_popularity = {
-				ideology = socialism
-				popularity = 0.02
-			}
-			add_popularity = {
-				ideology = conservatism
-				popularity = -0.02
+				20 {
+					if = { limit = { has_idea = tariffs_low }
+						swap_ideas = {
+							add_ideas = tariffs_none
+							remove_ideas = tariffs_low
+						}
+						set_country_flag = tariffs_none
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = tariffs_average }
+						swap_ideas = {
+							add_ideas = tariffs_low
+							remove_ideas = tariffs_average
+						}
+						set_country_flag = tariffs_low
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+							}
+						}
+					if = { limit = { has_idea = tariffs_high }
+						swap_ideas = {
+							add_ideas = tariffs_average
+							remove_ideas = tariffs_high
+						}
+						set_country_flag = tariffs_average
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
 					}
 				}
+				20 = {
+					if = { limit = { has_idea = fdi_allowed }
+						swap_ideas = {
+							add_ideas = fdi_encouraged
+							remove_ideas = fdi_allowed
+						}
+						set_country_flag = fdi_encouraged
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = fdi_regulated }
+						swap_ideas = {
+							add_ideas = fdi_allowed
+							remove_ideas = fdi_regulated
+						}
+						set_country_flag = fdi_allowed
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
+					}
+				}
+				20 = {
+					if = { limit = { has_idea = key_industries }
+						swap_ideas = {
+							add_ideas = major_industries
+							remove_ideas = key_industries
+						}
+						set_country_flag = major_industries
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
+					}
+					if = { limit = { has_idea = private_control }
+						swap_ideas = {
+							add_ideas = key_industries
+							remove_ideas = private_control
+						}
+						set_country_flag = key_industries
+						add_popularity = {
+							ideology = socialism
+							popularity = 0.02
+						}
+						add_popularity = {
+							ideology = conservatism
+							popularity = -0.02
+						}
+					}
 				}
 			}
 		}
@@ -2818,7 +2985,7 @@ country_event = {
 		random_list = {
 			20 = { if = { limit = { has_country_flag = press_free }
 			add_ideas = press_regulated
-			clr_country_flag = press_free
+			remove_ideas = press_free
 			set_country_flag = press_regulated
 			add_popularity = {
 				ideology = communism
@@ -2831,7 +2998,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = press_regulated }
 			add_ideas = press_censored
-			clr_country_flag = press_regulated
+			remove_ideas = press_regulated
 			set_country_flag = press_censored
 			add_popularity = {
 				ideology = communism
@@ -2845,7 +3012,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = free_trade }
 			add_ideas = export_focus
-			clr_country_flag = free_trade
+			remove_ideas = free_trade
 			set_country_flag = export_focus
 			add_popularity = {
 				ideology = communism
@@ -2858,7 +3025,7 @@ country_event = {
 				}
 			if = { limit = { has_country_flag = export_focus }
 			add_ideas = limited_exports
-			clr_country_flag = export_focus
+			remove_ideas = export_focus
 			set_country_flag = limited_exports
 			add_popularity = {
 				ideology = communism
@@ -2872,7 +3039,7 @@ country_event = {
 			}
 			20 { if = { limit = { has_country_flag = tariffs_none }
 			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
+			remove_ideas = tariffs_none
 			set_country_flag = tariffs_low
 			add_popularity = {
 				ideology = communism
@@ -2885,7 +3052,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_low }
 			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
+			remove_ideas = tariffs_low
 			set_country_flag = tariffs_average
 			add_popularity = {
 				ideology = communism
@@ -2898,7 +3065,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_average }
 			add_ideas = tariffs_high
-			clr_country_flag = tariffs_average
+			remove_ideas = tariffs_average
 			set_country_flag = tariffs_high
 			add_popularity = {
 				ideology = communism
@@ -2912,7 +3079,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = fdi_encouraged }
 			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
+			remove_ideas = fdi_encouraged
 			set_country_flag = fdi_allowed
 			add_popularity = {
 				ideology = communism
@@ -2925,7 +3092,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = fdi_allowed }
 			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
+			remove_ideas = fdi_allowed
 			set_country_flag = fdi_regulated
 			add_popularity = {
 				ideology = communism
@@ -2939,7 +3106,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = private_control }
 			add_ideas = key_industries
-			clr_country_flag = private_control
+			remove_ideas = private_control
 			set_country_flag = key_industries
 			add_popularity = {
 				ideology = communism
@@ -2952,7 +3119,7 @@ country_event = {
 				}
 				if = { limit = { has_country_flag = key_industries }
 			add_ideas = major_industries
-			clr_country_flag = key_industries
+			remove_ideas = key_industries
 			set_country_flag = major_industries
 			add_popularity = {
 				ideology = communism
@@ -2970,7 +3137,7 @@ country_event = {
 		random_list = {
 			20 = { if = { limit = { has_country_flag = press_free }
 			add_ideas = press_regulated
-			clr_country_flag = press_free
+			remove_ideas = press_free
 			set_country_flag = press_regulated
 			add_popularity = {
 				ideology = monarchism
@@ -2983,7 +3150,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = press_regulated }
 			add_ideas = press_censored
-			clr_country_flag = press_regulated
+			remove_ideas = press_regulated
 			set_country_flag = press_censored
 			add_popularity = {
 				ideology = monarchism
@@ -2997,7 +3164,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = free_trade }
 			add_ideas = export_focus
-			clr_country_flag = free_trade
+			remove_ideas = free_trade
 			set_country_flag = export_focus
 			add_popularity = {
 				ideology = monarchism
@@ -3010,7 +3177,7 @@ country_event = {
 				}
 			if = { limit = { has_country_flag = export_focus }
 			add_ideas = limited_exports
-			clr_country_flag = export_focus
+			remove_ideas = export_focus
 			set_country_flag = limited_exports
 			add_popularity = {
 				ideology = monarchism
@@ -3024,7 +3191,7 @@ country_event = {
 			}
 			20 { if = { limit = { has_country_flag = tariffs_none }
 			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
+			remove_ideas = tariffs_none
 			set_country_flag = tariffs_low
 			add_popularity = {
 				ideology = monarchism
@@ -3037,7 +3204,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_low }
 			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
+			remove_ideas = tariffs_low
 			set_country_flag = tariffs_average
 			add_popularity = {
 				ideology = monarchism
@@ -3050,7 +3217,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_average }
 			add_ideas = tariffs_high
-			clr_country_flag = tariffs_average
+			remove_ideas = tariffs_average
 			set_country_flag = tariffs_high
 			add_popularity = {
 				ideology = monarchism
@@ -3064,7 +3231,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = fdi_encouraged }
 			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
+			remove_ideas = fdi_encouraged
 			set_country_flag = fdi_allowed
 			add_popularity = {
 				ideology = monarchism
@@ -3077,7 +3244,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = fdi_allowed }
 			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
+			remove_ideas = fdi_allowed
 			set_country_flag = fdi_regulated
 			add_popularity = {
 				ideology = monarchism
@@ -3091,7 +3258,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = private_control }
 			add_ideas = key_industries
-			clr_country_flag = private_control
+			remove_ideas = private_control
 			set_country_flag = key_industries
 			add_popularity = {
 				ideology = monarchism
@@ -3115,7 +3282,7 @@ country_event = {
 		random_list = {
 			20 = { if = { limit = { has_country_flag = press_free }
 			add_ideas = press_regulated
-			clr_country_flag = press_free
+			remove_ideas = press_free
 			set_country_flag = press_regulated
 			add_popularity = {
 				ideology = fascism
@@ -3128,7 +3295,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = press_regulated }
 			add_ideas = press_censored
-			clr_country_flag = press_regulated
+			remove_ideas = press_regulated
 			set_country_flag = press_censored
 			add_popularity = {
 				ideology = fascism
@@ -3142,7 +3309,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = free_trade }
 			add_ideas = export_focus
-			clr_country_flag = free_trade
+			remove_ideas = free_trade
 			set_country_flag = export_focus
 			add_popularity = {
 				ideology = fascism
@@ -3155,7 +3322,7 @@ country_event = {
 				}
 			if = { limit = { has_country_flag = export_focus }
 			add_ideas = limited_exports
-			clr_country_flag = export_focus
+			remove_ideas = export_focus
 			set_country_flag = limited_exports
 			add_popularity = {
 				ideology = fascism
@@ -3169,7 +3336,7 @@ country_event = {
 			}
 			20 { if = { limit = { has_country_flag = tariffs_none }
 			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
+			remove_ideas = tariffs_none
 			set_country_flag = tariffs_low
 			add_popularity = {
 				ideology = fascism
@@ -3182,7 +3349,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_low }
 			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
+			remove_ideas = tariffs_low
 			set_country_flag = tariffs_average
 			add_popularity = {
 				ideology = fascism
@@ -3195,7 +3362,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_average }
 			add_ideas = tariffs_high
-			clr_country_flag = tariffs_average
+			remove_ideas = tariffs_average
 			set_country_flag = tariffs_high
 			add_popularity = {
 				ideology = fascism
@@ -3209,7 +3376,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = fdi_encouraged }
 			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
+			remove_ideas = fdi_encouraged
 			set_country_flag = fdi_allowed
 			add_popularity = {
 				ideology = fascism
@@ -3222,7 +3389,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = fdi_allowed }
 			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
+			remove_ideas = fdi_allowed
 			set_country_flag = fdi_regulated
 			add_popularity = {
 				ideology = fascism
@@ -3236,7 +3403,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = private_control }
 			add_ideas = key_industries
-			clr_country_flag = private_control
+			remove_ideas = private_control
 			set_country_flag = key_industries
 			add_popularity = {
 				ideology = fascism
@@ -3254,7 +3421,7 @@ country_event = {
 		random_list = {
 			20 = { if = { limit = { has_country_flag = press_free }
 			add_ideas = press_regulated
-			clr_country_flag = press_free
+			remove_ideas = press_free
 			set_country_flag = press_regulated
 			add_popularity = {
 				ideology = socialism
@@ -3268,7 +3435,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = free_trade }
 			add_ideas = export_focus
-			clr_country_flag = free_trade
+			remove_ideas = free_trade
 			set_country_flag = export_focus
 			add_popularity = {
 				ideology = socialism
@@ -3281,7 +3448,7 @@ country_event = {
 				}
 			if = { limit = { has_country_flag = export_focus }
 			add_ideas = limited_exports
-			clr_country_flag = export_focus
+			remove_ideas = export_focus
 			set_country_flag = limited_exports
 			add_popularity = {
 				ideology = socialism
@@ -3295,7 +3462,7 @@ country_event = {
 			}
 			20 { if = { limit = { has_country_flag = tariffs_none }
 			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
+			remove_ideas = tariffs_none
 			set_country_flag = tariffs_low
 			add_popularity = {
 				ideology = socialism
@@ -3308,7 +3475,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_low }
 			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
+			remove_ideas = tariffs_low
 			set_country_flag = tariffs_average
 			add_popularity = {
 				ideology = socialism
@@ -3321,7 +3488,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_average }
 			add_ideas = tariffs_high
-			clr_country_flag = tariffs_average
+			remove_ideas = tariffs_average
 			set_country_flag = tariffs_high
 			add_popularity = {
 				ideology = socialism
@@ -3335,7 +3502,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = fdi_encouraged }
 			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
+			remove_ideas = fdi_encouraged
 			set_country_flag = fdi_allowed
 			add_popularity = {
 				ideology = socialism
@@ -3348,7 +3515,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = fdi_allowed }
 			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
+			remove_ideas = fdi_allowed
 			set_country_flag = fdi_regulated
 			add_popularity = {
 				ideology = socialism
@@ -3362,7 +3529,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = private_control }
 			add_ideas = key_industries
-			clr_country_flag = private_control
+			remove_ideas = private_control
 			set_country_flag = key_industries
 			add_popularity = {
 				ideology = socialism
@@ -3380,7 +3547,7 @@ country_event = {
 		random_list = {
 			20 = { if = { limit = { has_country_flag = press_free }
 			add_ideas = press_regulated
-			clr_country_flag = press_free
+			remove_ideas = press_free
 			set_country_flag = press_regulated
 			add_popularity = {
 				ideology = conservatism
@@ -3394,7 +3561,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = free_trade }
 			add_ideas = export_focus
-			clr_country_flag = free_trade
+			remove_ideas = free_trade
 			set_country_flag = export_focus
 			add_popularity = {
 				ideology = conservatism
@@ -3408,7 +3575,7 @@ country_event = {
 			}
 			20 { if = { limit = { has_country_flag = tariffs_none }
 			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
+			remove_ideas = tariffs_none
 			set_country_flag = tariffs_low
 			add_popularity = {
 				ideology = conservatism
@@ -3421,7 +3588,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_low }
 			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
+			remove_ideas = tariffs_low
 			set_country_flag = tariffs_average
 			add_popularity = {
 				ideology = conservatism
@@ -3435,7 +3602,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = fdi_encouraged }
 			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
+			remove_ideas = fdi_encouraged
 			set_country_flag = fdi_allowed
 			add_popularity = {
 				ideology = conservatism
@@ -3448,7 +3615,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = fdi_allowed }
 			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
+			remove_ideas = fdi_allowed
 			set_country_flag = fdi_regulated
 			add_popularity = {
 				ideology = conservatism
@@ -3462,7 +3629,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = private_control }
 			add_ideas = key_industries
-			clr_country_flag = private_control
+			remove_ideas = private_control
 			set_country_flag = key_industries
 			add_popularity = {
 				ideology = conservatism
@@ -3480,7 +3647,7 @@ country_event = {
 		random_list = {
 			20 = { if = { limit = { has_country_flag = press_free }
 			add_ideas = press_regulated
-			clr_country_flag = press_free
+			remove_ideas = press_free
 			set_country_flag = press_regulated
 			add_popularity = {
 				ideology = communism
@@ -3493,7 +3660,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = press_regulated }
 			add_ideas = press_censored
-			clr_country_flag = press_regulated
+			remove_ideas = press_regulated
 			set_country_flag = press_censored
 			add_popularity = {
 				ideology = communism
@@ -3507,7 +3674,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = free_trade }
 			add_ideas = export_focus
-			clr_country_flag = free_trade
+			remove_ideas = free_trade
 			set_country_flag = export_focus
 			add_popularity = {
 				ideology = communism
@@ -3520,7 +3687,7 @@ country_event = {
 				}
 			if = { limit = { has_country_flag = export_focus }
 			add_ideas = limited_exports
-			clr_country_flag = export_focus
+			remove_ideas = export_focus
 			set_country_flag = limited_exports
 			add_popularity = {
 				ideology = communism
@@ -3534,7 +3701,7 @@ country_event = {
 			}
 			20 { if = { limit = { has_country_flag = tariffs_none }
 			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
+			remove_ideas = tariffs_none
 			set_country_flag = tariffs_low
 			add_popularity = {
 				ideology = communism
@@ -3547,7 +3714,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_low }
 			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
+			remove_ideas = tariffs_low
 			set_country_flag = tariffs_average
 			add_popularity = {
 				ideology = communism
@@ -3560,7 +3727,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_average }
 			add_ideas = tariffs_high
-			clr_country_flag = tariffs_average
+			remove_ideas = tariffs_average
 			set_country_flag = tariffs_high
 			add_popularity = {
 				ideology = communism
@@ -3574,7 +3741,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = fdi_encouraged }
 			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
+			remove_ideas = fdi_encouraged
 			set_country_flag = fdi_allowed
 			add_popularity = {
 				ideology = communism
@@ -3587,7 +3754,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = fdi_allowed }
 			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
+			remove_ideas = fdi_allowed
 			set_country_flag = fdi_regulated
 			add_popularity = {
 				ideology = communism
@@ -3601,7 +3768,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = private_control }
 			add_ideas = key_industries
-			clr_country_flag = private_control
+			remove_ideas = private_control
 			set_country_flag = key_industries
 			add_popularity = {
 				ideology = communism
@@ -3619,7 +3786,7 @@ country_event = {
 		random_list = {
 			20 = { if = { limit = { has_country_flag = press_free }
 			add_ideas = press_regulated
-			clr_country_flag = press_free
+			remove_ideas = press_free
 			set_country_flag = press_regulated
 			add_popularity = {
 				ideology = monarchism
@@ -3632,7 +3799,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = press_regulated }
 			add_ideas = press_censored
-			clr_country_flag = press_regulated
+			remove_ideas = press_regulated
 			set_country_flag = press_censored
 			add_popularity = {
 				ideology = monarchism
@@ -3646,7 +3813,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = free_trade }
 			add_ideas = export_focus
-			clr_country_flag = free_trade
+			remove_ideas = free_trade
 			set_country_flag = export_focus
 			add_popularity = {
 				ideology = monarchism
@@ -3659,7 +3826,7 @@ country_event = {
 				}
 			if = { limit = { has_country_flag = export_focus }
 			add_ideas = limited_exports
-			clr_country_flag = export_focus
+			remove_ideas = export_focus
 			set_country_flag = limited_exports
 			add_popularity = {
 				ideology = monarchism
@@ -3673,7 +3840,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = tariffs_none }
 			add_ideas = tariffs_low
-			clr_country_flag = tariffs_none
+			remove_ideas = tariffs_none
 			set_country_flag = tariffs_low
 			add_popularity = {
 				ideology = monarchism
@@ -3686,7 +3853,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_low }
 			add_ideas = tariffs_average
-			clr_country_flag = tariffs_low
+			remove_ideas = tariffs_low
 			set_country_flag = tariffs_average
 			add_popularity = {
 				ideology = monarchism
@@ -3699,7 +3866,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = tariffs_average }
 			add_ideas = tariffs_high
-			clr_country_flag = tariffs_average
+			remove_ideas = tariffs_average
 			set_country_flag = tariffs_high
 			add_popularity = {
 				ideology = monarchism
@@ -3713,7 +3880,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = fdi_encouraged }
 			add_ideas = fdi_allowed
-			clr_country_flag = fdi_encouraged
+			remove_ideas = fdi_encouraged
 			set_country_flag = fdi_allowed
 			add_popularity = {
 				ideology = monarchism
@@ -3726,7 +3893,7 @@ country_event = {
 			}
 			if = { limit = { has_country_flag = fdi_allowed }
 			add_ideas = fdi_regulated
-			clr_country_flag = fdi_allowed
+			remove_ideas = fdi_allowed
 			set_country_flag = fdi_regulated
 			add_popularity = {
 				ideology = monarchism
@@ -3740,7 +3907,7 @@ country_event = {
 			}
 			20 = { if = { limit = { has_country_flag = private_control }
 			add_ideas = key_industries
-			clr_country_flag = private_control
+			remove_ideas = private_control
 			set_country_flag = key_industries
 			add_popularity = {
 				ideology = monarchism
