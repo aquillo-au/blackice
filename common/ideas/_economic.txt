@@ -156,20 +156,26 @@ ideas = {
 			removal_cost = -1
 			level = 4
 			available = {
-				NOT = { has_country_flag = Transition }
-				NOT = { has_country_flag = Mobilizing }
-				OR = {
-					has_government = fascism
-					has_government = communism
-					has_war = yes
-					threat > 0.15
-				}
-				if = {
-					limit = {
-						original_tag = HUN
-						has_dlc = "Death or Dishonor"
+				OR={
+					AND={
+						NOT = { has_country_flag = Transition }
+						NOT = { has_country_flag = Mobilizing }
+						OR = {
+							has_government = fascism
+							has_government = communism
+							has_war = yes
+							threat > 0.15
+						}
+						if = {
+							limit = {
+								original_tag = HUN
+								has_dlc = "Death or Dishonor"
+							}
+							NOT = { has_idea = HUN_treaty_of_triannon }
+						}
 					}
-					NOT = { has_idea = HUN_treaty_of_triannon }
+					
+					has_country_flag=to_lem
 				}
 			}
 			
@@ -239,21 +245,27 @@ ideas = {
 			removal_cost = -1
 			level = 3
 			available = {
-				OR = {
-					has_government = fascism
-					has_government = communism
-					has_war = yes
-					threat > 0.30
-				}
-				if = {
-					limit = {
-						original_tag = HUN
-						has_dlc = "Death or Dishonor"
+				OR={
+					AND={
+						OR = {
+							has_government = fascism
+							has_government = communism
+							has_war = yes
+							threat > 0.30
+						}
+						if = {
+							limit = {
+								original_tag = HUN
+								has_dlc = "Death or Dishonor"
+							}
+							OR = {
+								has_completed_focus = HUN_secret_rearmament
+								NOT = { has_idea = HUN_treaty_of_triannon }
+							}
+						}
 					}
-					OR = {
-						has_completed_focus = HUN_secret_rearmament
-						NOT = { has_idea = HUN_treaty_of_triannon }
-					}
+					
+					has_country_flag=to_pem
 				}
 			}
 			
@@ -323,29 +335,35 @@ ideas = {
 			removal_cost = -1
 			level = 2
 			available = {
-				NOT = { has_country_flag = Transition }
-				NOT = { has_country_flag = Mobilizing }
-				threat > 0.50
-				OR = {
-					has_government = fascism
-					has_government = communism
-					AND = {
-						has_war = yes
-						any_enemy_country = {
-							ic_ratio = { 
-								tag = ROOT 
-								ratio > 0.1
+				OR={
+					AND={
+						NOT = { has_country_flag = Transition }
+						NOT = { has_country_flag = Mobilizing }
+						threat > 0.50
+						OR = {
+							has_government = fascism
+							has_government = communism
+							AND = {
+								has_war = yes
+								any_enemy_country = {
+									ic_ratio = { 
+										tag = ROOT 
+										ratio > 0.1
+									}
+								}
 							}
+						}			
+						if = {
+							limit = {
+								original_tag = HUN
+								has_dlc = "Death or Dishonor"
+							}
+							NOT = { has_idea = HUN_treaty_of_triannon }
 						}
 					}
-				}			
-				if = {
-					limit = {
-						original_tag = HUN
-						has_dlc = "Death or Dishonor"
-					}
-					NOT = { has_idea = HUN_treaty_of_triannon }
-				}
+					
+					has_country_flag = to_we
+				}	
 			}
 			
 			modifier = {
