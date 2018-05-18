@@ -91,55 +91,21 @@ i_SOV_case_white = {
 	}	
 }
 
-POL_template_design = {
+POL_stay_defensive = {
 	enable = {
-	
-		original_tag = POL
-		date < 1940.1.1				
+		tag = POL
+		OR = {
+			has_war_with = GER
+			GER = { is_justifying_wargoal_against = POL }
+		}
 	}
-	abort = { 
-		date > 1940.1.1
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = motorized
-		value = -10
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = cavalry
-		value = -100
+	abort = {
+		has_capitulated = yes
 	}
 	
 	ai_strategy = {
-		type = template_prio
-		id = light_armor
-		value = 40
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = medium_armor
-		value = -10
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = heavy_armor
-		value = -50
-	}
-
-	ai_strategy = {
-		type = template_prio
-		id = paratroopers
-		value = -50
-	}
-	
-	ai_strategy = {
-		type = template_prio
-		id = infantry
-		value = 75
-	}
+		type = consider_weak
+		id = "GER"			
+		value = -300000
+	}	
 }

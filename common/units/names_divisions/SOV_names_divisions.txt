@@ -30,8 +30,7 @@
 #                                      where you choose the historical division name.
 #           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
 #                                      the current game version.
-SOV_INF_01 = 
-{
+SOV_INF_01 = {
 	name = "Rifle Division"
 
 	for_countries = { SOV }
@@ -465,8 +464,7 @@ SOV_INF_01 =
 	}
 }
 
-SOV_CAV_01 = 
-{
+SOV_CAV_01 = {
 	name = "Cavalry Division"
 
 	for_countries = { SOV }
@@ -602,8 +600,7 @@ SOV_CAV_01 =
 	}
 }
 
-SOV_MOT_01 = 
-{
+SOV_MOT_01 = {
 	name = "Motor Rifle Division"
 
 	for_countries = { SOV }
@@ -667,8 +664,7 @@ SOV_MOT_01 =
 	}
 }
 
-SOV_MEC_01 = 
-{
+SOV_MEC_01 = {
 	name = "Mechanized Division"
 
 	for_countries = { SOV }
@@ -720,8 +716,7 @@ SOV_MEC_01 =
 	}
 }
 
-SOV_ARM_01 = 
-{
+SOV_ARM_01 = {
 	name = "Tank Division"
 
 	for_countries = { SOV }
@@ -813,8 +808,7 @@ SOV_ARM_01 =
 	}
 }
 
-SOV_PAR_01 = 
-{
+SOV_PAR_01 = {
 	name = "Paratrooper Division"
 
 	for_countries = { SOV }
@@ -871,8 +865,7 @@ SOV_PAR_01 =
 	}
 }
 
-SOV_MAR_01 = 
-{
+SOV_MAR_01 = {
 	name = "Marine Division"
 
 	for_countries = { SOV }
@@ -903,8 +896,7 @@ SOV_MAR_01 =
 	}
 }
 
-SOV_MNT_01 = 
-{
+SOV_MNT_01 = {
 	name = "Mountain Rifle Division"
 
 	for_countries = { SOV }
@@ -947,8 +939,7 @@ SOV_MNT_01 =
 	}
 }
 
-SOV_GAR_01 = 
-{
+SOV_GAR_01 = {
 	name = "Garrison Division"
 
 	for_countries = { SOV }
@@ -1048,15 +1039,14 @@ SOV_GAR_01 =
 	}
 }
 
-SOV_GRD_01 = 
-{
+SOV_GRD_01 = {
 	name = "Guards Rifles"
 
 	for_countries = { SOV }
 
 	can_use = { always = yes }
 
-	division_types = { "infantry" }
+	division_types = { "guards_infantry" }
 
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { SOV_INF_01 }
@@ -1199,15 +1189,14 @@ SOV_GRD_01 =
 	}
 }
 
-SOV_GMC_01 = 
-{
+SOV_GMC_01 = {
 	name = "Guards Mechanized"
 
 	for_countries = { SOV }
 
 	can_use = { always = yes }
 
-	division_types = { "mechanized" "motorized" }
+	division_types = { "mechanized" "guards_motorized" }
 
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { SOV_INF_01 }
@@ -1230,15 +1219,14 @@ SOV_GMC_01 =
 	}
 }
 
-SOV_GTC_01 = 
-{
+SOV_GTC_01 = {
 	name = "Guards Tanks"
 
 	for_countries = { SOV }
 
 	can_use = { always = yes }
 
-	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+	division_types = { "guards_sov_medium_tank" "guards_sov_heavy_tank" "modern_armor" }
 
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { SOV_INF_01 }
@@ -1263,3 +1251,4 @@ SOV_GTC_01 =
 		12 = { "%dya Gvds. Tankovaya Korpus" }
 	}
 }
+### EOF ###

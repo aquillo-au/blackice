@@ -306,22 +306,22 @@ dont_charge_into_french_lines = {
 	ai_strategy = {
 		type = consider_weak
 		id = "FRA"			
-		value = -1000
+		value = -300000
 	}		
 }
 
-italy_be_careful_transporting_through_the_med = {
+AXIS_be_careful_transporting_through_the_med_1 = {
 	enable = {
-		tag = ITA
+		is_in_faction_with = GER
 		date < 1943.1.1
 		has_war = yes
-		enemies_naval_strength_ratio > 0.6
+		all_enemy_country = { ships_in_area = { area = 68 size > 20 } }
 	}
 	abort = {
 		OR = {
 			date > 1944.1.1
 			has_war = no
-			enemies_naval_strength_ratio < 0.6
+			NOT = { all_enemy_country = { ships_in_area = { area = 68 size > 20 } } }
 		}
 	}
 	
@@ -330,17 +330,65 @@ italy_be_careful_transporting_through_the_med = {
 		id = 68
 		value = 2000
 	}
+}
+
+AXIS_be_careful_transporting_through_the_med_2 = {
+	enable = {
+		is_in_faction_with = GER
+		date < 1943.1.1
+		has_war = yes
+		all_enemy_country = { ships_in_area = { area = 169 size > 20 } }
+	}
+	abort = {
+		OR = {
+			date > 1944.1.1
+			has_war = no
+			NOT = { all_enemy_country = { ships_in_area = { area = 169 size > 20 } } }
+		}
+	}
 
 	ai_strategy = {
 		type = naval_avoid_region
 		id = 169
 		value = 2000
 	}
+}
+
+AXIS_be_careful_transporting_through_the_med_3 = {
+	enable = {
+		is_in_faction_with = GER
+		date < 1943.1.1
+		has_war = yes
+		all_enemy_country = { ships_in_area = { area = 29 size > 20 } }
+	}
+	abort = {
+		OR = {
+			date > 1944.1.1
+			has_war = no
+			NOT = { all_enemy_country = { ships_in_area = { area = 29 size > 20 } } }
+		}
+	}
 
 	ai_strategy = {
 		type = naval_avoid_region
 		id = 29
 		value = 2000
+	}
+}
+
+AXIS_be_careful_transporting_through_the_med_4 = {
+	enable = {
+		is_in_faction_with = GER
+		date < 1943.1.1
+		has_war = yes
+		all_enemy_country = { ships_in_area = { area = 69 size > 20 } }
+	}
+	abort = {
+		OR = {
+			date > 1944.1.1
+			has_war = no
+			NOT = { all_enemy_country = { ships_in_area = { area = 69 size > 20 } } }
+		}
 	}
 
 	ai_strategy = {
@@ -356,16 +404,16 @@ ITA_protect_core = {
 
 		surrender_progress > 0.13
 		NOT = { has_capitulated = yes }
-		any_owned_state = { OR = { region = 21 region = 23 } controller = { has_war_with = ITA } }
+		any_owned_state = { OR = { region = 21 region = 23 region = 248 } controller = { has_war_with = ITA } }
 	}
 	abort = {
 		OR = {
 			NOT = { surrender_progress > 0.07 }
 			has_capitulated = yes
-			NOT = { any_owned_state = { OR = { region = 21 region = 23 } controller = { has_war_with = ITA } } }
+			NOT = { any_owned_state = { OR = { region = 21 region = 23 region = 248 } controller = { has_war_with = ITA } } }
 		}
 	}
-    ai_strategy = { type = area_priority id = italy 			value = 100 }
+    ai_strategy = { type = area_priority id = italy 			value = 1000 }
 	ai_strategy = { type = area_priority id = mediterranean	 	value = 10 }
 	ai_strategy = { type = area_priority id = balkans	 		value = 10 }
 	ai_strategy = { type = area_priority id = north_africa	 	value = -10 }
@@ -396,15 +444,6 @@ ITA_protect_core = {
 	ai_strategy = { type = area_priority id = japan	 			value = -100 }
 	ai_strategy = { type = area_priority id = pacific 			value = -100 }
 	ai_strategy = { type = area_priority id = oceania 			value = -100 }
-	
-	#ai_strategy = { type = area_priority id = europe 			value = 100 }
-	#ai_strategy = { type = area_priority id = north_america 	value = -100 }
-	#ai_strategy = { type = area_priority id = south_america 	value = -100 }
-	#ai_strategy = { type = area_priority id = middle_east 		value = -100 }
-	#ai_strategy = { type = area_priority id = africa 			value = -10  }
-	#ai_strategy = { type = area_priority id = asia 				value = -100 }
-	#ai_strategy = { type = area_priority id = pacific 			value = -100 }
-	#ai_strategy = { type = area_priority id = oceania 			value = -100 }
 }
 
 ### EOF ###

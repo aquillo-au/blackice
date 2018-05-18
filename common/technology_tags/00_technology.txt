@@ -152,6 +152,7 @@ technology_folders = {
 	armour_axis_folder = {
 		available = {
 			original_tag = CZE
+			original_tag = HUN
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
 			NOT = { original_tag = SOV }
@@ -174,7 +175,10 @@ technology_folders = {
 		}
 	}
 	legacy_ships_folder = {
-		available = { 
+		available = {
+			all_country = {
+				any_owned_state = { is_coastal = yes }
+			}
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
 			NOT = { original_tag = ITA }
@@ -203,7 +207,7 @@ technology_folders = {
 	kriegsmarine_sub_folder = { available = { original_tag = GER }}
 	soviet_folder = {
 		available = {
-			or = {
+			OR = {
 				original_tag = SOV
 				original_tag = EST
 				original_tag = LIT
@@ -227,7 +231,7 @@ technology_folders = {
 	usanaval_sub_folder = { available = { original_tag = USA }}
 	frencharmor_folder = {
 		available = { 
-			or = {
+			OR = {
 				original_tag = FRA 
 				original_tag = VIC
 			}
@@ -235,7 +239,7 @@ technology_folders = {
 	}
 	frenchair_folder  = {
 		available = { 
-			or = {
+			OR = {
 				original_tag = FRA 
 				original_tag = VIC
 			}
@@ -243,7 +247,7 @@ technology_folders = {
 	}
 	frenchnaval_folder  = {
 		available = { 
-			or = {
+			OR = {
 				original_tag = FRA
 				original_tag = VIC
 			}
@@ -251,7 +255,7 @@ technology_folders = {
 	}
 	frenchnaval_sub_folder  = {
 		available = { 
-			or = {
+			OR = {
 				original_tag = FRA
 				original_tag = VIC
 			}

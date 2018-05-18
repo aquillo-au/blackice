@@ -1,24 +1,97 @@
 infantry_HOL = {
-	available_for = { HOL }
-	roles = { infantry }
-	match_to_count = 0.50
-infantry_default_HOL = {
-	target_width = 30.0 
-	width_weight = 1.0
-	column_swap_factor = 0.6
+
+	available_for = { 
+		HOL
+	}
+	roles = { 
+		infantry 
+	}
 	
+	match_to_count = 0.65
+	
+infantry_default_30w_HOL_1 = { #A design thats entirely defensive to help against germany, without AT, but added in once researched
+
+	production_prio = {
+		base = 0
+		modifier = {
+			add = 10
+			NOT = { has_tech = interwar_antitank }
+		}
+	}
+	upgrade_prio = {
+		base = 0
+		modifier = {
+			add = 10
+			NOT = { has_tech = interwar_antitank }
+		}
+	}
+		
+	target_width = 30
+	width_weight = 1
+	column_swap_factor = 1
+	reinforce_prio = 1
 	
 	target_template = {
-		weight = 1
-		match_value = 35990.0
+		weight = 0.9
+		match_value = 1000
 		
 		support = {
 			engineer = 1
 			recon_cav = 1
-			logistics_company = 1
-			field_hospital = 1
+			combat_engineer = 1
 			DIV_HQ = 1
 			anti_air = 1
+		}
+		
+		regiments = {
+			infantry = 12
+			artillery_brigade = 4
+		}
+	}
+	allowed_types = {
+		engineer
+		recon_cav
+		combat_engineer
+		DIV_HQ
+		anti_air
+		artillery_brigade
+		infantry
+	}
+}
+
+infantry_default_30w_HOL_2 = { #AT
+
+	production_prio = {
+		base = 0
+		modifier = {
+			add = 10
+			has_tech = interwar_antitank 
+		}
+	}
+	upgrade_prio = {
+		base = 0
+		modifier = {
+			add = 10
+			has_tech = interwar_antitank 
+		}
+	}
+		
+	target_width = 30
+	width_weight = 1
+	column_swap_factor = 1
+	reinforce_prio = 1
+	
+	target_template = {
+		weight = 0.9
+		match_value = 1000
+		
+		support = {
+			engineer = 1
+			recon_cav = 1
+			combat_engineer = 1
+			DIV_HQ = 1
+			anti_air = 1
+			anti_tank = 1
 		}
 		
 		regiments = {
@@ -27,12 +100,30 @@ infantry_default_HOL = {
 			anti_tank_brigade = 2
 		}
 	}
+	allowed_types = {
+		engineer
+		recon_cav
+		combat_engineer
+		DIV_HQ
+		anti_air
+		anti_tank
+		anti_tank_brigade
+		infantry
+		artillery_brigade
+	}
 }
 }
 marines_HOL = {
-	available_for = { HOL }
-	roles = { marines }
+	available_for = { 
+		HOL 
+		}
+		
+	roles = { 
+		marines 
+	}
+	
 	match_to_count = 0.50
+	
 marines_default_HOL = {
 	target_width = 20.0 
 	width_weight = 1.0
@@ -41,22 +132,234 @@ marines_default_HOL = {
 	
 	target_template = {
 		weight = 1
-		match_value = 35990.0
+		match_value = 1000
 		
 		support = {
 			engineer = 1
 			recon_cav = 1
-			logistics_company = 1
 			field_hospital = 1
 			DIV_HQ = 1
 			anti_air = 1
 		}
 		
 		regiments = {
-			marines = 8
-			artillery_brigade = 2
-			anti_tank_brigade = 2
+			marines = 7
+			artillery_brigade = 4
 		}
 	}
 }
+}
+
+cavalry_HOL = {
+
+	available_for = {
+		HOL
+	}
+	
+	roles = {
+		cavalry
+	}
+	
+    match_to_count = 0.60
+	
+	cavalry_HOL_1 = {
+	
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				NOT = { has_tech = interwar_antitank }
+			}
+		}
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				NOT = { has_tech = interwar_antitank }
+			}
+		}
+	
+		target_width = 23
+		width_weight = 1
+		column_swap_factor = 1
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 1000
+		
+			support = {
+				engineer = 1
+				DIV_HQ = 1
+				recon_cav = 1
+				combat_engineer = 1
+			}
+		
+			regiments = {
+				cavalry = 10
+				artillery_brigade = 2
+			}
+		}
+		allowed_types = {
+			engineer
+			DIV_HQ
+			recon_cav
+			combat_engineer
+			cavalry
+			artillery_brigade
+		}	
+	}
+	
+	cavalry_HOL_2 = {
+	
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				has_tech = interwar_antitank 
+			}
+		}
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				has_tech = interwar_antitank 
+			}
+		}
+	
+		target_width = 26
+		width_weight = 1
+		column_swap_factor = 1
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 0.9
+			match_value = 1000
+		
+			support = {
+				engineer = 1
+				DIV_HQ = 1
+				recon_cav = 1
+				combat_engineer = 1
+				anti_tank = 1
+			}
+		
+			regiments = {
+				cavalry = 11
+				artillery_brigade = 2
+				anti_tank_brigade = 2
+			}
+		}
+		allowed_types = {
+			engineer
+			DIV_HQ
+			recon_cav
+			combat_engineer
+			cavalry
+			artillery_brigade
+			anti_tank_brigade
+			anti_tank
+		}	
+	}
+}
+
+militia_HOL = {
+
+	available_for = {
+		HOL
+	}
+	
+	roles = {
+		militia
+	}
+	
+    match_to_count = 0.60
+	
+	militia_HOL_1 = {
+	
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				NOT = { has_tech = interwar_antitank }
+			}
+		}
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				NOT = { has_tech = interwar_antitank }
+			}
+		}
+		
+		target_width = 10.5
+		width_weight = 1
+		column_swap_factor = 1
+		reinforce_prio = 0
+
+		target_template = {
+			weight = 0.9
+			match_value = 1000
+		
+			support = {
+				engineer = 1
+			}
+		
+			regiments = {
+				militia = 6
+				artillery_brigade = 1
+			}
+		}
+		allowed_types = {
+			militia
+			engineer
+			artillery_brigade
+		}	
+	}
+	
+	militia_HOL_2 = {
+	
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				has_tech = interwar_antitank 
+			}
+		}
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				has_tech = interwar_antitank 
+			}
+		}
+		
+		target_width = 9.5
+		width_weight = 1
+		column_swap_factor = 1
+		reinforce_prio = 0
+
+		target_template = {
+			weight = 0.9
+			match_value = 1000
+		
+			support = {
+				engineer = 1
+				anti_tank = 1
+			}
+		
+			regiments = {
+				militia = 5
+				anti_tank_brigade = 1
+				artillery_brigade = 1
+			}
+		}
+		allowed_types = {
+			militia
+			engineer
+			anti_tank
+			anti_tank_brigade
+			artillery_brigade
+		}	
+	}
 }

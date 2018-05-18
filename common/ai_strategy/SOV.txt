@@ -130,6 +130,23 @@ claims_on_poland = {
 	}	
 }
 
+SOV_defend_barbarossa = {
+	enable = {
+		tag = SOV
+		has_war_with = GER
+		alliance_strength_ratio < 5
+	}
+	abort = {
+		alliance_strength_ratio > 5
+	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = "GER"			
+		value = -300000
+	}	
+}
+
 claims_on_baltic = {
 	enable = {
 		tag = SOV

@@ -151,8 +151,8 @@ country_event = {
 		VIC = { exists = yes }
 		VIC = { is_in_faction_with = GER }
 		is_in_faction_with = ENG
-		not = { has_country_flag = USAtorchII }
-		or = {
+		NOT = { has_country_flag = USAtorchII }
+		OR = {
 			ENG = {
 				NOT = { controls_state = 446 }
 			}
@@ -223,8 +223,8 @@ country_event = {
 		VIC = { exists = yes }
 		VIC = { is_in_faction_with = GER }
 		is_in_faction_with = ENG
-		not = { has_country_flag = USAtorchI }
-		or = {
+		NOT = { has_country_flag = USAtorchI }
+		OR = {
 			ENG = { controls_state = 446 }
 			USA = { controls_state = 446 }
 			ENG = { controls_state = 118 }
@@ -287,14 +287,14 @@ country_event = {
 		VIC = { is_in_faction = no }
 		is_in_faction_with = ENG
 		has_country_flag = USAdemandsII
-		not = { has_country_flag = USAtorchIV }
-		or = {
+		NOT = { has_country_flag = USAtorchIV }
+		OR = {
 		VIC = { 
 			NOT = { has_idea = USA_demands_II }
 		}
 		date > 1942.1.11
 		}
-		or = {
+		OR = {
 			ENG = {
 				NOT = { controls_state = 446 }
 			}
@@ -536,7 +536,7 @@ country_event = {
 		trigger = {
 			is_ai = no
 		}
-		GER = {
+		FRA = {
 			transfer_state = 1	
 			transfer_state = 21
 			transfer_state = 26
@@ -546,8 +546,21 @@ country_event = {
 			transfer_state = 31
 			transfer_state = 32
 			transfer_state = 33
-			transfer_state = 268
-			transfer_state = 735		
+			#transfer_state = 268
+			transfer_state = 735	
+		}
+		GER = {
+			set_state_controller = 1	
+			set_state_controller = 21
+			set_state_controller = 26
+			set_state_controller = 22
+			set_state_controller = 25
+			set_state_controller = 20
+			set_state_controller = 31
+			set_state_controller = 32
+			set_state_controller = 33
+			#set_state_controller = 268
+			set_state_controller = 735		
 		}
 		if = {
 			limit = { 
@@ -628,7 +641,7 @@ country_event = {
 					controls_state = 557
 				}
 			}
-			USA ={transfer_state = 557}
+			FRA ={transfer_state = 557}
 		}
 		if = {
 			limit = { 
@@ -636,7 +649,7 @@ country_event = {
 					controls_state = 272
 				}
 			}
-			USA ={transfer_state = 272}
+			FRA ={transfer_state = 272}
 		}
 		if = {
 			limit = { 
@@ -644,7 +657,167 @@ country_event = {
 					controls_state = 556
 				}
 			}
-			USA ={transfer_state = 556}
+			FRA ={transfer_state = 556}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 871
+				}
+			}
+			FRA ={transfer_state = 871}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 515
+				}
+			}
+			FRA ={transfer_state = 515}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 268
+				}
+			}
+			FRA ={transfer_state = 268}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 557
+				}
+			}
+			FRA ={transfer_state = 557}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 272
+				}
+			}
+			FRA ={transfer_state = 272}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 556
+				}
+			}
+			FRA ={transfer_state = 556}
+		}	
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 871
+				}
+			}
+			FRA ={transfer_state = 871}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 515
+				}
+			}
+			FRA ={transfer_state = 515}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 268
+				}
+			}
+			FRA ={transfer_state = 268}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 543
+				}
+			}
+			FRA ={transfer_state = 543}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 708
+				}
+			}
+			FRA ={transfer_state = 708}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 706
+				}
+			}
+			FRA ={transfer_state = 706}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 713
+				}
+			}
+			FRA ={transfer_state = 713}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 310
+				}
+			}
+			FRA ={transfer_state = 310}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 694
+				}
+			}
+			FRA ={transfer_state = 694}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 728
+				}
+			}
+			FRA ={transfer_state = 728}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 543
+				}
+			}
+			FRA ={transfer_state = 543}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 635
+				}
+			}
+			FRA ={transfer_state = 635}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 641
+				}
+			}
+			FRA ={transfer_state = 641}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 320
+				}
+			}
+			FRA ={transfer_state = 320}
 		}
 		GER = {
        		remove_ideas = german_payments_vichy
@@ -676,7 +849,25 @@ country_event = {
 				706 = { add_core_of = FRA}
 				708 = { add_core_of = FRA}
 				713 = { add_core_of = FRA}	
-	}
+		}
+		22 = { remove_core_of = VIC}
+		26 = { remove_core_of = VIC}
+		25 = { remove_core_of = VIC}
+		20 = { remove_core_of = VIC}
+		31 = { remove_core_of = VIC}
+		33 = { remove_core_of = VIC}
+		268 = { remove_core_of = VIC}
+		557 = { remove_core_of = VIC}
+		310 = { remove_core_of = VIC}
+		515 = { remove_core_of = VIC}
+		513 = { remove_core_of = VIC}
+		543 = { remove_core_of = VIC}
+		459 = { remove_core_of = VIC}
+		460 = { remove_core_of = VIC}
+		694 = { remove_core_of = VIC}
+		706 = { remove_core_of = VIC}
+		708 = { remove_core_of = VIC}
+		713 = { remove_core_of = VIC}
 	}
 	
 	option = { 
@@ -684,8 +875,8 @@ country_event = {
 		trigger = {
 			is_ai = yes
 		}
-		GER = {
-			transfer_state = 1
+		FRA = {
+			transfer_state = 1	
 			transfer_state = 21
 			transfer_state = 26
 			transfer_state = 22
@@ -694,8 +885,21 @@ country_event = {
 			transfer_state = 31
 			transfer_state = 32
 			transfer_state = 33
-			transfer_state = 268
-			transfer_state = 735		
+			#transfer_state = 268
+			transfer_state = 735	
+		}
+		GER = {
+			set_state_controller = 1
+			set_state_controller = 21
+			set_state_controller = 26
+			set_state_controller = 22
+			set_state_controller = 25
+			set_state_controller = 20
+			set_state_controller = 31
+			set_state_controller = 32
+			set_state_controller = 33
+			#set_state_controller = 268
+			set_state_controller = 735		
 		}
 		if = {
 			limit = { 
@@ -776,7 +980,7 @@ country_event = {
 					controls_state = 557
 				}
 			}
-			USA ={transfer_state = 557}
+			FRA ={transfer_state = 557}
 		}
 		if = {
 			limit = { 
@@ -784,7 +988,7 @@ country_event = {
 					controls_state = 272
 				}
 			}
-			USA ={transfer_state = 272}
+			FRA ={transfer_state = 272}
 		}
 		if = {
 			limit = { 
@@ -792,8 +996,120 @@ country_event = {
 					controls_state = 556
 				}
 			}
-			USA ={transfer_state = 556}
+			FRA ={transfer_state = 556}
 		}	
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 871
+				}
+			}
+			FRA ={transfer_state = 871}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 515
+				}
+			}
+			FRA ={transfer_state = 515}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 268
+				}
+			}
+			FRA ={transfer_state = 268}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 543
+				}
+			}
+			FRA ={transfer_state = 543}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 708
+				}
+			}
+			FRA ={transfer_state = 708}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 706
+				}
+			}
+			FRA ={transfer_state = 706}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 713
+				}
+			}
+			FRA ={transfer_state = 713}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 310
+				}
+			}
+			FRA ={transfer_state = 310}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 694
+				}
+			}
+			FRA ={transfer_state = 694}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 728
+				}
+			}
+			FRA ={transfer_state = 728}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 543
+				}
+			}
+			FRA ={transfer_state = 543}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 635
+				}
+			}
+			FRA ={transfer_state = 635}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 641
+				}
+			}
+			FRA ={transfer_state = 641}
+		}
+		if = {
+			limit = { 
+				VIC = { 
+					controls_state = 320
+				}
+			}
+			FRA ={transfer_state = 320}
+		}
 		GER = {
 			remove_ideas = german_payments_vichy
 		}
@@ -824,7 +1140,25 @@ country_event = {
 				706 = { add_core_of = FRA}
 				708 = { add_core_of = FRA}
 				713 = { add_core_of = FRA}	
-	}
+		}
+		22 = { remove_core_of = VIC}
+		26 = { remove_core_of = VIC}
+		25 = { remove_core_of = VIC}
+		20 = { remove_core_of = VIC}
+		31 = { remove_core_of = VIC}
+		33 = { remove_core_of = VIC}
+		268 = { remove_core_of = VIC}
+		557 = { remove_core_of = VIC}
+		310 = { remove_core_of = VIC}
+		515 = { remove_core_of = VIC}
+		513 = { remove_core_of = VIC}
+		543 = { remove_core_of = VIC}
+		459 = { remove_core_of = VIC}
+		460 = { remove_core_of = VIC}
+		694 = { remove_core_of = VIC}
+		706 = { remove_core_of = VIC}
+		708 = { remove_core_of = VIC}
+		713 = { remove_core_of = VIC}
 		ai_chance = { factor = 100 }
 	}
 }
@@ -1431,85 +1765,85 @@ country_event = {
         hidden_effect = {
        		if = {
 				limit = {
-					19 = { owner = { tag = GER } }
+					19 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 19 }
 			}
 			if = {
 				limit = {
-					23 = { owner = { tag = GER } }
+					23 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 23 }
 			}
 			if = {
 				limit = {
-					30 = { owner = { tag = GER } }
+					30 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 30 }
 			}
 			if = {
 				limit = {
-					14 = { owner = { tag = GER } }
+					14 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 14 }
 			}
 			if = {
 				limit = {
-					15 = { owner = { tag = GER } }
+					15 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 15 }
 			}
 			if = {
 				limit = {
-					16 = { owner = { tag = GER } }
+					16 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 16 }
 			}
 			if = {
 				limit = {
-					844 = { owner = { tag = GER } }
+					844 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 844 }
 			}
 			if = {
 				limit = {
-					24 = { owner = { tag = GER } }
+					24 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 24 }
 			}
 			if = {
 				limit = {
-					18 = { owner = { tag = GER } }
+					18 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 18 }
 			}
 			if = {
 				limit = {
-					886 = { owner = { tag = GER } }
+					886 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 886 }
 			}
 			if = {
 				limit = {
-					29 = { owner = { tag = GER } }
+					29 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 29 }
 			}
 			if = {
 				limit = {
-					27 = { owner = { tag = GER } }
+					27 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 27 }
 			}
 			if = {
 				limit = {
-					17 = { owner = { tag = GER } }
+					17 = { controller = { tag = GER } }
 				}
 				VIC = { transfer_state = 17}
 			}
 			if = {
 				limit = {
-					844 = { owner = { tag = VIC } }
+					844 = { controller = { tag = VIC } }
 				}
 				VIC = { set_capital = 844 }
 			}
@@ -1568,7 +1902,7 @@ country_event = {
 				annex_country = { target = FRA transfer_troops = yes }
 				if = {
 					limit = {
-						844 = { owner = { tag = FRA } }
+						844 = { controller = { tag = FRA } }
 					}	
 					set_capital = 844
 					else = {
@@ -1610,7 +1944,7 @@ country_event = {
 				annex_country = { target = VIC transfer_troops = yes }
 				if = {
 					limit = {
-						844 = { owner = { tag = VIC } }
+						844 = { controller = { tag = VIC } }
 					}	
 					set_capital = 844
 					else = {

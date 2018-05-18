@@ -1453,15 +1453,6 @@ technologies = {
 			position = { x = 13 y = @1936 }
 		}
 		
-		on_research_complete = {
-			limit = {
-				tag = GER
-			}
-			hidden_effect = {
-				set_technology = { ss_antitank_tech = 1 }
-			}
-		}
-		
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1497,7 +1488,7 @@ technologies = {
 			leads_to_tech = antitank2
 			research_cost_coeff = 1
 		}
-				
+		
 		research_cost = 1
 		start_year = 1939
 		folder = {
@@ -1677,6 +1668,20 @@ technologies = {
 			ap_attack = 0.1
 		}
 		
+		ss_anti_tank_heavy = {
+			hard_attack = 0.2
+			ap_attack = 0.1
+		}
+		
+		#on_research_complete = {
+		#	limit = {
+		#		tag = GER
+		#	}
+		#	hidden_effect = {
+		#		set_technology = { ss_anti_tank_heavy_tech = 1 }
+		#	}
+		#}
+		
 		path = {
 			leads_to_tech = HVantitank2
 			research_cost_coeff = 1
@@ -1687,15 +1692,6 @@ technologies = {
 		folder = {
 			name = artillery_folder
 			position = { x = 16 y = 15 }
-		}
-		
-		on_research_complete = {
-			limit = {
-				tag = GER
-			}
-			hidden_effect = {
-				set_technology = { ss_antitank_heavy_tech = 1 }
-			}
 		}
 		
 		ai_will_do = {

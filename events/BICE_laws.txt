@@ -116,7 +116,7 @@ news_event = {
 	option = {
 		name = law.3.a
 		add_ideas = press_censored
-		#set_country_flag = press_censored
+		set_country_flag = press_censored
 	}
 }
 #Labor Laws
@@ -138,8 +138,10 @@ country_event = {
 			has_idea = labor_allowed
 			has_idea = labor_encouraged
 		}
-		add_ideas = labor_transition
-		remove_ideas = labor_allowed
+		swap_ideas = {
+			add_idea = labor_transition
+			remove_idea = labor_allowed
+		}
 	}
 	option = {
 		name = law.6.b
@@ -147,8 +149,11 @@ country_event = {
 			has_idea = labor_allowed
 			has_idea = labor_pressed
 		}
-		add_ideas = labor_transition
-		#clr_country_flag = labor_allowed
+		swap_ideas = {
+			add_idea = labor_transition
+			remove_idea = labor_allowed
+		}
+		clr_country_flag = labor_allowed
 	}
 	option = {
 		name = law.6.c
@@ -157,13 +162,17 @@ country_event = {
 			has_idea = labor_pressed
 		}
 		if = { limit = { NOT = { has_country_flag = labor_step_down } }
-			add_ideas = labor_transition
-			remove_ideas = labor_encouraged
+			swap_ideas = {
+				add_idea = labor_transition
+				remove_idea = labor_encouraged
+			}
 			clr_country_flag = labor_step_down
 		}
 		if = { limit = { has_country_flag = labor_step_down }
-			add_ideas = labor_transition
-			remove_ideas = labor_pressed
+			swap_ideas = {
+				add_idea = labor_transition
+				remove_idea = labor_pressed
+			}
 			clr_country_flag = labor_step_down
 		}
 	}
@@ -173,8 +182,10 @@ country_event = {
 			has_idea = labor_none
 			has_idea = labor_encouraged
 		}
-		add_ideas = labor_transition
-		remove_idea = labor_none
+		swap_ideas = {
+			add_idea = labor_transition
+			remove_idea = labor_none
+		}
 	}
 	option = {
 		name = law.6.e
@@ -182,8 +193,10 @@ country_event = {
 			has_idea = labor_none
 			has_idea = labor_pressed
 		}
-		add_ideas = labor_transition
-		remove_ideas = labor_none
+		swap_ideas = {
+			add_idea = labor_transition
+			remove_idea = labor_none
+		}
 	}
 }
 
@@ -206,8 +219,8 @@ country_event = {
 	option = {
 		name = law.4.a
 		swap_ideas = {
-			add_ideas = labor_transition2
-			remove_ideas = labor_transition
+			add_idea = labor_transition2
+			remove_idea = labor_transition
 		}
 	}
 }
@@ -246,6 +259,7 @@ country_event = {
 			has_idea = train_low
 		}
 	}
+	
 	mean_time_to_happen = { days = 2 }
 
 	immediate = {
@@ -271,8 +285,8 @@ country_event = {
 
 	immediate = {
 		swap_ideas = {
-			remove_ideas = low_training_standards
-			add_ideas = low_training_standards2
+			remove_idea = low_training_standards
+			add_idea = low_training_standards2
 		}
 	}
 	
@@ -295,8 +309,11 @@ country_event = {
 	mean_time_to_happen = { days = 150 }
 
 	immediate = {
-		add_ideas = low_training_standards2
-		remove_ideas = low_training_standards
+		swap_ideas = {
+			add_idea = low_training_standards2
+			remove_idea = low_training_standards
+		}
+		clr_country_flag = low_training_standards
 	}
 	
 	option = {
@@ -318,6 +335,7 @@ country_event = {
 			has_idea = train_low
 		}
 	}
+	
 	mean_time_to_happen = { days = 2 }
 
 	immediate = {
@@ -340,6 +358,7 @@ country_event = {
 		has_idea = low_training_standards
 		has_idea = train_low
 	}
+	
 	mean_time_to_happen = { days = 30 }
 
 	immediate = {

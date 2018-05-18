@@ -5082,10 +5082,10 @@ focus = {
 		cost = 1
 		available = {
 			GER = { is_ai = yes }
-			or = {
-			NOT = { has_idea = Rodina_I }	
-			NOT = { has_idea = red_army_disarry_I }	
-				}
+			OR = {
+				NOT = { has_idea = Rodina_I }	
+				NOT = { has_idea = red_army_disarry_I }	
+			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -5107,14 +5107,13 @@ focus = {
 		y = 6
 		cost = 5
 		available = {
-		or = {
-		and = {
-			has_war_with = GER
-			not = {has_idea = Rodina_I}
+			OR = {
+				AND = {
+					has_war_with = GER
+					not = { has_idea = Rodina_I }
+				}
+				not = { has_idea = soviet_workers }
 			}
-			not = {has_idea = soviet_workers}
-			
-	}
 		}
 		ai_will_do = {
 			factor = 5
@@ -5122,13 +5121,13 @@ focus = {
 
 		
 		completion_reward = {
-		#country_event = {id = soviet.338 }
-		add_manpower = 4000000
-		add_timed_idea = {
+			#country_event = {id = soviet.338 }
+			add_manpower = 2000000
+			add_manpower = 2000000
+			add_timed_idea = {
 				idea = proletariats_fight
 				days = 365
 			}
-		
 		}
 	}
 	focus = {
@@ -5140,13 +5139,13 @@ focus = {
 		cost = 5
 		available = {
 		or = {
-		and = {
-			has_war_with = GER
-			not = {has_idea = Rodina_I}
+			and = {
+				has_war_with = GER
+				not = { has_idea = Rodina_I }
 			}
-			not = {has_idea = proletariats_fight}
+			not = { has_idea = proletariats_fight }
 			
-	}
+			}
 		}
 		ai_will_do = {
 			factor = 0

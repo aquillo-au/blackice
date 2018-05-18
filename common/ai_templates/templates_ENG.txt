@@ -196,38 +196,87 @@ infantry_ENG = {
 	
 	match_to_count = 0.6
 	
-	infantry_ENG = {
-		upgrade_prio = {
-			factor = 30
+	infantry_ENG_1 = {
+		production_prio = {
+			base = 0
 			modifier = {
-			factor = 20.0
-			has_tech = infantry_weapons1
+				add = 10
+				NOT = { has_tech = interwar_antitank }
+			}
 		}
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				NOT = { has_tech = interwar_antitank }
+			}
 		}
-		target_width = 24.0
-		width_weight = 1.0
-		column_swap_factor = 0.5
-		
-		can_upgrade_in_field = {
-		has_tech = infantry_weapons1
-		}
+		target_width = 26.0
+		width_weight = 1
+		column_swap_factor = 1
 		
 		target_template = {
 			weight = 1
-			match_value = 25990.0
+			match_value = 1000
 			
 			support = {
 				DIV_HQ = 1
 				engineer = 1
 				recon_cav = 1
-				logistics_company = 1
+				field_hospital = 1
+				combat_engineer = 1
+			}
+			
+			regiments = {
+				infantry = 10
+				artillery_brigade = 4
+			}
+		}
+		allowed_types = {
+			infantry
+			artillery_brigade
+			DIV_HQ
+			engineer
+			recon_cav
+			field_hospital
+			combat_engineer
+		}
+	}
+	
+	infantry_ENG_2 = {
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				has_tech = interwar_antitank 
+			}
+		}
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				has_tech = interwar_antitank 
+			}
+		}
+		target_width = 26.0
+		width_weight = 1
+		column_swap_factor = 1
+		
+		target_template = {
+			weight = 1
+			match_value = 1000
+			
+			support = {
+				DIV_HQ = 1
+				engineer = 1
+				recon_cav = 1
 				field_hospital = 1
 				anti_tank = 1
 				combat_engineer = 1
 			}
 			
 			regiments = {
-				infantry = 10
+				infantry = 11
 				artillery_brigade = 2
 				anti_tank_brigade = 2
 			}
@@ -239,7 +288,6 @@ infantry_ENG = {
 			DIV_HQ
 			engineer
 			recon_cav
-			logistics_company
 			field_hospital
 			anti_tank
 			combat_engineer
@@ -305,16 +353,23 @@ marines_ENG = {
 	
 
 	marines_ENG = {
-		upgrade_prio = {
-			factor = 20
+		production_prio = {
+			base = 0
 			modifier = {
-			factor = 20.0
-			has_war = yes
+				add = 10
+				threat > 0.1
+			}
 		}
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 10
+				threat > 0.1
+			}
 		}
-		target_width = 25.0
-		width_weight = 1.0
-		column_swap_factor = 0.5
+		target_width = 26
+		width_weight = 1
+		column_swap_factor = 1
 
 		target_template = {
 			weight = 1
@@ -324,14 +379,13 @@ marines_ENG = {
 				DIV_HQ = 1
 				recon = 1
 				engineer = 1
-				logistics_company = 1
 				anti_tank = 1
 				amph_support = 1
 			}
 			
 			regiments = {
-				marine = 11
-				artillery_brigade = 2
+				marine = 10
+				artillery_brigade = 4
 			}
 		}
 		allowed_types = {
@@ -344,7 +398,6 @@ marines_ENG = {
 			logistics_company
 			artillery_brigade
 		}
-		
 	}			
 }
 
@@ -358,7 +411,7 @@ cavalry_ENG = {
 		cavalry
 	}
 
-	match_to_count = 0.4
+	match_to_count = 0.6
 
 cavalry_ENG = {
 	target_width = 20.0
@@ -392,7 +445,7 @@ cavalry_ENG = {
 			logistics_company
 			artillery_brigade_mot
 			anti_tank_brigade
-		}
+	}
 	
 	replace_at_match = 0.3
 	replace_with = motorized_ENG
@@ -551,8 +604,7 @@ militia_ENG = {
 		weight = 1
 		match_value = 22990.0
 		
-		support = {
-						
+		support = {		
 			military_police = 1
 			recon_cav = 1
 		}
