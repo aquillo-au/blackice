@@ -116,7 +116,7 @@ news_event = {
 	option = {
 		name = law.3.a
 		add_ideas = press_censored
-		#set_country_flag = press_censored
+		set_country_flag = press_censored
 	}
 }
 #Labor Laws
@@ -149,8 +149,11 @@ country_event = {
 			has_idea = labor_allowed
 			has_idea = labor_pressed
 		}
-		add_ideas = labor_transition
-		#clr_country_flag = labor_allowed
+		swap_ideas = {
+			add_idea = labor_transition
+			remove_idea = labor_allowed
+		}
+		clr_country_flag = labor_allowed
 	}
 	option = {
 		name = law.6.c
@@ -310,6 +313,7 @@ country_event = {
 			add_idea = low_training_standards2
 			remove_idea = low_training_standards
 		}
+		clr_country_flag = low_training_standards
 	}
 	
 	option = {

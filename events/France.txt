@@ -2341,108 +2341,108 @@ country_event = {
 		hidden_effect = {
 			VIC = {
 				transfer_state = 1
-				1 = { add_core_of = VIC}
-				transfer_state = 21
-				21 = { add_core_of = VIC}
-				transfer_state = 26
-				26 = { add_core_of = VIC}
-				transfer_state = 22
-				22 = { add_core_of = VIC}
-				transfer_state = 25
-				25 = { add_core_of = VIC}
-				transfer_state = 20
-				20 = { add_core_of = VIC}
-				transfer_state = 31
-				31 = { add_core_of = VIC}
-				transfer_state = 32
-				32 = { add_core_of = VIC}
-				transfer_state = 33
-				33 = { add_core_of = VIC}
-				transfer_state = 268
-				268 = { add_core_of = VIC}
-				transfer_state = 557
-				557 = { add_core_of = VIC}
-				transfer_state = 272
-				#272 = { add_core_of = VIC}
-				transfer_state = 310
-				310 = { add_core_of = VIC}
-				transfer_state = 556
-				#556 = { add_core_of = VIC}
-				transfer_state = 515
-				515 = { add_core_of = VIC}
-				transfer_state = 513
-				513 = { add_core_of = VIC}
-				transfer_state = 514
-				514 = { add_core_of = VIC}
-				transfer_state = 543
-				543 = { add_core_of = VIC}
-				transfer_state = 459
-				459 = { add_core_of = VIC}
-				transfer_state = 460
-				460 = { add_core_of = VIC}
-				transfer_state = 694
-				694 = { add_core_of = VIC}
 				transfer_state = 706
-				706 = { add_core_of = VIC}
 				transfer_state = 708
-				708 = { add_core_of = VIC}
-				transfer_state = 713
-				713 = { add_core_of = VIC}
+				transfer_state = 268
+				transfer_state = 310
+				transfer_state = 635
+				transfer_state = 641
+				transfer_state = 728
+				transfer_state = 320
+				transfer_state = 272
+				transfer_state = 556
 				transfer_state = 513
-				#513 = { add_core_of = VIC} #colonies not cores
+				transfer_state = 514
+				transfer_state = 515
+				transfer_state = 871
+				transfer_state = 26
+				transfer_state = 22
+				transfer_state = 25
+				transfer_state = 20
+				transfer_state = 31
+				transfer_state = 33
+				transfer_state = 557
+				transfer_state = 694
+				transfer_state = 713
+				transfer_state = 462
+				transfer_state = 461
 				transfer_state = 460
-				#460 = { add_core_of = VIC}
 				transfer_state = 459
-				#459 = { add_core_of = VIC}
 				transfer_state = 543
-				transfer_state = 751
-				}
-				#TUN = { 
-				#	country_event = { days = 1 id = france.67 }
-				#}
-				#MOR = { 
-				#	country_event = { days = 1 id = france.68 }
-				#}
-				#ITA = { 
-				#	country_event = { days = 1 id = france.69 }
-				#}
-				#FRA = { 
-				#	country_event = { days = 1 id = france.66 }
-				#}
-					VIC={
-						transfer_state = 706
-						transfer_state = 708
-						transfer_state = 268
-						transfer_state = 310
-						transfer_state = 635
-						transfer_state = 641
-						transfer_state = 728
-						transfer_state = 320
-						transfer_state = 272
-						transfer_state = 556
-						transfer_state = 975
-						transfer_state = 992
-					}
-					FRA={
-						transfer_state = 515
-						transfer_state = 539
-						transfer_state = 660
-					}
-				BEL = {
-					transfer_state = 718
-					transfer_state = 538
-					transfer_state = 295
-				}			
-				VIC = {
+			}
+			VIC={
+				transfer_state = 1
+				transfer_state = 706
+				transfer_state = 708
+				transfer_state = 268
+				transfer_state = 310
+				transfer_state = 635
+				transfer_state = 641
+				transfer_state = 728
+				transfer_state = 320
+				transfer_state = 272
+				transfer_state = 556
+				transfer_state = 513
+				transfer_state = 514
+				transfer_state = 515
+				transfer_state = 871
+				transfer_state = 26
+				transfer_state = 22
+				transfer_state = 25
+				transfer_state = 20
+				transfer_state = 31
+				transfer_state = 33
+				transfer_state = 557
+				transfer_state = 694
+				transfer_state = 713
+				transfer_state = 462
+				transfer_state = 461
+				transfer_state = 460
+				transfer_state = 459
+				transfer_state = 543
+				22 = { add_core_of = VIC}
+				26 = { add_core_of = VIC}
+				25 = { add_core_of = VIC}
+				20 = { add_core_of = VIC}
+				31 = { add_core_of = VIC}
+				33 = { add_core_of = VIC}
+				268 = { add_core_of = VIC}
+				557 = { add_core_of = VIC}
+				310 = { add_core_of = VIC}
+				515 = { add_core_of = VIC}
+				513 = { add_core_of = VIC}
+				543 = { add_core_of = VIC}
+				459 = { add_core_of = VIC}
+				460 = { add_core_of = VIC}
+				694 = { add_core_of = VIC}
+				706 = { add_core_of = VIC}
+				708 = { add_core_of = VIC}
+				713 = { add_core_of = VIC}
+			}
+			FRA={
+				transfer_state = 884
+				transfer_state = 539
+				transfer_state = 660
+				transfer_state = 863
+			}
+			BEL = {
+				transfer_state = 718
+				transfer_state = 538
+				transfer_state = 295
+			}			
+			VIC = {
+				give_military_access = GER
 				if = {
 					limit = { 
-						TUN = { 
-							controls_state = 458
-							not = { is_in_faction_with = GER }
+						NOT = { 
+							ITA = {
+								controls_state = 665
+								controls_state = 458
+							}
 						}
 					}
+					transfer_state = 665
 					transfer_state = 458
-					#458 = { add_core_of = VIC}
 					annex_country = {
 						target = TUN
 						transfer_troops = yes
@@ -2452,433 +2452,115 @@ country_event = {
 					limit = { 
 						SYR = { 
 							controls_state = 677
-							not = { is_in_faction_with = GER }
+							controls_state = 554
+							controls_state = 837
+							controls_state = 680
+							is_puppet_of = FRA
+							NOT = { is_in_faction_with = GER }
 						}
 					}
-					annex_country = {
-						target = SYR
-						transfer_troops = yes
-					}
-					release = SYR
-					puppet =SYR
+					FRA = { end_puppet = SYR }
+					puppet = SYR
 				}
 				if = {
 					limit = { 
 						LEB = { 
 							controls_state = 553
-							not = { is_in_faction_with = GER }
+							is_puppet_of = FRA
+							NOT = { is_in_faction_with = GER }
 						}
 					}
-					annex_country = {
-						target = LEB
-						transfer_troops = yes
-					}
-					release = LEB
-					puppet =LEB
-				}
-				if = {
-					limit = { 
-						TUN = { 
-							controls_state = 665
-							not = { is_in_faction_with = GER }
-						}
-					}
-					transfer_state = 665
-					#665 = { add_core_of = VIC }
-				}
-				}
-				VIC = {
-				if = {
-					limit = { 
-						MOR = { 
-							controls_state = 461
-							not = { is_in_faction_with = GER }
-						}
-					}
-					transfer_state = 461
-					#461 = { add_core_of = VIC}
-					annex_country = {
-						target = MOR
-						transfer_troops = yes
-					}
+					FRA = { end_puppet = LEB }
+					puppet = LEB
 				}
 				if = {
 					limit = { 
 						MOR = { 
-							controls_state = 462
-							not = { is_in_faction_with = GER }
+							owns_state = 461 #uses owns now because ITA could have gotten there in time. But they only get tunisia max
+							owns_state = 462
+							is_puppet_of = FRA
+							NOT = { is_in_faction_with = GER }
 						}
 					}
-					transfer_state = 462
-					#462 = { add_core_of = VIC}
+					FRA = { end_puppet = MOR }
+					puppet = MOR
+				}
+				if = {
+					limit = { 
+						725 = { is_controlled_by = ITA } 
+					}
+					ITA = { set_state_controller = 725 } #just to be sure
+				}
+				if = {
+					limit = { 
+						NOT = { 
+							725 = { is_controlled_by = ITA } 
+						}
+					}
+					VIC = { transfer_state = 735 }
+					735 = { add_core_of = VIC }
+				}
+				if = {
+					limit = { 
+						32 = { is_controlled_by = ITA }
+						21 = { is_controlled_by = ITA }
+					}
+					ITA = {
+						set_state_controller = 32  #just to be sure
+						set_state_controller = 21  #just to be sure
+					}
+				}
+				if = {
+					limit = { 
+						NOT = {
+							32 = { is_controlled_by = ITA }
+							21 = { is_controlled_by = ITA }
+						}
+					}
+					VIC = {
+						transfer_state = 32
+						transfer_state = 21
+					}
+					32 = { add_core_of = VIC }
+					21 = { add_core_of = VIC }
+				}
+				# FRA Player Switches to Vichy
+				if = {
+					limit = { FRA = { has_country_flag = become_vichy } }
+					change_tag_from = FRA
+				}
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Philippe Pétain"
+					desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
+					picture = "Portrait_France_Philippe_Petain.dds"
+					expire = "1965.1.1"
+					ideology = vichy
+					traits = {
+						dictator
+						fascist_sympathies
+						war_hero
+					}
+				}		
+				set_country_flag = philipe_petain
+				add_ideas = neutrality_idea_vichy
+			}
+			#Set same cosmetic tag they would get on capitulation
+			FRA = {
+				set_cosmetic_tag = FRA_FREE
+			}
+			GER = {
+				add_ideas={
+					german_payments_vichy 
 				}
 			}
 			VIC = {
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 1
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 1
-					1 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 26
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 26
-					26 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 22
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 22
-					22 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 25
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 25
-					25 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 20
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 20
-					20 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 31
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 31
-					31 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 32
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 32
-					32 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 33
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 33
-					33 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 268
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 268
-					268 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 272
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 272
-					272 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 310
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 310
-					310 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 556
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 556
-					556 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 515
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 515
-					515 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 513
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 513
-					513 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 543
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 543
-					543 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 459
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 459
-					459 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 458
-							is_in_faction_with = GER
-						}
-					}
-					ITA={transfer_state = 458}
-						else={
-								VIC={transfer_state = 458}
-							}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 665
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 665
-					665 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						GER = { 
-							controls_state = 458
-						}
-					}
-					transfer_state = 458
-					458 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						GER = { 
-							controls_state = 461
-						}
-					}
-					transfer_state = 461
-					461 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						GER = { 
-							controls_state = 462
-						}
-					}
-					transfer_state = 462
-					462 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						GER = { 
-							controls_state = 665
-						}
-					}
-					transfer_state = 665
-					665 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 460
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 460
-					460 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 694
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 694
-					694 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 706
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 706
-					706 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 708
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 708
-					708 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 713
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 713
-					713 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 513
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 513
-					513 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 460
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 460
-					460 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 459
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 459
-					#459 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							not = { controls_state = 735 }
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 735
-					735 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							not = { controls_state = 514 }
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 514
-					#514 = { add_core_of = VIC}
-				}
-				if = {
-					limit = { 
-						ITA = { 
-							controls_state = 543
-							is_in_faction_with = GER
-						}
-					}
-					transfer_state = 543
-					543 = { add_core_of = VIC}
-				}
+				add_opinion_modifier = { target = GER modifier = very_large_increase }
 			}
-			# FRA Player Switches to Vichy
-			if = {
-				limit = { FRA = { has_country_flag = become_vichy } }
-				change_tag_from = FRA
-			}
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Philippe Pétain"
-				desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
-				picture = "Portrait_France_Philippe_Petain.dds"
-				expire = "1965.1.1"
-				ideology = vichy
-				traits = {
-					dictator
-					fascist_sympathies
-					war_hero
-				}
-			}		
-			set_country_flag = philipe_petain
-			add_ideas = neutrality_idea_vichy
-		}
-		#Set same cosmetic tag they would get on capitulation
-		FRA = {
-			set_cosmetic_tag = FRA_FREE
-		}
-		GER = {
-			add_ideas={
-				german_payments_vichy 
+			GER ={
+				add_opinion_modifier = { target = VIC modifier = very_large_increase }
 			}
 		}
-		VIC = {
-			add_opinion_modifier = { target = GER modifier = very_large_increase }
-       	}
-		GER ={
-			add_opinion_modifier = { target = VIC modifier = very_large_increase }
-       	}
 	}
 }
 # Given control over some colonies to FRA-Free

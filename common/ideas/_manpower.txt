@@ -1,5 +1,6 @@
-ideas = {
-	### Age Laws
+# Age Laws
+	ideas = {
+	
 	age_laws = {
 		law = yes
 		
@@ -11,40 +12,7 @@ ideas = {
 			available = {
 			}
 			
-			ai_will_do = {
-				factor = 1
-				modifier = {
-					factor = 0 
-					has_manpower < 2000000
-					OR = {
-						has_war = yes
-						threat > 0.50
-					}
-					is_major = yes
-				}
-				modifier = {
-					factor = 0 
-					has_manpower < 1000000
-					has_war = yes
-					is_major = no
-				}
-				modifier = {
-					factor = 100
-					has_war = no
-					NOT = {
-						OR = {
-							tag = GER
-							tag = JAP
-							tag = SOV
-							tag = SPR
-							tag = D01
-							tag = CHI
-							tag = ITA
-						}
-						date < 1940.1.1
-					}
-				}
-			}
+
 
 			modifier = {
 				conscription = 0.020
@@ -69,7 +37,7 @@ ideas = {
 			
 			cancel_if_invalid = no
 			default = yes
-		}
+			}
 		age_18 = {
 			cost = 25
 			removal_cost = -1
@@ -79,33 +47,15 @@ ideas = {
 			}
 			
 			ai_will_do = {
-   				factor = 1
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 1000
+					has_country_flag = age_19
+					manpower_per_military_factory <  3900
+				}
+				}		
 
-   				modifier = {
-					factor = 10
-					has_war = yes
-					has_manpower < 2500000
-					is_major = yes
-				}
-				modifier = {
-					factor = 10
-					has_war = yes
-					has_manpower < 1000000
-					is_major = no
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 2000000
-					is_major = yes
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 800000
-					is_major = no
-				}
-			}
 
 			modifier = {
 				conscription = 0.030
@@ -130,44 +80,25 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-		}
+			}
 		age_17 = {
 			cost = 50
 			removal_cost = -1
 			level = 8
 			
 			available = {
-				has_country_flag = cons_three
-				has_country_flag = cons_expanded_draft
-				has_country_flag = cons_extensive_draft
-				has_country_flag = cons_barrel
 			}
 			
 			ai_will_do = {
-   				factor = 5
-   				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 2000000
-					is_major = yes
-				}
-				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 900000
-					is_major = no
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 1700000
-					is_major = yes
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 800000
-					is_major = no
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 1000
+					OR = {
+						has_country_flag = age_18
+						has_country_flag = age_19
+						}
+					manpower_per_military_factory <  3800
 				}
 			}
 
@@ -194,7 +125,7 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-		}
+			}
 		age_16 = {
 			cost = 50
 			removal_cost = -1
@@ -202,38 +133,21 @@ ideas = {
 			
 			available = {
 				has_war = yes
-				has_country_flag = cons_three
-				has_country_flag = cons_expanded_draft
-				has_country_flag = cons_extensive_draft
-				has_country_flag = cons_barrel
+				OR = {
+					has_country_flag = cons_three
+					has_country_flag = cons_expanded_draft
+					has_country_flag = cons_extensive_draft
+					has_country_flag = cons_barrel
+				}
 			}
 			
 			ai_will_do = {
-   				factor = 1
-
-   				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 800000
-					is_major = yes
-				}
-				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 400000
-					is_major = no
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 1400000
-					is_major = yes
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 700000
-					is_major = no
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 1000
+					has_country_flag = age_17
+					manpower_per_military_factory <  3600
 				}
 			}
 
@@ -260,7 +174,7 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-		}
+			}
 		age_15 = {
 			cost = 50
 			removal_cost = -1
@@ -269,40 +183,21 @@ ideas = {
 			available = {
 				has_war = yes
 				OR = {
-				has_country_flag = cons_three
-				has_country_flag = cons_expanded_draft
-				has_country_flag = cons_extensive_draft
-				has_country_flag = cons_barrel
+					has_country_flag = cons_three
+					has_country_flag = cons_expanded_draft
+					has_country_flag = cons_extensive_draft
+					has_country_flag = cons_barrel
 				}
 
 			}
 			
 			ai_will_do = {
-   				factor = 1
-
-   				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 700000
-					is_major = yes
-				}
-				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 300000
-					is_major = no
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 1200000
-					is_major = yes
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 600000
-					is_major = no
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 1000
+					has_country_flag = age_16
+					manpower_per_military_factory <  3400
 				}
 			}
 
@@ -329,7 +224,7 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-		}
+			}
 		age_14 = {
 			cost = 50
 			removal_cost = -1
@@ -346,34 +241,14 @@ ideas = {
 			}
 			
 			ai_will_do = {
-   				factor = 1
-
-   				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 600000
-					is_major = yes
-				}
-				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 250000
-					is_major = no
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 1000000
-					is_major = yes
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 500000
-					is_major = no
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_country_flag = age_15
+					manpower_per_military_factory <  3200
 				}
 			}
-
 			modifier = {
 				conscription = 0.070
 				army_morale_factor = -0.15
@@ -398,7 +273,7 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-		}
+			}
 		age_13 = {
 			cost = 50
 			removal_cost = -1
@@ -407,6 +282,10 @@ ideas = {
 			available = {
 				has_war = yes
 				OR = {
+						has_war_support > 0.4
+						surrender_progress > 0
+					}
+				OR = {
 					has_country_flag = cons_expanded_draft
 					has_country_flag = cons_extensive_draft
 					has_country_flag = cons_barrel
@@ -414,31 +293,12 @@ ideas = {
 			}
 			
 			ai_will_do = {
-   				factor = 1
-
-   				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 500000
-					is_major = yes
-				}
-				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 200000
-					is_major = no
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 800000
-					is_major = yes
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 400000
-					is_major = no
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 1000
+					has_country_flag = age_14
+					manpower_per_military_factory <  3000
 				}
 			}
 
@@ -466,13 +326,17 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-		}
+			}
 		age_12 = {
 			cost = 50
 			removal_cost = -1
 			level = 3
 			
 			available = {
+					OR = {
+						has_war_support > 0.5
+						surrender_progress > 0
+					}
 					has_war = yes
 					OR = {
 					has_country_flag = cons_expanded_draft
@@ -483,31 +347,12 @@ ideas = {
 			}
 			
 			ai_will_do = {
-   				factor = 1
-
-   				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 450000
-					is_major = yes
-				}
-				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 200000
-					is_major = no
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 600000
-					is_major = yes
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 300000
-					is_major = no
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 1000
+					has_country_flag = age_13
+					manpower_per_military_factory <  2800
 				}
 			}
 
@@ -535,7 +380,7 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-		}
+			}
 		age_11 = {
 			cost = 50
 			removal_cost = -1
@@ -544,40 +389,24 @@ ideas = {
 			available = {
 					has_war = yes
 					OR = {
-					has_country_flag = cons_extensive_draft
-					has_country_flag = cons_barrel
+						has_war_support > 0.6
+						surrender_progress > 0
+					}
+					OR = {
+						has_country_flag = cons_extensive_draft
+						has_country_flag = cons_barrel
 					}
 			}
 			
 			ai_will_do = {
-   				factor = 1
-
-   				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 400000
-					is_major = yes
-				}
-				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 180000
-					is_major = no
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 400000
-					is_major = yes
-				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 200000
-					is_major = no
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 1000
+					has_country_flag = age_12
+					manpower_per_military_factory <  2600
 				}
 			}
-
 			modifier = {
 				conscription = 0.100
 				army_morale_factor = -0.4
@@ -602,7 +431,7 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-		}
+			}
 		age_10 = {
 			cost = 50
 			removal_cost = -1
@@ -611,35 +440,27 @@ ideas = {
 			available = {
 					has_war = yes
 					OR = {
-					has_country_flag = cons_extensive_draft
-					has_country_flag = cons_barrel
+						has_war_support > 0.7
+						surrender_progress > 0
+					}
+					OR = {
+						has_country_flag = cons_extensive_draft
+						has_country_flag = cons_barrel
 					}
 
 			}
 			
+
 			ai_will_do = {
-   				factor = 1
-
-   				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 350000
-					is_major = yes
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 1000
+					has_country_flag = age_11
+					manpower_per_military_factory <  2400
 				}
-				modifier = {
-					factor = 60
-					has_war = yes
-					has_manpower < 200000
-					is_major = no
 				}
-				modifier = {
-					factor = 0
-					has_war = yes
-					has_manpower > 200000
-					is_major = yes
-				}
-			}
-
+			
 			modifier = {
 				conscription = 0.120
 				army_morale_factor = -0.5
@@ -663,7 +484,7 @@ ideas = {
 			}
 			
 			cancel_if_invalid = no
-		}
+			}
 	}
 }
 ### EOF ###

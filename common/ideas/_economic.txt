@@ -156,31 +156,25 @@ ideas = {
 			removal_cost = -1
 			level = 4
 			available = {
-				OR={
-					AND={
-						NOT = { has_country_flag = Transition }
-						NOT = { has_country_flag = Mobilizing }
-						OR = {
-							has_government = fascism
-							has_government = communism
-							has_war = yes
-							threat > 0.15
-						}
-						if = {
-							limit = {
-								original_tag = HUN
-								has_dlc = "Death or Dishonor"
-							}
-							NOT = { has_idea = HUN_treaty_of_triannon }
-						}
+				NOT = { has_country_flag = Transition }
+				NOT = { has_country_flag = Mobilizing }
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_war = yes
+					threat > 0.15
+				}
+				if = {
+					limit = {
+						original_tag = HUN
+						has_dlc = "Death or Dishonor"
 					}
-					
-					has_country_flag=to_lem
+					NOT = { has_idea = HUN_treaty_of_triannon }
 				}
 			}
 			
 			modifier = {
-				consumer_goods_factor = 0.20
+				consumer_goods_factor = 0.25
 				production_speed_industrial_complex_factor = 0.03
 				production_speed_arms_factory_factor = -0.05
 				production_speed_smallarms_factory_factor = -0.05
@@ -245,32 +239,26 @@ ideas = {
 			removal_cost = -1
 			level = 3
 			available = {
-				OR={
-					AND={
-						OR = {
-							has_government = fascism
-							has_government = communism
-							has_war = yes
-							threat > 0.30
-						}
-						if = {
-							limit = {
-								original_tag = HUN
-								has_dlc = "Death or Dishonor"
-							}
-							OR = {
-								has_completed_focus = HUN_secret_rearmament
-								NOT = { has_idea = HUN_treaty_of_triannon }
-							}
-						}
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_war = yes
+					threat > 0.30
+				}
+				if = {
+					limit = {
+						original_tag = HUN
+						has_dlc = "Death or Dishonor"
 					}
-					
-					has_country_flag=to_pem
+					OR = {
+						has_completed_focus = HUN_secret_rearmament
+						NOT = { has_idea = HUN_treaty_of_triannon }
+					}
 				}
 			}
 			
 			modifier = {
-				consumer_goods_factor = 0.15
+				consumer_goods_factor = 0.2
 				conscription = -0.01
 				production_speed_industrial_complex_factor = -0.1
 				production_speed_arms_factory_factor = 0.1
@@ -335,39 +323,33 @@ ideas = {
 			removal_cost = -1
 			level = 2
 			available = {
-				OR={
-					AND={
-						NOT = { has_country_flag = Transition }
-						NOT = { has_country_flag = Mobilizing }
-						threat > 0.50
-						OR = {
-							has_government = fascism
-							has_government = communism
-							AND = {
-								has_war = yes
-								any_enemy_country = {
-									ic_ratio = { 
-										tag = ROOT 
-										ratio > 0.1
-									}
-								}
+				NOT = { has_country_flag = Transition }
+				NOT = { has_country_flag = Mobilizing }
+				threat > 0.50
+				OR = {
+					has_government = fascism
+					has_government = communism
+					AND = {
+						has_war = yes
+						any_enemy_country = {
+							ic_ratio = { 
+								tag = ROOT 
+								ratio > 0.1
 							}
-						}			
-						if = {
-							limit = {
-								original_tag = HUN
-								has_dlc = "Death or Dishonor"
-							}
-							NOT = { has_idea = HUN_treaty_of_triannon }
 						}
 					}
-					
-					has_country_flag = to_we
-				}	
+				}			
+				if = {
+					limit = {
+						original_tag = HUN
+						has_dlc = "Death or Dishonor"
+					}
+					NOT = { has_idea = HUN_treaty_of_triannon }
+				}
 			}
 			
 			modifier = {
-				consumer_goods_factor = 0.10
+				consumer_goods_factor = 0.15
 				conscription = -0.02
 				production_speed_industrial_complex_factor = -0.2
 				production_speed_arms_factory_factor = 0.15
@@ -446,7 +428,7 @@ ideas = {
 			}
 			
 			modifier = {
-				consumer_goods_factor = 0.075
+				consumer_goods_factor = 0.10
 				conscription = -0.04
 				production_speed_industrial_complex_factor = -0.25
 				production_speed_arms_factory_factor = 0.25

@@ -283,15 +283,17 @@ default_CHI_production_lim = {
 		num_of_military_factories > 31
 	}
 	
-	ai_strategy = { type = build_army id = infantry 							value = 102		}	
-	ai_strategy = { type = build_army id = mountaineers 						value = 0 		}	
-	ai_strategy = { type = build_army id = marines 								value = 0		}	
-	ai_strategy = { type = build_army id = paratroopers							value = 0 		}	
-	ai_strategy = { type = build_army id = motorized 							value = 0 		}	
+	ai_strategy = { type = build_army id = infantry 							value = 10		}	
+	ai_strategy = { type = build_army id = militia 								value = 5 		}	
 	ai_strategy = { type = build_army id = cavalry 								value = 10 		}	
-	ai_strategy = { type = build_army id = armor 								value = 0 		}	
-	ai_strategy = { type = build_army id = mechanized 							value = 0 		}	
-	ai_strategy = { type = build_army id = garrison	 							value = 0 		}
+	
+	ai_strategy = { type = equipment_production_factor id = fighter 				value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = interceptor 			value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = tactical_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = naval_bomber 			value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = cas 					value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = air_transport 			value = -100	}	
 }
 
 default_CHI_production_lim_2 = {
@@ -303,15 +305,9 @@ default_CHI_production_lim_2 = {
 		num_of_military_factories < 31
 	}
 	
-	ai_strategy = { type = build_army id = infantry 							value = 136		}	
-	ai_strategy = { type = build_army id = mountaineers 						value = 0 		}	
-	ai_strategy = { type = build_army id = marines 								value = 0		}	
-	ai_strategy = { type = build_army id = paratroopers							value = 0 		}	
-	ai_strategy = { type = build_army id = motorized 							value = 0 		}	
-	ai_strategy = { type = build_army id = cavalry 								value = 10 		}	
-	ai_strategy = { type = build_army id = armor 								value = 0 		}	
-	ai_strategy = { type = build_army id = mechanized 							value = 0 		}	
-	ai_strategy = { type = build_army id = garrison	 							value = 0 		}
+	ai_strategy = { type = build_army id = infantry 							value = 50		}	
+	ai_strategy = { type = build_army id = militia 								value = 5 		}	
+	ai_strategy = { type = build_army id = cavalry 								value = 30 		}	
 }
 
 default_FRA_production_lim = {
@@ -363,7 +359,7 @@ default_ENG_production_lim = {
 		num_of_military_factories > 65
 	}
 	
-	ai_strategy = { type = build_army id = infantry 						    value = 50		}	
+	ai_strategy = { type = build_army id = infantry 						    value = 90		}	
 	ai_strategy = { type = build_army id = mountaineers 					    value = 0 		}	
 	ai_strategy = { type = build_army id = marines 								value = 15		}	
 	ai_strategy = { type = build_army id = paratroopers							value = 0 		}	
@@ -372,6 +368,7 @@ default_ENG_production_lim = {
 	ai_strategy = { type = build_army id = armor 								value = 5 		}	
 	ai_strategy = { type = build_army id = mechanized 							value = 2 		}	
 	ai_strategy = { type = build_army id = garrison	 							value = 20 		}
+	
 }
 
 default_ENG_production_lim_2 = {
@@ -383,7 +380,7 @@ default_ENG_production_lim_2 = {
 		NOT = { num_of_military_factories > 65 }
 	}
 	
-	ai_strategy = { type = build_army id = infantry 						    value = 65		}  	
+	ai_strategy = { type = build_army id = infantry 						    value = 100		}  	
 	ai_strategy = { type = build_army id = mountaineers 					    value = 0 		}	
 	ai_strategy = { type = build_army id = marines 								value = 25		}	
 	ai_strategy = { type = build_army id = paratroopers							value = 0 		}	
@@ -392,6 +389,7 @@ default_ENG_production_lim_2 = {
 	ai_strategy = { type = build_army id = armor 								value = 6		}	
 	ai_strategy = { type = build_army id = mechanized 							value = 3 		}	
 	ai_strategy = { type = build_army id = garrison	 							value = 25 		}
+
 }
 
 default_ENG_production_lim_3 = {
@@ -403,7 +401,22 @@ default_ENG_production_lim_3 = {
 		NOT = { num_of_military_factories > 80 }
 	}
 	
-	ai_strategy = { type = build_army id = infantry 						    value = 5		}
+	ai_strategy = { type = build_army id = infantry 						    value = 40		}
+	ai_strategy = { type = build_army id = marines 								value = 10		}		
+	ai_strategy = { type = build_army id = motorized 							value = 20 		}		
+	ai_strategy = { type = build_army id = armor 								value = 10 		}
+}
+
+default_ENG_production_lim_4 = {
+	enable = {
+		original_tag = ENG
+		num_of_military_factories > 90
+	}
+	abort = {
+		NOT = { num_of_military_factories > 90 }
+	}
+	
+	ai_strategy = { type = build_army id = infantry 						    value = 50		}
 	ai_strategy = { type = build_army id = marines 								value = 10		}		
 	ai_strategy = { type = build_army id = motorized 							value = 20 		}		
 	ai_strategy = { type = build_army id = armor 								value = 15 		}	
@@ -460,7 +473,97 @@ default_ITA_production_lim_3 = {
 		NOT = { has_army_size = { type = infantry size > 70 } }
 	}
 		
-	ai_strategy = { type = build_army id = motorized 							value = 1 		}	
-	ai_strategy = { type = build_army id = cavalry 								value = 0 		}	
-	ai_strategy = { type = build_army id = armor 								value = 2 		}	
+	ai_strategy = { type = build_army id = motorized 							value = 1 	}	
+	ai_strategy = { type = build_army id = cavalry 								value = 0 	}	
+	ai_strategy = { type = build_army id = armor 								value = 2 	}	
+}
+
+default_POL_production_lim_0 = {
+	enable = {
+		original_tag = POL
+		has_capitulated = no
+	}
+	abort = {
+		has_capitulated = yes
+	}
+	
+	ai_strategy = { type = build_army id = infantry 						value = 20	}	
+	ai_strategy = { type = build_army id = mountaineers 					value = 1 	}	
+	ai_strategy = { type = build_army id = cavalry 							value = 8 	}	
+	ai_strategy = { type = build_army id = garrison	 						value = 2 	}
+	ai_strategy = { type = build_army id = suppression 					    value = 2 	}	
+	
+	ai_strategy = { type = equipment_production_factor id = fighter 				value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = interceptor 			value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = tactical_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = naval_bomber 			value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = cas 					value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = air_transport 			value = -100	}	
+}
+
+default_BEL_production_lim_0 = {
+	enable = {
+		original_tag = BEL
+		has_capitulated = no 
+	}
+	abort = {
+		has_capitulated = yes
+	}
+
+	ai_strategy = { type = build_army id = infantry 							value = 10	 }	
+	ai_strategy = { type = build_army id = cavalry 								value = 3 	}	
+	ai_strategy = { type = build_army id = militia	 							value = 3 	}
+	
+	ai_strategy = { type = equipment_production_factor id = fighter 				value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = interceptor 			value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = tactical_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = naval_bomber 			value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = cas 					value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = air_transport 			value = -100	}	
+}
+
+default_HOL_production_lim_0 = {
+	enable = {
+		original_tag = HOL
+		has_capitulated = no 
+	}
+	abort = {
+		has_capitulated = yes
+	}
+
+	ai_strategy = { type = build_army id = infantry 							value = 12	 }	
+	ai_strategy = { type = build_army id = cavalry 								value = 4 	}	
+	ai_strategy = { type = build_army id = garrison	 							value = 3 	}
+	
+	ai_strategy = { type = equipment_production_factor id = fighter 				value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = interceptor 			value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = tactical_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = naval_bomber 			value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = cas 					value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = air_transport 			value = -100	}	
+}
+
+default_FIN_production_lim_0 = {
+	enable = {
+		original_tag = FIN
+		has_capitulated = no 
+	}
+	abort = {
+		has_capitulated = yes
+	}
+
+	ai_strategy = { type = build_army id = infantry 							value = 12	 }	
+	ai_strategy = { type = build_army id = cavalry 								value = 4 	}	
+	ai_strategy = { type = build_army id = garrison	 							value = 1 	}
+	
+	ai_strategy = { type = equipment_production_factor id = fighter 				value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = interceptor 			value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = tactical_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = naval_bomber 			value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = cas 					value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = air_transport 			value = -100	}	
 }

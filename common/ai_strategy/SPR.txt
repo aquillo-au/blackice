@@ -11,34 +11,39 @@
 # influence
 
 # make italy and germany want to send stuff to the fascist side of SCW
-ITA_and_GER_help_SPA_win_civil_war = {
-	reversed = yes
+GER_help_SPA_win_civil_war = {
 	enable = {
-		date < 1939.1.1
-		original_tag = SPR
+		tag = GER
 		has_government = fascism
 		SPR = { has_civil_war = yes }
 		NOT = { has_global_flag = scw_over }
 	}
 	abort = {
-		OR = {
-			date > 1939.1.1
-			NOT = { has_government = fascism }
-			SPR = { has_civil_war = no }
-			has_global_flag = scw_over
-		}
+		SPR = { has_civil_war = no }
 	}
 	
 	ai_strategy = {
 		type = send_volunteers_desire
-		id = GER
-		value = 50
+		id = D01
+		value = 500
 	}
+}
 
+ITA_help_SPA_win_civil_war = {
+	enable = {
+		tag = GER
+		has_government = fascism
+		SPR = { has_civil_war = yes }
+		NOT = { has_global_flag = scw_over }
+	}
+	abort = {
+		SPR = { has_civil_war = no }
+	}
+	
 	ai_strategy = {
 		type = send_volunteers_desire
-		id = ITA
-		value = 50
+		id = D01
+		value = 500
 	}
 }
 
@@ -55,12 +60,51 @@ mexico_send_equipment = {
 	ai_strategy = {
 		type = support
 		id = SPR
-		value = 5000
+		value = 500
 	}
 	ai_strategy = {
 		type = befriend
 		id = SPR
-		value = 5000
+		value = 500
+	}
+}
+
+#Strategies to rush the war in 39
+SPR_crush_them_39 = {
+	enable = {
+		original_tag = SPR
+		has_government = communism
+		has_civil_war = yes
+		country_exists = D01
+		date > 1939.1.1
+	}
+	abort = {
+		SPR = { has_civil_war = no }
+	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = D01
+		value = 500
+	}
+}
+
+SPA_crush_them_39 = {
+	enable = {
+		original_tag = SPR
+		has_government = fascism
+		has_civil_war = yes
+		country_exists = SPR
+		date > 1939.1.1
+	}
+	abort = {
+		has_civil_war = no 
+	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = SPR
+		value = 500
 	}
 }
 

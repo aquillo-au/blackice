@@ -34,7 +34,6 @@ ENG_war_against_ITA = {
 			ITA = { is_puppet = yes }
 			is_in_faction_with = ITA
 			NOT = { ITA = { has_government = fascism } }
-			
 			NOT = { has_war_with = ITA }
 			NOT = { democratic_govt = yes }
 		}
@@ -43,13 +42,14 @@ ENG_war_against_ITA = {
 	ai_strategy = {
 		type = conquer
 		id = "ITA"
-		value = 1000
+		value = 10000
 	}
 }
 
 allied_support_england = {
 	enable = {
 		is_in_faction_with = ENG
+		NOT = { tag = ENG }
 	}
 	abort = {
 		NOT = { is_in_faction_with = ENG }
@@ -195,11 +195,11 @@ defend_poland_against_germany = {
 		country_exists = POL
 		OR = { 
 			GER = { has_war_with = POL }
-			#GER = { has_completed_focus = Solution_for_danzig }
+			GER = { has_completed_focus = GER_danzig_or_war }
 		}
 	}
 	abort = {
-		NOT = { country_exists = POL }
+		POL = { has_capitulated = yes }
 	}
 	
 	ai_strategy = {
@@ -305,13 +305,6 @@ royal_air_force = {
 	ai_strategy = {
 		type = air_factory_balance
 		value = 100
-	}
-	
-	#Does not work in BICE since fighter archetypes are all wrong and noone wants to fix it
-	ai_strategy = {
-		type = equipment_production_min_factories
-		id = fighter
-		value = 10
 	}
 
 }
@@ -466,6 +459,95 @@ ENG_dont_defend_Burma = {
 		value = 200
 	}
 }
+
+ALLIES_be_careful_transporting_through_the_med_1 = {
+	enable = {
+		is_in_faction_with = ENG
+		date < 1943.1.1
+		has_war = yes
+		all_enemy_country = { ships_in_area = { area = 68 size > 20 } }
+	}
+	abort = {
+		OR = {
+			date > 1944.1.1
+			has_war = no
+			NOT = { all_enemy_country = { ships_in_area = { area = 68 size > 20 } } }
+		}
+	}
+	
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 68
+		value = 2000
+	}
+}
+
+ALLIES_be_careful_transporting_through_the_med_2 = {
+	enable = {
+		is_in_faction_with = ENG
+		date < 1943.1.1
+		has_war = yes
+		all_enemy_country = { ships_in_area = { area = 169 size > 20 } }
+	}
+	abort = {
+		OR = {
+			date > 1944.1.1
+			has_war = no
+			NOT = { all_enemy_country = { ships_in_area = { area = 169 size > 20 } } }
+		}
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 169
+		value = 2000
+	}
+}
+
+ALLIES_be_careful_transporting_through_the_med_3 = {
+	enable = {
+		is_in_faction_with = ENG
+		date < 1943.1.1
+		has_war = yes
+		all_enemy_country = { ships_in_area = { area = 29 size > 20 } }
+	}
+	abort = {
+		OR = {
+			date > 1944.1.1
+			has_war = no
+			NOT = { all_enemy_country = { ships_in_area = { area = 29 size > 20 } } }
+		}
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 29
+		value = 2000
+	}
+}
+
+ALLIES_be_careful_transporting_through_the_med_4 = {
+	enable = {
+		is_in_faction_with = ENG
+		date < 1943.1.1
+		has_war = yes
+		all_enemy_country = { ships_in_area = { area = 69 size > 20 } }
+	}
+	abort = {
+		OR = {
+			date > 1944.1.1
+			has_war = no
+			NOT = { all_enemy_country = { ships_in_area = { area = 69 size > 20 } } }
+		}
+	}
+
+	ai_strategy = {
+		type = naval_avoid_region
+		id = 69
+		value = 2000
+	}
+}
+
 
 ENG_protect_island = {
 	enable = {

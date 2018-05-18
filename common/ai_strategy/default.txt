@@ -616,14 +616,12 @@ ENG_strategy_2 = {
 	ai_strategy = { type = role_ratio id = heavy_armor 		         			value = -100 }
 	ai_strategy = { type = role_ratio id = mechanized 							value = 15 		}	
 	ai_strategy = { type = role_ratio id = garrison						    	value = 7 		}
-	
 
 	ai_strategy = { type = equipment_production_factor id = armor 					value = 3		}
 	ai_strategy = { type = equipment_production_factor id = motorized 				value = 30    	}
 	ai_strategy = { type = equipment_production_factor id = infantry 				value = 60    	}
 	
 	ai_strategy = { type = air_factory_balance 									value = 20 		}
-	
 	
 	ai_strategy = { type = equipment_production_factor id = fighter 					value = 120 		}	
 	ai_strategy = { type = equipment_production_factor id = interceptor 				value = 40 		}	
@@ -920,8 +918,6 @@ USA_strategy_2 = {
 	
 }
 
-
-
 late_game_air = { 
 	enable = {
 		num_of_military_factories > 129
@@ -995,7 +991,7 @@ default_pp_spend_amount = {
 	ai_strategy = {
 		type = pp_spend_amount
 		id = idea
-		value = 100
+		value = 125
 	}
 	
 	ai_strategy = {
@@ -1017,27 +1013,6 @@ default_stockpile_management = {
 	ai_strategy = {
 		type = equipment_stockpile_surplus_ratio
 		value = 35 # double base stockpile #from 25 to 35
-	}
-}
-
-save_admiral_pp_for_later = {
-	enable = {
-		has_war = no
-		threat < 0.3
-		has_political_power < 200		
-	}
-	abort = {
-		OR = {
-			has_war = yes	
-			threat > 0.3
-			has_political_power > 200
-		}
-	}
-
-	ai_strategy = { # dont burn PP on admirals (can still get free ones)
-		type = pp_spend_priority
-		id = admiral
-		value = -100
 	}
 }
 
@@ -1065,6 +1040,39 @@ do_not_waste_pp_if_saving_for_manpower_laws = {
 		id = guarantee
 		value = -9999
 	}
+	
+	ai_strategy = {
+		type = pp_spend_amount
+		id = decision
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = pp_spend_amount
+		id = idea
+		value = 1000
+	}
+}
+
+do_not_waste_pp_on_befriend_if_low = {
+	enable = {
+		OR = {
+			political_power_daily < 0.5
+			has_political_power < 50
+		}
+	}
+	abort = {
+		OR = {
+			political_power_daily > 0.5
+			has_political_power > 50
+		}
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -9999
+	}
 }
 
 save_admiral_pp_for_later = {
@@ -1088,23 +1096,6 @@ save_admiral_pp_for_later = {
 	}
 }
 
-do_not_waste_pp_befriend = {
-
-	enable = {
-		has_political_power < 150
-		NOT = { tag = MEX }
-	}
-	abort = {
-		has_political_power > 149
-	}
-
-	ai_strategy = {
-		type = pp_spend_priority
-		id = relation
-		value = -9999
-	}
-
-}
 
 
 

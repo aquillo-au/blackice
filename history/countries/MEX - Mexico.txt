@@ -1,38 +1,19 @@
 ﻿capital = 277
 
+set_convoys = 45
+
+
+set_stability = 0.8
+
 oob = "MEX_1936"
-add_ideas = { 	
-		export_focus
-		tax_average
-		tariffs_average
-		
-		civilian_economy
-		press_free
-		private_control
-		labor_allowed
-		fdi_allowed
-		
-		cons_volunteer
-		foreign_volunteers
-		mob_reserve
-		train_medium
-		age_19
-		officer_train_low
-		security_liberty_first
-		edu_high
-		
-		unity_divided_nation	
-		foreign_neutral
-		neutrality_idea
-}
+
 # Starting tech
 set_technology = {
 	BICE_sub_balance = 1
 	#BICE_airrange_balance = 1
-################# infantry ###############
+	################# infantry ###############
 	tech_infantry_uniforms = 1
 	infantry_weapons = 1
-	
 	tech_Garrison = 1
 	tech_Headquarters = 1
 	################## support ##################
@@ -55,78 +36,67 @@ set_technology = {
 	generic_submarine = 1
 	generic_naval = 1
 	############### economy ############
+	############### WW1 doctrines ############
 	ww1_infantry = 1
 	infantry_charge = 1
-	
 	complex_trench_systems = 1
-	
 	ww1_artillery = 1
-	
 	foot_runners = 1
-	
 	mobile_doctrines = 1
 	cavalry_charges = 1
 	cavalry_dismounting = 1
-	
-
 	ww1_battlefield_support = 1
 }
-set_country_flag = monroe_doctrine
 
-1939.1.1 = {
-
-	add_political_power = 1198
+add_ideas = { 	
+	export_focus
+	tax_average
+	tariffs_average
 	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	civilian_economy
+	press_free
+	private_control
+	labor_allowed
+	fdi_allowed
+	security_liberty_first
 	
-	oob = "MEX_1939"
-	set_technology = {
-		interwar_artillery = 1
-		infantry_weapons1 = 1
-		infantry_weapons2 = 1
-		hmg = 1
-
-		#doctrines
-		air_superiority = 1
-		grand_battle_plan = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-
-		#electronics
-		electronic_mechanical_engineering = 1
-		radio = 1
-		radio_detection = 1
-		mechanical_computing = 1
-		computing_machine = 1
-
-		#industry
-		basic_machine_tools = 1
-		improved_machine_tools = 1
-		advanced_machine_tools = 1
-		synth_oil_experiments = 1
-		oil_plant = 1
-		improved_oil_plant = 1
-		construction1 = 1
-		construction2 = 1
-		construction3 = 1
-		dispersed_industry = 1
-		dispersed_industry2 = 1
-		dispersed_industry3 = 1
-	}
+	cons_volunteer
+	foreign_volunteers
+	mob_reserve
+	train_medium
+	officer_train_low
+	age_19
+	
+	edu_high
+	
+	unity_divided_nation	
+	foreign_neutral
+	neutrality_idea
 }
 
+set_country_flag = export_focus
+set_country_flag = tax_average
+set_country_flag = tariffs_average
 
-set_convoys = 45
+set_country_flag = civilian_economy
+set_country_flag = press_free
+set_country_flag = private_control
+set_country_flag = labor_allowed
+set_country_flag = fdi_allowed
+set_country_flag = security_liberty_first
+
+set_country_flag = cons_volunteer
+set_country_flag = foreign_volunteers
+set_country_flag = mob_reserve
+set_country_flag = train_medium
+set_country_flag = officer_train_low
+set_country_flag = age_19
+
+set_country_flag = edu_minimal
+
+set_country_flag = unity_divided_nation
+set_country_flag = foreign_neutral
+set_country_flag = neutrality_idea
 
 set_politics = {
 
@@ -134,15 +104,12 @@ set_politics = {
 		conservatism = { 
 			popularity = 5
 		}
-
 		fascism = {
 			popularity = 0
 		}
-		
 		communism = {
 			popularity = 1
 		}
-		
 		neutrality = { 
 			popularity = 94
 		}
@@ -154,7 +121,7 @@ set_politics = {
 	elections_allowed = yes
 }
 
-set_stability = 0.8
+set_country_flag = monroe_doctrine
 
 create_country_leader = {
 	name = "Lázaro Cárdenas"
@@ -199,46 +166,8 @@ create_country_leader = {
 		#
 	}
 }
-
-1939.1.1 = {
-	set_politics = {
-
-		parties = {
-		conservatism = { 
-			popularity = 1
-		}
-
-		fascism = {
-			popularity = 0
-		}
-		
-		communism = {
-			popularity = 1
-		}
-		
-		neutrality = { 
-			popularity = 98
-		}
-	}
-	
-	ruling_party = neutrality
-		last_election = "1934.7.1"
-		election_frequency = 72
-		elections_allowed = yes
-	}
-
-	create_country_leader = { #from 1940, but he's prettier so he gets to win early
-		name = "Manuel Avila Camacho"
-		desc = "POLITICS_LAZARO_CARDENAS_DESC"
-		picture = "gfx/leaders/South America/Portrait_South_America_Generic_3.dds"
-		expire = "1965.1.1"
-		ideology = despotism
-		traits = {
-			#
-		}
-	}
-}
-
+##### Field Marshals #####
+##### Corps Commanders #####
 create_corps_commander = {
 	name = "Luis Farell"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_1.dds"
@@ -443,8 +372,7 @@ create_corps_commander = {
 	traits = { Bad_General trait_engineer }
 	skill = 1
 }
-
-
+#### Navy Commanders #####
 create_navy_leader = {
 	name = "Paul Suarez"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_1.dds"
@@ -529,3 +457,4 @@ create_navy_leader = {
 	traits = { superior_tactician }
 	skill = 1
 }
+### EOF ###

@@ -21,6 +21,8 @@ country_event = {
 		hidden_effect = { 
 			153 = { remove_claim_by = GER }
 			3 =  { remove_claim_by = GER }
+			898 =  { remove_claim_by = GER }
+			909 =  { remove_claim_by = GER }
 		}
 	}
 	
@@ -285,6 +287,7 @@ country_event = {   # making sure German player gets correct soviet campaign
 			OR = { 
 				country_exists = LIT 
 				country_exists = LAT 
+				country_exists = EST
 			}
 			OR = { 
 				date > 1940.12.1   # before the 41 campaign. 
@@ -1297,7 +1300,6 @@ country_event = {
 		ai_chance = { factor = 100 }
 		set_technology = { generic_armor = 1 }
 		#set_technology = { allied_captured_armor_tech = 1 }
-				
 	}	
 }	
 
@@ -1592,9 +1594,8 @@ country_event = {
 				idea = ai_air_upgrades_mid
 				days = 1095
 			}
-		set_technology = {ai_air_mid_tech = 1 }	
+			set_technology = {ai_air_mid_tech = 1 }	
 		}
-		 
 	}
 }
 country_event = {
@@ -1612,12 +1613,14 @@ country_event = {
 		NOT = { has_idea = ai_air_upgrades_early }
 		NOT = { has_idea = ai_air_upgrades_mid }
 		NOT = { has_idea = ai_air_upgrades_late }
-			}
-		
+	}
+	
 	mean_time_to_happen = {
 		days = 2
 	}
+	
 	immediate = { set_country_flag = ai_lateair }
+	
 	option = {
 		name = blackiceevents.103.a
 		hidden_effect = {
@@ -1625,8 +1628,7 @@ country_event = {
 				idea = ai_air_upgrades_late
 				days = 1095
 			}
-		set_technology = {ai_air_late_tech = 1 }	
+			set_technology = {ai_air_late_tech = 1 }	
 		}
-		 
 	}
-	}
+}

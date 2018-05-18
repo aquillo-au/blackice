@@ -53,10 +53,10 @@ NDiplomacy = {
 	WARGOAL_JUSTIFY_TENSION_FROM_PRODUCTION = 30.0,						-- Base value scaled by production capacity of country compared to biggest country
 	MIN_WARGOAL_JUSTIFY_COST = 10.0,									-- It always takes atleast 10 days to justify a wargoal
 	WARGOAL_PER_JUSTIFY_AND_WAR_COST_FACTOR = 1.5,						-- Cost factor per nation at war with or justifying against
-	BASE_BOOST_PARTY_POPULARITY_DAILY_PP = 50, 							-- Daily pp cost for boost party popularity
-	BASE_BOOST_PARTY_POPULARITY_DAILY_DRIFT = 0.50, 						-- Daily amount of popularity that will be added by the activity.
-	BASE_STAGE_COUP_DAILY_PP = 50,										-- Daily pp cost for staging a coup
-	BASE_STAGE_COUP_TOTAL_COST = 1000, 								-- Equipment consume factor for stage coup.
+	BASE_BOOST_PARTY_POPULARITY_DAILY_PP = 5, 							-- Daily pp cost for boost party popularity
+	BASE_BOOST_PARTY_POPULARITY_DAILY_DRIFT = 0.02, 						-- Daily amount of popularity that will be added by the activity.
+	BASE_STAGE_COUP_DAILY_PP = 7.5,										-- Daily pp cost for staging a coup
+	BASE_STAGE_COUP_TOTAL_COST = 3000, 								-- Equipment consume factor for stage coup.
 	NAP_EXPIRY_MONTHS = 36,                        					-- NAPs expire after this many months
 	NAP_UNBREAKABLE_MONTHS = 12,                					    -- NAPS cannot be broken for this many months
 	NAP_FORCE_BALANCE_RULE_MONTHS = 4,        						-- The NAP border force balance rule changes with this interval
@@ -248,7 +248,7 @@ NCountry = {
 	AUTONOMOUS_SPILLOVER = 0.025,								-- Total score that can be saved to reach next level
 	CIVIL_WAR_INVOLVEMENT_MIN_TENSION = 0.75,					-- base value of world tension to involve other sides to the civil war
 	UNCAPITULATE_LEVEL = 0.15,                       			-- if we reclaim this much and our capital we reset capitulate status
-	BASE_SURRENDER_LIMIT = 0.8,								-- Base level of occupation required for country surrender
+	BASE_SURRENDER_LIMIT = 0.7,								-- Base level of occupation required for country surrender
 	MIN_SURRENDER_LIMIT = 0.1,									-- Minimum non-forced surrender limit. valid 0-1
 	BASE_MOBILIZATION_SPEED = 0.01,								-- Base speed of manpower mobilization  #in 1/1000 of 1 %
 	BOMBING_WAR_SUPPORT_SCALE = -0.00003, 					-- Scaling of health damaged by bombers to war support impact
@@ -266,8 +266,8 @@ NCountry = {
 	AIR_VOLUNTEER_PLANES_LIMIT = 0.2,							-- Ratio for volunteer planes available for sending in relation to sender air force
 	AIR_VOLUNTEER_BASES_CAPACITY_LIMIT = 0.1,						-- Ratio for volunteer planes available for sending in relation to receiver air base capacity
 	ATTACHE_XP_SHARE = 0.15,									-- Country received xp from attaches
-	SPECIAL_FORCES_CAP_BASE = 0.05,								-- Max ammount of special forces battalions is total number of non-special forces battalions multiplied by this and modified by a country modifier
-	SPECIAL_FORCES_CAP_MIN = 24,								-- You can have a minimum of this many special forces battalions, regardless of the number of non-special forces battalions you have, this can also be modified by a country modifier
+	SPECIAL_FORCES_CAP_BASE = 0.03,								-- Max ammount of special forces battalions is total number of non-special forces battalions multiplied by this and modified by a country modifier
+	SPECIAL_FORCES_CAP_MIN = 12,								-- You can have a minimum of this many special forces battalions, regardless of the number of non-special forces battalions you have, this can also be modified by a country modifier
 	DAYS_OF_WAR_BEFORE_SURRENDER = 7,							-- Number of days a war has to have existed before anyone can surrender in it
 },
 
@@ -277,10 +277,10 @@ NProduction = {
 	MAX_NAV_FACTORIES_PER_LINE = 10,							-- Max number of naval-factories that can be assigned a single production line.
 	MAX_MIL_FACTORIES_PER_LINE = 150,							-- Max number of mil-factories that can be assigned a single production line.
 	EFFICIENCY_LOSS_PER_UNUSED_DAY = 1,							-- Daily loss of efficiency for unused factory slots ( efficiency is tracked per factory slot in the production line )
-	MAX_LINE_RESOURCE_PENALTY = 90,							-- Max penalty factor for production lines lacking strategic resources in %.
+	MAX_LINE_RESOURCE_PENALTY = 100,							-- Max penalty factor for production lines lacking strategic resources in %.
 	RESOURCE_PENALTY_WARNING_CRITICAL_RATIO = 0.8, 				-- Switch to red progress bar if penalty is over threshold 
 	BASE_FACTORY_SPEED = 4, 									-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
-	BASE_FACTORY_SPEED_MIL = 6, 								-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
+	BASE_FACTORY_SPEED_MIL = 5, 								-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
 	BASE_FACTORY_SPEED_NAV = 2, 								-- Base factory speed multiplier (how much hoi3 style IC each factory gives).
 	BASE_FACTORY_START_EFFICIENCY_FACTOR = 10,					-- Base start efficiency for factories expressed in %.
 	BASE_FACTORY_MAX_EFFICIENCY_FACTOR = 50,						-- Base max efficiency for factories expressed in %.
@@ -300,7 +300,7 @@ NProduction = {
 	MIN_FIELD_TO_TRAINING_MANPOWER_RATIO = 0.60,				-- Ratio which % of army in field can be trained
 	CAPITULATE_STOCKPILES_RATIO = 0.30, 							-- How much equipment from deployed divisions will be transferred on capitulation
 	INFRA_MAX_CONSTRUCTION_COST_EFFECT = 0.5, 					-- Building in a state with higher infrastructure will reduce the cost of shared buildings.
-	PRODUCTION_RESOURCE_LACK_PENALTY = -0.03,					-- Penalty decrease while lack of resource per factory
+	PRODUCTION_RESOURCE_LACK_PENALTY = -0.05,					-- Penalty decrease while lack of resource per factory
 	MIN_LICENSE_ACTIVE_DAYS = 30,								-- Min days for license to be active
 	BASE_LICENSE_IC_COST = 1,									-- Base IC cost for lended license
 	LICENSE_IC_COST_YEAR_INCREASE = 1,							-- IC cost equipment for every year of equipment after 1936
@@ -355,7 +355,7 @@ NBuildings = {
 	BASE_FACTORY_REPAIR = 0.3,						-- Default repair rate before factories are taken into account
 	BASE_FACTORY_REPAIR_FACTOR = 3.0,				-- Factory speed modifier when repairing.
 	SUPPLY_PORT_LEVEL_THROUGHPUT = 7,   			-- supply throughput per level of naval base
-	INFRA_TO_SUPPLY = 1.7,
+	INFRA_TO_SUPPLY = 2,
  	INFRA_TO_SUPPLY_COEFF = 1,
 	MAX_SHARED_SLOTS = 49,						-- Max slots shared by factories
 	OWNER_CHANGE_EXTRA_SHARED_SLOTS_FACTOR = 0.5, 	--Scale factor of extra shared slots when state owner change.
@@ -1153,10 +1153,10 @@ NAI = {
 	ORG_UNIT_STRONG = 0.95,								-- Organization % for unit to be considered strong
 	STR_UNIT_STRONG = 0.95,								-- Strength (equipment) % for unit to be considered strong
 	
-	ORG_UNIT_WEAK = 0.75,								-- Organization % for unit to be considered weak
+	ORG_UNIT_WEAK = 0.8,								-- Organization % for unit to be considered weak
 	STR_UNIT_WEAK = 0.75,								-- Strength (equipment) % for unit to be considered weak
 	
-	ORG_UNIT_NORMAL = 0.85,						-- Organization % for unit to be considered normal
+	ORG_UNIT_NORMAL = 0.9,						-- Organization % for unit to be considered normal
 	STR_UNIT_NORMAL = 0.85,						-- Strength (equipment) % for unit to be considered normal
 	
 	PLAN_FACTION_STRONG_TO_EXECUTE = 0.65,				-- % or more of units in an order to consider ececuting the plan
@@ -1235,7 +1235,7 @@ NAI = {
 	
 	MANPOWER_FREE_USAGE_THRESHOLD = 90000,			-- If AI has this much manpower he doesn't care about the percentage
 	MANPOWER_RESERVED_THRESHOLD = 0.25,					-- The AI will not deploy more units if he goes below this percentage
-	START_TRAINING_EQUIPMENT_LEVEL = 0.9,              -- was 0.95 ai will not start to train if equipment drops below this level
+	START_TRAINING_EQUIPMENT_LEVEL = 0.8,              -- was 0.95 ai will not start to train if equipment drops below this level
 	STOP_TRAINING_EQUIPMENT_LEVEL = 0.7,                -- was 0.9 ai will not train if equipment drops below this level
 	BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.01,	-- was 0.001 How much lack of resources are worth when evaluating what to build.
 	DIVISION_DESIGN_WEIGHTS = {							-- Base values used by AI to evaluate value of a stat
@@ -1312,8 +1312,8 @@ NAI = {
 	BUILD_ARMOR_STRENGTH_MULTIPLIER_WEIGHT = 0.0,
 	BUILD_ARMOR_ORGANIZATION_MULTIPLIER_WEIGHT = 0.0,
 
-	UPGRADE_DIVISION_RELUCTANCE = 7,						-- 5.5 DNM, original 7, changed to be consistent with AI mod
-	UPGRADE_PERCENTAGE_OF_FORCES = 0.2,					-- How big part of the army that should be considered for upgrading
+	UPGRADE_DIVISION_RELUCTANCE = 5,						-- 5.5 DNM, original 7, changed to be consistent with AI mod
+	UPGRADE_PERCENTAGE_OF_FORCES = 0.25,					-- How big part of the army that should be considered for upgrading
 
 	STRATEGIC_BOMBING_DEFENCE_IMPORTANCE = 400.0,			-- DNM, original 400, changed to be consistent with AI mod
 	
@@ -1374,7 +1374,7 @@ NAI = {
 	FRONT_UNITS_CAP_FACTOR = 9.0,							-- A factor applied to total front size and supply use. Primarily effects small fronts
 	MAX_DIST_PORT_RUSH = 30.0,								-- If a unit is in enemy territory with no supply it will consider nearby ports within this distance.
 	
-	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.75,				-- Cancel unit production if below this to get resources out to units in the field
+	MIN_FIELD_STRENGTH_TO_BUILD_UNITS = 0.5,				-- Cancel unit production if below this to get resources out to units in the field
 	MIN_MANPOWER_TO_BUILD_UNITS = 0.80,						-- Cancel unit production if below this to get resources out to units in the field
 	
 	AVERAGE_SUPPLY_USE_PESSIMISM = 1.5,						-- Multiplier for when AI calculates average supply use of entire army.
@@ -1509,7 +1509,7 @@ NAI = {
 	MAX_AVAILABLE_MANPOWER_RATIO_TO_BUFFER_PEACETIME = 0.2,		-- deployment will try to buffer a ratio of manpower (for reinforcements) during peace time
 	
 	MANPOWER_RATIO_REQUIRED_TO_PRIO_MOBILIZATION_LAW = 0.4,		-- percentage of manpower in field is desired to be buffered for AI when it has upcoming wars or already at war. if it has less manpower, it will prio manpower laws
-	UPGRADES_DEFICIT_LIMIT_DAYS = 180,                           -- Ai will avoid upgrading units in the field to new templates if it takes longer than this to fullfill their equipment need
+	UPGRADES_DEFICIT_LIMIT_DAYS = 3000,                           -- Ai will avoid upgrading units in the field to new templates if it takes longer than this to fullfill their equipment need
 
 },
 

@@ -1750,30 +1750,10 @@ add_namespace = germany
 		id = germany.500
 		title = "Honor the Pact"
 		desc = germany.500.desc
-		picture = GFX_report_event_japan_europe_pact
+		picture = GFX_report_event_german_polish_border
 
 		is_triggered_only = yes
-		
-		immediate = { 
-			every_country = { 
-				limit = { is_in_faction_with = ENG } 
-				diplomatic_relation = { country = POL relation = guarantee active = no } 
-				diplomatic_relation = { country = SOV relation = non_aggression_pact } 
-				add_ai_strategy = {
-					type = dont_join_wars_with
-					id = "POL"
-					target_country = SOV
-					value = 2000
-				}
-				add_ai_strategy = {
-					type = befriend
-					id = "SOV"
-					value = 50
-				}
-			} 
-		}
 
-		
 		option = {
 			name = "Join the Attack"		#join the attack
 			ai_chance = { factor = 100 }
@@ -1796,30 +1776,7 @@ add_namespace = germany
 		
 		fire_only_once = yes
 
-		trigger = {
-			has_global_flag = sov_yes_pact
-			POL = { has_war_with = SOV has_war_with = GER }
-			POL = { is_in_faction_with = ENG }
-			count_triggers = {
-				amount = 16
-				96 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				840 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				95 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				94 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				93 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				91 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				89 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				88 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				762 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				90 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				10 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				1001 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				97 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				98 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				86 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-				85 = { CONTROLLER = { OR = { tag = GER tag = SOV is_in_faction_with = SOV is_in_faction_with = GER } } }
-			}
-		}
+		is_triggered_only = yes
 		
 		immediate = {
 			every_country = { limit = { is_in_faction_with = ENG has_war_with = SOV NOT = { is_puppet = yes } } 
@@ -1841,13 +1798,17 @@ add_namespace = germany
 				set_state_controller = 98
 				set_state_controller = 87
 				set_state_controller = 10
-				set_state_controller = 1001
+				set_state_controller = 862
 				set_state_controller = 90
 				set_state_controller = 92
 				set_state_controller = 88
 				set_state_controller = 762
+				set_state_controller = 842
+				set_state_controller = 944
 			}
-		}	
+		}
+		option = { }
+			
 	}		
 # Memel
 	country_event = {#22  Claim Memel - Lithuania Folds
@@ -7620,6 +7581,7 @@ add_namespace = germany
 						transfer_state = 108
 						transfer_state = 107
 						transfer_state = 906
+						transfer_state = 903
 				}
 				HUN = {
 						transfer_state = 914
@@ -7640,7 +7602,6 @@ add_namespace = germany
 						ITA = {
 							transfer_state = 105
 							transfer_state = 904
-							transfer_state = 903
 						}
 					}
 					if = {
@@ -11749,28 +11710,28 @@ add_namespace = germany
 			modifier = {
 				factor = 0.85
 				OR = {
-					has_global_flag = allied_anger_4
-					has_global_flag = allied_anger_5
+					GER = { check_variable = { allied_anger = 4 } }
+					GER = { check_variable = { allied_anger = 5 } }
 				}
 			}
 			modifier = {
 				factor = 0.75
 				OR = {
-					has_global_flag = allied_anger_6
-					has_global_flag = allied_anger_7
+					GER = { check_variable = { allied_anger = 6 } }
+					GER = { check_variable = { allied_anger = 7 } }
 				}
 			}
 			modifier = {
 				factor = 0.65
 				OR = {
-					has_global_flag = allied_anger_8
-					has_global_flag = allied_anger_9
+					GER = { check_variable = { allied_anger = 8 } }
+					GER = { check_variable = { allied_anger = 9 } }
 				}
 			}
 			modifier = {
 				factor = 0.1
 				OR = {
-					has_global_flag = allied_anger_10
+					GER = { check_variable = { allied_anger = 10 } }
 					has_war_with = ENG
 				}
 			}
@@ -13958,7 +13919,7 @@ add_namespace = germany
 	        ai_chance = { factor = 0 }
 	    }
 	}
-	country_event = {#451 GER_GROÃŸ
+	country_event = {#451 GER_GROSS -- revisit, the cosmetic tag doesnt exist
 	    id = germany.451
 	    title = germany.451.t
 	    desc = germany.451.d
@@ -13994,12 +13955,15 @@ add_namespace = germany
 		
 		trigger = {
 			tag = GER
+			POL = { has_capitulated = yes }
 			controls_state = 85
 			controls_state = 86
 			controls_state = 98
 			controls_state = 87
 			controls_state = 762
 			controls_state = 72
+			controls_state = 944
+			controls_state = 842
 		}
 		
 		option = {
@@ -14011,8 +13975,11 @@ add_namespace = germany
 			transfer_state = 98
 			transfer_state = 762
 			transfer_state = 72
+			transfer_state = 944
+			transfer_state = 842
 			set_country_flag = first
-			85 = { add_core_of = GER }
+			944 = { add_core_of = GER }
+			add_political_power = 25
 	    
 	    }
 	    option = {
@@ -14042,6 +14009,7 @@ add_namespace = germany
 			transfer_state = 8
 			transfer_state = 28
 			set_country_flag = second
+			add_political_power = 25
 	    }
 	    option = {
 	        name = germany.453.b 
