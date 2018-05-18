@@ -226,6 +226,1210 @@ political_actions = {
 	}
 }
 
+arms_trade = {
+
+	fascist_trade_infantry_weapons = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = inf_trade_running }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = inf_trade_running }
+			ROOT = { has_government = fascism }
+			ROOT = { has_equipment = { infantry_equipment > 500 } }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.35
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { infantry_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = infantry_equipment amount = -500 } }
+			set_country_flag = inf_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = infantry_equipment amount = 500 } }
+			clr_country_flag = inf_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { infantry_equipment > 7000 }
+			}
+		}
+	}
+	
+	fascist_trade_field_uniforms = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = field_trade_running }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = field_trade_running }
+			ROOT = { has_government = fascism }
+			ROOT = { has_equipment = { infantry_uniforms > 500 } }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { infantry_uniforms < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = infantry_uniforms amount = -500 } }
+			set_country_flag = field_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = infantry_uniforms amount = 500 } }
+			clr_country_flag = field_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { infantry_uniforms > 8000 }
+			}
+		}
+	}
+	
+	fascist_trade_HMG_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = HMG_trade_running }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = HMG_trade_running }
+			ROOT = { has_government = fascism }
+			ROOT = { has_equipment = { HMG_equipment > 500 } }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { HMG_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = HMG_equipment amount = -500 } }
+			set_country_flag = HMG_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = HMG_equipment amount = 500 } }
+			clr_country_flag = HMG_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { HMG_equipment > 5000 }
+			}
+		}
+	}
+	
+	fascist_trade_mortar_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = mortar_trade_running }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = mortar_trade_running }
+			ROOT = { has_government = fascism }
+			ROOT = { has_equipment = { mortar_equipment > 500 } }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { mortar_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = mortar_equipment amount = -500 } }
+			set_country_flag = mortar_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = mortar_equipment amount = 500 } }
+			clr_country_flag = mortar_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { mortar_equipment > 5000 }
+			}
+		}
+	}
+	
+	fascist_trade_artillery_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = artillery_trade_running }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = artillery_trade_running }
+			ROOT = { has_government = fascism }
+			ROOT = { has_equipment = { artillery_equipment > 500 } }
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = fascism
+					AND = {
+						fascism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { artillery_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = artillery_equipment amount = -500 } }
+			set_country_flag = artillery_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = artillery_equipment amount = 500 } }
+			clr_country_flag = artillery_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { artillery_equipment > 3000 }
+			}
+		}
+	}
+	
+	democratic_trade_infantry_weapons = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = inf_trade_running }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 40 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = inf_trade_running }
+			democratic_govt = yes
+			ROOT = { has_equipment = { infantry_equipment > 500 } }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 40 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { infantry_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 60
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = infantry_equipment amount = -500 } }
+			set_country_flag = inf_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = infantry_equipment amount = 500 } }
+			clr_country_flag = inf_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { infantry_equipment > 7000 }
+			}
+		}
+	}
+	
+	democratic_trade_field_uniforms = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = field_trade_running }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = field_trade_running }
+			democratic_govt = yes
+			ROOT = { has_equipment = { infantry_uniforms > 500 } }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { infantry_uniforms < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = infantry_uniforms amount = -500 } }
+			set_country_flag = field_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = infantry_uniforms amount = 500 } }
+			clr_country_flag = field_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { infantry_uniforms > 8000 }
+			}
+		}
+	}
+	
+	democratic_trade_HMG_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = HMG_trade_running }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = HMG_trade_running }
+			democratic_govt = yes
+			ROOT = { has_equipment = { HMG_equipment > 500 } }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { HMG_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = HMG_equipment amount = -500 } }
+			set_country_flag = HMG_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = HMG_equipment amount = 500 } }
+			clr_country_flag = HMG_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { HMG_equipment > 5000 }
+			}
+		}
+	}
+	
+	democratic_trade_mortar_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = mortar_trade_running }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = mortar_trade_running }
+			democratic_govt = yes
+			ROOT = { has_equipment = { mortar_equipment > 500 } }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { mortar_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = mortar_equipment amount = -500 } }
+			set_country_flag = mortar_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = mortar_equipment amount = 500 } }
+			clr_country_flag = mortar_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { mortar_equipment > 5000 }
+			}
+		}
+	}
+	
+	democratic_trade_artillery_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = artillery_trade_running }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = artillery_trade_running }
+			democratic_govt = yes
+			ROOT = { has_equipment = { artillery_equipment > 500 } }
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					democratic_govt = yes
+					AND = {
+						OR = {
+							conservatism > 0.2
+							liberalism > 0.2
+							socialism > 0.2
+						}
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { artillery_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = artillery_equipment amount = -500 } }
+			set_country_flag = artillery_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = artillery_equipment amount = 500 } }
+			clr_country_flag = artillery_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { artillery_equipment > 3000 }
+			}
+		}
+	}
+	
+	communist_trade_infantry_weapons = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = inf_trade_running }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 40 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = inf_trade_running }
+			ROOT = { has_government = communism }
+			ROOT = { has_equipment = { infantry_equipment > 500 } }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 40 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { infantry_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 60
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = infantry_equipment amount = -500 } }
+			set_country_flag = inf_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = infantry_equipment amount = 500 } }
+			clr_country_flag = inf_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { infantry_equipment > 7000 }
+			}
+		}
+	}
+	
+	communist_trade_field_uniforms = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = field_trade_running }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = field_trade_running }
+			ROOT = { has_government = communism }
+			ROOT = { has_equipment = { infantry_uniforms > 500 } }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { infantry_uniforms < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = infantry_uniforms amount = -500 } }
+			set_country_flag = field_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = infantry_uniforms amount = 500 } }
+			clr_country_flag = field_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { infantry_uniforms > 8000 }
+			}
+		}
+	}
+	
+	communist_trade_HMG_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = HMG_trade_running }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.35
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = HMG_trade_running }
+			ROOT = { has_government = communism }
+			ROOT = { has_equipment = { HMG_equipment > 500 } }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { HMG_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = HMG_equipment amount = -500 } }
+			set_country_flag = HMG_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = HMG_equipment amount = 500 } }
+			clr_country_flag = HMG_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { HMG_equipment > 5000 }
+			}
+		}
+	}
+	
+	communist_trade_mortar_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = mortar_trade_running }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.35
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = mortar_trade_running }
+			ROOT = { has_government = communism }
+			ROOT = { has_equipment = { mortar_equipment > 500 } }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { mortar_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = mortar_equipment amount = -500 } }
+			set_country_flag = mortar_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = mortar_equipment amount = 500 } }
+			clr_country_flag = mortar_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+			add = 50
+			has_equipment = { mortar_equipment > 5000 }
+			}
+		}
+	}
+	
+	communist_trade_artillery_equipment = {
+
+		icon = generic_prepare_civil_war
+
+		available = {
+			NOT = { has_country_flag = artillery_trade_running }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+			}
+		}
+
+		visible = {
+			NOT = { has_country_flag = artillery_trade_running }
+			ROOT = { has_government = communism }
+			ROOT = { has_equipment = { artillery_equipment > 500 } }
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.2
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				any_state = { is_controlled_by = FROM }
+			}
+		}
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					has_government = communism
+					AND = {
+						communism > 0.35
+						has_opinion = { target = ROOT value > 30 }
+					}
+				}
+				has_equipment = { artillery_equipment < 500 }
+			}
+			
+		}
+
+		days_remove = 30
+
+		fire_only_once = no
+
+		cost = 25
+
+		modifier = {
+			industrial_capacity_factory = -0.05
+		}
+
+		complete_effect = {
+			ROOT = { add_equipment_to_stockpile = { type = artillery_equipment amount = -500 } }
+			set_country_flag = artillery_trade_running
+		}
+		remove_effect = {
+			FROM = { add_equipment_to_stockpile = { type = artillery_equipment amount = 500 } }
+			clr_country_flag = artillery_trade_running
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 10
+				has_equipment = { artillery_equipment > 3000 }
+			}
+			modifier = {
+				add = 30
+				has_equipment = { artillery_equipment > 3000 }
+				ROOT = { has_war_together_with = FROM }
+			}
+			modifier = {
+				add = 50
+				has_equipment = { artillery_equipment > 3000 }
+				FROM = { is_in_faction_with = ROOT }
+			}
+			modifier = {
+				add = 100
+				has_equipment = { artillery_equipment > 3000 }
+				FROM = { is_in_faction_with = ROOT }
+				ROOT = { has_war_together_with = FROM }
+			}
+		}
+	}
+}
+
 economy_decisions = {
 	#Long time ST if ST < 0.4, cheap
 	decrease_unemployment = {
