@@ -74,6 +74,7 @@ technologies = {
 			factor = 20
 		}
 	}
+	### Anit-Air ###
 	interwar_antiair = {
 
 		enable_equipments = {
@@ -96,6 +97,13 @@ technologies = {
 			position = { x = @aaa y = @1936 }
 		}
 		
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			custom_effect_tooltip = ENABLE_SS_AA
+		}
+		
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -114,6 +122,12 @@ technologies = {
 			air_attack = 0.1
 		}
 		anti_air_heavy = {
+			air_attack = 0.1
+		}
+		ss_anti_air = {
+			air_attack = 0.1
+		}
+		ss_anti_air_heavy = {
 			air_attack = 0.1
 		}
 		
@@ -140,7 +154,7 @@ technologies = {
 			name = artillery_folder
 			position = { x = @aaa y = @1939 }
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -221,6 +235,12 @@ technologies = {
 		anti_air_heavy = {
 			air_attack = 0.1
 		}
+		ss_anti_air = {
+			air_attack = 0.1
+		}
+		ss_anti_air_heavy = {
+			air_attack = 0.1
+		}
 		
 		path = {
 			leads_to_tech = antiair4
@@ -252,6 +272,12 @@ technologies = {
 			air_attack = 0.1
 		}
 		anti_air_heavy = {
+			air_attack = 0.1
+		}
+		ss_anti_air = {
+			air_attack = 0.1
+		}
+		ss_anti_air_heavy = {
 			air_attack = 0.1
 		}
 		
@@ -350,6 +376,12 @@ technologies = {
 		anti_air_heavy = {
 			air_attack = 0.1
 		}
+		ss_anti_air = {
+			air_attack = 0.05
+		}
+		ss_anti_air_heavy = {
+			air_attack = 0.1
+		}
 		
 		path = {
 			leads_to_tech = HVantiair4
@@ -382,6 +414,9 @@ technologies = {
 	HVantiair4 = {
 
 		anti_air_heavy = {
+			air_attack = 0.1
+		}
+		ss_anti_air_heavy = {
 			air_attack = 0.1
 		}
 		
@@ -1673,15 +1708,6 @@ technologies = {
 			ap_attack = 0.1
 		}
 		
-		#on_research_complete = {
-		#	limit = {
-		#		tag = GER
-		#	}
-		#	hidden_effect = {
-		#		set_technology = { ss_anti_tank_heavy_tech = 1 }
-		#	}
-		#}
-		
 		path = {
 			leads_to_tech = HVantitank2
 			research_cost_coeff = 1
@@ -1713,7 +1739,10 @@ technologies = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
-		
+		ss_anti_tank_heavy = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
 		path = {
 			leads_to_tech = HVantitank3
 			research_cost_coeff = 1
@@ -1742,6 +1771,10 @@ technologies = {
 	HVantitank3 = {
 
 		anti_tank_heavy = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+		ss_anti_tank_heavy = {
 			hard_attack = 0.05
 			ap_attack = 0.05
 		}
@@ -1815,6 +1848,21 @@ technologies = {
 			}
 		}
 		artillery_medium_mot = {
+			need = {
+               	spotter_planes_equipment = 1
+         	}
+		}
+		ss_artillery_heavy = {
+			need = {
+               	spotter_planes_equipment = 1
+         	}
+		}
+		ss_artillery_medium = {
+			need = {
+               	spotter_planes_equipment = 1
+			}
+		}
+		ss_artillery_medium_mot = {
 			need = {
                	spotter_planes_equipment = 1
          	}
