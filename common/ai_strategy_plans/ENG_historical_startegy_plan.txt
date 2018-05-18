@@ -1,0 +1,31 @@
+ENG_rush_benefits = { #ENG should rush its additional research slot and extra focuses
+	name = "England rushing its bonuses"
+
+	enable = {
+		tag = ENG
+		has_completed_focus = ENG_civil_programmes
+		NOT = {
+			has_completed_focus = ENG_industrial_programme_focus
+			has_completed_focus = shadow_scheme_focus
+			has_completed_focus = uk_industrial_focus
+			has_completed_focus = royal_ordinance_focus
+			has_completed_focus = uk_extra_tech_slot
+		}
+	}
+	
+	abort = {
+		has_completed_focus = ENG_industrial_programme_focus
+		has_completed_focus = shadow_scheme_focus
+		has_completed_focus = uk_industrial_focus
+		has_completed_focus = royal_ordinance_focus
+		has_completed_focus = uk_extra_tech_slot
+	}
+
+	ai_national_focuses = {
+		ENG_industrial_programme_focus
+		shadow_scheme_focus
+		uk_industrial_focus
+		royal_ordinance_focus
+		uk_extra_tech_slot
+	}
+}
