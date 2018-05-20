@@ -4,11 +4,9 @@ sub_units = {
 	ss_artillery_brigade = {
 		sprite = artillery
 		map_icon_category = infantry
-		priority = 630
+		priority = 300
 		active = no
-		
-		
-		
+
 		type = {
 			infantry
 			artillery
@@ -25,7 +23,7 @@ sub_units = {
 		combat_width = 1.5
 
 		need = {
-			ss_infantry_uniforms = 8
+			ss_infantry_uniforms = 9
 			artillery_equipment = 12
 			#artytruck_equipment = 12 # truck pulled
 			artyhorse_equipment = 24 # horse pulled
@@ -90,11 +88,9 @@ sub_units = {
 	ss_artillery_brigade_mot = {
 		sprite = artillery
 		map_icon_category = infantry
-		priority = 500
+		priority = 350
 		active = no
-		
-		
-		
+
 		type = {
 			motorized							# else it can't be added to mot inf
 			artillery
@@ -112,6 +108,7 @@ sub_units = {
 
 		manpower = 1000
 		need = {
+			ss_infantry_uniforms = 10
 			artillery_equipment = 12
 			artytruck_equipment = 12 # truck pulled
 			#artyhorse_equipment = 24 # horse pulled
@@ -176,7 +173,7 @@ sub_units = {
 	ss_mountain_artillery_brigade = {
 		sprite = artillery
 		map_icon_category = infantry
-		priority = 640
+		priority = 400
 		active = no
 		
 		type = {
@@ -195,6 +192,7 @@ sub_units = {
 		combat_width = 1.5
 
 		need = {
+			ss_infantry_uniforms = 6
 			mountain_artillery_equipment = 12
 			artyhorse_equipment = 12
 		}
@@ -258,7 +256,7 @@ sub_units = {
     ss_mountain_artillery_brigade_mot = {
 		sprite = artillery
 		map_icon_category = infantry
-		priority = 640
+		priority = 450
 		active = no
 
 		type = {
@@ -277,11 +275,12 @@ sub_units = {
 		combat_width = 1.5
 
 		need = {
+			ss_infantry_uniforms = 6
 			mountain_artillery_equipment = 12
 			motorized_lia_equipment = 12
 		}
 		
-		manpower = 900
+		manpower = 550
 		max_strength = 5
 		max_organisation = -20
 		default_morale = 0.25
@@ -337,10 +336,101 @@ sub_units = {
 			
 		}
 	}
+	ss_airborne_artillery_brigade = {
+		sprite = artillery
+		map_icon_category = infantry
+		priority = 500
+		ai_priority = 100
+		active = no
+		
+		can_be_parachuted = yes
+		
+		type = {
+			motorized
+			artillery
+		}
+
+		group = artillery
+		
+		categories = {
+			category_army
+			category_line_artillery
+			category_artillery
+		}
+
+		combat_width = 1.5
+
+		need = {
+			ss_infantry_uniforms = 5
+			mountain_artillery_equipment = 12
+			motorized_lia_equipment = 12
+			para_equipment = 10
+		}
+		
+		manpower = 500
+		max_strength = 5
+		max_organisation = -20
+		default_morale = 0.25
+		training_time = 250
+		
+		weight = 1
+		supply_consumption = 0.25
+
+		#Line artillery bonuses								# if there is only line artillery, there is no need for such a bonus anymore
+		soft_attack = 1.25
+		hard_attack = 0.05
+		# this is what moves us and sets speed
+		#transport = artyhorse_equipment
+
+		plains = {
+			movement = 0.01			
+		}
+		desert = {
+			movement = 0.01			
+		}
+		forest = {
+		    attack = 0.01
+		}
+		hills = {
+		    attack = 0.01
+			movement = 0.02
+		}
+		mountain = 	{
+		    attack = 0.02
+			movement = 0.02
+		}
+		jungle = {
+		    attack = -0.05
+			movement = -0.01
+		}
+		marsh = {
+		    attack = -0.06
+			movement = -0.01
+		}
+		urban = {
+			attack = 0.02
+		}
+		densecity = {
+			attack = 0.015
+		}
+		capital = {
+			attack = 0.01
+		}
+		fort = {
+			attack = 0.01
+		}
+		river = { 
+			attack = -0.02
+			
+		}
+		amphibious = { 
+			attack = -0.02
+		}
+	}
 	ss_rocket_artillery_brigade = {
 		sprite = "artillery"
 		map_icon_category = infantry
-		priority = 650
+		priority = 600
 		active = no
 		
 		type = {
@@ -358,6 +448,7 @@ sub_units = {
 		combat_width = 1.5
 
 		need = {
+			ss_infantry_uniforms = 9
 			rocket_artillery_equipment = 12
 			motorized_lia_equipment = 12
 		}
@@ -435,6 +526,7 @@ sub_units = {
 		combat_width = 1.5
 
 		need = {
+			ss_infantry_uniforms = 10
 			motorized_rocket_equipment = 20
 			motorized_equipment = 20
 		}

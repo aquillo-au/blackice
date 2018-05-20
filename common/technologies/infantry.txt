@@ -1152,7 +1152,7 @@ technologies = {
 			hidden_effect = {
 				set_technology = { ss_infantry_uniforms_tech = 1 }
 			}
-			custom_effect_tooltip = SS_UNIFORM_I
+			custom_effect_tooltip = ENABLE_SS_UNIFORM_I
 		}
 		categories = {
 			infantry_weapons
@@ -1191,7 +1191,7 @@ technologies = {
 			hidden_effect = {
 				set_technology = { ss_infantry_uniforms_tech1 = 1 }
 			}
-			custom_effect_tooltip = SS_UNIFORM_II
+			custom_effect_tooltip = ENABLE_SS_UNIFORM_II
 		}
 		
 		categories = {
@@ -1231,7 +1231,7 @@ technologies = {
 			hidden_effect = {
 				set_technology = { ss_infantry_uniforms_tech2 = 1 }
 			}
-			custom_effect_tooltip = SS_UNIFORM_III
+			custom_effect_tooltip = ENABLE_SS_UNIFORM_III
 		}
 		
 		categories = {
@@ -1785,6 +1785,15 @@ technologies = {
 		
 		enable_subunits = {
 			airborne_artillery_brigade			
+		}
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			hidden_effect = {
+				set_technology = { ss_artillery_airborne_tech = 1 }
+			}
+			custom_effect_tooltip = ENABLE_SS_AIRNORNE_ART
 		}
 		
 		research_cost = 2.0
@@ -3093,7 +3102,16 @@ technologies = {
 		enable_equipments = {
 			motorized_rocket_equipment_1
 		}
-	
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			hidden_effect = {
+				set_technology = { ss_mot_rocketartillery_tech = 1 }
+			}
+			custom_effect_tooltip = ENABLE_SS_MOT_RCT_ART
+		}
+		
 		research_cost = 1.5
 		start_year = 1941
 		
