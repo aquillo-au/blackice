@@ -3,6 +3,68 @@
 ###########################
 add_namespace = ss_event
 ###########################
+# Technology activations Hidden-events #
+### Heavy AAA (Flak 88)
+country_event = {
+	id = ss_event.1
+	
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_tech = HVantiair2
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "Set Tech"
+		set_technology = { ss_antiair_hvy_tech = 1 }
+	}
+}
+country_event = {
+	id = ss_event.2
+	
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_tech = rocket_artillery
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "Set Tech"
+		set_technology = { ss_rocketartillery_tech = 1 }
+	}
+}
+country_event = {
+	id = ss_event.3
+	
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = GER
+		has_tech = HVantitank1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "Set Tech"
+		set_technology = { ss_hv_antitank_tech = 1 }
+	}
+}
 # LSSAH Starting OOB player WachBtl
 country_event = {
 	id = ss_event.665
@@ -1039,8 +1101,8 @@ country_event = {
 			load_oob = "unlock_ss_infantry"
 			load_oob = "unlock_ss_garrison"
 			load_oob = "GER_SS_Start"
-			set_technology = { hiddentech_ss_panzer_i = 1 }
-			set_technology = { hiddentech_ss_panzer_ii = 1 }
+			set_technology = { ss_panzer_i_tech = 1 }
+			set_technology = { ss_panzer_ii_tech = 1 }
 		}
 		set_country_flag = ahistorical_ss
 	}
@@ -1147,7 +1209,7 @@ country_event = {
 	trigger = {
 		original_tag = GER
 		has_tech = tech_panzer_iii_equipment_1
-		not = { has_country_flag = hiddentech_ss_panzer_iii }
+		not = { has_country_flag = ss_panzer_iii_tech }
 		OR = {
 			AND = {
 				has_country_flag = ahistorical_ss
@@ -1166,23 +1228,23 @@ country_event = {
 	
 	option = {
 		name = ss_event.681.a
-		set_country_flag = hiddentech_ss_panzer_iii
+		set_country_flag = ss_panzer_iii_tech
 		trigger = {
 			has_country_flag = ahistorical_ss
 		}
 		hidden_effect = {
-			set_technology = { hiddentech_ss_panzer_iii = 1 }
+			set_technology = { ss_panzer_iii_tech = 1 }
 		}
 		ai_chance = { factor = 0 }
 	}
 	option = {
 		name = ss_event.681.b
-		set_country_flag = hiddentech_ss_panzer_iii
+		set_country_flag = ss_panzer_iii_tech
 		trigger = {
 			has_country_flag = SS_Start
 		}
 		hidden_effect = {
-			set_technology = { hiddentech_ss_panzer_iii = 1 }
+			set_technology = { ss_panzer_iii_tech = 1 }
 			
 		}
 		ai_chance = { factor = 100 }
@@ -1199,7 +1261,7 @@ country_event = {
 	trigger = {
 		original_tag = GER
 		has_tech = tech_panzer_iv_equipment_1
-		not = { has_country_flag = hiddentech_ss_panzer_iv }
+		not = { has_country_flag = ss_panzer_iv_tech }
 		OR = {
 			AND = {
 				has_country_flag = ahistorical_ss
@@ -1218,24 +1280,24 @@ country_event = {
 	
 	option = {
 		name = ss_event.682.a
-		set_country_flag = hiddentech_ss_panzer_iv
+		set_country_flag = ss_panzer_iv_tech
 		trigger = {
 			has_country_flag = ahistorical_ss
 		}
 		hidden_effect = {
-			set_technology = { hiddentech_ss_panzer_iv = 1 }
+			set_technology = { ss_panzer_iv_tech = 1 }
 			
 		}
 		ai_chance = { factor = 0 }
 	}
 	option = {
 		name = ss_event.682.b
-		set_country_flag = hiddentech_ss_panzer_iv
+		set_country_flag = ss_panzer_iv_tech
 		trigger = {
 			has_country_flag = SS_Start
 		}
 		hidden_effect = {
-			set_technology = { hiddentech_ss_panzer_iv = 1 }
+			set_technology = { ss_panzer_iv_tech = 1 }
 			
 		}
 		ai_chance = { factor = 100 }
@@ -1252,7 +1314,7 @@ country_event = {
 	trigger = {
 		original_tag = GER
 		has_tech = tech_panzer_v_equipment_1
-		not = { has_country_flag = hiddentech_ss_panzer_v }
+		not = { has_country_flag = ss_panzer_v_tech }
 		OR = {
 			AND = {
 				has_country_flag = ahistorical_ss
@@ -1271,23 +1333,23 @@ country_event = {
 	
 	option = {
 		name = ss_event.683.a
-		set_country_flag = hiddentech_ss_panzer_v
+		set_country_flag = ss_panzer_v_tech
 		trigger = {
 			has_country_flag = ahistorical_ss
 		}
 		hidden_effect = {
-			set_technology = { hiddentech_ss_panzer_v = 1 }
+			set_technology = { ss_panzer_v_tech = 1 }
 		}
 		ai_chance = { factor = 0 }
 	}
 	option = {
 		name = ss_event.683.b
-		set_country_flag = hiddentech_ss_panzer_v
+		set_country_flag = ss_panzer_v_tech
 		trigger = {
 			has_country_flag = SS_Start
 		}
 		hidden_effect = {
-			set_technology = { hiddentech_ss_panzer_v = 1 }
+			set_technology = { ss_panzer_v_tech = 1 }
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -1489,7 +1551,7 @@ country_event = {
 	trigger = {
 		original_tag = GER
 		has_tech = tech_heavy_panzer_equipment_2
-		not = { has_country_flag = hiddentech_ss_panzer_vi }
+		not = { has_country_flag = ss_panzer_vi_tech }
 		or = {
 			has_country_flag = ahistorical_ss
 			AND = { 
@@ -1505,23 +1567,23 @@ country_event = {
 	
 	option = {
 		name = ss_event.688.a
-		set_country_flag = hiddentech_ss_panzer_vi
+		set_country_flag = ss_panzer_vi_tech
 		trigger = {
 			has_country_flag = ahistorical_ss
 		}
 		hidden_effect = {
-			set_technology = { hiddentech_ss_panzer_vi = 1 }
+			set_technology = { ss_panzer_v_tech = 1 }
 		}
 		ai_chance = { factor = 0 }
 	}
 	option = {
 		name = ss_event.688.b
-		set_country_flag = hiddentech_ss_panzer_vi
+		set_country_flag = ss_panzer_vi_tech
 		trigger = {
 			has_country_flag = SS_Start
 		}
 		hidden_effect = {
-			set_technology = { hiddentech_ss_panzer_vi = 1 }
+			set_technology = { ss_panzer_vi_tech = 1 }
 		}
 		ai_chance = { factor = 100 }
 	}
@@ -1791,7 +1853,6 @@ country_event = {
 		
 		ai_chance = { factor = 100 }
 	}
-	
 }
 country_event = {
 	id = ss_event.699
@@ -1805,15 +1866,21 @@ country_event = {
 		
 	option = {
 		name = ss_event.699.a
+		ai_chance = { factor = 100 }
 		
 		hidden_effect = {
-			set_technology = { ss_mountaineers_tech = 1 }
+			if = {
+				limit = {
+					NOT = { has_tech = ss_mountaineers_tech }
+					
+				}
+				set_technology = { ss_mountaineers_tech = 1 }
+			
+			}
+			
 			load_oob = "GER_ss_prinz_eugen"
 		}
-		
-		ai_chance = { factor = 100 }
 	}
-	
 }
 country_event = {
 	id = ss_event.700
@@ -1904,12 +1971,12 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOT = { has_tech = hiddentech_ss_panzer_iv }
-					NOT = { has_tech = hiddentech_ss_panzer_v }
+					NOT = { has_tech = ss_panzer_iv_tech }
+					NOT = { has_tech = ss_panzer_v_tech }
 					
 				}
-				set_technology = { hiddentech_ss_panzer_iv = 1 }
-				set_technology = { hiddentech_ss_panzer_v = 1 }
+				set_technology = { ss_panzer_iv_tech = 1 }
+				set_technology = { ss_panzer_v_tech = 1 }
 				
 			}
 			load_oob = "GER_ss_hohenstaufen"
@@ -2788,6 +2855,5 @@ country_event = {
 		
 		ai_chance = { factor = 100 }
 	}
-	
 }
 ## EOF ##

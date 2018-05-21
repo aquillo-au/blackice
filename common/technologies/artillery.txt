@@ -31,6 +31,13 @@ technologies = {
 			mountain_artillery_equipment_0
 		}
 		
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			custom_effect_tooltip = ENABLE_SS_ART
+		}
+		
 		path = {
 			leads_to_tech = interwar_artillery 
 			research_cost_coeff = 1
@@ -74,6 +81,7 @@ technologies = {
 			factor = 20
 		}
 	}
+	### Anit-Air ###
 	interwar_antiair = {
 
 		enable_equipments = {
@@ -96,6 +104,13 @@ technologies = {
 			position = { x = @aaa y = @1936 }
 		}
 		
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			custom_effect_tooltip = ENABLE_SS_AA
+		}
+		
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -114,6 +129,12 @@ technologies = {
 			air_attack = 0.1
 		}
 		anti_air_heavy = {
+			air_attack = 0.1
+		}
+		ss_anti_air = {
+			air_attack = 0.1
+		}
+		ss_anti_air_heavy = {
 			air_attack = 0.1
 		}
 		
@@ -140,7 +161,7 @@ technologies = {
 			name = artillery_folder
 			position = { x = @aaa y = @1939 }
 		}
-
+		
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -221,6 +242,12 @@ technologies = {
 		anti_air_heavy = {
 			air_attack = 0.1
 		}
+		ss_anti_air = {
+			air_attack = 0.1
+		}
+		ss_anti_air_heavy = {
+			air_attack = 0.1
+		}
 		
 		path = {
 			leads_to_tech = antiair4
@@ -252,6 +279,12 @@ technologies = {
 			air_attack = 0.1
 		}
 		anti_air_heavy = {
+			air_attack = 0.1
+		}
+		ss_anti_air = {
+			air_attack = 0.1
+		}
+		ss_anti_air_heavy = {
 			air_attack = 0.1
 		}
 		
@@ -313,7 +346,13 @@ technologies = {
 		enable_subunits = {
 			anti_air_heavy
 		}
-
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			custom_effect_tooltip = ENABLE_SS_AA_HVY
+		}
+		
 		path = {
 			leads_to_tech = HVantiair3
 			research_cost_coeff = 1
@@ -350,6 +389,12 @@ technologies = {
 		anti_air_heavy = {
 			air_attack = 0.1
 		}
+		ss_anti_air = {
+			air_attack = 0.05
+		}
+		ss_anti_air_heavy = {
+			air_attack = 0.1
+		}
 		
 		path = {
 			leads_to_tech = HVantiair4
@@ -382,6 +427,9 @@ technologies = {
 	HVantiair4 = {
 
 		anti_air_heavy = {
+			air_attack = 0.1
+		}
+		ss_anti_air_heavy = {
 			air_attack = 0.1
 		}
 		
@@ -1080,6 +1128,16 @@ technologies = {
 		artillery_heavy = {
 			soft_attack = 0.1
 		}
+		ss_artillery_heavy = {
+			soft_attack = 0.1
+		}
+		
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			custom_effect_tooltip = ENABLE_SS_ART_HVY
+		}
 		
 		path = {
 			leads_to_tech = Hvartillery2
@@ -1114,11 +1172,15 @@ technologies = {
 		artillery_heavy = {
 			soft_attack = 0.15
 		}
+		ss_artillery_heavy = {
+			soft_attack = 0.15
+		}
 		
 		path = {
 			leads_to_tech = Hvartillery3
 			research_cost_coeff = 1
 		}
+		
 		research_cost = 1
 		start_year = 1940
 		folder = {
@@ -1203,6 +1265,7 @@ technologies = {
 		categories = {
 			artillery
 		}
+		
 		ai_will_do = {
 			factor = 10
 			
@@ -1317,6 +1380,12 @@ technologies = {
 		enable_subunits = {
 			rocket_artillery_brigade
 		}
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			custom_effect_tooltip = ENABLE_SS_RCT_ART
+		}
 		
 		path = {
 			leads_to_tech = rocket_artillery2
@@ -1351,6 +1420,12 @@ technologies = {
 		motorized_rocket_brigade = {
 			soft_attack = 0.15
 		}
+		ss_rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		ss_motorized_rocket_brigade = {
+			soft_attack = 0.15
+		}
 		
 		path = {
 			leads_to_tech = rocket_artillery3
@@ -1380,7 +1455,13 @@ technologies = {
 		motorized_rocket_brigade = {
 			soft_attack = 0.15
 		}
-
+		ss_rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
+		ss_motorized_rocket_brigade = {
+			soft_attack = 0.15
+		}
+		
 		path = {
 			leads_to_tech = rocket_artillery4
 			research_cost_coeff = 1
@@ -1418,6 +1499,12 @@ technologies = {
 		rocket_artillery_brigade = {
 			soft_attack = 0.15
 		}
+		ss_motorized_rocket_brigade = {
+			soft_attack = 0.3
+		}
+		ss_rocket_artillery_brigade = {
+			soft_attack = 0.15
+		}
 		
 		research_cost = 1
 		start_year = 1943
@@ -1439,6 +1526,12 @@ technologies = {
 
 		enable_equipments = {
 			anti_tank_equipment_1
+		}
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			custom_effect_tooltip = ENABLE_SS_AT
 		}
 		
 		path = {
@@ -1479,6 +1572,11 @@ technologies = {
 			ap_attack = 1
 		}
 		anti_tank_brigade = {
+			soft_attack = 0.2
+			hard_attack = 0.5
+			ap_attack = 1
+		}
+		ss_anti_tank_brigade = {
 			soft_attack = 0.2
 			hard_attack = 0.5
 			ap_attack = 1
@@ -1554,6 +1652,10 @@ technologies = {
 			hard_attack = 0.15
 			ap_attack = 0.11
 		}
+		ss_anti_tank_brigade = {
+			hard_attack = 0.15
+			ap_attack = 0.11
+		}
 		
 		path = {
 			leads_to_tech = antitank4
@@ -1593,6 +1695,11 @@ technologies = {
 			ap_attack = 0.12
 		}
 		anti_tank_brigade = {
+			soft_attack = 0.35
+			hard_attack = 0.2
+			ap_attack = 0.12
+		}
+		ss_anti_tank_brigade = {
 			soft_attack = 0.35
 			hard_attack = 0.2
 			ap_attack = 0.12
@@ -1667,20 +1774,16 @@ technologies = {
 			hard_attack = 0.2
 			ap_attack = 0.1
 		}
-		
 		ss_anti_tank_heavy = {
 			hard_attack = 0.2
 			ap_attack = 0.1
 		}
-		
-		#on_research_complete = {
-		#	limit = {
-		#		tag = GER
-		#	}
-		#	hidden_effect = {
-		#		set_technology = { ss_anti_tank_heavy_tech = 1 }
-		#	}
-		#}
+		on_research_complete = {
+			limit = {
+				tag = GER
+			}
+			custom_effect_tooltip = ENABLE_SS_AT_HVY
+		}
 		
 		path = {
 			leads_to_tech = HVantitank2
@@ -1713,7 +1816,10 @@ technologies = {
 			hard_attack = 0.1
 			ap_attack = 0.1
 		}
-		
+		ss_anti_tank_heavy = {
+			hard_attack = 0.1
+			ap_attack = 0.1
+		}
 		path = {
 			leads_to_tech = HVantitank3
 			research_cost_coeff = 1
@@ -1742,6 +1848,10 @@ technologies = {
 	HVantitank3 = {
 
 		anti_tank_heavy = {
+			hard_attack = 0.05
+			ap_attack = 0.05
+		}
+		ss_anti_tank_heavy = {
 			hard_attack = 0.05
 			ap_attack = 0.05
 		}
@@ -1815,6 +1925,21 @@ technologies = {
 			}
 		}
 		artillery_medium_mot = {
+			need = {
+               	spotter_planes_equipment = 1
+         	}
+		}
+		ss_artillery_heavy = {
+			need = {
+               	spotter_planes_equipment = 1
+         	}
+		}
+		ss_artillery_medium = {
+			need = {
+               	spotter_planes_equipment = 1
+			}
+		}
+		ss_artillery_medium_mot = {
 			need = {
                	spotter_planes_equipment = 1
          	}

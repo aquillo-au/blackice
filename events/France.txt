@@ -178,14 +178,14 @@ country_event = {
 		democratic_govt = yes
 		has_war_with = GER
 		844 = { is_controlled_by = GER }
-		or = {
-		and = {
-		14 = { is_controlled_by = GER }
-		19 = { is_controlled_by = GER }
-		29 = { is_controlled_by = GER }
-		}
-		surrender_progress > 0.45
-		
+		OR = {
+			AND = {
+				14 = { is_controlled_by = GER }
+				19 = { is_controlled_by = GER }
+				29 = { is_controlled_by = GER }
+			}
+
+			surrender_progress > 0.45
 		}
 		is_in_faction_with = ENG
 		ENG = { has_war_with = GER }
@@ -2337,8 +2337,6 @@ country_event = {
 	
 	option = {
 		name = france.65.a
-		
-		hidden_effect = {
 			VIC = {
 				transfer_state = 1
 				transfer_state = 706
@@ -2356,10 +2354,12 @@ country_event = {
 				transfer_state = 515
 				transfer_state = 871
 				transfer_state = 26
+				transfer_state = 21
 				transfer_state = 22
 				transfer_state = 25
 				transfer_state = 20
 				transfer_state = 31
+				transfer_state = 32
 				transfer_state = 33
 				transfer_state = 557
 				transfer_state = 694
@@ -2370,7 +2370,7 @@ country_event = {
 				transfer_state = 459
 				transfer_state = 543
 			}
-			VIC={
+			VIC = {
 				transfer_state = 1
 				transfer_state = 706
 				transfer_state = 708
@@ -2387,10 +2387,12 @@ country_event = {
 				transfer_state = 515
 				transfer_state = 871
 				transfer_state = 26
+				transfer_state = 21
 				transfer_state = 22
 				transfer_state = 25
 				transfer_state = 20
 				transfer_state = 31
+				transfer_state = 32
 				transfer_state = 33
 				transfer_state = 557
 				transfer_state = 694
@@ -2400,11 +2402,13 @@ country_event = {
 				transfer_state = 460
 				transfer_state = 459
 				transfer_state = 543
+				21 = { add_core_of = VIC }
 				22 = { add_core_of = VIC}
 				26 = { add_core_of = VIC}
 				25 = { add_core_of = VIC}
 				20 = { add_core_of = VIC}
 				31 = { add_core_of = VIC}
+				21 = { add_core_of = VIC }
 				33 = { add_core_of = VIC}
 				268 = { add_core_of = VIC}
 				557 = { add_core_of = VIC}
@@ -2429,101 +2433,68 @@ country_event = {
 				transfer_state = 718
 				transfer_state = 538
 				transfer_state = 295
-			}			
-			VIC = {
-				give_military_access = GER
-				if = {
-					limit = { 
-						NOT = { 
-							ITA = {
-								controls_state = 665
-								controls_state = 458
-							}
-						}
+			}
+			if = {
+				limit = { 
+					ITA = {
+						controls_state = 665
+						controls_state = 458
 					}
-					transfer_state = 665
-					transfer_state = 458
+				}
+				ITA ={ 
+					set_state_controller = 665
+					set_state_controller = 458
+				}	
+				else = {
+					VIC = { 
+						transfer_state = 665
+						transfer_state = 458
+					}
 					annex_country = {
 						target = TUN
 						transfer_troops = yes
 					}
 				}
-				if = {
-					limit = { 
-						SYR = { 
-							controls_state = 677
-							controls_state = 554
-							controls_state = 837
-							controls_state = 680
-							is_puppet_of = FRA
-							NOT = { is_in_faction_with = GER }
-						}
+			}
+			if = {
+				limit = { 
+					SYR = { 
+						controls_state = 677
+						controls_state = 554
+						controls_state = 837
+						controls_state = 680
+						is_puppet_of = FRA
+						NOT = { is_in_faction_with = GER }
 					}
-					FRA = { end_puppet = SYR }
-					puppet = SYR
 				}
-				if = {
-					limit = { 
-						LEB = { 
-							controls_state = 553
-							is_puppet_of = FRA
-							NOT = { is_in_faction_with = GER }
-						}
+				VIC = { 
+					annex_country = {
+						target = SYR 
+						transfer_troops = no
 					}
-					FRA = { end_puppet = LEB }
+					release = SYR
+					puppet = SYR 
+				}
+			}
+			if = {
+				limit = { 
+					LEB = { 
+						controls_state = 553
+						is_puppet_of = FRA
+						NOT = { is_in_faction_with = GER }
+					}
+				}
+				VIC = { 
+					annex_country = {
+						target = LEB 
+						transfer_troops = no
+					}
+					release = LEB
 					puppet = LEB
 				}
-				if = {
-					limit = { 
-						MOR = { 
-							owns_state = 461 #uses owns now because ITA could have gotten there in time. But they only get tunisia max
-							owns_state = 462
-							is_puppet_of = FRA
-							NOT = { is_in_faction_with = GER }
-						}
-					}
-					FRA = { end_puppet = MOR }
-					puppet = MOR
-				}
-				if = {
-					limit = { 
-						725 = { is_controlled_by = ITA } 
-					}
-					ITA = { set_state_controller = 725 } #just to be sure
-				}
-				if = {
-					limit = { 
-						NOT = { 
-							725 = { is_controlled_by = ITA } 
-						}
-					}
-					VIC = { transfer_state = 735 }
-					735 = { add_core_of = VIC }
-				}
-				if = {
-					limit = { 
-						32 = { is_controlled_by = ITA }
-						21 = { is_controlled_by = ITA }
-					}
-					ITA = {
-						set_state_controller = 32  #just to be sure
-						set_state_controller = 21  #just to be sure
-					}
-				}
-				if = {
-					limit = { 
-						NOT = {
-							32 = { is_controlled_by = ITA }
-							21 = { is_controlled_by = ITA }
-						}
-					}
-					VIC = {
-						transfer_state = 32
-						transfer_state = 21
-					}
-					32 = { add_core_of = VIC }
-					21 = { add_core_of = VIC }
-				}
+			}
+					
+			VIC = {
 				# FRA Player Switches to Vichy
 				if = {
 					limit = { FRA = { has_country_flag = become_vichy } }
@@ -2556,11 +2527,12 @@ country_event = {
 			}
 			VIC = {
 				add_opinion_modifier = { target = GER modifier = very_large_increase }
+				give_military_access = GER
+				give_military_access = ITA
 			}
 			GER ={
 				add_opinion_modifier = { target = VIC modifier = very_large_increase }
 			}
-		}
 	}
 }
 # Given control over some colonies to FRA-Free

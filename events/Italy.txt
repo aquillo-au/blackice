@@ -996,12 +996,12 @@ country_event = {
 	
 	trigger = {
 		tag = ITA
-		
+		has_government = fascism
 		is_ai = yes
-		GER = {is_ai = yes}
-	
-		GER = {has_war_with = FRA}
-		
+		OR = {
+			GER = { has_war_with = FRA }
+			GER = { has_war_with = POL }
+		}
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -1010,7 +1010,7 @@ country_event = {
 	option = {
 		name = italy.31.a
 		hidden_effect = {
-				add_ideas = ITA_warweary
+			add_ideas = ITA_warweary
 		}
 	}
 }
@@ -1024,14 +1024,12 @@ country_event = {
 	
 	trigger = {
 		tag = ITA
-		
 		is_ai = yes
-		GER = {is_ai = yes}
-	
 		GER = {has_war_with = FRA}
-		or = {
-		GER = { controls_state = 844 }
-		date > 1940.5.1
+		has_idea = ITA_warweary
+		OR = {
+			GER = { controls_state = 844 }
+			date > 1940.5.1
 		}
 	}
 	mean_time_to_happen = {
@@ -1041,7 +1039,7 @@ country_event = {
 	option = {
 		name = italy.32.a
 		hidden_effect = {
-				remove_ideas = ITA_warweary
+			remove_ideas = ITA_warweary
 		}
 	}
 }

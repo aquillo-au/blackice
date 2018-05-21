@@ -296,13 +296,25 @@ country_event = {
 		if = {
 			limit = {
 				NOT = { has_tech = tech_cav_tanks }
-				NOT = { has_tech = basic_medium_tank }
-				NOT = { has_tech = tech_inf_tanks }
-				NOT = { has_tech = tech_ac_recon }
 			}
 			set_technology = { tech_cav_tanks = 1 }
+		}
+		if = { 	
+			limit = { 
+				NOT = { has_tech = basic_medium_tank }
+			}
 			set_technology = { basic_medium_tank = 1 }
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = tech_inf_tanks }
+			}
 			set_technology = { tech_inf_tanks = 1 }
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = tech_ac_recon }
+			}
 			set_technology = { tech_ac_recon = 1 }
 		}
 	}

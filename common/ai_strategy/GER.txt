@@ -276,6 +276,11 @@ war_with_france = {
 	}
 	
 	ai_strategy = { type = antagonize id = "FRA"				value = 200 		}
+	ai_strategy = {
+		type = consider_weak
+		id = "FRA"
+		value = 200
+	}
 }
 
 war_with_poland = {
@@ -671,7 +676,32 @@ GER_stay_in_berlin_moscow_axis = {
         value = 300000
     }
 }
-
+GER_speed_through_benelux = {
+	enable = {
+		tag = GER
+		is_historical_focus_on = yes
+		OR = {
+			has_war_with = HOL
+			has_war_with = BEL
+		}
+	}
+	abort = {
+		HOL = { has_capitulated = yes }
+		BEL = { has_capitulated = yes }
+	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = "HOL"
+		value = 1000
+	}
+	ai_strategy = {
+		type = consider_weak
+		id = "BEL"
+		value = 1000
+	}
+	
+}
 
 invading_france_is_pointless_because_we_go_through_benelux_soon = {
 	enable = {
