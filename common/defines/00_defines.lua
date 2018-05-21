@@ -248,7 +248,7 @@ NCountry = {
 	AUTONOMOUS_SPILLOVER = 0.025,								-- Total score that can be saved to reach next level
 	CIVIL_WAR_INVOLVEMENT_MIN_TENSION = 0.75,					-- base value of world tension to involve other sides to the civil war
 	UNCAPITULATE_LEVEL = 0.15,                       			-- if we reclaim this much and our capital we reset capitulate status
-	BASE_SURRENDER_LIMIT = 0.7,								-- Base level of occupation required for country surrender
+	BASE_SURRENDER_LIMIT = 0.5,								-- Base level of occupation required for country surrender
 	MIN_SURRENDER_LIMIT = 0.1,									-- Minimum non-forced surrender limit. valid 0-1
 	BASE_MOBILIZATION_SPEED = 0.01,								-- Base speed of manpower mobilization  #in 1/1000 of 1 %
 	BOMBING_WAR_SUPPORT_SCALE = -0.00003, 					-- Scaling of health damaged by bombers to war support impact
@@ -603,8 +603,8 @@ NMilitary = {
 	COMBAT_STACKING_PENALTY = -0.02,               		-- how much stackign penalty per division
 	COMBAT_OVER_WIDTH_PENALTY = -2,						-- over combat width penalty per %.
 	COMBAT_OVER_WIDTH_PENALTY_MAX = -0.33,				-- over combat width max (when you cant join no more).
-	RETREAT_SPEED_FACTOR = 0.25,                    		-- speed bonus when retreating
-	WITHDRAWING_SPEED_FACTOR = 0.15,						-- speed bonus when withdrawing
+	RETREAT_SPEED_FACTOR = 0.2,                    		-- speed bonus when retreating
+	WITHDRAWING_SPEED_FACTOR = 0.1,						-- speed bonus when withdrawing
 	STRATEGIC_SPEED_BASE = 6.0,                 			-- Speed of strategic redeployment
 	STRATEGIC_INFRA_SPEED = 12.0,                  			-- Max of additional speed gained trouh=gh level for strategic redeployment per infra
 	STRATEGIC_REDEPLOY_ORG_RATIO = 0.1,						-- Ratio of max org while strategic redeployment
@@ -737,7 +737,7 @@ NAir = {
 	AIR_REGION_SUPERIORITY_PIXEL_SCALE = 0.04,           		-- air superiority scale = superiority/(pixels*this)
 	COMBAT_SUP_VS_SUP_ATTACK_CHANCE_SPEED_DIFF = 0.25, 		-- How much diff in speed between aircrafts affects the chance of who attacks first in superiority vs superiority.( Naval air combat only )
 	COMBAT_MULTIPLANE_CAP = 3.0,							-- How many planes can shoot at each plane on other side ( if there are 100 planes we are atttacking COMBAT_MULTIPLANE_CAP * 100 of our planes can shoot )
-	COMBAT_DAMAGE_SCALE = 0.3,							-- Higher value = more shot down planes ALEN 0.1
+	COMBAT_DAMAGE_SCALE = 0.32,							-- Higher value = more shot down planes ALEN 0.1
 	DETECT_CHANCE_FROM_OCCUPATION = 0.10, 					-- How much the controlled provinces in area affects the air detection base value.
 	DETECT_CHANCE_FROM_RADARS = 0.5, 						-- How much the radars in area affects detection chance.
 	DETECT_CHANCE_FROM_AIRCRAFTS_EFFECTIVE_COUNT = 600, 		-- Max amount of aircrafts in region to give full detection bonus. ALEN 3000
