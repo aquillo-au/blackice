@@ -1734,6 +1734,10 @@ war_measures = {
             has_war = yes
             has_idea = tot_economic_mobilisation
             OR = {
+            	has_idea = labor_none 
+            	has_idea = labor_allowed
+            }
+            OR = {
                 AND = {
                     democratic_govt = yes
                     has_war_support > 0.79
@@ -1758,6 +1762,10 @@ war_measures = {
         }
         visible = {
             has_war = yes
+            OR = {
+            	has_idea = labor_none 
+            	has_idea = labor_allowed
+            }
         }
         cost = 100
         days_remove = -1
@@ -1765,8 +1773,6 @@ war_measures = {
             has_war = no
         }
         modifier = {
-            conscription = 0.03
-            stability_factor = -0.05
         }
         ai_will_do = {
 			factor = 1
@@ -1778,6 +1784,7 @@ war_measures = {
 				}
 				country_event = { id = canada_vanilla.1 hours = 6 } # Ronnie the Bren Gun Girl
 			}
+			add_ideas = labor_encouraged
         }
    }
 
