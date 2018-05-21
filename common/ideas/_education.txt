@@ -19,12 +19,6 @@ ideas = {
 				political_power_factor = 0.05
 			}
 			
-			on_add = {
-				set_country_flag = edu_minimal
-				clr_country_flag = edu_low
-				clr_country_flag = edu_high
-				clr_country_flag = edu_excellent
-			}
 			
 			allowed_to_remove = {
 			}
@@ -41,10 +35,10 @@ ideas = {
 			
 			available = {
 				OR = {
-					has_country_flag = tax_low
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea = tax_low
+					has_idea = tax_average
+					has_idea = tax_high
+					has_idea = tax_extreme
 				}
 			}
 			
@@ -60,15 +54,9 @@ ideas = {
 				max_planning = 0.015
 				political_power_factor = 0.025
 				consumer_goods_factor = 0.01
-				stability_weekly = 0.001
+				stability_weekly = 0.0005
 			}
 			
-			on_add = {
-				set_country_flag = edu_low
-				clr_country_flag = edu_minimal
-				clr_country_flag = edu_high
-				clr_country_flag = edu_excellent
-			}
 			
 			allowed_to_remove = {
 			}
@@ -86,9 +74,9 @@ ideas = {
 			
 			available = {
 				OR = {
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea = tax_average
+					has_idea = tax_high
+					has_idea = tax_extreme
 				}
 			}
 			level = 2
@@ -100,21 +88,15 @@ ideas = {
 				max_planning = 0.04
 				political_power_factor = -0.025
 				consumer_goods_factor = 0.02
-				stability_weekly = 0.0015
+				stability_weekly = 0.001
 				war_support_weekly = -0.0005
 			}
 			
-			on_add = {
-				set_country_flag = edu_high
-				clr_country_flag = edu_low
-				clr_country_flag = edu_minimal
-				clr_country_flag = edu_excellent
-			}
 			
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 100
+   				factor = 10
 				modifier = {
 					factor = 0
 					has_manpower < 900000
@@ -136,8 +118,8 @@ ideas = {
 			
 			available = {
 				OR ={ 
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea = tax_high
+					has_idea = tax_extreme
 				}
 			}
 			level = 1
@@ -149,21 +131,15 @@ ideas = {
 				industrial_capacity_dockyard = -0.08
 				consumer_goods_factor = 0.04
 				political_power_factor = -0.05
-				stability_weekly = 0.003
+				stability_weekly = 0.0015
 				war_support_weekly = -0.0015
 			}
 			
-			on_add = {
-				set_country_flag = edu_excellent
-				clr_country_flag = edu_low
-				clr_country_flag = edu_high
-				clr_country_flag = edu_minimal
-			}
 			
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 1000
+   				factor = 10
 				modifier = {
 					factor = 0
 					has_manpower < 1000000

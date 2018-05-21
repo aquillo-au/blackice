@@ -31,15 +31,9 @@ ideas = {
 				line_change_production_efficiency_factor = 0.05
 				industrial_capacity_factory = -0.08
 				industrial_capacity_dockyard = -0.08
-				stability_weekly  = 0.002
+				stability_weekly  = 0.001
 			}
 			
-			on_add = {
-				set_country_flag = private_control
-				clr_country_flag = key_industries
-				clr_country_flag = major_industries
-				clr_country_flag = planned_economy
-			}
 			
 			cancel_if_invalid = no
 			
@@ -80,15 +74,9 @@ ideas = {
 				industrial_capacity_factory = -0.025
 				industrial_capacity_dockyard = -0.025
 				local_resources_factor = 0.025
-				stability_weekly  = 0.001
+				stability_weekly  = 0.0005
 			}
 			
-			on_add = {
-				set_country_flag = key_industries
-				clr_country_flag = private_control
-				clr_country_flag = major_industries
-				clr_country_flag = planned_economy
-			}
 			
 			cancel_if_invalid = no
 			
@@ -146,12 +134,6 @@ ideas = {
 				line_change_production_efficiency_factor = -0.05
 			}
 			
-			on_add = {
-				set_country_flag = major_industries
-				clr_country_flag = key_industries
-				clr_country_flag = private_control
-				clr_country_flag = planned_economy
-			}
 			
 			cancel_if_invalid = no
 
@@ -181,8 +163,8 @@ ideas = {
 					has_government = neutrality
 				}
 				NOT = {
-					has_country_flag = taxes_none
-					has_country_flag = press_free
+					has_idea = tax_minimal
+					has_idea = press_free
 				}
 			}
 			level = 1
@@ -199,13 +181,6 @@ ideas = {
 				industrial_capacity_dockyard = 0.1
 				local_resources_factor = 0.075
 				line_change_production_efficiency_factor = -0.1
-			}
-			
-			on_add = {
-				set_country_flag = planned_economy
-				clr_country_flag = key_industries
-				clr_country_flag = major_industries
-				clr_country_flag = private_control
 			}
 			
 			cancel_if_invalid = no

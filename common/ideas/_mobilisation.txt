@@ -38,10 +38,6 @@ ideas = {
 			}
 			
 			on_add = {
-				set_country_flag = mob_reserve
-				clr_country_flag = mob_standing
-				clr_country_flag = mob_limited
-				clr_country_flag = mob_general
 				custom_effect_tooltip = readiness_TT
 			}
 			
@@ -101,10 +97,10 @@ ideas = {
 					}
 				}
 				OR = {
-					has_country_flag = tax_low
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea = tax_low
+					has_idea = tax_average
+					has_idea = tax_high
+					has_idea = tax_extreme
 				}
 				NOT = {
 					OR = {
@@ -137,13 +133,6 @@ ideas = {
 				ai_focus_defense_factor = 0.4
 			}
 			
-			on_add = {
-				set_country_flag = mob_standing
-				clr_country_flag = mob_reserve
-				clr_country_flag = mob_limited
-				clr_country_flag = mob_general
-				custom_effect_tooltip = readiness_TT
-			}
 			
 			cancel_if_invalid = no
 			
@@ -214,22 +203,22 @@ ideas = {
 					AND = {
 					has_country_flag = education_minimal
 						OR = {
-							has_country_flag = tax_low
-							has_country_flag = tax_average
-							has_country_flag = tax_high
-							has_country_flag = tax_extreme
+							has_idea = tax_low
+							has_idea = tax_average
+							has_idea = tax_high
+							has_idea = tax_extreme
 						}
 					}
 					OR = {
-						has_country_flag = tax_average
-						has_country_flag = tax_high
-						has_country_flag = tax_extreme
+						has_idea = tax_average
+						has_idea = tax_high
+						has_idea = tax_extreme
 					}
 				}
 				NOT = {
 					OR = {
-						has_country_flag = Organizing
-						has_country_flag = Demobilizing
+						has_idea = Organizing
+						has_idea = Demobilizing
 					}
 				}
 			}
@@ -250,14 +239,6 @@ ideas = {
 				training_time_army_factor = 0.05
 				
 				ai_focus_defense_factor = 0.3
-			}
-			
-			on_add = {
-				set_country_flag = mob_limited
-				clr_country_flag = mob_standing
-				clr_country_flag = mob_reserve
-				clr_country_flag = mob_general
-				custom_effect_tooltip = readiness_TT
 			}
 			
 			cancel_if_invalid = no
@@ -328,10 +309,10 @@ ideas = {
 					}
 				}
 				OR = {
-					has_country_flag = tax_low
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea = tax_low
+					has_idea = tax_average
+					has_idea = tax_high
+					has_idea = tax_extreme
 				}
 				NOT = {
 					OR = {
@@ -351,12 +332,6 @@ ideas = {
 				production_speed_dockyard_factor = -0.05
 			}
 			
-			on_add = {
-				set_country_flag = mob_general
-				clr_country_flag = mob_standing
-				clr_country_flag = mob_limited
-				clr_country_flag = mob_reserve
-			}
 			
 			cancel_if_invalid = no
 			

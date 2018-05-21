@@ -24,15 +24,7 @@
 				army_org_factor = 0.1
 				army_morale_factor = 0.1
 			}
-			on_add = {
-				set_country_flag = cons_volunteer
-				clr_country_flag = cons_one
-				clr_country_flag = cons_two
-				clr_country_flag = cons_three
-				clr_country_flag = cons_expanded_draft
-				clr_country_flag = cons_extensive_draft
-				clr_country_flag = cons_barrel
-			}
+
 			
 			cancel_if_invalid = no
 			
@@ -56,27 +48,22 @@
 				army_org_factor = -0.05
 				army_morale_factor = -0.05
 				#stability_factor = -0.01
-				stability_weekly = -0.0003
+				stability_weekly = -0.0002
 			}
 			
-			on_add = {
-				set_country_flag = cons_one
-				clr_country_flag = cons_volunteer
-				clr_country_flag = cons_two
-				clr_country_flag = cons_three
-				clr_country_flag = cons_expanded_draft
-				clr_country_flag = cons_extensive_draft
-				clr_country_flag = cons_barrel
-			}
+
 			
 			cancel_if_invalid = no
 			
 			ai_will_do = {
    				factor = 10
 				modifier = {
-					factor = 1000
-					has_country_flag = cons_volunteer
-					manpower_per_military_factory <  3750
+					factor = 100
+					has_idea = cons_volunteer
+				}
+				modifier = {
+					factor = 100
+					has_manpower < 150000 
 				}
 				}
 			}
@@ -105,17 +92,7 @@
 				political_power_factor = 0.01
 				army_org_factor = 0.025
 				army_morale_factor = 0.025
-				stability_weekly = -0.0004
-			}
-			
-			on_add = {
-				set_country_flag = cons_two
-				clr_country_flag = cons_volunteer
-				clr_country_flag = cons_one
-				clr_country_flag = cons_three
-				clr_country_flag = cons_expanded_draft
-				clr_country_flag = cons_extensive_draft
-				clr_country_flag = cons_barrel
+				stability_weekly = -0.0003
 			}
 			
 			cancel_if_invalid = no
@@ -123,10 +100,13 @@
 			ai_will_do = {
    				factor = 10
 				modifier = {
-					factor = 1000
-					has_country_flag = cons_one
-					manpower_per_military_factory <  3500
-				}
+					factor = 100
+					has_idea = cons_one
+					}
+				modifier = {
+					factor = 100
+					has_manpower < 150000 #3500
+					}
 			}
 			}
 		cons_three = {
@@ -154,32 +134,22 @@
 				industrial_capacity_factory = -0.03
 				industrial_capacity_dockyard = -0.03
 				political_power_factor = -0.01
-				stability_weekly = -0.0005
-			}
-			
-			on_add = {
-				set_country_flag = cons_three
-				clr_country_flag = cons_volunteer
-				clr_country_flag = cons_two
-				clr_country_flag = cons_one
-				clr_country_flag = cons_expanded_draft
-				clr_country_flag = cons_extensive_draft
-				clr_country_flag = cons_barrel
-			}
-			
+				stability_weekly = -0.0004
+				}
+
 			cancel_if_invalid = no
 			
 			ai_will_do = {
    				factor = 10
 				modifier = {
-					factor = 1000
-					has_country_flag = cons_two
-					OR = {
-						has_manpower < 100000
-						manpower_per_military_factory <  3250
-						}
+					factor = 100
+					has_idea = cons_two
+					}
+				modifier = {
+					factor = 100
+					has_manpower < 150000 
 				}
-				}
+			}
 			}
 		cons_expanded_draft = {
 			
@@ -189,23 +159,13 @@
 			available = {
 				has_war_support > 0.5
 				OR = {
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea  = tax_average
+					has_idea  = tax_high
+					has_idea  = tax_extreme
 				}
 				AND = {
 					has_war = yes
 					enemies_strength_ratio > 0.5
-				}
-				OR = {
-					has_country_flag = age_17
-					has_country_flag = age_16
-					has_country_flag = age_15
-					has_country_flag = age_14
-					has_country_flag = age_13
-					has_country_flag = age_12
-					has_country_flag = age_11
-					has_country_flag = age_10
 				}
 			}
 			
@@ -221,23 +181,15 @@
 				stability_weekly = -0.0006
 			}
 			
-			on_add = {
-				set_country_flag = cons_expanded_draft
-				clr_country_flag = cons_volunteer
-				clr_country_flag = cons_two
-				clr_country_flag = cons_three
-				clr_country_flag = cons_one
-				clr_country_flag = cons_extensive_draft
-				clr_country_flag = cons_barrel
-			}
-			
 			ai_will_do = {
    				factor = 10
 				modifier = {
-					factor = 1000
-					has_country_flag = cons_three
-					manpower_per_military_factory <  3000
-
+					factor = 100
+					has_idea = cons_three
+				} 
+				modifier = {
+					factor = 100
+					has_manpower < 150000					
 				}
 			}
 			
@@ -254,22 +206,22 @@
 						surrender_progress > 0
 					}
 				OR = {
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea  = tax_average
+					has_idea  = tax_high
+					has_idea  = tax_extreme
 				}
 				AND = {
 					has_war = yes
 					enemies_strength_ratio > 0.8
 				}
-				has_country_flag = cons_expanded_draft
+				has_idea = cons_expanded_draft
 				OR = {
-					has_country_flag = age_15
-					has_country_flag = age_14
-					has_country_flag = age_13
-					has_country_flag = age_12
-					has_country_flag = age_11
-					has_country_flag = age_10
+					has_idea  = age_15
+					has_idea  = age_14
+					has_idea  = age_13
+					has_idea  = age_12
+					has_idea  = age_11
+					has_idea  = age_10
 					
 				}
 			}
@@ -286,22 +238,16 @@
 				stability_weekly = -0.0007
 			}
 			
-			on_add = {
-				set_country_flag = cons_extensive_draft
-				clr_country_flag = cons_volunteer
-				clr_country_flag = cons_two
-				clr_country_flag = cons_three
-				clr_country_flag = cons_expanded_draft
-				clr_country_flag = cons_one
-				clr_country_flag = cons_barrel
-			}
 			
 			ai_will_do = {
    				factor = 10
 				modifier = {
-					factor = 1000
-					has_country_flag = cons_extensive_draft
-					manpower_per_military_factory <  2750
+					factor = 100
+					has_idea  = cons_extensive_draft
+				}
+				modifier = {
+					factor = 100
+					has_manpower < 150000 
 				}
 			}
 			
@@ -318,22 +264,22 @@
 						surrender_progress > 0
 					}
 				OR = {
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea  = tax_average
+					has_idea  = tax_high
+					has_idea  = tax_extreme
 				}
 				AND = {
 					has_war = yes
 					enemies_strength_ratio > 1
 				}
 				OR = {
-					has_country_flag = cons_barrel
-					has_country_flag = cons_extensive_draft
+					has_idea  = cons_barrel
+					has_idea  = cons_extensive_draft
 				}
 				OR = {
-					has_country_flag = age_12
-					has_country_flag = age_11
-					has_country_flag = age_10	
+					has_idea  = age_12
+					has_idea  = age_11
+					has_idea  = age_10	
 				}
 			}
 			
@@ -350,22 +296,16 @@
 				stability_weekly = -0.0010
 			}
 			
-			on_add = {
-				set_country_flag = cons_barrel
-				clr_country_flag = cons_volunteer
-				clr_country_flag = cons_two
-				clr_country_flag = cons_three
-				clr_country_flag = cons_expanded_draft
-				clr_country_flag = cons_extensive_draft
-				clr_country_flag = cons_one
-			}
 			
 			ai_will_do = {
    				factor = 10
 				modifier = {
-					factor = 1000
-					has_country_flag = cons_extensive_draft
-					manpower_per_military_factory <  2500
+					factor = 100
+					has_idea  = cons_extensive_draft 
+				}
+				modifier = {
+					factor = 100
+					has_manpower < 150000 
 				}
 			}
 			cancel_if_invalid = no

@@ -16,25 +16,15 @@ ideas = {
 			modifier = {
 				trade_opinion_factor = 0.10
 				production_speed_industrial_complex_factor = 0.03
-				stability_weekly = 0.001
 			}
 			
-			on_add = {
-				set_country_flag = bonds_peace
-				clr_country_flag = bonds_basic
-				clr_country_flag = bonds_war_domestic
-				clr_country_flag = bonds_war_international
-				clr_country_flag = bonds_war_public
-				clr_country_flag = bonds_state_requisition
-				clr_country_flag = bonds_print
-			}
 			
 			cancel_if_invalid = no
 			
 			ai_will_do = {
 				factor = 1
 				modifier = {
-					factor = 1000
+					factor = 100
 					has_war = no
 				}
 			}
@@ -52,16 +42,6 @@ ideas = {
 				industrial_capacity_dockyard = 0.025
 				production_speed_arms_factory_factor = 0.025
 				production_speed_dockyard_factor = 0.025
-			}
-			
-			on_add = {
-				set_country_flag = bonds_basic
-				clr_country_flag = bonds_peace
-				clr_country_flag = bonds_war_domestic
-				clr_country_flag = bonds_war_international
-				clr_country_flag = bonds_war_public
-				clr_country_flag = bonds_state_requisition
-				clr_country_flag = bonds_print
 			}
 			
 			cancel_if_invalid = no
@@ -91,7 +71,7 @@ ideas = {
 					has_government = neutrality
 				}
 				has_war = yes
-				has_country_flag = bonds_basic
+				has_idea = bonds_basic
 			}
 			
 			modifier = {
@@ -102,21 +82,10 @@ ideas = {
 				stability_weekly = -0.001
 			}
 			
-			on_add = {
-				set_country_flag = bonds_war_domestic
-				clr_country_flag = bonds_basic
-				clr_country_flag = bonds_peace
-				clr_country_flag = bonds_war_international
-				clr_country_flag = bonds_war_public
-				clr_country_flag = bonds_state_requisition
-				clr_country_flag = bonds_print
-			}
-			
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-				factor = 30
-				
+				factor = 20
 			}
 		}
 		bonds_war_international = {
@@ -132,7 +101,7 @@ ideas = {
 					has_government = monarchism
 				}
 				has_war = yes
-				has_country_flag = bonds_basic
+				has_idea = bonds_basic
 			}
 			
 			modifier = {
@@ -141,16 +110,6 @@ ideas = {
 				production_speed_arms_factory_factor = 0.075
 				production_speed_dockyard_factor = 0.075
 				stability_weekly = -0.001
-			}
-			
-			on_add = {
-				set_country_flag = bonds_war_international
-				clr_country_flag = bonds_basic
-				clr_country_flag = bonds_war_domestic
-				clr_country_flag = bonds_peace
-				clr_country_flag = bonds_war_public
-				clr_country_flag = bonds_state_requisition
-				clr_country_flag = bonds_print
 			}
 			
 			cancel_if_invalid = no
@@ -171,7 +130,7 @@ ideas = {
 					democratic_govt = yes
 					has_government = monarchism
 				}
-				has_country_flag = bonds_war_international
+				has_idea = bonds_war_international
 			}
 			
 			modifier = {
@@ -184,15 +143,6 @@ ideas = {
 				stability_weekly = -0.002
 			}
 			
-			on_add = {
-				set_country_flag = bonds_war_public
-				clr_country_flag = bonds_basic
-				clr_country_flag = bonds_war_domestic
-				clr_country_flag = bonds_war_international
-				clr_country_flag = bonds_peace
-				clr_country_flag = bonds_state_requisition
-				clr_country_flag = bonds_print
-			}
 			
 			cancel_if_invalid = no
 
@@ -217,9 +167,9 @@ ideas = {
 				OR = {
 					AND = {
 						has_government = communism
-						has_country_flag = bonds_basic
+						has_idea = bonds_basic
 					}
-					has_country_flag = bonds_war_domestic
+					has_idea = bonds_war_domestic
 				}
 			}
 			
@@ -233,15 +183,6 @@ ideas = {
 				stability_weekly = -0.002
 			}
 			
-			on_add = {
-				set_country_flag = bonds_state_requisition
-				clr_country_flag = bonds_basic
-				clr_country_flag = bonds_war_domestic
-				clr_country_flag = bonds_war_international
-				clr_country_flag = bonds_war_public
-				clr_country_flag = bonds_print
-				clr_country_flag = bonds_peace
-			}
 			
 			cancel_if_invalid = no
 
@@ -257,8 +198,8 @@ ideas = {
 			available = {
 				has_war = yes
 				OR = {
-					has_country_flag = bonds_state_requisition
-					has_country_flag = bonds_war_public
+					has_idea = bonds_state_requisition
+					has_idea = bonds_war_public
 				}
 			}
 			
@@ -274,15 +215,6 @@ ideas = {
 				stability_weekly = -0.004
 			}
 			
-			on_add = {
-				set_country_flag = bonds_print
-				clr_country_flag = bonds_basic
-				clr_country_flag = bonds_war_domestic
-				clr_country_flag = bonds_war_international
-				clr_country_flag = bonds_war_public
-				clr_country_flag = bonds_state_requisition
-				clr_country_flag = bonds_peace
-			}
 			
 			cancel_if_invalid = no
 

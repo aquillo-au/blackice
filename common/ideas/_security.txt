@@ -14,8 +14,8 @@ ideas = {
 					has_government = fascism
 					has_government = monarchism
 					has_government = neutrality
-					has_country_flag = press_state
-					has_country_flag = press_censored
+					has_idea = press_state
+					has_idea = press_censored
 				}
 			}
 			level = 4
@@ -24,17 +24,9 @@ ideas = {
 				enemy_partisan_effect = 0.10
 				foreign_subversive_activites = 0.10
 				drift_defence_factor = -0.20
-				stability_weekly = 0.002
+				stability_weekly = 0.001
 			}
-			
-			on_add = {
-				set_country_flag = security_liberty_first
-				clr_country_flag = security_minor_restrictions
-				clr_country_flag = security_major_restrictions
-				clr_country_flag = security_police_state
-			}
-			
-			
+						
 			
 			ai_will_do = {
    				factor = 10
@@ -55,7 +47,7 @@ ideas = {
 					has_government = fascism
 					has_government = monarchism
 					has_government = neutrality
-					has_country_flag = press_state
+					has_idea = press_state
 				}
 			}
 			level = 3
@@ -66,15 +58,8 @@ ideas = {
 				enemy_partisan_effect = 0.05
 				foreign_subversive_activites = 0.05
 				drift_defence_factor = -0.10
-				stability_weekly = 0.001
 			}
 			
-			on_add = {
-				set_country_flag = security_minor_restrictions
-				clr_country_flag = security_liberty_first
-				clr_country_flag = security_major_restrictions
-				clr_country_flag = security_police_state
-			}
 			
 			
 			
@@ -92,7 +77,7 @@ ideas = {
 			removal_cost = -1
 			
 			available = {
-				NOT = { has_country_flag = press_free }
+				NOT = { has_idea = press_free }
 				OR = {
 					AND = {
 						democratic_govt = yes
@@ -113,12 +98,6 @@ ideas = {
 				stability_weekly = -0.001
 			}
 			
-			on_add = {
-				set_country_flag = security_major_restrictions
-				clr_country_flag = security_liberty_first
-				clr_country_flag = security_minor_restrictions
-				clr_country_flag = security_police_state
-			}
 			
 			ai_will_do = {
    				factor = 2
@@ -138,8 +117,8 @@ ideas = {
 					has_government = neutrality
 				}
 				NOT = {
-					has_country_flag = press_free
-					has_country_flag = press_regulated
+					has_idea = press_free
+					has_idea = press_regulated
 				}
 			}
 			level = 1
@@ -148,16 +127,8 @@ ideas = {
 				enemy_partisan_effect = -0.10
 				foreign_subversive_activites = -0.20
 				drift_defence_factor = 0.20
-				stability_weekly = -0.001
-			}
-			
-			on_add = {
-				set_country_flag = security_police_state
-				clr_country_flag = security_liberty_first
-				clr_country_flag = security_minor_restrictions
-				clr_country_flag = security_major_restrictions
-			}
-			
+				stability_weekly = -0.002
+			}		
 			
 
 			ai_will_do = {

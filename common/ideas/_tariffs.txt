@@ -13,8 +13,8 @@ ideas = {
 					has_government = communism
 					has_government = neutrality
 					has_government = monarchism
-					has_country_flag = closed_economy
-					has_country_flag = limited_exports
+					has_idea = closed_economy
+					has_idea = limited_exports
 				}
 			}
 			
@@ -31,16 +31,9 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.06
 				consumer_goods_factor = -0.03
 				line_change_production_efficiency_factor = 0.06
-				stability_weekly = 0.002
+				stability_weekly = 0.001
 			}
 			
-			on_add = {
-				set_country_flag = tariffs_none
-				clr_country_flag = tariffs_extreme
-				clr_country_flag = tariffs_low
-				clr_country_flag = tariffs_average
-				clr_country_flag = tariffs_high
-			}
 			
 			cancel_if_invalid = no
 			
@@ -65,7 +58,7 @@ ideas = {
 				NOT = {
 					has_government = communism
 					has_government = fascism
-					has_country_flag = closed_economy
+					has_idea = closed_economy
 				}
 			}
 			
@@ -82,16 +75,9 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.03
 				consumer_goods_factor = -0.015
 				line_change_production_efficiency_factor = 0.03
-				stability_weekly = 0.001
+				stability_weekly = 0.0005
 			}
 			
-			on_add = {
-				set_country_flag = tariffs_low
-				clr_country_flag = tariffs_none
-				clr_country_flag = tariffs_extreme
-				clr_country_flag = tariffs_average
-				clr_country_flag = tariffs_high
-			}
 			
 			cancel_if_invalid = no
 			
@@ -131,15 +117,7 @@ ideas = {
 				industrial_capacity_factory = 0.01
 				industrial_capacity_dockyard = 0.01
 			}
-			
-			on_add = {
-				set_country_flag = tariffs_average
-				clr_country_flag = tariffs_none
-				clr_country_flag = tariffs_low
-				clr_country_flag = tariffs_extreme
-				clr_country_flag = tariffs_high
-			}
-			
+
 			cancel_if_invalid = no
 
 			ai_will_do = {
@@ -152,7 +130,7 @@ ideas = {
 			removal_cost = -1
 			level = 2
 			available = {
-				NOT = { has_country_flag = free_trade }
+				NOT = { has_idea = free_trade }
 				OR = {
 					AND = {
 						democratic_govt = yes
@@ -169,9 +147,9 @@ ideas = {
 							democratic_govt = yes
 						}
 						OR = {
-							has_country_flag = partial_economic_mobilisation
-							has_country_flag = war_economy
-							has_country_flag = tot_economic_mobilisation
+							has_idea = partial_economic_mobilisation
+							has_idea = war_economy
+							has_idea = tot_economic_mobilisation
 						}
 					}
 				}
@@ -192,15 +170,7 @@ ideas = {
 				line_change_production_efficiency_factor = -0.025
 				stability_weekly = -0.001
 			}
-			
-			on_add = {
-				set_country_flag = tariffs_high
-				clr_country_flag = tariffs_none
-				clr_country_flag = tariffs_low
-				clr_country_flag = tariffs_average
-				clr_country_flag = tariffs_extreme
-			}
-			
+
 			ai_will_do = {
    				factor = 10
 				
@@ -234,17 +204,17 @@ ideas = {
 					has_government = neutrality
 				}
 				NOT = {
-					has_country_flag = free_trade
-					has_country_flag = export_focus
+					has_idea = free_trade
+					has_idea = export_focus
 				}
 				AND = {
 					NOT = { 
 						democratic_govt = yes
 					}
 					OR = {
-						has_country_flag = partial_economic_mobilisation
-						has_country_flag = war_economy
-						has_country_flag = tot_economic_mobilisation
+						has_idea = partial_economic_mobilisation
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation
 					}
 				}
 			}
@@ -263,14 +233,6 @@ ideas = {
 				consumer_goods_factor = 0.03
 				line_change_production_efficiency_factor = -0.05
 				stability_weekly = -0.003
-			}
-			
-			on_add = {
-				set_country_flag = tariffs_extreme
-				clr_country_flag = tariffs_none
-				clr_country_flag = tariffs_low
-				clr_country_flag = tariffs_average
-				clr_country_flag = tariffs_high
 			}
 			
 			cancel_if_invalid = no

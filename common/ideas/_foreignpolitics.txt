@@ -26,13 +26,7 @@ ideas = {
 				guarantee_tension = 0.20
 			}
 			
-			on_add = {
-				set_country_flag = foreign_isolationism
-				clr_country_flag = foreign_neutral
-				clr_country_flag = foreign_cooperative
-				clr_country_flag = foreign_interventionism
-				clr_country_flag = foreign_warmonger
-			}
+
 			
 			cancel_if_invalid = no
 			
@@ -89,13 +83,7 @@ ideas = {
 				guarantee_tension = 0.25
 			}
 			
-			on_add = {
-				set_country_flag = foreign_neutral
-				clr_country_flag = foreign_isolationism
-				clr_country_flag = foreign_cooperative
-				clr_country_flag = foreign_interventionism
-				clr_country_flag = foreign_warmonger
-			}
+
 			
 			cancel_if_invalid = no
 			
@@ -145,13 +133,6 @@ ideas = {
 				send_volunteers_tension = -0.05
 			}
 			
-			on_add = {
-				set_country_flag = foreign_cooperative
-				clr_country_flag = foreign_neutral
-				clr_country_flag = foreign_isolationism
-				clr_country_flag = foreign_interventionism
-				clr_country_flag = foreign_warmonger
-			}
 			
 			cancel_if_invalid = no
 			
@@ -208,13 +189,6 @@ ideas = {
 				guarantee_tension = -0.10
 			}
 			
-			on_add = {
-				set_country_flag = foreign_interventionism
-				clr_country_flag = foreign_neutral
-				clr_country_flag = foreign_cooperative
-				clr_country_flag = foreign_isolationism
-				clr_country_flag = foreign_warmonger
-			}
 			
 			cancel_if_invalid = no
 
@@ -273,20 +247,12 @@ ideas = {
 				generate_wargoal_tension = -0.20
 			}
 			
-			on_add = {
-				set_country_flag = foreign_warmonger
-				clr_country_flag = foreign_neutral
-				clr_country_flag = foreign_cooperative
-				clr_country_flag = foreign_interventionism
-				clr_country_flag = foreign_isolationism
-			}
-			
 			cancel_if_invalid = yes
 
 			ai_will_do = {
    				factor = 1
 				modifier = {
-					factor = 90
+					factor = 40
 					has_government = fascism
 				}
 				modifier = {

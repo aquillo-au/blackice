@@ -14,8 +14,8 @@ ideas = {
 					has_government = communism
 					has_government = monarchism
 					has_government = neutrality
-					has_country_flag = tariffs_extreme
-					has_country_flag = tariffs_high
+					has_idea = tariffs_extreme
+					has_idea = tariffs_high
 				}
 			}
 			modifier = {
@@ -31,15 +31,8 @@ ideas = {
 				communism_drift = -0.01
 				fascism_drift = -0.01
 				line_change_production_efficiency_factor = 0.04
-				stability_weekly = 0.002
 			}
 			
-			on_add = {
-				set_country_flag = free_trade
-				clr_country_flag = export_focus
-				clr_country_flag = limited_exports
-				clr_country_flag = closed_economy
-			}
 			
 			cancel_if_invalid = no
 			
@@ -68,7 +61,7 @@ ideas = {
 			removal_cost = -1
 			level = 2
 			available = {
-				NOT = { has_country_flag = extreme_tariffs }
+				NOT = { has_idea = tariffs_extreme }
 				NOT = {
 					has_government = fascism
 					has_war = yes
@@ -84,14 +77,6 @@ ideas = {
 				research_time_factor = -0.02
 				production_factory_efficiency_gain_factor = 0.025
 				line_change_production_efficiency_factor = 0.02
-				stability_weekly = 0.001
-			}
-			
-			on_add = {
-				set_country_flag = export_focus
-				clr_country_flag = free_trade
-				clr_country_flag = limited_exports
-				clr_country_flag = closed_economy
 			}
 			
 			default = yes
@@ -124,8 +109,8 @@ ideas = {
 			level = 3
 			available = {
 				NOT = {
-					has_country_flag = tariffs_none
-					has_country_flag = private_control
+					has_idea = tariffs_none
+					has_idea = private_control
 				}
 			}
 			level = 2
@@ -140,17 +125,9 @@ ideas = {
 				industrial_capacity_dockyard = 0.025
 				research_time_factor = 0.02
 				production_factory_efficiency_gain_factor = -0.05
-				neutrality_drift = 0.01
 				line_change_production_efficiency_factor = -0.02
 			}
-			
-			on_add = {
-				set_country_flag = limited_exports
-				clr_country_flag = export_focus
-				clr_country_flag = free_trade
-				clr_country_flag = closed_economy
-			}
-			
+
 			cancel_if_invalid = no
 
 			ai_will_do = {
@@ -194,10 +171,10 @@ ideas = {
 			level = 4
 			available = {
 				NOT = { 
-					has_country_flag = private_control 
-					has_country_flag = tariffs_none
-					has_country_flag = tariffs_low
-					has_country_flag = press_free
+					has_idea = private_control 
+					has_idea = tariffs_none
+					has_idea = tariffs_low
+					has_idea = press_free
 				}
 				has_war = yes
 				OR = { 
@@ -207,8 +184,8 @@ ideas = {
 					has_government = neutrality
 				}
 				OR = {
-					has_country_flag = war_economy
-					has_country_flag = tot_economic_mobilisation
+					has_idea = war_economy
+					has_idea = tot_economic_mobilisation
 				}
 				OR = {
 					NOT = {
@@ -239,14 +216,7 @@ ideas = {
 				line_change_production_efficiency_factor = -0.04
 				stability_weekly = -0.002
 			}
-			
-			on_add = {
-				set_country_flag = closed_economy
-				clr_country_flag = export_focus
-				clr_country_flag = limited_exports
-				clr_country_flag = free_trade
-				custom_effect_tooltip = closed_economy_TT
-			}
+
 			
 			cancel_if_invalid = no
 

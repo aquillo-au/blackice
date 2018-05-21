@@ -15,8 +15,8 @@ ideas = {
 						has_government = communism
 						has_government = neutrality
 						has_government = monarchism
-						has_country_flag = tariffs_high
-						has_country_flag = closed_economy
+						has_idea = tariffs_high
+						has_idea = closed_economy
 					}
 				}
 			}
@@ -35,17 +35,10 @@ ideas = {
 				stability_weekly = -0.002
 			}
 			
-			on_add = {
-				set_country_flag = fdi_encouraged
-				clr_country_flag = fdi_allowed
-				clr_country_flag = fdi_regulated
-				clr_country_flag = fdi_banned
-			}
-			
 			cancel_if_invalid = no
 			
 			ai_will_do = {
-				factor = 5
+				factor = 10
 				modifier = {
 					factor = 10
 					has_government = conservatism
@@ -87,12 +80,6 @@ ideas = {
 				stability_weekly = -0.001
 			}
 			
-			on_add = {
-				set_country_flag = fdi_allowed
-				clr_country_flag = fdi_encouraged
-				clr_country_flag = fdi_regulated
-				clr_country_flag = fdi_banned
-			}
 			
 			cancel_if_invalid = no
 			
@@ -110,7 +97,7 @@ ideas = {
 					factor = 10
 					has_war = yes
 					democratic_govt = yes
-					NOT = { has_country_flag = fdi_regulated }
+					NOT = { has_idea = fdi_regulated }
 				}
 			}
 		}
@@ -134,16 +121,10 @@ ideas = {
 				research_time_factor = 0.015
 				local_resources_factor = -0.025
 				trade_opinion_factor = -0.05
-				stability_weekly = 0.001
+				stability_weekly = 0.0005
 
 			}
 			
-			on_add = {
-				set_country_flag = fdi_regulated
-				clr_country_flag = fdi_encouraged
-				clr_country_flag = fdi_allowed
-				clr_country_flag = fdi_banned
-			}
 			
 			cancel_if_invalid = no
 
@@ -173,8 +154,8 @@ ideas = {
 					has_government = neutrality
 				}
 				NOT = {
-					has_country_flag = tariffs_none
-					has_country_flag = free_trade
+					has_idea = tariffs_none
+					has_idea = free_trade
 				}
 			}
 			
@@ -188,16 +169,9 @@ ideas = {
 				research_time_factor = 0.02
 				local_resources_factor = -0.04
 				trade_opinion_factor = -0.10
-				stability_weekly = 0.002
+				stability_weekly = 0.001
 			}
-			
-			on_add = {
-				set_country_flag = fdi_banned
-				clr_country_flag = fdi_allowed
-				clr_country_flag = fdi_regulated
-				clr_country_flag = fdi_encouraged
-			}
-			
+					
 			cancel_if_invalid = no
 
 			ai_will_do = {

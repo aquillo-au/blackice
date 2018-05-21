@@ -22,12 +22,6 @@ ideas = {
 				political_power_factor = 0.05
 			}
 			
-			on_add = {
-				set_country_flag = labor_none
-				clr_country_flag = labor_allowed
-				clr_country_flag = labor_encouraged
-				clr_country_flag = labor_pressed
-			}
 			
 			cancel_if_invalid = no
 			
@@ -87,12 +81,6 @@ ideas = {
 				political_power_factor = 0.025
 			}
 			
-			on_add = {
-				set_country_flag = labor_allowed
-				clr_country_flag = labor_none
-				clr_country_flag = labor_encouraged
-				clr_country_flag = labor_pressed
-			}
 			
 			cancel_if_invalid = no
 			
@@ -126,24 +114,22 @@ ideas = {
 			}
 			
 			on_add = {
-				set_country_flag = labor_encouraged
 				hidden_effect = {
 					country_event = law.6
 				}
 				if = {
 					limit = {
 						OR = {
-							has_country_flag = labor_none
-							has_country_flag = labor_allowed
+							has_idea = labor_none
+							has_idea = labor_allowed
 						}
 					}
 					custom_effect_tooltip = labor_transition_TT
 				}
 				if = {
 					limit = {
-						has_country_flag = labor_pressed
+						has_idea = labor_pressed
 					}
-					set_country_flag = labor_step_down
 				}
 			}
 			
@@ -179,8 +165,8 @@ ideas = {
 						has_government = monarchism
 					}
 					OR = {
-						has_country_flag = war_economy
-						has_country_flag = tot_economic_mobilisation
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation
 					}
 				}
 			}
@@ -199,16 +185,15 @@ ideas = {
 			}
 
 			on_add = {
-				set_country_flag = labor_pressed
 				hidden_effect = {
 					country_event = law.6
 				}
 				if = {
 					limit = {
 						OR = {
-							has_country_flag = labor_none
-							has_country_flag = labor_allowed
-							has_country_flag = labor_encouraged
+							has_idea = labor_none
+							has_idea = labor_allowed
+							has_idea = labor_encouraged
 						}
 					}
 					custom_effect_tooltip = labor_transition_TT

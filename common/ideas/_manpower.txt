@@ -11,8 +11,6 @@
 			
 			available = {
 			}
-			
-
 
 			modifier = {
 				conscription = 0.020
@@ -20,19 +18,6 @@
 				army_morale_factor = 0.03
 				army_org_factor = 0.03
 				navy_org_factor = 0.03
-			}
-			
-			on_add = {
-				set_country_flag = age_19
-				clr_country_flag = age_18
-				clr_country_flag = age_17
-				clr_country_flag = age_16
-				clr_country_flag = age_15
-				clr_country_flag = age_14
-				clr_country_flag = age_13
-				clr_country_flag = age_12
-				clr_country_flag = age_11
-				clr_country_flag = age_10
 			}
 			
 			cancel_if_invalid = no
@@ -46,16 +31,6 @@
 			available = {
 			}
 			
-			ai_will_do = {
-   				factor = 10
-  				modifier = {
-					#Prio if low on manpower
-					factor = 1000
-					has_country_flag = age_19
-					manpower_per_military_factory <  3900
-				}
-				}		
-
 
 			modifier = {
 				conscription = 0.030
@@ -66,20 +41,20 @@
 
 			}
 			
-			on_add = {
-				set_country_flag = age_18
-				clr_country_flag = age_19
-				clr_country_flag = age_17
-				clr_country_flag = age_16
-				clr_country_flag = age_15
-				clr_country_flag = age_14
-				clr_country_flag = age_13
-				clr_country_flag = age_12
-				clr_country_flag = age_11
-				clr_country_flag = age_10
-			}
-			
 			cancel_if_invalid = no
+
+			ai_will_do = {
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_idea = age_19
+				}
+				modifier = {
+					factor = 100
+					has_manpower <  150000
+				}
+				}		
 			}
 		age_17 = {
 			cost = 50
@@ -87,19 +62,6 @@
 			level = 8
 			
 			available = {
-			}
-			
-			ai_will_do = {
-   				factor = 10
-  				modifier = {
-					#Prio if low on manpower
-					factor = 1000
-					OR = {
-						has_country_flag = age_18
-						has_country_flag = age_19
-						}
-					manpower_per_military_factory <  3800
-				}
 			}
 
 			modifier = {
@@ -111,20 +73,20 @@
 
 			}
 			
-			on_add = {
-				set_country_flag = age_17
-				clr_country_flag = age_18
-				clr_country_flag = age_19
-				clr_country_flag = age_16
-				clr_country_flag = age_15
-				clr_country_flag = age_14
-				clr_country_flag = age_13
-				clr_country_flag = age_12
-				clr_country_flag = age_11
-				clr_country_flag = age_10
-			}
-			
+
 			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_idea = age_18
+				}
+				modifier = {
+					factor = 100
+					has_manpower <  150000
+				}
+				}			
 			}
 		age_16 = {
 			cost = 50
@@ -134,20 +96,10 @@
 			available = {
 				has_war = yes
 				OR = {
-					has_country_flag = cons_three
-					has_country_flag = cons_expanded_draft
-					has_country_flag = cons_extensive_draft
-					has_country_flag = cons_barrel
-				}
-			}
-			
-			ai_will_do = {
-   				factor = 10
-  				modifier = {
-					#Prio if low on manpower
-					factor = 1000
-					has_country_flag = age_17
-					manpower_per_military_factory <  3600
+					has_idea = cons_three
+					has_idea = cons_expanded_draft
+					has_idea = cons_extensive_draft
+					has_idea = cons_barrel
 				}
 			}
 
@@ -159,21 +111,20 @@
 				navy_org_factor = -0.05
 				stability_weekly = -0.001
 			}
-			
-			on_add = {
-				set_country_flag = age_16
-				clr_country_flag = age_18
-				clr_country_flag = age_17
-				clr_country_flag = age_19
-				clr_country_flag = age_15
-				clr_country_flag = age_14
-				clr_country_flag = age_13
-				clr_country_flag = age_12
-				clr_country_flag = age_11
-				clr_country_flag = age_10
-			}
-			
+
 			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_idea = age_17
+				}
+				modifier = {
+					factor = 100
+					has_manpower <  150000
+				}
+				}		
 			}
 		age_15 = {
 			cost = 50
@@ -183,21 +134,10 @@
 			available = {
 				has_war = yes
 				OR = {
-					has_country_flag = cons_three
-					has_country_flag = cons_expanded_draft
-					has_country_flag = cons_extensive_draft
-					has_country_flag = cons_barrel
-				}
-
-			}
-			
-			ai_will_do = {
-   				factor = 10
-  				modifier = {
-					#Prio if low on manpower
-					factor = 1000
-					has_country_flag = age_16
-					manpower_per_military_factory <  3400
+					has_idea = cons_three
+					has_idea = cons_expanded_draft
+					has_idea = cons_extensive_draft
+					has_idea = cons_barrel
 				}
 			}
 
@@ -209,21 +149,20 @@
 				navy_org_factor = -0.1
 				stability_weekly = -0.0015
 			}
-			
-			on_add = {
-				set_country_flag = age_15
-				clr_country_flag = age_18
-				clr_country_flag = age_17
-				clr_country_flag = age_16
-				clr_country_flag = age_19
-				clr_country_flag = age_14
-				clr_country_flag = age_13
-				clr_country_flag = age_12
-				clr_country_flag = age_11
-				clr_country_flag = age_10
-			}
-			
+
 			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_idea = age_16
+				}
+				modifier = {
+					factor = 100
+					has_manpower <  150000
+				}
+				}		
 			}
 		age_14 = {
 			cost = 50
@@ -232,23 +171,14 @@
 			
 			available = {
 				OR = {
-					has_country_flag = cons_expanded_draft
-					has_country_flag = cons_extensive_draft
-					has_country_flag = cons_barrel
+					has_idea = cons_expanded_draft
+					has_idea = cons_extensive_draft
+					has_idea = cons_barrel
 					}
 				has_war = yes
 				
 			}
 			
-			ai_will_do = {
-   				factor = 10
-  				modifier = {
-					#Prio if low on manpower
-					factor = 100
-					has_country_flag = age_15
-					manpower_per_military_factory <  3200
-				}
-			}
 			modifier = {
 				conscription = 0.070
 				army_morale_factor = -0.15
@@ -256,23 +186,22 @@
 				army_org_factor = -0.15
 				navy_org_factor = -0.15
 				stability_weekly = -0.0025
+			}
 
-			}
-			
-			on_add = {
-				set_country_flag = age_14
-				clr_country_flag = age_18
-				clr_country_flag = age_17
-				clr_country_flag = age_16
-				clr_country_flag = age_15
-				clr_country_flag = age_19
-				clr_country_flag = age_13
-				clr_country_flag = age_12
-				clr_country_flag = age_11
-				clr_country_flag = age_10
-			}
-			
 			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_idea = age_15
+				}
+				modifier = {
+					factor = 100
+					has_manpower <  150000
+				}
+				}		
 			}
 		age_13 = {
 			cost = 50
@@ -286,20 +215,10 @@
 						surrender_progress > 0
 					}
 				OR = {
-					has_country_flag = cons_expanded_draft
-					has_country_flag = cons_extensive_draft
-					has_country_flag = cons_barrel
+					has_idea = cons_expanded_draft
+					has_idea = cons_extensive_draft
+					has_idea = cons_barrel
 					}
-			}
-			
-			ai_will_do = {
-   				factor = 10
-  				modifier = {
-					#Prio if low on manpower
-					factor = 1000
-					has_country_flag = age_14
-					manpower_per_military_factory <  3000
-				}
 			}
 
 			modifier = {
@@ -309,23 +228,21 @@
 				army_org_factor = -0.2
 				navy_org_factor = -0.2
 				stability_weekly = -0.003
+			}
 
-			}
-			
-			on_add = {
-				set_country_flag = age_13
-				clr_country_flag = age_18
-				clr_country_flag = age_17
-				clr_country_flag = age_16
-				clr_country_flag = age_15
-				clr_country_flag = age_14
-				clr_country_flag = age_19
-				clr_country_flag = age_12
-				clr_country_flag = age_11
-				clr_country_flag = age_10
-			}
-			
 			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_idea = age_14
+				}
+				modifier = {
+					factor = 100
+					has_manpower <  150000
+				}
+				}		
 			}
 		age_12 = {
 			cost = 50
@@ -339,21 +256,11 @@
 					}
 					has_war = yes
 					OR = {
-					has_country_flag = cons_expanded_draft
-					has_country_flag = cons_extensive_draft
-					has_country_flag = cons_barrel
+					has_idea = cons_expanded_draft
+					has_idea = cons_extensive_draft
+					has_idea = cons_barrel
 					}
 
-			}
-			
-			ai_will_do = {
-   				factor = 10
-  				modifier = {
-					#Prio if low on manpower
-					factor = 1000
-					has_country_flag = age_13
-					manpower_per_military_factory <  2800
-				}
 			}
 
 			modifier = {
@@ -366,20 +273,20 @@
 
 			}
 			
-			on_add = {
-				set_country_flag = age_12
-				clr_country_flag = age_18
-				clr_country_flag = age_17
-				clr_country_flag = age_16
-				clr_country_flag = age_15
-				clr_country_flag = age_14
-				clr_country_flag = age_13
-				clr_country_flag = age_19
-				clr_country_flag = age_11
-				clr_country_flag = age_10
-			}
-			
+
 			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_idea = age_13
+				}
+				modifier = {
+					factor = 100
+					has_manpower <  150000
+				}
+				}		
 			}
 		age_11 = {
 			cost = 50
@@ -393,20 +300,11 @@
 						surrender_progress > 0
 					}
 					OR = {
-						has_country_flag = cons_extensive_draft
-						has_country_flag = cons_barrel
+						has_idea = cons_extensive_draft
+						has_idea = cons_barrel
 					}
 			}
-			
-			ai_will_do = {
-   				factor = 10
-  				modifier = {
-					#Prio if low on manpower
-					factor = 1000
-					has_country_flag = age_12
-					manpower_per_military_factory <  2600
-				}
-			}
+
 			modifier = {
 				conscription = 0.100
 				army_morale_factor = -0.4
@@ -417,20 +315,20 @@
 
 			}
 			
-			on_add = {
-				set_country_flag = age_11
-				clr_country_flag = age_18
-				clr_country_flag = age_17
-				clr_country_flag = age_16
-				clr_country_flag = age_15
-				clr_country_flag = age_14
-				clr_country_flag = age_13
-				clr_country_flag = age_12
-				clr_country_flag = age_19
-				clr_country_flag = age_10
-			}
 			
 			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_idea = age_12
+				}
+				modifier = {
+					factor = 100
+					has_manpower <  150000
+				}
+				}		
 			}
 		age_10 = {
 			cost = 50
@@ -444,22 +342,10 @@
 						surrender_progress > 0
 					}
 					OR = {
-						has_country_flag = cons_extensive_draft
-						has_country_flag = cons_barrel
+						has_idea = cons_extensive_draft
+						has_idea = cons_barrel
 					}
-
-			}
-			
-
-			ai_will_do = {
-   				factor = 10
-  				modifier = {
-					#Prio if low on manpower
-					factor = 1000
-					has_country_flag = age_11
-					manpower_per_military_factory <  2400
-				}
-				}
+					}
 			
 			modifier = {
 				conscription = 0.120
@@ -470,20 +356,20 @@
 				stability_weekly = -0.006
 			}
 			
-			on_add = {
-				set_country_flag = age_10
-				clr_country_flag = age_18
-				clr_country_flag = age_17
-				clr_country_flag = age_16
-				clr_country_flag = age_15
-				clr_country_flag = age_14
-				clr_country_flag = age_13
-				clr_country_flag = age_12
-				clr_country_flag = age_11
-				clr_country_flag = age_19
-			}
 			
 			cancel_if_invalid = no
+			ai_will_do = {
+   				factor = 10
+  				modifier = {
+					#Prio if low on manpower
+					factor = 100
+					has_idea = age_11
+				}
+				modifier = {
+					factor = 100
+					has_manpower <  150000
+				}
+				}		
 			}
 	}
 }

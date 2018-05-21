@@ -14,8 +14,8 @@ ideas = {
 					has_government = neutrality
 					has_government = communism
 					has_government = monarchism
-					has_country_flag = security_police_state
-					has_country_flag = security_major_restrictions
+					has_idea = security_police_state
+					has_idea = security_major_restrictions
 				}
 			}
 			
@@ -30,12 +30,6 @@ ideas = {
 				war_support_weekly = -0.001
 			}
 			
-			on_add = {
-				set_country_flag = press_free
-				clr_country_flag = press_regulated
-				clr_country_flag = press_censored
-				clr_country_flag = press_state
-			}
 			
 			cancel_if_invalid = no
 			
@@ -58,7 +52,7 @@ ideas = {
 			
 			available = {
 				NOT = { 
-				has_country_flag = security_police_state 
+				has_idea = security_police_state 
 				has_government = communism 
 				has_government = fascism
 				}
@@ -77,12 +71,6 @@ ideas = {
 				war_support_weekly = -0.0005
 			}
 			
-			on_add = {
-				set_country_flag = press_regulated
-				clr_country_flag = press_free
-				clr_country_flag = press_censored
-				clr_country_flag = press_state
-			}
 			
 			cancel_if_invalid = no
 			
@@ -145,13 +133,7 @@ ideas = {
 				war_support_weekly = 0.001
 			}
 			
-			on_add = {
-				set_country_flag = press_censored
-				clr_country_flag = press_regulated
-				clr_country_flag = press_free
-				clr_country_flag = press_state
-			}
-			
+
 			cancel_if_invalid = yes
 
 			ai_will_do = {
@@ -201,8 +183,8 @@ ideas = {
 					has_government = neutrality
 				}
 				NOT = {
-					has_country_flag = security_liberty_first
-					has_country_flag = security_minor_restrictions
+					has_idea = security_liberty_first
+					has_idea = security_minor_restrictions
 				}
 			}
 			
@@ -217,12 +199,6 @@ ideas = {
 				war_support_weekly = 0.003
 			}
 			
-			on_add = {
-				set_country_flag = press_state
-				clr_country_flag = press_regulated
-				clr_country_flag = press_censored
-				clr_country_flag = press_free
-			}
 			
 			cancel_if_invalid = yes
 

@@ -24,12 +24,6 @@ ideas = {
 				#max_command_power = -20
 			}
 			
-			on_add = {
-				set_country_flag = officer_train_none
-				clr_country_flag = officer_train_low
-				clr_country_flag = officer_train_high
-				clr_country_flag = officer_train_elite
-			}
 			
 			cancel_if_invalid = no
 			
@@ -57,10 +51,10 @@ ideas = {
 
 			available = {
 				OR = {
-					has_country_flag = tax_low
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea = tax_low
+					has_idea = tax_average
+					has_idea = tax_high
+					has_idea = tax_extreme
 				}
 			}
 			level = 3
@@ -84,13 +78,6 @@ ideas = {
 				max_planning = 0.025
 				planning_speed = 0.025
 				max_command_power = 5
-			}
-			
-			on_add = {
-				set_country_flag = officer_train_low
-				clr_country_flag = officer_train_none
-				clr_country_flag = officer_train_high
-				clr_country_flag = officer_train_elite
 			}
 			
 			cancel_if_invalid = no
@@ -121,9 +108,9 @@ ideas = {
 			
 			available = {
 				OR = {
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea = tax_average
+					has_idea = tax_high
+					has_idea = tax_extreme
 				}
 			}
 			
@@ -148,13 +135,6 @@ ideas = {
 				max_planning = 0.075
 				planning_speed = 0.075
 				max_command_power = 10
-			}
-			
-			on_add = {
-				set_country_flag = officer_train_high
-				clr_country_flag = officer_train_low
-				clr_country_flag = officer_train_none
-				clr_country_flag = officer_train_elite
 			}
 			
 			cancel_if_invalid = no
@@ -190,9 +170,9 @@ ideas = {
 			
 			available = {
 				OR = {
-					has_country_flag = tax_average
-					has_country_flag = tax_high
-					has_country_flag = tax_extreme
+					has_idea = tax_average
+					has_idea = tax_high
+					has_idea = tax_extreme
 				}
 			}
 			level = 1
@@ -217,13 +197,6 @@ ideas = {
 				max_planning = 0.1
 				planning_speed = 0.1
 				max_command_power = 15
-			}
-			
-			on_add = {
-				set_country_flag = officer_train_elite
-				clr_country_flag = officer_train_low
-				clr_country_flag = officer_train_high
-				clr_country_flag = officer_train_none
 			}
 			
 			ai_will_do = {
