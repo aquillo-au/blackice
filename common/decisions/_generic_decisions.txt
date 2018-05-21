@@ -224,6 +224,66 @@ political_actions = {
 		}
 	
 	}
+	
+	AI_ww1 = {
+		icon = generic_political_discourse
+		available = {
+			is_ai = yes
+			NOT = {
+				has_country_flag = ww1_done
+			}
+		}
+		visible = {
+			is_ai = yes
+			NOT = {
+				has_country_flag = ww1_done
+			}
+		}
+		fire_only_once = no
+		days_remove = 1
+		cost = 0
+		complete_effect = {
+			set_country_flag = ww1_done
+			research_WW1 = yes
+		}
+		ai_will_do = {
+			base = 500
+		}
+	}
+	
+	AI_suppression = {
+		icon = generic_political_discourse
+
+		available = {
+			is_ai = yes
+			NOT = {
+				has_country_flag = ai_suppression
+			}
+		}
+
+		visible = {
+			is_ai = yes
+			NOT = {
+				has_country_flag = ai_suppression
+			}
+		}
+
+		fire_only_once = no
+
+		days_remove = 1
+
+		cost = 0
+
+		complete_effect = {
+			set_country_flag = ai_suppression
+			set_technology = { ai_suppression_tech = 1 }
+		}
+
+		ai_will_do = {
+			base = 500
+		}
+	
+	}
 }
 
 arms_trade = {
