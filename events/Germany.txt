@@ -11942,6 +11942,28 @@ add_namespace = germany
 			date > 1943.5.1
 			has_country_flag = gd_div_mot_42
 		}
+		immediate = {
+			if = {
+				limit = {
+					is_ai = yes
+					NOT = { has_tech = tech_panzer_v_equipment_1 }
+					NOT = { has_tech = subtech_panzer_v_spaa_equipment_1 }
+					NOT = { has_tech = subtech_heavy_panzer_art_equipment_1 }
+					NOT = { has_tech = subtech_panzer_iii_td_equipment_3 }
+					NOT = { has_tech = tech_heavy_panzer_equipment_2 }
+				}
+				set_technology = { tech_panzer_v_equipment_1 = 1 }
+				set_technology = { subtech_heavy_panzer_art_equipment_1 = 1 }
+				set_technology = { subtech_panzer_v_spaa_equipment_1 = 1 }
+				set_technology = { subtech_panzer_iii_td_equipment_3 = 1 }
+				set_technology = { tech_heavy_panzer_equipment_2 = 1 }
+			}
+			add_equipment_to_stockpile = { type = panzer_v_equipment_1 amount = 100 producer = GER }
+			add_equipment_to_stockpile = { type = panzer_v_spaa_equipment_1 amount = 50 producer = GER }
+			add_equipment_to_stockpile = { type = heavy_panzer_art_equipment_1 amount = 50 producer = GER }
+			add_equipment_to_stockpile = { type = panzer_iii_td_equipment_3 amount = 50 producer = GER }
+			add_equipment_to_stockpile = { type = panzer_vi_equipment_2 amount = 50 producer = GER }
+		}
 		
 		mean_time_to_happen = {
 			days = 1
@@ -11951,21 +11973,6 @@ add_namespace = germany
 			name = germany.403.a
 			ai_chance = { factor = 100 }
 			hidden_effect = {
-				if = {
-					limit = {
-						is_ai = yes
-						NOT = { has_tech = tech_panzer_v_equipment_1 }
-						NOT = { has_tech = subtech_panzer_v_spaa_equipment_1 }
-						NOT = { has_tech = subtech_heavy_panzer_art_equipment_1 }
-						NOT = { has_tech = subtech_panzer_iii_td_equipment_3 }
-						NOT = { has_tech = tech_heavy_panzer_equipment_2 }
-					}
-					set_technology = { tech_panzer_v_equipment_1 = 1 }
-					set_technology = { subtech_heavy_panzer_art_equipment_1 = 1 }
-					set_technology = { subtech_panzer_v_spaa_equipment_1 = 1 }
-					set_technology = { subtech_panzer_iii_td_equipment_3 = 1 }
-					set_technology = { tech_heavy_panzer_equipment_2 = 1 }
-				}
 				delete_unit_template_and_units = { division_template = "Inf.-Div.(GD)" }
 				load_oob = "GER_grossdeutschland_43"
 				set_country_flag = gd_div_pzgren_43
