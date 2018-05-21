@@ -286,6 +286,78 @@ political_actions = {
 	}
 }
 
+puppet_management = {
+	ENG_increased_IC_share = {
+
+		icon = generic_research
+
+		allowed = {
+			tag = ENG  
+		}
+
+		available = {
+			has_army_manpower = { size > 999999 }
+			has_capitulated = no
+			has_war = yes
+			FROM = {
+        		is_puppet_of = ENG
+				OR = {
+					has_autonomy_state = autonomy_integrated_puppet
+					has_autonomy_state = autonomy_dominion
+					has_autonomy_state = autonomy_satellite
+					has_autonomy_state = autonomy_colony
+				}
+			}
+		}
+
+		#If this trigger matches a country.
+		target_trigger = {
+			#Target is FROM
+			FROM = {
+        		is_puppet_of = ENG
+				OR = {
+					has_autonomy_state = autonomy_integrated_puppet
+					has_autonomy_state = autonomy_dominion
+					has_autonomy_state = autonomy_satellite
+					has_autonomy_state = autonomy_colony
+				}
+			}
+		}
+
+		visible = {
+            has_capitulated = no
+			has_war = yes
+		}
+		
+		cost = 50
+		
+		days_remove = 90
+
+		complete_effect = {
+			FROM = { add_timed_idea = { idea = autonomy_gain days = 90 } }
+			ROOT = { add_timed_idea = { idea = puppet_IC days = 90 } }
+		}
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1
+				FROM = {
+					OR = {
+						tag = LEB
+						tag = MOR
+						tag = TUN
+						tag = SYR
+						tag = BMP
+						tag = PAL
+						tag = EGY
+						tag = JOR
+					}
+				}
+			}
+		}
+	}
+}
 arms_trade = {
 
 	generic_trade_infantry_weapons = {

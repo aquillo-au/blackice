@@ -960,6 +960,15 @@ on_actions = {
 	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
 	on_state_control_changed = {
 		effect = {
+			if = {
+				limit = {
+					FROM.FROM = { is_core_of = FROM } ROOT = { has_war_with = FROM }
+				}
+				FROM = { 
+					add_stability = -0.02
+					add_war_support = -0.01
+				}
+			}
 			#German Soviet Railway Systems
 			if = {
 				limit = {

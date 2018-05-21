@@ -396,47 +396,6 @@ country_event = {
 		set_country_flag = fallblau
 	}
 }
-########################################## Blitzkrieg ############################
-country_event = {
-	id = operation.70
-	title = operation.70.t
-	desc = operation.70.d
-	picture = GFX_report_event_panzer_IV_in_russia
-	
-	fire_only_once = yes
-
-	trigger = {
-		tag = GER
-		not = { has_country_flag = blitzkrieg }
-		GER = { is_ai = yes }
-		or = {
-		has_war_with = POL
-		has_war_with = FRA
-		}
-	}
-	
-	
-	option = {
-		name = operation.70.a
-		hidden_effect = {
-			#load_oob = "GER_Prussian_Garrison"
-			#load_oob = "GER_WestWall_Garrison"
-			add_timed_idea = {
-				idea = Blitz_I
-				days = 365
-			}
-			add_timed_idea = {
-				idea = Blitz_II
-				days = 180
-			}
-			add_timed_idea = {
-				idea = Blitz_III
-				days = 90
-			}
-		}
-		set_country_flag = blitzkrieg
-	}
-}
 
 ############################################# Weserubung################################
 country_event = {
@@ -547,11 +506,6 @@ country_event = {
 	
 	option = {
 		name = operation.90.a
-			
-			add_timed_idea = {
-				idea = French_shock
-				days = 60
-			}
 			add_timed_idea = {
 				idea = French_Dismay
 				days = 240
