@@ -676,6 +676,10 @@ on_actions = {
 	on_capitulation = {
 		effect = {
 			news_event = { id = country_capitulated.0 days = 0 }
+			FROM = {
+				add_political_power = 75
+			}
+			
 			if = {
 				limit = { 
 					original_tag = POL
@@ -953,7 +957,9 @@ on_actions = {
 	#KEEP CODE VERY SHORT HERE
 	on_daily = {
 		effect = {
-		
+            set_temp_variable = { party_support_pp = party_popularity@ruling_party }    
+            divide_temp_variable = { var = party_support_pp value = 100 }
+            add_political_power = party_support_pp
 		}
 	}
 	
@@ -965,8 +971,8 @@ on_actions = {
 					FROM.FROM = { is_core_of = FROM } ROOT = { has_war_with = FROM }
 				}
 				FROM = { 
-					add_stability = -0.02
-					add_war_support = -0.01
+					add_stability = -0.005
+					add_war_support = -0.005
 				}
 			}
 			#German Soviet Railway Systems

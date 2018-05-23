@@ -10,10 +10,10 @@ medium_armored_GER = {
 		medium_armor
 	}
 	upgrade_prio = {
-		factor = 30.0
+		factor = 10
 
 	}
-	match_to_count = 0.40
+	match_to_count = 0.7
 	
 	medium_armor_default_GER = {
 		upgrade_prio = {
@@ -23,16 +23,13 @@ medium_armored_GER = {
 				has_tech = tech_panzer_iii_equipment_1
 			}
 		}
-		target_width = 30.0
+		target_width = 33
 		width_weight = 1.0
 		column_swap_factor = 0.5
-		can_upgrade_in_field = {
-			has_equipment = { panzer_iii_equipment_1 > 5 } 
-		}
 		
 		target_template = {
 			weight = 1
-			match_value = 3000.0
+			match_value = 1000.0
 			
 			support = {
 				DIV_HQ = 1
@@ -46,9 +43,9 @@ medium_armored_GER = {
 			
 			regiments = {
 				panzer_iii  = 6
-				motorized = 6
-				artillery_brigade_mot = 3
-				anti_tank_brigade = 1
+				motorized = 7
+				artillery_brigade_mot = 4
+				anti_tank_brigade = 2
 			}
 		}
 		allowed_types = {
@@ -63,173 +60,6 @@ medium_armored_GER = {
 			logistics_company
 			anti_tank
 			anti_tank_brigade
-		}
-		replace_at_match = 0.9
-		replace_with = medium_armor_2_default_GER
-		target_min_match = 0.9
-	}
-	
-	medium_armor_2_default_GER = {
-		upgrade_prio = {
-			factor = 10
-			modifier = {
-				factor = 90
-				has_tech = tech_panzer_iv_equipment_1
-			}
-		}
-		target_width = 30.0
-		width_weight = 1.0
-		column_swap_factor = 0.5
-		can_upgrade_in_field = {
-			has_equipment = { panzer_iv_equipment_1 > 5 } 
-		}
-		
-		target_template = {
-			weight = 1
-			match_value = 3000.0
-			
-			support = {
-				DIV_HQ = 1
-				engineer = 1
-				artillery_medium_mot = 1
-				recon_ac = 1
-				maintenance_company = 1
-				logistics_company = 1
-				anti_tank_brigade = 1
-			}
-			
-			regiments = {
-				panzer_iii  = 4
-				panzer_iv = 3
-				motorized = 4
-				artillery_brigade_mot = 3
-				anti_tank_brigade = 2
-			}
-		}
-		allowed_types = {
-			panzer_iii
-			panzer_iv
-			motorized
-			artillery_brigade_mot
-			engineer
-			DIV_HQ
-			recon_ac
-			signal_company
-			maintenance_company
-			logistics_company
-			anti_tank
-			anti_tank_brigade
-		}
-		replace_at_match = 3000.0
-		replace_with = medium_armor_3_default_GER
-		target_min_match = 3000.0
-	}
-	
-	medium_armor_3_default_GER = {
-		upgrade_prio = {
-			factor = 5
-			modifier = {
-				factor = 100
-				has_tech = tech_panzer_iv_equipment_3
-			}
-		}
-		target_width = 30.0
-		width_weight = 1.0
-		column_swap_factor = 0.6
-		can_upgrade_in_field = {
-			has_equipment = { panzer_iv_equipment_3 > 5 } 
-		}
-		target_template = {
-			weight = 1
-			match_value = 3000.0
-			
-			support = {
-				DIV_HQ = 1
-				engineer = 1
-				artillery_medium_mot = 1
-				recon_mot = 1
-				maintenance_company = 1
-				logistics_company = 1	
-				anti_tank_brigade = 1
-				combat_engineer = 1
-			}
-			
-			regiments = {
-				panzer_iv = 5
-				motorized = 6
-				artillery_brigade_mot = 3
-				anti_tank_brigade = 2
-			}
-		}
-		allowed_types = {
-			panzer_iv
-			motorized
-			artillery_brigade_mot
-			engineer
-			DIV_HQ
-			recon_mot
-			maintenance_company
-			logistics_company
-			anti_tank
-			anti_tank_brigade
-
-		}
-		replace_at_match = 3000.0
-		replace_with = medium_armor_4_default_GER
-		target_min_match = 3000.0
-	}
-	
-	medium_armor_4_default_GER = {
-		upgrade_prio = {
-			factor = 20
-			modifier = {
-				factor = 25
-				has_tech = tech_panzer_v_equipment_1
-			}
-		}
-		target_width = 30.0
-		width_weight = 1.0
-		column_swap_factor = 0.6
-		can_upgrade_in_field = {
-			has_equipment = { panzer_v_equipment_1 > 5 } 
-		}
-		target_template = {
-			weight = 1
-			match_value = 3000.0
-			
-			support = {
-				DIV_HQ = 1
-				engineer = 1
-				artillery_medium_mot = 1
-				recon_mot = 1
-				maintenance_company = 1
-				logistics_company = 1	
-				anti_tank_brigade = 1
-				combat_engineer = 1
-			}
-			
-			regiments = {
-				panzer_iv = 3
-				panzer_v = 3
-				motorized = 6
-				artillery_brigade_mot = 3
-				anti_tank_brigade = 1
-			}
-		}
-		allowed_types = {
-			panzer_iii
-			panzer_iv
-			panzer_v
-			motorized
-			artillery_brigade_mot
-			engineer
-			DIV_HQ
-			recon_mot
-			maintenance_company
-			logistics_company
-			anti_tank
-			anti_tank_brigade
-
 		}
 	}
 }

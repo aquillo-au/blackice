@@ -284,6 +284,60 @@ political_actions = {
 		}
 	
 	}
+	
+	AI_army_design_XP = {
+		icon = generic_political_discourse
+
+		available = {
+			is_ai = yes
+			has_army_experience < 200
+			OR = { 
+				tag = ENG
+				tag = GER
+				tag = USA
+				tag = JAP
+				tag = CHI
+				tag = SOV
+				tag = HOL
+				tag = BEL
+				tag = TUR
+				tag = FIN
+				tag = POL
+				tag = CZE
+				tag = YUG
+				tag = HUN
+				tag = ITA
+				tag = ROM
+				tag = GRE
+				tag = BUL 
+				tag = RAJ
+				tag = AST
+				tag = CAN 
+				tag = AST
+				tag = SPR
+			}
+		}
+
+		visible = {
+			is_ai = yes
+			has_army_experience < 200
+		}
+
+		fire_only_once = no
+
+		days_remove = 1
+
+		cost = 0
+
+		complete_effect = {
+			army_experience = 500
+		}
+
+		ai_will_do = {
+			base = 500
+		}
+	
+	}
 }
 
 puppet_management = {
@@ -485,13 +539,13 @@ economy_decisions = {
 
 		modifier = {
 			stability_weekly = 0.008
-			consumer_goods_factor = 0.01
+			consumer_goods_factor = 0.02
 		}
 
 		days_remove = 140
 		days_re_enable = 140
 
-		cost = 50
+		cost = 25
 
 		complete_effect = {
 
@@ -500,7 +554,7 @@ economy_decisions = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 400
+				add = 4000
 				has_stability < 0.6
 			}
 		}
@@ -597,7 +651,7 @@ propaganda_efforts = {
 
 		visible = {
 			threat > 0.3
-
+			has_offensive_war = no
 		}
 
 		fire_only_once = no
