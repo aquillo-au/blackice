@@ -261,6 +261,34 @@ technologies = {
 		}
 	}
 	
+	arctic_equipment = {
+
+		enable_equipments = { 
+			arctic_equipment_0
+		}
+		enable_subunits = {
+			arctic_support
+		}
+	
+		research_cost = 1
+		start_year = 1941
+		folder = {
+			name = infantry_folder
+			position = { x = @1941 y = 1 }
+		}
+		
+		on_research_complete = {
+			
+		}
+		categories = {
+			infantry_weapons
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	
 	desert_equipment = {
 
 		enable_equipments = { 
@@ -1520,10 +1548,7 @@ technologies = {
 			mount_support
 			
 		}
-		path = {
-			leads_to_tech = arctic_equipment
-			research_cost_coeff = 1
-		}
+		
 		
 		research_cost = 1.5
 		start_year = 1938
@@ -2957,10 +2982,7 @@ technologies = {
 			motorized_equipment_1
 		}
 		
-		path = {
-			leads_to_tech = desert_equipment
-			research_cost_coeff = 0.75
-		}
+		
 		path = {
 			leads_to_tech = motorised_infantry
 			research_cost_coeff = 1
@@ -3017,10 +3039,6 @@ technologies = {
 			motorized_equipment_2
 		}
 		
-		path = {
-			leads_to_tech = desert_equipment
-			research_cost_coeff = 0.75
-		}
 		path = {
 			leads_to_tech = mechanised_infantry
 			research_cost_coeff = 1
@@ -3153,6 +3171,16 @@ technologies = {
 		path = {
 			leads_to_tech = mechanised_infantry2
 			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = desert_equipment
+			research_cost_coeff = 0.75
+		}
+		
+		path = {
+			leads_to_tech = arctic_equipment
+			research_cost_coeff = 0.75
 		}
 
 		research_cost = 2

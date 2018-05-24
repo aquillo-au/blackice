@@ -17,15 +17,22 @@ medium_armored_GER = {
 	
 	medium_armor_default_GER = {
 		upgrade_prio = {
-			factor = 10
+			factor = 1
 			modifier = {
-				factor = 50
-				has_tech = tech_panzer_iii_equipment_1
+				add = 10
+				has_tech = tech_panzer_iv_equipment_1
 			}
 		}
-		target_width = 33
-		width_weight = 1.0
-		column_swap_factor = 0.5
+		production_prio = {
+			factor = 1
+			modifier = {
+				add = 10
+				has_tech = tech_panzer_iv_equipment_1
+			}
+		}
+		target_width = 31
+		width_weight = 1
+		column_swap_factor = 1
 		
 		target_template = {
 			weight = 1
@@ -34,32 +41,30 @@ medium_armored_GER = {
 			support = {
 				DIV_HQ = 1
 				engineer = 1
-				artillery_medium_mot = 1
-				recon_ac = 1
+				anti_tank = 1
 				maintenance_company = 1
 				logistics_company = 1
-				anti_tank_brigade = 1
+				combat_engineer = 1
 			}
 			
 			regiments = {
-				panzer_iii  = 6
-				motorized = 7
+				panzer_iv  = 6
+				motorized = 6
 				artillery_brigade_mot = 4
 				anti_tank_brigade = 2
 			}
 		}
 		allowed_types = {
-			panzer_iii
+			panzer_iv
 			motorized
 			artillery_brigade_mot
 			engineer
 			DIV_HQ
-			recon_ac
-			signal_company
 			maintenance_company
 			logistics_company
 			anti_tank
 			anti_tank_brigade
+			combat_engineer
 		}
 	}
 }
@@ -70,9 +75,9 @@ heavy_armored_GER = {
 	}
 
 	roles = {
-		_heavy_armor
+		heavy_armor
 	}
-	match_to_count = 0.40
+	match_to_count = 0.7
 	
 	heavy_armor_GER = {
 		target_width = 30.0
@@ -338,61 +343,6 @@ motorized_GER = {
 	}
 }
 
-mechanized_GER = {
-
-	available_for = {
-		GER
-	}
-
-	roles = {
-		mechanized
-	}
-	upgrade_prio = {
-		factor = 0
-		modifier = {
-			add = 5
-			has_tech = mechanised_infantry
-		}
-	}
-	match_to_count = 0.2
-
-	mechanized_GER = {
-		target_width = 25.0
-		width_weight = 1.0
-		column_swap_factor = 0.3
-		
-		target_template = {
-			weight = 1
-			match_value = 3000.0
-			
-			support = {
-				engineer = 1
-				combat_engineer = 1
-				recon_mot = 1
-				maintenance_company = 1
-				logistics_company = 1
-				DIV_HQ = 1
-				anti_tank = 1
-			}
-			
-			regiments = {
-				mechanized = 8
-				panzer_iv = 4
-				anti_tank_brigade = 2
-			}
-		}
-		allowed_types = {
-			mechanized
-			combat_engineer
-			engineer
-			maintenance_company
-			logistics_company
-			anti_tank
-			anti_tank_brigade
-			DIV_HQ
-		}
-	}
-}
 mountaineers_GER = {
 
 	available_for = {

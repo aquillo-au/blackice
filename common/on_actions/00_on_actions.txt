@@ -676,10 +676,6 @@ on_actions = {
 	on_capitulation = {
 		effect = {
 			news_event = { id = country_capitulated.0 days = 0 }
-			FROM = {
-				add_political_power = 75
-			}
-			
 			if = {
 				limit = { 
 					original_tag = POL
@@ -966,15 +962,15 @@ on_actions = {
 	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
 	on_state_control_changed = {
 		effect = {
-			if = {
-				limit = {
-					FROM.FROM = { is_core_of = FROM } ROOT = { has_war_with = FROM }
-				}
-				FROM = { 
-					add_stability = -0.005
-					add_war_support = -0.005
-				}
-			}
+			#if = {
+			#	limit = {
+			#		FROM.FROM = { is_core_of = FROM } ROOT = { has_war_with = FROM }
+			#	}
+			#	FROM = { 
+			#		add_stability = -0.005
+			#		add_war_support = -0.005
+			#	}
+			#}
 			#German Soviet Railway Systems
 			if = {
 				limit = {
@@ -1131,5 +1127,6 @@ on_actions = {
 			}
 		}
 	}
+	
 }
 ### EOF ###

@@ -19,6 +19,10 @@ ENG_war_against_ITA = {
 		democratic_govt = yes
 		is_historical_focus_on = yes
 		has_war_with = ITA
+		OR = {
+			ETH = { country_exists = no }
+			ETH = { has_capitulated = yes }
+		}
 		NOT = { 
 			ITA = { has_capitulated = yes }
 			ITA = { exists = no }
@@ -40,19 +44,48 @@ ENG_war_against_ITA = {
 	}
 	
 	ai_strategy = {
-		type = conquer
-		id = "ITA"
-		value = 10000
+		type = area_priority
+		id = "north_africa"
+		value = 1000
+	}
+}
+
+ENG_war_against_ETH = {
+	enable = {
+		tag = ENG
+		democratic_govt = yes
+		is_historical_focus_on = yes
+		has_war_with = ETH
+		ETH = { is_puppet_of = ITA }
+		ITA = { has_government = fascism }
+	}
+	abort = {
+		OR = { 
+			ETH = { has_capitulated = yes }
+			ETH = { country_exists = no }
+		}
+	}
+	
+	ai_strategy = {
+		type = area_priority
+		id = "south_africa"
+		value = 1000
 	}
 }
 
 allied_support_england = {
 	enable = {
 		is_in_faction_with = ENG
-		NOT = { tag = ENG }
+		FRA = {
+			is_in_faction_with = ENG
+			NOT = { has_capitulated = no }
+		}
 	}
 	abort = {
-		NOT = { is_in_faction_with = ENG }
+		OR = {	
+			FRA = { has_capitulated = no }
+			NOT = { is_in_faction_with = ENG }
+		}
 	}
 	
 	ai_strategy = {
@@ -376,10 +409,10 @@ ENG_dont_defend_france = {
 		tag = ENG
 		has_war_with = GER
 		is_in_faction_with = FRA
-		OR = {
-			FRA = { strength_ratio = { tag = GER ratio > 0.5 }}
-			ENG = { strength_ratio = { tag = GER ratio > 0.5 }}
-		}
+		#OR = {
+		#	FRA = { strength_ratio = { tag = GER ratio > 0.5 }}
+		#	ENG = { strength_ratio = { tag = GER ratio > 0.5 }}
+		#}
 	}
 	
 	abort = {

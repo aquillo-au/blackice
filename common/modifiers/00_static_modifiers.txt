@@ -110,33 +110,33 @@ occupation_policy_1 = { # Gentlest
 	resistance_tick = -0.7
 	local_resources = -0.5
 	local_manpower = -0.7
-	local_factories = -0.9
+	local_factories = -0.95
 	occupation_cost = 0.01
 }
 occupation_policy_2 = { # Gentle
 	resistance_tick = -0.5
 	local_resources = -0.3
 	local_manpower = -0.8
-	local_factories = -0.8
+	local_factories = -0.9
 	occupation_cost = 0.02
 }
 occupation_policy_3 = { # Harsh
 	resistance_tick = -0.2
 	local_resources = -0.1
 	local_manpower = -0.9
-	local_factories = -0.7
+	local_factories = -0.85
 	occupation_cost = 0.03
 }
 occupation_policy_4 = { # Harshest
 	#resistance_tick = 0.0
 	#local_resources = 0.0
 	local_manpower = -1.0
-	local_factories = -0.6
+	local_factories = -0.8
 	occupation_cost = 0.04
 }
 ### The following is multiplied by local resistance strength.
 resistance_effect = {
-	local_supplies = -0.4
+	local_supplies = -0.5
 	local_intel_to_enemies = 1
 	local_factory_sabotage = 0.6
 	attrition = 0.3
@@ -159,7 +159,7 @@ SOV_core = {
 	local_building_slots_factor = -0.5
 	local_factories = -0.5
  	local_resources = -0.3
-	resistance_tick = 0.05
+	resistance_tick = 0.1
 	local_factory_sabotage = 0.05
 	attrition = 0.05
 	local_supplies = -0.15
@@ -169,12 +169,12 @@ lacking_consumer_goods = {
 	research_time_factor = 0.25
 	political_power_factor = -0.25
 	#stability_factor = -0.15
-	stability_weekly = -0.005
-	war_support_weekly = -0.005
+	#stability_weekly = -0.005
+	#war_support_weekly = -0.005
 }
 gain_focus = {
 	political_power_cost = 0.80
-	command_power_gain_mult = -0.05
+	command_power_gain_mult = -0.1
 } 
 
 ### License production
@@ -254,11 +254,11 @@ free_license = {
 
 # applies when stability > 50%
 stability_good_modifier = {
-	industrial_capacity_factory = 0.1
-	industrial_capacity_dockyard = 0.1
+	industrial_capacity_factory = 0.15
+	industrial_capacity_dockyard = 0.15
 	consumer_goods_factor = -0.05
-	war_support_factor = 0.2
-	surrender_limit = 0.10
+	#war_support_factor = 0.2
+	surrender_limit = 0.20
 	political_power_factor = 0.15
 }
 
@@ -266,7 +266,7 @@ stability_good_modifier = {
 stability_bad_modifier = {
 	industrial_capacity_factory = -0.50
 	industrial_capacity_dockyard = -0.50
-	war_support_factor = -0.20
+	#war_support_factor = -0.20
 	surrender_limit = -0.2
 	political_power_factor = -0.25
 }
@@ -275,7 +275,7 @@ war_support_good_modifier = {
 	mobilization_speed = 0.030 #in 1/1000 of 1 %
 	army_core_attack_factor = 0.1
 	army_core_defence_factor = 0.1
-	stability_factor = 0.10
+	#stability_factor = 0.10
 	surrender_limit = 0.2
 	command_power_gain_mult = 0.5
 }
@@ -284,7 +284,7 @@ war_support_bad_modifier = {
 	mobilization_speed = -0.500 # Reduce mobilization speed by half.
 	#army_noncore_attack_factor = -0.20  # Attacking or defending on non-core takes a huge penalty.
 	#army_noncore_defence_factor = -0.20
-	stability_factor = -0.20
+	#stability_factor = -0.20
 	surrender_limit = -0.2
 	command_power_gain_mult = -0.95 
 }

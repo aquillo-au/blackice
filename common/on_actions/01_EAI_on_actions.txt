@@ -14,15 +14,37 @@ on_actions = {
 				limit = { radar_location = yes }
 				set_state_flag = radar_site
 			}
+			
+			every_country = {
+			#AI template rework
+			if = {
+				limit = {
+					POL = { is_ai = yes }
+				}
+				#POL = { country_event = EAI_M.101 }
+			}
+			if = {
+				limit = {
+					GER = { is_ai = yes }
+				}
+				#GER = { country_event = EAI_M.102 } 
+			}
+			if = {
+				limit = {
+					ENG = { is_ai = yes }
+				}
+				#ENG = { country_event = EAI_M.103 } 
+			}
+			}
 		}
 	}
 	on_declare_war = {
 		effect = {
 			#AI allies should immediately join wars to avoid problems with their fronts
-			if = { limit = { ROOT = { is_ai = yes } }
+			if = { limit = { ROOT = { is_ai = yes } NOT = { has_global_flag = no_EAI } }
 				hidden_effect = { ROOT = { country_event = { id = EAI_DM.5 hours = 1 } } } #has to be delayed for it to work
 			}
-			if = { limit = { FROM = { is_ai = yes } }
+			if = { limit = { FROM = { is_ai = yes } NOT = { has_global_flag = no_EAI } }
 				hidden_effect = { FROM = { country_event = { id = EAI_DM.5 hours = 1 } } }
 			}
 		}
@@ -50,6 +72,25 @@ on_actions = {
 
 				if = { limit = { 272 = { CONTROLLER = { is_in_faction_with = GER } } }
 					FRA = { set_state_controller = 272 }
+				}
+			}
+			
+			if =  { #bug fix to central africa flipping to GER on FRA capitulation
+				limit = {
+					ROOT = { tag = BEL is_in_faction = yes }
+					FROM = { is_in_faction_with = GER }
+				}
+
+				if = { limit = { 538 = { CONTROLLER = { is_in_faction_with = GER } } }
+					BEL = { set_state_controller = 538 }
+				}
+
+				if = { limit = { 295 = { CONTROLLER = { is_in_faction_with = GER } } }
+					BEL = { set_state_controller = 295 }
+				}
+
+				if = { limit = { 718 = { CONTROLLER = { is_in_faction_with = GER } } }
+					BEL = { set_state_controller = 718 }
 				}
 			}
 			

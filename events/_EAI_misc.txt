@@ -55,12 +55,12 @@ country_event = {
 			#Low Economy
 			AND = {
 				OR = {
-					threat > 15
+					threat > 0.15
 					has_war = yes
 					has_government = fascism
 					has_government = communism
 				}
-				threat < 31 
+				threat < 0.31 
 				NOT = { has_idea = low_economic_mobilisation }
 				if = {
 					limit = {
@@ -74,12 +74,12 @@ country_event = {
 			#Partial Economy
 			AND = {
 				OR = {
-					threat > 30
+					threat > 0.30
 					has_war = yes
 					has_government = fascism
 					has_government = communism
 				}
-				threat < 51
+				threat < 0.51
 				NOT = { has_idea = partial_economic_mobilisation }
 				if = {
 					limit = {
@@ -100,7 +100,7 @@ country_event = {
 					has_government = communism
 					has_war = yes
 				}
-				threat > 50
+				threat > 0.50
 				NOT = { has_idea = war_economy }
 				if = {
 					limit = {
@@ -119,17 +119,17 @@ country_event = {
 	
 	immediate = {
 		#Low economy
-		if = { limit = { OR = { threat > 15 has_government = fascism has_government = communism has_war = yes } threat < 31 NOT = { has_idea = low_economic_mobilisation } }
+		if = { limit = { OR = { threat > 0.15 has_government = fascism has_government = communism has_war = yes } threat < 0.31 NOT = { has_idea = low_economic_mobilisation } }
 		add_ideas = low_economic_mobilisation
 		}
 	
 		#Partial economy
-		if = { limit = { OR = { threat > 30 has_government = fascism has_government = communism has_war = yes } threat < 51 NOT = { has_idea = partial_economic_mobilisation } }
+		if = { limit = { OR = { threat > 0.30 has_government = fascism has_government = communism has_war = yes } threat < 0.51 NOT = { has_idea = partial_economic_mobilisation } }
 		add_ideas = partial_economic_mobilisation
 		}
 	
 		#War economy
-		if = { limit = { OR = { has_war = yes has_government = fascism has_government = communism } threat > 50 NOT = { has_idea = war_economy } }
+		if = { limit = { OR = { has_war = yes has_government = fascism has_government = communism } threat > 0.50 NOT = { has_idea = war_economy } }
 		add_ideas = war_economy
 		}
 	}
@@ -137,5 +137,82 @@ country_event = {
 	option = {}
 	
 }
+
+#Poland
+country_event = {
+	id = EAI_M.101
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		delete_unit_template_and_units = { division_template = "Brygada Kawalerii" }
+		delete_unit_template_and_units = { division_template = "Brygada KOP" }
+		load_oob = "1936_POL_AI"
+	}
+	
+}
+
+#Germany
+country_event = {
+	id = EAI_M.102
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		delete_unit_template_and_units = { division_template = "Infanterie-Division (halbmot.)" }
+	}
+	
+}
+
+#UK
+country_event = {
+	id = EAI_M.103
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		delete_unit_template_and_units = { division_template = "Territorial Division" }
+		delete_unit_template_and_units = { division_template = "African Division" }
+		delete_unit_template_and_units = { division_template = "Fortress Garrison" }
+		delete_unit_template_and_units = { division_template = "Regular Garrison" }
+		delete_unit_template_and_units = { division_template = "Colonial Volunteer Fortress Garrison" }
+		delete_unit_template_and_units = { division_template = "Local Defence Force" }
+		delete_unit_template_and_units = { division_template = "Small Colonial Garrison" }
+		load_oob = "1936_ENG_AI" 
+	}
+	
+}
+
+country_event = {
+	id = EAI_M.104
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		set_global_flag = no_EAI
+	}
+	
+	option = {
+		clr_global_flag = no_EAI
+	}
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 #Planned : Events to give AI equipment if f.e. infantry_euipment = -10000
