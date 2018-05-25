@@ -1,4 +1,5 @@
 political_actions = {
+	
 	targeted_race_for_the_bomb = {
 
 		icon = generic_research
@@ -52,18 +53,18 @@ political_actions = {
 				any_other_country = { has_tech = nukes }
 			}
 		}
-	}
-	#ST recovery when ST < 0.3
-	prevent_government_collapse_at_any_cost = {
+		}
+	
+	prevent_government_collapse_at_any_cost = {# ST recovery when ST < 0.3
 		icon = decision_revolt
 
 		available = {
-		has_stability < 0.3	
+		has_stability < 0.4	
 		has_war = no
 		}
 
 		visible = {
-			has_stability < 0.3	
+			has_stability < 0.4	
 			has_war = no
 		}
 
@@ -73,14 +74,14 @@ political_actions = {
 			stability_weekly = 0.02
 			consumer_goods_factor = 0.1
 			industrial_capacity_factory = -0.1
-			political_power_gain = -2
+			political_power_gain = -1
 			production_factory_max_efficiency_factor = -0.04
 			production_factory_efficiency_gain_factor = -0.04
 
 		}
 
 		days_remove = 70
-		days_re_enable = 200
+		days_re_enable = 30
 
 		cost = 50
 
@@ -92,21 +93,21 @@ political_actions = {
 			base = 0
 			modifier = {
 				add = 400
-				has_stability < 0.3
+				has_stability < 0.4
 			}
 		}
-	}
-	#ST solid gain, cheap, long
-	improve_worker_conditions = {
+		}
+	
+	improve_worker_conditions = {# ST solid gain, cheap, long
 
 		icon = generic_industry
 
 		available = {
-		has_stability > 0.2	
+		has_stability < 0.9	
 		}
 
 		visible = {
-			has_stability > 0.2	
+			has_stability <0.9	
 		}
 
 		fire_only_once = no
@@ -118,7 +119,7 @@ political_actions = {
 		}
 
 		days_remove = 140
-		days_re_enable = 100
+		days_re_enable = 60
 
 		cost = 75
 
@@ -127,26 +128,26 @@ political_actions = {
 		}
 
 		ai_will_do = {
-			base = 0
+			base = 10
 			modifier = {
-				add = 1
-				has_stability < 0.6
+				add = 500
+				has_stability < 0.7
 			}
 		}
-	}
-	#Conversion WT to ST.
-	promises_of_peace = {
+		}
+
+	promises_of_peace = {# Conversion WT to ST.
 
 		icon = generic_political_discourse
 
 		available = {
 			has_war = no
-			has_war_support > 0.4
+			has_war_support > 0.3
 		}
 
 		visible = {
 			has_war = no
-			has_war_support > 0.4
+			has_war_support > 0.3
 		}
 
 		remove_trigger = {
@@ -157,13 +158,13 @@ political_actions = {
 		fire_only_once = no
 
 		modifier = {
-			stability_weekly = 0.008
+			stability_weekly = 0.01
 			war_support_weekly = -0.005
 			political_power_gain = -0.25
 		}
 
 		days_remove = 90
-		days_re_enable = 360
+		days_re_enable = 120
 
 		cost = 50
 
@@ -172,16 +173,16 @@ political_actions = {
 		}
 
 		ai_will_do = {
-			base = 0
+			base = 10
 			modifier = {
-				add = 1
-				has_stability < 0.4
+				add = 400
+				has_stability < 0.7
 				has_war_support > 0.3
 			}
 		}
-	}
-	#Short time ST maintain
-	focus_on_peoples_problems = {
+		}
+
+	focus_on_peoples_problems = {# Short time ST maintain
 		icon = generic_political_discourse
 
 		available = {
@@ -222,8 +223,8 @@ political_actions = {
 
 			}
 		}
-	
-	}
+
+		}
 	
 	AI_ww1 = {
 		icon = generic_political_discourse
@@ -249,7 +250,7 @@ political_actions = {
 		ai_will_do = {
 			base = 500
 		}
-	}
+		}
 	
 	AI_suppression = {
 		icon = generic_political_discourse
@@ -282,8 +283,7 @@ political_actions = {
 		ai_will_do = {
 			base = 500
 		}
-	
-	}
+		}
 	
 	AI_mobilization = {
 		icon = generic_political_discourse
@@ -314,7 +314,8 @@ political_actions = {
 			base = 500
 		}
 	
-	}
+		}
+	
 	AI_army_design_XP = {
 		icon = generic_political_discourse
 
@@ -392,7 +393,8 @@ political_actions = {
 			base = 500
 		}
 	
-	}
+		}
+
 }
 
 puppet_management = {
@@ -466,7 +468,8 @@ puppet_management = {
 			}
 		}
 	}
-}
+	}
+
 arms_trade = {
 
 	generic_trade_infantry_weapons = {
@@ -571,14 +574,11 @@ arms_trade = {
 			}
 		}
 	}
-	
-	
-	
-}
+	}
 
 economy_decisions = {
-	#Long time ST if ST < 0.4, cheap
-	decrease_unemployment = {
+	
+	decrease_unemployment = {# Long time ST if ST < 0.4, cheap
 
 		icon = consumer_goods
 
@@ -613,8 +613,7 @@ economy_decisions = {
 				has_stability < 0.6
 			}
 		}
-	}
-
+		}
 
 	dismantle_maginot = {
 
@@ -689,8 +688,8 @@ economy_decisions = {
 				}
 			}
 		}
-	}		
-}
+		}		
+	}
 
 propaganda_efforts = {
 
@@ -736,26 +735,26 @@ propaganda_efforts = {
 				has_war = yes
 			}
 		}
-	}
+		}
 	
-	#+WS if in war and have high ST
-	we_fight_united = {
+	
+	we_fight_united = {# +WS if in war and have high ST
 		icon = generic_prepare_civil_war
 
 		available = {
 			NOT = { has_country_flag = we_fight_united }
-			has_stability > 0.6
+			has_stability > 0.3
 			has_war = yes
 		}
 
 		visible = {
 			has_war = yes
-			has_war_support < 0.5
+			has_war_support < 1
 		}
 
 		fire_only_once = no
 
-		days_remove = 45
+		days_remove = 120
 		days_re_enable = 90
 
 		cost = 100
@@ -778,13 +777,13 @@ propaganda_efforts = {
 			modifier = {
 				factor = 400
 				has_war = yes
-				has_stability > 0.6
+				is_major = yes
 			}
 		}
-	}
+		}
 	
-	#Preliminary war propaganda, while threat is small, no war
-	preliminary_war_propaganda = {
+
+	preliminary_war_propaganda = {	# Preliminary war propaganda, while threat is small, no war
 		icon = generic_prepare_civil_war
 
 		available = {
@@ -1080,7 +1079,7 @@ propaganda_efforts = {
 			}
 		}
 	}
-}
+	}
 
 operations = {
 	
@@ -1300,7 +1299,7 @@ operations = {
 			factor = 1
 		}
 	}
-}
+	}
 
 special_projects = {
 
@@ -1428,11 +1427,11 @@ special_projects = {
 			}
 		}
 	}
-}
+	}
 
 war_measures = {
-	#Short time high ST gain if ST > 0.3, short, high cost
-	unite_people_under_goverment = {
+
+	unite_people_under_goverment = {	# Short time high ST gain if ST > 0.3, short, high cost
 
 		icon = generic_prepare_civil_war
 
@@ -1452,7 +1451,7 @@ war_measures = {
 		days_remove = 45
 		days_re_enable = 270
 
-		cost = 150
+		cost = 30
 
 		modifier = {
 			war_support_weekly = 0.02
@@ -1471,16 +1470,13 @@ war_measures = {
 		ai_will_do = {
 			factor = 60
 			modifier = {
-				factor = 1
+				factor = 100
 				has_war_support < 0.6
 				has_stability < 0.6
 				has_war = yes
 			}
 		}
-	}
-
-
-
+		}
 
 	requisition_trucks = {
 
@@ -1527,7 +1523,7 @@ war_measures = {
 		ai_will_do = {
 			factor = 0
 		}
-	}
+		}
 	
 	requisition_cars = {
 
@@ -1575,7 +1571,7 @@ war_measures = {
 			factor = 0
 			
 		}
-	}
+		}
 	
 	requisition_motorcycles = {
 
@@ -1623,7 +1619,7 @@ war_measures = {
 			factor = 0
 			
 		}
-	}
+		}
 	
 	ration_civilian_petrol = {
 
@@ -1686,7 +1682,7 @@ war_measures = {
 			factor = 0
 			
 		}
-	}
+		}
 	
 	collect_metals = {
 
@@ -1762,7 +1758,7 @@ war_measures = {
 			factor = 0
 			
 		}
-	}
+		}
 	
 	round_up_horses = {
 
@@ -1809,8 +1805,7 @@ war_measures = {
 			factor = 0
 			
 		}
-	}
-	
+		}
 	
 	emergency_factory_conversion_defensive = {
 
@@ -1838,7 +1833,7 @@ war_measures = {
 		ai_will_do = {
 			factor = 0
 		}
-	}
+		}
 
 	emergency_factory_conversion_offensive = {
 
@@ -1866,7 +1861,7 @@ war_measures = {
 		ai_will_do = {
 			factor = 0
 		}
-	}
+		}
 
 	desperate_defense = {
 
@@ -1902,7 +1897,7 @@ war_measures = {
 		complete_effect = {
 
 		}
-	}
+		}
 
 	women_in_the_workforce = {
 
@@ -1968,7 +1963,7 @@ war_measures = {
 			}
 			add_ideas = labor_encouraged
         }
-   }
+	   }
 
     war_bonds = {
 
@@ -2090,7 +2085,8 @@ war_measures = {
 				add_war_support = GER_war_bonds_war_support_var
 			}
 		}
-    }
+	    }
+
 }
 
 foreign_politics = {
