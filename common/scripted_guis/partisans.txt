@@ -204,6 +204,7 @@ scripted_gui = {
 						has_country_flag = partisan_state_controller
 					}
 					set_state_controller = created_partisan_state
+					country_event = { id = EAI_M.105 hours = 2 }
 					clr_country_flag = partisan_state_controller
 				}
 				
@@ -220,7 +221,7 @@ scripted_gui = {
 		}
 		
 		ai_test_scopes = test_self_owned_states
-		ai_test_interval = 24
+		ai_test_interval = 18
 		ai_test_variance = 0
 		
 		ai_enabled = {
@@ -235,12 +236,12 @@ scripted_gui = {
 			check_variable = { ROOT.partisan_random = 1 }
 		}
 		
-		ai_max_weight_taken_per_test = 5
+		ai_max_weight_taken_per_test = 7
 		ai_weights = {
 			state_riseup_partisan_click = {
 				weight = 1
 				ai_will_do = {
-					factor = 200
+					factor = 400
 				}
 			}
 		}

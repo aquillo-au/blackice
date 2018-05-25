@@ -475,6 +475,29 @@ default_ITA_production_lim_3 = {
 	ai_strategy = { type = build_army id = armor 								value = 2 	}	
 }
 
+default_minors_production_aircraft = {
+	enable = {
+		NOT = { is_major = yes }
+		OR = {
+			num_of_military_factories < 75
+			is_major = no 
+		}
+	}
+	abort = {
+		OR = {
+			num_of_military_factories > 75
+		}
+	}
+	
+	ai_strategy = { type = equipment_production_factor id = fighter 				value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = interceptor 			value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = tactical_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = naval_bomber 			value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber 		value = -100	}	
+	ai_strategy = { type = equipment_production_factor id = cas 					value = -100 	}	
+	ai_strategy = { type = equipment_production_factor id = air_transport 			value = -100	}	
+}
+
 default_POL_production_lim_0 = {
 	enable = {
 		original_tag = POL
@@ -607,4 +630,46 @@ default_TUR_production_lim_0 = {
 	ai_strategy = { type = equipment_production_factor id = strategic_bomber 		value = -100	}	
 	ai_strategy = { type = equipment_production_factor id = cas 					value = -100 	}	
 	ai_strategy = { type = equipment_production_factor id = air_transport 			value = -100	}	
+}
+default_RAJ_production_lim_0 = {
+	enable = {
+		original_tag = RAJ
+		has_capitulated = no 
+	}
+	abort = {
+		has_capitulated = yes
+	}
+
+	ai_strategy = { type = build_army id = infantry 							value = 100	 }	
+	ai_strategy = { type = build_army id = cavalry 								value = 30 	}	
+
+}
+
+default_CAN_production_lim_0 = {
+	enable = {
+		original_tag = CAN
+		has_capitulated = no 
+	}
+	abort = {
+		has_capitulated = yes
+	}
+
+	ai_strategy = { type = build_army id = infantry 							value = 25	 }	
+	ai_strategy = { type = build_army id = cavalry 								value = 4 	}	
+	ai_strategy = { type = build_army id = marines							value = 10	 }	
+
+}
+
+default_EGY_production_lim_0 = {
+	enable = {
+		original_tag = EGY
+		has_capitulated = no 
+	}
+	abort = {
+		has_capitulated = yes
+	}
+
+	ai_strategy = { type = build_army id = infantry 							value = 14	 }	
+	ai_strategy = { type = build_army id = cavalry 								value = 4 	}	
+
 }

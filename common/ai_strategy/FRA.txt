@@ -28,6 +28,32 @@ FRA_troops_free_france = {
 		id = north_africa 			      
 		value = 200 
 	} 
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = RAJ
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = BUR
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = INS
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = AST
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = MAL
+		value = 2000
+	}
 }
 stay_in_allies = {
     enable = {
@@ -82,6 +108,24 @@ stay_in_lil_entente_pol = {
     }
  
     ai_strategy = { type = alliance id = "FRA"     		 		value = 300000     }
+}
+
+dont_charge_into_german_lines = {
+	enable = {
+		tag = FRA
+		has_capitulated = no
+		GER = { has_war_with = FRA }
+	}
+
+	abort = {
+		has_capitulated = yes
+	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = "GER"			
+		value = -300000
+	}		
 }
 
 

@@ -56,6 +56,31 @@ canada_stay_in_commonwealth = {
         id = "ENG"     
         value = 300000
     }
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = RAJ
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = BUR
+		value = 20000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = INS
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = AST
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = MAL
+		value = 2000
+	}
 }
 southafrica_stay_in_commonwealth = {
     enable = {
@@ -72,6 +97,31 @@ southafrica_stay_in_commonwealth = {
         id = "ENG"     
         value = 300000
     }
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = RAJ
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = BUR
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = INS
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = AST
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = MAL
+		value = 2000
+	}
 }
 newzealand_stay_in_commonwealth = {
     enable = {
@@ -104,6 +154,7 @@ australia_stay_in_commonwealth = {
         id = "ENG"     
         value = 300000
     }
+	
 }
 burma_stay_in_commonwealth = {
     enable = {
@@ -136,4 +187,52 @@ raj_stay_in_commonwealth = {
         id = "ENG"     
         value = 300000
     }
+}
+
+Allies_Minors_stay_defensive = { # Reverse strategy
+
+	enable = {
+		OR = {
+			tag = INS
+			tag = SYR
+			tag = LEB 
+			tag = MOR
+			tag = TUN
+			tag = BMP
+			tag = JOR
+			tag = EGY
+		}
+		is_in_faction_with = ENG
+		has_war = yes
+	}
+
+	abort = {
+		has_war = no
+	}
+
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = RAJ
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = BUR
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = INS
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = AST
+		value = 2000
+	}
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = MAL
+		value = 2000
+	}
 }

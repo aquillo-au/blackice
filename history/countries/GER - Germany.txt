@@ -2,7 +2,7 @@
 
 oob = "GER_1936"
 
-set_research_slots = 7
+set_research_slots = 6
 
 set_convoys = 400
 
@@ -15,27 +15,19 @@ set_variable = {
 	value = 0
 }
 
+set_variable = { 
+	var = allied_anger 
+	value = 0 
+}
+
 set_variable = {
 	var = ss_anger
 	value = 0
 }
 
-set_variable = { 
-	var = condor_legion_battles_won 
-	value = 0 
-}
-
-clamp_variable = { 
-	var = condor_legion_battles_won 
-	min = 0 
-	max = 30 
-}
-
-set_country_flag = begin_counting_battles
-
 activate_mission = GER_mefo_bills_mission
-activate_decision = GER_Berghof
-activate_mission = GER_Berghof_mission
+#activate_decision = GER_Berghof
+#activate_mission = GER_Berghof_mission
 
 # Starting tech
 set_technology = {

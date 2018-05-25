@@ -39,6 +39,17 @@ ideas = {
 			
 			on_add = {
 				custom_effect_tooltip = readiness_TT
+				set_country_flag = mob_reserve
+				clr_country_flag = mob_limited
+				clr_country_flag = mob_general
+				clr_country_flag = mob_standing
+				
+				clr_country_flag = has_mob_standing
+				clr_country_flag = has_mob_limited
+				set_country_flag = has_mob_reserved
+				clr_country_flag = has_mob_general
+				
+				clr_country_flag = Organizing
 			}
 			
 			cancel_if_invalid = no
@@ -77,6 +88,10 @@ ideas = {
 			removal_cost = -1
 			level = 2
 			available = {
+			OR = {
+				has_idea = mob_reserve
+				has_country_flag = mob_reserve_active
+			}
 				OR = {
 					has_war = yes
 					has_idea = low_economic_mobilisation
@@ -136,6 +151,16 @@ ideas = {
 			
 			cancel_if_invalid = no
 			
+			on_add = {
+				country_event = EAI_M.201 
+				set_country_flag = has_mob_standing
+				clr_country_flag = has_mob_limited
+				clr_country_flag = has_mob_reserved
+				clr_country_flag = has_mob_general
+				
+				clr_country_flag = Organizing
+			}
+			
 			ai_will_do = {
    				factor = 1
 
@@ -182,6 +207,10 @@ ideas = {
 			level = 2
 			available = {
 				OR = {
+					has_idea = mob_standing
+					has_country_flag = mob_standing_active
+				}
+				OR = {
 					has_war = yes
 					has_idea = partial_economic_mobilisation
 					has_idea = war_economy
@@ -221,6 +250,16 @@ ideas = {
 						has_country_flag = Demobilizing
 					}
 				}
+			}
+			
+			on_add = {
+				country_event = EAI_M.202 
+				clr_country_flag = has_mob_standing
+				set_country_flag = has_mob_limited
+				clr_country_flag = has_mob_reserved
+				clr_country_flag = has_mob_general
+				
+				clr_country_flag = Organizing
 			}
 			
 			modifier = {
@@ -291,6 +330,10 @@ ideas = {
 			removal_cost = -1
 			level = 1
 			available = {
+			OR = {
+				has_idea = mob_limited
+				has_country_flag = mob_limited_active
+			}
 				OR = {
 					has_war = yes
 					has_idea = war_economy
@@ -332,6 +375,15 @@ ideas = {
 				production_speed_dockyard_factor = -0.05
 			}
 			
+			on_add = {
+				country_event = EAI_M.203
+				clr_country_flag = has_mob_standing
+				clr_country_flag = has_mob_limited
+				clr_country_flag = has_mob_reserved
+				set_country_flag = has_mob_general
+				
+				clr_country_flag = Organizing
+			}
 			
 			cancel_if_invalid = no
 			
@@ -351,6 +403,140 @@ ideas = {
 				}
 			}
 		}
+		
+		Organizing = {
+			
+			cost = -1
+			removal_cost = -1
+			level = 1
+			available = {
+				always = no
+			}
+			
+			on_add = {
+				#country_event = EAI_M.203
+				set_country_flag = Organizing 
+				if = {
+					limit = { OR = {
+						has_idea = mobilisation_1
+						has_idea = mobilisation_2
+						has_idea = mobilisation_3
+						has_idea = mobilisation_4
+						has_idea = mobilisation_5
+						has_idea = mobilisation_7
+						has_idea = mobilisation_8
+						has_idea = mobilisation_9
+						has_idea = mobilisation_10
+						has_idea = mobilisation_12
+						has_idea = mobilisation_13
+						has_idea = mobilisation_14
+						has_idea = mobilisation_15
+						}
+					}
+						
+				if = {
+					limit = {
+						has_idea = mobilisation_1
+					}
+					show_ideas_tooltip = mobilisation_1
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_2
+					}
+					show_ideas_tooltip = mobilisation_2
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_3
+					}
+					show_ideas_tooltip = mobilisation_3
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_4
+					}
+					show_ideas_tooltip = mobilisation_4
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_5
+					}
+					show_ideas_tooltip = mobilisation_5
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_7
+					}
+					show_ideas_tooltip = mobilisation_7
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_8
+					}
+					show_ideas_tooltip = mobilisation_8
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_9
+					}
+					show_ideas_tooltip = mobilisation_9
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_10
+					}
+					show_ideas_tooltip = mobilisation_10
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_12
+					}
+					show_ideas_tooltip = mobilisation_12
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_13
+					}
+					show_ideas_tooltip = mobilisation_13
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_14
+					}
+					show_ideas_tooltip = mobilisation_14
+				}
+				if = {
+					limit = {
+						has_idea = mobilisation_15
+					}
+					show_ideas_tooltip = mobilisation_15
+				}
+			}
+			}
+			
+			cancel_if_invalid = no
+			
+			ai_will_do = {
+   				factor = 0
+			}
+		}
 	}
 }
 ### EOF ###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -27,22 +27,6 @@ country_event = { #mobile warfare doctrine tech switch to manpower branch
 	option = {}
 }
 
-#Mobilization Law, is already done with on_declare_war and on_wargoal_justification, but just to be 100% sure. f.e. if a nation joins a war
-country_event = {
-	id = EAI_M.1
-	hidden = yes
-
-	mean_time_to_happen = { days = 2 }
-
-	trigger = {
-		is_ai = yes
-		has_war = yes
-		NOT = { has_idea = mob_general }
-	}
-	
-	option = { add_political_power = -25 add_ideas = mob_general }
-}
-
 #Automatically switch to most benefitial economy law, also to set back to civilian after a war
 country_event = { 
 	id = EAI_M.100
@@ -201,6 +185,508 @@ country_event = {
 	}
 	
 }
+
+country_event = {
+	id = EAI_M.105
+	title = EAI_M.105.t
+	desc = EAI_M.105.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay"
+	}
+	
+	option = {
+		name = "Hide these Events"
+	}	
+}
+
+country_event = {
+	id = EAI_M.106
+	hidden = yes
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = INS 
+		is_ai = yes
+		HOL = { is_ai = yes }
+		INS = { is_puppet_of = HOL }
+		GER = { 
+			has_government = fascism
+			OR = {
+				has_war_with = HOL
+				focus_progress = {
+					focus = GER_around_maginot
+					progress > 0.01
+				}
+				#is_justifying_wargoal_against = HOL
+			}
+		}
+	}
+				
+	option = {
+		#INS = { 
+		##	transfer_navy = HOL
+		#}
+	}
+	
+	
+}
+
+country_event = {
+	id = EAI_M.107
+	hidden = yes
+	
+	is_triggered_only = yes
+				
+	option = {
+		remove_ideas = Barbarossa_I
+		remove_ideas = Barbarossa_II
+	}
+}
+
+#Manpower Law Changes - very basic for now
+country_event = {
+	id = EAI_M.108
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		democratic_govt = yes
+		manpower_per_military_factory < 2000
+		has_war = no
+		NOT = {
+			has_idea = cons_one 
+		}
+	}	
+	mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = { factor = 100  }
+		add_ideas = cons_one
+		activate_decision= AI_mobilization
+	}
+}
+
+country_event = {
+	id = EAI_M.1080
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		NOT = { democratic_govt = yes }
+		manpower_per_military_factory < 2000
+		has_war = no
+		NOT = {
+			has_idea = cons_three
+		}
+	}	
+	mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = { factor = 100  }
+		add_ideas = cons_three
+		activate_decision= AI_mobilization
+	}
+}
+
+country_event = {
+	id = EAI_M.109
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		manpower_per_military_factory < 1800
+		has_war = no
+		NOT = {
+			has_idea = age_17 
+		}
+	}
+	mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = { factor = 100  }
+		add_ideas = age_17
+		activate_decision= AI_mobilization
+	}
+}
+
+country_event = {
+	id = EAI_M.110
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		manpower_per_military_factory < 1600
+		has_war = yes
+		NOT = {
+			has_idea = cons_three 
+		}
+	}		
+	mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = { factor = 100  }
+		add_ideas = cons_three
+		activate_decision= AI_mobilization
+	}
+}
+
+
+country_event = {
+	id = EAI_M.111
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		manpower_per_military_factory < 1000
+		has_war = yes
+		NOT = {
+			has_idea = cons_expanded_draft
+		}
+	}	
+	mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = { factor = 100  }
+		add_ideas = cons_expanded_draft
+		activate_decision= AI_mobilization
+	}
+}
+
+country_event = {
+	id = EAI_M.112
+	hidden = yes
+	
+	trigger = {
+		is_ai = yes
+		manpower_per_military_factory < 1000
+		has_war = yes
+		NOT = {
+			has_idea = age_15
+		}
+	}
+	mean_time_to_happen = { days = 2 }
+	option = {
+		ai_chance = { factor = 100  }
+		add_ideas = age_15
+		activate_decision= AI_mobilization
+	}
+}
+
+country_event = {
+	id = EAI_M.201
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 100  }
+		if = {
+			limit = {
+				has_country_flag = mob_reserve
+			}
+			add_timed_idea = { idea = mobilisation_1 days = 21 }
+			set_country_flag = Organizing
+			add_ideas = Organizing
+			country_event = { id = EAI_M.301 days = 14 }
+		}
+		set_country_flag = mob_standing
+		clr_country_flag = mob_reserve
+		clr_country_flag = mob_general
+		clr_country_flag = mob_limited
+	}
+}
+
+country_event = {
+	id = EAI_M.202
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 100  }
+		if = {
+			limit = {
+				has_country_flag = mob_standing
+			}
+			#remove_ideas = mobilisation_6
+			add_timed_idea = { idea = mobilisation_7 days = 21 }
+			set_country_flag = Organizing
+			add_ideas = Organizing
+			country_event = { id = EAI_M.302 days = 14 }
+		}
+		set_country_flag = mob_limited
+		clr_country_flag = mob_reserve			
+		clr_country_flag = mob_standing
+		clr_country_flag = mob_general
+	}
+}
+
+country_event = {
+	id = EAI_M.203
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 100  }
+		if = {
+			limit = {
+				has_country_flag = mob_limited
+			}
+			#remove_ideas = mobilisation_11
+			add_timed_idea = { idea = mobilisation_12 days = 21 }
+			set_country_flag = Organizing
+			add_ideas = Organizing
+			country_event = { id = EAI_M.303 days = 14 }
+		}
+		set_country_flag = mob_general
+		clr_country_flag = mob_limited
+		clr_country_flag = mob_reserve
+		clr_country_flag = mob_standing
+	}
+}
+
+country_event = {
+	id = EAI_M.301
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_1
+		}
+		remove_ideas = mobilisation_1
+		add_timed_idea = { idea = mobilisation_2 days = 14 }
+		country_event = { id = EAI_M.301 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_2
+		}
+		remove_ideas = mobilisation_2
+		add_timed_idea = { idea = mobilisation_3 days = 14 }
+		country_event = { id = EAI_M.301 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_3
+		}
+		remove_ideas = mobilisation_3
+		add_timed_idea = { idea = mobilisation_4 days = 14 }
+		country_event = { id = EAI_M.301 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_4
+		}
+		remove_ideas = mobilisation_4
+		add_timed_idea = { idea = mobilisation_5 days = 14 }
+		country_event = { id = EAI_M.301 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_5
+		}
+		remove_ideas = mobilisation_5
+		remove_ideas = Organizing
+		clr_country_flag = Organizing
+		add_ideas = mob_standing
+		
+		country_event = EAI_M.310 #inform the player
+		
+		set_country_flag = mob_standing_active
+		clr_country_flag = mob_limited_active
+		clr_country_flag = mob_general_active
+	}
+}
+
+country_event = {
+	id = EAI_M.302
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		ai_chance = { factor = 100 }
+		trigger = {
+			has_idea = mobilisation_7
+		}
+		remove_ideas = mobilisation_7
+		add_timed_idea = { idea = mobilisation_8 days = 14 }
+		country_event = { id = EAI_M.302 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_8
+		}
+		remove_ideas = mobilisation_8
+		add_timed_idea = { idea = mobilisation_9 days = 14 }
+		country_event = { id = EAI_M.302 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_9
+		}
+		remove_ideas = mobilisation_9
+		add_timed_idea = { idea = mobilisation_10 days = 14 }
+		country_event = { id = EAI_M.302 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_10
+		}
+		remove_ideas = mobilisation_10
+		remove_ideas = Organizing
+		remove_ideas = Organizing	
+		add_ideas = mob_limited
+		
+		country_event = EAI_M.311 #inform the player
+		
+		clr_country_flag = mob_standing_active
+		set_country_flag = mob_limited_active
+		clr_country_flag = mob_general_active
+	}
+	
+}
+
+country_event = {
+	id = EAI_M.303
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_12
+		}
+		remove_ideas = mobilisation_12
+		add_timed_idea = { idea = mobilisation_13 days = 14 }
+		country_event = { id = EAI_M.303 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_13
+		}
+		remove_ideas = mobilisation_13
+		add_timed_idea = { idea = mobilisation_14 days = 14 }
+		country_event = { id = EAI_M.303 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_14
+		}
+		remove_ideas = mobilisation_14
+		add_timed_idea = { idea = mobilisation_15 days = 14 }
+		country_event = { id = EAI_M.303 days = 7 }
+	}
+	
+	option = {
+		ai_chance = { factor = 100  }
+		trigger = {
+			has_idea = mobilisation_15
+		}
+		remove_ideas = mobilisation_15
+		remove_ideas = Organizing
+		clr_country_flag = Organizing
+		add_ideas = mob_general
+		
+		country_event = EAI_M.312 #inform the player
+		
+		clr_country_flag = mob_standing_active
+		clr_country_flag = mob_limited_active
+		set_country_flag = mob_general_active
+	}
+}
+
+country_event = {
+	id = EAI_M.310
+	title = EAI_M.310.t
+	desc = EAI_M.310.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 100  }
+		name = EAI_M.310.a
+	}
+}
+
+country_event = {
+	id = EAI_M.311
+	title = EAI_M.311.t
+	desc = EAI_M.311.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 100  }
+		name = EAI_M.311.a
+	}
+}
+
+country_event = {
+	id = EAI_M.312
+	title = EAI_M.312.t
+	desc = EAI_M.312.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 100  }
+		name = EAI_M.312.a
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
 	
 	
 	

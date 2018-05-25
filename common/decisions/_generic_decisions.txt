@@ -285,6 +285,36 @@ political_actions = {
 	
 	}
 	
+	AI_mobilization = {
+		icon = generic_political_discourse
+
+		available = {
+			is_ai = yes
+		}
+
+		visible = {
+			always = no
+		}
+
+		fire_only_once = no
+
+		days_remove = 90
+
+		cost = 0
+		
+		modifier = {
+			mobilization_speed = 0.5
+		}
+
+		complete_effect = {
+			add_manpower = 5000
+		}
+
+		ai_will_do = {
+			base = 500
+		}
+	
+	}
 	AI_army_design_XP = {
 		icon = generic_political_discourse
 
@@ -321,6 +351,31 @@ political_actions = {
 		visible = {
 			is_ai = yes
 			has_army_experience < 200
+			OR = { 
+				tag = ENG
+				tag = GER
+				tag = USA
+				tag = JAP
+				tag = CHI
+				tag = SOV
+				tag = HOL
+				tag = BEL
+				tag = TUR
+				tag = FIN
+				tag = POL
+				tag = CZE
+				tag = YUG
+				tag = HUN
+				tag = ITA
+				tag = ROM
+				tag = GRE
+				tag = BUL 
+				tag = RAJ
+				tag = AST
+				tag = CAN 
+				tag = AST
+				tag = SPR
+			}
 		}
 
 		fire_only_once = no

@@ -1081,6 +1081,36 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
+					OWNER = { has_war_support > 0.24 }
+				}
+				OWNER = { 
+					if = {
+						limit = { 	
+							NOT = { has_variable = war_status_WS }
+						}
+						OWNER = { 
+							set_variable = { var = war_status_WS value = 0 }
+							clamp_variable = { var = war_status_WS min = 0 max = 50 } #50 Victories to gain 0.0005 Warsupport (0.5%)
+						}
+					}
+					if = {
+						limit = {
+							has_variable = war_status_WS
+						}
+						add_to_variable = { var = war_status_WS value = 1 }
+						if = {
+							limit = {
+								check_variable = { war_status_WS > 50 }
+							}
+							add_war_support = 0.01
+							subtract_from_variable = { var = war_status_WS value = 50 }
+						}
+					}
+				}
+			}
+		
+			if = {
+				limit = {
 					set_temp_variable = { chance = 0.001 }
 					set_temp_variable = { factor = 1.0 }
 					add_to_temp_variable = { factor = leader_modifier@wounded_chance_factor } 
@@ -1100,6 +1130,35 @@ on_actions = {
 	# From is owner country
 	on_army_leader_lost_combat = {
 		effect = {
+			if = {
+				limit = {
+					OWNER = { has_war_support > 0.24 }
+				}
+				OWNER = { 
+					if = {
+						limit = { 	
+							NOT = { has_variable = war_status_WS }
+						}
+						OWNER = {
+							set_variable = { var = war_status_WS value = 0 }
+							clamp_variable = { var = war_status_WS min = 0 max = 50 } #50 Victories to gain 0.0005 Warsupport (0.5%)
+						}
+					}
+					if = {
+						limit = {
+							has_variable = war_status_WS
+						}
+						subtract_from_variable = { var = war_status_WS value = 1 }
+						if = {
+							limit = {
+								check_variable = { war_status_WS > 50 }
+							}
+							add_war_support = 0.01
+							subtract_from_variable = { var = war_status_WS value = 50 }
+						}
+					}
+				}
+			}
 			if = {
 				limit = {
 					set_temp_variable = { chance = 0.005 }

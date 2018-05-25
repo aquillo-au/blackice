@@ -206,12 +206,15 @@ GER_dont_push_through_ITA = {
 		has_war_with = FRA
 		is_in_faction_with = ITA
 		ITA = { has_war_with = FRA }
-		ITA = { surrender_progress < 0.4 } 
+		ITA = { surrender_progress < 0.75 } 
 	}
 	abort = {
 		OR = {
-			FRA = { has_capitulated = yes }
-			ITA = { surrender_progress > 0.4 }
+			AND = {
+				FRA = { has_capitulated = yes }
+				NOT = { USA = { is_in_faction_with = ENG } }
+			}
+			ITA = { surrender_progress > 0.75 }
 		}
 	}
 

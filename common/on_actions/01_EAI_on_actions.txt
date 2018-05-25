@@ -16,6 +16,24 @@ on_actions = {
 			}
 			
 			every_country = {
+			if = {
+				limit = {
+					has_idea = mob_reserve
+				}
+				set_country_flag = mob_reserve
+			}
+			if = {
+				limit = {
+					has_idea = mob_standing
+				}
+				set_country_flag = mob_standing
+			}
+			if = {
+				limit = {
+					has_idea = mob_limited
+				}
+				set_country_flag = mob_limited
+			}
 			#AI template rework
 			if = {
 				limit = {

@@ -325,21 +325,266 @@ defend_LUX_against_germany = {
 		
 }
 
-royal_air_force = {
+royal_air_force_1 = {
 	enable = {
 		tag = ENG
-		date > 1937.12.31
+		num_of_military_factories > 50
+		num_of_military_factories < 75
 	}
 	abort = {
-		NOT = {  
-		}
+		num_of_military_factories < 50
+	}
+	
+	ai_strategy = {
+		type = air_factory_balance
+		value = 75
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 4
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = cas
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = naval_bomber
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = interceptor
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = tactical_bomber
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = strategic_bomber
+		value = 0
+	}
+
+}
+
+royal_air_force_2 = {
+	enable = {
+		tag = ENG
+		num_of_military_factories > 75
+		num_of_military_factories < 100
+	}
+	abort = {
+		num_of_military_factories < 75
+	}
+	
+	ai_strategy = {
+		type = air_factory_balance
+		value = 75
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 7
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = cas
+		value = 2
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = naval_bomber
+		value = 2
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = interceptor
+		value = 3
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = tactical_bomber
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = strategic_bomber
+		value = 0
+	}
+
+}
+
+royal_air_force_3 = {
+	enable = {
+		tag = ENG
+		num_of_military_factories > 100
+		num_of_military_factories < 150
+	}
+	abort = {
+		num_of_military_factories < 100
 	}
 	
 	ai_strategy = {
 		type = air_factory_balance
 		value = 100
 	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 9
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = cas
+		value = 1
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = naval_bomber
+		value = 3
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = interceptor
+		value = 3
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = tactical_bomber
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = strategic_bomber
+		value = 0
+	}
 
+}
+
+royal_air_force_4 = {
+	enable = {
+		tag = ENG
+		num_of_military_factories > 150
+		num_of_military_factories < 200
+	}
+	abort = {
+		num_of_military_factories < 150
+	}
+	
+	ai_strategy = {
+		type = air_factory_balance
+		value = 125
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 11
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = cas
+		value = 2
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = naval_bomber
+		value = 5
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = interceptor
+		value = 5
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = tactical_bomber
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = strategic_bomber
+		value = 0
+	}
+}
+
+royal_air_force_5 = {
+	enable = {
+		tag = ENG
+		num_of_military_factories > 200
+	}
+	abort = {
+		num_of_military_factories < 200
+	}
+	
+	ai_strategy = {
+		type = air_factory_balance
+		value = 150
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = fighter
+		value = 14
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = cas
+		value = 4
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = naval_bomber
+		value = 7
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = interceptor
+		value = 6
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = tactical_bomber
+		value = 0
+	}
+	
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = strategic_bomber
+		value = 0
+	}
 }
 
 #Strategies for UK to abandon Europe during Blitzkrieg
@@ -407,12 +652,14 @@ ENG_dont_defend_benelux = {
 ENG_dont_defend_france = {
 	enable = {
 		tag = ENG
-		has_war_with = GER
 		is_in_faction_with = FRA
-		#OR = {
-		#	FRA = { strength_ratio = { tag = GER ratio > 0.5 }}
-		#	ENG = { strength_ratio = { tag = GER ratio > 0.5 }}
-		#}
+		OR = {
+			has_war_with = GER
+			GER = { focus_progress = {
+				focus = GER_danzig_or_war
+				progress > 0.01
+			} }
+		}
 	}
 	
 	abort = {
@@ -498,13 +745,13 @@ ALLIES_be_careful_transporting_through_the_med_1 = {
 		is_in_faction_with = ENG
 		date < 1943.1.1
 		has_war = yes
-		all_enemy_country = { ships_in_area = { area = 68 size > 20 } }
+		all_enemy_country = { ships_in_area = { area = 68 size > 10 } }
 	}
 	abort = {
 		OR = {
 			date > 1944.1.1
 			has_war = no
-			NOT = { all_enemy_country = { ships_in_area = { area = 68 size > 20 } } }
+			NOT = { all_enemy_country = { ships_in_area = { area = 68 size > 10 } } }
 		}
 	}
 	
@@ -520,13 +767,13 @@ ALLIES_be_careful_transporting_through_the_med_2 = {
 		is_in_faction_with = ENG
 		date < 1943.1.1
 		has_war = yes
-		all_enemy_country = { ships_in_area = { area = 169 size > 20 } }
+		all_enemy_country = { ships_in_area = { area = 169 size > 10 } }
 	}
 	abort = {
 		OR = {
 			date > 1944.1.1
 			has_war = no
-			NOT = { all_enemy_country = { ships_in_area = { area = 169 size > 20 } } }
+			NOT = { all_enemy_country = { ships_in_area = { area = 169 size > 10 } } }
 		}
 	}
 
@@ -542,13 +789,13 @@ ALLIES_be_careful_transporting_through_the_med_3 = {
 		is_in_faction_with = ENG
 		date < 1943.1.1
 		has_war = yes
-		all_enemy_country = { ships_in_area = { area = 29 size > 20 } }
+		all_enemy_country = { ships_in_area = { area = 29 size > 10 } }
 	}
 	abort = {
 		OR = {
 			date > 1944.1.1
 			has_war = no
-			NOT = { all_enemy_country = { ships_in_area = { area = 29 size > 20 } } }
+			NOT = { all_enemy_country = { ships_in_area = { area = 29 size > 10 } } }
 		}
 	}
 
@@ -564,13 +811,13 @@ ALLIES_be_careful_transporting_through_the_med_4 = {
 		is_in_faction_with = ENG
 		date < 1943.1.1
 		has_war = yes
-		all_enemy_country = { ships_in_area = { area = 69 size > 20 } }
+		all_enemy_country = { ships_in_area = { area = 69 size > 10 } }
 	}
 	abort = {
 		OR = {
 			date > 1944.1.1
 			has_war = no
-			NOT = { all_enemy_country = { ships_in_area = { area = 69 size > 20 } } }
+			NOT = { all_enemy_country = { ships_in_area = { area = 69 size > 10 } } }
 		}
 	}
 

@@ -190,7 +190,7 @@ NCountry = {
 	RESOURCE_ORIGIN_PRIORITY = 1,							-- Default convoy priority for resources shipped internally
 	RESOURCE_EXPORT_PRIORITY = 0.85,						-- Default convoy priority for export trade
 	RESOURCE_LENDLEASE_PRIORITY = 0.85,						-- Default convoy priority for export lend lease
-	SUPPLY_CONVOY_FACTOR = 0.95,							-- How many convoys each supply needs
+	SUPPLY_CONVOY_FACTOR = 0.3,							-- How many convoys each supply needs
 	CONVOY_RANGE_FACTOR = 1,                        		-- how much range affects convoy need
 	LOCAL_MANPOWER_ACCESSIBLE_FACTOR = 0.35,         		-- was 0.45 accessible recruitable factor base
 	LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 0.03,  		-- accessible recruitable factor base
@@ -198,7 +198,7 @@ NCountry = {
 	DEFAULT_STABILITY = 0.5,								-- Default stability if not scripted otherwise.
 	DEFAULT_WAR_SUPPORT = 0.5,							-- Default war support if not scripted otherwise.
 	BASE_STABILITY_WAR_FACTOR = -0.3,						-- Default stability war factor
-	BASE_STABILITY_PARTY_POPULARITY_FACTOR = 0.15,				-- Default stability rulling party popularity factor
+	BASE_STABILITY_PARTY_POPULARITY_FACTOR = 0.2,				-- Default stability rulling party popularity factor
 	MIN_COUP_STABILITY_FACTOR = 0.0,						-- Min value of coup factor in stability
 	MAX_COUP_STABILITY_FACTOR = 2.0,						-- Max value of coup factor in stability
 	MIN_COUP_SUCCESS_STABILITY = 0.8,						-- Max stability when coup will happen
@@ -1219,7 +1219,7 @@ NAI = {
 	SHIPS_PRODUCTION_BASE_COST = 10000,					-- Used by the AI to normalize IC values when picking what ship to build.
 	NEEDED_NAVAL_FACTORIES_EXPENSIVE_SHIP_BONUS = 6,   	-- Amount of naval yards you need to get a bonus to building really expensive ships
 
-	AIR_WING_REINFORCEMENT_LIMIT = 150,					-- Size of AI air wings that get multiplied
+	AIR_WING_REINFORCEMENT_LIMIT = 200,					-- Size of AI air wings that get multiplied
 	AIR_BASE_DANGER_ZONE_WEIGHT = 100,					-- Score used per province taken by enemy in a state to determine how dangerous it is to use an air base
 
 	FORTIFIED_RATIO_TO_CONSIDER_A_FRONT_FORTIFIED = 0.3, -- ai will consider a front fortified if this ratio of provinces has fort
@@ -1233,8 +1233,8 @@ NAI = {
 	DESPERATE_ATTACK_WITHOUT_ORG_WHEN_NO_ORG_GAIN = 120,		-- if ai can't regain enough org to attack in this many hours, it will go truly desperate and attack anyway (still has to wait for move org)
 	
 	
-	MANPOWER_FREE_USAGE_THRESHOLD = 90000,			-- If AI has this much manpower he doesn't care about the percentage
-	MANPOWER_RESERVED_THRESHOLD = 0.25,					-- The AI will not deploy more units if he goes below this percentage
+	MANPOWER_FREE_USAGE_THRESHOLD = 50000,			-- If AI has this much manpower he doesn't care about the percentage
+	MANPOWER_RESERVED_THRESHOLD = 0.1,					-- The AI will not deploy more units if he goes below this percentage
 	START_TRAINING_EQUIPMENT_LEVEL = 0.8,              -- was 0.95 ai will not start to train if equipment drops below this level
 	STOP_TRAINING_EQUIPMENT_LEVEL = 0.7,                -- was 0.9 ai will not train if equipment drops below this level
 	BUILD_REFINERY_LACK_OF_RESOURCE_MODIFIER = 0.01,	-- was 0.001 How much lack of resources are worth when evaluating what to build.
@@ -1354,7 +1354,7 @@ NAI = {
 	NAVAL_MISSION_PATROL_NEAR_CONTROLLED = 12000,			-- Extra patrol mission score near controlled provinces
 	NAVAL_MISSION_ESCORT_NEAR_CONTROLLED = 5500,			-- Extra escort mission score near controlled provinces
 	NEW_LEADER_EXTRA_PP_FACTOR = 5.0,						-- Country must have at least this many times extra PP to get new admirals or army leaders
-	SCARY_LEVEL_AVERAGE_DEFENSE = -0.6,               	 	-- average front defense modifier to make it consider it as a PITA to go for
+	SCARY_LEVEL_AVERAGE_DEFENSE = -0.7,               	 	-- average front defense modifier to make it consider it as a PITA to go for
 	ATTACK_HEAVILY_DEFENDED_LIMIT = 1.2,					-- DNM, original 0.95 (ai overhaul mod) -- AI will not launch attacks against heavily defended fronts unless they consider to have this level of advantage (1.0 = 100%)
 	HOUR_BAD_COMBAT_REEVALUATE = 48,                  		-- DNM, original 60.0 (ai overhaul mod) -- if we are in combat for this amount and it goes shitty then try skipping it 
 	MIN_PLAN_VALUE_TO_MICRO_INACTIVE = 0.2,					-- The AI will not consider members of groups which plan is not activated AND evaluates lower than this.
