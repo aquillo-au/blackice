@@ -238,8 +238,10 @@ country_event = {
 	
 	option = {
 		name = "Clear normal difficulty"
-		trigger = { has_idea = normal_difficulty_AI } 
-		remove_ideas = normal_difficulty_AI
+		trigger = { any_country = { has_idea = normal_difficulty_AI } }
+		every_country = {
+			remove_ideas = normal_difficulty_AI
+		}
 	}
 	
 	option = {
