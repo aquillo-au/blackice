@@ -59,6 +59,7 @@ country_event = {
 	}
 	option = {
 		name = barbarossa.1.a
+		ai_chance = { factor = 100 }
 		
 		ROM = { transfer_state = 80 }
 		ROM = { transfer_state = 78 }
@@ -135,7 +136,14 @@ country_event = {
 		tag = ROM
 		is_in_faction_with = GER
 		has_war_with = SOV
-		surrender_progress > 0.45
+		surrender_progress > 0.5
+		NOT = {
+			SOV = {
+				any_owned_state = {
+					is_controlled_by = ROM 
+				}
+			}
+		}
 	}
 	option = { #Ask for Peace
 		name = barbarossa.3.a
