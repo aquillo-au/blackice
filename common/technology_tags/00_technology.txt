@@ -130,12 +130,9 @@ technology_folders = {
 	support_folder
 	armour_folder = {
 		available = {
-			OR = {
-				any_country = {
-					NOT = { has_government = fascism }
-				}
-				has_country_flag = genericalliedarmor
-			}
+			NOT = { has_government = fascism }
+			has_country_flag = genericalliedarmor
+		}
 			NOT = { original_tag = CZE }
 			NOT = { original_tag = AUS }
 			NOT = { original_tag = HUN }
@@ -158,10 +155,9 @@ technology_folders = {
 	armour_axis_folder = {
 		available = {
 			OR = {
-				any_country = {
-					has_government = fascism
-				}
+				has_government = fascism
 				has_country_flag = genericaxisarmor
+				original_tag = CZE
 			}
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
