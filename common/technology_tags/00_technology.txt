@@ -130,6 +130,12 @@ technology_folders = {
 	support_folder
 	armour_folder = {
 		available = {
+			OR = {
+				any_country = {
+					NOT = { has_government = fascism }
+				}
+				has_country_flag = genericalliedarmor
+			}
 			NOT = { original_tag = CZE }
 			NOT = { original_tag = AUS }
 			NOT = { original_tag = HUN }
@@ -151,8 +157,13 @@ technology_folders = {
 	}
 	armour_axis_folder = {
 		available = {
+			OR = {
+				any_country = {
+					has_government = fascism
+				}
+				has_country_flag = genericaxisarmor
+			}
 			original_tag = CZE
-			original_tag = HUN
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
 			NOT = { original_tag = SOV }
@@ -164,7 +175,7 @@ technology_folders = {
 	}
 	artillery_folder
 	air_techs_folder = { 
-		available = { 
+		available = {
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
 			NOT = { original_tag = SOV }
@@ -189,15 +200,28 @@ technology_folders = {
 		}
 	}
 	naval_folder = {
-		available = { 
+		available = {
+			all_country = {
+				any_owned_state = { is_coastal = yes }
+			}
 			NOT = { original_tag = GER }
 			NOT = { original_tag = JAP }
+			NOT = { original_tag = SOV }
+			NOT = { original_tag = ENG }
+			NOT = { original_tag = FRA }
+			NOT = { original_tag = USA }
 		}
 	}
 	industry_folder
 	ww1_land_doctrine_folder
 	land_doctrine_folder
-	naval_doctrine_folder
+	naval_doctrine_folder = {
+		available = {
+			all_country = {
+				any_owned_state = { is_coastal = yes }
+			}
+		}
+	}
 	air_doctrine_folder
 	electronics_folder
 	#secret_weapons_folder
