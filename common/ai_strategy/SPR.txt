@@ -69,6 +69,26 @@ mexico_send_equipment = {
 	}
 }
 
+SPR_defensive_pose = {
+	enable = {
+		original_tag = SPR
+		has_government = communism
+		has_civil_war = yes
+		country_exists = D01
+		date > 1939.1.1
+	}
+	abort = {
+		SPR = { has_civil_war = no }
+	}
+	
+	ai_strategy = {
+		type = consider_weak
+		id = D01
+		value = -50
+	}
+}
+
+
 #Strategies to rush the war in 39
 SPR_crush_them_39 = {
 	enable = {
