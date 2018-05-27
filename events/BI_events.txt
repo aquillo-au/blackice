@@ -1287,7 +1287,8 @@ country_event = {
 	mean_time_to_happen = {
 		days = 2
 	}
-		immediate = { set_country_flag = genericalliedarmor }
+	
+	immediate = { set_country_flag = genericalliedarmor }
 		
 	option = {
 		name = blackiceevents.89.a	# axis generic
@@ -1607,9 +1608,9 @@ country_event = {
 
 	trigger = {
 		is_ai = yes	
-		not = {has_country_flag = ai_earlyair}
-		not = {has_country_flag = ai_midair}
-		not = {has_country_flag = ai_lateair}
+		not = { has_country_flag = ai_earlyair }
+		not = { has_country_flag = ai_midair }
+		not = { has_country_flag = ai_lateair }
 		NOT = { has_idea = ai_air_upgrades_early }
 		NOT = { has_idea = ai_air_upgrades_mid }
 		NOT = { has_idea = ai_air_upgrades_late }
@@ -1631,4 +1632,30 @@ country_event = {
 			set_technology = {ai_air_late_tech = 1 }	
 		}
 	}
+}
+################ Generic Armor choice tech ( also axis AI )
+country_event = {
+	id = blackiceevents.104
+	title = blackiceevents.104.t
+	desc = blackiceevents.104.d
+	picture = GFX_event_ger_ss_panzer_iii
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = { set_country_flag = genericaxisarmor }
+	
+	option = {
+		name = blackiceevents.104.a	# axis generic
+		ai_chance = { factor = 100 }
+		set_technology = { generic_armor_axis = 1 }
+	}
+	option = {
+		name = blackiceevents.104.b	# allied generic
+		ai_chance = { factor = 0 }
+		set_technology = { generic_armor = 1 }
+	}	
 }
