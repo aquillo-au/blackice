@@ -1,4 +1,299 @@
 ########################################
+v3.0.3
+
+#DEFINES
+BASE_LEADER_TRAIT_GAIN_XP to 0.25
+reduced EXPERIENCE_COMBAT_FACTOR from 0,08 to 0,05 to prevent stacking of modifiers in combat
+FIELD_MARSHAL_DIVISIONS_CAP = 25 to 5
+Adjusted several defines
+Adjusted garrison factor and frontline factor
+Lowered retreat speed & withdraw speed
+Decreased base surrender lvl
+Boosted base repair
+Increased air damage from 0.3 to 0.31
+Decreased max expeditionary size
+Lowered convoy for supplies
+
+#AI_strategy
+ai strategy that prevents japan from sending volunteers to italian east africa
+Renamed barbarossa to axis and added ai strategies for romania bulgaria hungary and italy to stay in axis
+Italy staying defensive early on against FRA
+ENG area priorities
+CHI staying defensive
+GER not pushing through ITA
+Adjustments to GER AI strategies
+Adjusted several AI strategies
+SPR now more defensive
+
+
+#AI Templates
+revamped AI templates for bel fin hol pol fra and eng
+More AI_templates (CZE, ENG, GRE, SPA, TUR, YUG)
+Adjusted US and RAJ templates
+
+#On-action
+Added triggers for technologies
+Moved some starting events to on startup
+
+#IDEAS
+Replaced country_flags for laws with has_idea
+Added US armed population idea
+Changed soviet collectivist idea to 0.15 weekly stability instead of 25% total
+
+#UNITS/EQUIPMENT
+HQ need less hq_equipment (100 > 75)
+Added 1500 ss_uniforms to stockpile. (start-up)
+Added tech-modifier for GER-AI to research ss-combat-engineer on time
+Corrected division_name_group
+Added division_names_group for VT and Reich and Das Reich
+Added Ss-anti_tank_brigade
+Added smg_equipment to Commando, infantry and ss_infantry
+Set Wach Btl LSSAH to low priority
+Added rocket art detachment to support. (Small unit)
+Added texticons SS paratroopers and SS Airborne Art-Abt
+Adjusted infantry equipment types by grenight
+Added the arctic support company back in
+Adjusted desert support
+
+#OOB
+Added division_template to "history/units/GER_SS_Start_II_ai.txt
+Fixed error in div-template Bryganda_Panc_Mot (POL)
+ENG_Port_Garrisn_units OOB deleted. Corrected NF and event for that.
+Corrected support-units in several OOB
+Unique divisions (GER) locked due to event-chain
+Corrected logo 5. Pz-Div
+Locked first GER division_names_group GER_INF_01 for Welle-1 divisions so numbers won't be available for player.
+Added locked div-templates for 2., 13. and 20. Inf.-Div. due to event-chain.
+Corrected missing charater in division-template naming
+Deleted GER_SS_Danzig_ahist
+CZE using division_names_group now
+Fix 6. Pz.-Div load_oob
+
+#COUNTRIES
+Changed china starting ST to 0.4
+JAP and PRC supreme commander fix
+Reorganized historical order a bit in an effort to make sure ITA declares war on Greece in 1940
+Added militia to division_templates + Changed starting exp for china
+Gave BEL HOL FIN and POL a deployment queue
+Added starting productionlines for HUN
+Made BEL HOL and POL go for infantry bonus minister
+US more starting civilian factories
+Moved allied anger variable to history/GER
+
+#EVENTS
+Allied Anger deleted in NF GER and completely reworked
+Added 'No need' choice to several events for player
+Reworked military_size-events into 1 event
+Added WTT_china_political_struggle
+Compiled all buildings-events into 1 event
+Promotion/Demotion decision and event added
+Fix to Fritsch affair event, deleted Himmler_ai idea and connected events fixed
+Added von Blomberg to Fritsch affair event
+Reworked event-chain VT to SS Pz-Div Das Reich
+Reworked performance by Jack
+Reowrked SS-Infantry-Div Totenkopf eventchain
+Deleted some no valide ss_events
+Reworked AIRDT economy. Moved to _EAI_misc
+Reworked canada.10
+Correted some claims and add_core state 762 for WTT_GER
+Integrated renaming Alsace to Elsass-Lotharingen from vanilla for GER
+Corrected 4. TK Standarte
+Corrected state 987 to 864 in Britain_bice
+Delted buildings_ai event (obsolete)
+
+#NATIONAL FOCUS
+Adjusted solution for danzig focus
+Cleaner and more organized GER NF
+Placed condor-legion under Wehrmacht focus
+Changed Allied Anger date End of CZE 70 days earlier. To 1939.1.6 (Time of NF)
+Added date > 1940.1.1 to available 2nd Vienna Award for Allied Anger
+Merged canda and better_canada
+Made Allied Anger also for Allied
+Added a partisan event to inform the player where which and how many partisans spawned
+
+#TECHNOLOGIES
+Deleted double technology-gfx
+Only coastal countries have acces to naval techtree and naval doctrine.
+
+#NATIONAL FOCUS
+Adjusted solution for danzig focus
+
+#MODIFIERS
+Increased surrender limit
+Adjusted difficulty
+
+#BUGFIXES
+CTD fixed due to decimal values in defines.
+Several bugs fixed
+Corrected 2 bugs in 2 templates.
+Fixing CZECH Light tank issue
+Fixed Ger_invade_norway OOB support
+Fixed errordog in naval_combat losses window
+Added texturefile for convoys inverted
+Added inverted gfx ships
+Fixed countryflag for SS TK Division
+Fixed CTD sudetenland
+Fix to the move capital event for SPA
+Fixed vichy event and torch event
+Fixed error Invalid state for is_controlled_by 976 = ENG
+Fixed load_oob Pzgren-Div Das Reich
+Fixed Grossdeutchland missing equipment
+Fixed JAP using all its troop to garrison chinese puppet
+Fixed SOV operation decision visibility
+Fixed communist CWs
+Fixed ROM switching to SOV too soon
+
+
+#BUILDINGS
+Added enable_building Pillbox to ww1 doctrine Pillbox
+Nerfed airport capacity
+
+#LAWS
+USA WS MP Laws improvement
+Added max command power to Officer Training
+Adds 20% WS and has_war=no requirement for going from volunteer to 1Y Draft
+Adjusted conscription triggers
+5% to 1.5% for japanese conscription
+Deleted early mob economic from unsupported eco law, so it dont screw France early game
+Added mobilisation system to mobilize over time
+
+#INDUSTRY
+Consumer goods to housing
+Balanced housing and improved_machine_tools
+Changed steel mill to synthetic_rubber_refinery
+Added synth tech from vanilla
+Industry reorganized
+Nerfed housing and industry manpower demand
+
+#LOCALISATION
+Added some localisation for decisions
+Localisation for better Factory-events
+Localisation for VT to SS Pz.-Div Das Reich
+Localisation for SS-Infantry-Div Totenkopf event-chain
+Added localisation for Cze light tank
+Deleted some dupilcates entries
+Added decisions/event-chain/localisation 60. Inf.-Div.
+Lowered manpower demand for con industry
+Moved -retention from dispersed to concentrated industry
+
+
+#GUI
+Adjusted priorityze icon in division-designer
+Adjusted position of Strategic bombing view
+Added square for Field Marshal better visual
+Adjusting template tab for use of 1 column of support due to AI only using 1 column
+Added green button for TRAIN in templates-view
+
+#TRAITS
+Traits ENG, FRA and GER more balanced
+Added fortress_buster trait_cautious traits to Montgomery
+added trait for Paul Reynaud to help FRA AI against GER
+
+#AI
+AI gets WW1 techs at startup
+Fixes/adjustments/some AI improvements by Jack
+Added ai modifier to subtech_light_panzer_td_equipment_1
+Made soviet join case white 16 days later
+Adjusted AI convoys
+Changed the war goal event's war goal option's condition's ai factor to 0 so ai will not pick it and go nuts
+Nerfed AI suppression
+Fixed AI not switching to war economy
+Adjusted partisan system to use partisans unit type and stay at their local province
+Fixed AI manpower laws with rudimental events
+Adjusted desperate AI defines
+Adjusted decision AI by grenight
+Adjusted manpower
+
+#DECISIONS
+Corrected division-template 29. Inf-Div(mot.) in decisions for GER
+Location adjusted accordingly
+Added 2. Leichte Division
+Moved Historical Waffen SS to decisions
+Added several has_country_flags to available
+Deleted fortifications and anti_air/radar buildings from MEFO bills
+Aufstellungswelle order-event converted to decision
+Added available and visable date to Promotion/Demotion decision
+Reworked czechpanzer for 1. and 3. Leichte division
+Added ai_chance = { factor = 200 } for decisions
+Added 16 Inf-Div(mot.) to decision
+Added 72. Inf-Div to GER_INF_01 division-names-group
+Added arms_trade to decisions_category
+Converted our arms trade events to dynamic decisions
+Moved code AI_ww1 to generic_decisions
+Replace woman decision with laws change
+ENG puppet decisions added
+
+#GFX
+Added gfx for decision 2. Leichte Division
+Colorized portrait Liebmann
+Added gfx for Strategic bombing view
+Changed support_aa icon to better icon by Gatty
+Added terrain-capital
+Added new terrain GFX
+Fixed path for gung_ho_general.dds
+Loadingscreens and main-menu gfx moved to GFX-addon-mod
+Reworked texticons.
+Added texticons for SS-units. Panzer I to VII own texticon
+Added texticons SS paratroopers and SS Airborne Art-Abt
+New ideology icons by koltoast
+
+#BALANCING
+CHI balancing
+has_unsupported_economic_law WS raised
+Added 3 arms-factory to Rhineland NF to simulate the Ruhr industry back online
+Various fixed and balances
+Deleted scripted partisans from China
+
+#ADDED
+Itialian Generals mod added
+
+#MAP
+Rebuild buildings on map in nudge
+Adjusted oil
+Changed some french VP-points
+Reduced map to 64 states and around 259 prov.
+Lowered population in Brandenburg
+Mapfixes from Franc
+Rhodesian states adjusted ad replaced PAL ith BMP by koltoast
+Removed ZIM core from 542 Bechuna Land
+Removed 10 million manpower from japan (tokyo leftover)
+
+#Strategic-regions
+Corrected strategic zone Warsaw
+
+#Misc
+Eastern europe rework + flags
+vanilla SS_recruitment event empty
+Factory-events to on_action
+Deleted obsolete files
+Corrected uppercase issue with division_names_group
+Fixed leaders ID in NF SOV_purge_stalinists
+Enlarged costum-settings
+New main_menu screen.
+New loadingscreens
+New designed Blackice logo by Koltoast
+Added several custom_effect_tooltip in tech-trees.
+Renamed HP > Strenght
+Linked surrender limit to stability and war support
+Loosing a core state now gives minues stability and war support
+Removed obsolete ideas from operations events
+Linked party popularity to political power gain
+Added a tooltip if you hover over your party that shows how much PP it generates
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################################
 v3.0.2
 
 Reworked SPA back to D01.
