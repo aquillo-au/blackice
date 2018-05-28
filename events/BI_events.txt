@@ -1239,19 +1239,19 @@ country_event = {
 	mean_time_to_happen = {
 		days = 2
 	}
-	#immediate = { set_country_flag = genericaxisarmor }
+	immediate = { set_country_flag = genericaxisarmor }
 	
 	option = {
 		name = blackiceevents.88.a	# axis generic
 		ai_chance = { factor = 100 }
-		set_country_flag = genericaxisarmor
+		set_country_flag = axis_tanks
 		set_technology = { generic_armor_axis = 1 }
 		#set_technology = { axis_captured_armor_tech = 1 }
 	}
 	option = {
 		name = blackiceevents.88.b	# allied generic
 		ai_chance = { factor = 0 }
-		set_country_flag = genericalliedarmor
+		set_country_flag = allied_tanks
 		set_technology = { generic_armor = 1 }
 		#set_technology = { allied_captured_armor_tech = 1 }
 	}	
@@ -1290,19 +1290,19 @@ country_event = {
 		days = 2
 	}
 	
-	#immediate = { set_country_flag = genericalliedarmor }
+	immediate = { set_country_flag = genericalliedarmor }
 		
 	option = {
 		name = blackiceevents.89.a	# axis generic
 		ai_chance = { factor = 0 }
-		set_country_flag = genericaxisarmor
+		set_country_flag = axis_tanks
 		set_technology = { generic_armor_axis = 1 }
 		#set_technology = { axis_captured_armor_tech = 1 }
 	}
 	option = {
 		name = blackiceevents.89.b	# allied generic
 		ai_chance = { factor = 100 }
-		set_country_flag = genericalliedarmor
+		set_country_flag = allied_tanks
 		set_technology = { generic_armor = 1 }
 		#set_technology = { allied_captured_armor_tech = 1 }
 	}	
@@ -1637,29 +1637,46 @@ country_event = {
 		}
 	}
 }
-################ Generic Armor choice tech ( also axis AI )
+################ Generic Armor choice tech for those who start with them
 country_event = {
 	id = blackiceevents.104
-	title = blackiceevents.104.t
-	desc = blackiceevents.104.d
-	picture = GFX_event_ger_ss_panzer_iii
+	hidden = yes
 	
 	is_triggered_only = yes
 	
-	mean_time_to_happen = {
-		days = 1
+	immediate = {
+		if = {
+			limit = {
+				has_tech = generic_armor_axis
+			}
+			set_country_flag = axis_tanks
+		}
+		if = {
+			limit = {
+				has_tech = generic_armor
+			}
+			set_country_flag = allied_tanks
+		}
 	}
 	
-	immediate = { set_country_flag = genericaxisarmor }
-	
-	option = {
-		name = blackiceevents.104.a	# axis generic
-		ai_chance = { factor = 100 }
-		set_technology = { generic_armor_axis = 1 }
-	}
-	option = {
-		name = blackiceevents.104.b	# allied generic
-		ai_chance = { factor = 0 }
-		set_technology = { generic_armor = 1 }
-	}	
+	option = { }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

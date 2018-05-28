@@ -2,6 +2,8 @@ on_actions = {
 	#country
 	on_startup = {
 		effect = {
+		
+		#AI ONLY
 			every_country = {  
 				limit = { is_ai = yes }
 				research_WW1 = yes
@@ -31,6 +33,8 @@ on_actions = {
 					set_country_flag = MinorAIneutrality
 				}
 			}
+			
+		#PLAYER ONLY
 			every_country = { 
 				limit = { is_ai = no }
 				country_event = politics.1
@@ -47,6 +51,11 @@ on_actions = {
 					#	country_event = { id = blackiceevents.104 hours = 1 }
 					#}
 				}
+			}
+			
+		#EVERYONE
+			every_country = {
+				country_event =  blackiceevents.104 #checking generic armor techs
 			}
 		}
 	}

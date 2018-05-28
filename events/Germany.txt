@@ -6685,6 +6685,7 @@ add_namespace = germany
 			effect_tooltip = {
 				GER = {
 					transfer_state = 85
+					transfer_state = 944
 					remove_state_claim = 86
 				}
 			}
@@ -6744,7 +6745,7 @@ add_namespace = germany
 					declare_war_on = {
 						target = POL
 						type = take_state
-						generator = { 85 }
+						generator = { 85 944 }
 					}
 				}
 			}
@@ -6762,6 +6763,7 @@ add_namespace = germany
 			name = germany.87.a
 			set_country_flag = peaceful_danzig
 			transfer_state = 85
+			transfer_state = 944
 			remove_state_claim = 86
 			set_country_flag = recent_major_land_acquisition
 		}
@@ -6779,7 +6781,7 @@ add_namespace = germany
 			declare_war_on = {
 				target = POL
 				type = take_state
-				generator = { 85 }
+				generator = { 85 944 }
 			}
 			if = {
 				limit = {
@@ -6952,9 +6954,17 @@ add_namespace = germany
 								has_civil_war = no
 							}
 						}
+						944 = {
+							controller = {
+								tag = POL
+								has_civil_war = no
+							}
+						}
 					}
 					effect_tooltip = {
 						transfer_state = 85
+						remove_state_claim = 86
+						transfer_state = 944
 						remove_state_claim = 86
 					}
 					POL = {
@@ -6982,6 +6992,14 @@ add_namespace = germany
 				if = {
 					limit = {
 						85 = {
+							owner = {
+								OR = {
+									original_tag = POL
+									tag = POL
+								}
+							}
+						}
+						944 = {
 							owner = {
 								OR = {
 									original_tag = POL
@@ -7027,6 +7045,7 @@ add_namespace = germany
 					owns_state = 70
 				}
 				NOT = { owns_state = 85 }
+				NOT = { owns_state = 944 }
 				NOT = { has_war_with = POL }
 				POL = { owns_state = 72 }
 			}
