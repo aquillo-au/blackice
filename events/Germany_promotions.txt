@@ -18,40 +18,13 @@ country_event = {
 	option = {
 		name = promotion.1.a
 		ai_chance = { base = 100 }
-		
-		create_field_marshal = {
-			name = "Bock, Fedor von"
-			picture = "Portrait_Germany_Fedor_von_Bock.dds"
-			traits = { Competent_General career_officer Pour_le_Merite }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 1
-			id = 27
-		}
-		create_field_marshal = {
-			name = "Rundstedt, Gerd von"
-			picture = "Portrait_Germany_Gerd_von_Rundstedt.dds"
-			traits = { Iron_Cross Masterful_General defensive_doctrine_FM offensive_doctrine_FM }
-			skill = 4
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 2
-			id = 26
-		}
-		create_field_marshal = {
-			name = "Leeb, Wilhelm Ritter von"
-			picture = "Portrait_Germany_Wilhelm_Ritter_von_Leeb.dds"
-			traits = { old_guard Competent_General infantry_officer defensive_doctrine_FM }
-			skill = 3
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 4
-			logistics_skill = 3
-			id = 28
-		}
+		every_unit_leader = { 
+			limit = { OR = { has_id = 9 has_id = 1 has_id = 13 } }
+			promote_leader = yes
+		}	
+		#promote_leader = 9
+		#promote_leader = 1
+		#promote_leader = 13
 	}
 	
 	option = {

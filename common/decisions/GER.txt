@@ -1642,9 +1642,12 @@ GER_fm_promotion = {
 		}
 		
 		complete_effect = {
-			remove_unit_leader = 9
-			remove_unit_leader = 1
-			remove_unit_leader = 13
+			effect_tooltip = {
+				every_unit_leader = { 
+					limit = { OR = { has_id = 9 has_id = 1 has_id = 13 } }
+					promote_leader = yes
+				}
+			}
 			country_event = { id = promotion.1 hours = 6 }
 		}
 	}
