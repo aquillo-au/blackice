@@ -138,12 +138,28 @@ technologies = {
 			ss_anti_tank
 		}
 	}
+	ss_antitank_mot_tech = {
+		dependencies = {
+			interwar_antitank = 1
+		}
+		enable_subunits = {
+			ss_anti_tank_mot
+		}
+	}
 	ss_hv_antitank_tech = {
 		dependencies = {
 			HVantitank1 = 1
 		}
 		enable_subunits = {
 			ss_anti_tank_heavy
+		}
+	}
+	ss_antitank_brig_tech = {
+		dependencies = {
+			interwar_antitank = 1
+		}
+		enable_subunits = {
+			ss_anti_tank_brigade
 		}
 	}
 	ss_infantry_tech = {
@@ -4147,8 +4163,7 @@ ETH_defence_I = {
 			entrenchment  = 0.5
 		}
 	}
-ENG_defence_I = {
-
+	ENG_defence_I = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4159,8 +4174,7 @@ ENG_defence_I = {
 			entrenchment  = 0.25
 		}
 	}
-Gurkha_tech = {
-
+	Gurkha_tech = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4173,8 +4187,7 @@ Gurkha_tech = {
 			gurkha
 		}
 	}
-ENG_defence_II = {
-
+	ENG_defence_II = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4185,8 +4198,7 @@ ENG_defence_II = {
 			entrenchment  = 0.35
 		}
 	}
-ENG_defence_III = {
-
+	ENG_defence_III = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4197,8 +4209,7 @@ ENG_defence_III = {
 			entrenchment  = 0.45
 		}
 	}
-ENG_defence_I_end = {
-
+	ENG_defence_I_end = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4209,8 +4220,7 @@ ENG_defence_I_end = {
 			entrenchment  = -0.25
 		}
 	}
-ENG_defence_II_end = {
-
+	ENG_defence_II_end = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4221,8 +4231,7 @@ ENG_defence_II_end = {
 			entrenchment  = -0.35
 		}
 	}
-ENG_defence_III_end = {
-
+	ENG_defence_III_end = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4233,8 +4242,7 @@ ENG_defence_III_end = {
 			entrenchment  = -0.45
 		}
 	}
-FRA_defence_I = {
-
+	FRA_defence_I = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4245,8 +4253,7 @@ FRA_defence_I = {
 			entrenchment  = 0.5
 		}
 	}
-FIN_defence_I = {
-
+	FIN_defence_I = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4258,7 +4265,6 @@ FIN_defence_I = {
 		}
 	}
 FRA_defence_I_end = {
-
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4269,42 +4275,39 @@ FRA_defence_I_end = {
 			entrenchment  = -0.5
 		}
 	}
-luftwaffe_penalty_I = {
-
+	luftwaffe_penalty_I = {
 		research_cost = 1
 		# only from event
 		allow = {
 			always = no
 		}
 		air_intercept_efficiency = -0.025
-			air_superiority_efficiency = -0.025
-			army_bonus_air_superiority_factor = -0.025
-			air_strategic_bomber_bombing_factor = -0.025
-			air_strategic_bomber_night_penalty = 0.025
-			air_escort_efficiency = -0.025
-			air_cas_efficiency = -0.025
-			air_cas_present_factor = -0.025
-			air_nav_efficiency = -0.025
+		air_superiority_efficiency = -0.025
+		army_bonus_air_superiority_factor = -0.025
+		air_strategic_bomber_bombing_factor = -0.025
+		air_strategic_bomber_night_penalty = 0.025
+		air_escort_efficiency = -0.025
+		air_cas_efficiency = -0.025
+		air_cas_present_factor = -0.025
+		air_nav_efficiency = -0.025
 	}
-luftwaffe_penalty_II = {
-
+	luftwaffe_penalty_II = {
 		research_cost = 1
 		# only from event
 		allow = {
 			always = no
 		}
 		air_intercept_efficiency = -0.05
-			air_superiority_efficiency = -0.05
-			army_bonus_air_superiority_factor = -0.05
-			air_strategic_bomber_bombing_factor = -0.05
-			air_strategic_bomber_night_penalty = 0.05
-			air_escort_efficiency = -0.05
-			air_cas_efficiency = -0.05
-			air_cas_present_factor = -0.05
-			air_nav_efficiency = -0.05
+		air_superiority_efficiency = -0.05
+		army_bonus_air_superiority_factor = -0.05
+		air_strategic_bomber_bombing_factor = -0.05
+		air_strategic_bomber_night_penalty = 0.05
+		air_escort_efficiency = -0.05
+		air_cas_efficiency = -0.05
+		air_cas_present_factor = -0.05
+		air_nav_efficiency = -0.05
 	}
-The_perfect_horse = {
-
+	The_perfect_horse = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4319,8 +4322,7 @@ The_perfect_horse = {
 			maximum_speed = 0.05
 		}	
 	}
-arctic_weather_tech = {
-
+	arctic_weather_tech = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4347,8 +4349,7 @@ arctic_weather_tech = {
 			convoy_raiding_coordination = 0.05
 		}
 	}
-fritz_x_tech = {
-
+	fritz_x_tech = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4357,10 +4358,8 @@ fritz_x_tech = {
 		fw_200_bomber = {
 			naval_strike_attack = 0.15
 		}
-		
 	}
-rheinbote_tech = {
-
+	rheinbote_tech = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4369,10 +4368,8 @@ rheinbote_tech = {
 		artillery_heavy = {
 			soft_attack = 1.0
 		}
-		
 	}
-r4m_tech = {
-
+	r4m_tech = {
 		research_cost = 1
 		# only from event
 		allow = {
@@ -4380,19 +4377,15 @@ r4m_tech = {
 		}
 		jet_heavyfighter = {
 			air_attack = 0.25
-			
 		}
 		me_262 = {
 			air_attack = 0.25
-			
 		}
 		jet_cas = {
-			
 			air_ground_attack = 0.25 
 		}
-	
 	}
-molotov_cocktails_tech  = {
+	molotov_cocktails_tech  = {
 
 		research_cost = 1
 		# only from event
@@ -4401,155 +4394,117 @@ molotov_cocktails_tech  = {
 		}
 		anti_tank_brigade  = {
 			hard_attack = 3
-			
 		}
 		anti_tank  = {
 			hard_attack = 3
-			
 		}
 		anti_tank_mot  = {
 			hard_attack = 3
-			
 		}
 		combat_engineer  = {
 			hard_attack = 3
-			
 		}
 		airborne_engineer  = {
 			hard_attack = 3
-			
 		}
 		infantry  = {
 			hard_attack = 2
-			
 		}
 		light_infantry  = {
 			hard_attack = 2
-			
 		}
 		luftwaffe_infantry  = {
 			hard_attack = 1
-			
 		}
 		cavalry = {
 			hard_attack = 1
-			
 		}
 		militia  = {
 			hard_attack = 3
-			
 		}
 		marine  = {
 			hard_attack = 1
-			
 		}
 		gurkha  = {
 			hard_attack = 1
-			
 		}
 		mountaineers  = {
 			hard_attack = 1
-			
 		}
 		paratrooper  = {
 			hard_attack = 1
-			
 		}
 		commando  = {
 			hard_attack = 4
-			
 		}
 		semi_motorized  = {
 			hard_attack = 2
-			
 		}
 		motorized  = {
 			hard_attack = 2
-			
 		}
 		mechanized  = {
 			hard_attack = 2
-			
 		}
 		ss_anti_tank  = {
 			hard_attack = 2
-			
 		}
 		ss_anti_tank_mot  = {
 			hard_attack = 3
-			
 		}
 		ss_anti_tank_brigade  = {
 			hard_attack = 3
-			
 		}
 		ss_combat_engineer  = {
 			hard_attack = 3
-			
 		}
 		ss_infantry  = {
 			hard_attack = 2
-			
 		}
 		ss_cavalry  = {
 			hard_attack = 1
-			
 		}
 		ss_mountaineers  = {
 			hard_attack = 1
-			
 		}
 		fascist_militia  = {
 			hard_attack = 2
-			
 		}
 		ss_semi_motorized  = {
 			hard_attack = 2
-			
 		}
 		ss_motorized  = {
 			hard_attack = 2
-			
 		}
 		ss_mechanized  = {
 			hard_attack = 2
-			
 		}
 		ss_recon  = {
 			hard_attack = 1
-			
 		}
 		ss_recon_cav  = {
 			hard_attack = 1
-			
 		}
 		cavalry  = {
 			hard_attack = 2
-			
 		}
 		conscripts  = {
 			hard_attack = 3
-			
 		}
 		guards_infantry  = {
 			hard_attack = 2
-			
 		}
 		guards_cavalry  = {
 			hard_attack = 2
-			
 		}
 		guards_paratrooper  = {
 			hard_attack = 1
-			
 		}
 		guards_motorized  = {
 			hard_attack = 2
-			
 		}
 		recon  = {
 			hard_attack = 1
-			
 		}
 		recon_cav  = {
 			hard_attack = 1
