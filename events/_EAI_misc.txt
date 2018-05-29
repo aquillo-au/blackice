@@ -27,6 +27,22 @@ country_event = { #mobile warfare doctrine tech switch to manpower branch
 	option = {}
 }
 
+#Mobilization Law, is already done with on_declare_war and on_wargoal_justification, but just to be 100% sure. f.e. if a nation joins a war
+country_event = {
+	id = EAI_M.1
+	hidden = yes
+
+	mean_time_to_happen = { days = 2 }
+
+	trigger = {
+		is_ai = yes
+		has_war = yes
+		NOT = { has_idea = mob_general }
+	}
+	
+	option = { add_political_power = -25 add_ideas = mob_general }
+}
+
 #Automatically switch to most benefitial economy law, also to set back to civilian after a war
 country_event = { 
 	id = EAI_M.100
@@ -659,46 +675,5 @@ country_event = {
 		name = EAI_M.312.a
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-#Planned : Events to give AI equipment if f.e. infantry_euipment = -10000
+### EOF ###
