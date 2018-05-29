@@ -175,6 +175,23 @@ WTT_all_japanese_faction_join_war = {
 	}
 }
 
+JAP_dont_defend_manchuria = {
+	enable = {
+		tag = JAP
+		MAN = { is_puppet_of = JAP }
+		MAN = { surrender_progress < 0.01 }
+	}
+	abort = {
+		MAN = { surrender_progress > 0.01 }
+	}
+	
+	ai_strategy = {
+		type = dont_defend_ally_borders
+		id = "MAN"
+		value = 150
+	}
+}
+
 chinese_war = {
 	enable = {
 		tag = JAP

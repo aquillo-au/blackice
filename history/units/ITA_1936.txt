@@ -64,6 +64,33 @@ division_template = {
 	}
 }
 division_template = {
+	name = "Divisione di Fanteria-Binaria"		
+	# Certain infantry divisions were raised, or existed as binary divisions in 1936 before the 1938 re-organization
+	
+	regiments = {
+		light_infantry = { x = 0 y = 0 }
+		light_infantry = { x = 0 y = 1 }
+		light_infantry = { x = 0 y = 2 }
+
+		light_infantry = { x = 1 y = 0 }
+		light_infantry = { x = 1 y = 1 }
+		light_infantry = { x = 1 y = 2 }
+
+		artillery_brigade = { x = 2 y = 0 }
+		artillery_brigade = { x = 2 y = 1 }
+		mountain_artillery_brigade = { x = 2 y = 2 }
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
+		maintenance_company = { x = 1 y = 0 }
+		logistics_company = { x = 1 y = 1 }
+		field_hospital = { x = 1 y = 2 }
+	}
+	priority = 0
+}
+division_template = {
 	name = "Divisione di CC.NN."		
 	
 	regiments = {
@@ -87,6 +114,68 @@ division_template = {
 		recon_cav = { x = 0 y = 1 }
 		engineer = { x = 0 y = 2 }
 		military_police = { x = 0 y = 3 }
+	}
+}
+division_template = {
+	name = "Divisione di CC.NN. 'Tevere'"	#Represents 6th CCNN division, which was composed mostly of university students, veterans, and cripples - still saw a bit of service - notably missing pack artillery
+	
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		
+		mountain_artillery_brigade = { x = 2 y = 0 }
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		field_hospital = { x = 1 y = 0 }
+		logistics_company = { x = 1 y = 1 }
+		mount_support = { x = 1 y = 2 }
+		
+	}
+	priority = 0
+}
+division_template = {
+	name = "Divisione di CC.NN. 'Cirene'"	#Represents highly over-strength 7th CCNN division, in Libya, saw no front-line service but existed to threaten Suez, potentially
+	
+	regiments = {
+		light_infantry = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+
+		light_infantry = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 1 y = 3 }
+
+		light_infantry = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+		militia = { x = 2 y = 2 }
+		militia = { x = 2 y = 3 }	
+        
+		light_infantry = { x = 3 y = 0 }		
+		militia = { x = 3 y = 1 }
+		militia = { x = 3 y = 2 }
+		militia = { x = 3 y = 3 }
+		
+		mountain_artillery_brigade = { x = 4 y = 0 }
+		mountain_artillery_brigade = { x = 4 y = 1 }	
+		mountain_artillery_brigade = { x = 4 y = 2 }
+
+	}
+	support = {
+		DIV_HQ = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+		field_hospital = { x = 1 y = 0 }
+		logistics_company = { x = 1 y = 1 }
+		mount_support = { x = 1 y = 2 }
+		
 	}
 }
 division_template = {
@@ -149,24 +238,58 @@ division_template = {
 	priority = 2
 }
 division_template = {
-	name = "Divisione Coloniale"		
-	# Represents lesser-equipped colonial units
+	name = "Divisione Indigini-Eritreo"		
+	# Represents Askaris, primarily - basing on 1st and 2nd Eritrean division
 	regiments = {
-		militia = { x = 0 y = 0 }
-		militia = { x = 0 y = 1 }
-		militia = { x = 0 y = 2 }
-				
+		light_infantry = { x = 0 y = 0 }
+		light_infantry = { x = 0 y = 1 }
+		light_infantry = { x = 0 y = 2 }
+		
 		militia = { x = 1 y = 0 }
 		militia = { x = 1 y = 1 }
 		militia = { x = 1 y = 2 }
-				
+		
 		militia = { x = 2 y = 0 }
 		militia = { x = 2 y = 1 }
-		militia = { x = 2  y = 2 }
+		
+		cavalry = { x = 3 y = 0 }
+		cavalry = { x = 3 y = 1 }
+		
+		mountain_artillery_brigade = { x = 4 y = 0 }
+		mountain_artillery_brigade = { x = 4 y = 1 }
 	}
 	support = {
-		DIV_HQ = { x = 0 y = 0 }
-		recon_cav = { x = 0 y = 1 }
+	DIV_HQ = { x = 0 y = 0 }
+	recon_cav = { x = 0 y = 1 }
+	desert_support = { x = 1 y = 0 }
+	mount_support = { x = 1 y = 1 }
+	}
+	priority = 0
+}
+division_template = {
+	name = "Divisione Indigini-Somalo"		
+	# Represents Libyan / Somali divisions in Somalia
+	regiments = {
+		light_infantry = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+
+
+		light_infantry = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		
+		mountain_artillery_brigade = { x = 3 y = 0 }
+		mountain_artillery_brigade = { x = 3 y = 1 }
+	}
+	support = {
+	DIV_HQ = { x = 0 y = 0 }
+	recon_cav = { x = 0 y = 1 }
+	desert_support = { x = 1 y = 0 }
+	mount_support = { x = 1 y = 1 }
 	}
 	priority = 0
 }
@@ -408,7 +531,7 @@ units = {
 	division= {	
 		name = "2a Divisione Coloniale 'Libia'"
 		location = 1130
-		division_template = "Divisione Coloniale"		# Colonial militia, lower training and equipment
+		division_template = "Divisione Indigini-Eritreo"		# Colonial militia, lower training and equipment
 		force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" } }
 		start_equipment_factor = 0.2
 
@@ -417,18 +540,17 @@ units = {
 	## Armata dell'Africa Orientale Italiana ##
 	# I Corpo d'Armata dell'A.O.I. #
 	division= {	
-		name = "26a Divisione di Fanteria 'Assietta'"
+		name = "26a Divisione di Fanteria 'Assietta'" #Formed as binary in 1935
 		location = 12723
-		division_template = "Divisione di Fanteria"	
+		division_template = "Divisione di Fanteria-Binaria"	
 		start_experience_factor = 0.3
-		start_equipment_factor = 0.5
 	}
 	division= {	
-		name = "30a Divisione di Fanteria 'Sabauda'"
+		name = "30a Divisione di Fanteria 'Sabauda'" #Formed as three-regimented, but one regiment was semi-motorized, and moved to separate group in March 1936, so representing as binary
 		location = 12723
-		division_template = "Divisione di Fanteria"	
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.5
+		division_template = "Divisione di Fanteria-Binaria"	
+		start_experience_factor = 0.35
+
 	}
 	division= {	
 		name = "5a Divisione Alpina 'Pusteria'"
@@ -448,11 +570,10 @@ units = {
 
 	# II Corpo d'Armata dell'A.O.I. #
 	division= {	
-		name = "19a Divisione di Fanteria 'Gavinana'"
+		name = "19a Divisione di Fanteria 'Gavinana'" #Demobilized in July 1936, remobilized later, 3-regiment during Ethiopian war, 'mountain infantry'
 		location = 12766
-		division_template = "Divisione di Fanteria"	
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.5
+		division_template = "Divisione di Fanteria-Alpina"	
+		start_experience_factor = 0.35
 	}
 	division= {	
 		name = "24a Divisione di Fanteria 'Gran Sasso'"
@@ -489,11 +610,10 @@ units = {
 
 	# IV Corpo d'Armata dell'A.O.I. #
 	division= {	
-		name = "5a Divisione di Fanteria 'Cosseria'"
+		name = "5a Divisione di Fanteria 'Cosseria'" #Raised as binary before reorganisation in 1938
 		location = 8043
-		division_template = "Divisione di Fanteria"	
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.5
+		division_template = "Divisione di Fanteria-Binaria"	
+		start_experience_factor = 0.25
 	}
 	division= {	
 		name = "2a Divisione CC.NN. '28 Ottobre'"
@@ -516,16 +636,14 @@ units = {
 	division= {	
 		name = "1a Divisione Coloniale 'Eritrea'"
 		location = 12766
-		division_template = "Divisione Coloniale"		# Colonial militia, lower training and equipment
+		division_template = "Divisione Indigini-Eritreo"		#Askari division
 		force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" } }
-		start_equipment_factor = 0.2
 	}
 	division= {	
 		name = "2a Divisione Coloniale 'Eritrea'"
 		location = 12766
-		division_template = "Divisione Coloniale"		# Colonial militia, lower training and equipment
+		division_template = "Divisione Indigini-Eritreo"		#Askari division
 		force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" } }
-		start_equipment_factor = 0.2
 	}
 
 	# Corpo d'Armata Libico #
@@ -537,25 +655,28 @@ units = {
 		start_equipment_factor = 0.5
 	}
 	division= {	
-		name = "1a Divisione Coloniale 'Libia'"
+		name = "1a Divisione Coloniale 'Libia'" #Arab / Libyan auxillary division
 		location = 2063
-		division_template = "Divisione Coloniale"		# Colonial militia, lower training and equipment
+		division_template = "Divisione Indigini-Somalo"		
 		force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" } }
-		start_equipment_factor = 0.2
 	}
 	division= {	
-		name = "1a Divisione Coloniale 'Somalia'"
-		location = 2020
-		division_template = "Divisione Coloniale"		# Colonial militia, lower training and equipment
+		name = "Battaglioni Dubat del Somaliland" #Refers to unattached Somalian batallions under Graziani
+		location = 1964
+		division_template = "Divisione Indigini-Somalo"		
 		force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" } }
-		start_equipment_factor = 0.2
+	}
+	division= {	
+		name = "Comando Regione di Ogaden" #Refers to Somalian border command under Luigi Frusci
+		location = 2020
+		division_template = "Divisione Indigini-Somalo"		
+		force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" } }
 	}
 	division= {	
 		name = "6a Divisione CC.NN. 'Tevere'"
 		location = 2063
-		division_template = "Divisione di CC.NN."		# CCNN militia, lower training and equipment
-		start_experience_factor = 0.2
-		start_equipment_factor = 0.2
+		division_template = "Divisione di CC.NN. 'Tevere'"	# CCNN volunteer division, under-strength
+		start_experience_factor = 0.15
 	}
 	division= {	
 		name = "202a Div. Costiera"
