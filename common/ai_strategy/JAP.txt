@@ -180,9 +180,13 @@ JAP_dont_defend_manchuria = {
 		tag = JAP
 		MAN = { is_puppet_of = JAP }
 		MAN = { surrender_progress < 0.01 }
+		has_war = no
 	}
 	abort = {
-		MAN = { surrender_progress > 0.01 }
+		OR = {
+			MAN = { surrender_progress > 0.01 }
+			has_war = no
+		}
 	}
 	
 	ai_strategy = {
