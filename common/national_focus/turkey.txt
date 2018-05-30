@@ -1464,6 +1464,7 @@ focus_tree = {
 		bypass = {
 			340 = { is_demilitarized_zone = no }
 			341 = { is_demilitarized_zone = no }
+			868 = { is_demilitarized_zone = no }
 		}
 		ai_will_do = {
 			factor = 10
@@ -1471,7 +1472,8 @@ focus_tree = {
 		completion_reward = {
 			340 = { set_demilitarized_zone = no }
 			341 = { set_demilitarized_zone = no }
-			add_ideas = deterrence
+			868 = { set_demilitarized_zone = no }
+			add_timed_idea = { idea = deterrence days = 720 }
 			ENG = {
 				country_event = { id = turkey.4 days = 1  }
 				}

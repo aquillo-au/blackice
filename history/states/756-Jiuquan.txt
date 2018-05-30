@@ -1,43 +1,43 @@
+
 state={
 	id=756
 	name="STATE_756"
-	
-	manpower=1000000
-	impassable = yes
-	state_category = wasteland
-	
+
 	history={
-		owner = XSM
+		owner = MAN
+		add_core_of = MAN
 		add_core_of = CHI
 		add_core_of = PRC
 		add_core_of = SHX
-		#add_core_of = MAN
 		add_core_of = GXC
 		add_core_of = YUN
-		
 		buildings = {
 			infrastructure = 1
 
 		}
-		
 		1938.10.25 = {
 			if = {
 				limit = {
 					NOT = {
-						has_dlc = "Waking the Tiger" 
+						has_dlc = "Waking the Tiger"
 					}
 
 				}
 				CHI = {
 					transfer_state = PREV
+
 				}
+
 			}
+
 		}
+
 	}
-	
+
 	provinces={
-		2028 4783 7727 8102 10770
+		783 927 944 973 3791 3929 3944 3947 6806 6964 9766 9883 9897 11823 11862 11893 
 	}
-	
-	buildings_max_level_factor=1.000
+	manpower=1000000
+	buildings_max_level_factor=1.500
+	state_category=rural
 }

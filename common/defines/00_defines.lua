@@ -153,16 +153,16 @@ NDiplomacy = {
 NCountry = {
 	EVENT_PROCESS_OFFSET = 20,								-- Events are checked every X day per character or province (1 is ideal, but CPU heavy)
 	BASE_RESEARCH_SLOTS = 2,								-- Base number of research slots per country.
-	VP_TO_SUPPLY_BASE = 0.4,								-- Bonus to supply from a VP, no matter the level
+	VP_TO_SUPPLY_BASE = 0.01,								-- Bonus to supply from a VP, no matter the level
 	VP_TO_SUPPLY_BONUS_CONVERSION = 0.1,					-- Bonus to supply local supplies from Victory Points, multiplied by this aspect and rounded to closest integer
 	SUPPLY_FROM_DAMAGED_INFRA = 0.5,                		-- damaged infrastructure counts as this in supply calcs
 	SUPPLY_BASE_MULT = 1,									-- multiplier on supply base values
-	SUPPLY_BONUS_FROM_INPUT = 0.25,						-- % of supply bonus from input area.
+	SUPPLY_BONUS_FROM_INPUT = 0.2,						-- % of supply bonus from input area.
 	SUPPLY_PATH_MAX_DISTANCE = 15,							-- When supply route reach more than X nodes, the manpower+equipment delivery speed reach 100% penalty.
 	POPULATION_YEARLY_GROWTH_BASE = 0.015,					-- was 0.015 basic population growth per year, used for monthly manpower gain
 	RESISTANCE_STRENGTH_FROM_VP = 0.001,					-- How much strength ticking speed gives each VP score.
 	RESISTANCE_STRENGTH_FROM_UNIT = 0.001,					-- How much strength ticking speed is reduced from each unit in state (multiplies subunit value resistance_suppress)
-	RESISTANCE_STRENGTH_FROM_NEIGHBORS = 0.5, 				-- Multiplies how much resistance can spread from one state to its neighbors, a state will spread whatever is highest of its victorypoints resistance increase or half of any of its neighbors spread, multiplied by this
+	RESISTANCE_STRENGTH_FROM_NEIGHBORS = 0.7, 				-- Multiplies how much resistance can spread from one state to its neighbors, a state will spread whatever is highest of its victorypoints resistance increase or half of any of its neighbors spread, multiplied by this
 	RESISTANCE_DECAY_WHEN_NO_GROWTH = 0.005,				-- Resistance will fall by this much each day if there is nothing increasing it ( no VPs and no spread from neighbors )
 	REINFORCEMENT_DIVISION_PRIORITY_COUNT = 3, 				-- How many priority stages we have in division template? 0)Reserves, 1)Normal, 2)Elite.
 	REINFORCEMENT_DIVISION_PRIORITY_DEFAULT = 1, 				-- Each template by default is 1)Normal
@@ -341,7 +341,7 @@ NPolitics = {
 NBuildings = {
 	ANTI_AIR_SUPERIORITY_MULT = 5.0,				-- How much air superiority reduction to the enemy does our AA guns? Normally each building level = -1 reduction. With this multiplier.
 	MAX_BUILDING_LEVELS = 15,						-- Max levels a building can have.
-	AIRBASE_CAPACITY_MULT = 100,					-- Each level of airbase building multiplied by this, gives capacity (max operational value). Value is int. 1 for each airplane.
+	AIRBASE_CAPACITY_MULT = 125,					-- Each level of airbase building multiplied by this, gives capacity (max operational value). Value is int. 1 for each airplane.
 	ROCKETSITE_CAPACITY_MULT = 100,					-- Each level of rocketsite building multiplied by this, gives capacity (max operational value). Value is int. 1 for each rocket.
 	NAVALBASE_CAPACITY_MULT = 15.0,				-- Each level of navalbase building multiplied by this, gives max capacity. Value is float. Each ship takes port_capacity_usage space.
 	NAVALBASE_REPAIR_MULT = 0.13,					-- Each level of navalbase building repairs X strength. The value is spread on all ships needed reparation. Fe Navalbase lvl 5 x 0.5 str repair = 2.5 str repaired over 10 ships, so each ship repair hourly 0.25 str.
@@ -781,7 +781,7 @@ NAir = {
 	ACE_WING_SIZE =	100,								-- size of wing ace bonuses are set up for. if lower more bonus, if higher less bonus
 	ACE_WING_SIZE_MAX_BONUS = 10,                      	-- biggest bonus we can get from having a small wing with an ace on
 	NO_SEARCH_MISSION_DETECT_FACTOR = -0.5,					-- value of planes not on active search missions for detection
-	SUPPLY_NEED_FACTOR = 0.35, 							-- multiplies supply usage
+	SUPPLY_NEED_FACTOR = 0.36, 							-- multiplies supply usage
 	SUPPLY_PRIO_FACTOR = 100.0,							-- Effect of supply need per unit for target province picking for air supply
 	CAPACITY_PENALTY = 0.8,								-- scales penalty of having overcrowded bases.
 	AIR_COMBAT_FINAL_DAMAGE_SCALE = 0.015,              	-- % how many max disrupted only planes are alloed to die in a single combat
@@ -1136,7 +1136,7 @@ NAI = {
 	EASY_TARGET_FRONT_IMPORTANCE = 10.0,					-- How much extra focus the AI should put on who it considers to be the easiest target.
 	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.2,			-- If less than this fraction of units on a front is moving, AI sees it as ready for action	
 	MICRO_POCKET_SIZE = 7,								-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
-	POCKET_DISTANCE_MAX = 500,						-- shortest square distance we bother about chasing pockets
+	POCKET_DISTANCE_MAX = 5,						-- shortest square distance we bother about chasing pockets
 	VP_LEVEL_IMPORTANCE_HIGH = 30,						-- Victory points with values higher than or equal to this are considered to be of high importance.
 	VP_LEVEL_IMPORTANCE_MEDIUM = 10,						-- Victory points with values higher than or equal to this are considered to be of medium importance.
 	VP_LEVEL_IMPORTANCE_LOW = 5,						-- Victory points with values higher than or equal to this are considered to be of low importance.
@@ -1150,13 +1150,13 @@ NAI = {
 	BASE_DISTANCE_TO_CARE = 500.0,						-- Countries that are too far away are less interesting in diplomacy
 	MIN_FORCE_RATIO_TO_PROTECT = 0.5,					-- Tiny countries should not feel protective or really large ones
 	
-	ORG_UNIT_STRONG = 0.95,								-- Organization % for unit to be considered strong
+	ORG_UNIT_STRONG = 1,								-- Organization % for unit to be considered strong
 	STR_UNIT_STRONG = 0.95,								-- Strength (equipment) % for unit to be considered strong
 	
-	ORG_UNIT_WEAK = 0.8,								-- Organization % for unit to be considered weak
+	ORG_UNIT_WEAK = 0.85,								-- Organization % for unit to be considered weak
 	STR_UNIT_WEAK = 0.75,								-- Strength (equipment) % for unit to be considered weak
 	
-	ORG_UNIT_NORMAL = 0.9,						-- Organization % for unit to be considered normal
+	ORG_UNIT_NORMAL = 0.95,						-- Organization % for unit to be considered normal
 	STR_UNIT_NORMAL = 0.85,						-- Strength (equipment) % for unit to be considered normal
 	
 	PLAN_FACTION_STRONG_TO_EXECUTE = 0.65,				-- % or more of units in an order to consider ececuting the plan

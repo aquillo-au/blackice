@@ -3635,24 +3635,21 @@ country_event = {
 		
 	option = {
 		name = DOD_yugoslavia.177.a #Croatia
-		 ai_chance = { factor = 100 }
+		ai_chance = { factor = 100 }
 		GER = { annex_country = { target = YUG transfer_troops = no } }
 			release = CRO
 			if = {
-		limit = {
-			has_dlc = "Together for Victory"
-	}
-	set_autonomy = {
-		target = CRO
-		autonomous_state = autonomy_reichsprotectorate
+				limit = {
+					has_dlc = "Together for Victory"
 				}
-	
-		else = {
-			puppet = CRO
-		
+				set_autonomy = {
+					target = CRO
+					autonomous_state = autonomy_reichsprotectorate
+				}
+				else = {
+					puppet = CRO
 				}
 			}
-		
 		}
 	option = {
 		name = DOD_yugoslavia.177.b #no

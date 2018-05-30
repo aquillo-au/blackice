@@ -43,15 +43,91 @@ scripted_gui = {
 						set_variable = { ROOT.created_partisan_template = 1 }
 						set_technology = { partisans = 1 }
 						division_template = {
-							name = "Partisan"
+							name = "Tiny Partisans"
 							regiments = {
 								partisan = { x = 0 y = 0 }
 								partisan = { x = 0 y = 1 }
 								partisan = { x = 0 y = 2 }
 							}
 						}
+						division_template = {
+							name = "Small Partisans"
+							regiments = {
+								partisan = { x = 0 y = 0 }
+								partisan = { x = 0 y = 1 }
+								partisan = { x = 0 y = 2 }
+								
+								partisan = { x = 1 y = 0 }
+								partisan = { x = 1 y = 1 }
+								partisan = { x = 1 y = 2 }
+							}
+						}
+						division_template = {
+							name = "Medium Partisans"
+							regiments = {
+								partisan = { x = 0 y = 0 }
+								partisan = { x = 0 y = 1 }
+								partisan = { x = 0 y = 2 }
+								
+								partisan = { x = 1 y = 0 }
+								partisan = { x = 1 y = 1 }
+								partisan = { x = 1 y = 2 }
+								
+								partisan = { x = 2 y = 0 }
+								partisan = { x = 2 y = 1 }
+								partisan = { x = 2 y = 2 }
+							}
+						}
+						division_template = {
+							name = "Large Partisans"
+							regiments = {
+								partisan = { x = 0 y = 0 }
+								partisan = { x = 0 y = 1 }
+								partisan = { x = 0 y = 2 }
+								
+								partisan = { x = 1 y = 0 }
+								partisan = { x = 1 y = 1 }
+								partisan = { x = 1 y = 2 }
+								
+								partisan = { x = 2 y = 0 }
+								partisan = { x = 2 y = 1 }
+								partisan = { x = 2 y = 2 }
+								
+								partisan = { x = 3 y = 0 }
+								partisan = { x = 3 y = 1 }
+								partisan = { x = 3 y = 2 }
+							}
+						}
+						division_template = {
+							name = "Huge Partisans"
+							regiments = {
+								partisan = { x = 0 y = 0 }
+								partisan = { x = 0 y = 1 }
+								partisan = { x = 0 y = 2 }
+								
+								partisan = { x = 1 y = 0 }
+								partisan = { x = 1 y = 1 }
+								partisan = { x = 1 y = 2 }
+								
+								partisan = { x = 2 y = 0 }
+								partisan = { x = 2 y = 1 }
+								partisan = { x = 2 y = 2 }
+								
+								partisan = { x = 3 y = 0 }
+								partisan = { x = 3 y = 1 }
+								partisan = { x = 3 y = 2 }
+								
+								partisan = { x = 4 y = 0 }
+								partisan = { x = 4 y = 1 }
+								partisan = { x = 4 y = 2 }
+							}
+						}
 						
-						set_division_template_lock = { division_template = Partisan is_locked = yes }
+						set_division_template_lock = { division_template = "Tiny Partisans" is_locked = yes }
+						set_division_template_lock = { division_template = "Small Partisans" is_locked = yes }
+						set_division_template_lock = { division_template = "Medium Partisans" is_locked = yes }
+						set_division_template_lock = { division_template = "Large Partisans" is_locked = yes }
+						set_division_template_lock = { division_template = "Huge Partisans" is_locked = yes }
 					}
 				}
 				if = {
@@ -60,30 +136,9 @@ scripted_gui = {
 					}
 					var:created_partisan_state = {
 						create_unit = {
-							division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.6 start_equipment_factor = 0.99" 
+							division = "name = \"Partisan\" division_template = \"Huge Partisans\" start_experience_factor = 1 start_equipment_factor = 0.99" 
 							owner = ROOT
 						}
-						create_unit = {
-							division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.6 start_equipment_factor = 0.99" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.6 start_equipment_factor = 0.99" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.6 start_equipment_factor = 0.99" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.6 start_equipment_factor = 0.99" 
-							owner = ROOT
-						}
-						create_unit = {
-							division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.6 start_equipment_factor = 0.99" 
-							owner = ROOT
-						}
-						
 					}
 					else = {
 						if = {
@@ -92,23 +147,7 @@ scripted_gui = {
 							}
 							var:created_partisan_state = {
 								create_unit = {
-									division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.5 start_equipment_factor = 0.9" 
-									owner = ROOT
-								}
-								create_unit = {
-									division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.5 start_equipment_factor = 0.9" 
-									owner = ROOT
-								}
-								create_unit = {
-									division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.5 start_equipment_factor = 0.9" 
-									owner = ROOT
-								}
-								create_unit = {
-									division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.5 start_equipment_factor = 0.9" 
-									owner = ROOT
-								}
-								create_unit = {
-									division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.5 start_equipment_factor = 0.9" 
+									division = "name = \"Partisan\" division_template = \"Large Partisans\" start_experience_factor = 0.9 start_equipment_factor = 0.9" 
 									owner = ROOT
 								}
 							}
@@ -119,19 +158,7 @@ scripted_gui = {
 									}
 									var:created_partisan_state = {
 										create_unit = {
-											division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.4 start_equipment_factor = 0.8" 
-											owner = ROOT
-										}
-										create_unit = {
-											division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.4 start_equipment_factor = 0.8" 
-											owner = ROOT
-										}
-										create_unit = {
-											division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.4 start_equipment_factor = 0.8" 
-											owner = ROOT
-										}
-										create_unit = {
-											division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.4 start_equipment_factor = 0.8" 
+											division = "name = \"Partisan\" division_template = \"Medium Partisans\" start_experience_factor = 0.8 start_equipment_factor = 0.8" 
 											owner = ROOT
 										}
 									}
@@ -142,15 +169,7 @@ scripted_gui = {
 											}
 											var:created_partisan_state = {
 												create_unit = {
-													division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.3 start_equipment_factor = 0.7" 
-													owner = ROOT
-												}
-												create_unit = {
-													division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.3 start_equipment_factor = 0.7" 
-													owner = ROOT
-												}
-												create_unit = {
-													division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.3 start_equipment_factor = 0.7" 
+													division = "name = \"Partisan\" division_template = \"Small Partisans\" start_experience_factor = 0.7 start_equipment_factor = 0.7" 
 													owner = ROOT
 												}
 											}
@@ -161,18 +180,14 @@ scripted_gui = {
 													}
 													var:created_partisan_state = {
 														create_unit = {
-															division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.2 start_equipment_factor = 0.6" 
-															owner = ROOT
-														}
-														create_unit = {
-															division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.2 start_equipment_factor = 0.6" 
+															division = "name = \"Partisan\" division_template = \"Tiny Partisans\" start_experience_factor = 0.6 start_equipment_factor = 0.6" 
 															owner = ROOT
 														}
 													}
 													else = {
 														var:created_partisan_state = {
 															create_unit = {
-																division = "name = \"Partisan\" division_template = \"Partisan\" start_experience_factor = 0.1 start_equipment_factor = 0." 
+																division = "name = \"Partisan\" division_template = \"Tiny Partisans\" start_experience_factor = 0.5 start_equipment_factor = 0." 
 																owner = ROOT
 															}
 														}
@@ -204,7 +219,21 @@ scripted_gui = {
 						has_country_flag = partisan_state_controller
 					}
 					set_state_controller = created_partisan_state
-					country_event = { id = EAI_M.105 hours = 2 }
+					
+					if = {
+						limit = {
+							has_country_flag = hidden_partisan
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = hidden_partisan
+							}
+						}
+						country_event = { id = EAI_M.105 hours = 2 }
+					}
+					
 					clr_country_flag = partisan_state_controller
 				}
 				
@@ -221,7 +250,7 @@ scripted_gui = {
 		}
 		
 		ai_test_scopes = test_self_owned_states
-		ai_test_interval = 18
+		ai_test_interval = 168 #every 7 days
 		ai_test_variance = 0
 		
 		ai_enabled = {
@@ -236,7 +265,7 @@ scripted_gui = {
 			check_variable = { ROOT.partisan_random = 1 }
 		}
 		
-		ai_max_weight_taken_per_test = 7
+		ai_max_weight_taken_per_test = 5 #Max 5 uprising at a time, every 7 days
 		ai_weights = {
 			state_riseup_partisan_click = {
 				weight = 1

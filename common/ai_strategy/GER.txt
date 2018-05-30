@@ -190,7 +190,7 @@ GER_attack_barbarossa = {
 		has_war_with = SOV
 	}
 	abort = {
-		
+		SOV = { surrender_progress > 0.6 }
 	}
 	
 	ai_strategy = {
@@ -206,7 +206,7 @@ GER_dont_push_through_ITA = {
 		has_war_with = FRA
 		is_in_faction_with = ITA
 		ITA = { has_war_with = FRA }
-		ITA = { surrender_progress < 0.75 } 
+		ITA = { surrender_progress < 0.4 } 
 	}
 	abort = {
 		OR = {
@@ -214,7 +214,7 @@ GER_dont_push_through_ITA = {
 				FRA = { has_capitulated = yes }
 				NOT = { USA = { is_in_faction_with = ENG } }
 			}
-			ITA = { surrender_progress > 0.75 }
+			ITA = { surrender_progress > 0.6 }
 		}
 	}
 
@@ -320,7 +320,7 @@ danzig_of_war_preparation = {
 	}
 	
 	ai_strategy = { type = conquer id = "POL"					value = 300 		}
-	ai_strategy = { type = contain id = "FRA" 					value = 300 		}
+	ai_strategy = { type = conquer id = "FRA" 					value = 300 		}
 }
 
 dont_die_in_mountains = {
@@ -606,12 +606,12 @@ play_nice_with_benelux = {
 	    date > 1940.2.1
 	}
 	# leave britney alone!
-	ai_strategy = { type = antagonize id = "BEL" 					value = -100 	}
-	ai_strategy = { type = ignore id = "BEL"						value = 200 		}
-	ai_strategy = { type = antagonize id = "HOL"					value = -100 	}
-	ai_strategy = { type = ignore id = "HOL" 						value = 200 		}
-	ai_strategy = {	type = antagonize id = "LUX" 					value = -100 	}
-	ai_strategy = { type = ignore id = "LUX" 						value = 200 		}
+	ai_strategy = { type = declare_war id = "HOL" 	value = -200 }
+	ai_strategy = { type = declare_war id = "BEL"	value = -200 }
+	ai_strategy = { type = declare_war id = "LUX"	value = -200 }
+	ai_strategy = { type = befriend id = "HOL"	value = -200 }
+	ai_strategy = {	type = befriend id = "BEL" 	value = -200 }
+	ai_strategy = { type = befriend id = "LUX" 	value = -200 }
 }
 
 help_ita = {
