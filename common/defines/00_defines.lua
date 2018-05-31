@@ -1136,7 +1136,7 @@ NAI = {
 	EASY_TARGET_FRONT_IMPORTANCE = 10.0,					-- How much extra focus the AI should put on who it considers to be the easiest target.
 	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.2,			-- If less than this fraction of units on a front is moving, AI sees it as ready for action	
 	MICRO_POCKET_SIZE = 7,								-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
-	POCKET_DISTANCE_MAX = 5,						-- shortest square distance we bother about chasing pockets
+	POCKET_DISTANCE_MAX = 0,						-- shortest square distance we bother about chasing pockets
 	VP_LEVEL_IMPORTANCE_HIGH = 30,						-- Victory points with values higher than or equal to this are considered to be of high importance.
 	VP_LEVEL_IMPORTANCE_MEDIUM = 10,						-- Victory points with values higher than or equal to this are considered to be of medium importance.
 	VP_LEVEL_IMPORTANCE_LOW = 5,						-- Victory points with values higher than or equal to this are considered to be of low importance.
@@ -1222,14 +1222,14 @@ NAI = {
 	AIR_WING_REINFORCEMENT_LIMIT = 200,					-- Size of AI air wings that get multiplied
 	AIR_BASE_DANGER_ZONE_WEIGHT = 100,					-- Score used per province taken by enemy in a state to determine how dangerous it is to use an air base
 
-	FORTIFIED_RATIO_TO_CONSIDER_A_FRONT_FORTIFIED = 0.3, -- ai will consider a front fortified if this ratio of provinces has fort
-	HEAVILY_FORTIFIED_RATIO_TO_CONSIDER_A_FRONT_FORTIFIED = 0.5, -- ai will consider a front super fortified if this ratio of provinces has lots of forts
+	FORTIFIED_RATIO_TO_CONSIDER_A_FRONT_FORTIFIED = 0.2, -- ai will consider a front fortified if this ratio of provinces has fort
+	HEAVILY_FORTIFIED_RATIO_TO_CONSIDER_A_FRONT_FORTIFIED = 0.3, -- ai will consider a front super fortified if this ratio of provinces has lots of forts
 	
 	DESPERATE_AI_MIN_UNIT_ASSIGN_TO_ESCAPE = 6,			-- AI will assign at least this amount of units to break from desperate situations
 	
-	DESPERATE_AI_WEAK_UNIT_STR_LIMIT = 0.7,					-- ai will increase number of units assigned to break from desperate situations when units are start falling lower than this str limit
-	DESPERATE_AI_MIN_ORG_BEFORE_ATTACK = 0.55,					-- ai will wait for this much org to attack an enemy prov in desperate situations
-	DESPERATE_AI_MIN_ORG_BEFORE_MOVE = 0.16,					-- ai will wait for this much org to move in desperate situations
+	DESPERATE_AI_WEAK_UNIT_STR_LIMIT = 0.85,					-- ai will increase number of units assigned to break from desperate situations when units are start falling lower than this str limit
+	DESPERATE_AI_MIN_ORG_BEFORE_ATTACK = 0.6,					-- ai will wait for this much org to attack an enemy prov in desperate situations
+	DESPERATE_AI_MIN_ORG_BEFORE_MOVE = 0.15,					-- ai will wait for this much org to move in desperate situations
 	DESPERATE_ATTACK_WITHOUT_ORG_WHEN_NO_ORG_GAIN = 800,		-- if ai can't regain enough org to attack in this many hours, it will go truly desperate and attack anyway (still has to wait for move org)
 	
 	

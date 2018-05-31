@@ -323,6 +323,12 @@ on_actions = {
 				}
 				remove_ideas = anti_soviet_pact
 			}
+			if = {
+				limit = {
+					has_idea = neutrality_idea
+				}
+				remove_ideas = neutrality_idea
+			}
 		}
 	}
 
@@ -962,16 +968,16 @@ on_actions = {
 	#KEEP CODE VERY SHORT HERE
 	on_daily = {
 		effect = {
-            set_temp_variable = { party_support_pp = party_popularity@ruling_party }    
-            divide_temp_variable = { var = party_support_pp value = 100 }
-            add_political_power = party_support_pp
+          #  set_temp_variable = { party_support_pp = party_popularity@ruling_party }    
+          # divide_temp_variable = { var = party_support_pp value = 100 }
+          # add_political_power = party_support_pp
 		}
 	}
 	
 	#ROOT is new controller #FROM is old controller #FROM.FROM is state ID
 	on_state_control_changed = {
 		effect = {
-			#if = {
+			#if = { #state loss affecting unity
 			#	limit = {
 			#		FROM.FROM = { is_core_of = FROM } ROOT = { has_war_with = FROM }
 			#	}
@@ -980,6 +986,15 @@ on_actions = {
 			#		add_war_support = -0.005
 			#	}
 			#}
+			if = {
+				limit = {
+					FROM.FROM = { state = 930 }
+					ROOT = { tag = SOV }
+					FROM = { tag = NOR }
+					NOT = { FROM = { has_war_with = ROOT } }
+				}
+				FROM = { transfer_state = 930 set_country_flag = state_switched }
+			}
 			#German Soviet Railway Systems
 			if = {
 				limit = {
@@ -1090,36 +1105,6 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
-					OWNER = { has_war_support > 0.24 }
-				}
-				OWNER = { 
-					if = {
-						limit = { 	
-							NOT = { has_variable = war_status_WS }
-						}
-						OWNER = { 
-							set_variable = { var = war_status_WS value = 0 }
-							clamp_variable = { var = war_status_WS min = 0 max = 50 } #50 Victories to gain 0.0005 Warsupport (0.5%)
-						}
-					}
-					if = {
-						limit = {
-							has_variable = war_status_WS
-						}
-						add_to_variable = { var = war_status_WS value = 1 }
-						if = {
-							limit = {
-								check_variable = { war_status_WS > 50 }
-							}
-							add_war_support = 0.01
-							subtract_from_variable = { var = war_status_WS value = 50 }
-						}
-					}
-				}
-			}
-		
-			if = {
-				limit = {
 					set_temp_variable = { chance = 0.001 }
 					set_temp_variable = { factor = 1.0 }
 					add_to_temp_variable = { factor = leader_modifier@wounded_chance_factor } 
@@ -1139,35 +1124,6 @@ on_actions = {
 	# From is owner country
 	on_army_leader_lost_combat = {
 		effect = {
-			if = {
-				limit = {
-					OWNER = { has_war_support > 0.24 }
-				}
-				OWNER = { 
-					if = {
-						limit = { 	
-							NOT = { has_variable = war_status_WS }
-						}
-						OWNER = {
-							set_variable = { var = war_status_WS value = 0 }
-							clamp_variable = { var = war_status_WS min = 0 max = 50 } #50 Victories to gain 0.0005 Warsupport (0.5%)
-						}
-					}
-					if = {
-						limit = {
-							has_variable = war_status_WS
-						}
-						subtract_from_variable = { var = war_status_WS value = 1 }
-						if = {
-							limit = {
-								check_variable = { war_status_WS > 50 }
-							}
-							add_war_support = 0.01
-							subtract_from_variable = { var = war_status_WS value = 50 }
-						}
-					}
-				}
-			}
 			if = {
 				limit = {
 					set_temp_variable = { chance = 0.005 }
