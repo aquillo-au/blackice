@@ -10,14 +10,37 @@ technologies = {
 	@1940 = 14
 	@1941 = 16
 	@1942 = 18
-	@1944 = 20
-	@1945 = 22
-	@1949 = 24
-	@1951 = 26
-	@1952 = 28
-	@1954 = 30
-	@1959 = 32
-
+	@1943 = 20
+	@1944 = 22
+	@1945 = 24
+	@1946 = 26
+	@1949 = 28
+	@1951 = 30
+	@1952 = 32
+	@1954 = 34
+	@1959 = 36
+	#Horizontal position
+	@la = -10
+	@ma = -6
+	@ma_eq_1 = -5
+	@ma_eq_2 = -3
+	@ma_eq_3 = -1
+	@ma_eq_4 = 1
+	@ma_m4a1 = 2
+	@ma_m4a3 = 6
+	@ha = 10
+	@sha = 12
+	@mbt = 14
+	@para = 13
+	@ftd = 17
+	@lvt_1 = 21
+	@lvt_2 = 25
+	@lvt_3 = 29
+	@amp_a = 27
+	@recon = 34
+	@tankettes = 37
+	@guncarrier = 40
+	
 	american_tech_1 = {
 	
 		allow = {
@@ -28,11 +51,11 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usa_folder
-			position = { x = -10 y = @1942 }
+			position = { x = @lvt_1 y = @1941 }
 		}
 
 		path = {
-			leads_to_tech = tech_amph_american_tank_equipment_1 
+			leads_to_tech = tech_amph_american_lv_equipment_1
 			research_cost_coeff = 1
 		}
 		
@@ -56,7 +79,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usa_folder
-			position = { x = -7 y = @1942 }
+			position = { x = @para y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -79,7 +102,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usa_folder
-			position = { x = -4 y = @1942 }
+			position = { x = @ftd y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -102,7 +125,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usa_folder
-			position = { x =  0 y = @1935 }
+			position = { x = @la y = @1935 }
 		}
 		ai_will_do = {
 			factor = 0
@@ -124,7 +147,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usa_folder
-			position = { x = 4 y = @1939 }
+			position = { x = @ma y = @1939 }
 		}
 		
 		ai_will_do = {
@@ -147,7 +170,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usa_folder
-			position = { x = 16 y = @1941 }
+			position = { x = @ha y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -170,7 +193,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usa_folder
-			position = { x = 20 y = @1945 }
+			position = { x = @sha y = @1945 }
 		}
 		
 		ai_will_do = {
@@ -360,7 +383,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = usa_folder
-			position = { x = 4 y = @1944 }
+			position = { x = @ma_eq_1 y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -403,7 +426,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = usa_folder
-			position = { x = 6 y = @1944 }
+			position = { x = @ma_eq_2 y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -435,7 +458,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = usa_folder
-			position = { x = 8 y = @1944 }
+			position = { x = @ma_eq_3 y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -487,7 +510,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = usa_folder
-			position = { x = 10 y = @1944 }
+			position = { x = @ma_eq_4 y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -504,6 +527,7 @@ technologies = {
 		enable_equipments = {
 			american_light_tank_equipment_1 
 		}
+		
 		on_research_complete = {
 			
 			hidden_effect = {
@@ -511,16 +535,13 @@ technologies = {
 					limit = {
 						has_tech = motorised_infantry
 					}
-
 					load_oob = "USA_Armor_Division_I"
 				}
-				
 			}
 
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
-			
-			
 		}
+		
 		path = {
 			leads_to_tech = tech_american_light_tank_equipment_2 
 			research_cost_coeff = 1
@@ -535,9 +556,9 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 0 y = @1935 }
+			position = { x = @la y = @1935 }
 		}
-				
+		
 		ai_will_do = {
 			factor = 0
 		}
@@ -569,7 +590,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 0 y = @1937 }
+			position = { x = @la y = @1937 }
 		}
 				
 		ai_will_do = {
@@ -603,7 +624,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 0 y = @1938 }
+			position = { x = @la y = @1938 }
 		}
 				
 		ai_will_do = {
@@ -637,7 +658,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 0 y = @1940 }
+			position = { x = @la y = @1940 }
 		}
 				
 		ai_will_do = {
@@ -671,7 +692,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 0 y = @1942 }
+			position = { x = @la y = @1942 }
 		}
 				
 		ai_will_do = {
@@ -705,9 +726,9 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 0 y = @1944 }
+			position = { x = @la y = @1944 }
 		}
-				
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -734,9 +755,9 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 0 y = @1952 }
+			position = { x = @la y = @1952 }
 		}
-				
+		
 		ai_will_do = {
 			factor = 5
 		}
@@ -755,6 +776,7 @@ technologies = {
 		enable_equipments = {
 			american_medium_tank_equipment_1 
 		}
+		
 		on_research_complete = {
 			
 			hidden_effect = {
@@ -765,11 +787,11 @@ technologies = {
 
 					load_oob = "USA_Armor_Division_II"
 				}
-				
 			}
 
 			custom_effect_tooltip = UNLOCK_DIVISION_TEMPLATE
 		}
+		
 		path = {
 			leads_to_tech = tech_american_medium_tank_equipment_2 
 			research_cost_coeff = 1
@@ -784,9 +806,9 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 4 y = @1939 }
+			position = { x = @ma y = @1939 }
 		}
-				
+		
 		ai_will_do = {
 			factor = 10
 		}
@@ -818,7 +840,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 4 y = @1941 }
+			position = { x = @ma y = @1941 }
 		}
 
 		sub_technologies = {
@@ -911,7 +933,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 4 y = @1942 }
+			position = { x = @ma y = @1942 }
 		}
 
 		ai_will_do = {
@@ -972,7 +994,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 8 y = @1942 }
+			position = { x = @ma_m4a1 y = @1942 }
 		}
 
 		sub_technologies = {
@@ -1099,7 +1121,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 12 y = @1942 }
+			position = { x = @ma_m4a3 y = @1942 }
 		}
 
 		sub_technologies = {
@@ -1188,9 +1210,9 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 12 y = @1944 }
+			position = { x = @ma_m4a3 y = @1944 }
 		}
-				
+		
 		ai_will_do = {
 			factor = 10
 		}
@@ -1224,7 +1246,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 16 y = @1941 }
+			position = { x = @ha y = @1941 }
 		}
 				
 		ai_will_do = {
@@ -1263,7 +1285,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 16 y = @1944 }
+			position = { x = @ha y = @1944 }
 		}
 				
 		ai_will_do = {
@@ -1292,7 +1314,7 @@ technologies = {
 
 		folder = {
 			name = usa_folder
-			position = { x = 16 y = @1951 }
+			position = { x = @ha y = @1951 }
 		}
 				
 		ai_will_do = {
@@ -1329,7 +1351,7 @@ technologies = {
 		
 		folder = {
 			name = usa_folder
-			position = { x = 12 y = @1949 }
+			position = { x = @mbt y = @1949 }
 		}
 		
 		ai_will_do = {
@@ -1363,7 +1385,7 @@ technologies = {
 		
 		folder = {
 			name = usa_folder
-			position = { x = 12 y = @1951 }
+			position = { x = @mbt y = @1951 }
 		}
 				
 		ai_will_do = {
@@ -1397,7 +1419,7 @@ technologies = {
 		
 		folder = {
 			name = usa_folder
-			position = { x = 12 y = @1954 }
+			position = { x = @mbt y = @1954 }
 		}
 				
 		ai_will_do = {
@@ -1426,7 +1448,7 @@ technologies = {
 		
 		folder = {
 			name = usa_folder
-			position = { x = 12 y = @1959 }
+			position = { x = @mbt y = @1959 }
 		}
 		
 		ai_will_do = {
@@ -1455,7 +1477,7 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = usa_folder
-			position = { x = 20 y = @1945 }
+			position = { x = @sha y = @1945 }
 		}
 		
 	
@@ -1469,7 +1491,7 @@ technologies = {
 		}
 	}
 
-## Odd ones on the left ##########################
+## Odd ones on the right ##########################
 
 	tech_hellcat_equipment_1 = {
 	
@@ -1485,7 +1507,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = usa_folder
-			position = { x = -4 y = @1942 }
+			position = { x = @ftd y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -1513,7 +1535,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = usa_folder
-			position = { x = -7 y = @1942 }
+			position = { x = @para y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -1526,22 +1548,26 @@ technologies = {
 		}
 
 	}
-
-	tech_amph_american_tank_equipment_1 = {
+	# LVT-1 'Aligator' ##1225 build##
+	tech_amph_american_lv_equipment_1 = {
 
 		enable_equipments = {
-			amph_american_tank_equipment_1
+			amph_american_lv_equipment_1
 		}
-		
 		dependencies = {
 			american_tech_1 = 1
 		}
 		
+		path = {
+			leads_to_tech = tech_amph_american_lv_equipment_2
+			research_cost_coeff = 1
+		}
+		
 		research_cost = 2
-		start_year = 1942
+		start_year = 1941
 		folder = {
 			name = usa_folder
-			position = { x = -10 y = @1942 }
+			position = { x = @lvt_1 y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -1552,7 +1578,217 @@ technologies = {
 			armor
 			cat_light_armor
 		}
+	}
+	# LVT-2 Water Buffalo ##2962 build##
+	tech_amph_american_lv_equipment_2 = {
 
+		enable_equipments = {
+			amph_american_lv_equipment_2
+		}
+		dependencies = {
+			american_tech_1 = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_amph_american_lv_equipment_3
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_amph_american_lv_equipment_4
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_amph_american_lv_equipment_5
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = tech_amph_american_tank_equipment_1
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1942
+		folder = {
+			name = usa_folder
+			position = { x = @lvt_1 y = @1942 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+		categories = {
+			armor
+			cat_light_armor
+		}
+	}
+	#LVT-2(A) Water Buffalo II
+	tech_amph_american_lv_equipment_3 = {
+
+		enable_equipments = {
+			amph_american_lv_equipment_3
+		}
+		
+		dependencies = {
+			american_tech_1 = 1
+		}
+		
+		research_cost = 2
+		start_year = 1943
+		folder = {
+			name = usa_folder
+			position = { x = @lvt_1 y = @1943 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+		categories = {
+			armor
+			cat_light_armor
+		}
+	}
+	#LTV-3 Bushmaster
+	tech_amph_american_lv_equipment_4 = {
+
+		enable_equipments = {
+			amph_american_lv_equipment_4
+		}
+		dependencies = {
+			american_tech_1 = 1
+		}
+		path = {
+			leads_to_tech = tech_amph_american_lv_equipment_6
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		start_year = 1943
+		folder = {
+			name = usa_folder
+			position = { x = @lvt_2 y = @1943 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+		categories = {
+			armor
+			cat_light_armor
+		}
+	}
+	# LVT-4 Water Buffalo III more armor ##8348 build##
+	tech_amph_american_lv_equipment_5 = {
+
+		enable_equipments = {
+			amph_american_lv_equipment_5
+		}
+		
+		dependencies = {
+			american_tech_1 = 1
+		}
+		
+		research_cost = 2
+		start_year = 1943
+		folder = {
+			name = usa_folder
+			position = { x = @lvt_3 y = @1943 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+		categories = {
+			armor
+			cat_light_armor
+		}
+	}
+	# LVT-3C Bushmaster with armored roof on cargo bay ##450 build##
+	tech_amph_american_lv_equipment_6 = {
+
+		enable_equipments = {
+			amph_american_lv_equipment_6
+		}
+		
+		dependencies = {
+			american_tech_1 = 1
+		}
+		
+		research_cost = 2
+		start_year = 1949
+		folder = {
+			name = usa_folder
+			position = { x = @lvt_2 y = @1949 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+		categories = {
+			armor
+			cat_light_armor
+		}
+	}
+	# LVT(A)-1 ##1225 build##
+	tech_amph_american_tank_equipment_1 = {
+
+		enable_equipments = {
+			amph_american_tank_equipment_1
+		}
+		dependencies = {
+			american_tech_1 = 1
+		}
+		
+		path = {
+			leads_to_tech = tech_amph_american_tank_equipment_2
+			research_cost_coeff = 0.75
+		}
+		
+		research_cost = 2
+		start_year = 1942
+		folder = {
+			name = usa_folder
+			position = { x = @amp_a y = @1942 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+		categories = {
+			armor
+			cat_light_armor
+		}
+	}
+	# LVT(A)-4s ##1225 build##
+	tech_amph_american_tank_equipment_2 = {
+
+		enable_equipments = {
+			amph_american_tank_equipment_2
+		}
+		dependencies = {
+			american_tech_1 = 1
+		}
+
+		research_cost = 2
+		start_year = 1944
+		folder = {
+			name = usa_folder
+			position = { x = @amp_a y = @1944 }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+
+		categories = {
+			armor
+			cat_light_armor
+		}
 	}
 	################### Command tanks ###########
 	tech_american_command_tanks = {
@@ -1587,7 +1823,6 @@ technologies = {
                	command_tank_equipment = 1
          	}
 		}
-		
 		
 		research_cost = 4
 		start_year = 1938
@@ -1703,7 +1938,7 @@ technologies = {
 		start_year = 1930
 		folder = {
 			name = usa_folder
-			position = { x = 24 y = @1930 }
+			position = { x = @recon y = @1930 }
 		}
 		
 		categories = {
@@ -1733,7 +1968,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usa_folder
-			position = { x = 24 y = @1936 }
+			position = { x = @recon y = @1936 }
 		}
 		
 		categories = {
@@ -1763,7 +1998,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = usa_folder
-			position = { x = 24 y = @1939 }
+			position = { x = @recon y = @1939 }
 		}
 		
 		categories = {
@@ -1791,7 +2026,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = usa_folder
-			position = { x = 24 y = @1942 }
+			position = { x = @recon y = @1942 }
 		}
 		
 		categories = {
@@ -1817,7 +2052,7 @@ technologies = {
 		start_year = 1945
 		folder = {
 			name = usa_folder
-			position = { x = 24 y = @1945 }
+			position = { x = @recon y = @1945 }
 		}
 		
 		categories = {
@@ -1851,7 +2086,7 @@ technologies = {
 		start_year = 1933
 		folder = {
 			name = usa_folder
-			position = { x = 27 y = @1932 }
+			position = { x = @tankettes y = @1932 }
 		}
 		
 		categories = {
@@ -1881,7 +2116,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = usa_folder
-			position = { x = 27 y = @1938 }
+			position = { x = @tankettes y = @1938 }
 		}
 		
 		categories = {
@@ -1910,7 +2145,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = usa_folder
-			position = { x = 27 y = @1940 }
+			position = { x = @tankettes y = @1940 }
 		}
 		
 		categories = {
@@ -1963,7 +2198,7 @@ technologies = {
 		start_year = 1932
 		folder = {
 			name = usa_folder
-			position = { x = 30 y = @1932 }
+			position = { x = @guncarrier y = @1932 }
 		}
 		
 		categories = {
@@ -1990,7 +2225,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = usa_folder
-			position = { x = 30 y = @1936 }
+			position = { x = @guncarrier y = @1936 }
 		}
 		
 		categories = {
@@ -2022,7 +2257,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = usa_folder
-			position = { x = 30 y = @1939 }
+			position = { x = @guncarrier y = @1939 }
 		}
 		
 		categories = {
@@ -2050,7 +2285,7 @@ technologies = {
 	#		start_year = 1942
 	#		folder = {
 	#			name = usa_folder
-	#			position = { x = 30 y = @1942 }
+	#			position = { x = @guncarrier y = @1942 }
 	#		}
 	#		
 	#		categories = {
@@ -2062,3 +2297,4 @@ technologies = {
 	#		}
 	#}
 }
+### EOF ###

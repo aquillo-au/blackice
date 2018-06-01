@@ -429,8 +429,128 @@ hellcat_equipment = {
 		is_convertable = yes
 	}
 
-##### Amphibious tanks ###########################################
+##### Amphibious tanks and Landing-vehicle ###########################################
+	amph_american_lv_equipment = {
+		year = 1941
+		
+		is_archetype = yes
+		is_buildable = no
+		is_convertable = yes
+		type = armor
+		group_by = archetype
+		
+		interface_category = interface_category_armor
+		
+		upgrades = {
+			tank_reliability_upgrade
+			tank_engine_upgrade
+			tank_armor_upgrade
+			
+			tank_aa_upgrade
+			tank_radio_upgrade
 
+			tank_sloped_upgrade
+			tank_anti_inf_upgrade 
+		}
+
+		#Misc Abilities
+		maximum_speed = 5
+		reliability = 0.8
+
+		#Defensive Abilities
+		defense = 4
+		breakthrough = 10
+		hardness = 0.5
+		armor_value = 5
+
+		#Offensive Abilities
+		soft_attack = 6
+		air_attack = 2
+
+		#Space taken in convoy
+		lend_lease_cost = 10
+		
+		build_cost_ic = 18
+		resources = {
+			oil = 2
+			steel = 4
+			tungsten = 1
+		}
+	}
+	
+	# LVT-1 'Aligator' ##1225 build##
+	amph_american_lv_equipment_1 = {
+		year = 1941
+		
+		archetype = amph_american_lv_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+	}
+	
+	# LVT-2 Water Buffalo ##2962 build##
+	amph_american_lv_equipment_2 = {
+		year = 1942
+		
+		archetype = amph_american_lv_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+	}
+	
+	# LVT-2(A) Water Buffalo II more armor ##450 build##
+	amph_american_lv_equipment_3 = {
+		year = 1943
+		
+		archetype = amph_american_lv_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+		
+		armor_value = 7
+	}
+	
+	# LVT-3 Bushmaster ##450 build##
+	amph_american_lv_equipment_4 = {
+		year = 1943
+		
+		archetype = amph_american_lv_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+		
+		armor_value = 10
+	}
+	# LVT-3C Bushmaster with armored roof on cargo bay ##450 build##
+	amph_american_lv_equipment_5 = {
+		year = 1949
+		
+		archetype = amph_american_lv_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+		
+		armor_value = 8
+		resources = {
+			oil = 2
+			steel = 4
+			aluminium = 1 #for tracks
+			tungsten = 1
+		}
+	}
+	# LVT-4 Water Buffalo II more armor ##8348 build##
+	amph_american_lv_equipment_6 = {
+		year = 1943
+		
+		archetype = amph_american_lv_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+		
+		soft_attack = 4
+		armor_value = 10
+	}
+	
 	amph_american_tank_equipment = {
 		year = 1942
 		
@@ -471,7 +591,7 @@ hellcat_equipment = {
 		#Offensive Abilities
 		soft_attack = 6
 		hard_attack = 7.5
-		ap_attack = 27
+		ap_attack = 10
 		air_attack = 2
 
 		#Space taken in convoy
@@ -481,21 +601,32 @@ hellcat_equipment = {
 		resources = {
 			oil = 2
 			steel = 4
+			aluminium = 1
 			tungsten = 1
 		}
-
 	}
 
-	# LVT(A)1 Amtrack
+	# LVT-1 Amtrack ##1225 build##
 	amph_american_tank_equipment_1 = {
-		year = 1942
+		year = 1941
 		
 		archetype = amph_american_tank_equipment
 		priority = 10
 		visual_level = 0
 		is_convertable = yes
 	}
-
+	# LVT-1 Amtrack ##1225 build##
+	amph_american_tank_equipment_2 = {
+		year = 1941
+		
+		archetype = amph_american_tank_equipment
+		priority = 10
+		visual_level = 0
+		is_convertable = yes
+		
+		hard_attack = 10
+		ap_attack = 15
+	}
 ##### Medium tanks ###########################################
 
 american_medium_tank_equipment = {

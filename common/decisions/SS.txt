@@ -1422,14 +1422,14 @@ SS_recruitment = {
 			}
 			has_country_flag = ss_expansion
 			date > 1944.3.1
-				968 = { 
-					controller = {
-						OR = {
-							tag = GER
-							is_in_faction_with = GER
-						}
+			968 = {
+				controller = {
+					OR = {
+						tag = GER
+						is_in_faction_with = GER
 					}
-				} 
+				}
+			} 
 		}
 		visible = {
 			OR = {
@@ -1447,7 +1447,7 @@ SS_recruitment = {
 			factor = 1
 		}
 		complete_effect = {
-			country_event = ss_event.716 
+			country_event = ss_event.716
 			
 			add_to_variable = { var = wehrmacht_anger value = 3}
 			subtract_from_variable = { var = SS_anger value = 3}
