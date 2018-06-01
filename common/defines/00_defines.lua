@@ -1109,8 +1109,8 @@ NAI = {
 	PLAN_ATTACK_DEPTH_FACTOR = 0.5,						-- Factor applied to size or enemy being attacked.
 	PLAN_STEP_COST_LIMIT = 11,							-- When stepping to draw a plan this cost makes it break if it hits hard terrain (multiplied by number of desired steps)
 	PLAN_STEP_COST_LIMIT_REDUCTION = 3,					-- Cost limit is reduced per iteration, making hard terrain less likely to be crossed the further into enemy territory it is
-	PLAN_FRONT_SECTION_MAX_LENGTH = 30,					-- When a front is longer than this it will be split in two sections for the AI
-	PLAN_FRONT_SECTION_MIN_LENGTH = 20,					-- When two front sections together are this short they will be merged for the AI
+	PLAN_FRONT_SECTION_MAX_LENGTH = 25,					-- When a front is longer than this it will be split in two sections for the AI
+	PLAN_FRONT_SECTION_MIN_LENGTH = 10,					-- When two front sections together are this short they will be merged for the AI
 	PLAN_MIN_SIZE_FOR_FALLBACK = 10000,					-- A country with less provinces than this will not draw fallback plans, but rather station their troops along the front
 	SEND_VOLUNTEER_EVAL_BASE_DISTANCE = 105.0,  			-- DNM, original 300 (AI mod) -- How far away it will evaluate sending volunteers if not a major power
 	SEND_VOLUNTEER_EVAL_MAJOER_POWER = 1.0, 			-- How willing major powers are to send volunteers.
@@ -1130,13 +1130,13 @@ NAI = {
 														-- Value of 200 should give 0.3% chance of Stalin going for instance crazy and conquering all of America
 	GENERATE_WARGOAL_THREAT_BASELINE = 1.0,	   			-- The baseline for what the AI considers the world is getting dangerous and we want to generate wargoals	
 	GENERATE_WARGOAL_ANTAGONIZE_SCALE = 0.35,    -- works to scale the AIs antagonize value vs the threat baseline for when it should act on existing claims: threat used for baseline is min_threat - antagonize * scale
-	RESERVE_TO_COMMITTED_BALANCE = 0,					-- DNM, originla 0.1 (ai overhaul mod) -- How many reserves compared to number of committed divisions in a combat (1.0 = as many as reserves as committed)
+	RESERVE_TO_COMMITTED_BALANCE = 0.1,					-- DNM, originla 0.1 (ai overhaul mod) -- How many reserves compared to number of committed divisions in a combat (1.0 = as many as reserves as committed)
 	DIPLOMACY_COMMUNIST_NOT_NEIGHBOUR = -10,			-- Communists want to stay consolidated with their influence
 	MAIN_ENEMY_FRONT_IMPORTANCE = 18.0,					-- How much extra focus the AI should put on who it considers to be its current main enemy.
 	EASY_TARGET_FRONT_IMPORTANCE = 10.0,					-- How much extra focus the AI should put on who it considers to be the easiest target.
 	AI_FRONT_MOVEMENT_FACTOR_FOR_READY = 0.2,			-- If less than this fraction of units on a front is moving, AI sees it as ready for action	
 	MICRO_POCKET_SIZE = 7,								-- Pockets with a size equal to or lower than this will be mocroed by the AI, for efficiency.
-	POCKET_DISTANCE_MAX = 0,						-- shortest square distance we bother about chasing pockets
+	POCKET_DISTANCE_MAX = 0,							-- shortest square distance we bother about chasing pockets
 	VP_LEVEL_IMPORTANCE_HIGH = 30,						-- Victory points with values higher than or equal to this are considered to be of high importance.
 	VP_LEVEL_IMPORTANCE_MEDIUM = 10,						-- Victory points with values higher than or equal to this are considered to be of medium importance.
 	VP_LEVEL_IMPORTANCE_LOW = 5,						-- Victory points with values higher than or equal to this are considered to be of low importance.
@@ -1346,7 +1346,7 @@ NAI = {
 	FORCE_FACTOR_AGAINST_EXTRA_MINOR = 0.15,					-- AI considers generating wargoals against minors below this % of force compared to themselves to get at a bigger enemy.
 	MAX_EXTRA_WARGOAL_GENERATION = 2,						-- AI may want to generate wargoals against weak minors to get at larger enemy, but never more that this at any given time.
 	NAVAL_MISSION_DISTANCE_BASE = 3500,						-- Base value when AI is evaluating distance score to places
-	NAVAL_MISSION_INVASION_BASE = 10000,						-- Base score for region with naval invasion (modified dynamically by prioritizing orders)
+	NAVAL_MISSION_INVASION_BASE = 15000,						-- Base score for region with naval invasion (modified dynamically by prioritizing orders)
 	NAVAL_MISSION_AGGRESSIVE_PATROL_DIVISOR = 1,			-- Divides patrol score when not defending
 	NAVAL_MISSION_AGGRESSIVE_ESCORT_DIVISOR = 2,			-- Divides escort score when not defending
 	NAVAL_MISSION_PATROL_NEAR_OWNED = 50000,				-- Extra patrol mission score near owned provinces
@@ -1359,9 +1359,9 @@ NAI = {
 	HOUR_BAD_COMBAT_REEVALUATE = 60,                  		-- DNM, original 60.0 (ai overhaul mod) -- if we are in combat for this amount and it goes shitty then try skipping it 
 	MIN_PLAN_VALUE_TO_MICRO_INACTIVE = 0.2,					-- The AI will not consider members of groups which plan is not activated AND evaluates lower than this.
 	
-	MAX_UNITS_FACTOR_AREA_ORDER = 1.2,					-- Factor for max number of units to assign to area defense orders
+	MAX_UNITS_FACTOR_AREA_ORDER = 1.4,					-- Factor for max number of units to assign to area defense orders
 	DESIRED_UNITS_FACTOR_AREA_ORDER = 1.2,				-- Factor for desired number of units to assign to area defense orders
-	MIN_UNITS_FACTOR_AREA_ORDER = 1.2,					-- Factor for min number of units to assign to area defense orders
+	MIN_UNITS_FACTOR_AREA_ORDER = 1.0,					-- Factor for min number of units to assign to area defense orders
 
 	MAX_UNITS_FACTOR_FRONT_ORDER = 2.5,					-- Factor for max number of units to assign to area front orders
 	DESIRED_UNITS_FACTOR_FRONT_ORDER = 2.5,				-- Factor for desired number of units to assign to area front orders
