@@ -1,0 +1,26 @@
+﻿###########################
+# BlackICE City Rename Events
+###########################
+
+add_namespace = ww2doctrine
+
+country_event = {
+	id = ww2doctrine.1
+	title = ww2doctrine.1.t
+	desc = ww2doctrine.1.desc
+	
+	#hidden = yes
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_ww1_doctrine_researched = yes
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	immediate = { set_country_flag = ww2_doctrine_active }
+	
+	option = {
+		name = ww2doctrine.1.a
+	}
+}
