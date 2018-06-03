@@ -461,6 +461,7 @@ country_event = {
 	mean_time_to_happen = {
 		days = 30
 	}
+	
 	#Divided
 	option = { 
 		name = politics.22.a
@@ -470,12 +471,17 @@ country_event = {
 		}
 		
 		add_political_power = -10
-		remove_ideas = unity_united_nation
-		add_ideas = unity_divided_nation
+		
+		swap_ideas = {
+			remove_idea = unity_united_nation
+			add_idea = unity_divided_nation
+		}
+		
 		set_country_flag = nation_divided
-		#clr_country_flag = nation_united
+		clr_country_flag = nation_united
 		clr_country_flag = nation_chaos
 		clr_country_flag = nation_civil_war
+		
 		if = {
 			limit = { has_government = socialism }
 			add_popularity = {
@@ -527,7 +533,8 @@ country_event = {
 		}
 	}
 	
-	option = { #Broken Nation/Chaos
+	#Broken Nation/Chaos
+	option = { 
 		name = politics.22.b
 		
 		trigger = {
@@ -536,12 +543,17 @@ country_event = {
 		}
 		
 		add_political_power = -30
-		remove_ideas = unity_united_nation
-		add_ideas = unity_broken_nation
+		
+		swap_ideas = { 
+			remove_idea = unity_united_nation
+			add_idea = unity_broken_nation
+		}
+		
 		set_country_flag = nation_chaos
 		clr_country_flag = nation_divided
-		#clr_country_flag = nation_united
+		clr_country_flag = nation_united
 		clr_country_flag = nation_civil_war
+		
 		if = {
 			limit = { has_government = socialism }
 			add_popularity = {
@@ -593,7 +605,8 @@ country_event = {
 		}
 	}
 	
-	option = { #Civil War
+	#Civil War
+	option = { 
 		name = politics.22.c
 		
 		trigger = {
@@ -601,12 +614,17 @@ country_event = {
 		}
 		
 		add_political_power = -50
-		remove_ideas = unity_united_nation
-		add_ideas = unity_civil_war
+		
+		swap_ideas = {
+			remove_idea = unity_united_nation
+			add_idea = unity_civil_war
+		}
+		
 		set_country_flag = nation_civil_war
 		clr_country_flag = nation_divided
 		clr_country_flag = nation_chaos
-		#clr_country_flag = nation_united
+		clr_country_flag = nation_united
+		
 		if = {
 			limit = { has_government = socialism }
 			add_popularity = {
