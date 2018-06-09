@@ -7911,25 +7911,36 @@ focus_tree = {
 		bypass = {
 			887 = { is_owned_by = GER }
 		}
+		
 		ai_will_do = {
 			factor = 10	
 			modifier = {
 				factor = 0
-				date < 1940.1.1
+				date < 1939.10.1
 			}
-		}	
+		}
+		
 		completion_reward = {
 			#Allied Anger
-			if={
-			limit={
-			date>1939.1.1
+			if = {
+				limit = {
+					date > 1939.1.1
+				}
+				add_to_variable = {
+					var = allied_anger
+					value = 1
+					tooltip = allied.anger.plus.1
+				}
+				else = {
+					custom_effect_tooltip =allied.anger.early
+					add_to_variable = {
+						var = allied_anger
+						value = 6
+						tooltip = allied.anger.plus.6
+					}
+				}
 			}
-			add_to_variable = { var = allied_anger value = 1 tooltip = allied.anger.plus.1 }
-			else={
-			custom_effect_tooltip =allied.anger.early
-			add_to_variable = { var = allied_anger value = 6 tooltip = allied.anger.plus.6 }
-			}
-			}
+			
 			country_event = germany.312
 		}
 	}
