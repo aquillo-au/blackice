@@ -3108,3 +3108,34 @@ foreign_support = {
 		}
 	}
 }
+doctrines = {
+	ww1_doctrines = {
+		icon = generic_research
+		
+		available = {
+			has_tech = stormtroopers
+			has_tech = sniper_pits
+			has_tech = infantry_MG_coordination
+			has_tech = rolling_barrage
+			has_tech = aircraft_observers
+			has_tech = telephone_communications
+			has_tech = infantry_tank_artillery_coordination
+			has_tech = cavalry_exploitation
+			has_tech = first_aid_stations
+		}
+		visible = {
+			has_tech = ww1_infantry
+			has_tech = complex_trench_systems
+			has_tech = ww1_artillery
+			has_tech = mobile_doctrines
+			has_tech = ww1_battlefield_support
+		}
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			set_country_flag = ww1_doctrine_researched
+		}
+	}
+}
