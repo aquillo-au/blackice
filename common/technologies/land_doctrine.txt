@@ -17,9 +17,6 @@ technologies = {
 		dependencies = {
 			creeping_barrage = 1
 		}
-		dependencies = {
-			infantry_MG_coordination = 1
-		}
 		
 		category_all_armor = {
 			breakthrough = 0.15
@@ -50,11 +47,13 @@ technologies = {
 		ai_research_weights = {
 			armor = 2.0
 		}
-		
 	}
 	
 	delay = {
-
+		dependencies = {
+			infantry_MG_coordination = 1
+		}
+		
 		category_all_infantry = {
 			max_organisation = 6
 		}
@@ -62,14 +61,12 @@ technologies = {
 			max_organisation = 4
 		}
 		
-		
 		enable_tactic = tactic_delay
 		
 		path = {
 			leads_to_tech = elastic_defence 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -87,11 +84,16 @@ technologies = {
 		ai_will_do = {
 			factor = 20
 		}
-		
 	}
 	
 	elastic_defence = {
-
+		dependencies = {
+			mobile_doctrines = 1
+		}
+		dependencies = {
+			armor_support = 1
+		}
+		
 		land_reinforce_rate = 0.03
 
 		category_tanks = {
@@ -101,7 +103,6 @@ technologies = {
 		category_all_armor = {
 			maximum_speed = 0.12
 		}
-		
 	
 		enable_tactic = tactic_elastic_defense
 		
@@ -113,7 +114,6 @@ technologies = {
 			leads_to_tech = armored_spearhead 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -131,11 +131,12 @@ technologies = {
 		ai_will_do = {
 			factor = 20
 		}
-		
 	}
 	
 	mobile_infantry = { #Branch focuses on infantry, included Motorised and Mechanised.
-	
+		dependencies = {
+			mobile_doctrines = 1
+		}
 		xor={
 			armored_spearhead
 		}
@@ -143,16 +144,15 @@ technologies = {
 			maximum_speed = 0.07
 			default_morale = 0.2
 		}
-		
 		ss_semi_motorized = {
 			maximum_speed = 0.07
 			default_morale = 0.2
 		}
-		ss_motorized = {
+		motorized = {
 			maximum_speed = 0.1
 			default_morale = 0.2
 		}
-		motorized = {
+		ss_motorized = {
 			maximum_speed = 0.1
 			default_morale = 0.2
 		}
@@ -164,13 +164,13 @@ technologies = {
 			maximum_speed = 0.1
 			default_morale = 0.2
 		}
+		
 		#army_infantry_speed_factor = 0.1
 		
 		path = {
 			leads_to_tech = mass_motorization 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -193,14 +193,14 @@ technologies = {
 	mass_motorization = {
 		category_all_infantry = {
 			max_organisation = 6
-		}	
+		}
+		
 		#army_infantry_speed_factor = 0.1
 		
 		path = {
 			leads_to_tech = mechanised_offensive 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -218,28 +218,21 @@ technologies = {
 		ai_will_do = {
 			factor = 10
 		}
-		
 	}
 	
 	mechanised_offensive = {
 
 		semi_motorized  = {
 			max_organisation = 8
-			
 		}
-		#army_infantry_speed_factor = 0.15
 		ss_semi_motorized  = {
 			max_organisation = 8
-			
-		}
-
-		ss_motorized   = {
-			max_organisation = 8
-			
 		}
 		motorized = {
 			max_organisation = 8
-			
+		}
+		ss_motorized   = {
+			max_organisation = 8
 		}
 		mechanized = {
 			max_organisation = 8
@@ -248,20 +241,18 @@ technologies = {
 			max_organisation = 8
 		}
 		
+		#army_infantry_speed_factor = 0.15
 		
 		category_tanks = {
 			max_organisation = 2
 		}
-	
 
 		enable_tactic = tactic_blitz
-		
 		
 		path = {
 			leads_to_tech = kampfgruppe 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -270,7 +261,6 @@ technologies = {
 			land_doctrine
 			cat_mobile_warfare
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -280,28 +270,30 @@ technologies = {
 		ai_will_do = {
 			factor = 5
 		}
-		
 	}
 	
 	armored_spearhead = { #Branch focused on Tanks 
-	
+		dependencies = {
+			armor_support  = 1
+		}
+		xor = {
+			mobile_infantry
+		}
+		
 		category_tanks = {
 			max_organisation = 2
 			breakthrough = 0.15
 		}
+		
 		army_armor_speed_factor = 0.05
+		
 		enable_tactic = tactic_blitz
 		
-	
-		xor = {
-			mobile_infantry
-		}
 	
 		path = {
 			leads_to_tech = schwerpunk 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -310,8 +302,6 @@ technologies = {
 			land_doctrine
 			cat_mobile_warfare
 		}
-
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -321,7 +311,6 @@ technologies = {
 		ai_will_do = {
 			factor = 30
 		}
-		
 	}
 	
 	schwerpunk = {
@@ -329,17 +318,16 @@ technologies = {
 		category_tanks = {
 			max_organisation = 3
 		}
-		army_armor_speed_factor = 0.05
 		category_all_armor = {
 			default_morale = 0.1
 		}
 		
+		army_armor_speed_factor = 0.05
 		
 		path = {
 			leads_to_tech = blitzkrieg 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -357,7 +345,6 @@ technologies = {
 		ai_will_do = {
 			factor = 10
 		}
-		
 	}
 	
 	blitzkrieg = {
@@ -365,27 +352,32 @@ technologies = {
 		category_tanks = {
 			max_organisation = 2
 		}
-		army_armor_speed_factor = 0.05
-		army_speed_factor = 0.1
 		category_all_armor = {
 			default_morale = 0.1
 		}
+		
+		army_armor_speed_factor = 0.05
+		army_speed_factor = 0.1
 		
 		enable_tactic = tactic_breakthrough
 		
 		motorized = {
 			max_organisation = 4
 		}
+		ss_motorized = {
+			max_organisation = 4
+		}
 		mechanized = {
 			max_organisation = 4
 		}		
-
+		ss_mechanized = {
+			max_organisation = 4
+		}
 		
 		path = {
 			leads_to_tech = kampfgruppe 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -394,7 +386,6 @@ technologies = {
 			land_doctrine
 			cat_mobile_warfare
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -404,7 +395,6 @@ technologies = {
 		ai_will_do = {
 			factor = 10
 		}
-		
 	}
 	
 	kampfgruppe = {
@@ -415,12 +405,10 @@ technologies = {
 			default_morale = 0.1
 			max_organisation = 4
 		}
-		
 		category_all_armor = {
 		    default_morale = 0.1
 		    soft_attack = 0.1
 		}
-		
 		# faster planning
 		planning_speed = 0.2
 		
@@ -434,7 +422,6 @@ technologies = {
 			leads_to_tech = volkssturm 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -443,7 +430,6 @@ technologies = {
 			land_doctrine
 			cat_mobile_warfare
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -453,11 +439,9 @@ technologies = {
 		ai_will_do = {
 			factor = 10
 		}
-		
 	}
 	
 	firebrigades = { #Branch focused on mobile warfares
-	
 		xor={
 			volkssturm
 		}
@@ -468,13 +452,11 @@ technologies = {
 		category_tanks = {
 			max_organisation = 2
 		}
-
 		
 		path = {
 			leads_to_tech = backhand_blow 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -483,7 +465,6 @@ technologies = {
 			land_doctrine
 			cat_mobile_warfare
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -493,11 +474,9 @@ technologies = {
 		ai_will_do = {
 			factor = 5
 		}
-		
 	}
 	
 	backhand_blow = {
-
 	
 		enable_tactic = tactic_backhand_blow
 		
@@ -505,7 +484,6 @@ technologies = {
 			leads_to_tech = modern_blitzkrieg 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -514,7 +492,6 @@ technologies = {
 			land_doctrine
 			cat_mobile_warfare
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -668,17 +645,18 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		dependencies = {
-			infiltration_attacks = 1
-		}
-		dependencies = {
 			infantry_tank_artillery_coordination = 1
 		}
 		dependencies = {
-			creeping_barrage = 1
+			rolling_barrage = 1
 		}
 		dependencies = {
-			infantry_MG_coordination = 1
+			artillery_observers = 1
 		}
+		dependencies = {
+			telephone_communications = 1
+		}
+		
 		supply_consumption_factor = 0.10
 		
 		category_front_line = {
@@ -695,7 +673,6 @@ technologies = {
 			land_doctrine
 			cat_superior_firepower
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -712,11 +689,12 @@ technologies = {
 	}
 	
 	sup_delay = {
-
+		dependencies = {
+			harassment_fire = 1
+		}
 		category_light_infantry = {
 			max_organisation = 6
 		}
-		
 		category_all_infantry = {
 			max_organisation = 4
 		}
@@ -747,13 +725,14 @@ technologies = {
 	}
 	
 	mobile_defence = {
-
+		dependencies = {
+			creeping_barrage = 1
+		}
 		category_all_infantry = {
 			defense = 0.15
 		}
 		
 		enable_tactic = tactic_elastic_defense
-		
 		
 		path = {
 			leads_to_tech = intergrated_support 
@@ -763,7 +742,6 @@ technologies = {
 			leads_to_tech = dispersed_support 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -785,11 +763,12 @@ technologies = {
 	}
 	
 	intergrated_support = { #This Branch is focused on boosting stuff in the support column 
-	
+		dependencies = {
+			artillery_observers = 1
+		}
 		xor={
 			dispersed_support
 		}
-
 	
 		category_support_battalions = {
 			max_organisation = 4
@@ -822,7 +801,9 @@ technologies = {
 	}
 	
 	regimental_combat_teams = {
-
+		dependencies = {
+			continuous_fire = 1
+		}
 		category_support_battalions = {
 			max_organisation = 4
 			soft_attack = 0.15
@@ -842,7 +823,6 @@ technologies = {
 			land_doctrine
 			cat_superior_firepower
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -890,10 +870,14 @@ technologies = {
 	}
 	
 	overwhelming_firepower = {
-
+		dependencies = {
+			continuous_fire = 1
+		}
+		
 		category_line_artillery = {
 			soft_attack = 0.2
 		}
+		
 		army_attack_factor = 0.05
 		army_defence_factor = 0.05	
 		enable_tactic = tactic_overwhelming_fire
@@ -902,7 +886,6 @@ technologies = {
 			leads_to_tech = sup_mechanized_offensive 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -911,7 +894,6 @@ technologies = {
 			land_doctrine
 			cat_superior_firepower
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -998,7 +980,6 @@ technologies = {
 	}
 	
 	combined_arms = {
-
 		
 		category_all_armor = {
 			hard_attack = 0.05
@@ -1011,7 +992,6 @@ technologies = {
 			leads_to_tech = tactical_control 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -1051,7 +1031,6 @@ technologies = {
 			land_doctrine
 			cat_superior_firepower
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1068,7 +1047,7 @@ technologies = {
 		category_front_line = {
 			max_organisation = 3
 		}
-			
+		
 		#combat advantage when air superior
 		army_bonus_air_superiority_factor = 0.20
 		
@@ -1079,7 +1058,6 @@ technologies = {
 			land_doctrine
 			cat_superior_firepower
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1114,7 +1092,6 @@ technologies = {
 			land_doctrine
 			cat_superior_firepower
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1127,7 +1104,9 @@ technologies = {
 	}
 	
 	forward_observers = {
-
+		dependencies = {
+			artillery_observers = 1
+		}
 		land_reinforce_rate = 0.02
 
 		recon = {
@@ -1145,11 +1124,11 @@ technologies = {
 		tankettes = { 
 			recon = 1 
 		}
+		
 		path = {
 			leads_to_tech = advanced_firebases 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -1158,7 +1137,6 @@ technologies = {
 			land_doctrine
 			cat_superior_firepower
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1179,7 +1157,6 @@ technologies = {
 		category_tanks = {
 			max_organisation = 3
 		}
-
 		category_all_armor = {
 			default_morale = 0.05
 		}
@@ -1190,7 +1167,6 @@ technologies = {
 			leads_to_tech = shock_and_awe 
 			research_cost_coeff = 1
 		}
-
 		
 		doctrine = yes	
 		research_cost = 3
@@ -1199,7 +1175,6 @@ technologies = {
 			land_doctrine
 			cat_superior_firepower
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1217,6 +1192,7 @@ technologies = {
 			soft_attack = 0.05 
 			hard_attack = 0.05
 		}
+		
 		army_attack_factor = 0.05
 		army_defence_factor = 0.05	
 		enable_tactic = tactic_breakthrough
@@ -1228,7 +1204,6 @@ technologies = {
 			land_doctrine
 			cat_superior_firepower
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1240,7 +1215,6 @@ technologies = {
 		}
 	}
 	
-	
 	trench_warfare = {
 
 		xor = { mobile_warfare superior_firepower mass_assault } 
@@ -1248,23 +1222,24 @@ technologies = {
 		max_dig_in = 2
 		dig_in_speed_factor = 0.25 #25% bonus
 		
-		
 		path = {
 			leads_to_tech = grand_battle_plan 
 			research_cost_coeff = 1
 		}
+		
 		dependencies = {
-			infiltration_attacks = 1
+			complex_trench_systems = 1
 		}
 		dependencies = {
-			infantry_tank_artillery_coordination = 1
+			communication_trenches = 1
 		}
 		dependencies = {
-			creeping_barrage = 1
+			barbed_wire = 1
 		}
 		dependencies = {
-			infantry_MG_coordination = 1
+			pillboxes = 1
 		}
+		
 		doctrine = yes	
 		research_cost = 3
 		
@@ -1272,7 +1247,6 @@ technologies = {
 			land_doctrine
 			cat_grand_battle_plan
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1290,7 +1264,6 @@ technologies = {
 	}
 	
 	grand_battle_plan = {
-	
 
 		path = {
 			leads_to_tech = prepared_defense 
@@ -1307,7 +1280,6 @@ technologies = {
 			land_doctrine
 			cat_grand_battle_plan
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1318,8 +1290,6 @@ technologies = {
 			factor = 20
 		}
 	}
-	
-
 	
 	prepared_defense = {
 
@@ -1340,7 +1310,6 @@ technologies = {
 			land_doctrine
 			cat_grand_battle_plan
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1377,7 +1346,6 @@ technologies = {
 			land_doctrine
 			cat_grand_battle_plan
 		}
-
 		
 		folder = {
 			name = land_doctrine_folder
@@ -1402,6 +1370,15 @@ technologies = {
 			max_organisation = 4
 		}
 		mechanized = {
+			max_organisation = 4
+		}
+		ss_semi_motorized = {
+			max_organisation = 4
+		}
+		ss_motorized = {
+			max_organisation = 4
+		}
+		ss_mechanized = {
 			max_organisation = 4
 		}
 		
