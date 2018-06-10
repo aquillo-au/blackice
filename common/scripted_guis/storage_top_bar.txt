@@ -1,0 +1,39 @@
+scripted_gui = {
+
+	storage = {
+		context_type = player_context
+		
+		window_name = "storage_container"
+		
+		visible = {
+            always = yes
+		}
+
+		effects = {
+            buy_icon_click = {
+				set_variable = { show_storage = 1 }
+			}
+		}
+	}
+	
+	storage_menu = {
+		context_type = player_context
+		
+		window_name = "storage_menu_container"
+		visible = {
+			check_variable = { show_storage > 0 }
+		}
+		
+		effects = {
+			exitbutton_click = {
+				set_variable = { show_storage = 0 }
+			}
+		}
+		
+		triggers = {
+		
+		}
+	}
+    
+}
+

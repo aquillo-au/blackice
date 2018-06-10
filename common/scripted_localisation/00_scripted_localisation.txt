@@ -244,3 +244,476 @@ defined_text = { #
 		localization_key = Spanish_Battles
 	}
 }
+
+defined_text = { # Country
+	name = GetTaxesLevel
+	text = {
+		trigger = {
+			ROOT = { has_idea = tax_minimal }
+		}
+		localization_key = TAXES_MINIMAL_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tax_low }
+		}
+		localization_key = TAXES_LOW_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tax_average }
+		}
+		localization_key = TAXES_AVERAGE_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tax_high }
+		}
+		localization_key = TAXES_HIGH_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tax_extreme }
+		}
+		localization_key = TAXES_EXTREME_LEVEL
+	}
+}
+
+defined_text = { # Country
+	name = GetOfficerLevel
+	text = {
+		trigger = {
+			ROOT = { has_idea = officer_train_none }
+		}
+		localization_key = OFFICER_NONE_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = officer_train_low }
+		}
+		localization_key = OFFICER_LOW_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = officer_train_high }
+		}
+		localization_key = OFFICER_HIGH_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = officer_train_elite }
+		}
+		localization_key = OFFICER_ELITE_LEVEL
+	}
+}
+
+defined_text = { # Country
+	name = GetArmyLevel
+	text = {
+		trigger = {
+			ROOT = { has_idea = train_none }
+		}
+		localization_key = TRAIN_NONE_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = train_low }
+		}
+		localization_key = TRAIN_LOW_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = train_medium }
+		}
+		localization_key = TRAIN_MEDIUM_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = train_high }
+		}
+		localization_key = TRAIN_HIGH_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = train_elite }
+		}
+		localization_key = TRAIN_ELITE_LEVEL
+	}
+}
+
+defined_text = { # Country
+	name = GetRubberImport
+	text = {
+		trigger = {
+			check_variable = { rubber_import > 0 }
+		}
+		localization_key = RUBBER_IMPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetOilImport
+	text = {
+		trigger = {
+			check_variable = { oil_import > 0 }
+		}
+		localization_key =OIL_IMPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetSteelImport
+	text = {
+		trigger = {
+			check_variable = { steel_import > 0 }
+		}
+		localization_key = STEEL_IMPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetAluminiumImport
+	text = {
+		trigger = {
+			check_variable = { aluminium_import > 0 }
+		}
+		localization_key = ALUMINIUM_IMPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetTungstenImport
+	text = {
+		trigger = {
+			check_variable = { tungsten_import > 0 }
+		}
+		localization_key = TUNGSTEN_IMPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetChromiumImport
+	text = {
+		trigger = {
+			check_variable = { chromium_import > 0 }
+		}
+		localization_key = CHROMIUM_IMPORT
+	}
+}
+
+
+
+
+defined_text = { # Country
+	name = GetRubberExport
+	text = {
+		trigger = {
+			check_variable = { rubber_Export > 0 }
+		}
+		localization_key = RUBBER_EXPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetOilExport
+	text = {
+		trigger = {
+			check_variable = { oil_Export > 0 }
+		}
+		localization_key = OIL_EXPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetSteelExport
+	text = {
+		trigger = {
+			check_variable = { steel_Export > 0 }
+		}
+		localization_key = STEEL_EXPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetAluminiumExport
+	text = {
+		trigger = {
+			check_variable = { aluminium_export > 0 }
+		}
+		localization_key = ALUMINIUM_EXPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetTungstenExport
+	text = {
+		trigger = {
+			check_variable = { tungsten_Export > 0 }
+		}
+		localization_key = TUNGSTEN_EXPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetChromiumExport
+	text = {
+		trigger = {
+			check_variable = { chromium_Export > 0 }
+		}
+		localization_key = CHROMIUM_EXPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetOccupiedStates
+	text = {
+		trigger = {
+			check_variable = { no > 0 }
+		}
+		localization_key = OCCUPIED_STATES
+	}
+}
+
+defined_text = { # Country
+	name = GetDailyIncome #for the colour
+	text = {
+		trigger = {
+			check_variable = { money_gain > 0 }
+		}
+		localization_key = POS_MONEY
+	}
+	text = {
+		trigger = {
+			check_variable = { money_gain < 0 }
+		}
+		localization_key = NEG_MONEY
+	}
+}
+
+defined_text = { # Country
+	name = GetConsumerGoods 
+	text = {
+		trigger = {
+			has_variable = consumer_factor
+		}
+		localization_key = CONS_GOODS
+	}
+	
+}
+
+defined_text = { # Country
+	name = GetMaxExport 
+	text = {
+		trigger = {
+			check_variable = { export_upkeep > 0.99 }
+		}
+		localization_key = EXPORT_MAX
+	}
+	
+}
+
+defined_text = { # Country
+	name = GetImportTariffsLevel
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_none }
+		}
+		localization_key = TARIFFS_IMPORT_MINIMAL_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_low }
+		}
+		localization_key = TARIFFS_IMPORT_LOW_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_average }
+		}
+		localization_key = TARIFFS_IMPORT_AVERAGE_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_high }
+		}
+		localization_key = TARIFFS_IMPORT_HIGH_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_extreme }
+		}
+		localization_key = TARIFFS_IMPORT_EXTREME_LEVEL
+	}
+}
+
+defined_text = { # Country
+	name = GetExportTariffsLevel
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_none }
+		}
+		localization_key = TARIFFS_EXPORT_MINIMAL_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_low }
+		}
+		localization_key = TARIFFS_EXPORT_LOW_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_average }
+		}
+		localization_key = TARIFFS_EXPORT_AVERAGE_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_high }
+		}
+		localization_key = TARIFFS_EXPORT_HIGH_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = tariffs_extreme }
+		}
+		localization_key = TARIFFS_EXPORT_EXTREME_LEVEL
+	}
+}
+
+defined_text = { # Country
+	name = GetPressLevel
+	text = {
+		trigger = {
+			ROOT = { has_idea = press_free }
+		}
+		localization_key = PRESS_FREE_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = press_regulated }
+		}
+		localization_key = PRESS_REGULATED_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = press_censored }
+		}
+		localization_key = PRESS_CENSORED_LEVEL
+	}
+	text = {
+		trigger = {
+			ROOT = { has_idea = press_state }
+		}
+		localization_key = PRESS_STATE_LEVEL
+	}
+}
+
+
+defined_text = { # Country
+	name = GetMoneyLoss
+	text = {
+		trigger = {
+			ROOT = { check_variable = { money_gain > 0 } }
+		}
+		localization_key = MONEY_LOSS_TT
+	}
+}
+
+defined_text = { # Country
+	name = GetRubberConsume
+	text = {
+		trigger = {
+			check_variable = { rubber_consumed > 0 }
+		}
+		localization_key = RUBBER_CONSUMED
+	}
+}
+
+
+defined_text = { # Country
+	name = GetAluminiumConsume
+	text = {
+		trigger = {
+			check_variable = { aluminium_consumed > 0 }
+		}
+		localization_key = ALUMINIUM_CONSUMED
+	}
+}
+
+defined_text = { # Country
+	name = GetSteelConsume
+	text = {
+		trigger = {
+			check_variable = { steel_consumed > 0 }
+		}
+		localization_key = STEEL_CONSUMED
+	}
+}
+
+defined_text = { # Country
+	name = GetOilConsume
+	text = {
+		trigger = {
+			check_variable = { oil_consumed > 0 }
+		}
+		localization_key = OIL_CONSUMED
+	}
+}
+
+defined_text = { # Country
+	name = GetChromiumConsume
+	text = {
+		trigger = {
+			check_variable = { chromium_consumed > 0 }
+		}
+		localization_key = CHROMIUM_CONSUMED
+	}
+}
+
+
+defined_text = { # Country
+	name = GetWarSupport
+	text = {
+		trigger = {
+			has_war_support > 0.74
+		}
+		localization_key = GOOD_WAR_SUPPORT
+	}
+	text = {
+		trigger = {
+			has_war_support < 0.76
+		}
+		localization_key = BAD_WAR_SUPPORT
+	}
+}
+
+defined_text = { # Country
+	name = GetStability
+	text = {
+		trigger = {
+			has_stability > 0.74
+		}
+		localization_key = GOOD_STABILITY
+	}
+	text = {
+		trigger = {
+			has_stability < 0.76
+		}
+		localization_key = BAD_STABILITY
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,474 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			every_country={
+				set_variable = { var = dx value = 0 }
+				set_variable = { idea_cost_money = 75 }
+				every_owned_state = {
+					limit = { state_population < 2130000 }
+					set_variable = { var = state_taxes value = state_population }
+					divide_variable = { var = state_taxes value = 10000 }
+					#round_variable = state_taxes
+				}
+			}
+		}
+	}
+    
+    on_daily = {
+		effect = { 
+				### -- STORAGE
+				set_variable = { storage = num_of_factories }
+				multiply_variable = { storage = 2 }
+				round_variable = storage
+	
+				### -- TAXES
+				set_variable  = { var = taxes value = 0 }
+				set_variable  = { var = occupation_taxes value = 0 }
+				every_owned_state = {
+					limit = { OR = { is_core_of = ROOT AND = { OWNER = { has_civil_war = yes tag = d01 has_war_with = SPR } is_core_of = SPR } } is_fully_controlled_by = ROOT }
+					set_temp_variable = { state_taxes_temp = state_taxes }
+					divide_temp_variable = { state_taxes_temp = 1000 }
+					add_to_variable { var = ROOT.taxes value = state_taxes_temp } 		
+				}	
+					
+				set_variable = { stability_var = stability }
+				add_to_variable = { var = stability_var value = 0.25 }
+				
+				set_variable = { war_support_var = has_war_support }
+				add_to_variable = { var = war_support_var value = 0.25 }
+				
+				### -- FACTORIES
+				
+				set_variable = { nmn = num_of_civilian_factories}
+				divide_variable = { var = nmn value = 100 }
+				multiply_variable = { var = nmn value = 4.5 } #CIV gives 5 daily ###---- GAIN
+				
+				set_variable = { nmm = num_of_military_factories}
+				divide_variable = { var = nmm value = 100 }
+				multiply_variable = { var = nmm value = 3.5 } #Consumes 3 daily
+				
+				set_variable = { nmnn = num_of_naval_factories}
+				divide_variable = { var = nmnn value = 100 }
+				multiply_variable = { var = nmnn value = 6 } #Consumes 6 daily
+				
+				### -- Occupied States
+				
+				set_variable = { no = num_occupied_states}
+				divide_variable = { var = no value = 100 }
+				
+				
+	
+
+				#set_variable = { nc = num_of_core_states}
+				#divide_variable = { var = ncore value = 100 }
+				#multiply_variable = { var = ncore value =  } #Consumes 2 daily
+				
+				
+				### -- RESSOURCES
+				
+				set_variable = { chromium_import = resource_imported@chromium}
+				divide_variable = { var = chromium_import value = 100 }
+				
+				set_variable = { tungsten_import = resource_imported@tungsten}
+				divide_variable = { var = tungsten_import value = 200 }
+				
+				set_variable = { rubber_import = resource_imported@rubber}
+				divide_variable = { var = rubber_import value = 200 }
+				
+				set_variable = { aluminum_import = resource_imported@aluminium}
+				divide_variable = { var = aluminium_import value = 200 }
+				
+				set_variable = { oil_import = resource_imported@oil}
+				divide_variable = { var = oil_import value = 100 }
+				
+				set_variable = { steel_import = resource_imported@steel}
+				divide_variable = { var = steel_import value = 200 }
+				
+				
+				set_variable = { chromium_export = resource_exported@chromium}
+				divide_variable = { var = chromium_export value = 800 }
+				
+				set_variable = { tungsten_export = resource_exported@tungsten}
+				divide_variable = { var = tungsten_export value = 800 }
+				
+				set_variable = { rubber_export = resource_exported@rubber}
+				divide_variable = { var = rubber_export value = 800 }
+				
+				set_variable = { aluminium_export = resource_exported@aluminium}
+				divide_variable = { var = aluminium_export value = 800 }
+				
+				set_variable = { oil_export = resource_exported@oil}
+				divide_variable = { var = oil_export value = 800 }
+				
+				set_variable = { steel_export = resource_exported@steel}
+				divide_variable = { var = steel_export value = 800 }
+				
+					### -- INDUSTRY RESOURCES
+					
+				set_variable = { chromium_consumed = resource_consumed@chromium}
+				divide_variable = { var = chromium_consumed value = 100 }
+				
+				set_variable = { tungsten_consumed = resource_consumed@tungsten}
+				divide_variable = { var = tungsten_consumed value = 125 }
+				
+				set_variable = { rubber_consumed = resource_consumed@rubber}
+				divide_variable = { var = rubber_consumed value = 150 }
+				
+				set_variable = { aluminium_consumed = resource_consumed@aluminium}
+				divide_variable = { var = aluminium_consumed value = 175 }
+				
+				set_variable = { oil_consumed = resource_consumed@oil}
+				divide_variable = { var = oil_consumed value = 100 }
+				
+				set_variable = { steel_consumed = resource_consumed@steel}
+				divide_variable = { var = steel_consumed value = 225 }
+				
+				
+				### -- MILITARY UPKEEP
+				
+				if = {
+					limit = {
+						has_war = yes NOT = { has_variable = state_capture }
+					}
+					set_variable = { state_capture = 0 }
+				}
+				
+				set_variable = { ms = num_divisions }
+				#round_variable = ms
+				
+				set_variable = { queue = amount_manpower_in_deployment_queue }
+				
+					### -- OFFICER & RECRUITMENT LAWS
+				
+				if = {
+					limit = { has_idea = officer_train_none }
+					multiply_variable = { var = ms value = 0.9 }
+				}
+				if = {
+					limit = { has_idea = officer_train_low }
+					multiply_variable = { var = ms value = 1.1 }
+				}
+				if = {
+					limit = { has_idea = officer_train_high }
+					multiply_variable = { var = ms value = 1.15 }
+				}
+				if = {
+					limit = { has_idea = officer_train_elite }
+					multiply_variable = { var = ms value = 1.2 }
+				}
+				
+				if = {
+					limit = { has_idea = train_none }
+					multiply_variable = { var = ms value = 0.9 }
+				}
+				if = {
+					limit = { has_idea = train_low }
+					multiply_variable = { var = ms value = 1.05 }
+				}
+				if = {
+					limit = { has_idea = train_medium }
+					multiply_variable = { var = ms value = 1.1 }
+				}
+				if = {
+					limit = { has_idea = train_high }
+					multiply_variable = { var = ms value = 1.15 }
+				}
+				if = {
+					limit = { has_idea = train_elite }
+					multiply_variable = { var = ms value = 1.2 }
+				}
+				
+				
+				if = {
+					limit = { has_idea = officer_train_none }
+					multiply_variable = { var = queue value = 0.9 }
+				}
+				if = {
+					limit = { has_idea = officer_train_low }
+					multiply_variable = { var = queue value = 1.1 }
+				}
+				if = {
+					limit = { has_idea = officer_train_high }
+					multiply_variable = { var = queue value = 1.15 }
+				}
+				if = {
+					limit = { has_idea = officer_train_elite }
+					multiply_variable = { var = queue value = 1.2 }
+				}
+				
+				if = {
+					limit = { has_idea = train_none }
+					multiply_variable = { var = queue value = 0.9 }
+				}
+				if = {
+					limit = { has_idea = train_low }
+					multiply_variable = { var = queue value = 1.05 }
+				}
+				if = {
+					limit = { has_idea = train_medium }
+					multiply_variable = { var = queue value = 1.1 }
+				}
+				if = {
+					limit = { has_idea = train_high }
+					multiply_variable = { var = queue value = 1.15 }
+				}
+				if = {
+					limit = { has_idea = train_elite }
+					multiply_variable = { var = queue value = 1.2 }
+				}
+				
+				divide_variable = { var = ms value = 120 }
+				divide_variable = { var = queue value = 1000000 }
+				
+					
+				### -- DAILY GAIN / LOSS --revisit, scripted loc
+				
+				set_variable = { money_gain = 0 }
+				set_variable ={ money_loss = 0 }
+				
+					### -- GAIN
+					
+				set_variable = { pop = taxes }
+				multiply_variable = { pop = 10 }
+				#round_variable = pop
+					
+				if = {
+					limit = { has_idea = tax_minimal }
+					multiply_variable = { var = taxes value = 1.05 }
+				}
+				if = {
+					limit = { has_idea = tax_low }
+					multiply_variable = { var = taxes value = 1.10 }
+				}
+				if = {
+					limit = { has_idea = tax_average }
+					multiply_variable = { var = taxes value = 1.15 }
+				}
+				if = {
+					limit = { has_idea = tax_high }
+					multiply_variable = { var = taxes value = 1.2 }
+				}
+				if = {
+					limit = { has_idea = tax_extreme }
+					multiply_variable = { var = taxes value = 1.25 }
+				}
+				
+				multiply_variable = { taxes = stability_var }
+				
+				multiply_variable = { taxes = war_support_var }
+				
+				add_to_variable { var = money_gain value = taxes }
+				
+				add_to_variable = { var = money_gain value = nmn } #CIV gain, edited by taxes
+				
+
+				
+				set_variable = { var = consumer_factor value = modifier@consumer_goods_factor }
+				add_to_variable = { var = consumer_factor value = 1 }
+				multiply_variable = { var = money_gain value = consumer_factor }
+				subtract_from_variable = { var = consumer_factor value = 1 }
+				multiply_variable = { var = consumer_factor value = 100 }
+				round_variable = consumer_factor
+				
+				add_to_variable = { var = money_gain value = chromium_export }
+				add_to_variable = { var = money_gain value = steel_export }
+				add_to_variable = { var = money_gain value = tungsten_export }
+				add_to_variable = { var = money_gain value = rubber_export }
+				add_to_variable = { var = money_gain value = aluminium_export }
+				add_to_variable = { var = money_gain value = oil_export }
+				
+					### -- LOSS
+				
+				add_to_variable = { var = money_loss value = chromium_import }
+				add_to_variable = { var = money_loss value = steel_import }
+				add_to_variable = { var = money_loss value = tungsten_import }
+				add_to_variable = { var = money_loss value = rubber_import }
+				add_to_variable = { var = money_loss value = aluminium_import }
+				add_to_variable = { var = money_loss value = oil_import }
+				add_to_variable = { var = money_loss value = chromium_consumed }
+				add_to_variable = { var = money_loss value = steel_consumed }
+				add_to_variable = { var = money_loss value = tungsten_consumed }
+				add_to_variable = { var = money_loss value = rubber_consumed }
+				add_to_variable = { var = money_loss value = aluminium_consumed }
+				add_to_variable = { var = money_loss value = oil_consumed }
+				
+				add_to_variable = { var = money_loss value = ms } #Division count
+				#add_to_variable = { var = money_loss value = naval } #Ship count -- sadly its alliance ship count. useless.
+				add_to_variable = { var = money_loss value = nmm } #MIC upkeep
+				add_to_variable = { var = money_loss value = nmnn } #NIC upkeep
+				add_to_variable = { var = money_loss value = no } #Occupation cost
+				
+					### -- RESSOURCE UPKEEP / GAIN
+					
+				#UPKEEP
+				set_variable ={ import_upkeep = 0 }
+				
+				add_to_variable = { var = import_upkeep value = rubber_import}
+				add_to_variable = { var = import_upkeep value = chromium_import}
+				add_to_variable = { var = import_upkeep value = tungsten_import}
+				add_to_variable = { var = import_upkeep value = steel_import}
+				add_to_variable = { var = import_upkeep value = oil_import}
+				add_to_variable = { var = import_upkeep value = aluminium_import}
+				
+				if = {
+					limit = { has_idea = tariffs_none }
+					multiply_variable = { var = import_upkeep value = 1 }
+				}
+				if = {
+					limit = { has_idea = tariffs_low }
+					multiply_variable = { var = import_upkeep value = 1.05 }
+				}
+				if = {
+					limit = { has_idea = tariffs_average }
+					multiply_variable = { var = import_upkeep value = 1.10 }
+				}
+				if = {
+					limit = { has_idea = tariffs_high }
+					multiply_variable = { var = import_upkeep value = 1.15 }
+				}
+				if = {
+					limit = { has_idea = tariffs_extreme }
+					multiply_variable = { var = import_upkeep value = 1.2 }
+				}
+				
+				set_variable = { production_consumed = 0 }
+				
+				add_to_variable = { var = production_consumed value = rubber_consumed}
+				add_to_variable = { var = production_consumed value = chromium_import}
+				add_to_variable = { var = production_consumed value = tungsten_consumed}
+				add_to_variable = { var = production_consumed value = steel_consumed}
+				add_to_variable = { var = production_consumed value = oil_consumed}
+				add_to_variable = { var = production_consumed value = aluminum_consumed}
+				
+				#GAIN
+				set_variable ={ export_upkeep = 0 }
+
+				add_to_variable = { var = export_upkeep value = rubber_export}
+				add_to_variable = { var = export_upkeep value = chromium_export}
+				add_to_variable = { var = export_upkeep value = tungsten_export}
+				add_to_variable = { var = export_upkeep value = steel_export}
+				add_to_variable = { var = export_upkeep value = oil_export}
+				add_to_variable = { var = export_upkeep value = aluminum_export}
+				
+				if = {
+					limit = { has_idea = tariffs_none }
+					multiply_variable = { var = export_upkeep value = 1 }
+				}
+				if = {
+					limit = { has_idea = tariffs_low }
+					multiply_variable = { var = export_upkeep value = 1.05 }
+				}
+				if = {
+					limit = { has_idea = tariffs_average }
+					multiply_variable = { var = export_upkeep value = 1.1 }
+				}
+				if = {
+					limit = { has_idea = tariffs_high }
+					multiply_variable = { var = export_upkeep value = 1.15 }
+				}
+				if = {
+					limit = { has_idea = tariffs_extreme }
+					multiply_variable = { var = export_upkeep value = 1.20 }
+				}
+				
+				if = {
+					limit = {
+						check_variable = { export_upkeep > 0.99 }
+					}
+					subtract_from_variable = { var = money_gain value = chromium_export }
+					subtract_from_variable = { var = money_gain value = steel_export }
+					subtract_from_variable = { var = money_gain value = tungsten_export }
+					subtract_from_variable = { var = money_gain value = rubber_export }
+					subtract_from_variable = { var = money_gain value = aluminium_export }
+					subtract_from_variable = { var = money_gain value = oil_export }
+					set_variable = { var = export_upkeep value = 1 }
+					add_to_variable = { var = money_gain value = export_upkeep }
+				}
+				
+				### -- LAW MODIFIERS
+				
+					### -- PRESS
+				if = {
+					limit = { has_idea = press_free }
+					multiply_variable = { var = money_gain value = 1.05 }
+				}
+				if = {
+					limit = { has_idea = press_regulated }
+					multiply_variable = { var = money_gain value = 1 }
+				}
+				if = {
+					limit = { has_idea = press_censored }
+					multiply_variable = { var = money_gain value = 0.95 }
+				}
+				if = {
+					limit = { has_idea = press_state }
+					multiply_variable = { var = money_gain value = 0.9 }
+				}
+				
+					### -- TOTAL INCOME
+				set_variable = { var = money_gain_2 value = money_gain }	
+				subtract_from_variable = { var = money_gain value = money_loss }
+				add_to_variable = { var = dx value = money_gain  }
+				
+				#UI help
+				if = {
+					limit = {
+						check_variable = { dx > 99.9 } 
+					}
+					round_variable = dx
+				}
+				
+				#UI help
+				if = {
+					limit = {
+						check_variable = { dx < -99.9 } 
+					}
+					round_variable = dx
+				}
+				
+				#Max Money
+				if = {
+					limit = {
+						check_variable = { dx > 1999.9 } 
+					}
+					set_variable = { dx = 2000 } #max
+				}
+				
+				#Min Money
+				if = {
+					limit = {
+						check_variable = { dx < -1000 } 
+					}
+					set_variable = { dx = -1000 }
+				}
+        }
+    }
+
+	#Money Gain through capturing states - Fascism / Communism only?
+	on_state_control_changed = {
+		effect = {
+			if = { 
+				limit = {
+					FROM.FROM = { OR = { is_core_of = FROM is_core_of = d01 } NOT = { has_state_flag = looted } } 
+				}
+				FROM.FROM = { set_state_flag = { flag = loot days = 120 } set_variable = { state_value = state_strategic_value } divide_variable = { state_value = 25 } round_variable = state_value add_to_variable = { Root.state_capture = state_value } add_to_variable = { Root.dx = state_value } }
+			}
+		}
+	}
+}
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
