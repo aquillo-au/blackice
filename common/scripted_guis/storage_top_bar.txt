@@ -28,6 +28,43 @@ scripted_gui = {
 			exitbutton_click = {
 				set_variable = { show_storage = 0 }
 			}
+			oil_icon_click = {
+			if = {
+				limit = {
+					has_country_flag = stop_oil_storing
+					check_variable = { oil > 0 }
+				}
+				clr_country_flag = stop_oil_storing
+			}
+			else_if = {
+				limit = {
+					NOT = { has_country_flag = stop_oil_storing }
+					check_variable = { oil > 0 }
+				}
+				set_country_flag = stop_oil_storing
+				clr_country_flag = stop_oil_deploy
+			}
+			
+			
+			if = {
+				limit = {
+					check_variable = { oil < 0 }
+					check_variable = { oil_storage > 0.99 }
+					check_variable = { oil_deploy_consume > -1 }
+					NOT = { has_country_flag = stop_oil_deploy }
+				}
+				set_country_flag = stop_oil_deploy
+				clr_country_flag = stop_oil_storing
+			}
+			else_if = {
+				limit = {
+					check_variable = { oil < 0 }
+					check_variable = { oil_storage > 0.99 }
+					check_variable = { oil_deploy_consume > -1 }
+					has_country_flag = stop_oil_deploy
+				}
+				clr_country_flag = stop_oil_deploy
+			}
 		}
 		
 		triggers = {

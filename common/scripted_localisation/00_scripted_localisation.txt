@@ -703,6 +703,42 @@ defined_text = { # Country
 	}
 }
 
+defined_text = { # Country
+	name = GetOilStorageStatus
+	text = {
+		trigger = {
+			has_country_flag = stop_oil_storing
+			check_variable = { oil > 0 }
+		}
+		localization_key = START_OIL_STORING
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = stop_oil_storing }
+			check_variable = { oil > 0 }
+		}
+		localization_key = STOP_OIL_STORING
+	}
+	text = {
+		trigger = {
+			check_variable = { oil < 0 }
+			check_variable = { oil_storage > 0.99 }
+			check_variable = { oil_deploy_consume > -1 }
+			NOT = { has_country_flag = stop_oil_deploy }
+		}
+		localization_key = STOP_OIL_DEPLOY
+	}
+	text = {
+		trigger = {
+			check_variable = { oil < 0 }
+			check_variable = { oil_storage > 0.99 }
+			check_variable = { oil_deploy_consume > -1 }
+			has_country_flag = stop_oil_deploy
+		}
+		localization_key = START_OIL_DEPLOY
+	}
+}
+
 
 
 

@@ -123,6 +123,10 @@ ideas = {
 						has_country_flag = Demobilizing
 					}
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			
 			modifier = {
@@ -152,7 +156,7 @@ ideas = {
 			cancel_if_invalid = no
 			
 			on_add = {
-				country_event = EAI_M.201 
+				hidden_effect = { country_event = EAI_M.201 }
 				set_country_flag = has_mob_standing
 				clr_country_flag = has_mob_limited
 				clr_country_flag = has_mob_reserved
@@ -206,43 +210,17 @@ ideas = {
 			removal_cost = -1
 			level = 2
 			available = {
-				OR = {
-					has_idea = mob_standing
-					has_country_flag = mob_standing_active
+				hidden_trigger = {
+					OR = {
+						has_idea = mob_standing
+						has_country_flag = mob_standing_active
+					}
 				}
 				OR = {
 					has_war = yes
 					has_idea = partial_economic_mobilisation
 					has_idea = war_economy
-					has_war_support > 0.7
 					threat > 0.3
-					
-					AND = { 
-						has_government = fascism
-						fascism > 0.89
-						threat > 0.2
-					}
-					AND = { 
-						has_government = communism
-						communism > 0.89
-						threat > 0.2
-					}
-				}
-				OR = {
-					AND = {
-					has_country_flag = education_minimal
-						OR = {
-							has_idea = tax_low
-							has_idea = tax_average
-							has_idea = tax_high
-							has_idea = tax_extreme
-						}
-					}
-					OR = {
-						has_idea = tax_average
-						has_idea = tax_high
-						has_idea = tax_extreme
-					}
 				}
 				NOT = {
 					OR = {
@@ -250,10 +228,14 @@ ideas = {
 						has_country_flag = Demobilizing
 					}
 				}
+				custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > idea_cost_money } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			
 			on_add = {
-				country_event = EAI_M.202 
+				hidden_effect = { country_event = EAI_M.202 }
 				clr_country_flag = has_mob_standing
 				set_country_flag = has_mob_limited
 				clr_country_flag = has_mob_reserved
@@ -330,32 +312,19 @@ ideas = {
 			removal_cost = -1
 			level = 1
 			available = {
-			OR = {
-				has_idea = mob_limited
-				has_country_flag = mob_limited_active
-			}
-				OR = {
-					has_war = yes
-					has_idea = war_economy
-					has_war_support > 0.8
-					threat > 0.5
-					
-					AND = { 
-						has_government = fascism
-						fascism > 0.95
-						threat > 0.25
-					}
-					AND = { 
-						has_government = communism
-						communism > 0.95
-						threat > 0.25
+				hidden_trigger = {	
+					OR = {
+						has_idea = mob_limited
+						has_country_flag = mob_limited_active 
 					}
 				}
+				has_idea = mob_limited
 				OR = {
-					has_idea = tax_low
-					has_idea = tax_average
-					has_idea = tax_high
-					has_idea = tax_extreme
+					any_country = {
+						has_war_with = ROOT 
+					}
+					#has_idea = war_economy
+					threat > 0.5
 				}
 				NOT = {
 					OR = {
@@ -363,6 +332,10 @@ ideas = {
 						has_country_flag = Demobilizing
 					}
 				}
+				custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > idea_cost_money } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			
 			modifier = {
@@ -376,7 +349,7 @@ ideas = {
 			}
 			
 			on_add = {
-				country_event = EAI_M.203
+				hidden_effect = { country_event = EAI_M.203 }
 				clr_country_flag = has_mob_standing
 				clr_country_flag = has_mob_limited
 				clr_country_flag = has_mob_reserved

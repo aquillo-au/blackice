@@ -260,7 +260,23 @@ country_event = {
 	is_triggered_only = yes
 				
 	option = {
-		set_variable = { factory_output = resource@oil }
+		every_country = {
+			set_country_flag = money
+		}
+	}
+	
+	option = {
+		set_country_flag = fill_oil_storage
+		set_country_flag = fill_rubber_storage
+		clr_country_flag = deplete_oil_storage
+		clr_country_flag = deplete_rubber_storage
+	}
+	
+	option = {
+		set_country_flag = deplete_oil_storage
+		set_country_flag = deplete_rubber_storage
+		clr_country_flag = fill_oil_storage
+		clr_country_flag = fill_rubber_storage
 	}
 }
 

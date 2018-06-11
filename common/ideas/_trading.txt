@@ -17,6 +17,10 @@ ideas = {
 					has_idea = tariffs_extreme
 					has_idea = tariffs_high
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			modifier = {
 				min_export = 0.75
@@ -66,6 +70,10 @@ ideas = {
 					has_government = fascism
 					has_war = yes
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			level = 2
 			modifier = {
@@ -112,6 +120,10 @@ ideas = {
 					has_idea = tariffs_none
 					has_idea = private_control
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			level = 2
 			modifier = {
@@ -197,6 +209,10 @@ ideas = {
 					} 
 					NOT = { has_opinion_modifier = MR_pact }
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			level = 1
 			modifier = {

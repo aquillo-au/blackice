@@ -36,6 +36,10 @@
 			removal_cost = -1
 
 			available = {
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			
 			level = 4
@@ -83,7 +87,12 @@
 						enemies_strength_ratio > 0.3
 					}					
 				}
+				custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
 			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
+			}
+			
 			
 			level = 3
 
@@ -125,7 +134,11 @@
 						enemies_strength_ratio > 0.3
 					}					
 				}
-				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
+			}
 			
 			level = 2
 
@@ -167,6 +180,10 @@
 					has_war = yes
 					enemies_strength_ratio > 0.5
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			
 			level = 1
@@ -224,6 +241,10 @@
 					has_idea  = age_10
 					
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 
 
@@ -281,6 +302,10 @@
 					has_idea  = age_11
 					has_idea  = age_10	
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			
 

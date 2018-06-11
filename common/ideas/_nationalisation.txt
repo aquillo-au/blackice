@@ -19,6 +19,10 @@ ideas = {
 						has_country_flag = press_state
 					}
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			
 			modifier = {
@@ -58,6 +62,10 @@ ideas = {
 				NOT = {
 					has_government = communism
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			
 			default = yes
@@ -118,6 +126,10 @@ ideas = {
 					has_government = monarchism
 					has_government = neutrality
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			
 			modifier = {
@@ -166,6 +178,10 @@ ideas = {
 					has_idea = tax_minimal
 					has_idea = press_free
 				}
+			custom_trigger_tooltip = { tooltip = money_cost_idea check_variable = { dx > 75 } }
+			}
+			on_add = {
+				subtract_from_variable = { dx = idea_cost_money }
 			}
 			level = 1
 			modifier = {
