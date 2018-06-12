@@ -1,7 +1,7 @@
 # All BICE American Equipment
 equipments = {
 	
-##### Light tanks ###########################################
+# Light tanks
 
 	american_light_tank_equipment = {
 		year = 1935
@@ -49,26 +49,24 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 16
+		build_cost_ic = 18
 		resources = {
 			oil = 1
 			steel = 2
 		}
 
-	}
-
-	# M2 Light Tank
-	american_light_tank_equipment_1 = {
+		}
+	
+	american_light_tank_equipment_1 = {# M2 Light Tank
 		year = 1935
 	
 		archetype = american_light_tank_equipment
 		priority = 10
 		visual_level = 0
 		is_convertable = yes
-	}
-
-	# M1 Combat Car
-	american_light_tank_equipment_2 = {
+		}
+	
+	american_light_tank_equipment_2 = {# M1 Combat Car
 		year = 1937
 		
 		archetype = american_light_tank_equipment
@@ -96,16 +94,15 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 14
+		build_cost_ic = 20
 		resources = {
 			oil = 1
 			steel = 2
 		}
 
-	}
-
-	# M2A4 Light Tank
-	american_light_tank_equipment_3 = {
+		}
+	
+	american_light_tank_equipment_3 = {# M2A4 Light Tank
 		year = 1938
 		
 		archetype = american_light_tank_equipment
@@ -133,16 +130,15 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 18
+		build_cost_ic = 26
 		resources = {
 			oil = 2
 			steel = 4
 			tungsten = 1
 		}
-	}
+		}
 
-	# M3 Stuart
-	american_light_tank_equipment_4 = {
+	american_light_tank_equipment_4 = {# M3 Stuart
 		year = 1940
 		
 		archetype = american_light_tank_equipment
@@ -170,16 +166,15 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 20
+		build_cost_ic = 30
 		resources = {
 			oil = 2
 			steel = 5
 			tungsten = 1
 		}
-	}
-
-	# M5 Stuart
-	american_light_tank_equipment_5 = {
+		}
+	
+	american_light_tank_equipment_5 = {# M5 Stuart
 		year = 1942
 		
 		archetype = american_light_tank_equipment
@@ -208,16 +203,15 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 22
+		build_cost_ic = 32
 		resources = {
 			oil = 2
 			steel = 6
 			tungsten = 1
 		}
-	}
+		}
 
-	# M24 Chaffee
-	american_light_tank_equipment_6 = {
+	american_light_tank_equipment_6 = {# M24 Chaffee
 		year = 1944
 		
 		archetype = american_light_tank_equipment
@@ -248,17 +242,16 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 24
+		build_cost_ic = 67
 		resources = {
 			oil = 2
 			steel = 6
 			tungsten = 1
 			chromium = 1
 		}
-	}
+		}
 
-	# M41 Walker Bulldog
-	american_light_tank_equipment_7 = {
+	american_light_tank_equipment_7 = {# M41 Walker Bulldog
 		year = 1952
 		
 		archetype = american_light_tank_equipment
@@ -288,82 +281,80 @@ equipments = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 26
+		build_cost_ic = 100
 		resources = {
 			oil = 2
 			steel = 6
 			tungsten = 2
 			chromium = 1
 		}
-	}
+		}
 
-##### Tank Destroyers ###########################################
+# Tank Destroyers
 
-hellcat_equipment = {
-		year = 1942
-		
-		is_archetype = yes
-		is_buildable = no
-		is_convertable = yes
-		type = armor
-		group_by = archetype		
-		
-		interface_category = interface_category_armor
-		
-		upgrades = {
-			tank_reliability_upgrade
-			tank_engine_upgrade
-			tank_armor_upgrade
-			#tank_gun_upgrade
+	hellcat_equipment = {
+			year = 1942
 			
-			tank_aa_upgrade
-			tank_at_upgrade
-			#tank_art_upgrade 
-			tank_sights_upgrade
-			tank_radio_upgrade
+			is_archetype = yes
+			is_buildable = no
+			is_convertable = yes
+			type = armor
+			group_by = archetype		
+			
+			interface_category = interface_category_armor
+			
+			upgrades = {
+				tank_reliability_upgrade
+				tank_engine_upgrade
+				tank_armor_upgrade
+				#tank_gun_upgrade
+				
+				tank_aa_upgrade
+				tank_at_upgrade
+				#tank_art_upgrade 
+				tank_sights_upgrade
+				tank_radio_upgrade
 
-			tank_sloped_upgrade
-			tank_anti_inf_upgrade 
-		}
+				tank_sloped_upgrade
+				tank_anti_inf_upgrade 
+			}
 
-		#Misc Abilities
-		maximum_speed = 14
-		reliability = 0.8
+			#Misc Abilities
+			maximum_speed = 14
+			reliability = 0.8
 
-		#Defensive Abilities
-		defense = 15
-		breakthrough = 10
-		hardness = 0.6
-		armor_value = 12.5
+			#Defensive Abilities
+			defense = 15
+			breakthrough = 10
+			hardness = 0.6
+			armor_value = 12.5
 
-		#Offensive Abilities
-		soft_attack = 10
-		hard_attack = 12
-		ap_attack = 45.5
-		air_attack = 1
+			#Offensive Abilities
+			soft_attack = 10
+			hard_attack = 12
+			ap_attack = 45.5
+			air_attack = 1
 
-		#Space taken in convoy
-		lend_lease_cost = 10
-		
-		build_cost_ic = 18
-		resources = {
-			oil = 2
-			steel = 4
-			tungsten = 2
-		}
-
-	}
-
-	# M18 Hellcat
-	hellcat_equipment_1 = {
+			#Space taken in convoy
+			lend_lease_cost = 10
+			
+			build_cost_ic = 55
+			resources = {
+				oil = 2
+				steel = 4
+				tungsten = 2
+			}
+			}
+	
+	hellcat_equipment_1 = {# M18 Hellcat
 		year = 1942
 		archetype = hellcat_equipment
 		priority = 10
 		visual_level = 0
 		is_convertable = yes
-	}
+			}
 
-##### Para tanks ###########################################
+# Para tanks
 
 	american_para_tank_equipment = {
 		year = 1942
@@ -410,26 +401,25 @@ hellcat_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 20
+		build_cost_ic = 30
 		resources = {
 			oil = 2
 			steel = 5
 			tungsten = 1
 		}
+		}
 
-	}
-
-	# M22 Locust
-	american_para_tank_equipment_1 = {
+	american_para_tank_equipment_1 = {# M22 Locust
 		year = 1942
 	
 		archetype = american_para_tank_equipment
 		priority = 10
 		visual_level = 0
 		is_convertable = yes
-	}
+		}
 
-##### Amphibious tanks and Landing-vehicle ###########################################
+# Amphibious tanks and Landing-vehicle
+	
 	amph_american_lv_equipment = {
 		year = 1941
 		
@@ -470,36 +460,33 @@ hellcat_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 18
+		build_cost_ic = 26
 		resources = {
 			oil = 2
 			steel = 4
 			tungsten = 1
 		}
-	}
+		}
 	
-	# LVT-1 'Aligator' ##1225 build##
-	amph_american_lv_equipment_1 = {
+	amph_american_lv_equipment_1 = {# LVT-1 'Aligator' ##1225 build##
 		year = 1941
 		
 		archetype = amph_american_lv_equipment
 		priority = 10
 		visual_level = 0
 		is_convertable = yes
-	}
+		}
 	
-	# LVT-2 Water Buffalo ##2962 build##
-	amph_american_lv_equipment_2 = {
+	amph_american_lv_equipment_2 = {# LVT-2 Water Buffalo ##2962 build##
 		year = 1942
 		
 		archetype = amph_american_lv_equipment
 		priority = 10
 		visual_level = 0
 		is_convertable = yes
-	}
+		}
 	
-	# LVT-2(A) Water Buffalo II more armor ##450 build##
-	amph_american_lv_equipment_3 = {
+	amph_american_lv_equipment_3 = {# LVT-2(A) Water Buffalo II more armor ##450 build##
 		year = 1943
 		
 		archetype = amph_american_lv_equipment
@@ -508,10 +495,9 @@ hellcat_equipment = {
 		is_convertable = yes
 		
 		armor_value = 7
-	}
+		}
 	
-	# LVT-3 Bushmaster ##450 build##
-	amph_american_lv_equipment_4 = {
+	amph_american_lv_equipment_4 = {# LVT-3 Bushmaster ##450 build##
 		year = 1943
 		
 		archetype = amph_american_lv_equipment
@@ -520,9 +506,9 @@ hellcat_equipment = {
 		is_convertable = yes
 		
 		armor_value = 10
-	}
-	# LVT-3C Bushmaster with armored roof on cargo bay ##450 build##
-	amph_american_lv_equipment_5 = {
+		}
+	
+	amph_american_lv_equipment_5 = {# LVT-3C Bushmaster with armored roof on cargo bay ##450 build##
 		year = 1949
 		
 		archetype = amph_american_lv_equipment
@@ -537,9 +523,9 @@ hellcat_equipment = {
 			aluminium = 1 #for tracks
 			tungsten = 1
 		}
-	}
-	# LVT-4 Water Buffalo II more armor ##8348 build##
-	amph_american_lv_equipment_6 = {
+		}
+
+	amph_american_lv_equipment_6 = {# LVT-4 Water Buffalo II more armor ##8348 build##
 		year = 1943
 		
 		archetype = amph_american_lv_equipment
@@ -549,7 +535,7 @@ hellcat_equipment = {
 		
 		soft_attack = 4
 		armor_value = 10
-	}
+		}
 	
 	amph_american_tank_equipment = {
 		year = 1942
@@ -597,26 +583,25 @@ hellcat_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 10
 		
-		build_cost_ic = 18
+		build_cost_ic = 28
 		resources = {
 			oil = 2
 			steel = 4
 			aluminium = 1
 			tungsten = 1
 		}
-	}
+		}
 
-	# LVT-1 Amtrack ##1225 build##
-	amph_american_tank_equipment_1 = {
+	amph_american_tank_equipment_1 = {# LVT-1 Amtrack ##1225 build##
 		year = 1941
 		
 		archetype = amph_american_tank_equipment
 		priority = 10
 		visual_level = 0
 		is_convertable = yes
-	}
-	# LVT-1 Amtrack ##1225 build##
-	amph_american_tank_equipment_2 = {
+		}
+	
+	amph_american_tank_equipment_2 = {# LVT-1 Amtrack ##1225 build##
 		year = 1941
 		
 		archetype = amph_american_tank_equipment
@@ -626,10 +611,11 @@ hellcat_equipment = {
 		
 		hard_attack = 10
 		ap_attack = 15
-	}
-##### Medium tanks ###########################################
+		}
 
-american_medium_tank_equipment = {
+# Medium tanks 
+
+	american_medium_tank_equipment = {
 		year = 1939
 		
 		is_archetype = yes
@@ -676,26 +662,24 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 24
+		build_cost_ic = 34
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 4
 		}
-	}
-
-	# M2 Medium
-	american_medium_tank_equipment_1 = {
+		}
+	
+	american_medium_tank_equipment_1 = {# M2 Medium
 		year = 1939
 		
 		archetype = american_medium_tank_equipment
 		priority = 10
 		visual_level = 0
 		is_convertable = yes
-	}
+		}
 
-	# M3 Lee
-	american_medium_tank_equipment_2 = {
+	american_medium_tank_equipment_2 = {# M3 Lee
 		year = 1941
 		
 		archetype = american_medium_tank_equipment
@@ -724,16 +708,15 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 38
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 		}
-	}
+		}
 
-	# M4 Sherman
-	m4_equipment = {
+	m4_equipment = {# M4 Sherman
 		year = 1942
 		
 		archetype = american_medium_tank_equipment
@@ -778,16 +761,15 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 25
+		build_cost_ic = 45
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 		}
-	}
+		}
 
-	# M4(105) Sherman
-	m4_105_equipment = {
+	m4_105_equipment = {# M4(105) Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -833,15 +815,14 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 28
+		build_cost_ic = 46
 		resources = {
 			oil = 2
 			steel = 6
 		}
-	}
-
-	# M4(105) HVSS Sherman
-	m4_105_hvss_equipment = {
+		}
+	
+	m4_105_hvss_equipment = {# M4(105) HVSS Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -888,16 +869,15 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 28
+		build_cost_ic = 448
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 		}
-	}
-
-	# M4A1 Sherman
-	m4a1_equipment = {
+		}
+	
+	m4a1_equipment = {# M4A1 Sherman
 		year = 1942
 		
 		archetype = american_medium_tank_equipment
@@ -941,16 +921,15 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 50
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 		}
-	}
+		}
 
-	# M4A1(75)W Sherman
-	m4a1_w_equipment = {
+	m4a1_w_equipment = {# M4A1(75)W Sherman
 		year = 1942
 		
 		archetype = american_medium_tank_equipment
@@ -996,16 +975,15 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 52
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 		}
-	}
+		}
 
-	# M4A1(76)W Sherman
-	m4a1_76_w_equipment = {
+	m4a1_76_w_equipment = {# M4A1(76)W Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1052,16 +1030,15 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 54
 		resources = {
 			oil = 2
 			tungsten = 2
 			steel = 6
 		}
-	}
+		}
 
-	# M4A1(76)W HVSS Sherman
-	m4a1_76_w_hvss_equipment = {
+	m4a1_76_w_hvss_equipment = {# M4A1(76)W HVSS Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1110,16 +1087,15 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 56
 		resources = {
 			oil = 2
 			tungsten = 2
 			steel = 6
 		}
-	}
-
-	# M4A3 Sherman
-	m4a3_equipment = {
+		}
+	
+	m4a3_equipment = {# M4A3 Sherman
 		year = 1943
 		
 		archetype = american_medium_tank_equipment
@@ -1162,17 +1138,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 57
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 			
 		}
-	}
-
-	# M4A3(75)W Sherman
-	m4a3_w_equipment = {
+		}
+	
+	m4a3_w_equipment = {# M4A3(75)W Sherman
 		year = 1943
 		
 		archetype = american_medium_tank_equipment
@@ -1218,17 +1193,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 58
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 			
 		}
-	}
+		}
 
-	# M4A3(76)W Sherman
-	m4a3_76_w_equipment = {
+	m4a3_76_w_equipment = {# M4A3(76)W Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1275,17 +1249,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 59
 		resources = {
 			oil = 2
 			tungsten = 2
 			steel = 6
 			
 		}
-	}	
+		}	
 
-	# M4A3(76)W HVSS Sherman
-	m4a3_76_w_hvss_equipment = {
+	m4a3_76_w_hvss_equipment = {# M4A3(76)W HVSS Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1332,17 +1305,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 60
 		resources = {
 			oil = 2
 			tungsten = 2
 			steel = 6
 			
 		}
-	}		
+		}		
 
-	# M4A3(105) Sherman
-	m4a3_105_equipment = {
+	m4a3_105_equipment = {# M4A3(105) Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1391,15 +1363,14 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 28
+		build_cost_ic = 61
 		resources = {
 			oil = 2
 			steel = 6
 		}
-	}	
+		}	
 
-	# M4A3(105) HVSS Sherman
-	m4a3_105_hvss_equipment = {
+	m4a3_105_hvss_equipment = {# M4A3(105) HVSS Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1450,15 +1421,14 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 28
+		build_cost_ic = 62
 		resources = {
 			oil = 2
 			steel = 6
 		}
-	}
+		}
 
-	# M4A3E2 Jumbo Sherman
-	m4a3_jumbo_equipment = {
+	m4a3_jumbo_equipment = {# M4A3E2 Jumbo Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1508,16 +1478,15 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 30
+		build_cost_ic = 63
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 8
 		}
-	}
+		}
 
-	# M4A3E2(76)W Jumbo Sherman
-	m4a3_jumbo_76_w_equipment = {
+	m4a3_jumbo_76_w_equipment = {# M4A3E2(76)W Jumbo Sherman
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1568,17 +1537,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 30
+		build_cost_ic = 64
 		resources = {
 			oil = 2
 			tungsten = 2
 			steel = 8
 			
 		}
-	}
+		}
 
-	# Sherman V (BRITISH ONLY - and chinese, aparently)
-	m4a4_equipment = {
+	m4a4_equipment = {# Sherman V (BRITISH ONLY - and chinese, aparently)
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1624,17 +1592,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 65
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 			
 		}
-	}
-
-	# Sherman Vc (BRITISH ONLY)
-	firefly_equipment = {
+		}
+	
+	firefly_equipment = {# Sherman Vc (BRITISH ONLY)
 		year = 1944
 		
 		archetype = american_medium_tank_equipment
@@ -1679,17 +1646,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 30
+		build_cost_ic = 65
 		resources = {
 			oil = 2
 			tungsten = 2
 			steel = 6
 			
 		}
-	}
+		}
 
-	# Sherman V Tulip (BRITISH ONLY)
-	m4a4_tulip_equipment = {
+	m4a4_tulip_equipment = {# Sherman V Tulip (BRITISH ONLY)
 		year = 1945
 		
 		archetype = american_medium_tank_equipment
@@ -1734,17 +1700,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 24
+		build_cost_ic = 65
 		resources = {
 			oil = 2
 			tungsten = 4
 			steel = 7
 			#chromium = 2
 		}
-	}
+		}
 
-	# Sherman Vc Tulip (BRITISH ONLY)
-	firefly_tulip_equipment = {
+	firefly_tulip_equipment = {# Sherman Vc Tulip (BRITISH ONLY)
 		year = 1945
 		
 		archetype = american_medium_tank_equipment
@@ -1789,16 +1754,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 30
+		build_cost_ic = 65
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 			
 		}
-	}
+		}
 
-##### Heavy tanks ###########################################
+# Heavy tanks 
 
 	american_heavy_tank_equipment = {
 		year = 1936
@@ -1852,22 +1817,19 @@ american_medium_tank_equipment = {
 			steel = 10
 			tungsten = 2
 			
+		}	
 		}
-		
-	}
 
-	# M6 Heavy Tank
-	american_heavy_tank_equipment_1 = {
+	american_heavy_tank_equipment_1 = {# M6 Heavy Tank
 		year = 1941
 		
 		archetype = american_heavy_tank_equipment		
 		priority = 90
 		visual_level = 0
 		is_convertable = yes
-	}
+		}
 
-	# M26 Pershing
-	american_heavy_tank_equipment_2 = {
+	american_heavy_tank_equipment_2 = {# M26 Pershing
 		year = 1944
 		
 		archetype = american_heavy_tank_equipment
@@ -1895,17 +1857,16 @@ american_medium_tank_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 14
 		
-		build_cost_ic = 52 # cost/ resources doubled for reference
+		build_cost_ic = 83 # cost/ resources doubled for reference
 		resources = {
 			oil = 4
 			steel = 10
 			tungsten = 3
 			chromium = 1
 		}
-	}	
+		}		
 
-	# M103
-	american_heavy_tank_equipment_3 = {
+	american_heavy_tank_equipment_3 = {# M103
 		year = 1951
 		
 		archetype = american_heavy_tank_equipment
@@ -1913,9 +1874,10 @@ american_medium_tank_equipment = {
 		priority = 90
 		visual_level = 0
 		is_convertable = yes
-	}
+		build_cost_ic = 110
+		}
 
-##### Super Heavy tanks ###########################################
+# Super Heavy tanks 
 
 	t28_equipment = {
 		year = 1945
@@ -1970,7 +1932,7 @@ american_medium_tank_equipment = {
 			tungsten = 4
 			chromium = 2
 		}
-	}
+		}
 
 	t28_equipment_1 = {
 		year = 1945
@@ -1979,77 +1941,74 @@ american_medium_tank_equipment = {
 		priority = 160
 		visual_level = 0
 		is_convertable = yes
-	}
+		}
 
-##### Main battle tanks ###########################################
+# Main battle tanks
 
-american_mbt_equipment = {
-		year = 1944
-		
-		is_archetype = yes
-		is_buildable = no
-		is_convertable = yes
-		type = armor
-		group_by = archetype
-		
-		interface_category = interface_category_armor
-		
-		upgrades = {
-			tank_reliability_upgrade
-			tank_engine_upgrade
-			tank_armor_upgrade
-			tank_gun_upgrade
+	american_mbt_equipment = {
+			year = 1944
 			
-			tank_aa_upgrade
-			#tank_at_upgrade
-			#tank_art_upgrade 
-			tank_sights_upgrade
-			tank_radio_upgrade
+			is_archetype = yes
+			is_buildable = no
+			is_convertable = yes
+			type = armor
+			group_by = archetype
+			
+			interface_category = interface_category_armor
+			
+			upgrades = {
+				tank_reliability_upgrade
+				tank_engine_upgrade
+				tank_armor_upgrade
+				tank_gun_upgrade
+				
+				tank_aa_upgrade
+				#tank_at_upgrade
+				#tank_art_upgrade 
+				tank_sights_upgrade
+				tank_radio_upgrade
 
-			tank_sloped_upgrade
-			tank_anti_inf_upgrade 
-		}
-		
-		#Misc Abilities
-		maximum_speed = 10
-		reliability = 0.8
+				tank_sloped_upgrade
+				tank_anti_inf_upgrade 
+			}
+			
+			#Misc Abilities
+			maximum_speed = 10
+			reliability = 0.8
 
-		#Defensive Abilities
-		defense = 5
-		breakthrough = 42
-		hardness = 0.98
-		armor_value = 60
+			#Defensive Abilities
+			defense = 5
+			breakthrough = 42
+			hardness = 0.98
+			armor_value = 60
 
-		#Offensive Abilities
-		soft_attack = 16.5
-		hard_attack = 16
-		ap_attack = 60.5
-		air_attack = 15
+			#Offensive Abilities
+			soft_attack = 16.5
+			hard_attack = 16
+			ap_attack = 60.5
+			air_attack = 15
 
-		#Space taken in convoy
-		lend_lease_cost = 14
-		
-		build_cost_ic = 28
-		resources = {
-			oil = 1
-			steel = 3
-			chromium = 4
-		}
-		
-	}
+			#Space taken in convoy
+			lend_lease_cost = 14
+			
+			build_cost_ic = 310
+			resources = {
+				oil = 1
+				steel = 3
+				chromium = 4
+			}	
+			}
 
-	# M46 Patton
-	american_mbt_equipment_1 = {
+	american_mbt_equipment_1 = {# M46 Patton
 		year = 1949
 		
 		archetype = american_mbt_equipment
 		priority = 170
 		visual_level = 0
 		is_convertable = yes
-	}
-
-	# M47 Patton
-	american_mbt_equipment_2 = {
+		}
+	
+	american_mbt_equipment_2 = {# M47 Patton
 		year = 1951
 		
 		archetype = american_mbt_equipment
@@ -2057,10 +2016,9 @@ american_mbt_equipment = {
 		priority = 170
 		visual_level = 1
 		is_convertable = yes
-	}
+		}
 
-	# M48 Patton (dat 'Nam tank)
-	american_mbt_equipment_3 = {
+	american_mbt_equipment_3 = {# M48 Patton (dat 'Nam tank)
 		year = 1954
 		
 		archetype = american_mbt_equipment
@@ -2068,10 +2026,9 @@ american_mbt_equipment = {
 		priority = 170
 		visual_level = 2
 		is_convertable = yes
-	}
-
-	# M60 Patton
-	american_mbt_equipment_4 = {
+		}
+	
+	american_mbt_equipment_4 = {# M60 Patton
 		year = 1959
 		
 		archetype = american_mbt_equipment
@@ -2079,12 +2036,11 @@ american_mbt_equipment = {
 		priority = 170
 		visual_level = 3
 		is_convertable = yes
-	}
+		}
 
+# VARIANTS 
 
-##### VARIANTS ####################################################################################################
-
-##### Light Tank SPAA ###########################################
+# Light Tank SPAA 
 
 	american_light_tank_aa_equipment = {
 		year = 1935
@@ -2133,17 +2089,15 @@ american_mbt_equipment = {
 		ap_attack = 25
 		air_attack = 26
 		
-		build_cost_ic = 24
+		build_cost_ic = 40
 		resources = {
 			oil = 2
 			steel = 4
 			
+		}	
 		}
-		
-	}
-
-	# M19 GMC
-	american_light_tank_aa_equipment_1 = {
+	
+	american_light_tank_aa_equipment_1 = {# M19 GMC
 		year = 1944
 		
 		archetype = american_light_tank_aa_equipment
@@ -2154,10 +2108,9 @@ american_mbt_equipment = {
 		can_convert_from = { 
 			american_light_tank_equipment_6
 		}
-	}
+		}
 
-	# M42 Duster
-	american_light_tank_aa_equipment_2 = {
+	american_light_tank_aa_equipment_2 = {# M42 Duster
 		year = 1952
 		
 		archetype = american_light_tank_aa_equipment
@@ -2186,16 +2139,15 @@ american_mbt_equipment = {
 		ap_attack = 20
 		air_attack = 28
 		
-		build_cost_ic = 20
+		build_cost_ic = 78
 		resources = {
 			oil = 2
 			steel = 6
 			tungsten = 2
+		}	
 		}
-		
-	}
 
-##### Light Tank ART ###########################################		
+# Light Tank ART 
 
 	american_light_tank_artillery_equipment = {
 		year = 1935
@@ -2244,17 +2196,17 @@ american_mbt_equipment = {
 		ap_attack = 5
 		air_attack = 1		
 		
-		build_cost_ic = 24
+		build_cost_ic = 75
 		resources = {
 			oil = 2
 			steel = 5
 			
 		}
 		
-	}
+		}
 
-	# M41 HMC
-	american_light_tank_artillery_equipment_1 = {
+	
+	american_light_tank_artillery_equipment_1 = {# M41 HMC
 		year = 1944
 		
 		archetype = american_light_tank_artillery_equipment
@@ -2267,7 +2219,7 @@ american_mbt_equipment = {
 		}
 	}
 
-##### Medium Tank TD ###########################################		
+# Medium Tank TD 
 
 	american_medium_tank_destroyer_equipment = {
 		year = 1939
@@ -2316,17 +2268,16 @@ american_mbt_equipment = {
 		ap_attack = 45.5
 		air_attack = 1
 		
-		build_cost_ic = 24
+		build_cost_ic = 46
 		
 		resources = {
 			oil = 2
 			tungsten = 2
 			steel = 4
 		}
-	}
+		}
 
-	# M10 Wolverine
-	american_medium_tank_destroyer_equipment_1 = {
+	american_medium_tank_destroyer_equipment_1 = {# M10 Wolverine
 		year = 1942
 		
 		archetype = american_medium_tank_destroyer_equipment
@@ -2338,10 +2289,9 @@ american_mbt_equipment = {
 		can_convert_from = { 
 			m4a3_equipment
 		}
-	}
-
-	# M10 Achilles (BRITISH ONLY)
-	american_medium_tank_destroyer_equipment_2 = {
+		}
+	
+	american_medium_tank_destroyer_equipment_2 = {# M10 Achilles (BRITISH ONLY)
 		year = 1944
 		
 		archetype = american_medium_tank_destroyer_equipment
@@ -2370,17 +2320,16 @@ american_mbt_equipment = {
 		ap_attack = 70
 		air_attack = 1
 		
-		build_cost_ic = 24
+		build_cost_ic = 46
 		
 		resources = {
 			oil = 2
 			tungsten = 2
 			steel = 4
 		}
-	}
-
-	# M36 Jackson
-	american_medium_tank_destroyer_equipment_3 = {
+		}
+	
+	american_medium_tank_destroyer_equipment_3 = {# M36 Jackson
 		year = 1944
 		
 		archetype = american_medium_tank_destroyer_equipment
@@ -2409,16 +2358,14 @@ american_mbt_equipment = {
 		ap_attack = 67.5
 		air_attack = 1
 		
-		build_cost_ic = 26
+		build_cost_ic = 51
 		
 		resources = {
 			oil = 2
 			tungsten = 2
 			steel = 4
 		}
-	}
-
-##### Medium Tank ART ###########################################
+		}
 
 	american_medium_tank_artillery_equipment = {
 		year = 1939
@@ -2475,10 +2422,9 @@ american_mbt_equipment = {
 			tungsten = 6
 			steel = 4
 		}
-	}
+		}
 
-	# M4A1 Calliope
-	american_medium_tank_artillery_equipment_1 = {
+	american_medium_tank_artillery_equipment_1 = {# M4A1 Calliope
 		year = 1943
 		
 		archetype = american_medium_tank_artillery_equipment
@@ -2510,18 +2456,16 @@ american_mbt_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 28
+		build_cost_ic = 65
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 		}
+		}
 
+	american_medium_tank_artillery_equipment_2 = {# M7 Priest
 
-	}
-
-	# M7 Priest
-	american_medium_tank_artillery_equipment_2 = {
 		year = 1942
 		
 		archetype = american_medium_tank_artillery_equipment
@@ -2553,15 +2497,14 @@ american_mbt_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 24
+		build_cost_ic = 56
 		resources = {
 			oil = 2
 			steel = 6
 		}
+		}	
 
-	}	
-
-##### Medium Tank FLAMM ###########################################
+# Medium Tank FLAMM 
 
 	american_medium_tank_flame_equipment = {
 		year = 1939
@@ -2614,16 +2557,15 @@ american_mbt_equipment = {
 		#Space taken in convoy
 		lend_lease_cost = 12
 		
-		build_cost_ic = 26
+		build_cost_ic = 64
 		resources = {
 			oil = 2
 			tungsten = 1
 			steel = 6
 		}
-	}
+		}
 
-	# M4A3R3 Zippo
-	american_medium_tank_flame_equipment_1 = {
+	american_medium_tank_flame_equipment_1 = {# M4A3R3 Zippo
 		year = 1943
 		
 		archetype = american_medium_tank_flame_equipment
@@ -2631,7 +2573,7 @@ american_mbt_equipment = {
 		priority = 60
 		visual_level = 0
 		is_convertable = yes
-	}
+		}
 
-##### END ###########################################	
+# END 
 }
