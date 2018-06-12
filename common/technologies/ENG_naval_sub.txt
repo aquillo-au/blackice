@@ -1,21 +1,30 @@
 technologies = {
 	#Vertical position
-	@1922 = -1 	
-	@1928 = 1
-	@1933 = 3	
-	@1935 = 5	
+	@TOP = -3
+	@1922 = 0 	
+	@1928 = 2
+	@1933 = 4	
+	@1935 = 6	
 	@1936 = 8	
-	@1937 = 11	
-	@1938 = 14	
-	@1939 = 17	
-	@1940 = 20	
-	@1941 = 23	
-	@1942 = 26	
-	@1943 = 29	
-	@1944 = 32
-	@1945 = 35
-	@1949 = 42
-	@1950 = 45
+	@1937 = 10	
+	@1938 = 12	
+	@1939 = 14	
+	@1940 = 16	
+	@1941 = 18	
+	@1942 = 20	
+	@1943 = 22
+	@1944 = 24
+	@1945 = 26
+	@1949 = 28
+	@1950 = 30
+	#Horizontal position
+	@CENTER = 0
+	@AA = -8
+	@TORP = -6
+	@PSUB = 0
+	@PSUB1 = 5
+	@PSUB2 = 10
+	@LRSUB = 15
 	
 	tech_britishnaval_sub = {
 		
@@ -27,7 +36,7 @@ technologies = {
 		start_year = 1922
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = 0 y = -4 }
+			position = { x = @CENTER y = @TOP }
 		}
 		
 		ai_will_do = {
@@ -54,7 +63,7 @@ technologies = {
 		start_year = 1922
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -8 y = @1922 }
+			position = { x = @PSUB y = @1922 }
 		}
 		
 		ai_will_do = {
@@ -91,7 +100,7 @@ technologies = {
 		start_year = 1928
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -8 y = @1928 }
+			position = { x = @PSUB y = @1928 }
 		}
 		
 		ai_will_do = {
@@ -121,7 +130,7 @@ technologies = {
 		start_year = 1928
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -3 y = @1928 }
+			position = { x = @PSUB1 y = @1928 }
 		}
 		
 		ai_will_do = {
@@ -148,7 +157,7 @@ technologies = {
 		start_year = 1928
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = 2 y = @1928 }
+			position = { x = @PSUB2 y = @1928 }
 		}
 		
 		ai_will_do = {
@@ -177,12 +186,12 @@ technologies = {
 			leads_to_tech = tech_rn_patrol_submarine_8
 			research_cost_coeff = 1
 		}
-						
+		
 		research_cost = 1.5
 		start_year = 1933
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -8 y = @1933 }
+			position = { x = @PSUB y = @1933 }
 		}
 		
 		ai_will_do = {
@@ -207,12 +216,12 @@ technologies = {
 			leads_to_tech = tech_rn_patrol_submarine_3 #Grampus Class
 			research_cost_coeff = 1
 		}
-								
+		
 		research_cost = 1.5
 		start_year = 1935
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -8 y = @1935 }
+			position = { x = @PSUB y = @1935 }
 		}
 		
 		ai_will_do = {
@@ -242,7 +251,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -8 y = @1936 }
+			position = { x = @PSUB y = @1936 }
 		}
 		
 		ai_will_do = {
@@ -281,7 +290,7 @@ technologies = {
 		start_year = 1937
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -8 y = @1937 }
+			position = { x = @PSUB y = @1937 }
 		}
 		
 		ai_will_do = {
@@ -325,7 +334,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -8 y = @1938 }
+			position = { x = @PSUB y = @1938 }
 		}
 		
 		ai_will_do = {
@@ -359,12 +368,12 @@ technologies = {
 			leads_to_tech = tech_rn_patrol_submarine_7
 			research_cost_coeff = 1
 		}
-								
+		
 		research_cost = 1.5
 		start_year = 1940
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -2 y = @1940 }
+			position = { x = @PSUB1 y = @1940 }
 		}
 		
 		ai_will_do = {
@@ -393,12 +402,12 @@ technologies = {
 		dependencies = {
 			tech_britishnaval_sub = 1
 		}
-										
+		
 		research_cost = 1.5
 		start_year = 1941
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -2 y = @1941 }
+			position = { x = @PSUB1 y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -432,12 +441,12 @@ technologies = {
 			leads_to_tech = tech_rn_patrol_submarine_9
 			research_cost_coeff = 1
 		}
-								
+		
 		research_cost = 1.5
 		start_year = 1941
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = 6 y = @1940 }
+			position = { x = @PSUB2 y = @1941 }
 		}
 		
 		ai_will_do = {
@@ -471,7 +480,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = 6 y = @1943 }
+			position = { x = @PSUB2 y = @1943 }
 		}
 		
 		ai_will_do = {
@@ -509,7 +518,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -8 y = @1942 }
+			position = { x = @PSUB y = @1942 }
 		}
 		
 		ai_will_do = {
@@ -538,12 +547,12 @@ technologies = {
 		dependencies = {
 			tech_britishnaval_sub = 1
 		}
-							
+		
 		research_cost = 1.5
 		start_year = 1944
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = -8 y = @1944 }
+			position = { x = @PSUB y = @1944 }
 		}
 		
 		ai_will_do = {
@@ -564,9 +573,6 @@ technologies = {
 			ss_tech
 		}
 	}
-	
-	
-	
 	tech_rn_lr_patrol_submarine_0 = { #X1 Class
 
 		enable_equipments = { 
@@ -582,7 +588,7 @@ technologies = {
 		start_year = 1922
 		folder = {
 			name = britishnaval_sub_folder
-			position = { x = 8 y = @1922 }
+			position = { x = @LRSUB y = @1922 }
 		}
 		
 		ai_will_do = {
@@ -594,7 +600,390 @@ technologies = {
 			ss_tech
 		}
 	}
-	
-	
+	##########################
+	### ASW RADAR AA techs ###
+	sub_interwar_AA_tech_rn = {
 		
+		# EFFECT #############
+		submarine = {
+			anti_air_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = sub_late_1930s_AA_tech_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+		}
+
+		start_year = 1924
+
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = @AA y = @1928 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#}
+	}
+
+	sub_late_1930s_AA_tech_rn = {
+		
+		# EFFECT #############
+		submarine = {
+			anti_air_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = sub_early_war_AA_tech_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+		}
+
+		start_year = 1936
+
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = @AA y = @1936 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#}
+	}
+
+	sub_early_war_AA_tech_rn = {
+		
+		# EFFECT #############
+		submarine = {
+			anti_air_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = sub_late_war_AA_tech_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+		}
+
+		start_year = 1940
+
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = @AA y = @1940 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1941.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#}
+	}
+	sub_late_war_AA_tech_rn = {
+		
+		# EFFECT #############
+		submarine = {
+			anti_air_attack = 0.25
+		}
+
+		
+		research_cost = 2
+		
+		categories = {
+			naval_equipment
+		}
+
+		start_year = 1944
+
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = @AA y = @1944 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1944.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#}
+	}
+	### TORPEDOES ###
+	sub_rn_interwar_torpedoes = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			torpedo_attack = 0.2
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.2
+		}
+		destroyer = {
+			torpedo_attack = 0.2
+		}
+        rn_patrol_submarine = {
+			torpedo_attack = 0.2
+		}
+        rn_patrol_submarine = {
+			fire_range = 0.2
+		}
+        rn_lr_patrol_submarine = {
+			torpedo_attack = 0.2
+		}
+        rn_lr_patrol_submarine = {
+			fire_range = 0.2
+		}
+		
+		path = {
+			leads_to_tech = sub_rn_magnetic_detonators
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		
+		categories = {
+			naval_equipment
+			torpedo_equipment
+		}
+
+		start_year = 1924
+
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = @TORP y = @1922 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	sub_rn_magnetic_detonators = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			torpedo_attack = 0.2
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.2
+		}
+		destroyer = {
+			torpedo_attack = 0.2
+		}
+        rn_patrol_submarine = {
+			torpedo_attack = 0.2
+		}
+        rn_lr_patrol_submarine = {
+			torpedo_attack = 0.2
+		}
+        
+		path = {
+			leads_to_tech = sub_rn_electric_torpedoes
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+			torpedo_equipment
+		}
+
+		start_year = 1936
+
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = @TORP y = @1936 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 20
+				date > 1937.1.1
+			}
+		
+			modifier = {
+				factor = 10
+				date > 1939.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	sub_rn_electric_torpedoes = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			torpedo_attack = 0.1
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.1
+		}
+		destroyer = {
+			torpedo_attack = 0.1
+		}
+        rn_patrol_submarine = {
+			torpedo_attack = 0.1
+		}
+        rn_patrol_submarine = {
+			fire_range = 0.2
+		}
+        rn_lr_patrol_submarine = {
+			torpedo_attack = 0.1
+		}
+        rn_lr_patrol_submarine = {
+			fire_range = 0.2
+        }
+		
+		path = {
+			leads_to_tech = sub_rn_advanced_torpedoes
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+			torpedo_equipment
+		}
+
+		start_year = 1940
+
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = @TORP y = @1940 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 100
+				date > 1938.1.1
+			}
+
+			modifier = {
+				factor = 10
+				date > 1941.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	sub_rn_advanced_torpedoes = {
+		# EFFECT #############
+		light_cruiser = {
+			torpedo_attack = 0.2
+		}
+		heavy_cruiser = {
+			torpedo_attack = 0.2
+		}
+		destroyer = {
+			torpedo_attack = 0.2
+		}
+        rn_patrol_submarine = {
+			torpedo_attack = 0.2
+		}
+        rn_patrol_submarine = {
+			fire_range = 0.1
+		}
+        rn_lr_patrol_submarine = {
+			torpedo_attack = 0.2
+		}
+        rn_lr_patrol_submarine = {
+			fire_range = 0.1
+        }
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+			torpedo_equipment
+		}
+
+		start_year = 1944
+
+		folder = {
+			name = britishnaval_sub_folder
+			position = { x = @TORP y = @1944 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1945.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}	
 }
