@@ -294,7 +294,7 @@
  show_industrial_manpower:0 "Industrial Manpower \n How many people are working in your §YMilitary Factories§!"
  GER_historical_NF_TT:0 "§YHistorical§!"
  USA_armed_population:0 "Armed Population"
- MONEY_TOOLTIP:0 "You Have §Y[?dx]§! Money\n[Root.GetDailyIncome]\n[Root.GetMoneyLoss] \n\nTaxes Income (~§Y[?pop]M§!) : \n - Core Taxes : §G[?taxes]§! daily \n   - Multiplied with [Root.GetStability] - §YStability§!\n   - Multiplied with [Root.GetWarSupport] - §YWar Support§!\n[Root.GetTaxesLevel]\n\nFactories : \n - Civilian Factory Gain : §G[?nmn]§! daily \n[Root.GetConsumerGoods] \n - Military Factory Upkeep : §R-[?nmm]§! daily \n - Naval Dockyards Upkeep : §R-[?nmnn]§! daily \n\nIndustry : \n -Production Upkeep : §R[?production_consumed]§!\n[Root.GetRubberConsume][Root.GetChromiumConsume][Root.GetTungstenConsume][Root.GetAluminiumConsume][Root.GetOilConsume][Root.GetSteelConsume]\nTrade : \n- Import Upkeep : §R-[?import_upkeep]§!\n[Root.GetImportTariffsLevel]\n[Root.GetRubberImport][Root.GetChromiumImport][Root.GetTungstenImport][Root.GetAluminiumImport][Root.GetOilImport][Root.GetSteelImport]\n- Export Gain : §G[?export_upkeep]§![Root.GetMaxExport]\n[Root.GetExportTariffsLevel]\n[Root.GetRubberExport][Root.GetChromiumExport][Root.GetTungstenExport][Root.GetAluminiumExport][Root.GetOilExport][Root.GetSteelExport]\n - Division Upkeep §R-[?ms]§! daily\n[Root.GetOfficerLevel]\n[Root.GetArmyLevel]\n - Training Queue Upkeep §R-[?queue]§! daily\n[Root.GetOfficerLevel]\n[Root.GetArmyLevel]\n[Root.GetOccupiedStates]\n[Root.GetPressLevel]"
+ MONEY_TOOLTIP:0 "You Have §Y[?dx]§! Money\n[Root.GetDailyIncome]\n[Root.GetMoneyLoss] \n\nTaxes Income (~§Y[?pop]M§!) : \n - Core Taxes : §G[?taxes]§! daily \n [Root.GetTaxesLevel]\n\nFactories : \n - Civilian Factory Gain : §G[?nmn]§! daily \n[Root.GetEconomyLevel] \n - Military Factory Upkeep : §R-[?nmm]§! daily \n - Naval Dockyards Upkeep : §R-[?nmnn]§! daily \n\nIndustry : \n -Production Upkeep : §R[?production_consumed]§!\n[Root.GetRubberConsume][Root.GetChromiumConsume][Root.GetTungstenConsume][Root.GetAluminiumConsume][Root.GetOilConsume][Root.GetSteelConsume]\nTrade : \n- Import Upkeep : §R-[?import_upkeep]§!\n[Root.GetImportTariffsLevel]\n[Root.GetRubberImport][Root.GetChromiumImport][Root.GetTungstenImport][Root.GetAluminiumImport][Root.GetOilImport][Root.GetSteelImport]\n- Export Gain : §G[?export_upkeep]§![Root.GetMaxExport]\n[Root.GetExportTariffsLevel]\n[Root.GetRubberExport][Root.GetChromiumExport][Root.GetTungstenExport][Root.GetAluminiumExport][Root.GetOilExport][Root.GetSteelExport]\n - Division Upkeep §R-[?ms]§! daily\n[Root.GetOfficerLevel]\n[Root.GetArmyLevel]\n - Training Queue Upkeep §R-[?queue]§! daily\n[Root.GetOfficerLevel]\n[Root.GetArmyLevel]\n[Root.GetOccupiedStates]\n[Root.GetPressLevel]"
  TAXES_MINIMAL_LEVEL:0 "§L    - Modifiers §!:  §+G5%§! - §YMinimal Taxes§!"
  TAXES_LOW_LEVEL:0 "§L    - Modifiers §!:  §G+10%§! - §YLow Taxes§!"
  TAXES_AVERAGE_LEVEL:0 "§L    - Modifiers §!:  §G+15%§! - §YAverage Taxes§!"
@@ -315,6 +315,14 @@
  ALUMINIUM_IMPORT:0 "     - Aluminum Import : §R-[?aluminium_import]§!\n"
  OIL_IMPORT:0"    - Oil Import : §R-[?oil_import]§!\n"
  STEEL_IMPORT:0 "     - Steel Import : §R-[?steel_import]§!\n"
+ 
+ UNDISTURBED_ISOLATION_LEVEL:0 "§L    - Modifiers §!:  §R-90%§! - §YUndisturbed Isolation§!"
+ ISOLATION_LEVEL:0 "§L    - Modifiers §!:  §R-75%§! - §YIsolation§!"
+ CIVILIAN_LEVEL:0 "§L    - Modifiers §!:  §R-50%§! - §YCivilian Economy§!"
+ LOW_LEVEL:0 "§L    - Modifiers §!:  §R-25%§! - §YLow Economic Mobilization§!"
+ PARTIAL_LEVEL:0 "§L    - Modifiers §!:  §R-20%§! - §YPartial Economic Mobilization§!"
+ WAR_LEVEL:0 "§L    - Modifiers §!:  §R-10%§! - §YWar Economy§!"
+ TOT_LEVEL:0 "§L    - Modifiers §!:  §G0%§! - §YTotal Mobilization§!"
  
  RUBBER_EXPORT:0 "    - Rubber Export : §G[?rubber_export]§!\n"
  CHROMIUM_EXPORT:0 "    - Chromium Export : §G[?chromium_export]§!\n"
@@ -370,6 +378,36 @@
  STOP_OIL_STORING:0 "Close your Storage Space for §YOil§!"
  STOP_OIL_DEPLOY:0 "Stop depleting more §YOil§!"
  START_OIL_DEPLOY:0 "Start depleting more §YOil§!"
+ 
+ RUBBER_STORAGE_SWITCH:0 "[Root.GetRubberStorageStatus]"
+ START_RUBBER_STORING:0 "Open your Storage Space for §YRubber§!"
+ STOP_RUBBER_STORING:0 "Close your Storage Space for §YRubber§!"
+ STOP_RUBBER_DEPLOY:0 "Stop depleting more §YRubber§!"
+ START_RUBBER_DEPLOY:0 "Start depleting more §YRubber§!"
+ 
+ STEEL_STORAGE_SWITCH:0 "[Root.GetSteelStorageStatus]"
+ START_STEEL_STORING:0 "Open your Storage Space for §YSteel§!"
+ STOP_STEEL_STORING:0 "Close your Storage Space for §YSteel§!"
+ STOP_STEEL_DEPLOY:0 "Stop depleting more §YSteel§!"
+ START_STEEL_DEPLOY:0 "Start depleting more §YSteel§!"
+ 
+ ALUMINIUM_STORAGE_SWITCH:0 "[Root.GetAluminiumStorageStatus]"
+ START_ALUMINIUM_STORING:0 "Open your Storage Space for §YAluminium§!"
+ STOP_ALUMINIUM_STORING:0 "Close your Storage Space for §YAluminium§!"
+ STOP_ALUMINIUM_DEPLOY:0 "Stop depleting more §YAluminium§!"
+ START_ALUMINIUM_DEPLOY:0 "Start depleting more §YAluminium§!"
+ 
+ TUNGSTEN_STORAGE_SWITCH:0 "[Root.GetTungstenStorageStatus]"
+ START_TUNGSTEN_STORING:0 "Open your Storage Space for §YTungsten§!"
+ STOP_TUNGSTEN_STORING:0 "Close your Storage Space for §YTungsten§!"
+ STOP_TUNGSTEN_DEPLOY:0 "Stop depleting more §YTungsten§!"
+ START_TUNGSTEN_DEPLOY:0 "Start depleting more §YTungsten§!
+ 
+ CHROMIUM_STORAGE_SWITCH:0 "[Root.GetChromiumStorageStatus]"
+ START_CHROMIUM_STORING:0 "Open your Storage Space for §YChromium§!"
+ STOP_CHROMIUM_STORING:0 "Close your Storage Space for §YChromium§!"
+ STOP_CHROMIUM_DEPLOY:0 "Stop depleting more §YChromium§!"
+ START_CHROMIUM_DEPLOY:0 "Start depleting more §YChromium§!
   
  #Ministers
  #generic_neutral_advisor:0 "Arch Traditionalist"

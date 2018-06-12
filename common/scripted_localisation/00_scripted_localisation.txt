@@ -739,6 +739,234 @@ defined_text = { # Country
 	}
 }
 
+defined_text = { # Country
+	name = GetRubberStorageStatus
+	text = {
+		trigger = {
+			has_country_flag = stop_rubber_storing
+			check_variable = { rubber > 0 }
+		}
+		localization_key = START_RUBBER_STORING
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = stop_rubber_storing }
+			check_variable = { rubber > 0 }
+		}
+		localization_key = STOP_RUBBER_STORING
+	}
+	text = {
+		trigger = {
+			check_variable = { rubber < 0 }
+			check_variable = { rubber_storage > 0.99 }
+			check_variable = { rubber_deploy_consume > -1 }
+			NOT = { has_country_flag = stop_rubber_deploy }
+		}
+		localization_key = STOP_RUBBER_DEPLOY
+	}
+	text = {
+		trigger = {
+			check_variable = { rubber < 0 }
+			check_variable = { rubber_storage > 0.99 }
+			check_variable = { rubber_deploy_consume > -1 }
+			has_country_flag = stop_rubber_deploy
+		}
+		localization_key = START_RUBBER_DEPLOY
+	}
+}
+
+defined_text = { # Country
+	name = GetSteelStorageStatus
+	text = {
+		trigger = {
+			has_country_flag = stop_steel_storing
+			check_variable = { steel > 0 }
+		}
+		localization_key = START_STEEL_STORING
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = stop_steel_storing }
+			check_variable = { steel > 0 }
+		}
+		localization_key = STOP_STEEL_STORING
+	}
+	text = {
+		trigger = {
+			check_variable = { steel < 0 }
+			check_variable = { steel_storage > 0.99 }
+			check_variable = { steel_deploy_consume > -1 }
+			NOT = { has_country_flag = stop_steel_deploy }
+		}
+		localization_key = STOP_STEEL_DEPLOY
+	}
+	text = {
+		trigger = {
+			check_variable = { steel < 0 }
+			check_variable = { steel_storage > 0.99 }
+			check_variable = { steel_deploy_consume > -1 }
+			has_country_flag = stop_steel_deploy
+		}
+		localization_key = START_STEEL_DEPLOY
+	}
+}
+
+defined_text = { # Country
+	name = GetAluminiumStorageStatus
+	text = {
+		trigger = {
+			has_country_flag = stop_aluminium_storing
+			check_variable = { aluminium > 0 }
+		}
+		localization_key = START_ALUMINIUM_STORING
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = stop_aluminium_storing }
+			check_variable = { aluminium > 0 }
+		}
+		localization_key = STOP_ALUMINIUM_STORING
+	}
+	text = {
+		trigger = {
+			check_variable = { aluminium < 0 }
+			check_variable = { aluminium_storage > 0.99 }
+			check_variable = { aluminium_deploy_consume > -1 }
+			NOT = { has_country_flag = stop_aluminium_deploy }
+		}
+		localization_key = STOP_ALUMINIUM_DEPLOY
+	}
+	text = {
+		trigger = {
+			check_variable = { aluminium < 0 }
+			check_variable = { aluminium_storage > 0.99 }
+			check_variable = { aluminium_deploy_consume > -1 }
+			has_country_flag = stop_aluminium_deploy
+		}
+		localization_key = START_ALUMINIUM_DEPLOY
+	}
+}
+
+defined_text = { # Country
+	name = GetTungstenStorageStatus
+	text = {
+		trigger = {
+			has_country_flag = stop_tungsten_storing
+			check_variable = { tungsten > 0 }
+		}
+		localization_key = START_TUNGSTEN_STORING
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = stop_tungsten_storing }
+			check_variable = { tungsten > 0 }
+		}
+		localization_key = STOP_TUNGSTEN_STORING
+	}
+	text = {
+		trigger = {
+			check_variable = { tungsten < 0 }
+			check_variable = { tungsten_storage > 0.99 }
+			check_variable = { tungsten_deploy_consume > -1 }
+			NOT = { has_country_flag = stop_tungsten_deploy }
+		}
+		localization_key = STOP_TUNGSTEN_DEPLOY
+	}
+	text = {
+		trigger = {
+			check_variable = { tungsten < 0 }
+			check_variable = { tungsten_storage > 0.99 }
+			check_variable = { tungsten_deploy_consume > -1 }
+			has_country_flag = stop_tungsten_deploy
+		}
+		localization_key = START_TUNGSTEN_DEPLOY
+	}
+}
+
+
+defined_text = { # Country
+	name = GetChromiumStorageStatus
+	text = {
+		trigger = {
+			has_country_flag = stop_chromium_storing
+			check_variable = { chromium > 0 }
+		}
+		localization_key = START_CHROMIUM_STORING
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = stop_chromium_storing }
+			check_variable = { chromium > 0 }
+		}
+		localization_key = STOP_CHROMIUM_STORING
+	}
+	text = {
+		trigger = {
+			check_variable = { chromium < 0 }
+			check_variable = { chromium_storage > 0.99 }
+			check_variable = { chromium_deploy_consume > -1 }
+			NOT = { has_country_flag = stop_chromium_deploy }
+		}
+		localization_key = STOP_CHROMIUM_DEPLOY
+	}
+	text = {
+		trigger = {
+			check_variable = { chromium < 0 }
+			check_variable = { chromium_storage > 0.99 }
+			check_variable = { chromium_deploy_consume > -1 }
+			has_country_flag = stop_chromium_deploy
+		}
+		localization_key = START_CHROMIUM_DEPLOY
+	}
+}
+
+defined_text = { # Country
+	name = GetEconomyLevel
+	text = {
+		trigger = {
+			has_idea = undisturbed_isolation
+		}
+		localization_key = UNDISTURBED_ISOLATION_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = isolation
+		}
+		localization_key = ISOLATION_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = civilian_economy
+		}
+		localization_key = CIVILIAN_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = low_economic_mobilisation
+		}
+		localization_key = LOW_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = partial_economic_mobilisation
+		}
+		localization_key = PARTIAL_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = war_economy
+		}
+		localization_key = WAR_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = tot_economic_mobilisation
+		}
+		localization_key = TOT_LEVEL
+	}
+}
+
+
 
 
 

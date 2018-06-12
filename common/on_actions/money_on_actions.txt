@@ -28,11 +28,11 @@ on_actions = {
 		effect = { 
 			if = {
 				limit = {
-					#has_country_flag = money
+					has_country_flag = money
 				}
 				### -- STORAGE
 				set_variable = { storage = num_of_factories }
-				multiply_variable = { storage = 50 }
+				multiply_variable = { storage = 10 }
 				round_variable = storage
 				
 				
@@ -49,7 +49,7 @@ on_actions = {
 				
 				
 				### -- OIL PROTOTYPE
-				divide_variable = { oil = 125 }
+				divide_variable = { oil = 50 }
 				if = {
 					limit = {
 						NOT = { has_country_flag = stop_oil_storing }
@@ -125,6 +125,404 @@ on_actions = {
 					}
 					set_variable = { oil_storage = 0 }
 				}
+				
+				### -- RUBBER PROTOTYPE
+				divide_variable = { rubber = 50 }
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_rubber_storing }
+						check_variable = { rubber > 0 }
+					}
+					add_to_variable = { rubber_storage = rubber }
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_rubber_deploy }
+						check_variable = { rubber_storage > 0.99 }
+						check_variable = { rubber < 0 }
+					}
+					
+					add_to_variable = { daily_deploy_rubber = 1 }
+					add_to_variable = { rubber_deploy_consume = 1 }
+					random_owned_controlled_state = {
+						add_to_variable = { rubber_deploy = 1 }
+						add_resource = {
+							type = rubber
+							amount = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { rubber_storage > 0.99 }
+						any_owned_state = {
+							check_variable = { rubber_deploy > 0 }
+						}
+					}
+					subtract_from_variable = { rubber_storage = rubber_deploy_consume }
+				}
+				if = {
+					limit = {
+						check_variable = { rubber_storage > storage }
+					}
+					set_variable = { rubber_storage = storage }
+				}
+				
+				if = {
+					limit = { 
+						OR = {
+							check_variable = { rubber_storage = 0 }
+							#has_country_flag = stop_rubber_deploy 
+							check_variable = { rubber > 0 }
+						}
+						any_owned_state = {
+							check_variable = { rubber_deploy > 0 }
+						}
+					}
+							
+					set_variable = { rubber_deploy_consume = 0 }
+					clr_country_flag = stop_rubber_deploy
+					every_owned_state = {
+						limit = {
+							check_variable = { rubber_deploy > 0 }
+						}
+						add_to_variable = { rubber_deploy = -1 }
+						add_to_variable = { Root.daily_deploy_rubber = -1 }
+						add_to_variable = { rubber_deploy_consume = -1 }
+						add_resource = {
+							type = rubber
+							amount = -1
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						check_variable = { rubber_storage < 0 }
+					}
+					set_variable = { rubber_storage = 0 }
+				}
+				
+				
+				### -- STEEL PROTOTYPE
+				divide_variable = { steel = 200 }
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_steel_storing }
+						check_variable = { steel > 0 }
+					}
+					add_to_variable = { steel_storage = steel }
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_steel_deploy }
+						check_variable = { steel_storage > 0.99 }
+						check_variable = { steel < 0 }
+					}
+					
+					add_to_variable = { daily_deploy_steel = 1 }
+					add_to_variable = { steel_deploy_consume = 1 }
+					random_owned_controlled_state = {
+						add_to_variable = { steel_deploy = 1 }
+						add_resource = {
+							type = steel
+							amount = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { steel_storage > 0.99 }
+						any_owned_state = {
+							check_variable = { steel_deploy > 0 }
+						}
+					}
+					subtract_from_variable = { steel_storage = steel_deploy_consume }
+				}
+				if = {
+					limit = {
+						check_variable = { steel_storage > storage }
+					}
+					set_variable = { steel_storage = storage }
+				}
+				
+				if = {
+					limit = { 
+						OR = {
+							check_variable = { steel_storage = 0 }
+							#has_country_flag = stop_steel_deploy 
+							check_variable = { steel > 0 }
+						}
+						any_owned_state = {
+							check_variable = { steel_deploy > 0 }
+						}
+					}
+							
+					set_variable = { steel_deploy_consume = 0 }
+					clr_country_flag = stop_steel_deploy
+					every_owned_state = {
+						limit = {
+							check_variable = { steel_deploy > 0 }
+						}
+						add_to_variable = { steel_deploy = -1 }
+						add_to_variable = { Root.daily_deploy_steel = -1 }
+						add_to_variable = { steel_deploy_consume = -1 }
+						add_resource = {
+							type = steel
+							amount = -1
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						check_variable = { steel_storage < 0 }
+					}
+					set_variable = { steel_storage = 0 }
+				}
+				
+				### -- ALUMINIUM PROTOTYPE
+				divide_variable = { aluminium = 150 }
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_aluminium_storing }
+						check_variable = { aluminium > 0 }
+					}
+					add_to_variable = { aluminium_storage = aluminium }
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_aluminium_deploy }
+						check_variable = { aluminium_storage > 0.99 }
+						check_variable = { aluminium < 0 }
+					}
+					
+					add_to_variable = { daily_deploy_aluminium = 1 }
+					add_to_variable = { aluminium_deploy_consume = 1 }
+					random_owned_controlled_state = {
+						add_to_variable = { aluminium_deploy = 1 }
+						add_resource = {
+							type = aluminium
+							amount = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { aluminium_storage > 0.99 }
+						any_owned_state = {
+							check_variable = { aluminium_deploy > 0 }
+						}
+					}
+					subtract_from_variable = { aluminium_storage = aluminium_deploy_consume }
+				}
+				if = {
+					limit = {
+						check_variable = { aluminium_storage > storage }
+					}
+					set_variable = { aluminium_storage = storage }
+				}
+				
+				if = {
+					limit = { 
+						OR = {
+							check_variable = { aluminium_storage = 0 }
+							#has_country_flag = stop_aluminium_deploy 
+							check_variable = { aluminium > 0 }
+						}
+						any_owned_state = {
+							check_variable = { aluminium_deploy > 0 }
+						}
+					}
+							
+					set_variable = { aluminium_deploy_consume = 0 }
+					clr_country_flag = stop_aluminium_deploy
+					every_owned_state = {
+						limit = {
+							check_variable = { aluminium_deploy > 0 }
+						}
+						add_to_variable = { aluminium_deploy = -1 }
+						add_to_variable = { Root.daily_deploy_aluminium = -1 }
+						add_to_variable = { aluminium_deploy_consume = -1 }
+						add_resource = {
+							type = aluminium
+							amount = -1
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						check_variable = { aluminium_storage < 0 }
+					}
+					set_variable = { aluminium_storage = 0 }
+				}
+				
+				### -- TUNGSTEN PROTOTYPE
+				divide_variable = { tungsten = 150 }
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_tungsten_storing }
+						check_variable = { tungsten > 0 }
+					}
+					add_to_variable = { tungsten_storage = tungsten }
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_tungsten_deploy }
+						check_variable = { tungsten_storage > 0.99 }
+						check_variable = { tungsten < 0 }
+					}
+					
+					add_to_variable = { daily_deploy_tungsten = 1 }
+					add_to_variable = { tungsten_deploy_consume = 1 }
+					random_owned_controlled_state = {
+						add_to_variable = { tungsten_deploy = 1 }
+						add_resource = {
+							type = tungsten
+							amount = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { tungsten_storage > 0.99 }
+						any_owned_state = {
+							check_variable = { tungsten_deploy > 0 }
+						}
+					}
+					subtract_from_variable = { tungsten_storage = tungsten_deploy_consume }
+				}
+				if = {
+					limit = {
+						check_variable = { tungsten_storage > storage }
+					}
+					set_variable = { tungsten_storage = storage }
+				}
+				
+				if = {
+					limit = { 
+						OR = {
+							check_variable = { tungsten_storage = 0 }
+							#has_country_flag = stop_tungsten_deploy 
+							check_variable = { tungsten > 0 }
+						}
+						any_owned_state = {
+							check_variable = { tungsten_deploy > 0 }
+						}
+					}
+							
+					set_variable = { tungsten_deploy_consume = 0 }
+					clr_country_flag = stop_tungsten_deploy
+					every_owned_state = {
+						limit = {
+							check_variable = { tungsten_deploy > 0 }
+						}
+						add_to_variable = { tungsten_deploy = -1 }
+						add_to_variable = { Root.daily_deploy_tungsten = -1 }
+						add_to_variable = { tungsten_deploy_consume = -1 }
+						add_resource = {
+							type = tungsten
+							amount = -1
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						check_variable = { tungsten_storage < 0 }
+					}
+					set_variable = { tungsten_storage = 0 }
+				}
+				
+				### -- CHROMIUM PROTOTYPE
+				divide_variable = { chromium = 150 }
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_chromium_storing }
+						check_variable = { chromium > 0 }
+					}
+					add_to_variable = { chromium_storage = chromium }
+				}
+				
+				if = {
+					limit = {
+						NOT = { has_country_flag = stop_chromium_deploy }
+						check_variable = { chromium_storage > 0.99 }
+						check_variable = { chromium < 0 }
+					}
+					
+					add_to_variable = { daily_deploy_chromium = 1 }
+					add_to_variable = { chromium_deploy_consume = 1 }
+					random_owned_controlled_state = {
+						add_to_variable = { chromium_deploy = 1 }
+						add_resource = {
+							type = chromium
+							amount = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { chromium_storage > 0.99 }
+						any_owned_state = {
+							check_variable = { chromium_deploy > 0 }
+						}
+					}
+					subtract_from_variable = { chromium_storage = chromium_deploy_consume }
+				}
+				if = {
+					limit = {
+						check_variable = { chromium_storage > storage }
+					}
+					set_variable = { chromium_storage = storage }
+				}
+				
+				if = {
+					limit = { 
+						OR = {
+							check_variable = { chromium_storage = 0 }
+							#has_country_flag = stop_chromium_deploy 
+							check_variable = { chromium > 0 }
+						}
+						any_owned_state = {
+							check_variable = { chromium_deploy > 0 }
+						}
+					}
+							
+					set_variable = { chromium_deploy_consume = 0 }
+					clr_country_flag = stop_chromium_deploy
+					every_owned_state = {
+						limit = {
+							check_variable = { chromium_deploy > 0 }
+						}
+						add_to_variable = { chromium_deploy = -1 }
+						add_to_variable = { Root.daily_deploy_chromium = -1 }
+						add_to_variable = { chromium_deploy_consume = -1 }
+						add_resource = {
+							type = chromium
+							amount = -1
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						check_variable = { chromium_storage < 0 }
+					}
+					set_variable = { chromium_storage = 0 }
+				}
+				
+				#round_variable = oil_storage
+				#round_variable = rubber_storage
+				#round_variable = chromium_storage
+				#round_variable = tungsten_storage
+				#round_variable = aluminium_storage
+				#round_variable = steel_storage
 				
 	
 				### -- TAXES
