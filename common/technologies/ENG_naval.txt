@@ -19,25 +19,29 @@ technologies = {
 	
 	#Horizontal position
 	@TP = -9
-	@DD = -5
-	@DD2 = 0
-	@DD3 = 5
-	@DD4 = 10
-	@DD5 = 15
-	@DD6 = 20
-	@DD7 = 25
-	@CL = 30
-	@CL2 = 35
-	@AACL = 40
-	@CA = 45
-	@BC = 50
-	@BB = 55
-	@HBB = 60
-	@CV = 65
-	@CV2 = 70
-	@CVL = 75
-	@CVE = 80
-	@CVE2 = 85
+	@AA = -7
+	@RDR = -5
+	@RDR1 = -4
+	@SONAR = -2
+	@DD = 1
+	@DD2 = 6
+	@DD3 = 11
+	@DD4 = 16
+	@DD5 = 21
+	@DD6 = 26
+	@DD7 = 31
+	@CL = 36
+	@CL2 = 41
+	@AACL = 46
+	@CA = 51
+	@BC = 56
+	@BB = 61
+	@HBB = 66
+	@CV = 71
+	@CV2 = 76
+	@CVL = 81
+	@CVE = 86
+	@CVE2 = 91
 	
 	tech_rn = {
 		allow = {
@@ -3091,5 +3095,837 @@ technologies = {
 			naval_equipment
 			cve_tech
 		}
+	}
+	##########################
+	### ASW RADAR AA techs ###
+	interwar_AA_tech_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			anti_air_attack = 0.25
+		}
+		heavy_cruiser = {
+			anti_air_attack = 0.25
+		}
+		destroyer = {
+			anti_air_attack = 0.25
+		}
+		battle_cruiser = {
+			anti_air_attack = 0.25
+		}
+		battleship = {
+			anti_air_attack = 0.25
+		}
+		light_carrier = {
+			anti_air_attack = 0.25
+		}
+		carrier = {
+			anti_air_attack = 0.25
+		}
+		submarine = {
+			anti_air_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = late_1930s_AA_tech_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+		}
+
+		start_year = 1924
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @AA y = @1928 }
+		}
+		
+		ai_will_do = {
+			factor = 2
+			
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+
+	late_1930s_AA_tech_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			anti_air_attack = 0.25
+		}
+		heavy_cruiser = {
+			anti_air_attack = 0.25
+		}
+		destroyer = {
+			anti_air_attack = 0.25
+		}
+		battle_cruiser = {
+			anti_air_attack = 0.25
+		}
+		battleship = {
+			anti_air_attack = 0.25
+		}
+		light_carrier = {
+			anti_air_attack = 0.25
+		}
+		carrier = {
+			anti_air_attack = 0.25
+		}
+		submarine = {
+			anti_air_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = early_war_AA_tech_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+		}
+
+		start_year = 1936
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @AA y = @1936 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+
+	early_war_AA_tech_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			anti_air_attack = 0.25
+		}
+		heavy_cruiser = {
+			anti_air_attack = 0.25
+		}
+		destroyer = {
+			anti_air_attack = 0.25
+		}
+		battle_cruiser = {
+			anti_air_attack = 0.25
+		}
+		battleship = {
+			anti_air_attack = 0.25
+		}
+		light_carrier = {
+			anti_air_attack = 0.25
+		}
+		carrier = {
+			anti_air_attack = 0.25
+		}
+		submarine = {
+			anti_air_attack = 0.25
+		}
+
+		path = {
+			leads_to_tech = late_war_AA_tech_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+		}
+
+		start_year = 1940
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @AA y = @1940 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1941.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	late_war_AA_tech_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			anti_air_attack = 0.25
+		}
+		heavy_cruiser = {
+			anti_air_attack = 0.25
+		}
+		destroyer = {
+			anti_air_attack = 0.25
+		}
+		battle_cruiser = {
+			anti_air_attack = 0.25
+		}
+		battleship = {
+			anti_air_attack = 0.25
+		}
+		light_carrier = {
+			anti_air_attack = 0.25
+		}
+		carrier = {
+			anti_air_attack = 0.25
+		}
+		submarine = {
+			anti_air_attack = 0.25
+		}
+
+		
+		research_cost = 2
+		
+		categories = {
+			naval_equipment
+		}
+
+		start_year = 1944
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @AA y = @1944 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1944.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+
+	surface_search_radar_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			surface_detection = 0.15
+		}
+		heavy_cruiser = {
+			surface_detection = 0.15
+		}
+		battle_cruiser = {
+			surface_detection = 0.15
+		}
+		battleship = {
+			surface_detection = 0.15
+		}
+		light_carrier = {
+			surface_detection = 0.15
+		}
+		carrier = {
+			surface_detection = 0.15
+		}
+
+		path = {
+			leads_to_tech = air_warning_radar_rn
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = surface_fc_radar_rn
+			research_cost_coeff = 1
+		}
+		
+		dependencies = {
+			decimetric_radar = 1
+		}
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+			radar_tech
+		}
+
+		start_year = 1936
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @RDR y = @1936 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1939.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+
+	air_warning_radar_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			anti_air_attack = 0.5
+		}
+		heavy_cruiser = {
+			anti_air_attack = 0.5
+		}
+		#destroyer = {
+		#	anti_air_attack = 0.5
+		#}
+		battle_cruiser = {
+			anti_air_attack = 0.5
+		}
+		battleship = {
+			anti_air_attack = 0.5
+		}
+		light_carrier = {
+			anti_air_attack = 0.5
+		}
+		carrier = {
+			anti_air_attack = 0.5
+		}
+
+		path = {
+			leads_to_tech = advanced_surface_search_radar_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1.5
+		
+		categories = {
+			naval_equipment
+			radar_tech
+		}
+
+		start_year = 1936
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @RDR1 y = @1936 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1940.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+
+	surface_fc_radar_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			attack = 0.15
+		}
+		heavy_cruiser = {
+			attack = 0.15
+		}
+		battle_cruiser = {
+			attack = 0.15
+		}
+		battleship = {
+			attack = 0.15
+		}
+		light_carrier = {
+			attack = 0.15
+		}
+		carrier = {
+			attack = 0.15
+		}
+
+		path = {
+			leads_to_tech = advanced_surface_search_radar_rn
+			research_cost_coeff = 0.5
+		}
+		path = {
+			leads_to_tech = advanced_fc_radar_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2
+		
+		dependencies = {
+			improved_centimetric_radar = 1
+		}
+
+		categories = {
+			naval_equipment
+			radar_tech
+		}
+
+		start_year = 1940
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @RDR y = @1940 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 25
+				date > 1940.6.1
+			}
+
+			modifier = {
+				factor = 10
+				date > 1942.6.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+
+	advanced_surface_search_radar_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			surface_detection = 0.3
+		}
+		heavy_cruiser = {
+			surface_detection = 0.3
+		}
+		battle_cruiser = {
+			surface_detection = 0.3
+		}
+		destroyer = {
+			surface_detection = 0.3
+		}
+		submarine = { # This represents the anti-radar countermeasures used to help protect u-boats from allied radar
+			sub_visibility = -0.30
+		}
+		battleship = {
+			surface_detection = 0.3
+		}
+		light_carrier = {
+			surface_detection = 0.3
+		}
+		carrier = {
+			surface_detection = 0.3
+		}
+
+		dependencies = {
+			centimetric_radar = 1
+		}
+
+		path = {
+			leads_to_tech = advanced_fc_radar_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		
+		categories = {
+			naval_equipment
+		}
+
+		start_year = 1940
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @RDR1 y = @1940 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1942.1.1
+			}
+
+			modifier = {
+				factor = 10
+				date > 1944.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+
+	advanced_fc_radar_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			attack = 0.15
+			anti_air_attack = 0.20
+		}
+		heavy_cruiser = {
+			attack = 0.15
+			anti_air_attack = 0.20
+		}
+		battle_cruiser = {
+			attack = 0.15
+			anti_air_attack = 0.20
+		}
+		battleship = {
+			attack = 0.15
+			anti_air_attack = 0.20
+		}
+		light_carrier = {
+			attack = 0.15
+			anti_air_attack = 0.20
+		}
+		carrier = {
+			attack = 0.15
+			anti_air_attack = 0.20
+		}
+		destroyer = {
+			attack = 0.30
+			anti_air_attack = 0.20
+		}
+
+		research_cost = 2
+		
+		categories = {
+			naval_equipment
+			radar_tech
+		}
+
+		dependencies = {
+			surface_fc_radar_rn = 1
+			advanced_surface_search_radar_rn = 1
+			advanced_centimetric_radar = 1
+		}
+
+
+		start_year = 1944
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @RDR y = @1944 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 25
+				date > 1944.1.1
+			}
+
+			modifier = {
+				factor = 10
+				date > 1947.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+
+	early_sonar_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_detection = 0.1
+		}
+		heavy_cruiser = {
+			sub_detection = 0.1
+		}
+		destroyer = {
+			sub_detection = 0.15
+		}
+
+		path = {
+			leads_to_tech = depth_charge_throwers_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+
+		start_year = 1924
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @SONAR y = @1928 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+
+	depth_charge_throwers_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_attack = 0.2
+		}
+		destroyer = {
+			sub_attack = 0.2
+		}
+
+		path = {
+			leads_to_tech = basic_sonar_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+
+		start_year = 1933
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @SONAR y = @1933 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 10
+				date > 1937.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	basic_sonar_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_detection = 0.1
+		}
+		heavy_cruiser = {
+			sub_detection = 0.1
+		}
+		destroyer = {
+			sub_detection = 0.15
+		}
+
+		path = {
+			leads_to_tech = asw_mortars_rn
+			research_cost_coeff = 1
+		}
+
+		dependencies = {
+			mechanical_computing = 1
+		}
+
+		research_cost = 1
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+
+		start_year = 1936
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @SONAR y = @1936 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 50
+				date > 1937.6.1
+			}
+
+			modifier = {
+				factor = 10
+				date > 1938.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	asw_mortars_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_attack = 0.2
+		}
+		destroyer = {
+			sub_attack = 0.2
+		}
+
+		path = {
+			leads_to_tech = advanced_sonar_rn
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 1
+		
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+
+		start_year = 1940
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @SONAR y = @1940 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 50
+				date > 1941.6.1
+			}
+
+			modifier = {
+				factor = 10
+				date > 1942.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
+	}
+	advanced_sonar_rn = {
+		
+		# EFFECT #############
+		light_cruiser = {
+			sub_detection = 0.1
+		}
+		heavy_cruiser = {
+			sub_detection = 0.1
+		}
+		destroyer = {
+			sub_detection = 0.15
+		}
+
+		research_cost = 1
+		
+		dependencies = {
+			improved_computing_machine = 1
+		}
+
+		categories = {
+			naval_equipment
+			asw_tech
+		}
+
+		start_year = 1944
+
+		folder = {
+			name = britishnaval_folder
+			position = { x = @SONAR y = @1944 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 50
+				date > 1944.6.1
+			}
+
+			modifier = {
+				factor = 10
+				date > 1945.1.1
+			}
+		}
+		
+		#ai_research_weights = {
+		#	naval_doctrine = -1.0
+		#	battleship = 1.5
+		#	cruiser = 1.0
+		#}
 	}
 }
