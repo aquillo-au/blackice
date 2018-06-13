@@ -180,4 +180,61 @@ CHI_stay_defensive = {
 	}	
 	
 }
+
+
+CHI_like_each_other = {
+	enable = {
+		OR = {
+			tag = SIK
+			tag = XSM
+			tag = YUN
+			tag = GXC
+			tag = SHX
+		}
+	}
+	abort = {
+		is_in_faction_with = CHI	
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "CHI"
+		value = 5000
+	}
+}
+
+CHI_like_each_other = {
+	enable = {
+		tag = CHI
+	}
+	abort = {
+		is_puppet_of = JAP
+	}
+	
+	ai_strategy = {
+		type = befriend
+		id = "SIK"
+		value = 5000
+	}
+	ai_strategy = {
+		type = befriend
+		id = "XSM"
+		value = 5000
+	}
+	ai_strategy = {
+		type = befriend
+		id = "YUN"
+		value = 5000
+	}
+	ai_strategy = {
+		type = befriend
+		id = "GXC"
+		value = 5000
+	}
+	ai_strategy = {
+		type = befriend
+		id = "SHX"
+		value = 5000
+	}
+}
 ### EOF ###

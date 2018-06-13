@@ -59,12 +59,12 @@ on_actions = {
 	on_declare_war = {
 		effect = {
 			#AI allies should immediately join wars to avoid problems with their fronts
-			if = { limit = { ROOT = { is_ai = yes } NOT = { has_global_flag = no_EAI } }
-				hidden_effect = { ROOT = { country_event = { id = EAI_DM.5 hours = 1 } } } #has to be delayed for it to work
-			}
-			if = { limit = { FROM = { is_ai = yes } NOT = { has_global_flag = no_EAI } }
-				hidden_effect = { FROM = { country_event = { id = EAI_DM.5 hours = 1 } } }
-			}
+			#if = { limit = { ROOT = { is_ai = yes } NOT = { has_global_flag = no_EAI } }
+			#	hidden_effect = { ROOT = { country_event = { id = EAI_DM.5 hours = 1 } } } #has to be delayed for it to work
+			#}
+			#if = { limit = { FROM = { is_ai = yes } NOT = { has_global_flag = no_EAI } }
+			#	hidden_effect = { FROM = { country_event = { id = EAI_DM.5 hours = 1 } } }
+			#}
 		}
 	}
 	

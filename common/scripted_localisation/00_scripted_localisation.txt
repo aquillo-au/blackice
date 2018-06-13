@@ -966,7 +966,72 @@ defined_text = { # Country
 	}
 }
 
+defined_text = { # Country
+	name = GetMobilisationLevel
+	text = {
+		trigger = {
+			has_idea = mob_reserve
+		}
+		localization_key = RESERVE_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = mob_standing
+		}
+		localization_key = STANDING_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = mob_limited
+		}
+		localization_key = LIMITED_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = mob_general
+		}
+		localization_key = GENERAL_LEVEL
+	}
+}
 
+defined_text = { # Country
+	name = GetNationalisationLevel
+	text = {
+		trigger = {
+			has_idea = private_control
+		}
+		localization_key = PRIVATE_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = key_industries
+		}
+		localization_key = KEY_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = major_industries
+		}
+		localization_key = MAJOR_LEVEL
+	}
+	text = {
+		trigger = {
+			has_idea = planned_economy
+		}
+		localization_key = PLANNED_LEVEL
+	}
+
+}
+
+defined_text = { # Country
+	name = GetLicenseCost
+	text = {
+		trigger = {
+			check_variable = { licenses > 0 }
+		}
+		localization_key = LICENSES_TT
+	}
+}
 
 
 

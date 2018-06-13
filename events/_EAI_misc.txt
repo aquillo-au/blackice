@@ -260,16 +260,35 @@ country_event = {
 	is_triggered_only = yes
 				
 	option = {
+		set_technology = { tech_gladiator_fighter_equipment_1 = 1 }
 		every_country = {
-			set_country_flag = money
+			clr_country_flag = money
+			set_variable = { oil_storage = 5000 }
+			set_variable = { rubber_storage = 5000 }
+			set_variable = { steel_storage = 5000 }
+			set_variable = { chromium_storage = 5000 }
+			set_variable = { aluminium_storage = 5000 }
+			set_variable = { tungsten_storage = 5000 }
 		}
 	}
 	
 	option = {
-		set_country_flag = fill_oil_storage
-		set_country_flag = fill_rubber_storage
-		clr_country_flag = deplete_oil_storage
-		clr_country_flag = deplete_rubber_storage
+		every_country = {
+			clr_country_flag = money
+		}
+	}
+	
+	option = {
+		set_variable = { idea_cost_train_none = 50 }
+		set_variable = { idea_cost_train_low = 75 }
+		set_variable = { idea_cost_train_medium = 100 }
+		set_variable = { idea_cost_train_high = 125 }
+		set_variable = { idea_cost_train_elite = 150 }
+		
+		set_variable = { idea_cost_officer_train_none = 25 }
+		set_variable = { idea_cost_officer_train_low = 75 }
+		set_variable = { idea_cost_officer_train_high = 100 }
+		set_variable = { idea_cost_officer_train_elite = 150 }
 	}
 	
 	option = {
@@ -690,6 +709,79 @@ country_event = {
 	option = {
 		ai_chance = { factor = 100  }
 		name = EAI_M.312.a
+	}
+}
+
+country_event = {
+	id = EAI_M.313
+	title = EAI_M.313.t
+	desc = EAI_M.313.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 100  }
+		name = EAI_M.313.a
+		random_owned_controlled_state = {
+			limit = { arms_factory > 0 }
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+			if = {
+				limit = {
+					NOT = { has_variable = MIC_remove }
+				}
+				set_variable = { MIC_remove = 0 }
+			}
+			add_to_variable = { MIC_remove = 1 }
+			add_to_variable = { Root.total_MIC_remove = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = EAI_M.314
+	title = EAI_M.314.t
+	desc = EAI_M.314.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 100  }
+		name = EAI_M.314.a
+		random_army_leader = {
+			limit = { 	
+				skill  > 3
+				is_assigned = yes
+			}
+			add_temporary_buff_to_units = {
+				combat_offense = -0.2
+				combat_breakthrough = -0.2
+				
+				days = 60
+				tooltip = NO_WAGES
+			}
+		}
+	}
+}
+
+country_event = {
+	id = EAI_M.315
+	title = EAI_M.315.t
+	desc = EAI_M.315.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { factor = 100 }
+		name = EAI_M.315.a
+		set_temp_variable = { soldiers_deserting = dx }
+		set_temp_variable = { amount_div = num_divisions }
+		divide_temp_variable = { amount_div = 2 }
+		multiply_temp_variable = { soldiers_deserting = amount_div }
+		round_variable = soldiers_deserting
+		add_manpower = soldiers_deserting
 	}
 }
 	

@@ -1003,6 +1003,13 @@ focus_tree = {
 					modifier = embargo
 				} 
 			}
+			every_other_country = {
+				limit = { democratic_govt = yes NOT = { has_war_with = USA has_war_with = GER } }
+				reverse_add_opinion_modifier = {
+					target = GER
+					modifier = embargo
+				}
+			}
 		}
 	}
 
@@ -1108,6 +1115,13 @@ focus_tree = {
 					modifier = embargo
 				}
 			}
+			every_other_country = {
+				limit = { democratic_govt = yes NOT = { has_war_with = USA has_war_with = SOV } }
+				reverse_add_opinion_modifier = {
+					target = SOV
+					modifier = embargo
+				}
+			}
 		}
 	}
 
@@ -1166,6 +1180,13 @@ focus_tree = {
 			ENG = {
 				add_opinion_modifier = {
 					target = USA
+					modifier = embargo
+				}
+			}
+			every_other_country = {
+				limit = { democratic_govt = yes NOT = { has_war_with = USA is_in_faction_with = ENG } }
+				reverse_add_opinion_modifier = {
+					target = ENG
 					modifier = embargo
 				}
 			}
@@ -1257,6 +1278,13 @@ focus_tree = {
 			JAP = {
 				add_opinion_modifier = {
 					target = USA
+					modifier = embargo
+				}
+			}
+			every_other_country = {
+				limit = { democratic_govt = yes NOT = { has_war_with = USA has_war_with = JAP } }
+				reverse_add_opinion_modifier = {
+					target = JAP
 					modifier = embargo
 				}
 			}
@@ -1402,6 +1430,14 @@ focus_tree = {
 			add_opinion_modifier = {
 				target = GER
 				modifier = unholy_alliance_trade
+			}
+			
+			every_other_country = {
+				limit = { democratic_govt = yes NOT = { has_war_with = USA has_war_with = GER } }
+				reverse_add_opinion_modifier = {
+					target = GER
+					modifier = embargo
+				}
 			}
 		}
 	}
@@ -3480,25 +3516,25 @@ available_if_capitulated = yes
 			}
 		}
 		complete_tooltip = {
-			custom_effect_tooltip = USA_black_chamber_complete
-			#set_rule = {
-			#	can_boost_other_ideologies = yes
-			#}
+			#custom_effect_tooltip = USA_black_chamber_complete
+			set_rule = {
+				can_boost_other_ideologies = yes
+			}
 			#Too long and annoying tooltip to write. Will redo if someone complains
-			#every_other_country = {
-			#	limit = { has_country_flag = USA_black_chamber_democratic_CivWar }
-			#	start_civil_war = {
-			#		ideology = liberalism
-			#		size = 0.5
-			#	}
-			#}
-			#every_other_country = {
-			#	limit = { has_country_flag = USA_black_chamber_democratic_SetGov }
-			#	set_politics = {
-			#		ruling_party = liberalism
-			#		elections_allowed = yes
-			#	}			
-			#}
+			every_other_country = {
+				limit = { has_country_flag = USA_black_chamber_democratic_CivWar }
+				start_civil_war = {
+					ideology = liberalism
+					size = 0.5
+				}
+			}
+			every_other_country = {
+				limit = { has_country_flag = USA_black_chamber_democratic_SetGov }
+				set_politics = {
+					ruling_party = liberalism
+					elections_allowed = yes
+				}			
+			}
 		}
 
 		completion_reward = {

@@ -25,6 +25,7 @@ scripted_gui = {
 				
 				set_variable = { FROM.FROM.risedup_partizan = 2220 }
 				set_variable = { FROM.FROM.risedup_day = 30 }
+				set_variable = { var = FROM.FROM.occupation_check value = modifier@occupation_cost }
 				clamp_variable = { var = FROM.FROM.risedup_day min = 0 max = 1000000 }
 				every_country = {
 					limit = {
@@ -270,7 +271,24 @@ scripted_gui = {
 			state_riseup_partisan_click = {
 				weight = 1
 				ai_will_do = {
-					factor = 400
+					factor = 5
+					modifier = {
+						factor = 10
+						FROM.FROM = { check_variable = { FROM.FROM.occupation_check = 0.01 } }
+					}
+					modifier = {
+						factor = 20
+						FROM.FROM = { check_variable = { FROM.FROM.occupation_check = 0.02 } }
+					}
+					modifier = {
+						factor = 30
+						FROM.FROM = { check_variable = { FROM.FROM.occupation_check = 0.03 } }
+					}
+					modifier = {
+						factor = 40
+						FROM.FROM = { check_variable = { FROM.FROM.occupation_check = 0.04 } }
+					}
+					
 				}
 			}
 		}

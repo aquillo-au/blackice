@@ -47,57 +47,7 @@ dont_take_claims_on_POL_we_got_focus = {
 	}		
 }
 
-GER_stop_panzer_i_production = {
-	enable = {
-		original_tag = GER
-		has_equipment = { panzer_i_equipment > 600 }	
-	}
-	abort = {
-		has_equipment = { panzer_i_equipment < 1 }
-	}
-	
-	ai_strategy = {
-		type = equipment_variant_production_factor
-		id = panzer_i_equipment
-		value = -100
-	}
-	
-}
 
-GER_stop_panzer_ii_production = {
-	enable = {
-		original_tag = GER
-		has_equipment = { panzer_ii_equipment > 600 }	
-	}
-	abort = {
-		has_equipment = { panzer_ii_equipment < 1 }
-	}
-	
-	ai_strategy = {
-		type = equipment_variant_production_factor
-		id = panzer_ii_equipment
-		value = -100
-	}
-	
-}
-
-GER_stop_panzer_iii_production = {
-	enable = {
-		original_tag = GER
-		has_tech = tech_panzer_iv_equipment_3
-		has_equipment = { panzer_iii_equipment > 1000 }		
-	}
-	abort = {
-		has_equipment = { panzer_iii_equipment < 100 }
-	}
-	
-	ai_strategy = {
-		type = equipment_variant_production_factor
-		id = panzer_iii_equipment
-		value = -100
-	}
-
-}
 
 hungary_is_friend = {
 	enable = {

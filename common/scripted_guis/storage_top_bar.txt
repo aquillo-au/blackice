@@ -289,6 +289,34 @@ scripted_gui = {
 			}
 		}
 	}
+	
+	fuhrer_mana_self_state_powers = {
+	
+		context_type = selected_state_context
+		
+		window_name = "fuhrer_mana_self_state_powers_container"
+		
+		visible = {
+			OR ={
+				check_variable = { oil_deploy > 0 }
+				check_variable = { rubber_deploy > 0 }
+				check_variable = { steel_deploy > 0 }
+				check_variable = { aluminium_deploy > 0 }
+				check_variable = { chromium_deploy > 0 }
+				check_variable = { tungsten_deploy > 0 }
+			}	
+		}
+		
+		effects = {
+			
+		}
+		
+		triggers = {
+			
+		}
+		
+		
+	}
     
 }
 
