@@ -975,34 +975,32 @@ on_actions = {
 					}
 					set_variable = { dx = -1000 }
 				}
-        }
-    }
-}
+			}
+		}
+	}
 
 	#Money Gain through capturing states - Fascism / Communism only?
 	on_state_control_changed = {
 		effect = {
 			if = { 
 				limit = {
-					FROM.FROM = { OR = { is_core_of = FROM is_core_of = d01 } NOT = { has_state_flag = looted } } 
+					FROM.FROM = {
+						OR = {
+							is_core_of = FROM 
+							is_core_of = d01
+						}
+						NOT = { has_state_flag = looted }
+					} 
 				}
-				FROM.FROM = { set_state_flag = { flag = loot days = 120 } set_variable = { state_value = state_strategic_value } divide_variable = { state_value = 25 } round_variable = state_value add_to_variable = { Root.state_capture = state_value } add_to_variable = { Root.dx = state_value } }
+				FROM.FROM = {
+					set_state_flag = { flag = loot days = 120 }
+					set_variable = { state_value = state_strategic_value }
+					divide_variable = { state_value = 25 }
+					round_variable = state_value
+					add_to_variable = { Root.state_capture = state_value }
+					add_to_variable = { Root.dx = state_value }
+				}
 			}
 		}
 	}
 }
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
