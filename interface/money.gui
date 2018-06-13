@@ -2,10 +2,10 @@
 guiTypes = {
 	containerWindowType = {
 		name = "money_container"
-		position = { x = 503 y = 4 } #990
+		position = { x = 460 y = 3 } #990
 		iconType ={
 			name ="money_bg"
-			spriteType = "GFX_generic_box_smallest"
+			spriteType = "GFX_generic_box_96"
 			position = { x = 0 y = 0 }
 		}
 		
@@ -16,7 +16,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name ="money_text"
-			position = { x= 10 y = 3 }
+			position = { x= 39 y = 4 }
 			font = "hoi_18mbs"
 			text = "[?dx]"
 			format = right
@@ -30,31 +30,178 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "storage_container"
-		position = { x = 503 y = 33 } #990
-		iconType ={
-			name ="storage_bg"
-			spriteType = "GFX_generic_box_smallest"
-			position = { x=0 y=0 }
-		}
-		buttonType = {
+		position = { x = 100 y = 33 } #990
+		
+		#iconType ={
+		#	name ="storage_bg"
+		#	spriteType = "GFX_generic_box_smallest"
+		#	position = { x=0 y=0 }
+		#}
+		
+		iconType = {
 			name ="buy_icon"
 			spriteType = "GFX_in_stock_icon"
 			position = { x= 3 y = 1 }
 			
 			pdx_tooltip = "STORAGE_MENU"
 		}
-		instantTextBoxType = {
-			name ="storage_text"
-			position = { x= 11 y = 3 }
-			font = "hoi_18mbs"
-			text = "[?storage]"
-			format = right
-			maxWidth = 54
-			maxHeight = 24
-			fixedsize = yes
+		
+		#instantTextBoxType = {
+		#	name ="storage_text"
+		#	position = { x= 11 y = 3 }
+		#	font = "hoi_18mbs"
+		#	text = "[?storage]"
+		#	format = right
+		#	maxWidth = 54
+		#	maxHeight = 24
+		#	fixedsize = yes
+		#	
+		#	pdx_tooltip = "STORAGE_TOOLTIP"
+		#}
+		
+		containerWindowType = {
+			name = "top_bar_resources"
+			position = { x = 20 y = 0 }
 			
-			pdx_tooltip = "STORAGE_TOOLTIP"
+			iconType ={
+				name ="oil_bg"
+				spriteType = "GFX_generic_box_smallest"
+				position = { x = 10 y = 0 }
+				orientation = "UPPER_LEFT"
+			}
+			buttonType = {
+				name = "oil_icon"
+				position = { x = 9 y = 0 }
+				spriteType = "GFX_resources_strip"
+				frame = 1
+				pdx_tooltip = "OIL_STORAGE_SWITCH"
+			}
+			instantTextBoxType = {
+				name = "oil_storage_value"
+				position = { x = 12 y = 3 }
+				font = "hoi_18mbs"
+				text = "[?oil_storage]"
+				maxWidth = 65
+				maxHeight = 23
+				format = right
+			}
+		
+			iconType ={
+				name ="aluminum_bg"
+				spriteType = "GFX_generic_box_smallest"
+				position = { x = 80 y = 0 }
+				orientation = "UPPER_LEFT"
+			}
+			buttonType = {
+				name = "aluminum_icon"
+				position = { x = 80 y = 0 }
+				spriteType = "GFX_resources_strip"
+				frame = 2
+				pdx_tooltip = "ALUMINIUM_STORAGE_SWITCH"
+			}
+			instantTextBoxType = {
+				name = "aluminum_storage_value"
+				position = { x = 82 y = 3 }
+				font = "hoi_18mbs"
+				text = "[?aluminum_storage]"
+				maxWidth = 65
+				maxHeight = 23
+				format = right
+			}
+			
+			iconType ={
+				name ="rubber_bg"
+				spriteType = "GFX_generic_box_smallest"
+				position = { x = 150 y = 0 }
+				orientation = "UPPER_LEFT"
+			}
+			buttonType = {
+				name = "rubber_icon"
+				position = { x = 150 y = 0 }
+				spriteType = "GFX_resources_strip"
+				frame = 3
+				pdx_tooltip = "RUBBER_STORAGE_SWITCH"
+			}
+			instantTextBoxType = {
+				name = "rubber_storage_value"
+				position = { x = 152 y = 3 }
+				font = "hoi_16mbs"
+				text = "[?rubber_storage]"
+				maxWidth = 65
+				maxHeight = 23
+				format = right
+			}
+			
+			iconType ={
+				name ="tungsten_bg"
+				spriteType = "GFX_generic_box_smallest"
+				position = { x = 220 y = 0 }
+				orientation = "UPPER_LEFT"
+			}
+			buttonType = {
+				name = "tungsten_icon"
+				position = { x = 220 y = 0 }
+				spriteType = "GFX_resources_strip"
+				frame = 4
+				pdx_tooltip = "TUNGSTEN_STORAGE_SWITCH"
+			}
+			instantTextBoxType = {
+				name = "tungsten_storage_value"
+				position = { x = 222 y = 3 }
+				font = "hoi_16mbs"
+				text = "[?tungsten_storage]"
+				maxWidth = 65
+				maxHeight = 23
+				format = right
+			}
+			
+			iconType ={
+				name ="steel_bg"
+				spriteType = "GFX_generic_box_smallest"
+				position = { x = 290 y = 0 }
+				orientation = "UPPER_LEFT"
+			}
+			buttonType = {
+				name = "steel_icon"
+				position = { x = 290 y = 0 }
+				spriteType = "GFX_resources_strip"
+				frame = 5
+				pdx_tooltip = "STEEL_STORAGE_SWITCH"
+			}
+			instantTextBoxType = {
+				name = "steel_storage_value"
+				position = { x = 292 y = 3 }
+				font = "hoi_16mbs"
+				text = "[?steel_storage]"
+				maxWidth = 65
+				maxHeight = 23
+				format = right
+			}
+			
+			iconType ={
+				name ="chromium_bg"
+				spriteType = "GFX_generic_box_smallest"
+				position = { x = 360 y = 0 }
+				orientation = "UPPER_LEFT"
+			}
+			buttonType = {
+				name = "chromium_icon"
+				position = { x = 360 y = 0 }
+				spriteType = "GFX_resources_strip"
+				frame = 6
+				pdx_tooltip = "CHROMIUM_STORAGE_SWITCH"
+			}
+			instantTextBoxType = {
+				name = "chromium_storage_value"
+				position = { x = 362 y = 3 }
+				font = "hoi_16mbs"
+				text = "[?chromium_storage]"
+				maxWidth = 65
+				maxHeight = 23
+				format = right
+			}
 		}
+		
 	}
 	
 	
@@ -73,7 +220,7 @@ guiTypes = {
 			spriteType = "GFX_trade_resource_bg"
 		}
 
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "storage_headline"
 			position = {x=10 y=0}
 			font = "hoi_36header"
@@ -84,7 +231,7 @@ guiTypes = {
 		}
 		
 		
-		instantTextboxType = {
+		instantTextBoxType = {
 			name = "Oil_headline"
 			position = {x=120 y=35}
 			font = "hoi_18mbs"

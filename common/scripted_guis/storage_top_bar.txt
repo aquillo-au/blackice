@@ -3,6 +3,8 @@ scripted_gui = {
 	storage = {
 		context_type = player_context
 		
+		parent_window_token = top_bar
+		
 		window_name = "storage_container"
 		
 		visible = {
@@ -13,6 +15,226 @@ scripted_gui = {
             buy_icon_click = {
 				set_variable = { show_storage = 1 }
 			}
+			oil_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_oil_storing
+						check_variable = { oil > 0 }
+					}
+					clr_country_flag = stop_oil_storing
+				}
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_oil_storing }
+						check_variable = { oil > 0 }
+					}
+					set_country_flag = stop_oil_storing
+					clr_country_flag = stop_oil_deploy
+				}
+				if = {
+					limit = {
+						check_variable = { oil < 0 }
+						check_variable = { oil_storage > 0.99 }
+						check_variable = { oil_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_oil_deploy }
+					}
+					set_country_flag = stop_oil_deploy
+					clr_country_flag = stop_oil_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { oil < 0 }
+						check_variable = { oil_storage > 0.99 }
+						check_variable = { oil_deploy_consume > -1 }
+						has_country_flag = stop_oil_deploy
+					}
+					clr_country_flag = stop_oil_deploy
+				}
+				rubber_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_rubber_storing
+						check_variable = { rubber > 0 }
+					}
+					clr_country_flag = stop_rubber_storing
+				}
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_rubber_storing }
+						check_variable = { rubber > 0 }
+					}
+					set_country_flag = stop_rubber_storing
+					clr_country_flag = stop_rubber_deploy
+				}
+				
+				
+				if = {
+					limit = {
+						check_variable = { rubber < 0 }
+						check_variable = { rubber_storage > 0.99 }
+						check_variable = { rubber_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_rubber_deploy }
+					}
+					set_country_flag = stop_rubber_deploy
+					clr_country_flag = stop_rubber_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { rubber < 0 }
+						check_variable = { rubber_storage > 0.99 }
+						check_variable = { rubber_deploy_consume > -1 }
+						has_country_flag = stop_rubber_deploy
+					}
+					clr_country_flag = stop_rubber_deploy
+				}
+			}
+			steel_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_steel_storing
+						check_variable = { steel > 0 }
+					}
+					clr_country_flag = stop_steel_storing
+				}
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_steel_storing }
+						check_variable = { steel > 0 }
+					}
+					set_country_flag = stop_steel_storing
+					clr_country_flag = stop_steel_deploy
+				}
+				if = {
+					limit = {
+						check_variable = { steel < 0 }
+						check_variable = { steel_storage > 0.99 }
+						check_variable = { steel_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_steel_deploy }
+					}
+					set_country_flag = stop_steel_deploy
+					clr_country_flag = stop_steel_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { steel < 0 }
+						check_variable = { steel_storage > 0.99 }
+						check_variable = { steel_deploy_consume > -1 }
+						has_country_flag = stop_steel_deploy
+					}
+					clr_country_flag = stop_steel_deploy
+				}
+			}
+			aluminum_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_aluminium_storing
+						check_variable = { aluminium > 0 }
+					}
+					clr_country_flag = stop_aluminium_storing
+				}
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_aluminium_storing }
+						check_variable = { aluminium > 0 }
+					}
+					set_country_flag = stop_aluminium_storing
+					clr_country_flag = stop_aluminium_deploy
+				}
+				if = {
+					limit = {
+						check_variable = { aluminium < 0 }
+						check_variable = { aluminium_storage > 0.99 }
+						check_variable = { aluminium_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_aluminium_deploy }
+					}
+					set_country_flag = stop_aluminium_deploy
+					clr_country_flag = stop_aluminium_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { aluminium < 0 }
+						check_variable = { aluminium_storage > 0.99 }
+						check_variable = { aluminium_deploy_consume > -1 }
+						has_country_flag = stop_aluminium_deploy
+					}
+					clr_country_flag = stop_aluminium_deploy
+				}
+			}
+			tungsten_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_tungsten_storing
+						check_variable = { tungsten > 0 }
+					}
+					clr_country_flag = stop_tungsten_storing
+				}
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_tungsten_storing }
+						check_variable = { tungsten > 0 }
+					}
+					set_country_flag = stop_tungsten_storing
+					clr_country_flag = stop_tungsten_deploy
+				}
+				if = {
+					limit = {
+						check_variable = { tungsten < 0 }
+						check_variable = { tungsten_storage > 0.99 }
+						check_variable = { tungsten_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_tungsten_deploy }
+					}
+					set_country_flag = stop_tungsten_deploy
+					clr_country_flag = stop_tungsten_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { tungsten < 0 }
+						check_variable = { tungsten_storage > 0.99 }
+						check_variable = { tungsten_deploy_consume > -1 }
+						has_country_flag = stop_tungsten_deploy
+					}
+					clr_country_flag = stop_tungsten_deploy
+				}
+			}
+			chromium_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_chromium_storing
+						check_variable = { chromium > 0 }
+					}
+					clr_country_flag = stop_chromium_storing
+				}
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_chromium_storing }
+						check_variable = { chromium > 0 }
+					}
+					set_country_flag = stop_chromium_storing
+					clr_country_flag = stop_chromium_deploy
+				}
+				
+				
+				if = {
+					limit = {
+						check_variable = { chromium < 0 }
+						check_variable = { chromium_storage > 0.99 }
+						check_variable = { chromium_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_chromium_deploy }
+					}
+					set_country_flag = stop_chromium_deploy
+					clr_country_flag = stop_chromium_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { chromium < 0 }
+						check_variable = { chromium_storage > 0.99 }
+						check_variable = { chromium_deploy_consume > -1 }
+						has_country_flag = stop_chromium_deploy
+					}
+					clr_country_flag = stop_chromium_deploy
+				}
+			}
+			}
 		}
 	}
 	
@@ -20,6 +242,7 @@ scripted_gui = {
 		context_type = player_context
 		
 		window_name = "storage_menu_container"
+		
 		visible = {
 			check_variable = { show_storage > 0 }
 		}
@@ -29,235 +252,227 @@ scripted_gui = {
 				set_variable = { show_storage = 0 }
 			}
 			oil_icon_click = {
-			if = {
-				limit = {
-					has_country_flag = stop_oil_storing
-					check_variable = { oil > 0 }
+				if = {
+					limit = {
+						has_country_flag = stop_oil_storing
+						check_variable = { oil > 0 }
+					}
+					clr_country_flag = stop_oil_storing
 				}
-				clr_country_flag = stop_oil_storing
-			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = stop_oil_storing }
-					check_variable = { oil > 0 }
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_oil_storing }
+						check_variable = { oil > 0 }
+					}
+					set_country_flag = stop_oil_storing
+					clr_country_flag = stop_oil_deploy
 				}
-				set_country_flag = stop_oil_storing
-				clr_country_flag = stop_oil_deploy
-			}
-			
-			
-			if = {
-				limit = {
-					check_variable = { oil < 0 }
-					check_variable = { oil_storage > 0.99 }
-					check_variable = { oil_deploy_consume > -1 }
-					NOT = { has_country_flag = stop_oil_deploy }
+				if = {
+					limit = {
+						check_variable = { oil < 0 }
+						check_variable = { oil_storage > 0.99 }
+						check_variable = { oil_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_oil_deploy }
+					}
+					set_country_flag = stop_oil_deploy
+					clr_country_flag = stop_oil_storing
 				}
-				set_country_flag = stop_oil_deploy
-				clr_country_flag = stop_oil_storing
-			}
-			else_if = {
-				limit = {
-					check_variable = { oil < 0 }
-					check_variable = { oil_storage > 0.99 }
-					check_variable = { oil_deploy_consume > -1 }
-					has_country_flag = stop_oil_deploy
+				else_if = {
+					limit = {
+						check_variable = { oil < 0 }
+						check_variable = { oil_storage > 0.99 }
+						check_variable = { oil_deploy_consume > -1 }
+						has_country_flag = stop_oil_deploy
+					}
+					clr_country_flag = stop_oil_deploy
 				}
-				clr_country_flag = stop_oil_deploy
-			}
 			}
 			rubber_icon_click = {
-			if = {
-				limit = {
-					has_country_flag = stop_rubber_storing
-					check_variable = { rubber > 0 }
+				if = {
+					limit = {
+						has_country_flag = stop_rubber_storing
+						check_variable = { rubber > 0 }
+					}
+					clr_country_flag = stop_rubber_storing
 				}
-				clr_country_flag = stop_rubber_storing
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_rubber_storing }
+						check_variable = { rubber > 0 }
+					}
+					set_country_flag = stop_rubber_storing
+					clr_country_flag = stop_rubber_deploy
+				}
+				
+				
+				if = {
+					limit = {
+						check_variable = { rubber < 0 }
+						check_variable = { rubber_storage > 0.99 }
+						check_variable = { rubber_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_rubber_deploy }
+					}
+					set_country_flag = stop_rubber_deploy
+					clr_country_flag = stop_rubber_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { rubber < 0 }
+						check_variable = { rubber_storage > 0.99 }
+						check_variable = { rubber_deploy_consume > -1 }
+						has_country_flag = stop_rubber_deploy
+					}
+					clr_country_flag = stop_rubber_deploy
+				}
 			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = stop_rubber_storing }
-					check_variable = { rubber > 0 }
+			steel_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_steel_storing
+						check_variable = { steel > 0 }
+					}
+					clr_country_flag = stop_steel_storing
 				}
-				set_country_flag = stop_rubber_storing
-				clr_country_flag = stop_rubber_deploy
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_steel_storing }
+						check_variable = { steel > 0 }
+					}
+					set_country_flag = stop_steel_storing
+					clr_country_flag = stop_steel_deploy
+				}
+				if = {
+					limit = {
+						check_variable = { steel < 0 }
+						check_variable = { steel_storage > 0.99 }
+						check_variable = { steel_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_steel_deploy }
+					}
+					set_country_flag = stop_steel_deploy
+					clr_country_flag = stop_steel_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { steel < 0 }
+						check_variable = { steel_storage > 0.99 }
+						check_variable = { steel_deploy_consume > -1 }
+						has_country_flag = stop_steel_deploy
+					}
+					clr_country_flag = stop_steel_deploy
+				}
 			}
-			
-			
-			if = {
-				limit = {
-					check_variable = { rubber < 0 }
-					check_variable = { rubber_storage > 0.99 }
-					check_variable = { rubber_deploy_consume > -1 }
-					NOT = { has_country_flag = stop_rubber_deploy }
+			aluminum_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_aluminium_storing
+						check_variable = { aluminium > 0 }
+					}
+					clr_country_flag = stop_aluminium_storing
 				}
-				set_country_flag = stop_rubber_deploy
-				clr_country_flag = stop_rubber_storing
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_aluminium_storing }
+						check_variable = { aluminium > 0 }
+					}
+					set_country_flag = stop_aluminium_storing
+					clr_country_flag = stop_aluminium_deploy
+				}
+				if = {
+					limit = {
+						check_variable = { aluminium < 0 }
+						check_variable = { aluminium_storage > 0.99 }
+						check_variable = { aluminium_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_aluminium_deploy }
+					}
+					set_country_flag = stop_aluminium_deploy
+					clr_country_flag = stop_aluminium_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { aluminium < 0 }
+						check_variable = { aluminium_storage > 0.99 }
+						check_variable = { aluminium_deploy_consume > -1 }
+						has_country_flag = stop_aluminium_deploy
+					}
+					clr_country_flag = stop_aluminium_deploy
+				}
 			}
-			else_if = {
-				limit = {
-					check_variable = { rubber < 0 }
-					check_variable = { rubber_storage > 0.99 }
-					check_variable = { rubber_deploy_consume > -1 }
-					has_country_flag = stop_rubber_deploy
+			tungsten_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_tungsten_storing
+						check_variable = { tungsten > 0 }
+					}
+					clr_country_flag = stop_tungsten_storing
 				}
-				clr_country_flag = stop_rubber_deploy
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_tungsten_storing }
+						check_variable = { tungsten > 0 }
+					}
+					set_country_flag = stop_tungsten_storing
+					clr_country_flag = stop_tungsten_deploy
+				}
+				if = {
+					limit = {
+						check_variable = { tungsten < 0 }
+						check_variable = { tungsten_storage > 0.99 }
+						check_variable = { tungsten_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_tungsten_deploy }
+					}
+					set_country_flag = stop_tungsten_deploy
+					clr_country_flag = stop_tungsten_storing
+				}
+				else_if = {
+					limit = {
+						check_variable = { tungsten < 0 }
+						check_variable = { tungsten_storage > 0.99 }
+						check_variable = { tungsten_deploy_consume > -1 }
+						has_country_flag = stop_tungsten_deploy
+					}
+					clr_country_flag = stop_tungsten_deploy
+				}
 			}
-		}
-		steel_icon_click = {
-			if = {
-				limit = {
-					has_country_flag = stop_steel_storing
-					check_variable = { steel > 0 }
+			chromium_icon_click = {
+				if = {
+					limit = {
+						has_country_flag = stop_chromium_storing
+						check_variable = { chromium > 0 }
+					}
+					clr_country_flag = stop_chromium_storing
 				}
-				clr_country_flag = stop_steel_storing
-			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = stop_steel_storing }
-					check_variable = { steel > 0 }
+				else_if = {
+					limit = {
+						NOT = { has_country_flag = stop_chromium_storing }
+						check_variable = { chromium > 0 }
+					}
+					set_country_flag = stop_chromium_storing
+					clr_country_flag = stop_chromium_deploy
 				}
-				set_country_flag = stop_steel_storing
-				clr_country_flag = stop_steel_deploy
-			}
-			
-			
-			if = {
-				limit = {
-					check_variable = { steel < 0 }
-					check_variable = { steel_storage > 0.99 }
-					check_variable = { steel_deploy_consume > -1 }
-					NOT = { has_country_flag = stop_steel_deploy }
+				
+				
+				if = {
+					limit = {
+						check_variable = { chromium < 0 }
+						check_variable = { chromium_storage > 0.99 }
+						check_variable = { chromium_deploy_consume > -1 }
+						NOT = { has_country_flag = stop_chromium_deploy }
+					}
+					set_country_flag = stop_chromium_deploy
+					clr_country_flag = stop_chromium_storing
 				}
-				set_country_flag = stop_steel_deploy
-				clr_country_flag = stop_steel_storing
-			}
-			else_if = {
-				limit = {
-					check_variable = { steel < 0 }
-					check_variable = { steel_storage > 0.99 }
-					check_variable = { steel_deploy_consume > -1 }
-					has_country_flag = stop_steel_deploy
+				else_if = {
+					limit = {
+						check_variable = { chromium < 0 }
+						check_variable = { chromium_storage > 0.99 }
+						check_variable = { chromium_deploy_consume > -1 }
+						has_country_flag = stop_chromium_deploy
+					}
+					clr_country_flag = stop_chromium_deploy
 				}
-				clr_country_flag = stop_steel_deploy
-			}
-		}
-		aluminum_icon_click = {
-			if = {
-				limit = {
-					has_country_flag = stop_aluminium_storing
-					check_variable = { aluminium > 0 }
-				}
-				clr_country_flag = stop_aluminium_storing
-			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = stop_aluminium_storing }
-					check_variable = { aluminium > 0 }
-				}
-				set_country_flag = stop_aluminium_storing
-				clr_country_flag = stop_aluminium_deploy
-			}
-			
-			
-			if = {
-				limit = {
-					check_variable = { aluminium < 0 }
-					check_variable = { aluminium_storage > 0.99 }
-					check_variable = { aluminium_deploy_consume > -1 }
-					NOT = { has_country_flag = stop_aluminium_deploy }
-				}
-				set_country_flag = stop_aluminium_deploy
-				clr_country_flag = stop_aluminium_storing
-			}
-			else_if = {
-				limit = {
-					check_variable = { aluminium < 0 }
-					check_variable = { aluminium_storage > 0.99 }
-					check_variable = { aluminium_deploy_consume > -1 }
-					has_country_flag = stop_aluminium_deploy
-				}
-				clr_country_flag = stop_aluminium_deploy
-			}
-		}
-		tungsten_icon_click = {
-			if = {
-				limit = {
-					has_country_flag = stop_tungsten_storing
-					check_variable = { tungsten > 0 }
-				}
-				clr_country_flag = stop_tungsten_storing
-			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = stop_tungsten_storing }
-					check_variable = { tungsten > 0 }
-				}
-				set_country_flag = stop_tungsten_storing
-				clr_country_flag = stop_tungsten_deploy
-			}
-			
-			
-			if = {
-				limit = {
-					check_variable = { tungsten < 0 }
-					check_variable = { tungsten_storage > 0.99 }
-					check_variable = { tungsten_deploy_consume > -1 }
-					NOT = { has_country_flag = stop_tungsten_deploy }
-				}
-				set_country_flag = stop_tungsten_deploy
-				clr_country_flag = stop_tungsten_storing
-			}
-			else_if = {
-				limit = {
-					check_variable = { tungsten < 0 }
-					check_variable = { tungsten_storage > 0.99 }
-					check_variable = { tungsten_deploy_consume > -1 }
-					has_country_flag = stop_tungsten_deploy
-				}
-				clr_country_flag = stop_tungsten_deploy
-			}
-		}
-		chromium_icon_click = {
-			if = {
-				limit = {
-					has_country_flag = stop_chromium_storing
-					check_variable = { chromium > 0 }
-				}
-				clr_country_flag = stop_chromium_storing
-			}
-			else_if = {
-				limit = {
-					NOT = { has_country_flag = stop_chromium_storing }
-					check_variable = { chromium > 0 }
-				}
-				set_country_flag = stop_chromium_storing
-				clr_country_flag = stop_chromium_deploy
-			}
-			
-			
-			if = {
-				limit = {
-					check_variable = { chromium < 0 }
-					check_variable = { chromium_storage > 0.99 }
-					check_variable = { chromium_deploy_consume > -1 }
-					NOT = { has_country_flag = stop_chromium_deploy }
-				}
-				set_country_flag = stop_chromium_deploy
-				clr_country_flag = stop_chromium_storing
-			}
-			else_if = {
-				limit = {
-					check_variable = { chromium < 0 }
-					check_variable = { chromium_storage > 0.99 }
-					check_variable = { chromium_deploy_consume > -1 }
-					has_country_flag = stop_chromium_deploy
-				}
-				clr_country_flag = stop_chromium_deploy
 			}
 		}
 		
-		}
 		triggers = {
 			storage_status_headline_visible = {
 				OR = {
@@ -314,9 +529,5 @@ scripted_gui = {
 		triggers = {
 			
 		}
-		
-		
 	}
-    
 }
-
