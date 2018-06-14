@@ -784,5 +784,30 @@ country_event = {
 		add_manpower = soldiers_deserting
 	}
 }
+
+state_event = {
+	id = EAI_M.401
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_state_modifier = {
+			modifier = {
+				local_supplies = -0.5
+			}
+		}
+		clr_state_flag = partisan_modifier 
+				clr_state_flag = supply_modifier 
+				clr_state_flag = resource_modifier 
+				clr_state_flag = manpower_modifier 
+				clr_state_flag = intel_modifier 
+				clr_state_flag = factory_damage_modifier 
+				clr_state_flag = slot_modifier 
+				clr_state_flag = occupation_modifier 
+				clr_state_flag = attrition_modifier
+				clr_state_flag = factories_modifier
+	}
+}
 	
 ### EOF ###

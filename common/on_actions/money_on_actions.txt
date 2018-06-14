@@ -35,7 +35,8 @@ on_actions = {
 				multiply_variable = { storage = 20 }
 				round_variable = storage
 				
-				
+				set_variable = { nmn = 0 }
+				set_variable = { nmm = 0 }
 				
 				set_variable = { rubber = resource@rubber }
 				set_variable = { chromium = resource@chromium }
@@ -524,31 +525,362 @@ on_actions = {
 				#round_variable = aluminium_storage
 				#round_variable = steel_storage
 				
+				### -- EVERY STATE CHECK
+				
+				every_state = {
+					limit = { is_controlled_by = ROOT }
+					if = {
+						limit = {
+							has_variable = state_modifier
+						}
+						add_to_variable = { state_modifier = -1 }
+						if = {
+							limit = {
+								check_variable = { state_modifier < 0 }
+							}
+							clear_variable = state_modifier
+							
+							### -- MODIFIER CHECK
+							if = {
+								limit = {
+									has_state_flag = supply_flag
+								}
+								clr_state_flag = supply_flag
+								add_state_modifier = {
+									modifier = {
+										local_supplies = -0.5
+									}
+								}
+							}
+							if = {
+								limit = {
+									has_state_flag = resource_flag
+								}
+								clr_state_flag = resource_flag
+								add_state_modifier = {
+									modifier = {
+										local_resources = -0.4
+									}
+								}
+							}
+							if = {
+								limit = {
+									has_state_flag = security_flag
+								}
+								clr_state_flag = security_flag
+								add_state_modifier = {
+									modifier = {
+										local_factory_sabotage = 0.5
+									}
+								}
+							}
+							if = {
+								limit = {
+									has_state_flag = attrition_flag
+								}
+								clr_state_flag = attrition_flag
+								add_state_modifier = {
+									modifier = {
+										attrition = 0.25
+									}
+								}
+							}
+							if = {
+								limit = {
+									has_state_flag = occupation_flag
+								}
+								clr_state_flag = occupation_flag
+								add_state_modifier = {
+									modifier = {
+										occupation_cost = -0.02
+										resistance_tick = 0.2
+									}
+								}
+							}
+							if = {
+								limit = {
+									has_state_flag = damage_factories_flag
+								}
+								clr_state_flag = damage_factories_flag
+								add_state_modifier = {
+									modifier = {
+										local_factories = 1
+									}
+								}
+							}
+							if = {
+								limit = {
+									has_state_flag = resistance_flag
+								}
+								clr_state_flag = resistance_flag
+								add_state_modifier = {
+									modifier = {
+										resistance_tick = -0.25
+									}
+								}
+							}
+						}
+					}
+				}
+				
 	
 				### -- TAXES
-				
+				#State tax counter
+				set_variable = { amount_minimal_tax = 0 }
+				set_variable = { amount_low_tax = 0 }
+				set_variable = { amount_average_tax = 0 }
+				set_variable = { amount_high_tax = 0 }
+				set_variable = { amount_extreme_tax = 0 }
+			
+				set_variable = { pop = 0 }
 				set_variable  = { var = taxes value = 0 }
 				set_variable  = { var = occupation_taxes value = 0 }
 				every_owned_state = {
 					limit = { OR = { is_core_of = ROOT AND = { OWNER = { has_civil_war = yes tag = d01 has_war_with = SPR } is_core_of = SPR } } is_fully_controlled_by = ROOT }
-					set_temp_variable = { state_taxes_temp = state_taxes }
-					divide_temp_variable = { state_taxes_temp = 1000 }
-					add_to_variable { var = ROOT.taxes value = state_taxes_temp } 		
-				}	
-				
+					
+					#Money Loss on Capture
+					set_variable = { state_value = state_strategic_value }
+					
+					#Obsolete
+					set_temp_variable = { temp_terrain_value = state_and_terrain_strategic_value }
+					subtract_from_temp_variable = { temp_terrain_value = state_value }
+					set_variable = { terrain_value = temp_terrain_value }
+					
+					#For the Money Tooltip - counting population
+					add_to_variable = { Root.pop = state_taxes }
+	
+					
+					set_variable = { state_taxes_temp = state_taxes }
+					divide_variable = { state_taxes_temp = 1000 }
+
+					
+					set_variable = { state_taxes_default = state_taxes_temp }
+					
+					### -- TAKE STATE CATEGORY INTO ACCOUNT
+					if = {
+						limit = {
+							has_state_category = wasteland
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.05 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							OR = { #they are essentially the same
+								has_state_category = tiny_island
+								has_state_category = enclave
+							}
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.1 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							OR = { #they are essentially the same
+								has_state_category = small_island
+								has_state_category = pastoral
+							}
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.15 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							has_state_category = rural
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.2 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							has_state_category = town
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.25 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							has_state_category = large_town
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.3 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							has_state_category = city
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.35 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						#subtract_from_variable = { state_taxes_temp = state_category }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							has_state_category = large_city
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.4 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							has_state_category = metropolis
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.45 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							OR = {
+								has_state_category = megalopolis
+								has_state_category = berlin
+							}
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.5 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					if = {
+						limit = {
+							has_state_category = huge_megalopolis
+						}
+						set_variable = { state_category = state_taxes_default }
+						multiply_variable = { state_category = 1.4 }
+						subtract_from_variable = { state_category = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_category }
+					}
+					#add_to_variable { var = ROOT.taxes value = state_taxes_temp } 	
+					
+					
+					### -- TAXES
+					set_variable = { var = state_tax value = state_taxes_default }
+					if = {
+						#If no manual taxes is set take Root Tax law
+						limit = {
+							NOT = { has_variable = manual_taxes }
+						}
+						if = {
+							limit = { ROOT = { has_idea = tax_minimal } }
+							multiply_variable = { var = state_tax value = 1.1 }
+							add_to_variable = { Root.amount_minimal_tax = 1 }
+						}
+						if = {
+							limit = { ROOT = { has_idea = tax_low } }
+							multiply_variable = { var = state_tax value = 1.2 }
+							add_to_variable = { Root.amount_low_tax = 1 }
+						}
+						if = {
+							limit = { ROOT = { has_idea = tax_average } }
+							multiply_variable = { var = state_tax value = 1.3 }
+							add_to_variable = { Root.amount_average_tax = 1 }
+						}
+						if = {
+							limit = { ROOT = { has_idea = tax_high } }
+							multiply_variable = { var = state_tax value = 1.4 }
+							add_to_variable = { Root.amount_high_tax = 1 }
+						}
+						if = {
+							limit = { ROOT = { has_idea = tax_extreme } }
+							multiply_variable = { var = state_tax value = 1.5 }
+							add_to_variable = { Root.amount_extreme_tax = 1 }
+						}
+						subtract_from_variable = { state_tax = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_tax }
+					}
+					
+					if = {
+						#manual tax setting
+						limit = {
+							has_variable = manual_taxes
+						}
+						if = {
+							limit = { check_variable = { manual_taxes = 1 } }
+							multiply_variable = { var = state_tax value = 1.1 }
+							add_to_variable = { Root.amount_minimal_tax = 1 }
+						}
+						if = {
+							limit = { check_variable = { manual_taxes = 2 } }
+							multiply_variable = { var = state_tax value = 1.2 }
+							add_to_variable = { Root.amount_low_tax = 1 }
+						}
+						if = {
+							limit = { check_variable = { manual_taxes = 3 } }
+							multiply_variable = { var = state_tax value = 1.3 }
+							add_to_variable = { Root.amount_average_tax = 1 }
+						}
+						if = {
+							limit = { check_variable = { manual_taxes = 4 } }
+							multiply_variable = { var = state_tax value = 1.4 }
+							add_to_variable = { Root.amount_high_tax = 1 }
+						}
+						if = {
+							limit = { check_variable = { manual_taxes = 5 } }
+							multiply_variable = { var = state_tax value = 1.5 }
+							add_to_variable = { Root.amount_extreme_tax = 1 }
+						}
+						subtract_from_variable = { state_tax = state_taxes_default }
+						add_to_variable = { state_taxes_temp = state_tax }
+					}
+					set_variable = { state_infra_tt = infrastructure_level }
+					set_variable = { state_infra = state_infra_tt }
+					divide_variable = { var = state_infra value = 20 }	
+					multiply_variable = { state_infra = state_taxes_default }
+					add_to_variable { var = state_taxes_temp value = state_infra }
+					
+					add_to_variable { var = ROOT.taxes value = state_taxes_temp }
+					
+					
+					set_variable = { state_mic = arms_factory_level }
+					set_variable = { state_mic_tt = state_mic }
+					divide_variable = { var = state_mic value = 100 }
+					multiply_variable = { var = state_mic value = 3.5 }
+					subtract_from_variable { var = state_taxes_temp value = state_mic }
+					add_to_variable = { Root.nmm = state_mic }
+					
+					set_variable = { state_cic = industrial_complex_level }
+					set_variable = { state_cic_tt = state_cic }
+					divide_variable = { var = state_cic value = 100 }
+					multiply_variable = { var = state_cic value = 4.5 }
+					add_to_variable { var = state_taxes_temp value = state_cic }
+					add_to_variable = { Root.nmn = state_cic }
+					
+					
+					#add_to_variable = { Root.nmn = state_infra }
+					
+					
+					
+				}
+				multiply_variable = { pop = 0.01 }
 				### -- FACTORIES
 				
-				set_variable = { nmn = num_of_civilian_factories}
-				divide_variable = { var = nmn value = 100 }
-				multiply_variable = { var = nmn value = 4.5 } #CIV gives 5 daily ###---- GAIN
+				#set_variable = { nmn = num_of_civilian_factories}
+				#divide_variable = { var = nmn value = 100 }
+				#multiply_variable = { var = nmn value = 4.5 } #CIV gives 5 daily ###---- GAIN
 				
-				set_variable = { nmm = num_of_military_factories}
-				divide_variable = { var = nmm value = 100 }
-				multiply_variable = { var = nmm value = 3.5 } #Consumes 3 daily
+				#set_variable = { nmm = num_of_military_factories}
+				#divide_variable = { var = nmm value = 100 }
+				#multiply_variable = { var = nmm value = 3.5 } #Consumes 3 daily
 				
-				set_variable = { nmnn = num_of_naval_factories}
-				divide_variable = { var = nmnn value = 100 }
-				multiply_variable = { var = nmnn value = 6 } #Consumes 6 daily
+				#set_variable = { nmnn = num_of_naval_factories}
+				#divide_variable = { var = nmnn value = 100 }
+				#multiply_variable = { var = nmnn value = 6 } #Consumes 6 daily
 				
 				### -- Occupied States
 				
@@ -772,30 +1104,8 @@ on_actions = {
 				
 					### -- GAIN
 					
-				set_variable = { pop = taxes }
-				multiply_variable = { pop = 10 }
+				
 				#round_variable = pop
-					
-				if = {
-					limit = { has_idea = tax_minimal }
-					multiply_variable = { var = taxes value = 1.04 }
-				}
-				if = {
-					limit = { has_idea = tax_low }
-					multiply_variable = { var = taxes value = 1.08 }
-				}
-				if = {
-					limit = { has_idea = tax_average }
-					multiply_variable = { var = taxes value = 1.12 }
-				}
-				if = {
-					limit = { has_idea = tax_high }
-					multiply_variable = { var = taxes value = 1.16 }
-				}
-				if = {
-					limit = { has_idea = tax_extreme }
-					multiply_variable = { var = taxes value = 1.2 }
-				}
 				
 				### -- NATIONALISATION
 				if = {
@@ -1021,9 +1331,43 @@ on_actions = {
 						check_variable = { dx < -1000 } 
 					}
 					set_variable = { dx = -1000 }
+				}	
+				if = {
+					limit = {
+						check_variable = { oil_storage > 100 }
+					}
+					round_variable = oil_storage
 				}
-				
-				
+				if = {
+					limit = {
+						check_variable = { steel_storage > 100 }
+					}
+					round_variable = steel_storage
+				}
+				if = {
+					limit = {
+						check_variable = { aluminium_storage > 100 }
+					}
+					round_variable = aluminium_storage
+				}
+				if = {
+					limit = {
+						check_variable = { chromium_storage > 100 }
+					}
+					round_variable = chromium_storage
+				}
+				if = {
+					limit = {
+						check_variable = { tungsten_storage > 100 }
+					}
+					round_variable = tungsten_storage
+				}
+				if = {
+					limit = {
+						check_variable = { rubber_storage > 100 }
+					}
+					round_variable = rubber_storage
+				}
         }
     }
 }
