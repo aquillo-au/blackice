@@ -2,10 +2,10 @@
 guiTypes = {
 	containerWindowType = {
 		name = "money_container"
-		position = { x = 460 y = 3 } #990
+		position = { x = 503 y = 4 } #990
 		iconType ={
 			name ="money_bg"
-			spriteType = "GFX_generic_box_96"
+			spriteType = "GFX_generic_box_smallest"
 			position = { x = 0 y = 0 }
 		}
 		
@@ -16,7 +16,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name ="money_text"
-			position = { x= 39 y = 4 }
+			position = { x= 10 y = 3 }
 			font = "hoi_18mbs"
 			text = "[?dx]"
 			format = right
@@ -41,7 +41,7 @@ guiTypes = {
 		iconType = {
 			name ="buy_icon"
 			spriteType = "GFX_in_stock_icon"
-			position = { x= 3 y = 1 }
+			position = { x= 455 y = 1 }
 			
 			pdx_tooltip = "STORAGE_MENU"
 		}
@@ -66,19 +66,19 @@ guiTypes = {
 			iconType ={
 				name ="oil_bg"
 				spriteType = "GFX_generic_box_smallest"
-				position = { x = 10 y = 0 }
+				position = { x = -15 y = 0 }
 				orientation = "UPPER_LEFT"
 			}
 			buttonType = {
 				name = "oil_icon"
-				position = { x = 9 y = 0 }
+				position = { x = -17 y = 0 }
 				spriteType = "GFX_resources_strip"
 				frame = 1
 				pdx_tooltip = "OIL_STORAGE_SWITCH"
 			}
 			instantTextBoxType = {
 				name = "oil_storage_value"
-				position = { x = 26 y = 5 }
+				position = { x = -3 y = 5 }
 				font = "hoi_16mbs"
 				text = "[?oil_storage]"
 				maxWidth = 50
@@ -89,19 +89,19 @@ guiTypes = {
 			iconType ={
 				name ="aluminum_bg"
 				spriteType = "GFX_generic_box_smallest"
-				position = { x = 80 y = 0 }
+				position = { x = 60 y = 0 }
 				orientation = "UPPER_LEFT"
 			}
 			buttonType = {
 				name = "aluminum_icon"
-				position = { x = 80 y = 0 }
+				position = { x = 60 y = 0 }
 				spriteType = "GFX_resources_strip"
 				frame = 2
 				pdx_tooltip = "ALUMINIUM_STORAGE_SWITCH"
 			}
 			instantTextBoxType = {
 				name = "aluminum_storage_value"
-				position = { x = 96 y = 5 }
+				position = { x = 72 y = 5 }
 				font = "hoi_16mbs"
 				text = "[?aluminum_storage]"
 				maxWidth = 50
@@ -111,20 +111,20 @@ guiTypes = {
 			
 			iconType ={
 				name ="rubber_bg"
+				position = { x = 135 y = 0 }
 				spriteType = "GFX_generic_box_smallest"
-				position = { x = 150 y = 0 }
 				orientation = "UPPER_LEFT"
 			}
 			buttonType = {
 				name = "rubber_icon"
-				position = { x = 150 y = 0 }
+				position = { x = 135 y = 0 }
 				spriteType = "GFX_resources_strip"
 				frame = 3
 				pdx_tooltip = "RUBBER_STORAGE_SWITCH"
 			}
 			instantTextBoxType = {
 				name = "rubber_storage_value"
-				position = { x = 166 y = 5 }
+				position = { x = 147 y = 5 }
 				font = "hoi_16mbs"
 				text = "[?rubber_storage]"
 				maxWidth = 50
@@ -135,19 +135,19 @@ guiTypes = {
 			iconType ={
 				name ="tungsten_bg"
 				spriteType = "GFX_generic_box_smallest"
-				position = { x = 220 y = 0 }
+				position = { x = 210 y = 0 }
 				orientation = "UPPER_LEFT"
 			}
 			buttonType = {
 				name = "tungsten_icon"
-				position = { x = 220 y = 0 }
+				position = { x = 210 y = 0 }
 				spriteType = "GFX_resources_strip"
 				frame = 4
 				pdx_tooltip = "TUNGSTEN_STORAGE_SWITCH"
 			}
 			instantTextBoxType = {
 				name = "tungsten_storage_value"
-				position = { x = 236 y = 5 }
+				position = { x = 222 y = 5 }
 				font = "hoi_16mbs"
 				text = "[?tungsten_storage]"
 				maxWidth = 50
@@ -158,19 +158,19 @@ guiTypes = {
 			iconType ={
 				name ="steel_bg"
 				spriteType = "GFX_generic_box_smallest"
-				position = { x = 290 y = 0 }
+				position = { x = 285 y = 0 }
 				orientation = "UPPER_LEFT"
 			}
 			buttonType = {
 				name = "steel_icon"
-				position = { x = 290 y = 0 }
+				position = { x = 285 y = 0 }
 				spriteType = "GFX_resources_strip"
 				frame = 5
 				pdx_tooltip = "STEEL_STORAGE_SWITCH"
 			}
 			instantTextBoxType = {
 				name = "steel_storage_value"
-				position = { x = 307 y = 5 }
+				position = { x = 297 y = 5 }
 				font = "hoi_16mbs"
 				text = "[?steel_storage]"
 				maxWidth = 50
@@ -193,7 +193,7 @@ guiTypes = {
 			}
 			instantTextBoxType = {
 				name = "chromium_storage_value"
-				position = { x = 378 y = 5 }
+				position = { x = 372 y = 5 }
 				font = "hoi_16mbs"
 				text = "[?chromium_storage]"
 				maxWidth = 50
@@ -219,7 +219,7 @@ guiTypes = {
 			spriteType = "GFX_trade_resource_bg"
 		}
 
-		instantTextBoxType = {
+		instantTextboxType = {
 			name = "storage_headline"
 			position = {x=10 y=0}
 			font = "hoi_36header"
@@ -230,7 +230,7 @@ guiTypes = {
 		}
 		
 		
-		instantTextBoxType = {
+		instantTextboxType = {
 			name = "Oil_headline"
 			position = {x=120 y=35}
 			font = "hoi_18mbs"
@@ -635,4 +635,1068 @@ guiTypes = {
 			pdx_tooltip = "CHROMIUM_AMOUNT_TT"
 		}
 	}
+	containerWindowType = {
+		name = "fuhrer_mana_self_state_powers_container_2"
+		position = {x=-2000 y=1080}
+		size = { width=300	height=700 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		show_position = { x =0 y = 1080 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 100	
+		
+		background = {
+			name = "Background"
+			position = {x=26 y=30}		
+			spriteType = "GFX_unit_stats_list_bg"
+		}
+		
+		iconType = {
+			name = "test" 
+			position = {x=23 y=0}	
+			spriteType = "GFX_template_header_bg"
+		}
+		
+		instantTextboxType = {
+			name = "title_1"
+			position = {x=36 y=9}
+			font = "hoi_18mbs"
+			text = STATE_MODIFIERS_ACTIVE
+			maxWidth = 264
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "STATE_BUY"
+		}
+		
+		instantTextboxType = {
+			name = "modifier_countdown"
+			position = {x=214 y=51}
+			font = "hoi_18mbs"
+			text = "for [?state_modifier] days"
+			maxWidth = 80
+			maxHeight = 23
+			format = right
+			#pdx_tooltip = "STATE_BUY"
+		}
+		
+		instantTextboxType = {
+			name = "active_supply"
+			position = {x=47 y=51}
+			font = "hoi_18mbs"
+			text = SUPPLY_ACTIVE
+			maxWidth = 200
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_SUPPLY"
+		}
+		instantTextboxType = {
+			name = "active_resources"
+			position = {x=47 y=51}
+			font = "hoi_18mbs"
+			text = RESOURCES_ACTIVE
+			maxWidth = 200
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_RESOURCE"
+		}
+		instantTextboxType = {
+			name = "active_recruitment"
+			position = {x=47 y=51}
+			font = "hoi_18mbs"
+			text = RECRUITMENT_ACTIVE
+			maxWidth = 200
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_RECRUITMENT"
+		}
+		instantTextboxType = {
+			name = "active_secrecy"
+			position = {x=47 y=51}
+			font = "hoi_18mbs"
+			text = SECRECY_ACTIVE
+			maxWidth = 200
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_SECRECY"
+		}
+		instantTextboxType = {
+			name = "active_security"
+			position = {x=47 y=51}
+			font = "hoi_18mbs"
+			text = SECURITY_ACTIVE
+			maxWidth = 200
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_SECURITY"
+		}
+		instantTextboxType = {
+			name = "active_attrition"
+			position = {x=47 y=51}
+			font = "hoi_18mbs"
+			text = ATTRITION_ACTIVE
+			maxWidth = 200
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_ATTRITION"
+		}
+		instantTextboxType = {
+			name = "active_occupation"
+			position = {x=47 y=51}
+			font = "hoi_18mbs"
+			text = OCCUPATION_ACTIVE
+			maxWidth = 200
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_OCCUPATION"
+		}
+		instantTextboxType = {
+			name = "active_factories"
+			position = {x=47 y=51}
+			font = "hoi_18mbs"
+			text = FACTORIES_ACTIVE
+			maxWidth = 200
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_FACTORIES"
+		}
+		instantTextboxType = {
+			name = "active_partisan"
+			position = {x=47 y=51}
+			font = "hoi_18mbs"
+			text = PARTISAN_ACTIVE
+			maxWidth = 200
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_PARTISAN"
+		}
+		
+		buttonType = {
+			name = "test_2" 
+			position = {x=26 y=90}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_SUPPLY"
+		}
+		buttonType = {
+			name = "test_3" 
+			position = {x=26 y=120}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_RESOURCE"
+		}
+		buttonType = {
+			name = "test_4" 
+			position = {x=26 y=150}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_RECRUITMENT"
+		}
+		buttonType = {
+			name = "test_5" 
+			position = {x=26 y=180}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_SECRECY"
+		}
+		buttonType = {
+			name = "test_6" 
+			position = {x=26 y=210}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_SECURITY"
+		}
+		buttonType = {
+			name = "test_7" 
+			position = {x=26 y=240}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_SLOTS"
+		}
+		buttonType = {
+			name = "test_8" 
+			position = {x=26 y=270}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_ATTRITION"
+		}
+		buttonType = {
+			name = "test_9" 
+			position = {x=26 y=300}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_OCCUPATION"
+		}
+		buttonType = {
+			name = "test_10" 
+			position = {x=26 y=330}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_FACTORIES"
+		}
+		buttonType = {
+			name = "test_11" 
+			position = {x=26 y=360}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+			pdx_tooltip = "MOD_PARTISAN"
+		}
+		buttonType = {
+			name = "test_12" 
+			position = {x=26 y=390}	
+			spriteType = "GFX_unit_stats_list_entry_bg"
+		}
+		
+		instantTextboxType = {
+			name = "more supply"
+			position = {x=130 y=95}
+			font = "hoi_18mbs"
+			text = "Increased Supply"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_SUPPLY"
+		}
+		instantTextboxType = {
+			name = "more supply nr"
+			position = {x=50 y=95}
+			font = "hoi_18mbs"
+			text = "300"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "more resource"
+			position = {x=130 y=125}
+			font = "hoi_18mbs"
+			text = "Increased Resources"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_RESOURCE"
+		}
+		instantTextboxType = {
+			name = "more resource nr"
+			position = {x=50 y=125}
+			font = "hoi_18mbs"
+			text = "500"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "more manpower"
+			position = {x=130 y=155}
+			font = "hoi_18mbs"
+			text = "Increased Recruitment"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_RECRUITMENT"
+		}
+		instantTextboxType = {
+			name = "more manpower nr"
+			position = {x=50 y=155}
+			font = "hoi_18mbs"
+			text = "250"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "more secrecy"
+			position = {x=130 y=185}
+			font = "hoi_18mbs"
+			text = "Increased Secrecy"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_SECRECY"
+		}
+		instantTextboxType = {
+			name = "more secrecy nr"
+			position = {x=50 y=185}
+			font = "hoi_18mbs"
+			text = "150"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "more security"
+			position = {x=130 y=215}
+			font = "hoi_18mbs"
+			text = "Increased Security"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_SECURITY"
+		}
+		instantTextboxType = {
+			name = "more security nr"
+			position = {x=50 y=215}
+			font = "hoi_18mbs"
+			text = "200"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+			#pdx_tooltip = "MOD_SECURITY"
+		}
+		instantTextboxType = {
+			name = "more slots"
+			position = {x=130 y=245}
+			font = "hoi_18mbs"
+			text = "Building Slots"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_SLOTS"
+		}
+		instantTextboxType = {
+			name = "more slots nr"
+			position = {x=50 y=245}
+			font = "hoi_18mbs"
+			text = "100"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+			#pdx_tooltip = "MOD_SLOTS"
+		}
+		instantTextboxType = {
+			name = "less attrition"
+			position = {x=130 y=275}
+			font = "hoi_18mbs"
+			text = "Decreased Attrition"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_ATTRITION"
+		}
+		instantTextboxType = {
+			name = "less attrition nr"
+			position = {x=50 y=275}
+			font = "hoi_18mbs"
+			text = "250"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+			#pdx_tooltip = "MOD_ATTRITION"
+		}
+		instantTextboxType = {
+			name = "more occupation"
+			position = {x=130 y=305}
+			font = "hoi_18mbs"
+			text = "Heavier Occupation"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_OCCUPATION"
+		}
+		instantTextboxType = {
+			name = "more occupation nr"
+			position = {x=50 y=305}
+			font = "hoi_18mbs"
+			text = "125"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "destroy factories"
+			position = {x=130 y=335}
+			font = "hoi_18mbs"
+			text = "Disable Factories"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_FACTORIES"
+		}
+		instantTextboxType = {
+			name = "destroy factories nr"
+			position = {x=50 y=335}
+			font = "hoi_18mbs"
+			text = "75"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "supply partisan"
+			position = {x=130 y=365}
+			font = "hoi_18mbs"
+			text = "Supply Partisans"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_PARTISAN"
+		}
+		instantTextboxType = {
+			name = "supply partisan nr"
+			position = {x=50 y=365}
+			font = "hoi_18mbs"
+			text = "50"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "reset"
+			position = {x=130 y=395}
+			font = "hoi_18mbs"
+			text = "Reset Modifiers"
+			maxWidth = 160
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "MOD_RESET"
+		}
+		instantTextboxType = {
+			name = "reset nr"
+			position = {x=50 y=395}
+			font = "hoi_18mbs"
+			text = "15"
+			maxWidth = 30
+			maxHeight = 23
+			format = left
+		}
+		buttonType = {
+			name = "exitbutton" 
+			position = {x=266 y=3}	
+			spriteType = "GFX_closebutton"
+			pdx_tooltip = CLOSE
+		}
+	}
+	
+	containerWindowType = {
+		name = "fuhrer_mana_self_state_powers_container_3"
+		position = {x=1600 y=700}
+		size = { width=560	height=610 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			position = {x=-2 y=0}		
+			spriteType = "GFX_tiled_window_1b_thin_border"
+		}
+		
+		iconType = {
+			name = "test" 
+			position = {x=0 y=0}	
+			spriteType = "GFX_template_header_bg"
+		}
+		
+		buttonType = {
+			name = "close state" 
+			position = {x=520 y=3}	
+			spriteType = "GFX_closebutton"
+			pdx_tooltip = CLOSE
+		}
+		
+		instantTextboxType = {
+			name = "state name"
+			position = {x=30 y=1}
+			font = "hoi_36header"
+			text = "[This.GetName]"
+			maxWidth = 500
+			maxHeight = 23
+			format = centre
+		}
+		
+		instantTextboxType = {
+			name = "state taxes"
+			position = {x=183 y=41}
+			font = "hoi_36header"
+			text = "State Income"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "pop"
+			position = {x=30 y=90}
+			font = "hoi_36header"
+			text = "State Population: ~[?state_taxes]k"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "wasteland"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Wasteland"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "tiny_island"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Tiny Island"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "enclave"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Enclave"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "small_island"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Small Island"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "pastoral"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Pastoral"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "rural"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Rural"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "town"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Town"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "large_town"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Large Town"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "city"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: City"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "large_city"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Large City"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "metropolis"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Metropolis"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "megalopolis"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Megalopolis"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "huge_megalopolis"
+			position = {x=30 y=130}
+			font = "hoi_36header"
+			text = "State Category: Huge Megalopolis"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}	
+
+		instantTextboxType = {
+			name = "tax_minimal"
+			position = {x=30 y=170}
+			font = "hoi_36header"
+			text = "Tax Level: Minimal Taxes"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "tax_low"
+			position = {x=30 y=170}
+			font = "hoi_36header"
+			text = "Tax Level: Low Taxes"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "tax_average"
+			position = {x=30 y=170}
+			font = "hoi_36header"
+			text = "Tax Level: Average Taxes"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "tax_high"
+			position = {x=30 y=170}
+			font = "hoi_36header"
+			text = "Tax Level: High Taxes"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "tax_extreme"
+			position = {x=30 y=170}
+			font = "hoi_36header"
+			text = "Tax Level: Extreme Taxes"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}	
+		
+		instantTextboxType = {
+			name = "terrain_value"
+			position = {x=30 y=250}
+			font = "hoi_36header"
+			text = "Terrain Value: [?terrain_value]"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}	
+
+		instantTextboxType = {
+			name = "state_value"
+			position = {x=30 y=210}
+			font = "hoi_36header"
+			text = "State Value: [?state_value]"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+
+		instantTextboxType = {
+			name = "state_infra"
+			position = {x=30 y=290}
+			font = "hoi_36header"
+			text = "Infrastructure Level: [?state_infra_tt]"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}			
+
+		instantTextboxType = {
+			name = "state_mic"
+			position = {x=30 y=330}
+			font = "hoi_36header"
+			text = "Military Factories: [?state_mic_tt]"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}	
+
+		instantTextboxType = {
+			name = "state_civ"
+			position = {x=30 y=370}
+			font = "hoi_36header"
+			text = "Civilian Factories: [?state_cic_tt]"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}		
+		
+		instantTextboxType = {
+			name = "state_tax_level"
+			position = {x=393 y=470}
+			font = "hoi_18mbs"
+			text = "State Tax Level"
+			maxWidth = 110
+			maxHeight = 23
+			format = left
+		}	
+		
+			buttonType = {
+				name = "button_speedstep1"
+				quadTextureSprite ="GFX_speed_step"
+				position = { x=390 y =500 }
+				clicksound = click_default
+			}
+			
+			buttonType = {
+				name = "button_speedstep2"
+				quadTextureSprite ="GFX_speed_step"
+				position = { x=410 y =500 }
+				clicksound = click_default
+			}
+			
+			buttonType = {
+				name = "button_speedstep3"
+				quadTextureSprite ="GFX_speed_step"
+				position = { x=430 y =500 }
+				clicksound = click_default
+			}
+			
+			buttonType = {
+				name = "button_speedstep4"
+				quadTextureSprite ="GFX_speed_step"
+				position = { x=450 y =500 }
+				clicksound = click_default
+			}
+			
+			buttonType = {
+				name = "button_speedstep5"
+				quadTextureSprite ="GFX_speed_step"
+				position = { x=470 y =500 }
+				clicksound = click_default
+			}
+			
+			buttonType = {
+				name = "tax_plus_button"
+				quadTextureSprite ="GFX_zoom_in"
+				position = { x=500 y =492 }
+				clicksound = click_default
+			}
+			
+			buttonType = {
+				name = "tax_minus_button"
+				quadTextureSprite ="GFX_zoom_out"
+				position = { x=362 y =493 }
+				clicksound = click_default
+			}
+			
+		instantTextboxType = {
+			name = "tax"
+			position = {x=30 y=420}
+			font = "hoi_18mbs"
+			text = "State Population Tax : "
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "total_nr"
+			position = {x=-277 y=560}
+			font = "hoi_18mbs"
+			text = "[?state_taxes_temp]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "tax_nr"
+			position = {x=-277 y=420}
+			font = "hoi_18mbs"
+			text = "[?state_taxes_default]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "tax_modifier"
+			position = {x=30 y=440}
+			font = "hoi_18mbs"
+			text = "State Tax Level: "
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "tax_modifier_nr"
+			position = {x=-277 y=440}
+			font = "hoi_18mbs"
+			text = "[?state_tax]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "category"
+			position = {x=30 y=460}
+			font = "hoi_18mbs"
+			text = "State Category: "
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "category_nr"
+			position = {x=-277 y=460}
+			font = "hoi_18mbs"
+			text = "[?state_category]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "mic"
+			position = {x=30 y=480}
+			font = "hoi_18mbs"
+			text = "State MIC: "
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "mic_nr"
+			position = {x=-277 y=480}
+			font = "hoi_18mbs"
+			text = "-[?state_mic]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "cic"
+			position = {x=30 y=500}
+			font = "hoi_18mbs"
+			text = "State CIC: "
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "cic_nr"
+			position = {x=-277 y=500}
+			font = "hoi_18mbs"
+			text = "[?state_cic]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "infra"
+			position = {x=30 y=520}
+			font = "hoi_18mbs"
+			text = "State Infrastructure: "
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "infra_nr"
+			position = {x=-277 y=520}
+			font = "hoi_18mbs"
+			text = "[?state_infra]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "line"
+			position = {x=30 y=540}
+			font = "hoi_18mbs"
+			text = "----------------------------"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		
+		buttonType = {
+			name = "button1" 
+			position = {x=480 y=550}	
+			spriteType = "GFX_stateview_resistance_button"
+		}
+		
+		buttonType = {
+			name = "button2" 
+			position = {x=430 y=550}	
+			spriteType = "GFX_stateview_resistance_button"
+		}
+		
+		buttonType = {
+			name = "button3" 
+			position = {x=380 y=550}	
+			spriteType = "GFX_stateview_resistance_button"
+		}
+		
+		buttonType = {
+			name = "button4" 
+			position = {x=330 y=550}	
+			spriteType = "GFX_stateview_resistance_button"
+		}
+		
+		buttonType = {
+			name = "button5" 
+			position = {x=280 y=550}	
+			spriteType = "GFX_stateview_resistance_button"
+		}
+	}
+	
+	containerWindowType = {
+		name = "fuhrer_mana_self_state_powers_container_4"
+		position = {x=200 y=200}
+		size = { width=560	height=290 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background2"
+			position = {x=-2 y=0}		
+			spriteType = "GFX_tiled_window_1b_thin_border"
+		}
+		
+		iconType = {
+			name = "header" 
+			position = {x=0 y=0}	
+			spriteType = "GFX_template_header_bg"
+		}
+		
+		buttonType = {
+			name = "exitbutton" 
+			position = {x=520 y=3}	
+			spriteType = "GFX_closebutton"
+			pdx_tooltip = CLOSE
+		}
+		
+		instantTextboxType = {
+			name = "state_low_tax"
+			position = {x=17 y=00}
+			font = "hoi_36header"
+			text = "Country States Overview:"
+			maxWidth = 500
+			maxHeight = 23
+			format = centre
+		}
+		
+		instantTextboxType = {
+			name = "state name small"
+			position = {x=30 y=41}
+			font = "hoi_36header"
+			text = "[Root.GetName]"
+			maxWidth = 500
+			maxHeight = 23
+			format = centre
+		}
+		instantTextboxType = {
+			name = "minimal tax state"
+			position = {x=30 y=91}
+			font = "hoi_18mbs"
+			text = "Minimal Taxes"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "low tax state"
+			position = {x=30 y=121}
+			font = "hoi_18mbs"
+			text = "Low Taxes"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "average tax state"
+			position = {x=30 y=151}
+			font = "hoi_18mbs"
+			text = "Average Taxes"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "high tax state"
+			position = {x=30 y=181}
+			font = "hoi_18mbs"
+			text = "High Taxes"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		instantTextboxType = {
+			name = "extreme tax state"
+			position = {x=30 y=211}
+			font = "hoi_18mbs"
+			text = "Extreme Taxes:"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+		
+		instantTextboxType = {
+			name = "minimal tax state nr"
+			position = {x=10 y=91}
+			font = "hoi_18mbs"
+			text = "[?Root.amount_minimal_tax]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "low tax state nr"
+			position = {x=10 y=121}
+			font = "hoi_18mbs"
+			text = "[?Root.amount_low_tax]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "average tax state nr"
+			position = {x=10 y=151}
+			font = "hoi_18mbs"
+			text = "[?Root.amount_average_tax]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "high name small nr"
+			position = {x=10 y=181}
+			font = "hoi_18mbs"
+			text = "[?Root.amount_high_tax]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		instantTextboxType = {
+			name = "extreme name small nr"
+			position = {x=10 y=211}
+			font = "hoi_18mbs"
+			text = "[?Root.amount_extreme_tax]"
+			maxWidth = 500
+			maxHeight = 23
+			format = right
+		}
+		
+		instantTextboxType = {
+			name = "reset taxes"
+			position = {x=30 y=246}
+			font = "hoi_18mbs"
+			text = "Reset all States"
+			maxWidth = 500
+			maxHeight = 23
+			format = left
+		}
+	}
+		
 }
