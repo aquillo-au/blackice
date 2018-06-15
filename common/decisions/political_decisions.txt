@@ -401,6 +401,7 @@ fascism_on_the_rise = {
 			socialism < 0.8
 			communism < 0.8
 			neutrality < 0.8
+			monarchism < 0.8
 			has_idea_with_trait = fascist_demagogue
 		}
 
@@ -453,6 +454,15 @@ fascism_on_the_rise = {
 				}
 				add_popularity = {
 					ideology = communism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = monarchism
+				}
+				add_popularity = {
+					ideology = monarchism
 					popularity = -0.1
 				}
 			}
@@ -927,6 +937,7 @@ democratic_on_the_rise = {
 				socialism < 0.8
 			}
 			communism < 0.8
+			monarchism < 0.8
 			neutrality < 0.8
 			has_idea_with_trait = democratic_reformer
 		}
@@ -962,6 +973,15 @@ democratic_on_the_rise = {
 				}
 				add_popularity = {
 					ideology = communism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = monarchism
+				}
+				add_popularity = {
+					ideology = monarchism
 					popularity = -0.1
 				}
 			}
@@ -1406,6 +1426,7 @@ communism_on_the_rise = {
 			}
 			communism < 0.9
 			neutrality < 0.9
+			monarchism < 0.9
 		}
 
 		visible = {
@@ -1444,6 +1465,7 @@ communism_on_the_rise = {
 			}
 			communism < 0.8
 			neutrality < 0.8
+			monarchism < 0.8
 			has_idea_with_trait = communist_revolutionary
 		}
 
@@ -1487,6 +1509,15 @@ communism_on_the_rise = {
 				}
 				add_popularity = {
 					ideology = liberalism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = monarchism
+				}
+				add_popularity = {
+					ideology = monarchism
 					popularity = -0.1
 				}
 			}
@@ -1738,6 +1769,37 @@ political_actions = {
 	
 		modifier = {
 			communism_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
+        anti_monarchy_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = monarchism }
+		}
+
+		available = {
+            monarchism > 0.1
+        }
+	
+		modifier = {
+			monarchism_drift = -0.05
 			stability_weekly = 0.007
 		}
 	
