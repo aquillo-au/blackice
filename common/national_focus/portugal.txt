@@ -2025,7 +2025,7 @@ focus = {
 		}
 	}
 
-	focus = {
+		focus = {
 		id = POR_demand_ceuta
 		icon = GFX_goal_generic_forceful_treaty
 		prerequisite = { focus = POR_call_of_arms }
@@ -2038,7 +2038,8 @@ focus = {
 			POR = {
 				has_army_manpower = { size > 200000 }
 				}
-			SPR = {
+			any_other_country = {
+				original_tag = SPR
 				has_war = no
 				controls_state = 290
 			}
@@ -2055,27 +2056,23 @@ focus = {
 		
 		completion_reward = {
 
-
-			SPR = {
-			add_opinion_modifier = { target = POR modifier = POR_greedy }
+			random_other_country = {
+				limit = {
+					original_tag = SPR
+				}
+				add_opinion_modifier = {
+					target = POR
+					modifier = POR_greedy
+				}
+				country_event = { id = portugal.1 }
 			}
-
 
 			add_named_threat = { threat = 1 name = portugal.t1.t }
 			army_experience = 5
 			290 = { add_claim_by = POR }
-			#add_unity = 0.1
-			if =  {
-				limit = {
-					SPR = { owns_state = 290 }
-				}
-				SPR = {
-					country_event = { id = portugal.1 }
-				}
-			}
+			add_stability = 0.05
 		}
 	}
-
 	focus = {
 		id = POR_befriend_spain
 		icon = GFX_goal_generic_improve_relations
@@ -2089,15 +2086,22 @@ focus = {
 		}
 		
 		available = {
-			SPR = {
-				exists = yes
+			any_other_country = {
+				original_tag = SPR
 				has_government = fascism
 			}
 		}
 		completion_reward = {
-			SPR = {
-				add_opinion_modifier = { target = POR modifier = POR_propaganda }
+			random_other_country = {
+				limit = {
+					original_tag = SPR
+					}
+				add_opinion_modifier = {
+					target = POR
+					modifier = POR_propaganda
+					}
 				}
+	
 			}
 	}
 
