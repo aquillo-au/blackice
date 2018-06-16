@@ -364,6 +364,7 @@ fascism_on_the_rise = {
 			socialism < 0.9
 			communism < 0.9
 			neutrality < 0.9
+			monarchism < 0.9
 		}
 
 		visible = {
@@ -900,6 +901,7 @@ democratic_on_the_rise = {
 			}
 			communism < 0.9
 			neutrality < 0.9
+			monarchism < 0.9
 		}
 
 		visible = {
@@ -1906,7 +1908,7 @@ political_actions = {
 			hidden_effect = {
 				set_temp_variable = {
 					var = ban_ideology_var
-					value = party_popularity@democratic
+					value = party_popularity@conservatism + party_popularity@liberalism + party_popularity@socialism
 				}
 				multiply_temp_variable = {
 					var = ban_ideology_var
