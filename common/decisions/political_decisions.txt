@@ -1873,11 +1873,9 @@ political_actions = {
 		icon = generic_civil_support
 
 		available = {
-			OR = {
 				conservatism < 0.2
 				liberalism < 0.2
 				socialism < 0.2
-			}
 		}
 
 		visible = {
@@ -1990,6 +1988,60 @@ political_actions = {
 		}
 	}
 	
+		ban_monarchism_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			monarchism < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = monarchism }
+			monarchism > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = monarchism
+			}
+		}
+	
+		modifier = {
+			monarchism_drift = -0.02
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@monarchism
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = monarchism
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}				
+			}
+			custom_effect_tooltip = ban_communist_party_tt
+			add_stability = ban_ideology_var
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
 	institute_press_censorship_fascist_state = {
 
 		icon = generic_political_discourse
@@ -2005,6 +2057,7 @@ political_actions = {
 			liberalism_drift = -0.01
 			socialism_drift = -0.01
 			neutrality_drift = -0.01
+			monarchism_drift = -0.01
 		}
 	
 		days_remove = 360
@@ -2030,6 +2083,7 @@ political_actions = {
 			liberalism_drift = 0.03
 			socialism_drift = 0.03
 			neutrality_drift = -0.01
+			monarchism_drift = -0.01
 		}
 	
 		days_remove = 360
@@ -2055,6 +2109,7 @@ political_actions = {
 			liberalism_drift = -0.01
 			socialism_drift = -0.01
 			neutrality_drift = -0.01
+			monarchism_drift = -0.01
 		}
 	
 		days_remove = 360
@@ -2080,6 +2135,32 @@ political_actions = {
 			liberalism_drift = -0.01
 			socialism_drift = -0.01
 			neutrality_drift = 0.03
+			monarchism_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+		institute_press_censorship_monarchism_state = {
+
+		icon = generic_political_discourse
+
+		visible = {
+			has_government = monarchism
+		}
+	
+		modifier = {
+			communism_drift = -0.01
+			fascism_drift = -0.01
+			conservatism_drift = -0.01
+			liberalism_drift = -0.01
+			socialism_drift = -0.01
+			neutrality_drift = -0.01
+			monarchism_drift = 0.03
 		}
 	
 		days_remove = 360
