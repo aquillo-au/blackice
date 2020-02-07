@@ -364,6 +364,7 @@ fascism_on_the_rise = {
 			socialism < 0.9
 			communism < 0.9
 			neutrality < 0.9
+			monarchism < 0.9
 		}
 
 		visible = {
@@ -401,6 +402,7 @@ fascism_on_the_rise = {
 			socialism < 0.8
 			communism < 0.8
 			neutrality < 0.8
+			monarchism < 0.8
 			has_idea_with_trait = fascist_demagogue
 		}
 
@@ -453,6 +455,15 @@ fascism_on_the_rise = {
 				}
 				add_popularity = {
 					ideology = communism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = monarchism
+				}
+				add_popularity = {
+					ideology = monarchism
 					popularity = -0.1
 				}
 			}
@@ -890,6 +901,7 @@ democratic_on_the_rise = {
 			}
 			communism < 0.9
 			neutrality < 0.9
+			monarchism < 0.9
 		}
 
 		visible = {
@@ -927,6 +939,7 @@ democratic_on_the_rise = {
 				socialism < 0.8
 			}
 			communism < 0.8
+			monarchism < 0.8
 			neutrality < 0.8
 			has_idea_with_trait = democratic_reformer
 		}
@@ -962,6 +975,15 @@ democratic_on_the_rise = {
 				}
 				add_popularity = {
 					ideology = communism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = monarchism
+				}
+				add_popularity = {
+					ideology = monarchism
 					popularity = -0.1
 				}
 			}
@@ -1406,6 +1428,7 @@ communism_on_the_rise = {
 			}
 			communism < 0.9
 			neutrality < 0.9
+			monarchism < 0.9
 		}
 
 		visible = {
@@ -1444,6 +1467,7 @@ communism_on_the_rise = {
 			}
 			communism < 0.8
 			neutrality < 0.8
+			monarchism < 0.8
 			has_idea_with_trait = communist_revolutionary
 		}
 
@@ -1487,6 +1511,15 @@ communism_on_the_rise = {
 				}
 				add_popularity = {
 					ideology = liberalism
+					popularity = -0.1
+				}
+			}
+			if = {
+				limit = {
+					has_government = monarchism
+				}
+				add_popularity = {
+					ideology = monarchism
 					popularity = -0.1
 				}
 			}
@@ -1755,6 +1788,37 @@ political_actions = {
 			factor = 0
 		}
     }
+        anti_monarchy_raids = {
+
+    	icon = generic_civil_support
+
+    	visible = {
+			NOT = { has_government = monarchism }
+		}
+
+		available = {
+            monarchism > 0.1
+        }
+	
+		modifier = {
+			monarchism_drift = -0.05
+			stability_weekly = 0.007
+		}
+	
+		days_remove = 120
+		cost = 50
+
+		complete_effect = {
+			add_stability = -0.1
+		}
+		
+		remove_effect = {
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+    }
     
 	ban_fascist_party = {
 
@@ -1811,11 +1875,9 @@ political_actions = {
 		icon = generic_civil_support
 
 		available = {
-			OR = {
 				conservatism < 0.2
 				liberalism < 0.2
 				socialism < 0.2
-			}
 		}
 
 		visible = {
@@ -1846,7 +1908,7 @@ political_actions = {
 			hidden_effect = {
 				set_temp_variable = {
 					var = ban_ideology_var
-					value = party_popularity@democratic
+					value = party_popularity@conservatism + party_popularity@liberalism + party_popularity@socialism
 				}
 				multiply_temp_variable = {
 					var = ban_ideology_var
@@ -1928,6 +1990,60 @@ political_actions = {
 		}
 	}
 	
+		ban_monarchism_party = {
+
+		icon = generic_civil_support
+
+		available = {
+			monarchism < 0.2
+		}
+
+		visible = {
+			NOT = { has_government = monarchism }
+			monarchism > 0
+		}
+
+		remove_trigger = {
+			hidden_trigger = {
+				has_government = monarchism
+			}
+		}
+	
+		modifier = {
+			monarchism_drift = -0.02
+		}
+	
+		days_remove = -1
+		cost = 100
+		
+		complete_effect = {
+			hidden_effect = {
+				set_temp_variable = {
+					var = ban_ideology_var
+					value = party_popularity@monarchism
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = -1
+				}
+				add_popularity = {
+					ideology = monarchism
+					popularity = ban_ideology_var
+				}
+				multiply_temp_variable = {
+					var = ban_ideology_var
+					value = 0.66
+				}				
+			}
+			custom_effect_tooltip = ban_communist_party_tt
+			add_stability = ban_ideology_var
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
 	institute_press_censorship_fascist_state = {
 
 		icon = generic_political_discourse
@@ -1943,6 +2059,7 @@ political_actions = {
 			liberalism_drift = -0.01
 			socialism_drift = -0.01
 			neutrality_drift = -0.01
+			monarchism_drift = -0.01
 		}
 	
 		days_remove = 360
@@ -1968,6 +2085,7 @@ political_actions = {
 			liberalism_drift = 0.03
 			socialism_drift = 0.03
 			neutrality_drift = -0.01
+			monarchism_drift = -0.01
 		}
 	
 		days_remove = 360
@@ -1993,6 +2111,7 @@ political_actions = {
 			liberalism_drift = -0.01
 			socialism_drift = -0.01
 			neutrality_drift = -0.01
+			monarchism_drift = -0.01
 		}
 	
 		days_remove = 360
@@ -2018,6 +2137,32 @@ political_actions = {
 			liberalism_drift = -0.01
 			socialism_drift = -0.01
 			neutrality_drift = 0.03
+			monarchism_drift = -0.01
+		}
+	
+		days_remove = 360
+		cost = 150
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+		institute_press_censorship_monarchism_state = {
+
+		icon = generic_political_discourse
+
+		visible = {
+			has_government = monarchism
+		}
+	
+		modifier = {
+			communism_drift = -0.01
+			fascism_drift = -0.01
+			conservatism_drift = -0.01
+			liberalism_drift = -0.01
+			socialism_drift = -0.01
+			neutrality_drift = -0.01
+			monarchism_drift = 0.03
 		}
 	
 		days_remove = 360
